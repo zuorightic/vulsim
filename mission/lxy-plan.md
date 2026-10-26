@@ -632,3 +632,77 @@ experiments/arithmetic/        # 案例清单、训练/保留划分、四组配�
 - 实验说明：功能语义、评估阶段、时序—面积权衡、C/D 差异、失败案例及方法局限。
 
 当前从 §10.1 的基线故障处理继续，复用已经完成的构建、工具安装及测试记录。后续逐项达到完成条件，再推进对应的依赖步骤。
+
+# 第二章：推进
+
+本章按实施步骤追加实际工作、验证结果和完成状态。前文 §3 保留 2026-10-23 的历史基线，本章记录修复后的状态；未执行的项目不计为通过。
+
+## 步骤一：修复并确认现有功能基线
+
+### 1.1 状态与范围
+
+- 执行日期：2026-10-26。
+- 状态：**已完成，达到 §10.1 的完成条件**。步骤一所需的原生 RTL 生成、仿真及相关周期行为检查通过；CIRCT 补充路径也通过本次所列回归。
+- 基础版本：vulsim `42171cb69e836d46cfcf2e8028521f4f98086670`，RTLzz `1b4f499baf67ef5b4a59ff32b7b16e7752694503`。两处代码修复和新增回归保留在工作区，尚未创建提交；RTLzz 的改动位于子仓库内。
+- 主实验继续固定使用**原生 RTLzz 发射器**，CIRCT 用作补充核对。此处确认功能基线，不涉及算术自动拆分、物理代价模型或 ASAP7 PPA。
+
+### 1.2 修改内容
+
+1. `rtlzz/src/backend/rtlgen.cpp`：修复原生 AddCarry 的表达式位宽。三个加数在相加前均显式转换到当前 BEIR 结果位宽；窄输入和 1 位 carry 零扩展，必要时按结果位宽截断。保留原有无符号及模运算语义，不修改 BEIR 的 1 位进位定义，也不通过关闭 Verilator 位宽警告绕过问题。
+2. `src/rtlgen/verilator.cpp`：为 `VlWide<Words>` 生成专用读写重载，使用模板参数 `Words` 检查 32 位字索引，替代本机 Verilator 5.020 不支持的 `.size()`。分别检查 64 位数据块的低/高 32 位字，覆盖字数为奇数时的尾部；标量读写继续使用已有重载。
+3. `regression/generator_rtl_baseline.py`：新增端到端定向回归，按现有 `VUL_REGRESSION_CIRCT` 开关运行 simgen、原生及 CIRCT 路径；根目录 `regression.sh` 已按通配规则自动发现该脚本，无需改动总入口。
+
+新增回归用独立的无符号 128 位参考计算检查 1、8、16、32、64、96 位 AddCarry，包括动态 carry=0/1、省略进位、常量进位 1、截断到 4 位以及扩展到 128 位。端口测试对 65、80、96、127、128、129、193、256 位输入/返回值执行逐位、全 1 和清零传输；流水线携带 193 位标签，检查结构体打包、固定延迟、连续输入、valid 气泡、排空和在途复位。
+
+### 1.3 构建与验证结果
+
+构建命令 `cmake --build build --target vulrtlgen vulsimgen --parallel 2` 成功。以下回归均使用重建后的工具，并显式启用已安装的 CIRCT；未添加全局 Verilator 告警屏蔽选项。
+
+| 检查 | 结果与覆盖 |
+| --- | --- |
+| `generator_pipeline.py` | **通过**。L=1、2、3、4、8 的 simgen、原生 RTL、CIRCT 共 15 个配置完成生成及运行；26 项声明诊断、8 项访问隔离、RTL 输出完整定义和 sim-only 逻辑检查也通过 |
+| `generator_pipeline_instances.py` | **通过**。simgen、原生、CIRCT 的参数化流水线子实例、坐标参数及 release 清理 |
+| `generator_pipeline_valid.py` | **通过**。simgen L=1、2、8 的有效位、气泡、未写入 valid 的保持及在途复位 |
+| `generator_query_api.py` | **通过**。simgen / 原生 RTL 的 `Int<80>`、结构体、枚举、多维查询返回、快照和复位，以及相关接口诊断 |
+| `generator_rtl_baseline.py` | **通过**。simgen、原生、CIRCT 每条路径均输出 `RTL BASELINE PASS checks=2530`；另检查构造/再次复位后的结果及 valid |
+| `regression/mulu32/Main.utb` | **通过**。simgen、原生、CIRCT 每条路径均完成 100000 周期，含定向/随机数据、气泡、三周期回调对齐及排空；原生与 CIRCT 构建日志均无 `%Warning-` |
+| 工作区差异检查 | 主仓库与 RTLzz 子仓库的 `git diff --check` 均通过 |
+
+新回归首轮因测试脚本在同一周期反复调用同一 SERVICE 而触发平台断言，已在每次端口传输后推进周期，随后三条路径均通过。该次失败属于测试脚本错误，原始日志保留，不计作产品回归失败或最终验证通过。
+
+### 1.4 工具与证据
+
+本次工具版本：LLVM 18.1.3、g++ 13.3.0、CMake 3.28.3、Verilator 5.020、CIRCT firtool-1.162.0（LLVM 24.0.0git）。同时核对本机 Yosys `0.68+ / a5af9d690`、OpenROAD `26Q3-1867-g84e3ff1eb2` 可运行；本步未进行物理评估。
+
+验证目录：`build/step1-20261026-832lmG/`。
+
+- `verification.md`：验证摘要及范围。
+- `manifest.json`：基础提交、源码/二进制 SHA-256、工具版本、测试命令、结果和范围。
+- `generator_pipeline.log`、`generator_pipeline_instances.log`、`generator_pipeline_valid.log`、`generator_query_api.log`：既有相关回归日志。
+- `generator_rtl_baseline-fixed.log`：新增定向回归最终通过日志；`generator_rtl_baseline.log` 保留首轮测试脚本失败。
+- `mulu32-results.json`、`mulu32-*-generate.log`、`mulu32-*-run.log`：三条路径的生成/运行命令、返回码、耗时及原始输出。
+- `mulu32-sim/`、`mulu32-native/`、`mulu32-circt/`：可直接运行的仿真产物、RTL、驱动和构建日志。
+- `vulsim-code.patch`、`rtlzz-code.patch`、`generator_rtl_baseline.py.snapshot`：本次代码变化快照；`before-*.log` 为保留的 2026-10-23 原始失败日志副本。
+
+`build/` 为忽略目录，日志和构建产物保留在本机；新增测试和本章记录位于源码工作区。共享或归档结果时需一并保存上述证据目录。
+
+### 1.5 复现入口与完成边界
+
+从仓库根目录运行：
+
+```bash
+export CIRCT_ROOT=/home/zyrv/circt/circt-full-shared-linux-x64/firtool-1.162.0
+export PATH="$CIRCT_ROOT/bin:$PATH"
+export VUL_REGRESSION_CIRCT=1
+
+cmake --build build --target vulrtlgen vulsimgen --parallel 2
+python3 regression/generator_pipeline.py
+python3 regression/generator_pipeline_instances.py
+python3 regression/generator_pipeline_valid.py
+python3 regression/generator_query_api.py
+python3 regression/generator_rtl_baseline.py
+```
+
+已保留的原生 mulu32 产物可执行 `bash build/step1-20261026-832lmG/mulu32-native/run.sh`；将路径中的 `native` 分别改为 `sim` 或 `circt` 可运行另两条路径。重新生成并运行三条路径可使用 `python3 build/step1-20261026-832lmG/verify_mulu32.py`；该辅助脚本仅覆盖其验证目录中的三个生成子目录。
+
+本步执行了与两处修复相关的回归，未运行完整 `regression.sh` 或独立 RTLzz 全单元套件，因此不宣称全项目回归通过。ASAP7 综合/布局布线及后续优化步骤尚未执行。步骤一完成后，下一步按 §10.2 定义算术语义、对照规则和案例划分。
