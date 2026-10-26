@@ -1,0 +1,18 @@
+{
+  "version": "arithmetic-targets-v1",
+  "L_rule": "max(2,heavy_operation_depth+1)",
+  "A_L": 1,
+  "BCD_L": "same_value_from_L_rule; never_change_after_main_matrix_freeze",
+  "period_rule": "ceil(boundary_overhead_ps + 11*max(max(calibration_path_delay_ps),sum(calibration_path_delay_ps)/L)/10)",
+  "boundary_overhead": "measured_clk_to_Q_ps+measured_setup_ps+frozen_uncertainty_ps+nonduplicated_clock_reserve_ps",
+  "calibration_delay_definition": "arithmetic_data_path_cell_plus_estimated_wire_delay; excludes_boundary_register_and_clock_overhead",
+  "calibration_source": "fixed_ASAP7_TT_RVT_NLDM_microbenchmarks_only",
+  "missing_calibration": "pending_or_error; never_invent_numeric_ps",
+  "rounding": "round_up_to_integer_ps",
+  "main_case_PPA_used_to_set_targets": false,
+  "holdout_PPA_used_to_set_targets": false,
+  "infeasible_result": "retain_failure; do_not_relax_period_L_or_II",
+  "I_O_budget_policy": "same_explicit_SDC_for_all_groups; finalize_in_backend_step_before_measurement",
+  "numeric_periods": "pending_step3_and_microbenchmark_characterization",
+  "search_limits": "pending_backend_resource_trial; must_be_filled_before_main_matrix"
+}

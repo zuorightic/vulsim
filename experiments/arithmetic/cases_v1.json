@@ -1,0 +1,19 @@
+{
+  "version": "arithmetic-cases-v1",
+  "semantics": "arithmetic-semantics-v1",
+  "cases": [
+    {"id":"M1","split":"formal","family":"integer_mul","inputs":{"a":32,"b":32,"c":64},"outputs":{"y":64},"equation":"y=(a*b+c) mod 2**64","heavy_depth":1,"calibration_path":["mul_u32_full64","add_u64"]},
+    {"id":"M2","split":"formal","family":"integer_mul","inputs":{"a":16,"b":16,"c":16,"d":16},"outputs":{"y":33},"equation":"y=a*b+c*d; both products exact uint32, sum uint33","heavy_depth":1,"calibration_path":["mul_u16_full32","add_u33"]},
+    {"id":"D1","split":"formal","family":"integer_div","inputs":{"a":16,"d":16},"outputs":{"q":16,"r":16},"equation":"(q,r)=defined_udivrem16(a,d)","heavy_depth":1,"calibration_path":["safe_udivrem_u16"]},
+    {"id":"D2","split":"formal","family":"integer_div","inputs":{"a":32,"d":32,"bias":32,"bypass":32,"select":1},"outputs":{"y":32,"r":32},"equation":"(q,r)=defined_udivrem32(a,d); y=select ? (q+bias) mod 2**32 : bypass","heavy_depth":1,"calibration_path":["safe_udivrem_u32","add_u32","mux_u32"]},
+    {"id":"F1","split":"formal","family":"float_mul","inputs":{"a":32,"b":32},"outputs":{"bits":32,"flags":5},"equation":"(bits,flags)=binary32_mul_RNE(a,b)","heavy_depth":1,"calibration_path":["fp32_mul_rne"]},
+    {"id":"F2","split":"formal","family":"float_mul","inputs":{"a":32,"b":32,"c":32},"outputs":{"bits":32,"flags":5},"equation":"(t,f1)=binary32_mul_RNE(a,b); (bits,f2)=binary32_mul_RNE(t,c); flags=f1|f2","heavy_depth":2,"calibration_path":["fp32_mul_rne","fp32_mul_rne"]},
+    {"id":"H_M1","split":"holdout","family":"integer_mul","inputs":{"a":32,"b":32,"c":32,"select":1},"outputs":{"y":32},"equation":"p=(a*b) mod 2**32; y=(p+(select ? c : 0)) mod 2**32","heavy_depth":1,"calibration_path":["mul_u32_low32","add_u32"]},
+    {"id":"H_D1","split":"holdout","family":"integer_div","inputs":{"a":32,"d":32,"e":32},"outputs":{"q":32,"r1":32,"r2":32},"equation":"(q1,r1)=defined_udivrem32(a,d); (q,r2)=defined_udivrem32(q1,e)","heavy_depth":2,"calibration_path":["safe_udivrem_u32","safe_udivrem_u32"]},
+    {"id":"H_F1","split":"holdout","family":"float_mul","inputs":{"a":32,"b":32,"bypass":32,"select":1},"outputs":{"bits":32,"flags":5},"equation":"select ? binary32_mul_RNE(a,b) : (bypass,0)","heavy_depth":1,"calibration_path":["fp32_mul_rne","mux_u37"]}
+  ],
+  "calibration_only": ["mul_u16_full32","mul_u24_full48","mul_u32_full64","mul_u32_low32","add_u16","add_u17","add_u32","add_u33","add_u64","add_u65","compare_u16","compare_u32","mux_u32","mux_u37","mux_u64","safe_udivrem_u16","safe_udivrem_u32","fp32_mul_rne","register_valid_reset"],
+  "model_partition_policy": "only_calibration_microbenchmarks_train_global_model; no_formal_or_holdout_PPA_for_global_tuning",
+  "holdout_online_feedback": "allowed_only_with_frozen_search_budget; case_local_cache_never_updates_global_model",
+  "hardware_status": "case_definitions_frozen; integer_and_float_hardware_integration_validated_in_later_steps"
+}

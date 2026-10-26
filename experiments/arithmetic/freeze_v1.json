@@ -1,0 +1,36 @@
+{
+  "version": "arithmetic-step2-freeze-v1",
+  "frozen_at": "2026-10-26T16:06:30.214118+08:00",
+  "source_base": "a3302e65c672254ca41eb667e7a60a385203befb",
+  "rtlzz_base": "8cfbf11ed0242dd69dd5a06f82cb27122d75e1b1",
+  "files_sha256": {
+    "experiments/arithmetic/cases_v1.json": "e48ea4b7026ee096cdec1a3e33b559ddaaf112f647ea602af66c0aeebf68e60a",
+    "regression/arithmetic_contracts.py": "ad128849f9bdc73c229baa5c16528f46ef5f191f3e96ccbbbeeb4a07de83aaba",
+    "tools/arithmetic_dse/__init__.py": "5f2c8aa812c5af909c4a8eaaede8da1d82ae51605d34371fafaf0ff9e60576fa",
+    "tools/arithmetic_dse/configs/asap7_reference_v1.json": "843527ecd13094929ec74fb18dc1bfc34b5f25acc821c6baac403b321aad3912",
+    "tools/arithmetic_dse/configs/semantics_v1.json": "92f0c0f00cd62ea020066ef066c19572d50e8e668c6d994d35727bf2bf3e32fe",
+    "tools/arithmetic_dse/configs/simple_cost_v1.json": "aefe770ee64a2c198b45a6f3663a08217b210655fbf6185b13603ae758e1b6ac",
+    "tools/arithmetic_dse/configs/target_rules_v1.json": "5a4e6a99e4452aa46f3a7c7bbf34f6d922ff7dd1b0233dc246698c714fbd7ddc",
+    "tools/arithmetic_dse/contracts.py": "d76b0f52ba4fd63ff370e8640f06bcc82a1e4685b86d96bcbf214e0df35093b9",
+    "tools/arithmetic_dse/reference.py": "32a287fd6de7aac6a2ab5edd81c23279e787434110389ae4f988c935194ae4dc",
+    "tools/arithmetic_dse/simple_cost.py": "a9d55908b8eddd236676d34d4c62f8d31d1c2d0ce72a7f0de45350e8d644a9f7",
+    "tools/arithmetic_dse/softfloat_adapter.c": "127f6a469d84af4616fc9f2cc3aad4ccc854a0b0aa78dd4c395f071c25f36d21",
+    "tools/arithmetic_dse/softfloat_oracle.py": "682d832951dc07ab235dd5f7abb7026e54b145e9c17e839ffe996a71307cbea4"
+  },
+  "validation_evidence": {
+    "path": "build/step2-20261026-b38fDr/contracts-final.json",
+    "sha256": "9a38577a04cbdff393c9e691effa62854d65950e79ae8af1e688a737b42a2621",
+    "checks": 40589,
+    "softfloat_vectors": 20400,
+    "ppa_read": false
+  },
+  "scope": "semantics, case split, target formulation, BC formulas and structural prototype; no physical calibration",
+  "pending": [
+    "numeric_target_periods_ps",
+    "resource_budgets",
+    "region_entry_route",
+    "hardware_case_integration",
+    "D_physical_model"
+  ],
+  "change_policy": "new version and explicit reason for correctness fixes; rerun affected validation; never retune BC from PPA audit"
+}

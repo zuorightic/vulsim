@@ -1,0 +1,24 @@
+{
+  "version": "asap7-reference-v1",
+  "status": "configuration_reference_only; no_PPA_measurements",
+  "user_reference_root": "/home/zyrv/temp/ORFS/synthcore/版本27（6circtopt）/asap7",
+  "orfs_reference_root": "/home/zyrv/OpenROAD-flow-scripts/flow/designs/asap7",
+  "initial_backend_settings": {
+    "PLATFORM": "asap7", "CORNER": "TC", "ASAP7_USE_VT": "RVT", "LIB_MODEL": "NLDM",
+    "ABC_AREA": 0, "CORE_UTILIZATION": 40, "CORE_ASPECT_RATIO": 1,
+    "CORE_MARGIN": 2, "PLACE_DENSITY": 0.65, "TNS_END_PERCENT": 100,
+    "SYNTH_HDL_FRONTEND": "slang", "SYNTH_OPT_HIER": 1,
+    "IO_PLACER_H": "M4 M6", "IO_PLACER_V": "M5 M7",
+    "SYNTH_RETIME_MODULES": "", "CLUSTER_FLOPS": 0
+  },
+  "resource_reference": {"historical_NUM_CORES":8,"current_parallelism":"decide_after_step3_resource_trial"},
+  "historical_clock_periods_ps": {"outvul":1250,"outvul_MDU":1000,"outvul_FPU":1100,"outvul_FPU_arithmetic":1250},
+  "historical_period_policy": "record_provenance_only; do_not_reuse_as_new_case_targets",
+  "SDC_gap": "historical_files_only_create_clock; explicitly_define_IO_delays_drive_load_uncertainty_and_reset_paths_in_step3",
+  "official_examples": "aes/uart use explicit virtual_clock_and_20_percent_IO_delays_with_design_specific_clock_latency; do_not_copy_latency_numbers",
+  "PVT_gap": "platform_TC_temperature_metadata_0C_vs_loaded_TT_liberty_nominal_25C; record_and_align_actual_loaded_libraries",
+  "timing_unit": "ps; verify_report_units_and_ABC_period_input",
+  "area_unit": "verify_Liberty_and_LEF_consistency_before_reporting_um2",
+  "frontend_validation": "check_local_slang_plugin_before_using_the_historical_setting",
+  "not_frozen_until_step3": ["exact_library_hashes","driver_and_load","IO_delays","uncertainty","evaluation_stage","physical_recheck_scope","job_memory_threads_and_timeouts"]
+}

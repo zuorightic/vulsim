@@ -1,0 +1,50 @@
+{
+  "version": "arithmetic-semantics-v1",
+  "integer": {
+    "signedness": "unsigned",
+    "operand_widths": [16, 32],
+    "input_range_policy": "reject_out_of_range",
+    "multiply": "exact_product_then_explicit_output_truncation",
+    "add": "exact_sum_then_explicit_output_truncation",
+    "overflow": "modulo_2_to_output_width",
+    "division": {
+      "normal": "a=q*d+r; 0<=r<d",
+      "zero_divisor": "q=2**width-1; r=a",
+      "safe_divisor": "safe_d = (d == 0) ? 1 : d",
+      "implementation": "all_Div_Mod_nodes_consume_safe_d; select_defined_outputs_after_alignment",
+      "reset": "zero_inputs_are_defined_including_all_internal_reset_expressions"
+    },
+    "out_of_scope": ["signed_arithmetic", "mixed_signedness"]
+  },
+  "floating_point": {
+    "format": "IEEE754-binary32",
+    "operation": "multiply",
+    "interface": "uint32_bit_pattern_and_uint5_exception_flags",
+    "rounding": "nearest_ties_to_even",
+    "tininess": "after_rounding",
+    "tininess_test": "precision_24_rounding_with_unbounded_exponent; not_just_final_encoded_exponent",
+    "subnormals": "gradual_underflow",
+    "ftz": false,
+    "daz": false,
+    "canonical_nan": "0x7fc00000",
+    "signaling_nan": "exp=255; fraction!=0; fraction_bit22=0",
+    "invalid": "signaling_nan_or_zero_times_infinity",
+    "signed_zero": "xor_operand_signs_for_zero_product",
+    "flags": {"invalid": 16, "divide_by_zero": 8, "overflow": 4, "underflow": 2, "inexact": 1},
+    "flags_scope": "per_operation_not_global_sticky",
+    "chained_multiply": "round_each_operation_separately; output_flags=flags1|flags2",
+    "bypass": "return_unmodified_selected_bits_and_zero_flags_when_bypass_selected",
+    "out_of_scope": ["float_double_frontend_types", "FMA", "other_rounding_modes", "float_add_div_sqrt"]
+  },
+  "cycle_contract": {
+    "II": 1,
+    "L_definition": "input_Q_at_edge_k_to_output_Q_at_edge_k_plus_L",
+    "rtlzz_internal_boundaries": "L-1",
+    "A_latency": 1,
+    "BCD_latency": "same_fixed_L_for_each_case",
+    "valid": "advance_every_cycle; invalid_data_not_compared",
+    "reset": "discard_in_flight_transactions_and_restart_scoreboard",
+    "flags_and_sidebands": "same_transaction_and_latency_as_data",
+    "stall": "unsupported_in_this_experiment"
+  }
+}
