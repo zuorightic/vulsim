@@ -1,0 +1,26 @@
+[
+  {
+    "command": [
+      "/home/zyrv/vulsim/build/step4-rtlzz/testv2/pipeline-test",
+      "--circt"
+    ],
+    "exit_code": 0,
+    "stdout": "SKIP CIRCT checks: VUL_REGRESSION_CIRCT=0; native checks continue\npipeline tests passed\n"
+  },
+  {
+    "command": [
+      "/home/zyrv/vulsim/build/step4-rtlzz/testv2/pipeline-reset-test",
+      "--circt"
+    ],
+    "exit_code": 0,
+    "stdout": "SKIP CIRCT checks: VUL_REGRESSION_CIRCT=0; native checks continue\npipeline reset API tests passed\n"
+  },
+  {
+    "command": [
+      "/home/zyrv/vulsim/build/step4-rtlzz/testv2/pipeline-valid-test",
+      "--circt"
+    ],
+    "exit_code": 0,
+    "stdout": "SKIP CIRCT checks: VUL_REGRESSION_CIRCT=0; native checks continue\npipeline valid API and IR tests passed\n"
+  }
+]

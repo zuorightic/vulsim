@@ -74,6 +74,7 @@ vector<string> genStaticConfigHeaderCode(const VulStaticConfigLib &configlib) {
 
     out_lines.push_back("#include \"common.h\"\n");
     out_lines.push_back("#include \"fixint.hpp\"\n");
+    out_lines.push_back("#include \"arithmetic.hpp\"\n");
     out_lines.push_back("\n");
     out_lines.push_back("// Configuration Items\n");
     out_lines.push_back("\n");
@@ -89,6 +90,7 @@ vector<string> genStaticGlobalHelperHeaderCode(const vector<string> &helper_code
     vector<string> out_lines = genHeaderPrelude();
     out_lines.push_back("#include \"common.h\"\n");
     out_lines.push_back("#include \"fixint.hpp\"\n");
+    out_lines.push_back("#include \"arithmetic.hpp\"\n");
     out_lines.push_back("\n");
     out_lines.push_back("// Global Helper Definitions\n");
     out_lines.push_back("\n");
@@ -112,6 +114,7 @@ vector<string> genStaticBundleHeaderCode(const VulStaticBundleLib &bundlelib) {
     out_lines.push_back("#include \"common.h\"\n");
     out_lines.push_back("#include \"config.h\"\n");
     out_lines.push_back("#include \"fixint.hpp\"\n");
+    out_lines.push_back("#include \"arithmetic.hpp\"\n");
     out_lines.push_back("\n");
     out_lines.push_back("// Bundle Definitions\n");
     out_lines.push_back("\n");
@@ -135,6 +138,7 @@ vector<string> genStaticProjectHeaderCode(
 
     out_lines.push_back("#include \"common.h\"\n");
     out_lines.push_back("#include \"fixint.hpp\"\n");
+    out_lines.push_back("#include \"arithmetic.hpp\"\n");
     out_lines.push_back("\n");
 
     out_lines.push_back("// Configuration Items\n");

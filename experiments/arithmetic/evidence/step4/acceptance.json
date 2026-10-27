@@ -1,0 +1,62 @@
+{
+  "version": "arithmetic-regions-step4-acceptance-v1",
+  "status": "passed",
+  "acceptance": "minimum_semantic_region_integration_independent_FP_RTL_reference_and_atomic_scheduling_complete",
+  "route": "pre_BEOPT_semantic_occurrence_protection_then_template_expansion_and_isolated_normal_BEOPT",
+  "region_identity": "function/semantic_operation/occurrence assigned in S11; no NodeId/source-line/debug-name identity",
+  "region_checks": 51,
+  "scope_cases": [
+    "single",
+    "serial",
+    "parallel",
+    "shared",
+    "identical",
+    "constant"
+  ],
+  "normal_optimization": true,
+  "sharing": "external inputs may share; internal CSE is allowed only within the same region",
+  "real_FP_internal_CSE_demonstrator": {
+    "protected_Add_nodes": 100,
+    "unprotected_Add_nodes": 96
+  },
+  "synthetic_internal_CSE_demonstrator": {
+    "ordinary_Add_nodes": 1,
+    "protected_Add_nodes": 2
+  },
+  "restoration_clones": 0,
+  "legal_FP_cuts": [],
+  "unreliable_fallbacks": 0,
+  "rejected_or_unintegrated_minimum_cases": [],
+  "rejection_scope": [
+    "overlap",
+    "duplicate identity",
+    "undeclared entry",
+    "internal escape",
+    "nonempty internal cut",
+    "full DAG cycle",
+    "contracted DAG cycle",
+    "boundary removed without replacement"
+  ],
+  "other_metadata_checks": [
+    "constant exits",
+    "explicit reverse NodeId permutation",
+    "renamed members and cleared debug locations",
+    "repeated normal BEOPT",
+    "input alias replacement",
+    "materialized region metadata",
+    "tampered split schedule"
+  ],
+  "supported_FP_semantics": "binary32 RNE, tininess-after, canonicalNaN, per-operation flags",
+  "RTL_blackbox_calls": false,
+  "BC_rules_modified": false,
+  "physical_backend_modified": false,
+  "new_PPA_calls": 0,
+  "limits": [
+    "finite functional validation, no exhaustive FP equivalence proof",
+    "FP internal cuts disabled for all callers",
+    "four complete group selectors/cost adapters and integer multiplier splitting remain step5",
+    "D2 safe division and formal FP case boundary acceptance remain step6",
+    "actual D cost library, exact collection list and full main matrix not implemented",
+    "full budget closure required before step5 bulk physical work"
+  ]
+}

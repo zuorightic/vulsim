@@ -1,0 +1,41 @@
+{
+  "version": "arithmetic-regions-step4-review-v2",
+  "status": "passed",
+  "acceptance": "step4_passed_after_metadata_loss_and_CIRCT_disable_corrections",
+  "region_checks": 55,
+  "legal_FP_cuts": [],
+  "metadata_loss_rejected_at_internal_stages": [
+    0,
+    1
+  ],
+  "both_graphs_without_regions_compatible_at_internal_stages": [
+    0,
+    1
+  ],
+  "CIRCT_modes": [
+    "absent-disabled",
+    "present-disabled",
+    "present-enabled"
+  ],
+  "native_checks_never_skipped": true,
+  "direct_CXX_circt_flag_respects_disable": true,
+  "enabled_missing_tool_clear_diagnostic": true,
+  "sharing_policy": "semantic-marker-and-isolated-BEOPT-v1",
+  "template_version": "softfloat3d-bitvector-mul-v1",
+  "optimization_scope": "normal BEOPT within components; no CSE across region internals; cross-component symbolic values/static facts can be interface-limited; literal operands remain available",
+  "physical_impact_direction_or_magnitude_measured": false,
+  "frontend_recognition": "only registered vularith::F32MulRNE; no general integer-graph or external-library recognition",
+  "reusable_infrastructure": "BEIR Mul recognition may create regions/subgroups and reuse ownership, optimization isolation and scheduling; internal cuts and costs need separate extension/acceptance",
+  "BC_rules_modified": false,
+  "physical_backend_modified": false,
+  "step4_heading_level": 2,
+  "step4_child_heading_level": 3,
+  "remaining": [
+    "FP internal splitting",
+    "complete group selectors and real cost adapters",
+    "Mul splitting closed loop",
+    "formal division/FP boundary acceptance",
+    "actual D cost library",
+    "budget closure before step5 bulk physical work"
+  ]
+}

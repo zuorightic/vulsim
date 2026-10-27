@@ -34,6 +34,7 @@
 
 #include <inttypes.h>
 #include <fixint.hpp>
+#include <arithmetic.hpp>
 #include <ram.hpp>
 #include <storage.hpp>
 #include <queue.hpp>

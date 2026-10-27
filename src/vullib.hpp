@@ -17,21 +17,23 @@
 #include <array>
 #include <string_view>
 
-inline constexpr std::array<std::string_view, 8> VulLibFiles = {
+inline constexpr std::array<std::string_view, 9> VulLibFiles = {
     "vullib.h",
     "common.h",
     "queue.hpp",
     "ram.hpp",
     "storage.hpp",
     "fixint.hpp",
+    "arithmetic.hpp",
     "vcdrecord.hpp",
     "main.cpp",
 };
 
-inline constexpr std::array<std::string_view, 4> VulRTLLibFiles = {
+inline constexpr std::array<std::string_view, 5> VulRTLLibFiles = {
     "ram_generic.sv",
     "queue.sv",
     "fixint.hpp",
+    "arithmetic.hpp",
     "common.h",
 };
 

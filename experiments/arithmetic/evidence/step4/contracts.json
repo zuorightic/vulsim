@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "checks": 20202,
+  "division_exhaustive_pairs": 5460,
+  "fp_directed_vectors": 14,
+  "fp_exact_nearest_checks": 1736,
+  "case_reference_evaluations": 1152,
+  "partition": {
+    "formal": 6,
+    "holdout": 3,
+    "group_records": 36,
+    "fixed_L": {
+      "M1": 2,
+      "M2": 2,
+      "D1": 2,
+      "D2": 2,
+      "F1": 2,
+      "F2": 3,
+      "H_M1": 2,
+      "H_D1": 3,
+      "H_F1": 2
+    }
+  },
+  "simple_cost_structural_checks": "passed",
+  "simple_cost_version": "simple-cost-v1.1",
+  "width_rule_version": "effective-width-v2",
+  "freeze": {
+    "path": "experiments/arithmetic/freeze_v3.json",
+    "version": "arithmetic-step2-freeze-v3",
+    "files_checked": 12
+  },
+  "mul_candidate_prototype": {
+    "L": 2,
+    "original_max_stage_cost": 21,
+    "split_max_stage_cost": 19,
+    "selected_by_C": "split16"
+  },
+  "softfloat_crosscheck": null,
+  "physical_measurements_read": false,
+  "hardware_arithmetic_integration": "not_run"
+}

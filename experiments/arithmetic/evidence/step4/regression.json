@@ -1,0 +1,308 @@
+{
+  "version": "arithmetic-regions-regression-v1",
+  "seed": 20261027,
+  "cases": [
+    "single",
+    "serial",
+    "parallel",
+    "shared",
+    "identical",
+    "constant"
+  ],
+  "region_checks": "PASS arithmetic regions checks=51",
+  "FP_semantics": "binary32 RNE, tininess-after, canonicalNaN, per-operation flags",
+  "host_vectors": 20484,
+  "softfloat": {
+    "vectors": 20484,
+    "source": "/home/zyrv/temp/rv64-archsem软著/softfloat",
+    "command": [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-shared",
+      "-fPIC",
+      "-Wl,-z,defs",
+      "-I/home/zyrv/temp/rv64-archsem软著/softfloat",
+      "/home/zyrv/vulsim/experiments/arithmetic_dse/softfloat_adapter.c",
+      "/home/zyrv/temp/rv64-archsem软著/softfloat/f32_mul.c",
+      "/home/zyrv/temp/rv64-archsem软著/softfloat/s_normSubnormalF32Sig.c",
+      "/home/zyrv/temp/rv64-archsem软著/softfloat/s_roundPackToF32.c",
+      "/home/zyrv/temp/rv64-archsem软著/softfloat/s_propagateNaNF32UI.c",
+      "/home/zyrv/temp/rv64-archsem软著/softfloat/s_countLeadingZeros8.c",
+      "/home/zyrv/temp/rv64-archsem软著/softfloat/softfloat_state.c",
+      "/home/zyrv/temp/rv64-archsem软著/softfloat/softfloat_raiseFlags.c",
+      "-o",
+      "/home/zyrv/vulsim/build/step4-regions/oracle.so"
+    ],
+    "source_sha256": {
+      "f32_mul.c": "ddd925d4a83ccede935d4095aee4da5c90bac2ea98c9c8763da055b3ba4aedd7",
+      "s_normSubnormalF32Sig.c": "e1c4ea7a1809c60779aceb6ab31eb466efc821e635adc61b25a6f2144cf5e31c",
+      "s_roundPackToF32.c": "4cf6c727fd5fc56383a8bc21a3b5426619dea8ca76035462e3c1ec1f5790cbff",
+      "s_propagateNaNF32UI.c": "4ad3b1a533cfa78e92c08794723705bbafd85c553a5a5657633e6ed260249940",
+      "s_countLeadingZeros8.c": "ddcc24ab97647d2806800e81c14f1a8216c71dcf4863637a04413fec429ba6fa",
+      "softfloat_state.c": "e4c73f25255b4dd1fab8165150c8c7cbffb8edb68e4a023cfa44468a00627650",
+      "softfloat_raiseFlags.c": "57ec93b3ba971593d7c9b4d1f05c62914de91936286e84745a18300b4692fd03",
+      "platform.h": "18523058e44e8ea0e33b5a9152b11c94cfc5cda0adef081c047f5b28e68e2ac1",
+      "internals.h": "3ca1f1a2daedcc6962bafa418b99aa3698a83afd02180bcbc4ca53450eb97514",
+      "specialize.h": "669cd5af36c7faa1051e0b8a349724f6c66655212f1bce340b269ac967592911",
+      "softfloat.h": "3e245303268e7ad1d5e1ef4bf114c8add7a9dab07ed14f9f6d9bb5ddfc04f919",
+      "softfloat_types.h": "d295eed445f7c1371c1129f0bc6f4c19a8612fd47d1c6b1f0666d3c5a406bc22",
+      "primitiveTypes.h": "1c7b2313e819c06d3398ea4e42017a23ca9e66006f701687f35c020642347f47",
+      "primitives.h": "759da4086b9da9fb1d757f93c3bd4c2115f633cf4b4b37912621ea127eebf3e4"
+    }
+  },
+  "VUL_end_to_end": [
+    {
+      "backend": "sim",
+      "result": "FP REGION VUL PASS latency=4 verified=198 bubbles=90 resets=3"
+    },
+    {
+      "backend": "native",
+      "result": "FP REGION VUL PASS latency=4 verified=198 bubbles=90 resets=3"
+    },
+    {
+      "backend": "circt",
+      "result": "FP REGION VUL PASS latency=4 verified=198 bubbles=90 resets=3"
+    }
+  ],
+  "RTL_cycles": 20484,
+  "RTL_combinational_output_checks": 245808,
+  "RTL_valid_pipeline_output_checks": 173520,
+  "RTL_reset_output_checks": 960,
+  "bubble_cycles": 5831,
+  "reset_events": 80,
+  "pipeline_register_stages": 3,
+  "physical_calls": {
+    "synth": 0,
+    "grt": 0,
+    "final": 0
+  },
+  "commands": [
+    {
+      "command": [
+        "cmake",
+        "-S",
+        "/home/zyrv/vulsim",
+        "-B",
+        "/home/zyrv/vulsim/build"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 0.13394664507359266
+    },
+    {
+      "command": [
+        "cmake",
+        "--build",
+        "/home/zyrv/vulsim/build",
+        "-j2"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 3.0283088041469455
+    },
+    {
+      "command": [
+        "cmake",
+        "-S",
+        "/home/zyrv/vulsim/rtlzz",
+        "-B",
+        "/home/zyrv/vulsim/build/step4-rtlzz",
+        "-DCMAKE_BUILD_TYPE=Release"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 0.2231148649007082
+    },
+    {
+      "command": [
+        "cmake",
+        "--build",
+        "/home/zyrv/vulsim/build/step4-rtlzz",
+        "--target",
+        "arithmetic-region-test",
+        "pipeline-test",
+        "pipeline-reset-test",
+        "pipeline-valid-test",
+        "-j2"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 6.222928666044027
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step4-rtlzz/testv2/arithmetic-region-test",
+        "/home/zyrv/vulsim/vullib",
+        "/home/zyrv/vulsim/build/step4-regions"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 6.409751845058054
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step4-rtlzz/testv2/pipeline-test"
+      ],
+      "cwd": "/home/zyrv/vulsim/rtlzz",
+      "exit_code": 0,
+      "walltime_s": 2.3914216191042215
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step4-rtlzz/testv2/pipeline-reset-test"
+      ],
+      "cwd": "/home/zyrv/vulsim/rtlzz",
+      "exit_code": 0,
+      "walltime_s": 2.6918682740069926
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step4-rtlzz/testv2/pipeline-valid-test"
+      ],
+      "cwd": "/home/zyrv/vulsim/rtlzz",
+      "exit_code": 0,
+      "walltime_s": 1.1749651280697435
+    },
+    {
+      "command": [
+        "c++",
+        "-std=c++20",
+        "-O2",
+        "-I/home/zyrv/vulsim/vullib",
+        "/home/zyrv/vulsim/regression/arithmetic_regions/host.cpp",
+        "-o",
+        "/home/zyrv/vulsim/build/step4-regions/host"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 0.3633095920085907
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step4-regions/host"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 0.019228222779929638
+    },
+    {
+      "command": [
+        "verilator",
+        "--cc",
+        "--exe",
+        "--build",
+        "-j",
+        "2",
+        "--top-module",
+        "RegionRegression",
+        "--Mdir",
+        "/home/zyrv/vulsim/build/step4-regions/obj",
+        "/home/zyrv/vulsim/build/step4-regions/wrapper.sv",
+        "/home/zyrv/vulsim/build/step4-regions/single.sv",
+        "/home/zyrv/vulsim/build/step4-regions/single_pipe.sv",
+        "/home/zyrv/vulsim/build/step4-regions/serial.sv",
+        "/home/zyrv/vulsim/build/step4-regions/serial_pipe.sv",
+        "/home/zyrv/vulsim/build/step4-regions/parallel.sv",
+        "/home/zyrv/vulsim/build/step4-regions/parallel_pipe.sv",
+        "/home/zyrv/vulsim/build/step4-regions/shared.sv",
+        "/home/zyrv/vulsim/build/step4-regions/shared_pipe.sv",
+        "/home/zyrv/vulsim/build/step4-regions/identical.sv",
+        "/home/zyrv/vulsim/build/step4-regions/identical_pipe.sv",
+        "/home/zyrv/vulsim/build/step4-regions/constant.sv",
+        "/home/zyrv/vulsim/build/step4-regions/constant_pipe.sv",
+        "/home/zyrv/vulsim/regression/arithmetic_regions/rtl_driver.cpp"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 2.1923639040905982
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step4-regions/obj/VRegionRegression"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 0.10745745315216482
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/vulsimgen",
+        "-m",
+        "/home/zyrv/vulsim/regression/arithmetic_regions/vul/Main.utb",
+        "-f",
+        "-o",
+        "/home/zyrv/vulsim/build/step4-regions/vul-sim"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 0.017223486211150885
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step4-regions/vul-sim/run.sh"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 2.3528895820491016
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/vulrtlgen",
+        "-m",
+        "/home/zyrv/vulsim/regression/arithmetic_regions/vul/Main.utb",
+        "-f",
+        "-o",
+        "/home/zyrv/vulsim/build/step4-regions/vul-native"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 4.425612271996215
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step4-regions/vul-native/run.sh"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 3.8820099937729537
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/vulrtlgen",
+        "-m",
+        "/home/zyrv/vulsim/regression/arithmetic_regions/vul/Main.utb",
+        "-f",
+        "-o",
+        "/home/zyrv/vulsim/build/step4-regions/vul-circt",
+        "--circt"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 4.560989263933152
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step4-regions/vul-circt/run.sh"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 3.87533327518031
+    }
+  ],
+  "artifacts_sha256": {
+    "regions.txt": "c3126c389f1937df898bb1e3205653dd3b34e3adeaabd6bcc54b6d1b9d5969d0",
+    "single.sv": "3664cc6e7b1a66c568c5fd956dc192d85803cad5e5f2b04f2feef91518afff7a",
+    "single_pipe.sv": "c3fbf7e71393424c6c41fb3d9f8bd5d23979cbe887919b785cf209431c3906f9",
+    "serial.sv": "c4cfc742177803efc36ad6a2a642e87fcaa919011227f0a82777cd4b35b444cf",
+    "serial_pipe.sv": "d7998e0c774f95bd34c7b265ae44a0d22bb5343b0641fd4930b564b334d45404",
+    "parallel.sv": "aaf54fa15cd43e8bc419d1f9084e07b04c911f6eeeba5df0d046a6cfc12e66d3",
+    "parallel_pipe.sv": "02790b9adb2dce1aff80f7d4754ea3388f9cecf40e4de29c92ac98f6e6cf8c2b",
+    "shared.sv": "97cecee7045f41f578de6aa078423933eae4559962c3a00726735f4621289876",
+    "shared_pipe.sv": "18d124ffc16d7b1b53a10bfe1be80f97acd8bb3271bd75460dbc34f1b6413933",
+    "identical.sv": "09dc25cc07258709b00541b457b92c41bdd09e8271173ee81c2fd72516424612",
+    "identical_pipe.sv": "3e12c56377d73df1b2904f4317868a7b304d29798e7c0b84f0483d8fa78f83c1",
+    "constant.sv": "9720a9213789d24bb2b8ab0c7ecb6ccb1ae8f0be05865b7c3d7aef1159868af0",
+    "constant_pipe.sv": "665d9882f9f9ca30bf9741f76c0e9b38ec498a45ee65ff7abee25a483c7c5b5e"
+  }
+}

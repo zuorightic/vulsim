@@ -1,0 +1,30 @@
+{
+  "version": "step4-review-resources-v2",
+  "new_backend_calls": {
+    "synth": 0,
+    "grt": 0,
+    "final": 0,
+    "support": 0
+  },
+  "cumulative_backend_usage": {
+    "synth": 31,
+    "grt": 9,
+    "final": 5,
+    "support_calls": 97,
+    "walltime_s": 1619.8035816813353,
+    "CPU_time_s": 2566.69,
+    "pending": 0
+  },
+  "full_experiment_budget_status": "blocked",
+  "caps_increased": false,
+  "caps": {
+    "synth": 128,
+    "grt": 96,
+    "final": 28,
+    "walltime_h": 12,
+    "CPU_time_h": 48
+  },
+  "mode_command_count": 38,
+  "mode_elapsed_s": 85.68333347095177,
+  "scope": "functional regression only; scenario elapsed includes child commands; no Yosys/OpenROAD/PPA leaf launches and no nested double counting"
+}

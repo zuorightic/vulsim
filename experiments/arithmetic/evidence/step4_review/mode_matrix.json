@@ -1,0 +1,49 @@
+[
+  {
+    "scenario": "absent-disabled",
+    "CIRCT_enabled": false,
+    "tool_on_PATH": null,
+    "command": [
+      "/usr/bin/python3",
+      "/home/zyrv/vulsim/regression/arithmetic_regions.py",
+      "--skip-build",
+      "--output",
+      "/home/zyrv/vulsim/build/step4-review/absent-disabled"
+    ],
+    "exit_code": 0,
+    "walltime_s": 25.539951707003638,
+    "observed_CIRCT_invocations": 0
+  },
+  {
+    "scenario": "present-disabled",
+    "CIRCT_enabled": false,
+    "tool_on_PATH": "/home/zyrv/vulsim/build/step4-review/circt-bin/circt-opt",
+    "command": [
+      "/usr/bin/python3",
+      "/home/zyrv/vulsim/regression/arithmetic_regions.py",
+      "--skip-build",
+      "--output",
+      "/home/zyrv/vulsim/build/step4-review/present-disabled"
+    ],
+    "exit_code": 0,
+    "walltime_s": 25.544195737922564,
+    "observed_CIRCT_invocations": 0
+  },
+  {
+    "scenario": "present-enabled",
+    "CIRCT_enabled": true,
+    "tool_on_PATH": "/home/zyrv/vulsim/build/step4-review/circt-bin/circt-opt",
+    "command": [
+      "/usr/bin/python3",
+      "/home/zyrv/vulsim/regression/arithmetic_regions.py",
+      "--skip-build",
+      "--output",
+      "/home/zyrv/vulsim/build/step4-review/present-enabled",
+      "--softfloat",
+      "/home/zyrv/temp/rv64-archsem软著/softfloat"
+    ],
+    "exit_code": 0,
+    "walltime_s": 34.59918602602556,
+    "observed_CIRCT_invocations": 4
+  }
+]
