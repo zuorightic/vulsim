@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-c",
+    "from experiments.arithmetic_dse.backend import run_command; import os,sys; from pathlib import Path; run_command([sys.executable,\"-c\",'import os,json,time,signal; from pathlib import Path; signal.signal(signal.SIGTERM,signal.SIG_IGN); Path(\\'/home/zyrv/vulsim/build/step3-review-20261026-zz1wa66l/worker-after.json\\').write_text(json.dumps({\"pid\":os.getpid(),\"pgid\":os.getpgrp()})); time.sleep(30)'],Path('/home/zyrv/vulsim/build/step3-review-20261026-zz1wa66l'),\"inner-after\",20,os.environ.copy())"
+  ],
+  "exit_code": -15,
+  "process_exit_code": -15,
+  "timed_out": true,
+  "cancelled_signal": null,
+  "walltime_s": 2.8373076980933547,
+  "memory_limit_exceeded": false,
+  "memory_limit_MiB": 8192,
+  "sampled_process_tree_peak_rss_KiB": 31776,
+  "sampled_process_tree_peak_threads": 4,
+  "resource_scope": "descendants_across_sessions_with_PID_starttime_identity",
+  "resource_sampling_interval_s": 0.5,
+  "cleanup": {
+    "term_sent": 4,
+    "kill_sent": 2,
+    "remaining_live_pids": []
+  },
+  "log": "/home/zyrv/vulsim/build/step3-review-20261026-zz1wa66l/outer-after.log",
+  "gnu_time": "/home/zyrv/vulsim/build/step3-review-20261026-zz1wa66l/outer-after.resources.txt"
+}

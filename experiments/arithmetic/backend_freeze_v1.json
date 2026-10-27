@@ -1,0 +1,121 @@
+{
+  "version": "asap7-backend-freeze-v1",
+  "frozen_at": "2026-10-26T10:09:49.396091+00:00",
+  "kind": "backend_integration_and_initial_resource_policy",
+  "source_base": "c0259b7226bb78ddc6d91b719cb2692b52ef7dba",
+  "files_sha256": {
+    "experiments/arithmetic/backend_probe/Main.utb": "58c8952250ea7f4498cf652d6a715076fc33cf26b7d2471bd2e4c43e0deabfd9",
+    "experiments/arithmetic/backend_probe/MulProbe.vul": "4ea7ed06a706568e4a4238080d6b3ea45d90b4308df66031ff06884d28187a2e",
+    "experiments/arithmetic/backend_probe/header.uh": "e357d20bfd49f1b2c1ef1b0662267dd343f51c2eac8a3ec1b55ebca8152d00dc",
+    "experiments/arithmetic_dse/backend/README.md": "67e7eb9352221776512fc4b27aba37b0a55af6915a101a1bc4e7953d41beb312",
+    "experiments/arithmetic_dse/backend/asap7.mk": "a10b16f3c73a63dbd8d7339813d3f19496a239ba7a01e729ef0a9b06a025f430",
+    "experiments/arithmetic_dse/backend/constraints.sdc": "01f7dbcec5b108a693c3a37e9378f22be0a47ec31f18e784fb67ec8ab98205af",
+    "experiments/arithmetic_dse/backend/environment.mk": "fa28c534ec7cb3723b750f7772aa1bf09e1cc46664d8e6d497d687187e722237",
+    "experiments/arithmetic_dse/backend/snapshot.tcl": "13b14c83ded0fef734c657263bb55d34c00c32cf20138328703e7c177ca35732",
+    "experiments/arithmetic_dse/backend.py": "e8b77984d94a1b5050168e4296fb55dd83cc40b6f6595c7a165dba39aec021b9",
+    "experiments/arithmetic_dse/configs/backend_policy_v1.json": "9f1bc4e652cdcd909f1496617961184276b21719d603974269c7e61a7436cda8",
+    "experiments/arithmetic_dse/run.py": "1906ed10f6e551eef4efb5e505f3430947fda9b46789fb1d6e62c28e9cb0bd8a",
+    "regression/arithmetic_backend.py": "9bb4c822558f2717cd73d452376c8eb272a9020017ccb1a84ae5d5a70c42cc05"
+  },
+  "BC_precondition": {
+    "path": "experiments/arithmetic/freeze_v3.json",
+    "sha256": "53a2b263635209187ccc489780bedb40362824093e7e3beee4a94b2e1dee124d"
+  },
+  "libraries": [
+    {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib.gz",
+      "sha256": "fe9f1c18e88ab129d63ad82adc256f3a85c7e38e47dabbe0a96749b41087dea1",
+      "voltage_V": 0.7,
+      "temperature_C": 25.0,
+      "time_unit": "1ps",
+      "capacitance_unit": "fF"
+    },
+    {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib.gz",
+      "sha256": "8d6db2c2f83c3c162be54a5e102b2d379fcaaaef2db5f0b1d4152c395d01fea1",
+      "voltage_V": 0.7,
+      "temperature_C": 25.0,
+      "time_unit": "1ps",
+      "capacitance_unit": "fF"
+    },
+    {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib.gz",
+      "sha256": "bbe6d904d58c7367de1ed7639e4eae386c65fa0a5af26ae62dc5e4e2ec52b08b",
+      "voltage_V": 0.7,
+      "temperature_C": 25.0,
+      "time_unit": "1ps",
+      "capacitance_unit": "fF"
+    },
+    {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib",
+      "sha256": "57a0b403485b99ebd676942af4673ac086b86c7c75fbdc3e5c0038501dd22ba3",
+      "voltage_V": 0.7,
+      "temperature_C": 25.0,
+      "time_unit": "1ps",
+      "capacitance_unit": "fF"
+    },
+    {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz",
+      "sha256": "073ac4b6b08f272b6953b0ad54d1d9743767a7d15a0e2964ed86cf44c3dbe00e",
+      "voltage_V": 0.7,
+      "temperature_C": 25.0,
+      "time_unit": "1ps",
+      "capacitance_unit": "fF"
+    }
+  ],
+  "external_files_sha256": {
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lef/asap7_tech_1x_201209.lef": "7694bf4f8ef2f9745e4579f454788a0cf048e8605320f32d1d83ec540ed4ca41",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lef/asap7sc7p5t_28_R_1x_220121a.lef": "4eb73f825720d95eba4da455c7b2e7a28e444e88e9d8595d13492cf5eecfc0d1",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/yoSys/cells_adders_R.v": "978525beea03dc73d4a9d4a31012b41ef3f70eb729cf6e2babfb79ac7260f545",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/yoSys/cells_latch_R.v": "671d1558a6efd093ec60efd0db6a32286ca873b7bb72d05612427a123e0509dc",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/yoSys/cells_clkgate_R.v": "e65a51575b36be6d1ddc330a0df9805ec5737dd987d4e2227fa058018cca00ad",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/rcx_patterns.rules": "32a117e5e866d3de1406e8f18d65b6f1857781f156638941a4769e25ef5252cc",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/setRC.tcl": "ce6e29fe23b648839009c53035901066653d5850f9419ba85169c715b2cebd14",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/openRoad/make_tracks.tcl": "4693c8fc81cf9095ed7fba61e778ec81c16c3cadc747f9ce388acf38f8331632",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/openRoad/pdn/grid_strategy-M1-M2-M5-M6.tcl": "7eb4c880be9357ed33c352ff84c2870b9c02312db96cdf7b0a5214fb39d0a844",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/fastroute.tcl": "0513fb0efd632b4bc3c16882b09d64ce227e48f4bc71486f4d05aec62fe7b0e1"
+  },
+  "tools": {
+    "yosys": {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/tools/install/yosys/bin/yosys",
+      "sha256": "0c0d6674d38e48d1637003c2542977f74a550103b252f61776c158b2ebeeaca9",
+      "version": "Yosys 0.68+ (git sha1 a5af9d690, Release, GNU /usr/bin/c++ 13.3.0) [github.com/The-OpenROAD-Project/yosys at HEAD]"
+    },
+    "openroad": {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad",
+      "sha256": "c24e4e3a75e223e51e203440992a0364fb8c83a239162238d0772b87a1193f75",
+      "version": "26Q3-1867-g84e3ff1eb2"
+    },
+    "abc": {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/tools/install/yosys/bin/yosys-abc",
+      "sha256": "fab637b96f401f8b3fcadd3e256728f91528960e6da35d5b7e74b13c30ae83e0",
+      "version": "======== ABC command line \"version\"\nUC Berkeley, ABC 1.01 (compiled Sep 10 2026 09:58:03)"
+    }
+  },
+  "orfs_commit": "31e744df6a12ae09760820dc977d2b2488c9b0fe",
+  "evaluation_policy": "experiments/arithmetic_dse/configs/backend_policy_v1.json",
+  "validated_source_snapshot": "build/step3-asap7-20261026-93ltulln/validated-source",
+  "validation_evidence": {
+    "build/step3-asap7-20261026-93ltulln/trial4/manifest.json": "6adc041ca110e8d34d9de546baaa75ffac20b263e9ae2baafca129fc92886889",
+    "build/step3-asap7-20261026-93ltulln/trial4/metrics.json": "296ca41ed9ed1ec1cbcb25eee87608504d186890000571aef2bb242944fa6f70",
+    "build/step3-asap7-20261026-93ltulln/trial3/manifest.json": "405e10480ba5bbec74d4b87fde5e4f3105e6df6d888f1db682e89c1975cb28b0",
+    "build/step3-asap7-20261026-93ltulln/repeatability.json": "f38f3b235938c113eea69b707c9979cf45907ecd2e3d9d8965a03bfe1540eeb5",
+    "build/step3-asap7-20261026-93ltulln/resources.json": "27d701d63fcacf975d4b6b08c5c96c44ce502bffd0c0a8bbbededf84f5107ec7",
+    "build/step3-asap7-20261026-93ltulln/host.json": "335e5b85bffa55d8b47cc3d0eb98962492f16b002ff2391a422fa997b85fb830",
+    "build/step3-asap7-20261026-93ltulln/entrypoint/probe-manifest.json": "893f61b039e0e4dece48d24a5b130acee56e6e5778114ee5075e1bff19f65540",
+    "build/step3-asap7-20261026-93ltulln/entrypoint/evaluation/manifest.json": "25602895b36f9445a0d91bf3b93a91e2ad7740672cf2f9ab6a693ab2d39ebb9a",
+    "build/step3-asap7-20261026-93ltulln/invalid-evaluation/manifest.json": "be10cfae969c332450a71704599a482179f7871b995a7646ef9e041985f1a336",
+    "build/step3-asap7-20261026-93ltulln/backend-regression-final.log": "892b406000dca91d83a19a0f708f3e0237154d690c20e555b9117306534a6b08",
+    "build/step3-asap7-20261026-93ltulln/contracts-ordinary.log": "d1cf58ac5a74f8a5385fbe2d6283ff9928cd97f2565d674e64f5302f2bda5e12",
+    "build/step3-asap7-20261026-93ltulln/validate-native.log": "96a3a7c57d311c7414813ccdf91b5caaac74cc4f3d147665303890de5396f07b",
+    "build/step3-asap7-20261026-93ltulln/validate-sim.log": "48c558345e1c0a7e66f59260433c7655d475c4f4a5943b8abcf0fed65310257e"
+  },
+  "change_policy": "version any change to evaluation settings, parsing semantics or resource policy; rerun affected checks; never tune BC from PPA",
+  "scope": {
+    "main_stage": "CTS_post_global_route_estimated_parasitics",
+    "detailed_route_recheck": true,
+    "arithmetic_candidate_search": "step7",
+    "main_case_periods_ps": "pending_calibration",
+    "B_C_rules_changed": false
+  }
+}

@@ -1,0 +1,95 @@
+Startpoint: __vul_pipeline_multiply.rtlzz_pipe_2_s1[18]$_SDFFE_PN0P_
+            (rising edge-triggered flip-flop clocked by core_clk)
+Endpoint: __vul_pipeline_q_s3reg[61]$_SDFF_PN0_
+          (rising edge-triggered flip-flop clocked by core_clk)
+Path Group: core_clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock core_clk (rise edge)
+ 100.10  100.10   clock network delay (propagated)
+   0.00  100.10 ^ __vul_pipeline_multiply.rtlzz_pipe_2_s1[18]$_SDFFE_PN0P_/CLK (DFFHQNx2_ASAP7_75t_R)
+  81.41  181.50 v __vul_pipeline_multiply.rtlzz_pipe_2_s1[18]$_SDFFE_PN0P_/QN (DFFHQNx2_ASAP7_75t_R)
+  33.31  214.81 v place1252/Y (BUFx12f_ASAP7_75t_R)
+  15.53  230.34 ^ _08860_/Y (NOR2x2_ASAP7_75t_R)
+  45.96  276.30 v _11841_/SN (FAx1_ASAP7_75t_R)
+  24.68  300.98 ^ _07753_/Y (INVx1_ASAP7_75t_R)
+  47.69  348.67 v _11678_/SN (FAx1_ASAP7_75t_R)
+  24.05  372.71 ^ _07447_/Y (INVx1_ASAP7_75t_R)
+  46.72  419.44 v _11405_/SN (FAx1_ASAP7_75t_R)
+  18.78  438.22 ^ _08303_/Y (INVx1_ASAP7_75t_R)
+  42.66  480.88 v _11329_/SN (FAx1_ASAP7_75t_R)
+  18.11  499.00 ^ _08271_/Y (INVx1_ASAP7_75t_R)
+  45.98  544.97 v _11919_/SN (FAx1_ASAP7_75t_R)
+  24.67  569.64 ^ _07202_/Y (INVx1_ASAP7_75t_R)
+  24.35  593.99 v _12073_/CON (FAx1_ASAP7_75t_R)
+  19.42  613.41 ^ _12073_/SN (FAx1_ASAP7_75t_R)
+  19.95  633.36 v _08888_/Y (INVx1_ASAP7_75t_R)
+  33.69  667.05 ^ _11616_/CON (FAx1_ASAP7_75t_R)
+  23.76  690.80 v _11616_/SN (FAx1_ASAP7_75t_R)
+  26.84  717.64 ^ _08834_/Y (INVx1_ASAP7_75t_R)
+  47.62  765.26 ^ _11602_/SN (FAx1_ASAP7_75t_R)
+  15.41  780.67 v _09151_/Y (INVx1_ASAP7_75t_R)
+  29.61  810.28 ^ _12425_/CON (HAxp5_ASAP7_75t_R)
+  18.80  829.07 v _12425_/SN (HAxp5_ASAP7_75t_R)
+  25.81  854.88 v rebuffer1323/Y (BUFx3_ASAP7_75t_R)
+  43.56  898.44 v _10704_/Y (OR4x1_ASAP7_75t_R)
+  35.19  933.63 v _10705_/Y (OR3x1_ASAP7_75t_R)
+  32.75  966.38 v _10706_/Y (AO221x1_ASAP7_75t_R)
+  33.42  999.80 v _10707_/Y (AO21x2_ASAP7_75t_R)
+  30.29 1030.08 v _10732_/Y (AO31x2_ASAP7_75t_R)
+  36.69 1066.78 v _10757_/Y (OA211x2_ASAP7_75t_R)
+  33.73 1100.51 v _10765_/Y (OA211x2_ASAP7_75t_R)
+  33.63 1134.14 ^ _10766_/Y (XOR2x2_ASAP7_75t_R)
+  19.13 1153.27 ^ _10767_/Y (AND2x2_ASAP7_75t_R)
+   0.03 1153.30 ^ __vul_pipeline_q_s3reg[61]$_SDFF_PN0_/D (DFFHQNx1_ASAP7_75t_R)
+        1153.30   data arrival time
+
+1500.00 1500.00   clock core_clk (rise edge)
+  81.49 1581.49   clock network delay (propagated)
+ -20.00 1561.49   clock uncertainty
+   4.02 1565.51   clock reconvergence pessimism
+        1565.51 ^ __vul_pipeline_q_s3reg[61]$_SDFF_PN0_/CLK (DFFHQNx1_ASAP7_75t_R)
+  -9.27 1556.24   library setup time
+        1556.24   data required time
+---------------------------------------------------------
+        1556.24   data required time
+        -1153.30   data arrival time
+---------------------------------------------------------
+         402.94   slack (MET)
+
+
+Startpoint: s3output__vld__$_SDFF_PN0_
+            (rising edge-triggered flip-flop clocked by core_clk)
+Endpoint: s3output_y__[0] (output port clocked by io_clk)
+Path Group: io_clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock core_clk (rise edge)
+  97.62   97.62   clock network delay (propagated)
+   0.00   97.62 ^ s3output__vld__$_SDFF_PN0_/CLK (DFFHQNx3_ASAP7_75t_R)
+  80.38  178.00 v s3output__vld__$_SDFF_PN0_/QN (DFFHQNx3_ASAP7_75t_R)
+  29.60  207.61 v rebuffer1617/Y (BUFx12f_ASAP7_75t_R)
+  24.22  231.83 v rebuffer1629/Y (BUFx12f_ASAP7_75t_R)
+  25.55  257.38 v rebuffer1628/Y (BUFx12f_ASAP7_75t_R)
+  15.83  273.21 ^ _10419_/Y (NOR2x2_ASAP7_75t_R)
+  21.84  295.05 ^ output68/Y (BUFx6f_ASAP7_75t_R)
+   0.78  295.83 ^ s3output_y__[0] (out)
+         295.83   data arrival time
+
+1500.00 1500.00   clock io_clk (rise edge)
+   0.00 1500.00   clock network delay (ideal)
+ -20.00 1480.00   clock uncertainty
+   0.00 1480.00   clock reconvergence pessimism
+-300.00 1180.00   output external delay
+        1180.00   data required time
+---------------------------------------------------------
+        1180.00   data required time
+        -295.83   data arrival time
+---------------------------------------------------------
+         884.17   slack (MET)
+
+

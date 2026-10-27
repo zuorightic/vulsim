@@ -1,0 +1,170 @@
+[
+  {
+    "line": 32,
+    "text": "repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 100 -setup -skip_last_gasp -sequence unbuffer,sizeup,swap,vt_swap -verbose"
+  },
+  {
+    "line": 37,
+    "text": "   Iter   | Removed | Resized | Inserted | Cloned |  Pin  |   Area   |    WNS   |   StTNS    |   EnTNS    |  Viol  |  Worst  "
+  },
+  {
+    "line": 257,
+    "text": "[INFO RSZ-0051] Resized 523 instances: 523 up, 0 up match, 0 down, 0 VT"
+  },
+  {
+    "line": 261,
+    "text": "Took 15 seconds: repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 100 -setup -skip_last_gasp -sequence unbuffer,sizeup,swap,vt_swap -verbose"
+  },
+  {
+    "line": 343,
+    "text": "[INFO TAP-0004] Inserted 278 endcaps."
+  },
+  {
+    "line": 344,
+    "text": "[INFO TAP-0005] Inserted 70 tapcells."
+  },
+  {
+    "line": 522,
+    "text": "[INFO RSZ-0027] Inserted 66 BUFx2_ASAP7_75t_R input buffers."
+  },
+  {
+    "line": 523,
+    "text": "[INFO RSZ-0028] Inserted 65 BUFx2_ASAP7_75t_R output buffers."
+  },
+  {
+    "line": 593,
+    "text": "Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining"
+  },
+  {
+    "line": 600,
+    "text": "[INFO RSZ-0039] Resized 50 instances."
+  },
+  {
+    "line": 601,
+    "text": "[INFO RSZ-0038] Inserted 90 buffers in 68 nets."
+  },
+  {
+    "line": 602,
+    "text": "   Iter   |    Area   | Removed | Inserted |   Pins"
+  },
+  {
+    "line": 619,
+    "text": "[INFO GPL-0107] Timing-driven: repair_design delta area: 60.482 um^2 (+10.72%)"
+  },
+  {
+    "line": 620,
+    "text": "[INFO GPL-0108] Timing-driven: repair_design, gpl delta gcells: 556 (+9.94%)"
+  },
+  {
+    "line": 621,
+    "text": "[INFO GPL-0109] Timing-driven: repair_design, gcells created: 646, deleted: 90"
+  },
+  {
+    "line": 654,
+    "text": "Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining"
+  },
+  {
+    "line": 659,
+    "text": "   Iter   |    Area   | Removed | Inserted |   Pins"
+  },
+  {
+    "line": 676,
+    "text": "[INFO GPL-0107] Timing-driven: repair_design delta area: -1.400 um^2 (-0.22%)"
+  },
+  {
+    "line": 677,
+    "text": "[INFO GPL-0108] Timing-driven: repair_design, gpl delta gcells: -16 (-0.26%)"
+  },
+  {
+    "line": 678,
+    "text": "[INFO GPL-0109] Timing-driven: repair_design, gcells created: 540, deleted: 556"
+  },
+  {
+    "line": 728,
+    "text": "repair_design -verbose"
+  },
+  {
+    "line": 729,
+    "text": "Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining"
+  },
+  {
+    "line": 973,
+    "text": "repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 100 -verbose"
+  },
+  {
+    "line": 977,
+    "text": "   Iter   | Removed | Resized | Inserted | Cloned |  Pin  |   Area   |    WNS   |   StTNS    |   EnTNS    |  Viol  |  Worst  "
+  },
+  {
+    "line": 1407,
+    "text": "[INFO RSZ-0045] Inserted 129 buffers, 1 to split loads."
+  },
+  {
+    "line": 1408,
+    "text": "[INFO RSZ-0051] Resized 323 instances: 323 up, 0 up match, 0 down, 0 VT"
+  },
+  {
+    "line": 1414,
+    "text": "Iteration | Resized | Buffers | Cloned Gates |   Area   |   WNS   |   TNS   | Endpoint"
+  },
+  {
+    "line": 1433,
+    "text": "[INFO RSZ-0032] Inserted 262 hold buffers."
+  },
+  {
+    "line": 1435,
+    "text": "Took 25 seconds: repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 100 -verbose"
+  },
+  {
+    "line": 1656,
+    "text": "repair_design -verbose"
+  },
+  {
+    "line": 1657,
+    "text": "Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining"
+  },
+  {
+    "line": 1694,
+    "text": "global_route -end_incremental -resistance_aware -congestion_report_file /home/zyrv/vulsim/build/step3-physical-control-20261027/sdc-500/reports/asap7/arithmetic_probe/base/congestion_post_repair_design.rpt"
+  },
+  {
+    "line": 1697,
+    "text": "repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 100 -verbose"
+  },
+  {
+    "line": 1701,
+    "text": "   Iter   | Removed | Resized | Inserted | Cloned |  Pin  |   Area   |    WNS   |   StTNS    |   EnTNS    |  Viol  |  Worst  "
+  },
+  {
+    "line": 2065,
+    "text": "[INFO RSZ-0040] Inserted 38 buffers."
+  },
+  {
+    "line": 2066,
+    "text": "[INFO RSZ-0051] Resized 150 instances: 150 up, 0 up match, 0 down, 0 VT"
+  },
+  {
+    "line": 2071,
+    "text": "Iteration | Resized | Buffers | Cloned Gates |   Area   |   WNS   |   TNS   | Endpoint"
+  },
+  {
+    "line": 2077,
+    "text": "[INFO RSZ-0032] Inserted 14 hold buffers."
+  },
+  {
+    "line": 2079,
+    "text": "Took 26 seconds: repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 100 -verbose"
+  },
+  {
+    "line": 2122,
+    "text": "global_route -end_incremental -resistance_aware -congestion_report_file /home/zyrv/vulsim/build/step3-physical-control-20261027/sdc-500/reports/asap7/arithmetic_probe/base/congestion_post_repair_timing.rpt"
+  },
+  {
+    "line": 2124,
+    "text": "repair_timing -setup -sequence \"vt_swap reroute\" -skip_last_gasp -repair_tns 0 -verbose"
+  },
+  {
+    "line": 2128,
+    "text": "   Iter   | Removed | Resized | Inserted | Cloned |  Pin  |   Area   |    WNS   |   StTNS    |   EnTNS    |  Viol  |  Worst  "
+  }
+]

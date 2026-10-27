@@ -1,0 +1,44 @@
+{
+  "version": "step3-closure-review-v1",
+  "status": "passed",
+  "step3_acceptance": "complete_for_backend_trial_critical_path_and_controlled_physical_study",
+  "cumulative_usage": {
+    "synth": 31,
+    "grt": 9,
+    "final": 5,
+    "support_calls": 97,
+    "walltime_s": 1619.8035816813353,
+    "CPU_time_s": 2566.69,
+    "pending": 0
+  },
+  "new_physical_calls": {
+    "synth": 2,
+    "grt": 2,
+    "final": 0,
+    "support": 8
+  },
+  "new_failures": 0,
+  "new_timeouts": 0,
+  "retries": 0,
+  "pending_reservations": 0,
+  "caps_increased": false,
+  "backend_contract_tests": 29,
+  "ordinary_contract_assertions": 20202,
+  "BC_rules_modified": false,
+  "physical_control": "response_observed_at_two_predeclared_SDC_targets_with_same_mapped_synthesis_start",
+  "tight_target_500ps_met": false,
+  "collection_protocol": "target-conditioned-characterization-v3",
+  "universal_six_point_requirement": false,
+  "full_experiment_budget_status": "blocked",
+  "full_experiment_budget_closed": false,
+  "budget_gate": "freeze actual collection list and close budget before step5 bulk physical work; recheck large-kernel time/memory after step6",
+  "prior_462_422_45_record": "retained unchanged in step3_budget; not actual usage, minimum need or authorization",
+  "not_completed": [
+    "actual D cost library",
+    "D2/F1 hardware integration",
+    "complete four-group main experiment matrix"
+  ],
+  "timing_scope": "TT only; grt uses complete coverage/nonnegative setup with hold reported/reviewed, final TT setup/hold/SPEF/DRC scope retained; no multicorner signoff",
+  "artifact_scope": "previous critical paths read only, two new synth/grt runs and two common-SDC STA reloads, no added target scan",
+  "helper_followup": "controller now uses existing run_command cancellation wrapper; execution-time helper retained; no further physical calls for this support-level change"
+}

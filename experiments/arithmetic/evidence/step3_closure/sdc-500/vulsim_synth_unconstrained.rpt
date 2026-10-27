@@ -1,0 +1,92 @@
+Startpoint: __vul_pipeline_multiply.rtlzz_pipe_8_s1[6]$_SDFFE_PN0P_
+            (rising edge-triggered flip-flop clocked by core_clk)
+Endpoint: __vul_pipeline_q_s3reg[60]$_SDFF_PN0_
+          (rising edge-triggered flip-flop clocked by core_clk)
+Path Group: core_clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock core_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ __vul_pipeline_multiply.rtlzz_pipe_8_s1[6]$_SDFFE_PN0P_/CLK (DFFHQNx1_ASAP7_75t_R)
+  47.35   47.35 ^ __vul_pipeline_multiply.rtlzz_pipe_8_s1[6]$_SDFFE_PN0P_/QN (DFFHQNx1_ASAP7_75t_R)
+  27.69   75.05 ^ _08737_/Y (BUFx2_ASAP7_75t_R)
+  40.32  115.37 ^ _08749_/Y (BUFx2_ASAP7_75t_R)
+  25.53  140.89 v _08758_/Y (NOR2x1_ASAP7_75t_R)
+  26.45  167.34 ^ _11894_/CON (FAx1_ASAP7_75t_R)
+  16.63  183.97 v _11894_/SN (FAx1_ASAP7_75t_R)
+  18.62  202.59 ^ _08833_/Y (INVx1_ASAP7_75t_R)
+  40.82  243.42 v _11792_/SN (FAx1_ASAP7_75t_R)
+  18.39  261.80 ^ _07809_/Y (INVx1_ASAP7_75t_R)
+  40.77  302.57 v _11637_/SN (FAx1_ASAP7_75t_R)
+  19.13  321.70 ^ _08891_/Y (INVx1_ASAP7_75t_R)
+  40.31  362.02 v _11587_/SN (FAx1_ASAP7_75t_R)
+  18.37  380.39 ^ _07124_/Y (INVx1_ASAP7_75t_R)
+  40.77  421.16 v _12134_/SN (FAx1_ASAP7_75t_R)
+  18.37  439.53 ^ _07588_/Y (INVx1_ASAP7_75t_R)
+  40.77  480.30 v _11959_/SN (FAx1_ASAP7_75t_R)
+  19.13  499.43 ^ _09635_/Y (INVx1_ASAP7_75t_R)
+  40.31  539.74 v _11709_/SN (FAx1_ASAP7_75t_R)
+  19.11  558.85 ^ _10097_/Y (INVx1_ASAP7_75t_R)
+  20.86  579.71 v _11858_/CON (FAx1_ASAP7_75t_R)
+  16.80  596.51 ^ _11858_/SN (FAx1_ASAP7_75t_R)
+  13.83  610.34 v _06921_/Y (INVx1_ASAP7_75t_R)
+  95.10  705.44 v _12441_/SN (HAxp5_ASAP7_75t_R)
+  55.51  760.96 v _10769_/Y (OR4x1_ASAP7_75t_R)
+  51.74  812.70 v _10778_/Y (OR5x1_ASAP7_75t_R)
+  18.69  831.39 ^ _10781_/Y (OAI22x1_ASAP7_75t_R)
+  25.86  857.25 ^ _10785_/Y (OA21x2_ASAP7_75t_R)
+  26.65  883.90 v _10801_/Y (AOI211x1_ASAP7_75t_R)
+  34.51  918.40 v _10818_/Y (OA21x2_ASAP7_75t_R)
+  25.31  943.72 v _10824_/Y (OA21x2_ASAP7_75t_R)
+  31.79  975.51 ^ _10825_/Y (XOR2x2_ASAP7_75t_R)
+  18.95  994.46 ^ _10826_/Y (AND2x2_ASAP7_75t_R)
+   0.00  994.46 ^ __vul_pipeline_q_s3reg[60]$_SDFF_PN0_/D (DFFHQNx1_ASAP7_75t_R)
+         994.46   data arrival time
+
+ 500.00  500.00   clock core_clk (rise edge)
+   0.00  500.00   clock network delay (ideal)
+ -20.00  480.00   clock uncertainty
+   0.00  480.00   clock reconvergence pessimism
+         480.00 ^ __vul_pipeline_q_s3reg[60]$_SDFF_PN0_/CLK (DFFHQNx1_ASAP7_75t_R)
+  -9.89  470.11   library setup time
+         470.11   data required time
+---------------------------------------------------------
+         470.11   data required time
+        -994.46   data arrival time
+---------------------------------------------------------
+        -524.35   slack (VIOLATED)
+
+
+Startpoint: s3output__vld__$_SDFF_PN0_
+            (rising edge-triggered flip-flop clocked by core_clk)
+Endpoint: s3output_y__[14] (output port clocked by io_clk)
+Path Group: io_clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock core_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ s3output__vld__$_SDFF_PN0_/CLK (DFFHQNx1_ASAP7_75t_R)
+  50.97   50.97 ^ s3output__vld__$_SDFF_PN0_/QN (DFFHQNx1_ASAP7_75t_R)
+  35.34   86.31 ^ _06885_/Y (BUFx2_ASAP7_75t_R)
+  43.90  130.21 ^ _10394_/Y (BUFx2_ASAP7_75t_R)
+  33.11  163.32 v _10404_/Y (NOR2x1_ASAP7_75t_R)
+   0.00  163.32 v s3output_y__[14] (out)
+         163.32   data arrival time
+
+ 500.00  500.00   clock io_clk (rise edge)
+   0.00  500.00   clock network delay (ideal)
+ -20.00  480.00   clock uncertainty
+   0.00  480.00   clock reconvergence pessimism
+-300.00  180.00   output external delay
+         180.00   data required time
+---------------------------------------------------------
+         180.00   data required time
+        -163.32   data arrival time
+---------------------------------------------------------
+          16.68   slack (MET)
+
+

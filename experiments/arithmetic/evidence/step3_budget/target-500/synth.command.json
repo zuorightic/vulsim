@@ -1,0 +1,40 @@
+{
+  "command": [
+    "make",
+    "--no-print-directory",
+    "-C",
+    "/home/zyrv/OpenROAD-flow-scripts/flow",
+    "-f",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/Makefile",
+    "-f",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/backend/environment.mk",
+    "DESIGN_CONFIG=/home/zyrv/vulsim/build/step3-budget-20261027/target-500/config.mk",
+    "WORK_HOME=/home/zyrv/vulsim/build/step3-budget-20261027/target-500",
+    "NUM_CORES=2",
+    "TC_TEMPERATURE=25C",
+    "ABC_CLOCK_PERIOD_IN_PS=500.0",
+    "synth"
+  ],
+  "exit_code": 0,
+  "process_exit_code": 0,
+  "timed_out": false,
+  "CPU_limit_s": 600,
+  "CPU_limit_exceeded": false,
+  "sampled_process_tree_CPU_s": 3.4,
+  "cancelled_signal": null,
+  "walltime_s": 5.546588629949838,
+  "unexpected_live_descendants": false,
+  "memory_limit_exceeded": false,
+  "memory_limit_MiB": 8192,
+  "sampled_process_tree_peak_rss_KiB": 223384,
+  "sampled_process_tree_peak_threads": 9,
+  "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+  "resource_sampling_interval_s": 0.5,
+  "cleanup": {
+    "term_sent": 0,
+    "kill_sent": 0,
+    "remaining_live_pids": []
+  },
+  "log": "/home/zyrv/vulsim/build/step3-budget-20261027/target-500/synth.log",
+  "gnu_time": "/home/zyrv/vulsim/build/step3-budget-20261027/target-500/synth.resources.txt"
+}

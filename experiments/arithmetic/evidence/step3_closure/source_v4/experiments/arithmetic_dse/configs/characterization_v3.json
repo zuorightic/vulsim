@@ -1,0 +1,66 @@
+{
+  "version": "target-conditioned-characterization-v3",
+  "case_target_formula_reference_abc_ps": 1500,
+  "case_target_formula_reference_sdc_ps": 1500,
+  "case_target_freeze_policy": "compute case targets once from reference-point microbenchmarks; supplemental target samples never revise case targets",
+  "target_axis_lookup": "exact_measured_target_only; unmeasured interior and exterior targets return uncovered",
+  "extrapolation": "forbidden",
+  "extension": "add target measurements from declared microbenchmarks before querying an uncovered target; version coverage and count all calls; never retune BC or use formal/holdout whole-graph PPA to train the global model",
+  "required_identity_dimensions": [
+    "operation",
+    "operand_widths",
+    "result_width",
+    "signedness",
+    "template",
+    "split_granularity",
+    "constant_features",
+    "abc_target_ps",
+    "sdc_period_ps",
+    "ABC_mode_and_script_hash",
+    "SDC_rule_hash",
+    "library_and_LEF_hashes",
+    "RC_and_flow_hashes",
+    "tool_binary_hashes",
+    "corner",
+    "VT",
+    "evaluation_stage",
+    "boundary_shell_version"
+  ],
+  "delay_interpretation": "mapped implementation under the recorded synthesis target and SDC; never an intrinsic target-independent operator delay",
+  "budget_policy": "Keep cumulative ledger; freeze actual feature/context/stage collection manifest and close full budget before step5 bulk physical work; refresh after step6 large-kernel measurements; step3 closure does not require whole-experiment funding",
+  "step3_target_probes": "synthesis-only target-dependence and identity checks; not a completed D cost library",
+  "supersedes": "target-conditioned-characterization-v2",
+  "sensitivity_protocol": {
+    "predeclare_before_execution": true,
+    "representatives": [
+      "implemented multiplier",
+      "D2 safe_udivrem_u32 after hardware integration",
+      "F1 fp32_mul_rne after hardware integration"
+    ],
+    "initial_probe_size": "small declared study, e.g. two contrasting targets; select subsequent points from evidence and remaining budget",
+    "large_kernel_timing": "step4 or step6 when actual implementation is available; not a step3 closing requirement",
+    "automatic_extra_points": false,
+    "early_stop_scope": "ending a predeclared small study is allowed; identical measured metrics never creates unmeasured target coverage",
+    "physical_comparison": "same synthesis starting netlist, fixed L/II/library/VT/corner/seeds/utilization/density; state absolute vs proportional IO; compare physical structure and common-SDC paths, not own-SDC slack alone",
+    "ABC_diagnostic": "keep ABC mapper diagnostic separate from full-design STA; no model-error ratio without proving same path and timing conventions",
+    "axes": "ABC and SDC independently remain in identity and cache keys, irrespective of observed response",
+    "unobserved": "unmeasured exact context/stage returns uncovered; no nearest point or extrapolation"
+  },
+  "revision_reason": "Separate mandatory reference/exact D query coverage from predeclared representative sensitivity studies; no universal six-point obligation",
+  "status": "collection_design_pending_actual_feature_and_query_freeze",
+  "reference_context": {
+    "abc_target_ps": 1500,
+    "sdc_period_ps": 1500,
+    "stage": "grt"
+  },
+  "mandatory_data": "1500ps reference microbenchmarks required by the frozen case-target formula, plus exact ABC/SDC targets and implementation features actually queried by D; no formal/holdout whole-graph training",
+  "candidate_probe_targets_ps": [
+    500,
+    800,
+    1000,
+    1250,
+    1500,
+    2000
+  ],
+  "probe_grid_status": "available candidate points, not mandatory per family; completed multiplier six-point data retained"
+}

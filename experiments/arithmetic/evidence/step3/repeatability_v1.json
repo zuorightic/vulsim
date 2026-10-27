@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "runs": [
+    "trial3",
+    "trial4"
+  ],
+  "configured_threads": 2,
+  "seeds": 42,
+  "comparison": [
+    {
+      "stage": "synth",
+      "timing_and_functional_area_equal": true,
+      "orfs_stdcell_area_equal": true,
+      "setup_delta_ps": 0,
+      "hold_delta_ps": 0,
+      "orfs_area_delta_um2": 0
+    },
+    {
+      "stage": "grt",
+      "timing_and_functional_area_equal": true,
+      "orfs_stdcell_area_equal": true,
+      "setup_delta_ps": 0,
+      "hold_delta_ps": 0,
+      "orfs_area_delta_um2": 0
+    },
+    {
+      "stage": "final",
+      "timing_and_functional_area_equal": true,
+      "orfs_stdcell_area_equal": true,
+      "setup_delta_ps": 0,
+      "hold_delta_ps": 0,
+      "orfs_area_delta_um2": 0
+    }
+  ],
+  "note": "trial3 area field excluded taps; compare functional area and original ORFS standard-cell metric explicitly"
+}

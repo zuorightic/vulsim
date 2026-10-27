@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "build_present": false,
+  "EDA_tools_on_PATH": false,
+  "copied_live_ledger": false,
+  "evidence_verification": {
+    "status": "passed",
+    "freeze": "asap7-backend-freeze-v4",
+    "current_source_files": 22,
+    "historical_source_files": 47,
+    "unchanged_BC_files": 12,
+    "portable_evidence_files_current_revision": 217,
+    "cumulative_calls": {
+      "synth": 31,
+      "grt": 9,
+      "final": 5
+    },
+    "step3_acceptance": "complete_for_backend_trial_critical_path_and_controlled_physical_study",
+    "physical_control_response": "physical_response_observed_for_this_implementation_and_flow",
+    "full_experiment_budget_status": "blocked",
+    "requires_build_directory": false,
+    "external_verification": false
+  },
+  "budget_check_exit_code": 1,
+  "bootstrapped_usage": {
+    "synth": 31,
+    "grt": 9,
+    "final": 5,
+    "support_calls": 97,
+    "walltime_s": 1619.8035816813353,
+    "CPU_time_s": 2566.69,
+    "pending": 0
+  },
+  "budget_plan_status": "blocked",
+  "actual_collection_manifest_frozen": false
+}

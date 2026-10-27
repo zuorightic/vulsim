@@ -1,0 +1,59 @@
+{
+  "version": "asap7-backend-policy-v1",
+  "status": "step3_initial_limits; finalize_search_accounting_before_main_matrix",
+  "platform": {"name": "asap7", "corner": "TC", "VT": "RVT", "liberty_model": "NLDM", "voltage_V": 0.70, "temperature_C": 25, "time_unit": "ps", "capacitance_unit": "fF"},
+  "main_evaluation_stage": "post_CTS_global_route_with_estimated_parasitics",
+  "area_definition": "OpenDB standard-cell area in um2, excluding CORE_SPACER, including taps; functional/sequential/physical-only areas separate",
+  "timing_definition": "report_worst_slack max/min and report_tns max/min under common SDC; coverage checked with check_setup; minimum_clock_period is not a combinational data-path delay",
+  "feasibility": "nonnegative setup and hold slack, complete timing coverage, successful requested stage; final stage additionally requires SPEF and zero detailed-route DRC errors",
+  "detailed_route_scope": {
+    "base_cases": ["M1", "D1", "F1"],
+    "groups": ["A", "B", "C", "D"],
+    "base_records": 12,
+    "additional_records_max": 4,
+    "additional_selection": "from remaining completed main-table records, take closest-to-zero setup/hold slack per family, then smallest nonzero C/D area gap among pairs feasible at the main stage; stable case_id/group tie break; include failures without replacing them by favorable points",
+    "purpose": "separate physical recheck table; never replace individual main-table metrics or reselect B/C from physical results"
+  },
+  "resources": {
+    "threads_per_tool": 2,
+    "parallel_jobs": 1,
+    "memory_limit_MiB": 8192,
+    "memory_enforcement": "aggregate process-group RSS sampled every 0.5s; transient peaks between samples may be missed; GNU time per-command maxrss also retained",
+    "synthesis_timeout_s": 300,
+    "floorplan_through_global_route_timeout_s": 1200,
+    "detailed_route_extraction_timeout_s": 1200,
+    "snapshot_timeout_s": 120,
+    "validation_timeout_s": 300,
+    "max_global_walltime_h": 12,
+    "max_tool_CPU_time_h": 48,
+    "max_synthesis_calls": 128,
+    "max_global_route_calls": 96,
+    "max_detailed_route_calls": 28,
+    "scope": "all calibration, prototypes, search, final evaluation, physical recheck, repeats and retries share these global caps"
+  },
+  "initial_search_limits": {
+    "candidate_configurations_per_case_K": 8,
+    "same_ordered_K_for_C_D": true,
+    "D_search_synthesis_calls_S": 4,
+    "D_search_global_route_calls_G": 2,
+    "D_search_detailed_route_calls_R": 0,
+    "search_walltime_per_case_group_s": 3600,
+    "final_synthesis_calls_per_record": 1,
+    "final_global_route_calls_per_record": 1,
+    "final_detailed_route_calls_per_selected_recheck": 1,
+    "cache_policy": "record all actual calls and hits; final evaluation can reuse an identical already-measured stage with attribution; no unrecorded feedback in B/C"
+  },
+  "repeat_and_retry": {
+    "repeat_policy": "repeat critical and small-gain representative points before interpreting feasibility or gains; changed feasibility/ranking must be reported as unstable; no assumed fixed ps noise floor",
+    "repeat_per_record_max": 1,
+    "additional_detailed_route_repeat_calls_max": 8,
+    "transient_failure_retry_max": 1,
+    "automatic_retries_in_step3_runner": 0,
+    "deterministic_failure_retry": 0,
+    "failure_retention": "keep stage, command, exit code, timeout/memory flags and raw logs; unavailable stage metrics stay absent"
+  },
+  "resource_estimate_basis": "two full 32x32 multiplier runs and one end-to-end entrypoint run at 1500 ps; larger div/fp designs must be measured before freezing main-matrix numerical limits",
+  "trial_period_ps": 1500,
+  "trial_period_is_main_target": false,
+  "scope_of_enforcement": "current runner enforces per-invocation timeouts, process-group RSS cap and fresh output directories; cumulative search/matrix counters will be implemented with step7 driver"
+}

@@ -1,0 +1,40 @@
+{
+  "version": "physical-control-v1",
+  "purpose": "predeclared SDC physical target response; not training or main-matrix target selection",
+  "rtl": "build/step3-budget-20261027/bound-entrypoint/native/sim/top.sv",
+  "rtl_sha256": "95142b8c2fc148f8695f2fdd892a8298de6fd9a02a4cb1511e65dd6be80cd596",
+  "top": "MulProbe_sim_top",
+  "L": 2,
+  "II": 1,
+  "sdc_periods_ps": [
+    500,
+    2000
+  ],
+  "abc_target_ps": 1500,
+  "io_policy": "fixed absolute max input/output delay, min 0; both core and virtual IO clocks vary together",
+  "io_delay_max_ps": 300,
+  "common_sdc_period_ps": 1500,
+  "fixed": {
+    "corner": "TC/TT",
+    "VT": "RVT",
+    "liberty_model": "NLDM",
+    "voltage_V": 0.7,
+    "temperature_C": 25,
+    "seeds": 42,
+    "core_utilization": 40,
+    "place_density": 0.65,
+    "threads": 2,
+    "parallel_jobs": 1,
+    "flow": "frozen ASAP7 settings, no retiming or new templates"
+  },
+  "starting_point": "fresh synth in each directory; identical input RTL and ABC target; verify normalized mapped-netlist equality before interpreting physical response",
+  "cost": {
+    "synth": 2,
+    "grt": 2,
+    "final": 0,
+    "common_STA_support_calls": 2,
+    "automatic_retries": 0
+  },
+  "interpretation": "compare cell/master/physical netlist and common-SDC path metrics, never slack alone; failures limit conclusions to completed stages; no extra target scan",
+  "axes": "ABC target and SDC target both remain in measurement identity/cache keys"
+}

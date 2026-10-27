@@ -1,0 +1,179 @@
+{
+  "version": "critical-path-evidence-v1",
+  "origin": "previous target-bound 1500 ps full entrypoint; no new PPA calls for path analysis",
+  "stages": {
+    "synth": {
+      "startpoint": "__vul_pipeline_multiply.rtlzz_pipe_8_s1[6]$_SDFFE_PN0P_",
+      "endpoint": "__vul_pipeline_q_s3reg[60]$_SDFF_PN0_",
+      "path_group": "core_clk",
+      "slack_ps": 475.653625,
+      "clock_to_Q_ps": 47.35294,
+      "Q_to_D_combinational_ps": 947.107448,
+      "launch_clock_arrival_ps": 0.0,
+      "endpoint_D_arrival_ps": 994.460388,
+      "library_setup_ps": 9.885993,
+      "setup_uncertainty_ps": 20.0,
+      "data_and_setup_sum_ps": 1024.346381,
+      "sum_interpretation": "excludes capture/launch clock skew; equals setup period requirement only under ideal common clock"
+    },
+    "grt": {
+      "startpoint": "__vul_pipeline_multiply.rtlzz_pipe_8_s1[7]$_SDFFE_PN0P_",
+      "endpoint": "__vul_pipeline_q_s3reg[61]$_SDFF_PN0_",
+      "path_group": "core_clk",
+      "slack_ps": 217.969864,
+      "clock_to_Q_ps": 152.497925,
+      "Q_to_D_combinational_ps": 1091.396393,
+      "launch_clock_arrival_ps": 94.032913,
+      "endpoint_D_arrival_ps": 1337.927246,
+      "library_setup_ps": 9.640682,
+      "setup_uncertainty_ps": 20.0,
+      "data_and_setup_sum_ps": 1273.535,
+      "sum_interpretation": "excludes capture/launch clock skew; equals setup period requirement only under ideal common clock"
+    },
+    "final": {
+      "startpoint": "__vul_pipeline_multiply.rtlzz_pipe_8_s1[18]$_SDFFE_PN0P_",
+      "endpoint": "__vul_pipeline_q_s3reg[63]$_SDFF_PN0_",
+      "path_group": "core_clk",
+      "slack_ps": 287.885284,
+      "clock_to_Q_ps": 133.758255,
+      "Q_to_D_combinational_ps": 1037.390091,
+      "launch_clock_arrival_ps": 89.219948,
+      "endpoint_D_arrival_ps": 1260.368286,
+      "library_setup_ps": 9.872414,
+      "setup_uncertainty_ps": 20.0,
+      "data_and_setup_sum_ps": 1201.02076,
+      "sum_interpretation": "excludes capture/launch clock skew; equals setup period requirement only under ideal common clock"
+    }
+  },
+  "ABC_mapping_diagnostic_ps": 333.21,
+  "mapper_STA_error_ratio": null,
+  "mapper_STA_path_equivalence_proven": false,
+  "conclusion": "Current probe primary critical paths pass through the multiplier data cone and combinational data delay dominates; supports evaluating internal splitting. Actual timing/area benefit after splitting remains to be measured.",
+  "connectivity_evidence": {
+    "input_RTL_sha256": "95142b8c2fc148f8695f2fdd892a8298de6fd9a02a4cb1511e65dd6be80cd596",
+    "mapped_synth_gzip_sha256": "4affa4b2c6c9ee392ba5b368541a7d6da3b4d4db26f4bf8094707be80aa72505",
+    "instance_declarations": [
+      {
+        "stage": "synth",
+        "side": "startpoint",
+        "instance": "__vul_pipeline_multiply.rtlzz_pipe_8_s1[6]$_SDFFE_PN0P_",
+        "mapped_instance": "DFFHQNx1_ASAP7_75t_R \\__vul_pipeline_multiply.rtlzz_pipe_8_s1[6]$_SDFFE_PN0P_  (\n    .CLK(clk),\n    .D(_05906_),\n    .QN(_00013_)\n  );"
+      },
+      {
+        "stage": "synth",
+        "side": "endpoint",
+        "instance": "__vul_pipeline_q_s3reg[60]$_SDFF_PN0_",
+        "mapped_instance": "DFFHQNx1_ASAP7_75t_R \\__vul_pipeline_q_s3reg[60]$_SDFF_PN0_  (\n    .CLK(clk),\n    .D(_05790_),\n    .QN(_00129_)\n  );"
+      },
+      {
+        "stage": "grt",
+        "side": "startpoint",
+        "instance": "__vul_pipeline_multiply.rtlzz_pipe_8_s1[7]$_SDFFE_PN0P_",
+        "mapped_instance": "DFFHQNx1_ASAP7_75t_R \\__vul_pipeline_multiply.rtlzz_pipe_8_s1[7]$_SDFFE_PN0P_  (\n    .CLK(clk),\n    .D(_05905_),\n    .QN(_00014_)\n  );"
+      },
+      {
+        "stage": "grt",
+        "side": "endpoint",
+        "instance": "__vul_pipeline_q_s3reg[61]$_SDFF_PN0_",
+        "mapped_instance": "DFFHQNx1_ASAP7_75t_R \\__vul_pipeline_q_s3reg[61]$_SDFF_PN0_  (\n    .CLK(clk),\n    .D(_05789_),\n    .QN(_00130_)\n  );"
+      },
+      {
+        "stage": "final",
+        "side": "startpoint",
+        "instance": "__vul_pipeline_multiply.rtlzz_pipe_8_s1[18]$_SDFFE_PN0P_",
+        "mapped_instance": "DFFHQNx1_ASAP7_75t_R \\__vul_pipeline_multiply.rtlzz_pipe_8_s1[18]$_SDFFE_PN0P_  (\n    .CLK(clk),\n    .D(_05894_),\n    .QN(_00025_)\n  );"
+      },
+      {
+        "stage": "final",
+        "side": "endpoint",
+        "instance": "__vul_pipeline_q_s3reg[63]$_SDFF_PN0_",
+        "mapped_instance": "DFFHQNx1_ASAP7_75t_R \\__vul_pipeline_q_s3reg[63]$_SDFF_PN0_  (\n    .CLK(clk),\n    .D(_05916_),\n    .QN(_00003_)\n  );"
+      }
+    ],
+    "RTL_assignments": [
+      {
+        "line": 28,
+        "text": "__vul_pipeline_q_s1reg <= resetvalue_s1reg__;"
+      },
+      {
+        "line": 32,
+        "text": "__vul_pipeline_q_s1reg <= wdata_s1reg__;"
+      },
+      {
+        "line": 53,
+        "text": "__vul_pipeline_q_s3reg <= 64'h0;"
+      },
+      {
+        "line": 55,
+        "text": "__vul_pipeline_q_s3reg <= __vul_pipeline_d_s3reg;"
+      },
+      {
+        "line": 88,
+        "text": "assign __vul_port_s1reg = __vul_pipeline_q_s1reg;"
+      },
+      {
+        "line": 90,
+        "text": "assign __vul_pipeline_d_s3reg = __vul_port_s3reg;"
+      },
+      {
+        "line": 95,
+        "text": "assign vul_port_s1reg = __vul_port_s1reg;"
+      },
+      {
+        "line": 97,
+        "text": "assign __vul_port_s3reg = vul_port_s3reg;"
+      },
+      {
+        "line": 101,
+        "text": "assign s8_norm_mul_6_v0 = 128'(($unsigned(128'($unsigned(rtlzz_pipe_2_s1))) * $unsigned(128'($unsigned(rtlzz_pipe_8_s1)))));"
+      },
+      {
+        "line": 102,
+        "text": "assign s6_helper___vul_compute_0_product__v0 = s8_norm_mul_6_v0[63:0];"
+      },
+      {
+        "line": 103,
+        "text": "assign vul_port_s3reg = s6_helper___vul_compute_0_product__v0;"
+      },
+      {
+        "line": 105,
+        "text": "assign __beopt_width_36 = vul_port_s1reg[63:32];"
+      },
+      {
+        "line": 106,
+        "text": "assign __beopt_width_13 = (__beopt_width_11 & 64'hffffffff);"
+      },
+      {
+        "line": 107,
+        "text": "assign __beopt_width_11 = ({32'h0, __beopt_width_36});"
+      },
+      {
+        "line": 110,
+        "text": "rtlzz_pipe_2_s1 <= 64'h0;"
+      },
+      {
+        "line": 111,
+        "text": "rtlzz_pipe_8_s1 <= 64'h0;"
+      },
+      {
+        "line": 115,
+        "text": "rtlzz_pipe_2_s1 <= s6_helper___vul_compute_0_a__v0;"
+      },
+      {
+        "line": 118,
+        "text": "rtlzz_pipe_8_s1 <= __beopt_width_13;"
+      },
+      {
+        "line": 166,
+        "text": "assign s8_norm_hw_20_v0 = {s0input_b, s0input_a};"
+      },
+      {
+        "line": 172,
+        "text": "assign wdata_s1reg = s8_norm_hw_20_v0;"
+      }
+    ],
+    "interpretation": "rtlzz_pipe_8_s1 and rtlzz_pipe_2_s1 feed the same multiply expression; low64 product travels through s3reg aliases to __vul_pipeline_q_s3reg; mapped instance names retain RTL register identities and timing reports show their actual QN-to-D path",
+    "operand_chain": "s0input_b -> upper32 of {b,a} -> __vul_pipeline_q_s1reg/vul_port_s1reg -> __beopt_width_36 -> zero-extended/masked __beopt_width_13 -> rtlzz_pipe_8_s1 -> multiply operand",
+    "product_chain": "multiply -> low64 s6_helper___vul_compute_0_product__v0 -> vul_port_s3reg -> __vul_port_s3reg -> __vul_pipeline_d_s3reg -> __vul_pipeline_q_s3reg"
+  }
+}

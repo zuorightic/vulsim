@@ -1,0 +1,168 @@
+{
+  "version": "asap7-backend-freeze-v2",
+  "frozen_at": "2026-10-26T11:07:33.871143+00:00",
+  "kind": "review_correctness_and_portable_evidence_revision",
+  "source_base": "c0259b7226bb78ddc6d91b719cb2692b52ef7dba",
+  "files_sha256": {
+    "experiments/arithmetic/backend_probe/Main.utb": "58c8952250ea7f4498cf652d6a715076fc33cf26b7d2471bd2e4c43e0deabfd9",
+    "experiments/arithmetic/backend_probe/MulProbe.vul": "4ea7ed06a706568e4a4238080d6b3ea45d90b4308df66031ff06884d28187a2e",
+    "experiments/arithmetic/backend_probe/header.uh": "e357d20bfd49f1b2c1ef1b0662267dd343f51c2eac8a3ec1b55ebca8152d00dc",
+    "experiments/arithmetic_dse/backend.py": "8c2b9b0b715dfa3f17204771519bca7e6985b12f8985acd7e0de0688dc942cb8",
+    "experiments/arithmetic_dse/backend/README.md": "825aec5a8d6b9c032756c2df1e0d7625b3beab8b9d5c9c4eb5bcef17fce1a585",
+    "experiments/arithmetic_dse/backend/asap7.mk": "a10b16f3c73a63dbd8d7339813d3f19496a239ba7a01e729ef0a9b06a025f430",
+    "experiments/arithmetic_dse/backend/constraints.sdc": "01f7dbcec5b108a693c3a37e9378f22be0a47ec31f18e784fb67ec8ab98205af",
+    "experiments/arithmetic_dse/backend/environment.mk": "fa28c534ec7cb3723b750f7772aa1bf09e1cc46664d8e6d497d687187e722237",
+    "experiments/arithmetic_dse/backend/snapshot.tcl": "13b14c83ded0fef734c657263bb55d34c00c32cf20138328703e7c177ca35732",
+    "experiments/arithmetic_dse/characterization.py": "e0ed5a02a47f0a0ce45a0fb862e5e45e6f8b5d125406db752bc4be1826c3a854",
+    "experiments/arithmetic_dse/configs/backend_policy_v2.json": "ea62f825b329c99ae1a9df9f8a63d1a311eb127180fb6a88c680abf8e3692a49",
+    "experiments/arithmetic_dse/configs/characterization_v1.json": "bc0c99ad8fe561b98eba5a74e72d253a887a04374f1bb13a3f4852c040236cee",
+    "experiments/arithmetic_dse/evidence.py": "975cbe9bc113bcb6f7678a8c257debaf53b48426ea114fa15689de24c904c73c",
+    "experiments/arithmetic_dse/processes.py": "a114a93cefbffa7a1ecbcf54f52a932f72deb218c6796f29f66ea24c3e344fe4",
+    "experiments/arithmetic_dse/run.py": "1906ed10f6e551eef4efb5e505f3430947fda9b46789fb1d6e62c28e9cb0bd8a",
+    "regression/arithmetic_backend.py": "5f2c197851811822e18d10ebf50565a0e8785095ef70fb2d4be31e5a2cd87239"
+  },
+  "BC_precondition": {
+    "path": "experiments/arithmetic/freeze_v3.json",
+    "sha256": "53a2b263635209187ccc489780bedb40362824093e7e3beee4a94b2e1dee124d"
+  },
+  "libraries": [
+    {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib.gz",
+      "sha256": "fe9f1c18e88ab129d63ad82adc256f3a85c7e38e47dabbe0a96749b41087dea1",
+      "voltage_V": 0.7,
+      "temperature_C": 25.0,
+      "time_unit": "1ps",
+      "capacitance_unit": "fF"
+    },
+    {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib.gz",
+      "sha256": "8d6db2c2f83c3c162be54a5e102b2d379fcaaaef2db5f0b1d4152c395d01fea1",
+      "voltage_V": 0.7,
+      "temperature_C": 25.0,
+      "time_unit": "1ps",
+      "capacitance_unit": "fF"
+    },
+    {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib.gz",
+      "sha256": "bbe6d904d58c7367de1ed7639e4eae386c65fa0a5af26ae62dc5e4e2ec52b08b",
+      "voltage_V": 0.7,
+      "temperature_C": 25.0,
+      "time_unit": "1ps",
+      "capacitance_unit": "fF"
+    },
+    {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib",
+      "sha256": "57a0b403485b99ebd676942af4673ac086b86c7c75fbdc3e5c0038501dd22ba3",
+      "voltage_V": 0.7,
+      "temperature_C": 25.0,
+      "time_unit": "1ps",
+      "capacitance_unit": "fF"
+    },
+    {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz",
+      "sha256": "073ac4b6b08f272b6953b0ad54d1d9743767a7d15a0e2964ed86cf44c3dbe00e",
+      "voltage_V": 0.7,
+      "temperature_C": 25.0,
+      "time_unit": "1ps",
+      "capacitance_unit": "fF"
+    }
+  ],
+  "external_files_sha256": {
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lef/asap7_tech_1x_201209.lef": "7694bf4f8ef2f9745e4579f454788a0cf048e8605320f32d1d83ec540ed4ca41",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lef/asap7sc7p5t_28_R_1x_220121a.lef": "4eb73f825720d95eba4da455c7b2e7a28e444e88e9d8595d13492cf5eecfc0d1",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/yoSys/cells_adders_R.v": "978525beea03dc73d4a9d4a31012b41ef3f70eb729cf6e2babfb79ac7260f545",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/yoSys/cells_latch_R.v": "671d1558a6efd093ec60efd0db6a32286ca873b7bb72d05612427a123e0509dc",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/yoSys/cells_clkgate_R.v": "e65a51575b36be6d1ddc330a0df9805ec5737dd987d4e2227fa058018cca00ad",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/rcx_patterns.rules": "32a117e5e866d3de1406e8f18d65b6f1857781f156638941a4769e25ef5252cc",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/setRC.tcl": "ce6e29fe23b648839009c53035901066653d5850f9419ba85169c715b2cebd14",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/openRoad/make_tracks.tcl": "4693c8fc81cf9095ed7fba61e778ec81c16c3cadc747f9ce388acf38f8331632",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/openRoad/pdn/grid_strategy-M1-M2-M5-M6.tcl": "7eb4c880be9357ed33c352ff84c2870b9c02312db96cdf7b0a5214fb39d0a844",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/fastroute.tcl": "0513fb0efd632b4bc3c16882b09d64ce227e48f4bc71486f4d05aec62fe7b0e1"
+  },
+  "tools": {
+    "yosys": {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/tools/install/yosys/bin/yosys",
+      "sha256": "0c0d6674d38e48d1637003c2542977f74a550103b252f61776c158b2ebeeaca9",
+      "version": "Yosys 0.68+ (git sha1 a5af9d690, Release, GNU /usr/bin/c++ 13.3.0) [github.com/The-OpenROAD-Project/yosys at HEAD]"
+    },
+    "openroad": {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad",
+      "sha256": "c24e4e3a75e223e51e203440992a0364fb8c83a239162238d0772b87a1193f75",
+      "version": "26Q3-1867-g84e3ff1eb2"
+    },
+    "abc": {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/tools/install/yosys/bin/yosys-abc",
+      "sha256": "fab637b96f401f8b3fcadd3e256728f91528960e6da35d5b7e74b13c30ae83e0",
+      "version": "======== ABC command line \"version\"\nUC Berkeley, ABC 1.01 (compiled Sep 10 2026 09:58:03)"
+    }
+  },
+  "orfs_commit": "31e744df6a12ae09760820dc977d2b2488c9b0fe",
+  "evaluation_policy": "experiments/arithmetic_dse/configs/backend_policy_v2.json",
+  "validated_source_snapshot": "experiments/arithmetic/evidence/step3/source_v2",
+  "validation_evidence": {
+    "experiments/arithmetic/evidence/step3/README.md": "21b4f287a26937b5510505d30eeaac5a688e9e6c70a4dd7ee596aaa01caadc24",
+    "experiments/arithmetic/evidence/step3/backend-regression-v2.log": "ea7d72d4ae78f8830cedbef42776285bf0b5318dfa241968d74f1d70b7d55720",
+    "experiments/arithmetic/evidence/step3/clone_check.json": "4fd10bc176a6ff22177323b5bbdaf8eea0d2eebe519a3b3def0a48b0e2a144e6",
+    "experiments/arithmetic/evidence/step3/contracts-ordinary.json": "d1cf58ac5a74f8a5385fbe2d6283ff9928cd97f2565d674e64f5302f2bda5e12",
+    "experiments/arithmetic/evidence/step3/manifest_v1.json": "6adc041ca110e8d34d9de546baaa75ffac20b263e9ae2baafca129fc92886889",
+    "experiments/arithmetic/evidence/step3/manifest_v2.json": "2fc4c1144898d3a45dc4b13db86f598293ed49bce54fe165004c031f5692fa44",
+    "experiments/arithmetic/evidence/step3/metrics_v1.json": "296ca41ed9ed1ec1cbcb25eee87608504d186890000571aef2bb242944fa6f70",
+    "experiments/arithmetic/evidence/step3/metrics_v2.json": "c13d8a9e12f5c8cbb813151ff38d3cc249140357594314d47c1c263e7e673ab5",
+    "experiments/arithmetic/evidence/step3/probe_manifest_v2.json": "cfdf23cfe40a1b5b240c8c774bc2c9ccf49824f2e5512c2ddca3f9fae9193f23",
+    "experiments/arithmetic/evidence/step3/repeatability_v1.json": "f38f3b235938c113eea69b707c9979cf45907ecd2e3d9d8965a03bfe1540eeb5",
+    "experiments/arithmetic/evidence/step3/reports_v2/vulsim_final_coverage.rpt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "experiments/arithmetic/evidence/step3/reports_v2/vulsim_final_hold.rpt": "f20c1447a87d4b998b222cdc66a47ba08aa3612af4ec2ec5fca691b494599c52",
+    "experiments/arithmetic/evidence/step3/reports_v2/vulsim_final_hold_tns.rpt": "d2cd5ac33c7e5ae94363b6f4cee3f294aa0852daa624c390b572ee0b5ed6f5db",
+    "experiments/arithmetic/evidence/step3/reports_v2/vulsim_final_period.rpt": "1df06532d3c1e90fc11f876f079be39bd7ac97460995d898c533219a2d83e7b5",
+    "experiments/arithmetic/evidence/step3/reports_v2/vulsim_final_setup.rpt": "53545ae9d4e2ac4460eefbae46e8c832177c1a75cdc0ebf9217a8f1e6e84ee47",
+    "experiments/arithmetic/evidence/step3/reports_v2/vulsim_final_setup_tns.rpt": "44f23fe41be6907ffbb46685b3ddca75e2346eb1009578f7dcf1a0c5a4bdc1d5",
+    "experiments/arithmetic/evidence/step3/reports_v2/vulsim_final_units.rpt": "0a157b0d181fbc6e23e234ac2c14bb1b416f8860671d089692850be91286637b",
+    "experiments/arithmetic/evidence/step3/reports_v2/vulsim_grt_coverage.rpt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "experiments/arithmetic/evidence/step3/reports_v2/vulsim_grt_hold.rpt": "c572900691a9af6fd93d731945c2773a4951189e6fa82a71ab57e499e5de92a2",
+    "experiments/arithmetic/evidence/step3/reports_v2/vulsim_grt_hold_tns.rpt": "d2cd5ac33c7e5ae94363b6f4cee3f294aa0852daa624c390b572ee0b5ed6f5db",
+    "experiments/arithmetic/evidence/step3/reports_v2/vulsim_grt_period.rpt": "d19552898566d46b9cbf81f064308323c8d8a11f2d44185c192101d10058e998",
+    "experiments/arithmetic/evidence/step3/reports_v2/vulsim_grt_setup.rpt": "0c114e350de9fffeb42b774ef9098fe70a0e335a7fd1626e09ab386ed608a292",
+    "experiments/arithmetic/evidence/step3/reports_v2/vulsim_grt_setup_tns.rpt": "44f23fe41be6907ffbb46685b3ddca75e2346eb1009578f7dcf1a0c5a4bdc1d5",
+    "experiments/arithmetic/evidence/step3/reports_v2/vulsim_grt_units.rpt": "0a157b0d181fbc6e23e234ac2c14bb1b416f8860671d089692850be91286637b",
+    "experiments/arithmetic/evidence/step3/reports_v2/vulsim_synth_coverage.rpt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "experiments/arithmetic/evidence/step3/reports_v2/vulsim_synth_hold.rpt": "d601f4100083da6f8949204e5ba08fc02ac3fd00abb03c4844fbe20f2b48e432",
+    "experiments/arithmetic/evidence/step3/reports_v2/vulsim_synth_hold_tns.rpt": "d2cd5ac33c7e5ae94363b6f4cee3f294aa0852daa624c390b572ee0b5ed6f5db",
+    "experiments/arithmetic/evidence/step3/reports_v2/vulsim_synth_period.rpt": "d39b607071f15a48a0918d2c6898242535394f624d929fe645896181ccd49a43",
+    "experiments/arithmetic/evidence/step3/reports_v2/vulsim_synth_setup.rpt": "2827c00e15f01a3c3b445051a81f382d48950a79b5c21bbad3ac9f5114cf008c",
+    "experiments/arithmetic/evidence/step3/reports_v2/vulsim_synth_setup_tns.rpt": "44f23fe41be6907ffbb46685b3ddca75e2346eb1009578f7dcf1a0c5a4bdc1d5",
+    "experiments/arithmetic/evidence/step3/reports_v2/vulsim_synth_units.rpt": "0a157b0d181fbc6e23e234ac2c14bb1b416f8860671d089692850be91286637b",
+    "experiments/arithmetic/evidence/step3/resources_v1.json": "27d701d63fcacf975d4b6b08c5c96c44ce502bffd0c0a8bbbededf84f5107ec7",
+    "experiments/arithmetic/evidence/step3/resources_v2.json": "4682be64e6209c4010e2873b7bdf65aa4a28cf8fe0e6ab2be5e354571a6774da",
+    "experiments/arithmetic/evidence/step3/review_summary.json": "740c6f0d5cbfd2e75a9a2cc3a9dca2f292ebcb85860cd5685cef7dabefb53587",
+    "experiments/arithmetic/evidence/step3/target_probes.json": "fc14b0f134eb9a48e9330d37ea2f376167110d97b3ebbe02a7c7a6121d0452ab",
+    "experiments/arithmetic/evidence/step3/timeout-after-probe.json": "57d311a55b3c97867d02babe17a559ea18858d8a4a447c3b11c2f6774ec8286c",
+    "experiments/arithmetic/evidence/step3/timeout-before.json": "adaa369177cdc55e57ac2073d13c19d590f82c226a41a5eed999a82ec9dcbd04",
+    "experiments/arithmetic/evidence/step3/index.json": "7cf440112066ffec3c62e5f8fe7c2b0c2654356500c0985c96e885251309a856"
+  },
+  "change_policy": "version any change to evaluation settings, parsing semantics or resource policy; rerun affected checks; never tune BC from PPA",
+  "scope": {
+    "main_stage": "TT_setup_at_CTS_post_global_route",
+    "final_stage": "TT_setup_hold_after_OpenRCX",
+    "hold_review_margin_ps": 5,
+    "multi_corner_signoff": false,
+    "cost_library": "step7_not_built",
+    "main_case_periods_ps": "pending_calibration",
+    "B_C_rules_changed": false
+  },
+  "supersedes": {
+    "path": "experiments/arithmetic/backend_freeze_v1.json",
+    "sha256": "d2ca0b31c3a17e63958ba2df3a4fb2155d0d35ed9b25aa807adc84750fb808b4"
+  },
+  "previous_source_snapshot": "experiments/arithmetic/evidence/step3/source_v1",
+  "evidence_index": "experiments/arithmetic/evidence/step3/index.json",
+  "revision": {
+    "reason": "nested process cancellation, target-conditioned identity, scoped TT hold policy, portable evidence",
+    "BC_rules_changed": false,
+    "full_pipeline_revalidated": true,
+    "target_probe_ps": [
+      1000,
+      1500,
+      2000
+    ]
+  }
+}

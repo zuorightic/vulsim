@@ -1,0 +1,40 @@
+{
+  "version": "step3-review-summary-v2",
+  "status": "passed",
+  "nested_timeout": {
+    "before_worker_leak_reproduced": true,
+    "after_no_live_descendants": true,
+    "verified_cases": [
+      "nested_timeout",
+      "TERM_ignoring_worker",
+      "nested_memory_cap",
+      "external_TERM",
+      "quick_parent_exit"
+    ]
+  },
+  "backend_regression_tests": 15,
+  "BC_contract_assertions": 20202,
+  "end_to_end_probe": {
+    "status": "completed",
+    "cycles_per_sim_path": 10000,
+    "requested_final_stage": "OpenRCX_extracted_SPEF"
+  },
+  "target_probes_ps": [
+    1000,
+    1500,
+    2000
+  ],
+  "target_probe_stage": "synth",
+  "target_probe_observation": "mapped area and minimum period identical at sampled points; general target independence not established",
+  "grt_feasibility_scope": "TT_setup_only",
+  "hold_review_margin_ps": 5,
+  "multi_corner_signoff": false,
+  "final_hold_status": "TT_nonnegative_below_review_band",
+  "portable_validation": "no build directory or EDA installation required",
+  "remaining_scope": [
+    "full target-conditioned cost library is step7",
+    "characterization budgets must be revised before collection",
+    "multi-corner signoff not performed",
+    "sampled RSS may miss transient peaks"
+  ]
+}

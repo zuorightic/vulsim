@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "build_directory_present": false,
+  "tools_directory_present": false,
+  "external_tool_verification_requested": false,
+  "command": [
+    "python3",
+    "-m",
+    "experiments.arithmetic_dse.evidence"
+  ],
+  "method": "copy experiments and the two required regression files into a new temporary root, remove PYTHONPATH, run from that root"
+}

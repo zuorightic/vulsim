@@ -1,0 +1,22 @@
+# Fixed common ASAP7 trial settings. Per-run paths and period are generated.
+export PLATFORM = asap7
+export CORNER = TC
+export ASAP7_USE_VT = RVT
+export LIB_MODEL = NLDM
+export ABC_AREA = 0
+export CORE_UTILIZATION = 40
+export CORE_ASPECT_RATIO = 1
+export CORE_MARGIN = 2
+export PLACE_DENSITY = 0.65
+export TNS_END_PERCENT = 100
+export SYNTH_HDL_FRONTEND = slang
+export YOSYS_FLAGS = -Q
+export SYNTH_OPT_HIER = 1
+export SYNTH_RETIME_MODULES =
+export CLUSTER_FLOPS = 0
+export IO_PLACER_H = M4 M6
+export IO_PLACER_V = M5 M7
+export GPL_RANDOM_SEED = 42
+export GRT_SEED = 42
+export OR_SEED = 42
+export GENERATE_ARTIFACTS_ON_FAILURE = 0

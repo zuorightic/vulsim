@@ -1,0 +1,105 @@
+{
+  "version": "process-tree-resources-v2",
+  "scope": "one complete backend invocation, including nested sessions",
+  "configured_threads_per_tool": 2,
+  "commands": [
+    {
+      "walltime_s": 0.1658566161058843,
+      "sampled_process_tree_peak_rss_KiB": 1464,
+      "sampled_process_tree_peak_threads": 1,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "timed_out": false,
+      "memory_limit_exceeded": false,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "stage": "environment"
+    },
+    {
+      "walltime_s": 5.582361922133714,
+      "sampled_process_tree_peak_rss_KiB": 224872,
+      "sampled_process_tree_peak_threads": 9,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "timed_out": false,
+      "memory_limit_exceeded": false,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "stage": "synth"
+    },
+    {
+      "walltime_s": 1.3675075210630894,
+      "sampled_process_tree_peak_rss_KiB": 188264,
+      "sampled_process_tree_peak_threads": 6,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "timed_out": false,
+      "memory_limit_exceeded": false,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "stage": "synth-snapshot"
+    },
+    {
+      "walltime_s": 67.96895127906464,
+      "sampled_process_tree_peak_rss_KiB": 443016,
+      "sampled_process_tree_peak_threads": 10,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "timed_out": false,
+      "memory_limit_exceeded": false,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "stage": "grt"
+    },
+    {
+      "walltime_s": 1.7680009610485286,
+      "sampled_process_tree_peak_rss_KiB": 363176,
+      "sampled_process_tree_peak_threads": 6,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "timed_out": false,
+      "memory_limit_exceeded": false,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "stage": "grt-snapshot"
+    },
+    {
+      "walltime_s": 126.49225916597061,
+      "sampled_process_tree_peak_rss_KiB": 1343236,
+      "sampled_process_tree_peak_threads": 31,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "timed_out": false,
+      "memory_limit_exceeded": false,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "stage": "final"
+    },
+    {
+      "walltime_s": 1.8681621020659804,
+      "sampled_process_tree_peak_rss_KiB": 247560,
+      "sampled_process_tree_peak_threads": 6,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "timed_out": false,
+      "memory_limit_exceeded": false,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "stage": "final-snapshot"
+    }
+  ]
+}

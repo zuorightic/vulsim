@@ -1,0 +1,72 @@
+{
+  "configured_threads_per_tool": 2,
+  "actual_concurrent_jobs": 1,
+  "probe": "32x32_full64_atomic_mul",
+  "stages": [
+    {
+      "stage": "environment",
+      "walltime_s": 0.16469165799207985,
+      "sampled_aggregate_peak_MiB": 1.3671875,
+      "gnu_time_peak_process_MiB": 198.265625,
+      "user_CPU_s": 0.09,
+      "system_CPU_s": 0.05,
+      "sampled_group_threads": 1
+    },
+    {
+      "stage": "synth",
+      "walltime_s": 5.724253460066393,
+      "sampled_aggregate_peak_MiB": 218.5546875,
+      "gnu_time_peak_process_MiB": 209.5234375,
+      "user_CPU_s": 5.19,
+      "system_CPU_s": 0.66,
+      "sampled_group_threads": 18
+    },
+    {
+      "stage": "synth-snapshot",
+      "walltime_s": 1.41746048303321,
+      "sampled_aggregate_peak_MiB": 183.8984375,
+      "gnu_time_peak_process_MiB": 212.7421875,
+      "user_CPU_s": 1.32,
+      "system_CPU_s": 0.12,
+      "sampled_group_threads": 6
+    },
+    {
+      "stage": "grt",
+      "walltime_s": 68.57446363195777,
+      "sampled_aggregate_peak_MiB": 432.734375,
+      "gnu_time_peak_process_MiB": 415.765625,
+      "user_CPU_s": 104.91,
+      "system_CPU_s": 2.8,
+      "sampled_group_threads": 10
+    },
+    {
+      "stage": "grt-snapshot",
+      "walltime_s": 1.7661736118607223,
+      "sampled_aggregate_peak_MiB": 353.7265625,
+      "gnu_time_peak_process_MiB": 354.4453125,
+      "user_CPU_s": 1.73,
+      "system_CPU_s": 0.16,
+      "sampled_group_threads": 6
+    },
+    {
+      "stage": "final",
+      "walltime_s": 126.67426970112137,
+      "sampled_aggregate_peak_MiB": 1311.34765625,
+      "gnu_time_peak_process_MiB": 1285.76171875,
+      "user_CPU_s": 232.75,
+      "system_CPU_s": 2.66,
+      "sampled_group_threads": 31
+    },
+    {
+      "stage": "final-snapshot",
+      "walltime_s": 1.8666794109158218,
+      "sampled_aggregate_peak_MiB": 240.84375,
+      "gnu_time_peak_process_MiB": 253.453125,
+      "user_CPU_s": 1.89,
+      "system_CPU_s": 0.13,
+      "sampled_group_threads": 6
+    }
+  ],
+  "all_command_walltime_s": 206.18799195694737,
+  "note": "group thread count includes make/shell/helpers and tool threads; not CPU-core usage"
+}

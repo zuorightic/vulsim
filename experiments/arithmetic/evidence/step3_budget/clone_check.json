@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "copied_roots": [
+    "experiments",
+    "regression/arithmetic_contracts.py",
+    "regression/arithmetic_backend.py"
+  ],
+  "build_present": false,
+  "EDA_tools_on_PATH": false,
+  "live_ledger_copied": false,
+  "evidence_check": {
+    "status": "passed",
+    "freeze": "asap7-backend-freeze-v3",
+    "current_source_files": 19,
+    "historical_source_files": 28,
+    "unchanged_BC_files": 12,
+    "portable_evidence_files_current_revision": 405,
+    "cumulative_calls": {
+      "synth": 29,
+      "grt": 7,
+      "final": 5
+    },
+    "full_experiment_budget_status": "blocked",
+    "requires_build_directory": false,
+    "external_verification": false
+  },
+  "budget_check_exit_code": 1,
+  "bootstrapped_usage": {
+    "synth": 29,
+    "grt": 7,
+    "final": 5,
+    "support_calls": 89,
+    "walltime_s": 1385.926144756144,
+    "CPU_time_s": 2219.0099999999998,
+    "pending": 0
+  },
+  "budget_status": "blocked"
+}

@@ -113,3 +113,24 @@ ARITHMETIC_SOFTFLOAT_DIR=/path/to/flat/softfloat \
 用户服务器设置的 `CORNER=TC`、`ABC_AREA=0`、利用率 40%、布局密度 0.65、slang、层次优化和 M4/M6、M5/M7 引脚层已记录。旧约束只有 `create_clock`；实际接入需补充 I/O 延迟、驱动/负载、不确定度、reset 处理及 report_units 检查。官方 aes/uart 提供虚拟时钟和 20% I/O 延迟示例，但设计专用时钟延迟不应直接复制。
 
 首版沿用单 VT/RVT、NLDM，禁用重定时和多比特触发器聚类。服务器 NUM_CORES=8 仅是资源参考，当前线程/并发/超时由步骤三试跑决定。以上都是配置准备，未完成 Yosys/ASAP7/OpenROAD 测量，不使用历史 1000/1100/1250 ps 作为新目标。
+
+## 步骤三：已接通的后端入口
+
+2026-10-26 已完成原始全位宽乘法核的原生生成、软件/Verilator 验证、ASAP7 TC/RVT/NLDM 综合、CTS 后全局布线、详细布线和 OpenRCX 提取，并完成步骤三复核修订。前一节描述的是步骤二的配置准备状态；当前流程、单位/面积定义、失败处理和运行参数见 `experiments/arithmetic_dse/backend/README.md`。B/C 的 `freeze_v3.json` 保持原内容，当前后端冻结为 `backend_freeze_v2.json`，策略为 `experiments/arithmetic_dse/configs/backend_policy_v2.json`，v1 保留为历史记录。
+
+```bash
+python3 -m experiments.arithmetic_dse.run \
+  --out build/asap7-probe-new --stage final --period-ps 1500 --threads 2
+```
+
+1500 ps 为资源试跑周期；正式案例的目标仍按步骤二公式在建库后制定。当前主表阶段决定为 CTS 后全局布线寄生估计，详细布线另表复核预定覆盖及临界点。两套完整运行的时序与原始 ORFS 面积一致，单命令入口及错误输入失败定位也已验证。原始证据、manifest、资源及重复比较位于 `build/step3-asap7-20261026-93ltulln/`。
+
+复核修订增加跨 session 后代树清理、目标周期建库维度及 TT 阶段判定范围。grt 只以 TT setup/覆盖判可行，hold 独立报告并使用 5 ps 工程复核带；详细布线仍检查 TT setup/hold，所有记录明确不代表多角签核。关键证据及两版源快照随仓库保存在 `experiments/arithmetic/evidence/step3/`，原始大日志/ODB/SPEF 保留在 build。无需 build 或工具安装即可核对：
+
+```bash
+python3 -m experiments.arithmetic_dse.evidence
+```
+
+本轮预算复核采用 `backend_freeze_v3.json`：共享物理调用账本立即启用，并导入历史失败与成功调用。六个综合目标改为 500/800/1000/1250/1500/2000 ps，案例矩阵仍为 36 条。两点相同不构成未测目标覆盖。D2/F1 接入后各做六点检查；预算资助检查提前到步骤五之前，包含实际案例目标补测和步骤四至六探针。运行 `python3 -m experiments.arithmetic_dse.budget --check-plan` 可查看当前不足，原上限不会自动放宽。详见 `mission/lxy-plan.md` §7.1、§7.4、§3.9 及 `experiments/arithmetic/evidence/step3_budget/`。
+
+步骤三收尾升级为 `backend_freeze_v4.json`，见 `evidence/step3_closure/` 和计划 §3.10：已有关键路径明确经过乘法操作数到乘积的数据锥；预声明500/2000ps SDC对照固定ABC1500ps和绝对I/O300ps，两份实际综合网表一致，grt及共同1500ps SDC下的结构/面积/路径存在响应，500ps自身仍未达标。新增2 synth/2 grt后累计31/9/5，无待结算预约，无上限提高。采集协议v3将普遍六点改为必需参考/精确查询数据与代表性少量探测，D2/F1实现后检查。步骤三验收完成；D库、D2/F1硬件和主矩阵尚未完成，完整清单及预算仍在步骤五前闭合。B/C冻结内容保持。

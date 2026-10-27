@@ -1,0 +1,35 @@
+&get -n
+&st
+&dch
+&nf -D 2000.0
+&st
+&syn2
+&if -g -K 6
+&synch2
+&nf -D 2000.0
+&st
+&syn2
+&if -g -K 6
+&synch2
+&nf -D 2000.0
+&st
+&syn2
+&if -g -K 6
+&synch2
+&nf -D 2000.0
+&st
+&syn2
+&if -g -K 6
+&synch2
+&nf -D 2000.0
+&st
+&syn2
+&if -g -K 6
+&synch2
+&nf -D 2000.0
+&put
+buffer -c
+topo
+stime -c
+upsize -c -D 2000.0
+dnsize -c -D 2000.0

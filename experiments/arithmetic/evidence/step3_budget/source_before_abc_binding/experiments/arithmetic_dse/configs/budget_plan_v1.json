@@ -1,0 +1,23 @@
+{
+  "version": "pre-step5-budget-plan-v1",
+  "status": "underfunded_do_not_start_step5_bulk_physical_work",
+  "case_target_count": 9,
+  "family_count_initial": 19,
+  "grid": [500, 800, 1000, 1250, 1500, 2000],
+  "reserves": {
+    "prototype_reserve": 36,
+    "repeat_reserve": 8,
+    "retry_reserve": 16
+  },
+  "reserve_interpretation": {
+    "prototype": "36 synth/grt attempts for step4-6, including twelve D2/F1 sensitivity synth points; provisional allowance to replace with actual declared probe list before step5",
+    "repeat": "8 cold-cache synth/grt/final repeat chains; conservative when checkpoint continuation is possible",
+    "retry": "16 cold-cache synth/grt/final retry chains; not permission to retry deterministic failures or exceed one transient retry per record",
+    "supplemental": "until all nine exact case targets and required feature pairs are frozen, reserve 19 x 9 potential supplemental synth/grt records, not zero; add new split templates/boundary variants explicitly",
+    "reuse": "no assumed cross-target, observed-equality or cache savings; only verified complete-identity stage reuse can reduce actual calls"
+  },
+  "gate": "before step5, version and fund history + remaining work + supplemental coverage + probes + reserves; unchanged initial caps currently FAIL. Before step6/7 refresh for actual templates, nine computed targets and larger-kernel resource trials. Main matrix remains 36 records at one frozen target per case.",
+  "target_sensitivity": "six synth targets per required exact family; grt can use a predeclared subset but unsampled points remain uncovered and all queried case-target points must be funded",
+  "time_capacity": "12h leaf backend walltime / 48h actual CPU remain hard budgets; call funding alone is insufficient, larger div/fp measurements must justify the time forecast before library/main collection",
+  "automatic_limit_increase": false
+}

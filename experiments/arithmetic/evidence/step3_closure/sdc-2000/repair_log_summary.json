@@ -1,0 +1,122 @@
+[
+  {
+    "line": 32,
+    "text": "repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 100 -setup -skip_last_gasp -sequence unbuffer,sizeup,swap,vt_swap -verbose"
+  },
+  {
+    "line": 118,
+    "text": "[INFO TAP-0004] Inserted 278 endcaps."
+  },
+  {
+    "line": 119,
+    "text": "[INFO TAP-0005] Inserted 70 tapcells."
+  },
+  {
+    "line": 297,
+    "text": "[INFO RSZ-0027] Inserted 66 BUFx2_ASAP7_75t_R input buffers."
+  },
+  {
+    "line": 298,
+    "text": "[INFO RSZ-0028] Inserted 65 BUFx2_ASAP7_75t_R output buffers."
+  },
+  {
+    "line": 368,
+    "text": "Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining"
+  },
+  {
+    "line": 375,
+    "text": "[INFO RSZ-0039] Resized 37 instances."
+  },
+  {
+    "line": 376,
+    "text": "[INFO RSZ-0038] Inserted 103 buffers in 68 nets."
+  },
+  {
+    "line": 377,
+    "text": "   Iter   |    Area   | Removed | Inserted |   Pins"
+  },
+  {
+    "line": 394,
+    "text": "[INFO GPL-0107] Timing-driven: repair_design delta area: 4.731 um^2 (+0.84%)"
+  },
+  {
+    "line": 395,
+    "text": "[INFO GPL-0108] Timing-driven: repair_design, gpl delta gcells: 35 (+0.63%)"
+  },
+  {
+    "line": 396,
+    "text": "[INFO GPL-0109] Timing-driven: repair_design, gcells created: 138, deleted: 103"
+  },
+  {
+    "line": 429,
+    "text": "Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining"
+  },
+  {
+    "line": 434,
+    "text": "   Iter   |    Area   | Removed | Inserted |   Pins"
+  },
+  {
+    "line": 451,
+    "text": "[INFO GPL-0107] Timing-driven: repair_design delta area: 1.283 um^2 (+0.23%)"
+  },
+  {
+    "line": 452,
+    "text": "[INFO GPL-0108] Timing-driven: repair_design, gpl delta gcells: 14 (+0.25%)"
+  },
+  {
+    "line": 453,
+    "text": "[INFO GPL-0109] Timing-driven: repair_design, gcells created: 49, deleted: 35"
+  },
+  {
+    "line": 503,
+    "text": "repair_design -verbose"
+  },
+  {
+    "line": 504,
+    "text": "Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining"
+  },
+  {
+    "line": 743,
+    "text": "repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 100 -verbose"
+  },
+  {
+    "line": 748,
+    "text": "Iteration | Resized | Buffers | Cloned Gates |   Area   |   WNS   |   TNS   | Endpoint"
+  },
+  {
+    "line": 767,
+    "text": "[INFO RSZ-0032] Inserted 262 hold buffers."
+  },
+  {
+    "line": 994,
+    "text": "repair_design -verbose"
+  },
+  {
+    "line": 995,
+    "text": "Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining"
+  },
+  {
+    "line": 1032,
+    "text": "global_route -end_incremental -resistance_aware -congestion_report_file /home/zyrv/vulsim/build/step3-physical-control-20261027/sdc-2000/reports/asap7/arithmetic_probe/base/congestion_post_repair_design.rpt"
+  },
+  {
+    "line": 1035,
+    "text": "repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 100 -verbose"
+  },
+  {
+    "line": 1040,
+    "text": "Iteration | Resized | Buffers | Cloned Gates |   Area   |   WNS   |   TNS   | Endpoint"
+  },
+  {
+    "line": 1045,
+    "text": "[INFO RSZ-0032] Inserted 1 hold buffers."
+  },
+  {
+    "line": 1077,
+    "text": "global_route -end_incremental -resistance_aware -congestion_report_file /home/zyrv/vulsim/build/step3-physical-control-20261027/sdc-2000/reports/asap7/arithmetic_probe/base/congestion_post_repair_timing.rpt"
+  },
+  {
+    "line": 1079,
+    "text": "repair_timing -setup -sequence \"vt_swap reroute\" -skip_last_gasp -repair_tns 0 -verbose"
+  }
+]
