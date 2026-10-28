@@ -1,0 +1,624 @@
+{
+  "version": "step5-placement-analysis-v1",
+  "status": "passed",
+  "units": "abstract, not ps",
+  "scope": "all three-group stage assignments; frozen production placement for outer nodes",
+  "enumeration_owner": "independent acceptance oracle; not an instrumented compiler search trace",
+  "structure_sha256": "3738b4c883e2e53aa8a715673888c59f2d513d6877374cdec627bc079edfd5b0",
+  "L": 2,
+  "II": 1,
+  "schedule_trials": 8,
+  "dependency_legal_trials": 4,
+  "T0": 18,
+  "default_cap": 18.9,
+  "default_feasible_count": 1,
+  "production_group_stages": [
+    0,
+    1,
+    1
+  ],
+  "production_schedule_sha256": "712598da832f8df25453e1cb21808f032d2d024945b9e7e3eb102e9c1df75d47",
+  "production_register_chains_verified": true,
+  "evidence_type": "constraint_determined",
+  "preference_selection_demonstrated": false,
+  "diagnostic": {
+    "cap": 30,
+    "feasible_count": 2,
+    "scope": "feasibility only; no altered C/D choice, no claim of production preference between diagnostic-feasible placements",
+    "production_policy_changed": false
+  },
+  "cap17": {
+    "feasible_count": 0,
+    "interpretation": "group0 itself has delay18; cap17 does not identify the cost of (0,0,1)"
+  },
+  "points": [
+    {
+      "group_stages": [
+        0,
+        0,
+        0
+      ],
+      "node_stages": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "dependency_legal": true,
+      "stage_delays": [
+        36,
+        0
+      ],
+      "peak_delay": 36,
+      "register_bits": 65,
+      "register_count": 2,
+      "chains": [
+        {
+          "source": 2,
+          "name": "iv",
+          "width": 1,
+          "producer_stage": 0,
+          "register_stages": [
+            1
+          ],
+          "consumer_nodes": [],
+          "is_valid": true
+        },
+        {
+          "source": 29,
+          "name": "mul_split_3_29",
+          "width": 64,
+          "producer_stage": 0,
+          "register_stages": [
+            1
+          ],
+          "consumer_nodes": [
+            3
+          ],
+          "is_valid": false
+        }
+      ],
+      "schedule_sha256": "d9ec7d9e25072db12b72985a57f2ff2bec2330ba187d5a403185369c248ff4d5",
+      "default_feasible": false,
+      "diagnostic_feasible": false,
+      "default_reason": "peak 36 exceeds frozen 105/100*T0=1890/100"
+    },
+    {
+      "group_stages": [
+        0,
+        0,
+        1
+      ],
+      "node_stages": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "dependency_legal": true,
+      "stage_delays": [
+        30,
+        6
+      ],
+      "peak_delay": 30,
+      "register_bits": 83,
+      "register_count": 4,
+      "chains": [
+        {
+          "source": 2,
+          "name": "iv",
+          "width": 1,
+          "producer_stage": 0,
+          "register_stages": [
+            1
+          ],
+          "consumer_nodes": [],
+          "is_valid": true
+        },
+        {
+          "source": 17,
+          "name": "mul_split_3_17",
+          "width": 32,
+          "producer_stage": 0,
+          "register_stages": [
+            1
+          ],
+          "consumer_nodes": [
+            26
+          ],
+          "is_valid": false
+        },
+        {
+          "source": 18,
+          "name": "mul_split_3_18",
+          "width": 16,
+          "producer_stage": 0,
+          "register_stages": [
+            1
+          ],
+          "consumer_nodes": [
+            29
+          ],
+          "is_valid": false
+        },
+        {
+          "source": 23,
+          "name": "mul_split_3_23",
+          "width": 34,
+          "producer_stage": 0,
+          "register_stages": [
+            1
+          ],
+          "consumer_nodes": [
+            24,
+            28
+          ],
+          "is_valid": false
+        }
+      ],
+      "schedule_sha256": "9ea0d1ca4a7e2bd78b702155bd4cbc2bedf9c7d9d9477a898855f2d95f852eae",
+      "default_feasible": false,
+      "diagnostic_feasible": true,
+      "default_reason": "peak 30 exceeds frozen 105/100*T0=1890/100"
+    },
+    {
+      "group_stages": [
+        0,
+        1,
+        0
+      ],
+      "node_stages": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "dependency_legal": false,
+      "reasons": [
+        "backwards dependency 23->24: 1>0",
+        "backwards dependency 23->28: 1>0"
+      ],
+      "schedule_sha256": "b281b36a14deb7261e51ac2866069a852cb2e03cdb8f964db440e7640ffa77ff"
+    },
+    {
+      "group_stages": [
+        0,
+        1,
+        1
+      ],
+      "node_stages": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "dependency_legal": true,
+      "stage_delays": [
+        18,
+        18
+      ],
+      "peak_delay": 18,
+      "register_bits": 129,
+      "register_count": 6,
+      "chains": [
+        {
+          "source": 2,
+          "name": "iv",
+          "width": 1,
+          "producer_stage": 0,
+          "register_stages": [
+            1
+          ],
+          "consumer_nodes": [],
+          "is_valid": true
+        },
+        {
+          "source": 15,
+          "name": "mul_split_3_15",
+          "width": 32,
+          "producer_stage": 0,
+          "register_stages": [
+            1
+          ],
+          "consumer_nodes": [
+            21
+          ],
+          "is_valid": false
+        },
+        {
+          "source": 16,
+          "name": "mul_split_3_16",
+          "width": 32,
+          "producer_stage": 0,
+          "register_stages": [
+            1
+          ],
+          "consumer_nodes": [
+            22
+          ],
+          "is_valid": false
+        },
+        {
+          "source": 17,
+          "name": "mul_split_3_17",
+          "width": 32,
+          "producer_stage": 0,
+          "register_stages": [
+            1
+          ],
+          "consumer_nodes": [
+            26
+          ],
+          "is_valid": false
+        },
+        {
+          "source": 18,
+          "name": "mul_split_3_18",
+          "width": 16,
+          "producer_stage": 0,
+          "register_stages": [
+            1
+          ],
+          "consumer_nodes": [
+            29
+          ],
+          "is_valid": false
+        },
+        {
+          "source": 19,
+          "name": "mul_split_3_19",
+          "width": 16,
+          "producer_stage": 0,
+          "register_stages": [
+            1
+          ],
+          "consumer_nodes": [
+            20
+          ],
+          "is_valid": false
+        }
+      ],
+      "schedule_sha256": "712598da832f8df25453e1cb21808f032d2d024945b9e7e3eb102e9c1df75d47",
+      "default_feasible": true,
+      "diagnostic_feasible": true,
+      "default_reason": "within_frozen_cap"
+    },
+    {
+      "group_stages": [
+        1,
+        0,
+        0
+      ],
+      "node_stages": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "dependency_legal": false,
+      "reasons": [
+        "backwards dependency 19->20: 1>0",
+        "backwards dependency 15->21: 1>0",
+        "backwards dependency 16->22: 1>0",
+        "backwards dependency 17->26: 1>0",
+        "backwards dependency 18->29: 1>0"
+      ],
+      "schedule_sha256": "ccd0272e8ea886a3a90cc19e3972dc26c79bf19888f917fad9d219d1a506f276"
+    },
+    {
+      "group_stages": [
+        1,
+        0,
+        1
+      ],
+      "node_stages": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "dependency_legal": false,
+      "reasons": [
+        "backwards dependency 19->20: 1>0",
+        "backwards dependency 15->21: 1>0",
+        "backwards dependency 16->22: 1>0"
+      ],
+      "schedule_sha256": "f7a2f3dcaba454c670a6e321457e6f20c5e0f1e95f1c3e83b804e0ef3e8f440a"
+    },
+    {
+      "group_stages": [
+        1,
+        1,
+        0
+      ],
+      "node_stages": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "dependency_legal": false,
+      "reasons": [
+        "backwards dependency 23->24: 1>0",
+        "backwards dependency 17->26: 1>0",
+        "backwards dependency 23->28: 1>0",
+        "backwards dependency 18->29: 1>0"
+      ],
+      "schedule_sha256": "b7a384c198bda20bbd3a78393333abbe60d9908f48d37e37962c5105ead257c2"
+    },
+    {
+      "group_stages": [
+        1,
+        1,
+        1
+      ],
+      "node_stages": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "dependency_legal": true,
+      "stage_delays": [
+        0,
+        36
+      ],
+      "peak_delay": 36,
+      "register_bits": 129,
+      "register_count": 3,
+      "chains": [
+        {
+          "source": 2,
+          "name": "iv",
+          "width": 1,
+          "producer_stage": 0,
+          "register_stages": [
+            1
+          ],
+          "consumer_nodes": [],
+          "is_valid": true
+        },
+        {
+          "source": 8,
+          "name": "__beopt_width_10",
+          "width": 64,
+          "producer_stage": 0,
+          "register_stages": [
+            1
+          ],
+          "consumer_nodes": [
+            10,
+            11
+          ],
+          "is_valid": false
+        },
+        {
+          "source": 9,
+          "name": "__beopt_width_11",
+          "width": 64,
+          "producer_stage": 0,
+          "register_stages": [
+            1
+          ],
+          "consumer_nodes": [
+            12,
+            13
+          ],
+          "is_valid": false
+        }
+      ],
+      "schedule_sha256": "0226ed9d1ee4343766d246c2ea2e711be65a475cd2b9a5eee2343623eb5f4367",
+      "default_feasible": false,
+      "diagnostic_feasible": false,
+      "default_reason": "peak 36 exceeds frozen 105/100*T0=1890/100"
+    }
+  ]
+}

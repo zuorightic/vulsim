@@ -1,0 +1,25 @@
+{
+  "version": "step5-placement-freeze-v1",
+  "frozen_at": "2026-10-28T09:43:29.485731+00:00",
+  "scope": "additive model/functional acceptance for unchanged step5 compiler; not a production candidate or physical preference study",
+  "parent": {
+    "path": "experiments/arithmetic/mul_split_freeze_v1.json",
+    "sha256": "6dc97022e8fca8a48f899525f9c2bbbb56bfa285b88098191fa8fa197c2cedbf"
+  },
+  "files_sha256": {
+    "rtlzz/testv2/mul_placement_test.cpp": "e43e206a7631405c78f6a21d419316eeefa2737542b766b0a807b89b4cb21239",
+    "rtlzz/CMakeLists.txt": "6022b07b76e957c22a95113d655c2a54e1f0a9b3762eda3d5bbc1f972ff32d63",
+    "regression/arithmetic_mul_placement.py": "4e91f1d1f00a3fffa050157c05afcb661f188c55b4dce14b1fd586f8d79f6630",
+    "regression/arithmetic_mul_placement/rtl_driver.cpp": "febb2e0089be814bcef2776c420499294a606fec905da91d3c64714be9f56524",
+    "experiments/arithmetic_dse/placement_analysis.py": "6769526814d4775630bb11b1a0a7b30d6cefd71b33d138f95ed416e78456cc04",
+    "experiments/arithmetic_dse/placement_evidence.py": "55e5884ac9802b3c83900e08913387089e5a5467f7bdda0710654dc9ab573017",
+    "experiments/arithmetic_dse/configs/step5_placement_v1.json": "53524067567dfb4ccaaadc01917a957744263d65ec2d70ec074a826265412fde",
+    "experiments/arithmetic/placement_v1.md": "fa5ef73fa2543ab6dff385321f266f1b48fab18d2a90eb72d19c05d2096c3015"
+  },
+  "study": "experiments/arithmetic_dse/configs/step5_placement_v1.json",
+  "evidence_directory": "experiments/arithmetic/evidence/step5_placement",
+  "evidence_index": "experiments/arithmetic/evidence/step5_placement/index.json",
+  "evidence_index_sha256": "e41a29e250575cff9335121fdd1bdfd399f5c56a77b3b1671bac854afcf82d2b",
+  "B_C_rules_unchanged": true,
+  "production_compiler_unchanged": true
+}

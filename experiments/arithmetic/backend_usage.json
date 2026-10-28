@@ -5479,15 +5479,129 @@
       "timed_out": false,
       "command_record": "/home/zyrv/vulsim/build/step5-mul-split-0fc2633faeb7/rtl.command.json",
       "CPU_accounting": "GNU_time_leaf_command"
+    },
+    {
+      "id": "a14c4a9afc3348aeab763dfd05be6d84",
+      "kind": "live",
+      "stage": null,
+      "status": "completed",
+      "purpose": "step5_placement_acceptance",
+      "command": [
+        "cmake",
+        "-S",
+        "/home/zyrv/vulsim/rtlzz",
+        "-B",
+        "/home/zyrv/vulsim/build/step4-rtlzz"
+      ],
+      "output": "/home/zyrv/vulsim/build/step5-placement-acceptance-v1/configure",
+      "reserved_at": "2026-10-28T09:38:07.380357+00:00",
+      "walltime_s": 0.2652641509193927,
+      "CPU_time_s": 0.22,
+      "exit_code": 0,
+      "timed_out": false,
+      "command_record": "/home/zyrv/vulsim/build/step5-placement-acceptance-v1/configure.command.json",
+      "CPU_accounting": "GNU_time_leaf_command"
+    },
+    {
+      "id": "9038ae67da874130babe2dd587c268fe",
+      "kind": "live",
+      "stage": null,
+      "status": "completed",
+      "purpose": "step5_placement_acceptance",
+      "command": [
+        "cmake",
+        "--build",
+        "/home/zyrv/vulsim/build/step4-rtlzz",
+        "--target",
+        "mul-placement-test",
+        "-j2"
+      ],
+      "output": "/home/zyrv/vulsim/build/step5-placement-acceptance-v1/build",
+      "reserved_at": "2026-10-28T09:38:07.657045+00:00",
+      "walltime_s": 77.77421159483492,
+      "CPU_time_s": 151.34,
+      "exit_code": 0,
+      "timed_out": false,
+      "command_record": "/home/zyrv/vulsim/build/step5-placement-acceptance-v1/build.command.json",
+      "CPU_accounting": "GNU_time_leaf_command"
+    },
+    {
+      "id": "b3a96674cb7e46058a291a2a0ce2e396",
+      "kind": "live",
+      "stage": null,
+      "status": "completed",
+      "purpose": "step5_placement_acceptance",
+      "command": [
+        "/home/zyrv/vulsim/build/step4-rtlzz/testv2/mul-placement-test",
+        "/home/zyrv/vulsim/vullib",
+        "/home/zyrv/vulsim/build/step5-placement-acceptance-v1/mul_kernel.logic.cpp",
+        "/home/zyrv/vulsim/build/step5-placement-acceptance-v1"
+      ],
+      "output": "/home/zyrv/vulsim/build/step5-placement-acceptance-v1/generation",
+      "reserved_at": "2026-10-28T09:39:25.442483+00:00",
+      "walltime_s": 0.31512261205352843,
+      "CPU_time_s": 0.26,
+      "exit_code": 0,
+      "timed_out": false,
+      "command_record": "/home/zyrv/vulsim/build/step5-placement-acceptance-v1/generation.command.json",
+      "CPU_accounting": "GNU_time_leaf_command"
+    },
+    {
+      "id": "7c908826f51d41faa8dfac7374a41bc6",
+      "kind": "live",
+      "stage": null,
+      "status": "completed",
+      "purpose": "step5_placement_acceptance",
+      "command": [
+        "verilator",
+        "--cc",
+        "--exe",
+        "--build",
+        "-j",
+        "2",
+        "--top-module",
+        "mul32_split16",
+        "--Mdir",
+        "/home/zyrv/vulsim/build/step5-placement-acceptance-v1/obj",
+        "/home/zyrv/vulsim/build/step5-placement-acceptance-v1/mul32_split16.sv",
+        "/home/zyrv/vulsim/regression/arithmetic_mul_placement/rtl_driver.cpp"
+      ],
+      "output": "/home/zyrv/vulsim/build/step5-placement-acceptance-v1/verilator",
+      "reserved_at": "2026-10-28T09:39:25.773491+00:00",
+      "walltime_s": 1.9681371008045971,
+      "CPU_time_s": 3.29,
+      "exit_code": 0,
+      "timed_out": false,
+      "command_record": "/home/zyrv/vulsim/build/step5-placement-acceptance-v1/verilator.command.json",
+      "CPU_accounting": "GNU_time_leaf_command"
+    },
+    {
+      "id": "d9051c5300284e35838cd5ecec1fecec",
+      "kind": "live",
+      "stage": null,
+      "status": "completed",
+      "purpose": "step5_placement_acceptance",
+      "command": [
+        "/home/zyrv/vulsim/build/step5-placement-acceptance-v1/obj/Vmul32_split16",
+        "/home/zyrv/vulsim/build/step5-placement-acceptance-v1/vectors.txt"
+      ],
+      "output": "/home/zyrv/vulsim/build/step5-placement-acceptance-v1/rtl",
+      "reserved_at": "2026-10-28T09:39:27.767728+00:00",
+      "walltime_s": 0.016542482189834118,
+      "CPU_time_s": 0.0,
+      "exit_code": 0,
+      "timed_out": false,
+      "command_record": "/home/zyrv/vulsim/build/step5-placement-acceptance-v1/rtl.command.json",
+      "CPU_accounting": "GNU_time_leaf_command"
     }
   ],
   "usage": {
     "synth": 33,
     "grt": 11,
     "final": 5,
-    "support_calls": 131,
-    "walltime_s": 1955.6750466630328,
-    "CPU_time_s": 2988.46,
+    "support_calls": 136,
+    "walltime_s": 2036.0143246038351,
+    "CPU_time_s": 3143.5699999999997,
     "pending": 0
   },
   "migrations": [
