@@ -17,8 +17,8 @@ import tempfile
 import uuid
 
 ROOT = Path(__file__).resolve().parents[2]
-POLICY = ROOT/'experiments/arithmetic_dse/configs/backend_policy_v4.json'
-CHECKPOINT = ROOT/'experiments/arithmetic/evidence/step3_closure/usage_checkpoint.json'
+POLICY = ROOT/'experiments/arithmetic_dse/configs/backend_policy_v5.json'
+CHECKPOINT = ROOT/'experiments/arithmetic/evidence/step5/usage_before.json'
 LEDGER = ROOT/'experiments/arithmetic/backend_usage.json'
 STAGE_LIMITS = {'synth':'max_synthesis_calls', 'grt':'max_global_route_calls',
                 'final':'max_detailed_route_calls'}
@@ -92,6 +92,36 @@ class Ledger:
     def summary(self):
         with self._transaction() as state:
             return usage(state['entries'])
+
+    def migrate(self, previous_policy, previous_checkpoint, reason):
+        """Explicit migration; preserve every entry and require a matching checkpoint.
+
+        The old transaction validates its hashes and holds the same ledger lock.
+        A policy edit never silently invokes this operation.
+        """
+        old = Ledger(self.path, previous_policy, previous_checkpoint)
+        if not reason.strip():
+            raise ValueError('migration reason required')
+        with old._transaction() as state:
+            total = usage(state['entries'])
+            if total['pending']:
+                raise ValueError('cannot migrate an unsettled ledger')
+            if json.loads(self.checkpoint.read_text())['entries'] != state['entries']:
+                raise ValueError('migration checkpoint must preserve every historical entry')
+            limits = json.loads(self.policy.read_text())['resources']
+            if (any(total[k] > limits[v] for k,v in STAGE_LIMITS.items()) or
+                    total['walltime_s'] > limits['max_global_walltime_h']*3600 or
+                    total['CPU_time_s'] > limits['max_tool_CPU_time_h']*3600):
+                raise ValueError('new policy cannot fund historical usage')
+            audit = {'reason':reason, 'at':datetime.now(timezone.utc).isoformat(),
+                     'from_policy_sha256':state['policy_sha256'],
+                     'from_checkpoint_sha256':state['checkpoint_sha256'],
+                     'to_policy_sha256':digest(self.policy),
+                     'to_checkpoint_sha256':digest(self.checkpoint), 'usage':total}
+            state.setdefault('migrations', []).append(audit)
+            state['policy_sha256'] = digest(self.policy)
+            state['checkpoint_sha256'] = digest(self.checkpoint)
+            return audit
 
     def reserve(self, stage, timeout_s, threads, purpose, command, output):
         if stage not in [None, *STAGE_LIMITS]:
@@ -198,8 +228,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check-plan', action='store_true', help='exit nonzero if the declared call plan is unfunded')
     parser.add_argument('--case-targets', nargs=9, type=float, help='all nine frozen case targets; otherwise reserve all 19 x 9 potential supplements')
+    parser.add_argument('--migrate-from-v4', action='store_true', help='explicit one-time authorized v4 to v5 migration; preserve history')
     args = parser.parse_args()
-    declared = json.loads((POLICY.parent/'budget_plan_v2.json').read_text())
+    if args.migrate_from_v4:
+        print(json.dumps(Ledger().migrate(POLICY.parent/'backend_policy_v4.json',
+            ROOT/'experiments/arithmetic/evidence/step3_closure/usage_checkpoint.json',
+            'User authorized a reasonable bounded increase on 2026-10-28; budget-plan-v3 and frozen step5 two-candidate pilot'),indent=2))
+        return 0
+    declared = json.loads((POLICY.parent/'budget_plan_v3.json').read_text())
     history = Ledger().summary()
     plan = required_data_plan(case_manifest()['calibration_only'],args.case_targets,
                              historical=history,reserves=declared['reserves'],
@@ -207,7 +243,8 @@ def main():
     status = planning_status(plan, json.loads(POLICY.read_text())['resources'])
     if not plan['actual_collection_manifest_frozen']:
         status['status'] = 'blocked'
-        status['collection_manifest_required_before_step5'] = True
+        status['bulk_collection_manifest_required'] = True
+        status['step5_pilot_scope'] = 'separately frozen two-candidate pilot; does not open bulk collection'
     print(json.dumps({'usage':history, 'plan':plan, **status}, indent=2))
     return 1 if args.check_plan and status['status'] != 'ready' else 0
 

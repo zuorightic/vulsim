@@ -15,7 +15,8 @@ def verify_backend_evidence(root=ROOT, verify_external=False):
         if hashlib.sha256(path.read_bytes()).hexdigest() != expected:
             raise ValueError(f'SHA-256 mismatch: {path}')
     for relative, expected in freeze['files_sha256'].items():
-        verify(root/relative, expected)
+        from .freeze_history import source_location
+        verify(source_location(root,'experiments/arithmetic/backend_freeze_v4.json',relative,expected), expected)
         verify(root/freeze['validated_source_snapshot']/relative, expected)
     for relative, expected in freeze['validation_evidence'].items():
         verify(root/relative, expected)

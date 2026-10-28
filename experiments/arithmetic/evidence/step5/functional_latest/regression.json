@@ -1,0 +1,240 @@
+{
+  "version": "step5-mul-split-regression-v1",
+  "status": "passed",
+  "seed": 20261028,
+  "cycles": 21197,
+  "cases": "directed unsigned boundaries, all one-hot pairs, 20000 random products, continuous inputs, bubbles, six reset cycles and drain",
+  "valid_checks": 42394,
+  "valid_product_checks": 30930,
+  "bubble_hold_checks": 11452,
+  "reset_checks": 12,
+  "candidates": [
+    {
+      "id": "original",
+      "L": 2,
+      "II": 1,
+      "delay": 21,
+      "combinational_cost": 1024,
+      "register_bits": 65,
+      "register_count": 2,
+      "accepted_group_moves": 0,
+      "internal_region_registers": 0
+    },
+    {
+      "id": "mul32_split16",
+      "L": 2,
+      "II": 1,
+      "delay": 18,
+      "combinational_cost": 1124,
+      "register_bits": 129,
+      "register_count": 6,
+      "accepted_group_moves": 0,
+      "internal_region_registers": 5
+    }
+  ],
+  "simple_cost_version": "simple-cost-v1.1/effective-width-v2",
+  "C_choice_before_PPA": "mul32_split16",
+  "L": 2,
+  "II": 1,
+  "latency_scope": "input Q to output Q, N=L-1; external transaction sampled at tick t appears at t+2",
+  "emitter": "native",
+  "CIRCT": "outside this native regression; existing CIRCT policy unchanged",
+  "commands": [
+    {
+      "command": [
+        "cmake",
+        "-S",
+        "/home/zyrv/vulsim/rtlzz",
+        "-B",
+        "/home/zyrv/vulsim/build/step4-rtlzz"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 600,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 0,
+      "cancelled_signal": null,
+      "walltime_s": 0.26585724484175444,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 1204,
+      "sampled_process_tree_peak_threads": 1,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step5-mul-split-0fc2633faeb7/configure.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step5-mul-split-0fc2633faeb7/configure.resources.txt",
+      "budget_reservation_id": "ad32a7a825ce4913a488b4823d4c5ebc"
+    },
+    {
+      "command": [
+        "cmake",
+        "--build",
+        "/home/zyrv/vulsim/build/step4-rtlzz",
+        "--target",
+        "mul-split-test",
+        "-j2"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 600,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 0,
+      "cancelled_signal": null,
+      "walltime_s": 0.1648584920912981,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 332,
+      "sampled_process_tree_peak_threads": 1,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step5-mul-split-0fc2633faeb7/build.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step5-mul-split-0fc2633faeb7/build.resources.txt",
+      "budget_reservation_id": "19ec936b194243dc9379603a7a9be05b"
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step4-rtlzz/testv2/mul-split-test",
+        "/home/zyrv/vulsim/vullib",
+        "/home/zyrv/vulsim/build/step5-mul-split-0fc2633faeb7"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 600,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 0.99,
+      "cancelled_signal": null,
+      "walltime_s": 1.0348159209825099,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 114512,
+      "sampled_process_tree_peak_threads": 2,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step5-mul-split-0fc2633faeb7/generation.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step5-mul-split-0fc2633faeb7/generation.resources.txt",
+      "budget_reservation_id": "2e03ce7b63094841ad4f28f2cdde0718"
+    },
+    {
+      "command": [
+        "verilator",
+        "--cc",
+        "--exe",
+        "--build",
+        "-j",
+        "2",
+        "--top-module",
+        "MulSplitRegression",
+        "--Mdir",
+        "/home/zyrv/vulsim/build/step5-mul-split-0fc2633faeb7/obj",
+        "/home/zyrv/vulsim/build/step5-mul-split-0fc2633faeb7/wrapper.sv",
+        "/home/zyrv/vulsim/build/step5-mul-split-0fc2633faeb7/original.sv",
+        "/home/zyrv/vulsim/build/step5-mul-split-0fc2633faeb7/mul32_split16.sv",
+        "/home/zyrv/vulsim/regression/arithmetic_mul_split/rtl_driver.cpp"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 600,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 1.52,
+      "cancelled_signal": null,
+      "walltime_s": 1.9695803320501,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 297644,
+      "sampled_process_tree_peak_threads": 9,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step5-mul-split-0fc2633faeb7/verilator.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step5-mul-split-0fc2633faeb7/verilator.resources.txt",
+      "budget_reservation_id": "a3189a35e71a429badb906d6f16253df"
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step5-mul-split-0fc2633faeb7/obj/VMulSplitRegression",
+        "/home/zyrv/vulsim/build/step5-mul-split-0fc2633faeb7/vectors.txt"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 600,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 0,
+      "cancelled_signal": null,
+      "walltime_s": 0.016516302013769746,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 728,
+      "sampled_process_tree_peak_threads": 1,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step5-mul-split-0fc2633faeb7/rtl.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step5-mul-split-0fc2633faeb7/rtl.resources.txt",
+      "budget_reservation_id": "4ae302efc29f439d8b3178cad49e07c2"
+    }
+  ],
+  "usage_before": {
+    "synth": 33,
+    "grt": 11,
+    "final": 5,
+    "support_calls": 126,
+    "walltime_s": 1952.2234183710534,
+    "CPU_time_s": 2983.87,
+    "pending": 0
+  },
+  "usage_after": {
+    "synth": 33,
+    "grt": 11,
+    "final": 5,
+    "support_calls": 131,
+    "walltime_s": 1955.6750466630328,
+    "CPU_time_s": 2988.46,
+    "pending": 0
+  },
+  "new_PPA_calls": {
+    "synth": 0,
+    "grt": 0,
+    "final": 0
+  },
+  "artifacts_sha256": {
+    "original.sv": "7c575939024c0b4a564c550b32915c18eab18c6cd840db15cf29c27b1b7f1ff3",
+    "mul32_split16.sv": "a9959582c0f7c28250bcde2ed612e336279fc498fb7d3e250535fcb27561d961",
+    "mul_kernel.logic.cpp": "835dfb13bb3be67c5245e7e7e9dd3e4f4ec7f26c027b6ae25f647f4e3fb15bfd",
+    "schedule.txt": "3a64cd4890ae5d19f447e664eb7f2922a92d5377b7ae440ef979ca461b66a70d",
+    "candidates.json": "8ff20054a776269e7230c6f17b1ba6067a0c5d42f7d7b1afc88c372a9d4ee5c6",
+    "wrapper.sv": "70b3cc7137e33e3535b1b94803cf3bb8cd754ebd1c57baa2bd1b3ae710ebdd25"
+  }
+}

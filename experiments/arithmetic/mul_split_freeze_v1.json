@@ -1,0 +1,54 @@
+{
+  "version": "arithmetic-mul-split-freeze-v1",
+  "frozen_at": "2026-10-28T03:55:11.443548+00:00",
+  "supersedes": [
+    "experiments/arithmetic/backend_freeze_v4.json",
+    "experiments/arithmetic/arithmetic_regions_freeze_v2.json"
+  ],
+  "parents_sha256": {
+    "experiments/arithmetic/backend_freeze_v4.json": "efb419a35c19d147045023a3babd0cecaf6359149106df9027ea2718b6eb15c7",
+    "experiments/arithmetic/arithmetic_regions_freeze_v2.json": "68274ffb7c4197d301d856d7a3bafeb08fd0979972dcb63567ffa3d31fec2d53"
+  },
+  "historical_source_snapshots": {
+    "experiments/arithmetic/backend_freeze_v4.json": "experiments/arithmetic/evidence/step3_closure/source_v4",
+    "experiments/arithmetic/arithmetic_regions_freeze_v2.json": "experiments/arithmetic/evidence/step5/source_step4_v2"
+  },
+  "files_sha256": {
+    "experiments/arithmetic_dse/budget.py": "fc74607cd3ee4677bfb3c0750f098b8a9f0377178a84bf1dd4a738bca273867e",
+    "experiments/arithmetic_dse/evidence.py": "1c240bc915cd1e0cd5222b4cdca2ceaca0dbf5f0e38c7381bfbfdb6fc67acafc",
+    "regression/arithmetic_backend.py": "1f6968a9405dc84c339d63573e11615b3fa6f37a3471db29b5be4268c5b2d330",
+    "experiments/arithmetic_dse/regions_evidence.py": "bc71c2842f382ee9c5c2c691756ae62fab3b9f94c50f3b467f3e4a4d873d03a1",
+    "rtlzz/src/backend/arithmetic_regions.cpp": "3973d217a5f57f49ab7ce0504f6937b3bc4a76d4d0af24a5fb5567bf0c9a718e",
+    "rtlzz/src/backend/arithmetic_regions.hpp": "6d398b92c9334798022dc9ec0c9ad7683d80e825fbb590e9a0440d07ab4f1d8e",
+    "rtlzz/src/backend/beir.cpp": "7279a0827803e16cc420d16aebc3207bae08545918e84fdab2ae96beaa37f1e6",
+    "rtlzz/src/backend/beir.hpp": "6d62c652714cd63079c6bac5be71ad9781a08cbeda4689c96b667638f881f7bb",
+    "rtlzz/src/backend/pipeline.cpp": "346fd8eca80846b324f71a9cbd94a436489665d1259f59ba0dcc6dc459c17bdc",
+    "rtlzz/src/pipelinev2/PipelineV2.cpp": "52e904d095093e1fa0518422811d89e7283a020185baf29523dabba11c31495d",
+    "rtlzz/src/s11beir/S11BEIR.cpp": "7abaffabbdaceebfa4bbf978a30809c084547a0dbfb5f5d07e7bac636f40f6ab",
+    "experiments/arithmetic/mul_split_v1.md": "4611de99c4390ddb0287da787138e5bea8a084d3fdb43e1974a980a4d269495b",
+    "experiments/arithmetic_dse/configs/backend_policy_v5.json": "3f4a230ca19b9b53a9da71cb19a52e718d29a8001106d354394f13e5d6ef995a",
+    "experiments/arithmetic_dse/configs/budget_plan_v3.json": "1df29253ff0c51c4eb65062584aa8fc4cecc6dedccb3a3f0a2f46a256789ddce",
+    "experiments/arithmetic_dse/configs/step5_pilot_v1.json": "90640d7a83572fb0bb82b4da9ea4bad1a2bac06d7c7fc2466eace9a3092962a8",
+    "experiments/arithmetic_dse/step5_pilot.py": "82be988be20750a85d0839dfbc858b280628451945b7c77e39ccb3d3e213b1ef",
+    "experiments/arithmetic_dse/mul_split_evidence.py": "1cd1284a01a22adca217afe18d457c93fd3eb080b68446be9337388b9b1857d2",
+    "regression/arithmetic_mul_split.py": "37d11f247f2af92aa2669f44e3a289e1f15eac1599d60193f491f98dc7efbdce",
+    "rtlzz/src/backend/mul_split.cpp": "4d0a860e020a091f28c02dfdd37b06ec052ff8d00c3d1d088f664635c98b6392",
+    "rtlzz/src/backend/mul_split.hpp": "c9f96aade9ff69ebf3a19c6d913d08c78dee12524cd8b396a39594e6b3aab12a",
+    "rtlzz/src/backend/simple_cost.cpp": "699e4371c2b2c3b9b3f84bc08c608fe8603469ac4fdee590b266f9098648db53",
+    "rtlzz/src/backend/simple_cost.hpp": "f4927124ca7cff7d9a3bb1daff06f1575c2c52b0e10c4c1354aa5a5957a26151",
+    "rtlzz/testv2/mul_split_test.cpp": "423a86ddd73f997b36cf902569d7dcea80a2518ebbcf6724b1b87cb64c9d4b32",
+    "rtlzz/src/backend/pipeline.hpp": "390453b12d4b91ebbfa2ef3b78c9c2be92caae0d1e3f15c9ad7af1f84e4c7361",
+    "rtlzz/src/pipelinev2/PipelineV2.h": "15c46e3971b58fccf6898ae1a5fbc4e13b127ab16c238de28ba217fd5ed74e76",
+    "rtlzz/src/rtlzz.cpp": "8689d73b1dd5d2f943f638917d18f8c570b53eecb49ef5d053d2dec1022a3cf9",
+    "rtlzz/src/rtlzz.hpp": "43ad330ceeac6f050e344deb17bf2811ea00693d097696ff7e6df545d26256ee",
+    "experiments/arithmetic_dse/freeze_history.py": "b005510f79aff2d486d0fd832cb605bfee303ff70c8c517335916cbff196aeba",
+    "regression/arithmetic_mul_split/rtl_driver.cpp": "109aab36a81f3480ddbbb22b8a9f55a58999d85a25815340ea065dd1b62963ec"
+  },
+  "evidence_directory": "experiments/arithmetic/evidence/step5",
+  "evidence_index": "experiments/arithmetic/evidence/step5/index.json",
+  "evidence_index_sha256": "50ef764790d4bdf12e03e7794f0c5b034201e9a1a8acc61ef795e3cfd16674d9",
+  "measurement_generator_snapshot": "experiments/arithmetic/evidence/step5/generator_source_v1",
+  "budget_policy": "experiments/arithmetic_dse/configs/backend_policy_v5.json",
+  "scope": "step5 native fixed-L automatic unsigned 32x32 full64 split prototype and bounded TT pair; historical parents remain immutable",
+  "B_C_rules_unchanged": true
+}

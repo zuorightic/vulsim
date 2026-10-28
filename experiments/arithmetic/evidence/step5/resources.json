@@ -1,0 +1,35 @@
+{
+  "version": "step5-resources-v1",
+  "status": "settled",
+  "policy": "asap7-backend-policy-v5",
+  "caps_increased": true,
+  "authorization": "user 2026-10-28, bounded ceilings with history-preserving explicit migration",
+  "new_backend_calls": {
+    "synth": 2,
+    "grt": 2,
+    "final": 0
+  },
+  "new_support_calls": 34,
+  "new_experimental_leaf_usage": {
+    "synth": 2,
+    "grt": 2,
+    "final": 0,
+    "support_calls": 34,
+    "walltime_s": 335.8714649816975,
+    "CPU_time_s": 421.77,
+    "pending": 0
+  },
+  "cumulative_usage": {
+    "synth": 33,
+    "grt": 11,
+    "final": 5,
+    "support_calls": 131,
+    "walltime_s": 1955.6750466630328,
+    "CPU_time_s": 2988.46,
+    "pending": 0
+  },
+  "physical_pair_leaf_walltime_s": 157.48528778366745,
+  "physical_pair_leaf_CPU_time_s": 239.57999999999993,
+  "full_experiment_budget_status": "blocked: actual bulk collection manifest and large-kernel capacity review pending; call forecast funded",
+  "scope": "Same experimental backend leaf scope as step3/4, now also wrapping new step5 functional/compatibility commands. Interactive development compiler builds/file operations are outside experimental leaf ledger. Outer wrappers are excluded to avoid double-counting."
+}

@@ -1,0 +1,40 @@
+{
+  "command": [
+    "verilator",
+    "--cc",
+    "--exe",
+    "--build",
+    "-j",
+    "2",
+    "--top-module",
+    "MulSplitRegression",
+    "--Mdir",
+    "/home/zyrv/vulsim/build/step5-functional-accepted/obj",
+    "/home/zyrv/vulsim/build/step5-functional-accepted/wrapper.sv",
+    "/home/zyrv/vulsim/build/step5-functional-accepted/original.sv",
+    "/home/zyrv/vulsim/build/step5-functional-accepted/mul32_split16.sv",
+    "/home/zyrv/vulsim/regression/arithmetic_mul_split/rtl_driver.cpp"
+  ],
+  "exit_code": 0,
+  "process_exit_code": 0,
+  "timed_out": false,
+  "CPU_limit_s": 600,
+  "CPU_limit_exceeded": false,
+  "sampled_process_tree_CPU_s": 1.57,
+  "cancelled_signal": null,
+  "walltime_s": 1.9185635489411652,
+  "unexpected_live_descendants": false,
+  "memory_limit_exceeded": false,
+  "memory_limit_MiB": 8192,
+  "sampled_process_tree_peak_rss_KiB": 314008,
+  "sampled_process_tree_peak_threads": 9,
+  "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+  "resource_sampling_interval_s": 0.5,
+  "cleanup": {
+    "term_sent": 0,
+    "kill_sent": 0,
+    "remaining_live_pids": []
+  },
+  "log": "/home/zyrv/vulsim/build/step5-functional-accepted/verilator.log",
+  "gnu_time": "/home/zyrv/vulsim/build/step5-functional-accepted/verilator.resources.txt"
+}

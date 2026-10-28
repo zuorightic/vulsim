@@ -1,0 +1,63 @@
+Startpoint: a[0] (input port clocked by io_clk)
+Endpoint: aq[0]$_SDFF_PN0_ (rising edge-triggered flip-flop clocked by core_clk)
+Path Group: core_clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.000000    0.000000    0.000000   clock io_clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.000000    0.000000 v input external delay
+     1    0.298990    5.967567    0.628502    0.628502 v a[0] (in)
+                                                         a[0] (net)
+                      5.967567    0.000000    0.628502 v _11917_/B (AND2x2_ASAP7_75t_R)
+     1    0.485077    6.722932   17.280413   17.908915 v _11917_/Y (AND2x2_ASAP7_75t_R)
+                                                         _06118_ (net)
+                      6.722932    0.000000   17.908915 v aq[0]$_SDFF_PN0_/D (DFFHQNx1_ASAP7_75t_R)
+                                             17.908915   data arrival time
+
+                     10.000000    0.000000    0.000000   clock core_clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  5.000000    5.000000   clock uncertainty
+                                  0.000000    5.000000   clock reconvergence pessimism
+                                              5.000000 ^ aq[0]$_SDFF_PN0_/CLK (DFFHQNx1_ASAP7_75t_R)
+                                 12.218258   17.218258   library hold time
+                                             17.218258   data required time
+---------------------------------------------------------------------------------------------
+                                             17.218258   data required time
+                                            -17.908915   data arrival time
+---------------------------------------------------------------------------------------------
+                                              0.690656   slack (MET)
+
+
+Startpoint: ov$_SDFF_PN0_ (rising edge-triggered flip-flop clocked by core_clk)
+Endpoint: ov (output port clocked by io_clk)
+Path Group: io_clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                     10.000000    0.000000    0.000000   clock core_clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                     10.000000    0.000000    0.000000 ^ ov$_SDFF_PN0_/CLK (DFFHQNx1_ASAP7_75t_R)
+     1    0.452829   15.338710   46.801075   46.801075 ^ ov$_SDFF_PN0_/QN (DFFHQNx1_ASAP7_75t_R)
+                                                         _00009_ (net)
+                     15.338710    0.000000   46.801075 ^ _07825_/A (INVx1_ASAP7_75t_R)
+     1    3.898000   28.652592   20.028440   66.829514 v _07825_/Y (INVx1_ASAP7_75t_R)
+                                                         ov (net)
+                     28.652592    0.000000   66.829514 v ov (out)
+                                             66.829514   data arrival time
+
+                      0.000000    0.000000    0.000000   clock io_clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  5.000000    5.000000   clock uncertainty
+                                  0.000000    5.000000   clock reconvergence pessimism
+                                  0.000000    5.000000   output external delay
+                                              5.000000   data required time
+---------------------------------------------------------------------------------------------
+                                              5.000000   data required time
+                                            -66.829514   data arrival time
+---------------------------------------------------------------------------------------------
+                                             61.829514   slack (MET)
+
+

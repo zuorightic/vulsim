@@ -16,7 +16,9 @@ def verify(root=ROOT):
             raise ValueError(f'SHA-256 mismatch: {relative}')
 
     for relative, expected in freeze['files_sha256'].items():
-        check(relative, expected)
+        from .freeze_history import source_location
+        path=source_location(root,'experiments/arithmetic/arithmetic_regions_freeze_v2.json',relative,expected)
+        check(str(path.relative_to(root)), expected)
     for relative, expected in freeze['evidence_sha256'].items():
         check(relative, expected)
     parent_info = freeze['supersedes']

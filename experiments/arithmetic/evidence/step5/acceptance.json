@@ -1,0 +1,46 @@
+{
+  "version": "step5-acceptance-v1",
+  "status": "passed",
+  "scope": "plan 10.5, first native fixed-L automatically expanded multiplier optimization loop",
+  "completed": [
+    "automatic BEIR expansion of a real unsigned full64 Mul",
+    "declared group placement and whole-group optimization",
+    "five internal partial-product boundary registers",
+    "fixed L2 II1 continuous, bubble, reset and drain checks",
+    "frozen simple-cost adapter and choice before PPA",
+    "two same-context synth/grt measurements",
+    "explicit cumulative-budget migration and settled leaf accounting",
+    "portable historical/current source and evidence verification",
+    "no-argument native regression entry, compatible with regression.sh discovery"
+  ],
+  "functional": {
+    "cycles": 21197,
+    "valid_checks": 42394,
+    "valid_product_checks": 30930,
+    "bubble_hold_checks": 11452,
+    "reset_checks": 12,
+    "C_choice_before_PPA": "mul32_split16"
+  },
+  "new_calls": {
+    "synth": 2,
+    "grt": 2,
+    "final": 0
+  },
+  "new_support_calls": 34,
+  "cumulative_usage": {
+    "synth": 33,
+    "grt": 11,
+    "final": 5,
+    "support_calls": 131,
+    "walltime_s": 1955.6750466630328,
+    "CPU_time_s": 2988.46,
+    "pending": 0
+  },
+  "limitations": [
+    "one unsigned 32x32 full64 split template",
+    "single cold-cache TT pair, no step5 detailed-route or repeatability claim",
+    "both grt hold values below 5ps review band",
+    "D model, D2/F1 formal integration and main matrix pending",
+    "full check-plan remains blocked until actual bulk manifest and large-kernel capacity review"
+  ]
+}

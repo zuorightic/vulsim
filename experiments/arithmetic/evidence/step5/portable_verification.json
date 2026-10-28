@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "isolated_copy_without_build": true,
+  "EDA_tools_on_PATH": false,
+  "method": "fresh temporary copy of experiments and frozen source closure, absolute python executable, PATH empty; execute mul_split_evidence in the copy",
+  "checks": {
+    "intact_copy": "passed",
+    "tampered_archived_STA": "rejected_SHA256_mismatch",
+    "tampered_current_compiler_source": "rejected_SHA256_mismatch"
+  },
+  "does_not_run_EDA": true
+}

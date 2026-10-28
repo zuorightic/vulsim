@@ -169,6 +169,39 @@ class BackendContracts(unittest.TestCase):
         with self.assertRaises(ValueError):
             ledger.summary()
 
+    def test_explicit_policy_migration_keeps_all_history_and_rejects_replay(self):
+        old = self.budget_ledger()
+        before = old.summary()
+        checkpoint = self.directory/'new-checkpoint.json'
+        checkpoint.write_bytes(old.path.read_bytes())
+        policy = self.directory/'new-policy.json'
+        contents = json.loads(old.policy.read_text())
+        contents['resources']['max_synthesis_calls'] = 3
+        policy.write_text(json.dumps(contents))
+        new = Ledger(old.path,policy,checkpoint)
+        with self.assertRaises(ValueError):
+            new.summary()
+        audit = new.migrate(old.policy,old.checkpoint,'authorized bounded revision')
+        self.assertEqual(new.summary(),before)
+        state = json.loads(new.path.read_text())
+        self.assertEqual(state['entries'],json.loads(checkpoint.read_text())['entries'])
+        self.assertEqual(state['migrations'],[audit])
+        with self.assertRaises(ValueError):
+            new.migrate(old.policy,old.checkpoint,'cannot replay')
+
+    def test_policy_migration_rejects_pending_or_missing_history(self):
+        old = self.budget_ledger()
+        old.summary()
+        checkpoint = self.directory/'new-checkpoint.json'
+        checkpoint.write_text(json.dumps({'entries':[]}))
+        new = Ledger(old.path,old.policy,checkpoint)
+        with self.assertRaisesRegex(ValueError,'every historical entry'):
+            new.migrate(old.policy,old.checkpoint,'test')
+        old.reserve('grt',10,1,'prototype',[],self.directory)
+        checkpoint.write_bytes(old.path.read_bytes())
+        with self.assertRaisesRegex(ValueError,'unsettled'):
+            new.migrate(old.policy,old.checkpoint,'test')
+
     def test_budget_includes_six_targets_and_unfrozen_case_supplements(self):
         families = {str(i):[500,800,1000,1250,1500,2000] for i in range(19)}
         plan = plan_cost(families,None,historical={'synth':13,'grt':5,'final':4},

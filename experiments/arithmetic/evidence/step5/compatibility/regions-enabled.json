@@ -1,0 +1,327 @@
+{
+  "version": "arithmetic-regions-regression-v2",
+  "seed": 20261027,
+  "cases": [
+    "single",
+    "serial",
+    "parallel",
+    "shared",
+    "identical",
+    "constant"
+  ],
+  "region_checks": "PASS arithmetic regions checks=55",
+  "CIRCT": {
+    "enabled": true,
+    "tool_available": true,
+    "tool_path": "/home/zyrv/circt/circt-full-shared-linux-x64/firtool-1.162.0/bin/circt-opt",
+    "status": "executed",
+    "reason": null
+  },
+  "pipeline_unit_tests": [
+    {
+      "test": "pipeline-test",
+      "status": "passed",
+      "output": "pipeline tests passed"
+    },
+    {
+      "test": "pipeline-reset-test",
+      "status": "passed",
+      "output": "pipeline reset API tests passed"
+    },
+    {
+      "test": "pipeline-valid-test",
+      "status": "passed",
+      "output": "pipeline valid API and IR tests passed"
+    }
+  ],
+  "arithmetic_regions": [
+    {
+      "id": "single/fp32_mul_rne/0",
+      "operation": "fp32_mul_rne",
+      "semantics": "binary32-rne-tininess-after-canonicalNaN-v1",
+      "template_version": "softfloat3d-bitvector-mul-v1",
+      "sharing_policy": "semantic-marker-and-isolated-BEOPT-v1",
+      "legal_cut_count": 0
+    },
+    {
+      "id": "serial/fp32_mul_rne/0",
+      "operation": "fp32_mul_rne",
+      "semantics": "binary32-rne-tininess-after-canonicalNaN-v1",
+      "template_version": "softfloat3d-bitvector-mul-v1",
+      "sharing_policy": "semantic-marker-and-isolated-BEOPT-v1",
+      "legal_cut_count": 0
+    },
+    {
+      "id": "serial/fp32_mul_rne/1",
+      "operation": "fp32_mul_rne",
+      "semantics": "binary32-rne-tininess-after-canonicalNaN-v1",
+      "template_version": "softfloat3d-bitvector-mul-v1",
+      "sharing_policy": "semantic-marker-and-isolated-BEOPT-v1",
+      "legal_cut_count": 0
+    },
+    {
+      "id": "parallel/fp32_mul_rne/0",
+      "operation": "fp32_mul_rne",
+      "semantics": "binary32-rne-tininess-after-canonicalNaN-v1",
+      "template_version": "softfloat3d-bitvector-mul-v1",
+      "sharing_policy": "semantic-marker-and-isolated-BEOPT-v1",
+      "legal_cut_count": 0
+    },
+    {
+      "id": "parallel/fp32_mul_rne/1",
+      "operation": "fp32_mul_rne",
+      "semantics": "binary32-rne-tininess-after-canonicalNaN-v1",
+      "template_version": "softfloat3d-bitvector-mul-v1",
+      "sharing_policy": "semantic-marker-and-isolated-BEOPT-v1",
+      "legal_cut_count": 0
+    },
+    {
+      "id": "shared/fp32_mul_rne/0",
+      "operation": "fp32_mul_rne",
+      "semantics": "binary32-rne-tininess-after-canonicalNaN-v1",
+      "template_version": "softfloat3d-bitvector-mul-v1",
+      "sharing_policy": "semantic-marker-and-isolated-BEOPT-v1",
+      "legal_cut_count": 0
+    },
+    {
+      "id": "shared/fp32_mul_rne/1",
+      "operation": "fp32_mul_rne",
+      "semantics": "binary32-rne-tininess-after-canonicalNaN-v1",
+      "template_version": "softfloat3d-bitvector-mul-v1",
+      "sharing_policy": "semantic-marker-and-isolated-BEOPT-v1",
+      "legal_cut_count": 0
+    },
+    {
+      "id": "identical/fp32_mul_rne/0",
+      "operation": "fp32_mul_rne",
+      "semantics": "binary32-rne-tininess-after-canonicalNaN-v1",
+      "template_version": "softfloat3d-bitvector-mul-v1",
+      "sharing_policy": "semantic-marker-and-isolated-BEOPT-v1",
+      "legal_cut_count": 0
+    },
+    {
+      "id": "identical/fp32_mul_rne/1",
+      "operation": "fp32_mul_rne",
+      "semantics": "binary32-rne-tininess-after-canonicalNaN-v1",
+      "template_version": "softfloat3d-bitvector-mul-v1",
+      "sharing_policy": "semantic-marker-and-isolated-BEOPT-v1",
+      "legal_cut_count": 0
+    },
+    {
+      "id": "constant/fp32_mul_rne/0",
+      "operation": "fp32_mul_rne",
+      "semantics": "binary32-rne-tininess-after-canonicalNaN-v1",
+      "template_version": "softfloat3d-bitvector-mul-v1",
+      "sharing_policy": "semantic-marker-and-isolated-BEOPT-v1",
+      "legal_cut_count": 0
+    }
+  ],
+  "FP_semantics": "binary32 RNE, tininess-after, canonicalNaN, per-operation flags",
+  "host_vectors": 20484,
+  "softfloat": null,
+  "VUL_end_to_end": [
+    {
+      "backend": "sim",
+      "status": "passed",
+      "result": "FP REGION VUL PASS latency=4 verified=198 bubbles=90 resets=3"
+    },
+    {
+      "backend": "native",
+      "status": "passed",
+      "result": "FP REGION VUL PASS latency=4 verified=198 bubbles=90 resets=3"
+    },
+    {
+      "backend": "circt",
+      "status": "passed",
+      "result": "FP REGION VUL PASS latency=4 verified=198 bubbles=90 resets=3"
+    }
+  ],
+  "RTL_cycles": 20484,
+  "RTL_combinational_output_checks": 245808,
+  "RTL_valid_pipeline_output_checks": 173520,
+  "RTL_reset_output_checks": 960,
+  "bubble_cycles": 5831,
+  "reset_events": 80,
+  "pipeline_register_stages": 3,
+  "physical_calls": {
+    "synth": 0,
+    "grt": 0,
+    "final": 0
+  },
+  "commands": [
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step4-rtlzz/testv2/arithmetic-region-test",
+        "/home/zyrv/vulsim/vullib",
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 6.696568435057998
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step4-rtlzz/testv2/pipeline-test"
+      ],
+      "cwd": "/home/zyrv/vulsim/rtlzz",
+      "exit_code": 0,
+      "walltime_s": 2.340473175048828
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step4-rtlzz/testv2/pipeline-reset-test"
+      ],
+      "cwd": "/home/zyrv/vulsim/rtlzz",
+      "exit_code": 0,
+      "walltime_s": 2.670306497020647
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step4-rtlzz/testv2/pipeline-valid-test"
+      ],
+      "cwd": "/home/zyrv/vulsim/rtlzz",
+      "exit_code": 0,
+      "walltime_s": 1.1589960649143904
+    },
+    {
+      "command": [
+        "c++",
+        "-std=c++20",
+        "-O2",
+        "-I/home/zyrv/vulsim/vullib",
+        "/home/zyrv/vulsim/regression/arithmetic_regions/host.cpp",
+        "-o",
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled/host"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 0.36157032288610935
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled/host"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 0.01943776779808104
+    },
+    {
+      "command": [
+        "verilator",
+        "--cc",
+        "--exe",
+        "--build",
+        "-j",
+        "2",
+        "--top-module",
+        "RegionRegression",
+        "--Mdir",
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled/obj",
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled/wrapper.sv",
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled/single.sv",
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled/single_pipe.sv",
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled/serial.sv",
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled/serial_pipe.sv",
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled/parallel.sv",
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled/parallel_pipe.sv",
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled/shared.sv",
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled/shared_pipe.sv",
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled/identical.sv",
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled/identical_pipe.sv",
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled/constant.sv",
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled/constant_pipe.sv",
+        "/home/zyrv/vulsim/regression/arithmetic_regions/rtl_driver.cpp"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 2.2199214790016413
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled/obj/VRegionRegression"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 0.11120241391472518
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/vulsimgen",
+        "-m",
+        "/home/zyrv/vulsim/regression/arithmetic_regions/vul/Main.utb",
+        "-f",
+        "-o",
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled/vul-sim"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 0.017953222850337625
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled/vul-sim/run.sh"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 2.4442755449563265
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/vulrtlgen",
+        "-m",
+        "/home/zyrv/vulsim/regression/arithmetic_regions/vul/Main.utb",
+        "-f",
+        "-o",
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled/vul-native"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 4.597476172959432
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled/vul-native/run.sh"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 4.0520341489464045
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/vulrtlgen",
+        "-m",
+        "/home/zyrv/vulsim/regression/arithmetic_regions/vul/Main.utb",
+        "-f",
+        "-o",
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled/vul-circt",
+        "--circt"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 4.677290115971118
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step5-compatibility/regions-enabled/vul-circt/run.sh"
+      ],
+      "cwd": "/home/zyrv/vulsim",
+      "exit_code": 0,
+      "walltime_s": 3.959216638933867
+    }
+  ],
+  "artifacts_sha256": {
+    "regions.txt": "b8c89b534dbc9e2a3e88a6de47280036db962b6150ba02b9f3f586bf3e1df825",
+    "single.sv": "3664cc6e7b1a66c568c5fd956dc192d85803cad5e5f2b04f2feef91518afff7a",
+    "single_pipe.sv": "c3fbf7e71393424c6c41fb3d9f8bd5d23979cbe887919b785cf209431c3906f9",
+    "serial.sv": "c4cfc742177803efc36ad6a2a642e87fcaa919011227f0a82777cd4b35b444cf",
+    "serial_pipe.sv": "d7998e0c774f95bd34c7b265ae44a0d22bb5343b0641fd4930b564b334d45404",
+    "parallel.sv": "aaf54fa15cd43e8bc419d1f9084e07b04c911f6eeeba5df0d046a6cfc12e66d3",
+    "parallel_pipe.sv": "02790b9adb2dce1aff80f7d4754ea3388f9cecf40e4de29c92ac98f6e6cf8c2b",
+    "shared.sv": "97cecee7045f41f578de6aa078423933eae4559962c3a00726735f4621289876",
+    "shared_pipe.sv": "18d124ffc16d7b1b53a10bfe1be80f97acd8bb3271bd75460dbc34f1b6413933",
+    "identical.sv": "09dc25cc07258709b00541b457b92c41bdd09e8271173ee81c2fd72516424612",
+    "identical_pipe.sv": "3e12c56377d73df1b2904f4317868a7b304d29798e7c0b84f0483d8fa78f83c1",
+    "constant.sv": "9720a9213789d24bb2b8ab0c7ecb6ccb1ae8f0be05865b7c3d7aef1159868af0",
+    "constant_pipe.sv": "665d9882f9f9ca30bf9741f76c0e9b38ec498a45ee65ff7abee25a483c7c5b5e"
+  }
+}

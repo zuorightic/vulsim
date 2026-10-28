@@ -1,0 +1,20 @@
+#include <defhelper.hpp>
+INTERFACE() {
+    SERVICE(push, ARG(Int<32>) x, ARG(Int<32>) w, ARG(bool) v);
+    QUERY(result, Int<37>);
+    QUERY(valid, bool);
+}
+USE_VERSION(main);
+VERSION(main) {
+    PIPELINE(fp, LATENCY,
+        IREG(a, Int<32>) { a=Int<32>(0x7f800000); },
+        IREG(b, Int<32>) { b=Int<32>(0); }, IVALID(iv),
+        OREG(y, Int<37>), OVALID(ov)) {
+        y=vularith::F32MulRNE(a,b);
+    }
+    SERVICE(push, ARG(Int<32>) x, ARG(Int<32>) w, ARG(bool) v) {
+        a.setnext(x);b.setnext(w);iv.setnext(v);
+    }
+    QUERY(result, Int<37>) { return y; }
+    QUERY(valid, bool) { return ov; }
+}

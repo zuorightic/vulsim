@@ -1,0 +1,151 @@
+{
+  "version": "arithmetic-regions-regression-v2",
+  "seed": 20261027,
+  "cases": [
+    "single",
+    "serial",
+    "parallel",
+    "shared",
+    "identical",
+    "constant"
+  ],
+  "region_checks": "PASS arithmetic regions checks=55",
+  "CIRCT": {
+    "enabled": true,
+    "tool_available": true,
+    "tool_path": "/home/zyrv/circt/circt-full-shared-linux-x64/firtool-1.162.0/bin/circt-opt",
+    "status": "executed",
+    "reason": null
+  },
+  "pipeline_unit_tests": [
+    {
+      "test": "pipeline-test",
+      "status": "passed",
+      "output": "pipeline tests passed"
+    },
+    {
+      "test": "pipeline-reset-test",
+      "status": "passed",
+      "output": "pipeline reset API tests passed"
+    },
+    {
+      "test": "pipeline-valid-test",
+      "status": "passed",
+      "output": "pipeline valid API and IR tests passed"
+    }
+  ],
+  "arithmetic_regions": [
+    {
+      "id": "single/fp32_mul_rne/0",
+      "operation": "fp32_mul_rne",
+      "semantics": "binary32-rne-tininess-after-canonicalNaN-v1",
+      "template_version": "softfloat3d-bitvector-mul-v1",
+      "sharing_policy": "semantic-marker-and-isolated-BEOPT-v1",
+      "legal_cut_count": 0
+    },
+    {
+      "id": "serial/fp32_mul_rne/0",
+      "operation": "fp32_mul_rne",
+      "semantics": "binary32-rne-tininess-after-canonicalNaN-v1",
+      "template_version": "softfloat3d-bitvector-mul-v1",
+      "sharing_policy": "semantic-marker-and-isolated-BEOPT-v1",
+      "legal_cut_count": 0
+    },
+    {
+      "id": "serial/fp32_mul_rne/1",
+      "operation": "fp32_mul_rne",
+      "semantics": "binary32-rne-tininess-after-canonicalNaN-v1",
+      "template_version": "softfloat3d-bitvector-mul-v1",
+      "sharing_policy": "semantic-marker-and-isolated-BEOPT-v1",
+      "legal_cut_count": 0
+    },
+    {
+      "id": "parallel/fp32_mul_rne/0",
+      "operation": "fp32_mul_rne",
+      "semantics": "binary32-rne-tininess-after-canonicalNaN-v1",
+      "template_version": "softfloat3d-bitvector-mul-v1",
+      "sharing_policy": "semantic-marker-and-isolated-BEOPT-v1",
+      "legal_cut_count": 0
+    },
+    {
+      "id": "parallel/fp32_mul_rne/1",
+      "operation": "fp32_mul_rne",
+      "semantics": "binary32-rne-tininess-after-canonicalNaN-v1",
+      "template_version": "softfloat3d-bitvector-mul-v1",
+      "sharing_policy": "semantic-marker-and-isolated-BEOPT-v1",
+      "legal_cut_count": 0
+    },
+    {
+      "id": "shared/fp32_mul_rne/0",
+      "operation": "fp32_mul_rne",
+      "semantics": "binary32-rne-tininess-after-canonicalNaN-v1",
+      "template_version": "softfloat3d-bitvector-mul-v1",
+      "sharing_policy": "semantic-marker-and-isolated-BEOPT-v1",
+      "legal_cut_count": 0
+    },
+    {
+      "id": "shared/fp32_mul_rne/1",
+      "operation": "fp32_mul_rne",
+      "semantics": "binary32-rne-tininess-after-canonicalNaN-v1",
+      "template_version": "softfloat3d-bitvector-mul-v1",
+      "sharing_policy": "semantic-marker-and-isolated-BEOPT-v1",
+      "legal_cut_count": 0
+    },
+    {
+      "id": "identical/fp32_mul_rne/0",
+      "operation": "fp32_mul_rne",
+      "semantics": "binary32-rne-tininess-after-canonicalNaN-v1",
+      "template_version": "softfloat3d-bitvector-mul-v1",
+      "sharing_policy": "semantic-marker-and-isolated-BEOPT-v1",
+      "legal_cut_count": 0
+    },
+    {
+      "id": "identical/fp32_mul_rne/1",
+      "operation": "fp32_mul_rne",
+      "semantics": "binary32-rne-tininess-after-canonicalNaN-v1",
+      "template_version": "softfloat3d-bitvector-mul-v1",
+      "sharing_policy": "semantic-marker-and-isolated-BEOPT-v1",
+      "legal_cut_count": 0
+    },
+    {
+      "id": "constant/fp32_mul_rne/0",
+      "operation": "fp32_mul_rne",
+      "semantics": "binary32-rne-tininess-after-canonicalNaN-v1",
+      "template_version": "softfloat3d-bitvector-mul-v1",
+      "sharing_policy": "semantic-marker-and-isolated-BEOPT-v1",
+      "legal_cut_count": 0
+    }
+  ],
+  "FP_semantics": "binary32 RNE, tininess-after, canonicalNaN, per-operation flags",
+  "host_vectors": 20484,
+  "softfloat": null,
+  "VUL_end_to_end": [
+    {
+      "backend": "sim",
+      "status": "passed",
+      "result": "FP REGION VUL PASS latency=4 verified=198 bubbles=90 resets=3"
+    },
+    {
+      "backend": "native",
+      "status": "passed",
+      "result": "FP REGION VUL PASS latency=4 verified=198 bubbles=90 resets=3"
+    },
+    {
+      "backend": "circt",
+      "status": "passed",
+      "result": "FP REGION VUL PASS latency=4 verified=198 bubbles=90 resets=3"
+    }
+  ],
+  "RTL_cycles": 20484,
+  "RTL_combinational_output_checks": 245808,
+  "RTL_valid_pipeline_output_checks": 173520,
+  "RTL_reset_output_checks": 960,
+  "bubble_cycles": 5831,
+  "reset_events": 80,
+  "pipeline_register_stages": 3,
+  "physical_calls": {
+    "synth": 0,
+    "grt": 0,
+    "final": 0
+  }
+}
