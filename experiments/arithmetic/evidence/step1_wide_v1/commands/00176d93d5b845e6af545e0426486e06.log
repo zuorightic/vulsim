@@ -1,0 +1,9 @@
+PASS pipeline latency=1, sim+native+circt
+PASS pipeline latency=2, sim+native+circt
+PASS pipeline latency=3, sim+native+circt
+PASS pipeline latency=4, sim+native+circt
+PASS pipeline latency=8, sim+native+circt
+PASS 26 declaration diagnostics on all backends
+PASS 8 access isolation cases
+PASS RTL-only output definition checks
+PASS sim-only native C++ and pipeline-only module

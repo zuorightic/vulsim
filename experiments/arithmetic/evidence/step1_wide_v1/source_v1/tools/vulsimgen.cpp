@@ -1,0 +1,427 @@
+// Copyright (c) 2025 Chino
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+#include "vcpp.hpp"
+
+#include "simgen.h"
+#include "debugmap.hpp"
+#include "argparse.hpp"
+#include "breakpoint.hpp"
+#include "trace.hpp"
+#include "vullib.hpp"
+#include "output_dir.hpp"
+#include "resource_utils.hpp"
+
+#include <filesystem>
+#include <iostream>
+#include <fstream>
+#include <deque>
+#include <unordered_set>
+#include <vector>
+#include <string>
+
+static std::string shellSingleQuote(const std::string &value) {
+    std::string quoted = "'";
+    for (char ch : value) {
+        if (ch == '\'') {
+            quoted += "'\\''";
+        } else {
+            quoted += ch;
+        }
+    }
+    quoted += "'";
+    return quoted;
+}
+
+inline static void writeLinesToFile(const std::vector<std::string> &lines, const std::string &filepath) {
+    const std::filesystem::path target_path(filepath);
+    const std::filesystem::path parent_dir = target_path.parent_path();
+    if (!parent_dir.empty()) {
+        std::error_code ec;
+        std::filesystem::create_directories(parent_dir, ec);
+        if (ec) {
+            throw VulException("Failed to create directory: " + parent_dir.string() + ", reason: " + ec.message());
+        }
+    }
+    std::ofstream file(filepath);
+    if (!file.is_open()) {
+        throw VulException("Failed to open file for writing: " + filepath);
+    }
+    for (const auto &line : lines) {
+        file << line;
+        if (line.empty() || line.back() != '\n') {
+            file << "\n";
+        }
+    }
+    file.close();
+}
+
+struct SimGenArgs {
+    std::string top_file;
+    std::string main_file;
+    std::string proj_dir;
+    std::string out_dir;
+    std::string lib_dir;
+    std::string trace_file;
+    std::string trace_line;
+    std::string break_file;
+    std::string break_line;
+    uint64_t break_cycles = 1024;
+    bool force = false;
+};
+
+int simgenStatic(const SimGenArgs &args) {
+
+    const string &top_file = args.top_file;
+    const string &main_file = args.main_file;
+    const string &proj_dir = args.proj_dir;
+    const string &out_dir = args.out_dir;
+    const string &lib_dir = args.lib_dir;
+    const string &trace_file = args.trace_file;
+    const string &trace_line = args.trace_line;
+    const string &break_file = args.break_file;
+    const string &break_line = args.break_line;
+
+    std::filesystem::path main_path(main_file);
+    if (main_file.empty()) {
+        throw VulException("A .utb Main test file must be specified with -m/--main");
+    }
+
+    VulErrorContextGuard _err{"generating project from " + main_path.parent_path().string()};
+    VulStaticProject project = parseVcppStaticProject(proj_dir, top_file, main_path.string());
+
+    std::filesystem::path proj_path(project.project_dir_path);
+
+    std::filesystem::path out_path(out_dir);
+    if (!prepareOutputDirectory(out_path, out_dir, args.force)) {
+        return 1;
+    }
+
+    {
+        VulErrorContextGuard _err("generating project header code");
+        writeLinesToFile(
+            simgen::genStaticProjectHeaderCode(
+                project.global_configlib,
+                project.global_bundlelib,
+                project.global_helper_codes
+            ),
+            (out_path / "header.hpp").string()
+        );
+    }
+
+    vector<VulTraceMatcher> trace_matchers;
+    if (trace_file.size() > 0) {
+        VulErrorContextGuard _err("parsing trace matcher file: " + trace_file);
+
+        std::filesystem::path trace_path(trace_file);
+        if (!std::filesystem::exists(trace_path) || !std::filesystem::is_regular_file(trace_path)) {
+            throw VulException("Trace matcher file does not exist: " + trace_file);
+        }
+        // parse trace matcher file
+        // each line is a matcher string
+        std::ifstream trace_file_stream(trace_path.string());
+        if (!trace_file_stream.is_open()) {
+            throw VulException("Failed to open trace matcher file: " + trace_file);
+        }
+        string line;
+        while (std::getline(trace_file_stream, line)) {
+            // skip empty lines and lines starting with # or //
+            uint64_t commentpos = 0;
+            if ((commentpos = line.find('#')) != string::npos) {
+                line = line.substr(0, commentpos);
+            }
+            if ((commentpos = line.find("//")) != string::npos) {
+                line = line.substr(0, commentpos);
+            }
+            if (line.empty()) {
+                continue;
+            }
+            trace_matchers.push_back(parseTraceMatcher(line));
+        }
+    }
+    if (trace_line.size() > 0) {
+        // parse trace matcher line
+        // each matcher string is seperated by comma
+        VulErrorContextGuard _err("parsing trace matcher");
+
+        std::stringstream ss(trace_line);
+        string matcher_str;
+        while (std::getline(ss, matcher_str, ',')) {
+            if (matcher_str.empty()) {
+                continue;
+            }
+            trace_matchers.push_back(parseTraceMatcher(matcher_str));
+        }
+    }
+
+    auto trace_table = parseTraceOptions(project, trace_matchers);
+
+    if ((!break_file.empty() || !break_line.empty()) && trace_matchers.empty()) {
+        throw VulException("Breakpoints require tracing to be enabled with --trace or --tracefile");
+    }
+
+    std::vector<VulBreakPointSpec> break_specs;
+    if (!break_file.empty() || !break_line.empty()) {
+        VulErrorContextGuard _err("parsing breakpoint descriptions");
+        break_specs = parseBreakSpecs(break_file, break_line, collectTracedSignalWidths(project, trace_table));
+        if (args.break_cycles == 0) {
+            throw VulException("Breakpoint history cycles must be greater than 0");
+        }
+    }
+
+    // gen module
+    std::deque<shared_ptr<VulStaticModuleInstance>> bfs_queue;
+    std::map<std::string, simgen::StaticModuleCodeHpp> grouped_codes;
+    std::map<std::string, std::string> grouped_impl_paths;
+    std::unordered_set<std::string> copied_resources;
+    bfs_queue.push_back(project.top_module_instance);
+    while (!bfs_queue.empty()) {
+        auto mod_instance = bfs_queue.front();
+        bfs_queue.pop_front();
+        for (const auto &child : mod_instance->children) {
+            bfs_queue.push_back(child);
+        }
+
+        const std::string decl_path = mod_instance->simDeclPath();
+        VulErrorContextGuard _err("generating code for module instance: " + mod_instance->simClassName());
+
+        auto codes = simgen::genStaticModuleCodeHpp(*mod_instance, trace_table[mod_instance->instance_id]);
+        auto &group = grouped_codes[decl_path];
+        group.decl.insert(group.decl.end(), codes.decl.begin(), codes.decl.end());
+        group.decl_debug.insert(group.decl_debug.end(), codes.decl_debug.begin(), codes.decl_debug.end());
+        group.impl.insert(group.impl.end(), codes.impl.begin(), codes.impl.end());
+        group.impl_debug.insert(group.impl_debug.end(), codes.impl_debug.begin(), codes.impl_debug.end());
+        grouped_impl_paths[decl_path] = mod_instance->simImplPath();
+        for (const auto &res_file : codes.resource_files) {
+            if (!copied_resources.insert(res_file).second) continue;
+            const std::filesystem::path src_file =
+                vulresource::findShallowestProjectResource(proj_path, res_file);
+            std::filesystem::path dst_file = out_path / res_file;
+            std::filesystem::create_directories(dst_file.parent_path());
+            std::filesystem::copy_file(src_file, dst_file);
+        }
+    }
+
+    for (auto &[path, codes] : grouped_codes) {
+        writeLinesToFile(codes.decl, (out_path / path).string());
+        writeLinesToFile(codes.impl, (out_path / grouped_impl_paths.at(path)).string());
+        vulDebugWriteMapToFile(vulDebugBuildGeneratedMap(codes.decl_debug), (out_path / (path + ".dbgmap")).string());
+        vulDebugWriteMapToFile(vulDebugBuildGeneratedMap(codes.impl_debug), (out_path / (grouped_impl_paths.at(path) + ".dbgmap")).string());
+    }
+
+    // gen test harness module
+    {
+        VulErrorContextGuard _err("generating test harness code");
+
+        auto testharness_code = simgen::genStaticTestHarnessCodeHpp(
+            project.test_harness, *project.top_module_instance,
+            /*enable_tracing=*/trace_matchers.size() > 0,
+            break_specs,
+            args.break_cycles
+        );
+        const auto harness_path = project.top_module_instance->parent->simDeclPath();
+        writeLinesToFile(testharness_code.codes, (out_path / harness_path).string());
+        vulDebugWriteMapToFile(testharness_code.debug_lines, (out_path / (harness_path + ".dbgmap")).string());
+    }
+
+    // gen VulTestMain.hpp
+    {
+        VulErrorContextGuard _err("generating VulTestMain.hpp");
+
+        vector<string> testmain_code = simgen::genStaticTestMainHpp(project.top_module_instance);
+        writeLinesToFile(testmain_code, (out_path / "VulTestMain.hpp").string());
+    }
+
+    // copy vullib runtime files to output directory
+    {
+        VulErrorContextGuard _err("copying runtime library files");
+
+        std::filesystem::path lib_path(lib_dir);
+        if (!std::filesystem::exists(lib_path) || !std::filesystem::is_directory(lib_path)) {
+            throw VulException("Library directory does not exist: " + lib_dir);
+        }
+        for (auto filename : VulLibFiles) {
+            std::filesystem::path src_file = lib_path / filename;
+            if (!std::filesystem::exists(src_file) || !std::filesystem::is_regular_file(src_file)) {
+                throw VulException("Runtime library file does not exist: " + src_file.string());
+            }
+            std::filesystem::path dst_file = out_path / filename;
+            std::filesystem::copy_file(src_file, dst_file);
+        }
+    }
+
+    // generate build script
+    string projname = main_path.stem().string();
+    string build_cmd = "g++ -std=c++20 -g -O2 main.cpp -I. -o " + projname;
+    std::ofstream build_script((out_path / "build.sh").string());
+    if (!build_script.is_open()) {
+        throw VulException("Failed to create build script.");
+    }
+    build_script << "#!/bin/bash\necho \"Building " << projname << "\"\n";
+    build_script << "SCRIPT_DIR=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" && pwd)\"\n";
+    build_script << "pushd \"$SCRIPT_DIR\"\n";
+    build_script << build_cmd << "\n";
+    build_script << "popd\n";
+    build_script.close();
+
+    std::ofstream run_script((out_path / "run.sh").string());
+    if (!run_script.is_open()) {
+        throw VulException("Failed to create run script.");
+    }
+    run_script << "#!/usr/bin/env bash\n"
+                  "__vulsimgen_run_main() (\n"
+                  "set -euo pipefail\n"
+                  "SCRIPT_DIR=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" && pwd)\"\n"
+                  "cd \"$SCRIPT_DIR\"\n"
+                  "echo \"Building " << projname << "\"\n"
+               << "g++ -std=c++20 -g -O2 main.cpp -I. -o " << shellSingleQuote(projname) << "\n"
+               << "exec " << shellSingleQuote("./" + projname) << " \"$@\"\n"
+                  ")\n"
+                  "__vulsimgen_run_dispatch() {\n"
+                  "  local status\n"
+                  "  if __vulsimgen_run_main \"$@\"; then status=0; else status=$?; fi\n"
+                  "  unset -f __vulsimgen_run_main __vulsimgen_run_dispatch\n"
+                  "  return \"$status\"\n"
+                  "}\n"
+                  "if [[ \"${BASH_SOURCE[0]}\" != \"$0\" ]]; then\n"
+                  "  if __vulsimgen_run_dispatch \"$@\"; then return 0; else return $?; fi\n"
+                  "fi\n"
+                  "__vulsimgen_run_dispatch \"$@\"\n"
+                  "exit $?\n";
+    run_script.close();
+    if (!run_script) {
+        throw VulException("Failed to write run script.");
+    }
+    std::filesystem::permissions(
+        out_path / "run.sh",
+        std::filesystem::perms::owner_read | std::filesystem::perms::owner_write |
+            std::filesystem::perms::owner_exec | std::filesystem::perms::group_read |
+            std::filesystem::perms::group_exec | std::filesystem::perms::others_read |
+            std::filesystem::perms::others_exec,
+        std::filesystem::perm_options::replace);
+
+    string build_cmd_o3 = "g++ -std=c++20 -O3 main.cpp -I. -o " + projname + "_O3";
+    std::ofstream build_script_o3((out_path / "release.sh").string());
+    if (!build_script_o3.is_open()) {
+        throw VulException("Failed to create O3 build script.");
+    }
+    build_script_o3 << "#!/bin/bash\necho \"Building " << projname << " with O3 optimization\"\n";
+    build_script_o3 << "SCRIPT_DIR=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" && pwd)\"\n";
+    build_script_o3 << "pushd \"$SCRIPT_DIR\"\n";
+    build_script_o3 << build_cmd_o3 << "\n";
+    build_script_o3 << "popd\n";
+    build_script_o3.close();
+
+    string debug_cmd =
+        "g++ -std=c++20 -g -O1 "
+        "-fsanitize=address,undefined,leak "
+        "-fno-omit-frame-pointer "
+        "-Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion "
+        "-Wshadow -Wnull-dereference -Wdouble-promotion -Wformat=2 "
+        "-Wundef -Wuninitialized -Werror "
+        "main.cpp -I. -o " + projname + "_debug";
+    std::ofstream debug_script((out_path / "debug.sh").string());
+    if (!debug_script.is_open()) {
+        throw VulException("Failed to create debug build script.");
+    }
+    debug_script << "#!/bin/bash\necho \"Building " << projname << " for debug with sanitizers\"\n";
+    debug_script << "SCRIPT_DIR=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" && pwd)\"\n";
+    debug_script << "pushd \"$SCRIPT_DIR\"\n";
+    debug_script << debug_cmd << "\n";
+    debug_script << "popd\n";
+    debug_script.close();
+
+    return 0;
+}
+
+
+static int runVulSimGen(int argc, char * argv[]) {
+
+    argparse::ArgumentParser parser("vulsimgen", "VulSim Simulation Generator V1.0");
+    parser.add_argument("-t", "--top")
+        .help("sets a .vul top module, overriding TOP(...) in the .utb test file")
+        .default_value(std::string(""));
+    parser.add_argument("-m", "--main")
+        .help("sets the .utb main test file for test case generation")
+        .default_value(std::string(""))
+        .required();
+    parser.add_argument("-p", "--project")
+        .help("sets the first directory searched for header.uh or header/**/*.uh, before Main/Top PROJECT and the Top directory")
+        .default_value(std::string(""));
+    parser.add_argument("-o", "--out")
+        .help("sets the output directory for generated code (default: ./simout)")
+        .default_value(std::string("./simout"));
+    parser.add_argument("-l", "--lib")
+        .help("sets the directory for runtime library files (default: ./vullib)")
+        .default_value(std::string("./vullib"));
+    parser.add_argument("-f", "--force")
+        .help("overwrite a non-empty output directory without prompting")
+        .default_value(false)
+        .implicit_value(true);
+    parser.add_argument("-T", "--tracefile")
+        .help("tracing signal matcher file for generating tracing code (optional)")
+        .default_value(std::string(""));
+    parser.add_argument("--trace")
+        .help("tracing signal matcher strings seperated by commas (optional)")
+        .default_value(std::string(""));
+    parser.add_argument("-B", "--breakfile")
+        .help("breakpoint description file, one breakpoint expression per line (optional)")
+        .default_value(std::string(""));
+    parser.add_argument("--break")
+        .help("breakpoint expression string joined by && inside one breakpoint (optional)")
+        .default_value(std::string(""));
+    parser.add_argument("--breakcycles")
+        .help("number of recent cycles buffered for breakpoint waveform dump")
+        .scan<'u', uint64_t>()
+        .default_value(uint64_t(64));
+    parser.add_argument("--dynamic")
+        .help("generate dynamic simulation code instead of static code")
+        .default_value(false)
+        .implicit_value(true);
+    
+    try {
+        parser.parse_args(argc, argv);
+    } catch (const std::exception &e) {
+        std::cerr << "Argument parsing error: " << e.what() << "\n" << parser.help().str() << std::endl;
+        return 1;
+    }
+    
+    string top_file = parser.get<std::string>("--top");
+    string main_file = parser.get<std::string>("--main");
+    string proj_dir = parser.get<std::string>("--project");
+    string out_dir = parser.get<std::string>("--out");
+    string lib_dir = parser.get<std::string>("--lib");
+    string trace_file = parser.get<std::string>("--tracefile");
+    string trace_line = parser.get<std::string>("--trace");
+    string break_file = parser.get<std::string>("--breakfile");
+    string break_line = parser.get<std::string>("--break");
+    uint64_t break_cycles = parser.get<uint64_t>("--breakcycles");
+    bool force = parser.get<bool>("--force");
+    SimGenArgs args{top_file, main_file, proj_dir, out_dir, lib_dir, trace_file, trace_line, break_file, break_line, break_cycles, force};
+
+    return simgenStatic(args);
+}
+
+int main(int argc, char * argv[]) {
+    try {
+        return runVulSimGen(argc, argv);
+    } catch (const VulException &e) {
+        std::cerr << "ERROR: " << e.what() << std::endl;
+    } catch (const std::exception &e) {
+        std::cerr << "ERROR: " << e.what() << std::endl;
+    } catch (...) {
+        std::cerr << "ERROR: Unknown internal error" << std::endl;
+    }
+    return 1;
+}

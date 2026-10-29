@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/zyrv/vulsim/regression/generator_wide_arithmetic.py", line 456, in <module>
+    main()
+  File "/home/zyrv/vulsim/regression/generator_wide_arithmetic.py", line 350, in main
+    check_trace(out, args.trace, args.latency)
+  File "/home/zyrv/vulsim/regression/generator_wide_arithmetic.py", line 316, in check_trace
+    check_values(tokens[3+count:], held, (cycle, 'pipe/hold/reset'))
+  File "/home/zyrv/vulsim/regression/generator_wide_arithmetic.py", line 280, in check_values
+    assert observed == value, (where, name, hex(observed), hex(value))
+           ^^^^^^^^^^^^^^^^^
+AssertionError: ((402, 'pipe/hold/reset'), 'mac8', '0x1', '0xffff')

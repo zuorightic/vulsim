@@ -1,0 +1,727 @@
+// Copyright (c) 2025 Meng Chengzhen, in Shandong University
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+#pragma once
+
+#include "type.h"
+#include "configlib.h"
+#include "configexpr.hpp"
+#include "bundlelib.h"
+
+#include <algorithm>
+#include <map>
+
+using std::pair;
+using std::map;
+
+typedef string ModuleName;
+
+typedef string ReqServName;
+typedef string PipePortName;
+typedef string ArgName;
+
+using InstanceName = string;
+using CCodeLine = string;
+
+struct VulDebugLoc {
+    string file;
+    uint32_t line = 0;   // 1-based original source line, 0 means generated/unknown
+    uint32_t column = 0; // 1-based original source column, 0 means unknown
+
+    inline bool valid() const {
+        return !file.empty() && line != 0;
+    }
+};
+
+struct VulDebugLine {
+    uint32_t generated_line = 0; // 1-based line in emitted file
+    VulDebugLoc source;
+};
+
+using VulDebugLocs = vector<VulDebugLoc>;
+using VulDebugLines = vector<VulDebugLine>;
+
+enum class VulConnIndexKind {
+    ConstantExpr,
+    LoopVar,
+    GeneralExpr,
+    Wildcard,
+};
+
+struct VulConnIndexExpr {
+    VulConnIndexKind kind = VulConnIndexKind::ConstantExpr;
+    int32_t loop_dim = -1; // 0 for '$', 1 for '?'
+    int64_t offset = 0;
+    string expr; // original constant/general expression or "*" for wildcard
+
+    inline string toString() const {
+        if (kind == VulConnIndexKind::Wildcard) {
+            return "*";
+        }
+        if (kind == VulConnIndexKind::LoopVar) {
+            string out = (loop_dim == 0 ? "$" : "?");
+            if (offset > 0) out += "+" + std::to_string(offset);
+            if (offset < 0) out += std::to_string(offset);
+            return out;
+        }
+        return expr;
+    }
+};
+
+inline bool operator==(const VulConnIndexExpr &a, const VulConnIndexExpr &b) {
+    return std::tie(a.kind, a.loop_dim, a.offset, a.expr) ==
+           std::tie(b.kind, b.loop_dim, b.offset, b.expr);
+}
+
+struct VulReqServConnection {
+    InstanceName    req_instance;
+    ReqServName     req_name;       // should be ServiceName when req_instance is TopInterface
+    InstanceName    req_instance_base;
+    vector<VulConnIndexExpr> req_indices;
+    InstanceName    serv_instance;
+    ReqServName     serv_name;      // should be RequestName when serv_instance is TopInterface
+    InstanceName    serv_instance_base;
+    vector<VulConnIndexExpr> serv_indices;
+
+    int64_t req_port_index = -1;
+    int64_t serv_port_index = -1;
+
+    inline string toString() const {
+        string req_side = "'" + req_instance + "'.'" + req_name + "'";
+        if (!req_indices.empty()) {
+            req_side = "'" + req_instance_base + "'";
+            for (const auto &idx : req_indices) {
+                req_side += "[" + idx.toString() + "]";
+            }
+            req_side += ".'" + req_name + "'";
+        }
+        string serv_side = "'" + serv_instance + "'.'" + serv_name + "'";
+        if (!serv_indices.empty()) {
+            serv_side = "'" + serv_instance_base + "'";
+            for (const auto &idx : serv_indices) {
+                serv_side += "[" + idx.toString() + "]";
+            }
+            serv_side += ".'" + serv_name + "'";
+        }
+        return req_side + " -> " + serv_side;
+    }
+};
+
+inline bool operator==(const VulReqServConnection &a, const VulReqServConnection &b) {
+    return std::tie(a.req_instance, a.req_name, a.req_instance_base, a.req_indices,
+                    a.serv_instance, a.serv_name, a.serv_instance_base, a.serv_indices) ==
+           std::tie(b.req_instance, b.req_name, b.req_instance_base, b.req_indices,
+                    b.serv_instance, b.serv_name, b.serv_instance_base, b.serv_indices);
+}
+
+
+enum class VulRegisterRole { Ordinary, Input, Output, InputValid, OutputValid };
+inline bool pipelineInput(VulRegisterRole r) { return r == VulRegisterRole::Input || r == VulRegisterRole::InputValid; }
+inline bool pipelineOutput(VulRegisterRole r) { return r == VulRegisterRole::Output || r == VulRegisterRole::OutputValid; }
+
+struct VulTempPipeline {
+    string name, latency;
+    VulDebugLoc declaration_loc;
+    vector<string> endpoints, codelines;
+    VulDebugLocs codelines_debug;
+};
+struct VulStaticPipeline {
+    string name;
+    int latency = 1;
+    VulDebugLoc declaration_loc;
+    vector<string> endpoints, codelines;
+    VulDebugLocs codelines_debug;
+};
+
+struct VulTempRegister {
+    VulRegisterRole role = VulRegisterRole::Ordinary;
+    VulDebugLoc declaration_loc;
+    string name;
+    string type;
+    string portnum;
+    vector<string> dims;
+    vector<string> reset_codelines;
+    VulDebugLocs reset_codelines_debug;
+};
+
+struct VulTempWire {
+    string name;
+    string type;
+    vector<string> reset_codelines;
+    VulDebugLocs reset_codelines_debug;
+};
+
+enum class VulReqServParamKind {
+    Arg,
+    Resp,
+};
+
+struct VulReqServParamRef {
+    VulReqServParamKind kind = VulReqServParamKind::Arg;
+    size_t index = 0;
+
+    inline bool operator==(const VulReqServParamRef &other) const {
+        return kind == other.kind && index == other.index;
+    }
+};
+
+struct VulTempReqServBase {
+    string name;
+    vector<string> port_dims;
+    vector<pair<string, string>> args; // pair of argument type and name
+    vector<pair<string, string>> rets; // pair of response type and name
+    vector<VulReqServParamRef> param_order; // source declaration order across ARG/RESP
+    bool has_handshake;
+
+    inline string signatureArgNameList() const {
+        string sig;
+        for (const auto &param : param_order) {
+            if (!sig.empty()) sig += ", ";
+            sig += param.kind == VulReqServParamKind::Arg
+                ? args.at(param.index).second
+                : rets.at(param.index).second;
+        }
+        return sig;
+    }
+
+    inline string signatureArgTypeOnly() const {
+        string sig;
+        for (const auto &param : param_order) {
+            if (!sig.empty()) sig += ", ";
+            if (param.kind == VulReqServParamKind::Arg) {
+                sig += string("const ") + args.at(param.index).first + " & ";
+            } else {
+                sig += rets.at(param.index).first + " & ";
+            }
+        }
+        return sig;
+    }
+
+    inline string signatureArgOnly() const {
+        string sig;
+        for (const auto &param : param_order) {
+            if (!sig.empty()) sig += ", ";
+            if (param.kind == VulReqServParamKind::Arg) {
+                const auto &arg = args.at(param.index);
+                sig += string("const ") + arg.first + " & " + arg.second;
+            } else {
+                const auto &ret = rets.at(param.index);
+                sig += ret.first + " & " + ret.second;
+            }
+        }
+        return sig;
+    }
+
+    inline string returnType() const {
+        return (has_handshake ? "bool" : "void");
+    }
+
+    inline string signatureNoRetType(const string name_prefix = "") const {
+        return  name_prefix + name + "(" + signatureArgOnly() + ")";
+    }
+
+    inline string signatureFull(const string name_prefix = "") const {
+        return (has_handshake ? "bool " : "void ") + signatureNoRetType(name_prefix);
+    }
+};
+
+struct VulTempReq : public VulTempReqServBase {
+};
+
+struct VulTempServ : public VulTempReqServBase {
+    bool is_declaration = false;
+    string priority;
+    string cond;
+    vector<string> codelines;
+    VulDebugLocs codelines_debug;
+    VulDebugLoc cond_debug;
+};
+
+struct VulTempQuery {
+    bool is_declaration = false;
+    VulDebugLoc source_loc;
+    string name;
+    string ret_type;
+    vector<string> codelines;
+    VulDebugLocs codelines_debug;
+};
+
+using VulTempTickBlock = vector<string>;
+using VulTempTickBlockDebug = VulDebugLocs;
+
+struct VulTempInstance {
+    string name;
+    string module_name;
+    vector<string> array_dims;
+    vector<pair<string, string>> parameter_overrides; // pair of parameter name and value
+    vector<pair<string, string>> coordinate_bindings; // dimension expression -> parameter name
+};
+
+struct VulTempChildServiceUse {
+    string instance_expr;
+    string service_name;
+    string alias_name;
+    vector<string> dims;
+    bool has_dims = false;
+};
+
+struct VulTempChildQueryUse {
+    string instance_expr;
+    string query_name;
+    string alias_name;
+    string ret_type;
+    vector<string> dims;
+    bool has_dims = false;
+};
+
+struct VulTempBRAM {
+    string name;
+    string data_type;
+    string addr_size;
+    string read_ports;
+    string write_ports;
+    bool mode_1rw = false;
+};
+
+struct VulTempDigitalROM {
+    string name;
+    string data_width;
+    string addr_size;
+    string read_ports;
+    string init_path;
+};
+
+struct VulTempQueue {
+    string name;
+    string type;
+    string depth;
+    string enq_width;
+    string deq_width;
+};
+
+struct VulTempModule {
+    string name;
+    string filepath;
+    vector<VulTempConfig> configs;
+    vector<VulTempConfig> params;
+    vector<VulTempBundle> bundles;
+    vector<VulTempReq> requests;
+    vector<VulTempServ> services;
+    vector<VulTempQuery> queries;
+    vector<VulTempRegister> registers;
+    vector<VulTempPipeline> pipelines;
+    vector<VulTempWire> wires;
+    vector<VulTempBRAM> brams;
+    vector<VulTempDigitalROM> roms;
+    vector<VulTempQueue> queues;
+    vector<VulTempInstance> instances;
+    vector<VulTempTickBlock> tick_blocks;
+    vector<VulTempTickBlockDebug> tick_blocks_debug;
+    vector<VulReqServConnection>  req_connections;
+    vector<VulTempChildServiceUse> child_service_uses;
+    vector<VulTempChildQueryUse> child_query_uses;
+    vector<string> helper_codes;
+    VulDebugLocs helper_codes_debug;
+};
+
+using VulTempModuleCache = std::unordered_map<string, VulTempModule>; // map from module name to its parsed temp module
+
+
+
+
+using VulInstanceID = uint32_t;
+using VulLogicBlockID = uint32_t;
+
+struct LogicBlockCall {
+    InstanceName instance; // empty if call is in the module itself
+    ReqServName port; // request port for self-call, or service port for child instance call
+    string index_expression;
+    VulDebugLoc source_location;
+};
+
+struct VulLogicBlock {
+    vector<string> codelines;
+    vector<string> cond_codelines;
+    VulDebugLocs codelines_debug;
+    VulDebugLocs cond_codelines_debug;
+    vector<LogicBlockCall> call_requests; // all transaction ports called within this block
+    VulLogicBlockID block_id; // instance-unique block id, assigned during module tree construction
+    int32_t priority; // only for service logic block, larger value means higher priority, default 0
+    bool with_priority = false; // whether the priority is specified by user
+};
+
+struct VulTickBlock {
+    vector<string> codelines;
+    VulDebugLocs codelines_debug;
+    vector<LogicBlockCall> call_requests; // all transaction ports called within this block
+};
+
+struct VulStaticInstanceDecl {
+    InstanceName        name;
+    ModuleName          module_name;
+    vector<ConfigRealValue> array_dims;
+    VulStaticConfigLib parameter_overrides;
+    std::map<uint32_t, string> coordinate_bindings;
+    std::map<string, string> parameter_expressions;
+
+    inline bool isArrayed() const {
+        return !array_dims.empty();
+    }
+};
+
+struct VulStaticChildServiceUse {
+    ReqServName alias_name;
+    InstanceName instance_name;
+    ReqServName service_name;
+    bool alias_indexed = false;
+    ConfigRealValue alias_index = 0;
+    uint32_t service_port_index = 0;
+};
+
+struct VulStaticChildQueryUse {
+    ReqServName alias_name;
+    InstanceName instance_name;
+    ReqServName query_name;
+    VulStaticTypeSignature ret_type;
+    vector<ConfigRealValue> return_dims;
+    ConfigRealValue alias_index = 0;
+};
+
+struct VulStaticArg {
+    ArgName     name;
+    VulStaticTypeSignature type;
+};
+
+struct VulStaticReqServ {
+    ReqServName name;
+    bool is_arrayed = false;
+    ConfigRealValue array_size = 1;
+    vector<ConfigRealValue> port_dims;
+    vector<VulStaticArg> args;
+    vector<VulStaticArg> rets;
+    vector<VulReqServParamRef> param_order;
+    bool has_handshake;
+
+    inline bool match(const VulStaticReqServ &a) const {
+        if (a.has_handshake != has_handshake) return false;
+        if (a.is_arrayed != is_arrayed) return false;
+        if (a.array_size != array_size) return false;
+        if (a.port_dims != port_dims) return false;
+        if (a.args.size() != args.size()) return false;
+        for (size_t i = 0; i < a.args.size(); ++i) {
+            if (a.args[i].type != args[i].type) return false;
+        }
+        if (a.rets.size() != rets.size()) return false;
+        for (size_t i = 0; i < a.rets.size(); ++i) {
+            if (a.rets[i].type != rets[i].type) return false;
+        }
+        if (a.param_order != param_order) return false;
+        return true;
+    }
+
+    inline string signatureArgNameList() const {
+        string sig;
+        for (const auto &param : param_order) {
+            if (!sig.empty()) sig += ", ";
+            sig += param.kind == VulReqServParamKind::Arg
+                ? args.at(param.index).name
+                : rets.at(param.index).name;
+        }
+        return sig;
+    }
+
+    inline string signatureArgTypeOnly() const {
+        string sig;
+        for (const auto &param : param_order) {
+            if (!sig.empty()) sig += ", ";
+            if (param.kind == VulReqServParamKind::Arg) {
+                sig += string("const ") + args.at(param.index).type.toString() + " & ";
+            } else {
+                sig += rets.at(param.index).type.toString() + " & ";
+            }
+        }
+        return sig;
+    }
+
+    inline string signatureArgOnly() const {
+        string sig;
+        for (const auto &param : param_order) {
+            if (!sig.empty()) sig += ", ";
+            if (param.kind == VulReqServParamKind::Arg) {
+                const auto &arg = args.at(param.index);
+                sig += string("const ") + arg.type.toString() + " & " + arg.name;
+            } else {
+                const auto &ret = rets.at(param.index);
+                sig += ret.type.toString() + " & " + ret.name;
+            }
+        }
+        return sig;
+    }
+
+    inline string returnType() const {
+        return (has_handshake ? "bool" : "void");
+    }
+
+    inline string signatureNoRetType(const string name_prefix = "") const {
+        return  name_prefix + name + "(" + signatureArgOnly() + ")";
+    }
+
+    inline string signatureFull(const string name_prefix = "") const {
+        return (has_handshake ? "bool " : "void ") + signatureNoRetType(name_prefix);
+    }
+};
+
+VulStaticReqServ staticalizeReqServ(const VulTempReqServBase &item, const VulStaticConfigLib &config_lib);
+
+struct VulStaticQuery {
+    ReqServName name;
+    VulStaticTypeSignature ret_type;
+};
+
+struct VulStaticRegister {
+    VulRegisterRole role = VulRegisterRole::Ordinary;
+    VulDebugLoc declaration_loc;
+    BMemberName name;
+    VulStaticTypeSignature signature;
+    vector<ConfigRealValue> dims; // only for array types
+    ConfigRealValue ports;
+    vector<string> reset_codelines;
+    VulDebugLocs reset_codelines_debug;
+};
+
+struct VulStaticWire {
+    BMemberName name;
+    VulStaticTypeSignature signature;
+    vector<string> reset_codelines;
+    VulDebugLocs reset_codelines_debug;
+};
+
+struct VulStaticBRAM {
+    InstanceName name;
+    VulStaticTypeSignature data_type;
+    ConfigRealValue addr_size;
+    ConfigRealValue addr_width;
+    ConfigRealValue read_ports;
+    ConfigRealValue write_ports;
+};
+
+struct VulStaticDigitalROM {
+    InstanceName name;
+    ConfigRealValue data_width;
+    ConfigRealValue addr_size;
+    ConfigRealValue addr_width;
+    ConfigRealValue read_ports;
+    string init_path;
+};
+
+struct VulStaticQueue {
+    InstanceName name;
+    VulStaticTypeSignature type;
+    ConfigRealValue depth;
+    ConfigRealValue enq_width;
+    ConfigRealValue deq_width;
+};
+
+inline string concreteInstanceName(const string &name, const vector<ConfigRealValue> &indices) {
+    string out = indices.empty() ? name : "__vul_instance_" + name;
+    for (auto index : indices) out += "__" + std::to_string(index);
+    return out;
+}
+
+struct VulStaticModuleInstance {
+    std::map<string, vector<ConfigRealValue>> child_service_shapes;
+    bool child_service_ports_materialized = false;
+
+    inline vector<string> normalizedInstancePath() const {
+        vector<const VulStaticModuleInstance *> chain;
+        const VulStaticModuleInstance *cur = this;
+        while (cur != nullptr) {
+            chain.push_back(cur);
+            cur = cur->parent.get();
+        }
+        std::reverse(chain.begin(), chain.end());
+
+        vector<string> out;
+        out.reserve(chain.size());
+        for (const auto *node : chain) {
+            if (!node->instance_decl_name.empty() && !node->instance_array_indices.empty()) {
+                out.push_back(node->instance_decl_name);
+            } else if (!node->instance_path.empty()) {
+                out.push_back(node->instance_path.back());
+            }
+        }
+        return out;
+    }
+
+    shared_ptr<VulStaticModuleInstance> parent;
+    vector<shared_ptr<VulStaticModuleInstance>> children;
+
+    VulInstanceID instance_id; // global unique instance id, assigned during module tree construction
+
+    vector<InstanceName> instance_path; // full instance path from top
+    string filepath; // relative filepath to top module dir
+    ModuleName module_name;
+
+    inline string simClassName() const {
+        string name = module_name;
+        for (const auto &inst : normalizedInstancePath()) {
+            name += "_" + inst;
+        }
+        return name;
+    };
+    inline string simDeclPath() const {
+        string path = "";
+        for (const auto &inst : normalizedInstancePath()) {
+            path += "/" + inst;
+        }
+        return path.substr(1) + ".decl.hpp";
+    }
+    inline string simImplPath() const {
+        string path = "";
+        for (const auto &inst : normalizedInstancePath()) {
+            path += "/" + inst;
+        }
+        return path.substr(1) + ".impl.hpp";
+    }
+    inline string rtlHlsPath() const {
+        string path = "";
+        for (const auto &inst : normalizedInstancePath()) {
+            path += "/" + inst;
+        }
+        return path.substr(1) + ".logic.cpp";
+    }
+    inline string rtlSvPath() const {
+        string path = "";
+        for (const auto &inst : normalizedInstancePath()) {
+            path += "/" + inst;
+        }
+        return path.substr(1) + ".sv";
+    }
+    inline string concatInstancePath(const string &sep, bool include_topsim = false) const {
+        auto path = instance_path;
+        for (const auto *node = this; node != nullptr; node = node->parent.get()) {
+            if (node->instance_path.empty()) continue;
+            string segment = node->instance_decl_name.empty() ? node->instance_path.back() : node->instance_decl_name;
+            for (auto index : node->instance_array_indices) segment += "[" + std::to_string(index) + "]";
+            path.at(node->instance_path.size() - 1) = segment;
+        }
+        string out;
+        size_t begin = !include_topsim && !path.empty() && path.front() == "sim" ? 1 : 0;
+        for (size_t i = begin; i < path.size(); ++i) out += (out.empty() ? "" : sep) + path[i];
+        return out;
+    }
+
+    vector<ConfigRealValue> coordinateContext() const {
+        vector<ConfigRealValue> out = parent ? parent->coordinateContext() : vector<ConfigRealValue>{};
+        out.insert(out.end(), instance_array_indices.begin(), instance_array_indices.end());
+        return out;
+    }
+    string simConcreteClassName() const {
+        string out = simClassName();
+        const auto coords = coordinateContext();
+        if (!coords.empty()) {
+            out += "<";
+            for (size_t i = 0; i < coords.size(); ++i) {
+                if (i) out += ", ";
+                out += std::to_string(coords[i]);
+            }
+            out += ">";
+        }
+        return out;
+    }
+    string rtlConcreteClassName() const {
+        return simClassName() + (coordinateContext().empty() ? "" : "__v" + std::to_string(instance_id));
+    }
+    string rtlConcreteHlsPath() const {
+        string out = rtlHlsPath();
+        if (!coordinateContext().empty()) out.insert(out.size() - 10, "__v" + std::to_string(instance_id));
+        return out;
+    }
+    string rtlConcreteSvPath() const {
+        string out = rtlSvPath();
+        if (!coordinateContext().empty()) out.insert(out.size() - 3, "__v" + std::to_string(instance_id));
+        return out;
+    }
+    std::map<string, size_t> parameter_coordinate_indices;
+    // The concrete tree retains declaration names separately for generation identity.
+    vector<VulReqServConnection> concrete_connections;
+    VulStaticConfigLib connection_config;
+
+    VulStaticConfigLib local_parameters;
+    VulStaticConfigLib local_consts;
+    VulStaticBundleLib local_bundles;
+
+    unordered_map<ReqServName, VulStaticReqServ>      requests;
+    unordered_map<ReqServName, VulStaticReqServ>      services;
+    unordered_map<ReqServName, VulStaticQuery>        queries;
+
+    vector<VulStaticRegister> registers;
+    vector<VulStaticPipeline> pipelines;
+    vector<VulStaticWire> wires;
+    vector<VulStaticBRAM> brams;
+    vector<VulStaticDigitalROM> roms;
+    vector<VulStaticQueue> queues;
+
+    unordered_map<ReqServName, VulLogicBlock> serv_logic_blocks;
+    unordered_map<ReqServName, VulLogicBlock> query_logic_blocks;
+    vector<VulTickBlock> tick_blocks;
+    vector<string> helper_codes;
+    VulDebugLocs helper_codes_debug;
+
+    unordered_map<InstanceName, VulStaticInstanceDecl> instances;
+
+    vector<VulReqServConnection>  req_connections;
+    vector<VulStaticChildServiceUse> child_service_uses;
+    vector<VulStaticChildQueryUse> child_query_uses;
+
+    unordered_set<ReqServName> exported_services; // services that are connected to parent instance, and should not be connected or called within the module itself
+    vector<VulInstanceID> update_seq; // topological order of instance update in simulation
+
+    InstanceName instance_decl_name; // empty for top / synthetic instances
+    vector<ConfigRealValue> instance_array_indices; // empty for scalar instance or top
+};
+
+void instantiateModule(
+    VulStaticModuleInstance &instance,
+    const VulTempModule &temp,
+    const VulStaticConfigLib &param_overrides,
+    const VulStaticConfigLib &global_config,
+    const VulStaticBundleLib &global_bundles
+);
+
+void detectRequestCallInLogicBlocks(VulStaticModuleInstance &module_instance);
+
+void setupUpdateSequence(shared_ptr<VulStaticModuleInstance> &top);
+
+
+struct VulStaticTestHarnessModule {
+
+    VulStaticConfigLib top_config_overrides;
+    string top_module_path;
+    string project_dir_path;
+
+    unordered_map<ReqServName, VulTempReq>      requests;
+    unordered_map<ReqServName, VulTempServ>      services;
+    vector<ReqServName>                         service_order; // deterministic TestMain callback order
+    unordered_map<ReqServName, VulStaticQuery>  queries;
+
+    vector<CCodeLine> test_codelines;
+    VulDebugLocs test_codelines_debug;
+
+    vector<string> includedHeaders;
+    vector<string> globalCodes;
+    VulDebugLocs globalCodes_debug;
+};
+
+void materializeConcreteConnections(const shared_ptr<VulStaticModuleInstance> &root);

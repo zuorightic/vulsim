@@ -1088,7 +1088,7 @@ RTL 赋值链显示 `rtlzz_pipe_8_s1`、`rtlzz_pipe_2_s1` 是同一乘法表达�
 
 **步骤三验收完成：**后端接通、单核试跑、关键路径核查及受控物理目标对照已完成，统一 TT 评价口径和累计资源管理可用。实际 D 代价库、D2/F1 硬件接入及完整主矩阵尚未完成；完整预算须在步骤五前闭合。grt/final 按各阶段 TT 条件解释，不宣称多角签核。后续按计划进入区域接入和内部拆分，不把额外目标扫描或完整建库作为步骤三关闭条件。
 
-## 4. 步骤四：最小算术区域接入与浮点原型
+## 步骤四：最小算术区域接入与浮点原型
 
 ### 4.1 范围、路线与版本
 
@@ -1179,7 +1179,7 @@ VUL 软件/RTL 的源码前导、语法辅助头和运行库复制清单同步�
 B/C 普通契约 **20,202 项**及后端历史证据核验通过，12 个 B/C 冻结文件和步骤三后端 v4 未修改。本轮新增物理调用仍为 **0 synth / 0 grt / 0 detailed / 0 support**，累计仍为 **31/9/5/97**、未结算预约 **0**，现有资源上限不变。步骤四在本次修订后通过，内部浮点切分仍关闭，完整预算仍 blocked；步骤五批量物理工作前的采集清单和预算门槛继续有效。
 
 
-## 5. 步骤五：组约束调度与乘法内部自动拆分
+## 步骤五：组约束调度与乘法内部自动拆分
 
 ### 5.1 范围、预算重算与有限采集清单
 
@@ -1404,3 +1404,128 @@ B/C 普通契约 **20,202 项**及后端历史证据核验通过，12 个 B/C �
 2026-10-29将本文件第二章标题由“推进”改为“旧计划推进记录”，使目录和直接跳转时都能看出其历史身份。该章仍是从旧计划迁入的步骤一至五及位置补验记录；章内历史正文、结果、§号和完成状态不改，新计划实际工作继续记第三章。
 
 同步更新第一章§12的迁入/哈希说明、章前提示、历史材料边界及mission导航和archive说明。归档原计划保留原字节和原哈希；本文件副本仅调整章标题，正文校验改为排除章标题后逐字节对照，避免继续声称含新标题的整章与旧哈希相同。本轮只改文档，没有修改代码、配置、账本、冻结或证据，也未执行实验。
+
+# 第四章：修订计划实施与验收记录
+
+按用户2026-10-29的本轮要求，新计划各步骤的实际实施与验收统一追加在本章，以小节记录修改、验收、资源及剩余边界。第三章保留已有规划修订与迁移记录；前文“后续工作记第三章”等入口描述由本次记录位置调整接续，第一章的技术要求和验收范围不变。第一章及旧记录中的状态按形成时解释，最新实施状态以本章的明确范围和版本为准。
+
+本章之前的内容保留本轮开始时的字节，包括用户已有的第二章步骤四、五标题调整；不把这些既有编辑认作本轮修改，也不重新宣称第二章当前副本与归档原文逐字节相同。历史freeze、旧配置及证据不覆写。
+
+<a id="step1-wide-acceptance"></a>
+
+## 步骤一：继承基线，补齐宽位宽能力
+
+### 1.1 依据、继承版本与状态
+
+- 执行日期：2026-10-29。
+- 对应要求：本文件**第一章§10.1“步骤一：继承基线，补齐宽位宽能力”**，结合第一章§4.1、§4.3及§11；本次实现/验收版本为 `step1-wide-validation-v1`、`wide-baseline-freeze-v1`。
+- 基础提交：主仓库 `fe18cef3edebb7abc106fa022938ce2d59e8a979`，RTLzz `f40e69fab15129a9d077c98b12502f1d2e71f506`。继承旧AddCarry位宽修复、Verilator `VlWide<Words>` 多字读写、固定L/valid/reset及原生/CIRCT路径。
+- **状态：修订计划步骤一的新增宽位宽补验完成。** 五档整数及128位输入→256位完整乘积→257位归约结果的软件、前端/BEIR、常量与已知位分析、复位求值、原生RTL、驱动和周期链路通过本节所列检查；CIRCT开启与禁用分别验收。
+- 本轮未发现需要修改现有编译器实现的宽算术缺陷；新增的是独立参考回归、直接BEIR检查、证据核验器和后继冻结。该结论只覆盖本步验证范围，**不代表M1、步骤二、参数化拆分、三类43整图接入、D模型或四平台PPA已经完成**。
+
+### 1.2 实际新增内容
+
+1. 新增 `regression/generator_wide_arithmetic.py`。统一生成8/16/32/64/128位运算、组合SERVICE及L=1/3流水线夹具；Python任意精度整数计算独立期望。输入、实际输出和期望均保留全宽，C++驱动用逐位写入及公开limb读出进行十六进制传输，不将整个128/256/257位值转换成宿主 `uint64_t`。默认仍遵守既有 `VUL_REGRESSION_CIRCT` 开关，不修改总回归入口策略。
+2. 新增 `rtlzz/testv2/wide_value_test.cpp`。从Python产生的常量参考读取完整期望limb，直接验证ValueFacts、常量乘法、双乘积归约、AddCarry、借位及截断；分别核对BEOPT前、后及再次优化后的值、known-one/known-zero，以及非恒定输入零扩展到最高257位时的已知零/未知位边界。
+3. 同一回归增加 `--compatibility-only` 入口，重跑原有pipeline、多延迟、valid、查询/宽端口、AddCarry基线和mulu32。独立RTLzz测试继续显式用 `cmake -S rtlzz -B build/step4-rtlzz` 配置；父工程默认构建未替代独立单元目标配置。
+4. 新增 `experiments/arithmetic_dse/wide_evidence.py`、`experiments/arithmetic/wide_baseline_freeze_v1.json` 和 `experiments/arithmetic/evidence/step1_wide_v1/`。归档264份相关源码快照、实际生成RTL、向量、压缩完整跟踪、逐命令/资源记录及账本截点；核验可不依赖本机build目录、编译器或EDA工具执行。
+
+本轮未改变既有算术模式、候选、调度算法、区域机制、平台配置和预算策略；旧freeze保持原字节，新freeze明确绑定本步范围和源码快照。
+
+### 1.3 宽位宽支持与数值验收
+
+| 输入算术位宽W | 完整乘积2W | 双完整乘积和2W+1 | 已执行路径与结果 |
+| --- | ---: | ---: | --- |
+| 8 | 16 | 17 | Python参考、simgen、原生RTL、CIRCT及ValueFacts/BEOPT检查通过 |
+| 16 | 32 | 33 | 同上，包含进位、借位和显式截断 |
+| 32 | 64 | 65 | 同上，包含跨64位结果边界 |
+| 64 | 128 | 129 | 同上，覆盖多limb结果及非整字尾部 |
+| 128 | 256 | 257 | 同上，完整高位乘积、257位最高位、256位动态偏置及跨级合流均作数值比较 |
+
+每个配置执行**1,843个周期、59个输出字段**。每档W包括完整/低位乘积、双乘积和、乘加、模W加减、AddCarry、位逻辑、范围内动态左右移和比较；另有257位标签、长短路径合流及256/257位常量表达式。输入包含零、全1、最高位、32/64位limb边界、进位/借位、单热位及固定种子 `20261029` 随机值；128位乘积和257位归约均有非零高位，不能只比较低64位取得通过。
+
+组合SERVICE逐事务与Python参考比较；流水层按固定L维护历史队列，覆盖连续输入、气泡、填充/排空、共享结果的多消费者、标签与长短路径合流，以及5个显式在途/连续复位周期和最终复位重启。复位输入为非零全宽值，其输出包含非零256/257位算术结果，避免仅以全零复位掩盖高limb问题。
+
+宽端口另对 **128/129/193/256/257位**完成逐位单热、全1和清零传输，每配置**973次**；257位是5个64位limb、9个Verilator 32位word，包含最后仅1位有效的尾word。结构体实际输入/输出打包宽度还跨越多个这些边界，均通过同一数值核对。
+
+| CIRCT开关与配置 | 实际执行 | 每配置组合字段比较 | 每配置有效流水事务 | 每周期valid检查与复位 |
+| --- | --- | ---: | ---: | --- |
+| `VUL_REGRESSION_CIRCT=0`，L=1 | simgen、原生RTL各1项 | 108,737 | 1,415 | 各1,843周期；423气泡/填充/排空周期、5显式复位周期 |
+| `VUL_REGRESSION_CIRCT=0`，L=3 | simgen、原生RTL各1项 | 108,737 | 1,409 | 各1,843周期；429气泡/填充/排空周期、5显式复位周期 |
+| `VUL_REGRESSION_CIRCT=1`，L=1 | simgen、原生RTL、CIRCT各1项 | 108,737 | 1,415 | 同L=1；三条路径均实际生成并运行 |
+| `VUL_REGRESSION_CIRCT=1`，L=3 | simgen、原生RTL、CIRCT各1项 | 108,737 | 1,409 | 同L=3；原生内部valid寄存器数为2，符合N=L−1 |
+
+共10个实际配置，均通过。L=1对应RTLzz内部N=0，并同时验证独立组合SERVICE；L=3对应N=2。每个配置分别比较有效流水数据和显式复位数据，计83,780或83,426个字段值，另核对构造/最终复位。**气泡数据按已有 `arithmetic-semantics-v1` 的 `invalid_data_not_compared` 契约处理**：valid每周期必须对齐，无效输出数据不要求与上次有效值相等，不增加新的接口保证。
+
+直接BEIR检查另有**185组、2,960项**通过，覆盖上述五档及最大257位。离线核验还实际拒绝了“有效乘积第255位被翻转”和“将L=3跟踪按L=2解释”两种篡改，确认检查器会发现高位丢失及周期错位。
+
+### 1.4 继承功能的重新验收
+
+以下均为本轮重新执行，不借用旧通过次数。原有Python回归显式开启已安装CIRCT；独立pipeline/reset/valid单元分别执行原生与CIRCT分支。
+
+| 检查 | 本轮结果与范围 |
+| --- | --- |
+| `generator_pipeline.py` | 通过。L=1/2/3/4/8的simgen、原生、CIRCT共15个配置；26项声明诊断、8项访问隔离、RTL输出完整定义及sim-only逻辑检查通过 |
+| `generator_pipeline_instances.py` | 通过。三条路径的参数化子实例与release清理 |
+| `generator_pipeline_valid.py` | 通过。simgen L=1/2/8的valid、气泡与保持相关行为；本步新回归另覆盖原生/CIRCT的事务及valid对齐 |
+| `generator_query_api.py` | 通过。已有查询、宽结构体/快照/复位和错误诊断检查均正常结束 |
+| `generator_rtl_baseline.py` | 通过。simgen、原生、CIRCT各 `RTL BASELINE PASS checks=2530`，保留原AddCarry及65～256位端口基线 |
+| `mulu32/Main.utb` | 通过。simgen、原生、CIRCT各100,000周期及排空，包含有效事务和三周期回调对齐；原生/CIRCT构建日志无 `%Warning-` |
+| 独立RTLzz目标 | `pipeline-test`、`pipeline-reset-test`、`pipeline-valid-test` 的原生/CIRCT分支，以及 `beopt-width-test` 均通过；本步 `wide-value-test` 亦通过 |
+
+本轮未执行完整 `regression.sh` 或全部RTLzz单元套件，不据此宣称全项目回归通过。
+
+### 1.5 开发中失败与契约核对
+
+保留4个未通过的support叶命令及对应输入/生成夹具、日志和资源记录，不从资源账本删除：
+
+1. 新夹具首轮将模板辅助函数写在UTB顶层，DSL拒绝；改放 `GLOBAL()`。
+2. 第二轮夹具用了不支持的Int显式宿主类型转换及切片转换；改用受支持的 `Int::to<T>()`、逐位输入和limb序列化。
+3. 第三轮输出序列化错误调用切片的 `to<T>()`；改从公开limb读出，比较字段使用布尔类型表达。
+4. 第四轮检查器额外要求无效流水数据保持，原生L=1在气泡处被拒绝。复核 `semantics_v1.json`、simgen及原生输出壳后确认：现有实验契约明确不比较无效数据，simgen和原生可在这些周期给出不同数据。按原契约修正检查器，保留valid逐周期、全部有效结果及复位值的检查，没有修改产品行为或放宽有效事务比较。
+
+上述失败属于新增夹具/验收器开发问题，不计作编译器缺陷或成功验证；其后的完整禁用/启用矩阵及继承回归才作为本步通过证据。原始失败状态、命令、实际成本和原因可在 `development_attempts.json`、索引及账本截点互查。
+
+### 1.6 资源与证据
+
+本轮新增 **0 synth / 0 grt / 0 final / 92 support**，叶命令墙钟 **360.872746秒**、实际CPU **428.44秒**，含4个失败support。累计为 **33/11/5/228**，墙钟 **2396.887071秒**、CPU **3572.01秒**，pending=0；原185条历史账目逐项保留。未调用Yosys/OpenROAD物理流程，未迁移预算、扩大额度或消耗新规划的容量包络。
+
+后代RSS采样峰值 **1532.20MiB**，每条GNU time及后代采样口径独立保存。构建命令使用 `-j2`；后代采样观察到的总线程峰值为24，包含工具/运行库后台线程，不能把构建并发设置或物理单作业策略当成实际线程总数。0.5秒RSS采样可能重复计共享页或漏掉短峰值；CPU按GNU time实际结算，不以线程数乘墙钟替代。
+
+证据入口：
+
+- [新冻结](../experiments/arithmetic/wide_baseline_freeze_v1.json)：绑定第一章§10.1、本步版本、264份相关源码快照及5份旧freeze身份；历史原件不覆写。
+- [证据索引](../experiments/arithmetic/evidence/step1_wide_v1/index.json)：576个归档文件的内容哈希，含完整压缩跟踪、实际RTL和92条命令/资源索引。
+- [资源汇总](../experiments/arithmetic/evidence/step1_wide_v1/resources.json)、[启用CIRCT结果](../experiments/arithmetic/evidence/step1_wide_v1/enabled-summary.json)、[禁用CIRCT结果](../experiments/arithmetic/evidence/step1_wide_v1/disabled-summary.json)、[继承回归结果](../experiments/arithmetic/evidence/step1_wide_v1/compatibility-summary.json)。
+- `source_v1/` 保存本步实际源码，`rtl/` 保存原生/CIRCT各L=1/3的真实RTL，`versions.json` 保存主仓库/子仓库提交、生成器二进制及LLVM 18.1.3、g++ 13.3.0、Verilator 5.020、CIRCT firtool-1.162.0等工具身份。
+
+本机未压缩构建/跟踪位于 `build/step1-wide-no-circt-20261029-v5/`、`build/step1-wide-circt-20261029/` 和 `build/step1-inherited-20261029/`，开发失败目录另保留；这些build路径是来源与便于调试的产物，不是离线验收依赖。
+
+### 1.7 复现入口与验收边界
+
+从仓库根目录运行，`--output` 必须选尚不存在的目录以保留证据。软件/native主路径及显式禁用检查：
+
+```bash
+VUL_REGRESSION_CIRCT=0 python3 regression/generator_wide_arithmetic.py --output build/step1-wide-recheck-native
+```
+
+启用已安装CIRCT后，运行补充路径和继承回归：
+
+```bash
+export CIRCT_ROOT=/home/zyrv/circt/circt-full-shared-linux-x64/firtool-1.162.0
+export PATH="$CIRCT_ROOT/bin:$PATH"
+VUL_REGRESSION_CIRCT=1 python3 regression/generator_wide_arithmetic.py --output build/step1-wide-recheck-circt
+VUL_REGRESSION_CIRCT=1 python3 regression/generator_wide_arithmetic.py --compatibility-only --output build/step1-wide-recheck-inherited
+```
+
+以上实验命令继续使用共享账本和原资源策略，重新执行会照实增加support时间；若显式启用但CIRCT缺失，会保留工具诊断并失败，不伪装为SKIP或跳过软件/native整条回归。
+
+无build、无EDA工具的小证据核验：
+
+```bash
+python3 -m experiments.arithmetic_dse.wide_evidence
+```
+
+本轮该核验通过：264个相关源文件/配置及576个证据文件哈希、10配置完整数值跟踪、独立常量参考、2项篡改拒绝、92条叶命令结算、旧账保留和pending=0均可互查。另在只复制源快照、冻结与归档证据、没有build目录的隔离目录中完成相同核验，未调用EDA工具。核验器显式使用冻结源码快照；今后源码变化时会列出当前失配并标为历史快照核验，不把旧通过冒充新实现验收。
+
+**关闭条件核对：**第一章§10.1要求的五档类型与256/257位数据链路、边界/随机/非零复位、原生生成及仿真、既有pipeline/多延迟/valid/mulu32兼容、独立RTLzz显式构建及CIRCT启用/禁用均已有本轮证据，步骤一补验完成。动态商余、安全移位完整包装、43案例生成与新静态表、非整齐尺寸拆分模板、平台训练与PPA仍按步骤二/五/六/七/八推进；本步范围内的移位使用保证在范围内的移位量，不宣称已经实现新安全移位契约。下一入口是M1中的步骤二补充契约/静态表/参数化案例及诊断协议，M1整体尚未验收。

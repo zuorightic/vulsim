@@ -1,0 +1,117 @@
+Building Main
+In file included from VulTestMain.hpp:7,
+                 from main.cpp:23:
+sim.decl.hpp: In instantiation of ‘void SimTop_sim::print_hex(const vulfixint::Int<ShiftBitWidth>&) [with unsigned int W = 16]’:
+sim.decl.hpp:47:14:   required from here
+sim.decl.hpp:41:63: error: ‘class vulfixint::IntConstSliceRef<16, 1>’ has no member named ‘to’; did you mean ‘uint32_t vulfixint::IntConstSliceRef<16, 1>::lo’? (not accessible from this context)
+   41 |             if (bit<W && value.template pick<1>(bit).template to<bool>()) digit|=1u<<j;
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+In file included from header.hpp:8,
+                 from sim.decl.hpp:8:
+fixint.hpp:786:14: note: declared private here
+  786 |     uint32_t lo;
+      |              ^~
+sim.decl.hpp: In instantiation of ‘void SimTop_sim::print_hex(const vulfixint::Int<ShiftBitWidth>&) [with unsigned int W = 8]’:
+sim.decl.hpp:48:14:   required from here
+sim.decl.hpp:41:63: error: ‘class vulfixint::IntConstSliceRef<8, 1>’ has no member named ‘to’; did you mean ‘uint32_t vulfixint::IntConstSliceRef<8, 1>::lo’? (not accessible from this context)
+   41 |             if (bit<W && value.template pick<1>(bit).template to<bool>()) digit|=1u<<j;
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+fixint.hpp:786:14: note: declared private here
+  786 |     uint32_t lo;
+      |              ^~
+sim.decl.hpp: In instantiation of ‘void SimTop_sim::print_hex(const vulfixint::Int<ShiftBitWidth>&) [with unsigned int W = 17]’:
+sim.decl.hpp:49:14:   required from here
+sim.decl.hpp:41:63: error: ‘class vulfixint::IntConstSliceRef<17, 1>’ has no member named ‘to’; did you mean ‘uint32_t vulfixint::IntConstSliceRef<17, 1>::lo’? (not accessible from this context)
+   41 |             if (bit<W && value.template pick<1>(bit).template to<bool>()) digit|=1u<<j;
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+fixint.hpp:786:14: note: declared private here
+  786 |     uint32_t lo;
+      |              ^~
+sim.decl.hpp: In instantiation of ‘void SimTop_sim::print_hex(const vulfixint::Int<ShiftBitWidth>&) [with unsigned int W = 9]’:
+sim.decl.hpp:52:14:   required from here
+sim.decl.hpp:41:63: error: ‘class vulfixint::IntConstSliceRef<9, 1>’ has no member named ‘to’; did you mean ‘uint32_t vulfixint::IntConstSliceRef<9, 1>::lo’? (not accessible from this context)
+   41 |             if (bit<W && value.template pick<1>(bit).template to<bool>()) digit|=1u<<j;
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+fixint.hpp:786:14: note: declared private here
+  786 |     uint32_t lo;
+      |              ^~
+fixint.hpp: In instantiation of ‘class vulfixint::Int<0>’:
+sim.decl.hpp:41:48:   required from ‘void SimTop_sim::print_hex(const vulfixint::Int<ShiftBitWidth>&) [with unsigned int W = 1]’
+sim.decl.hpp:57:14:   required from here
+fixint.hpp:230:28: error: static assertion failed: BitWidth must be greater than 0
+  230 |     static_assert(BitWidth > 0, "BitWidth must be greater than 0");
+      |                   ~~~~~~~~~^~~
+fixint.hpp:230:28: note: the comparison reduces to ‘(0 > 0)’
+sim.decl.hpp: In instantiation of ‘void SimTop_sim::print_hex(const vulfixint::Int<ShiftBitWidth>&) [with unsigned int W = 1]’:
+sim.decl.hpp:57:14:   required from here
+sim.decl.hpp:41:63: error: ‘class vulfixint::IntConstSliceRef<1, 1>’ has no member named ‘to’; did you mean ‘uint32_t vulfixint::IntConstSliceRef<1, 1>::lo’? (not accessible from this context)
+   41 |             if (bit<W && value.template pick<1>(bit).template to<bool>()) digit|=1u<<j;
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+fixint.hpp:786:14: note: declared private here
+  786 |     uint32_t lo;
+      |              ^~
+sim.decl.hpp: In instantiation of ‘void SimTop_sim::print_hex(const vulfixint::Int<ShiftBitWidth>&) [with unsigned int W = 32]’:
+sim.decl.hpp:58:14:   required from here
+sim.decl.hpp:41:63: error: ‘class vulfixint::IntConstSliceRef<32, 1>’ has no member named ‘to’; did you mean ‘uint32_t vulfixint::IntConstSliceRef<32, 1>::lo’? (not accessible from this context)
+   41 |             if (bit<W && value.template pick<1>(bit).template to<bool>()) digit|=1u<<j;
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+fixint.hpp:786:14: note: declared private here
+  786 |     uint32_t lo;
+      |              ^~
+sim.decl.hpp: In instantiation of ‘void SimTop_sim::print_hex(const vulfixint::Int<ShiftBitWidth>&) [with unsigned int W = 33]’:
+sim.decl.hpp:60:14:   required from here
+sim.decl.hpp:41:63: error: ‘class vulfixint::IntConstSliceRef<33, 1>’ has no member named ‘to’; did you mean ‘uint32_t vulfixint::IntConstSliceRef<33, 1>::lo’? (not accessible from this context)
+   41 |             if (bit<W && value.template pick<1>(bit).template to<bool>()) digit|=1u<<j;
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+fixint.hpp:786:14: note: declared private here
+  786 |     uint32_t lo;
+      |              ^~
+sim.decl.hpp: In instantiation of ‘void SimTop_sim::print_hex(const vulfixint::Int<ShiftBitWidth>&) [with unsigned int W = 64]’:
+sim.decl.hpp:69:14:   required from here
+sim.decl.hpp:41:63: error: ‘class vulfixint::IntConstSliceRef<64, 1>’ has no member named ‘to’; did you mean ‘uint32_t vulfixint::IntConstSliceRef<64, 1>::lo’? (not accessible from this context)
+   41 |             if (bit<W && value.template pick<1>(bit).template to<bool>()) digit|=1u<<j;
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+fixint.hpp:786:14: note: declared private here
+  786 |     uint32_t lo;
+      |              ^~
+sim.decl.hpp: In instantiation of ‘void SimTop_sim::print_hex(const vulfixint::Int<ShiftBitWidth>&) [with unsigned int W = 65]’:
+sim.decl.hpp:71:14:   required from here
+sim.decl.hpp:41:63: error: ‘class vulfixint::IntConstSliceRef<65, 1>’ has no member named ‘to’; did you mean ‘uint32_t vulfixint::IntConstSliceRef<65, 1>::lo’? (not accessible from this context)
+   41 |             if (bit<W && value.template pick<1>(bit).template to<bool>()) digit|=1u<<j;
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+fixint.hpp:786:14: note: declared private here
+  786 |     uint32_t lo;
+      |              ^~
+sim.decl.hpp: In instantiation of ‘void SimTop_sim::print_hex(const vulfixint::Int<ShiftBitWidth>&) [with unsigned int W = 128]’:
+sim.decl.hpp:80:14:   required from here
+sim.decl.hpp:41:63: error: ‘class vulfixint::IntConstSliceRef<128, 1>’ has no member named ‘to’; did you mean ‘uint32_t vulfixint::IntConstSliceRef<128, 1>::lo’? (not accessible from this context)
+   41 |             if (bit<W && value.template pick<1>(bit).template to<bool>()) digit|=1u<<j;
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+fixint.hpp:786:14: note: declared private here
+  786 |     uint32_t lo;
+      |              ^~
+sim.decl.hpp: In instantiation of ‘void SimTop_sim::print_hex(const vulfixint::Int<ShiftBitWidth>&) [with unsigned int W = 129]’:
+sim.decl.hpp:82:14:   required from here
+sim.decl.hpp:41:63: error: ‘class vulfixint::IntConstSliceRef<129, 1>’ has no member named ‘to’; did you mean ‘uint32_t vulfixint::IntConstSliceRef<129, 1>::lo’? (not accessible from this context)
+   41 |             if (bit<W && value.template pick<1>(bit).template to<bool>()) digit|=1u<<j;
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+fixint.hpp:786:14: note: declared private here
+  786 |     uint32_t lo;
+      |              ^~
+sim.decl.hpp: In instantiation of ‘void SimTop_sim::print_hex(const vulfixint::Int<ShiftBitWidth>&) [with unsigned int W = 256]’:
+sim.decl.hpp:91:14:   required from here
+sim.decl.hpp:41:63: error: ‘class vulfixint::IntConstSliceRef<256, 1>’ has no member named ‘to’; did you mean ‘uint32_t vulfixint::IntConstSliceRef<256, 1>::lo’? (not accessible from this context)
+   41 |             if (bit<W && value.template pick<1>(bit).template to<bool>()) digit|=1u<<j;
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+fixint.hpp:786:14: note: declared private here
+  786 |     uint32_t lo;
+      |              ^~
+sim.decl.hpp: In instantiation of ‘void SimTop_sim::print_hex(const vulfixint::Int<ShiftBitWidth>&) [with unsigned int W = 257]’:
+sim.decl.hpp:93:14:   required from here
+sim.decl.hpp:41:63: error: ‘class vulfixint::IntConstSliceRef<257, 1>’ has no member named ‘to’; did you mean ‘uint32_t vulfixint::IntConstSliceRef<257, 1>::lo’? (not accessible from this context)
+   41 |             if (bit<W && value.template pick<1>(bit).template to<bool>()) digit|=1u<<j;
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+fixint.hpp:786:14: note: declared private here
+  786 |     uint32_t lo;
+      |              ^~
+/home/zyrv/vulsim/build/step1-wide-no-circt-20261029-v3/sim-L1/run.sh: line 8: /home/zyrv/vulsim/build/step1-wide-no-circt-20261029-v3/sim-L1/Main: No such file or directory

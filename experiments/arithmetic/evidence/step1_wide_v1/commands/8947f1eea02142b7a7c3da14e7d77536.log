@@ -1,0 +1,92 @@
+Building Main
+In file included from sim.decl.hpp:11,
+                 from VulTestMain.hpp:7,
+                 from main.cpp:23:
+sim/top.decl.hpp: In member function ‘void Top_sim_top::__vul_pipeline_calculate_scope::compute(const Input&, const bool&, Output&)’:
+sim/top.decl.hpp:70:23: error: invalid cast from type ‘const vulfixint::Int<8>’ to type ‘uint32_t’ {aka ‘unsigned int’}
+   70 | output.left8 = a8 << (uint32_t(input.shift) & 7u);
+      |                       ^~~~~~~~~~~~~~~~~~~~~
+sim/top.decl.hpp:71:24: error: invalid cast from type ‘const vulfixint::Int<8>’ to type ‘uint32_t’ {aka ‘unsigned int’}
+   71 | output.right8 = a8 >> (uint32_t(input.shift) & 7u);
+      |                        ^~~~~~~~~~~~~~~~~~~~~
+sim/top.decl.hpp:87:25: error: invalid cast from type ‘const vulfixint::Int<8>’ to type ‘uint32_t’ {aka ‘unsigned int’}
+   87 | output.left16 = a16 << (uint32_t(input.shift) & 15u);
+      |                         ^~~~~~~~~~~~~~~~~~~~~
+sim/top.decl.hpp:88:26: error: invalid cast from type ‘const vulfixint::Int<8>’ to type ‘uint32_t’ {aka ‘unsigned int’}
+   88 | output.right16 = a16 >> (uint32_t(input.shift) & 15u);
+      |                          ^~~~~~~~~~~~~~~~~~~~~
+sim/top.decl.hpp:104:25: error: invalid cast from type ‘const vulfixint::Int<8>’ to type ‘uint32_t’ {aka ‘unsigned int’}
+  104 | output.left32 = a32 << (uint32_t(input.shift) & 31u);
+      |                         ^~~~~~~~~~~~~~~~~~~~~
+sim/top.decl.hpp:105:26: error: invalid cast from type ‘const vulfixint::Int<8>’ to type ‘uint32_t’ {aka ‘unsigned int’}
+  105 | output.right32 = a32 >> (uint32_t(input.shift) & 31u);
+      |                          ^~~~~~~~~~~~~~~~~~~~~
+sim/top.decl.hpp:121:25: error: invalid cast from type ‘const vulfixint::Int<8>’ to type ‘uint32_t’ {aka ‘unsigned int’}
+  121 | output.left64 = a64 << (uint32_t(input.shift) & 63u);
+      |                         ^~~~~~~~~~~~~~~~~~~~~
+sim/top.decl.hpp:122:26: error: invalid cast from type ‘const vulfixint::Int<8>’ to type ‘uint32_t’ {aka ‘unsigned int’}
+  122 | output.right64 = a64 >> (uint32_t(input.shift) & 63u);
+      |                          ^~~~~~~~~~~~~~~~~~~~~
+sim/top.decl.hpp:138:27: error: invalid cast from type ‘const vulfixint::Int<8>’ to type ‘uint32_t’ {aka ‘unsigned int’}
+  138 | output.left128 = a128 << (uint32_t(input.shift) & 127u);
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+sim/top.decl.hpp:139:28: error: invalid cast from type ‘const vulfixint::Int<8>’ to type ‘uint32_t’ {aka ‘unsigned int’}
+  139 | output.right128 = a128 >> (uint32_t(input.shift) & 127u);
+      |                            ^~~~~~~~~~~~~~~~~~~~~
+sim.decl.hpp: In member function ‘void SimTop_sim::simulation()’:
+sim.decl.hpp:199:54: error: invalid cast from type ‘vulfixint::Int<1>’ to type ‘bool’
+  199 |         input.shift=read_hex<8>(stream); input.carry=bool(read_hex<1>(stream));
+      |                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~
+sim.decl.hpp:200:17: error: invalid cast from type ‘vulfixint::Int<1>’ to type ‘bool’
+  200 |         bool iv=bool(read_hex<1>(stream)), reset=bool(read_hex<1>(stream));
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+sim.decl.hpp:201:13: error: ‘reset’ was not declared in this scope; did you mean ‘result’?
+  201 |         if (reset) sim_reset();
+      |             ^~~~~
+      |             result
+sim.decl.hpp:203:14: error: ‘reset’ was not declared in this scope; did you mean ‘result’?
+  203 |         if (!reset) push(input,iv);
+      |              ^~~~~
+      |              result
+In file included from VulTestMain.hpp:9:
+sim/top.impl.hpp: In member function ‘void Top_sim_top::combine(const Input&, Output&)’:
+sim/top.impl.hpp:106:23: error: invalid cast from type ‘const vulfixint::Int<8>’ to type ‘uint32_t’ {aka ‘unsigned int’}
+  106 | result.left8 = a8 << (uint32_t(value.shift) & 7u);
+      |                       ^~~~~~~~~~~~~~~~~~~~~
+sim/top.impl.hpp:107:24: error: invalid cast from type ‘const vulfixint::Int<8>’ to type ‘uint32_t’ {aka ‘unsigned int’}
+  107 | result.right8 = a8 >> (uint32_t(value.shift) & 7u);
+      |                        ^~~~~~~~~~~~~~~~~~~~~
+sim/top.impl.hpp:123:25: error: invalid cast from type ‘const vulfixint::Int<8>’ to type ‘uint32_t’ {aka ‘unsigned int’}
+  123 | result.left16 = a16 << (uint32_t(value.shift) & 15u);
+      |                         ^~~~~~~~~~~~~~~~~~~~~
+sim/top.impl.hpp:124:26: error: invalid cast from type ‘const vulfixint::Int<8>’ to type ‘uint32_t’ {aka ‘unsigned int’}
+  124 | result.right16 = a16 >> (uint32_t(value.shift) & 15u);
+      |                          ^~~~~~~~~~~~~~~~~~~~~
+sim/top.impl.hpp:140:25: error: invalid cast from type ‘const vulfixint::Int<8>’ to type ‘uint32_t’ {aka ‘unsigned int’}
+  140 | result.left32 = a32 << (uint32_t(value.shift) & 31u);
+      |                         ^~~~~~~~~~~~~~~~~~~~~
+sim/top.impl.hpp:141:26: error: invalid cast from type ‘const vulfixint::Int<8>’ to type ‘uint32_t’ {aka ‘unsigned int’}
+  141 | result.right32 = a32 >> (uint32_t(value.shift) & 31u);
+      |                          ^~~~~~~~~~~~~~~~~~~~~
+sim/top.impl.hpp:157:25: error: invalid cast from type ‘const vulfixint::Int<8>’ to type ‘uint32_t’ {aka ‘unsigned int’}
+  157 | result.left64 = a64 << (uint32_t(value.shift) & 63u);
+      |                         ^~~~~~~~~~~~~~~~~~~~~
+sim/top.impl.hpp:158:26: error: invalid cast from type ‘const vulfixint::Int<8>’ to type ‘uint32_t’ {aka ‘unsigned int’}
+  158 | result.right64 = a64 >> (uint32_t(value.shift) & 63u);
+      |                          ^~~~~~~~~~~~~~~~~~~~~
+sim/top.impl.hpp:174:27: error: invalid cast from type ‘const vulfixint::Int<8>’ to type ‘uint32_t’ {aka ‘unsigned int’}
+  174 | result.left128 = a128 << (uint32_t(value.shift) & 127u);
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+sim/top.impl.hpp:175:28: error: invalid cast from type ‘const vulfixint::Int<8>’ to type ‘uint32_t’ {aka ‘unsigned int’}
+  175 | result.right128 = a128 >> (uint32_t(value.shift) & 127u);
+      |                            ^~~~~~~~~~~~~~~~~~~~~
+In file included from header.hpp:8,
+                 from sim.decl.hpp:8:
+fixint.hpp: In instantiation of ‘class vulfixint::Int<0>’:
+sim.decl.hpp:41:53:   required from ‘void SimTop_sim::print_hex(const vulfixint::Int<ShiftBitWidth>&) [with unsigned int W = 1]’
+sim.decl.hpp:57:14:   required from here
+fixint.hpp:230:28: error: static assertion failed: BitWidth must be greater than 0
+  230 |     static_assert(BitWidth > 0, "BitWidth must be greater than 0");
+      |                   ~~~~~~~~~^~~
+fixint.hpp:230:28: note: the comparison reduces to ‘(0 > 0)’
+/home/zyrv/vulsim/build/step1-wide-no-circt-20261029-v2/sim-L1/run.sh: line 8: /home/zyrv/vulsim/build/step1-wide-no-circt-20261029-v2/sim-L1/Main: No such file or directory

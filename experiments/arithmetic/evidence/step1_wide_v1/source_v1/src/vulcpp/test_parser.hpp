@@ -1,0 +1,26 @@
+// Copyright (c) 2025 Meng Chengzhen, in Shandong University
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+#pragma once
+
+#include "../project.h"
+
+#include <utility>
+
+VulStaticTestHarnessModule parseTestModule(
+    const string &test_filepath,
+    const VulStaticConfigLib &config_lib,
+    const VulStaticBundleLib &bundle_lib
+);
+std::pair<string, string> scanTestModuleBindingPaths(const string &test_filepath);

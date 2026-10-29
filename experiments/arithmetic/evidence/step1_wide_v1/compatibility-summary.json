@@ -1,0 +1,657 @@
+{
+  "version": "step1-inherited-compatibility-v1",
+  "status": "passed",
+  "CIRCT": "executed",
+  "commands": [
+    {
+      "command": [
+        "cmake",
+        "--build",
+        "/home/zyrv/vulsim/build",
+        "--target",
+        "vulrtlgen",
+        "vulsimgen",
+        "-j2"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 1200,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 0,
+      "cancelled_signal": null,
+      "walltime_s": 0.21555685391649604,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 1464,
+      "sampled_process_tree_peak_threads": 1,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step1-inherited-20261029/build-tools.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step1-inherited-20261029/build-tools.resources.txt",
+      "budget_reservation_id": "6744a95b95084d45b4ba9d7e641a889c"
+    },
+    {
+      "command": [
+        "cmake",
+        "-S",
+        "/home/zyrv/vulsim/rtlzz",
+        "-B",
+        "/home/zyrv/vulsim/build/step4-rtlzz"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 600,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 0,
+      "cancelled_signal": null,
+      "walltime_s": 0.2650198950432241,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 332,
+      "sampled_process_tree_peak_threads": 1,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step1-inherited-20261029/configure-rtlzz.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step1-inherited-20261029/configure-rtlzz.resources.txt",
+      "budget_reservation_id": "0368d97604944a85b8473f3a757044ce"
+    },
+    {
+      "command": [
+        "cmake",
+        "--build",
+        "/home/zyrv/vulsim/build/step4-rtlzz",
+        "--target",
+        "pipeline-test",
+        "pipeline-reset-test",
+        "pipeline-valid-test",
+        "beopt-width-test",
+        "-j2"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 1200,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 4.48,
+      "cancelled_signal": null,
+      "walltime_s": 5.7278509880416095,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 386056,
+      "sampled_process_tree_peak_threads": 10,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step1-inherited-20261029/build-inherited-unit-tests.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step1-inherited-20261029/build-inherited-unit-tests.resources.txt",
+      "budget_reservation_id": "7070485bccc342858087dcc3141f3b2c"
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step4-rtlzz/testv2/pipeline-test"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 600,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 1.92,
+      "cancelled_signal": null,
+      "walltime_s": 2.2672680178657174,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 112328,
+      "sampled_process_tree_peak_threads": 2,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step1-inherited-20261029/pipeline-test-native.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step1-inherited-20261029/pipeline-test-native.resources.txt",
+      "budget_reservation_id": "9fdf7d0de57c46b1b7853b18a5ae0e55"
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step4-rtlzz/testv2/pipeline-test",
+        "--circt"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 600,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 2.06,
+      "cancelled_signal": null,
+      "walltime_s": 2.6176560479216278,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 112936,
+      "sampled_process_tree_peak_threads": 2,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step1-inherited-20261029/pipeline-test-circt.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step1-inherited-20261029/pipeline-test-circt.resources.txt",
+      "budget_reservation_id": "9c0b6682ac4c48ee87eac3c003626d70"
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step4-rtlzz/testv2/pipeline-reset-test"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 600,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 2.49,
+      "cancelled_signal": null,
+      "walltime_s": 2.535237440140918,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 116020,
+      "sampled_process_tree_peak_threads": 2,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step1-inherited-20261029/pipeline-reset-test-native.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step1-inherited-20261029/pipeline-reset-test-native.resources.txt",
+      "budget_reservation_id": "c86fb47346994278b3057bcbb2044310"
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step4-rtlzz/testv2/pipeline-reset-test",
+        "--circt"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 600,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 2.23,
+      "cancelled_signal": null,
+      "walltime_s": 2.919093554839492,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 177568,
+      "sampled_process_tree_peak_threads": 4,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step1-inherited-20261029/pipeline-reset-test-circt.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step1-inherited-20261029/pipeline-reset-test-circt.resources.txt",
+      "budget_reservation_id": "f7c0fcd8ef2448be8bde2dd61cbf945e"
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step4-rtlzz/testv2/pipeline-valid-test"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 600,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 0.99,
+      "cancelled_signal": null,
+      "walltime_s": 1.1660496850963682,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 87152,
+      "sampled_process_tree_peak_threads": 2,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step1-inherited-20261029/pipeline-valid-test-native.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step1-inherited-20261029/pipeline-valid-test-native.resources.txt",
+      "budget_reservation_id": "88897c2228134233b01c0b3fce067316"
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step4-rtlzz/testv2/pipeline-valid-test",
+        "--circt"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 600,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 1.1400000000000001,
+      "cancelled_signal": null,
+      "walltime_s": 2.1190518580842763,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 124596,
+      "sampled_process_tree_peak_threads": 4,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step1-inherited-20261029/pipeline-valid-test-circt.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step1-inherited-20261029/pipeline-valid-test-circt.resources.txt",
+      "budget_reservation_id": "7dedbe49499b4b59bdf06256a1ffa3f7"
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step4-rtlzz/testv2/beopt-width-test"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 600,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 0,
+      "cancelled_signal": null,
+      "walltime_s": 0.03283993504010141,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 332,
+      "sampled_process_tree_peak_threads": 1,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step1-inherited-20261029/beopt-width-test-native.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step1-inherited-20261029/beopt-width-test-native.resources.txt",
+      "budget_reservation_id": "8755a469d95c4ec5ad5527873f572872"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/zyrv/vulsim/regression/generator_pipeline.py"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 2400,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 84.48,
+      "cancelled_signal": null,
+      "walltime_s": 106.74115914804861,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 330516,
+      "sampled_process_tree_peak_threads": 10,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step1-inherited-20261029/generator_pipeline.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step1-inherited-20261029/generator_pipeline.resources.txt",
+      "budget_reservation_id": "00176d93d5b845e6af545e0426486e06"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/zyrv/vulsim/regression/generator_pipeline_instances.py"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 2400,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 31.28,
+      "cancelled_signal": null,
+      "walltime_s": 35.915375740034506,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 321356,
+      "sampled_process_tree_peak_threads": 9,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step1-inherited-20261029/generator_pipeline_instances.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step1-inherited-20261029/generator_pipeline_instances.resources.txt",
+      "budget_reservation_id": "2648f464e3df4b6ebab8c97ac4e2377a"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/zyrv/vulsim/regression/generator_pipeline_valid.py"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 2400,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 5.01,
+      "cancelled_signal": null,
+      "walltime_s": 6.4258562319446355,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 280532,
+      "sampled_process_tree_peak_threads": 6,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step1-inherited-20261029/generator_pipeline_valid.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step1-inherited-20261029/generator_pipeline_valid.resources.txt",
+      "budget_reservation_id": "bcf91def7b714ca888acc1aa28bdea4a"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/zyrv/vulsim/regression/generator_query_api.py"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 2400,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 11.11,
+      "cancelled_signal": null,
+      "walltime_s": 12.484320923918858,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 330864,
+      "sampled_process_tree_peak_threads": 9,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step1-inherited-20261029/generator_query_api.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step1-inherited-20261029/generator_query_api.resources.txt",
+      "budget_reservation_id": "459ddb9836d14b1c8bd2697d02ee9f6f"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/zyrv/vulsim/regression/generator_rtl_baseline.py"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 2400,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 12.18,
+      "cancelled_signal": null,
+      "walltime_s": 15.544375065946952,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 329480,
+      "sampled_process_tree_peak_threads": 24,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step1-inherited-20261029/generator_rtl_baseline.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step1-inherited-20261029/generator_rtl_baseline.resources.txt",
+      "budget_reservation_id": "8cb9900a8661447d9f3d85296a733ed6"
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/vulsimgen",
+        "-m",
+        "/home/zyrv/vulsim/regression/mulu32/Main.utb",
+        "-o",
+        "/home/zyrv/vulsim/build/step1-inherited-20261029/mulu32-sim"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 600,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 0,
+      "cancelled_signal": null,
+      "walltime_s": 0.03240632591769099,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 392,
+      "sampled_process_tree_peak_threads": 1,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step1-inherited-20261029/mulu32-sim-generate.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step1-inherited-20261029/mulu32-sim-generate.resources.txt",
+      "budget_reservation_id": "91dd47f8a4fd48ad9528b49ea2016ebb"
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step1-inherited-20261029/mulu32-sim/run.sh"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 1200,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 1.98,
+      "cancelled_signal": null,
+      "walltime_s": 2.268210048088804,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 284576,
+      "sampled_process_tree_peak_threads": 5,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step1-inherited-20261029/mulu32-sim-run.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step1-inherited-20261029/mulu32-sim-run.resources.txt",
+      "budget_reservation_id": "287b4f77941c41eb85c79a0f29a62990"
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/vulrtlgen",
+        "-m",
+        "/home/zyrv/vulsim/regression/mulu32/Main.utb",
+        "-o",
+        "/home/zyrv/vulsim/build/step1-inherited-20261029/mulu32-native"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 600,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 1.99,
+      "cancelled_signal": null,
+      "walltime_s": 2.066738551016897,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 150008,
+      "sampled_process_tree_peak_threads": 2,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step1-inherited-20261029/mulu32-native-generate.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step1-inherited-20261029/mulu32-native-generate.resources.txt",
+      "budget_reservation_id": "1ce93957a96b4c3897a82d072612247d"
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step1-inherited-20261029/mulu32-native/run.sh"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 1200,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 2.7399999999999998,
+      "cancelled_signal": null,
+      "walltime_s": 3.771410648012534,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 303008,
+      "sampled_process_tree_peak_threads": 8,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step1-inherited-20261029/mulu32-native-run.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step1-inherited-20261029/mulu32-native-run.resources.txt",
+      "budget_reservation_id": "0220c02dd71742429aa0db2c1b022f20"
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/vulrtlgen",
+        "-m",
+        "/home/zyrv/vulsim/regression/mulu32/Main.utb",
+        "-o",
+        "/home/zyrv/vulsim/build/step1-inherited-20261029/mulu32-circt",
+        "--circt"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 600,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 1.91,
+      "cancelled_signal": null,
+      "walltime_s": 2.21734849200584,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 150896,
+      "sampled_process_tree_peak_threads": 2,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step1-inherited-20261029/mulu32-circt-generate.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step1-inherited-20261029/mulu32-circt-generate.resources.txt",
+      "budget_reservation_id": "9c32acf74ccf4bdea957eb1043e42388"
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/step1-inherited-20261029/mulu32-circt/run.sh"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 1200,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 2.83,
+      "cancelled_signal": null,
+      "walltime_s": 3.7215901280287653,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 303172,
+      "sampled_process_tree_peak_threads": 8,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step1-inherited-20261029/mulu32-circt-run.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step1-inherited-20261029/mulu32-circt-run.resources.txt",
+      "budget_reservation_id": "872ec96d670844c687ba2d486c2b9c88"
+    }
+  ],
+  "usage_before": {
+    "synth": 33,
+    "grt": 11,
+    "final": 5,
+    "support_calls": 207,
+    "walltime_s": 2185.832655465463,
+    "CPU_time_s": 3361.5499999999997,
+    "pending": 0
+  },
+  "usage_after": {
+    "synth": 33,
+    "grt": 11,
+    "final": 5,
+    "support_calls": 228,
+    "walltime_s": 2396.887071044417,
+    "CPU_time_s": 3572.0099999999998,
+    "pending": 0
+  },
+  "new_PPA_calls": {
+    "synth": 0,
+    "grt": 0,
+    "final": 0
+  }
+}

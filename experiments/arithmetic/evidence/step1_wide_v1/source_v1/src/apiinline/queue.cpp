@@ -1,0 +1,401 @@
+// Copyright (c) 2025 Meng Chengzhen, in Shandong University
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+#include "apiinline/queue.hpp"
+
+#include "apiinline/utils.hpp"
+
+#include <cctype>
+#include <sstream>
+#include <unordered_map>
+
+namespace apiinline {
+
+namespace {
+
+struct QueueInfo {
+    const VulStaticQueue *queue = nullptr;
+    uint32_t data_width = 0;
+    vector<FlatField> fields;
+    string type_str;
+    string helper_name;
+    string front_helper_name;
+    string enqready;
+    string deqready;
+    string enqvalid;
+    string deqvalid;
+    string enqdata;
+    string deqdata;
+    string clrnext;
+    string default_expr;
+};
+
+string unpackValueExpr(const QueueInfo &info, const string &packed_expr) {
+    return info.helper_name + "(" + packed_expr + ")";
+}
+
+string unpackValueHelper(const QueueInfo &info) {
+    std::ostringstream os;
+    os << info.type_str << " " << info.helper_name
+       << "(const Int<" << info.data_width << "> &__vul_queue_packed) {\n";
+    os << "  " << info.type_str << " value = " << info.default_expr << ";\n";
+    for (const auto &field : info.fields) {
+        const string extracted = uintExtractExpr("__vul_queue_packed", field.offset + field.width - 1, field.offset);
+        os << "  " << field.name << " = "
+           << unpackFlatFieldValueExpr(field.name, extracted, field) << ";\n";
+    }
+    os << "  return value;\n";
+    os << "}\n";
+    return os.str();
+}
+
+void emitPackValue(std::ostringstream &os, const QueueInfo &info, const string &packed_name, const string &value_name) {
+    os << "  Int<" << info.data_width << "> " << packed_name << " = 0;\n";
+    for (const auto &field : info.fields) {
+        const string value = packFlatFieldValueExpr(flatFieldValueExpr(value_name, field.name), field);
+        os << "  " << uintExtractExpr(packed_name, field.offset + field.width - 1, field.offset)
+           << " = " << value << ";\n";
+    }
+}
+
+string enqNextBlock(const QueueInfo &info, const vector<string> &args) {
+    const uint32_t enq_width = static_cast<uint32_t>(info.queue->enq_width);
+    const bool is_mp = (info.queue->enq_width > 1 || info.queue->deq_width > 1);
+    std::ostringstream os;
+    os << "{\n";
+    if (!is_mp) {
+        string value_expr = args.empty() ? "{}" : args[0];
+        os << "  " << info.type_str << " __vul_queue_value = (" << value_expr << ");\n";
+        emitPackValue(os, info, "__vul_queue_packed", "__vul_queue_value");
+        os << "  " << info.enqdata << " = __vul_queue_packed;\n";
+        os << "  " << info.enqvalid << " = true;\n";
+    } else {
+        string values_expr = args.empty() ? "{}" : args[0];
+        string num_expr = (args.size() >= 2) ? args[1] : std::to_string(enq_width);
+        os << "  std::array<" << info.type_str << ", " << enq_width
+           << "> __vul_queue_values = (" << values_expr << ");\n";
+        os << "  uint32_t __vul_queue_req = (" << num_expr << ") < " << enq_width
+           << " ? (" << num_expr << ") : " << enq_width << ";\n";
+        for (uint32_t i = 0; i < enq_width; ++i) {
+            os << "  if (__vul_queue_req > " << i << ") {\n";
+            os << "    " << info.type_str << " __vul_queue_value = __vul_queue_values[" << i << "];\n";
+            os << "    Int<" << info.data_width << "> __vul_queue_packed = 0;\n";
+            for (const auto &field : info.fields) {
+                const string value = packFlatFieldValueExpr(flatFieldValueExpr("__vul_queue_value", field.name), field);
+                os << "    " << uintExtractExpr("__vul_queue_packed", field.offset + field.width - 1, field.offset)
+                   << " = " << value << ";\n";
+            }
+            os << "    " << info.enqdata << "[" << i << "] = __vul_queue_packed;\n";
+            os << "  }\n";
+        }
+        os << "  " << info.enqvalid << " = __vul_queue_req;\n";
+    }
+    os << "}";
+    return os.str();
+}
+
+string frontExpr(const QueueInfo &info, const vector<string> &args) {
+    return info.front_helper_name + "()";
+}
+
+string frontAssignBlock(const QueueInfo &info, const string &lhs) {
+    const uint32_t deq_width = static_cast<uint32_t>(info.queue->deq_width);
+    std::ostringstream os;
+    os << "{\n";
+    for (uint32_t i = 0; i < deq_width; ++i) {
+        os << "  " << lhs << "[" << i << "] = " << info.default_expr << ";\n";
+    }
+    for (uint32_t i = 0; i < deq_width; ++i) {
+        os << "  if (" << info.deqvalid << " > " << i << ") {\n";
+        os << "    " << lhs << "[" << i << "] = "
+           << unpackValueExpr(info, info.deqdata + "[" + std::to_string(i) + "]") << ";\n";
+        os << "  }\n";
+    }
+    os << "}";
+    return os.str();
+}
+
+string trimCopy(string text) {
+    while (!text.empty() && std::isspace(static_cast<unsigned char>(text.front()))) {
+        text.erase(text.begin());
+    }
+    while (!text.empty() && std::isspace(static_cast<unsigned char>(text.back()))) {
+        text.pop_back();
+    }
+    return text;
+}
+
+bool parseSimpleAssignmentAroundCall(
+    const string &code,
+    const vector<TokenInfo> &tokens,
+    int object_idx,
+    int close_idx,
+    string &lhs,
+    uint32_t &replace_begin,
+    uint32_t &replace_end
+) {
+    int stmt_begin_idx = 0;
+    for (int i = object_idx - 1; i >= 0; --i) {
+        const string &spelling = tokens[i].spelling;
+        if (spelling == ";" || spelling == "{" || spelling == "}") {
+            stmt_begin_idx = i + 1;
+            break;
+        }
+    }
+
+    int assign_idx = -1;
+    for (int i = stmt_begin_idx; i < object_idx; ++i) {
+        if (tokens[i].spelling == "=") {
+            assign_idx = i;
+        }
+    }
+    if (assign_idx < 0 || assign_idx <= stmt_begin_idx) {
+        return false;
+    }
+
+    for (int i = assign_idx + 1; i < object_idx; ++i) {
+        if (!trimCopy(code.substr(tokens[i].start, tokens[i].end - tokens[i].start)).empty()) {
+            return false;
+        }
+    }
+
+    int semi_idx = -1;
+    for (int i = close_idx + 1; i < static_cast<int>(tokens.size()); ++i) {
+        if (tokens[i].spelling == ";") {
+            semi_idx = i;
+            break;
+        }
+        if (!trimCopy(code.substr(tokens[i].start, tokens[i].end - tokens[i].start)).empty()) {
+            return false;
+        }
+    }
+    if (semi_idx < 0) {
+        return false;
+    }
+
+    lhs = trimCopy(code.substr(tokens[stmt_begin_idx].start,
+                              tokens[assign_idx].start - tokens[stmt_begin_idx].start));
+    if (lhs.empty()) {
+        return false;
+    }
+    replace_begin = tokens[stmt_begin_idx].start;
+    replace_end = tokens[semi_idx].end;
+    return true;
+}
+
+string frontHelper(const QueueInfo &info) {
+    const uint32_t deq_width = static_cast<uint32_t>(info.queue->deq_width);
+    const bool is_mp = (info.queue->enq_width > 1 || info.queue->deq_width > 1);
+    if (!is_mp) {
+        return info.type_str + " " + info.front_helper_name +
+               "() {\n  return " + unpackValueExpr(info, info.deqdata) + ";\n}\n";
+    }
+    std::ostringstream os;
+    os << "std::array<" << info.type_str << ", " << deq_width << "> "
+       << info.front_helper_name
+       << "() {\n";
+    os << "  std::array<" << info.type_str << ", " << deq_width << "> __vul_queue_values = {};\n";
+    for (uint32_t i = 0; i < deq_width; ++i) {
+        os << "  if (" << info.deqvalid << " > " << i << ") {\n";
+        os << "    __vul_queue_values[" << i << "] = "
+           << unpackValueExpr(info, info.deqdata + "[" + std::to_string(i) + "]") << ";\n";
+        os << "  }\n";
+    }
+    os << "  return __vul_queue_values;\n";
+    os << "}\n";
+    return os.str();
+}
+
+string deqNextBlock(const QueueInfo &info, const vector<string> &args);
+
+string queuePortHelpers(const QueueInfo &info) {
+    const bool is_mp = (info.queue->enq_width > 1 || info.queue->deq_width > 1);
+    const uint32_t enq_width = static_cast<uint32_t>(info.queue->enq_width);
+    const uint32_t deq_width = static_cast<uint32_t>(info.queue->deq_width);
+    std::ostringstream os;
+    os << (is_mp ? "uint32_t " : "bool ") << "__vul_queue_enqready_"
+       << info.queue->name << "() {\n";
+    os << "  return " << info.enqready << (is_mp ? ".template to<uint32_t>()" : "") << ";\n}\n";
+    os << (is_mp ? "uint32_t " : "bool ") << "__vul_queue_deqvalid_"
+       << info.queue->name << "() {\n";
+    os << "  return " << info.deqvalid << (is_mp ? ".template to<uint32_t>()" : "") << ";\n}\n";
+    if (is_mp) {
+        os << "void __vul_queue_enqnext_" << info.queue->name
+           << "(std::array<" << info.type_str << ", " << enq_width
+           << "> values, uint32_t num = " << enq_width << ") "
+           << enqNextBlock(info, {"values", "num"}) << "\n";
+        os << "void __vul_queue_deqnext_" << info.queue->name
+           << "(uint32_t num = " << deq_width << ") "
+           << deqNextBlock(info, {"num"}) << "\n";
+    } else {
+        os << "void __vul_queue_enqnext_" << info.queue->name
+           << "(" << info.type_str << " value) "
+           << enqNextBlock(info, {"value"}) << "\n";
+        os << "void __vul_queue_deqnext_" << info.queue->name << "() "
+           << deqNextBlock(info, {}) << "\n";
+    }
+    os << "void __vul_queue_clrnext_" << info.queue->name << "() {\n";
+    os << "  " << info.clrnext << " = true;\n}\n";
+    return os.str();
+}
+
+string deqNextBlock(const QueueInfo &info, const vector<string> &args) {
+    const bool is_mp = (info.queue->enq_width > 1 || info.queue->deq_width > 1);
+    std::ostringstream os;
+    os << "{\n";
+    if (!is_mp) {
+        os << "  " << info.deqready << " = true;\n";
+    } else {
+        const uint32_t deq_width = static_cast<uint32_t>(info.queue->deq_width);
+        string num_expr = args.empty() ? std::to_string(deq_width) : args[0];
+        os << "  uint32_t __vul_queue_req = (" << num_expr << ") < " << deq_width
+           << " ? (" << num_expr << ") : " << deq_width << ";\n";
+        os << "  " << info.deqready << " = __vul_queue_req;\n";
+    }
+    os << "}";
+    return os.str();
+}
+
+bool parseMethodCall(
+    const string &code,
+    const vector<TokenInfo> &tokens,
+    int object_idx,
+    string &method,
+    vector<string> &args,
+    int &close_idx
+) {
+    if (object_idx + 2 >= static_cast<int>(tokens.size()) || tokens[object_idx + 1].spelling != ".") {
+        return false;
+    }
+    int method_idx = object_idx + 2;
+    method = tokens[method_idx].spelling;
+    int open_idx = method_idx + 1;
+    if (open_idx >= static_cast<int>(tokens.size()) || tokens[open_idx].spelling != "(") {
+        return false;
+    }
+    close_idx = findMatching(tokens, open_idx, "(", ")");
+    if (close_idx < 0) {
+        return false;
+    }
+    args = splitTopLevelArgs(code, tokens, open_idx + 1, close_idx - 1);
+    return true;
+}
+
+} // namespace
+
+InlineCode inlineQueueAPIs(
+    const VulStaticModuleInstance &module,
+    const VulStaticBundleLib &bundlelib,
+    const vector<string> &logic_hls_codes,
+    const VulDebugLocs &logic_hls_debug
+) {
+    unordered_map<string, QueueInfo> queues;
+    for (const auto &queue : module.queues) {
+        QueueInfo info;
+        info.queue = &queue;
+        info.type_str = queue.type.toString();
+        flatten_type_signature(queue.type, bundlelib, "value", info.data_width, info.fields);
+        info.default_expr = defaultValueExprForType(queue.type, bundlelib);
+        info.helper_name = "__vul_queue_unpack_" + queue.name;
+        info.front_helper_name = "__vul_queue_front_" + queue.name;
+        info.enqready = queue.name + "__enqready__";
+        info.deqready = queue.name + "__deqready__";
+        info.enqvalid = queue.name + "__enqvalid__";
+        info.deqvalid = queue.name + "__deqvalid__";
+        info.enqdata = queue.name + "__enqdata__";
+        info.deqdata = queue.name + "__deqdata__";
+        info.clrnext = queue.name + "__clrnext__";
+        queues[queue.name] = std::move(info);
+    }
+    if (queues.empty()) {
+        return {logic_hls_codes, logic_hls_debug};
+    }
+
+    string code = joinLines(logic_hls_codes);
+    vector<TokenInfo> tokens = tokenizeWithLibclang(code);
+    vector<Replacement> repls;
+    string helper_defs;
+    for (const auto &[name, info] : queues) {
+        helper_defs += unpackValueHelper(info);
+        helper_defs += "\n";
+        helper_defs += frontHelper(info);
+        helper_defs += queuePortHelpers(info);
+        helper_defs += "\n";
+    }
+    size_t logic_func_pos = findLogicSubmoduleFunctionStart(code);
+    size_t helper_pos = findLogicSubmoduleFunctionStart(code);
+    if (helper_pos != string::npos && !helper_defs.empty()) {
+        repls.push_back(Replacement{
+            static_cast<uint32_t>(helper_pos),
+            static_cast<uint32_t>(helper_pos),
+            helper_defs
+        });
+    }
+    for (int i = 0; i < static_cast<int>(tokens.size()); ++i) {
+        if (logic_func_pos != string::npos && tokens[i].start < logic_func_pos) {
+            continue;
+        }
+        auto it = queues.find(tokens[i].spelling);
+        if (it == queues.end() || tokens[i].kind != CXToken_Identifier) {
+            continue;
+        }
+        const QueueInfo &info = it->second;
+        string method;
+        vector<string> args;
+        int close_idx = -1;
+        if (!parseMethodCall(code, tokens, i, method, args, close_idx)) {
+            continue;
+        }
+        string text;
+        uint32_t replace_begin = tokens[i].start;
+        uint32_t replace_end = tokens[close_idx].end;
+        if (method == "enqready" || method == "enqreqdy") {
+            text = "__vul_queue_enqready_" + info.queue->name + "()";
+        } else if (method == "deqvalid") {
+            text = "__vul_queue_deqvalid_" + info.queue->name + "()";
+        } else if (method == "front") {
+            text = frontExpr(info, args);
+        } else if (method == "enqnext") {
+            text = "__vul_queue_enqnext_" + info.queue->name + "(";
+            for (size_t arg = 0; arg < args.size(); ++arg) {
+                if (arg != 0) text += ", ";
+                text += args[arg];
+            }
+            text += ")";
+        } else if (method == "deqnext") {
+            text = "__vul_queue_deqnext_" + info.queue->name + "(";
+            if (!args.empty()) text += args[0];
+            text += ")";
+        } else if (method == "clrnext") {
+            text = "__vul_queue_clrnext_" + info.queue->name + "()";
+        } else {
+            continue;
+        }
+        if (!overlapsExisting(repls, replace_begin, replace_end)) {
+            repls.push_back(Replacement{replace_begin, replace_end, text});
+        }
+    }
+
+    return applyReplacementsWithDebug(logic_hls_codes, logic_hls_debug, std::move(repls));
+}
+
+vector<string> inlineQueueAPIs(
+    const VulStaticModuleInstance &module,
+    const VulStaticBundleLib &bundlelib,
+    const vector<string> &logic_hls_codes
+) {
+    return inlineQueueAPIs(module, bundlelib, logic_hls_codes, {}).lines;
+}
+
+} // namespace apiinline

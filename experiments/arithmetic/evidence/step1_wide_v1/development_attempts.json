@@ -1,0 +1,18 @@
+[
+  {
+    "directory": "step1-wide-no-circt-20261029",
+    "reason": "fixture helper templates outside GLOBAL; DSL declaration rejected"
+  },
+  {
+    "directory": "step1-wide-no-circt-20261029-v2",
+    "reason": "fixture used unsupported Int casts and a slice conversion"
+  },
+  {
+    "directory": "step1-wide-no-circt-20261029-v3",
+    "reason": "fixture attempted slice.to<T> instead of the supported value/limb APIs"
+  },
+  {
+    "directory": "step1-wide-no-circt-20261029-v4",
+    "reason": "oracle incorrectly required invalid output data to hold; corrected to frozen invalid_data_not_compared contract"
+  }
+]

@@ -1,0 +1,358 @@
+// Copyright (c) 2025 Meng Chengzhen, in Shandong University
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+#include "apiinline/request.hpp"
+#include "port_shape.h"
+
+#include "apiinline/utils.hpp"
+
+#include <sstream>
+#include <unordered_map>
+
+namespace apiinline {
+
+namespace {
+
+struct ReqArgInfo {
+    string name;
+    string type_str;
+    uint32_t width = 0;
+    vector<FlatField> fields;
+};
+
+struct RequestInfo {
+    const VulStaticReqServ *req = nullptr;
+    vector<ReqArgInfo> args;
+    vector<ReqArgInfo> rets;
+    vector<VulReqServParamRef> param_order;
+    string helper_name;
+};
+
+string vldPort(const string &name) { return name + "__vld__"; }
+string rdyPort(const string &name) { return name + "__rdy__"; }
+string argPort(const string &name, const string &arg) { return name + "_" + arg + "__"; }
+
+string argFieldExpr(const string &root_expr, const string &decl_name, const string &flat_name) {
+    if (flat_name == decl_name) {
+        return root_expr;
+    }
+    const string prefix = decl_name + ".";
+    if (flat_name.rfind(prefix, 0) == 0) {
+        return root_expr + "." + flat_name.substr(prefix.size());
+    }
+    return flatFieldValueExpr(root_expr, flat_name);
+}
+
+bool parseRequestCall(
+    const string &code,
+    const vector<TokenInfo> &tokens,
+    int name_idx,
+    string &idx_expr,
+    vector<string> &args,
+    int &close_idx
+) {
+    int cursor = name_idx + 1;
+    idx_expr.clear();
+    if (cursor < static_cast<int>(tokens.size()) && tokens[cursor].spelling == "<") {
+        // A comparison inside a parenthesized non-type argument is not the closing angle.
+        int close_angle = -1;
+        int parentheses = 0;
+        int brackets = 0;
+        for (int i = cursor + 1; i < static_cast<int>(tokens.size()); ++i) {
+            const auto &token = tokens[i].spelling;
+            if (token == "(") ++parentheses;
+            else if (token == ")") --parentheses;
+            else if (token == "[") ++brackets;
+            else if (token == "]") --brackets;
+            else if (token == ">" && parentheses == 0 && brackets == 0) { close_angle = i; break; }
+        }
+        if (close_angle < 0) {
+            return false;
+        }
+        if (cursor + 1 <= close_angle - 1) {
+            idx_expr = sourceBetween(code, tokens[cursor + 1], tokens[close_angle - 1]);
+        }
+        if (idx_expr.empty()) idx_expr = " ";
+        cursor = close_angle + 1;
+    }
+    if (cursor >= static_cast<int>(tokens.size()) || tokens[cursor].spelling != "(") {
+        return false;
+    }
+    close_idx = findMatching(tokens, cursor, "(", ")");
+    if (close_idx < 0) {
+        return false;
+    }
+    args = splitTopLevelArgs(code, tokens, cursor + 1, close_idx - 1);
+    return true;
+}
+
+void emitRequestBody(
+    std::ostringstream &os,
+    const RequestInfo &info,
+    const string &idx_expr,
+    const vector<string> &call_args,
+    bool emit_return = true
+) {
+    const auto &req = *info.req;
+    const string sel = req.is_arrayed ? ("[" + idx_expr + "]") : "";
+    os << "  " << vldPort(req.name) << sel << " = true;\n";
+
+    vector<string> arg_exprs(info.args.size());
+    vector<string> ret_exprs(info.rets.size());
+    for (size_t i = 0; i < info.param_order.size() && i < call_args.size(); ++i) {
+        const auto &param = info.param_order[i];
+        if (param.kind == VulReqServParamKind::Arg) {
+            arg_exprs.at(param.index) = call_args[i];
+        } else {
+            ret_exprs.at(param.index) = call_args[i];
+        }
+    }
+
+    for (size_t i = 0; i < info.args.size(); ++i) {
+        const auto &arg = info.args[i];
+        if (arg_exprs[i].empty()) continue;
+        os << "  " << arg.type_str << " __vul_req_arg_" << arg.name
+           << " = (" << arg_exprs[i] << ");\n";
+        for (const auto &field : arg.fields) {
+            const string value = packFlatFieldValueExpr(
+                argFieldExpr("__vul_req_arg_" + arg.name, arg.name, field.name),
+                field);
+            os << "  " << uintExtractExpr(argPort(req.name, arg.name) + sel, field.offset + field.width - 1, field.offset)
+               << " = " << value << ";\n";
+        }
+    }
+
+    for (size_t i = 0; i < info.rets.size(); ++i) {
+        const auto &ret = info.rets[i];
+        if (ret_exprs[i].empty()) continue;
+        const string &ret_expr = ret_exprs[i];
+        for (const auto &field : ret.fields) {
+            os << "  " << argFieldExpr(ret_expr, ret.name, field.name) << " = "
+               << uintExtractExpr(argPort(req.name, ret.name) + sel, field.offset + field.width - 1, field.offset)
+               << ";\n";
+        }
+    }
+
+    if (emit_return && req.has_handshake) {
+        os << "  return " << rdyPort(req.name) << sel << ";\n";
+    }
+}
+
+string requestHelperDef(const RequestInfo &info) {
+    const auto &req = *info.req;
+    std::ostringstream os;
+    if (req.is_arrayed) {
+        os << "template <uint32_t IDX>\n";
+    }
+    os << (req.has_handshake ? "bool " : "void ") << info.helper_name << "(";
+    bool need_comma = false;
+    for (const auto &param : info.param_order) {
+        if (need_comma) os << ", ";
+        if (param.kind == VulReqServParamKind::Arg) {
+            const auto &arg = info.args.at(param.index);
+            os << arg.type_str << " " << arg.name;
+        } else {
+            const auto &ret = info.rets.at(param.index);
+            os << ret.type_str << " &" << ret.name;
+        }
+        need_comma = true;
+    }
+    os << ") {\n";
+    vector<string> arg_names;
+    for (const auto &param : info.param_order) {
+        arg_names.push_back(param.kind == VulReqServParamKind::Arg
+            ? info.args.at(param.index).name
+            : info.rets.at(param.index).name);
+    }
+    emitRequestBody(os, info, req.is_arrayed ? "IDX" : "0", arg_names);
+    os << "}\n";
+    if (req.is_arrayed) {
+        os << portArrayType(req.returnType(), req.port_dims) << " " << info.helper_name << "__bulk(" << portBulkArguments(req) << ") {\n";
+        os << portBulkBody(req, info.helper_name) << "}\n";
+    }
+    return os.str();
+}
+
+bool findDirectIfCondition(
+    const vector<TokenInfo> &tokens,
+    int call_idx,
+    int close_idx,
+    int &if_idx
+) {
+    if (call_idx < 2) {
+        return false;
+    }
+    if (tokens[call_idx - 1].spelling != "(" || tokens[call_idx - 2].spelling != "if") {
+        return false;
+    }
+    if (close_idx + 1 >= static_cast<int>(tokens.size()) || tokens[close_idx + 1].spelling != ")") {
+        return false;
+    }
+    if_idx = call_idx - 2;
+    return true;
+}
+
+string requestReadyPrelude(
+    const RequestInfo &info,
+    const string &idx_expr,
+    const vector<string> &call_args,
+    const string &ready_name
+) {
+    const auto &req = *info.req;
+    std::ostringstream os;
+    os << "{\n";
+    emitRequestBody(os, info, idx_expr, call_args, false);
+    os << "}\n";
+    const string sel = req.is_arrayed ? ("[" + idx_expr + "]") : "";
+    os << "bool " << ready_name << " = " << rdyPort(req.name) << sel << ";\n";
+    return os.str();
+}
+
+string requestCallExpr(const RequestInfo &info, const string &idx_expr, const vector<string> &call_args) {
+    const auto &req = *info.req;
+    std::ostringstream os;
+    os << info.helper_name;
+    if (req.is_arrayed) {
+        if (idx_expr.empty()) os << "__bulk";
+        else os << "<" << portIndexExpression(idx_expr, req.port_dims) << ">";
+    }
+    os << "(";
+    bool need_comma = false;
+    for (const auto &arg : call_args) {
+        if (need_comma) os << ", ";
+        os << arg;
+        need_comma = true;
+    }
+    os << ")";
+    return os.str();
+}
+
+} // namespace
+
+InlineCode inlineRequestAPIs(
+    const VulStaticModuleInstance &module,
+    const VulStaticBundleLib &bundlelib,
+    const vector<string> &logic_hls_codes,
+    const VulDebugLocs &logic_hls_debug
+) {
+    unordered_map<string, RequestInfo> requests;
+    for (const auto &[name, req] : module.requests) {
+        RequestInfo info;
+        info.req = &req;
+        info.param_order = req.param_order;
+        info.helper_name = "__vul_req_call_" + req.name;
+        for (const auto &arg : req.args) {
+            ReqArgInfo out;
+            out.name = arg.name;
+            out.type_str = arg.type.toString();
+            flatten_type_signature(arg.type, bundlelib, arg.name, out.width, out.fields);
+            info.args.push_back(std::move(out));
+        }
+        for (const auto &ret : req.rets) {
+            ReqArgInfo out;
+            out.name = ret.name;
+            out.type_str = ret.type.toString();
+            flatten_type_signature(ret.type, bundlelib, ret.name, out.width, out.fields);
+            info.rets.push_back(std::move(out));
+        }
+        requests[name] = std::move(info);
+    }
+    if (requests.empty() && module.child_service_shapes.empty()) {
+        return {logic_hls_codes, logic_hls_debug};
+    }
+
+    string code = joinLines(logic_hls_codes);
+    vector<TokenInfo> tokens = tokenizeWithLibclang(code);
+    vector<Replacement> repls;
+    for (const auto &[name, dims] : module.child_service_shapes) {
+        if (dims.empty()) continue;
+        for (int i = 0; i < static_cast<int>(tokens.size()); ++i) {
+            if (tokens[i].spelling != name || tokens[i].kind != CXToken_Identifier) continue;
+            string coordinates; vector<string> args; int close = -1;
+            if (!parseRequestCall(code, tokens, i, coordinates, args, close)) continue;
+            string target = coordinates.empty() ? "__vul_bulk_" + name : portFlatName(name) + "<" + portIndexExpression(coordinates, dims) + ">";
+            target += "(";
+            for (size_t a = 0; a < args.size(); ++a) { if (a) target += ", "; target += args[a]; }
+            target += ")";
+            repls.push_back({tokens[i].start, tokens[close].end, target});
+        }
+    }
+    string helper_defs;
+    const size_t logic_func_pos = findLogicSubmoduleFunctionStart(code);
+    for (const auto &[name, info] : requests) {
+        bool used = false;
+        for (int i = 0; i < static_cast<int>(tokens.size()); ++i) {
+            if (tokens[i].start < logic_func_pos || tokens[i].spelling != name) {
+                continue;
+            }
+            string idx_expr;
+            vector<string> args;
+            int close_idx = -1;
+            if (parseRequestCall(code, tokens, i, idx_expr, args, close_idx)) {
+                used = true;
+                break;
+            }
+        }
+        if (used) {
+            helper_defs += requestHelperDef(info);
+            helper_defs += "\n";
+        }
+    }
+    if (!helper_defs.empty()) {
+        size_t helper_pos = findLogicSubmoduleFunctionStart(code);
+        if (helper_pos != string::npos) {
+            repls.push_back(Replacement{
+                static_cast<uint32_t>(helper_pos),
+                static_cast<uint32_t>(helper_pos),
+                helper_defs
+            });
+        }
+    }
+    for (int i = 0; i < static_cast<int>(tokens.size()); ++i) {
+        auto it = requests.find(tokens[i].spelling);
+        if (it == requests.end() || tokens[i].kind != CXToken_Identifier) {
+            continue;
+        }
+        bool is_member_name = (i > 0 && tokens[i - 1].spelling == ".");
+        bool is_decl_name = (i > 0 && (tokens[i - 1].spelling == "void" || tokens[i - 1].spelling == "bool"));
+        if (is_member_name || is_decl_name) {
+            continue;
+        }
+        string idx_expr;
+        vector<string> args;
+        int close_idx = -1;
+        if (!parseRequestCall(code, tokens, i, idx_expr, args, close_idx)) {
+            continue;
+        }
+        if (!overlapsExisting(repls, tokens[i].start, tokens[close_idx].end)) {
+            repls.push_back(Replacement{
+                tokens[i].start,
+                tokens[close_idx].end,
+                requestCallExpr(it->second, idx_expr, args)
+            });
+        }
+    }
+
+    return applyReplacementsWithDebug(logic_hls_codes, logic_hls_debug, std::move(repls));
+}
+
+vector<string> inlineRequestAPIs(
+    const VulStaticModuleInstance &module,
+    const VulStaticBundleLib &bundlelib,
+    const vector<string> &logic_hls_codes
+) {
+    return inlineRequestAPIs(module, bundlelib, logic_hls_codes, {}).lines;
+}
+
+} // namespace apiinline
