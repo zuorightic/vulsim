@@ -1,4 +1,12 @@
-# 算术实验：步骤二契约
+# 算术实验：现行规划入口与历史契约
+
+> **后续实施以 [lxy-plan-fix.md 第一章](../../mission/lxy-plan-fix.md) 为准。** 本文下面保留的是旧步骤二至三的说明，其中九案例/36条、旧B/C解析代价、D在线反馈、精确目标查表、旧预算及“尚未实现/已完成”均按当时版本解释。它们不是新四平台、五档整数位宽、43案例/688条及离线训练D的实施规则或验收结果。
+
+目前可继承的是旧基线、ASAP7流程、区域保护、32×32 split16与位置验证方法；新成本、参数化范围、多平台、训练模型及正式矩阵仍按新计划逐项适配验收。已有步骤四/五及位置补验记录见新计划第二章；后续工作记第三章。具体哪些引用可直接迁移、哪些须先改实现，见 [引用迁移审计](../../mission/lxy-plan-fix.md#plan-reference-migration)，统一导航见 [mission/README.md](../../mission/README.md)。
+
+下面的文件和命令用于定位旧实现及复现对应历史结果；描述中的“当前”指该段形成时的版本。尤其 `backend/README.md` 已绑定后端v4历史冻结，不能以其旧额度替代执行代码读取的 `backend_policy_v5.json`；新计划中的容量包络也未自动生效。本轮只补文档导航，未更改任何运行默认值、策略或账本。
+
+## 历史说明：步骤二至三
 
 本目录固定算术语义、案例划分和对照规则，供后续算术展开、调度和 ASAP7 评估使用。当前交付是可执行的参考模型与规则原型；尚未实现 C++ CostProvider、区域约束调度、浮点硬件适配或物理搜索。
 
@@ -131,6 +139,6 @@ python3 -m experiments.arithmetic_dse.run \
 python3 -m experiments.arithmetic_dse.evidence
 ```
 
-本轮预算复核采用 `backend_freeze_v3.json`：共享物理调用账本立即启用，并导入历史失败与成功调用。六个综合目标改为 500/800/1000/1250/1500/2000 ps，案例矩阵仍为 36 条。两点相同不构成未测目标覆盖。D2/F1 接入后各做六点检查；预算资助检查提前到步骤五之前，包含实际案例目标补测和步骤四至六探针。运行 `python3 -m experiments.arithmetic_dse.budget --check-plan` 可查看当前不足，原上限不会自动放宽。详见 `mission/lxy-plan.md` §7.1、§7.4、§3.9 及 `experiments/arithmetic/evidence/step3_budget/`。
+本轮预算复核采用 `backend_freeze_v3.json`：共享物理调用账本立即启用，并导入历史失败与成功调用。六个综合目标改为 500/800/1000/1250/1500/2000 ps，案例矩阵仍为 36 条。两点相同不构成未测目标覆盖。D2/F1 接入后各做六点检查；预算资助检查提前到步骤五之前，包含实际案例目标补测和步骤四至六探针。运行 `python3 -m experiments.arithmetic_dse.budget --check-plan` 可查看当前不足，原上限不会自动放宽。此历史说明对应 [已归档的单平台旧计划](../../mission/archive/lxy-plan-v1-single-platform.md) 第一章§7.1、§7.4及第二章§3.9，以及 `experiments/arithmetic/evidence/step3_budget/`。
 
 步骤三收尾升级为 `backend_freeze_v4.json`，见 `evidence/step3_closure/` 和计划 §3.10：已有关键路径明确经过乘法操作数到乘积的数据锥；预声明500/2000ps SDC对照固定ABC1500ps和绝对I/O300ps，两份实际综合网表一致，grt及共同1500ps SDC下的结构/面积/路径存在响应，500ps自身仍未达标。新增2 synth/2 grt后累计31/9/5，无待结算预约，无上限提高。采集协议v3将普遍六点改为必需参考/精确查询数据与代表性少量探测，D2/F1实现后检查。步骤三验收完成；D库、D2/F1硬件和主矩阵尚未完成，完整清单及预算仍在步骤五前闭合。B/C冻结内容保持。
