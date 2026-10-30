@@ -1,0 +1,10 @@
+#include <defhelper.hpp>
+STRUCT(CaseInput) {
+    Int<32> a;
+    Int<32> b;
+    Int<32> c;
+    bool select;
+};
+STRUCT(CaseOutput) {
+    Int<32> y;
+};

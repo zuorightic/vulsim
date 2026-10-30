@@ -1,0 +1,282 @@
+{
+  "version": "arithmetic-source-dag-v1",
+  "nodes": [
+    {
+      "id": "a",
+      "op": "Input",
+      "width": 32,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "b",
+      "op": "Input",
+      "width": 32,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "mask",
+      "op": "Input",
+      "width": 32,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "d",
+      "op": "Input",
+      "width": 32,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "s",
+      "op": "Input",
+      "width": 7,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "zero_s",
+      "op": "Constant",
+      "width": 7,
+      "deps": [],
+      "params": {
+        "value": 0
+      }
+    },
+    {
+      "id": "limit",
+      "op": "Constant",
+      "width": 7,
+      "deps": [],
+      "params": {
+        "value": 32
+      }
+    },
+    {
+      "id": "zero",
+      "op": "Constant",
+      "width": 32,
+      "deps": [],
+      "params": {
+        "value": 0
+      }
+    },
+    {
+      "id": "in_range",
+      "op": "Lt",
+      "width": 1,
+      "deps": [
+        "s",
+        "limit"
+      ],
+      "params": {}
+    },
+    {
+      "id": "safe_s",
+      "op": "Ite",
+      "width": 7,
+      "deps": [
+        "in_range",
+        "s",
+        "zero_s"
+      ],
+      "params": {}
+    },
+    {
+      "id": "u",
+      "op": "Add",
+      "width": 32,
+      "deps": [
+        "a",
+        "b"
+      ],
+      "params": {}
+    },
+    {
+      "id": "v",
+      "op": "Sub",
+      "width": 32,
+      "deps": [
+        "a",
+        "b"
+      ],
+      "params": {}
+    },
+    {
+      "id": "raw_l",
+      "op": "Shl",
+      "width": 32,
+      "deps": [
+        "u",
+        "safe_s"
+      ],
+      "params": {}
+    },
+    {
+      "id": "raw_r",
+      "op": "Shr",
+      "width": 32,
+      "deps": [
+        "v",
+        "safe_s"
+      ],
+      "params": {}
+    },
+    {
+      "id": "left",
+      "op": "Ite",
+      "width": 32,
+      "deps": [
+        "in_range",
+        "raw_l",
+        "zero"
+      ],
+      "params": {}
+    },
+    {
+      "id": "right",
+      "op": "Ite",
+      "width": 32,
+      "deps": [
+        "in_range",
+        "raw_r",
+        "zero"
+      ],
+      "params": {}
+    },
+    {
+      "id": "inverse_mask",
+      "op": "BitNot",
+      "width": 32,
+      "deps": [
+        "mask"
+      ],
+      "params": {}
+    },
+    {
+      "id": "masked_l",
+      "op": "BitAnd",
+      "width": 32,
+      "deps": [
+        "left",
+        "mask"
+      ],
+      "params": {}
+    },
+    {
+      "id": "masked_r",
+      "op": "BitAnd",
+      "width": 32,
+      "deps": [
+        "right",
+        "inverse_mask"
+      ],
+      "params": {}
+    },
+    {
+      "id": "merged",
+      "op": "BitOr",
+      "width": 32,
+      "deps": [
+        "masked_l",
+        "masked_r"
+      ],
+      "params": {}
+    },
+    {
+      "id": "mod_zero",
+      "op": "Constant",
+      "width": 32,
+      "deps": [],
+      "params": {
+        "value": 0
+      }
+    },
+    {
+      "id": "mod_one",
+      "op": "Constant",
+      "width": 32,
+      "deps": [],
+      "params": {
+        "value": 1
+      }
+    },
+    {
+      "id": "mod_ones",
+      "op": "Constant",
+      "width": 32,
+      "deps": [],
+      "params": {
+        "value": 4294967295
+      }
+    },
+    {
+      "id": "mod_is_zero",
+      "op": "Eq",
+      "width": 1,
+      "deps": [
+        "d",
+        "mod_zero"
+      ],
+      "params": {}
+    },
+    {
+      "id": "mod_safe_d",
+      "op": "Ite",
+      "width": 32,
+      "deps": [
+        "mod_is_zero",
+        "mod_one",
+        "d"
+      ],
+      "params": {}
+    },
+    {
+      "id": "mod_raw_r",
+      "op": "Mod",
+      "width": 32,
+      "deps": [
+        "a",
+        "mod_safe_d"
+      ],
+      "params": {}
+    },
+    {
+      "id": "mod_r",
+      "op": "Ite",
+      "width": 32,
+      "deps": [
+        "mod_is_zero",
+        "a",
+        "mod_raw_r"
+      ],
+      "params": {}
+    },
+    {
+      "id": "answer",
+      "op": "BitXor",
+      "width": 32,
+      "deps": [
+        "merged",
+        "mod_r"
+      ],
+      "params": {}
+    },
+    {
+      "id": "less",
+      "op": "Lt",
+      "width": 1,
+      "deps": [
+        "a",
+        "b"
+      ],
+      "params": {}
+    }
+  ],
+  "outputs": {
+    "y": "answer",
+    "less": "less"
+  }
+}

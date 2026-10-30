@@ -1,0 +1,29 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-c",
+    "from pathlib import Path\nimport json,shutil,tempfile\nfrom experiments.arithmetic_dse.step2_evidence import verify,ROOT\ncurrent=verify()\nassert current['status']=='passed' and not current['current_source_mismatches']\nfreeze=json.loads((ROOT/'experiments/arithmetic/step2_freeze_v4.json').read_text())\nwith tempfile.TemporaryDirectory(prefix='step2-isolated-') as directory:\n root=Path(directory)\n names=['experiments/arithmetic/step2_freeze_v4.json','experiments/arithmetic/evidence/step2_v2','experiments/arithmetic/backend_usage.json',*freeze['historical_freezes']]\n for name in names:\n  source=ROOT/name;target=root/name;target.parent.mkdir(parents=True,exist_ok=True)\n  if source.is_dir(): shutil.copytree(source,target)\n  else: shutil.copy2(source,target)\n assert not (root/'build').exists()\n isolated=verify(root)\n assert isolated['status']=='passed' and isolated['verification_scope']=='frozen_source_snapshot_only'\nprint(json.dumps({'current':current,'isolated_status':isolated['status'],'isolated_has_build':False},indent=2))"
+  ],
+  "exit_code": 0,
+  "process_exit_code": 0,
+  "timed_out": false,
+  "CPU_limit_s": 120,
+  "CPU_limit_exceeded": false,
+  "sampled_process_tree_CPU_s": 0,
+  "cancelled_signal": null,
+  "walltime_s": 0.21532746590673923,
+  "unexpected_live_descendants": false,
+  "memory_limit_exceeded": false,
+  "memory_limit_MiB": 8192,
+  "sampled_process_tree_peak_rss_KiB": 1464,
+  "sampled_process_tree_peak_threads": 1,
+  "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+  "resource_sampling_interval_s": 0.5,
+  "cleanup": {
+    "term_sent": 0,
+    "kill_sent": 0,
+    "remaining_live_pids": []
+  },
+  "log": "/home/zyrv/vulsim/build/step2-revision-20261030/portable-audit.log",
+  "gnu_time": "/home/zyrv/vulsim/build/step2-revision-20261030/portable-audit.resources.txt"
+}

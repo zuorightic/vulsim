@@ -1,0 +1,49 @@
+{
+  "version": "arithmetic-source-dag-v1",
+  "nodes": [
+    {
+      "id": "a",
+      "op": "Input",
+      "width": 64,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "b",
+      "op": "Input",
+      "width": 64,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "product",
+      "op": "Mul",
+      "width": 128,
+      "deps": [
+        "a",
+        "b"
+      ],
+      "params": {}
+    },
+    {
+      "id": "c",
+      "op": "Input",
+      "width": 128,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "sum",
+      "op": "Add",
+      "width": 128,
+      "deps": [
+        "product",
+        "c"
+      ],
+      "params": {}
+    }
+  ],
+  "outputs": {
+    "y": "sum"
+  }
+}

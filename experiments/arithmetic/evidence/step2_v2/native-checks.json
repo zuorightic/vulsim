@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "scope": "combination_SERVICE; no_fixed_L_pipeline_claim",
+  "cases": [
+    {
+      "case": "MUL_128",
+      "rows": 144,
+      "output_values_compared": 144,
+      "backend": "native",
+      "largest_output_width": 256
+    },
+    {
+      "case": "MAC_128",
+      "rows": 151,
+      "output_values_compared": 151,
+      "backend": "native",
+      "largest_output_width": 256
+    },
+    {
+      "case": "DOT2_128",
+      "rows": 161,
+      "output_values_compared": 161,
+      "backend": "native",
+      "largest_output_width": 257
+    },
+    {
+      "case": "F2",
+      "rows": 407,
+      "output_values_compared": 814,
+      "backend": "native",
+      "largest_output_width": 32
+    },
+    {
+      "case": "H_M_128",
+      "rows": 153,
+      "output_values_compared": 153,
+      "backend": "native",
+      "largest_output_width": 128
+    }
+  ],
+  "output_values_compared": 1423
+}

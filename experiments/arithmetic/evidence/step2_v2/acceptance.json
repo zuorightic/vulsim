@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "scope": "mission/lxy-plan-fix.md 第一章§10.2 步骤二；新契约/参考/生成与计费规则",
+  "ordinary_checks": 210936,
+  "softfloat_checks": 231260,
+  "softfloat_vectors": 20324,
+  "formal": 32,
+  "holdout": 11,
+  "case_definitions": 43,
+  "planned_main_records": 688,
+  "executed_main_records": 0,
+  "software_cases": 43,
+  "software_rows": 7453,
+  "software_output_values": 12646,
+  "native_cases": [
+    "MUL_128",
+    "MAC_128",
+    "DOT2_128",
+    "H_M_128",
+    "F2"
+  ],
+  "native_rows": 1016,
+  "native_output_values": 1423,
+  "nonpower_widths": [
+    12,
+    24,
+    48,
+    96
+  ],
+  "nonpower_reference_graph_evaluations": 1408,
+  "integer_exhaustive_multiply_pairs": 65536,
+  "integer_exhaustive_division_pairs": 65536,
+  "safe_shift_checks": 5060,
+  "new_physical_calls": {
+    "synth": 0,
+    "grt": 0,
+    "final": 0
+  },
+  "source_generator": "combination_SERVICE_only",
+  "compiler_cost_adapter": "steps4_5_pending",
+  "native_dynamic_divmod": "step6_pending; s8_still_rejects_dynamic_rhs",
+  "full_suite_fixed_L_II_valid_reset": "later_steps_pending",
+  "D_models": "step7_pending",
+  "sensitivity_ranking": "step5_pending; exact_weights_and_protocol_frozen",
+  "core_profile_requests": "unsigned_integer_and_binary32_only; unsupported_formats_rejected",
+  "retired_active_implementations": [
+    "nine_case_reference_dispatch",
+    "nine_case_partition",
+    "old_target_formula",
+    "old_only_contract_regression",
+    "nine_target_budget_CLI"
+  ],
+  "temporary_dependencies": "configs/implementation_migration_v1.json; mandatory_cleanup_before_final_delivery"
+}

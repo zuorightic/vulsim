@@ -1,0 +1,14 @@
+INTERFACE() { SERVICE(calculate, ARG(CaseInput) value, RESP(CaseOutput) result); }
+SERVICE(calculate, ARG(CaseInput) value, RESP(CaseOutput) result) {
+    Int<16> n_first_one = Int<16>(1ull);
+    Int<16> n_first_ones = ~Int<16>(0);
+    Int<16> n_first_zero = Int<16>(0ull);
+    bool n_first_is_zero = (value.d == n_first_zero);
+    Int<16> n_first_safe_d = (n_first_is_zero ? n_first_one : value.d);
+    Int<16> n_first_raw_q = (value.a / n_first_safe_d);
+    Int<16> n_first_raw_r = (value.a % n_first_safe_d);
+    Int<16> n_first_q = (n_first_is_zero ? n_first_ones : n_first_raw_q);
+    Int<16> n_first_r = (n_first_is_zero ? value.a : n_first_raw_r);
+    result.q = n_first_q;
+    result.r = n_first_r;
+}

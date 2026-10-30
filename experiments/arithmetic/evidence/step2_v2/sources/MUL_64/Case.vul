@@ -1,0 +1,5 @@
+INTERFACE() { SERVICE(calculate, ARG(CaseInput) value, RESP(CaseOutput) result); }
+SERVICE(calculate, ARG(CaseInput) value, RESP(CaseOutput) result) {
+    Int<128> n_product = (value.a * value.b);
+    result.y = n_product;
+}

@@ -1,0 +1,104 @@
+{
+  "version": "arithmetic-source-dag-v1",
+  "nodes": [
+    {
+      "id": "a",
+      "op": "Input",
+      "width": 32,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "b",
+      "op": "Input",
+      "width": 32,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "fp1",
+      "op": "F32MulRNE",
+      "width": 37,
+      "deps": [
+        "a",
+        "b"
+      ],
+      "params": {}
+    },
+    {
+      "id": "bits1",
+      "op": "Slice",
+      "width": 32,
+      "deps": [
+        "fp1"
+      ],
+      "params": {
+        "low": 0
+      }
+    },
+    {
+      "id": "flags1",
+      "op": "Slice",
+      "width": 5,
+      "deps": [
+        "fp1"
+      ],
+      "params": {
+        "low": 32
+      }
+    },
+    {
+      "id": "c",
+      "op": "Input",
+      "width": 32,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "fp2",
+      "op": "F32MulRNE",
+      "width": 37,
+      "deps": [
+        "bits1",
+        "c"
+      ],
+      "params": {}
+    },
+    {
+      "id": "bits2",
+      "op": "Slice",
+      "width": 32,
+      "deps": [
+        "fp2"
+      ],
+      "params": {
+        "low": 0
+      }
+    },
+    {
+      "id": "flags2",
+      "op": "Slice",
+      "width": 5,
+      "deps": [
+        "fp2"
+      ],
+      "params": {
+        "low": 32
+      }
+    },
+    {
+      "id": "flags_or",
+      "op": "BitOr",
+      "width": 5,
+      "deps": [
+        "flags1",
+        "flags2"
+      ],
+      "params": {}
+    }
+  ],
+  "outputs": {
+    "bits": "bits2",
+    "flags": "flags_or"
+  }
+}

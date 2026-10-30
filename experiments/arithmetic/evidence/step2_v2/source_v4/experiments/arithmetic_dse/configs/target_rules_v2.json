@@ -1,0 +1,33 @@
+{
+  "version": "arithmetic-targets-v2",
+  "supersedes": "arithmetic-targets-v1",
+  "L_rule": "max(2,heavy_depth_of_original_unexpanded_DAG+1)",
+  "heavy_operations": [
+    "Mul",
+    "Div",
+    "Mod",
+    "F32MulRNE"
+  ],
+  "A_L": 1,
+  "BCD_L": "same_case_L_on_all_four_platforms; fixed",
+  "period_rule": "ceil(H_ref[p,case] + (3/2)*D_ref[p,case]/L[case]) ps",
+  "D_ref": "longest_dependency_path_of_original_graph; per_node_frozen_same_platform_grt_microbenchmark_labels",
+  "H_ref": "explicit_nonoverlapping_clk_to_Q_setup_uncertainty_and_clock_IO_reserve; same_boundary_policy",
+  "reference_identity": [
+    "platform",
+    "stage",
+    "label_definition",
+    "reference_set_id",
+    "settings_sha256",
+    "source_role",
+    "delays_ps"
+  ],
+  "allowed_source_role": "microbenchmark_only",
+  "stage": "grt",
+  "label_definition": "combinational_data_path_excluding_boundary",
+  "numeric_periods": "pending_each_platform_batch_reference_measurements",
+  "batch_freeze": "bind_reference_content_case_graph_L_overhead_and_rules; never_recompute_from_model_or_main_PPA",
+  "physical_failure": "retain; do_not_relax_L_II_or_period",
+  "model_out_of_domain": "uncovered; no_online_main_graph_backfill",
+  "training_or_main_PPA_used_to_tune_formula": false
+}

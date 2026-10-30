@@ -1,0 +1,84 @@
+{
+  "version": "arithmetic-source-dag-v1",
+  "nodes": [
+    {
+      "id": "a",
+      "op": "Input",
+      "width": 64,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "b",
+      "op": "Input",
+      "width": 64,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "product",
+      "op": "Mul",
+      "width": 128,
+      "deps": [
+        "a",
+        "b"
+      ],
+      "params": {}
+    },
+    {
+      "id": "c",
+      "op": "Input",
+      "width": 64,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "d",
+      "op": "Input",
+      "width": 64,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "product2",
+      "op": "Mul",
+      "width": 128,
+      "deps": [
+        "c",
+        "d"
+      ],
+      "params": {}
+    },
+    {
+      "id": "wide_p",
+      "op": "ZExt",
+      "width": 129,
+      "deps": [
+        "product"
+      ],
+      "params": {}
+    },
+    {
+      "id": "wide_q",
+      "op": "ZExt",
+      "width": 129,
+      "deps": [
+        "product2"
+      ],
+      "params": {}
+    },
+    {
+      "id": "sum",
+      "op": "Add",
+      "width": 129,
+      "deps": [
+        "wide_p",
+        "wide_q"
+      ],
+      "params": {}
+    }
+  ],
+  "outputs": {
+    "y": "sum"
+  }
+}

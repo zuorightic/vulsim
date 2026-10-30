@@ -1,0 +1,5063 @@
+{
+  "version": "arithmetic-cases-v2",
+  "generator_version": "arithmetic-source-dag-v1",
+  "semantics_version": "arithmetic-semantics-v2",
+  "platforms": [
+    "asap7",
+    "nangate45",
+    "sky130hd",
+    "gf180"
+  ],
+  "groups": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "integer_widths": [
+    8,
+    16,
+    32,
+    64,
+    128
+  ],
+  "cases": [
+    {
+      "id": "MUL_8",
+      "family": "MUL",
+      "width": 8,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 8,
+        "b": 8
+      },
+      "outputs": {
+        "y": 16
+      },
+      "source_graph_sha256": "38f822d17abcf420a69b1a4001518da085ee652a7434fbfec5d35e9ebaf48a9b",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "mul_u8_r16",
+          "heavy": true
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "MUL_16",
+      "family": "MUL",
+      "width": 16,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 16,
+        "b": 16
+      },
+      "outputs": {
+        "y": 32
+      },
+      "source_graph_sha256": "f05fe7b659cdfb58c3e9f75525b15a10f56cce3bc2ff7c638bc12cd0b94f5a7e",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "mul_u16_r32",
+          "heavy": true
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "MUL_32",
+      "family": "MUL",
+      "width": 32,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 32,
+        "b": 32
+      },
+      "outputs": {
+        "y": 64
+      },
+      "source_graph_sha256": "b8d70b58db35345d171f43c40b02e3176ae46dbd1329967025e2fc7bb30e7790",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "mul_u32_r64",
+          "heavy": true
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "MUL_64",
+      "family": "MUL",
+      "width": 64,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 64,
+        "b": 64
+      },
+      "outputs": {
+        "y": 128
+      },
+      "source_graph_sha256": "d0897b75f8df51ae632e45e901387700ab2d3f1b50272cff0b9df2c0f01cef85",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "mul_u64_r128",
+          "heavy": true
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "MUL_128",
+      "family": "MUL",
+      "width": 128,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 128,
+        "b": 128
+      },
+      "outputs": {
+        "y": 256
+      },
+      "source_graph_sha256": "00415c97a3a077adb62638135c36f5065acc847fcd975e0c04cc6662e5ab9a6d",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "mul_u128_r256",
+          "heavy": true
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "MAC_8",
+      "family": "MAC",
+      "width": 8,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 8,
+        "b": 8,
+        "c": 16
+      },
+      "outputs": {
+        "y": 16
+      },
+      "source_graph_sha256": "435e7f052ba9b7677334cef4cf894bd4cbe916d7dd7a9a0ec52a8900a680aa2e",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "mul_u8_r16",
+          "heavy": true
+        },
+        {
+          "id": "c",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "sum",
+          "deps": [
+            "product",
+            "c"
+          ],
+          "primitive": "add_u16",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "MAC_16",
+      "family": "MAC",
+      "width": 16,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 16,
+        "b": 16,
+        "c": 32
+      },
+      "outputs": {
+        "y": 32
+      },
+      "source_graph_sha256": "6e8779fca1d0cf73263499b81ebe9f343c80ec0ef49e7ab55aab5b0c89ce059d",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "mul_u16_r32",
+          "heavy": true
+        },
+        {
+          "id": "c",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "sum",
+          "deps": [
+            "product",
+            "c"
+          ],
+          "primitive": "add_u32",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "MAC_32",
+      "family": "MAC",
+      "width": 32,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 32,
+        "b": 32,
+        "c": 64
+      },
+      "outputs": {
+        "y": 64
+      },
+      "source_graph_sha256": "9c29970af3f2641778bbf1dfbb8b9543154efa3b61deb284e75903a567f4cb99",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "mul_u32_r64",
+          "heavy": true
+        },
+        {
+          "id": "c",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "sum",
+          "deps": [
+            "product",
+            "c"
+          ],
+          "primitive": "add_u64",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "MAC_64",
+      "family": "MAC",
+      "width": 64,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 64,
+        "b": 64,
+        "c": 128
+      },
+      "outputs": {
+        "y": 128
+      },
+      "source_graph_sha256": "50f3e231d165bcc92f6a58842b02b42477ed215895dab71b3acc3ebf7a26e7ed",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "mul_u64_r128",
+          "heavy": true
+        },
+        {
+          "id": "c",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "sum",
+          "deps": [
+            "product",
+            "c"
+          ],
+          "primitive": "add_u128",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "MAC_128",
+      "family": "MAC",
+      "width": 128,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 128,
+        "b": 128,
+        "c": 256
+      },
+      "outputs": {
+        "y": 256
+      },
+      "source_graph_sha256": "72d2b102ba1b52b1ed1020b5a5eb4c1ca38bd6b6e004a31342a86f58369c286b",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "mul_u128_r256",
+          "heavy": true
+        },
+        {
+          "id": "c",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "sum",
+          "deps": [
+            "product",
+            "c"
+          ],
+          "primitive": "add_u256",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "DOT2_8",
+      "family": "DOT2",
+      "width": 8,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 8,
+        "b": 8,
+        "c": 8,
+        "d": 8
+      },
+      "outputs": {
+        "y": 17
+      },
+      "source_graph_sha256": "83557eca45a6d0a4b06f9413d400f3149f40f0a4e43fd34f7025406342ad9afd",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "mul_u8_r16",
+          "heavy": true
+        },
+        {
+          "id": "c",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product2",
+          "deps": [
+            "c",
+            "d"
+          ],
+          "primitive": "mul_u8_r16",
+          "heavy": true
+        },
+        {
+          "id": "wide_p",
+          "deps": [
+            "product"
+          ],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "wide_q",
+          "deps": [
+            "product2"
+          ],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "sum",
+          "deps": [
+            "wide_p",
+            "wide_q"
+          ],
+          "primitive": "add_u17",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "DOT2_16",
+      "family": "DOT2",
+      "width": 16,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 16,
+        "b": 16,
+        "c": 16,
+        "d": 16
+      },
+      "outputs": {
+        "y": 33
+      },
+      "source_graph_sha256": "9e8f2103ec726cff141470375ded3dc6e6c18c57d8a3eb6f2309c4532d5e3a2f",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "mul_u16_r32",
+          "heavy": true
+        },
+        {
+          "id": "c",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product2",
+          "deps": [
+            "c",
+            "d"
+          ],
+          "primitive": "mul_u16_r32",
+          "heavy": true
+        },
+        {
+          "id": "wide_p",
+          "deps": [
+            "product"
+          ],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "wide_q",
+          "deps": [
+            "product2"
+          ],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "sum",
+          "deps": [
+            "wide_p",
+            "wide_q"
+          ],
+          "primitive": "add_u33",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "DOT2_32",
+      "family": "DOT2",
+      "width": 32,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 32,
+        "b": 32,
+        "c": 32,
+        "d": 32
+      },
+      "outputs": {
+        "y": 65
+      },
+      "source_graph_sha256": "490f7a6a8e2a0294765f884f9c88016d533cde9a50a5f04901bdf41442024bde",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "mul_u32_r64",
+          "heavy": true
+        },
+        {
+          "id": "c",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product2",
+          "deps": [
+            "c",
+            "d"
+          ],
+          "primitive": "mul_u32_r64",
+          "heavy": true
+        },
+        {
+          "id": "wide_p",
+          "deps": [
+            "product"
+          ],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "wide_q",
+          "deps": [
+            "product2"
+          ],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "sum",
+          "deps": [
+            "wide_p",
+            "wide_q"
+          ],
+          "primitive": "add_u65",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "DOT2_64",
+      "family": "DOT2",
+      "width": 64,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 64,
+        "b": 64,
+        "c": 64,
+        "d": 64
+      },
+      "outputs": {
+        "y": 129
+      },
+      "source_graph_sha256": "57085b22bb3da6fe45efb57436a127d70b9f655c452b8b52ab184d997fd2de31",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "mul_u64_r128",
+          "heavy": true
+        },
+        {
+          "id": "c",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product2",
+          "deps": [
+            "c",
+            "d"
+          ],
+          "primitive": "mul_u64_r128",
+          "heavy": true
+        },
+        {
+          "id": "wide_p",
+          "deps": [
+            "product"
+          ],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "wide_q",
+          "deps": [
+            "product2"
+          ],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "sum",
+          "deps": [
+            "wide_p",
+            "wide_q"
+          ],
+          "primitive": "add_u129",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "DOT2_128",
+      "family": "DOT2",
+      "width": 128,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 128,
+        "b": 128,
+        "c": 128,
+        "d": 128
+      },
+      "outputs": {
+        "y": 257
+      },
+      "source_graph_sha256": "282bf195f06d2fb59a2d52fed512799b2ce8831d26f94b1355d185c8c659a61b",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "mul_u128_r256",
+          "heavy": true
+        },
+        {
+          "id": "c",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product2",
+          "deps": [
+            "c",
+            "d"
+          ],
+          "primitive": "mul_u128_r256",
+          "heavy": true
+        },
+        {
+          "id": "wide_p",
+          "deps": [
+            "product"
+          ],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "wide_q",
+          "deps": [
+            "product2"
+          ],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "sum",
+          "deps": [
+            "wide_p",
+            "wide_q"
+          ],
+          "primitive": "add_u257",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "UDR_8",
+      "family": "UDR",
+      "width": 8,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 8,
+        "d": 8
+      },
+      "outputs": {
+        "q": 8,
+        "r": 8
+      },
+      "source_graph_sha256": "1359540093b357aaf0d9718aba452cc7d478ff97aef094a76c2c63a205e518e6",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_is_zero",
+          "deps": [
+            "d",
+            "first_zero"
+          ],
+          "primitive": "eq_u8",
+          "heavy": false
+        },
+        {
+          "id": "first_safe_d",
+          "deps": [
+            "first_is_zero",
+            "first_one",
+            "d"
+          ],
+          "primitive": "ite_u8",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_q",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "div_u8",
+          "heavy": true
+        },
+        {
+          "id": "first_q",
+          "deps": [
+            "first_is_zero",
+            "first_ones",
+            "first_raw_q"
+          ],
+          "primitive": "ite_u8",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_r",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "mod_u8",
+          "heavy": true
+        },
+        {
+          "id": "first_r",
+          "deps": [
+            "first_is_zero",
+            "a",
+            "first_raw_r"
+          ],
+          "primitive": "ite_u8",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "UDR_16",
+      "family": "UDR",
+      "width": 16,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 16,
+        "d": 16
+      },
+      "outputs": {
+        "q": 16,
+        "r": 16
+      },
+      "source_graph_sha256": "fc187f7413d1bd74546acd60307a5121f025f2aecef1708ec0d1ee5b47600609",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_is_zero",
+          "deps": [
+            "d",
+            "first_zero"
+          ],
+          "primitive": "eq_u16",
+          "heavy": false
+        },
+        {
+          "id": "first_safe_d",
+          "deps": [
+            "first_is_zero",
+            "first_one",
+            "d"
+          ],
+          "primitive": "ite_u16",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_q",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "div_u16",
+          "heavy": true
+        },
+        {
+          "id": "first_q",
+          "deps": [
+            "first_is_zero",
+            "first_ones",
+            "first_raw_q"
+          ],
+          "primitive": "ite_u16",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_r",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "mod_u16",
+          "heavy": true
+        },
+        {
+          "id": "first_r",
+          "deps": [
+            "first_is_zero",
+            "a",
+            "first_raw_r"
+          ],
+          "primitive": "ite_u16",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "UDR_32",
+      "family": "UDR",
+      "width": 32,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 32,
+        "d": 32
+      },
+      "outputs": {
+        "q": 32,
+        "r": 32
+      },
+      "source_graph_sha256": "9ea8de8ffb5b2322598c24cb7e1f25a888e6f70bd418ed13e1debaec3ed1de58",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_is_zero",
+          "deps": [
+            "d",
+            "first_zero"
+          ],
+          "primitive": "eq_u32",
+          "heavy": false
+        },
+        {
+          "id": "first_safe_d",
+          "deps": [
+            "first_is_zero",
+            "first_one",
+            "d"
+          ],
+          "primitive": "ite_u32",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_q",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "div_u32",
+          "heavy": true
+        },
+        {
+          "id": "first_q",
+          "deps": [
+            "first_is_zero",
+            "first_ones",
+            "first_raw_q"
+          ],
+          "primitive": "ite_u32",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_r",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "mod_u32",
+          "heavy": true
+        },
+        {
+          "id": "first_r",
+          "deps": [
+            "first_is_zero",
+            "a",
+            "first_raw_r"
+          ],
+          "primitive": "ite_u32",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "UDR_64",
+      "family": "UDR",
+      "width": 64,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 64,
+        "d": 64
+      },
+      "outputs": {
+        "q": 64,
+        "r": 64
+      },
+      "source_graph_sha256": "dcb1256223b71bdb8e490139864a34e152a4d9cdee2c24ba0db8a20f73ef8ecf",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_is_zero",
+          "deps": [
+            "d",
+            "first_zero"
+          ],
+          "primitive": "eq_u64",
+          "heavy": false
+        },
+        {
+          "id": "first_safe_d",
+          "deps": [
+            "first_is_zero",
+            "first_one",
+            "d"
+          ],
+          "primitive": "ite_u64",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_q",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "div_u64",
+          "heavy": true
+        },
+        {
+          "id": "first_q",
+          "deps": [
+            "first_is_zero",
+            "first_ones",
+            "first_raw_q"
+          ],
+          "primitive": "ite_u64",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_r",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "mod_u64",
+          "heavy": true
+        },
+        {
+          "id": "first_r",
+          "deps": [
+            "first_is_zero",
+            "a",
+            "first_raw_r"
+          ],
+          "primitive": "ite_u64",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "UDR_128",
+      "family": "UDR",
+      "width": 128,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 128,
+        "d": 128
+      },
+      "outputs": {
+        "q": 128,
+        "r": 128
+      },
+      "source_graph_sha256": "6b6158b4a4ed63a14ac9f7fd494acd338e8b99cd72ea5c0072fc2d91734b1c8b",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_is_zero",
+          "deps": [
+            "d",
+            "first_zero"
+          ],
+          "primitive": "eq_u128",
+          "heavy": false
+        },
+        {
+          "id": "first_safe_d",
+          "deps": [
+            "first_is_zero",
+            "first_one",
+            "d"
+          ],
+          "primitive": "ite_u128",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_q",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "div_u128",
+          "heavy": true
+        },
+        {
+          "id": "first_q",
+          "deps": [
+            "first_is_zero",
+            "first_ones",
+            "first_raw_q"
+          ],
+          "primitive": "ite_u128",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_r",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "mod_u128",
+          "heavy": true
+        },
+        {
+          "id": "first_r",
+          "deps": [
+            "first_is_zero",
+            "a",
+            "first_raw_r"
+          ],
+          "primitive": "ite_u128",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "DIVSEL_8",
+      "family": "DIVSEL",
+      "width": 8,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 8,
+        "d": 8,
+        "bias": 8,
+        "bypass": 8,
+        "select": 1
+      },
+      "outputs": {
+        "y": 8,
+        "r": 8
+      },
+      "source_graph_sha256": "a2914fb0dda71028a37c4a47a5cdb218eac189ac492f94cc126aa785645c501b",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_is_zero",
+          "deps": [
+            "d",
+            "first_zero"
+          ],
+          "primitive": "eq_u8",
+          "heavy": false
+        },
+        {
+          "id": "first_safe_d",
+          "deps": [
+            "first_is_zero",
+            "first_one",
+            "d"
+          ],
+          "primitive": "ite_u8",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_q",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "div_u8",
+          "heavy": true
+        },
+        {
+          "id": "first_q",
+          "deps": [
+            "first_is_zero",
+            "first_ones",
+            "first_raw_q"
+          ],
+          "primitive": "ite_u8",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_r",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "mod_u8",
+          "heavy": true
+        },
+        {
+          "id": "first_r",
+          "deps": [
+            "first_is_zero",
+            "a",
+            "first_raw_r"
+          ],
+          "primitive": "ite_u8",
+          "heavy": false
+        },
+        {
+          "id": "bias",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "bypass",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "select",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "biased_q",
+          "deps": [
+            "first_q",
+            "bias"
+          ],
+          "primitive": "add_u8",
+          "heavy": false
+        },
+        {
+          "id": "chosen",
+          "deps": [
+            "select",
+            "biased_q",
+            "bypass"
+          ],
+          "primitive": "ite_u8",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "DIVSEL_16",
+      "family": "DIVSEL",
+      "width": 16,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 16,
+        "d": 16,
+        "bias": 16,
+        "bypass": 16,
+        "select": 1
+      },
+      "outputs": {
+        "y": 16,
+        "r": 16
+      },
+      "source_graph_sha256": "ecfe0867a90136af73d5fb2c01f442963ac5c12f06f35d4a52f8ca43f2513945",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_is_zero",
+          "deps": [
+            "d",
+            "first_zero"
+          ],
+          "primitive": "eq_u16",
+          "heavy": false
+        },
+        {
+          "id": "first_safe_d",
+          "deps": [
+            "first_is_zero",
+            "first_one",
+            "d"
+          ],
+          "primitive": "ite_u16",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_q",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "div_u16",
+          "heavy": true
+        },
+        {
+          "id": "first_q",
+          "deps": [
+            "first_is_zero",
+            "first_ones",
+            "first_raw_q"
+          ],
+          "primitive": "ite_u16",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_r",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "mod_u16",
+          "heavy": true
+        },
+        {
+          "id": "first_r",
+          "deps": [
+            "first_is_zero",
+            "a",
+            "first_raw_r"
+          ],
+          "primitive": "ite_u16",
+          "heavy": false
+        },
+        {
+          "id": "bias",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "bypass",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "select",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "biased_q",
+          "deps": [
+            "first_q",
+            "bias"
+          ],
+          "primitive": "add_u16",
+          "heavy": false
+        },
+        {
+          "id": "chosen",
+          "deps": [
+            "select",
+            "biased_q",
+            "bypass"
+          ],
+          "primitive": "ite_u16",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "DIVSEL_32",
+      "family": "DIVSEL",
+      "width": 32,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 32,
+        "d": 32,
+        "bias": 32,
+        "bypass": 32,
+        "select": 1
+      },
+      "outputs": {
+        "y": 32,
+        "r": 32
+      },
+      "source_graph_sha256": "a0a25edd9868875f1bb3260a585ca7989942a12a8f34820a7bf593797db7f688",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_is_zero",
+          "deps": [
+            "d",
+            "first_zero"
+          ],
+          "primitive": "eq_u32",
+          "heavy": false
+        },
+        {
+          "id": "first_safe_d",
+          "deps": [
+            "first_is_zero",
+            "first_one",
+            "d"
+          ],
+          "primitive": "ite_u32",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_q",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "div_u32",
+          "heavy": true
+        },
+        {
+          "id": "first_q",
+          "deps": [
+            "first_is_zero",
+            "first_ones",
+            "first_raw_q"
+          ],
+          "primitive": "ite_u32",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_r",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "mod_u32",
+          "heavy": true
+        },
+        {
+          "id": "first_r",
+          "deps": [
+            "first_is_zero",
+            "a",
+            "first_raw_r"
+          ],
+          "primitive": "ite_u32",
+          "heavy": false
+        },
+        {
+          "id": "bias",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "bypass",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "select",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "biased_q",
+          "deps": [
+            "first_q",
+            "bias"
+          ],
+          "primitive": "add_u32",
+          "heavy": false
+        },
+        {
+          "id": "chosen",
+          "deps": [
+            "select",
+            "biased_q",
+            "bypass"
+          ],
+          "primitive": "ite_u32",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "DIVSEL_64",
+      "family": "DIVSEL",
+      "width": 64,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 64,
+        "d": 64,
+        "bias": 64,
+        "bypass": 64,
+        "select": 1
+      },
+      "outputs": {
+        "y": 64,
+        "r": 64
+      },
+      "source_graph_sha256": "f52623cb3fcb0d6a3eaef8b2a78f94c8ce6ceeb162105fdc4973c7303a0c925e",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_is_zero",
+          "deps": [
+            "d",
+            "first_zero"
+          ],
+          "primitive": "eq_u64",
+          "heavy": false
+        },
+        {
+          "id": "first_safe_d",
+          "deps": [
+            "first_is_zero",
+            "first_one",
+            "d"
+          ],
+          "primitive": "ite_u64",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_q",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "div_u64",
+          "heavy": true
+        },
+        {
+          "id": "first_q",
+          "deps": [
+            "first_is_zero",
+            "first_ones",
+            "first_raw_q"
+          ],
+          "primitive": "ite_u64",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_r",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "mod_u64",
+          "heavy": true
+        },
+        {
+          "id": "first_r",
+          "deps": [
+            "first_is_zero",
+            "a",
+            "first_raw_r"
+          ],
+          "primitive": "ite_u64",
+          "heavy": false
+        },
+        {
+          "id": "bias",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "bypass",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "select",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "biased_q",
+          "deps": [
+            "first_q",
+            "bias"
+          ],
+          "primitive": "add_u64",
+          "heavy": false
+        },
+        {
+          "id": "chosen",
+          "deps": [
+            "select",
+            "biased_q",
+            "bypass"
+          ],
+          "primitive": "ite_u64",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "DIVSEL_128",
+      "family": "DIVSEL",
+      "width": 128,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 128,
+        "d": 128,
+        "bias": 128,
+        "bypass": 128,
+        "select": 1
+      },
+      "outputs": {
+        "y": 128,
+        "r": 128
+      },
+      "source_graph_sha256": "fe73fb425013a88c0f3672afe0e4ba51d98be4ff93d3d457f69ded33cceb3c85",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_is_zero",
+          "deps": [
+            "d",
+            "first_zero"
+          ],
+          "primitive": "eq_u128",
+          "heavy": false
+        },
+        {
+          "id": "first_safe_d",
+          "deps": [
+            "first_is_zero",
+            "first_one",
+            "d"
+          ],
+          "primitive": "ite_u128",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_q",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "div_u128",
+          "heavy": true
+        },
+        {
+          "id": "first_q",
+          "deps": [
+            "first_is_zero",
+            "first_ones",
+            "first_raw_q"
+          ],
+          "primitive": "ite_u128",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_r",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "mod_u128",
+          "heavy": true
+        },
+        {
+          "id": "first_r",
+          "deps": [
+            "first_is_zero",
+            "a",
+            "first_raw_r"
+          ],
+          "primitive": "ite_u128",
+          "heavy": false
+        },
+        {
+          "id": "bias",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "bypass",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "select",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "biased_q",
+          "deps": [
+            "first_q",
+            "bias"
+          ],
+          "primitive": "add_u128",
+          "heavy": false
+        },
+        {
+          "id": "chosen",
+          "deps": [
+            "select",
+            "biased_q",
+            "bypass"
+          ],
+          "primitive": "ite_u128",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "MIX_8",
+      "family": "MIX",
+      "width": 8,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 8,
+        "b": 8,
+        "mask": 8,
+        "d": 8,
+        "s": 5
+      },
+      "outputs": {
+        "y": 8,
+        "less": 1
+      },
+      "source_graph_sha256": "64ba85d5dba28408ebecbc81ab9ceb6f01500ecb5c6a5d900151fae23450d7ba",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "mask",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "s",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "zero_s",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "limit",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "in_range",
+          "deps": [
+            "s",
+            "limit"
+          ],
+          "primitive": "lt_u5",
+          "heavy": false
+        },
+        {
+          "id": "safe_s",
+          "deps": [
+            "in_range",
+            "s",
+            "zero_s"
+          ],
+          "primitive": "ite_u5",
+          "heavy": false
+        },
+        {
+          "id": "u",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "add_u8",
+          "heavy": false
+        },
+        {
+          "id": "v",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "sub_u8",
+          "heavy": false
+        },
+        {
+          "id": "raw_l",
+          "deps": [
+            "u",
+            "safe_s"
+          ],
+          "primitive": "shl_u8",
+          "heavy": false
+        },
+        {
+          "id": "raw_r",
+          "deps": [
+            "v",
+            "safe_s"
+          ],
+          "primitive": "shr_u8",
+          "heavy": false
+        },
+        {
+          "id": "left",
+          "deps": [
+            "in_range",
+            "raw_l",
+            "zero"
+          ],
+          "primitive": "ite_u8",
+          "heavy": false
+        },
+        {
+          "id": "right",
+          "deps": [
+            "in_range",
+            "raw_r",
+            "zero"
+          ],
+          "primitive": "ite_u8",
+          "heavy": false
+        },
+        {
+          "id": "inverse_mask",
+          "deps": [
+            "mask"
+          ],
+          "primitive": "bitnot_u8",
+          "heavy": false
+        },
+        {
+          "id": "masked_l",
+          "deps": [
+            "left",
+            "mask"
+          ],
+          "primitive": "bitand_u8",
+          "heavy": false
+        },
+        {
+          "id": "masked_r",
+          "deps": [
+            "right",
+            "inverse_mask"
+          ],
+          "primitive": "bitand_u8",
+          "heavy": false
+        },
+        {
+          "id": "merged",
+          "deps": [
+            "masked_l",
+            "masked_r"
+          ],
+          "primitive": "bitor_u8",
+          "heavy": false
+        },
+        {
+          "id": "mod_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "mod_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "mod_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "mod_is_zero",
+          "deps": [
+            "d",
+            "mod_zero"
+          ],
+          "primitive": "eq_u8",
+          "heavy": false
+        },
+        {
+          "id": "mod_safe_d",
+          "deps": [
+            "mod_is_zero",
+            "mod_one",
+            "d"
+          ],
+          "primitive": "ite_u8",
+          "heavy": false
+        },
+        {
+          "id": "mod_raw_r",
+          "deps": [
+            "a",
+            "mod_safe_d"
+          ],
+          "primitive": "mod_u8",
+          "heavy": true
+        },
+        {
+          "id": "mod_r",
+          "deps": [
+            "mod_is_zero",
+            "a",
+            "mod_raw_r"
+          ],
+          "primitive": "ite_u8",
+          "heavy": false
+        },
+        {
+          "id": "answer",
+          "deps": [
+            "merged",
+            "mod_r"
+          ],
+          "primitive": "bitxor_u8",
+          "heavy": false
+        },
+        {
+          "id": "less",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "lt_u8",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "MIX_16",
+      "family": "MIX",
+      "width": 16,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 16,
+        "b": 16,
+        "mask": 16,
+        "d": 16,
+        "s": 6
+      },
+      "outputs": {
+        "y": 16,
+        "less": 1
+      },
+      "source_graph_sha256": "2b08ed1229c769ead3cbedb6c4d2fba4e17ca3ac04cd4d1d2cfe484fa0132bbd",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "mask",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "s",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "zero_s",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "limit",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "in_range",
+          "deps": [
+            "s",
+            "limit"
+          ],
+          "primitive": "lt_u6",
+          "heavy": false
+        },
+        {
+          "id": "safe_s",
+          "deps": [
+            "in_range",
+            "s",
+            "zero_s"
+          ],
+          "primitive": "ite_u6",
+          "heavy": false
+        },
+        {
+          "id": "u",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "add_u16",
+          "heavy": false
+        },
+        {
+          "id": "v",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "sub_u16",
+          "heavy": false
+        },
+        {
+          "id": "raw_l",
+          "deps": [
+            "u",
+            "safe_s"
+          ],
+          "primitive": "shl_u16",
+          "heavy": false
+        },
+        {
+          "id": "raw_r",
+          "deps": [
+            "v",
+            "safe_s"
+          ],
+          "primitive": "shr_u16",
+          "heavy": false
+        },
+        {
+          "id": "left",
+          "deps": [
+            "in_range",
+            "raw_l",
+            "zero"
+          ],
+          "primitive": "ite_u16",
+          "heavy": false
+        },
+        {
+          "id": "right",
+          "deps": [
+            "in_range",
+            "raw_r",
+            "zero"
+          ],
+          "primitive": "ite_u16",
+          "heavy": false
+        },
+        {
+          "id": "inverse_mask",
+          "deps": [
+            "mask"
+          ],
+          "primitive": "bitnot_u16",
+          "heavy": false
+        },
+        {
+          "id": "masked_l",
+          "deps": [
+            "left",
+            "mask"
+          ],
+          "primitive": "bitand_u16",
+          "heavy": false
+        },
+        {
+          "id": "masked_r",
+          "deps": [
+            "right",
+            "inverse_mask"
+          ],
+          "primitive": "bitand_u16",
+          "heavy": false
+        },
+        {
+          "id": "merged",
+          "deps": [
+            "masked_l",
+            "masked_r"
+          ],
+          "primitive": "bitor_u16",
+          "heavy": false
+        },
+        {
+          "id": "mod_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "mod_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "mod_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "mod_is_zero",
+          "deps": [
+            "d",
+            "mod_zero"
+          ],
+          "primitive": "eq_u16",
+          "heavy": false
+        },
+        {
+          "id": "mod_safe_d",
+          "deps": [
+            "mod_is_zero",
+            "mod_one",
+            "d"
+          ],
+          "primitive": "ite_u16",
+          "heavy": false
+        },
+        {
+          "id": "mod_raw_r",
+          "deps": [
+            "a",
+            "mod_safe_d"
+          ],
+          "primitive": "mod_u16",
+          "heavy": true
+        },
+        {
+          "id": "mod_r",
+          "deps": [
+            "mod_is_zero",
+            "a",
+            "mod_raw_r"
+          ],
+          "primitive": "ite_u16",
+          "heavy": false
+        },
+        {
+          "id": "answer",
+          "deps": [
+            "merged",
+            "mod_r"
+          ],
+          "primitive": "bitxor_u16",
+          "heavy": false
+        },
+        {
+          "id": "less",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "lt_u16",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "MIX_32",
+      "family": "MIX",
+      "width": 32,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 32,
+        "b": 32,
+        "mask": 32,
+        "d": 32,
+        "s": 7
+      },
+      "outputs": {
+        "y": 32,
+        "less": 1
+      },
+      "source_graph_sha256": "af7caf3d39dd5ace04464be167aa6dff4fe29cfcc97558050ef58cfd3efa44cb",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "mask",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "s",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "zero_s",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "limit",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "in_range",
+          "deps": [
+            "s",
+            "limit"
+          ],
+          "primitive": "lt_u7",
+          "heavy": false
+        },
+        {
+          "id": "safe_s",
+          "deps": [
+            "in_range",
+            "s",
+            "zero_s"
+          ],
+          "primitive": "ite_u7",
+          "heavy": false
+        },
+        {
+          "id": "u",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "add_u32",
+          "heavy": false
+        },
+        {
+          "id": "v",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "sub_u32",
+          "heavy": false
+        },
+        {
+          "id": "raw_l",
+          "deps": [
+            "u",
+            "safe_s"
+          ],
+          "primitive": "shl_u32",
+          "heavy": false
+        },
+        {
+          "id": "raw_r",
+          "deps": [
+            "v",
+            "safe_s"
+          ],
+          "primitive": "shr_u32",
+          "heavy": false
+        },
+        {
+          "id": "left",
+          "deps": [
+            "in_range",
+            "raw_l",
+            "zero"
+          ],
+          "primitive": "ite_u32",
+          "heavy": false
+        },
+        {
+          "id": "right",
+          "deps": [
+            "in_range",
+            "raw_r",
+            "zero"
+          ],
+          "primitive": "ite_u32",
+          "heavy": false
+        },
+        {
+          "id": "inverse_mask",
+          "deps": [
+            "mask"
+          ],
+          "primitive": "bitnot_u32",
+          "heavy": false
+        },
+        {
+          "id": "masked_l",
+          "deps": [
+            "left",
+            "mask"
+          ],
+          "primitive": "bitand_u32",
+          "heavy": false
+        },
+        {
+          "id": "masked_r",
+          "deps": [
+            "right",
+            "inverse_mask"
+          ],
+          "primitive": "bitand_u32",
+          "heavy": false
+        },
+        {
+          "id": "merged",
+          "deps": [
+            "masked_l",
+            "masked_r"
+          ],
+          "primitive": "bitor_u32",
+          "heavy": false
+        },
+        {
+          "id": "mod_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "mod_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "mod_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "mod_is_zero",
+          "deps": [
+            "d",
+            "mod_zero"
+          ],
+          "primitive": "eq_u32",
+          "heavy": false
+        },
+        {
+          "id": "mod_safe_d",
+          "deps": [
+            "mod_is_zero",
+            "mod_one",
+            "d"
+          ],
+          "primitive": "ite_u32",
+          "heavy": false
+        },
+        {
+          "id": "mod_raw_r",
+          "deps": [
+            "a",
+            "mod_safe_d"
+          ],
+          "primitive": "mod_u32",
+          "heavy": true
+        },
+        {
+          "id": "mod_r",
+          "deps": [
+            "mod_is_zero",
+            "a",
+            "mod_raw_r"
+          ],
+          "primitive": "ite_u32",
+          "heavy": false
+        },
+        {
+          "id": "answer",
+          "deps": [
+            "merged",
+            "mod_r"
+          ],
+          "primitive": "bitxor_u32",
+          "heavy": false
+        },
+        {
+          "id": "less",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "lt_u32",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "MIX_64",
+      "family": "MIX",
+      "width": 64,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 64,
+        "b": 64,
+        "mask": 64,
+        "d": 64,
+        "s": 8
+      },
+      "outputs": {
+        "y": 64,
+        "less": 1
+      },
+      "source_graph_sha256": "7a227c6879a44c805f135d4f33c87ec1dbd080757350fd22ceacabc7f411e24e",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "mask",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "s",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "zero_s",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "limit",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "in_range",
+          "deps": [
+            "s",
+            "limit"
+          ],
+          "primitive": "lt_u8",
+          "heavy": false
+        },
+        {
+          "id": "safe_s",
+          "deps": [
+            "in_range",
+            "s",
+            "zero_s"
+          ],
+          "primitive": "ite_u8",
+          "heavy": false
+        },
+        {
+          "id": "u",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "add_u64",
+          "heavy": false
+        },
+        {
+          "id": "v",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "sub_u64",
+          "heavy": false
+        },
+        {
+          "id": "raw_l",
+          "deps": [
+            "u",
+            "safe_s"
+          ],
+          "primitive": "shl_u64",
+          "heavy": false
+        },
+        {
+          "id": "raw_r",
+          "deps": [
+            "v",
+            "safe_s"
+          ],
+          "primitive": "shr_u64",
+          "heavy": false
+        },
+        {
+          "id": "left",
+          "deps": [
+            "in_range",
+            "raw_l",
+            "zero"
+          ],
+          "primitive": "ite_u64",
+          "heavy": false
+        },
+        {
+          "id": "right",
+          "deps": [
+            "in_range",
+            "raw_r",
+            "zero"
+          ],
+          "primitive": "ite_u64",
+          "heavy": false
+        },
+        {
+          "id": "inverse_mask",
+          "deps": [
+            "mask"
+          ],
+          "primitive": "bitnot_u64",
+          "heavy": false
+        },
+        {
+          "id": "masked_l",
+          "deps": [
+            "left",
+            "mask"
+          ],
+          "primitive": "bitand_u64",
+          "heavy": false
+        },
+        {
+          "id": "masked_r",
+          "deps": [
+            "right",
+            "inverse_mask"
+          ],
+          "primitive": "bitand_u64",
+          "heavy": false
+        },
+        {
+          "id": "merged",
+          "deps": [
+            "masked_l",
+            "masked_r"
+          ],
+          "primitive": "bitor_u64",
+          "heavy": false
+        },
+        {
+          "id": "mod_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "mod_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "mod_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "mod_is_zero",
+          "deps": [
+            "d",
+            "mod_zero"
+          ],
+          "primitive": "eq_u64",
+          "heavy": false
+        },
+        {
+          "id": "mod_safe_d",
+          "deps": [
+            "mod_is_zero",
+            "mod_one",
+            "d"
+          ],
+          "primitive": "ite_u64",
+          "heavy": false
+        },
+        {
+          "id": "mod_raw_r",
+          "deps": [
+            "a",
+            "mod_safe_d"
+          ],
+          "primitive": "mod_u64",
+          "heavy": true
+        },
+        {
+          "id": "mod_r",
+          "deps": [
+            "mod_is_zero",
+            "a",
+            "mod_raw_r"
+          ],
+          "primitive": "ite_u64",
+          "heavy": false
+        },
+        {
+          "id": "answer",
+          "deps": [
+            "merged",
+            "mod_r"
+          ],
+          "primitive": "bitxor_u64",
+          "heavy": false
+        },
+        {
+          "id": "less",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "lt_u64",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "MIX_128",
+      "family": "MIX",
+      "width": 128,
+      "partition": "formal",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 128,
+        "b": 128,
+        "mask": 128,
+        "d": 128,
+        "s": 9
+      },
+      "outputs": {
+        "y": 128,
+        "less": 1
+      },
+      "source_graph_sha256": "d861a9bed8b48651593f9d8ebef02a43399966c1ac8de95ca9b46630bd40ba52",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "mask",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "s",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "zero_s",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "limit",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "in_range",
+          "deps": [
+            "s",
+            "limit"
+          ],
+          "primitive": "lt_u9",
+          "heavy": false
+        },
+        {
+          "id": "safe_s",
+          "deps": [
+            "in_range",
+            "s",
+            "zero_s"
+          ],
+          "primitive": "ite_u9",
+          "heavy": false
+        },
+        {
+          "id": "u",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "add_u128",
+          "heavy": false
+        },
+        {
+          "id": "v",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "sub_u128",
+          "heavy": false
+        },
+        {
+          "id": "raw_l",
+          "deps": [
+            "u",
+            "safe_s"
+          ],
+          "primitive": "shl_u128",
+          "heavy": false
+        },
+        {
+          "id": "raw_r",
+          "deps": [
+            "v",
+            "safe_s"
+          ],
+          "primitive": "shr_u128",
+          "heavy": false
+        },
+        {
+          "id": "left",
+          "deps": [
+            "in_range",
+            "raw_l",
+            "zero"
+          ],
+          "primitive": "ite_u128",
+          "heavy": false
+        },
+        {
+          "id": "right",
+          "deps": [
+            "in_range",
+            "raw_r",
+            "zero"
+          ],
+          "primitive": "ite_u128",
+          "heavy": false
+        },
+        {
+          "id": "inverse_mask",
+          "deps": [
+            "mask"
+          ],
+          "primitive": "bitnot_u128",
+          "heavy": false
+        },
+        {
+          "id": "masked_l",
+          "deps": [
+            "left",
+            "mask"
+          ],
+          "primitive": "bitand_u128",
+          "heavy": false
+        },
+        {
+          "id": "masked_r",
+          "deps": [
+            "right",
+            "inverse_mask"
+          ],
+          "primitive": "bitand_u128",
+          "heavy": false
+        },
+        {
+          "id": "merged",
+          "deps": [
+            "masked_l",
+            "masked_r"
+          ],
+          "primitive": "bitor_u128",
+          "heavy": false
+        },
+        {
+          "id": "mod_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "mod_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "mod_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "mod_is_zero",
+          "deps": [
+            "d",
+            "mod_zero"
+          ],
+          "primitive": "eq_u128",
+          "heavy": false
+        },
+        {
+          "id": "mod_safe_d",
+          "deps": [
+            "mod_is_zero",
+            "mod_one",
+            "d"
+          ],
+          "primitive": "ite_u128",
+          "heavy": false
+        },
+        {
+          "id": "mod_raw_r",
+          "deps": [
+            "a",
+            "mod_safe_d"
+          ],
+          "primitive": "mod_u128",
+          "heavy": true
+        },
+        {
+          "id": "mod_r",
+          "deps": [
+            "mod_is_zero",
+            "a",
+            "mod_raw_r"
+          ],
+          "primitive": "ite_u128",
+          "heavy": false
+        },
+        {
+          "id": "answer",
+          "deps": [
+            "merged",
+            "mod_r"
+          ],
+          "primitive": "bitxor_u128",
+          "heavy": false
+        },
+        {
+          "id": "less",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "lt_u128",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "F1",
+      "family": "F1",
+      "width": null,
+      "partition": "formal",
+      "semantic_profile": "binary32_mul_rne",
+      "inputs": {
+        "a": 32,
+        "b": 32
+      },
+      "outputs": {
+        "bits": 32,
+        "flags": 5
+      },
+      "source_graph_sha256": "2256234ed0c81bbc7639018bbf3aefcd8791adaed032aa705012b7a20c33e357",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "fp1",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "f32_mul_rne",
+          "heavy": true
+        },
+        {
+          "id": "bits1",
+          "deps": [
+            "fp1"
+          ],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "flags1",
+          "deps": [
+            "fp1"
+          ],
+          "primitive": null,
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "F2",
+      "family": "F2",
+      "width": null,
+      "partition": "formal",
+      "semantic_profile": "binary32_mul_rne",
+      "inputs": {
+        "a": 32,
+        "b": 32,
+        "c": 32
+      },
+      "outputs": {
+        "bits": 32,
+        "flags": 5
+      },
+      "source_graph_sha256": "131a57e2fc32975568f6f2c0552a336db382ff4d95ad7c09ed74667e2076c6f7",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "fp1",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "f32_mul_rne",
+          "heavy": true
+        },
+        {
+          "id": "bits1",
+          "deps": [
+            "fp1"
+          ],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "flags1",
+          "deps": [
+            "fp1"
+          ],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "c",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "fp2",
+          "deps": [
+            "bits1",
+            "c"
+          ],
+          "primitive": "f32_mul_rne",
+          "heavy": true
+        },
+        {
+          "id": "bits2",
+          "deps": [
+            "fp2"
+          ],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "flags2",
+          "deps": [
+            "fp2"
+          ],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "flags_or",
+          "deps": [
+            "flags1",
+            "flags2"
+          ],
+          "primitive": "bitor_u5",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "H_M_8",
+      "family": "H_M",
+      "width": 8,
+      "partition": "holdout",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 8,
+        "b": 8,
+        "c": 8,
+        "select": 1
+      },
+      "outputs": {
+        "y": 8
+      },
+      "source_graph_sha256": "dc132cc656e1d7adf72e728ec226927f332ee2575a6f2fa4dc572949577ffd33",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "mul_u8_r8",
+          "heavy": true
+        },
+        {
+          "id": "c",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "select",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "chosen_c",
+          "deps": [
+            "select",
+            "c",
+            "zero"
+          ],
+          "primitive": "ite_u8",
+          "heavy": false
+        },
+        {
+          "id": "sum",
+          "deps": [
+            "product",
+            "chosen_c"
+          ],
+          "primitive": "add_u8",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "H_M_16",
+      "family": "H_M",
+      "width": 16,
+      "partition": "holdout",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 16,
+        "b": 16,
+        "c": 16,
+        "select": 1
+      },
+      "outputs": {
+        "y": 16
+      },
+      "source_graph_sha256": "66aa5c80981f079ac94b1c2f8df7aa6ec674e4adea4b0e71a022d8611eab4d0c",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "mul_u16_r16",
+          "heavy": true
+        },
+        {
+          "id": "c",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "select",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "chosen_c",
+          "deps": [
+            "select",
+            "c",
+            "zero"
+          ],
+          "primitive": "ite_u16",
+          "heavy": false
+        },
+        {
+          "id": "sum",
+          "deps": [
+            "product",
+            "chosen_c"
+          ],
+          "primitive": "add_u16",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "H_M_32",
+      "family": "H_M",
+      "width": 32,
+      "partition": "holdout",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 32,
+        "b": 32,
+        "c": 32,
+        "select": 1
+      },
+      "outputs": {
+        "y": 32
+      },
+      "source_graph_sha256": "9a2006b0bf39830876a8aa807dbc96ddb08fb2c8e487f668accf222bf1a6ee9a",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "mul_u32_r32",
+          "heavy": true
+        },
+        {
+          "id": "c",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "select",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "chosen_c",
+          "deps": [
+            "select",
+            "c",
+            "zero"
+          ],
+          "primitive": "ite_u32",
+          "heavy": false
+        },
+        {
+          "id": "sum",
+          "deps": [
+            "product",
+            "chosen_c"
+          ],
+          "primitive": "add_u32",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "H_M_64",
+      "family": "H_M",
+      "width": 64,
+      "partition": "holdout",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 64,
+        "b": 64,
+        "c": 64,
+        "select": 1
+      },
+      "outputs": {
+        "y": 64
+      },
+      "source_graph_sha256": "44e98b1d1be61e26e4d32daafdbbe30a94136478d584f153f23e49dc37a419fd",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "mul_u64_r64",
+          "heavy": true
+        },
+        {
+          "id": "c",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "select",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "chosen_c",
+          "deps": [
+            "select",
+            "c",
+            "zero"
+          ],
+          "primitive": "ite_u64",
+          "heavy": false
+        },
+        {
+          "id": "sum",
+          "deps": [
+            "product",
+            "chosen_c"
+          ],
+          "primitive": "add_u64",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "H_M_128",
+      "family": "H_M",
+      "width": 128,
+      "partition": "holdout",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 128,
+        "b": 128,
+        "c": 128,
+        "select": 1
+      },
+      "outputs": {
+        "y": 128
+      },
+      "source_graph_sha256": "98326e9ea9433053d603a60b8099e1a23e2a28643622dfae4b015c853ac3dfba",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "product",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "mul_u128_r128",
+          "heavy": true
+        },
+        {
+          "id": "c",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "select",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "chosen_c",
+          "deps": [
+            "select",
+            "c",
+            "zero"
+          ],
+          "primitive": "ite_u128",
+          "heavy": false
+        },
+        {
+          "id": "sum",
+          "deps": [
+            "product",
+            "chosen_c"
+          ],
+          "primitive": "add_u128",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "H_D_8",
+      "family": "H_D",
+      "width": 8,
+      "partition": "holdout",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 8,
+        "d": 8,
+        "e": 8
+      },
+      "outputs": {
+        "q": 8,
+        "r1": 8,
+        "r2": 8
+      },
+      "source_graph_sha256": "d6ea14ee7df93753bd1f83338dffa3740b63c11364e4acfca72d180cfcbfd7c1",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_is_zero",
+          "deps": [
+            "d",
+            "first_zero"
+          ],
+          "primitive": "eq_u8",
+          "heavy": false
+        },
+        {
+          "id": "first_safe_d",
+          "deps": [
+            "first_is_zero",
+            "first_one",
+            "d"
+          ],
+          "primitive": "ite_u8",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_q",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "div_u8",
+          "heavy": true
+        },
+        {
+          "id": "first_q",
+          "deps": [
+            "first_is_zero",
+            "first_ones",
+            "first_raw_q"
+          ],
+          "primitive": "ite_u8",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_r",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "mod_u8",
+          "heavy": true
+        },
+        {
+          "id": "first_r",
+          "deps": [
+            "first_is_zero",
+            "a",
+            "first_raw_r"
+          ],
+          "primitive": "ite_u8",
+          "heavy": false
+        },
+        {
+          "id": "e",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "second_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "second_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "second_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "second_is_zero",
+          "deps": [
+            "e",
+            "second_zero"
+          ],
+          "primitive": "eq_u8",
+          "heavy": false
+        },
+        {
+          "id": "second_safe_d",
+          "deps": [
+            "second_is_zero",
+            "second_one",
+            "e"
+          ],
+          "primitive": "ite_u8",
+          "heavy": false
+        },
+        {
+          "id": "second_raw_q",
+          "deps": [
+            "first_q",
+            "second_safe_d"
+          ],
+          "primitive": "div_u8",
+          "heavy": true
+        },
+        {
+          "id": "second_q",
+          "deps": [
+            "second_is_zero",
+            "second_ones",
+            "second_raw_q"
+          ],
+          "primitive": "ite_u8",
+          "heavy": false
+        },
+        {
+          "id": "second_raw_r",
+          "deps": [
+            "first_q",
+            "second_safe_d"
+          ],
+          "primitive": "mod_u8",
+          "heavy": true
+        },
+        {
+          "id": "second_r",
+          "deps": [
+            "second_is_zero",
+            "first_q",
+            "second_raw_r"
+          ],
+          "primitive": "ite_u8",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "H_D_16",
+      "family": "H_D",
+      "width": 16,
+      "partition": "holdout",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 16,
+        "d": 16,
+        "e": 16
+      },
+      "outputs": {
+        "q": 16,
+        "r1": 16,
+        "r2": 16
+      },
+      "source_graph_sha256": "faa6728d9c5bf1d4d290ce478dc57e646dafbe5516758f27137c2f992b2afc0c",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_is_zero",
+          "deps": [
+            "d",
+            "first_zero"
+          ],
+          "primitive": "eq_u16",
+          "heavy": false
+        },
+        {
+          "id": "first_safe_d",
+          "deps": [
+            "first_is_zero",
+            "first_one",
+            "d"
+          ],
+          "primitive": "ite_u16",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_q",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "div_u16",
+          "heavy": true
+        },
+        {
+          "id": "first_q",
+          "deps": [
+            "first_is_zero",
+            "first_ones",
+            "first_raw_q"
+          ],
+          "primitive": "ite_u16",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_r",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "mod_u16",
+          "heavy": true
+        },
+        {
+          "id": "first_r",
+          "deps": [
+            "first_is_zero",
+            "a",
+            "first_raw_r"
+          ],
+          "primitive": "ite_u16",
+          "heavy": false
+        },
+        {
+          "id": "e",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "second_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "second_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "second_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "second_is_zero",
+          "deps": [
+            "e",
+            "second_zero"
+          ],
+          "primitive": "eq_u16",
+          "heavy": false
+        },
+        {
+          "id": "second_safe_d",
+          "deps": [
+            "second_is_zero",
+            "second_one",
+            "e"
+          ],
+          "primitive": "ite_u16",
+          "heavy": false
+        },
+        {
+          "id": "second_raw_q",
+          "deps": [
+            "first_q",
+            "second_safe_d"
+          ],
+          "primitive": "div_u16",
+          "heavy": true
+        },
+        {
+          "id": "second_q",
+          "deps": [
+            "second_is_zero",
+            "second_ones",
+            "second_raw_q"
+          ],
+          "primitive": "ite_u16",
+          "heavy": false
+        },
+        {
+          "id": "second_raw_r",
+          "deps": [
+            "first_q",
+            "second_safe_d"
+          ],
+          "primitive": "mod_u16",
+          "heavy": true
+        },
+        {
+          "id": "second_r",
+          "deps": [
+            "second_is_zero",
+            "first_q",
+            "second_raw_r"
+          ],
+          "primitive": "ite_u16",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "H_D_32",
+      "family": "H_D",
+      "width": 32,
+      "partition": "holdout",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 32,
+        "d": 32,
+        "e": 32
+      },
+      "outputs": {
+        "q": 32,
+        "r1": 32,
+        "r2": 32
+      },
+      "source_graph_sha256": "33562c49bd9744be68baddec75487e0d6d005eb68aac681a370387c3a19155a6",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_is_zero",
+          "deps": [
+            "d",
+            "first_zero"
+          ],
+          "primitive": "eq_u32",
+          "heavy": false
+        },
+        {
+          "id": "first_safe_d",
+          "deps": [
+            "first_is_zero",
+            "first_one",
+            "d"
+          ],
+          "primitive": "ite_u32",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_q",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "div_u32",
+          "heavy": true
+        },
+        {
+          "id": "first_q",
+          "deps": [
+            "first_is_zero",
+            "first_ones",
+            "first_raw_q"
+          ],
+          "primitive": "ite_u32",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_r",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "mod_u32",
+          "heavy": true
+        },
+        {
+          "id": "first_r",
+          "deps": [
+            "first_is_zero",
+            "a",
+            "first_raw_r"
+          ],
+          "primitive": "ite_u32",
+          "heavy": false
+        },
+        {
+          "id": "e",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "second_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "second_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "second_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "second_is_zero",
+          "deps": [
+            "e",
+            "second_zero"
+          ],
+          "primitive": "eq_u32",
+          "heavy": false
+        },
+        {
+          "id": "second_safe_d",
+          "deps": [
+            "second_is_zero",
+            "second_one",
+            "e"
+          ],
+          "primitive": "ite_u32",
+          "heavy": false
+        },
+        {
+          "id": "second_raw_q",
+          "deps": [
+            "first_q",
+            "second_safe_d"
+          ],
+          "primitive": "div_u32",
+          "heavy": true
+        },
+        {
+          "id": "second_q",
+          "deps": [
+            "second_is_zero",
+            "second_ones",
+            "second_raw_q"
+          ],
+          "primitive": "ite_u32",
+          "heavy": false
+        },
+        {
+          "id": "second_raw_r",
+          "deps": [
+            "first_q",
+            "second_safe_d"
+          ],
+          "primitive": "mod_u32",
+          "heavy": true
+        },
+        {
+          "id": "second_r",
+          "deps": [
+            "second_is_zero",
+            "first_q",
+            "second_raw_r"
+          ],
+          "primitive": "ite_u32",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "H_D_64",
+      "family": "H_D",
+      "width": 64,
+      "partition": "holdout",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 64,
+        "d": 64,
+        "e": 64
+      },
+      "outputs": {
+        "q": 64,
+        "r1": 64,
+        "r2": 64
+      },
+      "source_graph_sha256": "1c3b36dc282b99eeb39a3756405e40b350e13de17928f069a2f0f16832cfea77",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_is_zero",
+          "deps": [
+            "d",
+            "first_zero"
+          ],
+          "primitive": "eq_u64",
+          "heavy": false
+        },
+        {
+          "id": "first_safe_d",
+          "deps": [
+            "first_is_zero",
+            "first_one",
+            "d"
+          ],
+          "primitive": "ite_u64",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_q",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "div_u64",
+          "heavy": true
+        },
+        {
+          "id": "first_q",
+          "deps": [
+            "first_is_zero",
+            "first_ones",
+            "first_raw_q"
+          ],
+          "primitive": "ite_u64",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_r",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "mod_u64",
+          "heavy": true
+        },
+        {
+          "id": "first_r",
+          "deps": [
+            "first_is_zero",
+            "a",
+            "first_raw_r"
+          ],
+          "primitive": "ite_u64",
+          "heavy": false
+        },
+        {
+          "id": "e",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "second_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "second_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "second_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "second_is_zero",
+          "deps": [
+            "e",
+            "second_zero"
+          ],
+          "primitive": "eq_u64",
+          "heavy": false
+        },
+        {
+          "id": "second_safe_d",
+          "deps": [
+            "second_is_zero",
+            "second_one",
+            "e"
+          ],
+          "primitive": "ite_u64",
+          "heavy": false
+        },
+        {
+          "id": "second_raw_q",
+          "deps": [
+            "first_q",
+            "second_safe_d"
+          ],
+          "primitive": "div_u64",
+          "heavy": true
+        },
+        {
+          "id": "second_q",
+          "deps": [
+            "second_is_zero",
+            "second_ones",
+            "second_raw_q"
+          ],
+          "primitive": "ite_u64",
+          "heavy": false
+        },
+        {
+          "id": "second_raw_r",
+          "deps": [
+            "first_q",
+            "second_safe_d"
+          ],
+          "primitive": "mod_u64",
+          "heavy": true
+        },
+        {
+          "id": "second_r",
+          "deps": [
+            "second_is_zero",
+            "first_q",
+            "second_raw_r"
+          ],
+          "primitive": "ite_u64",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "H_D_128",
+      "family": "H_D",
+      "width": 128,
+      "partition": "holdout",
+      "semantic_profile": "unsigned_integer",
+      "inputs": {
+        "a": 128,
+        "d": 128,
+        "e": 128
+      },
+      "outputs": {
+        "q": 128,
+        "r1": 128,
+        "r2": 128
+      },
+      "source_graph_sha256": "deb70a3f5d0d3afd399caa5a54d416cf389f858ddfa0585dd1d66b7d55e428bb",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "d",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "first_is_zero",
+          "deps": [
+            "d",
+            "first_zero"
+          ],
+          "primitive": "eq_u128",
+          "heavy": false
+        },
+        {
+          "id": "first_safe_d",
+          "deps": [
+            "first_is_zero",
+            "first_one",
+            "d"
+          ],
+          "primitive": "ite_u128",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_q",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "div_u128",
+          "heavy": true
+        },
+        {
+          "id": "first_q",
+          "deps": [
+            "first_is_zero",
+            "first_ones",
+            "first_raw_q"
+          ],
+          "primitive": "ite_u128",
+          "heavy": false
+        },
+        {
+          "id": "first_raw_r",
+          "deps": [
+            "a",
+            "first_safe_d"
+          ],
+          "primitive": "mod_u128",
+          "heavy": true
+        },
+        {
+          "id": "first_r",
+          "deps": [
+            "first_is_zero",
+            "a",
+            "first_raw_r"
+          ],
+          "primitive": "ite_u128",
+          "heavy": false
+        },
+        {
+          "id": "e",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "second_zero",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "second_one",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "second_ones",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "second_is_zero",
+          "deps": [
+            "e",
+            "second_zero"
+          ],
+          "primitive": "eq_u128",
+          "heavy": false
+        },
+        {
+          "id": "second_safe_d",
+          "deps": [
+            "second_is_zero",
+            "second_one",
+            "e"
+          ],
+          "primitive": "ite_u128",
+          "heavy": false
+        },
+        {
+          "id": "second_raw_q",
+          "deps": [
+            "first_q",
+            "second_safe_d"
+          ],
+          "primitive": "div_u128",
+          "heavy": true
+        },
+        {
+          "id": "second_q",
+          "deps": [
+            "second_is_zero",
+            "second_ones",
+            "second_raw_q"
+          ],
+          "primitive": "ite_u128",
+          "heavy": false
+        },
+        {
+          "id": "second_raw_r",
+          "deps": [
+            "first_q",
+            "second_safe_d"
+          ],
+          "primitive": "mod_u128",
+          "heavy": true
+        },
+        {
+          "id": "second_r",
+          "deps": [
+            "second_is_zero",
+            "first_q",
+            "second_raw_r"
+          ],
+          "primitive": "ite_u128",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    },
+    {
+      "id": "H_F1",
+      "family": "H_F1",
+      "width": null,
+      "partition": "holdout",
+      "semantic_profile": "binary32_mul_rne",
+      "inputs": {
+        "a": 32,
+        "b": 32,
+        "bypass": 32,
+        "select": 1
+      },
+      "outputs": {
+        "bits": 32,
+        "flags": 5
+      },
+      "source_graph_sha256": "21e8b440072a7a37cff7785cda88aeb74db8b87fee5d85d3a72cf2da7ab69fed",
+      "reference_graph": [
+        {
+          "id": "a",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "b",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "fp1",
+          "deps": [
+            "a",
+            "b"
+          ],
+          "primitive": "f32_mul_rne",
+          "heavy": true
+        },
+        {
+          "id": "bits1",
+          "deps": [
+            "fp1"
+          ],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "flags1",
+          "deps": [
+            "fp1"
+          ],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "bypass",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "select",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "zero_flags",
+          "deps": [],
+          "primitive": null,
+          "heavy": false
+        },
+        {
+          "id": "selected_bits",
+          "deps": [
+            "select",
+            "bits1",
+            "bypass"
+          ],
+          "primitive": "ite_u32",
+          "heavy": false
+        },
+        {
+          "id": "selected_flags",
+          "deps": [
+            "select",
+            "flags1",
+            "zero_flags"
+          ],
+          "primitive": "ite_u5",
+          "heavy": false
+        }
+      ],
+      "divrem_sharing": "not_assumed; actual_implementation_identity_required"
+    }
+  ],
+  "training_identity_policy": {
+    "registered_training_ids": [],
+    "namespace": "microbenchmark/<platform>/<version>/<sample>",
+    "formal_and_holdout_graphs_allowed_for_training_or_tuning": false,
+    "structure_variants_and_target_sweeps_share_group": true,
+    "actual_sample_list_and_model_splits": "freeze_at_stage7_admission"
+  },
+  "legacy_mapping": {
+    "M1": "MAC_32",
+    "M2": "DOT2_16",
+    "D1": "UDR_16",
+    "D2": "DIVSEL_32",
+    "F1": "F1",
+    "F2": "F2",
+    "H_M1": "H_M_32",
+    "H_D1": "H_D_32",
+    "H_F1": "H_F1"
+  }
+}

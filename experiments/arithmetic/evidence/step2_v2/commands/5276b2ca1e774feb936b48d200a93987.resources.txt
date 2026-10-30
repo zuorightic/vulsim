@@ -1,0 +1,39 @@
+	Command being timed: "/usr/bin/python3 -c from pathlib import Path
+import json,shutil,tempfile
+from experiments.arithmetic_dse.step2_evidence import verify,ROOT
+current=verify()
+assert current['status']=='passed' and not current['current_source_mismatches']
+freeze=json.loads((ROOT/'experiments/arithmetic/step2_freeze_v4.json').read_text())
+with tempfile.TemporaryDirectory(prefix='step2-isolated-') as directory:
+ root=Path(directory)
+ names=['experiments/arithmetic/step2_freeze_v4.json','experiments/arithmetic/evidence/step2_v2','experiments/arithmetic/backend_usage.json',*freeze['historical_freezes']]
+ for name in names:
+  source=ROOT/name;target=root/name;target.parent.mkdir(parents=True,exist_ok=True)
+  if source.is_dir(): shutil.copytree(source,target)
+  else: shutil.copy2(source,target)
+ assert not (root/'build').exists()
+ isolated=verify(root)
+ assert isolated['status']=='passed' and isolated['verification_scope']=='frozen_source_snapshot_only'
+print(json.dumps({'current':current,'isolated_status':isolated['status'],'isolated_has_build':False},indent=2))"
+	User time (seconds): 0.14
+	System time (seconds): 0.05
+	Percent of CPU this job got: 98%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.19
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 23064
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 4211
+	Voluntary context switches: 1
+	Involuntary context switches: 26
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 12328
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

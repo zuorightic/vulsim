@@ -1,0 +1,38 @@
+{
+  "version": "arithmetic-selection-v2",
+  "platforms": [
+    "asap7",
+    "nangate45",
+    "sky130hd",
+    "gf180"
+  ],
+  "groups": {
+    "A": "original_combinational_kernel_common_boundary_shell",
+    "B": "fixed-op-width-v1; atomic_operations",
+    "C": "same_fixed_cost; supported_internal_templates_and_original",
+    "D": "same_ordered_candidates_as_C; offline_platform_model_and_physical_budget"
+  },
+  "candidate_K": 16,
+  "candidate_order": "stable_original_mul_node_id_order; lexicographic_cartesian_product(original,half,quarter); filter_eligibility_then_deduplicate_then_truncate_K",
+  "C_score": [
+    "maximum_stage_abstract_delay",
+    "comb_weight_plus_register_bits",
+    "register_bits",
+    "register_signals",
+    "candidate_id"
+  ],
+  "D_score_after_predicted_feasibility": [
+    "predicted_total_area",
+    "predicted_maximum_stage_delay",
+    "register_bits",
+    "candidate_id"
+  ],
+  "candidate_PPA_calls_in_D_selection": 0,
+  "final_PPA_failure_triggers_reselection": false,
+  "unknown_or_mismatched_model": "explicit_error; never_fallback_to_C_or_other_platform",
+  "D_feedback": "optional_separate_method; excluded_from_core",
+  "training_isolation": "microbenchmarks_only; formal_holdout_and_variants_never_train_or_tune",
+  "dataset_split": "group_variants_targets_and_repeated_flow_contexts_before_splitting; actual_manifest_and_quality_gates_frozen_at_step7_admission",
+  "failure_denominator": "43_cases_x4_groups_x4_platforms; preserve_all_attempted_case_records_and_stratify_reasons",
+  "full_compiler_selection": "implemented_in_steps5_7; not_claimed_by_this_protocol"
+}

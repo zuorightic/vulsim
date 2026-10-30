@@ -5,9 +5,8 @@ It does not use host floating point or the prospective hardware implementation.
 """
 from dataclasses import dataclass
 import json
-from pathlib import Path
-
-ROOT = Path(__file__).resolve().parents[2]
+import sys
+from .contracts import case_manifest
 INVALID, DIVIDE_BY_ZERO, OVERFLOW, UNDERFLOW, INEXACT = 16, 8, 4, 2, 1
 CANONICAL_NAN = 0x7FC00000
 
@@ -96,62 +95,78 @@ def f32_chain(a: int, b: int, c: int) -> FPResult:
     return FPResult(second.bits, first.flags | second.flags)
 
 
-def case_manifest() -> dict:
-    return json.loads((ROOT/'experiments/arithmetic/cases_v1.json').read_text())
+def logical_shift(a, shift, width, *, right=False):
+    if (type(width) is not int or width <= 0 or type(a) is not int
+            or not 0 <= a < 1 << width or type(shift) is not int or shift < 0):
+        raise ValueError('invalid unsigned shift input')
+    if shift >= width:
+        return 0
+    return a >> shift if right else (a << shift) & ((1 << width)-1)
 
 
-def evaluate_case(case_id: str, inputs: dict[str, int]) -> dict[str, int]:
-    cases = {case['id']: case for case in case_manifest()['cases']}
-    if case_id not in cases:
-        raise ValueError(f'unknown case: {case_id}')
-    case = cases[case_id]
+def evaluate_spec(case, inputs):
     if inputs.keys() != case['inputs'].keys():
-        raise ValueError(f'{case_id}: expected inputs {sorted(case["inputs"])}')
+        raise ValueError(f'{case["id"]}: input signature mismatch')
     for name, width in case['inputs'].items():
-        unsigned(inputs[name], width)
-    x = inputs
-    mask32 = (1 << 32)-1
-    if case_id == 'M1':
-        result = {'y': (x['a']*x['b']+x['c']) & ((1 << 64)-1)}
-    elif case_id == 'M2':
-        result = {'y': x['a']*x['b']+x['c']*x['d']}
-    elif case_id == 'D1':
-        q, r = udivrem(x['a'], x['d'], 16)
-        result = {'q': q, 'r': r}
-    elif case_id == 'D2':
-        q, r = udivrem(x['a'], x['d'], 32)
-        result = {'y': (q+x['bias']) & mask32 if x['select'] else x['bypass'], 'r': r}
-    elif case_id in ('F1', 'F2', 'H_F1'):
-        if case_id == 'F2':
-            fp = f32_chain(x['a'], x['b'], x['c'])
-        elif case_id == 'H_F1' and not x['select']:
-            fp = FPResult(x['bypass'], 0)
+        if type(inputs[name]) is not int or not 0 <= inputs[name] < 1 << width:
+            raise ValueError(f'{case["id"]}: {name} exceeds uint{width}')
+    x, family, w = inputs, case['family'], case['width']
+    if w is not None:
+        mask = (1 << w)-1
+        if family == 'MUL': result = {'y': x['a']*x['b']}
+        elif family == 'MAC': result = {'y': (x['a']*x['b']+x['c']) & ((1 << (2*w))-1)}
+        elif family == 'DOT2': result = {'y': x['a']*x['b']+x['c']*x['d']}
+        elif family in ('UDR', 'DIVSEL', 'H_D'):
+            q, r = udivrem(x['a'], x['d'], w)
+            if family == 'UDR': result = {'q': q, 'r': r}
+            elif family == 'DIVSEL':
+                result = {'y': (q+x['bias']) & mask if x['select'] else x['bypass'], 'r': r}
+            else:
+                q2, r2 = udivrem(q, x['e'], w)
+                result = {'q': q2, 'r1': r, 'r2': r2}
+        elif family == 'MIX':
+            left = logical_shift((x['a']+x['b']) & mask, x['s'], w)
+            right = logical_shift((x['a']-x['b']) & mask, x['s'], w, right=True)
+            remainder = udivrem(x['a'], x['d'], w)[1]
+            result = {'y': ((left & x['mask']) | (right & (~x['mask'] & mask))) ^ remainder,
+                      'less': int(x['a'] < x['b'])}
+        elif family == 'H_M':
+            product = (x['a']*x['b']) & mask
+            result = {'y': (product + (x['c'] if x['select'] else 0)) & mask}
         else:
-            fp = f32_mul(x['a'], x['b'])
-        result = {'bits': fp.bits, 'flags': fp.flags}
-    elif case_id == 'H_M1':
-        result = {'y': ((x['a']*x['b'] & mask32)+(x['c'] if x['select'] else 0)) & mask32}
-    elif case_id == 'H_D1':
-        q1, r1 = udivrem(x['a'], x['d'], 32)
-        q2, r2 = udivrem(q1, x['e'], 32)
-        result = {'q': q2, 'r1': r1, 'r2': r2}
+            raise ValueError(f'unknown integer family: {family}')
     else:
-        raise ValueError(f'missing reference implementation: {case_id}')
+        if family == 'F2': fp = f32_chain(x['a'], x['b'], x['c'])
+        elif family == 'H_F1' and not x['select']: fp = FPResult(x['bypass'], 0)
+        elif family in ('F1', 'H_F1'): fp = f32_mul(x['a'], x['b'])
+        else: raise ValueError(f'unknown FP family: {family}')
+        result = {'bits': fp.bits, 'flags': fp.flags}
     if result.keys() != case['outputs'].keys():
-        raise ValueError(f'{case_id}: reference output signature mismatch')
+        raise ValueError('reference output signature mismatch')
     for name, width in case['outputs'].items():
-        unsigned(result[name], width)
+        if type(result[name]) is not int or not 0 <= result[name] < 1 << width:
+            raise ValueError('reference output exceeds declared width')
     return result
 
 
-if __name__ == '__main__':
-    import sys
-    for line_number, line in enumerate(sys.stdin, 1):
+def evaluate_case(case_id, inputs):
+    cases = {case['id']: case for case in case_manifest()['cases']}
+    if case_id not in cases:
+        raise ValueError(f'unknown revised case: {case_id}')
+    return evaluate_spec(cases[case_id], inputs)
+
+
+def main():
+    for number, line in enumerate(sys.stdin, 1):
         if not line.strip():
             continue
         try:
             request = json.loads(line)
             result = evaluate_case(request['case'], request['inputs'])
         except (ValueError, KeyError, TypeError) as error:
-            raise SystemExit(f'reference input line {line_number}: {error}') from error
-        print(json.dumps({'case':request['case'], 'outputs':result}, sort_keys=True))
+            raise SystemExit(f'revised reference input line {number}: {error}') from error
+        print(json.dumps({'case': request['case'], 'outputs': result}, sort_keys=True))
+
+
+if __name__ == '__main__':
+    main()

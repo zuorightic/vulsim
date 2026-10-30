@@ -1,0 +1,76 @@
+{
+  "version": "arithmetic-source-dag-v1",
+  "nodes": [
+    {
+      "id": "a",
+      "op": "Input",
+      "width": 32,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "b",
+      "op": "Input",
+      "width": 32,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "product",
+      "op": "Mul",
+      "width": 32,
+      "deps": [
+        "a",
+        "b"
+      ],
+      "params": {}
+    },
+    {
+      "id": "c",
+      "op": "Input",
+      "width": 32,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "select",
+      "op": "Input",
+      "width": 1,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "zero",
+      "op": "Constant",
+      "width": 32,
+      "deps": [],
+      "params": {
+        "value": 0
+      }
+    },
+    {
+      "id": "chosen_c",
+      "op": "Ite",
+      "width": 32,
+      "deps": [
+        "select",
+        "c",
+        "zero"
+      ],
+      "params": {}
+    },
+    {
+      "id": "sum",
+      "op": "Add",
+      "width": 32,
+      "deps": [
+        "product",
+        "chosen_c"
+      ],
+      "params": {}
+    }
+  ],
+  "outputs": {
+    "y": "sum"
+  }
+}

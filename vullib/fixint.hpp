@@ -26,7 +26,9 @@
 
 #include <array>
 #include <cassert>
+#include <stdexcept>
 #include <type_traits>
+#include <utility>
 
 namespace vulfixint {
 
@@ -1985,6 +1987,57 @@ constexpr bool operator>=(T lhs, const IntOperand& rhs) {
 }
 
 
+
+namespace detail {
+
+// Software evaluation of unsigned Int division. Hardware lowering recognizes
+// operator/ and operator% as BEIR operations; this loop is not an RTL template.
+// The caller's defined-divrem wrapper must replace a zero divisor before use.
+template <uint32_t W>
+constexpr auto unsigned_divrem(const Int<W>& dividend, const Int<W>& divisor) {
+    static_assert(W < ~uint32_t(0), "division working width overflows uint32_t");
+    if (divisor == Int<W>(0)) {
+        throw std::domain_error("Int division by zero; use an explicit safe-divisor wrapper");
+    }
+    Int<W> quotient(0);
+    Int<W + 1> remainder(0);
+    const Int<W + 1> extended_divisor(divisor);
+    for (uint32_t bit = W; bit-- > 0;) {
+        remainder = remainder << 1u;
+        if (static_cast<bool>(dividend.template pick<1>(bit))) {
+            remainder = remainder | Int<W + 1>(1);
+        }
+        if (remainder >= extended_divisor) {
+            remainder = remainder - extended_divisor;
+            quotient.template pick<1>(bit) = true;
+        }
+    }
+    return std::pair<Int<W>, Int<W>>(quotient, Int<W>(remainder));
+}
+
+} // namespace detail
+
+template <typename LhsOperand, typename RhsOperand>
+    requires(IntOperandTraits<std::remove_cvref_t<LhsOperand>>::VALID
+             && IntOperandTraits<std::remove_cvref_t<RhsOperand>>::VALID
+             && !IntOperandTraits<std::remove_cvref_t<LhsOperand>>::IS_SIGNED
+             && !IntOperandTraits<std::remove_cvref_t<RhsOperand>>::IS_SIGNED
+             && IntOperandTraits<std::remove_cvref_t<LhsOperand>>::BIT_WIDTH
+                    == IntOperandTraits<std::remove_cvref_t<RhsOperand>>::BIT_WIDTH)
+constexpr auto operator/(const LhsOperand& lhs, const RhsOperand& rhs) {
+    return detail::unsigned_divrem(get_int_operand_value(lhs), get_int_operand_value(rhs)).first;
+}
+
+template <typename LhsOperand, typename RhsOperand>
+    requires(IntOperandTraits<std::remove_cvref_t<LhsOperand>>::VALID
+             && IntOperandTraits<std::remove_cvref_t<RhsOperand>>::VALID
+             && !IntOperandTraits<std::remove_cvref_t<LhsOperand>>::IS_SIGNED
+             && !IntOperandTraits<std::remove_cvref_t<RhsOperand>>::IS_SIGNED
+             && IntOperandTraits<std::remove_cvref_t<LhsOperand>>::BIT_WIDTH
+                    == IntOperandTraits<std::remove_cvref_t<RhsOperand>>::BIT_WIDTH)
+constexpr auto operator%(const LhsOperand& lhs, const RhsOperand& rhs) {
+    return detail::unsigned_divrem(get_int_operand_value(lhs), get_int_operand_value(rhs)).second;
+}
 
 } // namespace vulfixint
 

@@ -15,7 +15,9 @@ def verify(root=ROOT):
     digest=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
     def check(rel,expected):
         if digest(root/rel)!=expected:raise ValueError(f'SHA-256 mismatch: {rel}')
-    for rel,expected in freeze['files_sha256'].items():check(rel,expected)
+    for rel,expected in freeze['files_sha256'].items():
+        from .freeze_history import source_location
+        check(str(source_location(root,relative,rel,expected).relative_to(root)),expected)
     for rel,expected in freeze['parents_sha256'].items():check(rel,expected)
     check(freeze['evidence_index'],freeze['evidence_index_sha256'])
     index=json.loads((root/freeze['evidence_index']).read_text())

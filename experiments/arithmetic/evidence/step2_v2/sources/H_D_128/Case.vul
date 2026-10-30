@@ -1,0 +1,24 @@
+INTERFACE() { SERVICE(calculate, ARG(CaseInput) value, RESP(CaseOutput) result); }
+SERVICE(calculate, ARG(CaseInput) value, RESP(CaseOutput) result) {
+    Int<128> n_first_one = Int<128>(1ull);
+    Int<128> n_first_ones = ~Int<128>(0);
+    Int<128> n_first_zero = Int<128>(0ull);
+    Int<128> n_second_one = Int<128>(1ull);
+    Int<128> n_second_ones = ~Int<128>(0);
+    Int<128> n_second_zero = Int<128>(0ull);
+    bool n_first_is_zero = (value.d == n_first_zero);
+    bool n_second_is_zero = (value.e == n_second_zero);
+    Int<128> n_first_safe_d = (n_first_is_zero ? n_first_one : value.d);
+    Int<128> n_second_safe_d = (n_second_is_zero ? n_second_one : value.e);
+    Int<128> n_first_raw_q = (value.a / n_first_safe_d);
+    Int<128> n_first_raw_r = (value.a % n_first_safe_d);
+    Int<128> n_first_q = (n_first_is_zero ? n_first_ones : n_first_raw_q);
+    Int<128> n_first_r = (n_first_is_zero ? value.a : n_first_raw_r);
+    Int<128> n_second_raw_q = (n_first_q / n_second_safe_d);
+    Int<128> n_second_raw_r = (n_first_q % n_second_safe_d);
+    Int<128> n_second_q = (n_second_is_zero ? n_second_ones : n_second_raw_q);
+    Int<128> n_second_r = (n_second_is_zero ? n_first_q : n_second_raw_r);
+    result.q = n_second_q;
+    result.r1 = n_first_r;
+    result.r2 = n_second_r;
+}

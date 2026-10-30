@@ -1,0 +1,29 @@
+INTERFACE() { SERVICE(calculate, ARG(CaseInput) value, RESP(CaseOutput) result); }
+SERVICE(calculate, ARG(CaseInput) value, RESP(CaseOutput) result) {
+    Int<8> n_limit = Int<8>(64ull);
+    Int<64> n_mod_one = Int<64>(1ull);
+    Int<64> n_mod_ones = ~Int<64>(0);
+    Int<64> n_mod_zero = Int<64>(0ull);
+    Int<64> n_zero = Int<64>(0ull);
+    Int<8> n_zero_s = Int<8>(0ull);
+    bool n_in_range = (value.s < n_limit);
+    Int<64> n_inverse_mask = ~value.mask;
+    bool n_less = (value.a < value.b);
+    bool n_mod_is_zero = (value.d == n_mod_zero);
+    Int<64> n_u = (Int<64>(value.a) + Int<64>(value.b));
+    Int<64> n_v = (Int<64>(value.a) - Int<64>(value.b));
+    Int<64> n_mod_safe_d = (n_mod_is_zero ? n_mod_one : value.d);
+    Int<8> n_safe_s = (n_in_range ? value.s : n_zero_s);
+    Int<64> n_mod_raw_r = (value.a % n_mod_safe_d);
+    Int<64> n_raw_l = (n_u << n_safe_s.to<uint32_t>());
+    Int<64> n_raw_r = (n_v >> n_safe_s.to<uint32_t>());
+    Int<64> n_left = (n_in_range ? n_raw_l : n_zero);
+    Int<64> n_mod_r = (n_mod_is_zero ? value.a : n_mod_raw_r);
+    Int<64> n_right = (n_in_range ? n_raw_r : n_zero);
+    Int<64> n_masked_l = (n_left & value.mask);
+    Int<64> n_masked_r = (n_right & n_inverse_mask);
+    Int<64> n_merged = (n_masked_l | n_masked_r);
+    Int<64> n_answer = (n_merged ^ n_mod_r);
+    result.y = n_answer;
+    result.less = n_less;
+}

@@ -1,0 +1,59 @@
+{
+  "version": "mul-comb-sensitivity-v1",
+  "purpose": "predeclared_selection_diagnostic; not_main_C_or_extra_PPA_group",
+  "families": [
+    "MUL",
+    "MAC"
+  ],
+  "widths": [
+    8,
+    16,
+    32,
+    64,
+    128
+  ],
+  "structures": [
+    "original",
+    "half",
+    "quarter"
+  ],
+  "structure_limit": 30,
+  "input_bucket_rule": "same_as_main",
+  "only_change": "Mul.comb_weight",
+  "formula": "bucket_width^2/64",
+  "exact_values": {
+    "1": "1/64",
+    "2": "1/16",
+    "4": "1/4",
+    "8": "1",
+    "16": "4",
+    "32": "16",
+    "64": "64",
+    "128": "256"
+  },
+  "unchanged": [
+    "all_delay_weights",
+    "other_comb_weights",
+    "register_bit_cost_1",
+    "source",
+    "normalized_graph",
+    "groups",
+    "L",
+    "II",
+    "ordering"
+  ],
+  "arithmetic": "exact_rational; no_rounding_or_extra_scale",
+  "position_policy": "reuse_legal_assignments_first; rerun_schedule_only_with_structure_schedule_hashes_and_initial_final_maps",
+  "required_outputs": [
+    "per_stage_delay",
+    "shared_comb_cost",
+    "data_valid_register_bits",
+    "full_score",
+    "rank",
+    "selected_changed",
+    "structure_hash",
+    "schedule_hash"
+  ],
+  "execution": "step5_after_parameterized_templates_and_new_C_are_ready",
+  "physical_calls_authorized": 0
+}

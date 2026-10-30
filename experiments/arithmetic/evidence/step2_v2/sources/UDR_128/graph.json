@@ -1,0 +1,113 @@
+{
+  "version": "arithmetic-source-dag-v1",
+  "nodes": [
+    {
+      "id": "a",
+      "op": "Input",
+      "width": 128,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "d",
+      "op": "Input",
+      "width": 128,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "first_zero",
+      "op": "Constant",
+      "width": 128,
+      "deps": [],
+      "params": {
+        "value": 0
+      }
+    },
+    {
+      "id": "first_one",
+      "op": "Constant",
+      "width": 128,
+      "deps": [],
+      "params": {
+        "value": 1
+      }
+    },
+    {
+      "id": "first_ones",
+      "op": "Constant",
+      "width": 128,
+      "deps": [],
+      "params": {
+        "value": 340282366920938463463374607431768211455
+      }
+    },
+    {
+      "id": "first_is_zero",
+      "op": "Eq",
+      "width": 1,
+      "deps": [
+        "d",
+        "first_zero"
+      ],
+      "params": {}
+    },
+    {
+      "id": "first_safe_d",
+      "op": "Ite",
+      "width": 128,
+      "deps": [
+        "first_is_zero",
+        "first_one",
+        "d"
+      ],
+      "params": {}
+    },
+    {
+      "id": "first_raw_q",
+      "op": "Div",
+      "width": 128,
+      "deps": [
+        "a",
+        "first_safe_d"
+      ],
+      "params": {}
+    },
+    {
+      "id": "first_q",
+      "op": "Ite",
+      "width": 128,
+      "deps": [
+        "first_is_zero",
+        "first_ones",
+        "first_raw_q"
+      ],
+      "params": {}
+    },
+    {
+      "id": "first_raw_r",
+      "op": "Mod",
+      "width": 128,
+      "deps": [
+        "a",
+        "first_safe_d"
+      ],
+      "params": {}
+    },
+    {
+      "id": "first_r",
+      "op": "Ite",
+      "width": 128,
+      "deps": [
+        "first_is_zero",
+        "a",
+        "first_raw_r"
+      ],
+      "params": {}
+    }
+  ],
+  "outputs": {
+    "q": "first_q",
+    "r": "first_r"
+  }
+}

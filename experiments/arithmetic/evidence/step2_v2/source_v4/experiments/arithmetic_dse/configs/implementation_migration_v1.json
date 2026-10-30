@@ -1,0 +1,55 @@
+{
+  "version": "arithmetic-implementation-migration-v1",
+  "user_direction_date": "2026-10-30",
+  "final_rule": "one_active_revised_implementation; keep_required_foundations; no_permanent_legacy_mode_or_case_aliases",
+  "historical_evidence": "immutable_data_and_explicit_source_snapshots_only; not_active_runtime_compatibility",
+  "stage2_replaced": [
+    "contracts.py_nine_case_partition_and_old_target_rule",
+    "reference.py_hardcoded_nine_case_dispatch",
+    "regression/arithmetic_contracts.py_old_only_checks",
+    "budget_CLI_nine_target_list_and_once_only_v4_migration_switch"
+  ],
+  "required_foundations_kept": [
+    "reference.py_bit_exact_binary32_and_integer_oracles",
+    "vullib_Int_and_wide_transport",
+    "backend_process_tree_and_shared_ledger",
+    "arithmetic_regions_and_group_scheduling"
+  ],
+  "temporary_dependencies": [
+    {
+      "paths": [
+        "experiments/arithmetic_dse/simple_cost.py",
+        "experiments/arithmetic_dse/placement_analysis.py",
+        "rtlzz/src/backend/simple_cost.cpp",
+        "old_simple_cost_options"
+      ],
+      "used_by": "unmigrated_step5_compiler_and_historical_placement_checks",
+      "replace_at": "step4_step5; move_historical_recomputation_to_explicit_frozen_snapshot_if_needed"
+    },
+    {
+      "paths": [
+        "historical_nine_case_budget_planning_helpers"
+      ],
+      "used_by": "historical_backend_evidence_only; no_active_budget_CLI_use",
+      "replace_at": "step3_platform_stage_budget_migration"
+    },
+    {
+      "paths": [
+        "cases_v1.json",
+        "semantics_v1.json_integer_scope",
+        "simple_cost_v1.json",
+        "target_rules_v1.json",
+        "old_step5_pilot_and_placement_configs"
+      ],
+      "used_by": "frozen_historical_evidence_or_not_yet_migrated_step5",
+      "replace_at": "move_to_explicit_evidence_archive_when_users_migrated; mandatory_final_step9_scan"
+    }
+  ],
+  "final_acceptance": [
+    "scan_active_imports_entrypoints_configs_and_CLI_flags",
+    "no_nine_case_or_feedback_D_fallback_in_revised_default_flow",
+    "no_obsolete_formula_or_hardcoded_split16_selector_outside_explicit_archived_evidence",
+    "retained_v1_named_foundations_must_have_current_callers_and_documented_semantics",
+    "archived_freezes_remain_verifiable_without_reintroducing_public_legacy_mode"
+  ]
+}

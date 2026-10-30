@@ -1,0 +1,33 @@
+{
+  "command": [
+    "c++",
+    "-std=c++20",
+    "-O2",
+    "-I/home/zyrv/vulsim/vullib",
+    "/home/zyrv/vulsim/vullib/test/fixint.cpp",
+    "-o",
+    "/home/zyrv/vulsim/build/step2-revision-20261030/full-v2/test-fixint"
+  ],
+  "exit_code": 0,
+  "process_exit_code": 0,
+  "timed_out": false,
+  "CPU_limit_s": 240,
+  "CPU_limit_exceeded": false,
+  "sampled_process_tree_CPU_s": 0.99,
+  "cancelled_signal": null,
+  "walltime_s": 1.1168919699266553,
+  "unexpected_live_descendants": false,
+  "memory_limit_exceeded": false,
+  "memory_limit_MiB": 8192,
+  "sampled_process_tree_peak_rss_KiB": 168224,
+  "sampled_process_tree_peak_threads": 3,
+  "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+  "resource_sampling_interval_s": 0.5,
+  "cleanup": {
+    "term_sent": 0,
+    "kill_sent": 0,
+    "remaining_live_pids": []
+  },
+  "log": "/home/zyrv/vulsim/build/step2-revision-20261030/full-v2/fixint-build.log",
+  "gnu_time": "/home/zyrv/vulsim/build/step2-revision-20261030/full-v2/fixint-build.resources.txt"
+}

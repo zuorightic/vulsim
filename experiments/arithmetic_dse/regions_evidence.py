@@ -32,7 +32,9 @@ def verify(root=ROOT):
         check(freeze[key]['path'], freeze[key]['sha256'])
     bc = json.loads((root/freeze['BC_precondition']['path']).read_text())
     for relative, expected in bc['files_sha256'].items():
-        check(relative, expected)
+        from .freeze_history import source_location
+        path=source_location(root,freeze['BC_precondition']['path'],relative,expected)
+        check(str(path.relative_to(root)), expected)
 
     def artifacts(report, directory):
         for name, expected in report['artifacts_sha256'].items():

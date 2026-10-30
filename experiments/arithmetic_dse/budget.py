@@ -226,27 +226,18 @@ def main():
     import argparse
     from .reference import case_manifest
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--check-plan', action='store_true', help='exit nonzero if the declared call plan is unfunded')
-    parser.add_argument('--case-targets', nargs=9, type=float, help='all nine frozen case targets; otherwise reserve all 19 x 9 potential supplements')
-    parser.add_argument('--migrate-from-v4', action='store_true', help='explicit one-time authorized v4 to v5 migration; preserve history')
+    parser.add_argument('--check-plan', action='store_true', help='require a ready revised stage admission package')
     args = parser.parse_args()
-    if args.migrate_from_v4:
-        print(json.dumps(Ledger().migrate(POLICY.parent/'backend_policy_v4.json',
-            ROOT/'experiments/arithmetic/evidence/step3_closure/usage_checkpoint.json',
-            'User authorized a reasonable bounded increase on 2026-10-28; budget-plan-v3 and frozen step5 two-candidate pilot'),indent=2))
-        return 0
-    declared = json.loads((POLICY.parent/'budget_plan_v3.json').read_text())
     history = Ledger().summary()
-    plan = required_data_plan(case_manifest()['calibration_only'],args.case_targets,
-                             historical=history,reserves=declared['reserves'],
-                             actual_collection_manifest_frozen=declared['actual_collection_manifest_frozen'])
-    status = planning_status(plan, json.loads(POLICY.read_text())['resources'])
-    if not plan['actual_collection_manifest_frozen']:
-        status['status'] = 'blocked'
-        status['bulk_collection_manifest_required'] = True
-        status['step5_pilot_scope'] = 'separately frozen two-candidate pilot; does not open bulk collection'
-    print(json.dumps({'usage':history, 'plan':plan, **status}, indent=2))
-    return 1 if args.check_plan and status['status'] != 'ready' else 0
+    from .contracts import check_partition
+    scope = check_partition(case_manifest())
+    print(json.dumps({'usage':history,'scope':scope,
+        'status':'pending_revised_platform_stage_admission',
+        'effective_policy':str(POLICY.relative_to(ROOT)),
+        'resource_caps_unchanged':True,
+        'reason':'actual platform/stage list, capacity and funding must be validated in steps3_5_7; the old nine-case forecast is retired',
+        'cold_main_matrix_only':{'synth':688,'grt':688,'includes_training_or_rechecks':False}},indent=2))
+    return 1 if args.check_plan else 0
 
 
 if __name__ == '__main__':

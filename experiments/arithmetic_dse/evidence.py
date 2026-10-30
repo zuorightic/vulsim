@@ -46,7 +46,8 @@ def verify_backend_evidence(root=ROOT, verify_external=False):
     verify(root/bc_info['path'], bc_info['sha256'])
     bc = json.loads((root/bc_info['path']).read_text())
     for relative, expected in bc['files_sha256'].items():
-        verify(root/relative, expected)
+        from .freeze_history import source_location
+        verify(source_location(root,bc_info['path'],relative,expected), expected)
     index = json.loads((root/freeze['evidence_index']).read_text())
     for item in index['files']:
         verify(root/item['path'], item['sha256'])
@@ -102,7 +103,7 @@ def verify_backend_evidence(root=ROOT, verify_external=False):
             raise ValueError('ABC execution evidence does not confirm rendered target')
     from .budget import usage, plan_cost, planning_status, cpu_seconds
     from .characterization import sensitivity_observation
-    from .reference import case_manifest
+    from .freeze_history import historical_case_manifest
     checkpoint = json.loads((new_root/'usage_checkpoint.json').read_text())
     actual = usage(checkpoint['entries'])
     if actual != summary['cumulative_usage'] or actual['pending']:
@@ -130,7 +131,7 @@ def verify_backend_evidence(root=ROOT, verify_external=False):
     report = json.loads((new_root/'budget_check.json').read_text())
     config = json.loads((root/'experiments/arithmetic_dse/configs/characterization_v2.json').read_text())
     declared = json.loads((root/'experiments/arithmetic_dse/configs/budget_plan_v1.json').read_text())
-    plan = plan_cost({name:config['initial_abc_target_points_ps'] for name in case_manifest()['calibration_only']},
+    plan = plan_cost({name:config['initial_abc_target_points_ps'] for name in historical_case_manifest(root)['calibration_only']},
                      None, historical=actual, targets_frozen=False, **declared['reserves'])
     resources = json.loads((root/freeze['evaluation_policy']).read_text())['resources']
     if report['plan'] != plan or report['status'] != planning_status(plan,resources)['status']:
@@ -224,7 +225,7 @@ def verify_backend_evidence(root=ROOT, verify_external=False):
             raise ValueError('new command CPU charge mismatch')
     report = json.loads((closure/'budget_check.json').read_text())
     declared = json.loads((root/'experiments/arithmetic_dse/configs/budget_plan_v2.json').read_text())
-    expected_plan = required_data_plan(case_manifest()['calibration_only'],None,historical=actual,
+    expected_plan = required_data_plan(historical_case_manifest(root)['calibration_only'],None,historical=actual,
         reserves=declared['reserves'],actual_collection_manifest_frozen=False)
     if report['plan'] != expected_plan or report['status'] != 'blocked' or current_summary['status'] != 'passed':
         raise ValueError('updated budget/acceptance summary mismatch')

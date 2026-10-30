@@ -14,7 +14,10 @@ def verify(root=ROOT):
     def check(relative,expected):
         if hashlib.sha256((root/relative).read_bytes()).hexdigest()!=expected:
             raise ValueError(f'SHA-256 mismatch: {relative}')
-    for relative,expected in freeze['files_sha256'].items():check(relative,expected)
+    for relative,expected in freeze['files_sha256'].items():
+        from .freeze_history import source_location
+        path=source_location(root,'experiments/arithmetic/placement_freeze_v1.json',relative,expected)
+        check(str(path.relative_to(root)),expected)
     parent=freeze['parent'];check(parent['path'],parent['sha256'])
     from .mul_split_evidence import verify as verify_parent
     historical=verify_parent(root)

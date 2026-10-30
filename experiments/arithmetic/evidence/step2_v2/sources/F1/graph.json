@@ -1,0 +1,55 @@
+{
+  "version": "arithmetic-source-dag-v1",
+  "nodes": [
+    {
+      "id": "a",
+      "op": "Input",
+      "width": 32,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "b",
+      "op": "Input",
+      "width": 32,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "fp1",
+      "op": "F32MulRNE",
+      "width": 37,
+      "deps": [
+        "a",
+        "b"
+      ],
+      "params": {}
+    },
+    {
+      "id": "bits1",
+      "op": "Slice",
+      "width": 32,
+      "deps": [
+        "fp1"
+      ],
+      "params": {
+        "low": 0
+      }
+    },
+    {
+      "id": "flags1",
+      "op": "Slice",
+      "width": 5,
+      "deps": [
+        "fp1"
+      ],
+      "params": {
+        "low": 32
+      }
+    }
+  ],
+  "outputs": {
+    "bits": "bits1",
+    "flags": "flags1"
+  }
+}

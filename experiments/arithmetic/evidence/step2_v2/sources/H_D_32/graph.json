@@ -1,0 +1,211 @@
+{
+  "version": "arithmetic-source-dag-v1",
+  "nodes": [
+    {
+      "id": "a",
+      "op": "Input",
+      "width": 32,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "d",
+      "op": "Input",
+      "width": 32,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "first_zero",
+      "op": "Constant",
+      "width": 32,
+      "deps": [],
+      "params": {
+        "value": 0
+      }
+    },
+    {
+      "id": "first_one",
+      "op": "Constant",
+      "width": 32,
+      "deps": [],
+      "params": {
+        "value": 1
+      }
+    },
+    {
+      "id": "first_ones",
+      "op": "Constant",
+      "width": 32,
+      "deps": [],
+      "params": {
+        "value": 4294967295
+      }
+    },
+    {
+      "id": "first_is_zero",
+      "op": "Eq",
+      "width": 1,
+      "deps": [
+        "d",
+        "first_zero"
+      ],
+      "params": {}
+    },
+    {
+      "id": "first_safe_d",
+      "op": "Ite",
+      "width": 32,
+      "deps": [
+        "first_is_zero",
+        "first_one",
+        "d"
+      ],
+      "params": {}
+    },
+    {
+      "id": "first_raw_q",
+      "op": "Div",
+      "width": 32,
+      "deps": [
+        "a",
+        "first_safe_d"
+      ],
+      "params": {}
+    },
+    {
+      "id": "first_q",
+      "op": "Ite",
+      "width": 32,
+      "deps": [
+        "first_is_zero",
+        "first_ones",
+        "first_raw_q"
+      ],
+      "params": {}
+    },
+    {
+      "id": "first_raw_r",
+      "op": "Mod",
+      "width": 32,
+      "deps": [
+        "a",
+        "first_safe_d"
+      ],
+      "params": {}
+    },
+    {
+      "id": "first_r",
+      "op": "Ite",
+      "width": 32,
+      "deps": [
+        "first_is_zero",
+        "a",
+        "first_raw_r"
+      ],
+      "params": {}
+    },
+    {
+      "id": "e",
+      "op": "Input",
+      "width": 32,
+      "deps": [],
+      "params": {}
+    },
+    {
+      "id": "second_zero",
+      "op": "Constant",
+      "width": 32,
+      "deps": [],
+      "params": {
+        "value": 0
+      }
+    },
+    {
+      "id": "second_one",
+      "op": "Constant",
+      "width": 32,
+      "deps": [],
+      "params": {
+        "value": 1
+      }
+    },
+    {
+      "id": "second_ones",
+      "op": "Constant",
+      "width": 32,
+      "deps": [],
+      "params": {
+        "value": 4294967295
+      }
+    },
+    {
+      "id": "second_is_zero",
+      "op": "Eq",
+      "width": 1,
+      "deps": [
+        "e",
+        "second_zero"
+      ],
+      "params": {}
+    },
+    {
+      "id": "second_safe_d",
+      "op": "Ite",
+      "width": 32,
+      "deps": [
+        "second_is_zero",
+        "second_one",
+        "e"
+      ],
+      "params": {}
+    },
+    {
+      "id": "second_raw_q",
+      "op": "Div",
+      "width": 32,
+      "deps": [
+        "first_q",
+        "second_safe_d"
+      ],
+      "params": {}
+    },
+    {
+      "id": "second_q",
+      "op": "Ite",
+      "width": 32,
+      "deps": [
+        "second_is_zero",
+        "second_ones",
+        "second_raw_q"
+      ],
+      "params": {}
+    },
+    {
+      "id": "second_raw_r",
+      "op": "Mod",
+      "width": 32,
+      "deps": [
+        "first_q",
+        "second_safe_d"
+      ],
+      "params": {}
+    },
+    {
+      "id": "second_r",
+      "op": "Ite",
+      "width": 32,
+      "deps": [
+        "second_is_zero",
+        "first_q",
+        "second_raw_r"
+      ],
+      "params": {}
+    }
+  ],
+  "outputs": {
+    "q": "second_q",
+    "r1": "first_r",
+    "r2": "second_r"
+  }
+}

@@ -1,255 +1,213 @@
 #!/usr/bin/env python3
-"""Check step-two semantics, partition and simple-cost contracts without PPA.
-
-Optional independent SoftFloat cross-check:
-  ARITHMETIC_SOFTFLOAT_DIR=/path/to/flat/softfloat python3 regression/arithmetic_contracts.py
-"""
+"""Revised step-two executable contracts; no physical data or model training."""
+from copy import deepcopy
 from fractions import Fraction
 import json
 import os
 from pathlib import Path
 import random
 import sys
+import subprocess
 import tempfile
-
+from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from experiments.arithmetic_dse.contracts import check_freeze, check_partition, fixed_latency, target_period_ps
-from experiments.arithmetic_dse.reference import (FPResult, f32_mul, f32_chain, udivrem,
-                                            safe_divisor, case_manifest, evaluate_case)
-from experiments.arithmetic_dse.simple_cost import (CONFIG as SIMPLE_COST_CONFIG, Cost, Value, node_cost, lookup_choices,
-    region_delay, combinational_area, candidate_score, within_relative_cap)
-from experiments.arithmetic_dse.softfloat_oracle import SoftFloatOracle
-
+from experiments.arithmetic_dse import fixed_cost
+from experiments.arithmetic_dse.contracts import (ContractError, PLATFORMS, WIDTHS,
+    case_manifest, check_partition, fixed_latency, freeze_target_batch,
+    semantic_profile, target_period_ps, template_parameters)
+from experiments.arithmetic_dse.case_generator import (Builder, build_graph, case_spec,
+    evaluate_graph, generate_manifest, graph_signatures, source_files, validation_vectors)
+from experiments.arithmetic_dse.fixed_cost import (Cost, candidate_score, graph_cost,
+    lower_lookup, lower_priority_case, node_cost, state_cost)
+from experiments.arithmetic_dse.reference import (FPResult, evaluate_case, evaluate_spec,
+    f32_chain, f32_mul, logical_shift, udivrem)
 checks = 0
-
-
 def check(condition, message='contract assertion'):
     global checks
     checks += 1
-    if not condition:
-        raise AssertionError(message)
-
-
-def rejects(function):
-    try:
-        function()
-    except ValueError:
-        check(True)
-    else:
-        check(False, 'expected rejection')
-
-
-def fp_fraction(bits):
-    exponent = bits >> 23 & 255
-    significand = bits & 0x7FFFFF
-    if exponent == 255:
-        raise ValueError('non-finite')
-    power = -149 if exponent == 0 else exponent-150
-    if exponent:
-        significand |= 1 << 23
-    value = Fraction(significand)*(Fraction(2)**power)
-    return -value if bits >> 31 else value
-
-
+    if not condition: raise AssertionError(message)
+def rejects(function, code=None):
+    try: function()
+    except ValueError as error:
+        check(code is None or isinstance(error,ContractError) and error.code == code,
+              f'wrong rejection: {error!r}; expected {code}')
+    else: raise AssertionError('expected rejection')
 manifest = case_manifest()
+check(manifest == generate_manifest())
 partition = check_partition(manifest)
-check(partition['formal'] == 6 and partition['holdout'] == 3 and partition['group_records'] == 36)
-check(partition['fixed_L'] == {c['id']: (3 if c['heavy_depth'] == 2 else 2) for c in manifest['cases']})
-rejects(lambda: check_partition({**manifest, 'cases': manifest['cases'][:-1]}))
-
-# Exhaustive small-width proof of the division wrapper, including zero divisor.
-division_pairs = 0
-for width in range(1, 7):
-    for a in range(1 << width):
-        for d in range(1 << width):
-            q, r = udivrem(a, d, width)
-            safe, is_zero = safe_divisor(d, width)
-            qs, rs = divmod(a, safe)
-            actual = ((1 << width)-1, a) if is_zero else (qs, rs)
-            check(actual == (q, r))
-            check(d == 0 or (q*d+r == a and 0 <= r < d))
-            division_pairs += 1
-rejects(lambda: udivrem(-1, 1, 16))
-rejects(lambda: udivrem(1 << 16, 1, 16))
-
-directed = [
-    (0x3F800000, 0x40000000, 0x40000000, 0),
-    (0x80000000, 0x40000000, 0x80000000, 0),
-    (0x80000000, 0xC0000000, 0, 0),
-    (0, 0x7F800000, 0x7FC00000, 16),
-    (0x7FC12345, 0x3F800000, 0x7FC00000, 0),
-    (0x7F812345, 0x3F800000, 0x7FC00000, 16),
-    (0x7F800000, 0xBF800000, 0xFF800000, 0),
-    (0x7F7FFFFF, 0x40000000, 0x7F800000, 5),
-    (1, 0x3F800000, 1, 0),
-    (1, 0x3F000000, 0, 3),
-    (3, 0x3F000000, 2, 3),
-    (0x00800000, 0x3F000000, 0x00400000, 0),
-    (0x00800000, 0x3F7FFFFF, 0x00800000, 3),
-    (0x3F800001, 0x3F800001, 0x3F800002, 1),
-]
-for a, b, bits, flags in directed:
-    check(f32_mul(a, b) == FPResult(bits, flags), f'directed {a:08x} * {b:08x}')
-    check(f32_mul(b, a) == FPResult(bits, flags), 'operand symmetry')
-
-rng = random.Random(20261026)
-nearest_checks = 0
-for _ in range(2000):
-    a, b = rng.getrandbits(32), rng.getrandbits(32)
-    if (a >> 23 & 255) == 255 or (b >> 23 & 255) == 255:
-        continue
-    result = f32_mul(a, b)
-    magnitude = result.bits & 0x7FFFFFFF
-    if magnitude >= 0x7F7FFFFF:
-        continue
-    exact = abs(fp_fraction(a)*fp_fraction(b))
-    rounded = fp_fraction(magnitude)
-    distance = abs(exact-rounded)
-    if magnitude:
-        check(distance <= abs(exact-fp_fraction(magnitude-1)))
-        if distance == abs(exact-fp_fraction(magnitude-1)):
-            check(magnitude & 1 == 0)
-    check(distance <= abs(exact-fp_fraction(magnitude+1)))
-    if distance == abs(exact-fp_fraction(magnitude+1)):
-        check(magnitude & 1 == 0)
-    check(bool(result.flags & 1) == (exact != rounded))
-    if magnitude < 0x00800000 and exact != rounded:
-        check(bool(result.flags & 2))
-    check(not result.flags & 2 or bool(result.flags & 1))
-    nearest_checks += 1
-
-case_evaluations = 0
+check((partition['formal'],partition['holdout'],partition['records_per_platform'],partition['all_platform_records']) == (32,11,172,688))
 for case in manifest['cases']:
-    for sample in range(128):
-        inputs = {name: (0 if sample == 0 else (1 << width)-1 if sample == 1 else rng.getrandbits(width))
-                  for name, width in case['inputs'].items()}
-        output = evaluate_case(case['id'], inputs)
-        check(set(output) == set(case['outputs']))
+    check(fixed_latency(case) == (3 if case['family'] in ('H_D','F2') else 2))
+bad = deepcopy(manifest); bad['cases'][0]['inputs']['a'] = 7
+rejects(lambda: check_partition(bad),'invalid_case_manifest')
+rejects(lambda: check_partition({**manifest,'cases':manifest['cases'][:-1]}),'invalid_case_manifest')
+for w in WIDTHS:
+    check(semantic_profile({'kind':'unsigned_integer','width':w})['width'] == w)
+    for mode in ('full','truncated'):
+        for block in (None,w//2,w//4):
+            p = {'operation':'Mul','W':w,'R':2*w if mode=='full' else w,'block_width':block,'product':mode}
+            check(template_parameters(p)['R'] == p['R'])
+check(semantic_profile({'kind':'binary32_mul_rne'})['flags_width'] == 5)
+for request in ({'kind':'unsigned_integer','width':32,'signed':True},
+                {'kind':'unsigned_integer','width':32,'fraction_bits':8},
+                {'kind':'unsigned_integer','width':True},{'kind':'fixed_point','width':16},
+                {'kind':'binary32_mul_rne','rounding':'toward_zero'}):
+    rejects(lambda request=request: semantic_profile(request),'unsupported_semantic_profile')
+for request in ({'operation':'Mul','W':32,'R':32,'product':'full'},
+                {'operation':'Mul','W':32,'R':64,'block_width':1},
+                {'operation':'Mul','W':256,'R':512},{'operation':'Mul','W':32,'R':64,'L':2}):
+    rejects(lambda request=request: template_parameters(request),'template_ineligible')
+small = case_spec('MUL',8)
+for a in range(256):
+    for b in range(256):
+        product = sum(a << bit for bit in range(8) if b >> bit & 1)
+        check(evaluate_spec(small,{'a':a,'b':b}) == {'y':product})
+        safe = b if b else 1
+        qr = (a//safe,a % safe) if b else (255,a)
+        check(udivrem(a,b,8) == qr)
+        check(b == 0 or qr[0]*b+qr[1] == a and 0 <= qr[1] < b)
+shift_checks = 0
+for w in WIDTHS:
+    for a in (0,1,(1 << w)-1,1 << (w-1),(1 << w)-2):
+        for s in range(2*w+2):
+            safe = s if s < w else 0
+            check(logical_shift(a,s,w) == ((a << safe) & ((1 << w)-1) if s < w else 0))
+            check(logical_shift(a,s,w,right=True) == (a >> safe if s < w else 0))
+            shift_checks += 2
+rejects(lambda: logical_shift(1,-1,8)); rejects(lambda: logical_shift(256,0,8))
+case_evaluations = nonpower_evaluations = 0
+for case in manifest['cases']:
+    graph = build_graph(case['family'],case['width'])
+    check(graph_signatures(graph) == (case['inputs'],case['outputs']))
+    check(set(source_files(case)) == {'header.uh','Case.vul','graph.json'})
+    for inputs in validation_vectors(case):
+        expected = evaluate_spec(case,inputs)
+        check(evaluate_graph(graph,inputs) == expected,(case['id'],inputs,expected))
         case_evaluations += 1
-    rejects(lambda case=case: evaluate_case(case['id'], {}))
-check(evaluate_case('H_F1', {'a':0, 'b':0x7F800000, 'bypass':0x7F812345, 'select':0}) == {'bits':0x7F812345, 'flags':0})
-check(f32_chain(0x7F7FFFFF, 0x40000000, 0) == FPResult(0x7FC00000, 21))
-check(evaluate_case('M1', {'a':0xFFFFFFFF, 'b':0xFFFFFFFF, 'c':0xFFFFFFFFFFFFFFFF}) == {'y':0xFFFFFFFE00000000})
-check(evaluate_case('M2', {'a':65535, 'b':65535, 'c':65535, 'd':65535}) == {'y':8589672450})
-check(evaluate_case('D1', {'a':65535,'d':0}) == {'q':65535,'r':65535})
-check(evaluate_case('H_M1', {'a':0xFFFFFFFF,'b':0xFFFFFFFF,'c':0xFFFFFFFF,'select':1}) == {'y':0})
-
-# Width normalization, truncation and control/data role separation.
-full = node_cost('Mul', [Value(32), Value(32)], Value(64))
-check(full == Cost(21, 1024))
-check(node_cost('Mul', [Value(32), Value(32)], Value(64)) == full)  # following Trunc is separate
-check(node_cost('Mul', [Value(32), Value(32)], Value(32)) == Cost(18, 1024))
-check(node_cost('Mul', [Value(16), Value(16)], Value(32)) == Cost(18, 256))
-extended = Value(32, known_zero=0xFFFF0000, facts_valid=True)
-check(node_cost('Mul', [extended, extended], Value(32)) == Cost(18, 256))
-check(Value(32, known_zero=0xFFFF0000).effective_width == 32)
-check(node_cost('AddCarry', [Value(32), Value(32)], Value(33)) == Cost(6, 33))
-check(node_cost('Trunc', [Value(64)], Value(32)) == Cost(0, 0))
-check(node_cost('Shl', [Value(32)], Value(32), index=Value(32, literal=3)) == Cost(0, 0))
-check(node_cost('Shl', [Value(32)], Value(32), index=Value(5)) == Cost(6, 192))
-check(node_cost('Ite', [Value(8), Value(8)], Value(8)) == Cost(1, 8))
-check(node_cost('Case', [Value(8)]*2, Value(8)) == Cost(1, 8))
-check(node_cost('Case', [Value(8)]*4, Value(8)) == Cost(2, 32))
-check(node_cost('Case', [Value(8)], Value(8), single_choice_proven=True) == Cost(0, 0))
-check(lookup_choices(Value(32), 8, truncate_to_bits=3) == 8)
-check(lookup_choices(Value(3, known_zero=4, facts_valid=True), 8) == 4)
-check(lookup_choices(Value(3, known_one=3, facts_valid=True), 8) == 2)
-check(node_cost('Lookup', [Value(8)]*8, Value(8), index=Value(1), table_count=8) == Cost(1, 8))
-check(node_cost('Lookup', [Value(8)]*8, Value(8), index=Value(3), table_count=8) == Cost(3, 64))
-# Plan 7.5: selections retain the result TYPE width even with proven high zeros.
-# Cover both narrow data types and wide data types narrowed by static facts.
-narrowed32 = Value(32, known_zero=0xFFFFFF00, facts_valid=True)
-for alternatives in ([Value(8)]*2, [narrowed32]*2):
-    check(node_cost('Ite', alternatives, narrowed32) == Cost(1, 32),
-          'Ite must charge the 32-bit result type')
-    check(node_cost('Case', alternatives, narrowed32) == Cost(1, 32),
-          'Case must charge the 32-bit result type')
-    check(node_cost('Lookup', alternatives, narrowed32, index=Value(1), table_count=2) == Cost(1, 32),
-          'Lookup must charge the 32-bit result type')
-check(node_cost('Case', [narrowed32]*4, narrowed32) == Cost(2, 128))
-check(node_cost('Lookup', [narrowed32]*8, narrowed32, index=Value(3), table_count=8) == Cost(3, 256))
-check(node_cost('ArrayAccess', [narrowed32]*2, narrowed32, index=Value(1), table_count=2) == Cost(1, 32))
-wide_data = Value(64, known_zero=0xFFFFFF0000000000, facts_valid=True)
-check(node_cost('Ite', [wide_data, narrowed32], narrowed32) == Cost(1, 40))
-# The selection exception must not disable effective-width charging elsewhere.
-check(node_cost('Add', [narrowed32]*2, narrowed32) == Cost(4, 8))
-check(node_cost('BitAnd', [narrowed32]*2, narrowed32) == Cost(1, 8))
-selection_cost = node_cost('Ite', [narrowed32]*2, narrowed32)
-check(candidate_score(selection_cost.delay, selection_cost.area, 0, 0, 'selection')
-      > candidate_score(1, 16, 0, 0, 'competitor'), 'equal-delay ranking must use the full selection area')
-rejects(lambda: lookup_choices(Value(3), 6))
-rejects(lambda: node_cost('Lookup', [Value(8)]*8, Value(8), index=Value(3, literal=2), table_count=8))
-rejects(lambda: node_cost('ExternalIP', [], Value(8), transaction_constant=True))
-rejects(lambda: Value(8, known_zero=1, known_one=1, facts_valid=True))
-check(region_delay({'a': Cost(3, 4), 'b': Cost(3, 4), 'c': Cost(1, 2)}, {'c':['a','b']}) == 4)
-rejects(lambda: region_delay({'a':Cost(1,1), 'b':Cost(1,1)}, {'a':['b'],'b':['a']}))
-entries = [('q', Cost(80,256)), ('r', Cost(80,256))]
-check(combinational_area(entries) == 512)
-check(combinational_area(entries, verified_shared_divrem={'q':'qr','r':'qr'}) == 256)
-check(within_relative_cap(105,100) and not within_relative_cap(106,100))
-check(candidate_score(3,100,16,2,'a') < candidate_score(3,100,16,2,'b'))
-check(candidate_score(3,100,16,2,'z') < candidate_score(4,1,1,1,'a'))
-# Compare a declared two-stage original/split structure using the same rules.
-# This is a structural contract prototype, not a claim about compiler grouping.
-partial_cost = node_cost('Mul', [Value(16), Value(16)], Value(32))
-reduction_costs = [node_cost('AddCarry', [Value(32), Value(32)], Value(33)),
-                   node_cost('AddCarry', [Value(33), Value(33)], Value(34)),
-                   node_cost('Add', [Value(64), Value(64)], Value(64))]
-split_delay = max(partial_cost.delay, sum(cost.delay for cost in reduction_costs))
-check(split_delay == 19)
-check(candidate_score(split_delay, 4*partial_cost.area+sum(c.area for c in reduction_costs),128,4,'split16')
-      < candidate_score(full.delay,full.area,64,1,'original'))
-for _ in range(1000):
-    a,b = rng.getrandbits(32),rng.getrandbits(32)
-    lo=(1<<16)-1
-    partial=[(a&lo)*(b&lo), (a&lo)*(b>>16), (a>>16)*(b&lo), (a>>16)*(b>>16)]
-    combined=partial[0]+((partial[1]+partial[2])<<16)+(partial[3]<<32)
-    check(combined == a*b and (combined & 0xFFFFFFFF) == (a*b & 0xFFFFFFFF))
-for case in manifest['cases']:
-    # Synthetic timings test the formula; these are not physical measurements.
-    calibration = {name:100 for name in case['calibration_path']}
-    check(target_period_ps(case, calibration, 20) == (185 if case['id'] == 'D2' else 130))
-    rejects(lambda case=case: target_period_ps(case, {}, 20))
-rejects(lambda: target_period_ps(manifest['cases'][0], {'mul_u32_full64':-1, 'add_u64':1}, 20))
-
-softfloat_count = 0
+    rejects(lambda case=case: evaluate_spec(case,{}))
+    if case['width'] is not None: check(graph_cost(graph)['delay_weight'] > 0)
+    else: rejects(lambda graph=graph: graph_cost(graph),'cost_uncovered')
+check(evaluate_case('DOT2_128',{x:(1 << 128)-1 for x in ('a','b','c','d')})['y'] >> 256 == 1)
+check(evaluate_case('MAC_128',{'a':(1 << 128)-1,'b':(1 << 128)-1,'c':(1 << 256)-1})['y'] == (1 << 256)-(1 << 129))
+check(evaluate_case('H_D_128',{'a':123,'d':0,'e':0}) == {'q':(1 << 128)-1,'r1':123,'r2':(1 << 128)-1})
+for width in (12,24,48,96):
+    for family in ('MUL','MAC','DOT2','UDR','DIVSEL','MIX','H_M','H_D'):
+        case = case_spec(family,width); graph = build_graph(family,width)
+        for inputs in validation_vectors(case,random_count=16):
+            check(evaluate_graph(graph,inputs) == evaluate_spec(case,inputs)); nonpower_evaluations += 1
+        check('Case.vul' in source_files(case))
+fp_vectors = [(0x3f800000,0x40000000,0x40000000,0),(0x80000000,0x40000000,0x80000000,0),
+              (0,0x7f800000,0x7fc00000,16),(0x7f812345,0x3f800000,0x7fc00000,16),
+              (0x7fc12345,0x3f800000,0x7fc00000,0),(0x7f7fffff,0x40000000,0x7f800000,5),
+              (1,0x3f000000,0,3),(3,0x3f000000,2,3),(0x00800000,0x3f7fffff,0x00800000,3)]
+for a,b,bits,flags in fp_vectors: check(f32_mul(a,b) == FPResult(bits,flags))
+check(f32_chain(0x7f7fffff,0x40000000,0) == FPResult(0x7fc00000,21))
+check(evaluate_case('H_F1',{'a':0,'b':0x7f800000,'bypass':0x7f812345,'select':0}) == {'bits':0x7f812345,'flags':0})
+rejects(lambda: evaluate_case('M1',{'a':1,'b':1,'c':0}))
 softfloat_details = None
-source = os.environ.get('ARITHMETIC_SOFTFLOAT_DIR')
-if source:
-    with tempfile.TemporaryDirectory(prefix='arithmetic-softfloat-') as directory:
-        oracle = SoftFloatOracle(Path(source), Path(directory)/'oracle.so')
+if os.environ.get('ARITHMETIC_SOFTFLOAT_DIR'):
+    from experiments.arithmetic_dse.softfloat_oracle import SoftFloatOracle
+    with tempfile.TemporaryDirectory(prefix='revised-softfloat-') as directory:
+        oracle = SoftFloatOracle(Path(os.environ['ARITHMETIC_SOFTFLOAT_DIR']),Path(directory)/'oracle.so')
         rng = random.Random(730021)
-        edges = [0,0x80000000,1,3,0x007FFFFF,0x00800000,0x00800001,
-                 0x3F000000,0x3F7FFFFF,0x3F800000,0x3F800001,
-                 0x40000000,0x7F7FFFFF,0xFF7FFFFF,0x7F800000,0xFF800000,
-                 0x7FC00000,0x7F812345,0xFFC01234,0xFF812345]
+        edges = [0,0x80000000,1,3,0x007fffff,0x00800000,0x3f000000,0x3f7fffff,
+                 0x3f800000,0x3f800001,0x40000000,0x7f7fffff,0xff7fffff,
+                 0x7f800000,0xff800000,0x7fc00000,0x7f812345,0xff812345]
         pairs = [(a,b) for a in edges for b in edges]
-        pairs += [(rng.getrandbits(32), rng.getrandbits(32)) for _ in range(20000)]
+        pairs += [(rng.getrandbits(32),rng.getrandbits(32)) for _ in range(20000)]
         for a,b in pairs:
-            expected = oracle.multiply(a,b)
-            actual = f32_mul(a,b)
-            check((actual.bits,actual.flags) == expected,
-                  f'SoftFloat mismatch {a:08x}*{b:08x}: {actual}, {expected}')
-            softfloat_count += 1
-        softfloat_details = {'source':str(Path(source).resolve()), 'source_sha256':oracle.source_hashes,
-                             'build_command':oracle.command, 'vectors':softfloat_count}
-
-freeze_path = ROOT/'experiments/arithmetic/freeze_v3.json'
-freeze = check_freeze(freeze_path)
-cost_config = json.loads(SIMPLE_COST_CONFIG.read_text())
-
-report = {'status':'passed', 'checks':checks, 'division_exhaustive_pairs':division_pairs,
-          'fp_directed_vectors':len(directed), 'fp_exact_nearest_checks':nearest_checks,
-          'case_reference_evaluations':case_evaluations, 'partition':partition,
-          'simple_cost_structural_checks':'passed',
-          'simple_cost_version':cost_config['version'], 'width_rule_version':cost_config['width_rule_version'],
-          'freeze':{'path':str(freeze_path.relative_to(ROOT)), 'version':freeze['version'],
-                    'files_checked':len(freeze['files_sha256'])},
-          'mul_candidate_prototype':{'L':2,'original_max_stage_cost':full.delay,
-                                      'split_max_stage_cost':split_delay,'selected_by_C':'split16'},
+            fp = f32_mul(a,b)
+            check((fp.bits,fp.flags) == oracle.multiply(a,b),'SoftFloat mismatch')
+        softfloat_details = {'vectors':len(pairs),'source_sha256':oracle.source_hashes,
+                             'build_command':oracle.command}
+for width,mul,div in [(1,1,2),(2,1,4),(4,2,8),(8,4,16),(16,8,32),(32,16,64),(64,32,128),(128,64,256)]:
+    check(node_cost('Mul',[width,width],2*width) == Cost(mul,mul))
+    for op in ('Div','Mod'): check(node_cost(op,[width,width],width) == Cost(div,div))
+    check(node_cost('Mul',[width,width],width) == node_cost('Mul',[width,width],2*width))
+    check(node_cost('Mul',[width,width],2*width,diagnostic_square_mul=True).comb_weight == Fraction(width*width,64))
+for op,widths,result,expected in [('Mul',[12,24],48,Cost(16,16)),('Add',[256,256],257,Cost(1,1)),
+        ('AddCarry',[256,256,1],257,Cost(1,1)),('ReduceXor',[257],1,Cost(1,1)),
+        ('Shl',[128,9],128,Cost(2,2)),('Concat',[128,128],256,Cost(0,0))]:
+    check(node_cost(op,widths,result) == expected)
+check(node_cost('Shl',[128,9],128,constant_shift=True) == Cost(0,0))
+rejects(lambda: node_cost('Mul',[129,1],130),'cost_uncovered')
+rejects(lambda: node_cost('ExternalIP',[],1,transaction_constant=True),'cost_uncovered')
+rejects(lambda: node_cost('Lookup',[8]*8,8),'cost_uncovered')
+with tempfile.TemporaryDirectory(prefix='fixed-fields-') as directory:
+    config = json.loads(fixed_cost.CONFIG.read_text())
+    config['operations']['Mul']['delay_weight']['32'] = 7
+    config['operations']['Mul']['comb_weight']['32'] = 11
+    p = Path(directory)/'weights.json'; p.write_text(json.dumps(config))
+    with patch.object(fixed_cost,'CONFIG',p): check(node_cost('Mul',[32,32],64) == Cost(7,11))
+b = Builder(); a,x = b.input('a',32),b.input('b',32)
+ea,ex = b.node('ea','ZExt',64,a),b.node('ex','ZExt',64,x)
+p = b.node('p','Mul',64,ea,ex); graph = {'nodes':b.nodes,'outputs':{'y':p}}
+check(graph_cost(graph)['node_costs']['p'] == Cost(16,16))
+check(graph_cost(graph)['width_audit']['p']['billing_widths'] == [32,32])
+dot = graph_cost(build_graph('DOT2',32)); check(dot['delay_weight'] == 17 and dot['comb_weight'] == 33)
+b = Builder(); a,x = b.input('a',32),b.input('b',32)
+p = b.node('p','Mul',64,a,x); y = b.node('y','Add',64,p,p)
+check(graph_cost({'nodes':b.nodes,'outputs':{'y':y}})['comb_weight'] == 17)
+b = Builder(); a,d = b.input('a',16),b.input('d',16)
+q,r = b.node('q','Div',16,a,d),b.node('r','Mod',16,a,d); graph = {'nodes':b.nodes,'outputs':{'q':q,'r':r}}
+check(graph_cost(graph)['comb_weight'] == 64)
+receipt = {'implementation_id':'verified-qr','members':[q,r],'proof_ref':'implementation-receipt'}
+check(graph_cost(graph,verified_shared_divrem=[receipt])['comb_weight'] == 32)
+rejects(lambda: graph_cost(graph,verified_shared_divrem=[{**receipt,'proof_ref':None}]),'invalid_expansion_graph')
+b = Builder(); index = b.input('index',3); entries = [b.input('e'+str(i),8) for i in range(8)]
+y = lower_lookup(b,'lut',index,entries,8); graph = {'nodes':b.nodes,'outputs':{'y':y}}
+check(graph_cost(graph)['delay_weight'] == 3 and graph_cost(graph)['comb_weight'] == 7)
+for i in range(8): check(evaluate_graph(graph,{'index':i,**{'e'+str(n):17+n for n in range(8)}}) == {'y':17+i})
+rejects(lambda: lower_lookup(b,'bad',index,entries[:6],8),'template_ineligible')
+b = Builder(); index = b.input('index',1); entries = [b.input('e'+str(i),8) for i in range(8)]
+y = lower_lookup(b,'lut',index,entries,8); check(graph_cost({'nodes':b.nodes,'outputs':{'y':y}})['comb_weight'] == 1)
+b = Builder(); c0,c1 = b.input('c0',1),b.input('c1',1); a,x,d = b.input('a',8),b.input('b',8),b.input('d',8)
+y = lower_priority_case(b,'case',[(c0,a),(c1,x)],d,8); graph = {'nodes':b.nodes,'outputs':{'y':y}}
+check(evaluate_graph(graph,{'c0':1,'c1':1,'a':11,'b':22,'d':33}) == {'y':11})
+check(graph_cost(graph)['delay_weight'] == 2 and graph_cost(graph)['comb_weight'] == 2)
+check(state_cost([{'source':'p','width':257,'producer_stage':0,'last_consumer_stage':2}],valid_boundaries=2)
+      == {'register_bits':516,'register_signals':4,'state_weight':516})
+rejects(lambda: state_cost([{'source':'p','width':8,'producer_stage':0,'last_consumer_stage':1}]*2))
+check(candidate_score(3,Fraction(1,64),16,2,'a') < candidate_score(3,Fraction(1,16),16,2,'b'))
+cases = {c['id']:c for c in manifest['cases']}
+labels = {n['primitive']:100 if n['heavy'] else 1 for c in manifest['cases'] for n in c['reference_graph'] if n['primitive']}
+bundle = {'platform':'asap7','stage':'grt','source_role':'microbenchmark_only',
+          'label_definition':'combinational_data_path_excluding_boundary','reference_set_id':'synthetic-formula-test-only',
+          'settings_sha256':'0'*64,'delays_ps':labels}
+for name,expected in [('MUL_32',95),('MAC_32',96),('DOT2_32',96),('F2',121)]:
+    check(target_period_ps(cases[name],bundle,20,platform='asap7') == expected)
+for platform in PLATFORMS:
+    check(target_period_ps(cases['MUL_32'],{**bundle,'platform':platform},Fraction(41,2),platform=platform) == 96)
+rejects(lambda: target_period_ps(cases['MUL_32'],bundle,20,platform='gf180'),'invalid_reference')
+rejects(lambda: target_period_ps(cases['MUL_32'],{**bundle,'delays_ps':{}},20,platform='asap7'),'missing_reference')
+rejects(lambda: target_period_ps(cases['MUL_32'],{**bundle,'source_role':'formal_case_PPA'},20,platform='asap7'),'invalid_reference')
+rejects(lambda: target_period_ps(cases['MUL_32'],bundle,'nan',platform='asap7'),'invalid_reference')
+rejects(lambda: target_period_ps(cases['MUL_32'],{**bundle,'settings_sha256':'unknown'},20,platform='asap7'),'invalid_reference')
+targets = freeze_target_batch(manifest['cases'],bundle,{c['id']:20 for c in manifest['cases']},platform='asap7')
+check(len(targets['periods_ps']) == 43 and len(targets['batch_sha256']) == 64)
+rejects(lambda: freeze_target_batch(manifest['cases'],bundle,{},platform='asap7'),'invalid_reference')
+bad = deepcopy(build_graph('DOT2',128)); next(n for n in bad['nodes'] if n['id']=='wide_p')['width'] = 255
+rejects(lambda: graph_cost(bad),'width_contract_violation')
+bad = deepcopy(build_graph('DOT2',128)); bad['nodes'][0]['deps'] = ['missing']
+rejects(lambda: graph_cost(bad),'invalid_expansion_graph')
+bad = deepcopy(build_graph('MUL',32)); bad['nodes'][0]['params']['signed'] = True
+rejects(lambda: graph_cost(bad),'invalid_expansion_graph')
+requests = [{'case':'MAC_32','inputs':{'a':3,'b':7,'c':5}},
+            {'case':'DOT2_128','inputs':{name:(1 << 128)-1 for name in ('a','b','c','d')}}]
+cli = subprocess.run([sys.executable,'-m','experiments.arithmetic_dse.reference'],cwd=ROOT,
+                     input=''.join(json.dumps(r)+'\n' for r in requests),text=True,capture_output=True)
+check(cli.returncode == 0,cli.stderr)
+check([json.loads(line)['outputs'] for line in cli.stdout.splitlines()]
+      == [evaluate_case(r['case'],r['inputs']) for r in requests])
+report = {'status':'passed','version':'step2-revised-contracts-v1','checks':checks,'partition':partition,
+          'integer_exhaustive_multiply_pairs':65536,'integer_exhaustive_division_pairs':65536,
+          'safe_shift_checks':shift_checks,'case_graph_reference_evaluations':case_evaluations,
+          'nonpower_width_graph_reference_evaluations':nonpower_evaluations,'nonpower_widths':[12,24,48,96],
+          'fp_directed_vectors':len(fp_vectors),'target_labels':'synthetic_formula_tests_only',
           'softfloat_crosscheck':softfloat_details,
-          'physical_measurements_read':False, 'hardware_arithmetic_integration':'not_run'}
-if os.environ.get('ARITHMETIC_REPORT'):
-    Path(os.environ['ARITHMETIC_REPORT']).write_text(json.dumps(report, ensure_ascii=False, indent=2)+'\n')
-print(json.dumps(report, ensure_ascii=False, indent=2))
+          'new_cost_mode':'fixed-op-width-v1','physical_measurements_read':False,
+          'compiler_BEIR_preflight':'steps4_5','scheduling_and_actual_D_model':'later_steps',
+          'cost_sensitivity':'protocol_and_exact_weights_verified; ranking_runs_in_step5'}
+if os.environ.get('ARITHMETIC_REPORT'): Path(os.environ['ARITHMETIC_REPORT']).write_text(json.dumps(report,indent=2)+'\n')
+print(json.dumps(report,indent=2))

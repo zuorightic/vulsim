@@ -1,0 +1,29 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-c",
+    "import json; from experiments.arithmetic_dse.placement_evidence import verify; from experiments.arithmetic_dse.wide_evidence import verify as wide; print(json.dumps({\"placement_and_parents\":verify(),\"step1\":wide()},indent=2))"
+  ],
+  "exit_code": 0,
+  "process_exit_code": 0,
+  "timed_out": false,
+  "CPU_limit_s": 240,
+  "CPU_limit_exceeded": false,
+  "sampled_process_tree_CPU_s": 0.99,
+  "cancelled_signal": null,
+  "walltime_s": 1.2674510618671775,
+  "unexpected_live_descendants": false,
+  "memory_limit_exceeded": false,
+  "memory_limit_MiB": 8192,
+  "sampled_process_tree_peak_rss_KiB": 29344,
+  "sampled_process_tree_peak_threads": 2,
+  "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+  "resource_sampling_interval_s": 0.5,
+  "cleanup": {
+    "term_sent": 0,
+    "kill_sent": 0,
+    "remaining_live_pids": []
+  },
+  "log": "/home/zyrv/vulsim/build/step2-revision-20261030/historical-audit.log",
+  "gnu_time": "/home/zyrv/vulsim/build/step2-revision-20261030/historical-audit.resources.txt"
+}

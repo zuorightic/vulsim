@@ -1,0 +1,8 @@
+INTERFACE() { SERVICE(calculate, ARG(CaseInput) value, RESP(CaseOutput) result); }
+SERVICE(calculate, ARG(CaseInput) value, RESP(CaseOutput) result) {
+    Int<128> n_zero = Int<128>(0ull);
+    Int<128> n_chosen_c = (value.select ? value.c : n_zero);
+    Int<128> n_product = (value.a * value.b);
+    Int<128> n_sum = (Int<128>(n_product) + Int<128>(n_chosen_c));
+    result.y = n_sum;
+}

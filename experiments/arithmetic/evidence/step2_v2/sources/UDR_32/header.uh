@@ -1,0 +1,9 @@
+#include <defhelper.hpp>
+STRUCT(CaseInput) {
+    Int<32> a;
+    Int<32> d;
+};
+STRUCT(CaseOutput) {
+    Int<32> q;
+    Int<32> r;
+};

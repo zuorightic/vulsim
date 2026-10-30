@@ -1,0 +1,9 @@
+#include <defhelper.hpp>
+STRUCT(CaseInput) {
+    Int<8> a;
+    Int<8> b;
+    Int<16> c;
+};
+STRUCT(CaseOutput) {
+    Int<16> y;
+};

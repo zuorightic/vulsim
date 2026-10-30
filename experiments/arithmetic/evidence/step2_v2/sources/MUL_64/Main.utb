@@ -1,0 +1,52 @@
+#include <cstdio>
+#include <cstdlib>
+#include <fstream>
+#include <string>
+#include <run.hpp>
+TOP("Case.vul"); PROJECT(".");
+REQUEST(calculate, ARG(CaseInput) value, RESP(CaseOutput) result);
+GLOBAL() {
+template<uint32_t W> Int<W> read_hex(std::istream& stream) {
+    std::string token;
+    if (!(stream >> token)) std::exit(1);
+    Int<W> value{};
+    for (size_t i=0; i<token.size(); ++i) {
+        char c=token[token.size()-1-i];
+        unsigned digit=c>='a' ? unsigned(c-'a'+10) : unsigned(c-'0');
+        for (unsigned j=0; j<4; ++j) {
+            unsigned bit=unsigned(i)*4+j;
+            if (bit<W) {
+                if constexpr (W==1) value=(digit>>j)&1;
+                else value.template pick<1>(bit)=(digit>>j)&1;
+            } else if ((digit>>j)&1) std::exit(2);
+        }
+    }
+    return value;
+}
+template<uint32_t W> void print_hex(const Int<W>& value) {
+    const auto words=value.get_data();
+    std::putchar(' ');
+    for (int nibble=int((W+3)/4)-1; nibble>=0; --nibble) {
+        unsigned digit=0;
+        for (unsigned j=0; j<4; ++j) {
+            unsigned bit=unsigned(nibble)*4+j;
+            if (bit<W && ((words[bit/64]>>(bit%64))&1)) digit|=1u<<j;
+        }
+        std::putchar("0123456789abcdef"[digit]);
+    }
+}
+}
+SIMULATION() {
+    std::ifstream stream("/home/zyrv/vulsim/build/step2-revision-20261030/full-v2/sources/MUL_64/vectors.txt");
+    unsigned count=0; if (!(stream >> count)) std::exit(3);
+    for (unsigned i=0; i<count; ++i) {
+        CaseInput input{}; CaseOutput output{};
+        input.a = read_hex<64>(stream);
+        input.b = read_hex<64>(stream);
+        calculate(input, output);
+        std::printf("ROW %u",i);
+        print_hex(Int<128>(output.y));
+        std::putchar('\n'); sim_nextcycle();
+    }
+    std::printf("CASE RUN PASS rows=%u\n",count);
+}

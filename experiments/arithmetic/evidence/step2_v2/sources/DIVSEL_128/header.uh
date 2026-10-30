@@ -1,0 +1,12 @@
+#include <defhelper.hpp>
+STRUCT(CaseInput) {
+    Int<128> a;
+    Int<128> d;
+    Int<128> bias;
+    Int<128> bypass;
+    bool select;
+};
+STRUCT(CaseOutput) {
+    Int<128> y;
+    Int<128> r;
+};
