@@ -1,0 +1,81 @@
+[2026-10-30 13:02:20.939] [miter_logger] [info] MiterStrategy::run starting
+[2026-10-30 13:02:20.939] [miter_logger] [info] Collecting POs for design 0: MulProbe_sim_top
+
+[2026-10-30 13:02:20.946] [miter_logger] [info] Collected 262 PIs for design 0
+
+[2026-10-30 13:02:20.946] [miter_logger] [info] Collected 455 POs for design 0
+
+[2026-10-30 13:02:20.946] [miter_logger] [info] design 0 PI summary by model/term (262 total terminals, 8 unique rows):
+| Model                | Term           | Count |
+|----------------------|----------------|-------|
+| DFFHQNx1_ASAP7_75t_R | QN             |   160 |
+| DFFHQNx2_ASAP7_75t_R | QN             |    33 |
+| MulProbe_sim_top     | s0input_a__    |    32 |
+| MulProbe_sim_top     | s0input_b__    |    32 |
+| DFFHQNx3_ASAP7_75t_R | QN             |     2 |
+| MulProbe_sim_top     | clk            |     1 |
+| MulProbe_sim_top     | rstn           |     1 |
+| MulProbe_sim_top     | s0input__vld__ |     1 |
+
+[2026-10-30 13:02:20.946] [miter_logger] [info] design 0 PO summary by model/term (455 total terminals, 8 unique rows):
+| Model                | Term            | Count |
+|----------------------|-----------------|-------|
+| DFFHQNx1_ASAP7_75t_R | CLK             |   160 |
+| DFFHQNx1_ASAP7_75t_R | D               |   160 |
+| MulProbe_sim_top     | s3output_y__    |    64 |
+| DFFHQNx2_ASAP7_75t_R | CLK             |    33 |
+| DFFHQNx2_ASAP7_75t_R | D               |    33 |
+| DFFHQNx3_ASAP7_75t_R | CLK             |     2 |
+| DFFHQNx3_ASAP7_75t_R | D               |     2 |
+| MulProbe_sim_top     | s3output__vld__ |     1 |
+
+[2026-10-30 13:02:20.946] [miter_logger] [info] Collecting POs for design 1: MulProbe_sim_top
+
+[2026-10-30 13:02:20.952] [miter_logger] [info] size of common inputs: 262
+[2026-10-30 13:02:20.952] [miter_logger] [info] size of diff0 inputs: 0
+[2026-10-30 13:02:20.952] [miter_logger] [info] size of diff1 inputs: 0
+[2026-10-30 13:02:20.952] [miter_logger] [info] Collected 262 PIs for design 1
+
+[2026-10-30 13:02:20.952] [miter_logger] [info] Collected 455 POs for design 1
+
+[2026-10-30 13:02:20.952] [miter_logger] [info] design 1 PI summary by model/term (262 total terminals, 8 unique rows):
+| Model                | Term           | Count |
+|----------------------|----------------|-------|
+| DFFHQNx1_ASAP7_75t_R | QN             |   160 |
+| DFFHQNx2_ASAP7_75t_R | QN             |    33 |
+| MulProbe_sim_top     | s0input_a__    |    32 |
+| MulProbe_sim_top     | s0input_b__    |    32 |
+| DFFHQNx3_ASAP7_75t_R | QN             |     2 |
+| MulProbe_sim_top     | clk            |     1 |
+| MulProbe_sim_top     | rstn           |     1 |
+| MulProbe_sim_top     | s0input__vld__ |     1 |
+
+[2026-10-30 13:02:20.952] [miter_logger] [info] design 1 PO summary by model/term (455 total terminals, 8 unique rows):
+| Model                | Term            | Count |
+|----------------------|-----------------|-------|
+| DFFHQNx1_ASAP7_75t_R | CLK             |   160 |
+| DFFHQNx1_ASAP7_75t_R | D               |   160 |
+| MulProbe_sim_top     | s3output_y__    |    64 |
+| DFFHQNx2_ASAP7_75t_R | CLK             |    33 |
+| DFFHQNx2_ASAP7_75t_R | D               |    33 |
+| DFFHQNx3_ASAP7_75t_R | CLK             |     2 |
+| DFFHQNx3_ASAP7_75t_R | D               |     2 |
+| MulProbe_sim_top     | s3output__vld__ |     1 |
+
+[2026-10-30 13:02:20.952] [miter_logger] [info] normalizeInputs: starting
+[2026-10-30 13:02:20.953] [miter_logger] [info] size of common inputs: 262
+[2026-10-30 13:02:20.953] [miter_logger] [info] size of diff0 inputs: 0
+[2026-10-30 13:02:20.953] [miter_logger] [info] size of diff1 inputs: 0
+[2026-10-30 13:02:20.953] [miter_logger] [info] normalizeOutputs: starting
+[2026-10-30 13:02:20.953] [miter_logger] [info] size of common outputs: 455
+[2026-10-30 13:02:20.953] [miter_logger] [info] size of diff0 outputs: 0
+[2026-10-30 13:02:20.953] [miter_logger] [info] size of diff1 outputs: 0
+[2026-10-30 13:02:20.953] [miter_logger] [info] size of PIs in circuit 0: 262
+[2026-10-30 13:02:20.953] [miter_logger] [info] size of PIs in circuit 1: 262
+[2026-10-30 13:02:20.953] [miter_logger] [info] size of POs in circuit 0: 455
+[2026-10-30 13:02:20.953] [miter_logger] [info] size of POs in circuit 1: 455
+[2026-10-30 13:02:21.002] [miter_logger] [info] Building miter expression
+[2026-10-30 13:02:21.002] [miter_logger] [info] Finished building miter expression
+[2026-10-30 13:02:21.002] [miter_logger] [info] Starting solver
+[2026-10-30 13:02:21.002] [miter_logger] [info] SAT solver finished: UNSAT
+[2026-10-30 13:02:21.002] [miter_logger] [info] Circuits are IDENTICAL

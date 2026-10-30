@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "checks": {
+    "isolated_without_build_EDA_or_PATH": {
+      "exit_code": 0,
+      "expected_rejection": false,
+      "diagnostic": "passed"
+    },
+    "wrong_report_time_unit_after_hash_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "ValueError: STA and selected Liberty disagree on time"
+    },
+    "wrong_LEF_area_after_hash_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "ValueError: Liberty/LEF area mismatch: AND2_X1"
+    },
+    "changed_active_source": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "ValueError: evidence mismatch: experiments/arithmetic_dse/backend.py: 'c8caf700481e0c81fe4155e204bc4f7e34a28ca8f352a0e6aa85e31b1c719f9b' != 'c30acfb0f8d2b8fee3a04be4c6be5d2f21f583f1c496c25dd6a76dcaab7bac2a'"
+    }
+  },
+  "mutations_confined_to_temporary_copy": true,
+  "EDA_invocations": 0
+}

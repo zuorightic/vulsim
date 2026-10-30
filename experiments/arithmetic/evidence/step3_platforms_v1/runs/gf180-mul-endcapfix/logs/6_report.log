@@ -1,0 +1,32 @@
+OpenROAD 26Q3-1867-g84e3ff1eb2 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 2 thread(s).
+read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/lib/gf180mcu_fd_sc_mcu9t5v0__tt_025C_5v00.lib.gz
+read_db /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/gf180-mul-endcapfix/results/gf180/arithmetic_probe/base/6_1_fill.odb
+read_sdc /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/gf180-mul-endcapfix/results/gf180/arithmetic_probe/base/6_1_fill.sdc
+source /home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/setRC.tcl
+[WARNING STA-0450] virtual clock io_clk can not be propagated.
+write_db /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/gf180-mul-endcapfix/results/gf180/arithmetic_probe/base/6_final.odb
+write_sdc -no_timestamp /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/gf180-mul-endcapfix/results/gf180/arithmetic_probe/base/6_final.sdc
+Deleted 0 routing obstructions
+[INFO RCX-0431] Defined process_corner X with ext_model_index 0
+[INFO RCX-0029] Defined extraction corner X
+[INFO RCX-0435] Reading extraction model file /home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/openROAD/rcx/gf180mcu_1p5m_1tm_9k_sp_smim_OPTB_typ.rules ...
+[INFO RCX-0436] RC segment generation MulProbe_sim_top (max_merge_res 50.0) ...
+[INFO RCX-0040] Final 12138 rc segments
+[INFO RCX-0439] Coupling Cap extraction MulProbe_sim_top ...
+[INFO RCX-0440] Coupling threshhold is 0.1000 fF, coupling capacitance less than 0.1000 fF will be grounded.
+[INFO RCX-0442] 51% of 32212 wires extracted
+[INFO RCX-0442] 100% of 32212 wires extracted
+[INFO RCX-0045] Extract 4714 nets, 16852 rsegs, 16852 caps, 31510 ccs
+[INFO RCX-0443] 4714 nets finished
+[INFO PSM-0040] All shapes on net VDD are connected.
+[WARNING PSM-0020] Via1 has zero resistance.
+[WARNING PSM-0020] Via2 has zero resistance.
+[WARNING PSM-0020] Via3 has zero resistance.
+[WARNING PSM-0020] Via4 has zero resistance.
+[ERROR PSM-0021] Resistance map constains invalid values.
+Error: final_report.tcl, 7 PSM-0021
+Elapsed time: 0:01.74[h:]min:sec. CPU time: user 1.66 sys 0.08 (99%). Peak memory: 224792KB.

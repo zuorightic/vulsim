@@ -1,0 +1,20 @@
+OpenROAD 26Q3-1867-g84e3ff1eb2 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 2 thread(s).
+read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+[INFO ODB-0227] LEF file: /home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/lef/NangateOpenCellLibrary.tech.lef, created 22 layers, 27 vias
+[INFO ODB-0227] LEF file: /home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/lef/NangateOpenCellLibrary.macro.mod.lef, created 135 library cells
+link_design MulProbe_sim_top
+read_sdc /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/nangate45-add-rcfix/results/nangate45/arithmetic_probe/base/1_2_yosys.sdc
+source /home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+eliminate_dead_logic
+Removed 0 unused instances and 0 unused nets.
+Design area 1623 um^2 100% utilization.
+write_db /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/nangate45-add-rcfix/results/nangate45/arithmetic_probe/base/1_synth.odb
+write_sdc -no_timestamp /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/nangate45-add-rcfix/results/nangate45/arithmetic_probe/base/1_synth.sdc
+Elapsed time: 0:00.23[h:]min:sec. CPU time: user 0.21 sys 0.03 (99%). Peak memory: 117064KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+1_synth                   .odb            0            114 c37f71542c7ec78ebeaf
+1_synth                   .sdc                             8d8946c842f675b86186

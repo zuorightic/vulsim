@@ -1,0 +1,13 @@
+OpenROAD 26Q3-1867-g84e3ff1eb2 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 2 thread(s).
+read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_db /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/sky130hd-mul-sdcfix/results/sky130hd/arithmetic_probe/base/5_route.odb
+read_sdc /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/sky130hd-mul-sdcfix/results/sky130hd/arithmetic_probe/base/5_route.sdc
+source /home/zyrv/OpenROAD-flow-scripts/flow/platforms/sky130hd/setRC.tcl
+exec cp /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/sky130hd-mul-sdcfix/results/sky130hd/arithmetic_probe/base/5_route.odb /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/sky130hd-mul-sdcfix/results/sky130hd/arithmetic_probe/base/6_1_fill.odb
+Elapsed time: 0:00.34[h:]min:sec. CPU time: user 0.30 sys 0.04 (99%). Peak memory: 139200KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+6_1_fill                  .odb            0            135 c687447f9384269197ac

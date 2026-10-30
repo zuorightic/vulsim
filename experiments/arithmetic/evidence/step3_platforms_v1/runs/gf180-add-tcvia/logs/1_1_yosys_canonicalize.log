@@ -1,0 +1,343 @@
+Yosys 0.68+ (git sha1 a5af9d690, Release, GNU /usr/bin/c++ 13.3.0) [github.com/The-OpenROAD-Project/yosys at HEAD]
+Using ABC speed script.
+Extracting clock period from SDC file: /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/gf180-add-tcvia/results/gf180/arithmetic_probe/base/clock_period.txt
+Setting clock period to 30000.0
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+Found gzip magic in file `/home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/lib/gf180mcu_fd_sc_mcu9t5v0__tt_025C_5v00.lib.gz', decompressing using zlib.
+
+1. Executing Liberty frontend: /home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/lib/gf180mcu_fd_sc_mcu9t5v0__tt_025C_5v00.lib.gz
+Imported 229 cell types from liberty file.
+Found gzip magic in file `/home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/lib/gf180mcu_fd_sc_mcu9t5v0__tt_025C_5v00.lib.gz', decompressing using zlib.
+
+2. Executing Liberty frontend: /home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/lib/gf180mcu_fd_sc_mcu9t5v0__tt_025C_5v00.lib.gz
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__addf_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__addf_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__addf_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__addh_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__addh_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__addh_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__and2_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__and2_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__and2_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__and3_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__and3_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__and3_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__and4_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__and4_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__and4_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__antenna.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__aoi21_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__aoi21_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__aoi21_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__aoi211_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__aoi211_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__aoi211_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__aoi22_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__aoi22_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__aoi22_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__aoi221_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__aoi221_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__aoi221_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__aoi222_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__aoi222_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__aoi222_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__buf_12.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__buf_16.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__buf_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__buf_20.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__buf_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__buf_3.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__buf_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__buf_8.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__bufz_12.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__bufz_16.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__bufz_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__bufz_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__bufz_3.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__bufz_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__bufz_8.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__clkbuf_12.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__clkbuf_16.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__clkbuf_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__clkbuf_20.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__clkbuf_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__clkbuf_3.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__clkbuf_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__clkbuf_8.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__clkinv_12.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__clkinv_16.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__clkinv_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__clkinv_20.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__clkinv_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__clkinv_3.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__clkinv_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__clkinv_8.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffnq_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffnq_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffnq_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffnrnq_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffnrnq_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffnrnq_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffnrsnq_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffnrsnq_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffnrsnq_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffnsnq_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffnsnq_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffnsnq_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffq_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffq_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffq_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffrnq_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffrnq_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffrnq_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffrsnq_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffrsnq_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffrsnq_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffsnq_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffsnq_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dffsnq_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dlya_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dlya_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dlya_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dlyb_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dlyb_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dlyb_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dlyc_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dlyc_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dlyc_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dlyd_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dlyd_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__dlyd_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__endcap.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__fill_16.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__fill_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__fill_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__fill_32.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__fill_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__fill_64.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__fill_8.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__fillcap_16.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__fillcap_32.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__fillcap_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__fillcap_64.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__fillcap_8.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__filltie.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__hold.
+Ignoring cell gf180mcu_fd_sc_mcu9t5v0__icgtn_1 with missing function on output IQ3.
+Ignoring cell gf180mcu_fd_sc_mcu9t5v0__icgtn_2 with missing function on output IQ3.
+Ignoring cell gf180mcu_fd_sc_mcu9t5v0__icgtn_4 with missing function on output IQ3.
+Ignoring cell gf180mcu_fd_sc_mcu9t5v0__icgtp_1 with missing function on output IQ2.
+Ignoring cell gf180mcu_fd_sc_mcu9t5v0__icgtp_2 with missing function on output IQ2.
+Ignoring cell gf180mcu_fd_sc_mcu9t5v0__icgtp_4 with missing function on output IQ2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__inv_12.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__inv_16.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__inv_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__inv_20.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__inv_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__inv_3.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__inv_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__inv_8.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__invz_12.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__invz_16.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__invz_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__invz_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__invz_3.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__invz_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__invz_8.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__latq_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__latq_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__latq_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__latrnq_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__latrnq_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__latrnq_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__latrsnq_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__latrsnq_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__latrsnq_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__latsnq_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__latsnq_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__latsnq_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__mux2_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__mux2_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__mux2_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__mux4_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__mux4_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__mux4_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__nand2_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__nand2_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__nand2_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__nand3_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__nand3_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__nand3_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__nand4_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__nand4_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__nand4_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__nor2_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__nor2_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__nor2_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__nor3_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__nor3_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__nor3_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__nor4_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__nor4_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__nor4_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai21_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai21_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai21_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai211_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai211_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai211_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai22_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai22_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai22_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai221_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai221_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai221_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai222_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai222_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai222_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai31_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai31_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai31_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai32_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai32_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai32_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai33_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai33_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__oai33_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__or2_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__or2_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__or2_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__or3_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__or3_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__or3_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__or4_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__or4_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__or4_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__sdffq_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__sdffq_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__sdffq_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__sdffrnq_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__sdffrnq_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__sdffrnq_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__sdffrsnq_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__sdffrsnq_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__sdffrsnq_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__sdffsnq_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__sdffsnq_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__sdffsnq_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__tieh.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__tiel.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__xnor2_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__xnor2_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__xnor2_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__xnor3_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__xnor3_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__xnor3_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__xor2_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__xor2_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__xor2_4.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__xor3_1.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__xor3_2.
+Replacing existing blackbox module gf180mcu_fd_sc_mcu9t5v0__xor3_4.
+Imported 223 cell types from liberty file.
+<suppressed ~18 debug messages>
+
+3. Executing SLANG frontend.
+Top level design units:
+    MulProbe_sim_top
+
+
+Build succeeded: 0 errors, 0 warnings
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$35'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$12'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$9'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$4'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$0'.
+Cleaned up 5 empty switches.
+<suppressed ~57 debug messages>
+
+3.2. Executing TRIBUF pass.
+
+3.3. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 3 switch rules as full_case in process $35 in module MulProbe_sim_top.
+Marked 1 switch rules as full_case in process $12 in module MulProbe_sim_top.
+Marked 1 switch rules as full_case in process $9 in module MulProbe_sim_top.
+Marked 4 switch rules as full_case in process $4 in module MulProbe_sim_top.
+Marked 2 switch rules as full_case in process $0 in module MulProbe_sim_top.
+Removed a total of 0 dead cases.
+
+3.4. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 8 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.5. Executing PROC_INIT pass (extract init attributes).
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~15 debug messages>
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\MulProbe_sim_top.$35'.
+     1/5: $__vul_pipeline_multiply.rtlzz_pipe_8_s1$38
+     2/5: $__vul_pipeline_multiply.rtlzz_pipe_2_s1$37
+     3/5: $__vul_pipeline_multiply.rtlzz_valid_s1$41
+     4/5: $__vul_pipeline_multiply.rtlzz_pipe_8_s1$40
+     5/5: $__vul_pipeline_multiply.rtlzz_pipe_2_s1$39
+Creating decoders for process `\MulProbe_sim_top.$12'.
+     1/1: $__vul_pipeline_q_s3valid$14
+Creating decoders for process `\MulProbe_sim_top.$9'.
+     1/1: $__vul_pipeline_q_s3reg$11
+Creating decoders for process `\MulProbe_sim_top.$4'.
+     1/3: $__vul_pipeline_q_s1valid$6
+     2/3: $__vul_pipeline_q_s1valid$7
+     3/3: $__vul_pipeline_q_s1valid$8
+Creating decoders for process `\MulProbe_sim_top.$0'.
+     1/2: $__vul_pipeline_q_s1reg$2
+     2/2: $__vul_pipeline_q_s1reg$3
+
+3.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 5 empty switches in `\MulProbe_sim_top.$35'.
+Removing empty process `MulProbe_sim_top.$35'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$12'.
+Removing empty process `MulProbe_sim_top.$12'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$9'.
+Removing empty process `MulProbe_sim_top.$9'.
+Found and cleaned up 5 empty switches in `\MulProbe_sim_top.$4'.
+Removing empty process `MulProbe_sim_top.$4'.
+Found and cleaned up 3 empty switches in `\MulProbe_sim_top.$0'.
+Removing empty process `MulProbe_sim_top.$0'.
+Cleaned up 15 empty switches.
+
+3.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module MulProbe_sim_top.
+<suppressed ~16 debug messages>
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1. Analyzing design hierarchy..
+Top module:  \MulProbe_sim_top
+
+4.2. Analyzing design hierarchy..
+Top module:  \MulProbe_sim_top
+Removed 0 unused modules.
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \MulProbe_sim_top..
+Removed 5 unused cells and 82 unused wires.
+<suppressed ~95 debug messages>
+
+6. Executing RTLIL backend.
+Output filename: /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/gf180-add-tcvia/results/gf180/arithmetic_probe/base/1_1_yosys_canonicalize.rtlil
+
+End of script. Logfile hash: 82614e9bd4, time: 0.24s, user: 0.21s, system: 0.01s, MEM: 75.23 MB peak
+Yosys 0.68+ (git sha1 a5af9d690, Release, GNU /usr/bin/c++ 13.3.0) [github.com/The-OpenROAD-Project/yosys at HEAD]
+Time spent: 93% 4x read_liberty (0 sec), 3% 2x read_slang (0 sec), ...
+Elapsed time: 0:00.24[h:]min:sec. CPU time: user 0.23 sys 0.02 (100%). Peak memory: 79892KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+1_1_yosys_canonicalize    .rtlil          0             78 dd56a6787267f3008a0e

@@ -28,13 +28,6 @@
     },
     {
       "paths": [
-        "historical_nine_case_budget_planning_helpers"
-      ],
-      "used_by": "historical_backend_evidence_only; no_active_budget_CLI_use",
-      "replace_at": "step3_platform_stage_budget_migration"
-    },
-    {
-      "paths": [
         "cases_v1.json",
         "semantics_v1.json_integer_scope",
         "simple_cost_v1.json",
@@ -51,5 +44,11 @@
     "no_obsolete_formula_or_hardcoded_split16_selector_outside_explicit_archived_evidence",
     "retained_v1_named_foundations_must_have_current_callers_and_documented_semantics",
     "archived_freezes_remain_verifiable_without_reintroducing_public_legacy_mode"
-  ]
+  ],
+  "stage3_replaced": [
+    "backend_ASAP7_fixed_paths_units_PVT_and_library_count",
+    "backend/asap7.mk_platform_specific_active_settings",
+    "historical_nine_case_budget_planning_helpers_in_active_budget_module"
+  ],
+  "historical_forecast_recomputation": "evidence.py explicitly loads the original backend-v4 budget source through freeze_history; old nine-case formulas exist only in frozen evidence snapshots"
 }

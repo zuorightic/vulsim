@@ -1,0 +1,55 @@
+{
+  "schema": "arithmetic-platform-v1",
+  "version": 1,
+  "corner": "TC",
+  "temperature_C": 25.0,
+  "liberty_model": "NLDM",
+  "abc_time_unit": "ps",
+  "abc_load_unit": "fF",
+  "abc_unit_basis": "Yosys ABC Liberty reader scales delay to ps and capacitance to fF; logs retain stime evidence",
+  "hold_review_band_role": "predeclared engineering trigger; not noise floor or signoff",
+  "exclude_area_master_types": [
+    "CORE_SPACER"
+  ],
+  "physical_master_types": [
+    "CORE_WELLTAP",
+    "CORE_ENDCAP",
+    "ENDCAP_PRE",
+    "ENDCAP_POST",
+    "ENDCAP_TOPLEFT",
+    "ENDCAP_TOPRIGHT",
+    "ENDCAP_BOTTOMLEFT",
+    "ENDCAP_BOTTOMRIGHT"
+  ],
+  "seed": 42,
+  "core_utilization": 40,
+  "place_density": 0.65,
+  "multi_corner_signoff": false,
+  "platform": "gf180",
+  "voltage_V": 5.0,
+  "time_unit": "ns",
+  "capacitance_unit": "pF",
+  "library_count": 1,
+  "library_name_pattern": "gf180mcu_fd_sc_mcu9t5v0__tt_025C_5v00\\.lib\\.gz",
+  "VT": "library_default",
+  "driver_cell": "gf180mcu_fd_sc_mcu9t5v0__buf_4",
+  "driver_pin": "Z",
+  "output_load_fF": 13.43,
+  "setup_uncertainty_ps": 100,
+  "hold_uncertainty_ps": 25,
+  "clock_transition_ps": 100,
+  "hold_review_margin_ps": 25,
+  "core_margin_um": 25,
+  "trial_period_ps": 30000,
+  "make_overrides": {
+    "CORNER": "TC",
+    "TRACK_OPTION": "9t",
+    "METAL_OPTION": "5LM_1TM",
+    "KVALUE": "9",
+    "POWER_OPTION": "5v0"
+  },
+  "allowed_physical_prefixes": [
+    "gf180mcu_fd_sc_mcu9t5v0__fill",
+    "gf180mcu_fd_sc_mcu9t5v0__endcap"
+  ]
+}

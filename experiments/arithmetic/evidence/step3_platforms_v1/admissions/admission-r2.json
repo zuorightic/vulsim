@@ -1,0 +1,100 @@
+{
+  "version": "platform-connection-admission-v1",
+  "id": "step3-four-platforms-r2",
+  "created_at": "2026-10-30T05:12:15.248984+00:00",
+  "purpose": "platform_connection_only",
+  "policy_sha256": "3f4a230ca19b9b53a9da71cb19a52e718d29a8001106d354394f13e5d6ef995a",
+  "starting_usage": {
+    "synth": 35,
+    "grt": 13,
+    "final": 6,
+    "support_calls": 374,
+    "walltime_s": 2810.163082752144,
+    "CPU_time_s": 4136.67,
+    "pending": 0
+  },
+  "tasks": [
+    {
+      "id": "nangate45-add-rcfix",
+      "platform": "nangate45",
+      "kernel": "add_u32",
+      "rtl": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/add-native/sim/top.sv",
+      "rtl_sha256": "cc8d3eba4c0adb938b633c7ab3fdcfca915643b70314c848af95bd7da6bf0a6c",
+      "top": "MulProbe_sim_top",
+      "profile_sha256": "f4ff4c89159379ad030fca2780ae71e17409492b2d003240912fbf63cf634911",
+      "period_ps": 3000,
+      "abc_target_ps": 3000,
+      "stage": "grt",
+      "purpose": "prototype",
+      "L": 3,
+      "II": 1,
+      "size_scope": "32bit_input; complete_result_64bit",
+      "supersedes_task_id": "nangate45-add"
+    },
+    {
+      "id": "gf180-add-loadfix",
+      "platform": "gf180",
+      "kernel": "add_u32",
+      "rtl": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/add-native/sim/top.sv",
+      "rtl_sha256": "cc8d3eba4c0adb938b633c7ab3fdcfca915643b70314c848af95bd7da6bf0a6c",
+      "top": "MulProbe_sim_top",
+      "profile_sha256": "1ce703428dbbc4a65c6d9b96bb98460d3b4bc749bcd5f07ba80630c135ce190e",
+      "period_ps": 30000,
+      "abc_target_ps": 30000,
+      "stage": "grt",
+      "purpose": "prototype",
+      "L": 3,
+      "II": 1,
+      "size_scope": "32bit_input; complete_result_64bit",
+      "supersedes_task_id": "gf180-add"
+    },
+    {
+      "id": "gf180-mul-loadfix",
+      "platform": "gf180",
+      "kernel": "mul_u32",
+      "rtl": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/mul-native/sim/top.sv",
+      "rtl_sha256": "5018e7b6831f1963c2ac3ee159f25f045cb12eab2a7fcee82cc44af982f7dca3",
+      "top": "MulProbe_sim_top",
+      "profile_sha256": "1ce703428dbbc4a65c6d9b96bb98460d3b4bc749bcd5f07ba80630c135ce190e",
+      "period_ps": 30000,
+      "abc_target_ps": 30000,
+      "stage": "final",
+      "purpose": "prototype",
+      "L": 3,
+      "II": 1,
+      "size_scope": "32bit_input; complete_result_64bit",
+      "supersedes_task_id": "gf180-mul"
+    }
+  ],
+  "call_caps": {
+    "synth": 8,
+    "grt": 8,
+    "final": 4
+  },
+  "worst_case_leaf_walltime_s": 24000,
+  "CPU_envelope_s": 48000,
+  "threads": 2,
+  "physical_jobs": 1,
+  "memory_limit_MiB": 8192,
+  "sample_split": "not_applicable; connection probes not admitted as model training",
+  "stops": [
+    "failed_stage",
+    "timeout",
+    "memory_limit",
+    "unsettled_ledger",
+    "unexpected_units_or_assets"
+  ],
+  "automatic_retries": 0,
+  "main_case_targets": false,
+  "later_bulk_or_model_work_authorized": false,
+  "correction_reason": "Correct RC/track fallback resolution to match ORFS load.tcl/floorplan.tcl; explicitly normalize GF180 ABC load to 13.43 fF instead of platform default 0.01343 fF. Preserve RTL, periods, stage and shared 8/8/4 call envelope; no automatic retries.",
+  "parent_admission": {
+    "path": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/admission.json",
+    "sha256": "36f504bc9ef392961283c206d8457f75cce15c2ad99386db5c44fe083eace275",
+    "id": "step3-four-platforms-v1"
+  },
+  "related_admission_ids": [
+    "step3-four-platforms-v1",
+    "step3-four-platforms-r2"
+  ]
+}

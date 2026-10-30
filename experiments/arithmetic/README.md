@@ -55,4 +55,7 @@ python3 -m experiments.arithmetic_dse.wide_evidence
 
 历史freeze、旧配置和证据只解释原版本。现行契约/参考/回归入口已替换九案例实现；旧simple_cost及依赖旧成本的放置分析仍支撑尚未迁移的步骤五，按[实现迁移清单](../arithmetic_dse/configs/implementation_migration_v1.json)替换。最终交付只保留现行实现和必要基础；被替代的公式、案例入口、命令行开关和脚本须退出活动路径。需要追溯的原字节限定在明确的归档/冻结证据中，不保留永久旧模式或旧案例兼容别名。
 
-已有ASAP7后端、进程清理及共享账本继续作为后续平台抽象的基础；当前v5额度保持不变。预算命令行报告43例/688条新范围及待准入状态，已移除九案例目标列表和一次性旧迁移开关；实际批量清单、平台能力及预算须按规划逐阶段准入。
+[四平台后端](../arithmetic_dse/backend/README.md)及[步骤三物理测量冻结](backend_freeze_v6.json)已按SDC单位修正重验完成32位共同探针接通，包含三个ns平台重跑的小核grt/完整乘法和单独核对后继承的ASAP7。原v5三个ns平台约束错误结果作废，具体更正见规划第四章步骤三§3.9；便携核验为`python3 -m experiments.arithmetic_dse.platform_evidence`。平台进程清理及共享账本沿用必要基础，旧ASAP7专用设置和九案例预算预测函数已退出活动路径；当前v5额度保持不变。预算命令行报告43例/688条新范围及待准入状态，已移除九案例目标列表和一次性旧迁移开关；实际批量清单、平台能力及预算须按规划逐阶段准入。
+
+
+当前步骤三软件核验冻结已推进到[backend_freeze_v7.json](backend_freeze_v7.json)，收尾记录见[规划第四章§3.10](../../mission/lxy-plan-fix.md#step3-validator-closure)与[step3_platforms_v3说明](evidence/step3_platforms_v3/README.md)。物理结果继承原v6：本次只收紧静态SDC命令边界、补参数来源和交接覆盖，不新增synth/grt/final。v5旧ns结果仍作废；v6原772份证据及全部旧收费保留。GF180 wire RC校准依据尚未闭合，通孔适配验证不扩大成全部wire验证。

@@ -1,0 +1,566 @@
+OpenROAD 26Q3-1867-g84e3ff1eb2 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 2 thread(s).
+read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/nangate45-add-sdcfix/results/nangate45/arithmetic_probe/base/4_cts.odb
+read_sdc /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/nangate45-add-sdcfix/results/nangate45/arithmetic_probe/base/4_cts.sdc
+source /home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+pin_access
+[INFO DRT-0149] Reading tech and libs.
+
+Units:                2000
+Number of layers:     21
+Number of macros:     135
+Number of vias:       33
+Number of viarulegen: 19
+
+[INFO DRT-0150] Reading design.
+
+Design:                   MulProbe_sim_top
+Die area:                 ( 0 0 ) ( 147390 147390 )
+Number of track patterns: 20
+Number of DEF vias:       0
+Number of components:     1172
+Number of terminals:      134
+Number of snets:          2
+Number of nets:           1331
+
+[INFO DRT-0167] List of default vias:
+  Layer via2
+    default via: via2_5
+  Layer via3
+    default via: via3_2
+  Layer via4
+    default via: via4_0
+  Layer via5
+    default via: via5_0
+  Layer via6
+    default via: via6_0
+  Layer via7
+    default via: via7_0
+  Layer via8
+    default via: via8_0
+  Layer via9
+    default via: via9_0
+[INFO DRT-0162] Library cell analysis.
+[INFO DRT-0163] Instance analysis.
+[INFO DRT-0164] Number of unique instances = 67.
+[INFO DRT-0168] Init region query.
+[INFO DRT-0024]   Complete active.
+[INFO DRT-0024]   Complete Fr_VIA.
+[INFO DRT-0024]   Complete metal1.
+[INFO DRT-0024]   Complete via1.
+[INFO DRT-0024]   Complete metal2.
+[INFO DRT-0024]   Complete via2.
+[INFO DRT-0024]   Complete metal3.
+[INFO DRT-0024]   Complete via3.
+[INFO DRT-0024]   Complete metal4.
+[INFO DRT-0024]   Complete via4.
+[INFO DRT-0024]   Complete metal5.
+[INFO DRT-0024]   Complete via5.
+[INFO DRT-0024]   Complete metal6.
+[INFO DRT-0024]   Complete via6.
+[INFO DRT-0024]   Complete metal7.
+[INFO DRT-0024]   Complete via7.
+[INFO DRT-0024]   Complete metal8.
+[INFO DRT-0024]   Complete via8.
+[INFO DRT-0024]   Complete metal9.
+[INFO DRT-0024]   Complete via9.
+[INFO DRT-0024]   Complete metal10.
+[INFO DRT-0033] active shape region query size = 0.
+[INFO DRT-0033] FR_VIA shape region query size = 0.
+[INFO DRT-0033] metal1 shape region query size = 20710.
+[INFO DRT-0033] via1 shape region query size = 207.
+[INFO DRT-0033] metal2 shape region query size = 138.
+[INFO DRT-0033] via2 shape region query size = 207.
+[INFO DRT-0033] metal3 shape region query size = 138.
+[INFO DRT-0033] via3 shape region query size = 207.
+[INFO DRT-0033] metal4 shape region query size = 80.
+[INFO DRT-0033] via4 shape region query size = 80.
+[INFO DRT-0033] metal5 shape region query size = 89.
+[INFO DRT-0033] via5 shape region query size = 80.
+[INFO DRT-0033] metal6 shape region query size = 75.
+[INFO DRT-0033] via6 shape region query size = 32.
+[INFO DRT-0033] metal7 shape region query size = 18.
+[INFO DRT-0033] via7 shape region query size = 0.
+[INFO DRT-0033] metal8 shape region query size = 0.
+[INFO DRT-0033] via8 shape region query size = 0.
+[INFO DRT-0033] metal9 shape region query size = 0.
+[INFO DRT-0033] via9 shape region query size = 0.
+[INFO DRT-0033] metal10 shape region query size = 0.
+[INFO DRT-0165] Start pin access.
+[INFO DRT-0078]   Complete 362 pins.
+[INFO DRT-0081]   Complete 67 unique inst patterns.
+[INFO DRT-0084]   Complete 616 groups.
+#scanned instances     = 1172
+#unique  instances     = 67
+#stdCellGenAp          = 1668
+#stdCellValidPlanarAp  = 0
+#stdCellValidViaAp     = 1280
+#stdCellPinNoAp        = 0
+#stdCellPinCnt         = 3365
+#instTermValidViaApCnt = 0
+#macroGenAp            = 0
+#macroValidPlanarAp    = 0
+#macroValidViaAp       = 0
+#macroNoAp             = 0
+[INFO DRT-0166] Complete pin access.
+[INFO DRT-0267] cpu time = 00:00:09, elapsed time = 00:00:04, memory = 117.94 (MB), peak = 117.16 (MB)
+Took 5 seconds: pin_access
+set_global_routing_random -seed 42
+global_route -congestion_report_file /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/nangate45-add-sdcfix/reports/nangate45/arithmetic_probe/base/congestion.rpt -congestion_iterations 30 -congestion_report_iter_step 5 -verbose
+[INFO GRT-0020] Min routing layer: metal2
+[INFO GRT-0021] Max routing layer: metal10
+[INFO GRT-0022] Global adjustment: 0%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0088] Layer metal1  Track-Pitch = 0.1400  line-2-Via Pitch: 0.1350
+[INFO GRT-0088] Layer metal2  Track-Pitch = 0.1900  line-2-Via Pitch: 0.1400
+[INFO GRT-0088] Layer metal3  Track-Pitch = 0.1400  line-2-Via Pitch: 0.1400
+[INFO GRT-0088] Layer metal4  Track-Pitch = 0.2800  line-2-Via Pitch: 0.2800
+[INFO GRT-0088] Layer metal5  Track-Pitch = 0.2800  line-2-Via Pitch: 0.2800
+[INFO GRT-0088] Layer metal6  Track-Pitch = 0.2800  line-2-Via Pitch: 0.2800
+[INFO GRT-0088] Layer metal7  Track-Pitch = 0.8000  line-2-Via Pitch: 0.8000
+[INFO GRT-0088] Layer metal8  Track-Pitch = 0.8000  line-2-Via Pitch: 0.8000
+[INFO GRT-0088] Layer metal9  Track-Pitch = 1.6000  line-2-Via Pitch: 1.6000
+[INFO GRT-0088] Layer metal10 Track-Pitch = 1.6000  line-2-Via Pitch: 1.6000
+[INFO GRT-0003] Macros: 0
+[INFO GRT-0004] Blockages: 0
+[INFO GRT-0019] Found 18 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 61
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+metal1     Horizontal          0             0          0.00%
+metal2     Vertical         9108          4300          52.79%
+metal3     Horizontal      12555          6150          51.02%
+metal4     Vertical         6176          4396          28.82%
+metal5     Horizontal       6269          4430          29.33%
+metal6     Vertical         6294          4454          29.23%
+metal7     Horizontal       1908          1353          29.09%
+metal8     Vertical         2184          1560          28.57%
+metal9     Horizontal       1080           624          42.22%
+metal10    Vertical         1080           624          42.22%
+---------------------------------------------------------------
+
+[INFO GRT-0197] Via related to pin nodes: 5420
+[INFO GRT-0198] Via related Steiner nodes: 50
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 6535
+[INFO GRT-0112] Final usage 3D: 22300
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Congestion
+---------------------------------------------------------------------------------------
+metal1               0             0            0.00%             0 /  0 /  0
+metal2            4300          1150           26.74%             0 /  0 /  0
+metal3            6150          1123           18.26%             0 /  0 /  0
+metal4            4396           213            4.85%             0 /  0 /  0
+metal5            4430           177            4.00%             0 /  0 /  0
+metal6            4454            32            0.72%             0 /  0 /  0
+metal7            1353             0            0.00%             0 /  0 /  0
+metal8            1560             0            0.00%             0 /  0 /  0
+metal9             624             0            0.00%             0 /  0 /  0
+metal10            624             0            0.00%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total            27891          2695            9.66%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 12924 um
+[INFO GRT-0014] Routed nets: 1167
+[INFO GRT-0303] Global routing runtime = 00:00:00
+[WARNING STA-0450] virtual clock io_clk can not be propagated.
+estimate_parasitics -global_routing
+Perform buffer insertion and gate resizing...
+repair_design -verbose
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |      1346
+       10 |     +0.0% |       0 |       0 |             0 |      1336
+       20 |     +0.0% |       0 |       0 |             0 |      1326
+       30 |     +0.0% |       0 |       0 |             0 |      1316
+       40 |     +0.0% |       0 |       0 |             0 |      1306
+       50 |     +0.0% |       0 |       0 |             0 |      1296
+       60 |     +0.0% |       0 |       0 |             0 |      1286
+       70 |     +0.0% |       0 |       0 |             0 |      1276
+       80 |     +0.0% |       0 |       0 |             0 |      1266
+       90 |     +0.0% |       0 |       0 |             0 |      1256
+      100 |     +0.0% |       0 |       0 |             0 |      1246
+      110 |     +0.0% |       0 |       0 |             0 |      1236
+      120 |     +0.0% |       0 |       0 |             0 |      1226
+      130 |     +0.0% |       0 |       0 |             0 |      1216
+      140 |     +0.0% |       0 |       0 |             0 |      1206
+      150 |     +0.0% |       0 |       0 |             0 |      1196
+      160 |     +0.0% |       0 |       0 |             0 |      1186
+      170 |     +0.0% |       0 |       0 |             0 |      1176
+      180 |     +0.0% |       0 |       0 |             0 |      1166
+      190 |     +0.0% |       0 |       0 |             0 |      1156
+      200 |     +0.0% |       0 |       0 |             0 |      1146
+      210 |     +0.0% |       0 |       0 |             0 |      1136
+      220 |     +0.0% |       0 |       0 |             0 |      1126
+      230 |     +0.0% |       0 |       0 |             0 |      1116
+      240 |     +0.0% |       0 |       0 |             0 |      1106
+      250 |     +0.0% |       0 |       0 |             0 |      1096
+      260 |     +0.0% |       0 |       0 |             0 |      1086
+      270 |     +0.0% |       0 |       0 |             0 |      1076
+      280 |     +0.0% |       0 |       0 |             0 |      1066
+      290 |     +0.0% |       0 |       0 |             0 |      1056
+      300 |     +0.0% |       0 |       0 |             0 |      1046
+      310 |     +0.0% |       0 |       0 |             0 |      1036
+      320 |     +0.0% |       0 |       0 |             0 |      1026
+      330 |     +0.0% |       0 |       0 |             0 |      1016
+      340 |     +0.0% |       0 |       0 |             0 |      1006
+      350 |     +0.0% |       0 |       0 |             0 |       996
+      360 |     +0.0% |       0 |       0 |             0 |       986
+      370 |     +0.0% |       0 |       0 |             0 |       976
+      380 |     +0.0% |       0 |       0 |             0 |       966
+      390 |     +0.0% |       0 |       0 |             0 |       956
+      400 |     +0.0% |       0 |       0 |             0 |       946
+      410 |     +0.0% |       0 |       0 |             0 |       936
+      420 |     +0.0% |       0 |       0 |             0 |       926
+      430 |     +0.0% |       0 |       0 |             0 |       916
+      440 |     +0.0% |       0 |       0 |             0 |       906
+      450 |     +0.0% |       0 |       0 |             0 |       896
+      460 |     +0.0% |       0 |       0 |             0 |       886
+      470 |     +0.0% |       0 |       0 |             0 |       876
+      480 |     +0.0% |       0 |       0 |             0 |       866
+      490 |     +0.0% |       0 |       0 |             0 |       856
+      500 |     +0.0% |       0 |       0 |             0 |       846
+      510 |     +0.0% |       0 |       0 |             0 |       836
+      520 |     +0.0% |       0 |       0 |             0 |       826
+      530 |     +0.0% |       0 |       0 |             0 |       816
+      540 |     +0.0% |       0 |       0 |             0 |       806
+      550 |     +0.0% |       0 |       0 |             0 |       796
+      560 |     +0.0% |       0 |       0 |             0 |       786
+      570 |     +0.0% |       0 |       0 |             0 |       776
+      580 |     +0.0% |       0 |       0 |             0 |       766
+      590 |     +0.0% |       0 |       0 |             0 |       756
+      600 |     +0.0% |       0 |       0 |             0 |       746
+      610 |     +0.0% |       0 |       0 |             0 |       736
+      620 |     +0.0% |       0 |       0 |             0 |       726
+      630 |     +0.0% |       0 |       0 |             0 |       716
+      640 |     +0.0% |       0 |       0 |             0 |       706
+      650 |     +0.0% |       0 |       0 |             0 |       696
+      660 |     +0.0% |       0 |       0 |             0 |       686
+      670 |     +0.0% |       0 |       0 |             0 |       676
+      680 |     +0.0% |       0 |       0 |             0 |       666
+      690 |     +0.0% |       0 |       0 |             0 |       656
+[WARNING RSZ-0104] Net _0676_ only has one pin. Check if it is intended to be dangling.
+      700 |     +0.0% |       0 |       0 |             0 |       646
+      710 |     +0.0% |       0 |       0 |             0 |       636
+      720 |     +0.0% |       0 |       0 |             0 |       626
+      730 |     +0.0% |       0 |       0 |             0 |       616
+      740 |     +0.0% |       0 |       0 |             0 |       606
+      750 |     +0.0% |       0 |       0 |             0 |       596
+      760 |     +0.0% |       0 |       0 |             0 |       586
+      770 |     +0.0% |       0 |       0 |             0 |       576
+[WARNING RSZ-0104] Net _0689_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0688_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0687_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0686_ only has one pin. Check if it is intended to be dangling.
+      780 |     +0.0% |       0 |       0 |             0 |       566
+[WARNING RSZ-0104] Net _0685_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0684_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0683_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0673_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0711_ only has one pin. Check if it is intended to be dangling.
+      790 |     +0.0% |       0 |       0 |             0 |       556
+[WARNING RSZ-0104] Net _0710_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0682_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0709_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0708_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0707_ only has one pin. Check if it is intended to be dangling.
+      800 |     +0.0% |       0 |       0 |             0 |       546
+[WARNING RSZ-0104] Net _0706_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0705_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0704_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0703_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0702_ only has one pin. Check if it is intended to be dangling.
+      810 |     +0.0% |       0 |       0 |             0 |       536
+[WARNING RSZ-0104] Net _0701_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0700_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0681_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0699_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0698_ only has one pin. Check if it is intended to be dangling.
+      820 |     +0.0% |       0 |       0 |             0 |       526
+[WARNING RSZ-0104] Net _0697_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0696_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0695_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0694_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0693_ only has one pin. Check if it is intended to be dangling.
+      830 |     +0.0% |       0 |       0 |             0 |       516
+[WARNING RSZ-0104] Net _0692_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0691_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0690_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0680_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0721_ only has one pin. Check if it is intended to be dangling.
+      840 |     +0.0% |       0 |       0 |             0 |       506
+[WARNING RSZ-0104] Net _0720_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0719_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0718_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0717_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0716_ only has one pin. Check if it is intended to be dangling.
+      850 |     +0.0% |       0 |       0 |             0 |       496
+[WARNING RSZ-0104] Net _0715_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0674_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0742_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0714_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0741_ only has one pin. Check if it is intended to be dangling.
+      860 |     +0.0% |       0 |       0 |             0 |       486
+[WARNING RSZ-0104] Net _0740_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0739_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0738_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0737_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0736_ only has one pin. Check if it is intended to be dangling.
+      870 |     +0.0% |       0 |       0 |             0 |       476
+[WARNING RSZ-0104] Net _0735_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0734_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0733_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0732_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0713_ only has one pin. Check if it is intended to be dangling.
+      880 |     +0.0% |       0 |       0 |             0 |       466
+[WARNING RSZ-0104] Net _0731_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0730_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0729_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0728_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0727_ only has one pin. Check if it is intended to be dangling.
+      890 |     +0.0% |       0 |       0 |             0 |       456
+[WARNING RSZ-0104] Net _0726_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0725_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0724_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0723_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0722_ only has one pin. Check if it is intended to be dangling.
+      900 |     +0.0% |       0 |       0 |             0 |       446
+[WARNING RSZ-0104] Net _0712_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0752_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0751_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0750_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0749_ only has one pin. Check if it is intended to be dangling.
+      910 |     +0.0% |       0 |       0 |             0 |       436
+[WARNING RSZ-0104] Net _0748_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0747_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0746_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0675_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0773_ only has one pin. Check if it is intended to be dangling.
+      920 |     +0.0% |       0 |       0 |             0 |       426
+[WARNING RSZ-0104] Net _0745_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0772_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0771_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0770_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0769_ only has one pin. Check if it is intended to be dangling.
+      930 |     +0.0% |       0 |       0 |             0 |       416
+[WARNING RSZ-0104] Net _0768_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0767_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0766_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0765_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0764_ only has one pin. Check if it is intended to be dangling.
+      940 |     +0.0% |       0 |       0 |             0 |       406
+[WARNING RSZ-0104] Net _0763_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0744_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0762_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0761_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0760_ only has one pin. Check if it is intended to be dangling.
+      950 |     +0.0% |       0 |       0 |             0 |       396
+[WARNING RSZ-0104] Net _0759_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0758_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0757_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0756_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0755_ only has one pin. Check if it is intended to be dangling.
+      960 |     +0.0% |       0 |       0 |             0 |       386
+[WARNING RSZ-0104] Net _0754_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0753_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0743_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0677_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0783_ only has one pin. Check if it is intended to be dangling.
+      970 |     +0.0% |       0 |       0 |             0 |       376
+[WARNING RSZ-0104] Net _0782_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0781_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0780_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0679_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0836_ only has one pin. Check if it is intended to be dangling.
+      980 |     +0.0% |       0 |       0 |             0 |       366
+[WARNING RSZ-0104] Net _0835_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0834_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0779_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0833_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0832_ only has one pin. Check if it is intended to be dangling.
+      990 |     +0.0% |       0 |       0 |             0 |       356
+[WARNING RSZ-0104] Net _0831_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0830_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0829_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0828_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0827_ only has one pin. Check if it is intended to be dangling.
+     1000 |     +0.0% |       0 |       0 |             0 |       346
+[WARNING RSZ-0104] Net _0826_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0825_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0824_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0778_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0823_ only has one pin. Check if it is intended to be dangling.
+     1010 |     +0.0% |       0 |       0 |             0 |       336
+[WARNING RSZ-0104] Net _0822_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0821_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0820_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0819_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0818_ only has one pin. Check if it is intended to be dangling.
+     1020 |     +0.0% |       0 |       0 |             0 |       326
+[WARNING RSZ-0104] Net _0817_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0816_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0815_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0814_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0777_ only has one pin. Check if it is intended to be dangling.
+     1030 |     +0.0% |       0 |       0 |             0 |       316
+[WARNING RSZ-0104] Net _0813_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0812_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0811_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0810_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0809_ only has one pin. Check if it is intended to be dangling.
+     1040 |     +0.0% |       0 |       0 |             0 |       306
+[WARNING RSZ-0104] Net _0808_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0807_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0806_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0805_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0804_ only has one pin. Check if it is intended to be dangling.
+     1050 |     +0.0% |       0 |       0 |             0 |       296
+[WARNING RSZ-0104] Net _0776_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0803_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0802_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0801_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0800_ only has one pin. Check if it is intended to be dangling.
+     1060 |     +0.0% |       0 |       0 |             0 |       286
+[WARNING RSZ-0104] Net _0799_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0798_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0797_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0796_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0795_ only has one pin. Check if it is intended to be dangling.
+     1070 |     +0.0% |       0 |       0 |             0 |       276
+[WARNING RSZ-0104] Net _0794_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0775_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0793_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0792_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0791_ only has one pin. Check if it is intended to be dangling.
+     1080 |     +0.0% |       0 |       0 |             0 |       266
+[WARNING RSZ-0104] Net _0790_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0789_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0788_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0787_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0786_ only has one pin. Check if it is intended to be dangling.
+     1090 |     +0.0% |       0 |       0 |             0 |       256
+[WARNING RSZ-0104] Net _0785_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0784_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0774_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _0678_ only has one pin. Check if it is intended to be dangling.
+     1100 |     +0.0% |       0 |       0 |             1 |       246
+     1110 |     +0.0% |       0 |       0 |             1 |       236
+     1120 |     +0.0% |       0 |       0 |             1 |       226
+     1130 |     +0.0% |       0 |       0 |             1 |       216
+     1140 |     +0.0% |       0 |       0 |             1 |       206
+     1150 |     +0.0% |       0 |       0 |             1 |       196
+     1160 |     +0.0% |       0 |       0 |             1 |       186
+     1170 |     +0.0% |       0 |       0 |             1 |       176
+     1180 |     +0.0% |       0 |       0 |             1 |       166
+     1190 |     +0.0% |       0 |       0 |             1 |       156
+     1200 |     +0.0% |       0 |       0 |             1 |       146
+     1210 |     +0.0% |       0 |       0 |             1 |       136
+     1220 |     +0.0% |       0 |       0 |             1 |       126
+     1230 |     +0.0% |       0 |       0 |             1 |       116
+     1240 |     +0.0% |       0 |       0 |             1 |       106
+     1250 |     +0.0% |       0 |       0 |             1 |        96
+     1260 |     +0.0% |       0 |       0 |             1 |        86
+     1270 |     +0.0% |       0 |       0 |             1 |        76
+     1280 |     +0.0% |       0 |       0 |             1 |        66
+     1290 |     +0.0% |       0 |       0 |             1 |        56
+     1300 |     +0.0% |       0 |       0 |             1 |        46
+     1310 |     +0.0% |       0 |       0 |             1 |        36
+     1320 |     +0.0% |       0 |       0 |             1 |        26
+     1330 |     +0.0% |       0 |       0 |             1 |        16
+     1340 |     +0.0% |       0 |       0 |             1 |         6
+    final |     +0.0% |       0 |       0 |             1 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0036] Found 1 capacitance violations.
+[INFO RSZ-0504] Runtime: 0.06s
+global_route -start_incremental
+detailed_placement
+[INFO DPL-0006] Core area: 3997.98 um^2
+[INFO DPL-0007] Movable instances area: 1794.97 um^2
+[INFO DPL-0008] Fixed instances area within core: 23.94 um^2
+[INFO DPL-0009] Utilization: 45.5%
+[INFO DPL-0005] Diamond search max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+[INFO DPL-1102] Legalizing using negotiation legalizer.
+[INFO DPL-1103] Negotiation base search window: +/-20 sites horizontally, +/-5 rows vertically 
+	Automatic search window extension enabled.
+	Search window extendable up to the max displacement cap of +/-500 sites, +/-100 rows near walls.
+[INFO DPL-1104] NegotiationLegalizer DRC penalty: 5.
+[INFO DPL-0392] Negotiation cell height distribution (1 unique row-count(s)):
+[INFO DPL-0393]   height 1 row(s): 1172 cells
+[INFO DPL-0500] Runtime: 0.00s
+Placement Analysis
+---------------------------------
+total displacement          0.0 u
+average displacement        0.0 u
+max displacement            0.0 u
+original HPWL            6291.0 u
+legalized HPWL           6291.0 u
+delta HPWL                    0 %
+
+global_route -end_incremental -congestion_report_file /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/nangate45-add-sdcfix/reports/nangate45/arithmetic_probe/base/congestion_post_repair_design.rpt
+Repair setup and hold violations...
+estimate_parasitics -global_routing
+repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 100 -verbose
+[INFO RSZ-0100] Repair move sequence: UnbufferMove SizeUpMove SwapPinsMove BufferMove CloneMove SplitLoadMove 
+[INFO RSZ-0098] No setup violations found
+[INFO RSZ-0505] Runtime: 0.05s
+[INFO RSZ-0033] No hold violations found.
+[INFO RSZ-0506] Runtime: 0.01s
+global_route -start_incremental
+detailed_placement
+[INFO DPL-0006] Core area: 3997.98 um^2
+[INFO DPL-0007] Movable instances area: 1794.97 um^2
+[INFO DPL-0008] Fixed instances area within core: 23.94 um^2
+[INFO DPL-0009] Utilization: 45.5%
+[INFO DPL-0005] Diamond search max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+[INFO DPL-1102] Legalizing using negotiation legalizer.
+[INFO DPL-1103] Negotiation base search window: +/-20 sites horizontally, +/-5 rows vertically 
+	Automatic search window extension enabled.
+	Search window extendable up to the max displacement cap of +/-500 sites, +/-100 rows near walls.
+[INFO DPL-1104] NegotiationLegalizer DRC penalty: 5.
+[INFO DPL-0392] Negotiation cell height distribution (1 unique row-count(s)):
+[INFO DPL-0393]   height 1 row(s): 1172 cells
+[INFO DPL-0500] Runtime: 0.00s
+Placement Analysis
+---------------------------------
+total displacement          0.0 u
+average displacement        0.0 u
+max displacement            0.0 u
+original HPWL            6291.0 u
+legalized HPWL           6291.0 u
+delta HPWL                    0 %
+
+check_placement -verbose
+global_route -end_incremental -congestion_report_file /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/nangate45-add-sdcfix/reports/nangate45/arithmetic_probe/base/congestion_post_repair_timing.rpt
+estimate_parasitics -global_routing
+global_route -start_incremental
+global_route -end_incremental -congestion_report_file /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/nangate45-add-sdcfix/reports/nangate45/arithmetic_probe/base/congestion_post_recover_power.rpt
+Repair antennas...
+[WARNING GRT-0246] No diode with LEF class CORE ANTENNACELL found.
+[INFO ANT-0002] Found 0 net violations.
+[INFO ANT-0001] Found 0 pin violations.
+Estimate parasitics...
+estimate_parasitics -global_routing
+Report metrics stage 5, global route...
+
+==========================================================================
+global route report_design_area
+--------------------------------------------------------------------------
+Design area 1819 um^2 45% utilization.
+[INFO FLW-0007] clock core_clk period 3.000000
+[WARNING FLW-0010] more than one clock found. Skipping sdc update.
+[INFO FLW-0011] Path endpoint path count 377
+write_db /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/nangate45-add-sdcfix/results/nangate45/arithmetic_probe/base/5_1_grt.odb
+write_sdc -no_timestamp /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/nangate45-add-sdcfix/results/nangate45/arithmetic_probe/base/5_1_grt.sdc
+Elapsed time: 0:05.59[h:]min:sec. CPU time: user 10.34 sys 0.14 (187%). Peak memory: 299920KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+5_1_grt                   .odb            5            292 08f7b0ffe5e790965142
+5_1_grt                   .sdc                             916b400163e5ca26bf60

@@ -1,0 +1,88 @@
+Startpoint: rstn (input port clocked by io_clk)
+Endpoint: __vul_pipeline_d_s3valid$_SDFF_PN0_
+          (rising edge-triggered flip-flop clocked by core_clk)
+Path Group: core_clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.000000    0.000000    0.000000   clock io_clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.000000    0.000000 ^ input external delay
+     1    1.732852    0.007005    0.004819    0.004819 ^ rstn (in)
+                                                         rstn (net)
+                      0.007005    0.000000    0.004819 ^ hold370/A (CLKBUF_X1)
+     1    1.735017    0.007979    0.028238    0.033058 ^ hold370/Z (CLKBUF_X1)
+                                                         net370 (net)
+                      0.007979    0.000037    0.033095 ^ input1/A (CLKBUF_X3)
+    46   83.018845    0.058319    0.079872    0.112967 ^ input1/Z (CLKBUF_X3)
+                                                         net1 (net)
+                      0.060380    0.010304    0.123270 ^ _7079_/A2 (AND2_X1)
+     1    1.360363    0.008655    0.041046    0.164317 ^ _7079_/ZN (AND2_X1)
+                                                         _1337_ (net)
+                      0.008655    0.000024    0.164341 ^ __vul_pipeline_d_s3valid$_SDFF_PN0_/D (DFF_X1)
+                                              0.164341   data arrival time
+
+                                  0.000000    0.000000   clock core_clk (rise edge)
+                                  0.000000    0.000000   clock source latency
+     1   14.389904    0.000000    0.000000    0.000000 ^ clk (in)
+                                                         clk (net)
+                      0.001212    0.000991    0.000991 ^ clkbuf_0_clk/A (CLKBUF_X3)
+    16   63.523411    0.048454    0.072952    0.073943 ^ clkbuf_0_clk/Z (CLKBUF_X3)
+                                                         clknet_0_clk (net)
+                      0.048945    0.005616    0.079560 ^ clkbuf_4_10_0_clk/A (CLKBUF_X3)
+    14   26.138901    0.022887    0.062793    0.142353 ^ clkbuf_4_10_0_clk/Z (CLKBUF_X3)
+                                                         clknet_4_10_0_clk (net)
+                      0.022899    0.001559    0.143912 ^ __vul_pipeline_d_s3valid$_SDFF_PN0_/CK (DFF_X1)
+                                  0.000000    0.143912   clock reconvergence pessimism
+                                  0.012146    0.156058   library hold time
+                                              0.156058   data required time
+---------------------------------------------------------------------------------------------
+                                              0.156058   data required time
+                                             -0.164341   data arrival time
+---------------------------------------------------------------------------------------------
+                                              0.008283   slack (MET)
+
+
+Startpoint: __vul_pipeline_q_s3reg[58]$_SDFF_PN0_
+            (rising edge-triggered flip-flop clocked by core_clk)
+Endpoint: s3output_y__[58] (output port clocked by io_clk)
+Path Group: io_clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                                  0.000000    0.000000   clock core_clk (rise edge)
+                                  0.000000    0.000000   clock source latency
+     1   14.389904    0.000000    0.000000    0.000000 ^ clk (in)
+                                                         clk (net)
+                      0.001212    0.000991    0.000991 ^ clkbuf_0_clk/A (CLKBUF_X3)
+    16   63.523411    0.048454    0.072952    0.073943 ^ clkbuf_0_clk/Z (CLKBUF_X3)
+                                                         clknet_0_clk (net)
+                      0.048945    0.005616    0.079560 ^ clkbuf_4_10_0_clk/A (CLKBUF_X3)
+    14   26.138901    0.022887    0.062793    0.142353 ^ clkbuf_4_10_0_clk/Z (CLKBUF_X3)
+                                                         clknet_4_10_0_clk (net)
+                      0.022892    0.001005    0.143357 ^ __vul_pipeline_q_s3reg[58]$_SDFF_PN0_/CK (DFF_X1)
+     1    1.039584    0.005777    0.086359    0.229716 v __vul_pipeline_q_s3reg[58]$_SDFF_PN0_/Q (DFF_X1)
+                                                         __vul_pipeline_q_s3reg[58] (net)
+                      0.005777    0.000016    0.229732 v _6061_/A2 (AND2_X1)
+     1    1.387504    0.005751    0.028507    0.258239 v _6061_/ZN (AND2_X1)
+                                                         net121 (net)
+                      0.005751    0.000036    0.258275 v output121/A (BUF_X1)
+     1    4.911052    0.008546    0.030581    0.288856 v output121/Z (BUF_X1)
+                                                         s3output_y__[58] (net)
+                      0.008546    0.000183    0.289039 v s3output_y__[58] (out)
+                                              0.289039   data arrival time
+
+                      0.000000    0.000000    0.000000   clock io_clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.000000    0.000000   clock reconvergence pessimism
+                                  0.000000    0.000000   output external delay
+                                              0.000000   data required time
+---------------------------------------------------------------------------------------------
+                                              0.000000   data required time
+                                             -0.289039   data arrival time
+---------------------------------------------------------------------------------------------
+                                              0.289039   slack (MET)
+
+

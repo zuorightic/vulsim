@@ -1,0 +1,7 @@
+read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/lib/gf180mcu_fd_sc_mcu9t5v0__tt_025C_5v00.lib.gz
+read_db /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/gf180-mul-sdcfix/results/gf180/arithmetic_probe/base/6_final.odb
+read_sdc /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/gf180-mul-sdcfix/results/gf180/arithmetic_probe/base/6_final.sdc
+source /home/zyrv/vulsim/experiments/arithmetic_dse/backend/gf180_tc_rc.tcl
+[WARNING STA-0450] virtual clock io_clk can not be propagated.
+VULSIM_SNAPSHOT_COMPLETE final
+Elapsed time: 0:00.99[h:]min:sec. CPU time: user 1.05 sys 0.05 (112%). Peak memory: 183596KB.

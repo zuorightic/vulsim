@@ -1,0 +1,73 @@
+{
+  "new_usage": {
+    "synth": 6,
+    "grt": 6,
+    "final": 3,
+    "support_calls": 25,
+    "walltime_s": 520.1694345334545,
+    "CPU_time_s": 845.47,
+    "pending": 0
+  },
+  "cumulative_usage": {
+    "synth": 52,
+    "grt": 29,
+    "final": 14,
+    "support_calls": 439,
+    "walltime_s": 4219.710897511803,
+    "CPU_time_s": 6430.8099999999995,
+    "pending": 0
+  },
+  "new_by_platform": {
+    "common": {
+      "synth": 0,
+      "grt": 0,
+      "final": 0,
+      "support_calls": 4,
+      "walltime_s": 11.317164450883865,
+      "CPU_time_s": 0.59,
+      "pending": 0
+    },
+    "gf180": {
+      "synth": 2,
+      "grt": 2,
+      "final": 1,
+      "support_calls": 7,
+      "walltime_s": 146.29266376188025,
+      "CPU_time_s": 224.69,
+      "pending": 0
+    },
+    "nangate45": {
+      "synth": 2,
+      "grt": 2,
+      "final": 1,
+      "support_calls": 7,
+      "walltime_s": 128.83998967683874,
+      "CPU_time_s": 209.35999999999999,
+      "pending": 0
+    },
+    "sky130hd": {
+      "synth": 2,
+      "grt": 2,
+      "final": 1,
+      "support_calls": 7,
+      "walltime_s": 233.71961664385162,
+      "CPU_time_s": 410.83,
+      "pending": 0
+    }
+  },
+  "new_by_admission": {
+    "step3-sdc-correction-v1": {
+      "synth": 6,
+      "grt": 6,
+      "final": 3,
+      "support_calls": 25,
+      "walltime_s": 520.1694345334545,
+      "CPU_time_s": 845.47,
+      "pending": 0
+    }
+  },
+  "policy": "experiments/arithmetic_dse/configs/backend_policy_v5.json",
+  "policy_sha256": "3f4a230ca19b9b53a9da71cb19a52e718d29a8001106d354394f13e5d6ef995a",
+  "global_caps_changed": false,
+  "max_leaf_sampled_RSS_KiB": 995276
+}

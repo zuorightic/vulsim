@@ -1,0 +1,61 @@
+Startpoint: s0input__vld__ (input port clocked by io_clk)
+Endpoint: __vul_pipeline_multiply.__vul_port_s1reg[34]$_SDFFE_PN0P_
+          (rising edge-triggered flip-flop clocked by core_clk)
+Path Group: core_clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock io_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.60    0.60 ^ input external delay
+   0.01    0.61 ^ s0input__vld__ (in)
+   0.14    0.75 ^ input33/Z (BUF_X2)
+   0.15    0.90 ^ place140/Z (BUF_X1)
+   0.07    0.97 v _0941_/Z (MUX2_X1)
+   0.03    1.00 v _0942_/ZN (AND2_X1)
+   0.00    1.00 v __vul_pipeline_multiply.__vul_port_s1reg[34]$_SDFFE_PN0P_/D (DFF_X1)
+           1.00   data arrival time
+
+   3.00    3.00   clock core_clk (rise edge)
+   0.11    3.11   clock network delay (propagated)
+   0.00    3.11   clock reconvergence pessimism
+           3.11 ^ __vul_pipeline_multiply.__vul_port_s1reg[34]$_SDFFE_PN0P_/CK (DFF_X1)
+  -0.03    3.07   library setup time
+           3.07   data required time
+---------------------------------------------------------
+           3.07   data required time
+          -1.00   data arrival time
+---------------------------------------------------------
+           2.07   slack (MET)
+
+
+Startpoint: s3output__vld__$_SDFF_PN0_
+            (rising edge-triggered flip-flop clocked by core_clk)
+Endpoint: s3output_y__[5] (output port clocked by io_clk)
+Path Group: io_clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock core_clk (rise edge)
+   0.11    0.11   clock network delay (propagated)
+   0.00    0.11 ^ s3output__vld__$_SDFF_PN0_/CK (DFF_X1)
+   0.20    0.31 ^ s3output__vld__$_SDFF_PN0_/Q (DFF_X1)
+   0.05    0.36 ^ _0868_/ZN (AND2_X1)
+   0.03    0.39 ^ output127/Z (BUF_X1)
+   0.00    0.39 ^ s3output_y__[5] (out)
+           0.39   data arrival time
+
+   3.00    3.00   clock io_clk (rise edge)
+   0.00    3.00   clock network delay (ideal)
+   0.00    3.00   clock reconvergence pessimism
+  -0.60    2.40   output external delay
+           2.40   data required time
+---------------------------------------------------------
+           2.40   data required time
+          -0.39   data arrival time
+---------------------------------------------------------
+           2.01   slack (MET)
+
+

@@ -1,0 +1,448 @@
+{
+  "version": "serialized-sdc-contract-v2",
+  "accepted_stage_count": 18,
+  "stages": [
+    {
+      "task_id": "asap7-mul-finalinterface",
+      "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/asap7-mul-finalinterface/1_synth.sdc.gz",
+      "result": {
+        "version": "serialized-sdc-contract-v2",
+        "status": "passed",
+        "sdc_sha256": "480efa928cd04ef67949078ff3cb2af327f4252772f36b3f762523340118c52c",
+        "platform": "asap7",
+        "time_to_ps": 1.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 1500.0,
+          "io_clk": 1500.0
+        },
+        "clock_transition_native": 10.0,
+        "setup_uncertainty_native": 20.0,
+        "hold_uncertainty_native": 5.0,
+        "output_load_native": 3.898,
+        "input_ports_checked": 66,
+        "output_ports_checked": 65,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05
+      }
+    },
+    {
+      "task_id": "asap7-mul-finalinterface",
+      "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/asap7-mul-finalinterface/5_1_grt.sdc.gz",
+      "result": {
+        "version": "serialized-sdc-contract-v2",
+        "status": "passed",
+        "sdc_sha256": "84a81b9225ab82808fd5ecaab90df966564930d928c51450a1133f27b264d0c9",
+        "platform": "asap7",
+        "time_to_ps": 1.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 1500.0,
+          "io_clk": 1500.0
+        },
+        "clock_transition_native": 10.0,
+        "setup_uncertainty_native": 20.0,
+        "hold_uncertainty_native": 5.0,
+        "output_load_native": 3.898,
+        "input_ports_checked": 66,
+        "output_ports_checked": 65,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05
+      }
+    },
+    {
+      "task_id": "asap7-mul-finalinterface",
+      "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/asap7-mul-finalinterface/6_final.sdc.gz",
+      "result": {
+        "version": "serialized-sdc-contract-v2",
+        "status": "passed",
+        "sdc_sha256": "84a81b9225ab82808fd5ecaab90df966564930d928c51450a1133f27b264d0c9",
+        "platform": "asap7",
+        "time_to_ps": 1.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 1500.0,
+          "io_clk": 1500.0
+        },
+        "clock_transition_native": 10.0,
+        "setup_uncertainty_native": 20.0,
+        "hold_uncertainty_native": 5.0,
+        "output_load_native": 3.898,
+        "input_ports_checked": 66,
+        "output_ports_checked": 65,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05
+      }
+    },
+    {
+      "task_id": "gf180-add-sdcfix",
+      "path": "experiments/arithmetic/evidence/step3_platforms_v2/runs/gf180-add-sdcfix/1_synth.sdc.gz",
+      "result": {
+        "version": "serialized-sdc-contract-v2",
+        "status": "passed",
+        "sdc_sha256": "d4aa3ea7514f304cf85f25c2b824238b721d8adbd6e5beb2c68c5bcc9530df0e",
+        "platform": "gf180",
+        "time_to_ps": 1000.0,
+        "capacitance_to_fF": 1000.0,
+        "clock_periods_native": {
+          "core_clk": 30.0,
+          "io_clk": 30.0
+        },
+        "clock_transition_native": 0.1,
+        "setup_uncertainty_native": 0.1,
+        "hold_uncertainty_native": 0.025,
+        "output_load_native": 0.0134,
+        "input_ports_checked": 66,
+        "output_ports_checked": 65,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05
+      }
+    },
+    {
+      "task_id": "gf180-add-sdcfix",
+      "path": "experiments/arithmetic/evidence/step3_platforms_v2/runs/gf180-add-sdcfix/5_1_grt.sdc.gz",
+      "result": {
+        "version": "serialized-sdc-contract-v2",
+        "status": "passed",
+        "sdc_sha256": "8479961bee7ea33962ab09a55de9ec143415044b5624b13a37ddb6f590d414ac",
+        "platform": "gf180",
+        "time_to_ps": 1000.0,
+        "capacitance_to_fF": 1000.0,
+        "clock_periods_native": {
+          "core_clk": 30.0,
+          "io_clk": 30.0
+        },
+        "clock_transition_native": 0.1,
+        "setup_uncertainty_native": 0.1,
+        "hold_uncertainty_native": 0.025,
+        "output_load_native": 0.0134,
+        "input_ports_checked": 66,
+        "output_ports_checked": 65,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05
+      }
+    },
+    {
+      "task_id": "gf180-mul-sdcfix",
+      "path": "experiments/arithmetic/evidence/step3_platforms_v2/runs/gf180-mul-sdcfix/1_synth.sdc.gz",
+      "result": {
+        "version": "serialized-sdc-contract-v2",
+        "status": "passed",
+        "sdc_sha256": "d4aa3ea7514f304cf85f25c2b824238b721d8adbd6e5beb2c68c5bcc9530df0e",
+        "platform": "gf180",
+        "time_to_ps": 1000.0,
+        "capacitance_to_fF": 1000.0,
+        "clock_periods_native": {
+          "core_clk": 30.0,
+          "io_clk": 30.0
+        },
+        "clock_transition_native": 0.1,
+        "setup_uncertainty_native": 0.1,
+        "hold_uncertainty_native": 0.025,
+        "output_load_native": 0.0134,
+        "input_ports_checked": 66,
+        "output_ports_checked": 65,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05
+      }
+    },
+    {
+      "task_id": "gf180-mul-sdcfix",
+      "path": "experiments/arithmetic/evidence/step3_platforms_v2/runs/gf180-mul-sdcfix/5_1_grt.sdc.gz",
+      "result": {
+        "version": "serialized-sdc-contract-v2",
+        "status": "passed",
+        "sdc_sha256": "8479961bee7ea33962ab09a55de9ec143415044b5624b13a37ddb6f590d414ac",
+        "platform": "gf180",
+        "time_to_ps": 1000.0,
+        "capacitance_to_fF": 1000.0,
+        "clock_periods_native": {
+          "core_clk": 30.0,
+          "io_clk": 30.0
+        },
+        "clock_transition_native": 0.1,
+        "setup_uncertainty_native": 0.1,
+        "hold_uncertainty_native": 0.025,
+        "output_load_native": 0.0134,
+        "input_ports_checked": 66,
+        "output_ports_checked": 65,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05
+      }
+    },
+    {
+      "task_id": "gf180-mul-sdcfix",
+      "path": "experiments/arithmetic/evidence/step3_platforms_v2/runs/gf180-mul-sdcfix/6_final.sdc.gz",
+      "result": {
+        "version": "serialized-sdc-contract-v2",
+        "status": "passed",
+        "sdc_sha256": "8479961bee7ea33962ab09a55de9ec143415044b5624b13a37ddb6f590d414ac",
+        "platform": "gf180",
+        "time_to_ps": 1000.0,
+        "capacitance_to_fF": 1000.0,
+        "clock_periods_native": {
+          "core_clk": 30.0,
+          "io_clk": 30.0
+        },
+        "clock_transition_native": 0.1,
+        "setup_uncertainty_native": 0.1,
+        "hold_uncertainty_native": 0.025,
+        "output_load_native": 0.0134,
+        "input_ports_checked": 66,
+        "output_ports_checked": 65,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05
+      }
+    },
+    {
+      "task_id": "nangate45-add-sdcfix",
+      "path": "experiments/arithmetic/evidence/step3_platforms_v2/runs/nangate45-add-sdcfix/1_synth.sdc.gz",
+      "result": {
+        "version": "serialized-sdc-contract-v2",
+        "status": "passed",
+        "sdc_sha256": "e4af921a610cd76679dfe7d167b990e98b4db15c6bd8e25549fd6c1daea3d05d",
+        "platform": "nangate45",
+        "time_to_ps": 1000.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 3.0,
+          "io_clk": 3.0
+        },
+        "clock_transition_native": 0.01,
+        "setup_uncertainty_native": 0.02,
+        "hold_uncertainty_native": 0.005,
+        "output_load_native": 3.898,
+        "input_ports_checked": 66,
+        "output_ports_checked": 65,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05
+      }
+    },
+    {
+      "task_id": "nangate45-add-sdcfix",
+      "path": "experiments/arithmetic/evidence/step3_platforms_v2/runs/nangate45-add-sdcfix/5_1_grt.sdc.gz",
+      "result": {
+        "version": "serialized-sdc-contract-v2",
+        "status": "passed",
+        "sdc_sha256": "b4eeaa7ac78c9d1d2452130f809bd932e81b25b68e54073b21c6806bdca7ec21",
+        "platform": "nangate45",
+        "time_to_ps": 1000.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 3.0,
+          "io_clk": 3.0
+        },
+        "clock_transition_native": 0.01,
+        "setup_uncertainty_native": 0.02,
+        "hold_uncertainty_native": 0.005,
+        "output_load_native": 3.898,
+        "input_ports_checked": 66,
+        "output_ports_checked": 65,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05
+      }
+    },
+    {
+      "task_id": "nangate45-mul-sdcfix",
+      "path": "experiments/arithmetic/evidence/step3_platforms_v2/runs/nangate45-mul-sdcfix/1_synth.sdc.gz",
+      "result": {
+        "version": "serialized-sdc-contract-v2",
+        "status": "passed",
+        "sdc_sha256": "e4af921a610cd76679dfe7d167b990e98b4db15c6bd8e25549fd6c1daea3d05d",
+        "platform": "nangate45",
+        "time_to_ps": 1000.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 3.0,
+          "io_clk": 3.0
+        },
+        "clock_transition_native": 0.01,
+        "setup_uncertainty_native": 0.02,
+        "hold_uncertainty_native": 0.005,
+        "output_load_native": 3.898,
+        "input_ports_checked": 66,
+        "output_ports_checked": 65,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05
+      }
+    },
+    {
+      "task_id": "nangate45-mul-sdcfix",
+      "path": "experiments/arithmetic/evidence/step3_platforms_v2/runs/nangate45-mul-sdcfix/5_1_grt.sdc.gz",
+      "result": {
+        "version": "serialized-sdc-contract-v2",
+        "status": "passed",
+        "sdc_sha256": "b4eeaa7ac78c9d1d2452130f809bd932e81b25b68e54073b21c6806bdca7ec21",
+        "platform": "nangate45",
+        "time_to_ps": 1000.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 3.0,
+          "io_clk": 3.0
+        },
+        "clock_transition_native": 0.01,
+        "setup_uncertainty_native": 0.02,
+        "hold_uncertainty_native": 0.005,
+        "output_load_native": 3.898,
+        "input_ports_checked": 66,
+        "output_ports_checked": 65,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05
+      }
+    },
+    {
+      "task_id": "nangate45-mul-sdcfix",
+      "path": "experiments/arithmetic/evidence/step3_platforms_v2/runs/nangate45-mul-sdcfix/6_final.sdc.gz",
+      "result": {
+        "version": "serialized-sdc-contract-v2",
+        "status": "passed",
+        "sdc_sha256": "b4eeaa7ac78c9d1d2452130f809bd932e81b25b68e54073b21c6806bdca7ec21",
+        "platform": "nangate45",
+        "time_to_ps": 1000.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 3.0,
+          "io_clk": 3.0
+        },
+        "clock_transition_native": 0.01,
+        "setup_uncertainty_native": 0.02,
+        "hold_uncertainty_native": 0.005,
+        "output_load_native": 3.898,
+        "input_ports_checked": 66,
+        "output_ports_checked": 65,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05
+      }
+    },
+    {
+      "task_id": "sky130hd-add-sdcfix",
+      "path": "experiments/arithmetic/evidence/step3_platforms_v2/runs/sky130hd-add-sdcfix/1_synth.sdc.gz",
+      "result": {
+        "version": "serialized-sdc-contract-v2",
+        "status": "passed",
+        "sdc_sha256": "9f6a5c7f3832fabb3d29c17b8ac2055bbcf9c018e0947ab4510d029be3457bee",
+        "platform": "sky130hd",
+        "time_to_ps": 1000.0,
+        "capacitance_to_fF": 1000.0,
+        "clock_periods_native": {
+          "core_clk": 30.0,
+          "io_clk": 30.0
+        },
+        "clock_transition_native": 0.1,
+        "setup_uncertainty_native": 0.1,
+        "hold_uncertainty_native": 0.025,
+        "output_load_native": 0.005,
+        "input_ports_checked": 66,
+        "output_ports_checked": 65,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05
+      }
+    },
+    {
+      "task_id": "sky130hd-add-sdcfix",
+      "path": "experiments/arithmetic/evidence/step3_platforms_v2/runs/sky130hd-add-sdcfix/5_1_grt.sdc.gz",
+      "result": {
+        "version": "serialized-sdc-contract-v2",
+        "status": "passed",
+        "sdc_sha256": "a52d008ecf3021b1f90b2792760f8f9190106851bbf7b149645fa858361fb7c2",
+        "platform": "sky130hd",
+        "time_to_ps": 1000.0,
+        "capacitance_to_fF": 1000.0,
+        "clock_periods_native": {
+          "core_clk": 30.0,
+          "io_clk": 30.0
+        },
+        "clock_transition_native": 0.1,
+        "setup_uncertainty_native": 0.1,
+        "hold_uncertainty_native": 0.025,
+        "output_load_native": 0.005,
+        "input_ports_checked": 66,
+        "output_ports_checked": 65,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05
+      }
+    },
+    {
+      "task_id": "sky130hd-mul-sdcfix",
+      "path": "experiments/arithmetic/evidence/step3_platforms_v2/runs/sky130hd-mul-sdcfix/1_synth.sdc.gz",
+      "result": {
+        "version": "serialized-sdc-contract-v2",
+        "status": "passed",
+        "sdc_sha256": "9f6a5c7f3832fabb3d29c17b8ac2055bbcf9c018e0947ab4510d029be3457bee",
+        "platform": "sky130hd",
+        "time_to_ps": 1000.0,
+        "capacitance_to_fF": 1000.0,
+        "clock_periods_native": {
+          "core_clk": 30.0,
+          "io_clk": 30.0
+        },
+        "clock_transition_native": 0.1,
+        "setup_uncertainty_native": 0.1,
+        "hold_uncertainty_native": 0.025,
+        "output_load_native": 0.005,
+        "input_ports_checked": 66,
+        "output_ports_checked": 65,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05
+      }
+    },
+    {
+      "task_id": "sky130hd-mul-sdcfix",
+      "path": "experiments/arithmetic/evidence/step3_platforms_v2/runs/sky130hd-mul-sdcfix/5_1_grt.sdc.gz",
+      "result": {
+        "version": "serialized-sdc-contract-v2",
+        "status": "passed",
+        "sdc_sha256": "a52d008ecf3021b1f90b2792760f8f9190106851bbf7b149645fa858361fb7c2",
+        "platform": "sky130hd",
+        "time_to_ps": 1000.0,
+        "capacitance_to_fF": 1000.0,
+        "clock_periods_native": {
+          "core_clk": 30.0,
+          "io_clk": 30.0
+        },
+        "clock_transition_native": 0.1,
+        "setup_uncertainty_native": 0.1,
+        "hold_uncertainty_native": 0.025,
+        "output_load_native": 0.005,
+        "input_ports_checked": 66,
+        "output_ports_checked": 65,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05
+      }
+    },
+    {
+      "task_id": "sky130hd-mul-sdcfix",
+      "path": "experiments/arithmetic/evidence/step3_platforms_v2/runs/sky130hd-mul-sdcfix/6_final.sdc.gz",
+      "result": {
+        "version": "serialized-sdc-contract-v2",
+        "status": "passed",
+        "sdc_sha256": "a52d008ecf3021b1f90b2792760f8f9190106851bbf7b149645fa858361fb7c2",
+        "platform": "sky130hd",
+        "time_to_ps": 1000.0,
+        "capacitance_to_fF": 1000.0,
+        "clock_periods_native": {
+          "core_clk": 30.0,
+          "io_clk": 30.0
+        },
+        "clock_transition_native": 0.1,
+        "setup_uncertainty_native": 0.1,
+        "hold_uncertainty_native": 0.025,
+        "output_load_native": 0.005,
+        "input_ports_checked": 66,
+        "output_ports_checked": 65,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05
+      }
+    }
+  ],
+  "p2_minimal_counterexample": {
+    "attack": "current_design MulProbe_sim_top; set_false_path -from [get_ports {rstn}]",
+    "before_status": "passed",
+    "after": {
+      "status": "rejected",
+      "reason": "unsupported SDC command boundary or substitution at line 415"
+    }
+  },
+  "runtime_manifest_rewritten": false,
+  "new_physical_runs": 0
+}

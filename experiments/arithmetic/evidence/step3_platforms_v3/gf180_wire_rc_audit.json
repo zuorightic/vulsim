@@ -1,0 +1,51 @@
+{
+  "status": "unresolved_calibration_provenance",
+  "confirmed_defect": false,
+  "action": "retain native wire RC; do not multiply by 1000; no EDA launched",
+  "source_commits": [
+    "dc4c579129d00ef56db02124b2b542346b1ca54e",
+    "de7739cc5ea745132afd7e60c19abb6e7c71d413"
+  ],
+  "native_coefficients": {
+    "Metal2": {
+      "resistance_ui_per_um": 0.000225636,
+      "capacitance_pF_per_um": 0.000135357
+    },
+    "Metal3": {
+      "resistance_ui_per_um": 0.000225636,
+      "capacitance_pF_per_um": 0.000146141
+    },
+    "Metal4": {
+      "resistance_ui_per_um": 0.000225637,
+      "capacitance_pF_per_um": 0.000150688
+    },
+    "Metal5": {
+      "resistance_ui_per_um": 5.85545e-05,
+      "capacitance_pF_per_um": 0.000155595
+    }
+  },
+  "selected_STA_report_units": {
+    "path": "experiments/arithmetic/evidence/step3_platforms_v2/runs/gf180-mul-sdcfix/reports/vulsim_grt_units.rpt",
+    "sha256": "071267aab1f302a3f078c60058dea2b6e24937396345ee6fd2bb8a6d0356530d",
+    "resistance": "1ohm",
+    "capacitance": "1pF",
+    "distance": "1um"
+  },
+  "known_source_semantics": "set_layer_rc uses STA resistance/distance UI units; local correlateRCHelper defaults to kohm output. This does not prove the historical invocation used that default.",
+  "nominal_LEF_comparison": {
+    "Metal2_sheet_ohms_per_square": 0.09,
+    "Metal2_width_um": 0.28,
+    "Metal2_nominal_ohms_per_um": 0.3214285714285714,
+    "Metal5_sheet_ohms_per_square": 0.04,
+    "Metal5_width_um": 0.44,
+    "Metal5_nominal_ohms_per_um": 0.09090909090909091
+  },
+  "why_comparison_is_not_a_proof": "Effective width, selected segments, extraction geometries and fitting definitions may differ from nominal LEF. These possibilities have not resolved the magnitude difference.",
+  "missing": [
+    "exact matching calibration invocation and res_unit",
+    "raw segments and fit results",
+    "independent dimensional/estimation-extraction validation"
+  ],
+  "next_gate": "before GF180 training/formal evaluation, recover matching calibration provenance or separately admit a bounded segment/GRT-extracted comparison. Parameter changes require a new physical profile/model-domain and revalidation.",
+  "via_validation_scope": "Via1-Via4 4.5ohm adapter only; does not validate native wire coefficients"
+}

@@ -1,0 +1,1141 @@
+{
+  "version": "platform-connection-summary-v2",
+  "runs": [
+    {
+      "task_id": "asap7-mul-finalinterface",
+      "platform": "asap7",
+      "kernel": "mul_u32",
+      "status": "completed",
+      "metrics": [
+        {
+          "stage": "synth",
+          "target_period_ps": 1500.0,
+          "cell_area_um2": 572.4691199999999,
+          "functional_cell_area_um2": 572.4691199999999,
+          "excluded_filler_area_um2": 0,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 56.862,
+          "sequential_cells": 195,
+          "physical_only_area_um2": 0,
+          "setup_worst_slack_ps": 475.653625,
+          "hold_worst_slack_ps": 3.311698,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": 0.0,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 1024.35,
+          "sta_feasibility": true,
+          "measured_feasibility": null,
+          "feasibility_scope": "synthesis_STA_only",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": true,
+          "hold_review_margin_ps": 5,
+          "hold_review_required": true,
+          "hold_margin_status": "below_review_band",
+          "parasitics": "none",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/asap7-mul-finalinterface/reports/asap7/arithmetic_probe/base/vulsim_synth",
+          "target_platform": "asap7",
+          "platform_profile_sha256": "a29e056328a495af3f5815e3c56f4e6838eafd4b3f4f7844cc81d82ef99dd3df",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ps",
+              "to_ps": 1.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1fF",
+              "to_fF": 1.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": 475.653625,
+            "hold_worst_slack_ps": 3.311698,
+            "setup_tns_ps": 0.0,
+            "hold_tns_ps": 0.0,
+            "minimum_clock_period_ps": 1024.35
+          },
+          "abc_target_ps": 1500.0,
+          "mapping_context_sha256": "c83aabb93fafe3aa9d4c385a0335542dc01da9c1341d002ddfb1a291e696e63f",
+          "target_dependent_measurement": true,
+          "mapped_netlist_sha256": "05ccdd514e2885a0a4b756d2bc20dc59941b4924616300d31155091826c74bdb",
+          "mapped_netlist_hash_rule": "Yosys_Verilog_remove_banner_src_blank_lines_v1",
+          "comparison_identity_sha256": "debdf4a34bdf4caea56ba31135fc8f067ec302454a1190977494e421a1b3dad7",
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.000500001,
+            "absolute_difference_um2": 0.00011999999981071596
+          },
+          "orfs_stdcell_area_um2": 572.469
+        },
+        {
+          "stage": "grt",
+          "target_period_ps": 1500.0,
+          "cell_area_um2": 602.62056,
+          "functional_cell_area_um2": 592.4728799999999,
+          "excluded_filler_area_um2": 0,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 57.40146000000001,
+          "sequential_cells": 195,
+          "physical_only_area_um2": 10.14768,
+          "setup_worst_slack_ps": 217.969864,
+          "hold_worst_slack_ps": 0.406383,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": 0.0,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 1282.03,
+          "sta_feasibility": true,
+          "measured_feasibility": true,
+          "feasibility_scope": "TT_setup_only",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": true,
+          "hold_review_margin_ps": 5,
+          "hold_review_required": true,
+          "hold_margin_status": "below_review_band",
+          "parasitics": "global_route_estimate",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/asap7-mul-finalinterface/reports/asap7/arithmetic_probe/base/vulsim_grt",
+          "target_platform": "asap7",
+          "platform_profile_sha256": "a29e056328a495af3f5815e3c56f4e6838eafd4b3f4f7844cc81d82ef99dd3df",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ps",
+              "to_ps": 1.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1fF",
+              "to_fF": 1.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": 217.969864,
+            "hold_worst_slack_ps": 0.406383,
+            "setup_tns_ps": 0.0,
+            "hold_tns_ps": 0.0,
+            "minimum_clock_period_ps": 1282.03
+          },
+          "abc_target_ps": 1500.0,
+          "mapping_context_sha256": "c83aabb93fafe3aa9d4c385a0335542dc01da9c1341d002ddfb1a291e696e63f",
+          "target_dependent_measurement": true,
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.000500001,
+            "absolute_difference_um2": 0.00044000000002597517
+          },
+          "orfs_stdcell_area_um2": 602.621
+        },
+        {
+          "stage": "final",
+          "target_period_ps": 1500.0,
+          "cell_area_um2": 602.62056,
+          "functional_cell_area_um2": 592.4728799999999,
+          "excluded_filler_area_um2": 813.98682,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 57.40146000000001,
+          "sequential_cells": 195,
+          "physical_only_area_um2": 10.14768,
+          "setup_worst_slack_ps": 287.885284,
+          "hold_worst_slack_ps": 4.040046,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": 0.0,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 1212.11,
+          "sta_feasibility": true,
+          "measured_feasibility": true,
+          "feasibility_scope": "TT_setup_and_hold",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": true,
+          "hold_review_margin_ps": 5,
+          "hold_review_required": true,
+          "hold_margin_status": "below_review_band",
+          "parasitics": "OpenRCX_extracted_SPEF",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/asap7-mul-finalinterface/reports/asap7/arithmetic_probe/base/vulsim_final",
+          "target_platform": "asap7",
+          "platform_profile_sha256": "a29e056328a495af3f5815e3c56f4e6838eafd4b3f4f7844cc81d82ef99dd3df",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ps",
+              "to_ps": 1.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1fF",
+              "to_fF": 1.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": 287.885284,
+            "hold_worst_slack_ps": 4.040046,
+            "setup_tns_ps": 0.0,
+            "hold_tns_ps": 0.0,
+            "minimum_clock_period_ps": 1212.11
+          },
+          "abc_target_ps": 1500.0,
+          "mapping_context_sha256": "c83aabb93fafe3aa9d4c385a0335542dc01da9c1341d002ddfb1a291e696e63f",
+          "target_dependent_measurement": true,
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.000500001,
+            "absolute_difference_um2": 0.00044000000002597517
+          },
+          "orfs_stdcell_area_um2": 602.621,
+          "detailed_route_drc_errors": 0
+        }
+      ],
+      "artifact_directory": "experiments/arithmetic/evidence/step3_platforms_v1/runs/asap7-mul-finalinterface",
+      "carried_forward_unaffected": true,
+      "extracted_spef_sha256": "ce7ca192b339c2a9d7714ca903efeba0f5faea52194d44c8364cca7815a97016"
+    },
+    {
+      "task_id": "gf180-add-sdcfix",
+      "platform": "gf180",
+      "kernel": "add_u32",
+      "status": "completed",
+      "metrics": [
+        {
+          "stage": "synth",
+          "target_period_ps": 30000.0,
+          "cell_area_um2": 36753.292799999996,
+          "functional_cell_area_um2": 36753.292799999996,
+          "excluded_filler_area_um2": 0,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 13886.207999999999,
+          "sequential_cells": 164,
+          "physical_only_area_um2": 0,
+          "setup_worst_slack_ps": 22054.535,
+          "hold_worst_slack_ps": 310.462,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": 0.0,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 4530.0,
+          "sta_feasibility": true,
+          "measured_feasibility": null,
+          "feasibility_scope": "synthesis_STA_only",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": true,
+          "hold_review_margin_ps": 25,
+          "hold_review_required": false,
+          "hold_margin_status": "review_band_met",
+          "parasitics": "none",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/gf180-add-sdcfix/reports/gf180/arithmetic_probe/base/vulsim_synth",
+          "target_platform": "gf180",
+          "platform_profile_sha256": "96e1c0c7fe0c9df178fde863272f1bc8e3ed44e6e8457d50bbadcf9a53036bc7",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ns",
+              "to_ps": 1000.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1pF",
+              "to_fF": 1000.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": 22.054535,
+            "hold_worst_slack_ps": 0.310462,
+            "setup_tns_ps": 0.0,
+            "hold_tns_ps": 0.0,
+            "minimum_clock_period_ps": 4.53
+          },
+          "abc_target_ps": 30000.0,
+          "mapping_context_sha256": "652325554c02b1d8e5e1c92893128dbe4b2df9f2ad3fdc1ffed290bd444a453d",
+          "target_dependent_measurement": true,
+          "mapped_netlist_sha256": "3abaa929bec1241c5bcc00b1af4941551275d4575827443f7cd62526b0035248",
+          "mapped_netlist_hash_rule": "Yosys_Verilog_remove_banner_src_blank_lines_v1",
+          "comparison_identity_sha256": "9b73e685aff5b43ed920024868ad5f1379b3b376e775268fb4fa9be13058a1bc",
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.050000100000000006,
+            "absolute_difference_um2": 0.007200000007287599
+          },
+          "orfs_stdcell_area_um2": 36753.3
+        },
+        {
+          "stage": "grt",
+          "target_period_ps": 30000.0,
+          "cell_area_um2": 42804.51840000001,
+          "functional_cell_area_um2": 41602.17600000001,
+          "excluded_filler_area_um2": 0,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 13900.32,
+          "sequential_cells": 164,
+          "physical_only_area_um2": 1202.3424,
+          "setup_worst_slack_ps": 19931.688000000002,
+          "hold_worst_slack_ps": 200.95499999999998,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": 0.0,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 5090.0,
+          "sta_feasibility": true,
+          "measured_feasibility": true,
+          "feasibility_scope": "TT_setup_only",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": true,
+          "hold_review_margin_ps": 25,
+          "hold_review_required": false,
+          "hold_margin_status": "review_band_met",
+          "parasitics": "global_route_estimate",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/gf180-add-sdcfix/reports/gf180/arithmetic_probe/base/vulsim_grt",
+          "target_platform": "gf180",
+          "platform_profile_sha256": "96e1c0c7fe0c9df178fde863272f1bc8e3ed44e6e8457d50bbadcf9a53036bc7",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ns",
+              "to_ps": 1000.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1pF",
+              "to_fF": 1000.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": 19.931688,
+            "hold_worst_slack_ps": 0.200955,
+            "setup_tns_ps": 0.0,
+            "hold_tns_ps": 0.0,
+            "minimum_clock_period_ps": 5.09
+          },
+          "abc_target_ps": 30000.0,
+          "mapping_context_sha256": "652325554c02b1d8e5e1c92893128dbe4b2df9f2ad3fdc1ffed290bd444a453d",
+          "target_dependent_measurement": true,
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.050000100000000006,
+            "absolute_difference_um2": 0.018400000008114148
+          },
+          "orfs_stdcell_area_um2": 42804.5
+        }
+      ],
+      "failure_stage": null,
+      "failure_reason": null,
+      "carried_forward_unaffected": false
+    },
+    {
+      "task_id": "gf180-mul-sdcfix",
+      "platform": "gf180",
+      "kernel": "mul_u32",
+      "status": "completed",
+      "metrics": [
+        {
+          "stage": "synth",
+          "target_period_ps": 30000.0,
+          "cell_area_um2": 167743.69919999994,
+          "functional_cell_area_um2": 167743.69919999994,
+          "excluded_filler_area_um2": 0,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 16511.04,
+          "sequential_cells": 195,
+          "physical_only_area_um2": 0,
+          "setup_worst_slack_ps": 18033.154,
+          "hold_worst_slack_ps": 395.555,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": 0.0,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 11970.0,
+          "sta_feasibility": true,
+          "measured_feasibility": null,
+          "feasibility_scope": "synthesis_STA_only",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": true,
+          "hold_review_margin_ps": 25,
+          "hold_review_required": false,
+          "hold_margin_status": "review_band_met",
+          "parasitics": "none",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/gf180-mul-sdcfix/reports/gf180/arithmetic_probe/base/vulsim_synth",
+          "target_platform": "gf180",
+          "platform_profile_sha256": "96e1c0c7fe0c9df178fde863272f1bc8e3ed44e6e8457d50bbadcf9a53036bc7",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ns",
+              "to_ps": 1000.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1pF",
+              "to_fF": 1000.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": 18.033154,
+            "hold_worst_slack_ps": 0.395555,
+            "setup_tns_ps": 0.0,
+            "hold_tns_ps": 0.0,
+            "minimum_clock_period_ps": 11.97
+          },
+          "abc_target_ps": 30000.0,
+          "mapping_context_sha256": "36336fb94056b3eb6ffc0acef09e0e478e588cdec32dfaa25fd1993ae1586f71",
+          "target_dependent_measurement": true,
+          "mapped_netlist_sha256": "36016c1354c7c409b38bc2d5fa572da69a2aa63b479c8da5fc12d322584d3ef3",
+          "mapped_netlist_hash_rule": "Yosys_Verilog_remove_banner_src_blank_lines_v1",
+          "comparison_identity_sha256": "afe80a7fcdc0cb05742c3b3b3d850d1d6a1f4e66d90e772015ddf9a9ee6a0de8",
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.500001,
+            "absolute_difference_um2": 0.30080000005546026
+          },
+          "orfs_stdcell_area_um2": 167744
+        },
+        {
+          "stage": "grt",
+          "target_period_ps": 30000.0,
+          "cell_area_um2": 175821.40800000002,
+          "functional_cell_area_um2": 172174.8672,
+          "excluded_filler_area_um2": 0,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 16525.152,
+          "sequential_cells": 195,
+          "physical_only_area_um2": 3646.5408,
+          "setup_worst_slack_ps": 16136.417000000001,
+          "hold_worst_slack_ps": 357.541,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": 0.0,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 13860.0,
+          "sta_feasibility": true,
+          "measured_feasibility": true,
+          "feasibility_scope": "TT_setup_only",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": true,
+          "hold_review_margin_ps": 25,
+          "hold_review_required": false,
+          "hold_margin_status": "review_band_met",
+          "parasitics": "global_route_estimate",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/gf180-mul-sdcfix/reports/gf180/arithmetic_probe/base/vulsim_grt",
+          "target_platform": "gf180",
+          "platform_profile_sha256": "96e1c0c7fe0c9df178fde863272f1bc8e3ed44e6e8457d50bbadcf9a53036bc7",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ns",
+              "to_ps": 1000.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1pF",
+              "to_fF": 1000.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": 16.136417,
+            "hold_worst_slack_ps": 0.357541,
+            "setup_tns_ps": 0.0,
+            "hold_tns_ps": 0.0,
+            "minimum_clock_period_ps": 13.86
+          },
+          "abc_target_ps": 30000.0,
+          "mapping_context_sha256": "36336fb94056b3eb6ffc0acef09e0e478e588cdec32dfaa25fd1993ae1586f71",
+          "target_dependent_measurement": true,
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.500001,
+            "absolute_difference_um2": 0.4080000000249129
+          },
+          "orfs_stdcell_area_um2": 175821
+        },
+        {
+          "stage": "final",
+          "target_period_ps": 30000.0,
+          "cell_area_um2": 175821.40800000002,
+          "functional_cell_area_um2": 172174.8672,
+          "excluded_filler_area_um2": 241803.4752,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 16525.152,
+          "sequential_cells": 195,
+          "physical_only_area_um2": 3646.5408,
+          "setup_worst_slack_ps": 16002.087,
+          "hold_worst_slack_ps": 281.177,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": 0.0,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 14000.0,
+          "sta_feasibility": true,
+          "measured_feasibility": true,
+          "feasibility_scope": "TT_setup_and_hold",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": true,
+          "hold_review_margin_ps": 25,
+          "hold_review_required": false,
+          "hold_margin_status": "review_band_met",
+          "parasitics": "OpenRCX_extracted_SPEF",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/gf180-mul-sdcfix/reports/gf180/arithmetic_probe/base/vulsim_final",
+          "target_platform": "gf180",
+          "platform_profile_sha256": "96e1c0c7fe0c9df178fde863272f1bc8e3ed44e6e8457d50bbadcf9a53036bc7",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ns",
+              "to_ps": 1000.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1pF",
+              "to_fF": 1000.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": 16.002087,
+            "hold_worst_slack_ps": 0.281177,
+            "setup_tns_ps": 0.0,
+            "hold_tns_ps": 0.0,
+            "minimum_clock_period_ps": 14.0
+          },
+          "abc_target_ps": 30000.0,
+          "mapping_context_sha256": "36336fb94056b3eb6ffc0acef09e0e478e588cdec32dfaa25fd1993ae1586f71",
+          "target_dependent_measurement": true,
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.500001,
+            "absolute_difference_um2": 0.4080000000249129
+          },
+          "orfs_stdcell_area_um2": 175821,
+          "detailed_route_drc_errors": 0
+        }
+      ],
+      "failure_stage": null,
+      "failure_reason": null,
+      "carried_forward_unaffected": false,
+      "extracted_spef_sha256": "8f90553c0ee36623634a283ab01f69d2b6d090073ecdc01123d0dee3b38a1e1a"
+    },
+    {
+      "task_id": "nangate45-add-sdcfix",
+      "platform": "nangate45",
+      "kernel": "add_u32",
+      "status": "completed",
+      "metrics": [
+        {
+          "stage": "synth",
+          "target_period_ps": 3000.0,
+          "cell_area_um2": 1622.8660000000007,
+          "functional_cell_area_um2": 1622.8660000000007,
+          "excluded_filler_area_um2": 0,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 741.6080000000001,
+          "sequential_cells": 164,
+          "physical_only_area_um2": 0,
+          "setup_worst_slack_ps": 2106.642,
+          "hold_worst_slack_ps": 50.208999999999996,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": 0.0,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 600.0,
+          "sta_feasibility": true,
+          "measured_feasibility": null,
+          "feasibility_scope": "synthesis_STA_only",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": true,
+          "hold_review_margin_ps": 5,
+          "hold_review_required": false,
+          "hold_margin_status": "review_band_met",
+          "parasitics": "none",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/nangate45-add-sdcfix/reports/nangate45/arithmetic_probe/base/vulsim_synth",
+          "target_platform": "nangate45",
+          "platform_profile_sha256": "f4ff4c89159379ad030fca2780ae71e17409492b2d003240912fbf63cf634911",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ns",
+              "to_ps": 1000.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1fF",
+              "to_fF": 1.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": 2.106642,
+            "hold_worst_slack_ps": 0.050209,
+            "setup_tns_ps": 0.0,
+            "hold_tns_ps": 0.0,
+            "minimum_clock_period_ps": 0.6
+          },
+          "abc_target_ps": 3000.0,
+          "mapping_context_sha256": "56ee64fc483b40a8f7e3662a106cf9e2fc062f12ede284e5799f69359e90ed41",
+          "target_dependent_measurement": true,
+          "mapped_netlist_sha256": "d1c3cad7afd0a996f79b7e9f844f0e9cbbda85e0ebd0f58b68c18de8d68e8a7f",
+          "mapped_netlist_hash_rule": "Yosys_Verilog_remove_banner_src_blank_lines_v1",
+          "comparison_identity_sha256": "2c9c8d541926bc52d8f5ccac852985e3308e656307c81ae86e2d916667b36ce0",
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.00500001,
+            "absolute_difference_um2": 0.0039999999992232915
+          },
+          "orfs_stdcell_area_um2": 1622.87
+        },
+        {
+          "stage": "grt",
+          "target_period_ps": 3000.0,
+          "cell_area_um2": 1818.9080000000008,
+          "functional_cell_area_um2": 1794.9680000000008,
+          "excluded_filler_area_um2": 0,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 742.14,
+          "sequential_cells": 164,
+          "physical_only_area_um2": 23.94,
+          "setup_worst_slack_ps": 1978.4470000000001,
+          "hold_worst_slack_ps": 11.782,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": 0.0,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 650.0,
+          "sta_feasibility": true,
+          "measured_feasibility": true,
+          "feasibility_scope": "TT_setup_only",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": true,
+          "hold_review_margin_ps": 5,
+          "hold_review_required": false,
+          "hold_margin_status": "review_band_met",
+          "parasitics": "global_route_estimate",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/nangate45-add-sdcfix/reports/nangate45/arithmetic_probe/base/vulsim_grt",
+          "target_platform": "nangate45",
+          "platform_profile_sha256": "f4ff4c89159379ad030fca2780ae71e17409492b2d003240912fbf63cf634911",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ns",
+              "to_ps": 1000.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1fF",
+              "to_fF": 1.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": 1.978447,
+            "hold_worst_slack_ps": 0.011782,
+            "setup_tns_ps": 0.0,
+            "hold_tns_ps": 0.0,
+            "minimum_clock_period_ps": 0.65
+          },
+          "abc_target_ps": 3000.0,
+          "mapping_context_sha256": "56ee64fc483b40a8f7e3662a106cf9e2fc062f12ede284e5799f69359e90ed41",
+          "target_dependent_measurement": true,
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.00500001,
+            "absolute_difference_um2": 0.0019999999992705852
+          },
+          "orfs_stdcell_area_um2": 1818.91
+        }
+      ],
+      "failure_stage": null,
+      "failure_reason": null,
+      "carried_forward_unaffected": false
+    },
+    {
+      "task_id": "nangate45-mul-sdcfix",
+      "platform": "nangate45",
+      "kernel": "mul_u32",
+      "status": "completed",
+      "metrics": [
+        {
+          "stage": "synth",
+          "target_period_ps": 3000.0,
+          "cell_area_um2": 7872.270000000001,
+          "functional_cell_area_um2": 7872.270000000001,
+          "excluded_filler_area_um2": 0,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 881.7900000000001,
+          "sequential_cells": 195,
+          "physical_only_area_um2": 0,
+          "setup_worst_slack_ps": 1326.463,
+          "hold_worst_slack_ps": 50.208999999999996,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": 0.0,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 1670.0,
+          "sta_feasibility": true,
+          "measured_feasibility": null,
+          "feasibility_scope": "synthesis_STA_only",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": true,
+          "hold_review_margin_ps": 5,
+          "hold_review_required": false,
+          "hold_margin_status": "review_band_met",
+          "parasitics": "none",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/nangate45-mul-sdcfix/reports/nangate45/arithmetic_probe/base/vulsim_synth",
+          "target_platform": "nangate45",
+          "platform_profile_sha256": "f4ff4c89159379ad030fca2780ae71e17409492b2d003240912fbf63cf634911",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ns",
+              "to_ps": 1000.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1fF",
+              "to_fF": 1.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": 1.326463,
+            "hold_worst_slack_ps": 0.050209,
+            "setup_tns_ps": 0.0,
+            "hold_tns_ps": 0.0,
+            "minimum_clock_period_ps": 1.67
+          },
+          "abc_target_ps": 3000.0,
+          "mapping_context_sha256": "699592d4965257e84c95e39c8095bda3555cca522ea041000130531f422feec7",
+          "target_dependent_measurement": true,
+          "mapped_netlist_sha256": "46f2ac6ea3f5154ef5d019a36ac6f90b4b17b4d725ffb4b574bb68acb5ca8ef0",
+          "mapped_netlist_hash_rule": "Yosys_Verilog_remove_banner_src_blank_lines_v1",
+          "comparison_identity_sha256": "01964cfbb7e9d3d190a3c6b3acaf31148ef76288456bdca54df7c928292b24a5",
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.00500001,
+            "absolute_difference_um2": 9.094947017729282e-13
+          },
+          "orfs_stdcell_area_um2": 7872.27
+        },
+        {
+          "stage": "grt",
+          "target_period_ps": 3000.0,
+          "cell_area_um2": 8001.014,
+          "functional_cell_area_um2": 7935.046,
+          "excluded_filler_area_um2": 0,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 882.322,
+          "sequential_cells": 195,
+          "physical_only_area_um2": 65.968,
+          "setup_worst_slack_ps": 1136.217,
+          "hold_worst_slack_ps": 7.218,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": 0.0,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 1860.0,
+          "sta_feasibility": true,
+          "measured_feasibility": true,
+          "feasibility_scope": "TT_setup_only",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": true,
+          "hold_review_margin_ps": 5,
+          "hold_review_required": false,
+          "hold_margin_status": "review_band_met",
+          "parasitics": "global_route_estimate",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/nangate45-mul-sdcfix/reports/nangate45/arithmetic_probe/base/vulsim_grt",
+          "target_platform": "nangate45",
+          "platform_profile_sha256": "f4ff4c89159379ad030fca2780ae71e17409492b2d003240912fbf63cf634911",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ns",
+              "to_ps": 1000.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1fF",
+              "to_fF": 1.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": 1.136217,
+            "hold_worst_slack_ps": 0.007218,
+            "setup_tns_ps": 0.0,
+            "hold_tns_ps": 0.0,
+            "minimum_clock_period_ps": 1.86
+          },
+          "abc_target_ps": 3000.0,
+          "mapping_context_sha256": "699592d4965257e84c95e39c8095bda3555cca522ea041000130531f422feec7",
+          "target_dependent_measurement": true,
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.00500001,
+            "absolute_difference_um2": 0.0039999999999054126
+          },
+          "orfs_stdcell_area_um2": 8001.01
+        },
+        {
+          "stage": "final",
+          "target_period_ps": 3000.0,
+          "cell_area_um2": 8001.014,
+          "functional_cell_area_um2": 7935.046,
+          "excluded_filler_area_um2": 11407.144,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 882.322,
+          "sequential_cells": 195,
+          "physical_only_area_um2": 65.968,
+          "setup_worst_slack_ps": 1172.499,
+          "hold_worst_slack_ps": 8.989,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": 0.0,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 1830.0,
+          "sta_feasibility": true,
+          "measured_feasibility": true,
+          "feasibility_scope": "TT_setup_and_hold",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": true,
+          "hold_review_margin_ps": 5,
+          "hold_review_required": false,
+          "hold_margin_status": "review_band_met",
+          "parasitics": "OpenRCX_extracted_SPEF",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/nangate45-mul-sdcfix/reports/nangate45/arithmetic_probe/base/vulsim_final",
+          "target_platform": "nangate45",
+          "platform_profile_sha256": "f4ff4c89159379ad030fca2780ae71e17409492b2d003240912fbf63cf634911",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ns",
+              "to_ps": 1000.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1fF",
+              "to_fF": 1.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": 1.172499,
+            "hold_worst_slack_ps": 0.008989,
+            "setup_tns_ps": 0.0,
+            "hold_tns_ps": 0.0,
+            "minimum_clock_period_ps": 1.83
+          },
+          "abc_target_ps": 3000.0,
+          "mapping_context_sha256": "699592d4965257e84c95e39c8095bda3555cca522ea041000130531f422feec7",
+          "target_dependent_measurement": true,
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.00500001,
+            "absolute_difference_um2": 0.0039999999999054126
+          },
+          "orfs_stdcell_area_um2": 8001.01,
+          "detailed_route_drc_errors": 0
+        }
+      ],
+      "failure_stage": null,
+      "failure_reason": null,
+      "carried_forward_unaffected": false,
+      "extracted_spef_sha256": "f8de544254f4abc55100c88bb93b93414b8e9a58c3bef5e0812addcd4a2978de"
+    },
+    {
+      "task_id": "sky130hd-add-sdcfix",
+      "platform": "sky130hd",
+      "kernel": "add_u32",
+      "status": "completed",
+      "metrics": [
+        {
+          "stage": "synth",
+          "target_period_ps": 30000.0,
+          "cell_area_um2": 7543.484800000001,
+          "functional_cell_area_um2": 7543.484800000001,
+          "excluded_filler_area_um2": 0,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 3283.1488000000004,
+          "sequential_cells": 164,
+          "physical_only_area_um2": 0,
+          "setup_worst_slack_ps": 22640.982,
+          "hold_worst_slack_ps": 143.126,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": 0.0,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 2700.0,
+          "sta_feasibility": true,
+          "measured_feasibility": null,
+          "feasibility_scope": "synthesis_STA_only",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": true,
+          "hold_review_margin_ps": 25,
+          "hold_review_required": false,
+          "hold_margin_status": "review_band_met",
+          "parasitics": "none",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/sky130hd-add-sdcfix/reports/sky130hd/arithmetic_probe/base/vulsim_synth",
+          "target_platform": "sky130hd",
+          "platform_profile_sha256": "b167ee95ee7092393e79f1a3ba4d37897d1214d30cc9cd95229b3f1d2d9e2ca7",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ns",
+              "to_ps": 1000.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1pF",
+              "to_fF": 1000.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": 22.640982,
+            "hold_worst_slack_ps": 0.143126,
+            "setup_tns_ps": 0.0,
+            "hold_tns_ps": 0.0,
+            "minimum_clock_period_ps": 2.7
+          },
+          "abc_target_ps": 30000.0,
+          "mapping_context_sha256": "db7b7b962d62beb60a33ded2e256975cd2cc56035cd3ebba8aeea54e765f273f",
+          "target_dependent_measurement": true,
+          "mapped_netlist_sha256": "0c0fc8c5ebc46db742e19759906cd73d3ba23ac9e72cb5abd37bc4f8de033c8b",
+          "mapped_netlist_hash_rule": "Yosys_Verilog_remove_banner_src_blank_lines_v1",
+          "comparison_identity_sha256": "9f497b6247a5d96d44bf2d751cf1d23cf706dfc3a6f4c5a007700e7539d5652e",
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.00500001,
+            "absolute_difference_um2": 0.0048000000015235855
+          },
+          "orfs_stdcell_area_um2": 7543.48
+        },
+        {
+          "stage": "grt",
+          "target_period_ps": 30000.0,
+          "cell_area_um2": 9155.030400000003,
+          "functional_cell_area_um2": 8862.249600000003,
+          "excluded_filler_area_um2": 0,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 3286.9024000000004,
+          "sequential_cells": 164,
+          "physical_only_area_um2": 292.7808,
+          "setup_worst_slack_ps": 21530.815,
+          "hold_worst_slack_ps": 209.24499999999998,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": 0.0,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 3700.0,
+          "sta_feasibility": true,
+          "measured_feasibility": true,
+          "feasibility_scope": "TT_setup_only",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": true,
+          "hold_review_margin_ps": 25,
+          "hold_review_required": false,
+          "hold_margin_status": "review_band_met",
+          "parasitics": "global_route_estimate",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/sky130hd-add-sdcfix/reports/sky130hd/arithmetic_probe/base/vulsim_grt",
+          "target_platform": "sky130hd",
+          "platform_profile_sha256": "b167ee95ee7092393e79f1a3ba4d37897d1214d30cc9cd95229b3f1d2d9e2ca7",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ns",
+              "to_ps": 1000.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1pF",
+              "to_fF": 1000.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": 21.530814999999997,
+            "hold_worst_slack_ps": 0.209245,
+            "setup_tns_ps": 0.0,
+            "hold_tns_ps": 0.0,
+            "minimum_clock_period_ps": 3.7
+          },
+          "abc_target_ps": 30000.0,
+          "mapping_context_sha256": "db7b7b962d62beb60a33ded2e256975cd2cc56035cd3ebba8aeea54e765f273f",
+          "target_dependent_measurement": true,
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.00500001,
+            "absolute_difference_um2": 0.0004000000026280759
+          },
+          "orfs_stdcell_area_um2": 9155.03
+        }
+      ],
+      "failure_stage": null,
+      "failure_reason": null,
+      "carried_forward_unaffected": false
+    },
+    {
+      "task_id": "sky130hd-mul-sdcfix",
+      "platform": "sky130hd",
+      "kernel": "mul_u32",
+      "status": "completed",
+      "metrics": [
+        {
+          "stage": "synth",
+          "target_period_ps": 30000.0,
+          "cell_area_um2": 37825.02719999998,
+          "functional_cell_area_um2": 37825.02719999998,
+          "excluded_filler_area_um2": 0,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 3903.744,
+          "sequential_cells": 195,
+          "physical_only_area_um2": 0,
+          "setup_worst_slack_ps": 22641.13,
+          "hold_worst_slack_ps": 143.126,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": 0.0,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 7340.0,
+          "sta_feasibility": true,
+          "measured_feasibility": null,
+          "feasibility_scope": "synthesis_STA_only",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": true,
+          "hold_review_margin_ps": 25,
+          "hold_review_required": false,
+          "hold_margin_status": "review_band_met",
+          "parasitics": "none",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/sky130hd-mul-sdcfix/reports/sky130hd/arithmetic_probe/base/vulsim_synth",
+          "target_platform": "sky130hd",
+          "platform_profile_sha256": "b167ee95ee7092393e79f1a3ba4d37897d1214d30cc9cd95229b3f1d2d9e2ca7",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ns",
+              "to_ps": 1000.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1pF",
+              "to_fF": 1000.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": 22.64113,
+            "hold_worst_slack_ps": 0.143126,
+            "setup_tns_ps": 0.0,
+            "hold_tns_ps": 0.0,
+            "minimum_clock_period_ps": 7.34
+          },
+          "abc_target_ps": 30000.0,
+          "mapping_context_sha256": "ed3375d485c9d8893e0e5c3bdc08f870d3928afe48286a451173c87fe55011a0",
+          "target_dependent_measurement": true,
+          "mapped_netlist_sha256": "6d7db0916483d362138b86faba08f9328c9c27652772754306b048f08a63f9b2",
+          "mapped_netlist_hash_rule": "Yosys_Verilog_remove_banner_src_blank_lines_v1",
+          "comparison_identity_sha256": "fcc9d2b234d0bd2911468e88f6b1e2cf286fb075a4ea085ac5f2ad4d67af6aec",
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.050000100000000006,
+            "absolute_difference_um2": 0.027199999982258305
+          },
+          "orfs_stdcell_area_um2": 37825
+        },
+        {
+          "stage": "grt",
+          "target_period_ps": 30000.0,
+          "cell_area_um2": 40799.12959999997,
+          "functional_cell_area_um2": 39230.12479999997,
+          "excluded_filler_area_um2": 0,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 3921.2608000000005,
+          "sequential_cells": 195,
+          "physical_only_area_um2": 1569.0048000000002,
+          "setup_worst_slack_ps": 20556.656,
+          "hold_worst_slack_ps": 72.507,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": 0.0,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 9440.0,
+          "sta_feasibility": true,
+          "measured_feasibility": true,
+          "feasibility_scope": "TT_setup_only",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": true,
+          "hold_review_margin_ps": 25,
+          "hold_review_required": false,
+          "hold_margin_status": "review_band_met",
+          "parasitics": "global_route_estimate",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/sky130hd-mul-sdcfix/reports/sky130hd/arithmetic_probe/base/vulsim_grt",
+          "target_platform": "sky130hd",
+          "platform_profile_sha256": "b167ee95ee7092393e79f1a3ba4d37897d1214d30cc9cd95229b3f1d2d9e2ca7",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ns",
+              "to_ps": 1000.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1pF",
+              "to_fF": 1000.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": 20.556656,
+            "hold_worst_slack_ps": 0.072507,
+            "setup_tns_ps": 0.0,
+            "hold_tns_ps": 0.0,
+            "minimum_clock_period_ps": 9.44
+          },
+          "abc_target_ps": 30000.0,
+          "mapping_context_sha256": "ed3375d485c9d8893e0e5c3bdc08f870d3928afe48286a451173c87fe55011a0",
+          "target_dependent_measurement": true,
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.050000100000000006,
+            "absolute_difference_um2": 0.02959999997256091
+          },
+          "orfs_stdcell_area_um2": 40799.1
+        },
+        {
+          "stage": "final",
+          "target_period_ps": 30000.0,
+          "cell_area_um2": 40804.13439999997,
+          "functional_cell_area_um2": 39235.12959999997,
+          "excluded_filler_area_um2": 52805.64480000001,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 3921.2608000000005,
+          "sequential_cells": 195,
+          "physical_only_area_um2": 1569.0048000000002,
+          "setup_worst_slack_ps": 20891.950999999997,
+          "hold_worst_slack_ps": 64.205,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": 0.0,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 9110.0,
+          "sta_feasibility": true,
+          "measured_feasibility": true,
+          "feasibility_scope": "TT_setup_and_hold",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": true,
+          "hold_review_margin_ps": 25,
+          "hold_review_required": false,
+          "hold_margin_status": "review_band_met",
+          "parasitics": "OpenRCX_extracted_SPEF",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/sky130hd-mul-sdcfix/reports/sky130hd/arithmetic_probe/base/vulsim_final",
+          "target_platform": "sky130hd",
+          "platform_profile_sha256": "b167ee95ee7092393e79f1a3ba4d37897d1214d30cc9cd95229b3f1d2d9e2ca7",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ns",
+              "to_ps": 1000.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1pF",
+              "to_fF": 1000.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": 20.891951,
+            "hold_worst_slack_ps": 0.064205,
+            "setup_tns_ps": 0.0,
+            "hold_tns_ps": 0.0,
+            "minimum_clock_period_ps": 9.11
+          },
+          "abc_target_ps": 30000.0,
+          "mapping_context_sha256": "ed3375d485c9d8893e0e5c3bdc08f870d3928afe48286a451173c87fe55011a0",
+          "target_dependent_measurement": true,
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.050000100000000006,
+            "absolute_difference_um2": 0.03439999997499399
+          },
+          "orfs_stdcell_area_um2": 40804.1,
+          "detailed_route_drc_errors": 0
+        }
+      ],
+      "failure_stage": null,
+      "failure_reason": null,
+      "carried_forward_unaffected": false,
+      "extracted_spef_sha256": "4995466ad87c40bb424d8a158ea2165289472bd13652571c44012cf4242f8eb4"
+    }
+  ],
+  "training_or_main_records": 0,
+  "scope": "SDC integer-division correction: three ns platforms, small add grt + common unsigned32x32->64 mul synth/grt/final; ASAP7 checked and carried forward",
+  "automatic_retries": 0,
+  "multi_corner_signoff": false,
+  "previous_four_platform_acceptance": "revoked; ns results invalid, retain original files and charges"
+}

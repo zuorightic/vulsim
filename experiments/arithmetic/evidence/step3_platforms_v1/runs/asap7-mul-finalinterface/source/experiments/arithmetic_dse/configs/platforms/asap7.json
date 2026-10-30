@@ -1,0 +1,57 @@
+{
+  "schema": "arithmetic-platform-v1",
+  "version": 1,
+  "corner": "TC",
+  "temperature_C": 25.0,
+  "liberty_model": "NLDM",
+  "abc_time_unit": "ps",
+  "abc_load_unit": "fF",
+  "abc_unit_basis": "Yosys ABC Liberty reader scales delay to ps and capacitance to fF; logs retain stime evidence",
+  "hold_review_band_role": "predeclared engineering trigger; not noise floor or signoff",
+  "exclude_area_master_types": [
+    "CORE_SPACER"
+  ],
+  "physical_master_types": [
+    "CORE_WELLTAP",
+    "CORE_ENDCAP",
+    "ENDCAP_PRE",
+    "ENDCAP_POST",
+    "ENDCAP_TOPLEFT",
+    "ENDCAP_TOPRIGHT",
+    "ENDCAP_BOTTOMLEFT",
+    "ENDCAP_BOTTOMRIGHT"
+  ],
+  "seed": 42,
+  "core_utilization": 40,
+  "place_density": 0.65,
+  "multi_corner_signoff": false,
+  "platform": "asap7",
+  "voltage_V": 0.7,
+  "time_unit": "ps",
+  "capacitance_unit": "fF",
+  "library_count": 5,
+  "library_name_pattern": "asap7sc7p5t_(?:AO|INVBUF|OA|SIMPLE|SEQ)_RVT_TT_nldm_[0-9]+\\.lib(?:\\.gz)?",
+  "VT": "RVT",
+  "driver_cell": "BUFx2_ASAP7_75t_R",
+  "driver_pin": "Y",
+  "output_load_fF": 3.898,
+  "setup_uncertainty_ps": 20,
+  "hold_uncertainty_ps": 5,
+  "clock_transition_ps": 10,
+  "hold_review_margin_ps": 5,
+  "core_margin_um": 2,
+  "trial_period_ps": 1500,
+  "make_overrides": {
+    "CORNER": "TC",
+    "ASAP7_USE_VT": "RVT",
+    "LIB_MODEL": "NLDM",
+    "TC_TEMPERATURE": "25C",
+    "IO_PLACER_H": "M4 M6",
+    "IO_PLACER_V": "M5 M7"
+  },
+  "allowed_physical_prefixes": [
+    "FILLER",
+    "TAPCELL",
+    "DECAP"
+  ]
+}

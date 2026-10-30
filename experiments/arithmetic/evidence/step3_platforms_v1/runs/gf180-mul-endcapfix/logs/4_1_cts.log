@@ -1,0 +1,140 @@
+OpenROAD 26Q3-1867-g84e3ff1eb2 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 2 thread(s).
+read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/lib/gf180mcu_fd_sc_mcu9t5v0__tt_025C_5v00.lib.gz
+read_db /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/gf180-mul-endcapfix/results/gf180/arithmetic_probe/base/3_place.odb
+read_sdc /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/gf180-mul-endcapfix/results/gf180/arithmetic_probe/base/3_place.sdc
+source /home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/setRC.tcl
+clock_tree_synthesis -sink_clustering_enable -repair_clock_nets
+[INFO CTS-0050] Root buffer is gf180mcu_fd_sc_mcu9t5v0__clkbuf_16.
+[INFO CTS-0051] Sink buffer is gf180mcu_fd_sc_mcu9t5v0__clkbuf_20.
+[INFO CTS-0052] The following clock buffers will be used for CTS:
+                    gf180mcu_fd_sc_mcu9t5v0__clkbuf_16
+                    gf180mcu_fd_sc_mcu9t5v0__clkbuf_20
+[INFO CTS-0049] Characterization buffer is gf180mcu_fd_sc_mcu9t5v0__clkbuf_20.
+[INFO CTS-0007] Net "clk" found for clock "core_clk".
+[INFO CTS-0010]  Clock net "clk" has 195 sinks.
+[INFO CTS-0008] TritonCTS found 1 clock nets.
+[INFO CTS-0097] Characterization used 2 buffer(s) types.
+[INFO CTS-0201] 0 blockages from hard placement blockages and placed macros will be used.
+[INFO CTS-0027] Generating H-Tree topology for net clk.
+[INFO CTS-0028]  Total number of sinks: 195.
+[INFO CTS-0090]  Sinks will be clustered based on buffer max cap.
+[INFO CTS-0030]  Number of static layers: 0.
+[INFO CTS-0020]  Wire segment unit: 50400  dbu (25 um).
+[INFO CTS-0023]  Original sink region: [(147720, 195440), (1309160, 1336720)].
+[INFO CTS-0024]  Normalized sink region: [(2.93095, 3.87778), (25.9754, 26.5222)].
+[INFO CTS-0025]     Width:  23.0444.
+[INFO CTS-0026]     Height: 22.6444.
+ Level 1
+    Direction: Horizontal
+    Sinks per sub-region: 98
+    Sub-region size: 11.5222 X 22.6444
+[INFO CTS-0034]     Segment length (rounded): 6.
+ Level 2
+    Direction: Vertical
+    Sinks per sub-region: 49
+    Sub-region size: 11.5222 X 11.3222
+[INFO CTS-0034]     Segment length (rounded): 6.
+ Level 3
+    Direction: Horizontal
+    Sinks per sub-region: 25
+    Sub-region size: 5.7611 X 11.3222
+[INFO CTS-0034]     Segment length (rounded): 2.
+ Level 4
+    Direction: Vertical
+    Sinks per sub-region: 13
+    Sub-region size: 5.7611 X 5.6611
+[INFO CTS-0034]     Segment length (rounded): 2.
+[INFO CTS-0038]  Stop criterion found. Sink region hpwl is smaller than max wirelength (197925.436 um) and max number of sinks is 15.
+[INFO CTS-0035]  Number of sinks covered: 195.
+[INFO CTS-0018]     Created 17 clock buffers.
+[INFO CTS-0012]     Minimum number of buffers in the clock path: 2.
+[INFO CTS-0013]     Maximum number of buffers in the clock path: 2.
+[INFO CTS-0015]     Created 17 clock nets.
+[INFO CTS-0016]     Fanout distribution for the current clock = 6:1, 8:3, 9:2, 10:1, 11:1, 13:1, 14:3, 15:2, 20:1, 21:1..
+[INFO CTS-0017]     Max level of the clock tree: 4.
+[INFO CTS-0098] Clock net "clk"
+[INFO CTS-0099]  Sinks 210
+[INFO CTS-0100]  Leaf buffers 0
+[INFO CTS-0101]  Average sink wire length 985.95 um
+[INFO CTS-0102]  Path depth 2 - 2
+[INFO CTS-0207]  Dummy loads inserted 15
+[INFO CTS-0500] Runtime: 1.66s
+estimate_parasitics -placement
+detailed_placement
+[INFO DPL-0006] Core area: 417624.88 um^2
+[INFO DPL-0007] Movable instances area: 172197.45 um^2
+[INFO DPL-0008] Fixed instances area within core: 3646.54 um^2
+[INFO DPL-0009] Utilization: 42.1%
+[INFO DPL-0005] Diamond search max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+[INFO DPL-1102] Legalizing using negotiation legalizer.
+[INFO DPL-1103] Negotiation base search window: +/-20 sites horizontally, +/-5 rows vertically 
+	Automatic search window extension enabled.
+	Search window extendable up to the max displacement cap of +/-500 sites, +/-100 rows near walls.
+[INFO DPL-1104] NegotiationLegalizer DRC penalty: 5.
+[INFO DPL-0392] Negotiation cell height distribution (1 unique row-count(s)):
+[INFO DPL-0393]   height 1 row(s): 4149 cells
+          |      Total |  Illegal |  Illegal
+Iteration | Violations |    Cells |    Sites
+---------------------------------------------
+        0 |        337 |        27 |       310
+        1 |        197 |        17 |       180
+        2 |          8 |         2 |         6
+        3 |          0 |         0 |         0
+Negotiation phase 1 converged at iteration 3.
+[INFO DPL-0500] Runtime: 0.02s
+Placement Analysis
+---------------------------------
+total displacement       6786.9 u
+average displacement        1.6 u
+max displacement           26.8 u
+original HPWL          173400.1 u
+legalized HPWL         176485.4 u
+delta HPWL                    2 %
+
+estimate_parasitics -placement
+repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 100 -verbose
+[INFO RSZ-0100] Repair move sequence: UnbufferMove SizeUpMove SwapPinsMove BufferMove CloneMove SplitLoadMove 
+[INFO RSZ-0098] No setup violations found
+[INFO RSZ-0505] Runtime: 0.09s
+[INFO RSZ-0033] No hold violations found.
+[INFO RSZ-0506] Runtime: 0.02s
+Repair timing output passed lec test
+detailed_placement
+[INFO DPL-0006] Core area: 417624.88 um^2
+[INFO DPL-0007] Movable instances area: 172197.45 um^2
+[INFO DPL-0008] Fixed instances area within core: 3646.54 um^2
+[INFO DPL-0009] Utilization: 42.1%
+[INFO DPL-0005] Diamond search max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+[INFO DPL-1102] Legalizing using negotiation legalizer.
+[INFO DPL-1103] Negotiation base search window: +/-20 sites horizontally, +/-5 rows vertically 
+	Automatic search window extension enabled.
+	Search window extendable up to the max displacement cap of +/-500 sites, +/-100 rows near walls.
+[INFO DPL-1104] NegotiationLegalizer DRC penalty: 5.
+[INFO DPL-0392] Negotiation cell height distribution (1 unique row-count(s)):
+[INFO DPL-0393]   height 1 row(s): 4149 cells
+[INFO DPL-0500] Runtime: 0.02s
+Placement Analysis
+---------------------------------
+total displacement          0.0 u
+average displacement        0.0 u
+max displacement            0.0 u
+original HPWL          176485.4 u
+legalized HPWL         176485.4 u
+delta HPWL                    0 %
+
+estimate_parasitics -placement
+Report metrics stage 4, cts final...
+
+==========================================================================
+cts final report_design_area
+--------------------------------------------------------------------------
+Design area 175844 um^2 42% utilization.
+write_db /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/gf180-mul-endcapfix/results/gf180/arithmetic_probe/base/4_1_cts.odb
+write_sdc -no_timestamp /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/gf180-mul-endcapfix/results/gf180/arithmetic_probe/base/4_cts.sdc
+Elapsed time: 0:03.49[h:]min:sec. CPU time: user 3.68 sys 0.14 (109%). Peak memory: 291240KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+4_1_cts                   .odb            3            284 ea63f0d082eb675a8d90

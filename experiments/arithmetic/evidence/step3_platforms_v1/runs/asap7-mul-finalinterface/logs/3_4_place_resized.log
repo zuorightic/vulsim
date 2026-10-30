@@ -1,0 +1,42 @@
+OpenROAD 26Q3-1867-g84e3ff1eb2 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 2 thread(s).
+source /home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/liberty_suppressions.tcl
+read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib.gz
+read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib.gz
+read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib.gz
+read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib
+read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz
+read_db /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/asap7-mul-finalinterface/results/asap7/arithmetic_probe/base/3_3_place_gp.odb
+read_sdc /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/asap7-mul-finalinterface/results/asap7/arithmetic_probe/base/2_floorplan.sdc
+source /home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/setRC.tcl
+estimate_parasitics -placement
+Perform buffer insertion and gate resizing...
+repair_design -verbose
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |      6881
+     1000 |     +0.0% |       0 |       0 |             0 |      5881
+     2000 |     +0.0% |       0 |       0 |             0 |      4881
+     3000 |     +0.0% |       0 |       0 |             0 |      3881
+     4000 |     +0.0% |       0 |       0 |             0 |      2881
+     5000 |     +0.0% |       0 |       0 |             0 |      1881
+     6000 |     +0.0% |       0 |       0 |             0 |       881
+    final |     +0.0% |       0 |       0 |             0 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0504] Runtime: 0.37s
+Floating nets: 
+Report metrics stage 3, resizer...
+
+==========================================================================
+resizer report_design_area
+--------------------------------------------------------------------------
+Design area 575 um^2 41% utilization.
+Instance count before 6003, after 6003
+Pin count before 17215, after 17215
+write_db /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/asap7-mul-finalinterface/results/asap7/arithmetic_probe/base/3_4_place_resized.odb
+Elapsed time: 0:02.23[h:]min:sec. CPU time: user 2.39 sys 0.09 (111%). Peak memory: 239468KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+3_4_place_resized         .odb            2            233 d10ba2629d1ec136a3c3

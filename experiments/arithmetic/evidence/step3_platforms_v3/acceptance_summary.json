@@ -1,0 +1,135 @@
+{
+  "status": "passed",
+  "SDC_regression_methods": 7,
+  "backend_regression_methods": 42,
+  "accepted_stage_SDC_checks": 18,
+  "invalidated_previous_SDC_stages": 23,
+  "P2_before": "passed (counterexample retained)",
+  "P2_after": "rejected",
+  "isolated_semantic_checks": {
+    "status": "passed",
+    "checks": {
+      "isolated_no_build_no_EDA_no_Tcl_empty_PATH": {
+        "exit_code": 0,
+        "expected_rejection": false,
+        "diagnostic": "passed"
+      },
+      "P2_minimal_semicolon_bypass_after_identity_rebinding": {
+        "exit_code": 1,
+        "expected_rejection": true,
+        "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: unsupported SDC command boundary or substitution at line 415"
+      },
+      "P2_existing_declaration_semicolon_after_identity_rebinding": {
+        "exit_code": 1,
+        "expected_rejection": true,
+        "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: unsupported SDC command boundary or substitution at line 4"
+      },
+      "invalid_current_design_arity_after_identity_rebinding": {
+        "exit_code": 1,
+        "expected_rejection": true,
+        "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: unsupported SDC current_design declaration"
+      },
+      "wrong_current_design_after_identity_rebinding": {
+        "exit_code": 1,
+        "expected_rejection": true,
+        "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: SDC current_design identity mismatch"
+      },
+      "quoted_dynamic_current_design_after_identity_rebinding": {
+        "exit_code": 1,
+        "expected_rejection": true,
+        "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: unsupported SDC literal nesting or substitution"
+      },
+      "comment_continuation_hides_constraint_after_identity_rebinding": {
+        "exit_code": 1,
+        "expected_rejection": true,
+        "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: unsupported SDC continuation or escape at line 9"
+      },
+      "adjacent_collection_substitution_after_identity_rebinding": {
+        "exit_code": 1,
+        "expected_rejection": true,
+        "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: unsupported SDC word concatenation"
+      },
+      "standalone_false_path_after_identity_rebinding": {
+        "exit_code": 1,
+        "expected_rejection": true,
+        "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: unsupported SDC constraint command: set_false_path"
+      },
+      "zero_setup_after_identity_rebinding": {
+        "exit_code": 1,
+        "expected_rejection": true,
+        "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: SDC setup uncertainty mismatch: 0.0 != 0.02 (native units)"
+      },
+      "zero_hold_after_identity_rebinding": {
+        "exit_code": 1,
+        "expected_rejection": true,
+        "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: SDC hold uncertainty mismatch: 0.0 != 0.005 (native units)"
+      },
+      "zero_transition_after_identity_rebinding": {
+        "exit_code": 1,
+        "expected_rejection": true,
+        "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: SDC transition mismatch: 0.0 != 0.01 (native units)"
+      },
+      "zero_load_after_identity_rebinding": {
+        "exit_code": 1,
+        "expected_rejection": true,
+        "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: SDC output load mismatch: 0.0 != 3.898 (native units)"
+      },
+      "wrong_period_after_identity_rebinding": {
+        "exit_code": 1,
+        "expected_rejection": true,
+        "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: SDC period mismatch: 3000.0 != 3.0 (native units)"
+      },
+      "zero_IO_max_after_identity_rebinding": {
+        "exit_code": 1,
+        "expected_rejection": true,
+        "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: SDC IO max mismatch: 0.0 != 0.6 (native units)"
+      },
+      "missing_reset_after_identity_rebinding": {
+        "exit_code": 1,
+        "expected_rejection": true,
+        "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: SDC IO coverage mismatch (includes reset/valid/data)"
+      },
+      "old_invalid_ns_SDC_after_identity_rebinding": {
+        "exit_code": 1,
+        "expected_rejection": true,
+        "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: SDC transition mismatch: 0.0 != 0.01 (native units)"
+      },
+      "restored_copy_still_passes": {
+        "exit_code": 0,
+        "expected_rejection": false,
+        "diagnostic": "passed"
+      },
+      "explicit_root_uses_copied_bundle": {
+        "exit_code": 0,
+        "expected_rejection": false,
+        "diagnostic": "passed"
+      },
+      "explicit_root_provenance_tamper_after_rebinding": {
+        "exit_code": 1,
+        "expected_rejection": true,
+        "diagnostic": "ValueError: parameter provenance value/unit/basis mismatch: setup_uncertainty_ps"
+      }
+    },
+    "mutations_confined_to_temporary_copy": true,
+    "EDA_invocations": 0,
+    "archived_Tcl_executions": 0,
+    "hash_rebinding": "modified SDC, measurement index/freeze, successor inherited hashes and source metadata identities all rebound before semantic checks"
+  },
+  "immutable_measurement_collection": {
+    "measurement_freeze": "experiments/arithmetic/backend_freeze_v6.json",
+    "measurement_freeze_sha256": "62c43d7ab9182c2c05954f1ba4e7a6894c93392b40b95fa75bed7106a3901e55",
+    "authoritative_index": "experiments/arithmetic/evidence/step3_platforms_v2/index.json",
+    "authoritative_index_sha256": "d464f0e663bc25f144ddd4a9961d753cf42be02d980945948e450e8ef5348500",
+    "final_indexed_files": 772,
+    "earlier_report": "experiments/arithmetic/evidence/step3_platforms_v2/acceptance_checks.json",
+    "earlier_report_sha256": "548f2c5a37047aa787d05347cc249d8c830c11db6c1d44c6b0b89cd81c5d7cf2",
+    "earlier_reported_files": 767,
+    "difference": 5,
+    "explanation": "767 is an intermediate verifier report produced before final supporting audit/report files were indexed; 772 is the final v2 index protected by immutable v6. The earlier report contains no intermediate index hash or timestamp; an exact per-file 767 inventory cannot be recovered from that report alone. No evidence was lost. Neither old report nor old index is rewritten. Current verifier additionally reports the index hash alongside the count.",
+    "old_files_modified": false
+  },
+  "GF180_wire_RC": "calibration provenance unresolved; not a confirmed defect; no coefficient change",
+  "new_physical_runs": 0,
+  "effective_profiles_changed": false,
+  "report_scope": "semantic acceptance; final software evidence collection is the index hash in backend_freeze_v7, avoiding a self-referential report count"
+}

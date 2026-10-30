@@ -1,0 +1,13 @@
+{
+  "measurement_freeze": "experiments/arithmetic/backend_freeze_v6.json",
+  "measurement_freeze_sha256": "62c43d7ab9182c2c05954f1ba4e7a6894c93392b40b95fa75bed7106a3901e55",
+  "authoritative_index": "experiments/arithmetic/evidence/step3_platforms_v2/index.json",
+  "authoritative_index_sha256": "d464f0e663bc25f144ddd4a9961d753cf42be02d980945948e450e8ef5348500",
+  "final_indexed_files": 772,
+  "earlier_report": "experiments/arithmetic/evidence/step3_platforms_v2/acceptance_checks.json",
+  "earlier_report_sha256": "548f2c5a37047aa787d05347cc249d8c830c11db6c1d44c6b0b89cd81c5d7cf2",
+  "earlier_reported_files": 767,
+  "difference": 5,
+  "explanation": "767 is an intermediate verifier report produced before final supporting audit/report files were indexed; 772 is the final v2 index protected by immutable v6. The earlier report contains no intermediate index hash or timestamp; an exact per-file 767 inventory cannot be recovered from that report alone. No evidence was lost. Neither old report nor old index is rewritten. Current verifier additionally reports the index hash alongside the count.",
+  "old_files_modified": false
+}

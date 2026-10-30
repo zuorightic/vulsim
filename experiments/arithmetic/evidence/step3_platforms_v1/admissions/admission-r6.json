@@ -1,0 +1,91 @@
+{
+  "version": "platform-connection-admission-v1",
+  "id": "step3-four-platforms-r6",
+  "created_at": "2026-10-30T05:19:38.754952+00:00",
+  "purpose": "platform_connection_only",
+  "policy_sha256": "3f4a230ca19b9b53a9da71cb19a52e718d29a8001106d354394f13e5d6ef995a",
+  "starting_usage": {
+    "synth": 40,
+    "grt": 17,
+    "final": 7,
+    "support_calls": 390,
+    "walltime_s": 4170.7946628129575,
+    "CPU_time_s": 6777.57,
+    "pending": 1
+  },
+  "tasks": [
+    {
+      "id": "gf180-add-verified",
+      "platform": "gf180",
+      "kernel": "add_u32",
+      "rtl": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/add-native/sim/top.sv",
+      "rtl_sha256": "cc8d3eba4c0adb938b633c7ab3fdcfca915643b70314c848af95bd7da6bf0a6c",
+      "top": "MulProbe_sim_top",
+      "profile_sha256": "1ce703428dbbc4a65c6d9b96bb98460d3b4bc749bcd5f07ba80630c135ce190e",
+      "period_ps": 30000,
+      "abc_target_ps": 30000,
+      "stage": "grt",
+      "purpose": "prototype",
+      "L": 3,
+      "II": 1,
+      "size_scope": "32bit_input; complete_result_64bit",
+      "supersedes_task_id": "gf180-add-config"
+    },
+    {
+      "id": "gf180-mul-verified",
+      "platform": "gf180",
+      "kernel": "mul_u32",
+      "rtl": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/mul-native/sim/top.sv",
+      "rtl_sha256": "5018e7b6831f1963c2ac3ee159f25f045cb12eab2a7fcee82cc44af982f7dca3",
+      "top": "MulProbe_sim_top",
+      "profile_sha256": "1ce703428dbbc4a65c6d9b96bb98460d3b4bc749bcd5f07ba80630c135ce190e",
+      "period_ps": 30000,
+      "abc_target_ps": 30000,
+      "stage": "final",
+      "purpose": "prototype",
+      "L": 3,
+      "II": 1,
+      "size_scope": "32bit_input; complete_result_64bit",
+      "supersedes_task_id": "gf180-mul-config"
+    }
+  ],
+  "call_caps": {
+    "synth": 9,
+    "grt": 8,
+    "final": 4
+  },
+  "worst_case_leaf_walltime_s": 24300,
+  "CPU_envelope_s": 48600,
+  "threads": 2,
+  "physical_jobs": 1,
+  "memory_limit_MiB": 8192,
+  "sample_split": "not_applicable; connection probes not admitted as model training",
+  "stops": [
+    "failed_stage",
+    "timeout",
+    "memory_limit",
+    "unsettled_ledger",
+    "unexpected_units_or_assets"
+  ],
+  "automatic_retries": 0,
+  "main_case_targets": false,
+  "later_bulk_or_model_work_authorized": false,
+  "correction_reason": "Finalize GF180 probes after reviewing explicit fF ABC load, 9t/5v0/5LM_1TM/K9/TC assets and shared global funding. Recompute inherited 9/8/4 timeout envelope as 24300 seconds including 7200-second support reserve; no global cap or target change.",
+  "parent_admission": {
+    "path": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/admission-r5.json",
+    "sha256": "267470a18741628b71dee66588bfce2221155e574ff1709c187d9fe363fbf5f7",
+    "id": "step3-four-platforms-r5"
+  },
+  "related_admission_ids": [
+    "step3-four-platforms-v1",
+    "step3-four-platforms-r2",
+    "step3-four-platforms-r3",
+    "step3-four-platforms-r4",
+    "step3-four-platforms-r5",
+    "step3-four-platforms-r6"
+  ],
+  "additional_diagnostic_call_caps": {
+    "synth": 1
+  },
+  "support_walltime_reserve_s": 7200
+}

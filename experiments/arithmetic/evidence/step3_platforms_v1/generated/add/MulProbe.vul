@@ -1,0 +1,34 @@
+#pragma once
+#include "header.uh"
+#include <defhelper.hpp>
+
+INTERFACE() {
+    REQUEST(s3output, ARG(uint64_t) y);
+    SERVICE(s0input, ARG(uint32_t) a, ARG(uint32_t) b);
+}
+
+STRUCT(InputData) {
+    uint32_t a;
+    uint32_t b;
+};
+
+// One full unsigned multiplier; the existing scheduler keeps it atomic.
+PIPELINE(multiply, 2,
+    IREG(s1reg, InputData), IVALID(s1valid, 2),
+    OREG(s3reg, uint64_t), OVALID(s3valid)
+) {
+    Int<64> a = s1reg.a;
+    Int<64> b = s1reg.b;
+    Int<64> product = a + b;
+    s3reg = product.to<uint64_t>();
+}
+
+SERVICE(s0input, ARG(uint32_t) a, ARG(uint32_t) b) {
+    s1reg.setnext(InputData{a, b});
+    s1valid.setnext<0>(true);
+}
+
+TICK_IMPL() {
+    s1valid.setnext<1>(false);
+    if (s3valid) s3output(s3reg.get());
+}

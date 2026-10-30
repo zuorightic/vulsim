@@ -1,0 +1,346 @@
+Yosys 0.68+ (git sha1 a5af9d690, Release, GNU /usr/bin/c++ 13.3.0) [github.com/The-OpenROAD-Project/yosys at HEAD]
+Using ABC speed script.
+Extracting clock period from SDC file: /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/asap7-mul-finalinterface/results/asap7/arithmetic_probe/base/clock_period.txt
+Setting clock period to 1500.0
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+Found gzip magic in file `/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib.gz', decompressing using zlib.
+
+1. Executing Liberty frontend: /home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib.gz
+Imported 42 cell types from liberty file.
+Found gzip magic in file `/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib.gz', decompressing using zlib.
+
+2. Executing Liberty frontend: /home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib.gz
+Imported 37 cell types from liberty file.
+Found gzip magic in file `/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib.gz', decompressing using zlib.
+
+3. Executing Liberty frontend: /home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib.gz
+Imported 34 cell types from liberty file.
+
+4. Executing Liberty frontend: /home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib
+Imported 33 cell types from liberty file.
+Found gzip magic in file `/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz', decompressing using zlib.
+
+5. Executing Liberty frontend: /home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz
+Imported 56 cell types from liberty file.
+Found gzip magic in file `/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib.gz', decompressing using zlib.
+
+6. Executing Liberty frontend: /home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib.gz
+Replacing existing blackbox module A2O1A1Ixp33_ASAP7_75t_R.
+Replacing existing blackbox module A2O1A1O1Ixp25_ASAP7_75t_R.
+Replacing existing blackbox module AO211x2_ASAP7_75t_R.
+Replacing existing blackbox module AO21x1_ASAP7_75t_R.
+Replacing existing blackbox module AO21x2_ASAP7_75t_R.
+Replacing existing blackbox module AO221x1_ASAP7_75t_R.
+Replacing existing blackbox module AO221x2_ASAP7_75t_R.
+Replacing existing blackbox module AO222x2_ASAP7_75t_R.
+Replacing existing blackbox module AO22x1_ASAP7_75t_R.
+Replacing existing blackbox module AO22x2_ASAP7_75t_R.
+Replacing existing blackbox module AO31x2_ASAP7_75t_R.
+Replacing existing blackbox module AO322x2_ASAP7_75t_R.
+Replacing existing blackbox module AO32x1_ASAP7_75t_R.
+Replacing existing blackbox module AO32x2_ASAP7_75t_R.
+Replacing existing blackbox module AO331x1_ASAP7_75t_R.
+Replacing existing blackbox module AO331x2_ASAP7_75t_R.
+Replacing existing blackbox module AO332x1_ASAP7_75t_R.
+Replacing existing blackbox module AO332x2_ASAP7_75t_R.
+Replacing existing blackbox module AO333x1_ASAP7_75t_R.
+Replacing existing blackbox module AO333x2_ASAP7_75t_R.
+Replacing existing blackbox module AO33x2_ASAP7_75t_R.
+Replacing existing blackbox module AOI211x1_ASAP7_75t_R.
+Replacing existing blackbox module AOI211xp5_ASAP7_75t_R.
+Replacing existing blackbox module AOI21x1_ASAP7_75t_R.
+Replacing existing blackbox module AOI21xp33_ASAP7_75t_R.
+Replacing existing blackbox module AOI21xp5_ASAP7_75t_R.
+Replacing existing blackbox module AOI221x1_ASAP7_75t_R.
+Replacing existing blackbox module AOI221xp5_ASAP7_75t_R.
+Replacing existing blackbox module AOI222xp33_ASAP7_75t_R.
+Replacing existing blackbox module AOI22x1_ASAP7_75t_R.
+Replacing existing blackbox module AOI22xp33_ASAP7_75t_R.
+Replacing existing blackbox module AOI22xp5_ASAP7_75t_R.
+Replacing existing blackbox module AOI311xp33_ASAP7_75t_R.
+Replacing existing blackbox module AOI31xp33_ASAP7_75t_R.
+Replacing existing blackbox module AOI31xp67_ASAP7_75t_R.
+Replacing existing blackbox module AOI321xp33_ASAP7_75t_R.
+Replacing existing blackbox module AOI322xp5_ASAP7_75t_R.
+Replacing existing blackbox module AOI32xp33_ASAP7_75t_R.
+Replacing existing blackbox module AOI331xp33_ASAP7_75t_R.
+Replacing existing blackbox module AOI332xp33_ASAP7_75t_R.
+Replacing existing blackbox module AOI333xp33_ASAP7_75t_R.
+Replacing existing blackbox module AOI33xp33_ASAP7_75t_R.
+Imported 42 cell types from liberty file.
+Found gzip magic in file `/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib.gz', decompressing using zlib.
+
+7. Executing Liberty frontend: /home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib.gz
+Replacing existing blackbox module BUFx10_ASAP7_75t_R.
+Replacing existing blackbox module BUFx12_ASAP7_75t_R.
+Replacing existing blackbox module BUFx12f_ASAP7_75t_R.
+Replacing existing blackbox module BUFx16f_ASAP7_75t_R.
+Replacing existing blackbox module BUFx24_ASAP7_75t_R.
+Replacing existing blackbox module BUFx2_ASAP7_75t_R.
+Replacing existing blackbox module BUFx3_ASAP7_75t_R.
+Replacing existing blackbox module BUFx4_ASAP7_75t_R.
+Replacing existing blackbox module BUFx4f_ASAP7_75t_R.
+Replacing existing blackbox module BUFx5_ASAP7_75t_R.
+Replacing existing blackbox module BUFx6f_ASAP7_75t_R.
+Replacing existing blackbox module BUFx8_ASAP7_75t_R.
+Replacing existing blackbox module CKINVDCx10_ASAP7_75t_R.
+Replacing existing blackbox module CKINVDCx11_ASAP7_75t_R.
+Replacing existing blackbox module CKINVDCx12_ASAP7_75t_R.
+Replacing existing blackbox module CKINVDCx14_ASAP7_75t_R.
+Replacing existing blackbox module CKINVDCx16_ASAP7_75t_R.
+Replacing existing blackbox module CKINVDCx20_ASAP7_75t_R.
+Replacing existing blackbox module CKINVDCx5p33_ASAP7_75t_R.
+Replacing existing blackbox module CKINVDCx6p67_ASAP7_75t_R.
+Replacing existing blackbox module CKINVDCx8_ASAP7_75t_R.
+Replacing existing blackbox module CKINVDCx9p33_ASAP7_75t_R.
+Replacing existing blackbox module HB1xp67_ASAP7_75t_R.
+Replacing existing blackbox module HB2xp67_ASAP7_75t_R.
+Replacing existing blackbox module HB3xp67_ASAP7_75t_R.
+Replacing existing blackbox module HB4xp67_ASAP7_75t_R.
+Replacing existing blackbox module INVx11_ASAP7_75t_R.
+Replacing existing blackbox module INVx13_ASAP7_75t_R.
+Replacing existing blackbox module INVx1_ASAP7_75t_R.
+Replacing existing blackbox module INVx2_ASAP7_75t_R.
+Replacing existing blackbox module INVx3_ASAP7_75t_R.
+Replacing existing blackbox module INVx4_ASAP7_75t_R.
+Replacing existing blackbox module INVx5_ASAP7_75t_R.
+Replacing existing blackbox module INVx6_ASAP7_75t_R.
+Replacing existing blackbox module INVx8_ASAP7_75t_R.
+Replacing existing blackbox module INVxp33_ASAP7_75t_R.
+Replacing existing blackbox module INVxp67_ASAP7_75t_R.
+Imported 37 cell types from liberty file.
+Found gzip magic in file `/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib.gz', decompressing using zlib.
+
+8. Executing Liberty frontend: /home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib.gz
+Replacing existing blackbox module O2A1O1Ixp33_ASAP7_75t_R.
+Replacing existing blackbox module O2A1O1Ixp5_ASAP7_75t_R.
+Replacing existing blackbox module OA211x2_ASAP7_75t_R.
+Replacing existing blackbox module OA21x2_ASAP7_75t_R.
+Replacing existing blackbox module OA221x2_ASAP7_75t_R.
+Replacing existing blackbox module OA222x2_ASAP7_75t_R.
+Replacing existing blackbox module OA22x2_ASAP7_75t_R.
+Replacing existing blackbox module OA31x2_ASAP7_75t_R.
+Replacing existing blackbox module OA331x1_ASAP7_75t_R.
+Replacing existing blackbox module OA331x2_ASAP7_75t_R.
+Replacing existing blackbox module OA332x1_ASAP7_75t_R.
+Replacing existing blackbox module OA332x2_ASAP7_75t_R.
+Replacing existing blackbox module OA333x1_ASAP7_75t_R.
+Replacing existing blackbox module OA333x2_ASAP7_75t_R.
+Replacing existing blackbox module OA33x2_ASAP7_75t_R.
+Replacing existing blackbox module OAI211xp5_ASAP7_75t_R.
+Replacing existing blackbox module OAI21x1_ASAP7_75t_R.
+Replacing existing blackbox module OAI21xp33_ASAP7_75t_R.
+Replacing existing blackbox module OAI21xp5_ASAP7_75t_R.
+Replacing existing blackbox module OAI221xp5_ASAP7_75t_R.
+Replacing existing blackbox module OAI222xp33_ASAP7_75t_R.
+Replacing existing blackbox module OAI22x1_ASAP7_75t_R.
+Replacing existing blackbox module OAI22xp33_ASAP7_75t_R.
+Replacing existing blackbox module OAI22xp5_ASAP7_75t_R.
+Replacing existing blackbox module OAI311xp33_ASAP7_75t_R.
+Replacing existing blackbox module OAI31xp33_ASAP7_75t_R.
+Replacing existing blackbox module OAI31xp67_ASAP7_75t_R.
+Replacing existing blackbox module OAI321xp33_ASAP7_75t_R.
+Replacing existing blackbox module OAI322xp33_ASAP7_75t_R.
+Replacing existing blackbox module OAI32xp33_ASAP7_75t_R.
+Replacing existing blackbox module OAI331xp33_ASAP7_75t_R.
+Replacing existing blackbox module OAI332xp33_ASAP7_75t_R.
+Replacing existing blackbox module OAI333xp33_ASAP7_75t_R.
+Replacing existing blackbox module OAI33xp33_ASAP7_75t_R.
+Imported 34 cell types from liberty file.
+
+9. Executing Liberty frontend: /home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib
+Replacing existing blackbox module DFFASRHQNx1_ASAP7_75t_R.
+Replacing existing blackbox module DFFHQNx1_ASAP7_75t_R.
+Replacing existing blackbox module DFFHQNx2_ASAP7_75t_R.
+Replacing existing blackbox module DFFHQNx3_ASAP7_75t_R.
+Replacing existing blackbox module DFFHQx4_ASAP7_75t_R.
+Replacing existing blackbox module DFFLQNx1_ASAP7_75t_R.
+Replacing existing blackbox module DFFLQNx2_ASAP7_75t_R.
+Replacing existing blackbox module DFFLQNx3_ASAP7_75t_R.
+Replacing existing blackbox module DFFLQx4_ASAP7_75t_R.
+Replacing existing blackbox module DHLx1_ASAP7_75t_R.
+Replacing existing blackbox module DHLx2_ASAP7_75t_R.
+Replacing existing blackbox module DHLx3_ASAP7_75t_R.
+Replacing existing blackbox module DLLx1_ASAP7_75t_R.
+Replacing existing blackbox module DLLx2_ASAP7_75t_R.
+Replacing existing blackbox module DLLx3_ASAP7_75t_R.
+Ignoring cell ICGx1_ASAP7_75t_R with missing function on output IQ.
+Ignoring cell ICGx2_ASAP7_75t_R with missing function on output IQ.
+Ignoring cell ICGx2p67DC_ASAP7_75t_R with missing function on output IQ.
+Ignoring cell ICGx3_ASAP7_75t_R with missing function on output IQ.
+Ignoring cell ICGx4DC_ASAP7_75t_R with missing function on output IQ.
+Ignoring cell ICGx4_ASAP7_75t_R with missing function on output IQ.
+Ignoring cell ICGx5_ASAP7_75t_R with missing function on output IQ.
+Ignoring cell ICGx5p33DC_ASAP7_75t_R with missing function on output IQ.
+Ignoring cell ICGx6p67DC_ASAP7_75t_R with missing function on output IQ.
+Ignoring cell ICGx8DC_ASAP7_75t_R with missing function on output IQ.
+Replacing existing blackbox module SDFHx1_ASAP7_75t_R.
+Replacing existing blackbox module SDFHx2_ASAP7_75t_R.
+Replacing existing blackbox module SDFHx3_ASAP7_75t_R.
+Replacing existing blackbox module SDFHx4_ASAP7_75t_R.
+Replacing existing blackbox module SDFLx1_ASAP7_75t_R.
+Replacing existing blackbox module SDFLx2_ASAP7_75t_R.
+Replacing existing blackbox module SDFLx3_ASAP7_75t_R.
+Replacing existing blackbox module SDFLx4_ASAP7_75t_R.
+Imported 23 cell types from liberty file.
+<suppressed ~2 debug messages>
+Found gzip magic in file `/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz', decompressing using zlib.
+
+10. Executing Liberty frontend: /home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz
+Replacing existing blackbox module AND2x2_ASAP7_75t_R.
+Replacing existing blackbox module AND2x4_ASAP7_75t_R.
+Replacing existing blackbox module AND2x6_ASAP7_75t_R.
+Replacing existing blackbox module AND3x1_ASAP7_75t_R.
+Replacing existing blackbox module AND3x2_ASAP7_75t_R.
+Replacing existing blackbox module AND3x4_ASAP7_75t_R.
+Replacing existing blackbox module AND4x1_ASAP7_75t_R.
+Replacing existing blackbox module AND4x2_ASAP7_75t_R.
+Replacing existing blackbox module AND5x1_ASAP7_75t_R.
+Replacing existing blackbox module AND5x2_ASAP7_75t_R.
+Replacing existing blackbox module FAx1_ASAP7_75t_R.
+Replacing existing blackbox module HAxp5_ASAP7_75t_R.
+Replacing existing blackbox module MAJIxp5_ASAP7_75t_R.
+Replacing existing blackbox module MAJx2_ASAP7_75t_R.
+Replacing existing blackbox module MAJx3_ASAP7_75t_R.
+Replacing existing blackbox module NAND2x1_ASAP7_75t_R.
+Replacing existing blackbox module NAND2x1p5_ASAP7_75t_R.
+Replacing existing blackbox module NAND2x2_ASAP7_75t_R.
+Replacing existing blackbox module NAND2xp33_ASAP7_75t_R.
+Replacing existing blackbox module NAND2xp5_ASAP7_75t_R.
+Replacing existing blackbox module NAND2xp67_ASAP7_75t_R.
+Replacing existing blackbox module NAND3x1_ASAP7_75t_R.
+Replacing existing blackbox module NAND3x2_ASAP7_75t_R.
+Replacing existing blackbox module NAND3xp33_ASAP7_75t_R.
+Replacing existing blackbox module NAND4xp25_ASAP7_75t_R.
+Replacing existing blackbox module NAND4xp75_ASAP7_75t_R.
+Replacing existing blackbox module NAND5xp2_ASAP7_75t_R.
+Replacing existing blackbox module NOR2x1_ASAP7_75t_R.
+Replacing existing blackbox module NOR2x1p5_ASAP7_75t_R.
+Replacing existing blackbox module NOR2x2_ASAP7_75t_R.
+Replacing existing blackbox module NOR2xp33_ASAP7_75t_R.
+Replacing existing blackbox module NOR2xp67_ASAP7_75t_R.
+Replacing existing blackbox module NOR3x1_ASAP7_75t_R.
+Replacing existing blackbox module NOR3x2_ASAP7_75t_R.
+Replacing existing blackbox module NOR3xp33_ASAP7_75t_R.
+Replacing existing blackbox module NOR4xp25_ASAP7_75t_R.
+Replacing existing blackbox module NOR4xp75_ASAP7_75t_R.
+Replacing existing blackbox module NOR5xp2_ASAP7_75t_R.
+Replacing existing blackbox module OR2x2_ASAP7_75t_R.
+Replacing existing blackbox module OR2x4_ASAP7_75t_R.
+Replacing existing blackbox module OR2x6_ASAP7_75t_R.
+Replacing existing blackbox module OR3x1_ASAP7_75t_R.
+Replacing existing blackbox module OR3x2_ASAP7_75t_R.
+Replacing existing blackbox module OR3x4_ASAP7_75t_R.
+Replacing existing blackbox module OR4x1_ASAP7_75t_R.
+Replacing existing blackbox module OR4x2_ASAP7_75t_R.
+Replacing existing blackbox module OR5x1_ASAP7_75t_R.
+Replacing existing blackbox module OR5x2_ASAP7_75t_R.
+Replacing existing blackbox module TIEHIx1_ASAP7_75t_R.
+Replacing existing blackbox module TIELOx1_ASAP7_75t_R.
+Replacing existing blackbox module XNOR2x1_ASAP7_75t_R.
+Replacing existing blackbox module XNOR2x2_ASAP7_75t_R.
+Replacing existing blackbox module XNOR2xp5_ASAP7_75t_R.
+Replacing existing blackbox module XOR2x1_ASAP7_75t_R.
+Replacing existing blackbox module XOR2x2_ASAP7_75t_R.
+Replacing existing blackbox module XOR2xp5_ASAP7_75t_R.
+Imported 56 cell types from liberty file.
+
+11. Executing SLANG frontend.
+Top level design units:
+    MulProbe_sim_top
+
+
+Build succeeded: 0 errors, 0 warnings
+
+11.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$36'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$12'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$9'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$4'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$0'.
+Cleaned up 5 empty switches.
+<suppressed ~58 debug messages>
+
+11.2. Executing TRIBUF pass.
+
+11.3. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 3 switch rules as full_case in process $36 in module MulProbe_sim_top.
+Marked 1 switch rules as full_case in process $12 in module MulProbe_sim_top.
+Marked 1 switch rules as full_case in process $9 in module MulProbe_sim_top.
+Marked 4 switch rules as full_case in process $4 in module MulProbe_sim_top.
+Marked 2 switch rules as full_case in process $0 in module MulProbe_sim_top.
+Removed a total of 0 dead cases.
+
+11.4. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 8 redundant assignments.
+Promoted 0 assignments to connections.
+
+11.5. Executing PROC_INIT pass (extract init attributes).
+
+11.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~15 debug messages>
+
+11.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\MulProbe_sim_top.$36'.
+     1/5: $__vul_pipeline_multiply.rtlzz_pipe_8_s1$39
+     2/5: $__vul_pipeline_multiply.rtlzz_pipe_2_s1$38
+     3/5: $__vul_pipeline_multiply.rtlzz_valid_s1$42
+     4/5: $__vul_pipeline_multiply.rtlzz_pipe_8_s1$41
+     5/5: $__vul_pipeline_multiply.rtlzz_pipe_2_s1$40
+Creating decoders for process `\MulProbe_sim_top.$12'.
+     1/1: $__vul_pipeline_q_s3valid$14
+Creating decoders for process `\MulProbe_sim_top.$9'.
+     1/1: $__vul_pipeline_q_s3reg$11
+Creating decoders for process `\MulProbe_sim_top.$4'.
+     1/3: $__vul_pipeline_q_s1valid$6
+     2/3: $__vul_pipeline_q_s1valid$7
+     3/3: $__vul_pipeline_q_s1valid$8
+Creating decoders for process `\MulProbe_sim_top.$0'.
+     1/2: $__vul_pipeline_q_s1reg$2
+     2/2: $__vul_pipeline_q_s1reg$3
+
+11.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 5 empty switches in `\MulProbe_sim_top.$36'.
+Removing empty process `MulProbe_sim_top.$36'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$12'.
+Removing empty process `MulProbe_sim_top.$12'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$9'.
+Removing empty process `MulProbe_sim_top.$9'.
+Found and cleaned up 5 empty switches in `\MulProbe_sim_top.$4'.
+Removing empty process `MulProbe_sim_top.$4'.
+Found and cleaned up 3 empty switches in `\MulProbe_sim_top.$0'.
+Removing empty process `MulProbe_sim_top.$0'.
+Cleaned up 15 empty switches.
+
+11.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module MulProbe_sim_top.
+<suppressed ~16 debug messages>
+
+12. Executing HIERARCHY pass (managing design hierarchy).
+
+12.1. Analyzing design hierarchy..
+Top module:  \MulProbe_sim_top
+
+12.2. Analyzing design hierarchy..
+Top module:  \MulProbe_sim_top
+Removed 0 unused modules.
+
+13. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \MulProbe_sim_top..
+Removed 5 unused cells and 83 unused wires.
+<suppressed ~97 debug messages>
+
+14. Executing RTLIL backend.
+Output filename: /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/asap7-mul-finalinterface/results/asap7/arithmetic_probe/base/1_1_yosys_canonicalize.rtlil
+
+End of script. Logfile hash: 9d577f0b7d, time: 0.51s, user: 0.46s, system: 0.03s, MEM: 85.32 MB peak
+Yosys 0.68+ (git sha1 a5af9d690, Release, GNU /usr/bin/c++ 13.3.0) [github.com/The-OpenROAD-Project/yosys at HEAD]
+Time spent: 96% 12x read_liberty (0 sec), 1% 2x read_slang (0 sec), ...
+Elapsed time: 0:00.51[h:]min:sec. CPU time: user 0.48 sys 0.04 (100%). Peak memory: 89456KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+1_1_yosys_canonicalize    .rtlil          0             87 91b998bab52debe71dfe

@@ -15,13 +15,15 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from experiments.arithmetic_dse.backend import run_command, stage_metrics, render_abc_script
+from experiments.arithmetic_dse.backend import run_command, stage_metrics, render_abc_script, verify_orfs_area
 from experiments.arithmetic_dse.characterization import target_coverage
 from experiments.arithmetic_dse.characterization import sensitivity_observation, mapped_netlist_hash
-from experiments.arithmetic_dse.budget import Ledger, BudgetExceeded, plan_cost, planning_status
-from experiments.arithmetic_dse.budget import required_data_plan, POLICY
+from experiments.arithmetic_dse.budget import Ledger, BudgetExceeded, stage_plan, usage_by
+from experiments.arithmetic_dse.budget import POLICY
 from experiments.arithmetic_dse.physical_control import admission
 from experiments.arithmetic_dse.timing_evidence import critical_path
+from experiments.arithmetic_dse.platforms import profile,report_scales,library_data,resolve_environment,validate_environment
+from experiments.arithmetic_dse.platforms import parameter_provenance
 from concurrent.futures import ThreadPoolExecutor
 
 
@@ -58,6 +60,133 @@ class BackendContracts(unittest.TestCase):
         self.assertEqual(result['sequential_area_um2'], 4)
         self.assertEqual(result['excluded_filler_area_um2'], 2)
         self.assertTrue(result['measured_feasibility'])
+
+    def test_orfs_area_rounding_matches_six_significant_digit_serializer(self):
+        for area in (572.46912,1622.866,123456.78,0.001234567):
+            native=float(format(area,'.6g'))
+            verify_orfs_area(area,native)
+            with self.assertRaises(ValueError):verify_orfs_area(area*1.0001,native)
+
+    def test_declared_endcap_area_is_physical_and_fillers_remain_excluded(self):
+        self.reports['cells']+='gf180mcu_fd_sc_mcu9t5v0__endcap\t3\t1.25\t0\tENDCAP_PRE\n'
+        self.write_reports()
+        m=self.metrics()
+        self.assertEqual(m['cell_area_um2'],11.25)
+        self.assertEqual(m['functional_cell_area_um2'],7)
+        self.assertEqual(m['physical_only_area_um2'],4.25)
+        self.assertEqual(m['excluded_filler_area_um2'],2)
+        self.reports['cells']+='macro\t1\t100\t0\tBLOCK\n';self.write_reports()
+        with self.assertRaises(ValueError):self.metrics()
+
+    def test_ns_pf_reports_are_converted_without_changing_area(self):
+        self.reports['units']='time 1ns\ncapacitance 1pF\ndistance 1um\n'
+        self.reports['setup']='worst slack max 0.010000\n'
+        self.reports['hold']='worst slack min -0.002000\n'
+        self.reports['period']='core_clk period_min = 1.490000\n'
+        self.write_reports()
+        result=stage_metrics(self.directory,'grt',self.cells,1500,selected=profile('sky130hd'))
+        self.assertEqual(result['setup_worst_slack_ps'],10)
+        self.assertEqual(result['hold_worst_slack_ps'],-2)
+        self.assertEqual(result['minimum_clock_period_ps'],1490)
+        self.assertEqual(result['cell_area_um2'],7.5)
+        self.assertTrue(result['measured_feasibility'])
+        self.assertEqual(result['raw_timing_values']['hold_worst_slack_ps'],-0.002)
+
+    def test_profile_mismatched_report_units_are_rejected(self):
+        for platform in ('nangate45','sky130hd','gf180'):
+            with self.assertRaises(ValueError):
+                report_scales('time 1ps\ncapacitance 1fF\n',profile(platform))
+        with self.assertRaises(ValueError):profile('unknown')
+
+    def test_parameter_provenance_preserves_effective_identity_and_detects_mismatch(self):
+        from copy import deepcopy
+        from experiments.arithmetic_dse.platforms import PARAMETER_SOURCES
+        data=json.loads(PARAMETER_SOURCES.read_text())
+        for platform in ('asap7','nangate45','sky130hd','gf180'):
+            self.assertEqual(parameter_provenance(platform)['profile_sha256'],profile(platform)['profile_sha256'])
+            for field in ('profile_sha256','value','unit','basis'):
+                altered=deepcopy(data);item=altered['profiles'][platform]
+                if field=='profile_sha256':item[field]='0'*64
+                else:item['parameters']['setup_uncertainty_ps'][field]={'value':0,'unit':'ns','basis':[]}[field]
+                with self.subTest(platform=platform,field=field),self.assertRaises(ValueError):
+                    parameter_provenance(platform,document=altered)
+
+    def test_selected_library_checks_name_pvt_and_units_before_physical_launch(self):
+        p=profile('nangate45')
+        path=self.directory/'NangateOpenCellLibrary_typical.lib'
+        text='''library(test) { time_unit : "1ns"; capacitive_load_unit(1,ff);
+nom_voltage : 1.1; nom_temperature : 25;
+/* cell (example) { area: 999; } */
+cell (BUF_X1) { area: 1.0; } }'''
+        path.write_text(text)
+        libs,cells=library_data([path],p)
+        self.assertEqual(libs[0]['time_to_ps'],1000)
+        self.assertEqual(list(cells),['BUF_X1'])
+        for old,new in [('1.1','1.2'),('25','125'),('1ns','1ps'),('(1,ff)','(1,pf)')]:
+            path.write_text(text.replace(old,new))
+            with self.assertRaises(ValueError):library_data([path],p)
+        path.write_text(text)
+        renamed=path.with_name('wrong.lib');renamed.write_text(text)
+        with self.assertRaises(ValueError):library_data([renamed],p)
+
+    def environment_fixture(self):
+        selected=profile('nangate45')
+        d=self.directory/'nangate45';d.mkdir()
+        effective={'PLATFORM':'nangate45','PLATFORM_DIR':str(d),'CORNER':'TC',
+                   'ABC_DRIVER_CELL':'BUF_X1','ABC_LOAD_IN_FF':'3.898'}
+        for key in ('TECH_LEF','SC_LEF','RCX_RULES','PDN_TCL'):
+            path=d/key;path.touch();effective[key]=str(path)
+        for name in ('setRC.tcl','make_tracks.tcl'):(d/name).touch()
+        return effective,selected
+
+    def test_rc_and_tracks_defaults_follow_actual_flow_without_mutating_raw_env(self):
+        raw,p=self.environment_fixture()
+        effective,origins=resolve_environment(raw)
+        validate_environment(effective,p)
+        self.assertNotIn('LAYER_PARASITICS_FILE',raw)
+        self.assertEqual(Path(effective['LAYER_PARASITICS_FILE']).name,'setRC.tcl')
+        self.assertIn('fallback',origins['MAKE_TRACKS'])
+        Path(effective['MAKE_TRACKS']).unlink()
+        resolved,origins=resolve_environment(raw)
+        self.assertEqual(resolved['MAKE_TRACKS'],'')
+        self.assertIn('make_tracks command',origins['MAKE_TRACKS'])
+
+    def test_wrong_platform_assets_and_abc_load_are_rejected(self):
+        raw,p=self.environment_fixture();effective,_=resolve_environment(raw)
+        for key,value in [('CORNER','BC'),('ABC_LOAD_IN_FF','0.003898'),
+                          ('ABC_DRIVER_CELL','OTHER'),('RCX_RULES',str(self.directory/'outside'))]:
+            if key=='RCX_RULES':Path(value).touch()
+            with self.assertRaises(ValueError):validate_environment(dict(effective,**{key:value}),p)
+        Path(effective['LAYER_PARASITICS_FILE']).unlink()
+        with self.assertRaises(ValueError):validate_environment(effective,p)
+
+    def test_shared_rc_asset_requires_exact_alias_and_content_identity(self):
+        import hashlib
+        raw,p=self.environment_fixture();effective,_=resolve_environment(raw)
+        shared=self.directory/'shared';shared.mkdir()
+        rules=shared/'rules';rules.write_text('same interconnect stack')
+        alias=Path(raw['PLATFORM_DIR'])/'rcx_alias';alias.symlink_to(rules)
+        effective['RCX_RULES']=str(alias)
+        with self.assertRaises(ValueError):validate_environment(effective,p)
+
+        p=dict(p,shared_platform_assets={'RCX_RULES':{'logical_relative':'rcx_alias',
+               'resolved_relative':'../shared/rules','sha256':hashlib.sha256(rules.read_bytes()).hexdigest()}})
+        validate_environment(effective,p)
+        rules.write_text('different extraction corner')
+        with self.assertRaises(ValueError):validate_environment(effective,p)
+
+    def test_via_adapter_rejects_wrong_resistance_units_and_selected_lef_basis(self):
+        raw,p=self.environment_fixture();effective,_=resolve_environment(raw)
+        adapter={'via_resistance_ohm':4.5,'via_layers':['Via1']}
+        p=dict(p,rc_adapter=adapter)
+        # Reject before any adapter file can be accepted: the selected LEF
+        # does not establish the declared typical single-cut resistance.
+        with self.assertRaisesRegex(ValueError,'technology LEF'):validate_environment(effective,p)
+        Path(effective['TECH_LEF']).write_text('VIA Via1_HH DEFAULT\n RESISTANCE 4.500 ;')
+        effective['VULSIM_TC_VIA_RESISTANCE_OHM']='4500'
+        with self.assertRaisesRegex(ValueError,'resistance override'):validate_environment(effective,p)
+        with self.assertRaisesRegex(ValueError,'resistance units'):
+            report_scales('time 1ns\ncapacitance 1fF\nresistance 1kohm\n',p)
 
     def test_grt_hold_is_reported_without_changing_setup_feasibility(self):
         self.reports['hold'] = 'worst slack min -0.000001\n'
@@ -202,27 +331,70 @@ class BackendContracts(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'unsettled'):
             new.migrate(old.policy,old.checkpoint,'test')
 
-    def test_budget_includes_six_targets_and_unfrozen_case_supplements(self):
-        families = {str(i):[500,800,1000,1250,1500,2000] for i in range(19)}
-        plan = plan_cost(families,None,historical={'synth':13,'grt':5,'final':4},
-                         prototype_reserve=36,repeat_reserve=8,retry_reserve=16,targets_frozen=False)
-        self.assertEqual(plan['base_characterization'],114)
-        self.assertEqual(plan['supplemental_characterization'],171)
-        self.assertEqual(plan['requested_calls'],{'synth':446,'grt':420,'final':44})
-        policy = {'max_synthesis_calls':128,'max_global_route_calls':96,'max_detailed_route_calls':28}
-        self.assertEqual(planning_status(plan,policy)['status'],'blocked')
-        exact = plan_cost(families,[1000]*8+[1100],historical={'synth':0,'grt':0,'final':0},
-                         prototype_reserve=0,repeat_reserve=0,retry_reserve=0,targets_frozen=True)
-        self.assertEqual(exact['supplemental_characterization'],19)
+    def test_platform_stage_list_counts_cold_chains_and_rejects_duplicate_tasks(self):
+        resources=json.loads(POLICY.read_text())['resources']
+        historical={'synth':33,'grt':11,'final':5,'walltime_s':2500,'CPU_time_s':3700,'pending':0}
+        tasks=[{'id':'one','platform':'sky130hd','stage':'grt','period_ps':30000,'abc_target_ps':20000},
+               {'id':'two','platform':'gf180','stage':'final','period_ps':30000,'abc_target_ps':30000}]
+        plan=stage_plan(tasks,historical,resources,support_walltime_s=600)
+        self.assertEqual(plan['new_calls'],{'synth':2,'grt':2,'final':1})
+        self.assertEqual(plan['new_calls_by_platform']['gf180'],{'synth':1,'grt':1,'final':1})
+        self.assertEqual(plan['status'],'ready')
+        self.assertFalse(plan['main_matrix_authorized'])
+        for invalid in ([tasks[0],tasks[0]],[dict(tasks[0],abc_target_ps=0)]):
+            with self.assertRaises(ValueError):stage_plan(invalid,historical,resources)
+        self.assertEqual(stage_plan(tasks,dict(historical,pending=1),resources)['status'],'blocked')
+        self.assertEqual(stage_plan(tasks,historical,dict(resources,max_synthesis_calls=33))['status'],'blocked')
+        self.assertEqual(stage_plan(tasks,historical,dict(resources,max_global_walltime_h=1))['status'],'blocked')
 
-    def test_required_data_plan_does_not_mandate_six_points_per_family(self):
-        plan = required_data_plan([str(i) for i in range(19)],None,
-            historical={'synth':13,'grt':5,'final':4},
-            reserves={'prototype_reserve':36,'repeat_reserve':8,'retry_reserve':16})
-        self.assertEqual(plan['base_characterization'],19)
-        self.assertEqual(plan['supplemental_characterization'],171)
-        self.assertFalse(plan['universal_six_point_requirement'])
-        self.assertFalse(plan['actual_collection_manifest_frozen'])
+    def test_accounting_context_is_preserved_without_relabeling_history(self):
+        ledger=self.budget_ledger()
+        context={'target_platform':'gf180','admission_id':'diagnostic-v1','task_id':'adder',
+                 'model_version':'not_applicable'}
+        r=ledger.reserve('synth',10,2,'prototype',[],self.directory,context=context)
+        with self.assertRaises(ValueError):ledger.reserve(None,1,1,'bad',[],self.directory,context={'unknown':'x'})
+        state=json.loads(ledger.path.read_text())
+        by_platform=usage_by(state['entries'],'target_platform')
+        self.assertEqual(by_platform['gf180']['pending'],1)
+        self.assertEqual(by_platform['historical_unattributed']['synth'],1)
+        self.assertTrue(all(r[k]==v for k,v in context.items()))
+
+    def test_connection_admission_binds_both_targets_and_requires_small_probe(self):
+        from types import SimpleNamespace
+        from experiments.arithmetic_dse.platform_probe import verify_admission,digest
+        ledger=self.budget_ledger();ledger.summary()
+        p=profile('sky130hd');rtl=self.directory/'rtl.sv';rtl.write_text('module test; endmodule')
+        task={'id':'product','platform':'sky130hd','kernel':'mul_u32','profile_sha256':p['profile_sha256'],
+              'rtl_sha256':digest(rtl),'top':'test','period_ps':30000,'abc_target_ps':20000,
+              'stage':'final','purpose':'prototype'}
+        frozen={'id':'connection','purpose':'platform_connection_only','policy_sha256':digest(POLICY),
+                'tasks':[task,dict(task,id='small',kernel='add_u32')],'call_caps':{'synth':3,'grt':3,'final':2}}
+        path=self.directory/'admission.json';path.write_text(json.dumps(frozen))
+        args=SimpleNamespace(admission=path,admission_id='connection',task_id='product',top='test',
+                             period_ps=30000,abc_target_ps=20000,stage='final',budget_purpose='prototype',
+                             period_role='resource_trial',io_delay_max_ps=None,out=self.directory/'runs/product')
+        with self.assertRaisesRegex(ValueError,'small add'):verify_admission(args,p,rtl,ledger)
+        small=self.directory/'runs/small';small.mkdir(parents=True)
+        (small/'manifest.json').write_text(json.dumps({'target_platform':'sky130hd','status':'completed',
+             'task_id':'small','platform_profile':p,'sdc_contracts':{'grt':{'status':'passed'}},'metrics':[{'stage':'grt','timing_coverage_complete':True}]}))
+        self.assertEqual(verify_admission(args,p,rtl,ledger),digest(path))
+        frozen['related_admission_ids']=['unrelated'];path.write_text(json.dumps(frozen))
+        with self.assertRaisesRegex(ValueError,'lineage'):verify_admission(args,p,rtl,ledger)
+        del frozen['related_admission_ids'];path.write_text(json.dumps(frozen))
+        from experiments.arithmetic_dse.sdc import VERSION
+        frozen['tasks'][0].update(constraints_sha256='bad-source-hash',sdc_contract_version=VERSION)
+        path.write_text(json.dumps(frozen))
+        with self.assertRaisesRegex(ValueError,'SDC source'):verify_admission(args,p,rtl,ledger)
+        del frozen['tasks'][0]['constraints_sha256'];del frozen['tasks'][0]['sdc_contract_version']
+        path.write_text(json.dumps(frozen))
+        args.abc_target_ps=30000
+        with self.assertRaisesRegex(ValueError,'differs'):verify_admission(args,p,rtl,ledger)
+        args.abc_target_ps=20000
+        r=ledger.reserve(None,10,1,'test',[],self.directory,context={'admission_id':'connection','task_id':'product'})
+        with self.assertRaisesRegex(ValueError,'unsettled'):verify_admission(args,p,rtl,ledger)
+        ledger.finish(r,{'exit_code':1,'walltime_s':1,'timed_out':False,'log':str(self.directory/'missing.log'),
+                         'gnu_time':str(self.directory/'missing.resources.txt')})
+        with self.assertRaisesRegex(ValueError,'already attempted'):verify_admission(args,p,rtl,ledger)
 
     def test_control_admission_requires_both_grt_slots_and_counts_support_time(self):
         resources = json.loads(POLICY.read_text())['resources']

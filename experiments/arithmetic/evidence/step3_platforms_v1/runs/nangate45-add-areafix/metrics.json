@@ -1,0 +1,119 @@
+[
+  {
+    "stage": "synth",
+    "target_period_ps": 3000.0,
+    "cell_area_um2": 1622.8660000000007,
+    "functional_cell_area_um2": 1622.8660000000007,
+    "excluded_filler_area_um2": 0,
+    "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+    "sequential_area_um2": 741.6080000000001,
+    "sequential_cells": 164,
+    "physical_only_area_um2": 0,
+    "setup_worst_slack_ps": 2123.3,
+    "hold_worst_slack_ps": 58.02,
+    "setup_tns_ps": 0.0,
+    "hold_tns_ps": 0.0,
+    "timing_coverage_complete": true,
+    "timing_coverage_diagnostics": "",
+    "minimum_clock_period_ps": 580.0,
+    "sta_feasibility": true,
+    "measured_feasibility": null,
+    "feasibility_scope": "synthesis_STA_only",
+    "multi_corner_signoff": false,
+    "hold_feasible_at_TT": true,
+    "hold_review_margin_ps": 5,
+    "hold_review_required": false,
+    "hold_margin_status": "review_band_met",
+    "parasitics": "none",
+    "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/nangate45-add-areafix/reports/nangate45/arithmetic_probe/base/vulsim_synth",
+    "target_platform": "nangate45",
+    "platform_profile_sha256": "f4ff4c89159379ad030fca2780ae71e17409492b2d003240912fbf63cf634911",
+    "raw_report_units": {
+      "time": {
+        "raw_unit": "time 1ns",
+        "to_ps": 1000.0
+      },
+      "capacitance": {
+        "raw_unit": "capacitance 1fF",
+        "to_fF": 1.0
+      }
+    },
+    "unit_conversion": "Liberty_and_report_units_verified",
+    "raw_timing_values": {
+      "setup_worst_slack_ps": 2.1233,
+      "hold_worst_slack_ps": 0.05802,
+      "setup_tns_ps": 0.0,
+      "hold_tns_ps": 0.0,
+      "minimum_clock_period_ps": 0.58
+    },
+    "abc_target_ps": 3000.0,
+    "mapping_context_sha256": "8fdb66b5f10db1622554c99ba2d285c39566ed045f60c2459bbb777b3f67ad6d",
+    "target_dependent_measurement": true,
+    "mapped_netlist_sha256": "d1c3cad7afd0a996f79b7e9f844f0e9cbbda85e0ebd0f58b68c18de8d68e8a7f",
+    "mapped_netlist_hash_rule": "Yosys_Verilog_remove_banner_src_blank_lines_v1",
+    "comparison_identity_sha256": "c9f0842a08a423c2f5e3d1a419f3203539e3b47a3761a9a78796f1c4548b619e",
+    "orfs_area_crosscheck": {
+      "native_json_significant_digits": 6,
+      "rounding_tolerance_um2": 0.00500001,
+      "absolute_difference_um2": 0.0039999999992232915
+    },
+    "orfs_stdcell_area_um2": 1622.87
+  },
+  {
+    "stage": "grt",
+    "target_period_ps": 3000.0,
+    "cell_area_um2": 1796.830000000001,
+    "functional_cell_area_um2": 1772.890000000001,
+    "excluded_filler_area_um2": 0,
+    "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+    "sequential_area_um2": 742.14,
+    "sequential_cells": 164,
+    "physical_only_area_um2": 23.94,
+    "setup_worst_slack_ps": 2005.1809999999998,
+    "hold_worst_slack_ps": 0.38499999999999995,
+    "setup_tns_ps": 0.0,
+    "hold_tns_ps": 0.0,
+    "timing_coverage_complete": true,
+    "timing_coverage_diagnostics": "",
+    "minimum_clock_period_ps": 620.0,
+    "sta_feasibility": true,
+    "measured_feasibility": true,
+    "feasibility_scope": "TT_setup_only",
+    "multi_corner_signoff": false,
+    "hold_feasible_at_TT": true,
+    "hold_review_margin_ps": 5,
+    "hold_review_required": true,
+    "hold_margin_status": "below_review_band",
+    "parasitics": "global_route_estimate",
+    "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/nangate45-add-areafix/reports/nangate45/arithmetic_probe/base/vulsim_grt",
+    "target_platform": "nangate45",
+    "platform_profile_sha256": "f4ff4c89159379ad030fca2780ae71e17409492b2d003240912fbf63cf634911",
+    "raw_report_units": {
+      "time": {
+        "raw_unit": "time 1ns",
+        "to_ps": 1000.0
+      },
+      "capacitance": {
+        "raw_unit": "capacitance 1fF",
+        "to_fF": 1.0
+      }
+    },
+    "unit_conversion": "Liberty_and_report_units_verified",
+    "raw_timing_values": {
+      "setup_worst_slack_ps": 2.005181,
+      "hold_worst_slack_ps": 0.000385,
+      "setup_tns_ps": 0.0,
+      "hold_tns_ps": 0.0,
+      "minimum_clock_period_ps": 0.62
+    },
+    "abc_target_ps": 3000.0,
+    "mapping_context_sha256": "8fdb66b5f10db1622554c99ba2d285c39566ed045f60c2459bbb777b3f67ad6d",
+    "target_dependent_measurement": true,
+    "orfs_area_crosscheck": {
+      "native_json_significant_digits": 6,
+      "rounding_tolerance_um2": 0.00500001,
+      "absolute_difference_um2": 1.1368683772161603e-12
+    },
+    "orfs_stdcell_area_um2": 1796.83
+  }
+]

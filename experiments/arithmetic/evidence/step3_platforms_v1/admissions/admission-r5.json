@@ -1,0 +1,123 @@
+{
+  "version": "platform-connection-admission-v1",
+  "id": "step3-four-platforms-r5",
+  "created_at": "2026-10-30T05:18:06.990370+00:00",
+  "purpose": "platform_connection_only",
+  "policy_sha256": "3f4a230ca19b9b53a9da71cb19a52e718d29a8001106d354394f13e5d6ef995a",
+  "starting_usage": {
+    "synth": 38,
+    "grt": 15,
+    "final": 7,
+    "support_calls": 385,
+    "walltime_s": 2938.133774146205,
+    "CPU_time_s": 4333.55,
+    "pending": 0
+  },
+  "tasks": [
+    {
+      "id": "sky130hd-add-rcalias",
+      "platform": "sky130hd",
+      "kernel": "add_u32",
+      "rtl": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/add-native/sim/top.sv",
+      "rtl_sha256": "cc8d3eba4c0adb938b633c7ab3fdcfca915643b70314c848af95bd7da6bf0a6c",
+      "top": "MulProbe_sim_top",
+      "profile_sha256": "b167ee95ee7092393e79f1a3ba4d37897d1214d30cc9cd95229b3f1d2d9e2ca7",
+      "period_ps": 30000,
+      "abc_target_ps": 30000,
+      "stage": "grt",
+      "purpose": "prototype",
+      "L": 3,
+      "II": 1,
+      "size_scope": "32bit_input; complete_result_64bit",
+      "supersedes_task_id": "sky130hd-add-audit"
+    },
+    {
+      "id": "sky130hd-mul-rcalias",
+      "platform": "sky130hd",
+      "kernel": "mul_u32",
+      "rtl": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/mul-native/sim/top.sv",
+      "rtl_sha256": "5018e7b6831f1963c2ac3ee159f25f045cb12eab2a7fcee82cc44af982f7dca3",
+      "top": "MulProbe_sim_top",
+      "profile_sha256": "b167ee95ee7092393e79f1a3ba4d37897d1214d30cc9cd95229b3f1d2d9e2ca7",
+      "period_ps": 30000,
+      "abc_target_ps": 30000,
+      "stage": "final",
+      "purpose": "prototype",
+      "L": 3,
+      "II": 1,
+      "size_scope": "32bit_input; complete_result_64bit",
+      "supersedes_task_id": "sky130hd-mul-audit"
+    },
+    {
+      "id": "gf180-add-config",
+      "platform": "gf180",
+      "kernel": "add_u32",
+      "rtl": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/add-native/sim/top.sv",
+      "rtl_sha256": "cc8d3eba4c0adb938b633c7ab3fdcfca915643b70314c848af95bd7da6bf0a6c",
+      "top": "MulProbe_sim_top",
+      "profile_sha256": "1ce703428dbbc4a65c6d9b96bb98460d3b4bc749bcd5f07ba80630c135ce190e",
+      "period_ps": 30000,
+      "abc_target_ps": 30000,
+      "stage": "grt",
+      "purpose": "prototype",
+      "L": 3,
+      "II": 1,
+      "size_scope": "32bit_input; complete_result_64bit",
+      "supersedes_task_id": "gf180-add-finalconfig"
+    },
+    {
+      "id": "gf180-mul-config",
+      "platform": "gf180",
+      "kernel": "mul_u32",
+      "rtl": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/mul-native/sim/top.sv",
+      "rtl_sha256": "5018e7b6831f1963c2ac3ee159f25f045cb12eab2a7fcee82cc44af982f7dca3",
+      "top": "MulProbe_sim_top",
+      "profile_sha256": "1ce703428dbbc4a65c6d9b96bb98460d3b4bc749bcd5f07ba80630c135ce190e",
+      "period_ps": 30000,
+      "abc_target_ps": 30000,
+      "stage": "final",
+      "purpose": "prototype",
+      "L": 3,
+      "II": 1,
+      "size_scope": "32bit_input; complete_result_64bit",
+      "supersedes_task_id": "gf180-mul-finalconfig"
+    }
+  ],
+  "call_caps": {
+    "synth": 9,
+    "grt": 8,
+    "final": 4
+  },
+  "worst_case_leaf_walltime_s": 24000,
+  "CPU_envelope_s": 48000,
+  "threads": 2,
+  "physical_jobs": 1,
+  "memory_limit_MiB": 8192,
+  "sample_split": "not_applicable; connection probes not admitted as model training",
+  "stops": [
+    "failed_stage",
+    "timeout",
+    "memory_limit",
+    "unsettled_ledger",
+    "unexpected_units_or_assets"
+  ],
+  "automatic_retries": 0,
+  "main_case_targets": false,
+  "later_bulk_or_model_work_authorized": false,
+  "correction_reason": "Sky130HD ORFS uses an intentional symlink to Sky130HS interconnect RCX rules. Register this exact logical path/resolved path/content hash as a shared physical asset; retain HD Liberty and LEF. Prior preflight rejection retained, no physical stage spent or target/cap change.",
+  "parent_admission": {
+    "path": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/admission-r4.json",
+    "sha256": "c9433f2f92563144721cae69e2ac25b30d5eb8e6f2c7907b8259cfed29d0be6d",
+    "id": "step3-four-platforms-r4"
+  },
+  "related_admission_ids": [
+    "step3-four-platforms-v1",
+    "step3-four-platforms-r2",
+    "step3-four-platforms-r3",
+    "step3-four-platforms-r4",
+    "step3-four-platforms-r5"
+  ],
+  "additional_diagnostic_call_caps": {
+    "synth": 1
+  }
+}

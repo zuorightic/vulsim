@@ -1,0 +1,6 @@
+read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/nangate45-add-areafix/results/nangate45/arithmetic_probe/base/1_synth.odb
+read_sdc /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/nangate45-add-areafix/results/nangate45/arithmetic_probe/base/1_synth.sdc
+source /home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+VULSIM_SNAPSHOT_COMPLETE synth
+Elapsed time: 0:00.23[h:]min:sec. CPU time: user 0.22 sys 0.02 (102%). Peak memory: 116184KB.

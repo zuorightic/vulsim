@@ -1,0 +1,195 @@
+{
+  "version": "platform-source-excerpts-v1",
+  "sources": {
+    "flow/platforms/asap7/config.mk": {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/config.mk",
+      "sha256": "c5c868f35c7c04365a074aef2d81c72641441a8070a117bcb1a35b696942507c",
+      "excerpts": [
+        {
+          "first_line": 25,
+          "last_line": 33,
+          "text": "export DONT_USE_CELLS          += SDF* ICG*\n\nexport SYNTH_MINIMUM_KEEP_SIZE       ?= 1000\n\n# BUF_X1, pin (A) = 0.974659. Arbitrarily multiply by 4\nexport ABC_LOAD_IN_FF          = 3.898\n\n\n# Placement site for core cells"
+        },
+        {
+          "first_line": 131,
+          "last_line": 138,
+          "text": "# Used in synthesis\nexport MIN_BUF_CELL_AND_PORTS  ?= BUFx2_ASAP7_75t_$(PRIMARY_VT_TAG) A Y\n\nexport HOLD_BUF_CELL           ?= BUFx2_ASAP7_75t_$(PRIMARY_VT_TAG)\n\nexport ABC_DRIVER_CELL         ?= BUFx2_ASAP7_75t_$(PRIMARY_VT_TAG)\n\n# Fill cells used in fill cell insertion"
+        }
+      ]
+    },
+    "flow/platforms/nangate45/config.mk": {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/config.mk",
+      "sha256": "1d8e639ccc138e72b5fe02dc0130e167455aee1c53b5aa3ee50ff442dc47d6cc",
+      "excerpts": [
+        {
+          "first_line": 38,
+          "last_line": 44,
+          "text": "export ADDER_MAP_FILE ?= $(PLATFORM_DIR)/cells_adders.v\n#\nexport ABC_DRIVER_CELL = BUF_X1\n# BUF_X1, pin (A) = 0.974659. Arbitrarily multiply by 4\nexport ABC_LOAD_IN_FF = 3.898\n\n#--------------------------------------------------------"
+        }
+      ]
+    },
+    "flow/platforms/sky130hd/config.mk": {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/sky130hd/config.mk",
+      "sha256": "1a36b8fbd58ee4b6b961bc14f3ca44e7b44a4ea47faf6f116f827eb5177509d5",
+      "excerpts": [
+        {
+          "first_line": 75,
+          "last_line": 81,
+          "text": "export ADDER_MAP_FILE ?= $(PLATFORM_DIR)/cells_adders_hd.v\n\n# Define ABC driver and load\nexport ABC_DRIVER_CELL = sky130_fd_sc_hd__buf_1\nexport ABC_LOAD_IN_FF = 5\n\n# -----------------------------------------------------"
+        }
+      ]
+    },
+    "flow/platforms/gf180/config.mk": {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/config.mk",
+      "sha256": "1ab8a25c54e376c5aa2ef5f983f969cdd943cc747785f9a641bb47467e64a6d3",
+      "excerpts": [
+        {
+          "first_line": 43,
+          "last_line": 55,
+          "text": "#-----------------------------------------------------\n# Yosys\n#-----------------------------------------------------\n\n# set the TIEHI/TIELO cells\nexport TIEHI_CELL_AND_PORT                    = gf180mcu_fd_sc_mcu$(TRACK_OPTION)$(POWER_OPTION)__tieh Z\nexport TIELO_CELL_AND_PORT                    = gf180mcu_fd_sc_mcu$(TRACK_OPTION)$(POWER_OPTION)__tiel ZN\n\nexport ABC_DRIVER_CELL                        = gf180mcu_fd_sc_mcu$(TRACK_OPTION)$(POWER_OPTION)__buf_4\nexport ABC_LOAD_IN_FF                         = 0.01343\n\n# hold buffer cell\nexport MIN_BUF_CELL_AND_PORTS                 = gf180mcu_fd_sc_mcu$(TRACK_OPTION)$(POWER_OPTION)__dlya_4 I Z"
+        }
+      ]
+    },
+    "flow/platforms/gf180/setRC.tcl": {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/setRC.tcl",
+      "sha256": "6be67945e3c76ffcb2d8bebd9c17c8996f9d40ce91d8cda2be00605e5ad90539",
+      "excerpts": [
+        {
+          "first_line": 1,
+          "last_line": 66,
+          "text": "set_layer_rc -layer Metal2 -resistance 2.25636E-04 -capacitance 1.35357E-04\nset_layer_rc -layer Metal3 -resistance 2.25636E-04 -capacitance 1.46141E-04\nset_layer_rc -layer Metal4 -resistance 2.25637E-04 -capacitance 1.50688E-04\nset_layer_rc -layer Metal5 -resistance 5.85545E-05 -capacitance 1.55595E-04\n\nregexp {(\\d+)} $::env(METAL_OPTION) metal\n\nif { $metal == \"6\" } {\n  set_wire_rc -signal -layer Metal2\n  set_wire_rc -clock -layer Metal5\n} elseif { $metal == \"5\" } {\n  # TC matches LEF.  These are the temperature adjusted values.\n  # The other stacks are likely similar but I haven't checked yet.\n  if { $::env(CORNER) == \"WC\" } {\n    set_layer_rc -via Via1 -resistance 16.845\n    set_layer_rc -via Via2 -resistance 16.845\n    set_layer_rc -via Via3 -resistance 16.845\n    set_layer_rc -via Via4 -resistance 16.845\n\n    set tech [ord::get_db_tech]\n    foreach via [$tech getVias] {\n      if { [$via getResistance] == 4.5 } {\n        $via setResistance 16.845\n      }\n    }\n  } elseif { $::env(CORNER) == \"BC\" } {\n    set_layer_rc -via Via1 -resistance 4.23\n    set_layer_rc -via Via2 -resistance 4.23\n    set_layer_rc -via Via3 -resistance 4.23\n    set_layer_rc -via Via4 -resistance 4.23\n\n    set tech [ord::get_db_tech]\n    foreach via [$tech getVias] {\n      if { [$via getResistance] == 4.5 } {\n        $via setResistance 4.23\n      }\n    }\n  }\n\n  set_wire_rc -signal -layer Metal2\n  set_wire_rc -clock -layer Metal4\n} elseif { $metal == \"4\" } {\n  set_wire_rc -signal -layer Metal2\n  set_wire_rc -clock -layer Metal3\n} elseif { $metal == \"3\" } {\n  set_wire_rc -signal -layer Metal2\n  set_wire_rc -clock -layer Metal2\n} elseif { $metal == \"2\" } {\n  set_wire_rc -signal -layer Metal2\n  set_wire_rc -clock -layer Metal2\n}"
+        }
+      ]
+    },
+    "flow/platforms/gf180/lef/gf180mcu_5LM_1TM_9K_9t_tech.lef": {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/lef/gf180mcu_5LM_1TM_9K_9t_tech.lef",
+      "sha256": "126f13f69fb7a05bcf6a3a5df0c2092709e2bc2b1e75f0cad0add837f25231e2",
+      "excerpts": [
+        {
+          "first_line": 120,
+          "last_line": 147,
+          "text": "LAYER Metal2\n    TYPE ROUTING ;\n    DIRECTION VERTICAL ;\n\n    PITCH 0.56 ;\n    OFFSET 0.0 ;  \n\n    MINWIDTH 0.280 ;\n    WIDTH 0.280 ;                        # Mn.1  (n>1)\n    SPACING 0.280 ;                      # Mn.2a (n>1)\n    SPACING 0.300 RANGE 10.005 999.00 ;  # Mn.2b\n    AREA 0.1444 ;                        # Mn.3\n\n    THICKNESS 0.54 ;\n    ANTENNAMODEL OXIDE1 ;\n    ANTENNADIFFSIDEAREARATIO 400 ;\n    ANTENNAGATEPLUSDIFF 2 ;\n\n    DCCURRENTDENSITY AVERAGE 0.67 ;\n    ACCURRENTDENSITY AVERAGE 1.00 ;\n\n    CAPACITANCE CPERSQDIST 0.0000394 ;\n    RESISTANCE RPERSQ 0.090000 ;\n\n    MINIMUMDENSITY 30.0 ;\n    DENSITYCHECKWINDOW 200.0 200.0 ;\n    DENSITYCHECKSTEP 100.0 ;\n"
+        },
+        {
+          "first_line": 275,
+          "last_line": 304,
+          "text": "LAYER Metal5\n    TYPE ROUTING ;\n    DIRECTION HORIZONTAL ;\n\n    OFFSET 0.0 ;  \n\n\n    PITCH 0.9 ;\n    MINWIDTH 0.440 ;\n    WIDTH   0.440 ;                      # MT.1\n    AREA    0.5625 ;                     # MT.4\n    SPACING 0.460 ;                      # MT.2a\n    SPACING 0.600 RANGE 10.005 999.00 ;  # MT.2b\n\n    DCCURRENTDENSITY AVERAGE 1.21 ;\n    ACCURRENTDENSITY AVERAGE 1.82 ;\n    RESISTANCE RPERSQ 0.04000 ;\n\n    THICKNESS 0.99 ;\n\n    ANTENNAMODEL OXIDE1 ;\n    ANTENNADIFFSIDEAREARATIO 400 ;\n    ANTENNAGATEPLUSDIFF 2 ;\n\n    CAPACITANCE CPERSQDIST 0.0000394 ;\n\n    MINIMUMDENSITY 30.0 ;\n    DENSITYCHECKWINDOW 200.0 200.0 ;\n    DENSITYCHECKSTEP 100.0 ;\n"
+        }
+      ]
+    },
+    "tools/OpenROAD/src/est/src/EstimateParasitics.tcl": {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/tools/OpenROAD/src/est/src/EstimateParasitics.tcl",
+      "sha256": "be50353626ead30f429cf7b6d6f6550cfe83e5c50c9f0360b071a3336b30e475",
+      "excerpts": [
+        {
+          "first_line": 33,
+          "last_line": 87,
+          "text": "sta::define_cmd_args \"set_layer_rc\" { [-layer layer]\\\n                                        [-via via_layer]\\\n                                        [-capacitance cap]\\\n                                        [-resistance res]\\\n                                        [-corner corner]}\nproc set_layer_rc { args } {\n  sta::parse_key_args \"set_layer_rc\" args \\\n    keys {-layer -via -capacitance -resistance -corner} \\\n    flags {}\n\n  if { [info exists keys(-layer)] && [info exists keys(-via)] } {\n    utl::error \"EST\" 201 \"Use -layer or -via but not both.\"\n  }\n\n  set corners [sta::parse_scene_or_null keys]\n  set tech [est::get_db_tech_checked]\n  if { [info exists keys(-layer)] } {\n    set layer_name $keys(-layer)\n    set layer [$tech findLayer $layer_name]\n    if { $layer == \"NULL\" } {\n      utl::error \"EST\" 202 \"layer $layer_name not found.\"\n    }\n\n    if { [$layer getRoutingLevel] == 0 } {\n      utl::error \"EST\" 203 \"$layer_name is not a routing layer.\"\n    }\n\n    if { ![info exists keys(-capacitance)] && ![info exists keys(-resistance)] } {\n      utl::error \"EST\" 204 \"missing -capacitance or -resistance argument.\"\n    }\n\n    set cap 0.0\n    if { [info exists keys(-capacitance)] } {\n      set cap $keys(-capacitance)\n      sta::check_positive_float \"-capacitance\" $cap\n      # F/m\n      set cap [expr [sta::capacitance_ui_sta $cap] / [sta::distance_ui_sta 1.0]]\n    }\n\n    set res 0.0\n    if { [info exists keys(-resistance)] } {\n      set res $keys(-resistance)\n      sta::check_positive_float \"-resistance\" $res\n      # ohm/m\n      set res [expr [sta::resistance_ui_sta $res] / [sta::distance_ui_sta 1.0]]\n    }\n\n    if { $corners == \"NULL\" } {\n      set corners [sta::scenes]\n      # Only update the db layers if -corner not specified.\n      est::set_dblayer_wire_rc $layer $res $cap\n    }\n\n    foreach corner $corners {\n      est::set_layer_rc_cmd $layer $corner $res $cap"
+        }
+      ]
+    },
+    "flow/util/correlateRC.py": {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/flow/util/correlateRC.py",
+      "sha256": "2de7944b8294ec3b04cc690b2d06842e2cc910101ead035fb831861c6aa6e943",
+      "excerpts": [
+        {
+          "first_line": 1,
+          "last_line": 43,
+          "text": "#!/usr/bin/env python3\n\n# Script for generating and comparing per-layer parasitics values.\n# These values are used by set_layer_rc and will be the base\n# values for the parasitics estimations across the flow.\n#\n# Both input files are written by \"make write_rc\": the set_layer_rc and\n# set_wire_rc values are fitted from the segments data, while the plots\n# compare the GRT estimates against the RCX values of the nets.\n\nfrom correlateRCHelper import (\n    fit_layer_models,\n    parse_args,\n    plot_grt_rcx_diff,\n    print_fit_scores,\n    print_layer_rc,\n    print_wire_rc,\n    read_nets_rc,\n    read_segments_rc,\n    resolve_units,\n)\n\nargs = parse_args()\nres_unit, res_scale, cap_unit, cap_scale = resolve_units(args)\n\nrouting_layers, layer_segments, layer_net_type_length = read_segments_rc(\n    args.segments_rc_file\n)\n\n# Use linear regression to find the layer resistances and capacitances.\nlayer_models = fit_layer_models(routing_layers, layer_segments)\n\nprint_fit_scores(layer_models, res_unit, cap_unit)\nprint_layer_rc(layer_models, res_scale, cap_scale)\nprint_wire_rc(layer_models, layer_net_type_length, res_scale, cap_scale)\n\n# The plots come after the commands so that a plot with no data does not\n# withhold them.\nif args.plot_cap or args.plot_res:\n    nets, nets_routing_layers = read_nets_rc(args.nets_rc_file)\n\n    if nets_routing_layers != routing_layers:\n        print(\"[Warning] The nets and the segments data have different routing\")"
+        }
+      ]
+    },
+    "flow/util/correlateRCHelper.py": {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/flow/util/correlateRCHelper.py",
+      "sha256": "e30949c53c0ccff2b9109ebe378c8a8708f7afafa1ce3761d9e6122ed3f15625",
+      "excerpts": [
+        {
+          "first_line": 24,
+          "last_line": 34,
+          "text": "    parser = argparse.ArgumentParser(\n        description=\"Determines layer capacitance and resistance values for OpenROAD flow designs\"\n    )\n    parser.add_argument(\n        \"-cap_unit\", required=False, default=\"pf\", help=\"capacitance unit ff|pf\"\n    )\n    parser.add_argument(\n        \"-res_unit\", required=False, default=\"kohm\", help=\"resistance unit ohm|kohm\"\n    )\n    parser.add_argument(\n        \"-plot_cap\","
+        },
+        {
+          "first_line": 70,
+          "last_line": 89,
+          "text": "def resolve_units(args):\n    res_unit = args.res_unit\n    if res_unit == \"ohm\":\n        res_scale = 1\n    elif res_unit == \"kohm\":\n        res_scale = 1e3\n    else:\n        print(\"Unknown resistance unit.\", file=stderr)\n        exit(1)\n\n    cap_unit = args.cap_unit\n    if cap_unit == \"ff\":\n        cap_scale = 1e-15\n    elif cap_unit == \"pf\":\n        cap_scale = 1e-12\n    else:\n        print(\"Unknown capacitance unit.\", file=stderr)\n        exit(1)\n\n    return res_unit, res_scale, cap_unit, cap_scale"
+        },
+        {
+          "first_line": 329,
+          "last_line": 340,
+          "text": "\ndef print_layer_rc(layer_models, res_scale, cap_scale):\n    for layer_name, (res_model, cap_model, _, _, _) in layer_models.items():\n        print(\n            \"set_layer_rc -layer {} -resistance {:.5E} -capacitance {:.5E}\".format(\n                layer_name,\n                res_model.coef_[0] / res_scale,\n                cap_model.coef_[0] * CAP_FF_TO_F / cap_scale,\n            )\n        )\n    print(\"\")\n"
+        }
+      ]
+    },
+    "tools/yosys/abc/src/map/scl/sclLibUtil.c": {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/tools/yosys/abc/src/map/scl/sclLibUtil.c",
+      "sha256": "d3a8d425f1847f9b508f455e944287debba20aec344be97b4fef42f5bd9db1fc",
+      "excerpts": [
+        {
+          "first_line": 756,
+          "last_line": 786,
+          "text": "        Vec_FltWriteEntry( &p->vIndex1, i, Load * Entry );\n}\nvoid Abc_SclLibNormalize( SC_Lib * p )\n{\n    SC_WireLoad * pWL;\n    SC_Cell * pCell;\n    SC_Pin * pPin;\n    SC_Timings * pTimings;\n    SC_Timing * pTiming;\n    int i, k, m, n;\n    float Time = 1.0 * pow(10.0, 12 - p->unit_time);\n    float Load = p->unit_cap_fst * pow(10.0, 15 - p->unit_cap_snd);\n    if ( Time == 1 && Load == 1 )\n        return;\n    p->unit_time = 12;\n    p->unit_cap_fst = 1;\n    p->unit_cap_snd = 15;\n    p->default_max_out_slew *= Time;\n    SC_LibForEachWireLoad( p, pWL, i )\n        pWL->cap *= Load;\n    SC_LibForEachCell( p, pCell, i )\n    SC_CellForEachPin( pCell, pPin, k )\n    {\n        pPin->cap *= Load;\n        pPin->rise_cap *= Load;\n        pPin->fall_cap *= Load;\n        pPin->max_out_cap *= Load;\n        pPin->max_out_slew *= Time;\n        SC_PinForEachRTiming( pPin, pTimings, m )\n        Vec_PtrForEachEntry( SC_Timing *, &pTimings->vTimings, pTiming, n )\n        {"
+        }
+      ]
+    },
+    "experiments/arithmetic/evidence/step3_closure/source_v4/experiments/arithmetic_dse/backend/constraints.sdc": {
+      "path": "/home/zyrv/vulsim/experiments/arithmetic/evidence/step3_closure/source_v4/experiments/arithmetic_dse/backend/constraints.sdc",
+      "sha256": "5cd2443e7ec6c107cee629221f1acf8f299aba845fa2e03f58bf50c201936401",
+      "excerpts": [
+        {
+          "first_line": 1,
+          "last_line": 22,
+          "text": "# Liberty time/capacitance units are verified as ps/fF before a run starts.\nset clk_period $::env(VULSIM_CLOCK_PERIOD_PS)\ncreate_clock -name core_clk -period $clk_period [get_ports clk]\ncreate_clock -name io_clk -period $clk_period\nset_clock_uncertainty -setup 20 [all_clocks]\nset_clock_uncertainty -hold 5 [all_clocks]\nset_clock_transition 10 [get_clocks core_clk]\n\n# rstn is synchronous and remains timed; valid and data have identical I/O rules.\nset non_clock_inputs [all_inputs -no_clocks]\nset io_max [expr 0.20 * $clk_period]\nif { [info exists ::env(VULSIM_IO_DELAY_MAX_PS)] && $::env(VULSIM_IO_DELAY_MAX_PS) ne \"\" } {\n    set io_max $::env(VULSIM_IO_DELAY_MAX_PS)\n}\nset_input_delay -max $io_max -clock io_clk $non_clock_inputs\nset_input_delay -min 0 -clock io_clk $non_clock_inputs\nset_output_delay -max $io_max -clock io_clk [all_outputs]\nset_output_delay -min 0 -clock io_clk [all_outputs]\nset_driving_cell -lib_cell BUFx2_ASAP7_75t_R -pin Y $non_clock_inputs\nset_load 3.898 [all_outputs]"
+        }
+      ]
+    },
+    "flow/platforms/asap7/lib/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib.gz": {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib.gz",
+      "sha256": "8d6db2c2f83c3c162be54a5e102b2d379fcaaaef2db5f0b1d4152c395d01fea1",
+      "excerpts": [
+        {
+          "first_line": 1102,
+          "last_line": 1114,
+          "text": "    pin (Y) {\n      direction : output;\n      function : \"A\";\n      power_down_function : \"(!VDD) + (VSS)\";\n      related_ground_pin : VSS;\n      related_power_pin : VDD;\n      max_capacitance : 92.16;\n      output_voltage : default_VDD_VSS_output;\n      timing () {\n        related_pin : \"A\";\n        timing_sense : positive_unate;\n        timing_type : combinational;\n        cell_rise (delay_template_7x7_x1) {",
+          "line_basis": "decompressed Liberty"
+        }
+      ]
+    },
+    "flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib": {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib",
+      "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+      "excerpts": [
+        {
+          "first_line": 30798,
+          "last_line": 30810,
+          "text": "\tpin (Z) {\n\n\t\tdirection\t\t: output;\n\t\trelated_power_pin\t: \"VDD\";\n\t\trelated_ground_pin\t: \"VSS\";\n\t\tmax_capacitance\t\t: 60.653700;\n\t\tfunction\t\t: \"A\";\n\n\t\ttiming () {\n\n\t\t\trelated_pin\t   : \"A\";\n\t\t\ttiming_sense\t   : positive_unate;\n",
+          "line_basis": "decompressed Liberty"
+        }
+      ]
+    },
+    "flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib": {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib",
+      "sha256": "ec0e1067a35c8bf20b11e58d1e8ac53326067e4dac84a125cc1b917a3518d0d9",
+      "excerpts": [
+        {
+          "first_line": 44848,
+          "last_line": 44860,
+          "text": "        pin (\"X\") {\n            direction : \"output\";\n            function : \"(A)\";\n            internal_power () {\n                fall_power (\"power_outputs_1\") {\n                    index_1(\"0.0100000000, 0.0230505800, 0.0531329300, 0.1224745000, 0.2823108000, 0.6507428000, 1.5000000000\");\n                    index_2(\"0.0005000000, 0.0012632050, 0.0031913740, 0.0080627180, 0.0203697300, 0.0514622900, 0.1300148000\");\n                    values(\"0.0108054000, 0.0097834000, 0.0069418000, -0.000808000, -0.020725600, -0.071111700, -0.198366400\", \\\n                        \"0.0105490000, 0.0095435000, 0.0066983000, -0.001032800, -0.020903300, -0.071322800, -0.198572800\", \\\n                        \"0.0103270000, 0.0093022000, 0.0064758000, -0.001239900, -0.021126200, -0.071476300, -0.198740200\", \\\n                        \"0.0102095000, 0.0091712000, 0.0063456000, -0.001333800, -0.021148000, -0.071505900, -0.198745900\", \\\n                        \"0.0100561000, 0.0088657000, 0.0061667000, -0.001306700, -0.021101500, -0.071399700, -0.198641200\", \\\n                        \"0.0109558000, 0.0097739000, 0.0068849000, -0.001026800, -0.020488100, -0.070778700, -0.197991500\", \\",
+          "line_basis": "decompressed Liberty"
+        }
+      ]
+    },
+    "flow/platforms/gf180/lib/gf180mcu_fd_sc_mcu9t5v0__tt_025C_5v00.lib.gz": {
+      "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/lib/gf180mcu_fd_sc_mcu9t5v0__tt_025C_5v00.lib.gz",
+      "sha256": "75de8f18d2ecc8564a8ff73e48f1507cb184fd0915ba15f4ff72785cbeb243d2",
+      "excerpts": [
+        {
+          "first_line": 66591,
+          "last_line": 66603,
+          "text": "    pin(Z) {\n      direction : output ;\n      function : \"I\" ;\n      max_capacitance : 1.457 ;\n      max_transition : 4 ;\n      min_capacitance : 0.001 ;\n      output_voltage : default ;\n      related_ground_pin : VSS ;\n      related_power_pin : VDD ;\n\n      internal_power() {\n        related_pin : \"I\" ;\n",
+          "line_basis": "decompressed Liberty"
+        }
+      ]
+    }
+  },
+  "scope": "read-only local source audit; excerpts are not a PDK copy or independent calibration"
+}

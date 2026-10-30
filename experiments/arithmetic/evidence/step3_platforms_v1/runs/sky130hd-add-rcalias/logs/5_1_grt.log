@@ -1,0 +1,344 @@
+OpenROAD 26Q3-1867-g84e3ff1eb2 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 2 thread(s).
+read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_db /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/sky130hd-add-rcalias/results/sky130hd/arithmetic_probe/base/4_cts.odb
+read_sdc /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/sky130hd-add-rcalias/results/sky130hd/arithmetic_probe/base/4_cts.sdc
+source /home/zyrv/OpenROAD-flow-scripts/flow/platforms/sky130hd/setRC.tcl
+pin_access
+[INFO DRT-0149] Reading tech and libs.
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer mcon
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer mcon
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via2
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via2
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via3
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via3
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via4
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via4
+
+Units:                1000
+Number of layers:     13
+Number of macros:     441
+Number of vias:       29
+Number of viarulegen: 25
+
+[INFO DRT-0150] Reading design.
+
+Design:                   MulProbe_sim_top
+Die area:                 ( 0 0 ) ( 157325 157325 )
+Number of track patterns: 12
+Number of DEF vias:       0
+Number of components:     1135
+Number of terminals:      134
+Number of snets:          2
+Number of nets:           987
+
+[INFO DRT-0167] List of default vias:
+  Layer via
+    default via: M1M2_PR
+  Layer via2
+    default via: M2M3_PR
+  Layer via3
+    default via: M3M4_PR
+  Layer via4
+    default via: M4M5_PR
+[INFO DRT-0162] Library cell analysis.
+[INFO DRT-0163] Instance analysis.
+[INFO DRT-0164] Number of unique instances = 84.
+[INFO DRT-0168] Init region query.
+[INFO DRT-0024]   Complete FR_MASTERSLICE.
+[INFO DRT-0024]   Complete Fr_VIA.
+[INFO DRT-0024]   Complete li1.
+[INFO DRT-0024]   Complete mcon.
+[INFO DRT-0024]   Complete met1.
+[INFO DRT-0024]   Complete via.
+[INFO DRT-0024]   Complete met2.
+[INFO DRT-0024]   Complete via2.
+[INFO DRT-0024]   Complete met3.
+[INFO DRT-0024]   Complete via3.
+[INFO DRT-0024]   Complete met4.
+[INFO DRT-0024]   Complete via4.
+[INFO DRT-0024]   Complete met5.
+[INFO DRT-0033] FR_MASTERSLICE shape region query size = 0.
+[INFO DRT-0033] FR_VIA shape region query size = 0.
+[INFO DRT-0033] li1 shape region query size = 27424.
+[INFO DRT-0033] mcon shape region query size = 15663.
+[INFO DRT-0033] met1 shape region query size = 3907.
+[INFO DRT-0033] via shape region query size = 1275.
+[INFO DRT-0033] met2 shape region query size = 820.
+[INFO DRT-0033] via2 shape region query size = 1020.
+[INFO DRT-0033] met3 shape region query size = 842.
+[INFO DRT-0033] via3 shape region query size = 1020.
+[INFO DRT-0033] met4 shape region query size = 315.
+[INFO DRT-0033] via4 shape region query size = 50.
+[INFO DRT-0033] met5 shape region query size = 70.
+[INFO DRT-0165] Start pin access.
+[INFO DRT-0078]   Complete 623 pins.
+[INFO DRT-0081]   Complete 84 unique inst patterns.
+[INFO DRT-0084]   Complete 605 groups.
+#scanned instances     = 1135
+#unique  instances     = 84
+#stdCellGenAp          = 2495
+#stdCellValidPlanarAp  = 13
+#stdCellValidViaAp     = 1755
+#stdCellPinNoAp        = 3
+#stdCellPinCnt         = 2835
+#instTermValidViaApCnt = 0
+#macroGenAp            = 0
+#macroValidPlanarAp    = 0
+#macroValidViaAp       = 0
+#macroNoAp             = 0
+[INFO DRT-0166] Complete pin access.
+[INFO DRT-0267] cpu time = 00:00:23, elapsed time = 00:00:13, memory = 131.94 (MB), peak = 131.05 (MB)
+Took 14 seconds: pin_access
+set_global_routing_random -seed 42
+global_route -congestion_report_file /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/sky130hd-add-rcalias/reports/sky130hd/arithmetic_probe/base/congestion.rpt -congestion_iterations 30 -congestion_report_iter_step 5 -verbose
+[INFO GRT-0020] Min routing layer: met1
+[INFO GRT-0021] Max routing layer: met5
+[INFO GRT-0022] Global adjustment: 0%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0088] Layer li1     Track-Pitch = 0.4600  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met1    Track-Pitch = 0.3400  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met2    Track-Pitch = 0.4600  line-2-Via Pitch: 0.3500
+[INFO GRT-0088] Layer met3    Track-Pitch = 0.6800  line-2-Via Pitch: 0.6150
+[INFO GRT-0088] Layer met4    Track-Pitch = 0.9200  line-2-Via Pitch: 1.0400
+[INFO GRT-0088] Layer met5    Track-Pitch = 3.4000  line-2-Via Pitch: 3.1100
+[INFO GRT-0003] Macros: 0
+[INFO GRT-0004] Blockages: 2301
+[INFO GRT-0019] Found 18 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 79
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+li1        Vertical            0             0          0.00%
+met1       Horizontal       7800          6084          22.00%
+met2       Vertical         6382          4953          22.39%
+met3       Horizontal       4666          3664          21.47%
+met4       Vertical         3191          2246          29.61%
+met5       Horizontal        766           464          39.43%
+---------------------------------------------------------------
+
+[INFO GRT-0197] Via related to pin nodes: 4412
+[INFO GRT-0198] Via related Steiner nodes: 40
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 5336
+[INFO GRT-0112] Final usage 3D: 18264
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Congestion
+---------------------------------------------------------------------------------------
+li1                  0             0            0.00%             0 /  0 /  0
+met1              6084          1055           17.34%             0 /  0 /  0
+met2              4953           979           19.77%             0 /  0 /  0
+met3              3664           131            3.58%             0 /  0 /  0
+met4              2246            91            4.05%             0 /  0 /  0
+met5               464             0            0.00%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total            17411          2256           12.96%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 26330 um
+[INFO GRT-0014] Routed nets: 987
+[INFO GRT-0303] Global routing runtime = 00:00:00
+[WARNING STA-0450] virtual clock io_clk can not be propagated.
+estimate_parasitics -global_routing
+Perform buffer insertion and gate resizing...
+repair_design -verbose
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |      1032
+       10 |     +0.0% |       0 |       0 |             0 |      1022
+       20 |     +0.0% |       0 |       0 |             0 |      1012
+       30 |     +0.0% |       0 |       0 |             0 |      1002
+       40 |     +0.0% |       0 |       0 |             0 |       992
+       50 |     +0.0% |       0 |       0 |             0 |       982
+       60 |     +0.0% |       0 |       0 |             0 |       972
+       70 |     +0.0% |       0 |       0 |             0 |       962
+       80 |     +0.0% |       0 |       0 |             0 |       952
+       90 |     +0.0% |       0 |       0 |             0 |       942
+      100 |     +0.0% |       0 |       0 |             0 |       932
+      110 |     +0.0% |       0 |       0 |             0 |       922
+      120 |     +0.0% |       0 |       0 |             0 |       912
+      130 |     +0.0% |       0 |       0 |             0 |       902
+      140 |     +0.0% |       0 |       0 |             0 |       892
+      150 |     +0.0% |       0 |       0 |             0 |       882
+      160 |     +0.0% |       0 |       0 |             0 |       872
+      170 |     +0.0% |       0 |       0 |             0 |       862
+      180 |     +0.0% |       0 |       0 |             0 |       852
+      190 |     +0.0% |       0 |       0 |             0 |       842
+      200 |     +0.0% |       0 |       0 |             0 |       832
+      210 |     +0.0% |       0 |       0 |             0 |       822
+      220 |     +0.0% |       0 |       0 |             0 |       812
+      230 |     +0.0% |       0 |       0 |             0 |       802
+      240 |     +0.0% |       0 |       0 |             0 |       792
+      250 |     +0.0% |       0 |       0 |             0 |       782
+      260 |     +0.0% |       0 |       0 |             0 |       772
+      270 |     +0.0% |       0 |       0 |             0 |       762
+      280 |     +0.0% |       0 |       0 |             0 |       752
+      290 |     +0.0% |       0 |       0 |             0 |       742
+      300 |     +0.0% |       0 |       0 |             0 |       732
+      310 |     +0.0% |       0 |       0 |             0 |       722
+      320 |     +0.0% |       0 |       0 |             0 |       712
+      330 |     +0.0% |       0 |       0 |             0 |       702
+      340 |     +0.0% |       0 |       0 |             0 |       692
+      350 |     +0.0% |       0 |       0 |             0 |       682
+      360 |     +0.0% |       0 |       0 |             0 |       672
+      370 |     +0.0% |       0 |       0 |             0 |       662
+      380 |     +0.0% |       0 |       0 |             0 |       652
+      390 |     +0.0% |       0 |       0 |             0 |       642
+      400 |     +0.0% |       0 |       0 |             0 |       632
+      410 |     +0.0% |       0 |       0 |             0 |       622
+      420 |     +0.0% |       0 |       0 |             0 |       612
+      430 |     +0.0% |       0 |       0 |             0 |       602
+      440 |     +0.0% |       0 |       0 |             0 |       592
+      450 |     +0.0% |       0 |       0 |             0 |       582
+      460 |     +0.0% |       0 |       0 |             0 |       572
+      470 |     +0.0% |       0 |       0 |             0 |       562
+      480 |     +0.0% |       0 |       0 |             0 |       552
+      490 |     +0.0% |       0 |       0 |             0 |       542
+      500 |     +0.0% |       0 |       0 |             0 |       532
+      510 |     +0.0% |       0 |       0 |             0 |       522
+      520 |     +0.0% |       0 |       0 |             0 |       512
+      530 |     +0.0% |       0 |       0 |             0 |       502
+      540 |     +0.0% |       0 |       0 |             0 |       492
+      550 |     +0.0% |       0 |       0 |             0 |       482
+      560 |     +0.0% |       0 |       0 |             0 |       472
+      570 |     +0.0% |       0 |       0 |             0 |       462
+      580 |     +0.0% |       0 |       0 |             0 |       452
+      590 |     +0.0% |       0 |       0 |             0 |       442
+      600 |     +0.0% |       0 |       0 |             0 |       432
+      610 |     +0.0% |       0 |       0 |             0 |       422
+      620 |     +0.0% |       0 |       0 |             0 |       412
+      630 |     +0.0% |       0 |       0 |             0 |       402
+      640 |     +0.0% |       0 |       0 |             0 |       392
+      650 |     +0.0% |       0 |       0 |             0 |       382
+      660 |     +0.0% |       0 |       0 |             0 |       372
+      670 |     +0.0% |       0 |       0 |             0 |       362
+      680 |     +0.0% |       0 |       0 |             0 |       352
+      690 |     +0.0% |       0 |       0 |             0 |       342
+      700 |     +0.0% |       0 |       0 |             0 |       332
+      710 |     +0.0% |       0 |       0 |             0 |       322
+      720 |     +0.0% |       0 |       0 |             0 |       312
+      730 |     +0.0% |       0 |       0 |             0 |       302
+      740 |     +0.0% |       0 |       0 |             0 |       292
+      750 |     +0.0% |       0 |       0 |             0 |       282
+      760 |     +0.0% |       0 |       0 |             0 |       272
+      770 |     +0.0% |       0 |       0 |             0 |       262
+      780 |     +0.0% |       0 |       0 |             0 |       252
+      790 |     +0.0% |       0 |       0 |             0 |       242
+      800 |     +0.0% |       0 |       0 |             0 |       232
+      810 |     +0.0% |       0 |       0 |             0 |       222
+      820 |     +0.0% |       0 |       0 |             0 |       212
+      830 |     +0.0% |       0 |       0 |             0 |       202
+      840 |     +0.0% |       0 |       0 |             0 |       192
+      850 |     +0.0% |       0 |       0 |             0 |       182
+      860 |     +0.0% |       0 |       0 |             0 |       172
+      870 |     +0.0% |       0 |       0 |             0 |       162
+      880 |     +0.0% |       0 |       0 |             0 |       152
+      890 |     +0.0% |       0 |       0 |             0 |       142
+      900 |     +0.0% |       0 |       0 |             0 |       132
+      910 |     +0.0% |       0 |       0 |             0 |       122
+      920 |     +0.0% |       0 |       0 |             0 |       112
+      930 |     +0.0% |       0 |       0 |             0 |       102
+      940 |     +0.0% |       0 |       0 |             0 |        92
+      950 |     +0.0% |       0 |       0 |             0 |        82
+      960 |     +0.0% |       0 |       0 |             0 |        72
+      970 |     +0.0% |       0 |       0 |             0 |        62
+      980 |     +0.0% |       0 |       0 |             0 |        52
+      990 |     +0.0% |       0 |       0 |             0 |        42
+     1000 |     +0.0% |       0 |       0 |             0 |        32
+     1010 |     +0.0% |       0 |       0 |             0 |        22
+     1020 |     +0.0% |       0 |       0 |             0 |        12
+     1030 |     +0.0% |       0 |       0 |             0 |         2
+    final |     +0.0% |       0 |       0 |             0 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0504] Runtime: 0.04s
+global_route -start_incremental
+detailed_placement
+[INFO DPL-0006] Core area: 18642.88 um^2
+[INFO DPL-0007] Movable instances area: 8884.77 um^2
+[INFO DPL-0008] Fixed instances area within core: 292.78 um^2
+[INFO DPL-0009] Utilization: 49.2%
+[INFO DPL-0005] Diamond search max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+[INFO DPL-1102] Legalizing using negotiation legalizer.
+[INFO DPL-1103] Negotiation base search window: +/-20 sites horizontally, +/-5 rows vertically 
+	Automatic search window extension enabled.
+	Search window extendable up to the max displacement cap of +/-500 sites, +/-100 rows near walls.
+[INFO DPL-1104] NegotiationLegalizer DRC penalty: 5.
+[INFO DPL-0392] Negotiation cell height distribution (1 unique row-count(s)):
+[INFO DPL-0393]   height 1 row(s): 1135 cells
+[INFO DPL-0500] Runtime: 0.00s
+Placement Analysis
+---------------------------------
+total displacement          0.0 u
+average displacement        0.0 u
+max displacement            0.0 u
+original HPWL           12819.5 u
+legalized HPWL          12819.5 u
+delta HPWL                    0 %
+
+global_route -end_incremental -congestion_report_file /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/sky130hd-add-rcalias/reports/sky130hd/arithmetic_probe/base/congestion_post_repair_design.rpt
+Repair setup and hold violations...
+estimate_parasitics -global_routing
+repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 100 -verbose
+[INFO RSZ-0100] Repair move sequence: UnbufferMove SizeUpMove SwapPinsMove BufferMove CloneMove SplitLoadMove 
+[INFO RSZ-0098] No setup violations found
+[INFO RSZ-0505] Runtime: 0.06s
+[INFO RSZ-0033] No hold violations found.
+[INFO RSZ-0506] Runtime: 0.01s
+global_route -start_incremental
+detailed_placement
+[INFO DPL-0006] Core area: 18642.88 um^2
+[INFO DPL-0007] Movable instances area: 8884.77 um^2
+[INFO DPL-0008] Fixed instances area within core: 292.78 um^2
+[INFO DPL-0009] Utilization: 49.2%
+[INFO DPL-0005] Diamond search max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+[INFO DPL-1102] Legalizing using negotiation legalizer.
+[INFO DPL-1103] Negotiation base search window: +/-20 sites horizontally, +/-5 rows vertically 
+	Automatic search window extension enabled.
+	Search window extendable up to the max displacement cap of +/-500 sites, +/-100 rows near walls.
+[INFO DPL-1104] NegotiationLegalizer DRC penalty: 5.
+[INFO DPL-0392] Negotiation cell height distribution (1 unique row-count(s)):
+[INFO DPL-0393]   height 1 row(s): 1135 cells
+[INFO DPL-0500] Runtime: 0.00s
+Placement Analysis
+---------------------------------
+total displacement          0.0 u
+average displacement        0.0 u
+max displacement            0.0 u
+original HPWL           12819.5 u
+legalized HPWL          12819.5 u
+delta HPWL                    0 %
+
+check_placement -verbose
+global_route -end_incremental -congestion_report_file /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/sky130hd-add-rcalias/reports/sky130hd/arithmetic_probe/base/congestion_post_repair_timing.rpt
+estimate_parasitics -global_routing
+global_route -start_incremental
+global_route -end_incremental -congestion_report_file /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/sky130hd-add-rcalias/reports/sky130hd/arithmetic_probe/base/congestion_post_recover_power.rpt
+Repair antennas...
+[INFO GRT-0012] Found 0 antenna violations.
+[INFO ANT-0002] Found 0 net violations.
+[INFO ANT-0001] Found 0 pin violations.
+Estimate parasitics...
+estimate_parasitics -global_routing
+Report metrics stage 5, global route...
+
+==========================================================================
+global route report_design_area
+--------------------------------------------------------------------------
+Design area 9178 um^2 49% utilization.
+[INFO FLW-0007] clock core_clk period 30.000000
+[WARNING FLW-0010] more than one clock found. Skipping sdc update.
+[INFO FLW-0011] Path endpoint path count 212
+write_db /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/sky130hd-add-rcalias/results/sky130hd/arithmetic_probe/base/5_1_grt.odb
+write_sdc -no_timestamp /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/sky130hd-add-rcalias/results/sky130hd/arithmetic_probe/base/5_1_grt.sdc
+Elapsed time: 0:15.03[h:]min:sec. CPU time: user 25.96 sys 0.16 (173%). Peak memory: 265984KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+5_1_grt                   .odb           15            259 490b1629e6c1661e2f5b
+5_1_grt                   .sdc                             97e81ddc4e0994d6ff76

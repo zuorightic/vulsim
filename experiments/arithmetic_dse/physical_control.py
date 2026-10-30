@@ -13,6 +13,7 @@ import os
 from .backend import ASSETS, ROOT, sha256, write_json, library_data, stage_metrics
 from .budget import Ledger, POLICY, STAGE_LIMITS
 from .processes import run_command
+from .platforms import profile
 
 
 def admission(used, resources):
@@ -36,6 +37,7 @@ def main():
     parser.add_argument('--study',type=Path,default=ROOT/'experiments/arithmetic_dse/configs/physical_control_v1.json')
     args = parser.parse_args()
     config = json.loads(args.study.read_text())
+    selected=profile(config.get('platform','asap7'))
     out = args.out.resolve()
     if out.exists():
         parser.error('study output must be a new directory')
@@ -54,6 +56,7 @@ def main():
     for target in config['sdc_periods_ps']:
         directory = out/f'sdc-{target}'
         argv = [sys.executable,'-m','experiments.arithmetic_dse.backend','--rtl',str(rtl),
+                '--platform',selected['platform'],
                 '--top',config['top'],'--out',str(directory),'--period-ps',str(target),
                 '--abc-target-ps',str(config['abc_target_ps']),
                 '--io-delay-max-ps',str(config['io_delay_max_ps']),
@@ -70,7 +73,7 @@ def main():
                  'failure_reason':manifest.get('failure_reason')}
         study['points'].append(point)
         if manifest['status'] == 'completed':
-            suffix = 'asap7/arithmetic_probe/base'
+            suffix = selected['platform']+'/arithmetic_probe/base'
             results = directory/'results'/suffix
             reports = directory/'reports'/suffix
             # Same RTL and explicit fixed ABC target should produce exactly the
@@ -94,8 +97,8 @@ def main():
             study['commands'].append(record)
             point['common_STA_exit_code'] = record['exit_code']
             if record['exit_code'] == 0:
-                _,cells = library_data([Path(lib['path']) for lib in manifest['libraries']])
-                metrics = stage_metrics(reports,'grt',cells,config['common_sdc_period_ps'],'common1500')
+                _,cells = library_data([Path(lib['path']) for lib in manifest['libraries']],selected)
+                metrics = stage_metrics(reports,'grt',cells,config['common_sdc_period_ps'],'common1500',selected=selected)
                 metrics.update(abc_target_ps=config['abc_target_ps'],
                                implementation_sdc_period_ps=target,
                                assessment_sdc_period_ps=config['common_sdc_period_ps'])

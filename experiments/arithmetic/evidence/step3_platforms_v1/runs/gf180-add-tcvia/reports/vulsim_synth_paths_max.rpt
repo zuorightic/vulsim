@@ -1,0 +1,75 @@
+Startpoint: s0input__vld__ (input port clocked by io_clk)
+Endpoint: __vul_pipeline_multiply.__vul_port_s1reg[14]$_SDFFE_PN0P_
+          (rising edge-triggered flip-flop clocked by core_clk)
+Path Group: core_clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.000000    0.000000    0.000000   clock io_clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  6.000000    6.000000 ^ input external delay
+     2    0.014224    0.078548    0.023880    6.023880 ^ s0input__vld__ (in)
+                                                         s0input__vld__ (net)
+                      0.078548    0.000000    6.023880 ^ _0672_/I (gf180mcu_fd_sc_mcu9t5v0__buf_2)
+    10    0.108060    0.623647    0.467330    6.491210 ^ _0672_/Z (gf180mcu_fd_sc_mcu9t5v0__buf_2)
+                                                         _0301_ (net)
+                      0.623647    0.000000    6.491210 ^ _0759_/I (gf180mcu_fd_sc_mcu9t5v0__buf_2)
+    10    0.145000    0.826817    0.632898    7.124108 ^ _0759_/Z (gf180mcu_fd_sc_mcu9t5v0__buf_2)
+                                                         _0349_ (net)
+                      0.826817    0.000000    7.124108 ^ _0779_/S (gf180mcu_fd_sc_mcu9t5v0__mux2_2)
+     1    0.006551    0.117869    0.378468    7.502576 v _0779_/Z (gf180mcu_fd_sc_mcu9t5v0__mux2_2)
+                                                         _0360_ (net)
+                      0.117869    0.000000    7.502576 v _0780_/A2 (gf180mcu_fd_sc_mcu9t5v0__and2_2)
+     1    0.003911    0.070853    0.212133    7.714709 v _0780_/Z (gf180mcu_fd_sc_mcu9t5v0__and2_2)
+                                                         _0112_ (net)
+                      0.070853    0.000000    7.714709 v __vul_pipeline_multiply.__vul_port_s1reg[14]$_SDFFE_PN0P_/D (gf180mcu_fd_sc_mcu9t5v0__dffq_2)
+                                              7.714709   data arrival time
+
+                      0.000000   30.000000   30.000000   clock core_clk (rise edge)
+                                  0.000000   30.000000   clock network delay (ideal)
+                                  0.000000   30.000000   clock reconvergence pessimism
+                                             30.000000 ^ __vul_pipeline_multiply.__vul_port_s1reg[14]$_SDFFE_PN0P_/CLK (gf180mcu_fd_sc_mcu9t5v0__dffq_2)
+                                 -0.146644   29.853354   library setup time
+                                             29.853354   data required time
+---------------------------------------------------------------------------------------------
+                                             29.853354   data required time
+                                             -7.714709   data arrival time
+---------------------------------------------------------------------------------------------
+                                             22.138645   slack (MET)
+
+
+Startpoint: s3output__vld__$_SDFF_PN0_
+            (rising edge-triggered flip-flop clocked by core_clk)
+Endpoint: s3output_y__[10] (output port clocked by io_clk)
+Path Group: io_clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.000000    0.000000    0.000000   clock core_clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.000000    0.000000    0.000000 ^ s3output__vld__$_SDFF_PN0_/CLK (gf180mcu_fd_sc_mcu9t5v0__dffq_2)
+     7    0.054613    0.331742    0.668213    0.668213 ^ s3output__vld__$_SDFF_PN0_/Q (gf180mcu_fd_sc_mcu9t5v0__dffq_2)
+                                                         s3output__vld__ (net)
+                      0.331742    0.000000    0.668213 ^ _0657_/I (gf180mcu_fd_sc_mcu9t5v0__buf_2)
+    10    0.066630    0.398507    0.376139    1.044352 ^ _0657_/Z (gf180mcu_fd_sc_mcu9t5v0__buf_2)
+                                                         _0297_ (net)
+                      0.398507    0.000000    1.044352 ^ _0658_/A1 (gf180mcu_fd_sc_mcu9t5v0__and2_2)
+     1    0.013400    0.126345    0.268842    1.313195 ^ _0658_/Z (gf180mcu_fd_sc_mcu9t5v0__and2_2)
+                                                         s3output_y__[10] (net)
+                      0.126345    0.000000    1.313195 ^ s3output_y__[10] (out)
+                                              1.313195   data arrival time
+
+                      0.000000   30.000000   30.000000   clock io_clk (rise edge)
+                                  0.000000   30.000000   clock network delay (ideal)
+                                  0.000000   30.000000   clock reconvergence pessimism
+                                 -6.000000   24.000000   output external delay
+                                             24.000000   data required time
+---------------------------------------------------------------------------------------------
+                                             24.000000   data required time
+                                             -1.313195   data arrival time
+---------------------------------------------------------------------------------------------
+                                             22.686804   slack (MET)
+
+

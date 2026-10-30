@@ -1,8 +1,8 @@
 """Shared, fail-closed physical-backend ledger, charged before every launch.
 
 The repository checkpoint bootstraps a clone with past usage, never zero usage.
-Unfinished reservations remain charged at their full time allowance. Only leaf
-backend commands are recorded here; generator/validation/outer wrappers are not.
+Unfinished reservations remain charged at their full time allowance. Physical stages and experiment generator/validation/support leaves are charged.
+Outer wrappers are excluded to avoid double counting.
 """
 from contextlib import contextmanager
 from datetime import datetime, timezone
@@ -123,11 +123,16 @@ class Ledger:
             state['checkpoint_sha256'] = digest(self.checkpoint)
             return audit
 
-    def reserve(self, stage, timeout_s, threads, purpose, command, output):
+    def reserve(self, stage, timeout_s, threads, purpose, command, output, *, context=None):
         if stage not in [None, *STAGE_LIMITS]:
             raise ValueError('unknown physical stage')
         if not math.isfinite(timeout_s) or timeout_s <= 0 or threads < 1:
             raise ValueError('invalid resource reservation')
+        if context is not None:
+            allowed={'target_platform','admission_id','admission_sha256','task_id','model_version','sample_id','case_id'}
+            if (not isinstance(context,dict) or context.keys()-allowed
+                    or any(not isinstance(v,str) or not v for v in context.values())):
+                raise ValueError('invalid platform/admission accounting context')
         policy = json.loads(self.policy.read_text())['resources']
         with self._transaction() as state:
             total = usage(state['entries'])
@@ -147,6 +152,8 @@ class Ledger:
                            'purpose':purpose, 'command':list(map(str, command)), 'output':str(output),
                            'reserved_at':datetime.now(timezone.utc).isoformat(),
                            'walltime_s':timeout_s, 'CPU_time_s':cpu_allowance}
+            if context is not None:
+                reservation.update(context)
             state['entries'].append(reservation)
             return reservation.copy()
 
@@ -165,61 +172,41 @@ class Ledger:
                 entry['CPU_accounting'] = 'full_reservation_missing_CPU_evidence'
 
 
-def plan_cost(family_targets, case_targets, *, historical, prototype_reserve,
-              repeat_reserve, retry_reserve, targets_frozen):
-    """Conservative cold-cache count; an absent case-target list is NOT free.
-
-    Every family/case pair is budgeted until the exact required feature set is
-    frozen. The future planner can supply fewer families only with an explicit
-    coverage manifest; scalar PPA similarity never earns a cache credit.
-    """
-    if not family_targets:
-        raise ValueError('nonempty family mapping required')
-    for targets in family_targets.values():
-        if not targets or any(not math.isfinite(t) or t <= 0 for t in targets):
-            raise ValueError('invalid characterization targets')
-    base = sum(len(set(targets)) for targets in family_targets.values())
-    if case_targets is None:
-        supplemental = 9*len(family_targets)  # declared nine-case upper scenario
-    else:
-        if len(case_targets) != 9 or any(not math.isfinite(t) or t <= 0 for t in case_targets):
-            raise ValueError('all nine case targets required')
-        supplemental = sum(len(set(case_targets)-set(targets)) for targets in family_targets.values())
-    # The current fresh-directory runner repeats synth/grt for each detail
-    # recheck. Do not assume a future checkpoint-continuation implementation.
-    extra = 16+prototype_reserve+repeat_reserve+retry_reserve
-    if any(not isinstance(value, int) or value < 0 for value in [prototype_reserve,repeat_reserve,retry_reserve]):
-        raise ValueError('nonnegative integer reserves required')
-    requested = {'synth':historical['synth']+base+supplemental+36+9*4+extra,
-                 'grt':historical['grt']+base+supplemental+36+9*2+extra,
-                 'final':historical['final']+16+repeat_reserve+retry_reserve}
-    return {'base_characterization':base, 'supplemental_characterization':supplemental,
-            'supplemental_scope':'nineteen_by_nine_upper_scenario' if case_targets is None else 'exact_targets_all_declared_families',
-            'targets_frozen':targets_frozen and case_targets is not None,
-            'requested_calls':requested, 'unfunded_cache_credit':0}
+def usage_by(entries,field):
+    if field not in ('target_platform','admission_id','model_version'):
+        raise ValueError('unsupported accounting dimension')
+    keys=sorted({e.get(field,'historical_unattributed') for e in entries})
+    return {key:usage([e for e in entries if e.get(field,'historical_unattributed')==key]) for key in keys}
 
 
-def planning_status(plan, resources):
-    shortfall = {stage:max(0,plan['requested_calls'][stage]-resources[key]) for stage,key in STAGE_LIMITS.items()}
-    return {'status':'ready' if not any(shortfall.values()) else 'blocked',
-            'call_shortfall':shortfall, 'targets_frozen':plan['targets_frozen'],
-            'time_capacity_requires_large_kernel_trials':True}
-
-
-def required_data_plan(families, case_targets, *, historical, reserves,
-                       actual_collection_manifest_frozen=False):
-    """Reference plus exact-query coverage, with probes in the prototype pool.
-
-    The unknown-target upper scenario stays conservative until a real list of
-    required feature/context/stage pairs is frozen. It confers no coverage.
-    """
-    plan = plan_cost({family:[1500] for family in families},case_targets,
-                     historical=historical,targets_frozen=case_targets is not None,**reserves)
-    plan.update(collection_protocol='target-conditioned-characterization-v3',
-                universal_six_point_requirement=False,
-                representative_probes='included_in_prototype_reserve_not_an_extra_grid',
-                actual_collection_manifest_frozen=actual_collection_manifest_frozen)
-    return plan
+def stage_plan(tasks,historical,resources,*,support_walltime_s=0):
+    """Fund an explicit platform/stage cold-run list; never assume cache reuse."""
+    if (not tasks or len({t['id'] for t in tasks})!=len(tasks)
+            or not math.isfinite(support_walltime_s) or support_walltime_s<0):
+        raise ValueError('finite unique nonempty task list required')
+    counts={s:0 for s in STAGE_LIMITS}
+    by_platform={}
+    order=list(STAGE_LIMITS)
+    for task in tasks:
+        if task['platform'] not in ('asap7','nangate45','sky130hd','gf180') or task['stage'] not in order:
+            raise ValueError('unsupported task platform/stage')
+        if any(not math.isfinite(task[k]) or task[k]<=0 for k in ('period_ps','abc_target_ps')):
+            raise ValueError('both physical target axes are required')
+        local=by_platform.setdefault(task['platform'],{s:0 for s in order})
+        for stage in order[:order.index(task['stage'])+1]:
+            counts[stage]+=1;local[stage]+=1
+    requested={s:historical[s]+counts[s] for s in counts}
+    shortfall={s:max(0,requested[s]-resources[k]) for s,k in STAGE_LIMITS.items()}
+    wall=(counts['synth']*resources['synthesis_timeout_s']
+          +counts['grt']*resources['floorplan_through_global_route_timeout_s']
+          +counts['final']*resources['detailed_route_extraction_timeout_s']+support_walltime_s)
+    cpu=wall*resources['threads_per_tool']
+    time_funded=(historical['walltime_s']+wall<=resources['max_global_walltime_h']*3600
+                 and historical['CPU_time_s']+cpu<=resources['max_tool_CPU_time_h']*3600)
+    return {'status':'ready' if not historical['pending'] and not any(shortfall.values()) and time_funded else 'blocked',
+            'new_calls':counts,'new_calls_by_platform':by_platform,'requested_calls':requested,
+            'call_shortfall':shortfall,'worst_case_leaf_walltime_s':wall,'CPU_envelope_s':cpu,
+            'time_funded':time_funded,'cold_runs':True,'cache_credit':0,'main_matrix_authorized':False}
 
 
 def main():
@@ -228,10 +215,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check-plan', action='store_true', help='require a ready revised stage admission package')
     args = parser.parse_args()
-    history = Ledger().summary()
+    ledger=Ledger()
+    history = ledger.summary()
+    entries=json.loads(ledger.path.read_text())['entries']
     from .contracts import check_partition
     scope = check_partition(case_manifest())
-    print(json.dumps({'usage':history,'scope':scope,
+    print(json.dumps({'usage':history,'by_platform':usage_by(entries,'target_platform'),'by_admission':usage_by(entries,'admission_id'),'scope':scope,
         'status':'pending_revised_platform_stage_admission',
         'effective_policy':str(POLICY.relative_to(ROOT)),
         'resource_caps_unchanged':True,

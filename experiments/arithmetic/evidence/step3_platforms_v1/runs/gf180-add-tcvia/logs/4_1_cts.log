@@ -1,0 +1,157 @@
+OpenROAD 26Q3-1867-g84e3ff1eb2 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 2 thread(s).
+read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/lib/gf180mcu_fd_sc_mcu9t5v0__tt_025C_5v00.lib.gz
+read_db /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/gf180-add-tcvia/results/gf180/arithmetic_probe/base/3_place.odb
+read_sdc /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/gf180-add-tcvia/results/gf180/arithmetic_probe/base/3_place.sdc
+source /home/zyrv/vulsim/experiments/arithmetic_dse/backend/gf180_tc_rc.tcl
+clock_tree_synthesis -sink_clustering_enable -repair_clock_nets
+[INFO CTS-0050] Root buffer is gf180mcu_fd_sc_mcu9t5v0__clkbuf_8.
+[INFO CTS-0051] Sink buffer is gf180mcu_fd_sc_mcu9t5v0__clkbuf_12.
+[INFO CTS-0052] The following clock buffers will be used for CTS:
+                    gf180mcu_fd_sc_mcu9t5v0__clkbuf_8
+                    gf180mcu_fd_sc_mcu9t5v0__clkbuf_12
+[INFO CTS-0049] Characterization buffer is gf180mcu_fd_sc_mcu9t5v0__clkbuf_12.
+[INFO CTS-0007] Net "clk" found for clock "core_clk".
+[INFO CTS-0010]  Clock net "clk" has 164 sinks.
+[INFO CTS-0008] TritonCTS found 1 clock nets.
+[INFO CTS-0097] Characterization used 2 buffer(s) types.
+[INFO CTS-0201] 0 blockages from hard placement blockages and placed macros will be used.
+[INFO CTS-0027] Generating H-Tree topology for net clk.
+[INFO CTS-0028]  Total number of sinks: 164.
+[INFO CTS-0090]  Sinks will be clustered based on buffer max cap.
+[INFO CTS-0030]  Number of static layers: 0.
+[INFO CTS-0020]  Wire segment unit: 50400  dbu (25 um).
+[INFO CTS-0023]  Original sink region: [(119720, 106960), (602440, 631120)].
+[INFO CTS-0024]  Normalized sink region: [(2.3754, 2.12222), (11.9532, 12.5222)].
+[INFO CTS-0025]     Width:  9.5778.
+[INFO CTS-0026]     Height: 10.4000.
+ Level 1
+    Direction: Vertical
+    Sinks per sub-region: 82
+    Sub-region size: 9.5778 X 5.2000
+[INFO CTS-0034]     Segment length (rounded): 2.
+ Level 2
+    Direction: Horizontal
+    Sinks per sub-region: 41
+    Sub-region size: 4.7889 X 5.2000
+[INFO CTS-0034]     Segment length (rounded): 2.
+ Level 3
+    Direction: Vertical
+    Sinks per sub-region: 21
+    Sub-region size: 4.7889 X 2.6000
+[INFO CTS-0034]     Segment length (rounded): 1.
+ Level 4
+    Direction: Horizontal
+    Sinks per sub-region: 11
+    Sub-region size: 2.3944 X 2.6000
+[INFO CTS-0034]     Segment length (rounded): 1.
+[INFO CTS-0038]  Stop criterion found. Sink region hpwl is smaller than max wirelength (197925.436 um) and max number of sinks is 15.
+[INFO CTS-0035]  Number of sinks covered: 164.
+[INFO CTS-0018]     Created 17 clock buffers.
+[INFO CTS-0012]     Minimum number of buffers in the clock path: 2.
+[INFO CTS-0013]     Maximum number of buffers in the clock path: 2.
+[INFO CTS-0015]     Created 17 clock nets.
+[INFO CTS-0016]     Fanout distribution for the current clock = 7:2, 8:1, 9:3, 10:4, 11:1, 12:3, 13:1, 15:1..
+[INFO CTS-0017]     Max level of the clock tree: 4.
+[INFO CTS-0098] Clock net "clk"
+[INFO CTS-0099]  Sinks 179
+[INFO CTS-0100]  Leaf buffers 0
+[INFO CTS-0101]  Average sink wire length 441.26 um
+[INFO CTS-0102]  Path depth 2 - 2
+[INFO CTS-0207]  Dummy loads inserted 15
+[INFO CTS-0500] Runtime: 1.33s
+estimate_parasitics -placement
+detailed_placement
+[INFO DPL-0006] Core area: 91445.76 um^2
+[INFO DPL-0007] Movable instances area: 41432.83 um^2
+[INFO DPL-0008] Fixed instances area within core: 1202.34 um^2
+[INFO DPL-0009] Utilization: 46.6%
+[INFO DPL-0005] Diamond search max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+[INFO DPL-1102] Legalizing using negotiation legalizer.
+[INFO DPL-1103] Negotiation base search window: +/-20 sites horizontally, +/-5 rows vertically 
+	Automatic search window extension enabled.
+	Search window extendable up to the max displacement cap of +/-500 sites, +/-100 rows near walls.
+[INFO DPL-1104] NegotiationLegalizer DRC penalty: 5.
+[INFO DPL-0392] Negotiation cell height distribution (1 unique row-count(s)):
+[INFO DPL-0393]   height 1 row(s): 1142 cells
+          |      Total |  Illegal |  Illegal
+Iteration | Violations |    Cells |    Sites
+---------------------------------------------
+        0 |        259 |        25 |       234
+        1 |        122 |        10 |       112
+        2 |         44 |         4 |        40
+        3 |         32 |         2 |        30
+        4 |          0 |         0 |         0
+Negotiation phase 1 converged at iteration 4.
+[INFO DPL-0500] Runtime: 0.01s
+Placement Analysis
+---------------------------------
+total displacement       1384.4 u
+average displacement        1.2 u
+max displacement           20.2 u
+original HPWL           27874.9 u
+legalized HPWL          28634.4 u
+delta HPWL                    3 %
+
+estimate_parasitics -placement
+repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 100 -verbose
+[INFO RSZ-0100] Repair move sequence: UnbufferMove SizeUpMove SwapPinsMove BufferMove CloneMove SplitLoadMove 
+[INFO RSZ-0098] No setup violations found
+[INFO RSZ-0505] Runtime: 0.03s
+[INFO RSZ-0046] Found 40 endpoints with hold violations.
+Iteration | Resized | Buffers | Cloned Gates |   Area   |   WNS   |   TNS   | Endpoint
+--------------------------------------------------------------------------------------
+        0 |       0 |       0 |            0 |    +0.0% |  -0.204 |  -7.740 | __vul_pipeline_q_s3reg[7]$_SDFF_PN0_/D
+       10 |       0 |       1 |            0 |    +0.1% |   0.411 |   0.000 | __vul_pipeline_multiply.__vul_port_s1reg[25]$_SDFFE_PN0P_/D
+       20 |       0 |       1 |            0 |    +0.1% |   0.411 |   0.000 | __vul_pipeline_multiply.__vul_port_s1reg[25]$_SDFFE_PN0P_/D
+       30 |       0 |       1 |            0 |    +0.1% |   0.411 |   0.000 | __vul_pipeline_multiply.__vul_port_s1reg[25]$_SDFFE_PN0P_/D
+       40 |       0 |       1 |            0 |    +0.1% |   0.411 |   0.000 | __vul_pipeline_multiply.__vul_port_s1reg[25]$_SDFFE_PN0P_/D
+    final |       0 |       1 |            0 |    +0.1% |   0.411 |   0.000 | __vul_pipeline_multiply.__vul_port_s1reg[25]$_SDFFE_PN0P_/D
+--------------------------------------------------------------------------------------
+[INFO RSZ-0032] Inserted 1 hold buffers.
+[INFO RSZ-0506] Runtime: 0.01s
+Repair timing output passed lec test
+detailed_placement
+[INFO DPL-0006] Core area: 91445.76 um^2
+[INFO DPL-0007] Movable instances area: 41494.92 um^2
+[INFO DPL-0008] Fixed instances area within core: 1202.34 um^2
+[INFO DPL-0009] Utilization: 46.7%
+[INFO DPL-0005] Diamond search max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+[INFO DPL-1102] Legalizing using negotiation legalizer.
+[INFO DPL-1103] Negotiation base search window: +/-20 sites horizontally, +/-5 rows vertically 
+	Automatic search window extension enabled.
+	Search window extendable up to the max displacement cap of +/-500 sites, +/-100 rows near walls.
+[INFO DPL-1104] NegotiationLegalizer DRC penalty: 5.
+[INFO DPL-0392] Negotiation cell height distribution (1 unique row-count(s)):
+[INFO DPL-0393]   height 1 row(s): 1143 cells
+          |      Total |  Illegal |  Illegal
+Iteration | Violations |    Cells |    Sites
+---------------------------------------------
+        0 |         14 |         2 |        12
+        1 |          0 |         0 |         0
+Negotiation phase 1 converged at iteration 1.
+[INFO DPL-0500] Runtime: 0.01s
+Placement Analysis
+---------------------------------
+total displacement         21.4 u
+average displacement        0.0 u
+max displacement           10.1 u
+original HPWL           28648.0 u
+legalized HPWL          28653.2 u
+delta HPWL                    0 %
+
+estimate_parasitics -placement
+Report metrics stage 4, cts final...
+
+==========================================================================
+cts final report_design_area
+--------------------------------------------------------------------------
+Design area 42697 um^2 47% utilization.
+write_db /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/gf180-add-tcvia/results/gf180/arithmetic_probe/base/4_1_cts.odb
+write_sdc -no_timestamp /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/gf180-add-tcvia/results/gf180/arithmetic_probe/base/4_cts.sdc
+Elapsed time: 0:02.34[h:]min:sec. CPU time: user 2.33 sys 0.09 (102%). Peak memory: 180632KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+4_1_cts                   .odb            2            176 768797cd85e0df04cc56

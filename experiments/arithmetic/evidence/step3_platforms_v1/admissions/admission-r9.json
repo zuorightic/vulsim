@@ -1,0 +1,113 @@
+{
+  "version": "platform-connection-admission-v1",
+  "id": "step3-four-platforms-r9",
+  "created_at": "2026-10-30T05:28:30.396644+00:00",
+  "purpose": "platform_connection_only",
+  "policy_sha256": "3f4a230ca19b9b53a9da71cb19a52e718d29a8001106d354394f13e5d6ef995a",
+  "starting_usage": {
+    "synth": 43,
+    "grt": 20,
+    "final": 9,
+    "support_calls": 401,
+    "walltime_s": 3335.74903834844,
+    "CPU_time_s": 4996.92,
+    "pending": 0
+  },
+  "tasks": [
+    {
+      "id": "gf180-add-tcvia",
+      "platform": "gf180",
+      "kernel": "add_u32",
+      "rtl": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/add-native/sim/top.sv",
+      "rtl_sha256": "cc8d3eba4c0adb938b633c7ab3fdcfca915643b70314c848af95bd7da6bf0a6c",
+      "top": "MulProbe_sim_top",
+      "profile_sha256": "96e1c0c7fe0c9df178fde863272f1bc8e3ed44e6e8457d50bbadcf9a53036bc7",
+      "period_ps": 30000,
+      "abc_target_ps": 30000,
+      "stage": "grt",
+      "purpose": "prototype",
+      "L": 3,
+      "II": 1,
+      "size_scope": "32bit_input; complete_result_64bit",
+      "supersedes_task_id": "gf180-add-endcapfix"
+    },
+    {
+      "id": "gf180-mul-tcvia",
+      "platform": "gf180",
+      "kernel": "mul_u32",
+      "rtl": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/mul-native/sim/top.sv",
+      "rtl_sha256": "5018e7b6831f1963c2ac3ee159f25f045cb12eab2a7fcee82cc44af982f7dca3",
+      "top": "MulProbe_sim_top",
+      "profile_sha256": "96e1c0c7fe0c9df178fde863272f1bc8e3ed44e6e8457d50bbadcf9a53036bc7",
+      "period_ps": 30000,
+      "abc_target_ps": 30000,
+      "stage": "final",
+      "purpose": "prototype",
+      "L": 3,
+      "II": 1,
+      "size_scope": "32bit_input; complete_result_64bit",
+      "supersedes_task_id": "gf180-mul-endcapfix"
+    },
+    {
+      "id": "asap7-mul-finalinterface",
+      "platform": "asap7",
+      "kernel": "mul_u32",
+      "rtl": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/mul-native/sim/top.sv",
+      "rtl_sha256": "5018e7b6831f1963c2ac3ee159f25f045cb12eab2a7fcee82cc44af982f7dca3",
+      "top": "MulProbe_sim_top",
+      "profile_sha256": "a29e056328a495af3f5815e3c56f4e6838eafd4b3f4f7844cc81d82ef99dd3df",
+      "period_ps": 1500,
+      "abc_target_ps": 1500,
+      "stage": "final",
+      "purpose": "prototype",
+      "L": 3,
+      "II": 1,
+      "size_scope": "32bit_input; complete_result_64bit",
+      "supersedes_task_id": "asap7-mul-sourcebound"
+    }
+  ],
+  "call_caps": {
+    "synth": 13,
+    "grt": 12,
+    "final": 6
+  },
+  "worst_case_leaf_walltime_s": 32700,
+  "CPU_envelope_s": 65400,
+  "threads": 2,
+  "physical_jobs": 1,
+  "memory_limit_MiB": 8192,
+  "sample_split": "not_applicable; connection probes not admitted as model training",
+  "stops": [
+    "failed_stage",
+    "timeout",
+    "memory_limit",
+    "unsettled_ledger",
+    "unexpected_units_or_assets"
+  ],
+  "automatic_retries": 0,
+  "main_case_targets": false,
+  "later_bulk_or_model_work_authorized": false,
+  "correction_reason": "Fix GF180 platform TC via-layer RC omission exposed by final PSM-0021. Exact selected technology LEF defines each Via1..Via4 default single-cut as 4.5 ohm; validate that basis and source native setRC before adding the TC map in a hashed local adapter. Keep IR analysis enabled, TT wire RC/PDN/RCX rules/RTL/periods unchanged; revalidate small and multiplier probes under profile v3. Add 2 synth/2 grt/1 final diagnostic slots within the unchanged global budget; carry pending ASAP7 provenance recheck.",
+  "parent_admission": {
+    "path": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/admission-r8.json",
+    "sha256": "f747439b8df0255f000ff366e64f284437e038cc25c7bcf6c175152de23b63c0",
+    "id": "step3-four-platforms-r8"
+  },
+  "related_admission_ids": [
+    "step3-four-platforms-v1",
+    "step3-four-platforms-r2",
+    "step3-four-platforms-r3",
+    "step3-four-platforms-r4",
+    "step3-four-platforms-r5",
+    "step3-four-platforms-r6",
+    "step3-four-platforms-r7",
+    "step3-four-platforms-r8",
+    "step3-four-platforms-r9"
+  ],
+  "additional_diagnostic_call_caps": {
+    "synth": 2,
+    "grt": 2,
+    "final": 1
+  },
+  "support_walltime_reserve_s": 7200
+}

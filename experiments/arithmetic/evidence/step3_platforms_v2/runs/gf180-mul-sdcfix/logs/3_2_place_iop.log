@@ -1,0 +1,24 @@
+OpenROAD 26Q3-1867-g84e3ff1eb2 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 2 thread(s).
+read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/lib/gf180mcu_fd_sc_mcu9t5v0__tt_025C_5v00.lib.gz
+read_db /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/gf180-mul-sdcfix/results/gf180/arithmetic_probe/base/3_1_place_gp_skip_io.odb
+read_sdc /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/gf180-mul-sdcfix/results/gf180/arithmetic_probe/base/2_floorplan.sdc
+source /home/zyrv/vulsim/experiments/arithmetic_dse/backend/gf180_tc_rc.tcl
+place_pins -hor_layers Metal3 -ver_layers Metal4
+Found 0 macro blocks.
+Using 2 tracks default min distance between IO pins.
+[INFO PPL-0001] Number of available slots 2484
+[INFO PPL-0002] Number of I/O             132
+[INFO PPL-0003] Number of I/O w/sink      132
+[INFO PPL-0004] Number of I/O w/o sink    0
+[INFO PPL-0005] Slots per section         200
+[INFO PPL-0008] Successfully assigned pins to sections.
+[INFO PPL-0012] I/O nets HPWL: 21831.65 um.
+Design area 171390 um^2 41% utilization.
+write_db /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/gf180-mul-sdcfix/results/gf180/arithmetic_probe/base/3_2_place_iop.odb
+Elapsed time: 0:00.54[h:]min:sec. CPU time: user 0.50 sys 0.04 (99%). Peak memory: 147940KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+3_2_place_iop             .odb            0            144 e048ce2ae8dd45967bc1

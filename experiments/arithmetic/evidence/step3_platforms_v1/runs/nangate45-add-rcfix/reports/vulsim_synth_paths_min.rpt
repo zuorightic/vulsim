@@ -1,0 +1,63 @@
+Startpoint: s0input_a__[0] (input port clocked by io_clk)
+Endpoint: __vul_pipeline_multiply.__vul_port_s1reg[0]$_SDFFE_PN0P_
+          (rising edge-triggered flip-flop clocked by core_clk)
+Path Group: core_clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.000000    0.000000    0.000000   clock io_clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.000000    0.000000 ^ input external delay
+     1    0.944775    0.005504    0.002604    0.002604 ^ s0input_a__[0] (in)
+                                                         s0input_a__[0] (net)
+                      0.005504    0.000000    0.002604 ^ _1016_/B (MUX2_X1)
+     1    0.974630    0.007439    0.031812    0.034417 ^ _1016_/Z (MUX2_X1)
+                                                         _0413_ (net)
+                      0.007439    0.000000    0.034417 ^ _1017_/A2 (AND2_X1)
+     1    1.140290    0.007349    0.028913    0.063329 ^ _1017_/ZN (AND2_X1)
+                                                         _0126_ (net)
+                      0.007349    0.000000    0.063329 ^ __vul_pipeline_multiply.__vul_port_s1reg[0]$_SDFFE_PN0P_/D (DFF_X1)
+                                              0.063329   data arrival time
+
+                      0.000000    0.000000    0.000000   clock core_clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.000000    0.000000   clock reconvergence pessimism
+                                              0.000000 ^ __vul_pipeline_multiply.__vul_port_s1reg[0]$_SDFFE_PN0P_/CK (DFF_X1)
+                                  0.005310    0.005310   library hold time
+                                              0.005310   data required time
+---------------------------------------------------------------------------------------------
+                                              0.005310   data required time
+                                             -0.063329   data arrival time
+---------------------------------------------------------------------------------------------
+                                              0.058020   slack (MET)
+
+
+Startpoint: s3output__vld__$_SDFF_PN0_
+            (rising edge-triggered flip-flop clocked by core_clk)
+Endpoint: s3output__vld__ (output port clocked by io_clk)
+Path Group: io_clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.000000    0.000000    0.000000   clock core_clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.000000    0.000000    0.000000 ^ s3output__vld__$_SDFF_PN0_/CK (DFF_X1)
+     2    4.773250    0.009327    0.084027    0.084027 v s3output__vld__$_SDFF_PN0_/Q (DFF_X1)
+                                                         s3output__vld__ (net)
+                      0.009327    0.000000    0.084027 v s3output__vld__ (out)
+                                              0.084027   data arrival time
+
+                      0.000000    0.000000    0.000000   clock io_clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.000000    0.000000   clock reconvergence pessimism
+                                  0.000000    0.000000   output external delay
+                                              0.000000   data required time
+---------------------------------------------------------------------------------------------
+                                              0.000000   data required time
+                                             -0.084027   data arrival time
+---------------------------------------------------------------------------------------------
+                                              0.084027   slack (MET)
+
+

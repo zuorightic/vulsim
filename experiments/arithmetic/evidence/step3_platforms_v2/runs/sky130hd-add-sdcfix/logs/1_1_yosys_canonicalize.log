@@ -1,0 +1,540 @@
+Yosys 0.68+ (git sha1 a5af9d690, Release, GNU /usr/bin/c++ 13.3.0) [github.com/The-OpenROAD-Project/yosys at HEAD]
+Using ABC speed script.
+Extracting clock period from SDC file: /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/sky130hd-add-sdcfix/results/sky130hd/arithmetic_probe/base/clock_period.txt
+Setting clock period to 30000.0
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Liberty frontend: /home/zyrv/OpenROAD-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+
+2. Executing Liberty frontend: /home/zyrv/OpenROAD-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Replacing existing blackbox module sky130_fd_sc_hd__a2111o_1.
+Replacing existing blackbox module sky130_fd_sc_hd__a2111o_2.
+Replacing existing blackbox module sky130_fd_sc_hd__a2111o_4.
+Replacing existing blackbox module sky130_fd_sc_hd__a2111oi_0.
+Replacing existing blackbox module sky130_fd_sc_hd__a2111oi_1.
+Replacing existing blackbox module sky130_fd_sc_hd__a2111oi_2.
+Replacing existing blackbox module sky130_fd_sc_hd__a2111oi_4.
+Replacing existing blackbox module sky130_fd_sc_hd__a211o_1.
+Replacing existing blackbox module sky130_fd_sc_hd__a211o_2.
+Replacing existing blackbox module sky130_fd_sc_hd__a211o_4.
+Replacing existing blackbox module sky130_fd_sc_hd__a211oi_1.
+Replacing existing blackbox module sky130_fd_sc_hd__a211oi_2.
+Replacing existing blackbox module sky130_fd_sc_hd__a211oi_4.
+Replacing existing blackbox module sky130_fd_sc_hd__a21bo_1.
+Replacing existing blackbox module sky130_fd_sc_hd__a21bo_2.
+Replacing existing blackbox module sky130_fd_sc_hd__a21bo_4.
+Replacing existing blackbox module sky130_fd_sc_hd__a21boi_0.
+Replacing existing blackbox module sky130_fd_sc_hd__a21boi_1.
+Replacing existing blackbox module sky130_fd_sc_hd__a21boi_2.
+Replacing existing blackbox module sky130_fd_sc_hd__a21boi_4.
+Replacing existing blackbox module sky130_fd_sc_hd__a21o_1.
+Replacing existing blackbox module sky130_fd_sc_hd__a21o_2.
+Replacing existing blackbox module sky130_fd_sc_hd__a21o_4.
+Replacing existing blackbox module sky130_fd_sc_hd__a21oi_1.
+Replacing existing blackbox module sky130_fd_sc_hd__a21oi_2.
+Replacing existing blackbox module sky130_fd_sc_hd__a21oi_4.
+Replacing existing blackbox module sky130_fd_sc_hd__a221o_1.
+Replacing existing blackbox module sky130_fd_sc_hd__a221o_2.
+Replacing existing blackbox module sky130_fd_sc_hd__a221o_4.
+Replacing existing blackbox module sky130_fd_sc_hd__a221oi_1.
+Replacing existing blackbox module sky130_fd_sc_hd__a221oi_2.
+Replacing existing blackbox module sky130_fd_sc_hd__a221oi_4.
+Replacing existing blackbox module sky130_fd_sc_hd__a222oi_1.
+Replacing existing blackbox module sky130_fd_sc_hd__a22o_1.
+Replacing existing blackbox module sky130_fd_sc_hd__a22o_2.
+Replacing existing blackbox module sky130_fd_sc_hd__a22o_4.
+Replacing existing blackbox module sky130_fd_sc_hd__a22oi_1.
+Replacing existing blackbox module sky130_fd_sc_hd__a22oi_2.
+Replacing existing blackbox module sky130_fd_sc_hd__a22oi_4.
+Replacing existing blackbox module sky130_fd_sc_hd__a2bb2o_1.
+Replacing existing blackbox module sky130_fd_sc_hd__a2bb2o_2.
+Replacing existing blackbox module sky130_fd_sc_hd__a2bb2o_4.
+Replacing existing blackbox module sky130_fd_sc_hd__a2bb2oi_1.
+Replacing existing blackbox module sky130_fd_sc_hd__a2bb2oi_2.
+Replacing existing blackbox module sky130_fd_sc_hd__a2bb2oi_4.
+Replacing existing blackbox module sky130_fd_sc_hd__a311o_1.
+Replacing existing blackbox module sky130_fd_sc_hd__a311o_2.
+Replacing existing blackbox module sky130_fd_sc_hd__a311o_4.
+Replacing existing blackbox module sky130_fd_sc_hd__a311oi_1.
+Replacing existing blackbox module sky130_fd_sc_hd__a311oi_2.
+Replacing existing blackbox module sky130_fd_sc_hd__a311oi_4.
+Replacing existing blackbox module sky130_fd_sc_hd__a31o_1.
+Replacing existing blackbox module sky130_fd_sc_hd__a31o_2.
+Replacing existing blackbox module sky130_fd_sc_hd__a31o_4.
+Replacing existing blackbox module sky130_fd_sc_hd__a31oi_1.
+Replacing existing blackbox module sky130_fd_sc_hd__a31oi_2.
+Replacing existing blackbox module sky130_fd_sc_hd__a31oi_4.
+Replacing existing blackbox module sky130_fd_sc_hd__a32o_1.
+Replacing existing blackbox module sky130_fd_sc_hd__a32o_2.
+Replacing existing blackbox module sky130_fd_sc_hd__a32o_4.
+Replacing existing blackbox module sky130_fd_sc_hd__a32oi_1.
+Replacing existing blackbox module sky130_fd_sc_hd__a32oi_2.
+Replacing existing blackbox module sky130_fd_sc_hd__a32oi_4.
+Replacing existing blackbox module sky130_fd_sc_hd__a41o_1.
+Replacing existing blackbox module sky130_fd_sc_hd__a41o_2.
+Replacing existing blackbox module sky130_fd_sc_hd__a41o_4.
+Replacing existing blackbox module sky130_fd_sc_hd__a41oi_1.
+Replacing existing blackbox module sky130_fd_sc_hd__a41oi_2.
+Replacing existing blackbox module sky130_fd_sc_hd__a41oi_4.
+Replacing existing blackbox module sky130_fd_sc_hd__and2_0.
+Replacing existing blackbox module sky130_fd_sc_hd__and2_1.
+Replacing existing blackbox module sky130_fd_sc_hd__and2_2.
+Replacing existing blackbox module sky130_fd_sc_hd__and2_4.
+Replacing existing blackbox module sky130_fd_sc_hd__and2b_1.
+Replacing existing blackbox module sky130_fd_sc_hd__and2b_2.
+Replacing existing blackbox module sky130_fd_sc_hd__and2b_4.
+Replacing existing blackbox module sky130_fd_sc_hd__and3_1.
+Replacing existing blackbox module sky130_fd_sc_hd__and3_2.
+Replacing existing blackbox module sky130_fd_sc_hd__and3_4.
+Replacing existing blackbox module sky130_fd_sc_hd__and3b_1.
+Replacing existing blackbox module sky130_fd_sc_hd__and3b_2.
+Replacing existing blackbox module sky130_fd_sc_hd__and3b_4.
+Replacing existing blackbox module sky130_fd_sc_hd__and4_1.
+Replacing existing blackbox module sky130_fd_sc_hd__and4_2.
+Replacing existing blackbox module sky130_fd_sc_hd__and4_4.
+Replacing existing blackbox module sky130_fd_sc_hd__and4b_1.
+Replacing existing blackbox module sky130_fd_sc_hd__and4b_2.
+Replacing existing blackbox module sky130_fd_sc_hd__and4b_4.
+Replacing existing blackbox module sky130_fd_sc_hd__and4bb_1.
+Replacing existing blackbox module sky130_fd_sc_hd__and4bb_2.
+Replacing existing blackbox module sky130_fd_sc_hd__and4bb_4.
+Replacing existing blackbox module sky130_fd_sc_hd__buf_1.
+Replacing existing blackbox module sky130_fd_sc_hd__buf_12.
+Replacing existing blackbox module sky130_fd_sc_hd__buf_16.
+Replacing existing blackbox module sky130_fd_sc_hd__buf_2.
+Replacing existing blackbox module sky130_fd_sc_hd__buf_4.
+Replacing existing blackbox module sky130_fd_sc_hd__buf_6.
+Replacing existing blackbox module sky130_fd_sc_hd__buf_8.
+Replacing existing blackbox module sky130_fd_sc_hd__bufbuf_16.
+Replacing existing blackbox module sky130_fd_sc_hd__bufbuf_8.
+Replacing existing blackbox module sky130_fd_sc_hd__bufinv_16.
+Replacing existing blackbox module sky130_fd_sc_hd__bufinv_8.
+Replacing existing blackbox module sky130_fd_sc_hd__clkbuf_1.
+Replacing existing blackbox module sky130_fd_sc_hd__clkbuf_16.
+Replacing existing blackbox module sky130_fd_sc_hd__clkbuf_2.
+Replacing existing blackbox module sky130_fd_sc_hd__clkbuf_4.
+Replacing existing blackbox module sky130_fd_sc_hd__clkbuf_8.
+Replacing existing blackbox module sky130_fd_sc_hd__clkdlybuf4s15_1.
+Replacing existing blackbox module sky130_fd_sc_hd__clkdlybuf4s15_2.
+Replacing existing blackbox module sky130_fd_sc_hd__clkdlybuf4s18_1.
+Replacing existing blackbox module sky130_fd_sc_hd__clkdlybuf4s18_2.
+Replacing existing blackbox module sky130_fd_sc_hd__clkdlybuf4s25_1.
+Replacing existing blackbox module sky130_fd_sc_hd__clkdlybuf4s25_2.
+Replacing existing blackbox module sky130_fd_sc_hd__clkdlybuf4s50_1.
+Replacing existing blackbox module sky130_fd_sc_hd__clkdlybuf4s50_2.
+Replacing existing blackbox module sky130_fd_sc_hd__clkinv_1.
+Replacing existing blackbox module sky130_fd_sc_hd__clkinv_16.
+Replacing existing blackbox module sky130_fd_sc_hd__clkinv_2.
+Replacing existing blackbox module sky130_fd_sc_hd__clkinv_4.
+Replacing existing blackbox module sky130_fd_sc_hd__clkinv_8.
+Replacing existing blackbox module sky130_fd_sc_hd__clkinvlp_2.
+Replacing existing blackbox module sky130_fd_sc_hd__clkinvlp_4.
+Replacing existing blackbox module sky130_fd_sc_hd__conb_1.
+Replacing existing blackbox module sky130_fd_sc_hd__decap_12.
+Replacing existing blackbox module sky130_fd_sc_hd__decap_3.
+Replacing existing blackbox module sky130_fd_sc_hd__decap_4.
+Replacing existing blackbox module sky130_fd_sc_hd__decap_6.
+Replacing existing blackbox module sky130_fd_sc_hd__decap_8.
+Replacing existing blackbox module sky130_fd_sc_hd__dfbbn_1.
+Replacing existing blackbox module sky130_fd_sc_hd__dfbbn_2.
+Replacing existing blackbox module sky130_fd_sc_hd__dfbbp_1.
+Replacing existing blackbox module sky130_fd_sc_hd__dfrbp_1.
+Replacing existing blackbox module sky130_fd_sc_hd__dfrbp_2.
+Replacing existing blackbox module sky130_fd_sc_hd__dfrtn_1.
+Replacing existing blackbox module sky130_fd_sc_hd__dfrtp_1.
+Replacing existing blackbox module sky130_fd_sc_hd__dfrtp_2.
+Replacing existing blackbox module sky130_fd_sc_hd__dfrtp_4.
+Replacing existing blackbox module sky130_fd_sc_hd__dfsbp_1.
+Replacing existing blackbox module sky130_fd_sc_hd__dfsbp_2.
+Replacing existing blackbox module sky130_fd_sc_hd__dfstp_1.
+Replacing existing blackbox module sky130_fd_sc_hd__dfstp_2.
+Replacing existing blackbox module sky130_fd_sc_hd__dfstp_4.
+Replacing existing blackbox module sky130_fd_sc_hd__dfxbp_1.
+Replacing existing blackbox module sky130_fd_sc_hd__dfxbp_2.
+Replacing existing blackbox module sky130_fd_sc_hd__dfxtp_1.
+Replacing existing blackbox module sky130_fd_sc_hd__dfxtp_2.
+Replacing existing blackbox module sky130_fd_sc_hd__dfxtp_4.
+Replacing existing blackbox module sky130_fd_sc_hd__diode_2.
+Ignoring cell sky130_fd_sc_hd__dlclkp_1 with missing function on output GCLK.
+Ignoring cell sky130_fd_sc_hd__dlclkp_2 with missing function on output GCLK.
+Ignoring cell sky130_fd_sc_hd__dlclkp_4 with missing function on output GCLK.
+Replacing existing blackbox module sky130_fd_sc_hd__dlrbn_1.
+Replacing existing blackbox module sky130_fd_sc_hd__dlrbn_2.
+Replacing existing blackbox module sky130_fd_sc_hd__dlrbp_1.
+Replacing existing blackbox module sky130_fd_sc_hd__dlrbp_2.
+Replacing existing blackbox module sky130_fd_sc_hd__dlrtn_1.
+Replacing existing blackbox module sky130_fd_sc_hd__dlrtn_2.
+Replacing existing blackbox module sky130_fd_sc_hd__dlrtn_4.
+Replacing existing blackbox module sky130_fd_sc_hd__dlrtp_1.
+Replacing existing blackbox module sky130_fd_sc_hd__dlrtp_2.
+Replacing existing blackbox module sky130_fd_sc_hd__dlrtp_4.
+Replacing existing blackbox module sky130_fd_sc_hd__dlxbn_1.
+Replacing existing blackbox module sky130_fd_sc_hd__dlxbn_2.
+Replacing existing blackbox module sky130_fd_sc_hd__dlxbp_1.
+Replacing existing blackbox module sky130_fd_sc_hd__dlxtn_1.
+Replacing existing blackbox module sky130_fd_sc_hd__dlxtn_2.
+Replacing existing blackbox module sky130_fd_sc_hd__dlxtn_4.
+Replacing existing blackbox module sky130_fd_sc_hd__dlxtp_1.
+Replacing existing blackbox module sky130_fd_sc_hd__dlygate4sd1_1.
+Replacing existing blackbox module sky130_fd_sc_hd__dlygate4sd2_1.
+Replacing existing blackbox module sky130_fd_sc_hd__dlygate4sd3_1.
+Replacing existing blackbox module sky130_fd_sc_hd__dlymetal6s2s_1.
+Replacing existing blackbox module sky130_fd_sc_hd__dlymetal6s4s_1.
+Replacing existing blackbox module sky130_fd_sc_hd__dlymetal6s6s_1.
+Replacing existing blackbox module sky130_fd_sc_hd__ebufn_1.
+Replacing existing blackbox module sky130_fd_sc_hd__ebufn_2.
+Replacing existing blackbox module sky130_fd_sc_hd__ebufn_4.
+Replacing existing blackbox module sky130_fd_sc_hd__ebufn_8.
+Replacing existing blackbox module sky130_fd_sc_hd__edfxbp_1.
+Replacing existing blackbox module sky130_fd_sc_hd__edfxtp_1.
+Replacing existing blackbox module sky130_fd_sc_hd__einvn_0.
+Replacing existing blackbox module sky130_fd_sc_hd__einvn_1.
+Replacing existing blackbox module sky130_fd_sc_hd__einvn_2.
+Replacing existing blackbox module sky130_fd_sc_hd__einvn_4.
+Replacing existing blackbox module sky130_fd_sc_hd__einvn_8.
+Replacing existing blackbox module sky130_fd_sc_hd__einvp_1.
+Replacing existing blackbox module sky130_fd_sc_hd__einvp_2.
+Replacing existing blackbox module sky130_fd_sc_hd__einvp_4.
+Replacing existing blackbox module sky130_fd_sc_hd__einvp_8.
+Replacing existing blackbox module sky130_fd_sc_hd__fa_1.
+Replacing existing blackbox module sky130_fd_sc_hd__fa_2.
+Replacing existing blackbox module sky130_fd_sc_hd__fa_4.
+Replacing existing blackbox module sky130_fd_sc_hd__fah_1.
+Replacing existing blackbox module sky130_fd_sc_hd__fahcin_1.
+Replacing existing blackbox module sky130_fd_sc_hd__fahcon_1.
+Replacing existing blackbox module sky130_fd_sc_hd__ha_1.
+Replacing existing blackbox module sky130_fd_sc_hd__ha_2.
+Replacing existing blackbox module sky130_fd_sc_hd__ha_4.
+Replacing existing blackbox module sky130_fd_sc_hd__inv_1.
+Replacing existing blackbox module sky130_fd_sc_hd__inv_12.
+Replacing existing blackbox module sky130_fd_sc_hd__inv_16.
+Replacing existing blackbox module sky130_fd_sc_hd__inv_2.
+Replacing existing blackbox module sky130_fd_sc_hd__inv_4.
+Replacing existing blackbox module sky130_fd_sc_hd__inv_6.
+Replacing existing blackbox module sky130_fd_sc_hd__inv_8.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_bleeder_1.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_clkbufkapwr_1.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_clkbufkapwr_16.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_clkbufkapwr_2.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_clkbufkapwr_4.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_clkbufkapwr_8.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_clkinvkapwr_1.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_clkinvkapwr_16.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_clkinvkapwr_2.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_clkinvkapwr_4.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_clkinvkapwr_8.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_decapkapwr_12.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_decapkapwr_3.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_decapkapwr_4.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_decapkapwr_6.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_decapkapwr_8.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_inputiso0n_1.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_inputiso0p_1.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_inputiso1n_1.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_inputiso1p_1.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_inputisolatch_1.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_isobufsrc_1.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_isobufsrc_16.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_isobufsrc_2.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_isobufsrc_4.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_isobufsrc_8.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_isobufsrckapwr_16.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_1.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_2.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_4.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_4.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_1.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_2.
+Replacing existing blackbox module sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_4.
+Replacing existing blackbox module sky130_fd_sc_hd__macro_sparecell.
+Replacing existing blackbox module sky130_fd_sc_hd__maj3_1.
+Replacing existing blackbox module sky130_fd_sc_hd__maj3_2.
+Replacing existing blackbox module sky130_fd_sc_hd__maj3_4.
+Replacing existing blackbox module sky130_fd_sc_hd__mux2_1.
+Replacing existing blackbox module sky130_fd_sc_hd__mux2_2.
+Replacing existing blackbox module sky130_fd_sc_hd__mux2_4.
+Replacing existing blackbox module sky130_fd_sc_hd__mux2_8.
+Replacing existing blackbox module sky130_fd_sc_hd__mux2i_1.
+Replacing existing blackbox module sky130_fd_sc_hd__mux2i_2.
+Replacing existing blackbox module sky130_fd_sc_hd__mux2i_4.
+Replacing existing blackbox module sky130_fd_sc_hd__mux4_1.
+Replacing existing blackbox module sky130_fd_sc_hd__mux4_2.
+Replacing existing blackbox module sky130_fd_sc_hd__mux4_4.
+Replacing existing blackbox module sky130_fd_sc_hd__nand2_1.
+Replacing existing blackbox module sky130_fd_sc_hd__nand2_2.
+Replacing existing blackbox module sky130_fd_sc_hd__nand2_4.
+Replacing existing blackbox module sky130_fd_sc_hd__nand2_8.
+Replacing existing blackbox module sky130_fd_sc_hd__nand2b_1.
+Replacing existing blackbox module sky130_fd_sc_hd__nand2b_2.
+Replacing existing blackbox module sky130_fd_sc_hd__nand2b_4.
+Replacing existing blackbox module sky130_fd_sc_hd__nand3_1.
+Replacing existing blackbox module sky130_fd_sc_hd__nand3_2.
+Replacing existing blackbox module sky130_fd_sc_hd__nand3_4.
+Replacing existing blackbox module sky130_fd_sc_hd__nand3b_1.
+Replacing existing blackbox module sky130_fd_sc_hd__nand3b_2.
+Replacing existing blackbox module sky130_fd_sc_hd__nand3b_4.
+Replacing existing blackbox module sky130_fd_sc_hd__nand4_1.
+Replacing existing blackbox module sky130_fd_sc_hd__nand4_2.
+Replacing existing blackbox module sky130_fd_sc_hd__nand4_4.
+Replacing existing blackbox module sky130_fd_sc_hd__nand4b_1.
+Replacing existing blackbox module sky130_fd_sc_hd__nand4b_2.
+Replacing existing blackbox module sky130_fd_sc_hd__nand4b_4.
+Replacing existing blackbox module sky130_fd_sc_hd__nand4bb_1.
+Replacing existing blackbox module sky130_fd_sc_hd__nand4bb_2.
+Replacing existing blackbox module sky130_fd_sc_hd__nand4bb_4.
+Replacing existing blackbox module sky130_fd_sc_hd__nor2_1.
+Replacing existing blackbox module sky130_fd_sc_hd__nor2_2.
+Replacing existing blackbox module sky130_fd_sc_hd__nor2_4.
+Replacing existing blackbox module sky130_fd_sc_hd__nor2_8.
+Replacing existing blackbox module sky130_fd_sc_hd__nor2b_1.
+Replacing existing blackbox module sky130_fd_sc_hd__nor2b_2.
+Replacing existing blackbox module sky130_fd_sc_hd__nor2b_4.
+Replacing existing blackbox module sky130_fd_sc_hd__nor3_1.
+Replacing existing blackbox module sky130_fd_sc_hd__nor3_2.
+Replacing existing blackbox module sky130_fd_sc_hd__nor3_4.
+Replacing existing blackbox module sky130_fd_sc_hd__nor3b_1.
+Replacing existing blackbox module sky130_fd_sc_hd__nor3b_2.
+Replacing existing blackbox module sky130_fd_sc_hd__nor3b_4.
+Replacing existing blackbox module sky130_fd_sc_hd__nor4_1.
+Replacing existing blackbox module sky130_fd_sc_hd__nor4_2.
+Replacing existing blackbox module sky130_fd_sc_hd__nor4_4.
+Replacing existing blackbox module sky130_fd_sc_hd__nor4b_1.
+Replacing existing blackbox module sky130_fd_sc_hd__nor4b_2.
+Replacing existing blackbox module sky130_fd_sc_hd__nor4b_4.
+Replacing existing blackbox module sky130_fd_sc_hd__nor4bb_1.
+Replacing existing blackbox module sky130_fd_sc_hd__nor4bb_2.
+Replacing existing blackbox module sky130_fd_sc_hd__nor4bb_4.
+Replacing existing blackbox module sky130_fd_sc_hd__o2111a_1.
+Replacing existing blackbox module sky130_fd_sc_hd__o2111a_2.
+Replacing existing blackbox module sky130_fd_sc_hd__o2111a_4.
+Replacing existing blackbox module sky130_fd_sc_hd__o2111ai_1.
+Replacing existing blackbox module sky130_fd_sc_hd__o2111ai_2.
+Replacing existing blackbox module sky130_fd_sc_hd__o2111ai_4.
+Replacing existing blackbox module sky130_fd_sc_hd__o211a_1.
+Replacing existing blackbox module sky130_fd_sc_hd__o211a_2.
+Replacing existing blackbox module sky130_fd_sc_hd__o211a_4.
+Replacing existing blackbox module sky130_fd_sc_hd__o211ai_1.
+Replacing existing blackbox module sky130_fd_sc_hd__o211ai_2.
+Replacing existing blackbox module sky130_fd_sc_hd__o211ai_4.
+Replacing existing blackbox module sky130_fd_sc_hd__o21a_1.
+Replacing existing blackbox module sky130_fd_sc_hd__o21a_2.
+Replacing existing blackbox module sky130_fd_sc_hd__o21a_4.
+Replacing existing blackbox module sky130_fd_sc_hd__o21ai_0.
+Replacing existing blackbox module sky130_fd_sc_hd__o21ai_1.
+Replacing existing blackbox module sky130_fd_sc_hd__o21ai_2.
+Replacing existing blackbox module sky130_fd_sc_hd__o21ai_4.
+Replacing existing blackbox module sky130_fd_sc_hd__o21ba_1.
+Replacing existing blackbox module sky130_fd_sc_hd__o21ba_2.
+Replacing existing blackbox module sky130_fd_sc_hd__o21ba_4.
+Replacing existing blackbox module sky130_fd_sc_hd__o21bai_1.
+Replacing existing blackbox module sky130_fd_sc_hd__o21bai_2.
+Replacing existing blackbox module sky130_fd_sc_hd__o21bai_4.
+Replacing existing blackbox module sky130_fd_sc_hd__o221a_1.
+Replacing existing blackbox module sky130_fd_sc_hd__o221a_2.
+Replacing existing blackbox module sky130_fd_sc_hd__o221a_4.
+Replacing existing blackbox module sky130_fd_sc_hd__o221ai_1.
+Replacing existing blackbox module sky130_fd_sc_hd__o221ai_2.
+Replacing existing blackbox module sky130_fd_sc_hd__o221ai_4.
+Replacing existing blackbox module sky130_fd_sc_hd__o22a_1.
+Replacing existing blackbox module sky130_fd_sc_hd__o22a_2.
+Replacing existing blackbox module sky130_fd_sc_hd__o22a_4.
+Replacing existing blackbox module sky130_fd_sc_hd__o22ai_1.
+Replacing existing blackbox module sky130_fd_sc_hd__o22ai_2.
+Replacing existing blackbox module sky130_fd_sc_hd__o22ai_4.
+Replacing existing blackbox module sky130_fd_sc_hd__o2bb2a_1.
+Replacing existing blackbox module sky130_fd_sc_hd__o2bb2a_2.
+Replacing existing blackbox module sky130_fd_sc_hd__o2bb2a_4.
+Replacing existing blackbox module sky130_fd_sc_hd__o2bb2ai_1.
+Replacing existing blackbox module sky130_fd_sc_hd__o2bb2ai_2.
+Replacing existing blackbox module sky130_fd_sc_hd__o2bb2ai_4.
+Replacing existing blackbox module sky130_fd_sc_hd__o311a_1.
+Replacing existing blackbox module sky130_fd_sc_hd__o311a_2.
+Replacing existing blackbox module sky130_fd_sc_hd__o311a_4.
+Replacing existing blackbox module sky130_fd_sc_hd__o311ai_0.
+Replacing existing blackbox module sky130_fd_sc_hd__o311ai_1.
+Replacing existing blackbox module sky130_fd_sc_hd__o311ai_2.
+Replacing existing blackbox module sky130_fd_sc_hd__o311ai_4.
+Replacing existing blackbox module sky130_fd_sc_hd__o31a_1.
+Replacing existing blackbox module sky130_fd_sc_hd__o31a_2.
+Replacing existing blackbox module sky130_fd_sc_hd__o31a_4.
+Replacing existing blackbox module sky130_fd_sc_hd__o31ai_1.
+Replacing existing blackbox module sky130_fd_sc_hd__o31ai_2.
+Replacing existing blackbox module sky130_fd_sc_hd__o31ai_4.
+Replacing existing blackbox module sky130_fd_sc_hd__o32a_1.
+Replacing existing blackbox module sky130_fd_sc_hd__o32a_2.
+Replacing existing blackbox module sky130_fd_sc_hd__o32a_4.
+Replacing existing blackbox module sky130_fd_sc_hd__o32ai_1.
+Replacing existing blackbox module sky130_fd_sc_hd__o32ai_2.
+Replacing existing blackbox module sky130_fd_sc_hd__o32ai_4.
+Replacing existing blackbox module sky130_fd_sc_hd__o41a_1.
+Replacing existing blackbox module sky130_fd_sc_hd__o41a_2.
+Replacing existing blackbox module sky130_fd_sc_hd__o41a_4.
+Replacing existing blackbox module sky130_fd_sc_hd__o41ai_1.
+Replacing existing blackbox module sky130_fd_sc_hd__o41ai_2.
+Replacing existing blackbox module sky130_fd_sc_hd__o41ai_4.
+Replacing existing blackbox module sky130_fd_sc_hd__or2_0.
+Replacing existing blackbox module sky130_fd_sc_hd__or2_1.
+Replacing existing blackbox module sky130_fd_sc_hd__or2_2.
+Replacing existing blackbox module sky130_fd_sc_hd__or2_4.
+Replacing existing blackbox module sky130_fd_sc_hd__or2b_1.
+Replacing existing blackbox module sky130_fd_sc_hd__or2b_2.
+Replacing existing blackbox module sky130_fd_sc_hd__or2b_4.
+Replacing existing blackbox module sky130_fd_sc_hd__or3_1.
+Replacing existing blackbox module sky130_fd_sc_hd__or3_2.
+Replacing existing blackbox module sky130_fd_sc_hd__or3_4.
+Replacing existing blackbox module sky130_fd_sc_hd__or3b_1.
+Replacing existing blackbox module sky130_fd_sc_hd__or3b_2.
+Replacing existing blackbox module sky130_fd_sc_hd__or3b_4.
+Replacing existing blackbox module sky130_fd_sc_hd__or4_1.
+Replacing existing blackbox module sky130_fd_sc_hd__or4_2.
+Replacing existing blackbox module sky130_fd_sc_hd__or4_4.
+Replacing existing blackbox module sky130_fd_sc_hd__or4b_1.
+Replacing existing blackbox module sky130_fd_sc_hd__or4b_2.
+Replacing existing blackbox module sky130_fd_sc_hd__or4b_4.
+Replacing existing blackbox module sky130_fd_sc_hd__or4bb_1.
+Replacing existing blackbox module sky130_fd_sc_hd__or4bb_2.
+Replacing existing blackbox module sky130_fd_sc_hd__or4bb_4.
+Replacing existing blackbox module sky130_fd_sc_hd__probe_p_8.
+Replacing existing blackbox module sky130_fd_sc_hd__probec_p_8.
+Replacing existing blackbox module sky130_fd_sc_hd__sdfbbn_1.
+Replacing existing blackbox module sky130_fd_sc_hd__sdfbbn_2.
+Replacing existing blackbox module sky130_fd_sc_hd__sdfbbp_1.
+Replacing existing blackbox module sky130_fd_sc_hd__sdfrbp_1.
+Replacing existing blackbox module sky130_fd_sc_hd__sdfrbp_2.
+Replacing existing blackbox module sky130_fd_sc_hd__sdfrtn_1.
+Replacing existing blackbox module sky130_fd_sc_hd__sdfrtp_1.
+Replacing existing blackbox module sky130_fd_sc_hd__sdfrtp_2.
+Replacing existing blackbox module sky130_fd_sc_hd__sdfrtp_4.
+Replacing existing blackbox module sky130_fd_sc_hd__sdfsbp_1.
+Replacing existing blackbox module sky130_fd_sc_hd__sdfsbp_2.
+Replacing existing blackbox module sky130_fd_sc_hd__sdfstp_1.
+Replacing existing blackbox module sky130_fd_sc_hd__sdfstp_2.
+Replacing existing blackbox module sky130_fd_sc_hd__sdfstp_4.
+Replacing existing blackbox module sky130_fd_sc_hd__sdfxbp_1.
+Replacing existing blackbox module sky130_fd_sc_hd__sdfxbp_2.
+Replacing existing blackbox module sky130_fd_sc_hd__sdfxtp_1.
+Replacing existing blackbox module sky130_fd_sc_hd__sdfxtp_2.
+Replacing existing blackbox module sky130_fd_sc_hd__sdfxtp_4.
+Ignoring cell sky130_fd_sc_hd__sdlclkp_1 with missing function on output GCLK.
+Ignoring cell sky130_fd_sc_hd__sdlclkp_2 with missing function on output GCLK.
+Ignoring cell sky130_fd_sc_hd__sdlclkp_4 with missing function on output GCLK.
+Replacing existing blackbox module sky130_fd_sc_hd__sedfxbp_1.
+Replacing existing blackbox module sky130_fd_sc_hd__sedfxbp_2.
+Replacing existing blackbox module sky130_fd_sc_hd__sedfxtp_1.
+Replacing existing blackbox module sky130_fd_sc_hd__sedfxtp_2.
+Replacing existing blackbox module sky130_fd_sc_hd__sedfxtp_4.
+Replacing existing blackbox module sky130_fd_sc_hd__xnor2_1.
+Replacing existing blackbox module sky130_fd_sc_hd__xnor2_2.
+Replacing existing blackbox module sky130_fd_sc_hd__xnor2_4.
+Replacing existing blackbox module sky130_fd_sc_hd__xnor3_1.
+Replacing existing blackbox module sky130_fd_sc_hd__xnor3_2.
+Replacing existing blackbox module sky130_fd_sc_hd__xnor3_4.
+Replacing existing blackbox module sky130_fd_sc_hd__xor2_1.
+Replacing existing blackbox module sky130_fd_sc_hd__xor2_2.
+Replacing existing blackbox module sky130_fd_sc_hd__xor2_4.
+Replacing existing blackbox module sky130_fd_sc_hd__xor3_1.
+Replacing existing blackbox module sky130_fd_sc_hd__xor3_2.
+Replacing existing blackbox module sky130_fd_sc_hd__xor3_4.
+Imported 422 cell types from liberty file.
+<suppressed ~12 debug messages>
+
+3. Executing SLANG frontend.
+Top level design units:
+    MulProbe_sim_top
+
+
+Build succeeded: 0 errors, 0 warnings
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$35'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$12'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$9'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$4'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$0'.
+Cleaned up 5 empty switches.
+<suppressed ~57 debug messages>
+
+3.2. Executing TRIBUF pass.
+
+3.3. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 3 switch rules as full_case in process $35 in module MulProbe_sim_top.
+Marked 1 switch rules as full_case in process $12 in module MulProbe_sim_top.
+Marked 1 switch rules as full_case in process $9 in module MulProbe_sim_top.
+Marked 4 switch rules as full_case in process $4 in module MulProbe_sim_top.
+Marked 2 switch rules as full_case in process $0 in module MulProbe_sim_top.
+Removed a total of 0 dead cases.
+
+3.4. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 8 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.5. Executing PROC_INIT pass (extract init attributes).
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~15 debug messages>
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\MulProbe_sim_top.$35'.
+     1/5: $__vul_pipeline_multiply.rtlzz_pipe_8_s1$38
+     2/5: $__vul_pipeline_multiply.rtlzz_pipe_2_s1$37
+     3/5: $__vul_pipeline_multiply.rtlzz_valid_s1$41
+     4/5: $__vul_pipeline_multiply.rtlzz_pipe_8_s1$40
+     5/5: $__vul_pipeline_multiply.rtlzz_pipe_2_s1$39
+Creating decoders for process `\MulProbe_sim_top.$12'.
+     1/1: $__vul_pipeline_q_s3valid$14
+Creating decoders for process `\MulProbe_sim_top.$9'.
+     1/1: $__vul_pipeline_q_s3reg$11
+Creating decoders for process `\MulProbe_sim_top.$4'.
+     1/3: $__vul_pipeline_q_s1valid$6
+     2/3: $__vul_pipeline_q_s1valid$7
+     3/3: $__vul_pipeline_q_s1valid$8
+Creating decoders for process `\MulProbe_sim_top.$0'.
+     1/2: $__vul_pipeline_q_s1reg$2
+     2/2: $__vul_pipeline_q_s1reg$3
+
+3.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 5 empty switches in `\MulProbe_sim_top.$35'.
+Removing empty process `MulProbe_sim_top.$35'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$12'.
+Removing empty process `MulProbe_sim_top.$12'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$9'.
+Removing empty process `MulProbe_sim_top.$9'.
+Found and cleaned up 5 empty switches in `\MulProbe_sim_top.$4'.
+Removing empty process `MulProbe_sim_top.$4'.
+Found and cleaned up 3 empty switches in `\MulProbe_sim_top.$0'.
+Removing empty process `MulProbe_sim_top.$0'.
+Cleaned up 15 empty switches.
+
+3.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module MulProbe_sim_top.
+<suppressed ~16 debug messages>
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1. Analyzing design hierarchy..
+Top module:  \MulProbe_sim_top
+
+4.2. Analyzing design hierarchy..
+Top module:  \MulProbe_sim_top
+Removed 0 unused modules.
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \MulProbe_sim_top..
+Removed 5 unused cells and 82 unused wires.
+<suppressed ~95 debug messages>
+
+6. Executing RTLIL backend.
+Output filename: /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/sky130hd-add-sdcfix/results/sky130hd/arithmetic_probe/base/1_1_yosys_canonicalize.rtlil
+
+End of script. Logfile hash: 3f8937700f, time: 0.13s, user: 0.10s, system: 0.02s, MEM: 59.42 MB peak
+Yosys 0.68+ (git sha1 a5af9d690, Release, GNU /usr/bin/c++ 13.3.0) [github.com/The-OpenROAD-Project/yosys at HEAD]
+Time spent: 73% 4x read_liberty (0 sec), 13% 2x read_slang (0 sec), ...
+Elapsed time: 0:00.14[h:]min:sec. CPU time: user 0.12 sys 0.02 (100%). Peak memory: 63528KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+1_1_yosys_canonicalize    .rtlil          0             62 a6d29901a8e0a6389bfe

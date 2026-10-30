@@ -1,0 +1,18 @@
+OpenROAD 26Q3-1867-g84e3ff1eb2 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 2 thread(s).
+read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/nangate45-mul/results/nangate45/arithmetic_probe/base/2_3_floorplan_tapcell.odb
+read_sdc /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/nangate45-mul/results/nangate45/arithmetic_probe/base/2_1_floorplan.sdc
+source /home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+[WARNING PDN-1051] No instances found for grid (CORE_macro_grid_1).
+[WARNING PDN-1051] No instances found for grid (CORE_macro_grid_2).
+[INFO PDN-0001] Inserting grid: grid
+[INFO PDN-0500] Runtime: 0.00s
+Design area 7938 um^2 41% utilization.
+write_db /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/nangate45-mul/results/nangate45/arithmetic_probe/base/2_4_floorplan_pdn.odb
+Elapsed time: 0:00.26[h:]min:sec. CPU time: user 0.23 sys 0.03 (99%). Peak memory: 121708KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+2_4_floorplan_pdn         .odb            0            118 a275b76f80d856b55312

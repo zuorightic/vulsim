@@ -1,0 +1,20 @@
+OpenROAD 26Q3-1867-g84e3ff1eb2 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 2 thread(s).
+read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+[INFO ODB-0227] LEF file: /home/zyrv/OpenROAD-flow-scripts/flow/platforms/sky130hd/lef/sky130_fd_sc_hd.tlef, created 13 layers, 25 vias
+[INFO ODB-0227] LEF file: /home/zyrv/OpenROAD-flow-scripts/flow/platforms/sky130hd/lef/sky130_fd_sc_hd_merged.lef, created 441 library cells
+link_design MulProbe_sim_top
+read_sdc /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/sky130hd-mul-rcalias/results/sky130hd/arithmetic_probe/base/1_2_yosys.sdc
+source /home/zyrv/OpenROAD-flow-scripts/flow/platforms/sky130hd/setRC.tcl
+eliminate_dead_logic
+Removed 0 unused instances and 0 unused nets.
+Design area 37825 um^2 100% utilization.
+write_db /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/sky130hd-mul-rcalias/results/sky130hd/arithmetic_probe/base/1_synth.odb
+write_sdc -no_timestamp /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/sky130hd-mul-rcalias/results/sky130hd/arithmetic_probe/base/1_synth.sdc
+Elapsed time: 0:00.37[h:]min:sec. CPU time: user 0.34 sys 0.03 (99%). Peak memory: 134692KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+1_synth                   .odb            0            131 b1032efc781e3530c860
+1_synth                   .sdc                             77f0d344593a45826f12

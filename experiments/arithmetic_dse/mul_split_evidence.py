@@ -3,7 +3,6 @@ import gzip
 import hashlib
 import json
 from pathlib import Path
-from .backend import stage_metrics
 from .budget import usage,cpu_seconds
 from .characterization import mapped_netlist_hash
 from .timing_evidence import critical_path,master_inventory
@@ -11,6 +10,8 @@ from .timing_evidence import critical_path,master_inventory
 ROOT=Path(__file__).resolve().parents[2]
 def verify(root=ROOT):
     root=Path(root);relative='experiments/arithmetic/mul_split_freeze_v1.json'
+    from .freeze_history import historical_stage_metrics
+    stage_metrics=historical_stage_metrics(root)
     freeze=json.loads((root/relative).read_text())
     digest=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
     def check(rel,expected):

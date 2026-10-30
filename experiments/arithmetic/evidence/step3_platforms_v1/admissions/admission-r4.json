@@ -1,0 +1,122 @@
+{
+  "version": "platform-connection-admission-v1",
+  "id": "step3-four-platforms-r4",
+  "created_at": "2026-10-30T05:17:10.278643+00:00",
+  "purpose": "platform_connection_only",
+  "policy_sha256": "3f4a230ca19b9b53a9da71cb19a52e718d29a8001106d354394f13e5d6ef995a",
+  "starting_usage": {
+    "synth": 38,
+    "grt": 15,
+    "final": 7,
+    "support_calls": 384,
+    "walltime_s": 2937.9684521800373,
+    "CPU_time_s": 4333.41,
+    "pending": 0
+  },
+  "tasks": [
+    {
+      "id": "sky130hd-add-audit",
+      "platform": "sky130hd",
+      "kernel": "add_u32",
+      "rtl": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/add-native/sim/top.sv",
+      "rtl_sha256": "cc8d3eba4c0adb938b633c7ab3fdcfca915643b70314c848af95bd7da6bf0a6c",
+      "top": "MulProbe_sim_top",
+      "profile_sha256": "5d9ad5109b78e4ef0c8565752a1d2d90aa18a2e99ae33e76ce8975828f616ba5",
+      "period_ps": 30000,
+      "abc_target_ps": 30000,
+      "stage": "grt",
+      "purpose": "prototype",
+      "L": 3,
+      "II": 1,
+      "size_scope": "32bit_input; complete_result_64bit",
+      "supersedes_task_id": "sky130hd-add"
+    },
+    {
+      "id": "sky130hd-mul-audit",
+      "platform": "sky130hd",
+      "kernel": "mul_u32",
+      "rtl": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/mul-native/sim/top.sv",
+      "rtl_sha256": "5018e7b6831f1963c2ac3ee159f25f045cb12eab2a7fcee82cc44af982f7dca3",
+      "top": "MulProbe_sim_top",
+      "profile_sha256": "5d9ad5109b78e4ef0c8565752a1d2d90aa18a2e99ae33e76ce8975828f616ba5",
+      "period_ps": 30000,
+      "abc_target_ps": 30000,
+      "stage": "final",
+      "purpose": "prototype",
+      "L": 3,
+      "II": 1,
+      "size_scope": "32bit_input; complete_result_64bit",
+      "supersedes_task_id": "sky130hd-mul"
+    },
+    {
+      "id": "gf180-add-finalconfig",
+      "platform": "gf180",
+      "kernel": "add_u32",
+      "rtl": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/add-native/sim/top.sv",
+      "rtl_sha256": "cc8d3eba4c0adb938b633c7ab3fdcfca915643b70314c848af95bd7da6bf0a6c",
+      "top": "MulProbe_sim_top",
+      "profile_sha256": "1ce703428dbbc4a65c6d9b96bb98460d3b4bc749bcd5f07ba80630c135ce190e",
+      "period_ps": 30000,
+      "abc_target_ps": 30000,
+      "stage": "grt",
+      "purpose": "prototype",
+      "L": 3,
+      "II": 1,
+      "size_scope": "32bit_input; complete_result_64bit",
+      "supersedes_task_id": "gf180-add-audit"
+    },
+    {
+      "id": "gf180-mul-finalconfig",
+      "platform": "gf180",
+      "kernel": "mul_u32",
+      "rtl": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/mul-native/sim/top.sv",
+      "rtl_sha256": "5018e7b6831f1963c2ac3ee159f25f045cb12eab2a7fcee82cc44af982f7dca3",
+      "top": "MulProbe_sim_top",
+      "profile_sha256": "1ce703428dbbc4a65c6d9b96bb98460d3b4bc749bcd5f07ba80630c135ce190e",
+      "period_ps": 30000,
+      "abc_target_ps": 30000,
+      "stage": "final",
+      "purpose": "prototype",
+      "L": 3,
+      "II": 1,
+      "size_scope": "32bit_input; complete_result_64bit",
+      "supersedes_task_id": "gf180-mul-audit"
+    }
+  ],
+  "call_caps": {
+    "synth": 9,
+    "grt": 8,
+    "final": 4
+  },
+  "worst_case_leaf_walltime_s": 24000,
+  "CPU_envelope_s": 48000,
+  "threads": 2,
+  "physical_jobs": 1,
+  "memory_limit_MiB": 8192,
+  "sample_split": "not_applicable; connection probes not admitted as model training",
+  "stops": [
+    "failed_stage",
+    "timeout",
+    "memory_limit",
+    "unsettled_ledger",
+    "unexpected_units_or_assets"
+  ],
+  "automatic_retries": 0,
+  "main_case_targets": false,
+  "later_bulk_or_model_work_authorized": false,
+  "correction_reason": "Carry all unattempted remaining platform tasks into the same audited lineage and shared 9/8/4 envelope after the RC/unit/area corrections. No target, RTL, stage or global resource cap changes.",
+  "parent_admission": {
+    "path": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/admission-r3.json",
+    "sha256": "45c4627a528dd0927b74e97112ba2f4bc59610d23e7dbe7cd0e9ff176045a9f1",
+    "id": "step3-four-platforms-r3"
+  },
+  "related_admission_ids": [
+    "step3-four-platforms-v1",
+    "step3-four-platforms-r2",
+    "step3-four-platforms-r3",
+    "step3-four-platforms-r4"
+  ],
+  "additional_diagnostic_call_caps": {
+    "synth": 1
+  }
+}

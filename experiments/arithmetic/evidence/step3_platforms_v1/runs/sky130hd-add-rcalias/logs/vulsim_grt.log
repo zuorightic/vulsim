@@ -1,0 +1,7 @@
+read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_db /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/sky130hd-add-rcalias/results/sky130hd/arithmetic_probe/base/5_1_grt.odb
+read_sdc /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/sky130hd-add-rcalias/results/sky130hd/arithmetic_probe/base/5_1_grt.sdc
+source /home/zyrv/OpenROAD-flow-scripts/flow/platforms/sky130hd/setRC.tcl
+[WARNING STA-0450] virtual clock io_clk can not be propagated.
+VULSIM_SNAPSHOT_COMPLETE grt
+Elapsed time: 0:00.37[h:]min:sec. CPU time: user 0.32 sys 0.06 (103%). Peak memory: 226468KB.

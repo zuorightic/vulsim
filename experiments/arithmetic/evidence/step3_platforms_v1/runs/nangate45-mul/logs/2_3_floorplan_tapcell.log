@@ -1,0 +1,16 @@
+OpenROAD 26Q3-1867-g84e3ff1eb2 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 2 thread(s).
+read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/nangate45-mul/results/nangate45/arithmetic_probe/base/2_2_floorplan_macro.odb
+read_sdc /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/nangate45-mul/results/nangate45/arithmetic_probe/base/2_1_floorplan.sdc
+source /home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+[INFO TAP-0004] Inserted 198 endcaps.
+[INFO TAP-0005] Inserted 50 tapcells.
+Design area 7938 um^2 41% utilization.
+write_db /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/nangate45-mul/results/nangate45/arithmetic_probe/base/2_3_floorplan_tapcell.odb
+Elapsed time: 0:00.23[h:]min:sec. CPU time: user 0.20 sys 0.03 (99%). Peak memory: 117196KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+2_3_floorplan_tapcell     .odb            0            114 66b23dd59236d52f7ee9

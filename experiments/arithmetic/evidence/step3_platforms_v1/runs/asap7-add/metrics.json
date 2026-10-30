@@ -1,0 +1,57 @@
+[
+  {
+    "stage": "synth",
+    "target_period_ps": 1500.0,
+    "cell_area_um2": 115.75062,
+    "functional_cell_area_um2": 115.75062,
+    "excluded_filler_area_um2": 0,
+    "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+    "sequential_area_um2": 47.8224,
+    "sequential_cells": 164,
+    "physical_only_area_um2": 0,
+    "setup_worst_slack_ps": 1028.464844,
+    "hold_worst_slack_ps": 3.314153,
+    "setup_tns_ps": 0.0,
+    "hold_tns_ps": 0.0,
+    "timing_coverage_complete": true,
+    "timing_coverage_diagnostics": "",
+    "minimum_clock_period_ps": 430.41,
+    "sta_feasibility": true,
+    "measured_feasibility": null,
+    "feasibility_scope": "synthesis_STA_only",
+    "multi_corner_signoff": false,
+    "hold_feasible_at_TT": true,
+    "hold_review_margin_ps": 5,
+    "hold_review_required": true,
+    "hold_margin_status": "below_review_band",
+    "parasitics": "none",
+    "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/asap7-add/reports/asap7/arithmetic_probe/base/vulsim_synth",
+    "target_platform": "asap7",
+    "platform_profile_sha256": "a29e056328a495af3f5815e3c56f4e6838eafd4b3f4f7844cc81d82ef99dd3df",
+    "raw_report_units": {
+      "time": {
+        "raw_unit": "time 1ps",
+        "to_ps": 1.0
+      },
+      "capacitance": {
+        "raw_unit": "capacitance 1fF",
+        "to_fF": 1.0
+      }
+    },
+    "unit_conversion": "Liberty_and_report_units_verified",
+    "raw_timing_values": {
+      "setup_worst_slack_ps": 1028.464844,
+      "hold_worst_slack_ps": 3.314153,
+      "setup_tns_ps": 0.0,
+      "hold_tns_ps": 0.0,
+      "minimum_clock_period_ps": 430.41
+    },
+    "abc_target_ps": 1500.0,
+    "mapping_context_sha256": "dab24637d4335d4077921754d9a821f110f1f32a02881ebdf135e5199012fb8d",
+    "target_dependent_measurement": true,
+    "mapped_netlist_sha256": "106e935c97e75bd8704d6b5ef8182a93e5a02f48b3f5e4ccb610b3d99518ad59",
+    "mapped_netlist_hash_rule": "Yosys_Verilog_remove_banner_src_blank_lines_v1",
+    "comparison_identity_sha256": "fb9cb73f19e738250678e3a45b7399b4f958385cd3b363ffd1725d47574e0c54",
+    "orfs_stdcell_area_um2": 115.751
+  }
+]

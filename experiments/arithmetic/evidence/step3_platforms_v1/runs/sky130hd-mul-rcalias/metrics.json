@@ -1,0 +1,177 @@
+[
+  {
+    "stage": "synth",
+    "target_period_ps": 30000.0,
+    "cell_area_um2": 37825.02719999998,
+    "functional_cell_area_um2": 37825.02719999998,
+    "excluded_filler_area_um2": 0,
+    "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+    "sequential_area_um2": 3903.744,
+    "sequential_cells": 195,
+    "physical_only_area_um2": 0,
+    "setup_worst_slack_ps": 22717.735,
+    "hold_worst_slack_ps": 181.357,
+    "setup_tns_ps": 0.0,
+    "hold_tns_ps": 0.0,
+    "timing_coverage_complete": true,
+    "timing_coverage_diagnostics": "",
+    "minimum_clock_period_ps": 7230.0,
+    "sta_feasibility": true,
+    "measured_feasibility": null,
+    "feasibility_scope": "synthesis_STA_only",
+    "multi_corner_signoff": false,
+    "hold_feasible_at_TT": true,
+    "hold_review_margin_ps": 25,
+    "hold_review_required": false,
+    "hold_margin_status": "review_band_met",
+    "parasitics": "none",
+    "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/sky130hd-mul-rcalias/reports/sky130hd/arithmetic_probe/base/vulsim_synth",
+    "target_platform": "sky130hd",
+    "platform_profile_sha256": "b167ee95ee7092393e79f1a3ba4d37897d1214d30cc9cd95229b3f1d2d9e2ca7",
+    "raw_report_units": {
+      "time": {
+        "raw_unit": "time 1ns",
+        "to_ps": 1000.0
+      },
+      "capacitance": {
+        "raw_unit": "capacitance 1pF",
+        "to_fF": 1000.0
+      }
+    },
+    "unit_conversion": "Liberty_and_report_units_verified",
+    "raw_timing_values": {
+      "setup_worst_slack_ps": 22.717735,
+      "hold_worst_slack_ps": 0.181357,
+      "setup_tns_ps": 0.0,
+      "hold_tns_ps": 0.0,
+      "minimum_clock_period_ps": 7.23
+    },
+    "abc_target_ps": 30000.0,
+    "mapping_context_sha256": "697e6fe0a32354e3dcb8f620e41b46fc0721e9dd7ee477d5ec21b9797244175d",
+    "target_dependent_measurement": true,
+    "mapped_netlist_sha256": "6d7db0916483d362138b86faba08f9328c9c27652772754306b048f08a63f9b2",
+    "mapped_netlist_hash_rule": "Yosys_Verilog_remove_banner_src_blank_lines_v1",
+    "comparison_identity_sha256": "a30b9c82f9d435118c5b8488737de99f917d80a4d6a4be261d28bf11a1e88edd",
+    "orfs_area_crosscheck": {
+      "native_json_significant_digits": 6,
+      "rounding_tolerance_um2": 0.050000100000000006,
+      "absolute_difference_um2": 0.027199999982258305
+    },
+    "orfs_stdcell_area_um2": 37825
+  },
+  {
+    "stage": "grt",
+    "target_period_ps": 30000.0,
+    "cell_area_um2": 40800.38079999998,
+    "functional_cell_area_um2": 39231.375999999975,
+    "excluded_filler_area_um2": 0,
+    "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+    "sequential_area_um2": 3918.7584,
+    "sequential_cells": 195,
+    "physical_only_area_um2": 1569.0048000000002,
+    "setup_worst_slack_ps": 20701.582,
+    "hold_worst_slack_ps": 128.599,
+    "setup_tns_ps": 0.0,
+    "hold_tns_ps": 0.0,
+    "timing_coverage_complete": true,
+    "timing_coverage_diagnostics": "",
+    "minimum_clock_period_ps": 9300.0,
+    "sta_feasibility": true,
+    "measured_feasibility": true,
+    "feasibility_scope": "TT_setup_only",
+    "multi_corner_signoff": false,
+    "hold_feasible_at_TT": true,
+    "hold_review_margin_ps": 25,
+    "hold_review_required": false,
+    "hold_margin_status": "review_band_met",
+    "parasitics": "global_route_estimate",
+    "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/sky130hd-mul-rcalias/reports/sky130hd/arithmetic_probe/base/vulsim_grt",
+    "target_platform": "sky130hd",
+    "platform_profile_sha256": "b167ee95ee7092393e79f1a3ba4d37897d1214d30cc9cd95229b3f1d2d9e2ca7",
+    "raw_report_units": {
+      "time": {
+        "raw_unit": "time 1ns",
+        "to_ps": 1000.0
+      },
+      "capacitance": {
+        "raw_unit": "capacitance 1pF",
+        "to_fF": 1000.0
+      }
+    },
+    "unit_conversion": "Liberty_and_report_units_verified",
+    "raw_timing_values": {
+      "setup_worst_slack_ps": 20.701582,
+      "hold_worst_slack_ps": 0.128599,
+      "setup_tns_ps": 0.0,
+      "hold_tns_ps": 0.0,
+      "minimum_clock_period_ps": 9.3
+    },
+    "abc_target_ps": 30000.0,
+    "mapping_context_sha256": "697e6fe0a32354e3dcb8f620e41b46fc0721e9dd7ee477d5ec21b9797244175d",
+    "target_dependent_measurement": true,
+    "orfs_area_crosscheck": {
+      "native_json_significant_digits": 6,
+      "rounding_tolerance_um2": 0.050000100000000006,
+      "absolute_difference_um2": 0.019200000024284236
+    },
+    "orfs_stdcell_area_um2": 40800.4
+  },
+  {
+    "stage": "final",
+    "target_period_ps": 30000.0,
+    "cell_area_um2": 40807.88799999998,
+    "functional_cell_area_um2": 39238.883199999975,
+    "excluded_filler_area_um2": 52801.8912,
+    "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+    "sequential_area_um2": 3918.7584,
+    "sequential_cells": 195,
+    "physical_only_area_um2": 1569.0048000000002,
+    "setup_worst_slack_ps": 21107.490999999998,
+    "hold_worst_slack_ps": 124.862,
+    "setup_tns_ps": 0.0,
+    "hold_tns_ps": 0.0,
+    "timing_coverage_complete": true,
+    "timing_coverage_diagnostics": "",
+    "minimum_clock_period_ps": 8890.0,
+    "sta_feasibility": true,
+    "measured_feasibility": true,
+    "feasibility_scope": "TT_setup_and_hold",
+    "multi_corner_signoff": false,
+    "hold_feasible_at_TT": true,
+    "hold_review_margin_ps": 25,
+    "hold_review_required": false,
+    "hold_margin_status": "review_band_met",
+    "parasitics": "OpenRCX_extracted_SPEF",
+    "raw_reports_prefix": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/sky130hd-mul-rcalias/reports/sky130hd/arithmetic_probe/base/vulsim_final",
+    "target_platform": "sky130hd",
+    "platform_profile_sha256": "b167ee95ee7092393e79f1a3ba4d37897d1214d30cc9cd95229b3f1d2d9e2ca7",
+    "raw_report_units": {
+      "time": {
+        "raw_unit": "time 1ns",
+        "to_ps": 1000.0
+      },
+      "capacitance": {
+        "raw_unit": "capacitance 1pF",
+        "to_fF": 1000.0
+      }
+    },
+    "unit_conversion": "Liberty_and_report_units_verified",
+    "raw_timing_values": {
+      "setup_worst_slack_ps": 21.107491,
+      "hold_worst_slack_ps": 0.124862,
+      "setup_tns_ps": 0.0,
+      "hold_tns_ps": 0.0,
+      "minimum_clock_period_ps": 8.89
+    },
+    "abc_target_ps": 30000.0,
+    "mapping_context_sha256": "697e6fe0a32354e3dcb8f620e41b46fc0721e9dd7ee477d5ec21b9797244175d",
+    "target_dependent_measurement": true,
+    "orfs_area_crosscheck": {
+      "native_json_significant_digits": 6,
+      "rounding_tolerance_um2": 0.050000100000000006,
+      "absolute_difference_um2": 0.012000000024272595
+    },
+    "orfs_stdcell_area_um2": 40807.9,
+    "detailed_route_drc_errors": 0
+  }
+]

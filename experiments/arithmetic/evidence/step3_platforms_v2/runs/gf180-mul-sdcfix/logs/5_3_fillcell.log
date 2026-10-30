@@ -1,0 +1,17 @@
+OpenROAD 26Q3-1867-g84e3ff1eb2 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 2 thread(s).
+read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/lib/gf180mcu_fd_sc_mcu9t5v0__tt_025C_5v00.lib.gz
+read_db /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/gf180-mul-sdcfix/results/gf180/arithmetic_probe/base/5_2_route.odb
+read_sdc /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/gf180-mul-sdcfix/results/gf180/arithmetic_probe/base/5_1_grt.sdc
+source /home/zyrv/vulsim/experiments/arithmetic_dse/backend/gf180_tc_rc.tcl
+[WARNING STA-0450] virtual clock io_clk can not be propagated.
+filler_placement "gf180mcu_fd_sc_mcu9t5v0__fill_64 gf180mcu_fd_sc_mcu9t5v0__fill_32 gf180mcu_fd_sc_mcu9t5v0__fill_16 gf180mcu_fd_sc_mcu9t5v0__fill_8 gf180mcu_fd_sc_mcu9t5v0__fill_4 gf180mcu_fd_sc_mcu9t5v0__fill_2 gf180mcu_fd_sc_mcu9t5v0__fill_1"
+[INFO DPL-0001] Placed 7120 filler instances.
+Design area 175821 um^2 42% utilization.
+write_db /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/gf180-mul-sdcfix/results/gf180/arithmetic_probe/base/5_3_fillcell.odb
+Elapsed time: 0:00.58[h:]min:sec. CPU time: user 0.53 sys 0.05 (99%). Peak memory: 166792KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+5_3_fillcell              .odb            0            162 f45ba896ef6873b6058f

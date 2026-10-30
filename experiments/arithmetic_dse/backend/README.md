@@ -1,60 +1,29 @@
-# ASAP7 TT 后端评估
+# 四平台典型角后端
 
-从仓库根目录执行完整试跑：
+当前实现按 `mission/lxy-plan-fix.md` 第一章§3和§10.3执行，平台选择只有 `asap7`、`nangate45`、`sky130hd`、`gf180`。平台身份、I/O、单位和试跑周期在 `../configs/platforms/`；共同综合/物理设置在 `platform.mk`，真实库、层栈、RC和报告路径从ORFS有效环境取得并校验。旧ASAP7专用Make文件和九案例预算公式已退出活动路径，历史核验显式读取冻结快照。
 
-```bash
-python3 -m experiments.arithmetic_dse.run \
-  --out build/asap7-probe-new --stage final --period-ps 1500 --threads 2
-```
-
-该入口先使用已构建的 `build/vulsimgen` / `build/vulrtlgen` 生成 `experiments/arithmetic/backend_probe/Main.utb`，分别运行软件和原生 Verilator 功能检查，然后进入 ORFS。每次使用新的输出目录。默认 ORFS 为 `/home/zyrv/OpenROAD-flow-scripts`，可用 `--orfs` 指定另一个兼容的源码/工具安装目录。1500 ps 只用于本步骤资源试跑，不是正式案例的目标周期。
-
-对已有的自包含原生 RTL，可以直接执行：
+`backend.py` 的单核接口保留ABC和SDC两个目标轴，对外统一ps、fF和µm²。Liberty头、库名/PVT和OpenSTA `report_units`必须一致；ABC原生使用ps/fF。GF180显式采用TC、9t、5v0、5LM_1TM、K=9，ABC负载为13.43fF。其TC通孔RC适配逐一核对所选技术LEF的Via1–Via4默认单孔4.5Ω及Liberty/STA的1Ω单位，在平台原RC脚本之后补齐缺省映射；电源网格分析保持启用。`constraints.sdc`再把ps/fF转成所选Liberty的原生单位，约束时钟、I/O、驱动/负载、reset及valid。重定时和触发器聚类关闭，种子42、2线程、一次一个物理任务。
 
 ```bash
-python3 -m experiments.arithmetic_dse.backend \
-  --rtl build/asap7-probe-new/native/sim/top.sv --top MulProbe_sim_top \
-  --out build/asap7-candidate-new --period-ps 1500 --stage grt --threads 2
+python3 -m experiments.arithmetic_dse.backend --help
+python3 -m experiments.arithmetic_dse.platform_probe --out build/new-platform-probes --prepare
+python3 -m experiments.arithmetic_dse.platform_probe --out build/new-platform-probes --task nangate45-add
 ```
 
-`--stage synth` 停在映射及综合 STA，`grt` 包含布局、CTS、全局布线及寄生估计，`final` 继续详细布线、填充和 OpenRCX 提取并读取 SPEF。后者直接请求 ORFS 的 `6_report.log` 目标，避免引入本步骤不需要的 GDS 合并。当前适配器接受单个自包含 RTL 文件、普通 Verilog 顶层标识符及无空白的 Make 路径；不支持的输入会留下明确失败状态。
+探针准备会实际生成和运行共同的32位加法及32×32→64乘法核，冻结8个有限任务；新增平台先加法到grt，再乘法到final。连接试跑周期不用于主案例目标或训练标签。失败保留已有阶段，自动重试次数为0。实现缺陷的修正使用有父哈希、原因和新任务ID的显式准入修订，继承整个谱系的调用额度，不覆写原清单、日志或失败目录。`--admission`选择这种修订清单。
 
-固定设置在 `asap7.mk` 与 `constraints.sdc`：TC/RVT/NLDM、ABC speed 模式、slang、层次优化、单比特触发器、关闭重定时、固定种子 42。五份实际选中的 TT Liberty 均需为 0.70 V、25°C、ps/fF，平台的温度元数据通过 Make 命令行覆盖为 25°C。真实文件列表、工具版本、Liberty/LEF/RC/映射及流程脚本哈希写入每次运行的 manifest。
+每个运行目录保存输入RTL、源快照、有效Make原值、实际生效资产及默认解析来源、库/工具/流程哈希、ABC脚本、映射上下文、逐阶段报告/网表和资源记录。ORFS的`LAYER_PARASITICS_FILE`和`MAKE_TRACKS`缺省规则按其实际脚本解析；不因变量为空便误判平台缺失。面积逐单元核对Liberty和LEF，再按OpenROAD JSON的六位有效数字与汇总值互查。功能、顺序、物理专用和填充面积分列，主面积排除CORE_SPACER，包含tap等物理单元。
 
-SDC 定义实时时钟及同周期虚拟 I/O 时钟，setup/hold 不确定度为 20/5 ps，时钟输入转换时间为 10 ps；I/O 最大延迟为周期的 20%，最小延迟为 0，非时钟输入使用 BUFx2 驱动，输出负载 3.898 fF。同步 `rstn` 与 valid/数据都参与时序分析。没有把复位路径删去，也不修改主案例的 L/II。
+synth指标仅为综合STA。grt只按TT/typical setup和完整时序覆盖判断可行，hold始终另报；final读取详细布线提取的SPEF，只有setup/hold≥0、完整覆盖及路由DRC=0才报告可行。所有结果均为`multi_corner_signoff=false`；hold复核带是预声明工程触发值，不能解释成跨工艺噪声底。
 
-每个阶段从对应的 ODB/SDC 重新提取原始单位、setup/hold worst slack、TNS、覆盖检查、关键路径、最小时钟周期及逐 master 面积。面积与 ORFS 的 `design__instance__area__stdcell` 对齐，排除 CORE_SPACER，包含 tap；功能、顺序单元及物理专用单元面积另列。Liberty 和 LEF 单元面积必须匹配。最小时钟周期是含规定边界及时钟约束的 STA 指标，不能称为算术组合路径时延。组合时延的专门定义和微基准审计留在步骤七。
+预算沿用共享账本、策略v5及进程树清理，发起前预约、结束后按GNU time结算；失败/超时仍收费，未结算预约阻断后续任务。新增叶命令记录平台、准入和任务身份，旧记录保留原字节并在平台分账列为`historical_unattributed`。`budget.stage_plan`核对显式平台/阶段清单的冷链和时间包络，不为未知目标假定缓存或免费覆盖；预算CLI仍明确完整43例/688条主矩阵待分阶段准入。
 
-流程状态与时序判定分开：工具成功退出为 `completed`。grt 的 `measured_feasibility` 表示完整覆盖及 TT setup 非负，报告明确标为 `feasibility_scope=TT_setup_only`；hold 始终单列，负值标记风险，0～5 ps 标记需要复核，达到 5 ps 也只表示达到工程复核带。详细布线仍要求 TT setup/hold 非负、提取 SPEF、零路由 DRC；hold<5 ps 继续标记窄裕量。5 ps 不是测得的噪声底，`multi_corner_signoff=false`，TT 通过不能解释为最坏角保证。综合只有 `sta_feasibility`。缺失/失败阶段保持缺失，不能使用更早指标填补。
+步骤三当前软件冻结为backend_freeze_v7.json，收尾证据在`../../arithmetic/evidence/step3_platforms_v3/`，物理测量继承不改字节的v6/step3_platforms_v2。离线入口仍为`python3 -m experiments.arithmetic_dse.platform_evidence`。历史后端证据仅证明其原版本；当前四平台接通不代表D已训练、宽算术容量已覆盖或主矩阵已运行。
 
-复核带作用于已含原有 hold 不确定度的报告 slack，不修改 SDC，也不再从该 slack 扣除 5 ps。
+2026-10-30的P1复核修订：v5的三个ns平台结果因Tcl整数除法把uncertainty/transition写成0，原四平台验收撤回。SDC所有单位除法改用double，并在阶段继续前检查实际生成文件；三个新增平台的小核/完整乘法以新任务ID重验，ASAP7单独核对并继承。该物理修复冻结为v6，结果见规划第四章步骤三§3.9；23份旧错误SDC及收费永久保留，不用于成功、训练或目标标签。
 
-每条命令同时记录 GNU time 的 CPU/峰值 RSS 和每 0.5 秒采样的后代进程树 RSS 总和、线程数。`processes.py` 通过 PID/启动时间及继承的运行标记跟踪后代，包括嵌套调用产生的新 session、快速退出父进程留下的孤儿。超时、内存超限或收到 SIGTERM/SIGINT 时，先 TERM，宽限后对存活后代 KILL；即使外层 leader 已退出仍继续清理并记录 `remaining_live_pids`。命令退出却遗留后台后代也记失败。SIGKILL 无法由被杀进程捕获；正常取消应使用 TERM/INT。
+随后P2收尾将静态SDC规则升级为`serialized-sdc-contract-v2`：一条物理行只允许一个受支持命令，拒绝分号、变量/嵌套命令替换、续行和词拼接；`get_ports/get_clocks`只接受固定形状的单个静态名称，`current_design`恰有一个与原RTL顶层匹配的名称且只声明一次。注释中的续行也拒绝。未实现完整Tcl解释器，归档Tcl从不执行；运行时与便携核验共用同一个`verify_sdc`。时钟、uncertainty/transition、I/O、driver/load及四位小数舍入规则保留。收紧后的规则重新接受18份有效SDC，旧v1运行时检查记录原样保留，另记v2重验结果。此次没有新物理调用。
 
-内存采样可能漏掉瞬时峰值，RSS 求和也会重复计入共享页，因此两种记录都保留。默认综合 300 秒、从布局到全局布线 1200 秒、详细布线与提取增量 1200 秒，快照 120 秒；后代树 RSS 上限 8192 MiB，不自动重试。
+参数依据与实际交接覆盖分别见[参数来源决策](../configs/platform_parameter_decisions_v1.md)、[44项来源表](../configs/platform_parameter_sources_v1.json)及[产物核验覆盖表](handoff_checks.md)。来源表单独哈希，四个有效profile字节未变。来源一致只证明遵守配置，不能证明物理假设已校准。GF180 wire RC仍保留量级/校准来源未闭合风险；4.5Ω检查只覆盖通孔适配，进入GF180训练/正式评价前需完成独立依据或有限对照准入。
 
-当前策略为 `configs/backend_policy_v4.json`，保留 128 synth / 96 grt / 28 detailed、12h墙钟/48h CPU 额度及 TT/hold 口径。所有物理及生成/验证叶命令使用共享账本 `experiments/arithmetic/backend_usage.json`；snapshot、环境和验证仅计时间。外层包装不重复计费，失败/超时/重复调用照计，未结算预约不自动退款。当前 checkpoint 为 `experiments/arithmetic/evidence/step3_closure/usage_checkpoint.json`，克隆从归档消耗继续。CPU/RSS按0.5s采样，GNU time结算实际CPU，清理可能有有限超额。
-
-`configs/characterization_v3.json` 把500/800/1000/1250/1500/2000ps保留为候选点集，已完成的乘法六点历史数据继续保留；后续不普遍要求19个模型族各测六点。必需数据为1500ps参考，以及D实际查询的精确ABC/SDC目标、实现特征和阶段；代表性乘法/除法/浮点先做预声明少量探测，再决定额外点集。D2/F1实际实现后可在步骤四/六检查，不阻止步骤三关闭。未测上下文仍uncovered，两个轴均保留，不使用相邻点一致性来创建覆盖。
-
-`--period-ps` 指定SDC周期，`--abc-target-ps` 可独立固定ABC目标（默认跟随周期）；`--io-delay-max-ps` 可固定I/O绝对最大延迟，省略时保留原20%周期规则。每份身份记录分别保存ABC、SDC和I/O策略。原ORFS具名speed脚本不自动接收Yosys `-D`；隔离 `flow-scripts` 中的 `abc_speed_target.script` 显式传给 `&nf/upsize/dnsize`，外部ORFS无改动。
-
-本轮预声明对照固定ABC1500ps、I/O max300ps、L2/II1及物理参数，仅改变SDC时钟500/2000ps。两次新目录综合真实计2 synth，实际映射网表一致；之后2 grt，以及共同1500ps SDC重新STA（仅支持时间）。网表、master尺寸/缓冲数量、放置、路径、修复日志及共同SDC指标随证据保留，不能只凭各自slack判断响应。共同STA没有再次优化物理实现。控制入口：
-
-```bash
-python3 -m experiments.arithmetic_dse.physical_control --out build/new-physical-study
-```
-
-该命令重跑真实工具并计费。只校验证据请使用：
-
-```bash
-python3 -m experiments.arithmetic_dse.evidence
-```
-
-当前冻结 `experiments/arithmetic/backend_freeze_v4.json` 和 `experiments/arithmetic/evidence/step3_closure/` 包括旧关键路径核查、受控物理对照、账本和验收摘要。先前v1/v2/v3及所有历史证据保持不变。步骤三不要求完成D库、D2/F1硬件或主矩阵，也不要求完整预算立即闭合。
-
-完整采集清单与资源预算仍须在步骤五批量物理工作前冻结闭合，配置为 `budget_plan_v2.json`；代表性探测包含在原型预留里。当前保守场景369/329/45且清单未冻结，预期blocked；旧462/422/45保留为原方案规划记录，两者都不是实际消耗/最低需要/授权新上限：
-
-```bash
-python3 -m experiments.arithmetic_dse.budget --check-plan
-```
+阶段交接统一要求核对下一阶段实际消费的文件、有效配置及可观测状态，分列身份和语义检查；缺失、不支持或不一致时在后续昂贵阶段前停止并保留费用。覆盖表明确标注已有检查、本次新增的P2边界检查，以及ABC实际调用自动比对、映射网表LEC、全部wire RC回读等尚未覆盖的内容，不用哈希替代语义证明。

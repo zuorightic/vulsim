@@ -1,0 +1,93 @@
+Startpoint: s0input__vld__ (input port clocked by io_clk)
+Endpoint: __vul_pipeline_multiply.__vul_port_s1reg[35]$_SDFFE_PN0P_
+          (rising edge-triggered flip-flop clocked by core_clk)
+Path Group: core_clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.000000    0.000000    0.000000   clock io_clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.600000    0.600000 ^ input external delay
+     1    2.798568    0.009195    0.007575    0.607575 ^ s0input__vld__ (in)
+                                                         s0input__vld__ (net)
+                      0.009195    0.000000    0.607575 ^ input33/A (BUF_X2)
+    46  109.614159    0.120081    0.139827    0.747402 ^ input33/Z (BUF_X2)
+                                                         net32 (net)
+                      0.120231    0.003760    0.751162 ^ place140/A (BUF_X1)
+    20   48.605125    0.108650    0.144588    0.895750 ^ place140/Z (BUF_X1)
+                                                         net139 (net)
+                      0.108891    0.005677    0.901428 ^ _0939_/S (MUX2_X1)
+     1    1.734396    0.010530    0.064537    0.965965 v _0939_/Z (MUX2_X1)
+                                                         _0371_ (net)
+                      0.010530    0.000070    0.966035 v _0940_/A2 (AND2_X1)
+     1    2.324424    0.007627    0.032917    0.998952 v _0940_/ZN (AND2_X1)
+                                                         _0091_ (net)
+                      0.007627    0.000116    0.999068 v __vul_pipeline_multiply.__vul_port_s1reg[35]$_SDFFE_PN0P_/D (DFF_X1)
+                                              0.999068   data arrival time
+
+                                  3.000000    3.000000   clock core_clk (rise edge)
+                                  0.000000    3.000000   clock source latency
+     1    7.799212    0.000000    0.000000    3.000000 ^ clk (in)
+                                                         clk (net)
+                      0.000374    0.000306    3.000306 ^ clkbuf_0_clk/A (CLKBUF_X3)
+    16   42.461315    0.033650    0.057067    3.057374 ^ clkbuf_0_clk/Z (CLKBUF_X3)
+                                                         clknet_0_clk (net)
+                      0.033757    0.002069    3.059443 ^ clkbuf_4_7_0_clk/A (CLKBUF_X3)
+    11   16.997993    0.016623    0.051003    3.110445 ^ clkbuf_4_7_0_clk/Z (CLKBUF_X3)
+                                                         clknet_4_7_0_clk (net)
+                      0.016623    0.000128    3.110574 ^ __vul_pipeline_multiply.__vul_port_s1reg[35]$_SDFFE_PN0P_/CK (DFF_X1)
+                                 -0.020000    3.090574   clock uncertainty
+                                  0.000000    3.090574   clock reconvergence pessimism
+                                 -0.034285    3.056289   library setup time
+                                              3.056289   data required time
+---------------------------------------------------------------------------------------------
+                                              3.056289   data required time
+                                             -0.999068   data arrival time
+---------------------------------------------------------------------------------------------
+                                              2.057221   slack (MET)
+
+
+Startpoint: s3output__vld__$_SDFF_PN0_
+            (rising edge-triggered flip-flop clocked by core_clk)
+Endpoint: s3output_y__[11] (output port clocked by io_clk)
+Path Group: io_clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                                  0.000000    0.000000   clock core_clk (rise edge)
+                                  0.000000    0.000000   clock source latency
+     1    7.799212    0.000000    0.000000    0.000000 ^ clk (in)
+                                                         clk (net)
+                      0.000374    0.000306    0.000306 ^ clkbuf_0_clk/A (CLKBUF_X3)
+    16   42.461315    0.033650    0.057068    0.057374 ^ clkbuf_0_clk/Z (CLKBUF_X3)
+                                                         clknet_0_clk (net)
+                      0.033762    0.002142    0.059516 ^ clkbuf_4_13_0_clk/A (CLKBUF_X3)
+    14   17.995678    0.017216    0.051702    0.111218 ^ clkbuf_4_13_0_clk/Z (CLKBUF_X3)
+                                                         clknet_4_13_0_clk (net)
+                      0.017217    0.000386    0.111604 ^ s3output__vld__$_SDFF_PN0_/CK (DFF_X1)
+    34   49.615520    0.110939    0.201271    0.312875 ^ s3output__vld__$_SDFF_PN0_/Q (DFF_X1)
+                                                         net97 (net)
+                      0.111250    0.006891    0.319766 ^ _0861_/A1 (AND2_X1)
+     1    1.883292    0.012139    0.050302    0.370068 ^ _0861_/ZN (AND2_X1)
+                                                         net100 (net)
+                      0.012139    0.000082    0.370149 ^ output101/A (BUF_X1)
+     1    4.976009    0.013850    0.031210    0.401359 ^ output101/Z (BUF_X1)
+                                                         s3output_y__[11] (net)
+                      0.013850    0.000194    0.401553 ^ s3output_y__[11] (out)
+                                              0.401553   data arrival time
+
+                      0.000000    3.000000    3.000000   clock io_clk (rise edge)
+                                  0.000000    3.000000   clock network delay (ideal)
+                                 -0.020000    2.980000   clock uncertainty
+                                  0.000000    2.980000   clock reconvergence pessimism
+                                 -0.600000    2.380000   output external delay
+                                              2.380000   data required time
+---------------------------------------------------------------------------------------------
+                                              2.380000   data required time
+                                             -0.401553   data arrival time
+---------------------------------------------------------------------------------------------
+                                              1.978447   slack (MET)
+
+

@@ -1,0 +1,68 @@
+OpenROAD 26Q3-1867-g84e3ff1eb2 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 2 thread(s).
+read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/lib/gf180mcu_fd_sc_mcu9t5v0__tt_025C_5v00.lib.gz
+read_db /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/gf180-mul-sdcfix/results/gf180/arithmetic_probe/base/6_1_fill.odb
+read_sdc /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/gf180-mul-sdcfix/results/gf180/arithmetic_probe/base/6_1_fill.sdc
+source /home/zyrv/vulsim/experiments/arithmetic_dse/backend/gf180_tc_rc.tcl
+[WARNING STA-0450] virtual clock io_clk can not be propagated.
+write_db /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/gf180-mul-sdcfix/results/gf180/arithmetic_probe/base/6_final.odb
+write_sdc -no_timestamp /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/gf180-mul-sdcfix/results/gf180/arithmetic_probe/base/6_final.sdc
+Deleted 0 routing obstructions
+[INFO RCX-0431] Defined process_corner X with ext_model_index 0
+[INFO RCX-0029] Defined extraction corner X
+[INFO RCX-0435] Reading extraction model file /home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/openROAD/rcx/gf180mcu_1p5m_1tm_9k_sp_smim_OPTB_typ.rules ...
+[INFO RCX-0436] RC segment generation MulProbe_sim_top (max_merge_res 50.0) ...
+[INFO RCX-0040] Final 12124 rc segments
+[INFO RCX-0439] Coupling Cap extraction MulProbe_sim_top ...
+[INFO RCX-0440] Coupling threshhold is 0.1000 fF, coupling capacitance less than 0.1000 fF will be grounded.
+[INFO RCX-0442] 51% of 32179 wires extracted
+[INFO RCX-0442] 100% of 32179 wires extracted
+[INFO RCX-0045] Extract 4712 nets, 16836 rsegs, 16836 caps, 31659 ccs
+[INFO RCX-0443] 4712 nets finished
+[INFO PSM-0040] All shapes on net VDD are connected.
+########## IR report #################
+Net              : VDD
+Corner           : default
+Total power      : 1.59e-02 W
+Supply voltage   : 5.00e+00 V
+Worstcase voltage: 5.00e+00 V
+Average voltage  : 5.00e+00 V
+Average IR drop  : 1.29e-05 V
+Worstcase IR drop: 9.92e-05 V
+Percentage drop  : 0.00 %
+######################################
+[INFO PSM-0040] All shapes on net VSS are connected.
+########## IR report #################
+Net              : VSS
+Corner           : default
+Total power      : 1.59e-02 W
+Supply voltage   : 0.00e+00 V
+Worstcase voltage: 1.21e-04 V
+Average voltage  : 1.31e-05 V
+Average IR drop  : 1.31e-05 V
+Worstcase IR drop: 1.21e-04 V
+Percentage drop  : 0.00 %
+######################################
+Cell type report:                       Count        Area
+  Endcap cell                             256     1445.07
+  Fill cell                              7120   241803.48
+  Tap cell                                390     2201.47
+  Clock buffer                             23     3686.05
+  Timing Repair Buffer                    133     5653.27
+  Inverter                                 73     1236.21
+  Clock inverter                            9      383.85
+  Sequential cell                         195    16525.15
+  Multi-Input combinational cell         3068   144690.34
+  Total                                 11267   417624.88
+Report metrics stage 6, finish...
+
+==========================================================================
+finish report_design_area
+--------------------------------------------------------------------------
+Design area 175821 um^2 42% utilization.
+Elapsed time: 0:04.99[h:]min:sec. CPU time: user 5.15 sys 0.14 (106%). Peak memory: 308620KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+6_report                                  4            301                  N/A

@@ -1,0 +1,76 @@
+Startpoint: __vul_pipeline_multiply.rtlzz_pipe_8_s1[9]$_SDFFE_PN0P_
+            (rising edge-triggered flip-flop clocked by core_clk)
+Endpoint: __vul_pipeline_q_s3reg[52]$_SDFF_PN0_
+          (rising edge-triggered flip-flop clocked by core_clk)
+Path Group: core_clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock core_clk (rise edge)
+   0.89    0.89   clock network delay (propagated)
+   0.00    0.89 ^ __vul_pipeline_multiply.rtlzz_pipe_8_s1[9]$_SDFFE_PN0P_/CLK (gf180mcu_fd_sc_mcu9t5v0__dffq_2)
+   1.84    2.72 ^ __vul_pipeline_multiply.rtlzz_pipe_8_s1[9]$_SDFFE_PN0P_/Q (gf180mcu_fd_sc_mcu9t5v0__dffq_2)
+   0.35    3.08 ^ _4821_/Z (gf180mcu_fd_sc_mcu9t5v0__and2_2)
+   0.75    3.83 v _7196_/S (gf180mcu_fd_sc_mcu9t5v0__addf_1)
+   0.96    4.79 ^ _7033_/S (gf180mcu_fd_sc_mcu9t5v0__addf_1)
+   0.76    5.55 v _6760_/S (gf180mcu_fd_sc_mcu9t5v0__addf_1)
+   0.87    6.42 ^ _6780_/S (gf180mcu_fd_sc_mcu9t5v0__addf_1)
+   0.78    7.20 v _7284_/S (gf180mcu_fd_sc_mcu9t5v0__addf_1)
+   0.90    8.10 ^ _6973_/S (gf180mcu_fd_sc_mcu9t5v0__addf_1)
+   0.94    9.05 v _6779_/S (gf180mcu_fd_sc_mcu9t5v0__addf_1)
+   0.93    9.97 ^ _7016_/S (gf180mcu_fd_sc_mcu9t5v0__addf_1)
+   0.89   10.86 v _7734_/S (gf180mcu_fd_sc_mcu9t5v0__addh_1)
+   0.54   11.40 v _6129_/Z (gf180mcu_fd_sc_mcu9t5v0__and3_2)
+   0.28   11.68 v _6135_/Z (gf180mcu_fd_sc_mcu9t5v0__and2_2)
+   0.25   11.93 v _6141_/Z (gf180mcu_fd_sc_mcu9t5v0__and2_2)
+   0.22   12.15 v _6143_/Z (gf180mcu_fd_sc_mcu9t5v0__and2_2)
+   1.05   13.20 ^ _6152_/ZN (gf180mcu_fd_sc_mcu9t5v0__aoi221_2)
+   0.29   13.49 v _6165_/ZN (gf180mcu_fd_sc_mcu9t5v0__aoi21_2)
+   0.59   14.08 v _6294_/Z (gf180mcu_fd_sc_mcu9t5v0__or3_2)
+   0.36   14.44 ^ _6325_/Z (gf180mcu_fd_sc_mcu9t5v0__mux2_2)
+   0.00   14.45 ^ __vul_pipeline_q_s3reg[52]$_SDFF_PN0_/D (gf180mcu_fd_sc_mcu9t5v0__dffq_2)
+          14.45   data arrival time
+
+  30.00   30.00   clock core_clk (rise edge)
+   0.88   30.88   clock network delay (propagated)
+   0.00   30.88   clock reconvergence pessimism
+          30.88 ^ __vul_pipeline_q_s3reg[52]$_SDFF_PN0_/CLK (gf180mcu_fd_sc_mcu9t5v0__dffq_2)
+  -0.18   30.71   library setup time
+          30.71   data required time
+---------------------------------------------------------
+          30.71   data required time
+         -14.45   data arrival time
+---------------------------------------------------------
+          16.26   slack (MET)
+
+
+Startpoint: s3output__vld__$_SDFF_PN0_
+            (rising edge-triggered flip-flop clocked by core_clk)
+Endpoint: s3output_y__[55] (output port clocked by io_clk)
+Path Group: io_clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock core_clk (rise edge)
+   0.87    0.87   clock network delay (propagated)
+   0.00    0.87 ^ s3output__vld__$_SDFF_PN0_/CLK (gf180mcu_fd_sc_mcu9t5v0__dffq_2)
+   2.25    3.12 ^ s3output__vld__$_SDFF_PN0_/Q (gf180mcu_fd_sc_mcu9t5v0__dffq_2)
+   0.41    3.53 ^ _5690_/Z (gf180mcu_fd_sc_mcu9t5v0__and2_2)
+   1.00    4.53 ^ output118/Z (gf180mcu_fd_sc_mcu9t5v0__dlyb_2)
+   0.00    4.53 ^ s3output_y__[55] (out)
+           4.53   data arrival time
+
+  30.00   30.00   clock io_clk (rise edge)
+   0.00   30.00   clock network delay (ideal)
+   0.00   30.00   clock reconvergence pessimism
+  -6.00   24.00   output external delay
+          24.00   data required time
+---------------------------------------------------------
+          24.00   data required time
+          -4.53   data arrival time
+---------------------------------------------------------
+          19.47   slack (MET)
+
+

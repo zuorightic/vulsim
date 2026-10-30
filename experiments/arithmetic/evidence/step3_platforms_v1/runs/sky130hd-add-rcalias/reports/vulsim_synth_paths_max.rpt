@@ -1,0 +1,75 @@
+Startpoint: s0input__vld__ (input port clocked by io_clk)
+Endpoint: __vul_pipeline_multiply.__vul_port_s1reg[14]$_SDFFE_PN0P_
+          (rising edge-triggered flip-flop clocked by core_clk)
+Path Group: core_clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.000000    0.000000    0.000000   clock io_clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  6.000000    6.000000 ^ input external delay
+     2    0.004377    0.063522    0.036569    6.036569 ^ s0input__vld__ (in)
+                                                         s0input__vld__ (net)
+                      0.063522    0.000000    6.036569 ^ _0652_/A (sky130_fd_sc_hd__clkbuf_1)
+    10    0.035100    0.416425    0.342111    6.378680 ^ _0652_/X (sky130_fd_sc_hd__clkbuf_1)
+                                                         _0283_ (net)
+                      0.416425    0.000000    6.378680 ^ _0738_/A (sky130_fd_sc_hd__buf_1)
+    10    0.048290    0.564307    0.494070    6.872750 ^ _0738_/X (sky130_fd_sc_hd__buf_1)
+                                                         _0330_ (net)
+                      0.564307    0.000000    6.872750 ^ _0758_/S (sky130_fd_sc_hd__mux2i_1)
+     1    0.002501    0.115960    0.237359    7.110109 ^ _0758_/Y (sky130_fd_sc_hd__mux2i_1)
+                                                         _0341_ (net)
+                      0.115960    0.000000    7.110109 ^ _0759_/B (sky130_fd_sc_hd__nor2_1)
+     1    0.001681    0.059799    0.044751    7.154860 v _0759_/Y (sky130_fd_sc_hd__nor2_1)
+                                                         _0112_ (net)
+                      0.059799    0.000000    7.154860 v __vul_pipeline_multiply.__vul_port_s1reg[14]$_SDFFE_PN0P_/D (sky130_fd_sc_hd__dfxtp_1)
+                                              7.154860   data arrival time
+
+                      0.000000   30.000000   30.000000   clock core_clk (rise edge)
+                                  0.000000   30.000000   clock network delay (ideal)
+                                  0.000000   30.000000   clock reconvergence pessimism
+                                             30.000000 ^ __vul_pipeline_multiply.__vul_port_s1reg[14]$_SDFFE_PN0P_/CLK (sky130_fd_sc_hd__dfxtp_1)
+                                 -0.127553   29.872446   library setup time
+                                             29.872446   data required time
+---------------------------------------------------------------------------------------------
+                                             29.872446   data required time
+                                             -7.154860   data arrival time
+---------------------------------------------------------------------------------------------
+                                             22.717587   slack (MET)
+
+
+Startpoint: s3output__vld__$_SDFF_PN0_
+            (rising edge-triggered flip-flop clocked by core_clk)
+Endpoint: s3output_y__[10] (output port clocked by io_clk)
+Path Group: io_clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.000000    0.000000    0.000000   clock core_clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.000000    0.000000    0.000000 ^ s3output__vld__$_SDFF_PN0_/CLK (sky130_fd_sc_hd__dfxtp_1)
+     7    0.016102    0.160539    0.370056    0.370056 ^ s3output__vld__$_SDFF_PN0_/Q (sky130_fd_sc_hd__dfxtp_1)
+                                                         s3output__vld__ (net)
+                      0.160539    0.000000    0.370056 ^ _0636_/A (sky130_fd_sc_hd__clkbuf_1)
+    10    0.014920    0.184441    0.204021    0.574077 ^ _0636_/X (sky130_fd_sc_hd__clkbuf_1)
+                                                         _0278_ (net)
+                      0.184441    0.000000    0.574077 ^ _0637_/A (sky130_fd_sc_hd__and2_1)
+     1    0.005000    0.068601    0.166179    0.740256 ^ _0637_/X (sky130_fd_sc_hd__and2_1)
+                                                         s3output_y__[10] (net)
+                      0.068601    0.000000    0.740256 ^ s3output_y__[10] (out)
+                                              0.740256   data arrival time
+
+                      0.000000   30.000000   30.000000   clock io_clk (rise edge)
+                                  0.000000   30.000000   clock network delay (ideal)
+                                  0.000000   30.000000   clock reconvergence pessimism
+                                 -6.000000   24.000000   output external delay
+                                             24.000000   data required time
+---------------------------------------------------------------------------------------------
+                                             24.000000   data required time
+                                             -0.740256   data arrival time
+---------------------------------------------------------------------------------------------
+                                             23.259743   slack (MET)
+
+

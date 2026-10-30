@@ -1,0 +1,15 @@
+OpenROAD 26Q3-1867-g84e3ff1eb2 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 2 thread(s).
+read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_db /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/sky130hd-add-sdcfix/results/sky130hd/arithmetic_probe/base/2_2_floorplan_macro.odb
+read_sdc /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/sky130hd-add-sdcfix/results/sky130hd/arithmetic_probe/base/2_1_floorplan.sdc
+source /home/zyrv/OpenROAD-flow-scripts/flow/platforms/sky130hd/setRC.tcl
+[INFO TAP-0005] Inserted 234 tapcells.
+Design area 7949 um^2 43% utilization.
+write_db /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/sky130hd-add-sdcfix/results/sky130hd/arithmetic_probe/base/2_3_floorplan_tapcell.odb
+Elapsed time: 0:00.32[h:]min:sec. CPU time: user 0.29 sys 0.03 (99%). Peak memory: 125368KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+2_3_floorplan_tapcell     .odb            0            122 17436edf753334dbacbf

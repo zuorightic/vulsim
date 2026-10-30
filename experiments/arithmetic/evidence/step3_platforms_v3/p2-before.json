@@ -1,0 +1,24 @@
+{
+  "attack": "current_design MulProbe_sim_top; set_false_path -from [get_ports {rstn}]",
+  "result": {
+    "version": "serialized-sdc-contract-v1",
+    "status": "passed",
+    "sdc_sha256": "9c8b9fdf3aef650a7f577f5cc1928aa030e29a9ce78301a4d5fbd896c62799d8",
+    "platform": "nangate45",
+    "time_to_ps": 1000.0,
+    "capacitance_to_fF": 1.0,
+    "clock_periods_native": {
+      "core_clk": 3.0,
+      "io_clk": 3.0
+    },
+    "clock_transition_native": 0.01,
+    "setup_uncertainty_native": 0.02,
+    "hold_uncertainty_native": 0.005,
+    "output_load_native": 3.898,
+    "input_ports_checked": 66,
+    "output_ports_checked": 65,
+    "write_sdc_decimal_digits": 4,
+    "native_rounding_tolerance": 5.00001e-05
+  },
+  "archive_sha256": "76a918fcc1b30dbb4a439dd66dbd3c82abfddafed86e6f14a41ce2cc012e72c7"
+}

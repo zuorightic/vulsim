@@ -1,0 +1,188 @@
+{
+  "version": "platform-connection-admission-v2",
+  "id": "step3-sdc-correction-v1",
+  "created_at": "2026-10-30T06:22:37.064780+00:00",
+  "purpose": "platform_connection_only",
+  "policy_sha256": "3f4a230ca19b9b53a9da71cb19a52e718d29a8001106d354394f13e5d6ef995a",
+  "starting_usage": {
+    "synth": 46,
+    "grt": 23,
+    "final": 11,
+    "support_calls": 416,
+    "walltime_s": 3705.199941544328,
+    "CPU_time_s": 5585.61,
+    "pending": 0
+  },
+  "tasks": [
+    {
+      "id": "nangate45-add-sdcfix",
+      "platform": "nangate45",
+      "kernel": "add_u32",
+      "rtl": "/home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/add-native/sim/top.sv",
+      "rtl_sha256": "cc8d3eba4c0adb938b633c7ab3fdcfca915643b70314c848af95bd7da6bf0a6c",
+      "top": "MulProbe_sim_top",
+      "profile_sha256": "f4ff4c89159379ad030fca2780ae71e17409492b2d003240912fbf63cf634911",
+      "period_ps": 3000,
+      "abc_target_ps": 3000,
+      "stage": "grt",
+      "purpose": "prototype",
+      "L": 3,
+      "II": 1,
+      "constraints_sha256": "ae5fb19566bf95cd28f58b8928a1d481fac4a0adfe5abdc7b3a505b244cc5c4e",
+      "sdc_contract_version": "serialized-sdc-contract-v1"
+    },
+    {
+      "id": "nangate45-mul-sdcfix",
+      "platform": "nangate45",
+      "kernel": "mul_u32",
+      "rtl": "/home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/mul-native/sim/top.sv",
+      "rtl_sha256": "5018e7b6831f1963c2ac3ee159f25f045cb12eab2a7fcee82cc44af982f7dca3",
+      "top": "MulProbe_sim_top",
+      "profile_sha256": "f4ff4c89159379ad030fca2780ae71e17409492b2d003240912fbf63cf634911",
+      "period_ps": 3000,
+      "abc_target_ps": 3000,
+      "stage": "final",
+      "purpose": "prototype",
+      "L": 3,
+      "II": 1,
+      "constraints_sha256": "ae5fb19566bf95cd28f58b8928a1d481fac4a0adfe5abdc7b3a505b244cc5c4e",
+      "sdc_contract_version": "serialized-sdc-contract-v1"
+    },
+    {
+      "id": "sky130hd-add-sdcfix",
+      "platform": "sky130hd",
+      "kernel": "add_u32",
+      "rtl": "/home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/add-native/sim/top.sv",
+      "rtl_sha256": "cc8d3eba4c0adb938b633c7ab3fdcfca915643b70314c848af95bd7da6bf0a6c",
+      "top": "MulProbe_sim_top",
+      "profile_sha256": "b167ee95ee7092393e79f1a3ba4d37897d1214d30cc9cd95229b3f1d2d9e2ca7",
+      "period_ps": 30000,
+      "abc_target_ps": 30000,
+      "stage": "grt",
+      "purpose": "prototype",
+      "L": 3,
+      "II": 1,
+      "constraints_sha256": "ae5fb19566bf95cd28f58b8928a1d481fac4a0adfe5abdc7b3a505b244cc5c4e",
+      "sdc_contract_version": "serialized-sdc-contract-v1"
+    },
+    {
+      "id": "sky130hd-mul-sdcfix",
+      "platform": "sky130hd",
+      "kernel": "mul_u32",
+      "rtl": "/home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/mul-native/sim/top.sv",
+      "rtl_sha256": "5018e7b6831f1963c2ac3ee159f25f045cb12eab2a7fcee82cc44af982f7dca3",
+      "top": "MulProbe_sim_top",
+      "profile_sha256": "b167ee95ee7092393e79f1a3ba4d37897d1214d30cc9cd95229b3f1d2d9e2ca7",
+      "period_ps": 30000,
+      "abc_target_ps": 30000,
+      "stage": "final",
+      "purpose": "prototype",
+      "L": 3,
+      "II": 1,
+      "constraints_sha256": "ae5fb19566bf95cd28f58b8928a1d481fac4a0adfe5abdc7b3a505b244cc5c4e",
+      "sdc_contract_version": "serialized-sdc-contract-v1"
+    },
+    {
+      "id": "gf180-add-sdcfix",
+      "platform": "gf180",
+      "kernel": "add_u32",
+      "rtl": "/home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/add-native/sim/top.sv",
+      "rtl_sha256": "cc8d3eba4c0adb938b633c7ab3fdcfca915643b70314c848af95bd7da6bf0a6c",
+      "top": "MulProbe_sim_top",
+      "profile_sha256": "96e1c0c7fe0c9df178fde863272f1bc8e3ed44e6e8457d50bbadcf9a53036bc7",
+      "period_ps": 30000,
+      "abc_target_ps": 30000,
+      "stage": "grt",
+      "purpose": "prototype",
+      "L": 3,
+      "II": 1,
+      "constraints_sha256": "ae5fb19566bf95cd28f58b8928a1d481fac4a0adfe5abdc7b3a505b244cc5c4e",
+      "sdc_contract_version": "serialized-sdc-contract-v1"
+    },
+    {
+      "id": "gf180-mul-sdcfix",
+      "platform": "gf180",
+      "kernel": "mul_u32",
+      "rtl": "/home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/mul-native/sim/top.sv",
+      "rtl_sha256": "5018e7b6831f1963c2ac3ee159f25f045cb12eab2a7fcee82cc44af982f7dca3",
+      "top": "MulProbe_sim_top",
+      "profile_sha256": "96e1c0c7fe0c9df178fde863272f1bc8e3ed44e6e8457d50bbadcf9a53036bc7",
+      "period_ps": 30000,
+      "abc_target_ps": 30000,
+      "stage": "final",
+      "purpose": "prototype",
+      "L": 3,
+      "II": 1,
+      "constraints_sha256": "ae5fb19566bf95cd28f58b8928a1d481fac4a0adfe5abdc7b3a505b244cc5c4e",
+      "sdc_contract_version": "serialized-sdc-contract-v1"
+    }
+  ],
+  "call_caps": {
+    "synth": 6,
+    "grt": 6,
+    "final": 3
+  },
+  "cold_stage_plan": {
+    "status": "ready",
+    "new_calls": {
+      "synth": 6,
+      "grt": 6,
+      "final": 3
+    },
+    "new_calls_by_platform": {
+      "nangate45": {
+        "synth": 2,
+        "grt": 2,
+        "final": 1
+      },
+      "sky130hd": {
+        "synth": 2,
+        "grt": 2,
+        "final": 1
+      },
+      "gf180": {
+        "synth": 2,
+        "grt": 2,
+        "final": 1
+      }
+    },
+    "requested_calls": {
+      "synth": 52,
+      "grt": 29,
+      "final": 14
+    },
+    "call_shortfall": {
+      "synth": 0,
+      "grt": 0,
+      "final": 0
+    },
+    "worst_case_leaf_walltime_s": 16200,
+    "CPU_envelope_s": 32400,
+    "time_funded": true,
+    "cold_runs": true,
+    "cache_credit": 0,
+    "main_matrix_authorized": false
+  },
+  "support_walltime_reserve_s": 3600,
+  "worst_case_leaf_walltime_s": 16200,
+  "CPU_envelope_s": 32400,
+  "threads": 2,
+  "physical_jobs": 1,
+  "memory_limit_MiB": 8192,
+  "automatic_retries": 0,
+  "main_case_targets": false,
+  "later_bulk_or_model_work_authorized": false,
+  "sample_split": "not_applicable; no training/main evaluation",
+  "correction_reason": "P1 Tcl integer division zeroed uncertainty and transition on ns platforms; same RTL/targets/profiles, six explicit cold rechecks with corrected SDC and per-stage semantic gate.",
+  "supersedes_acceptance": {
+    "path": "experiments/arithmetic/backend_freeze_v5.json",
+    "sha256": "065d6212074f9674edf5d6ac10372fd05fe7dffb47b1e48d2a5fa9d66bbbc78e"
+  },
+  "stops": [
+    "failed_stage",
+    "SDC_contract_mismatch",
+    "timeout",
+    "memory_limit",
+    "unsettled_ledger"
+  ]
+}

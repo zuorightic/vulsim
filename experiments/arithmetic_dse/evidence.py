@@ -101,7 +101,10 @@ def verify_backend_evidence(root=ROOT, verify_external=False):
         if (f'target delay (' not in abc_log or
             f'target delay ({point["abc_target_ps"]:.2f} ps)' not in abc_log):
             raise ValueError('ABC execution evidence does not confirm rendered target')
-    from .budget import usage, plan_cost, planning_status, cpu_seconds
+    from .budget import usage, cpu_seconds
+    from .freeze_history import historical_budget
+    old_budget=historical_budget(root)
+    plan_cost,planning_status=old_budget.plan_cost,old_budget.planning_status
     from .characterization import sensitivity_observation
     from .freeze_history import historical_case_manifest
     checkpoint = json.loads((new_root/'usage_checkpoint.json').read_text())
@@ -141,7 +144,7 @@ def verify_backend_evidence(root=ROOT, verify_external=False):
     closure = root/'experiments/arithmetic/evidence/step3_closure'
     from .timing_evidence import critical_path, master_inventory
     from .characterization import mapped_netlist_hash
-    from .budget import required_data_plan
+    required_data_plan=old_budget.required_data_plan
     import gzip
     paths = json.loads((closure/'critical_path/summary.json').read_text())
     for stage,path in paths['stages'].items():

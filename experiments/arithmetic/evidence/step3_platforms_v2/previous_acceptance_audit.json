@@ -1,0 +1,559 @@
+{
+  "version": "sdc-integer-division-audit-v1",
+  "previous_freeze_sha256": "065d6212074f9674edf5d6ac10372fd05fe7dffb47b1e48d2a5fa9d66bbbc78e",
+  "conclusion": "backend-v5 four-platform acceptance revoked; affected ns stage metrics not usable as model/evaluation labels; original files immutable; ASAP7 only may be carried forward after complete SDC semantic check",
+  "runs": [
+    {
+      "task_id": "asap7-add",
+      "platform": "asap7",
+      "original_status": "failed",
+      "acceptance_status": "unaffected",
+      "stages": [
+        {
+          "stage": "synth",
+          "status": "valid_unaffected",
+          "reason": null,
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/asap7-add/1_synth.sdc.gz",
+          "sha256": "0f78b8e90f5f653ab9c98b7530345c9e9edc40d12ede8541b370dda4b8f9a157",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 1500.0000 [get_ports {clk}]",
+            "set_clock_transition 10.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty -setup 20.0000 core_clk",
+            "set_clock_uncertainty -hold 5.0000 core_clk",
+            "create_clock -name io_clk -period 1500.0000 ",
+            "set_clock_uncertainty -setup 20.0000 io_clk",
+            "set_clock_uncertainty -hold 5.0000 io_clk"
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "asap7-mul",
+      "platform": "asap7",
+      "original_status": "completed",
+      "acceptance_status": "unaffected",
+      "stages": [
+        {
+          "stage": "synth",
+          "status": "valid_unaffected",
+          "reason": null,
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/asap7-mul/1_synth.sdc.gz",
+          "sha256": "0f78b8e90f5f653ab9c98b7530345c9e9edc40d12ede8541b370dda4b8f9a157",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 1500.0000 [get_ports {clk}]",
+            "set_clock_transition 10.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty -setup 20.0000 core_clk",
+            "set_clock_uncertainty -hold 5.0000 core_clk",
+            "create_clock -name io_clk -period 1500.0000 ",
+            "set_clock_uncertainty -setup 20.0000 io_clk",
+            "set_clock_uncertainty -hold 5.0000 io_clk"
+          ]
+        },
+        {
+          "stage": "grt",
+          "status": "valid_unaffected",
+          "reason": null,
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/asap7-mul/5_1_grt.sdc.gz",
+          "sha256": "0f8099bf1e2f28318454890cc8e13b279f5fa87d058a4d749f4f0dd844c12c13",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 1500.0000 [get_ports {clk}]",
+            "set_clock_transition 10.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty -setup 20.0000 core_clk",
+            "set_clock_uncertainty -hold 5.0000 core_clk",
+            "create_clock -name io_clk -period 1500.0000 ",
+            "set_clock_uncertainty -setup 20.0000 io_clk",
+            "set_clock_uncertainty -hold 5.0000 io_clk"
+          ]
+        },
+        {
+          "stage": "final",
+          "status": "valid_unaffected",
+          "reason": null,
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/asap7-mul/6_final.sdc.gz",
+          "sha256": "0f8099bf1e2f28318454890cc8e13b279f5fa87d058a4d749f4f0dd844c12c13",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 1500.0000 [get_ports {clk}]",
+            "set_clock_transition 10.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty -setup 20.0000 core_clk",
+            "set_clock_uncertainty -hold 5.0000 core_clk",
+            "create_clock -name io_clk -period 1500.0000 ",
+            "set_clock_uncertainty -setup 20.0000 io_clk",
+            "set_clock_uncertainty -hold 5.0000 io_clk"
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "asap7-mul-finalinterface",
+      "platform": "asap7",
+      "original_status": "completed",
+      "acceptance_status": "unaffected",
+      "stages": [
+        {
+          "stage": "synth",
+          "status": "valid_unaffected",
+          "reason": null,
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/asap7-mul-finalinterface/1_synth.sdc.gz",
+          "sha256": "0f78b8e90f5f653ab9c98b7530345c9e9edc40d12ede8541b370dda4b8f9a157",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 1500.0000 [get_ports {clk}]",
+            "set_clock_transition 10.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty -setup 20.0000 core_clk",
+            "set_clock_uncertainty -hold 5.0000 core_clk",
+            "create_clock -name io_clk -period 1500.0000 ",
+            "set_clock_uncertainty -setup 20.0000 io_clk",
+            "set_clock_uncertainty -hold 5.0000 io_clk"
+          ]
+        },
+        {
+          "stage": "grt",
+          "status": "valid_unaffected",
+          "reason": null,
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/asap7-mul-finalinterface/5_1_grt.sdc.gz",
+          "sha256": "0f8099bf1e2f28318454890cc8e13b279f5fa87d058a4d749f4f0dd844c12c13",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 1500.0000 [get_ports {clk}]",
+            "set_clock_transition 10.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty -setup 20.0000 core_clk",
+            "set_clock_uncertainty -hold 5.0000 core_clk",
+            "create_clock -name io_clk -period 1500.0000 ",
+            "set_clock_uncertainty -setup 20.0000 io_clk",
+            "set_clock_uncertainty -hold 5.0000 io_clk"
+          ]
+        },
+        {
+          "stage": "final",
+          "status": "valid_unaffected",
+          "reason": null,
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/asap7-mul-finalinterface/6_final.sdc.gz",
+          "sha256": "0f8099bf1e2f28318454890cc8e13b279f5fa87d058a4d749f4f0dd844c12c13",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 1500.0000 [get_ports {clk}]",
+            "set_clock_transition 10.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty -setup 20.0000 core_clk",
+            "set_clock_uncertainty -hold 5.0000 core_clk",
+            "create_clock -name io_clk -period 1500.0000 ",
+            "set_clock_uncertainty -setup 20.0000 io_clk",
+            "set_clock_uncertainty -hold 5.0000 io_clk"
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "gf180-add-endcapfix",
+      "platform": "gf180",
+      "original_status": "completed",
+      "acceptance_status": "invalid_sdc_contract",
+      "stages": [
+        {
+          "stage": "synth",
+          "status": "invalid_sdc_contract",
+          "reason": "SDC transition mismatch: 0.0 != 0.1 (native units)",
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/gf180-add-endcapfix/1_synth.sdc.gz",
+          "sha256": "f3a9e74f07b101e6594d6e03a468790fe6b271b3aaf30459872247b67570f6b1",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 30.0000 [get_ports {clk}]",
+            "set_clock_transition 0.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty 0.0000 core_clk",
+            "create_clock -name io_clk -period 30.0000 ",
+            "set_clock_uncertainty 0.0000 io_clk"
+          ]
+        },
+        {
+          "stage": "grt",
+          "status": "invalid_sdc_contract",
+          "reason": "SDC transition mismatch: 0.0 != 0.1 (native units)",
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/gf180-add-endcapfix/5_1_grt.sdc.gz",
+          "sha256": "08f8eadeb5686373d1e19a598337e9da6dfb4087527db8fffc07fbdbe637eae0",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 30.0000 [get_ports {clk}]",
+            "set_clock_transition 0.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty 0.0000 core_clk",
+            "create_clock -name io_clk -period 30.0000 ",
+            "set_clock_uncertainty 0.0000 io_clk"
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "gf180-add-tcvia",
+      "platform": "gf180",
+      "original_status": "completed",
+      "acceptance_status": "invalid_sdc_contract",
+      "stages": [
+        {
+          "stage": "synth",
+          "status": "invalid_sdc_contract",
+          "reason": "SDC transition mismatch: 0.0 != 0.1 (native units)",
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/gf180-add-tcvia/1_synth.sdc.gz",
+          "sha256": "f3a9e74f07b101e6594d6e03a468790fe6b271b3aaf30459872247b67570f6b1",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 30.0000 [get_ports {clk}]",
+            "set_clock_transition 0.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty 0.0000 core_clk",
+            "create_clock -name io_clk -period 30.0000 ",
+            "set_clock_uncertainty 0.0000 io_clk"
+          ]
+        },
+        {
+          "stage": "grt",
+          "status": "invalid_sdc_contract",
+          "reason": "SDC transition mismatch: 0.0 != 0.1 (native units)",
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/gf180-add-tcvia/5_1_grt.sdc.gz",
+          "sha256": "08f8eadeb5686373d1e19a598337e9da6dfb4087527db8fffc07fbdbe637eae0",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 30.0000 [get_ports {clk}]",
+            "set_clock_transition 0.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty 0.0000 core_clk",
+            "create_clock -name io_clk -period 30.0000 ",
+            "set_clock_uncertainty 0.0000 io_clk"
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "gf180-add-verified",
+      "platform": "gf180",
+      "original_status": "failed",
+      "acceptance_status": "invalid_sdc_contract",
+      "stages": [
+        {
+          "stage": "synth",
+          "status": "invalid_sdc_contract",
+          "reason": "SDC transition mismatch: 0.0 != 0.1 (native units)",
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/gf180-add-verified/1_synth.sdc.gz",
+          "sha256": "f3a9e74f07b101e6594d6e03a468790fe6b271b3aaf30459872247b67570f6b1",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 30.0000 [get_ports {clk}]",
+            "set_clock_transition 0.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty 0.0000 core_clk",
+            "create_clock -name io_clk -period 30.0000 ",
+            "set_clock_uncertainty 0.0000 io_clk"
+          ]
+        },
+        {
+          "stage": "grt",
+          "status": "invalid_sdc_contract",
+          "reason": "SDC transition mismatch: 0.0 != 0.1 (native units)",
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/gf180-add-verified/5_1_grt.sdc.gz",
+          "sha256": "08f8eadeb5686373d1e19a598337e9da6dfb4087527db8fffc07fbdbe637eae0",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 30.0000 [get_ports {clk}]",
+            "set_clock_transition 0.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty 0.0000 core_clk",
+            "create_clock -name io_clk -period 30.0000 ",
+            "set_clock_uncertainty 0.0000 io_clk"
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "gf180-mul-endcapfix",
+      "platform": "gf180",
+      "original_status": "failed",
+      "acceptance_status": "invalid_sdc_contract",
+      "stages": [
+        {
+          "stage": "synth",
+          "status": "invalid_sdc_contract",
+          "reason": "SDC transition mismatch: 0.0 != 0.1 (native units)",
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/gf180-mul-endcapfix/1_synth.sdc.gz",
+          "sha256": "f3a9e74f07b101e6594d6e03a468790fe6b271b3aaf30459872247b67570f6b1",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 30.0000 [get_ports {clk}]",
+            "set_clock_transition 0.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty 0.0000 core_clk",
+            "create_clock -name io_clk -period 30.0000 ",
+            "set_clock_uncertainty 0.0000 io_clk"
+          ]
+        },
+        {
+          "stage": "grt",
+          "status": "invalid_sdc_contract",
+          "reason": "SDC transition mismatch: 0.0 != 0.1 (native units)",
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/gf180-mul-endcapfix/5_1_grt.sdc.gz",
+          "sha256": "08f8eadeb5686373d1e19a598337e9da6dfb4087527db8fffc07fbdbe637eae0",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 30.0000 [get_ports {clk}]",
+            "set_clock_transition 0.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty 0.0000 core_clk",
+            "create_clock -name io_clk -period 30.0000 ",
+            "set_clock_uncertainty 0.0000 io_clk"
+          ]
+        },
+        {
+          "stage": "final",
+          "status": "invalid_sdc_contract",
+          "reason": "SDC transition mismatch: 0.0 != 0.1 (native units)",
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/gf180-mul-endcapfix/6_final.sdc.gz",
+          "sha256": "08f8eadeb5686373d1e19a598337e9da6dfb4087527db8fffc07fbdbe637eae0",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 30.0000 [get_ports {clk}]",
+            "set_clock_transition 0.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty 0.0000 core_clk",
+            "create_clock -name io_clk -period 30.0000 ",
+            "set_clock_uncertainty 0.0000 io_clk"
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "gf180-mul-tcvia",
+      "platform": "gf180",
+      "original_status": "completed",
+      "acceptance_status": "invalid_sdc_contract",
+      "stages": [
+        {
+          "stage": "synth",
+          "status": "invalid_sdc_contract",
+          "reason": "SDC transition mismatch: 0.0 != 0.1 (native units)",
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/gf180-mul-tcvia/1_synth.sdc.gz",
+          "sha256": "f3a9e74f07b101e6594d6e03a468790fe6b271b3aaf30459872247b67570f6b1",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 30.0000 [get_ports {clk}]",
+            "set_clock_transition 0.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty 0.0000 core_clk",
+            "create_clock -name io_clk -period 30.0000 ",
+            "set_clock_uncertainty 0.0000 io_clk"
+          ]
+        },
+        {
+          "stage": "grt",
+          "status": "invalid_sdc_contract",
+          "reason": "SDC transition mismatch: 0.0 != 0.1 (native units)",
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/gf180-mul-tcvia/5_1_grt.sdc.gz",
+          "sha256": "08f8eadeb5686373d1e19a598337e9da6dfb4087527db8fffc07fbdbe637eae0",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 30.0000 [get_ports {clk}]",
+            "set_clock_transition 0.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty 0.0000 core_clk",
+            "create_clock -name io_clk -period 30.0000 ",
+            "set_clock_uncertainty 0.0000 io_clk"
+          ]
+        },
+        {
+          "stage": "final",
+          "status": "invalid_sdc_contract",
+          "reason": "SDC transition mismatch: 0.0 != 0.1 (native units)",
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/gf180-mul-tcvia/6_final.sdc.gz",
+          "sha256": "08f8eadeb5686373d1e19a598337e9da6dfb4087527db8fffc07fbdbe637eae0",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 30.0000 [get_ports {clk}]",
+            "set_clock_transition 0.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty 0.0000 core_clk",
+            "create_clock -name io_clk -period 30.0000 ",
+            "set_clock_uncertainty 0.0000 io_clk"
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "nangate45-add",
+      "platform": "nangate45",
+      "original_status": "failed",
+      "acceptance_status": "not_accepted_original_failure",
+      "stages": []
+    },
+    {
+      "task_id": "nangate45-add-areafix",
+      "platform": "nangate45",
+      "original_status": "completed",
+      "acceptance_status": "invalid_sdc_contract",
+      "stages": [
+        {
+          "stage": "synth",
+          "status": "invalid_sdc_contract",
+          "reason": "SDC transition mismatch: 0.0 != 0.01 (native units)",
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/nangate45-add-areafix/1_synth.sdc.gz",
+          "sha256": "1f9eaf4bbc4d7e23e561eed23008c327b7218cd776be098c904c32fa93b00c12",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 3.0000 [get_ports {clk}]",
+            "set_clock_transition 0.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty 0.0000 core_clk",
+            "create_clock -name io_clk -period 3.0000 ",
+            "set_clock_uncertainty 0.0000 io_clk"
+          ]
+        },
+        {
+          "stage": "grt",
+          "status": "invalid_sdc_contract",
+          "reason": "SDC transition mismatch: 0.0 != 0.01 (native units)",
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/nangate45-add-areafix/5_1_grt.sdc.gz",
+          "sha256": "8e393b44ca7254c14e3ce016fb1a629448c9dd62b685f9685c8c986419d86a6a",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 3.0000 [get_ports {clk}]",
+            "set_clock_transition 0.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty 0.0000 core_clk",
+            "create_clock -name io_clk -period 3.0000 ",
+            "set_clock_uncertainty 0.0000 io_clk"
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "nangate45-add-rcfix",
+      "platform": "nangate45",
+      "original_status": "failed",
+      "acceptance_status": "invalid_sdc_contract",
+      "stages": [
+        {
+          "stage": "synth",
+          "status": "invalid_sdc_contract",
+          "reason": "SDC transition mismatch: 0.0 != 0.01 (native units)",
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/nangate45-add-rcfix/1_synth.sdc.gz",
+          "sha256": "1f9eaf4bbc4d7e23e561eed23008c327b7218cd776be098c904c32fa93b00c12",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 3.0000 [get_ports {clk}]",
+            "set_clock_transition 0.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty 0.0000 core_clk",
+            "create_clock -name io_clk -period 3.0000 ",
+            "set_clock_uncertainty 0.0000 io_clk"
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "nangate45-mul",
+      "platform": "nangate45",
+      "original_status": "completed",
+      "acceptance_status": "invalid_sdc_contract",
+      "stages": [
+        {
+          "stage": "synth",
+          "status": "invalid_sdc_contract",
+          "reason": "SDC transition mismatch: 0.0 != 0.01 (native units)",
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/nangate45-mul/1_synth.sdc.gz",
+          "sha256": "1f9eaf4bbc4d7e23e561eed23008c327b7218cd776be098c904c32fa93b00c12",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 3.0000 [get_ports {clk}]",
+            "set_clock_transition 0.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty 0.0000 core_clk",
+            "create_clock -name io_clk -period 3.0000 ",
+            "set_clock_uncertainty 0.0000 io_clk"
+          ]
+        },
+        {
+          "stage": "grt",
+          "status": "invalid_sdc_contract",
+          "reason": "SDC transition mismatch: 0.0 != 0.01 (native units)",
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/nangate45-mul/5_1_grt.sdc.gz",
+          "sha256": "8e393b44ca7254c14e3ce016fb1a629448c9dd62b685f9685c8c986419d86a6a",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 3.0000 [get_ports {clk}]",
+            "set_clock_transition 0.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty 0.0000 core_clk",
+            "create_clock -name io_clk -period 3.0000 ",
+            "set_clock_uncertainty 0.0000 io_clk"
+          ]
+        },
+        {
+          "stage": "final",
+          "status": "invalid_sdc_contract",
+          "reason": "SDC transition mismatch: 0.0 != 0.01 (native units)",
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/nangate45-mul/6_final.sdc.gz",
+          "sha256": "8e393b44ca7254c14e3ce016fb1a629448c9dd62b685f9685c8c986419d86a6a",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 3.0000 [get_ports {clk}]",
+            "set_clock_transition 0.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty 0.0000 core_clk",
+            "create_clock -name io_clk -period 3.0000 ",
+            "set_clock_uncertainty 0.0000 io_clk"
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "sky130hd-add-audit",
+      "platform": "sky130hd",
+      "original_status": "failed",
+      "acceptance_status": "not_accepted_original_failure",
+      "stages": []
+    },
+    {
+      "task_id": "sky130hd-add-rcalias",
+      "platform": "sky130hd",
+      "original_status": "completed",
+      "acceptance_status": "invalid_sdc_contract",
+      "stages": [
+        {
+          "stage": "synth",
+          "status": "invalid_sdc_contract",
+          "reason": "SDC transition mismatch: 0.0 != 0.1 (native units)",
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/sky130hd-add-rcalias/1_synth.sdc.gz",
+          "sha256": "e8a4678a98302710d4e88e6ac08d977eb778c4c4b711cafeb203471d12e6a9e6",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 30.0000 [get_ports {clk}]",
+            "set_clock_transition 0.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty 0.0000 core_clk",
+            "create_clock -name io_clk -period 30.0000 ",
+            "set_clock_uncertainty 0.0000 io_clk"
+          ]
+        },
+        {
+          "stage": "grt",
+          "status": "invalid_sdc_contract",
+          "reason": "SDC transition mismatch: 0.0 != 0.1 (native units)",
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/sky130hd-add-rcalias/5_1_grt.sdc.gz",
+          "sha256": "ff11835db08878667327147264a1362272204b94a5e17116fe6b775317b1ab04",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 30.0000 [get_ports {clk}]",
+            "set_clock_transition 0.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty 0.0000 core_clk",
+            "create_clock -name io_clk -period 30.0000 ",
+            "set_clock_uncertainty 0.0000 io_clk"
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "sky130hd-mul-rcalias",
+      "platform": "sky130hd",
+      "original_status": "completed",
+      "acceptance_status": "invalid_sdc_contract",
+      "stages": [
+        {
+          "stage": "synth",
+          "status": "invalid_sdc_contract",
+          "reason": "SDC transition mismatch: 0.0 != 0.1 (native units)",
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/sky130hd-mul-rcalias/1_synth.sdc.gz",
+          "sha256": "e8a4678a98302710d4e88e6ac08d977eb778c4c4b711cafeb203471d12e6a9e6",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 30.0000 [get_ports {clk}]",
+            "set_clock_transition 0.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty 0.0000 core_clk",
+            "create_clock -name io_clk -period 30.0000 ",
+            "set_clock_uncertainty 0.0000 io_clk"
+          ]
+        },
+        {
+          "stage": "grt",
+          "status": "invalid_sdc_contract",
+          "reason": "SDC transition mismatch: 0.0 != 0.1 (native units)",
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/sky130hd-mul-rcalias/5_1_grt.sdc.gz",
+          "sha256": "ff11835db08878667327147264a1362272204b94a5e17116fe6b775317b1ab04",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 30.0000 [get_ports {clk}]",
+            "set_clock_transition 0.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty 0.0000 core_clk",
+            "create_clock -name io_clk -period 30.0000 ",
+            "set_clock_uncertainty 0.0000 io_clk"
+          ]
+        },
+        {
+          "stage": "final",
+          "status": "invalid_sdc_contract",
+          "reason": "SDC transition mismatch: 0.0 != 0.1 (native units)",
+          "path": "experiments/arithmetic/evidence/step3_platforms_v1/runs/sky130hd-mul-rcalias/6_final.sdc.gz",
+          "sha256": "ff11835db08878667327147264a1362272204b94a5e17116fe6b775317b1ab04",
+          "clock_constraints": [
+            "create_clock -name core_clk -period 30.0000 [get_ports {clk}]",
+            "set_clock_transition 0.0000 [get_clocks {core_clk}]",
+            "set_clock_uncertainty 0.0000 core_clk",
+            "create_clock -name io_clk -period 30.0000 ",
+            "set_clock_uncertainty 0.0000 io_clk"
+          ]
+        }
+      ]
+    }
+  ]
+}

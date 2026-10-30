@@ -1,0 +1,35 @@
+&get -n
+&st
+&dch
+&nf -D @TARGET_PS@
+&st
+&syn2
+&if -g -K 6
+&synch2
+&nf -D @TARGET_PS@
+&st
+&syn2
+&if -g -K 6
+&synch2
+&nf -D @TARGET_PS@
+&st
+&syn2
+&if -g -K 6
+&synch2
+&nf -D @TARGET_PS@
+&st
+&syn2
+&if -g -K 6
+&synch2
+&nf -D @TARGET_PS@
+&st
+&syn2
+&if -g -K 6
+&synch2
+&nf -D @TARGET_PS@
+&put
+buffer -c
+topo
+stime -c
+upsize -c -D @TARGET_PS@
+dnsize -c -D @TARGET_PS@

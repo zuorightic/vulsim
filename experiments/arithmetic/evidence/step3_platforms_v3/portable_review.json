@@ -1,0 +1,109 @@
+{
+  "status": "passed",
+  "checks": {
+    "isolated_no_build_no_EDA_no_Tcl_empty_PATH": {
+      "exit_code": 0,
+      "expected_rejection": false,
+      "diagnostic": "passed"
+    },
+    "P2_minimal_semicolon_bypass_after_identity_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: unsupported SDC command boundary or substitution at line 415"
+    },
+    "P2_existing_declaration_semicolon_after_identity_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: unsupported SDC command boundary or substitution at line 4"
+    },
+    "invalid_current_design_arity_after_identity_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: unsupported SDC current_design declaration"
+    },
+    "wrong_current_design_after_identity_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: SDC current_design identity mismatch"
+    },
+    "quoted_dynamic_current_design_after_identity_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: unsupported SDC literal nesting or substitution"
+    },
+    "comment_continuation_hides_constraint_after_identity_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: unsupported SDC continuation or escape at line 9"
+    },
+    "adjacent_collection_substitution_after_identity_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: unsupported SDC word concatenation"
+    },
+    "standalone_false_path_after_identity_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: unsupported SDC constraint command: set_false_path"
+    },
+    "zero_setup_after_identity_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: SDC setup uncertainty mismatch: 0.0 != 0.02 (native units)"
+    },
+    "zero_hold_after_identity_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: SDC hold uncertainty mismatch: 0.0 != 0.005 (native units)"
+    },
+    "zero_transition_after_identity_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: SDC transition mismatch: 0.0 != 0.01 (native units)"
+    },
+    "zero_load_after_identity_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: SDC output load mismatch: 0.0 != 3.898 (native units)"
+    },
+    "wrong_period_after_identity_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: SDC period mismatch: 3000.0 != 3.0 (native units)"
+    },
+    "zero_IO_max_after_identity_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: SDC IO max mismatch: 0.0 != 0.6 (native units)"
+    },
+    "missing_reset_after_identity_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: SDC IO coverage mismatch (includes reset/valid/data)"
+    },
+    "old_invalid_ns_SDC_after_identity_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "experiments.arithmetic_dse.sdc.SdcContractError: SDC transition mismatch: 0.0 != 0.01 (native units)"
+    },
+    "restored_copy_still_passes": {
+      "exit_code": 0,
+      "expected_rejection": false,
+      "diagnostic": "passed"
+    },
+    "explicit_root_uses_copied_bundle": {
+      "exit_code": 0,
+      "expected_rejection": false,
+      "diagnostic": "passed"
+    },
+    "explicit_root_provenance_tamper_after_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "ValueError: parameter provenance value/unit/basis mismatch: setup_uncertainty_ps"
+    }
+  },
+  "mutations_confined_to_temporary_copy": true,
+  "EDA_invocations": 0,
+  "archived_Tcl_executions": 0,
+  "hash_rebinding": "modified SDC, measurement index/freeze, successor inherited hashes and source metadata identities all rebound before semantic checks"
+}

@@ -1,0 +1,247 @@
+Yosys 0.68+ (git sha1 a5af9d690, Release, GNU /usr/bin/c++ 13.3.0) [github.com/The-OpenROAD-Project/yosys at HEAD]
+Using ABC speed script.
+Extracting clock period from SDC file: /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/nangate45-mul/results/nangate45/arithmetic_probe/base/clock_period.txt
+Setting clock period to 3000.0
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Liberty frontend: /home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+Imported 135 cell types from liberty file.
+
+2. Executing Liberty frontend: /home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+Replacing existing blackbox module AND2_X1.
+Replacing existing blackbox module AND2_X2.
+Replacing existing blackbox module AND2_X4.
+Replacing existing blackbox module AND3_X1.
+Replacing existing blackbox module AND3_X2.
+Replacing existing blackbox module AND3_X4.
+Replacing existing blackbox module AND4_X1.
+Replacing existing blackbox module AND4_X2.
+Replacing existing blackbox module AND4_X4.
+Replacing existing blackbox module ANTENNA_X1.
+Replacing existing blackbox module AOI21_X1.
+Replacing existing blackbox module AOI21_X2.
+Replacing existing blackbox module AOI21_X4.
+Replacing existing blackbox module AOI22_X1.
+Replacing existing blackbox module AOI22_X2.
+Replacing existing blackbox module AOI22_X4.
+Replacing existing blackbox module AOI211_X1.
+Replacing existing blackbox module AOI211_X2.
+Replacing existing blackbox module AOI211_X4.
+Replacing existing blackbox module AOI221_X1.
+Replacing existing blackbox module AOI221_X2.
+Replacing existing blackbox module AOI221_X4.
+Replacing existing blackbox module AOI222_X1.
+Replacing existing blackbox module AOI222_X2.
+Replacing existing blackbox module AOI222_X4.
+Replacing existing blackbox module BUF_X1.
+Replacing existing blackbox module BUF_X2.
+Replacing existing blackbox module BUF_X4.
+Replacing existing blackbox module BUF_X8.
+Replacing existing blackbox module BUF_X16.
+Replacing existing blackbox module BUF_X32.
+Replacing existing blackbox module CLKBUF_X1.
+Replacing existing blackbox module CLKBUF_X2.
+Replacing existing blackbox module CLKBUF_X3.
+Ignoring cell CLKGATETST_X1 with missing function on output IQ.
+Ignoring cell CLKGATETST_X2 with missing function on output IQ.
+Ignoring cell CLKGATETST_X4 with missing function on output IQ.
+Ignoring cell CLKGATETST_X8 with missing function on output IQ.
+Ignoring cell CLKGATE_X1 with missing function on output IQ.
+Ignoring cell CLKGATE_X2 with missing function on output IQ.
+Ignoring cell CLKGATE_X4 with missing function on output IQ.
+Ignoring cell CLKGATE_X8 with missing function on output IQ.
+Replacing existing blackbox module DFFRS_X1.
+Replacing existing blackbox module DFFRS_X2.
+Replacing existing blackbox module DFFR_X1.
+Replacing existing blackbox module DFFR_X2.
+Replacing existing blackbox module DFFS_X1.
+Replacing existing blackbox module DFFS_X2.
+Replacing existing blackbox module DFF_X1.
+Replacing existing blackbox module DFF_X2.
+Replacing existing blackbox module DLH_X1.
+Replacing existing blackbox module DLH_X2.
+Replacing existing blackbox module DLL_X1.
+Replacing existing blackbox module DLL_X2.
+Replacing existing blackbox module FA_X1.
+Replacing existing blackbox module FILLCELL_X1.
+Replacing existing blackbox module TAPCELL_X1.
+Replacing existing blackbox module FILLCELL_X2.
+Replacing existing blackbox module FILLCELL_X4.
+Replacing existing blackbox module FILLCELL_X8.
+Replacing existing blackbox module FILLCELL_X16.
+Replacing existing blackbox module FILLCELL_X32.
+Replacing existing blackbox module HA_X1.
+Replacing existing blackbox module INV_X1.
+Replacing existing blackbox module INV_X2.
+Replacing existing blackbox module INV_X4.
+Replacing existing blackbox module INV_X8.
+Replacing existing blackbox module INV_X16.
+Replacing existing blackbox module INV_X32.
+Replacing existing blackbox module LOGIC0_X1.
+Replacing existing blackbox module LOGIC1_X1.
+Replacing existing blackbox module MUX2_X1.
+Replacing existing blackbox module MUX2_X2.
+Replacing existing blackbox module NAND2_X1.
+Replacing existing blackbox module NAND2_X2.
+Replacing existing blackbox module NAND2_X4.
+Replacing existing blackbox module NAND3_X1.
+Replacing existing blackbox module NAND3_X2.
+Replacing existing blackbox module NAND3_X4.
+Replacing existing blackbox module NAND4_X1.
+Replacing existing blackbox module NAND4_X2.
+Replacing existing blackbox module NAND4_X4.
+Replacing existing blackbox module NOR2_X1.
+Replacing existing blackbox module NOR2_X2.
+Replacing existing blackbox module NOR2_X4.
+Replacing existing blackbox module NOR3_X1.
+Replacing existing blackbox module NOR3_X2.
+Replacing existing blackbox module NOR3_X4.
+Replacing existing blackbox module NOR4_X1.
+Replacing existing blackbox module NOR4_X2.
+Replacing existing blackbox module NOR4_X4.
+Replacing existing blackbox module OAI21_X1.
+Replacing existing blackbox module OAI21_X2.
+Replacing existing blackbox module OAI21_X4.
+Replacing existing blackbox module OAI22_X1.
+Replacing existing blackbox module OAI22_X2.
+Replacing existing blackbox module OAI22_X4.
+Replacing existing blackbox module OAI33_X1.
+Replacing existing blackbox module OAI211_X1.
+Replacing existing blackbox module OAI211_X2.
+Replacing existing blackbox module OAI211_X4.
+Replacing existing blackbox module OAI221_X1.
+Replacing existing blackbox module OAI221_X2.
+Replacing existing blackbox module OAI221_X4.
+Replacing existing blackbox module OAI222_X1.
+Replacing existing blackbox module OAI222_X2.
+Replacing existing blackbox module OAI222_X4.
+Replacing existing blackbox module OR2_X1.
+Replacing existing blackbox module OR2_X2.
+Replacing existing blackbox module OR2_X4.
+Replacing existing blackbox module OR3_X1.
+Replacing existing blackbox module OR3_X2.
+Replacing existing blackbox module OR3_X4.
+Replacing existing blackbox module OR4_X1.
+Replacing existing blackbox module OR4_X2.
+Replacing existing blackbox module OR4_X4.
+Replacing existing blackbox module SDFFRS_X1.
+Replacing existing blackbox module SDFFRS_X2.
+Replacing existing blackbox module SDFFR_X1.
+Replacing existing blackbox module SDFFR_X2.
+Replacing existing blackbox module SDFFS_X1.
+Replacing existing blackbox module SDFFS_X2.
+Replacing existing blackbox module SDFF_X1.
+Replacing existing blackbox module SDFF_X2.
+Replacing existing blackbox module TBUF_X1.
+Replacing existing blackbox module TBUF_X2.
+Replacing existing blackbox module TBUF_X4.
+Replacing existing blackbox module TBUF_X8.
+Replacing existing blackbox module TBUF_X16.
+Replacing existing blackbox module TINV_X1.
+Replacing existing blackbox module TLAT_X1.
+Replacing existing blackbox module XNOR2_X1.
+Replacing existing blackbox module XNOR2_X2.
+Replacing existing blackbox module XOR2_X1.
+Replacing existing blackbox module XOR2_X2.
+Imported 127 cell types from liberty file.
+<suppressed ~8 debug messages>
+
+3. Executing SLANG frontend.
+Top level design units:
+    MulProbe_sim_top
+
+
+Build succeeded: 0 errors, 0 warnings
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$36'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$12'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$9'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$4'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$0'.
+Cleaned up 5 empty switches.
+<suppressed ~58 debug messages>
+
+3.2. Executing TRIBUF pass.
+
+3.3. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 3 switch rules as full_case in process $36 in module MulProbe_sim_top.
+Marked 1 switch rules as full_case in process $12 in module MulProbe_sim_top.
+Marked 1 switch rules as full_case in process $9 in module MulProbe_sim_top.
+Marked 4 switch rules as full_case in process $4 in module MulProbe_sim_top.
+Marked 2 switch rules as full_case in process $0 in module MulProbe_sim_top.
+Removed a total of 0 dead cases.
+
+3.4. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 8 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.5. Executing PROC_INIT pass (extract init attributes).
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~15 debug messages>
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\MulProbe_sim_top.$36'.
+     1/5: $__vul_pipeline_multiply.rtlzz_pipe_8_s1$39
+     2/5: $__vul_pipeline_multiply.rtlzz_pipe_2_s1$38
+     3/5: $__vul_pipeline_multiply.rtlzz_valid_s1$42
+     4/5: $__vul_pipeline_multiply.rtlzz_pipe_8_s1$41
+     5/5: $__vul_pipeline_multiply.rtlzz_pipe_2_s1$40
+Creating decoders for process `\MulProbe_sim_top.$12'.
+     1/1: $__vul_pipeline_q_s3valid$14
+Creating decoders for process `\MulProbe_sim_top.$9'.
+     1/1: $__vul_pipeline_q_s3reg$11
+Creating decoders for process `\MulProbe_sim_top.$4'.
+     1/3: $__vul_pipeline_q_s1valid$6
+     2/3: $__vul_pipeline_q_s1valid$7
+     3/3: $__vul_pipeline_q_s1valid$8
+Creating decoders for process `\MulProbe_sim_top.$0'.
+     1/2: $__vul_pipeline_q_s1reg$2
+     2/2: $__vul_pipeline_q_s1reg$3
+
+3.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 5 empty switches in `\MulProbe_sim_top.$36'.
+Removing empty process `MulProbe_sim_top.$36'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$12'.
+Removing empty process `MulProbe_sim_top.$12'.
+Found and cleaned up 1 empty switch in `\MulProbe_sim_top.$9'.
+Removing empty process `MulProbe_sim_top.$9'.
+Found and cleaned up 5 empty switches in `\MulProbe_sim_top.$4'.
+Removing empty process `MulProbe_sim_top.$4'.
+Found and cleaned up 3 empty switches in `\MulProbe_sim_top.$0'.
+Removing empty process `MulProbe_sim_top.$0'.
+Cleaned up 15 empty switches.
+
+3.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module MulProbe_sim_top.
+<suppressed ~16 debug messages>
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1. Analyzing design hierarchy..
+Top module:  \MulProbe_sim_top
+
+4.2. Analyzing design hierarchy..
+Top module:  \MulProbe_sim_top
+Removed 0 unused modules.
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \MulProbe_sim_top..
+Removed 5 unused cells and 83 unused wires.
+<suppressed ~97 debug messages>
+
+6. Executing RTLIL backend.
+Output filename: /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/nangate45-mul/results/nangate45/arithmetic_probe/base/1_1_yosys_canonicalize.rtlil
+
+End of script. Logfile hash: c38b6c2423, time: 0.08s, user: 0.06s, system: 0.01s, MEM: 46.23 MB peak
+Yosys 0.68+ (git sha1 a5af9d690, Release, GNU /usr/bin/c++ 13.3.0) [github.com/The-OpenROAD-Project/yosys at HEAD]
+Time spent: 74% 4x read_liberty (0 sec), 16% 2x read_slang (0 sec), ...
+Elapsed time: 0:00.08[h:]min:sec. CPU time: user 0.07 sys 0.02 (101%). Peak memory: 50404KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+1_1_yosys_canonicalize    .rtlil          0             49 3e668144bbeffa86a59e

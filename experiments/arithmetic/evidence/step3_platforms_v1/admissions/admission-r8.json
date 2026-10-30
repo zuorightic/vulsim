@@ -1,0 +1,78 @@
+{
+  "version": "platform-connection-admission-v1",
+  "id": "step3-four-platforms-r8",
+  "created_at": "2026-10-30T05:26:14.443596+00:00",
+  "purpose": "platform_connection_only",
+  "policy_sha256": "3f4a230ca19b9b53a9da71cb19a52e718d29a8001106d354394f13e5d6ef995a",
+  "starting_usage": {
+    "synth": 43,
+    "grt": 20,
+    "final": 9,
+    "support_calls": 401,
+    "walltime_s": 4458.477560744388,
+    "CPU_time_s": 7255.74,
+    "pending": 1
+  },
+  "tasks": [
+    {
+      "id": "asap7-mul-sourcebound",
+      "platform": "asap7",
+      "kernel": "mul_u32",
+      "rtl": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/mul-native/sim/top.sv",
+      "rtl_sha256": "5018e7b6831f1963c2ac3ee159f25f045cb12eab2a7fcee82cc44af982f7dca3",
+      "top": "MulProbe_sim_top",
+      "profile_sha256": "a29e056328a495af3f5815e3c56f4e6838eafd4b3f4f7844cc81d82ef99dd3df",
+      "period_ps": 1500,
+      "abc_target_ps": 1500,
+      "stage": "final",
+      "purpose": "prototype",
+      "L": 3,
+      "II": 1,
+      "size_scope": "32bit_input; complete_result_64bit",
+      "supersedes_task_id": "asap7-mul"
+    }
+  ],
+  "call_caps": {
+    "synth": 11,
+    "grt": 10,
+    "final": 5
+  },
+  "worst_case_leaf_walltime_s": 28500,
+  "CPU_envelope_s": 57000,
+  "threads": 2,
+  "physical_jobs": 1,
+  "memory_limit_MiB": 8192,
+  "sample_split": "not_applicable; connection probes not admitted as model training",
+  "stops": [
+    "failed_stage",
+    "timeout",
+    "memory_limit",
+    "unsettled_ledger",
+    "unexpected_units_or_assets"
+  ],
+  "automatic_retries": 0,
+  "main_case_targets": false,
+  "later_bulk_or_model_work_authorized": false,
+  "correction_reason": "Revalidate the ASAP7 multiplier through the finalized common parser and run-start source snapshot capture. The first ASAP7 run had hashes but not a complete per-run Python copy, so one explicit same-RTL/same-target/same-profile cold chain closes provenance and current-parser acceptance. Preserve all prior runs and add one funded synth/grt/final slot; no timing search or global resource cap change.",
+  "parent_admission": {
+    "path": "/home/zyrv/vulsim/build/step3-platforms-20261030/probes/admission-r7.json",
+    "sha256": "693016e66238e97525f70be98204ac087eeac2d6cc903d915d76a89b5864aede",
+    "id": "step3-four-platforms-r7"
+  },
+  "related_admission_ids": [
+    "step3-four-platforms-v1",
+    "step3-four-platforms-r2",
+    "step3-four-platforms-r3",
+    "step3-four-platforms-r4",
+    "step3-four-platforms-r5",
+    "step3-four-platforms-r6",
+    "step3-four-platforms-r7",
+    "step3-four-platforms-r8"
+  ],
+  "additional_diagnostic_call_caps": {
+    "synth": 1,
+    "grt": 1,
+    "final": 1
+  },
+  "support_walltime_reserve_s": 7200
+}

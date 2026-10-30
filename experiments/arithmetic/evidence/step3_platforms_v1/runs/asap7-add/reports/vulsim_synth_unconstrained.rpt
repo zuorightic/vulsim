@@ -1,0 +1,65 @@
+Startpoint: s0input__vld__ (input port clocked by io_clk)
+Endpoint: __vul_pipeline_multiply.__vul_port_s1reg[10]$_SDFFE_PN0P_
+          (rising edge-triggered flip-flop clocked by core_clk)
+Path Group: core_clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock io_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+ 300.00  300.00 v input external delay
+   2.29  302.29 v s0input__vld__ (in)
+   9.59  311.88 ^ _0890_/Y (INVx1_ASAP7_75t_R)
+  28.22  340.10 ^ _0894_/Y (BUFx2_ASAP7_75t_R)
+  41.82  381.92 ^ _1003_/Y (BUFx2_ASAP7_75t_R)
+  12.27  394.19 v _1018_/Y (NAND2x1_ASAP7_75t_R)
+  36.55  430.74 v _1019_/Y (OA211x2_ASAP7_75t_R)
+   0.00  430.74 v __vul_pipeline_multiply.__vul_port_s1reg[10]$_SDFFE_PN0P_/D (DFFHQNx1_ASAP7_75t_R)
+         430.74   data arrival time
+
+1500.00 1500.00   clock core_clk (rise edge)
+   0.00 1500.00   clock network delay (ideal)
+ -20.00 1480.00   clock uncertainty
+   0.00 1480.00   clock reconvergence pessimism
+        1480.00 ^ __vul_pipeline_multiply.__vul_port_s1reg[10]$_SDFFE_PN0P_/CLK (DFFHQNx1_ASAP7_75t_R)
+  -3.94 1476.06   library setup time
+        1476.06   data required time
+---------------------------------------------------------
+        1476.06   data required time
+        -430.74   data arrival time
+---------------------------------------------------------
+        1045.31   slack (MET)
+
+
+Startpoint: s3output__vld__$_SDFF_PN0_
+            (rising edge-triggered flip-flop clocked by core_clk)
+Endpoint: s3output_y__[10] (output port clocked by io_clk)
+Path Group: io_clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock core_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ s3output__vld__$_SDFF_PN0_/CLK (DFFHQNx1_ASAP7_75t_R)
+  47.35   47.35 ^ s3output__vld__$_SDFF_PN0_/QN (DFFHQNx1_ASAP7_75t_R)
+  29.67   77.03 ^ _0790_/Y (BUFx2_ASAP7_75t_R)
+  41.43  118.46 ^ _0875_/Y (BUFx2_ASAP7_75t_R)
+  33.08  151.54 v _0879_/Y (NOR2x1_ASAP7_75t_R)
+   0.00  151.54 v s3output_y__[10] (out)
+         151.54   data arrival time
+
+1500.00 1500.00   clock io_clk (rise edge)
+   0.00 1500.00   clock network delay (ideal)
+ -20.00 1480.00   clock uncertainty
+   0.00 1480.00   clock reconvergence pessimism
+-300.00 1180.00   output external delay
+        1180.00   data required time
+---------------------------------------------------------
+        1180.00   data required time
+        -151.54   data arrival time
+---------------------------------------------------------
+        1028.46   slack (MET)
+
+

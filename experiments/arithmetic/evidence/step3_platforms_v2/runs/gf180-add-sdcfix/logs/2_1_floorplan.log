@@ -1,0 +1,73 @@
+OpenROAD 26Q3-1867-g84e3ff1eb2 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 2 thread(s).
+read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/lib/gf180mcu_fd_sc_mcu9t5v0__tt_025C_5v00.lib.gz
+read_db /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/gf180-add-sdcfix/results/gf180/arithmetic_probe/base/1_synth.odb
+read_sdc /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/gf180-add-sdcfix/results/gf180/arithmetic_probe/base/1_synth.sdc
+source /home/zyrv/vulsim/experiments/arithmetic_dse/backend/gf180_tc_rc.tcl
+
+==========================================================================
+Floorplan check_setup
+--------------------------------------------------------------------------
+number instances in verilog is 831
+initialize_floorplan -utilization 40 -aspect_ratio 1 -core_space 25 -site GF018hv5v_green_sc9
+[INFO IFP-0107] Defining die area using utilization: 40.00% and aspect ratio: 1.
+[WARNING IFP-0028] Core area lower left (25.000, 25.000) snapped to (25.200, 25.200).
+[INFO IFP-0001] Added 60 rows of 540 site GF018hv5v_green_sc9.
+[INFO IFP-0100] Die BBox:  (  0.000  0.000 ) ( 353.120 353.120 ) um
+[INFO IFP-0101] Core BBox: ( 25.200 25.200 ) ( 327.600 327.600 ) um
+[INFO IFP-0102] Core area:                        91445.760 um^2
+[INFO IFP-0103] Total instances area:             36753.293 um^2
+[INFO IFP-0104] Effective utilization:                0.402
+[INFO IFP-0105] Number of instances:                    831
+make_tracks
+source /home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/fastroute.tcl
+set_dont_use *_1
+repair_tie_fanout -separation 0 gf180mcu_fd_sc_mcu9t5v0__tt_025C_5v00/gf180mcu_fd_sc_mcu9t5v0__tiel/ZN
+[INFO RSZ-0042] Inserted 31 tie gf180mcu_fd_sc_mcu9t5v0__tiel instances.
+repair_tie_fanout -separation 0 gf180mcu_fd_sc_mcu9t5v0__tt_025C_5v00/gf180mcu_fd_sc_mcu9t5v0__tieh/Z
+repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 100 -setup -skip_last_gasp -sequence unbuffer,sizeup,swap,vt_swap -verbose
+[WARNING EST-0027] no estimated parasitics. Using wire load models.
+[INFO RSZ-0100] Repair move sequence: UnbufferMove SizeUpMove SwapPinsMove 
+[INFO RSZ-0098] No setup violations found
+[INFO RSZ-0505] Runtime: 0.04s
+Default units for flow
+ time 1ns
+ capacitance 1pF
+ resistance 1ohm
+ voltage 1v
+ current 1mA
+ power 1uW
+ distance 1um
+   Layer   | Unit Resistance | Unit Capacitance 
+           |        (ohm/um) |          (pF/um)
+------------------------------------------------
+    Metal1 |        3.91e-01 |         9.06e-06
+    Metal2 |        2.26e-04 |         1.35e-04
+    Metal3 |        2.26e-04 |         1.46e-04
+    Metal4 |        2.26e-04 |         1.51e-04
+    Metal5 |        5.86e-05 |         1.56e-04
+------------------------------------------------
+
+   Layer   | Via Resistance 
+           |          (ohm) 
+----------------------------
+      Via1 |       4.50e+00 
+      Via2 |       4.50e+00 
+      Via3 |       4.50e+00 
+      Via4 |       4.50e+00 
+----------------------------
+Report metrics stage 2, floorplan final...
+
+==========================================================================
+floorplan final report_design_area
+--------------------------------------------------------------------------
+Design area 37092 um^2 41% utilization.
+write_db /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/gf180-add-sdcfix/results/gf180/arithmetic_probe/base/2_1_floorplan.odb
+write_sdc -no_timestamp /home/zyrv/vulsim/build/step3-sdcfix-20261030/probes/runs/gf180-add-sdcfix/results/gf180/arithmetic_probe/base/2_1_floorplan.sdc
+Elapsed time: 0:00.58[h:]min:sec. CPU time: user 0.52 sys 0.07 (101%). Peak memory: 156012KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+2_1_floorplan             .odb            0            152 5efea4d0776466e32d17
+2_1_floorplan             .sdc                             30a54b7952b9467c0254

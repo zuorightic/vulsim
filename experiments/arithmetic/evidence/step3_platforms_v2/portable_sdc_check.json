@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "checks": {
+    "isolated_without_build_EDA_Tcl_or_PATH": {
+      "exit_code": 0,
+      "expected_rejection": false,
+      "diagnostic": "passed"
+    },
+    "zero_setup_uncertainty_after_hash_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "ValueError: SDC setup uncertainty mismatch: 0.0 != 0.02 (native units)"
+    },
+    "zero_hold_uncertainty_after_hash_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "ValueError: SDC hold uncertainty mismatch: 0.0 != 0.025 (native units)"
+    },
+    "zero_clock_transition_after_hash_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "ValueError: SDC transition mismatch: 0.0 != 0.1 (native units)"
+    },
+    "zero_output_load_after_hash_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "ValueError: SDC output load mismatch: 0.0 != 0.01343 (native units)"
+    },
+    "wrong_period_after_hash_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "ValueError: SDC period mismatch: 3000.0 != 3.0 (native units)"
+    },
+    "zero_reset_max_IO_delay_after_hash_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "ValueError: SDC IO max mismatch: 0.0 != 0.6 (native units)"
+    },
+    "old_invalid_SDC_cannot_be_accepted_after_hash_rebinding": {
+      "exit_code": 1,
+      "expected_rejection": true,
+      "diagnostic": "ValueError: SDC transition mismatch: 0.0 != 0.01 (native units)"
+    }
+  },
+  "mutations_confined_to_temporary_copy": true,
+  "EDA_invocations": 0
+}

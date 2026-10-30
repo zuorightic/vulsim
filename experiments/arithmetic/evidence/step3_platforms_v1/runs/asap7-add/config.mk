@@ -1,0 +1,22 @@
+include /home/zyrv/vulsim/experiments/arithmetic_dse/backend/platform.mk
+export PLATFORM = asap7
+export CORNER = TC
+export ASAP7_USE_VT = RVT
+export LIB_MODEL = NLDM
+export TC_TEMPERATURE = 25C
+export IO_PLACER_H = M4 M6
+export IO_PLACER_V = M5 M7
+export CORE_MARGIN = 2
+export VULSIM_TIME_TO_PS = 1
+export VULSIM_CAP_TO_FF = 1
+export VULSIM_DRIVER_CELL = BUFx2_ASAP7_75t_R
+export VULSIM_DRIVER_PIN = Y
+export VULSIM_OUTPUT_LOAD_FF = 3.898
+export VULSIM_SETUP_UNCERTAINTY_PS = 20
+export VULSIM_HOLD_UNCERTAINTY_PS = 5
+export VULSIM_CLOCK_TRANSITION_PS = 10
+export DESIGN_NAME = MulProbe_sim_top
+export DESIGN_NICKNAME = arithmetic_probe
+export VERILOG_FILES = /home/zyrv/vulsim/build/step3-platforms-20261030/probes/runs/asap7-add/input.sv
+export SDC_FILE = /home/zyrv/vulsim/experiments/arithmetic_dse/backend/constraints.sdc
+export VULSIM_CLOCK_PERIOD_PS = 1500.0

@@ -1,0 +1,82 @@
+Startpoint: __vul_pipeline_multiply.rtlzz_pipe_2_s1[13]$_SDFFE_PN0P_
+            (rising edge-triggered flip-flop clocked by core_clk)
+Endpoint: __vul_pipeline_q_s3reg[62]$_SDFF_PN0_
+          (rising edge-triggered flip-flop clocked by core_clk)
+Path Group: core_clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock core_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ __vul_pipeline_multiply.rtlzz_pipe_2_s1[13]$_SDFFE_PN0P_/CK (DFF_X1)
+   0.09    0.09 ^ __vul_pipeline_multiply.rtlzz_pipe_2_s1[13]$_SDFFE_PN0P_/Q (DFF_X1)
+   0.03    0.12 ^ _4833_/Z (BUF_X1)
+   0.04    0.16 ^ _5238_/Z (BUF_X1)
+   0.04    0.20 ^ _5324_/ZN (AND2_X1)
+   0.10    0.30 v _7516_/S (FA_X1)
+   0.13    0.43 ^ _7464_/S (FA_X1)
+   0.09    0.52 v _7191_/S (FA_X1)
+   0.12    0.64 ^ _7534_/S (FA_X1)
+   0.09    0.73 v _7740_/S (FA_X1)
+   0.13    0.86 ^ _7796_/S (FA_X1)
+   0.10    0.95 v _7497_/S (FA_X1)
+   0.13    1.08 ^ _7881_/S (FA_X1)
+   0.04    1.12 ^ _8156_/S (HA_X1)
+   0.04    1.16 ^ _6347_/Z (BUF_X1)
+   0.02    1.18 v _6348_/ZN (INV_X1)
+   0.11    1.29 ^ _6349_/ZN (NOR4_X1)
+   0.03    1.32 v _6400_/ZN (NAND3_X1)
+   0.05    1.38 ^ _6401_/ZN (OAI22_X1)
+   0.04    1.42 v _6440_/ZN (OAI22_X1)
+   0.05    1.47 ^ _6441_/ZN (OAI21_X1)
+   0.06    1.53 v _6442_/Z (MUX2_X1)
+   0.08    1.61 v _6446_/ZN (OR4_X1)
+   0.00    1.61 v __vul_pipeline_q_s3reg[62]$_SDFF_PN0_/D (DFF_X1)
+           1.61   data arrival time
+
+   3.00    3.00   clock core_clk (rise edge)
+   0.00    3.00   clock network delay (ideal)
+  -0.02    2.98   clock uncertainty
+   0.00    2.98   clock reconvergence pessimism
+           2.98 ^ __vul_pipeline_q_s3reg[62]$_SDFF_PN0_/CK (DFF_X1)
+  -0.04    2.94   library setup time
+           2.94   data required time
+---------------------------------------------------------
+           2.94   data required time
+          -1.61   data arrival time
+---------------------------------------------------------
+           1.33   slack (MET)
+
+
+Startpoint: s3output__vld__$_SDFF_PN0_
+            (rising edge-triggered flip-flop clocked by core_clk)
+Endpoint: s3output_y__[10] (output port clocked by io_clk)
+Path Group: io_clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock core_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ s3output__vld__$_SDFF_PN0_/CK (DFF_X1)
+   0.10    0.10 ^ s3output__vld__$_SDFF_PN0_/Q (DFF_X1)
+   0.04    0.14 ^ _6055_/Z (BUF_X1)
+   0.04    0.18 ^ _6112_/Z (BUF_X1)
+   0.04    0.23 ^ _6114_/ZN (AND2_X1)
+   0.00    0.23 ^ s3output_y__[10] (out)
+           0.23   data arrival time
+
+   3.00    3.00   clock io_clk (rise edge)
+   0.00    3.00   clock network delay (ideal)
+  -0.02    2.98   clock uncertainty
+   0.00    2.98   clock reconvergence pessimism
+  -0.60    2.38   output external delay
+           2.38   data required time
+---------------------------------------------------------
+           2.38   data required time
+          -0.23   data arrival time
+---------------------------------------------------------
+           2.15   slack (MET)
+
+
