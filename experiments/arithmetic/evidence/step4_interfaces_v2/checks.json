@@ -1,0 +1,343 @@
+{
+  "status": "passed",
+  "version": "step4-report-type-checks-v2",
+  "native_cpp_checks": "PASS arithmetic interfaces checks=3786",
+  "actual_reports_checked": 15,
+  "four_platforms": [
+    "asap7",
+    "nangate45",
+    "sky130hd",
+    "gf180"
+  ],
+  "VUL_reports": 1,
+  "all_graph_schedule_unchanged": true,
+  "native_and_standalone_RTL_bytes_unchanged": true,
+  "VUL_RTL_only_source_annotation_path_changed": true,
+  "only_report_version_counter_token_and_VUL_annotation_hash_changed": true,
+  "type_test_methods": 7,
+  "type_tests_passed": true,
+  "uint64_max_roundtrip_CPP": true,
+  "failure_reports": [
+    {
+      "generated_report": "build/step4-review-20261031/unknown_field.failure.json",
+      "failure_code": "invalid_request"
+    },
+    {
+      "generated_report": "build/step4-review-20261031/missing_model.failure.json",
+      "failure_code": "cost_uncovered"
+    }
+  ],
+  "reports": [
+    {
+      "generated_report": "build/step4-review-20261031/generated/mixed_fp.json",
+      "inherited_report": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/generated/mixed_fp.json",
+      "rtl": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/generated/mixed_fp.sv",
+      "register_bits": 278,
+      "register_count": 8,
+      "graph_sha256": "7f44fe19c86af57158ca708d539f270766911dfc0c807d6ed32d559c4f27c62e",
+      "schedule_sha256": "e9b0a51a2f8ab9c58e294dbed8f99f8f728a100489641cd96c6aa7319571b9bc",
+      "rtl_sha256": "3919ecbc1cbb3f868a5c8ba6f9f5167e99dc0d97b21bbe34394c0dff31a003d7"
+    },
+    {
+      "generated_report": "build/step4-review-20261031/generated/mul12.json",
+      "inherited_report": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/generated/mul12.json",
+      "rtl": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/generated/mul12.sv",
+      "register_bits": 98,
+      "register_count": 6,
+      "graph_sha256": "7cf75e727ac9561433c317bc8e2466ef5d45c4b855270170f9ee438eb3533493",
+      "schedule_sha256": "00c6994d5e08d7f58139b558054b81d2e5558c039f424ce39811d36442654bf6",
+      "rtl_sha256": "2c52cd9be2eed1588056a3f1d5ab67bbcc395cab9504b0e837d397a91c2ffcca"
+    },
+    {
+      "generated_report": "build/step4-review-20261031/generated/mul128.json",
+      "inherited_report": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/generated/mul128.json",
+      "rtl": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/generated/mul128.sv",
+      "register_bits": 1026,
+      "register_count": 6,
+      "graph_sha256": "41ea1ecff1abd8702325f75169568bb9442337c22460bfb8c3cf3481e635df70",
+      "schedule_sha256": "2410847c8d884a5f7ee2ef578aecfbed182b586a21231c74ec81baba9d2002d4",
+      "rtl_sha256": "02bb604ba09616aacb05150462580a7d23ffde057b9efaa761ac73316979758d"
+    },
+    {
+      "generated_report": "build/step4-review-20261031/generated/mul16.json",
+      "inherited_report": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/generated/mul16.json",
+      "rtl": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/generated/mul16.sv",
+      "register_bits": 130,
+      "register_count": 6,
+      "graph_sha256": "9f0046ac27a0a281767377ef7f557ea13b6c1d4b77943f4cea11c413d8ba347d",
+      "schedule_sha256": "7a420c34e8f7ff3f608fbb42d2367f2a291db160f66d7dc743946cf062d2ae8f",
+      "rtl_sha256": "d39da92eb7dbcca779f19cceccf5d662156fc4d182e8c18935f17e51aad9020a"
+    },
+    {
+      "generated_report": "build/step4-review-20261031/generated/mul24.json",
+      "inherited_report": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/generated/mul24.json",
+      "rtl": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/generated/mul24.sv",
+      "register_bits": 194,
+      "register_count": 6,
+      "graph_sha256": "214993ac2e900710c2db19beeeb3e7789a8e404ed4d005ee342b005cd255a409",
+      "schedule_sha256": "4903119b69d9a8c7193cba889dc708d429cbc9bbf45ce9a7675f1af66f6411a8",
+      "rtl_sha256": "99c5ee5232d9527288642d65f5ea4b9788beefafa60f000844c0711103d874a0"
+    },
+    {
+      "generated_report": "build/step4-review-20261031/generated/mul32.json",
+      "inherited_report": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/generated/mul32.json",
+      "rtl": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/generated/mul32.sv",
+      "register_bits": 258,
+      "register_count": 6,
+      "graph_sha256": "96d16d270507faf120e9f5debf02a8336079d68922f355a657dfeb0dcf6343cc",
+      "schedule_sha256": "fe8d8b8abed8f917541e50f7ee29cf3e056497e27694744807aa3488316fbb90",
+      "rtl_sha256": "65b9b347983b48207933525d76cc2908743f7e5cf37593d09e302631856c4d7d"
+    },
+    {
+      "generated_report": "build/step4-review-20261031/generated/mul48.json",
+      "inherited_report": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/generated/mul48.json",
+      "rtl": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/generated/mul48.sv",
+      "register_bits": 386,
+      "register_count": 6,
+      "graph_sha256": "c1faaa3bd12159d9a49aa988b55edef7926295bc7fc40386736c067cda90b9f8",
+      "schedule_sha256": "fad81ae3493e6d7324a638f363dff45339bafe0f6e936937140def91d4f88f51",
+      "rtl_sha256": "f2f31d61b2b3c4918492de991220ae5118b0f094a1eef637b883b155627def73"
+    },
+    {
+      "generated_report": "build/step4-review-20261031/generated/mul64.json",
+      "inherited_report": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/generated/mul64.json",
+      "rtl": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/generated/mul64.sv",
+      "register_bits": 514,
+      "register_count": 6,
+      "graph_sha256": "c0a2a4c02a38c6ee09a5b86cd6e5c5c90ce0f50af25475e5733d1d04e081c4ad",
+      "schedule_sha256": "673d86919f27f0af35f3d59896b86e63e0314573b636a390d77e73a45e301b9b",
+      "rtl_sha256": "56e7071c069b2b8bb1b9fecc2e586b6ce101eb4508a4f2d4c92b41f223067c8f"
+    },
+    {
+      "generated_report": "build/step4-review-20261031/generated/mul8.json",
+      "inherited_report": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/generated/mul8.json",
+      "rtl": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/generated/mul8.sv",
+      "register_bits": 66,
+      "register_count": 6,
+      "graph_sha256": "b0bea074fdded3ff6d6bdae6902cb1b1622ac18ab91eb637d9af9e5831b16bcc",
+      "schedule_sha256": "f29e1d0a181a2be1f907b04958859c8d93248a8914c57f442b63650e4a992b2f",
+      "rtl_sha256": "61384e02b1d54749a09489c5b3448292b149414a4fe264da97db97a8e2ae338e"
+    },
+    {
+      "generated_report": "build/step4-review-20261031/generated/mul96.json",
+      "inherited_report": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/generated/mul96.json",
+      "rtl": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/generated/mul96.sv",
+      "register_bits": 770,
+      "register_count": 6,
+      "graph_sha256": "2a96a9b7ed5c94ceff5aec61f610bc45cacc79551e901c0952058b3ebf1b894f",
+      "schedule_sha256": "d91b3fc0d8998615dda7e2ea712fe7436e582e6d352637005edf37cfcc57f7cb",
+      "rtl_sha256": "5b92324d5e4fc5d62fd44cd1dea9b15bb9e48c6b2cf85514720118b6c0bd81bd"
+    },
+    {
+      "generated_report": "build/step4-review-20261031/asap7.json",
+      "inherited_report": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/asap7.report.json",
+      "rtl": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/asap7.sv",
+      "register_bits": 128,
+      "register_count": 2,
+      "graph_sha256": "78707b5cade9890e4e4e2b33a5b50ef15c06f1393e1cb478bd320e8e06353c54",
+      "schedule_sha256": "03ba6f3b64cfe61535e3cc8ebcf6f2c6b915bf733cd8a5e92e4bd25f42a6ef41",
+      "rtl_sha256": "ff627a16ac5df0a7926d80a87b34787abbb4fb96d2422a231d63e0e76844ab5c"
+    },
+    {
+      "generated_report": "build/step4-review-20261031/nangate45.json",
+      "inherited_report": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/nangate45.report.json",
+      "rtl": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/nangate45.sv",
+      "register_bits": 128,
+      "register_count": 2,
+      "graph_sha256": "78707b5cade9890e4e4e2b33a5b50ef15c06f1393e1cb478bd320e8e06353c54",
+      "schedule_sha256": "03ba6f3b64cfe61535e3cc8ebcf6f2c6b915bf733cd8a5e92e4bd25f42a6ef41",
+      "rtl_sha256": "ff627a16ac5df0a7926d80a87b34787abbb4fb96d2422a231d63e0e76844ab5c"
+    },
+    {
+      "generated_report": "build/step4-review-20261031/sky130hd.json",
+      "inherited_report": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/sky130hd.report.json",
+      "rtl": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/sky130hd.sv",
+      "register_bits": 128,
+      "register_count": 2,
+      "graph_sha256": "78707b5cade9890e4e4e2b33a5b50ef15c06f1393e1cb478bd320e8e06353c54",
+      "schedule_sha256": "03ba6f3b64cfe61535e3cc8ebcf6f2c6b915bf733cd8a5e92e4bd25f42a6ef41",
+      "rtl_sha256": "ff627a16ac5df0a7926d80a87b34787abbb4fb96d2422a231d63e0e76844ab5c"
+    },
+    {
+      "generated_report": "build/step4-review-20261031/gf180.json",
+      "inherited_report": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/gf180.report.json",
+      "rtl": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/gf180.sv",
+      "register_bits": 128,
+      "register_count": 2,
+      "graph_sha256": "78707b5cade9890e4e4e2b33a5b50ef15c06f1393e1cb478bd320e8e06353c54",
+      "schedule_sha256": "03ba6f3b64cfe61535e3cc8ebcf6f2c6b915bf733cd8a5e92e4bd25f42a6ef41",
+      "rtl_sha256": "ff627a16ac5df0a7926d80a87b34787abbb4fb96d2422a231d63e0e76844ab5c"
+    },
+    {
+      "generated_report": "build/step4-review-20261031/vul-native/sim/top.logic.cpp.pipeline_multiply.cpp.arithmetic.json",
+      "inherited_report": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/vul-native/sim/top.logic.cpp.pipeline_multiply.cpp.arithmetic.json",
+      "rtl": "build/step4-review-20261031/vul-kernel.sv",
+      "register_bits": 129,
+      "register_count": 3,
+      "graph_sha256": "aaef7fcb9f27cd641291f590a8dfc9c4841d3118bd50cc20f45540b888fa0346",
+      "schedule_sha256": "ddebe117f7b2a688565898eb7593026ebc0082506a08a80d7deb6910dff13bdd",
+      "rtl_sha256": "1a1be0e68f5883ad000f1b8be31f5952de949655a091d9b19965b9620b767364",
+      "embedded_wrapper": "build/step4-review-20261031/vul-native/sim/top.sv",
+      "byte_range": [
+        1539,
+        10182
+      ],
+      "inherited_rtl": "experiments/arithmetic/evidence/step4_interfaces_v1/accepted/vul-native/sim/top.logic.cpp.pipeline_multiply.cpp.arithmetic.kernel.sv",
+      "annotation_prefix_from": "/home/zyrv/vulsim/build/step4-review-20261031/vul-native",
+      "annotation_prefix_to": "/home/zyrv/vulsim/build/step4-interfaces-20261030/acceptance/vul-native"
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/home/zyrv/vulsim/build/step4-rtlzz/predicate-expand",
+        "--input",
+        "/home/zyrv/vulsim/build/step4-interfaces-20261030/acceptance/cli.logic.cpp",
+        "--top",
+        "top",
+        "--vullib",
+        "/home/zyrv/vulsim/vullib",
+        "--release",
+        "--arithmetic-request",
+        "/home/zyrv/vulsim/experiments/arithmetic/evidence/step4_interfaces_v1/accepted/asap7.request.json",
+        "--arithmetic-report",
+        "/home/zyrv/vulsim/build/step4-review-20261031/asap7.json",
+        "-o",
+        "/home/zyrv/vulsim/build/step4-review-20261031/asap7.sv"
+      ],
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/zyrv/vulsim/build/step4-rtlzz/predicate-expand",
+        "--input",
+        "/home/zyrv/vulsim/build/step4-interfaces-20261030/acceptance/cli.logic.cpp",
+        "--top",
+        "top",
+        "--vullib",
+        "/home/zyrv/vulsim/vullib",
+        "--release",
+        "--arithmetic-request",
+        "/home/zyrv/vulsim/experiments/arithmetic/evidence/step4_interfaces_v1/accepted/nangate45.request.json",
+        "--arithmetic-report",
+        "/home/zyrv/vulsim/build/step4-review-20261031/nangate45.json",
+        "-o",
+        "/home/zyrv/vulsim/build/step4-review-20261031/nangate45.sv"
+      ],
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/zyrv/vulsim/build/step4-rtlzz/predicate-expand",
+        "--input",
+        "/home/zyrv/vulsim/build/step4-interfaces-20261030/acceptance/cli.logic.cpp",
+        "--top",
+        "top",
+        "--vullib",
+        "/home/zyrv/vulsim/vullib",
+        "--release",
+        "--arithmetic-request",
+        "/home/zyrv/vulsim/experiments/arithmetic/evidence/step4_interfaces_v1/accepted/sky130hd.request.json",
+        "--arithmetic-report",
+        "/home/zyrv/vulsim/build/step4-review-20261031/sky130hd.json",
+        "-o",
+        "/home/zyrv/vulsim/build/step4-review-20261031/sky130hd.sv"
+      ],
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/zyrv/vulsim/build/step4-rtlzz/predicate-expand",
+        "--input",
+        "/home/zyrv/vulsim/build/step4-interfaces-20261030/acceptance/cli.logic.cpp",
+        "--top",
+        "top",
+        "--vullib",
+        "/home/zyrv/vulsim/vullib",
+        "--release",
+        "--arithmetic-request",
+        "/home/zyrv/vulsim/experiments/arithmetic/evidence/step4_interfaces_v1/accepted/gf180.request.json",
+        "--arithmetic-report",
+        "/home/zyrv/vulsim/build/step4-review-20261031/gf180.json",
+        "-o",
+        "/home/zyrv/vulsim/build/step4-review-20261031/gf180.sv"
+      ],
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/zyrv/vulsim/build/step4-rtlzz/predicate-expand",
+        "--input",
+        "/home/zyrv/vulsim/build/step4-interfaces-20261030/acceptance/cli.logic.cpp",
+        "--top",
+        "top",
+        "--vullib",
+        "/home/zyrv/vulsim/vullib",
+        "--release",
+        "--arithmetic-request",
+        "/home/zyrv/vulsim/experiments/arithmetic/evidence/step4_interfaces_v1/accepted/unknown_field.request.json",
+        "--arithmetic-report",
+        "/home/zyrv/vulsim/build/step4-review-20261031/unknown_field.failure.json",
+        "-o",
+        "/home/zyrv/vulsim/build/step4-review-20261031/unknown_field.sv"
+      ],
+      "expected_exit_code": 1,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "invalid_request: unknown request field: rounding\n"
+    },
+    {
+      "argv": [
+        "/home/zyrv/vulsim/build/step4-rtlzz/predicate-expand",
+        "--input",
+        "/home/zyrv/vulsim/build/step4-interfaces-20261030/acceptance/cli.logic.cpp",
+        "--top",
+        "top",
+        "--vullib",
+        "/home/zyrv/vulsim/vullib",
+        "--release",
+        "--arithmetic-request",
+        "/home/zyrv/vulsim/experiments/arithmetic/evidence/step4_interfaces_v1/accepted/missing_model.request.json",
+        "--arithmetic-report",
+        "/home/zyrv/vulsim/build/step4-review-20261031/missing_model.failure.json",
+        "-o",
+        "/home/zyrv/vulsim/build/step4-review-20261031/missing_model.sv"
+      ],
+      "expected_exit_code": 1,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Error: cost: cost_uncovered: backend model bundle is required; no fixed-cost fallback\n"
+    },
+    {
+      "argv": [
+        "/home/zyrv/vulsim/build/vulrtlgen",
+        "-m",
+        "/home/zyrv/vulsim/experiments/arithmetic/backend_probe/Main.utb",
+        "-f",
+        "-o",
+        "/home/zyrv/vulsim/build/step4-review-20261031/vul-native",
+        "--arithmetic-request",
+        "/home/zyrv/vulsim/experiments/arithmetic/evidence/step4_interfaces_v1/accepted/vul.request.json"
+      ],
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "stdout": "mization: iteration 8/8: simplifyWidthOperations\n[vulrtlgen] module MulProbe_sim_top: RTLzz backend optimization: iteration 8/8: mergeCommonExpressions \n[vulrtlgen] module MulProbe_sim_top: RTLzz backend optimization: iteration 8/8: mergeCommonExpressions\n[vulrtlgen] module MulProbe_sim_top: RTLzz backend optimization: iteration 8/8: foldAssignChains      \n[vulrtlgen] module MulProbe_sim_top: RTLzz backend optimization: iteration 8/8: foldAssignChains\n[vulrtlgen] module MulProbe_sim_top: RTLzz backend optimization: iteration 8/8: eliminateDeadNodes\n[vulrtlgen] module MulProbe_sim_top: RTLzz backend optimization: iteration 8/8: normalizeBooleanControl\n[vulrtlgen] Summary:\n[vulrtlgen] copying vul library files from ./vullib to /home/zyrv/vulsim/build/step4-review-20261031/vul-native\n[vulrtlgen] generation complete: output=\"/home/zyrv/vulsim/build/step4-review-20261031/vul-native\"; top file=\"/home/zyrv/vulsim/build/step4-review-20261031/vul-native/sim/top.sv\"; top module=MulProbe_sim_top\n",
+      "stderr": "[vulrtlgen] module MulProbe_sim_top: pipeline multiply: latency=2, native RTLZZ\n"
+    }
+  ],
+  "new_physical_calls": 0,
+  "new_RTL_simulation": false,
+  "functional_evidence": "inherited unchanged v1 trace, not a new simulation"
+}

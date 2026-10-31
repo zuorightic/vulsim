@@ -1,0 +1,45 @@
+{
+  "version": "step5-register-placement-study-v1",
+  "scope": "functional/model-only independent placement acceptance; no PPA or production candidate change",
+  "source": "#include \"fixint.hpp\"\nInt<32> a,b; Int<64> y; bool iv,ov;\n#pragma input_port a\n#pragma input_port b\n#pragma input_port iv\n#pragma output_port y\n#pragma output_port ov\nvoid mul_kernel(){y=a*b;}\n",
+  "source_name": "mul_kernel.logic.cpp",
+  "candidate": "mul32_split16",
+  "template_version": "mul32-split16-v1",
+  "split_version": "partial-middle-high-groups-v1",
+  "L": 2,
+  "II": 1,
+  "group_names": [
+    "partial_products",
+    "middle_reduction",
+    "high_reduction_and_concat"
+  ],
+  "enumeration": "lexicographic Cartesian product of stages {0,1} for the three legal groups; outer nodes retain production stage map",
+  "default_cap": "production frozen simple-cost T0 * 105/100",
+  "diagnostic_cap": 30,
+  "diagnostic_cap_unit": "simple-cost abstract units; not ps",
+  "diagnostic_scope": "feasibility only; no altered C/D choice, no claim of production preference between diagnostic-feasible placements",
+  "selection": "retain frozen compiler selection and cross-check against exhaustive minimum peak then 5%/register policy within declared scope",
+  "functional": {
+    "seed": 20261028,
+    "random_vectors": 20000,
+    "reset_indices": [
+      0,
+      400,
+      401,
+      1000,
+      8000,
+      16000
+    ]
+  },
+  "resource_scope": {
+    "synth": 0,
+    "grt": 0,
+    "final": 0,
+    "support_timeout_s": 300,
+    "threads": 2
+  },
+  "parent_freeze": {
+    "path": "experiments/arithmetic/mul_split_freeze_v1.json",
+    "sha256": "6dc97022e8fca8a48f899525f9c2bbbb56bfa285b88098191fa8fa197c2cedbf"
+  }
+}

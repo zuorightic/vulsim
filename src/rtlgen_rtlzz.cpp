@@ -60,7 +60,8 @@ LogicRTLResult appendLogicRTL(
     int unroll_limit,
     bool release,
     bool use_circt,
-    std::function<void(const std::string &)> progress_callback
+    std::function<void(const std::string &)> progress_callback,
+    const std::string &arithmetic_request_file
 ) {
     vector<string> pipeline_debug;
     std::map<string, vector<std::uint64_t>> output_reset_values;
@@ -83,7 +84,8 @@ LogicRTLResult appendLogicRTL(
         const string step = "pipeline " + unit.name + ": latency=" + std::to_string(unit.latency) + (use_circt ? ", CIRCT" : ", native RTLZZ");
         if (progress_callback) progress_callback(step);
         else std::cerr << "[vulrtlgen] module " << module.simClassName() << ": " << step << "\n";
-        auto compiled = generateLogicRTLWithRTLzz(path, unit.top_function, lib_include_dir, unit.bindings, unroll_limit, release, use_circt, progress_callback, unit.latency - 1, true, reset_inputs.output_reset_values, false, unit.input_valid_name, unit.output_valid_name);
+        auto compiled = generateLogicRTLWithRTLzz(path, unit.top_function, lib_include_dir, unit.bindings, unroll_limit, release, use_circt, progress_callback, unit.latency - 1, true, reset_inputs.output_reset_values, false, unit.input_valid_name, unit.output_valid_name, arithmetic_request_file);
+        if(!compiled.arithmetic_report.empty()){std::ofstream report(path+".arithmetic.json");if(!report)throw VulException("Cannot write arithmetic report");report<<compiled.arithmetic_report;}
         if (!compiled.ok) {
             LogicRTLResult error;
             error.ok = false;
@@ -144,8 +146,10 @@ LogicRTLResult appendLogicRTL(
         unroll_limit,
         release,
         use_circt,
-        std::move(progress_callback)
+        std::move(progress_callback),
+        0,false,{},false,{},{},result.pipelines.empty()?arithmetic_request_file:std::string{}
     );
+    if(!logic_rtl.arithmetic_report.empty()){std::ofstream report(logic_hls_filepath+".arithmetic.json");if(!report)throw VulException("Cannot write arithmetic report");report<<logic_rtl.arithmetic_report;}
     if (!logic_rtl.ok) {
         LogicRTLResult out;
         out.ok = false;

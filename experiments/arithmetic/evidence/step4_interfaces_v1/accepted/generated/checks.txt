@@ -1,0 +1,16 @@
+two atomic Mul regions W=8 full=16; independent provider cost; metadata/shape/op/reference negatives passed
+two atomic Mul regions W=16 full=32; independent provider cost; metadata/shape/op/reference negatives passed
+two atomic Mul regions W=32 full=64; independent provider cost; metadata/shape/op/reference negatives passed
+two atomic Mul regions W=64 full=128; independent provider cost; metadata/shape/op/reference negatives passed
+two atomic Mul regions W=128 full=256; independent provider cost; metadata/shape/op/reference negatives passed
+two atomic Mul regions W=12 full=24; independent provider cost; metadata/shape/op/reference negatives passed
+two atomic Mul regions W=24 full=48; independent provider cost; metadata/shape/op/reference negatives passed
+two atomic Mul regions W=48 full=96; independent provider cost; metadata/shape/op/reference negatives passed
+two atomic Mul regions W=96 full=192; independent provider cost; metadata/shape/op/reference negatives passed
+request reject 0 template_ineligible
+request reject 1 template_ineligible
+request reject 2 invalid_request
+request reject 3 invalid_request
+request reject 4 invalid_request
+request reject 5 cost_uncovered
+request reject 6 template_ineligible

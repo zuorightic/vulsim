@@ -1,0 +1,760 @@
+// Copyright (c) 2025 Chino
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+#include "vcpp.hpp"
+
+#include "simgen.h"
+#include "rtlgen.h"
+#include <regex>
+#include "debugmap.hpp"
+#include "argparse.hpp"
+#include "vullib.hpp"
+#include "output_dir.hpp"
+#include "resource_utils.hpp"
+
+#include <filesystem>
+#include <algorithm>
+#include <iostream>
+#include <fstream>
+#include <deque>
+#include <functional>
+#include <memory>
+#include <unordered_set>
+#include <vector>
+#include <string>
+#include <cerrno>
+#include <charconv>
+#include <cstdint>
+#include <cstring>
+#ifndef _WIN32
+#include <fcntl.h>
+#include <poll.h>
+#include <sys/wait.h>
+#include <unistd.h>
+#endif
+
+namespace {
+unsigned positiveCount(const std::string& text, const char* option) {
+    unsigned value = 0;
+    const auto parsed = std::from_chars(text.data(), text.data() + text.size(), value);
+    if (parsed.ec != std::errc{} || parsed.ptr != text.data() + text.size() || !value)
+        throw VulException(std::string(option) + " requires a positive integer");
+    return value;
+}
+
+class TaskDashboard {
+public:
+    TaskDashboard(unsigned worker_count, unsigned total)
+        : total_(total), workers_(worker_count) {
+#ifndef _WIN32
+        interactive_ = isatty(STDOUT_FILENO) != 0;
+#endif
+        if (interactive_) render();
+        else printProgress();
+    }
+
+    void start(unsigned worker, const std::string &module, const std::string &stage) {
+        workers_[worker] = {module, stage, true};
+        refresh();
+    }
+    void update(unsigned worker, const std::string &stage) {
+        if (worker < workers_.size() && workers_[worker].active) workers_[worker].stage = stage;
+        refresh();
+    }
+    void complete(unsigned worker, bool failed) {
+        ++completed_;
+        if (failed) ++failed_;
+        if (worker < workers_.size()) workers_[worker] = {{}, failed ? "failed" : "completed", false};
+        refresh();
+    }
+    unsigned failed() const { return failed_; }
+
+private:
+    struct Worker { std::string module; std::string stage; bool active = false; };
+    bool interactive_;
+    unsigned total_;
+    unsigned completed_ = 0;
+    unsigned failed_ = 0;
+    std::vector<Worker> workers_;
+
+    std::string progress() const {
+        return "[vulrtlgen] Tasks: " + std::to_string(completed_) + "/" + std::to_string(total_) +
+               " completed, " + std::to_string(failed_) + " failed";
+    }
+    std::string workerLine(unsigned index) const {
+        const Worker &worker = workers_[index];
+        if (!worker.active) return "Worker " + std::to_string(index + 1) + ": idle";
+        return "Worker " + std::to_string(index + 1) + ": module " + worker.module + " : + " + worker.stage;
+    }
+    void render() const {
+        const unsigned rows = static_cast<unsigned>(workers_.size()) + 1;
+        if (rendered_) std::cout << "\033[" << rows << "A";
+        std::cout << "\r\033[2K" << progress() << '\n';
+        for (unsigned index = 0; index < workers_.size(); ++index)
+            std::cout << "\r\033[2K" << workerLine(index) << '\n';
+        std::cout.flush();
+        rendered_ = true;
+    }
+    void printProgress() const {
+        std::cout << progress() << std::endl;
+        for (unsigned index = 0; index < workers_.size(); ++index)
+            if (workers_[index].active) std::cout << workerLine(index) << std::endl;
+    }
+    void refresh() const { if (interactive_) render(); else printProgress(); }
+    mutable bool rendered_ = false;
+};
+
+class TaskReporter {
+public:
+    explicit TaskReporter(int fd = -1, std::string *direct_errors = nullptr)
+        : fd_(fd), direct_errors_(direct_errors) {}
+    void progress(const std::string &message) const { send('P', message); }
+    void error(const std::string &message) const {
+        if (fd_ < 0 && direct_errors_) *direct_errors_ += message;
+        else if (fd_ < 0) std::cerr << message << std::flush;
+        else send('E', message);
+    }
+private:
+    int fd_;
+    std::string *direct_errors_;
+    void send(char kind, const std::string &message) const {
+#ifdef _WIN32
+        (void)kind;
+        (void)message;
+        return;
+#else
+        if (fd_ < 0) return;
+        const std::uint32_t size = static_cast<std::uint32_t>(message.size());
+        char header[5] = {kind, 0, 0, 0, 0};
+        std::memcpy(header + 1, &size, sizeof(size));
+        auto write_all = [&](const char *data, std::size_t remaining) {
+            while (remaining) {
+                const ssize_t written = write(fd_, data, remaining);
+                if (written <= 0) return;
+                data += written;
+                remaining -= static_cast<std::size_t>(written);
+            }
+        };
+        write_all(header, sizeof(header));
+        write_all(message.data(), message.size());
+#endif
+    }
+};
+
+// Fork only from the single-threaded coordinator; workers own all RTLzz state.
+class ModuleTasks {
+public:
+    struct Failure { std::string module; std::string output; };
+    ModuleTasks(unsigned limit, unsigned total)
+        : limit_(limit), dashboard_(limit > 1 ? std::make_unique<TaskDashboard>(limit, total) : nullptr) {
+#ifdef _WIN32
+        if (limit > 1) throw VulException("Parallel module processes require a POSIX platform");
+#endif
+    }
+    ~ModuleTasks() {
+#ifndef _WIN32
+        for (auto &child : children_) {
+            if (child.read_fd >= 0) close(child.read_fd);
+            int status = 0;
+            while (waitpid(child.pid, &status, 0) < 0 && errno == EINTR) {}
+        }
+#endif
+    }
+
+    template<class Function> void launch(const std::string &module, Function function) {
+        if (limit_ == 1) {
+            std::string errors;
+            TaskReporter reporter(-1, &errors);
+            const int status = function(reporter);
+            if (status != 0) failures_.push_back({module, errors.empty() ? "Module task returned failure.\n" : std::move(errors)});
+            return;
+        }
+#ifndef _WIN32
+        while (children_.size() >= limit_) waitForEvent();
+        int pipes[2];
+        if (pipe(pipes) != 0) throw VulException("Failed to create module task progress pipe");
+        std::cout.flush();
+        std::cerr.flush();
+        const pid_t pid = fork();
+        if (pid < 0) {
+            close(pipes[0]); close(pipes[1]);
+            throw VulException("Failed to start module task");
+        }
+        const unsigned worker = next_worker_++ % limit_;
+        if (pid == 0) {
+            close(pipes[0]);
+            int status = 1;
+            TaskReporter reporter(pipes[1]);
+            try { status = function(reporter); }
+            catch (const std::exception& error) { reporter.error(std::string("ERROR: ") + error.what() + "\n"); }
+            catch (...) { reporter.error("ERROR: Unknown module task failure\n"); }
+            close(pipes[1]);
+            _exit(status);
+        }
+        close(pipes[1]);
+        const int flags = fcntl(pipes[0], F_GETFL, 0);
+        if (flags >= 0) fcntl(pipes[0], F_SETFL, flags | O_NONBLOCK);
+        children_.push_back({pid, pipes[0], worker, module});
+        dashboard_->start(worker, module, "starting");
+#endif
+    }
+
+    bool finish() {
+#ifndef _WIN32
+        while (!children_.empty()) waitForEvent();
+#endif
+        return failures_.empty();
+    }
+    const std::vector<Failure> &failures() const { return failures_; }
+
+private:
+    unsigned limit_;
+    std::unique_ptr<TaskDashboard> dashboard_;
+    std::vector<Failure> failures_;
+#ifndef _WIN32
+    struct Child {
+        pid_t pid;
+        int read_fd;
+        unsigned worker;
+        std::string module;
+        std::vector<char> received;
+        std::string errors;
+    };
+    std::vector<Child> children_;
+    unsigned next_worker_ = 0;
+
+    void consume(Child &child) {
+        char buffer[4096];
+        for (;;) {
+            const ssize_t count = read(child.read_fd, buffer, sizeof(buffer));
+            if (count > 0) child.received.insert(child.received.end(), buffer, buffer + count);
+            else if (count == 0) { close(child.read_fd); child.read_fd = -1; break; }
+            else if (errno == EAGAIN || errno == EWOULDBLOCK) break;
+            else if (errno == EINTR) continue;
+            else { close(child.read_fd); child.read_fd = -1; break; }
+        }
+        std::size_t offset = 0;
+        while (child.received.size() - offset >= 5) {
+            std::uint32_t size = 0;
+            std::memcpy(&size, child.received.data() + offset + 1, sizeof(size));
+            if (size > 16 * 1024 * 1024) throw VulException("Invalid module task progress record");
+            if (child.received.size() - offset < 5 + size) break;
+            const std::string message(child.received.data() + offset + 5, size);
+            if (child.received[offset] == 'P') dashboard_->update(child.worker, message);
+            else if (child.received[offset] == 'E') child.errors += message;
+            offset += 5 + size;
+        }
+        if (offset) child.received.erase(child.received.begin(), child.received.begin() + offset);
+    }
+    void consumeAll() { for (auto &child : children_) if (child.read_fd >= 0) consume(child); }
+    void reapFinished() {
+        for (;;) {
+            int status = 0;
+            const pid_t pid = waitpid(-1, &status, WNOHANG);
+            if (pid == 0) return;
+            if (pid < 0) { if (errno == EINTR) continue; if (errno == ECHILD) return; throw VulException("Failed to wait for module task"); }
+            const auto found = std::find_if(children_.begin(), children_.end(), [pid](const Child &child) { return child.pid == pid; });
+            if (found == children_.end()) continue;
+            while (found->read_fd >= 0) consume(*found);
+            const bool failed = !WIFEXITED(status) || WEXITSTATUS(status) != 0;
+            if (failed) {
+                if (WIFSIGNALED(status)) found->errors += "Terminated by signal " + std::to_string(WTERMSIG(status)) + "\n";
+                if (found->errors.empty()) found->errors = "Module task returned failure without diagnostic output.\n";
+                failures_.push_back({found->module, std::move(found->errors)});
+            }
+            dashboard_->complete(found->worker, failed);
+            children_.erase(found);
+        }
+    }
+    void waitForEvent() {
+        consumeAll();
+        reapFinished();
+        if (children_.empty()) return;
+        std::vector<pollfd> poll_fds;
+        for (const auto &child : children_) if (child.read_fd >= 0) poll_fds.push_back({child.read_fd, POLLIN | POLLHUP, 0});
+        if (!poll_fds.empty()) {
+            int result;
+            do { result = poll(poll_fds.data(), poll_fds.size(), 100); } while (result < 0 && errno == EINTR);
+            if (result < 0) throw VulException("Failed to read module task progress");
+        }
+        consumeAll();
+        reapFinished();
+    }
+#endif
+};
+} // namespace
+
+inline static void writeLinesToFile(const std::vector<std::string> &lines, const std::string &filepath) {
+    const std::filesystem::path target_path(filepath);
+    const std::filesystem::path parent_dir = target_path.parent_path();
+    if (!parent_dir.empty()) {
+        std::error_code ec;
+        std::filesystem::create_directories(parent_dir, ec);
+        if (ec) {
+            throw VulException("Failed to create directory: " + parent_dir.string() + ", reason: " + ec.message());
+        }
+    }
+    std::ofstream file(filepath);
+    if (!file.is_open()) {
+        throw VulException("Failed to open file for writing: " + filepath);
+    }
+    for (const auto &line : lines) {
+        file << line;
+        if (line.empty() || line.back() != '\n') {
+            file << "\n";
+        }
+    }
+    file.close();
+}
+
+inline static std::string joinNames(const std::vector<std::string> &names) {
+    if (names.empty()) {
+        return "<not provided by RTLzz>";
+    }
+    std::string out;
+    for (size_t i = 0; i < names.size(); ++i) {
+        if (i > 0) {
+            out += ", ";
+        }
+        out += names[i];
+    }
+    return out;
+}
+
+namespace {
+struct ArrayRTLVariant {
+    shared_ptr<VulStaticModuleInstance> module;
+    vector<string> ports;
+    string implementation;
+};
+string coordinateCondition(const VulStaticModuleInstance &module) {
+    string out;
+    const auto coords = module.coordinateContext();
+    for (size_t i = 0; i < coords.size(); ++i) {
+        if (i) out += " && ";
+        out += "__vul_idx_" + std::to_string(i) + " == " + std::to_string(coords[i]);
+    }
+    return out;
+}
+vector<string> arrayRTLWrapper(const vector<ArrayRTLVariant> &variants) {
+    const auto &first = *variants.front().module;
+    struct Port { string direction, high, name, length; bool packed = false; };
+    vector<vector<Port>> shapes;
+    const std::regex syntax(R"(^\s*(input|output)\s+(?:\[([^:]+):0\]\s+)?([A-Za-z_][A-Za-z_0-9]*)(?:\[([^\]]+)\])?\s*,?\s*$)");
+    for (const auto &variant : variants) {
+        vector<Port> ports;
+        for (const auto &line : variant.ports) {
+            std::smatch match;
+            if (!std::regex_match(line, match, syntax)) throw VulException("Cannot parameterize RTL port: " + line);
+            ports.push_back({match[1], match[2].matched ? match[2].str() : "0", match[3], match[4], match[2].matched});
+        }
+        if (!shapes.empty() && ports.size() != shapes.front().size()) throw VulException("Coordinate-dependent interface port names are inconsistent");
+        shapes.push_back(std::move(ports));
+    }
+    vector<string> out{"`timescale 1ns/1ps\n", "module " + first.simClassName() + " #(\n"};
+    const auto coords = first.coordinateContext();
+    for (size_t i = 0; i < coords.size(); ++i)
+        out.push_back("parameter int unsigned __vul_idx_" + std::to_string(i) + " = 0" + (i + 1 == coords.size() ? "" : ",") + "\n");
+    out.push_back(") (\n");
+    auto select = [&](size_t port, bool length) {
+        const string fallback = length ? shapes.back()[port].length : shapes.back()[port].high;
+        bool same = true;
+        for (const auto &shape : shapes) if ((length ? shape[port].length : shape[port].high) != fallback) same = false;
+        if (same) return fallback;
+        string expression = fallback;
+        for (size_t i = variants.size() - 1; i-- > 0;) {
+            const string value = length ? shapes[i][port].length : shapes[i][port].high;
+            expression = "((" + coordinateCondition(*variants[i].module) + ") ? " + value + " : " + expression + ")";
+        }
+        return expression;
+    };
+    for (size_t p = 0; p < shapes.front().size(); ++p) {
+        const auto &port = shapes.front()[p];
+        bool packed = false;
+        for (const auto &shape : shapes) {
+            if (shape[p].name != port.name || shape[p].direction != port.direction || shape[p].length.empty() != port.length.empty())
+                throw VulException("Coordinate-dependent interface shape is incompatible: " + port.name);
+            packed |= shape[p].packed;
+        }
+        out.push_back(port.direction + " " + (packed ? "[" + select(p, false) + ":0] " : "") + port.name
+            + (port.length.empty() ? "" : "[" + select(p, true) + "]") + (p + 1 == shapes.front().size() ? "" : ",") + "\n");
+    }
+    out.push_back(");\n");
+    for (const auto &[name, index] : first.parameter_coordinate_indices)
+        out.push_back("localparam " + name + " = __vul_idx_" + std::to_string(index) + ";\n");
+    string valid;
+    for (size_t v = 0; v < variants.size(); ++v) {
+        const string condition = coordinateCondition(*variants[v].module);
+        if (!valid.empty()) valid += " || ";
+        valid += "(" + condition + ")";
+        out.push_back("generate if (" + condition + ") begin : __vul_variant_" + std::to_string(v) + "\n");
+        out.push_back(variants[v].implementation + " __implementation (\n");
+        for (size_t p = 0; p < shapes.front().size(); ++p) {
+            const auto &name = shapes.front()[p].name;
+            out.push_back("." + name + "(" + name + ")" + (p + 1 == shapes.front().size() ? "" : ",") + "\n");
+        }
+        out.push_back(");\nend endgenerate\n");
+    }
+    out.push_back("initial begin if (!(" + valid + ")) $fatal(1, \"Invalid array coordinate parameters\"); end\nendmodule\n");
+    return out;
+}
+}
+
+static int runVulRTLGen(int argc, char * argv[]) {
+
+    argparse::ArgumentParser parser("vulrtlgen", "Vul RTL Generator");
+    parser.add_argument("-t", "--top")
+        .help("sets the .vul top module file")
+        .default_value(std::string(""));
+    parser.add_argument("-m", "--main")
+        .help("sets the .utb TestMain file used to generate a Verilator main cpp")
+        .default_value(std::string(""));
+    parser.add_argument("-o", "--out")
+        .help("sets the output directory for generated code (default: ./rtlout)")
+        .default_value(std::string("./rtlout"));
+    parser.add_argument("-l", "--lib")
+        .help("sets the directory for runtime library files (default: ./vullib)")
+        .default_value(std::string("./vullib"));
+    parser.add_argument("-p", "--project")
+        .help("sets the first directory searched for header.uh or header/**/*.uh, before Main/Top PROJECT and the Top directory")
+        .default_value(std::string(""));
+    parser.add_argument("-j")
+        .help("maximum concurrent module processes (default: 1)")
+        .default_value(std::string("1"));
+    parser.add_argument("-r", "--release")
+        .help("emit RTL without intermediate C++ or debug files")
+        .default_value(false)
+        .implicit_value(true);
+    parser.add_argument("--arithmetic-request").default_value(std::string{}).help("Versioned arithmetic JSON request for PIPELINE kernels or a combinational logic unit; reports are saved next to generated logic sources");
+    parser.add_argument("--circt")
+        .help("emit ordinary and pipeline RTL through the CIRCT HW/Comb/Seq backend")
+        .default_value(false)
+        .implicit_value(true);
+    parser.add_argument("-f", "--force")
+        .help("overwrite a non-empty output directory without prompting")
+        .default_value(false)
+        .implicit_value(true);
+    try {
+        parser.parse_args(argc, argv);
+    } catch (const std::exception &e) {
+        std::cerr << "Argument parsing error: " << e.what() << std::endl;
+        std::cerr << parser.help().str() << std::endl;
+        return 1;
+    }
+
+    const bool release = parser.get<bool>("--release");
+    const bool use_circt = parser.get<bool>("--circt");
+    const auto arithmetic_request_file = parser.get<std::string>("--arithmetic-request");
+    string top_file = parser.get<std::string>("--top");
+    string main_file = parser.get<std::string>("--main");
+    string out_dir = parser.get<std::string>("--out");
+    string proj_dir = parser.get<std::string>("--project");
+    string lib_dir = parser.get<std::string>("--lib");
+    bool force = parser.get<bool>("--force");
+    const unsigned processes = positiveCount(parser.get<std::string>("-j"), "-j");
+
+    if (top_file.empty() && main_file.empty()) {
+        std::cerr << "Error: Specify -t/--top, -m/--main, or a TestMain with TOP(...)." << std::endl;
+        return 1;
+    }
+    VulErrorContextGuard _err{"generating project from " + proj_dir};
+    VulStaticProject project = parseVcppStaticProject(proj_dir, top_file, main_file);
+
+    proj_dir = project.project_dir_path;
+
+    std::filesystem::path out_path(out_dir);
+    if (!prepareOutputDirectory(out_path, out_dir, force)) {
+        return 1;
+    }
+
+    // Determine the unique generated modules before launching workers so the
+    // dashboard can display a stable total task count.
+    std::deque<shared_ptr<VulStaticModuleInstance>> bfs_queue;
+    std::unordered_set<std::string> generated_module_paths;
+    std::unordered_set<std::string> copied_resources;
+    std::vector<shared_ptr<VulStaticModuleInstance>> modules;
+    bfs_queue.push_back(project.top_module_instance);
+    while (!bfs_queue.empty()) {
+        auto mod_instance = bfs_queue.front();
+        bfs_queue.pop_front();
+        for (const auto &child : mod_instance->children) {
+            bfs_queue.push_back(child);
+        }
+
+        const std::string hls_path = mod_instance->rtlConcreteHlsPath();
+        if (!generated_module_paths.insert(hls_path).second) {
+            continue;
+        }
+        modules.push_back(std::move(mod_instance));
+    }
+
+    std::map<string, vector<ArrayRTLVariant>> array_variants;
+    std::map<string, string> shared_implementations;
+    ModuleTasks tasks(processes, static_cast<unsigned>(modules.size()));
+    for (const auto &mod_instance : modules) {
+        const std::string hls_path = mod_instance->rtlConcreteHlsPath();
+
+        VulErrorContextGuard _err("generating code for module instance: " + mod_instance->simClassName());
+
+        if (processes == 1) {
+            std::cout << "[vulrtlgen] module " << mod_instance->simClassName()
+                      << ": generating RTL skeleton and API-inline logic\n";
+        }
+        auto codes = rtlgen::genModuleRTL(
+            *mod_instance,
+            project.global_configlib,
+            project.global_bundlelib,
+            project.global_helper_codes
+        );
+        string implementation = mod_instance->rtlConcreteClassName();
+        bool duplicate_implementation = false;
+        if (!mod_instance->coordinateContext().empty()) {
+            const std::regex own_logic("\\bLogicSubModule_" + implementation + "\\b");
+            const std::regex own_module("\\b" + implementation + "\\b");
+            string signature = mod_instance->rtlSvPath();
+            auto normalized = [&](const string &line) {
+                return std::regex_replace(std::regex_replace(line, own_logic, "__vul_logic"), own_module, "__vul_implementation");
+            };
+            for (const auto &line : codes.logic_hls_codes) signature += normalized(line);
+            for (const auto &unit : codes.pipelines) {
+                signature += unit.name + ":" + std::to_string(unit.latency);
+                for (const auto &line : unit.source) signature += normalized(identifierReplace(line, unit.top_function, "__vul_pipeline_" + unit.name));
+                for (const auto &line : unit.reset_source) signature += normalized(identifierReplace(line, unit.reset_top, "__vul_pipeline_reset_" + unit.name));
+            }
+            signature += "\n// Framework\n";
+            for (const auto &line : codes.rtl_skeleten_codes) signature += normalized(line);
+            auto [shared, inserted] = shared_implementations.emplace(signature, implementation);
+            duplicate_implementation = !inserted;
+            implementation = shared->second;
+        }
+        if (!mod_instance->coordinateContext().empty()) {
+            ArrayRTLVariant variant{mod_instance, {}, implementation};
+            bool in_ports = false;
+            for (const auto &line : codes.rtl_skeleten_codes) {
+                if (line.starts_with("module ")) { in_ports = true; continue; }
+                if (in_ports && line.starts_with(");")) break;
+                if (in_ports) {
+                    string port = line;
+                    while (!port.empty() && (port.back() == '\n' || port.back() == '\r')) port.pop_back();
+                    variant.ports.push_back(std::move(port));
+                }
+            }
+            array_variants[mod_instance->rtlSvPath()].push_back(std::move(variant));
+        }
+        // Shared resources are copied only by the coordinator, once per path.
+        for (const auto& resource : codes.resource_files) {
+            if (!copied_resources.insert(resource).second) continue;
+            const auto source = vulresource::findShallowestProjectResource(
+                std::filesystem::path(proj_dir), resource);
+            const auto destination = out_path / resource;
+            std::filesystem::create_directories(destination.parent_path());
+            std::filesystem::copy_file(source, destination);
+        }
+        tasks.launch(mod_instance->simClassName(), [&](TaskReporter &reporter) -> int {
+        if (duplicate_implementation) return 0;
+        const auto hls_out_path = out_path / hls_path;
+        // The frontend still needs a source file; remove it on every exit in release mode.
+        struct IntermediateCleanup {
+            std::filesystem::path path;
+            bool enabled;
+            ~IntermediateCleanup() {
+                if (enabled) { std::error_code ec; std::filesystem::remove(path, ec); }
+            }
+        } cleanup{hls_out_path, release};
+        writeLinesToFile(codes.logic_hls_codes, hls_out_path.string());
+        if (!release) vulDebugWriteMapToFile(codes.logic_hls_debug_lines, (out_path / (hls_path + ".dbgmap")).string());
+        const auto sv_path = mod_instance->rtlConcreteSvPath();
+        rtlgen::LogicRTLResult rtlzz_result =
+            rtlgen::appendLogicRTL(codes, *mod_instance, hls_out_path.string(), lib_dir,
+                                  1024, release, use_circt,
+                                  processes > 1
+                                      ? std::function<void(const std::string &)>([&reporter](const std::string &step) { reporter.progress(step); })
+                                      : std::function<void(const std::string &)>{}, arithmetic_request_file);
+        if (!rtlzz_result.ok) {
+            std::filesystem::path error_dbg_path;
+            if (!release) {
+                const std::filesystem::path sv_out_path = out_path / sv_path;
+                error_dbg_path =
+                    (sv_out_path.has_parent_path() ? sv_out_path.parent_path() : out_path) / "error.dbg";
+                if (rtlzz_result.error_debug_codelines.empty()) {
+                    rtlzz_result.error_debug_codelines.push_back(
+                        "RTLzz did not provide an error debug snapshot for this failure.\n"
+                    );
+                }
+                writeLinesToFile(rtlzz_result.error_debug_codelines, error_dbg_path.string());
+            }
+            std::string failure;
+            if (!release) {
+                failure += "RTLzz error signal(s): " + joinNames(rtlzz_result.error_signal_names) + "\n";
+                failure += "RTLzz error debug file: " + error_dbg_path.string() + "\n";
+                if (!rtlzz_result.error_signal_debug_text.empty()) {
+                    failure += "RTLzz error signal debug:\n" + rtlzz_result.error_signal_debug_text;
+                    if (failure.back() != '\n') failure += '\n';
+                } else {
+                    failure += "RTLzz error signal debug: <not provided by RTLzz>\n";
+                }
+            }
+            failure += "Error: " + rtlzz_result.error + "\n";
+            reporter.error(failure);
+            return 1;
+        }
+        std::vector<std::string> rtlzz_debug_codelines =
+            std::move(rtlzz_result.debug_codelines);
+        writeLinesToFile(codes.rtl_skeleten_codes, (out_path / sv_path).string());
+        if (!release) vulDebugWriteMapToFile(codes.rtl_skeleten_debug_lines, (out_path / (sv_path + ".dbgmap")).string());
+        if (!release && !rtlzz_debug_codelines.empty()) {
+            writeLinesToFile(rtlzz_debug_codelines, (out_path / (sv_path + ".dbg")).string());
+        }
+        return 0;
+        });
+    }
+    if (!tasks.finish()) {
+        std::cerr << "[vulrtlgen] Summary: " << tasks.failures().size() << " module task(s) failed\n";
+        for (const auto &failure : tasks.failures()) {
+            std::cerr << "[vulrtlgen] Failed module " << failure.module << ":\n" << failure.output;
+            if (failure.output.empty() || failure.output.back() != '\n') std::cerr << '\n';
+        }
+        return 1;
+    }
+
+    for (const auto &[path, variants] : array_variants)
+        writeLinesToFile(arrayRTLWrapper(variants), (out_path / path).string());
+
+    std::cout << "[vulrtlgen] Summary:\n";
+
+    if (!release && !main_file.empty()) {
+        VulErrorContextGuard _err("generating Verilator TestMain cpp");
+        vector<string> testmain_code = rtlgen::genVerilatorTestMainCpp(project);
+        writeLinesToFile(testmain_code, (out_path / "VulTestMain.cpp").string());
+    }
+
+    // copy vullib files to output directory
+    {
+        VulErrorContextGuard _err("copying vul library files");
+        std::cout << "[vulrtlgen] copying vul library files from " << lib_dir << " to " << out_dir << std::endl;
+
+        std::filesystem::path lib_path(lib_dir);
+        if (!std::filesystem::exists(lib_path) || !std::filesystem::is_directory(lib_path)) {
+            throw VulException("Library directory does not exist: " + lib_dir);
+        }
+        for (const auto &filename : VulRTLLibFiles) {
+            std::filesystem::path src_file = lib_path / filename;
+            if (!std::filesystem::exists(src_file) || !std::filesystem::is_regular_file(src_file)) {
+                throw VulException("Runtime library file does not exist: " + src_file.string());
+            }
+            std::filesystem::path dst_file = out_path / filename;
+            std::filesystem::copy_file(src_file, dst_file);
+        }
+    }
+
+    if (!release && !main_file.empty()) {
+        VulErrorContextGuard _err("generating Verilator run script");
+        const std::string top_module_name = project.top_module_instance->simClassName();
+        const std::filesystem::path script_path = out_path / "run.sh";
+        std::ofstream script(script_path);
+        if (!script.is_open()) {
+            throw VulException("Failed to create Verilator run script.");
+        }
+        script << "#!/usr/bin/env bash\n"
+                  "__vulrtlgen_run_main() (\n"
+                  "set -euo pipefail\n"
+                  "SCRIPT_DIR=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" && pwd)\"\n"
+                  "cd \"$SCRIPT_DIR\"\n"
+                  "mapfile -d '' RTL_FILES < <(find . -type f -name '*.sv' -not -path './obj_dir/*' -print0 | sort -z)\n"
+                  "shopt -s nullglob\n"
+                  "DRIVER_SOURCES=(./*.cpp)\n"
+                  "shopt -u nullglob\n"
+                  "if (( ${#RTL_FILES[@]} == 0 )); then\n"
+                  "  echo 'No SystemVerilog files found in the output directory.' >&2\n"
+                  "  exit 1\n"
+                  "fi\n"
+                  "if (( ${#DRIVER_SOURCES[@]} != 1 )); then\n"
+                  "  echo \"Expected exactly one top-level C++ test driver, found ${#DRIVER_SOURCES[@]}.\" >&2\n"
+                  "  printf '  %s\\n' \"${DRIVER_SOURCES[@]}\" >&2\n"
+                  "  exit 1\n"
+                  "fi\n"
+                  "BUILD_LOG=\"$SCRIPT_DIR/verilator_build.log\"\n"
+                  "RUN_LOG=\"$SCRIPT_DIR/simulation.log\"\n"
+                  "DRIVER_SOURCE=\"${DRIVER_SOURCES[0]}\"\n"
+                  "echo \"Building Verilator simulation; log: $BUILD_LOG\"\n"
+                  "if verilator --cc --exe --build --top-module " << top_module_name
+               << " --Mdir obj_dir -CFLAGS '-std=c++20' \"${RTL_FILES[@]}\" \"$DRIVER_SOURCE\" >\"$BUILD_LOG\" 2>&1; then\n"
+                  "  :\n"
+                  "else\n"
+                  "  status=$?\n"
+                  "  echo \"Verilator build failed (exit $status); log: $BUILD_LOG\" >&2\n"
+                  "  cat \"$BUILD_LOG\" >&2\n"
+                  "  exit \"$status\"\n"
+                  "fi\n"
+                  "echo \"Running simulation; log: $RUN_LOG\"\n"
+                  "if \"$SCRIPT_DIR/obj_dir/V" << top_module_name
+               << "\" \"$@\" >\"$RUN_LOG\" 2>&1; then\n"
+                  "  status=0\n"
+                  "else\n"
+                  "  status=$?\n"
+                  "fi\n"
+                  "cat \"$RUN_LOG\"\n"
+                  "if (( status != 0 )); then\n"
+                  "  echo \"Simulation failed (exit $status); log: $RUN_LOG\" >&2\n"
+                  "fi\n"
+                  "exit \"$status\"\n"
+                  ")\n"
+                  "__vulrtlgen_run_dispatch() {\n"
+                  "  local status\n"
+                  "  if __vulrtlgen_run_main \"$@\"; then status=0; else status=$?; fi\n"
+                  "  unset -f __vulrtlgen_run_main __vulrtlgen_run_dispatch\n"
+                  "  return \"$status\"\n"
+                  "}\n"
+                  "if [[ \"${BASH_SOURCE[0]}\" != \"$0\" ]]; then\n"
+                  "  if __vulrtlgen_run_dispatch \"$@\"; then return 0; else return $?; fi\n"
+                  "fi\n"
+                  "__vulrtlgen_run_dispatch \"$@\"\n"
+                  "exit $?\n";
+        script.close();
+        if (!script) {
+            throw VulException("Failed to write Verilator run script.");
+        }
+        std::filesystem::permissions(
+            script_path,
+            std::filesystem::perms::owner_read | std::filesystem::perms::owner_write |
+                std::filesystem::perms::owner_exec | std::filesystem::perms::group_read |
+                std::filesystem::perms::group_exec | std::filesystem::perms::others_read |
+                std::filesystem::perms::others_exec,
+            std::filesystem::perm_options::replace);
+    }
+
+    const std::filesystem::path absolute_out_path =
+        std::filesystem::absolute(out_path).lexically_normal();
+    const std::filesystem::path top_rtl_path =
+        absolute_out_path / project.top_module_instance->rtlSvPath();
+    std::cout << "[vulrtlgen] generation complete: output=\""
+              << absolute_out_path.string() << "\"; top file=\""
+              << top_rtl_path.string() << "\"; top module="
+              << project.top_module_instance->simClassName() << std::endl;
+
+    return 0;
+}
+
+int main(int argc, char * argv[]) {
+    try {
+        return runVulRTLGen(argc, argv);
+    } catch (const VulException &e) {
+        std::cerr << "ERROR: " << e.what() << std::endl;
+    } catch (const std::exception &e) {
+        std::cerr << "ERROR: " << e.what() << std::endl;
+    } catch (...) {
+        std::cerr << "ERROR: Unknown internal error" << std::endl;
+    }
+    return 1;
+}

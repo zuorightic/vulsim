@@ -1,0 +1,34 @@
+#pragma once
+#include "arithmetic_request.hpp"
+#include "backend/beir.hpp"
+#include "rtlzz.hpp"
+#include <vector>
+namespace pred::beir::arithmetic {
+inline constexpr const char* kBackendContract = "native-beir-contract-v1";
+// One static contract shared by expansion, normalization, cost and materialization.
+void validate(const Program&, const std::string& phase, bool circt = false, const std::vector<std::string>& auxiliary_ports = {});
+Program normalizeSelections(Program);
+Program registerOriginalMultipliers(Program);
+int billingWidth(const Program&, const Operand&);
+struct CostEstimate {
+    bool covered = true;
+    double delay = 0;
+    std::uint64_t combinational = 0, state_per_bit = 1;
+    std::string delay_unit = "abstract", area_unit = "abstract";
+    std::string source = "fixed-op-width-v1", reason;
+    int billing_width = 0;
+};
+class CostProvider {
+public:
+    virtual ~CostProvider() = default;
+    virtual CostEstimate node(const Program&, NodeId) const = 0;
+    CostEstimate group(const Program&, const std::vector<NodeId>&) const;
+};
+class FixedCostProvider final : public CostProvider {
+public:
+    CostEstimate node(const Program&, NodeId) const override;
+};
+std::string report(const Program&,const rtlzz::ArithmeticRequest&,
+                   const rtlzz::PipelineReport*, const std::vector<int>&,
+                   const std::string& rtl_text);
+}

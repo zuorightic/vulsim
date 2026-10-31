@@ -1,0 +1,40 @@
+{
+  "version": "pre-step5-budget-plan-v3",
+  "status": "call_funded_upper_scenario; exact_step5_pilot_frozen; bulk_collection_manifest_pending",
+  "case_target_count": 9,
+  "family_count_initial": 19,
+  "reserves": {
+    "prototype_reserve": 34,
+    "repeat_reserve": 8,
+    "retry_reserve": 16
+  },
+  "reserve_interpretation": {
+    "prototype": "36 attempts were reserved across step4-6; the frozen step5 pair consumed 2 synth/grt entries, leaving 34 unspent attempts for remaining prototypes including D2/F1 sensitivity studies; no extra universal six-point term",
+    "repeat": "8 cold-cache synth/grt/final repeat chains; conservative when checkpoint continuation is possible",
+    "retry": "16 cold-cache synth/grt/final retry chains; not permission to retry deterministic failures or exceed one transient retry per record",
+    "supplemental": "until all nine exact case targets and required feature pairs are frozen, reserve 19 x 9 potential supplemental synth/grt records, not zero; add new split templates/boundary variants explicitly",
+    "reuse": "no assumed cross-target, observed-equality or cache savings; only verified complete-identity stage reuse can reduce actual calls"
+  },
+  "gate": "Only exact step5 pilot frozen below. Full check-plan remains blocked until actual library/exact-target manifest is frozen and large-kernel capacity is reviewed. No bulk physical collection authorized by this file.",
+  "target_sensitivity": "Representatives use small predeclared studies; extra points and stages selected from evidence and charged; unknown targets stay uncovered",
+  "time_capacity": "24h wall / 96h actual CPU cumulative; large-kernel capacity must be rechecked at step6; neither a time guarantee nor automatic enlargement",
+  "automatic_limit_increase": false,
+  "supersedes": "pre-step5-budget-plan-v2",
+  "revision_reason": "User-authorized bounded ceilings cover conservative cold-cache upper scenario; no hypothetical reuse credit. Step5 runs exactly two grt chains; remaining prototype reserve covers step6.",
+  "collection_protocol": "characterization_v3.json",
+  "reference_context": {
+    "abc_target_ps": 1500,
+    "sdc_period_ps": 1500
+  },
+  "prior_conservative_scenario": {
+    "forecast_at_step3_v3": {
+      "synth": 462,
+      "grt": 422,
+      "final": 45
+    },
+    "meaning": "historical planning record only; not actual usage, minimum requirement or new authorized ceilings",
+    "evidence": "experiments/arithmetic/evidence/step3_budget/budget_check.json"
+  },
+  "actual_collection_manifest_frozen": false,
+  "step5_collection_manifest": "experiments/arithmetic_dse/configs/step5_pilot_v1.json"
+}

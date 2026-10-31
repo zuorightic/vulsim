@@ -1,0 +1,20 @@
+{
+  "failure_code": "cost_uncovered",
+  "failure_reason": "backend model bundle is required; no fixed-cost fallback",
+  "failure_stage": "cost",
+  "node_id": "",
+  "region_id": "",
+  "request": {
+    "II": 1,
+    "L": 3,
+    "candidate_policy": "core-original-v1",
+    "cost_mode": "backend-model",
+    "model_bundle_sha256": "",
+    "platform_profile_sha256": "a29e056328a495af3f5815e3c56f4e6838eafd4b3f4f7844cc81d82ef99dd3df",
+    "semantic_profile": "arithmetic-semantics-v2",
+    "target_period_ps": 1500,
+    "target_platform": "asap7"
+  },
+  "status": "failed",
+  "version": "arithmetic-structure-report-v1"
+}

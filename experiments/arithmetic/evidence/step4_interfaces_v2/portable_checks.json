@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "version": "step4-report-type-portable-checks-v2",
+  "frozen_index_sha256": "bc87b646bc7ebef824cd0f04a15af8717595a2d239ee79d4c35113206f1ac368",
+  "PATH": "",
+  "build_compiler_EDA_absent": true,
+  "checks": [
+    {
+      "name": "isolated_baseline",
+      "status": "passed",
+      "parent_status": {
+        "physical_v7": "passed",
+        "placement": "passed",
+        "step2": "passed"
+      },
+      "package_bytes": 687411
+    },
+    {
+      "name": "counter_string",
+      "status": "rejected",
+      "hashes_rebound": true,
+      "reason": "ValueError: report type contract: report.pipeline.register_bits requires integer"
+    },
+    {
+      "name": "counter_float",
+      "status": "rejected",
+      "hashes_rebound": true,
+      "reason": "ValueError: report type contract: report.pipeline.register_bits requires integer"
+    },
+    {
+      "name": "counter_boolean",
+      "status": "rejected",
+      "hashes_rebound": true,
+      "reason": "ValueError: report type contract: report.pipeline.register_bits requires integer"
+    },
+    {
+      "name": "counter_negative",
+      "status": "rejected",
+      "hashes_rebound": true,
+      "reason": "ValueError: report type contract: report.pipeline.register_bits minimum"
+    },
+    {
+      "name": "counter_overflow",
+      "status": "rejected",
+      "hashes_rebound": true,
+      "reason": "ValueError: report type contract: report.pipeline.register_bits maximum"
+    },
+    {
+      "name": "isolated_restored",
+      "status": "passed",
+      "parent_status": {
+        "physical_v7": "passed",
+        "placement": "passed",
+        "step2": "passed"
+      },
+      "package_bytes": 687411
+    }
+  ],
+  "negative_checks_rejected": 5,
+  "parent_evidence_files_copied_only_to_temporary_validation_root": true,
+  "new_archive_uses_references_not_parent_copies": true
+}

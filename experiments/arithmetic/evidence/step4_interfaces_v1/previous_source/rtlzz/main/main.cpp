@@ -1,0 +1,380 @@
+#include "rtlzz.hpp"
+
+#include <cctype>
+#include <cstdlib>
+#include <exception>
+#include <filesystem>
+#include <fstream>
+#include <iostream>
+#include <limits>
+#include <string>
+#include <vector>
+
+static void printUsage(const char* prog) {
+    std::cerr << "Usage: " << prog
+              << " <source.cpp> --top <function_name> [--format beir|rtl|portmeta]"
+              << " [--input source.cpp] [--vullib DIR] [--unroll-limit N]"
+              << " [--max-leaf-symbols N] [--latency N] [--clock-name NAME]"
+              << " [--beopt OPT ...] [--circt] [--clang-arg ARG ...] [-o output_file]"
+              << " [--release|-r] [--rtl-debug-file FILE] [--no-rtl-debug]\n";
+    std::cerr << "Required: source.cpp and --top. Default format is rtl.\n";
+    std::cerr << "Default output files append .sv, .beir, or .ptmt to the input file path; use -o - for stdout.\n";
+    std::cerr << "For rtl output, a debug report is emitted by default to <rtl-output>.dbg.\n";
+    std::cerr << "Default --vullib is ./vullib from the current working directory.\n";
+    std::cerr << "Default clang language mode is -std=c++20 unless --clang-arg already sets -std.\n";
+    std::cerr << "Default --max-leaf-symbols is 0 (no artificial S7 leaf-symbol limit).\n";
+    std::cerr << "--latency N inserts N internal register boundaries; external output capture is N+1 cycles. Default is 0.\n";
+}
+
+static std::vector<std::string> splitArgs(const std::string& text) {
+    std::vector<std::string> args;
+    std::string current;
+    bool in_quote = false;
+    char quote = 0;
+    for (char ch : text) {
+        if ((ch == '"' || ch == '\'') && (!in_quote || ch == quote)) {
+            if (in_quote) {
+                in_quote = false;
+                quote = 0;
+            } else {
+                in_quote = true;
+                quote = ch;
+            }
+            continue;
+        }
+        if (std::isspace(static_cast<unsigned char>(ch)) && !in_quote) {
+            if (!current.empty()) {
+                args.push_back(current);
+                current.clear();
+            }
+            continue;
+        }
+        current.push_back(ch);
+    }
+    if (!current.empty()) args.push_back(current);
+    return args;
+}
+
+static constexpr int kMaxUnrollLimit = 1000000;
+
+static bool hasLanguageStandardArg(const std::vector<std::string>& clang_args) {
+    for (const auto& arg : clang_args) {
+        if (arg == "-std" || arg == "--std" ||
+            arg.rfind("-std=", 0) == 0 || arg.rfind("--std=", 0) == 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
+static bool readSourceUnits(const std::string& path,
+                            std::vector<std::string>& units,
+                            std::string& error) {
+    std::ifstream in(path);
+    if (!in) {
+        error = "Cannot open input file: " + path;
+        return false;
+    }
+    std::string line;
+    while (std::getline(in, line)) {
+        units.push_back(line + "\n");
+    }
+    if (!in.eof()) {
+        error = "Failed to read input file: " + path;
+        return false;
+    }
+    return true;
+}
+
+static bool parseUnrollLimit(const std::string& text, int& value, std::string& error) {
+    if (text.empty()) {
+        error = "value is empty";
+        return false;
+    }
+    unsigned long long parsed = 0;
+    for (char ch : text) {
+        if (!std::isdigit(static_cast<unsigned char>(ch))) {
+            error = "value must be a positive decimal integer";
+            return false;
+        }
+        parsed = parsed * 10ULL + static_cast<unsigned long long>(ch - '0');
+        if (parsed > static_cast<unsigned long long>(kMaxUnrollLimit)) {
+            error = "value exceeds maximum supported limit " + std::to_string(kMaxUnrollLimit);
+            return false;
+        }
+    }
+    if (parsed == 0) {
+        error = "value must be greater than zero";
+        return false;
+    }
+    value = static_cast<int>(parsed);
+    return true;
+}
+
+static bool parseLeafSymbolLimit(const std::string& text,
+                                 std::size_t& value,
+                                 std::string& error) {
+    if (text.empty()) {
+        error = "value is empty";
+        return false;
+    }
+    std::size_t parsed = 0;
+    for (char ch : text) {
+        if (!std::isdigit(static_cast<unsigned char>(ch))) {
+            error = "value must be a non-negative decimal integer";
+            return false;
+        }
+        const std::size_t digit = static_cast<std::size_t>(ch - '0');
+        if (parsed > (std::numeric_limits<std::size_t>::max() - digit) / 10) {
+            error = "value is too large";
+            return false;
+        }
+        parsed = parsed * 10 + digit;
+    }
+    value = parsed;
+    return true;
+}
+
+static bool writeLinesToFile(const std::string& output_file,
+                             const std::vector<std::string>& lines,
+                             std::string& error) {
+    std::filesystem::path out_path(output_file);
+    if (out_path.has_parent_path()) {
+        std::error_code ec;
+        std::filesystem::create_directories(out_path.parent_path(), ec);
+        if (ec) {
+            error = "Cannot create output directory: " +
+                    out_path.parent_path().string() + ": " + ec.message();
+            return false;
+        }
+    }
+    std::ofstream ofs(output_file);
+    if (!ofs) {
+        error = "Cannot open output file: " + output_file;
+        return false;
+    }
+    for (const auto& line : lines) ofs << line;
+    return true;
+}
+
+static const char* defaultOutputSuffix(const std::string& format) {
+    if (format == "beir") return ".beir";
+    if (format == "portmeta") return ".ptmt";
+    return ".sv";
+}
+
+static std::string defaultOutputFile(const std::string& source_file,
+                                     const std::string& format) {
+    return source_file + defaultOutputSuffix(format);
+}
+
+static std::string defaultRtlDebugFile(const std::string& source_file,
+                                       const std::string& output_file) {
+    if (output_file.empty() || output_file == "-") return defaultOutputFile(source_file, "rtl") + ".dbg";
+    return output_file + ".dbg";
+}
+
+static int runMain(int argc, char* argv[]) {
+    if (argc < 2) {
+        printUsage(argv[0]);
+        return 1;
+    }
+
+    std::string source_file;
+    std::string top_function;
+    std::string format = "rtl";
+    std::string output_file;
+    std::string rtl_debug_file;
+    std::string vullib_dir;
+    int unroll_limit = 1024;
+    int register_stages = 0;
+    std::string clock_name = "clk";
+    std::size_t max_leaf_symbols = 0;
+    bool emit_rtl_debug = true;
+    bool release = false;
+    bool use_circt = false;
+    std::vector<std::string> clang_args;
+    std::vector<std::string> beopt_args;
+
+    if (const char* env = std::getenv("PREDICATE_EXPAND_CLANG_ARGS")) {
+        auto env_args = splitArgs(env);
+        clang_args.insert(clang_args.end(), env_args.begin(), env_args.end());
+    }
+
+    for (int i = 1; i < argc; ++i) {
+        std::string arg = argv[i];
+        if ((arg == "--input" || arg == "-i") && i + 1 < argc) {
+            source_file = argv[++i];
+        } else if (arg == "--top" && i + 1 < argc) {
+            top_function = argv[++i];
+        } else if (arg == "--format" && i + 1 < argc) {
+            format = argv[++i];
+        } else if ((arg == "--vullib" || arg == "--vullib-dir") && i + 1 < argc) {
+            vullib_dir = argv[++i];
+        } else if (arg == "-o" && i + 1 < argc) {
+            output_file = argv[++i];
+        } else if (arg == "--rtl-debug-file" && i + 1 < argc) {
+            rtl_debug_file = argv[++i];
+            emit_rtl_debug = true;
+        } else if (arg == "--release" || arg == "-r") {
+            release = true;
+        } else if (arg == "--circt") {
+            use_circt = true;
+        } else if (arg == "--no-rtl-debug") {
+            emit_rtl_debug = false;
+        } else if (arg == "--unroll-limit" && i + 1 < argc) {
+            std::string error;
+            std::string value = argv[++i];
+            if (!parseUnrollLimit(value, unroll_limit, error)) {
+                std::cerr << "Invalid --unroll-limit '" << value << "': " << error << "\n";
+                return 1;
+            }
+        } else if (arg == "--latency" && i + 1 < argc) {
+            std::size_t stages = 0;
+            std::string error;
+            if (!parseLeafSymbolLimit(argv[++i], stages, error) || stages >= static_cast<std::size_t>(std::numeric_limits<int>::max())) {
+                std::cerr << "Invalid --latency: expected a non-negative integer less than INT_MAX\n";
+                return 1;
+            }
+            register_stages = static_cast<int>(stages);
+        } else if (arg == "--clock-name" && i + 1 < argc) {
+            clock_name = argv[++i];
+        } else if (arg == "--max-leaf-symbols" && i + 1 < argc) {
+            std::string error;
+            std::string value = argv[++i];
+            if (!parseLeafSymbolLimit(value, max_leaf_symbols, error)) {
+                std::cerr << "Invalid --max-leaf-symbols '" << value
+                          << "': " << error << "\n";
+                return 1;
+            }
+        } else if (arg == "--clang-arg" && i + 1 < argc) {
+            clang_args.push_back(argv[++i]);
+        } else if (arg == "--beopt" && i + 1 < argc) {
+            beopt_args.push_back(argv[++i]);
+        } else if (arg[0] != '-') {
+            source_file = arg;
+        } else {
+            std::cerr << "Unknown or incomplete argument: " << arg << "\n";
+            printUsage(argv[0]);
+            return 1;
+        }
+    }
+
+    if (source_file.empty() || top_function.empty()) {
+        printUsage(argv[0]);
+        return 1;
+    }
+    if (!std::filesystem::exists(source_file)) {
+        std::cerr << "Input file does not exist: " << source_file << "\n";
+        return 1;
+    }
+    if (top_function.find_first_not_of(" \t\r\n") == std::string::npos) {
+        std::cerr << "--top must not be empty\n";
+        return 1;
+    }
+    if (format != "portmeta" && format != "beir" && format != "rtl") {
+        std::cerr << "Unknown format: " << format << "\n";
+        return 1;
+    }
+    if (release) {
+        if (format != "rtl") {
+            std::cerr << "--release requires --format rtl\n";
+            return 1;
+        }
+        emit_rtl_debug = false;
+    }
+    if (output_file.empty()) output_file = defaultOutputFile(source_file, format);
+    if (vullib_dir.empty()) {
+        vullib_dir = (std::filesystem::current_path() / "vullib").string();
+    }
+    if (!hasLanguageStandardArg(clang_args)) {
+        clang_args.push_back("-std=c++20");
+    }
+
+    rtlzz::CompileOptions options;
+    std::string read_error;
+    if (!readSourceUnits(source_file, options.source_codelines, read_error)) {
+        std::cerr << read_error << "\n";
+        return 1;
+    }
+    options.source_name = source_file;
+    options.top_function = top_function;
+    options.unroll_limit = unroll_limit;
+    options.register_stages = register_stages;
+    options.clock_name = clock_name;
+    options.max_leaf_symbols = max_leaf_symbols;
+    options.clang_args = std::move(clang_args);
+    options.beopt_args = std::move(beopt_args);
+    options.use_circt = use_circt;
+    options.vullib_dir = vullib_dir;
+    if (format == "rtl" && emit_rtl_debug) {
+        options.rtl_debug = rtlzz::RtlDebugMode::Text;
+    }
+
+    rtlzz::CompileResult result;
+    if (format == "portmeta") {
+        result = rtlzz::compileToPortMetadata(std::move(options));
+    } else if (format == "beir") {
+        result = rtlzz::compileToBeir(std::move(options));
+    } else {
+        result = rtlzz::compileToRtl(std::move(options));
+    }
+    if (!result.ok()) {
+        std::cerr << "Error: " << result.error << "\n";
+        if (!result.error_signal_debug_text.empty()) {
+            std::cerr << "\nError signal debug:\n"
+                      << result.error_signal_debug_text;
+            if (!result.error_signal_debug_text.empty() &&
+                result.error_signal_debug_text.back() != '\n') {
+                std::cerr << "\n";
+            }
+        }
+        if (format == "rtl" && emit_rtl_debug && !result.error_debug_codelines.empty()) {
+            std::string debug_path = rtl_debug_file.empty()
+                ? defaultRtlDebugFile(source_file, output_file)
+                : rtl_debug_file;
+            std::string write_error;
+            if (writeLinesToFile(debug_path, result.error_debug_codelines, write_error)) {
+                std::cerr << "Error debug snapshot written to: " << debug_path << "\n";
+            } else {
+                std::cerr << "Could not write error debug snapshot: " << write_error << "\n";
+            }
+        }
+        return 1;
+    }
+
+    if (output_file == "-") {
+        for (const auto& line : result.output_codelines) std::cout << line;
+    } else {
+        std::string write_error;
+        if (!writeLinesToFile(output_file, result.output_codelines, write_error)) {
+            std::cerr << write_error << "\n";
+            return 1;
+        }
+    }
+
+    if (format == "rtl" && emit_rtl_debug && !result.debug_codelines.empty()) {
+        std::string debug_path = rtl_debug_file.empty()
+            ? defaultRtlDebugFile(source_file, output_file)
+            : rtl_debug_file;
+        std::string write_error;
+        if (!writeLinesToFile(debug_path, result.debug_codelines, write_error)) {
+            std::cerr << write_error << "\n";
+            return 1;
+        }
+    }
+
+    return 0;
+}
+
+int main(int argc, char* argv[]) {
+    try {
+        return runMain(argc, argv);
+    } catch (const std::exception& ex) {
+        std::cerr << "Fatal error: " << ex.what() << "\n";
+        return 1;
+    } catch (...) {
+        std::cerr << "Fatal error: unknown exception\n";
+        return 1;
+    }
+}

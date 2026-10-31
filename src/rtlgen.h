@@ -82,7 +82,8 @@ LogicRTLResult appendLogicRTL(
     int unroll_limit = 1024,
     bool release = false,
     bool use_circt = false,
-    std::function<void(const std::string &)> progress_callback = {}
+    std::function<void(const std::string &)> progress_callback = {},
+    const std::string &arithmetic_request_file = {}
 );
 
 vector<string> genVerilatorTestMainCpp(

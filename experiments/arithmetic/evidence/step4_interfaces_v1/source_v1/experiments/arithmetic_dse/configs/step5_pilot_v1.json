@@ -1,0 +1,64 @@
+{
+  "version": "step5-pilot-manifest-v1",
+  "status": "frozen_before_any_new_physical_call",
+  "authorized_scope": "one original and one automatically split candidate; each L2/II1 native RTL; synth followed by grt",
+  "calls": {
+    "synth": 2,
+    "grt": 2,
+    "final": 0,
+    "retry": 0,
+    "automatic_retry": false
+  },
+  "settings": {
+    "period_ps": 1500,
+    "abc_target_ps": 1500,
+    "io_delay_policy": "same frozen constraints.sdc 20% period",
+    "corner": "TC / TT",
+    "VT": "RVT",
+    "library_model": "NLDM",
+    "seed": 42,
+    "utilization_percent": 40,
+    "place_density": 0.65,
+    "threads": 2,
+    "parallel_jobs": 1,
+    "L": 2,
+    "II": 1
+  },
+  "rtl_generator": "rtlzz native emitter; frozen step5 functional regression",
+  "candidates": [
+    "original",
+    "mul32_split16"
+  ],
+  "comparison_rule": "Completed same-stage synth/grt only; area, structure, mapped netlist, critical path and setup/hold. No reselection or target retries; failed metrics stay missing.",
+  "budget_reserve": {
+    "synth": 2,
+    "grt": 2,
+    "final": 0,
+    "walltime_s": 5040,
+    "CPU_time_s": 10080
+  },
+  "remaining_work_gate": "Full exact collection manifest and step6 large-kernel capacity review before bulk library/main-matrix work",
+  "B_C_rules_modified": false,
+  "functional_report": {
+    "path": "experiments/arithmetic/evidence/step5/regression.json",
+    "sha256": "b94af081daa37f4a4e69747e9e93aaf90f497dc2c80602e14619c8f69d5d1749"
+  },
+  "rtl": {
+    "original": {
+      "path": "experiments/arithmetic/evidence/step5/original.sv",
+      "sha256": "7c575939024c0b4a564c550b32915c18eab18c6cd840db15cf29c27b1b7f1ff3"
+    },
+    "mul32_split16": {
+      "path": "experiments/arithmetic/evidence/step5/mul32_split16.sv",
+      "sha256": "a9959582c0f7c28250bcde2ed612e336279fc498fb7d3e250535fcb27561d961"
+    }
+  },
+  "generator_sha256": "1b83bc0e948e3720f65b41365e1f418c3348c24604957747e10eabd08f180f72",
+  "source_sha256": {
+    "rtlzz/src/backend/mul_split.cpp": "46ae58f028d06353fb8b0b08a1114e100e36daf96c0025462cb34156dbe75304",
+    "rtlzz/src/backend/simple_cost.cpp": "699e4371c2b2c3b9b3f84bc08c608fe8603469ac4fdee590b266f9098648db53",
+    "rtlzz/src/backend/pipeline.cpp": "904928f2a8abf50de4764e22c6e91f17a3685045fee93cfedf7027cc516049e1",
+    "rtlzz/testv2/mul_split_test.cpp": "14eaf962fb4c547cb31f80dc5255cfbbc2884c7f088c91e8fc96a4133f645abc"
+  },
+  "frozen_at": "2026-10-28T03:00:49.127197+00:00"
+}

@@ -1,0 +1,132 @@
+{
+  "prefix": "experiments/arithmetic/evidence/step4_interfaces_v1/usage_after.json",
+  "prefix_sha256": "d5a172ed89133d8970c28b8b9e115746296cb16f111a6156b5097b77bd7ad449",
+  "prefix_entries": 670,
+  "entries": [
+    {
+      "id": "29dd3dbedf5144b383ce188a7e6d6610",
+      "kind": "live",
+      "stage": null,
+      "status": "completed",
+      "purpose": "step4_report_types_and_evidence_review",
+      "command": [
+        "cmake",
+        "--build",
+        "build/step4-rtlzz",
+        "--target",
+        "arithmetic-interface-test",
+        "predicate-expand",
+        "-j2"
+      ],
+      "output": "/home/zyrv/vulsim/build/step4-review-20261031/report-build",
+      "reserved_at": "2026-10-31T02:19:03.284755+00:00",
+      "walltime_s": 7.629963833140209,
+      "CPU_time_s": 9.24,
+      "target_platform": "common",
+      "admission_id": "step4-report-types-v2",
+      "task_id": "report-build",
+      "model_version": "not_applicable",
+      "exit_code": 0,
+      "timed_out": false,
+      "command_record": "/home/zyrv/vulsim/build/step4-review-20261031/report-build.command.json",
+      "CPU_accounting": "GNU_time_leaf_command"
+    },
+    {
+      "id": "87628addef5342099c27e674a5426ba7",
+      "kind": "live",
+      "stage": null,
+      "status": "completed",
+      "purpose": "step4_report_types_and_evidence_review",
+      "command": [
+        "build/step4-rtlzz/testv2/arithmetic-interface-test",
+        "/home/zyrv/vulsim",
+        "/home/zyrv/vulsim/build/step4-review-20261031/generated"
+      ],
+      "output": "/home/zyrv/vulsim/build/step4-review-20261031/native-core",
+      "reserved_at": "2026-10-31T02:20:57.782586+00:00",
+      "walltime_s": 8.041400446090847,
+      "CPU_time_s": 8.02,
+      "target_platform": "common",
+      "admission_id": "step4-report-types-v2",
+      "task_id": "native-core",
+      "model_version": "not_applicable",
+      "exit_code": 0,
+      "timed_out": false,
+      "command_record": "/home/zyrv/vulsim/build/step4-review-20261031/native-core.command.json",
+      "CPU_accounting": "GNU_time_leaf_command"
+    },
+    {
+      "id": "a6633f0908614e0aa535db0611353ce3",
+      "kind": "live",
+      "stage": null,
+      "status": "completed",
+      "purpose": "step4_report_types_and_evidence_review",
+      "command": [
+        "cmake",
+        "--build",
+        "build",
+        "--target",
+        "vulrtlgen",
+        "-j2"
+      ],
+      "output": "/home/zyrv/vulsim/build/step4-review-20261031/vul-build",
+      "reserved_at": "2026-10-31T02:22:03.549230+00:00",
+      "walltime_s": 3.3218333241529763,
+      "CPU_time_s": 4.13,
+      "target_platform": "common",
+      "admission_id": "step4-report-types-v2",
+      "task_id": "vul-build",
+      "model_version": "not_applicable",
+      "exit_code": 0,
+      "timed_out": false,
+      "command_record": "/home/zyrv/vulsim/build/step4-review-20261031/vul-build.command.json",
+      "CPU_accounting": "GNU_time_leaf_command"
+    },
+    {
+      "id": "0baec0c0e71047c995e44e457dd64f2e",
+      "kind": "live",
+      "stage": null,
+      "status": "completed",
+      "purpose": "step4_report_types_and_evidence_review",
+      "command": [
+        "/usr/bin/python3",
+        "build/step4-review-20261031/check_reports.py"
+      ],
+      "output": "/home/zyrv/vulsim/build/step4-review-20261031/report-checks",
+      "reserved_at": "2026-10-31T02:23:45.654380+00:00",
+      "walltime_s": 3.4198506120592356,
+      "CPU_time_s": 3.39,
+      "target_platform": "common",
+      "admission_id": "step4-report-types-v2",
+      "task_id": "report-checks",
+      "model_version": "not_applicable",
+      "exit_code": 0,
+      "timed_out": false,
+      "command_record": "/home/zyrv/vulsim/build/step4-review-20261031/report-checks.command.json",
+      "CPU_accounting": "GNU_time_leaf_command"
+    },
+    {
+      "id": "ce66a4a8e84f4547941f5e416c211aee",
+      "kind": "live",
+      "stage": null,
+      "status": "completed",
+      "purpose": "step4_report_types_and_evidence_review",
+      "command": [
+        "/usr/bin/python3",
+        "build/step4-review-20261031/portable_checks.py"
+      ],
+      "output": "/home/zyrv/vulsim/build/step4-review-20261031/portable-checks",
+      "reserved_at": "2026-10-31T02:28:29.212209+00:00",
+      "walltime_s": 8.178162361029536,
+      "CPU_time_s": 8.120000000000001,
+      "target_platform": "common",
+      "admission_id": "step4-report-types-v2",
+      "task_id": "portable-checks",
+      "model_version": "not_applicable",
+      "exit_code": 0,
+      "timed_out": false,
+      "command_record": "/home/zyrv/vulsim/build/step4-review-20261031/portable-checks.command.json",
+      "CPU_accounting": "GNU_time_leaf_command"
+    }
+  ]
+}

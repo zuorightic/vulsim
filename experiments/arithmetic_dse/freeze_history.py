@@ -12,6 +12,26 @@ def source_location(root, parent, relative, expected):
     root=Path(root)
     digest=lambda path:hashlib.sha256(path.read_bytes()).hexdigest()
     if (root/relative).is_file() and digest(root/relative)==expected:return root/relative
+    interfaces_review=root/'experiments/arithmetic/arithmetic_interfaces_freeze_v2.json'
+    if interfaces_review.exists():
+        current=json.loads(interfaces_review.read_text())
+        active=root/relative
+        bound=active.is_file() and current['files_sha256'].get(relative)==digest(active)
+        retired=not active.exists() and relative in current.get('retired_active_paths',[])
+        if current['historical_freezes'].get(parent)==digest(root/parent) and (bound or retired):
+            for source_root in current['historical_source_roots']:
+                snapshot=root/source_root/relative
+                if snapshot.is_file() and digest(snapshot)==expected:return snapshot
+    interfaces_revision=root/'experiments/arithmetic/arithmetic_interfaces_freeze_v1.json'
+    if interfaces_revision.exists():
+        current=json.loads(interfaces_revision.read_text())
+        active=root/relative
+        bound=active.is_file() and current['files_sha256'].get(relative)==digest(active)
+        retired=not active.exists() and relative in current.get('retired_active_paths',[])
+        if current['historical_freezes'].get(parent)==digest(root/parent) and (bound or retired):
+            for source_root in current['historical_source_roots']:
+                snapshot=root/source_root/relative
+                if snapshot.is_file() and digest(snapshot)==expected:return snapshot
     review_revision=root/'experiments/arithmetic/backend_freeze_v7.json'
     if review_revision.exists():
         current=json.loads(review_revision.read_text())

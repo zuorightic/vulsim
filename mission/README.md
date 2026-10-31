@@ -1,6 +1,6 @@
 # 任务与现行规划导航
 
-后续算术拆分、代价模型和流水线工作按 [lxy-plan-fix.md 第一章](lxy-plan-fix.md) 推进。先读第一章§2“既有成果如何迁移”、§10“九个步骤”和§10.10“阶段里程碑”；[第四章步骤一](lxy-plan-fix.md#step1-wide-acceptance)的宽位宽补验及[第四章步骤二](lxy-plan-fix.md#step2-revised-acceptance)的新契约/静态表/43例生成补验已完成对应范围。[第四章步骤三](lxy-plan-fix.md#step3-platform-acceptance)的原v5验收因SDC整数除法缺陷撤回；[§3.9的v6修订](lxy-plan-fix.md#step3-sdc-correction)已修复、核对实际SDC并重跑三个ns平台后重新通过。[§3.10的v7收尾](lxy-plan-fix.md#step3-validator-closure)已关闭SDC命令边界P2并补来源/交接规则，物理结果继承v6，GF180 wire RC校准仍登记待核。下一入口是步骤四的公共编译请求/区域保护与成本接口。
+后续算术拆分、代价模型和流水线工作按 [lxy-plan-fix.md 第一章](lxy-plan-fix.md) 推进。先读第一章§2“既有成果如何迁移”、§10“九个步骤”和§10.10“阶段里程碑”；[第四章步骤一](lxy-plan-fix.md#step1-wide-acceptance)的宽位宽补验及[第四章步骤二](lxy-plan-fix.md#step2-revised-acceptance)的新契约/静态表/43例生成补验已完成对应范围。[第四章步骤三](lxy-plan-fix.md#step3-platform-acceptance)的原v5验收因SDC整数除法缺陷撤回；[§3.9的v6修订](lxy-plan-fix.md#step3-sdc-correction)已修复、核对实际SDC并重跑三个ns平台后重新通过。[§3.10的v7收尾](lxy-plan-fix.md#step3-validator-closure)已关闭SDC命令边界P2并补来源/交接规则，物理结果继承v6，GF180 wire RC校准仍登记待核。[第四章步骤四](lxy-plan-fix.md#step4-interface-acceptance)已完成本步公共请求/原始Mul与FP区域/固定成本及保护验收；half/quarter内部展开和D模型仍未完成。[§4.8报告类型修订](lxy-plan-fix.md#step4-report-type-review)将计数改为JSON整数，并补历史证据横幅及存储分层；v1原证据保留。下一入口是步骤五参数化内部拆分与新C位置选择。
 
 | 文档 | 作用 | 阅读边界 |
 | --- | --- | --- |
@@ -8,7 +8,7 @@
 | [lxy-plan-fix.md](lxy-plan-fix.md)第一章 | 现行范围、方法、步骤、准入和最终验收依据 | 四平台、整数8/16/32/64/128位、binary32、43案例/688条；阶段通过不等于全范围完成 |
 | 同文件第二章：旧计划推进记录 | 原步骤一至五及位置补验的历史正文，章标题已改名标识 | 只证明旧版本；文中未限定版本的§号仍按旧计划解释 |
 | 同文件第三章 | 新规划修订与引用迁移的已有记录 | 保留既有内容；后续步骤实施按用户要求改记第四章 |
-| 同文件第四章 | 修订计划各步骤的实际实施与验收 | 步骤一、二补验已完成；步骤三物理测量以§3.9的v6单位修复重验为准，当前软件/静态核验以§3.10的v7为准，原v5三个ns结果作废；分别列明软件/原生、组合/流水及后端阶段边界，不能当作后续模板/模型或全任务通过 |
+| 同文件第四章 | 修订计划各步骤的实际实施与验收 | 步骤一、二补验已完成；步骤三物理测量以§3.9的v6单位修复重验为准，当前软件/静态核验以§3.10的v7为准，原v5三个ns结果作废；步骤四见其独立记录，仅验收原始Mul/原子FP和公共固定成本路径；分别列明软件/原生、组合/流水及后端阶段边界，不能当作后续模板/模型或全任务通过 |
 | [archive/lxy-plan-v1-single-platform.md](archive/lxy-plan-v1-single-platform.md) | 已归档的单平台旧计划及原推进记录 | 保留原字节用于追溯；后续任务不从其未完成步骤接着执行 |
 | [算术实验README](../experiments/arithmetic/README.md) | 实验目录入口及旧契约说明 | 先读顶部的现行规划与历史边界提示 |
 

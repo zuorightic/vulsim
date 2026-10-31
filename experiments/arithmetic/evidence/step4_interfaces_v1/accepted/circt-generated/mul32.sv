@@ -1,0 +1,60 @@
+module mul32(	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:1:1
+  input  [31:0] a,	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:1:21
+                b,	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:1:34
+                c,	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:1:47
+  input         iv,	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:1:60
+                rstn,	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:1:73
+                clk,	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:1:88
+  output [63:0] y,	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:1:103
+                z,	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:1:116
+  output        ov	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:1:129
+);
+
+  reg         rtlzz_valid_s1;	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:22:21
+  wire        _GEN = ~rstn;	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:4:9
+  wire [63:0] _GEN_0 = {32'h0, a};	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:6:9
+  reg  [63:0] rtlzz_pipe_4_s1;	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:11:22
+  always_ff @(posedge clk) begin	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:11:22
+    if (_GEN)	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:4:9, :11:22
+      rtlzz_pipe_4_s1 <= 64'h23;	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:11:22
+    else	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:4:9, :11:22
+      rtlzz_pipe_4_s1 <= iv ? _GEN_0 * {32'h0, b} : rtlzz_pipe_4_s1;	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:6:9, :8:9, :9:9, :11:22
+  end // always_ff @(posedge)
+  reg  [63:0] rtlzz_pipe_4_s2;	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:13:22
+  always_ff @(posedge clk) begin	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:13:22
+    if (_GEN)	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:4:9, :13:22
+      rtlzz_pipe_4_s2 <= 64'h23;	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:13:22
+    else	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:4:9, :13:22
+      rtlzz_pipe_4_s2 <= rtlzz_valid_s1 ? rtlzz_pipe_4_s1 : rtlzz_pipe_4_s2;	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:11:22, :13:22, :22:21
+  end // always_ff @(posedge)
+  reg  [63:0] rtlzz_pipe_5_s1;	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:18:22
+  always_ff @(posedge clk) begin	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:18:22
+    if (_GEN)	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:4:9, :18:22
+      rtlzz_pipe_5_s1 <= 64'h37;	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:18:22
+    else	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:4:9, :18:22
+      rtlzz_pipe_5_s1 <= iv ? _GEN_0 * {32'h0, c} : rtlzz_pipe_5_s1;	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:6:9, :15:10, :16:10, :18:22
+  end // always_ff @(posedge)
+  reg  [63:0] rtlzz_pipe_5_s2;	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:20:22
+  always_ff @(posedge clk) begin	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:20:22
+    if (_GEN)	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:4:9, :20:22
+      rtlzz_pipe_5_s2 <= 64'h37;	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:20:22
+    else	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:4:9, :20:22
+      rtlzz_pipe_5_s2 <= rtlzz_valid_s1 ? rtlzz_pipe_5_s1 : rtlzz_pipe_5_s2;	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:18:22, :20:22, :22:21
+  end // always_ff @(posedge)
+  always_ff @(posedge clk) begin	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:22:21
+    if (_GEN)	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:4:9, :22:21
+      rtlzz_valid_s1 <= 1'h0;	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:22:21
+    else	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:4:9, :22:21
+      rtlzz_valid_s1 <= iv;	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:22:21
+  end // always_ff @(posedge)
+  reg         rtlzz_valid_s2;	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:24:21
+  always_ff @(posedge clk) begin	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:24:21
+    if (_GEN)	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:4:9, :24:21
+      rtlzz_valid_s2 <= 1'h0;	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:24:21
+    else	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:4:9, :24:21
+      rtlzz_valid_s2 <= rtlzz_valid_s1;	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:22:21, :24:21
+  end // always_ff @(posedge)
+  assign y = rtlzz_pipe_4_s2;	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:13:22, :25:3
+  assign z = rtlzz_pipe_5_s2;	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:20:22, :25:3
+  assign ov = rtlzz_valid_s2;	// /tmp/rtlzz-circt-292-1949829446229953/input.mlir:24:21, :25:3
+endmodule

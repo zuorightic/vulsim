@@ -1,0 +1,71 @@
+{
+  "version": "target-conditioned-characterization-v2",
+  "initial_abc_target_points_ps": [
+    500,
+    800,
+    1000,
+    1250,
+    1500,
+    2000
+  ],
+  "minimum_distinct_targets_per_model_family": 6,
+  "case_target_formula_reference_abc_ps": 1500,
+  "case_target_formula_reference_sdc_ps": 1500,
+  "case_target_freeze_policy": "compute case targets once from reference-point microbenchmarks; supplemental target samples never revise case targets",
+  "target_axis_lookup": "exact_measured_target_only; unmeasured interior and exterior targets return uncovered",
+  "extrapolation": "forbidden",
+  "extension": "add target measurements from declared microbenchmarks before querying an uncovered target; version coverage and count all calls; never retune BC or use formal/holdout whole-graph PPA to train the global model",
+  "required_identity_dimensions": [
+    "operation",
+    "operand_widths",
+    "result_width",
+    "signedness",
+    "template",
+    "split_granularity",
+    "constant_features",
+    "abc_target_ps",
+    "sdc_period_ps",
+    "ABC_mode_and_script_hash",
+    "SDC_rule_hash",
+    "library_and_LEF_hashes",
+    "RC_and_flow_hashes",
+    "tool_binary_hashes",
+    "corner",
+    "VT",
+    "evaluation_stage",
+    "boundary_shell_version"
+  ],
+  "delay_interpretation": "mapped implementation under the recorded synthesis target and SDC; never an intrinsic target-independent operator delay",
+  "budget_policy": "pre-step5 funded-plan gate; shared ledger active immediately; exact supplemental case targets and all probes charged; six targets do not multiply the main matrix",
+  "step3_target_probes": "synthesis-only target-dependence and identity checks; not a completed D cost library",
+  "budget_review_required_before_collection": {
+    "gate": "before step5, refreshed before step6/7 on new families or targets",
+    "base_samples": 114,
+    "synthesis_base_with_main_and_D_search": 186,
+    "grt_base_if_all_characterization_use_grt": 168,
+    "additional_terms": [
+      "historical actual usage",
+      "exact required family/case-target pairs absent from six-point set",
+      "step4-6 prototypes incl D2/F1 six-point checks",
+      "new split templates and boundary variants",
+      "repeats",
+      "retries"
+    ],
+    "initial_limits_insufficient": true,
+    "automatic_cap_increase": false
+  },
+  "supersedes": "target-conditioned-characterization-v1",
+  "sensitivity_protocol": {
+    "mandatory_all_six_synth_targets": true,
+    "early_exit_after_two_identical_scalar_metrics": false,
+    "observation_scope": "exact kernel RTL/boundary/width/template plus identical target-independent context; compare normalized mapped netlist hash and functional/sequential area as well as reported minimum period",
+    "interpretation": "observed equality at measured points only; never target-insensitive family or interval coverage",
+    "skipped_points": "uncovered at skipped stage, never covered by scalar equality or netlist equality under another SDC",
+    "physical_sampling": "may predeclare a sparse grt subset; unsampled grt targets remain uncovered and required exact case targets must be funded before search",
+    "large_kernel_obligation": [
+      "D2 safe_udivrem_u32: all six when step6 implementation is available, before step7 library freeze",
+      "F1 fp32_mul_rne: all six when step4/6 implementation is available, before step7 library freeze"
+    ],
+    "budget_credit": "no unmeasured early-exit/cache credit in admission plan; attribute reuse only with identical complete identity and measurement stage"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "command": [
+    "/home/zyrv/vulsim/build/step4-rtlzz/predicate-expand",
+    "--input",
+    "/home/zyrv/vulsim/build/step4-interfaces-20261030/validation-no-circt/cli.logic.cpp",
+    "--top",
+    "top",
+    "--vullib",
+    "/home/zyrv/vulsim/vullib",
+    "--release",
+    "--arithmetic-request",
+    "/home/zyrv/vulsim/build/step4-interfaces-20261030/validation-no-circt/wrong_profile.request.json",
+    "--arithmetic-report",
+    "/home/zyrv/vulsim/build/step4-interfaces-20261030/validation-no-circt/wrong_profile.failure.json",
+    "-o",
+    "/home/zyrv/vulsim/build/step4-interfaces-20261030/validation-no-circt/wrong_profile.sv"
+  ],
+  "exit_code": 1,
+  "process_exit_code": 1,
+  "timed_out": false,
+  "CPU_limit_s": 600,
+  "CPU_limit_exceeded": false,
+  "sampled_process_tree_CPU_s": 0,
+  "cancelled_signal": null,
+  "walltime_s": 0.01652755797840655,
+  "unexpected_live_descendants": false,
+  "memory_limit_exceeded": false,
+  "memory_limit_MiB": 8192,
+  "sampled_process_tree_peak_rss_KiB": 728,
+  "sampled_process_tree_peak_threads": 1,
+  "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+  "resource_sampling_interval_s": 0.5,
+  "cleanup": {
+    "term_sent": 0,
+    "kill_sent": 0,
+    "remaining_live_pids": []
+  },
+  "log": "/home/zyrv/vulsim/build/step4-interfaces-20261030/validation-no-circt/reject-wrong_profile.log",
+  "gnu_time": "/home/zyrv/vulsim/build/step4-interfaces-20261030/validation-no-circt/reject-wrong_profile.resources.txt"
+}

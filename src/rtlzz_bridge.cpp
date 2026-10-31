@@ -101,7 +101,8 @@ RTLzzLogicRTLResult generateLogicRTLWithRTLzz(
     const std::map<std::string, std::vector<std::uint64_t>> &input_reset_values,
     bool reset_probe,
     const std::string &input_valid_name,
-    const std::string &output_valid_name
+    const std::string &output_valid_name,
+    const std::string &arithmetic_request_file
 ) {
     std::ifstream input(source_file);
     if (!input) {
@@ -122,6 +123,10 @@ RTLzzLogicRTLResult generateLogicRTLWithRTLzz(
 
     rtlzz::CompileOptions options;
     std::filesystem::path source_path(source_file);
+    if(!arithmetic_request_file.empty()) {
+        try {options.arithmetic_request=rtlzz::loadArithmeticRequest(arithmetic_request_file);}
+        catch(const rtlzz::ArithmeticError& e){RTLzzLogicRTLResult out;out.error=e.what();out.arithmetic_report=rtlzz::arithmeticDiagnosticJson(e.diagnostic);return out;}
+    }
     options.source_name = source_file;
     options.source_codelines = std::move(source_codelines);
     options.vullib_dir = lib_include_dir;
@@ -158,6 +163,7 @@ RTLzzLogicRTLResult generateLogicRTLWithRTLzz(
     auto result = reset_probe ? rtlzz::compileToBeir(std::move(options)) : rtlzz::compileToRtl(std::move(options));
     if (progress_line) progress_line->finish();
     RTLzzLogicRTLResult out;
+    out.arithmetic_report=result.arithmetic_report;
     if (!result.ok()) {
         out.error = result.error;
         out.error_debug_codelines = std::move(result.error_debug_codelines);

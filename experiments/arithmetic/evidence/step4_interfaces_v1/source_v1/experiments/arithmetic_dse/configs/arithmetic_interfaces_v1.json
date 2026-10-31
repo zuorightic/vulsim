@@ -1,0 +1,81 @@
+{
+  "version": "arithmetic-interfaces-v1",
+  "implementation_scope": "Python_experiment_contracts; compiler_plumbing_and_BEIR_preflight_in_steps4_5_7",
+  "core_profiles": [
+    "unsigned_integer",
+    "binary32_mul_rne"
+  ],
+  "template_parameters": {
+    "operation": "Mul",
+    "W": "1..128; formal_profile_only_8_16_32_64_128",
+    "R": "1..2W; full_requires_2W",
+    "block_width": "null_for_original_or_2..W",
+    "product": [
+      "full",
+      "truncated"
+    ],
+    "reduction": [
+      "carry_preserving_tree"
+    ],
+    "eligibility": "provider_support_separate_from_schema_validation",
+    "scheduling": "fixed_L_II_and_budget_separate_from_eligibility"
+  },
+  "capability_states": [
+    "reserved",
+    "generated",
+    "numerically_validated",
+    "internally_cuttable",
+    "C_selected",
+    "D_covered",
+    "D_selected",
+    "physically_evaluated"
+  ],
+  "failure_fields": [
+    "failure_stage",
+    "failure_code",
+    "failure_reason",
+    "failure_detail_ref",
+    "candidate_rejections_ref"
+  ],
+  "reason_codes": {
+    "template_ineligible": "eligibility",
+    "unsupported_backend_op": "expansion_validation",
+    "invalid_expansion_graph": "graph_validation",
+    "width_contract_violation": "graph_validation",
+    "cost_uncovered": "cost",
+    "schedule_group_over_budget": "scheduling; requires_applicable_indivisible_group_lower_bound",
+    "schedule_latency_lower_bound": "scheduling; requires_verifiable_stage_lower_bound",
+    "schedule_no_placement_found": "scheduling; no_unsat_proof",
+    "schedule_search_limit": "scheduling; preserve_attempts_limits_usage",
+    "schedule_validation_error": "schedule_or_materialization_defect"
+  },
+  "new_template_invariant": "lower_to_current_version_and_selected_path_supported_op_kind_opcode_types_shapes_before_consumer_handoff",
+  "numerical_format_extensions": "unregistered_or_unknown_fields_rejected; no_implicit_unsigned_fallback",
+  "stage2_diagnostics": "contract_and_cost_errors_implemented; scheduler_codes_are_schema_only",
+  "compile_request_fields": [
+    "target_platform",
+    "platform_profile",
+    "cost_mode",
+    "model_bundle",
+    "candidate_policy",
+    "L",
+    "II",
+    "target_period_ps",
+    "semantic_profile",
+    "template_parameters"
+  ],
+  "compile_request_status": "schema_definition_in_step2; CompileOptions_PipelineV2_VUL_bridge_CLI_plumbing_in_steps4_5_7",
+  "expansion_product_fields": [
+    "semantic_version",
+    "template_id",
+    "template_version",
+    "node_graph",
+    "port_mapping",
+    "region_id",
+    "group_members",
+    "legal_cut_granularity",
+    "shared_values",
+    "width_provenance",
+    "eligibility_or_rejection"
+  ]
+}

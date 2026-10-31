@@ -11,6 +11,7 @@ from .budget import usage,usage_by,cpu_seconds
 from .characterization import mapped_netlist_hash
 from .platforms import unit_scale,parameter_provenance
 from .sdc import verify_sdc,rtl_ports,VERSION as SDC_VERSION
+from .freeze_history import source_location
 
 ROOT=Path(__file__).resolve().parents[2]
 FREEZE='experiments/arithmetic/backend_freeze_v7.json'
@@ -31,7 +32,9 @@ def same(actual,expected,label):
 def verify_bundle(root,freeze,*,active):
     """One identity gate for current code and immutable inherited bundles."""
     for relative,expected in freeze['files_sha256'].items():
-        if active:same(digest(root/relative),expected,relative)
+        if active:
+            original=source_location(root,FREEZE,relative,expected)
+            same(digest(original),expected,relative)
         same(digest(root/freeze['validated_source_snapshot']/relative),expected,'snapshot '+relative)
     for relative,expected in freeze['historical_freezes'].items():
         same(digest(root/relative),expected,'historical freeze '+relative)
@@ -273,6 +276,7 @@ def verify(root=ROOT,verify_external=False):
             'measurement_correction_usage':report['new_usage'],
             'new_usage':resources['new_usage'],'cumulative_usage':resources['cumulative_usage'],
             'effective_profiles_changed':False,'new_physical_runs':0,
+            'source_verification':'v7 snapshot; changed active sources require a bound successor',
             'GF180_wire_RC':'unresolved_calibration_provenance; unchanged; connection_only'}
 
 

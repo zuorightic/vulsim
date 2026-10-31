@@ -436,6 +436,7 @@ static int runVulRTLGen(int argc, char * argv[]) {
         .help("emit RTL without intermediate C++ or debug files")
         .default_value(false)
         .implicit_value(true);
+    parser.add_argument("--arithmetic-request").default_value(std::string{}).help("Versioned arithmetic JSON request for PIPELINE kernels or a combinational logic unit; reports are saved next to generated logic sources");
     parser.add_argument("--circt")
         .help("emit ordinary and pipeline RTL through the CIRCT HW/Comb/Seq backend")
         .default_value(false)
@@ -454,6 +455,7 @@ static int runVulRTLGen(int argc, char * argv[]) {
 
     const bool release = parser.get<bool>("--release");
     const bool use_circt = parser.get<bool>("--circt");
+    const auto arithmetic_request_file = parser.get<std::string>("--arithmetic-request");
     string top_file = parser.get<std::string>("--top");
     string main_file = parser.get<std::string>("--main");
     string out_dir = parser.get<std::string>("--out");
@@ -578,7 +580,7 @@ static int runVulRTLGen(int argc, char * argv[]) {
                                   1024, release, use_circt,
                                   processes > 1
                                       ? std::function<void(const std::string &)>([&reporter](const std::string &step) { reporter.progress(step); })
-                                      : std::function<void(const std::string &)>{});
+                                      : std::function<void(const std::string &)>{}, arithmetic_request_file);
         if (!rtlzz_result.ok) {
             std::filesystem::path error_dbg_path;
             if (!release) {

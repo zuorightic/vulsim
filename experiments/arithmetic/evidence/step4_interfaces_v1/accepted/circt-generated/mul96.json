@@ -1,0 +1,811 @@
+{
+  "D_inference_implemented": false,
+  "backend_contract": "native-beir-contract-v1",
+  "capabilities": {
+    "AES_Sigmoid_fixedpoint": "reserved; requests rejected",
+    "backend_model": "reserved_step7; requests fail closed",
+    "binary32_mul_rne": "generated; atomic",
+    "mul_half_quarter": "reserved_step5",
+    "original_unsigned_mul": "generated; atomic"
+  },
+  "comb_unit": "abstract",
+  "cost_query_context": {
+    "evaluation_stage": "grt",
+    "feature_schema": "beir-cost-features-v1",
+    "model_bundle_sha256": "",
+    "platform_profile_sha256": "a29e056328a495af3f5815e3c56f4e6838eafd4b3f4f7844cc81d82ef99dd3df",
+    "stage_index": -1,
+    "target_platform": "asap7"
+  },
+  "delay_unit": "abstract",
+  "graph": {
+    "nodes": [
+      {
+        "billing_width": 0,
+        "bit": -1,
+        "comb": 0,
+        "cost_source": "fixed-op-width-v1",
+        "covered": true,
+        "delay": 0,
+        "dims": [],
+        "hi": -1,
+        "id": "0",
+        "kind": 1,
+        "lo": -1,
+        "opcode": 0,
+        "operands": [
+          {
+            "constant_signed": false,
+            "constant_width": 0,
+            "dims": [],
+            "kind": 2,
+            "limbs": [],
+            "node": "",
+            "signed": false,
+            "width": 96
+          }
+        ],
+        "signed_truncation": false,
+        "times": 0,
+        "to_width": 0,
+        "transaction_constant": false,
+        "width": 96
+      },
+      {
+        "billing_width": 0,
+        "bit": -1,
+        "comb": 0,
+        "cost_source": "fixed-op-width-v1",
+        "covered": true,
+        "delay": 0,
+        "dims": [],
+        "hi": -1,
+        "id": "1",
+        "kind": 1,
+        "lo": -1,
+        "opcode": 0,
+        "operands": [
+          {
+            "constant_signed": false,
+            "constant_width": 0,
+            "dims": [],
+            "kind": 2,
+            "limbs": [],
+            "node": "",
+            "signed": false,
+            "width": 96
+          }
+        ],
+        "signed_truncation": false,
+        "times": 0,
+        "to_width": 0,
+        "transaction_constant": false,
+        "width": 96
+      },
+      {
+        "billing_width": 0,
+        "bit": -1,
+        "comb": 0,
+        "cost_source": "fixed-op-width-v1",
+        "covered": true,
+        "delay": 0,
+        "dims": [],
+        "hi": -1,
+        "id": "2",
+        "kind": 1,
+        "lo": -1,
+        "opcode": 0,
+        "operands": [
+          {
+            "constant_signed": false,
+            "constant_width": 0,
+            "dims": [],
+            "kind": 2,
+            "limbs": [],
+            "node": "",
+            "signed": false,
+            "width": 96
+          }
+        ],
+        "signed_truncation": false,
+        "times": 0,
+        "to_width": 0,
+        "transaction_constant": false,
+        "width": 96
+      },
+      {
+        "billing_width": 0,
+        "bit": -1,
+        "comb": 0,
+        "cost_source": "fixed-op-width-v1",
+        "covered": true,
+        "delay": 0,
+        "dims": [],
+        "hi": -1,
+        "id": "3",
+        "kind": 1,
+        "lo": -1,
+        "opcode": 0,
+        "operands": [
+          {
+            "constant_signed": false,
+            "constant_width": 0,
+            "dims": [],
+            "kind": 2,
+            "limbs": [],
+            "node": "",
+            "signed": false,
+            "width": 1
+          }
+        ],
+        "signed_truncation": false,
+        "times": 0,
+        "to_width": 0,
+        "transaction_constant": false,
+        "width": 1
+      },
+      {
+        "billing_width": 0,
+        "bit": -1,
+        "comb": 0,
+        "cost_source": "fixed-op-width-v1",
+        "covered": true,
+        "delay": 0,
+        "dims": [],
+        "hi": -1,
+        "id": "4",
+        "kind": 0,
+        "lo": -1,
+        "opcode": 0,
+        "operands": [
+          {
+            "constant_signed": false,
+            "constant_width": 0,
+            "dims": [],
+            "kind": 0,
+            "limbs": [],
+            "node": "15",
+            "signed": false,
+            "width": 192
+          }
+        ],
+        "signed_truncation": false,
+        "times": 0,
+        "to_width": 0,
+        "transaction_constant": false,
+        "width": 192
+      },
+      {
+        "billing_width": 0,
+        "bit": -1,
+        "comb": 0,
+        "cost_source": "fixed-op-width-v1",
+        "covered": true,
+        "delay": 0,
+        "dims": [],
+        "hi": -1,
+        "id": "5",
+        "kind": 0,
+        "lo": -1,
+        "opcode": 0,
+        "operands": [
+          {
+            "constant_signed": false,
+            "constant_width": 0,
+            "dims": [],
+            "kind": 0,
+            "limbs": [],
+            "node": "16",
+            "signed": false,
+            "width": 192
+          }
+        ],
+        "signed_truncation": false,
+        "times": 0,
+        "to_width": 0,
+        "transaction_constant": false,
+        "width": 192
+      },
+      {
+        "billing_width": 0,
+        "bit": -1,
+        "comb": 0,
+        "cost_source": "fixed-op-width-v1",
+        "covered": true,
+        "delay": 0,
+        "dims": [],
+        "hi": -1,
+        "id": "6",
+        "kind": 0,
+        "lo": -1,
+        "opcode": 0,
+        "operands": [
+          {
+            "constant_signed": false,
+            "constant_width": 0,
+            "dims": [],
+            "kind": 0,
+            "limbs": [],
+            "node": "4",
+            "signed": false,
+            "width": 192
+          }
+        ],
+        "signed_truncation": false,
+        "times": 0,
+        "to_width": 0,
+        "transaction_constant": false,
+        "width": 192
+      },
+      {
+        "billing_width": 0,
+        "bit": -1,
+        "comb": 0,
+        "cost_source": "fixed-op-width-v1",
+        "covered": true,
+        "delay": 0,
+        "dims": [],
+        "hi": -1,
+        "id": "7",
+        "kind": 0,
+        "lo": -1,
+        "opcode": 0,
+        "operands": [
+          {
+            "constant_signed": false,
+            "constant_width": 0,
+            "dims": [],
+            "kind": 0,
+            "limbs": [],
+            "node": "5",
+            "signed": false,
+            "width": 192
+          }
+        ],
+        "signed_truncation": false,
+        "times": 0,
+        "to_width": 0,
+        "transaction_constant": false,
+        "width": 192
+      },
+      {
+        "billing_width": 0,
+        "bit": -1,
+        "comb": 0,
+        "cost_source": "fixed-op-width-v1",
+        "covered": true,
+        "delay": 0,
+        "dims": [],
+        "hi": -1,
+        "id": "8",
+        "kind": 0,
+        "lo": -1,
+        "opcode": 0,
+        "operands": [
+          {
+            "constant_signed": false,
+            "constant_width": 1,
+            "dims": [],
+            "kind": 1,
+            "limbs": [
+              "0"
+            ],
+            "node": "",
+            "signed": false,
+            "width": 1
+          }
+        ],
+        "signed_truncation": false,
+        "times": 0,
+        "to_width": 0,
+        "transaction_constant": true,
+        "width": 1
+      },
+      {
+        "billing_width": 0,
+        "bit": -1,
+        "comb": 0,
+        "cost_source": "fixed-op-width-v1",
+        "covered": true,
+        "delay": 0,
+        "dims": [],
+        "hi": -1,
+        "id": "9",
+        "kind": 11,
+        "lo": -1,
+        "opcode": 0,
+        "operands": [
+          {
+            "constant_signed": false,
+            "constant_width": 0,
+            "dims": [],
+            "kind": 0,
+            "limbs": [],
+            "node": "0",
+            "signed": false,
+            "width": 96
+          }
+        ],
+        "signed_truncation": false,
+        "times": 0,
+        "to_width": 96,
+        "transaction_constant": false,
+        "width": 96
+      },
+      {
+        "billing_width": 0,
+        "bit": -1,
+        "comb": 0,
+        "cost_source": "fixed-op-width-v1",
+        "covered": true,
+        "delay": 0,
+        "dims": [],
+        "hi": -1,
+        "id": "10",
+        "kind": 11,
+        "lo": -1,
+        "opcode": 0,
+        "operands": [
+          {
+            "constant_signed": false,
+            "constant_width": 0,
+            "dims": [],
+            "kind": 0,
+            "limbs": [],
+            "node": "1",
+            "signed": false,
+            "width": 96
+          }
+        ],
+        "signed_truncation": false,
+        "times": 0,
+        "to_width": 96,
+        "transaction_constant": false,
+        "width": 96
+      },
+      {
+        "billing_width": 0,
+        "bit": -1,
+        "comb": 0,
+        "cost_source": "fixed-op-width-v1",
+        "covered": true,
+        "delay": 0,
+        "dims": [],
+        "hi": -1,
+        "id": "11",
+        "kind": 11,
+        "lo": -1,
+        "opcode": 0,
+        "operands": [
+          {
+            "constant_signed": false,
+            "constant_width": 0,
+            "dims": [],
+            "kind": 0,
+            "limbs": [],
+            "node": "2",
+            "signed": false,
+            "width": 96
+          }
+        ],
+        "signed_truncation": false,
+        "times": 0,
+        "to_width": 96,
+        "transaction_constant": false,
+        "width": 96
+      },
+      {
+        "billing_width": 0,
+        "bit": -1,
+        "comb": 0,
+        "cost_source": "fixed-op-width-v1",
+        "covered": true,
+        "delay": 0,
+        "dims": [],
+        "hi": -1,
+        "id": "12",
+        "kind": 11,
+        "lo": -1,
+        "opcode": 0,
+        "operands": [
+          {
+            "constant_signed": false,
+            "constant_width": 0,
+            "dims": [],
+            "kind": 0,
+            "limbs": [],
+            "node": "9",
+            "signed": false,
+            "width": 96
+          }
+        ],
+        "signed_truncation": false,
+        "times": 0,
+        "to_width": 192,
+        "transaction_constant": false,
+        "width": 192
+      },
+      {
+        "billing_width": 0,
+        "bit": -1,
+        "comb": 0,
+        "cost_source": "fixed-op-width-v1",
+        "covered": true,
+        "delay": 0,
+        "dims": [],
+        "hi": -1,
+        "id": "13",
+        "kind": 11,
+        "lo": -1,
+        "opcode": 0,
+        "operands": [
+          {
+            "constant_signed": false,
+            "constant_width": 0,
+            "dims": [],
+            "kind": 0,
+            "limbs": [],
+            "node": "10",
+            "signed": false,
+            "width": 96
+          }
+        ],
+        "signed_truncation": false,
+        "times": 0,
+        "to_width": 192,
+        "transaction_constant": false,
+        "width": 192
+      },
+      {
+        "billing_width": 0,
+        "bit": -1,
+        "comb": 0,
+        "cost_source": "fixed-op-width-v1",
+        "covered": true,
+        "delay": 0,
+        "dims": [],
+        "hi": -1,
+        "id": "14",
+        "kind": 11,
+        "lo": -1,
+        "opcode": 0,
+        "operands": [
+          {
+            "constant_signed": false,
+            "constant_width": 0,
+            "dims": [],
+            "kind": 0,
+            "limbs": [],
+            "node": "11",
+            "signed": false,
+            "width": 96
+          }
+        ],
+        "signed_truncation": false,
+        "times": 0,
+        "to_width": 192,
+        "transaction_constant": false,
+        "width": 192
+      },
+      {
+        "billing_width": 96,
+        "bit": -1,
+        "comb": 64,
+        "cost_source": "fixed-op-width-v1",
+        "covered": true,
+        "delay": 64,
+        "dims": [],
+        "hi": -1,
+        "id": "15",
+        "kind": 4,
+        "lo": -1,
+        "opcode": 3,
+        "operands": [
+          {
+            "constant_signed": false,
+            "constant_width": 0,
+            "dims": [],
+            "kind": 0,
+            "limbs": [],
+            "node": "12",
+            "signed": false,
+            "width": 192
+          },
+          {
+            "constant_signed": false,
+            "constant_width": 0,
+            "dims": [],
+            "kind": 0,
+            "limbs": [],
+            "node": "13",
+            "signed": false,
+            "width": 192
+          }
+        ],
+        "signed_truncation": false,
+        "times": 0,
+        "to_width": 192,
+        "transaction_constant": false,
+        "width": 192
+      },
+      {
+        "billing_width": 96,
+        "bit": -1,
+        "comb": 64,
+        "cost_source": "fixed-op-width-v1",
+        "covered": true,
+        "delay": 64,
+        "dims": [],
+        "hi": -1,
+        "id": "16",
+        "kind": 4,
+        "lo": -1,
+        "opcode": 3,
+        "operands": [
+          {
+            "constant_signed": false,
+            "constant_width": 0,
+            "dims": [],
+            "kind": 0,
+            "limbs": [],
+            "node": "12",
+            "signed": false,
+            "width": 192
+          },
+          {
+            "constant_signed": false,
+            "constant_width": 0,
+            "dims": [],
+            "kind": 0,
+            "limbs": [],
+            "node": "14",
+            "signed": false,
+            "width": 192
+          }
+        ],
+        "signed_truncation": false,
+        "times": 0,
+        "to_width": 192,
+        "transaction_constant": false,
+        "width": 192
+      }
+    ],
+    "ports": [
+      {
+        "dims": [],
+        "direction": 0,
+        "name": "a",
+        "nodes": [
+          "0"
+        ],
+        "width": 96
+      },
+      {
+        "dims": [],
+        "direction": 0,
+        "name": "b",
+        "nodes": [
+          "1"
+        ],
+        "width": 96
+      },
+      {
+        "dims": [],
+        "direction": 0,
+        "name": "c",
+        "nodes": [
+          "2"
+        ],
+        "width": 96
+      },
+      {
+        "dims": [],
+        "direction": 1,
+        "name": "y",
+        "nodes": [
+          "6"
+        ],
+        "width": 192
+      },
+      {
+        "dims": [],
+        "direction": 1,
+        "name": "z",
+        "nodes": [
+          "7"
+        ],
+        "width": 192
+      },
+      {
+        "dims": [],
+        "direction": 0,
+        "name": "iv",
+        "nodes": [
+          "3"
+        ],
+        "width": 1
+      },
+      {
+        "dims": [],
+        "direction": 1,
+        "name": "ov",
+        "nodes": [
+          "8"
+        ],
+        "width": 1
+      }
+    ],
+    "regions": [
+      {
+        "C_selected": false,
+        "D_covered": false,
+        "D_selected": false,
+        "comb": 64,
+        "delay": 64,
+        "generated": true,
+        "id": "mul96/mul/0",
+        "inputs": [
+          {
+            "billing_width": 96,
+            "constant_limbs": [],
+            "constant_signed": false,
+            "constant_width": 0,
+            "node": "12",
+            "signed_view": false,
+            "width": 192
+          },
+          {
+            "billing_width": 96,
+            "constant_limbs": [],
+            "constant_signed": false,
+            "constant_width": 0,
+            "node": "13",
+            "signed_view": false,
+            "width": 192
+          }
+        ],
+        "internally_cuttable": false,
+        "legal_groups": [],
+        "members": [
+          "15"
+        ],
+        "numerically_validated_by_this_compile": false,
+        "operation": "mul_unsigned",
+        "outputs": [
+          "15"
+        ],
+        "parameters": {
+          "lhs_width": 96,
+          "result_width": 192,
+          "rhs_width": 96
+        },
+        "physically_evaluated": false,
+        "semantic_version": "unsigned-mod-result-v2",
+        "sharing_policy": "post-BEOPT-original-atomic-v1",
+        "template_id": "mul-original-v1"
+      },
+      {
+        "C_selected": false,
+        "D_covered": false,
+        "D_selected": false,
+        "comb": 64,
+        "delay": 64,
+        "generated": true,
+        "id": "mul96/mul/1",
+        "inputs": [
+          {
+            "billing_width": 96,
+            "constant_limbs": [],
+            "constant_signed": false,
+            "constant_width": 0,
+            "node": "12",
+            "signed_view": false,
+            "width": 192
+          },
+          {
+            "billing_width": 96,
+            "constant_limbs": [],
+            "constant_signed": false,
+            "constant_width": 0,
+            "node": "14",
+            "signed_view": false,
+            "width": 192
+          }
+        ],
+        "internally_cuttable": false,
+        "legal_groups": [],
+        "members": [
+          "16"
+        ],
+        "numerically_validated_by_this_compile": false,
+        "operation": "mul_unsigned",
+        "outputs": [
+          "16"
+        ],
+        "parameters": {
+          "lhs_width": 96,
+          "result_width": 192,
+          "rhs_width": 96
+        },
+        "physically_evaluated": false,
+        "semantic_version": "unsigned-mod-result-v2",
+        "sharing_policy": "post-BEOPT-original-atomic-v1",
+        "template_id": "mul-original-v1"
+      }
+    ]
+  },
+  "graph_identity_text": "{\"nodes\":[{\"billing_width\":0,\"bit\":-1,\"comb\":0,\"cost_source\":\"fixed-op-width-v1\",\"covered\":true,\"delay\":0,\"dims\":[],\"hi\":-1,\"id\":\"0\",\"kind\":1,\"lo\":-1,\"opcode\":0,\"operands\":[{\"constant_signed\":false,\"constant_width\":0,\"dims\":[],\"kind\":2,\"limbs\":[],\"node\":\"\",\"signed\":false,\"width\":96}],\"signed_truncation\":false,\"times\":0,\"to_width\":0,\"transaction_constant\":false,\"width\":96},{\"billing_width\":0,\"bit\":-1,\"comb\":0,\"cost_source\":\"fixed-op-width-v1\",\"covered\":true,\"delay\":0,\"dims\":[],\"hi\":-1,\"id\":\"1\",\"kind\":1,\"lo\":-1,\"opcode\":0,\"operands\":[{\"constant_signed\":false,\"constant_width\":0,\"dims\":[],\"kind\":2,\"limbs\":[],\"node\":\"\",\"signed\":false,\"width\":96}],\"signed_truncation\":false,\"times\":0,\"to_width\":0,\"transaction_constant\":false,\"width\":96},{\"billing_width\":0,\"bit\":-1,\"comb\":0,\"cost_source\":\"fixed-op-width-v1\",\"covered\":true,\"delay\":0,\"dims\":[],\"hi\":-1,\"id\":\"2\",\"kind\":1,\"lo\":-1,\"opcode\":0,\"operands\":[{\"constant_signed\":false,\"constant_width\":0,\"dims\":[],\"kind\":2,\"limbs\":[],\"node\":\"\",\"signed\":false,\"width\":96}],\"signed_truncation\":false,\"times\":0,\"to_width\":0,\"transaction_constant\":false,\"width\":96},{\"billing_width\":0,\"bit\":-1,\"comb\":0,\"cost_source\":\"fixed-op-width-v1\",\"covered\":true,\"delay\":0,\"dims\":[],\"hi\":-1,\"id\":\"3\",\"kind\":1,\"lo\":-1,\"opcode\":0,\"operands\":[{\"constant_signed\":false,\"constant_width\":0,\"dims\":[],\"kind\":2,\"limbs\":[],\"node\":\"\",\"signed\":false,\"width\":1}],\"signed_truncation\":false,\"times\":0,\"to_width\":0,\"transaction_constant\":false,\"width\":1},{\"billing_width\":0,\"bit\":-1,\"comb\":0,\"cost_source\":\"fixed-op-width-v1\",\"covered\":true,\"delay\":0,\"dims\":[],\"hi\":-1,\"id\":\"4\",\"kind\":0,\"lo\":-1,\"opcode\":0,\"operands\":[{\"constant_signed\":false,\"constant_width\":0,\"dims\":[],\"kind\":0,\"limbs\":[],\"node\":\"15\",\"signed\":false,\"width\":192}],\"signed_truncation\":false,\"times\":0,\"to_width\":0,\"transaction_constant\":false,\"width\":192},{\"billing_width\":0,\"bit\":-1,\"comb\":0,\"cost_source\":\"fixed-op-width-v1\",\"covered\":true,\"delay\":0,\"dims\":[],\"hi\":-1,\"id\":\"5\",\"kind\":0,\"lo\":-1,\"opcode\":0,\"operands\":[{\"constant_signed\":false,\"constant_width\":0,\"dims\":[],\"kind\":0,\"limbs\":[],\"node\":\"16\",\"signed\":false,\"width\":192}],\"signed_truncation\":false,\"times\":0,\"to_width\":0,\"transaction_constant\":false,\"width\":192},{\"billing_width\":0,\"bit\":-1,\"comb\":0,\"cost_source\":\"fixed-op-width-v1\",\"covered\":true,\"delay\":0,\"dims\":[],\"hi\":-1,\"id\":\"6\",\"kind\":0,\"lo\":-1,\"opcode\":0,\"operands\":[{\"constant_signed\":false,\"constant_width\":0,\"dims\":[],\"kind\":0,\"limbs\":[],\"node\":\"4\",\"signed\":false,\"width\":192}],\"signed_truncation\":false,\"times\":0,\"to_width\":0,\"transaction_constant\":false,\"width\":192},{\"billing_width\":0,\"bit\":-1,\"comb\":0,\"cost_source\":\"fixed-op-width-v1\",\"covered\":true,\"delay\":0,\"dims\":[],\"hi\":-1,\"id\":\"7\",\"kind\":0,\"lo\":-1,\"opcode\":0,\"operands\":[{\"constant_signed\":false,\"constant_width\":0,\"dims\":[],\"kind\":0,\"limbs\":[],\"node\":\"5\",\"signed\":false,\"width\":192}],\"signed_truncation\":false,\"times\":0,\"to_width\":0,\"transaction_constant\":false,\"width\":192},{\"billing_width\":0,\"bit\":-1,\"comb\":0,\"cost_source\":\"fixed-op-width-v1\",\"covered\":true,\"delay\":0,\"dims\":[],\"hi\":-1,\"id\":\"8\",\"kind\":0,\"lo\":-1,\"opcode\":0,\"operands\":[{\"constant_signed\":false,\"constant_width\":1,\"dims\":[],\"kind\":1,\"limbs\":[\"0\"],\"node\":\"\",\"signed\":false,\"width\":1}],\"signed_truncation\":false,\"times\":0,\"to_width\":0,\"transaction_constant\":true,\"width\":1},{\"billing_width\":0,\"bit\":-1,\"comb\":0,\"cost_source\":\"fixed-op-width-v1\",\"covered\":true,\"delay\":0,\"dims\":[],\"hi\":-1,\"id\":\"9\",\"kind\":11,\"lo\":-1,\"opcode\":0,\"operands\":[{\"constant_signed\":false,\"constant_width\":0,\"dims\":[],\"kind\":0,\"limbs\":[],\"node\":\"0\",\"signed\":false,\"width\":96}],\"signed_truncation\":false,\"times\":0,\"to_width\":96,\"transaction_constant\":false,\"width\":96},{\"billing_width\":0,\"bit\":-1,\"comb\":0,\"cost_source\":\"fixed-op-width-v1\",\"covered\":true,\"delay\":0,\"dims\":[],\"hi\":-1,\"id\":\"10\",\"kind\":11,\"lo\":-1,\"opcode\":0,\"operands\":[{\"constant_signed\":false,\"constant_width\":0,\"dims\":[],\"kind\":0,\"limbs\":[],\"node\":\"1\",\"signed\":false,\"width\":96}],\"signed_truncation\":false,\"times\":0,\"to_width\":96,\"transaction_constant\":false,\"width\":96},{\"billing_width\":0,\"bit\":-1,\"comb\":0,\"cost_source\":\"fixed-op-width-v1\",\"covered\":true,\"delay\":0,\"dims\":[],\"hi\":-1,\"id\":\"11\",\"kind\":11,\"lo\":-1,\"opcode\":0,\"operands\":[{\"constant_signed\":false,\"constant_width\":0,\"dims\":[],\"kind\":0,\"limbs\":[],\"node\":\"2\",\"signed\":false,\"width\":96}],\"signed_truncation\":false,\"times\":0,\"to_width\":96,\"transaction_constant\":false,\"width\":96},{\"billing_width\":0,\"bit\":-1,\"comb\":0,\"cost_source\":\"fixed-op-width-v1\",\"covered\":true,\"delay\":0,\"dims\":[],\"hi\":-1,\"id\":\"12\",\"kind\":11,\"lo\":-1,\"opcode\":0,\"operands\":[{\"constant_signed\":false,\"constant_width\":0,\"dims\":[],\"kind\":0,\"limbs\":[],\"node\":\"9\",\"signed\":false,\"width\":96}],\"signed_truncation\":false,\"times\":0,\"to_width\":192,\"transaction_constant\":false,\"width\":192},{\"billing_width\":0,\"bit\":-1,\"comb\":0,\"cost_source\":\"fixed-op-width-v1\",\"covered\":true,\"delay\":0,\"dims\":[],\"hi\":-1,\"id\":\"13\",\"kind\":11,\"lo\":-1,\"opcode\":0,\"operands\":[{\"constant_signed\":false,\"constant_width\":0,\"dims\":[],\"kind\":0,\"limbs\":[],\"node\":\"10\",\"signed\":false,\"width\":96}],\"signed_truncation\":false,\"times\":0,\"to_width\":192,\"transaction_constant\":false,\"width\":192},{\"billing_width\":0,\"bit\":-1,\"comb\":0,\"cost_source\":\"fixed-op-width-v1\",\"covered\":true,\"delay\":0,\"dims\":[],\"hi\":-1,\"id\":\"14\",\"kind\":11,\"lo\":-1,\"opcode\":0,\"operands\":[{\"constant_signed\":false,\"constant_width\":0,\"dims\":[],\"kind\":0,\"limbs\":[],\"node\":\"11\",\"signed\":false,\"width\":96}],\"signed_truncation\":false,\"times\":0,\"to_width\":192,\"transaction_constant\":false,\"width\":192},{\"billing_width\":96,\"bit\":-1,\"comb\":64,\"cost_source\":\"fixed-op-width-v1\",\"covered\":true,\"delay\":64,\"dims\":[],\"hi\":-1,\"id\":\"15\",\"kind\":4,\"lo\":-1,\"opcode\":3,\"operands\":[{\"constant_signed\":false,\"constant_width\":0,\"dims\":[],\"kind\":0,\"limbs\":[],\"node\":\"12\",\"signed\":false,\"width\":192},{\"constant_signed\":false,\"constant_width\":0,\"dims\":[],\"kind\":0,\"limbs\":[],\"node\":\"13\",\"signed\":false,\"width\":192}],\"signed_truncation\":false,\"times\":0,\"to_width\":192,\"transaction_constant\":false,\"width\":192},{\"billing_width\":96,\"bit\":-1,\"comb\":64,\"cost_source\":\"fixed-op-width-v1\",\"covered\":true,\"delay\":64,\"dims\":[],\"hi\":-1,\"id\":\"16\",\"kind\":4,\"lo\":-1,\"opcode\":3,\"operands\":[{\"constant_signed\":false,\"constant_width\":0,\"dims\":[],\"kind\":0,\"limbs\":[],\"node\":\"12\",\"signed\":false,\"width\":192},{\"constant_signed\":false,\"constant_width\":0,\"dims\":[],\"kind\":0,\"limbs\":[],\"node\":\"14\",\"signed\":false,\"width\":192}],\"signed_truncation\":false,\"times\":0,\"to_width\":192,\"transaction_constant\":false,\"width\":192}],\"ports\":[{\"dims\":[],\"direction\":0,\"name\":\"a\",\"nodes\":[\"0\"],\"width\":96},{\"dims\":[],\"direction\":0,\"name\":\"b\",\"nodes\":[\"1\"],\"width\":96},{\"dims\":[],\"direction\":0,\"name\":\"c\",\"nodes\":[\"2\"],\"width\":96},{\"dims\":[],\"direction\":1,\"name\":\"y\",\"nodes\":[\"6\"],\"width\":192},{\"dims\":[],\"direction\":1,\"name\":\"z\",\"nodes\":[\"7\"],\"width\":192},{\"dims\":[],\"direction\":0,\"name\":\"iv\",\"nodes\":[\"3\"],\"width\":1},{\"dims\":[],\"direction\":1,\"name\":\"ov\",\"nodes\":[\"8\"],\"width\":1}],\"regions\":[{\"C_selected\":false,\"D_covered\":false,\"D_selected\":false,\"comb\":64,\"delay\":64,\"generated\":true,\"id\":\"mul96/mul/0\",\"inputs\":[{\"billing_width\":96,\"constant_limbs\":[],\"constant_signed\":false,\"constant_width\":0,\"node\":\"12\",\"signed_view\":false,\"width\":192},{\"billing_width\":96,\"constant_limbs\":[],\"constant_signed\":false,\"constant_width\":0,\"node\":\"13\",\"signed_view\":false,\"width\":192}],\"internally_cuttable\":false,\"legal_groups\":[],\"members\":[\"15\"],\"numerically_validated_by_this_compile\":false,\"operation\":\"mul_unsigned\",\"outputs\":[\"15\"],\"parameters\":{\"lhs_width\":96,\"result_width\":192,\"rhs_width\":96},\"physically_evaluated\":false,\"semantic_version\":\"unsigned-mod-result-v2\",\"sharing_policy\":\"post-BEOPT-original-atomic-v1\",\"template_id\":\"mul-original-v1\"},{\"C_selected\":false,\"D_covered\":false,\"D_selected\":false,\"comb\":64,\"delay\":64,\"generated\":true,\"id\":\"mul96/mul/1\",\"inputs\":[{\"billing_width\":96,\"constant_limbs\":[],\"constant_signed\":false,\"constant_width\":0,\"node\":\"12\",\"signed_view\":false,\"width\":192},{\"billing_width\":96,\"constant_limbs\":[],\"constant_signed\":false,\"constant_width\":0,\"node\":\"14\",\"signed_view\":false,\"width\":192}],\"internally_cuttable\":false,\"legal_groups\":[],\"members\":[\"16\"],\"numerically_validated_by_this_compile\":false,\"operation\":\"mul_unsigned\",\"outputs\":[\"16\"],\"parameters\":{\"lhs_width\":96,\"result_width\":192,\"rhs_width\":96},\"physically_evaluated\":false,\"semantic_version\":\"unsigned-mod-result-v2\",\"sharing_policy\":\"post-BEOPT-original-atomic-v1\",\"template_id\":\"mul-original-v1\"}]}",
+  "graph_sha256": "2a96a9b7ed5c94ceff5aec61f610bc45cacc79551e901c0952058b3ebf1b894f",
+  "pipeline": {
+    "allowed_delay": 67.200000000000003,
+    "baseline_delay": 64,
+    "comb": 128,
+    "final_delay": 64,
+    "register_bits": "770",
+    "register_count": 6
+  },
+  "protocol": {
+    "clock_name": "clk",
+    "input_reset_values": {
+      "a": [
+        "5",
+        "0"
+      ],
+      "b": [
+        "7",
+        "0"
+      ],
+      "c": [
+        "11",
+        "0"
+      ],
+      "iv": [
+        "0"
+      ]
+    },
+    "input_valid_name": "iv",
+    "output_valid_name": "ov",
+    "register_stages": 2,
+    "reset_active_low": true,
+    "reset_enabled": true,
+    "reset_name": "rstn"
+  },
+  "request": {
+    "II": 1,
+    "L": 3,
+    "candidate_policy": "core-original-v1",
+    "cost_mode": "fixed",
+    "cost_source": "fixed-op-width-v1",
+    "cost_source_sha256": "d83c391e3b5435b40d9805c869b01cd9ff8cdf2dae27c173223ca4614d2c59bd",
+    "model_bundle_sha256": "",
+    "platform_profile_sha256": "a29e056328a495af3f5815e3c56f4e6838eafd4b3f4f7844cc81d82ef99dd3df",
+    "semantic_profile": "arithmetic-semantics-v2",
+    "target_period_ps": 1500,
+    "target_platform": "asap7"
+  },
+  "rtl_sha256": "80709f8909a90c021ebbe32fa7b5b37ecfd300403ff861317b0903e71f6345e0",
+  "schedule_identity_text": "{\"protocol\":{\"clock_name\":\"clk\",\"input_reset_values\":{\"a\":[\"5\",\"0\"],\"b\":[\"7\",\"0\"],\"c\":[\"11\",\"0\"],\"iv\":[\"0\"]},\"input_valid_name\":\"iv\",\"output_valid_name\":\"ov\",\"register_stages\":2,\"reset_active_low\":true,\"reset_enabled\":true,\"reset_name\":\"rstn\"},\"stages\":[0,0,0,0,0,0,2,2,2,0,0,0,0,0,0,0,0]}",
+  "schedule_sha256": "d91b3fc0d8998615dda7e2ea712fe7436e582e6d352637005edf37cfcc57f7cb",
+  "stages": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "state_unit": "saved_bits",
+  "status": "passed",
+  "version": "arithmetic-structure-report-v1"
+}

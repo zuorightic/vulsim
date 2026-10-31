@@ -42,7 +42,7 @@ python3 -m experiments.arithmetic_dse.step2_validation --output build/step2-rech
 ARITHMETIC_SOFTFLOAT_DIR=/path/to/flat/softfloat python3 -m experiments.arithmetic_dse.step2_validation --output build/step2-softfloat-recheck
 ```
 
-B/C的新表按输入语义位宽向上取档，可靠ZExt来源可剥离；结果256/257位不自动把128位乘数改成表外输入。d/a是独立字段，组合成本按共享节点求和，时延按依赖最长路径计算。Case保留优先级，Lookup按实际可达索引展开成Mux图；未知操作拒绝或先降低。平方Mul组合成本只属于预声明诊断，完整排序诊断在步骤五执行，不能替换主C。当前Python实现是可执行契约，编译器CostProvider、公共选项贯通和真实调度按步骤四/五/七落实。
+B/C的新表按输入语义位宽向上取档，可靠ZExt来源可剥离；结果256/257位不自动把128位乘数改成表外输入。d/a是独立字段，组合成本按共享节点求和，时延按依赖最长路径计算。Case保留优先级，Lookup按实际可达索引展开成Mux图；未知操作拒绝或先降低。平方Mul组合成本只属于预声明诊断，完整排序诊断在步骤五执行，不能替换主C。Python实现保留为独立可执行契约；步骤四已将同表固定CostProvider和公共请求接入真实核心调度，half/quarter内部拆分、正式C位置选择和D推理仍按步骤五/七落实。
 
 目标规则先冻结共同公式`ceil(H_ref + (3/2)*D_ref/L)`和平台/阶段/参考身份。D_ref使用原始图最长路径，H_ref单独声明并避免重复计入；实际ps值须等各平台参考微基准就绪后逐批冻结。当前回归中的数值均为公式测试的合成输入，没有生成正式目标或训练模型。
 
@@ -59,3 +59,8 @@ python3 -m experiments.arithmetic_dse.wide_evidence
 
 
 当前步骤三软件核验冻结已推进到[backend_freeze_v7.json](backend_freeze_v7.json)，收尾记录见[规划第四章§3.10](../../mission/lxy-plan-fix.md#step3-validator-closure)与[step3_platforms_v3说明](evidence/step3_platforms_v3/README.md)。物理结果继承原v6：本次只收紧静态SDC命令边界、补参数来源和交接覆盖，不新增synth/grt/final。v5旧ns结果仍作废；v6原772份证据及全部旧收费保留。GF180 wire RC校准依据尚未闭合，通孔适配验证不扩大成全部wire验证。
+
+
+[步骤四公共编译接口](../../mission/lxy-plan-fix.md#step4-interface-acceptance)已实际贯通请求、原始Mul/FP原子区域、固定成本及图/物化校验，说明见[RTLzz接口文档](../../rtlzz/src/backend/arithmetic_interfaces.md)。当前后继冻结为[arithmetic_interfaces_freeze_v2.json](arithmetic_interfaces_freeze_v2.json)，[报告类型修订证据](evidence/step4_interfaces_v2/README.md)说明整数计数/历史导航/存储分层；[原v1证据](evidence/step4_interfaces_v1/README.md)保留原字节，便携入口为`python3 -m experiments.arithmetic_dse.interfaces_evidence`。这不是half/quarter内部拆分或D模型完成；旧simple_cost/split16按迁移清单在步骤五退出。步骤三v7物理证据仍按显式旧快照追溯，GF180 wire RC风险未关闭。
+
+证据目录的新旧含义见[总导航](evidence/README.md)。旧`step4/step4_review`已增加历史横幅，原冻结路径不迁移；新包遵循[分层存储规则](../arithmetic_dse/evidence_storage.md)，不重复复制父源码/账本，不仅凭hash宣称完整产物可重算。

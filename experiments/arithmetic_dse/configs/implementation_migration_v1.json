@@ -23,8 +23,8 @@
         "rtlzz/src/backend/simple_cost.cpp",
         "old_simple_cost_options"
       ],
-      "used_by": "unmigrated_step5_compiler_and_historical_placement_checks",
-      "replace_at": "step4_step5; move_historical_recomputation_to_explicit_frozen_snapshot_if_needed"
+      "used_by": "unmigrated_step5_split16_and_historical_placement_tests_only; new_ArithmeticRequest_rejects_these_flags",
+      "replace_at": "step5_parameterized_split_and_new_C_position_acceptance; mandatory_final_step9_scan"
     },
     {
       "paths": [
@@ -50,5 +50,18 @@
     "backend/asap7.mk_platform_specific_active_settings",
     "historical_nine_case_budget_planning_helpers_in_active_budget_module"
   ],
-  "historical_forecast_recomputation": "evidence.py explicitly loads the original backend-v4 budget source through freeze_history; old nine-case formulas exist only in frozen evidence snapshots"
+  "historical_forecast_recomputation": "evidence.py explicitly loads the original backend-v4 budget source through freeze_history; old nine-case formulas exist only in frozen evidence snapshots",
+  "stage4_implemented": [
+    "public_ArithmeticRequest_through_CompileOptions_PipelineV2_VUL_bridge_both_CLIs",
+    "native_BEIR_preflight_and_original_Mul_parameter_metadata",
+    "fixed_op_width_v1_CostProvider_used_in_initial_move_and_final_scheduling",
+    "actual_selection_graph_normalization_and_atomic_FP_protection",
+    "structured_request_cost_context_graph_schedule_RTL_and_protocol_reports"
+  ],
+  "stage4_boundaries": [
+    "original_Mul_only_in_new_request; no_half_quarter_generation_acceptance",
+    "model_requests_fail_cost_uncovered; offline_inference_step7",
+    "legacy_operation_weights_remain_general_RTLzz_feature_not_formal_revised_C",
+    "no_new_PPA_or_main_matrix_records"
+  ]
 }

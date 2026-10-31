@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "version": "step4-report-review-preservation-v2",
+  "old_freezes_unchanged": 17,
+  "old_evidence_files_unchanged": 5772,
+  "changed_existing_paths": [
+    "experiments/arithmetic/README.md",
+    "experiments/arithmetic/backend_usage.json",
+    "experiments/arithmetic_dse/configs/arithmetic_compiler_interfaces_v1.json",
+    "experiments/arithmetic_dse/freeze_history.py",
+    "experiments/arithmetic_dse/interfaces_evidence.py",
+    "mission/README.md",
+    "mission/lxy-plan-fix.md",
+    "rtlzz/src/arithmetic_request.cpp",
+    "rtlzz/src/backend/arithmetic_core.cpp",
+    "rtlzz/src/backend/arithmetic_interfaces.md",
+    "rtlzz/testv2/arithmetic_interface_test.cpp"
+  ],
+  "deleted_existing_paths": [],
+  "only_prospective_storage_rule_added_to_normative_plan": true,
+  "prior_chapter_2_3_4_bytes_preserved": true,
+  "only_new_banner_files_in_old_step4_directories": true,
+  "platform_profiles_fixed_table_and_budget_unchanged": true,
+  "markdown_links_and_python_syntax_passed": true,
+  "root_and_submodule_diff_check_passed": true,
+  "ledger_prefix_unchanged": true,
+  "cleanup_passed": true,
+  "new_usage": {
+    "synth": 0,
+    "grt": 0,
+    "final": 0,
+    "support_calls": 5,
+    "walltime_s": 30.591210576472804,
+    "CPU_time_s": 32.9,
+    "pending": 0
+  },
+  "cumulative_usage": {
+    "synth": 52,
+    "grt": 29,
+    "final": 14,
+    "support_calls": 580,
+    "walltime_s": 4771.475181376096,
+    "CPU_time_s": 7149.79,
+    "pending": 0
+  },
+  "no_new_physical_or_functional_measurement": true,
+  "remote_upload_or_git_history_rewrite": false
+}

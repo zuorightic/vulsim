@@ -1,0 +1,86 @@
+{
+  "status": "passed",
+  "version": "arithmetic-interfaces-portable-checks-v1",
+  "frozen_evidence_index_sha256": "a820e302c0bbbf2d2da7160d148202d3a1df59c3aa65a4514c1b925c612deb24",
+  "checks": [
+    {
+      "name": "isolated_original",
+      "status": "passed",
+      "parent_status": {
+        "physical_v7": "passed",
+        "placement": "passed",
+        "step2": "passed"
+      },
+      "evidence_index_sha256": "a820e302c0bbbf2d2da7160d148202d3a1df59c3aa65a4514c1b925c612deb24"
+    },
+    {
+      "name": "current_source_modified",
+      "status": "rejected",
+      "reason": "ValueError: step4 evidence mismatch: current source rtlzz/src/arithmetic_request.cpp: 'f6d431d8fb25dd6125bf4590cc7ce8a1092d897ebb682afe1bde2227ab8998f8' != '9a097106b96e6332b720f483417ee6684d154bd1086a7266e27e5e1f49294a8e'",
+      "evidence_hashes_rebound": false
+    },
+    {
+      "name": "wrong_Mul_cost",
+      "status": "rejected",
+      "reason": "ValueError: step4 evidence mismatch: node delay: 0 != 64.0",
+      "evidence_hashes_rebound": true
+    },
+    {
+      "name": "wrong_reference_width",
+      "status": "rejected",
+      "reason": "ValueError: step4 evidence mismatch: reference type: (257, []) != (256, [])",
+      "evidence_hashes_rebound": true
+    },
+    {
+      "name": "cut_atomic_FP",
+      "status": "rejected",
+      "reason": "ValueError: backwards schedule dependency",
+      "evidence_hashes_rebound": true
+    },
+    {
+      "name": "wrong_template_parameters",
+      "status": "rejected",
+      "reason": "ValueError: step4 evidence mismatch: template width parameters: {'lhs_width': 64, 'result_width': 256, 'rhs_width': 128} != {'lhs_width': 128, 'rhs_width': 128, 'result_width': 256}",
+      "evidence_hashes_rebound": true
+    },
+    {
+      "name": "fake_D_success",
+      "status": "rejected",
+      "reason": "ValueError: step4 evidence mismatch: no fake D result: 'backend-model' != 'fixed'",
+      "evidence_hashes_rebound": true
+    },
+    {
+      "name": "wrong_reset_protocol",
+      "status": "rejected",
+      "reason": "ValueError: step4 evidence mismatch: cycle 0 integer outputs: [35, 55, 35, 55, 35, 55, 35, 55, 35, 55, 35, 55, 35, 55, 35, 55, 35, 55] != [35, 55, 35, 55, 35, 55, 35, 55, 0, 0, 35, 55, 35, 55, 35, 55, 35, 55]",
+      "evidence_hashes_rebound": true
+    },
+    {
+      "name": "wrong_clock_protocol",
+      "status": "rejected",
+      "reason": "ValueError: reported clock absent from actual sequential RTL",
+      "evidence_hashes_rebound": true
+    },
+    {
+      "name": "flip_product_bit255",
+      "status": "rejected",
+      "reason": "ValueError: step4 evidence mismatch: cycle 4 integer outputs: [65025, 25245, 4294836225, 1868730525, 18446744065119617025, 18011143276560355485, 340282366920938463426481119284349108225, 180621771285020878718758325745403793565, 57896044618658097711785492504343953925954427598978405092802042789093028397057, 76134945190282498260319190162268247122272506190401506575311117400051263705245, 16769025, 16130205, 281474943156225, 268759223472285, 79228162514263774643590529025, 38646912053906761014112391325, 6277101735386680763835789423049210091073826769276946612225, 5150082787849429154412493821291695473126635386321668640925] != [65025, 25245, 4294836225, 1868730525, 18446744065119617025, 18011143276560355485, 340282366920938463426481119284349108225, 180621771285020878718758325745403793565, 115792089237316195423570985008687907852589419931798687112530834793049593217025, 76134945190282498260319190162268247122272506190401506575311117400051263705245, 16769025, 16130205, 281474943156225, 268759223472285, 79228162514263774643590529025, 38646912053906761014112391325, 6277101735386680763835789423049210091073826769276946612225, 5150082787849429154412493821291695473126635386321668640925]",
+      "evidence_hashes_rebound": true
+    },
+    {
+      "name": "isolated_restored",
+      "status": "passed",
+      "parent_status": {
+        "physical_v7": "passed",
+        "placement": "passed",
+        "step2": "passed"
+      },
+      "evidence_index_sha256": "a820e302c0bbbf2d2da7160d148202d3a1df59c3aa65a4514c1b925c612deb24"
+    }
+  ],
+  "negative_checks_rejected": 9,
+  "requires_build": false,
+  "compiler_or_EDA_executed": false,
+  "PATH": "",
+  "scope": "all copy mutations; full parent chain; semantic negatives rebind graph/schedule/evidence hashes; source negative checks immutable binding"
+}

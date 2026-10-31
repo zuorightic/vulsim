@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "pipeline-test",
+      "CIRCT_enabled": false,
+      "exit_code": 0,
+      "output": "SKIP CIRCT checks: VUL_REGRESSION_CIRCT=0; native checks continue\npipeline tests passed\n"
+    },
+    {
+      "name": "pipeline-test",
+      "CIRCT_enabled": true,
+      "exit_code": 0,
+      "output": "pipeline tests passed\n"
+    },
+    {
+      "name": "pipeline-reset-test",
+      "CIRCT_enabled": true,
+      "exit_code": 0,
+      "output": "pipeline reset API tests passed\n"
+    },
+    {
+      "name": "pipeline-valid-test",
+      "CIRCT_enabled": true,
+      "exit_code": 0,
+      "output": "pipeline valid API and IR tests passed\n"
+    },
+    {
+      "name": "arithmetic-region-test",
+      "CIRCT_enabled": true,
+      "exit_code": 0,
+      "output": "PASS arithmetic regions checks=55\n"
+    }
+  ],
+  "new_PPA_calls": 0
+}

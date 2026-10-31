@@ -1,0 +1,45 @@
+{
+  "version": "target-conditioned-characterization-v1",
+  "initial_abc_target_points_ps": [
+    1000,
+    1500,
+    2000
+  ],
+  "minimum_distinct_targets_per_model_family": 3,
+  "case_target_formula_reference_abc_ps": 1500,
+  "case_target_formula_reference_sdc_ps": 1500,
+  "case_target_freeze_policy": "compute case targets once from reference-point microbenchmarks; supplemental target samples never revise case targets",
+  "target_axis_lookup": "exact_measured_target_only; unmeasured interior and exterior targets return uncovered",
+  "extrapolation": "forbidden",
+  "extension": "add target measurements from declared microbenchmarks before querying an uncovered target; version coverage and count all calls; never retune BC or use formal/holdout whole-graph PPA to train the global model",
+  "required_identity_dimensions": [
+    "operation",
+    "operand_widths",
+    "result_width",
+    "signedness",
+    "template",
+    "split_granularity",
+    "constant_features",
+    "abc_target_ps",
+    "sdc_period_ps",
+    "ABC_mode_and_script_hash",
+    "SDC_rule_hash",
+    "library_and_LEF_hashes",
+    "RC_and_flow_hashes",
+    "tool_binary_hashes",
+    "corner",
+    "VT",
+    "evaluation_stage",
+    "boundary_shell_version"
+  ],
+  "delay_interpretation": "mapped implementation under the recorded synthesis target and SDC; never an intrinsic target-independent operator delay",
+  "budget_policy": "three target points apply to microbenchmark characterization, not main-case period scanning; review initial synthesis/global-route call caps before step7 collection",
+  "step3_target_probes": "synthesis-only target-dependence and identity checks; not a completed D cost library",
+  "budget_review_required_before_collection": {
+    "characterization_min_samples": 57,
+    "synthesis_base_with_main_and_D_search": 129,
+    "grt_base_if_all_characterization_use_grt": 111,
+    "initial_limits_insufficient": true,
+    "policy": "version and freeze resource ceilings before step7 collection; never silently exceed initial 128 synth/96 grt caps"
+  }
+}

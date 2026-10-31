@@ -1,0 +1,18 @@
+{
+  "version": "arithmetic-evidence-storage-v1",
+  "effective_from": "step4_interfaces_v2_and_new_packages",
+  "size_unit": "bytes_of_file_content; allocated_du_and_git_packed_bytes_reported_separately",
+  "new_git_single_file_max_bytes": 1048576,
+  "new_git_package_target_bytes": 5242880,
+  "limits_basis": "engineering_retention_targets_for_new_packages; not_a_measured_full_matrix_capacity_or_a_retroactive_limit",
+  "historical_evidence": "grandfathered_immutable; no_rewrite_or_deletion_in_this_revision",
+  "git_keep": ["small_frozen_requests_and_profiles", "versioned_schemas_and_model_metadata", "row_results_and_resource_deltas", "compact_semantic_reports_and_replay_inputs", "representative_or_required_failure_evidence", "checksums_sizes_and_resolvable_artifact_catalog"],
+  "deduplicate": ["reference_exact_parent_artifact_hash_instead_of_copying", "snapshot_only_changed_source_bytes; map_unchanged_paths_to_frozen_parent", "retain_ledger_prefix_identity_and_new_entries_instead_of_recopying_full_history", "compress_large_text_deterministically; no_expanded_and_compressed_duplicate"],
+  "external_keep": ["full_tool_logs", "ODB_and_large_SPEF", "large_training_raw_files", "full_repeated_netlists_or_traces", "build_outputs_and_binaries"],
+  "external_catalog_required": ["artifact_id", "sha256", "content_size_bytes", "encoding", "stored_sha256", "stored_size_bytes", "relative_member_path", "location", "availability_status", "license_or_source_constraints"],
+  "verification_levels": ["repository_summary_and_selected_replays", "full_artifacts_required_for_full_reproduction"],
+  "missing_external_artifact": "explicit_artifact_unavailable; never_report_full_verification_passed_from_hash_only",
+  "bulk_gate": "freeze_storage_inventory_and_byte_estimate_with_existing_platform_batch_admission_before_training_or_688_row_runs; repartition_if_new_git_targets_exceeded",
+  "remote_transfer": "not_implemented_or_authorized_by_this_policy; select_durable_destination_and_confirm_retention_before_relying_on_it",
+  "migration": "prospective_only; any_historical_extraction_needs_explicit_mapping_and_verified_restore_before_a_separate_versioned_migration"
+}

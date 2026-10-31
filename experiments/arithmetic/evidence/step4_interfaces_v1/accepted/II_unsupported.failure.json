@@ -1,0 +1,20 @@
+{
+  "failure_code": "invalid_request",
+  "failure_reason": "only II=1 is implemented",
+  "failure_stage": "request_validation",
+  "node_id": "",
+  "region_id": "",
+  "request": {
+    "II": 2,
+    "L": 3,
+    "candidate_policy": "core-original-v1",
+    "cost_mode": "fixed",
+    "model_bundle_sha256": "",
+    "platform_profile_sha256": "a29e056328a495af3f5815e3c56f4e6838eafd4b3f4f7844cc81d82ef99dd3df",
+    "semantic_profile": "arithmetic-semantics-v2",
+    "target_period_ps": 1500,
+    "target_platform": "asap7"
+  },
+  "status": "failed",
+  "version": "arithmetic-structure-report-v1"
+}

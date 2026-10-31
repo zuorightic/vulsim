@@ -1,0 +1,108 @@
+{
+  "version": "arithmetic-semantics-v2",
+  "integer": {
+    "signedness": "unsigned",
+    "operand_widths": [
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "input_range_policy": "reject_out_of_range",
+    "multiply": "exact_product_then_explicit_output_truncation",
+    "add": "exact_sum_then_explicit_output_truncation",
+    "overflow": "modulo_2_to_output_width",
+    "division": {
+      "normal": "a=q*d+r; 0<=r<d",
+      "zero_divisor": "q=2**width-1; r=a",
+      "safe_divisor": "safe_d = (d == 0) ? 1 : d",
+      "implementation": "all_Div_Mod_nodes_consume_safe_d; select_defined_outputs_after_alignment",
+      "reset": "zero_inputs_are_defined_including_all_internal_reset_expressions"
+    },
+    "out_of_scope": [
+      "signed_arithmetic",
+      "mixed_signedness"
+    ],
+    "maximum_full_product_width": 256,
+    "maximum_two_product_sum_width": 257,
+    "dynamic_shift": {
+      "input": "unsigned_integer_encoding; width_explicit_per_case",
+      "normal": "s<W: logical_shift_then_mask_to_W",
+      "out_of_range": "s>=W: zero",
+      "safe_internal_shift": "safe_s = (s<W) ? s : 0; every_internal_shift_consumes_safe_s",
+      "output": "select_in_range_result_else_zero",
+      "reset": "internal_operations_defined_for_all_reset_expressions"
+    }
+  },
+  "floating_point": {
+    "format": "IEEE754-binary32",
+    "operation": "multiply",
+    "interface": "uint32_bit_pattern_and_uint5_exception_flags",
+    "rounding": "nearest_ties_to_even",
+    "tininess": "after_rounding",
+    "tininess_test": "precision_24_rounding_with_unbounded_exponent; not_just_final_encoded_exponent",
+    "subnormals": "gradual_underflow",
+    "ftz": false,
+    "daz": false,
+    "canonical_nan": "0x7fc00000",
+    "signaling_nan": "exp=255; fraction!=0; fraction_bit22=0",
+    "invalid": "signaling_nan_or_zero_times_infinity",
+    "signed_zero": "xor_operand_signs_for_zero_product",
+    "flags": {
+      "invalid": 16,
+      "divide_by_zero": 8,
+      "overflow": 4,
+      "underflow": 2,
+      "inexact": 1
+    },
+    "flags_scope": "per_operation_not_global_sticky",
+    "chained_multiply": "round_each_operation_separately; output_flags=flags1|flags2",
+    "bypass": "return_unmodified_selected_bits_and_zero_flags_when_bypass_selected",
+    "out_of_scope": [
+      "float_double_frontend_types",
+      "FMA",
+      "other_rounding_modes",
+      "float_add_div_sqrt"
+    ]
+  },
+  "cycle_contract": {
+    "II": 1,
+    "L_definition": "input_Q_at_edge_k_to_output_Q_at_edge_k_plus_L",
+    "rtlzz_internal_boundaries": "L-1",
+    "A_latency": 1,
+    "BCD_latency": "same_fixed_L_for_each_case",
+    "valid": "advance_every_cycle; invalid_data_not_compared",
+    "reset": "discard_in_flight_transactions_and_restart_scoreboard",
+    "flags_and_sidebands": "same_transaction_and_latency_as_data",
+    "stall": "unsupported_in_this_experiment"
+  },
+  "supersedes": "arithmetic-semantics-v1; floating_point_and_cycle_contract_unchanged",
+  "extension_profiles": {
+    "reserved_fields": [
+      "signedness",
+      "total_width_W",
+      "fraction_bits_F",
+      "intermediate_precision",
+      "rescaling_points",
+      "rounding",
+      "truncation",
+      "overflow",
+      "saturation",
+      "exception_policy",
+      "approximation_domain",
+      "error_contract"
+    ],
+    "unknown_fields_or_profile": "explicit_rejection",
+    "implemented": [
+      "unsigned_integer_core",
+      "binary32_mul_rne_v1"
+    ],
+    "not_implemented": [
+      "signed_split",
+      "fixed_point",
+      "AES",
+      "sigmoid"
+    ]
+  }
+}
