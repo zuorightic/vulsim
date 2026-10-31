@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "CPP": [
+    {
+      "name": "pipeline-test",
+      "exit_code": 0,
+      "output": "pipeline tests passed\n"
+    },
+    {
+      "name": "pipeline-reset-test",
+      "exit_code": 0,
+      "output": "pipeline reset API tests passed\n"
+    },
+    {
+      "name": "pipeline-valid-test",
+      "exit_code": 0,
+      "output": "pipeline valid API and IR tests passed\n"
+    },
+    {
+      "name": "arithmetic-region-test",
+      "exit_code": 0,
+      "output": "PASS arithmetic regions checks=55\n"
+    },
+    {
+      "name": "arithmetic-interface-test",
+      "exit_code": 0,
+      "output": "PASS arithmetic interfaces checks=3786\n"
+    }
+  ],
+  "python_unittest": "backend,SDC,report types passed",
+  "CIRCT_enabled_path": true,
+  "native_disable_scope": "separate native parameterized generation did not invoke CIRCT",
+  "new_PPA_calls": 0
+}

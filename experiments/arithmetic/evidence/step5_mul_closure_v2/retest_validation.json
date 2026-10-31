@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "software": {
+    "reports": 129,
+    "regions": 219,
+    "blocked_regions": 165,
+    "native_rejected": 0,
+    "native_unreconstructable": 0,
+    "native_mutations_rejected": 5,
+    "C_candidates_recomputed": 340,
+    "feasible_positions": 4,
+    "production_register_bits": 130,
+    "sensitivity_structures": 30,
+    "sensitivity_contexts": 10,
+    "sensitivity_selected_changes": 0
+  },
+  "capacity": {
+    "task_id": "asap7-mul128-C-postsynth-grt-3600-v1",
+    "status": "completed",
+    "failure_code": null,
+    "complete_chain": {
+      "walltime_s": 1450.1932151019573,
+      "CPU_time_s": 2489.33,
+      "CPU_accounting": "GNU_time_actual",
+      "sampled_CPU_s": 2480.04,
+      "RSS_peak_KiB": 2931364,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      }
+    },
+    "separate_5_1_grt": [
+      {
+        "stage": "5_1_grt",
+        "walltime_s": 1021.23,
+        "CPU_time_s": 1948.68,
+        "source": "build/step5-closure-20261031/capacity-retest/logs/asap7/arithmetic_probe/base/5_1_grt.log",
+        "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+      }
+    ],
+    "process_completed": true,
+    "target_setup_met": true,
+    "hold_feasible_at_TT": true,
+    "scale_vs_split_attribution": "not established; no original paired run",
+    "batch_release": "separate domain admission required; no blanket release"
+  }
+}

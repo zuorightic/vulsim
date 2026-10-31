@@ -169,6 +169,7 @@ def evaluate(args):
                       Path(__file__).with_name('processes.py'),Path(__file__).with_name('characterization.py'),
                       Path(__file__).parent/'configs/platforms'/(p['platform']+'.json'),POLICY]
         source_paths += [s for s in ASSETS.iterdir() if s.is_file()]
+        if args.resume_synth_from:source_paths.append(Path(__file__).with_name('capacity_retest.py'))
         manifest['source_sha256']={}
         for source in source_paths:
             relative=source.relative_to(ROOT)
@@ -305,6 +306,10 @@ def evaluate(args):
         stages = [('synth','synth','1_synth.odb','1_synth.sdc',args.synth_timeout_s),
                   ('grt','grt','5_1_grt.odb','5_1_grt.sdc',args.route_timeout_s),
                   ('final',str(logs/'6_report.log'),'6_final.odb','6_final.sdc',args.route_timeout_s)]
+        if args.resume_synth_from:
+            from .capacity_retest import seed_checkpoint
+            manifest['checkpoint_reuse']=seed_checkpoint(args,out,results,command,effective)
+            stages=[row for row in stages if row[0]=='grt']
         for stage, target, db, sdc, timeout in stages:
             manifest['active_stage'] = stage
             run([target], stage, timeout, stage)
@@ -384,6 +389,7 @@ def main():
     parser.add_argument('--memory-limit-mib', type=int, default=8192, help='sampled aggregate process-group RSS cap')
     parser.add_argument('--stage', choices=['synth','grt','final'], default='final')
     parser.add_argument('--budget-purpose', choices=['prototype','characterization','search','final_evaluation','physical_recheck','repeat','retry'], default='prototype')
+    parser.add_argument('--resume-synth-from',type=Path,help='only a named checkpoint retest admission may reuse exact synth ODB/SDC')
     parser.add_argument('--synth-timeout-s', type=float, default=300)
     parser.add_argument('--route-timeout-s', type=float, default=1200)
     args = parser.parse_args()
@@ -395,9 +401,15 @@ def main():
         parser.error('period, threads and timeouts must be positive')
     if args.io_delay_max_ps is not None and (not math.isfinite(args.io_delay_max_ps) or args.io_delay_max_ps < 0):
         parser.error('absolute I/O delay must be finite and nonnegative')
+    route_limit=limits['floorplan_through_global_route_timeout_s'] if args.stage=='grt' else min(limits['floorplan_through_global_route_timeout_s'],limits['detailed_route_extraction_timeout_s'])
+    if args.resume_synth_from or args.route_timeout_s>route_limit:
+        from .capacity_retest import task
+        try:task(args)
+        except ValueError as error:parser.error(str(error))
+        route_limit=3600
     if (args.threads > limits['threads_per_tool'] or args.memory_limit_mib > limits['memory_limit_MiB']
         or args.synth_timeout_s > limits['synthesis_timeout_s']
-        or args.route_timeout_s > min(limits['floorplan_through_global_route_timeout_s'], limits['detailed_route_extraction_timeout_s'])):
+        or args.route_timeout_s > route_limit):
         parser.error('requested resources exceed frozen per-job policy')
     if not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', args.top):
         parser.error('top must be a simple Verilog identifier')

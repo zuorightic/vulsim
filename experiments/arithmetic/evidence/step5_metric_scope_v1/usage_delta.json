@@ -1,0 +1,29 @@
+{
+  "prefix": "experiments/arithmetic/evidence/step5_mul_closure_v2/usage_delta.json",
+  "prefix_sha256": "15fa62eb7e80dde19a950be6f172823e512fae581b50c6b557600a40f53ea7c9",
+  "entries": [
+    {
+      "id": "b6e73ac134074f078a5d189a0d291ea1",
+      "kind": "live",
+      "stage": null,
+      "status": "completed",
+      "purpose": "step5_metric_scope_saved_report_review",
+      "command": [
+        "python3",
+        "build/step5-metric-scope-20261031/audit.py"
+      ],
+      "output": "/home/zyrv/vulsim/build/step5-metric-scope-20261031/saved-report-scope-audit",
+      "reserved_at": "2026-10-31T09:13:28.341463+00:00",
+      "walltime_s": 4.970522276125848,
+      "CPU_time_s": 4.9399999999999995,
+      "target_platform": "asap7",
+      "task_id": "saved-report-scope-audit",
+      "admission_id": "step5-metric-scope-support-v1",
+      "model_version": "not_applicable",
+      "exit_code": 0,
+      "timed_out": false,
+      "command_record": "/home/zyrv/vulsim/build/step5-metric-scope-20261031/saved-report-scope-audit.command.json",
+      "CPU_accounting": "GNU_time_leaf_command"
+    }
+  ]
+}

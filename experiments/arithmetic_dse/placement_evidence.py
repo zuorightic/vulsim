@@ -3,7 +3,7 @@ import hashlib
 import json
 from pathlib import Path
 from .budget import usage, cpu_seconds
-from .placement_analysis import analyze
+from .freeze_history import historical_placement_analyzer
 
 ROOT=Path(__file__).resolve().parents[2]
 
@@ -12,7 +12,11 @@ def verify(root=ROOT):
     root=Path(root)
     freeze=json.loads((root/'experiments/arithmetic/placement_freeze_v1.json').read_text())
     def check(relative,expected):
-        if hashlib.sha256((root/relative).read_bytes()).hexdigest()!=expected:
+        path=root/relative
+        if not path.is_file():
+            from .freeze_history import source_location
+            path=source_location(root,'experiments/arithmetic/placement_freeze_v1.json',relative,expected)
+        if hashlib.sha256(path.read_bytes()).hexdigest()!=expected:
             raise ValueError(f'SHA-256 mismatch: {relative}')
     for relative,expected in freeze['files_sha256'].items():
         from .freeze_history import source_location
@@ -25,12 +29,13 @@ def verify(root=ROOT):
     index=json.loads((root/freeze['evidence_index']).read_text())
     for item in index['files']:check(item['path'],item['sha256'])
     ev=root/freeze['evidence_directory']
-    config=json.loads((root/freeze['study']).read_text())
+    study_source=source_location(root,'experiments/arithmetic/placement_freeze_v1.json',freeze['study'],freeze['files_sha256'][freeze['study']])
+    config=json.loads(study_source.read_text())
     report=json.loads((ev/'regression.json').read_text())
-    check(freeze['study'],report['study_sha256'])
+    check(str(study_source.relative_to(root)),report['study_sha256'])
     for name,expected in report['artifacts_sha256'].items():check(str((ev/name).relative_to(root)),expected)
     graph=json.loads((ev/'graph.json').read_text())
-    analysis=analyze(graph,config)
+    analysis=historical_placement_analyzer(root)(graph,config)
     if analysis!=json.loads((ev/'analysis.json').read_text()):raise ValueError('independent analysis differs')
     if report['status']!='passed' or report['evidence_type']!=analysis['evidence_type']:
         raise ValueError('acceptance classification differs')

@@ -15,7 +15,11 @@ def verify(root=ROOT):
     freeze=json.loads((root/relative).read_text())
     digest=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
     def check(rel,expected):
-        if digest(root/rel)!=expected:raise ValueError(f'SHA-256 mismatch: {rel}')
+        path=root/rel
+        if not path.is_file():
+            from .freeze_history import source_location
+            path=source_location(root,relative,rel,expected)
+        if digest(path)!=expected:raise ValueError(f'SHA-256 mismatch: {rel}')
     for rel,expected in freeze['files_sha256'].items():
         from .freeze_history import source_location
         check(str(source_location(root,relative,rel,expected).relative_to(root)),expected)
@@ -28,9 +32,11 @@ def verify(root=ROOT):
     from .evidence import verify_backend_evidence
     from .regions_evidence import verify as verify_regions
     backend=verify_backend_evidence(root);regions=verify_regions(root)
-    config=json.loads((root/'experiments/arithmetic_dse/configs/step5_pilot_v1.json').read_text())
+    config_relative='experiments/arithmetic_dse/configs/step5_pilot_v1.json'
+    config_source=source_location(root,relative,config_relative,freeze['files_sha256'][config_relative])
+    config=json.loads(config_source.read_text())
     study=json.loads((ev/'physical_study.json').read_text())
-    check('experiments/arithmetic_dse/configs/step5_pilot_v1.json',study['study_sha256'])
+    check(str(config_source.relative_to(root)),study['study_sha256'])
     for item in [config['functional_report'],*config['rtl'].values()]:check(item['path'],item['sha256'])
     for rel,expected in config['source_sha256'].items():
         check(str(Path(freeze['measurement_generator_snapshot'])/rel),expected)

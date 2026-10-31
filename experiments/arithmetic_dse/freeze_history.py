@@ -12,6 +12,32 @@ def source_location(root, parent, relative, expected):
     root=Path(root)
     digest=lambda path:hashlib.sha256(path.read_bytes()).hexdigest()
     if (root/relative).is_file() and digest(root/relative)==expected:return root/relative
+    metric_note=root/'experiments/arithmetic/mul_templates_freeze_v3.json'
+    if metric_note.exists():
+        current=json.loads(metric_note.read_text());active=root/relative
+        bound=active.is_file() and current['files_sha256'].get(relative)==digest(active)
+        if current['historical_freezes'].get(parent)==digest(root/parent) and bound:
+            for source_root in current['historical_source_roots']:
+                snapshot=root/source_root/relative
+                if snapshot.is_file() and digest(snapshot)==expected:return snapshot
+    closure=root/'experiments/arithmetic/mul_templates_freeze_v2.json'
+    if closure.exists():
+        current=json.loads(closure.read_text());active=root/relative
+        bound=active.is_file() and current['files_sha256'].get(relative)==digest(active)
+        retired=not active.exists() and relative in current.get('retired_active_paths',[])
+        if current['historical_freezes'].get(parent)==digest(root/parent) and (bound or retired):
+            for source_root in current['historical_source_roots']:
+                snapshot=root/source_root/relative
+                if snapshot.is_file() and digest(snapshot)==expected:return snapshot
+    mul_revision=root/'experiments/arithmetic/mul_templates_freeze_v1.json'
+    if mul_revision.exists():
+        current=json.loads(mul_revision.read_text());active=root/relative
+        bound=active.is_file() and current['files_sha256'].get(relative)==digest(active)
+        retired=not active.exists() and relative in current.get('retired_active_paths',[])
+        if current['historical_freezes'].get(parent)==digest(root/parent) and (bound or retired):
+            for source_root in current['historical_source_roots']:
+                snapshot=root/source_root/relative
+                if snapshot.is_file() and digest(snapshot)==expected:return snapshot
     interfaces_review=root/'experiments/arithmetic/arithmetic_interfaces_freeze_v2.json'
     if interfaces_review.exists():
         current=json.loads(interfaces_review.read_text())
@@ -117,3 +143,32 @@ def historical_stage_metrics(root):
     module=importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module.stage_metrics
+
+
+def historical_placement_analyzer(root):
+    """Old cost formula is imported only from its immutable evidence namespace."""
+    root=Path(root);parent='experiments/arithmetic/placement_freeze_v1.json';relative='experiments/arithmetic_dse/placement_analysis.py'
+    expected=json.loads((root/parent).read_text())['files_sha256'][relative]
+    source=source_location(root,parent,relative,expected)
+    # The full step4 snapshot contains the original analysis, cost module and
+    # its configuration. Verify each consumed file against that parent freeze.
+    base=root/'experiments/arithmetic/evidence/step4_interfaces_v1/source_v1/experiments/arithmetic_dse'
+    freeze=json.loads((root/'experiments/arithmetic/arithmetic_interfaces_freeze_v1.json').read_text())
+    import sys,types
+    name='_vulsim_archived_placement_'+expected[:12]
+    pkg=types.ModuleType(name);pkg.__path__=[str(base)];sys.modules[name]=pkg
+    for file in ('placement_analysis.py','simple_cost.py','configs/simple_cost_v1.json'):
+        path=base/file;key='experiments/arithmetic_dse/'+file
+        if hashlib.sha256(path.read_bytes()).hexdigest()!=freeze['files_sha256'][key]:raise ValueError('archived analysis dependency mismatch')
+    spec=importlib.util.spec_from_file_location(name+'.placement_analysis',source)
+    module=importlib.util.module_from_spec(spec);sys.modules[spec.name]=module;spec.loader.exec_module(module)
+    return module.analyze
+
+
+def historical_step5_analysis(root):
+    root=Path(root);parent='experiments/arithmetic/mul_templates_freeze_v1.json';relative='experiments/arithmetic_dse/step5_analysis.py'
+    freeze=json.loads((root/parent).read_text());expected=freeze['files_sha256'][relative]
+    path=root/freeze['source_snapshots'][relative]
+    if hashlib.sha256(path.read_bytes()).hexdigest()!=expected:raise ValueError('historical step5 analysis snapshot mismatch')
+    name=__package__+'._frozen_step5_analysis_'+expected[:12]
+    spec=importlib.util.spec_from_file_location(name,path);module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module

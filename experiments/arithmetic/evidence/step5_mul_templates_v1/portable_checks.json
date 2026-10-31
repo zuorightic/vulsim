@@ -1,0 +1,66 @@
+{
+  "version": "step5-portable-checks-v1",
+  "status": "passed",
+  "PATH": "",
+  "build_or_EDA_or_external_artifacts_present": false,
+  "tested_index_sha256": "ec4bb669b437ff79e645a248611e7a73eeb277abaaf1d74ec02dcd6047ecc5e0",
+  "checks": [
+    {
+      "name": "isolated_baseline",
+      "status": "passed",
+      "parent_status": {
+        "step4_interfaces_v2": "passed"
+      },
+      "artifact_verification": "not_requested; portable reports/SDC/costs/trace only"
+    },
+    {
+      "name": "missing_complete_artifacts_fail_full_verification",
+      "status": "rejected",
+      "reason": "ValueError: artifact_unavailable: experiments/arithmetic/artifact_store/step5_mul_capacity_v1/W64-complete-artifacts.tar.gz"
+    },
+    {
+      "name": "wrong_partial_cost",
+      "status": "rejected",
+      "reason": "ValueError: step4 evidence mismatch: node delay: 0 != 16.0"
+    },
+    {
+      "name": "cut_legal_group",
+      "status": "rejected",
+      "reason": "ValueError: backwards schedule dependency"
+    },
+    {
+      "name": "wrong_block_parameter",
+      "status": "rejected",
+      "reason": "ValueError: blocked Mul parameter range"
+    },
+    {
+      "name": "wrong_C_selected_candidate",
+      "status": "rejected",
+      "reason": "ValueError: C did not choose declared minimum"
+    },
+    {
+      "name": "flip_256_product_bit",
+      "status": "rejected",
+      "reason": "AssertionError: (4, {'R': 256, 'W': 128, 'internal_registers': False, 'mode': 0, 'register_bits': 1026, 'stem': 'w128_full_0'}, [1, 57896044618658097711785492504343953925954427598978405092802042789093028397057, 11272795921699134176212192217...",
+      "reason_excerpt_only": true
+    },
+    {
+      "name": "wrong_square_diagnostic",
+      "status": "rejected",
+      "reason": "ValueError: step4 evidence mismatch: exact sensitivity: {'version': 'mul-comb-sensitivity-v1', 'status': 'passed', 'structures': 30, 'contexts': 10, 'selected_changes': 0, 'exact_rational': True, 'only_changed': 'Mul.comb_weight=bucket_widt...",
+      "reason_excerpt_only": true
+    },
+    {
+      "name": "isolated_restored",
+      "status": "passed",
+      "parent_status": {
+        "step4_interfaces_v2": "passed"
+      },
+      "artifact_verification": "not_requested; portable reports/SDC/costs/trace only"
+    }
+  ],
+  "negative_checks_rejected": 7,
+  "semantic_negative_hashes_rebound": true,
+  "same_archived_1129_and_1011_cycle_vectors_replayed_not_new_RTL_simulation": true,
+  "original_summary_sha256": "f306fb2069c35f4a4725f03a07710c1fa2f72029fe50c548cb8a27d6a88cf46c"
+}

@@ -29,13 +29,13 @@ def verify_report(report,rtl,features,*,embedded=False,report_schemas=None):
     same(hashlib.sha256(report['graph_identity_text'].encode()).hexdigest(),report['graph_sha256'],'graph hash')
     schedule=json.loads(report['schedule_identity_text']);same(schedule,{'stages':report['stages'],'protocol':report['protocol']},'schedule/protocol serialization')
     same(hashlib.sha256((report['graph_sha256']+report['schedule_identity_text']).encode()).hexdigest(),report['schedule_sha256'],'schedule hash')
-    same(hashlib.sha256(rtl.encode()).hexdigest(),report['rtl_sha256'],'emitted kernel hash')
+    if rtl is not None:same(hashlib.sha256(rtl.encode()).hexdigest(),report['rtl_sha256'],'emitted kernel hash')
     same(report['delay_unit'],'abstract','cost units');same(report['comb_unit'],'abstract','comb units')
     same(report['request']['cost_mode'],'fixed','no fake D result');same(report['D_inference_implemented'],False,'inference scope')
     protocol=report['protocol'];same(protocol['register_stages'],report['request']['L']-1,'L/N protocol')
     same(report['request']['II'],1,'initiation interval')
     if type(protocol['reset_enabled']) is not bool or type(protocol['reset_active_low']) is not bool:raise ValueError('invalid reset protocol type')
-    if not embedded and protocol['register_stages']>0:
+    if rtl is not None and not embedded and protocol['register_stages']>0:
         if not re.search(r'@\s*\(\s*posedge\s+'+re.escape(protocol['clock_name'])+r'\s*\)',rtl):raise ValueError('reported clock absent from actual sequential RTL')
     kinds={v:k for k,v in features['operation_kinds'].items()};opcodes={v:k for k,v in features['opcodes'].items()}
     graph=report['graph'];nodes={str(n['id']):n for n in graph['nodes']};same(set(nodes),{str(i) for i in range(len(nodes))},'dense IDs')
@@ -84,8 +84,8 @@ def verify_report(report,rtl,features,*,embedded=False,report_schemas=None):
     owners={};port_ids={i for p in graph['ports'] for i in p['nodes']}
     region_results=[]
     for region in graph['regions']:
-        same(region['internally_cuttable'],False,'step4 atomic scope')
-        for field in ('C_selected','D_covered','D_selected','physically_evaluated'):same(region[field],False,'capability '+field)
+        same(region['internally_cuttable'],region['template_id']=='mul-block-tree-v1','registered cut scope')
+        for field in ('C_selected','D_covered','D_selected','physically_evaluated'):same(region[field],field=='C_selected' and report['request']['candidate_policy']=='mul-candidates-v1','capability '+field)
         members=set(region['members'])
         if len(members)!=len(region['members']) or not members or not set(region['outputs'])<=members or members&port_ids:raise ValueError('invalid region membership/ports')
         for i in members:
@@ -99,6 +99,28 @@ def verify_report(report,rtl,features,*,embedded=False,report_schemas=None):
         if region['template_id']=='mul-original-v1':
             same(len(members),1,'original Mul member');n=nodes[next(iter(members))];same(kinds[n['kind']],'Binary','original Mul kind');same(opcodes[n['opcode']],'Mul','original Mul opcode')
             parameters={'lhs_width':width(n['operands'][0]),'rhs_width':width(n['operands'][1]),'result_width':n['width']};same(region['parameters'],parameters,'template width parameters')
+        elif region['template_id']=='mul-block-tree-v1':
+            params=region['parameters'];same(set(params),{'lhs_width','rhs_width','result_width','block_width'},'block parameters')
+            if any(type(x) is not int or x<1 for x in params.values()) or params['block_width']<2 or max(params['lhs_width'],params['rhs_width'])>128 or params['result_width']>params['lhs_width']+params['rhs_width']:raise ValueError('blocked Mul parameter range')
+            same(nodes[region['outputs'][0]]['width'],params['result_width'],'block result width')
+            products=0
+            for i in members:
+                n=nodes[i]
+                if kinds[n['kind']]=='Binary' and opcodes[n['opcode']]=='Mul':
+                    products+=1;same(n['width'],sum(v['width'] for v in n['operands']),'partial product precision')
+                    if max(v['width'] for v in n['operands'])>params['block_width']:raise ValueError('partial product exceeds block width')
+                if kinds[n['kind']]=='AddCarry':
+                    widths=[]
+                    for v in n['operands'][:2]:
+                        if v['kind']!=0:raise ValueError('tree sum requires explicit extension')
+                        extension=nodes[v['node']]
+                        if kinds[extension['kind']]!='ZExt' or len(extension['operands'])!=1:raise ValueError('tree sum lost extension')
+                        widths.append(extension['operands'][0]['width'])
+                    same(n['width'],max(widths)+1,'tree carry precision')
+            same(products,math.ceil(params['lhs_width']/params['block_width'])*math.ceil(params['rhs_width']/params['block_width']),'partial product coverage')
+
+            groups=region['legal_groups'];flat=[i for g in groups for i in g]
+            if len(flat)!=len(set(flat)) or set(flat)!=members or any(not g for g in groups):raise ValueError('invalid group partition')
         elif region['template_id']=='softfloat3d-bitvector-mul-v1':same(region['parameters'],{},'FP parameter scope')
         else:raise ValueError('unregistered region template')
         region_results.append(region['id'])
@@ -132,7 +154,8 @@ def verify_report(report,rtl,features,*,embedded=False,report_schemas=None):
         if i in valid_nodes:end=N
         length=end-stage;bits=nodes[i]['width']*math.prod(nodes[i]['dims']);register_bits+=length*bits;register_count+=length
     for region in graph['regions']:
-        if len({stages[int(i)] for i in region['members']})!=1:raise ValueError('atomic region cut by schedule')
+        for group in (region['legal_groups'] if region['internally_cuttable'] else [region['members']]):
+            if len({stages[int(i)] for i in group})!=1:raise ValueError('indivisible group cut by schedule')
     pipeline=report['pipeline'];same(pipeline['final_delay'],max(stage_delays),'selected stage delay');same(pipeline['comb'],comb,'selected comb cost');same(pipeline['register_bits'],register_bits,'shared register bits');same(pipeline['register_count'],register_count,'shared register chains');same(pipeline['allowed_delay'],pipeline['baseline_delay']*105/100,'fixed abstract cap')
     if pipeline['final_delay']>pipeline['allowed_delay']+1e-9:raise ValueError('selected schedule exceeded cap')
     return {'nodes':len(nodes),'regions':len(region_results),'comb':comb,'register_bits':register_bits}
@@ -175,7 +198,7 @@ def _verify_original(root,parents):
 def verify(root=ROOT,parents=True):
     root=Path(root);freeze=json.loads((root/FREEZE).read_text());directory=root/freeze['evidence_directory']
     for relative,expected in freeze['files_sha256'].items():
-        same(digest(root/relative),expected,'current source '+relative)
+        same(digest(source_location(root,FREEZE,relative,expected)),expected,'current source or explicit successor '+relative)
         same(digest(root/freeze['source_snapshots'][relative]),expected,'current snapshot '+relative)
     for relative,expected in freeze['historical_freezes'].items():same(digest(root/relative),expected,'historical freeze '+relative)
     same(digest(root/freeze['evidence_index']),freeze['evidence_index_sha256'],'index')

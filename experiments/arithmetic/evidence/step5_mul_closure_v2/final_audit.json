@@ -1,0 +1,197 @@
+{
+  "closure_complete_artifacts_and_parents": {
+    "status": "passed",
+    "freeze": "mul-templates-freeze-v2",
+    "software": {
+      "reports": 129,
+      "regions": 219,
+      "blocked_regions": 165,
+      "native_rejected": 0,
+      "native_unreconstructable": 0,
+      "native_mutations_rejected": 5,
+      "C_candidates_recomputed": 340,
+      "feasible_positions": 4,
+      "production_register_bits": 130,
+      "sensitivity_structures": 30,
+      "sensitivity_contexts": 10,
+      "sensitivity_selected_changes": 0
+    },
+    "capacity": {
+      "task_id": "asap7-mul128-C-postsynth-grt-3600-v1",
+      "status": "completed",
+      "failure_code": null,
+      "complete_chain": {
+        "walltime_s": 1450.1932151019573,
+        "CPU_time_s": 2489.33,
+        "CPU_accounting": "GNU_time_actual",
+        "sampled_CPU_s": 2480.04,
+        "RSS_peak_KiB": 2931364,
+        "cleanup": {
+          "term_sent": 0,
+          "kill_sent": 0,
+          "remaining_live_pids": []
+        }
+      },
+      "separate_5_1_grt": [
+        {
+          "stage": "5_1_grt",
+          "walltime_s": 1021.23,
+          "CPU_time_s": 1948.68,
+          "source": "build/step5-closure-20261031/capacity-retest/logs/asap7/arithmetic_probe/base/5_1_grt.log",
+          "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+        }
+      ],
+      "process_completed": true,
+      "target_setup_met": true,
+      "hold_feasible_at_TT": true,
+      "scale_vs_split_attribution": "not established; no original paired run",
+      "batch_release": "separate domain admission required; no blanket release"
+    },
+    "new_usage": {
+      "synth": 0,
+      "grt": 1,
+      "final": 0,
+      "support_calls": 26,
+      "walltime_s": 1823.039383083582,
+      "CPU_time_s": 2861.65,
+      "pending": 0
+    },
+    "cumulative_usage": {
+      "synth": 54,
+      "grt": 32,
+      "final": 14,
+      "support_calls": 655,
+      "walltime_s": 8937.585582206957,
+      "CPU_time_s": 14015.18,
+      "pending": 0
+    },
+    "artifact_verification": "all locally available archive bytes verified; remote durable retention unconfirmed",
+    "parent_status": "passed",
+    "requires_build_or_EDA": false,
+    "new_original_synth_final_or_main_matrix_calls": false
+  },
+  "platform_external": {
+    "status": "passed",
+    "freeze": "arithmetic-backend-freeze-v7",
+    "platforms": {
+      "asap7": {
+        "multiplier_final": "asap7-mul-finalinterface"
+      },
+      "gf180": {
+        "small_probe_grt": "gf180-add-sdcfix",
+        "multiplier_final": "gf180-mul-sdcfix"
+      },
+      "nangate45": {
+        "small_probe_grt": "nangate45-add-sdcfix",
+        "multiplier_final": "nangate45-mul-sdcfix"
+      },
+      "sky130hd": {
+        "small_probe_grt": "sky130hd-add-sdcfix",
+        "multiplier_final": "sky130hd-mul-sdcfix"
+      }
+    },
+    "source_files": 38,
+    "portable_evidence_files": 101,
+    "retained_failed_runs": 6,
+    "new_failed_runs": 0,
+    "accepted_stage_SDC_checks": 18,
+    "invalidated_previous_runs": 10,
+    "previous_four_platform_acceptance": "revoked_due_to_integer_division",
+    "invalidated_previous_SDC_stages": 23,
+    "ASAP7_carried_forward": "actual_SDC_all_stages_checked; unaffected; no_physical_rerun",
+    "new_usage": {
+      "synth": 0,
+      "grt": 0,
+      "final": 0,
+      "support_calls": 4,
+      "walltime_s": 19.353419188177213,
+      "CPU_time_s": 13.93,
+      "pending": 0
+    },
+    "cumulative_usage": {
+      "synth": 52,
+      "grt": 29,
+      "final": 14,
+      "support_calls": 443,
+      "walltime_s": 4239.06431669998,
+      "CPU_time_s": 6444.74,
+      "pending": 0
+    },
+    "requires_build_directory": false,
+    "external_verification": true,
+    "training_or_main_matrix_executed": false,
+    "multi_corner_signoff": false,
+    "physical_measurement_freeze": "arithmetic-backend-freeze-v6",
+    "sdc_revalidation_version": "serialized-sdc-contract-v2",
+    "evidence_index_sha256": "1a99cc5edac97fa275de30176483283286a2a7ecaa36702077f02a45dc0c0844",
+    "physical_evidence_index_sha256": "d464f0e663bc25f144ddd4a9961d753cf42be02d980945948e450e8ef5348500",
+    "inherited_v6_evidence_files": 772,
+    "measurement_correction_usage": {
+      "synth": 6,
+      "grt": 6,
+      "final": 3,
+      "support_calls": 25,
+      "walltime_s": 520.1694345334545,
+      "CPU_time_s": 845.47,
+      "pending": 0
+    },
+    "effective_profiles_changed": false,
+    "new_physical_runs": 0,
+    "source_verification": "v7 snapshot; changed active sources require a bound successor",
+    "GF180_wire_RC": "unresolved_calibration_provenance; unchanged; connection_only"
+  },
+  "wide": {
+    "status": "passed",
+    "freeze": "wide-baseline-freeze-v1",
+    "source_scope": "explicit_historical_snapshot",
+    "current_source_mismatches": [
+      "rtlzz/src/backend/arithmetic_regions.cpp",
+      "rtlzz/src/backend/beir.hpp",
+      "rtlzz/src/backend/mul_split.cpp",
+      "rtlzz/src/backend/mul_split.hpp",
+      "rtlzz/src/backend/pipeline.cpp",
+      "rtlzz/src/backend/pipeline.hpp",
+      "rtlzz/src/backend/simple_cost.cpp",
+      "rtlzz/src/backend/simple_cost.hpp",
+      "rtlzz/src/pipelinev2/PipelineV2.cpp",
+      "rtlzz/src/pipelinev2/PipelineV2.h",
+      "rtlzz/src/rtlzz.cpp",
+      "rtlzz/src/rtlzz.hpp",
+      "src/rtlgen.h",
+      "src/rtlgen_rtlzz.cpp",
+      "src/rtlzz_bridge.cpp",
+      "src/rtlzz_bridge.hpp",
+      "tools/vulrtlgen.cpp",
+      "vullib/fixint.hpp"
+    ],
+    "source_files": 264,
+    "evidence_files": 576,
+    "wide_configurations": 10,
+    "rows_per_configuration": 1843,
+    "negative_checks_rejected": [
+      "product_bit255_corruption",
+      "L3_trace_as_L2"
+    ],
+    "facts_checks": 2960,
+    "new_usage": {
+      "synth": 0,
+      "grt": 0,
+      "final": 0,
+      "support_calls": 92,
+      "walltime_s": 360.872746440582,
+      "CPU_time_s": 428.44,
+      "pending": 0
+    },
+    "cumulative_usage": {
+      "synth": 33,
+      "grt": 11,
+      "final": 5,
+      "support_calls": 228,
+      "walltime_s": 2396.887071044417,
+      "CPU_time_s": 3572.0099999999998,
+      "pending": 0
+    },
+    "requires_build_directory": false,
+    "requires_EDA_tools": false
+  }
+}

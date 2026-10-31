@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "saved_traces_replayed_with_independent_oracles": {
+    "mul": {
+      "status": "passed",
+      "seed": 20261031,
+      "L": 3,
+      "II": 1,
+      "cycles": 1129,
+      "valid_checks": 99352,
+      "data_checks": 146608,
+      "reset_checks": 880,
+      "bubble_hold_checks": 51216,
+      "configurations": 88
+    },
+    "mac": {
+      "status": "passed",
+      "cycles": 1011,
+      "configurations": 20,
+      "valid_checks": 20180,
+      "data_checks": 20100,
+      "bit256_carry_observed": true,
+      "reset": "not in this MAC fixture; covered by 88 Mul configurations",
+      "L": 3,
+      "II": 1
+    }
+  },
+  "no_new_RTL_simulation_needed": "all 129 graph/schedule/RTL bytes unchanged",
+  "new_native_positive_checks": 24504,
+  "CIRCT_positive_checks": "PASS parameterized Mul checks=3383",
+  "public_interfaces_checks": 3786,
+  "historical_replay": "passed"
+}

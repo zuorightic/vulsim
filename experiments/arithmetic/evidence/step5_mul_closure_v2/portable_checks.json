@@ -1,0 +1,63 @@
+{
+  "version": "step5-closure-portable-checks-v2",
+  "status": "passed",
+  "PATH": "",
+  "build_EDA_or_artifact_store_present": false,
+  "checks": [
+    {
+      "name": "isolated_successor_and_v1_parent",
+      "status": "passed",
+      "parent_status": "passed",
+      "artifact_verification": "not requested; compact evidence only; native C++ execution is an archived receipt, static graph checks rerun"
+    },
+    {
+      "name": "missing_complete_artifacts_explicitly_rejected",
+      "status": "rejected",
+      "reason": "ValueError: artifact_unavailable: experiments/arithmetic/artifact_store/step5_mul_capacity_v2/ASAP7-W128-postsynth-grt-complete.tar.gz"
+    },
+    {
+      "name": "over_budget_positions_forged_feasible",
+      "status": "rejected",
+      "reason": "ValueError: archived position feasibility disagrees with recomputed cap"
+    },
+    {
+      "name": "wrong_production_cap",
+      "status": "rejected",
+      "reason": "ValueError: archived cap mismatch"
+    },
+    {
+      "name": "false_production_minimum_claim",
+      "status": "rejected",
+      "reason": "ValueError: position preference/production summary mismatch"
+    },
+    {
+      "name": "rational_zero_denominator",
+      "status": "rejected",
+      "reason": "ValueError: linear_comb requires integer numerator and positive denominator"
+    },
+    {
+      "name": "boolean_count_token",
+      "status": "rejected",
+      "reason": "ValueError: register_bits requires JSON integer"
+    },
+    {
+      "name": "actual_grt_SDC_wrong_transition",
+      "status": "rejected",
+      "reason": "experiments.arithmetic_dse.sdc.SdcContractError: SDC transition mismatch: 0.0 != 10.0 (native units)"
+    },
+    {
+      "name": "checkpoint_reuse_identity_changed",
+      "status": "rejected",
+      "reason": "ValueError: step4 evidence mismatch: only bound synthesis checkpoint: {'1_synth.odb': '75d0c32f420eb3fdc8d3678cc96257e28a1758d958c1dcfadff86369e868d0c3', '1_synth.sdc': 'cce24218972e7f53485883877ad516b7a7d1f5595f6d7992d0089dbb86c10d69', '1_2_yosys.v': 'a6be1c37d5ecffb24438d7c93754d9278e7846637cc4470077847bd0174cad79', '1_2_yosys.sdc': 'ae5fb19566bf95cd28f58b8928a1d481fac4a0adfe5abdc7b3a505b244cc5c4e'} != {'1_synth.odb': '0000000000000000000000000000000000000000000000000000000000000000', '1_synth.sdc': 'cce24218972e7f53485883877ad516b7a7d1f5595f6d7992d0089dbb86c10d69', '1_2_yosys.v': 'a6be1c37d5ecffb24438d7c93754d9278e7846637cc4470077847bd0174cad79', '1_2_yosys.sdc': 'ae5fb19566bf95cd28f58b8928a1d481fac4a0adfe5abdc7b3a505b244cc5c4e'}"
+    },
+    {
+      "name": "isolated_restored",
+      "status": "passed",
+      "parent_status": null,
+      "artifact_verification": "not requested; compact evidence only; native C++ execution is an archived receipt, static graph checks rerun"
+    }
+  ],
+  "negative_checks_rejected": 8,
+  "semantic_negative_hashes_rebound": true,
+  "native_CXX_execution_scope": "archived receipt; portable independent graph certificate reruns; no native executable in isolated copy"
+}

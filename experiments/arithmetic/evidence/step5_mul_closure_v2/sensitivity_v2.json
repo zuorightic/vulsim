@@ -1,0 +1,1814 @@
+{
+  "version": "mul-comb-sensitivity-v2",
+  "numeric_protocol": "arithmetic-exact-analysis-v2",
+  "status": "passed",
+  "structures": 30,
+  "contexts": 10,
+  "selected_changes": 0,
+  "exact_rational": true,
+  "only_changed": "Mul.comb_weight=bucket_width^2/64",
+  "schedules_reused": true,
+  "physical_calls": 0,
+  "rows": [
+    {
+      "W": 8,
+      "family": "MUL",
+      "structures": [
+        {
+          "structure": "original",
+          "graph_sha256": "14509792ab57a204858b9be33a67b9587dbe2163360247203ba78f10a83b6ed7",
+          "schedule_sha256": "39bae9d85f4e57e01ff8fe254c81c520596ae5a6bf039b4798938560c7473a48",
+          "stage_delays": [
+            {
+              "numerator": 4,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 34,
+          "register_count": 4,
+          "linear_comb": {
+            "numerator": 4,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 1,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 4,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 38,
+              "denominator": 1
+            },
+            "register_bits": 34,
+            "register_count": 4,
+            "candidate_id": "original"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 4,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 35,
+              "denominator": 1
+            },
+            "register_bits": 34,
+            "register_count": 4,
+            "candidate_id": "original"
+          },
+          "linear_rank": 3,
+          "square_rank": 3
+        },
+        {
+          "structure": "half",
+          "graph_sha256": "b50631d895430c1482f0f99690091ddfd088a2721c37df35bec439de584204b9",
+          "schedule_sha256": "41d5d9ce990aa504d5058666db393f97a28070099b2119830a7231bab6fbf0a4",
+          "stage_delays": [
+            {
+              "numerator": 2,
+              "denominator": 1
+            },
+            {
+              "numerator": 2,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 66,
+          "register_count": 7,
+          "linear_comb": {
+            "numerator": 11,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 4,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 2,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 77,
+              "denominator": 1
+            },
+            "register_bits": 66,
+            "register_count": 7,
+            "candidate_id": "half"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 2,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 70,
+              "denominator": 1
+            },
+            "register_bits": 66,
+            "register_count": 7,
+            "candidate_id": "half"
+          },
+          "linear_rank": 1,
+          "square_rank": 1
+        },
+        {
+          "structure": "quarter",
+          "graph_sha256": "b9d1ba4d8ce1c7c03621ce9e7e4023dbc49e529db25b6d4f843836e6185c31e2",
+          "schedule_sha256": "af9bff9743cf8558f3be59bbc5a2996c35a43c5ded4bb2e343c3ad3b784edc5d",
+          "stage_delays": [
+            {
+              "numerator": 2,
+              "denominator": 1
+            },
+            {
+              "numerator": 2,
+              "denominator": 1
+            },
+            {
+              "numerator": 1,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 132,
+          "register_count": 12,
+          "linear_comb": {
+            "numerator": 31,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 16,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 2,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 163,
+              "denominator": 1
+            },
+            "register_bits": 132,
+            "register_count": 12,
+            "candidate_id": "quarter"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 2,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 148,
+              "denominator": 1
+            },
+            "register_bits": 132,
+            "register_count": 12,
+            "candidate_id": "quarter"
+          },
+          "linear_rank": 2,
+          "square_rank": 2
+        }
+      ],
+      "linear_selected": "half",
+      "square_selected": "half",
+      "selected_changed": false
+    },
+    {
+      "W": 8,
+      "family": "MAC",
+      "structures": [
+        {
+          "structure": "original",
+          "graph_sha256": "8a22cd57d9f59d46a28ea252487645c8e91eb267150da7f3cdbcf583749e3ba8",
+          "schedule_sha256": "66e9a772a6a3036923f4421ec9c8b92b40d1fe5bdec8b8332280357111695270",
+          "stage_delays": [
+            {
+              "numerator": 4,
+              "denominator": 1
+            },
+            {
+              "numerator": 1,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 52,
+          "register_count": 5,
+          "linear_comb": {
+            "numerator": 5,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 2,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 4,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 57,
+              "denominator": 1
+            },
+            "register_bits": 52,
+            "register_count": 5,
+            "candidate_id": "original"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 4,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 54,
+              "denominator": 1
+            },
+            "register_bits": 52,
+            "register_count": 5,
+            "candidate_id": "original"
+          },
+          "linear_rank": 3,
+          "square_rank": 3
+        },
+        {
+          "structure": "half",
+          "graph_sha256": "87344c7916120e6531d4188a8d3418431c8ef3f39f54b48552329c986a2775d5",
+          "schedule_sha256": "9eb1b63139cc029d1516ad0065ff5190e9a473560274d7a835bd439fec797d5a",
+          "stage_delays": [
+            {
+              "numerator": 2,
+              "denominator": 1
+            },
+            {
+              "numerator": 2,
+              "denominator": 1
+            },
+            {
+              "numerator": 1,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 100,
+          "register_count": 9,
+          "linear_comb": {
+            "numerator": 12,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 5,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 2,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 112,
+              "denominator": 1
+            },
+            "register_bits": 100,
+            "register_count": 9,
+            "candidate_id": "half"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 2,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 105,
+              "denominator": 1
+            },
+            "register_bits": 100,
+            "register_count": 9,
+            "candidate_id": "half"
+          },
+          "linear_rank": 1,
+          "square_rank": 1
+        },
+        {
+          "structure": "quarter",
+          "graph_sha256": "5a420ed69a13b72b9e4e99f76153fe430772a9f4ecd236c08fa4dc56d0e34042",
+          "schedule_sha256": "c5f789251fa2651433944bd8e7c0ef70d7f69ff1b842871b4b8f3b84d31a7df5",
+          "stage_delays": [
+            {
+              "numerator": 2,
+              "denominator": 1
+            },
+            {
+              "numerator": 2,
+              "denominator": 1
+            },
+            {
+              "numerator": 2,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 166,
+          "register_count": 14,
+          "linear_comb": {
+            "numerator": 32,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 17,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 2,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 198,
+              "denominator": 1
+            },
+            "register_bits": 166,
+            "register_count": 14,
+            "candidate_id": "quarter"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 2,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 183,
+              "denominator": 1
+            },
+            "register_bits": 166,
+            "register_count": 14,
+            "candidate_id": "quarter"
+          },
+          "linear_rank": 2,
+          "square_rank": 2
+        }
+      ],
+      "linear_selected": "half",
+      "square_selected": "half",
+      "selected_changed": false
+    },
+    {
+      "W": 16,
+      "family": "MUL",
+      "structures": [
+        {
+          "structure": "original",
+          "graph_sha256": "020707fb617340a06704495751b9641978f0ff391d96f25f1436c41a95c2a418",
+          "schedule_sha256": "a83f969e3816bfad1115697583cd6f8ed1e78c9845efb26a48571578ca725e5a",
+          "stage_delays": [
+            {
+              "numerator": 8,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 66,
+          "register_count": 4,
+          "linear_comb": {
+            "numerator": 8,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 4,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 8,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 74,
+              "denominator": 1
+            },
+            "register_bits": 66,
+            "register_count": 4,
+            "candidate_id": "original"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 8,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 70,
+              "denominator": 1
+            },
+            "register_bits": 66,
+            "register_count": 4,
+            "candidate_id": "original"
+          },
+          "linear_rank": 3,
+          "square_rank": 3
+        },
+        {
+          "structure": "half",
+          "graph_sha256": "98b214749a9704ae584fde8592bcb8519c178efda85b380ee13d538be8227a7f",
+          "schedule_sha256": "f03559706b10f73e398748ad63e21e97d1b735e67ea4554c6eacafca6627a5dc",
+          "stage_delays": [
+            {
+              "numerator": 4,
+              "denominator": 1
+            },
+            {
+              "numerator": 2,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 130,
+          "register_count": 7,
+          "linear_comb": {
+            "numerator": 19,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 7,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 4,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 149,
+              "denominator": 1
+            },
+            "register_bits": 130,
+            "register_count": 7,
+            "candidate_id": "half"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 4,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 137,
+              "denominator": 1
+            },
+            "register_bits": 130,
+            "register_count": 7,
+            "candidate_id": "half"
+          },
+          "linear_rank": 2,
+          "square_rank": 2
+        },
+        {
+          "structure": "quarter",
+          "graph_sha256": "3ff5c765d3cd2199a709c07a0dfbc90b857963aed79d940f66f9138b1cbf86e5",
+          "schedule_sha256": "e475c333fe33faaebaf65e249edd63030f2751617a753713f10b51dd029542ec",
+          "stage_delays": [
+            {
+              "numerator": 2,
+              "denominator": 1
+            },
+            {
+              "numerator": 2,
+              "denominator": 1
+            },
+            {
+              "numerator": 2,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 434,
+          "register_count": 22,
+          "linear_comb": {
+            "numerator": 47,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 19,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 2,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 481,
+              "denominator": 1
+            },
+            "register_bits": 434,
+            "register_count": 22,
+            "candidate_id": "quarter"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 2,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 453,
+              "denominator": 1
+            },
+            "register_bits": 434,
+            "register_count": 22,
+            "candidate_id": "quarter"
+          },
+          "linear_rank": 1,
+          "square_rank": 1
+        }
+      ],
+      "linear_selected": "quarter",
+      "square_selected": "quarter",
+      "selected_changed": false
+    },
+    {
+      "W": 16,
+      "family": "MAC",
+      "structures": [
+        {
+          "structure": "original",
+          "graph_sha256": "cb60a64d933b3b5271484ad78362aa1fd6752cf5eb767f9e0f08272c37fb917b",
+          "schedule_sha256": "1051b7c59c1bb7bed89e5e1463d95039245adbbf836a3e9fce782ddf3f9608e5",
+          "stage_delays": [
+            {
+              "numerator": 8,
+              "denominator": 1
+            },
+            {
+              "numerator": 1,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 100,
+          "register_count": 5,
+          "linear_comb": {
+            "numerator": 9,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 5,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 8,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 109,
+              "denominator": 1
+            },
+            "register_bits": 100,
+            "register_count": 5,
+            "candidate_id": "original"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 8,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 105,
+              "denominator": 1
+            },
+            "register_bits": 100,
+            "register_count": 5,
+            "candidate_id": "original"
+          },
+          "linear_rank": 3,
+          "square_rank": 3
+        },
+        {
+          "structure": "half",
+          "graph_sha256": "0ebc2bee5069405fee93a5eded3a939cad73ec66b05034c8550d25a3f9c513bd",
+          "schedule_sha256": "fa73c3a493e303bf0c0805464d15402fbb4827a0bbc55475443c1fc99dc5d13b",
+          "stage_delays": [
+            {
+              "numerator": 4,
+              "denominator": 1
+            },
+            {
+              "numerator": 3,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 164,
+          "register_count": 8,
+          "linear_comb": {
+            "numerator": 20,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 8,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 4,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 184,
+              "denominator": 1
+            },
+            "register_bits": 164,
+            "register_count": 8,
+            "candidate_id": "half"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 4,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 172,
+              "denominator": 1
+            },
+            "register_bits": 164,
+            "register_count": 8,
+            "candidate_id": "half"
+          },
+          "linear_rank": 2,
+          "square_rank": 2
+        },
+        {
+          "structure": "quarter",
+          "graph_sha256": "191e321313d52f093186a7fbe642963765fc3ef6f55a1ce5b59db82bd32892ef",
+          "schedule_sha256": "a2e51f2ef9d8d804d573571a60ce62457457faf6cc5865ef17aca333ebb14dc8",
+          "stage_delays": [
+            {
+              "numerator": 3,
+              "denominator": 1
+            },
+            {
+              "numerator": 3,
+              "denominator": 1
+            },
+            {
+              "numerator": 1,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 284,
+          "register_count": 13,
+          "linear_comb": {
+            "numerator": 48,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 20,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 3,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 332,
+              "denominator": 1
+            },
+            "register_bits": 284,
+            "register_count": 13,
+            "candidate_id": "quarter"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 3,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 304,
+              "denominator": 1
+            },
+            "register_bits": 284,
+            "register_count": 13,
+            "candidate_id": "quarter"
+          },
+          "linear_rank": 1,
+          "square_rank": 1
+        }
+      ],
+      "linear_selected": "quarter",
+      "square_selected": "quarter",
+      "selected_changed": false
+    },
+    {
+      "W": 32,
+      "family": "MUL",
+      "structures": [
+        {
+          "structure": "original",
+          "graph_sha256": "d3b52ebb2a44e731ff626dc5c34150f80bb9e83ec96c3fa056602a6243c8f913",
+          "schedule_sha256": "f246a33772e81961d6c5a30234c7de669cba2995bfad46a6a84c55aa55f12656",
+          "stage_delays": [
+            {
+              "numerator": 16,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 130,
+          "register_count": 4,
+          "linear_comb": {
+            "numerator": 16,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 16,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 16,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 146,
+              "denominator": 1
+            },
+            "register_bits": 130,
+            "register_count": 4,
+            "candidate_id": "original"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 16,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 146,
+              "denominator": 1
+            },
+            "register_bits": 130,
+            "register_count": 4,
+            "candidate_id": "original"
+          },
+          "linear_rank": 3,
+          "square_rank": 3
+        },
+        {
+          "structure": "half",
+          "graph_sha256": "78d20091c4a2b9a22273b49d78f9a0a7eb3fe20cd8d48984f83fd8ad1b9e8b0a",
+          "schedule_sha256": "43f10243264e79ce36477383b7472a4eedade5c01896f0e479b4fd0979632d43",
+          "stage_delays": [
+            {
+              "numerator": 8,
+              "denominator": 1
+            },
+            {
+              "numerator": 2,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 258,
+          "register_count": 7,
+          "linear_comb": {
+            "numerator": 35,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 19,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 8,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 293,
+              "denominator": 1
+            },
+            "register_bits": 258,
+            "register_count": 7,
+            "candidate_id": "half"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 8,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 277,
+              "denominator": 1
+            },
+            "register_bits": 258,
+            "register_count": 7,
+            "candidate_id": "half"
+          },
+          "linear_rank": 2,
+          "square_rank": 2
+        },
+        {
+          "structure": "quarter",
+          "graph_sha256": "284b474bdfa07c73fd8c9422e6b77076fdccfeb730928208bfa8857f9da0a5e5",
+          "schedule_sha256": "2b90c7c8419ec800ea92f21a525163f6c1249300c61672c797cccf89b1d31dde",
+          "stage_delays": [
+            {
+              "numerator": 4,
+              "denominator": 1
+            },
+            {
+              "numerator": 4,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 706,
+          "register_count": 19,
+          "linear_comb": {
+            "numerator": 79,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 31,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 4,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 785,
+              "denominator": 1
+            },
+            "register_bits": 706,
+            "register_count": 19,
+            "candidate_id": "quarter"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 4,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 737,
+              "denominator": 1
+            },
+            "register_bits": 706,
+            "register_count": 19,
+            "candidate_id": "quarter"
+          },
+          "linear_rank": 1,
+          "square_rank": 1
+        }
+      ],
+      "linear_selected": "quarter",
+      "square_selected": "quarter",
+      "selected_changed": false
+    },
+    {
+      "W": 32,
+      "family": "MAC",
+      "structures": [
+        {
+          "structure": "original",
+          "graph_sha256": "288d0b0f36da8f416a535bf1196fc2e50accb046918d69ce4ce32d2d2fac2780",
+          "schedule_sha256": "ffc056c1ceb67cfbda3deb4941b131ff097385d05209fe35ab62cb14bca64d47",
+          "stage_delays": [
+            {
+              "numerator": 16,
+              "denominator": 1
+            },
+            {
+              "numerator": 1,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 196,
+          "register_count": 5,
+          "linear_comb": {
+            "numerator": 17,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 17,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 16,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 213,
+              "denominator": 1
+            },
+            "register_bits": 196,
+            "register_count": 5,
+            "candidate_id": "original"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 16,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 213,
+              "denominator": 1
+            },
+            "register_bits": 196,
+            "register_count": 5,
+            "candidate_id": "original"
+          },
+          "linear_rank": 3,
+          "square_rank": 3
+        },
+        {
+          "structure": "half",
+          "graph_sha256": "6e32890590d9db599b4b9661ec9c70d13f593075554633e2a8a556e87730d7b5",
+          "schedule_sha256": "43636b7a569d39b4482bd2288883b3658b7f1a3e633e5d249b8d6fbe800d263a",
+          "stage_delays": [
+            {
+              "numerator": 8,
+              "denominator": 1
+            },
+            {
+              "numerator": 3,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 324,
+          "register_count": 8,
+          "linear_comb": {
+            "numerator": 36,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 20,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 8,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 360,
+              "denominator": 1
+            },
+            "register_bits": 324,
+            "register_count": 8,
+            "candidate_id": "half"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 8,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 344,
+              "denominator": 1
+            },
+            "register_bits": 324,
+            "register_count": 8,
+            "candidate_id": "half"
+          },
+          "linear_rank": 2,
+          "square_rank": 2
+        },
+        {
+          "structure": "quarter",
+          "graph_sha256": "c972f47ccf368478fb0c7ace48125e1aa78248c81106104423f21cb31a1d6e88",
+          "schedule_sha256": "58e4effaaa30a25b22854b85ae78faea20879a6a18ab32e130646883e4e7076c",
+          "stage_delays": [
+            {
+              "numerator": 4,
+              "denominator": 1
+            },
+            {
+              "numerator": 4,
+              "denominator": 1
+            },
+            {
+              "numerator": 1,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 836,
+          "register_count": 21,
+          "linear_comb": {
+            "numerator": 80,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 32,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 4,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 916,
+              "denominator": 1
+            },
+            "register_bits": 836,
+            "register_count": 21,
+            "candidate_id": "quarter"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 4,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 868,
+              "denominator": 1
+            },
+            "register_bits": 836,
+            "register_count": 21,
+            "candidate_id": "quarter"
+          },
+          "linear_rank": 1,
+          "square_rank": 1
+        }
+      ],
+      "linear_selected": "quarter",
+      "square_selected": "quarter",
+      "selected_changed": false
+    },
+    {
+      "W": 64,
+      "family": "MUL",
+      "structures": [
+        {
+          "structure": "original",
+          "graph_sha256": "893cf8f0f40a178a86f75bc018ef25eb9973b716efa61f6c20b834002ef62a9c",
+          "schedule_sha256": "fabb4432f591e73aa10d7d03fba44acdf97759b884da5895e6546e07d4a85e83",
+          "stage_delays": [
+            {
+              "numerator": 32,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 258,
+          "register_count": 4,
+          "linear_comb": {
+            "numerator": 32,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 64,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 32,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 290,
+              "denominator": 1
+            },
+            "register_bits": 258,
+            "register_count": 4,
+            "candidate_id": "original"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 32,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 322,
+              "denominator": 1
+            },
+            "register_bits": 258,
+            "register_count": 4,
+            "candidate_id": "original"
+          },
+          "linear_rank": 3,
+          "square_rank": 3
+        },
+        {
+          "structure": "half",
+          "graph_sha256": "2617c37c85819d74a7fe674d974210d16c31991837966cbcec6f0a3bc9427dab",
+          "schedule_sha256": "60e8048057856260591c93a8a3123cf2ea23f1a17015585c0986ec92862e244d",
+          "stage_delays": [
+            {
+              "numerator": 16,
+              "denominator": 1
+            },
+            {
+              "numerator": 2,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 514,
+          "register_count": 7,
+          "linear_comb": {
+            "numerator": 67,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 67,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 16,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 581,
+              "denominator": 1
+            },
+            "register_bits": 514,
+            "register_count": 7,
+            "candidate_id": "half"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 16,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 581,
+              "denominator": 1
+            },
+            "register_bits": 514,
+            "register_count": 7,
+            "candidate_id": "half"
+          },
+          "linear_rank": 2,
+          "square_rank": 2
+        },
+        {
+          "structure": "quarter",
+          "graph_sha256": "77327259c804176b2fe59793c7067d2cff940f6a17922bd8d1942212fea1b867",
+          "schedule_sha256": "d97c14e73f080b17f46225ea0be06701eb9af062c29c7876502a5c2d9c50a709",
+          "stage_delays": [
+            {
+              "numerator": 8,
+              "denominator": 1
+            },
+            {
+              "numerator": 4,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 1410,
+          "register_count": 19,
+          "linear_comb": {
+            "numerator": 143,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 79,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 8,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 1553,
+              "denominator": 1
+            },
+            "register_bits": 1410,
+            "register_count": 19,
+            "candidate_id": "quarter"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 8,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 1489,
+              "denominator": 1
+            },
+            "register_bits": 1410,
+            "register_count": 19,
+            "candidate_id": "quarter"
+          },
+          "linear_rank": 1,
+          "square_rank": 1
+        }
+      ],
+      "linear_selected": "quarter",
+      "square_selected": "quarter",
+      "selected_changed": false
+    },
+    {
+      "W": 64,
+      "family": "MAC",
+      "structures": [
+        {
+          "structure": "original",
+          "graph_sha256": "1685d0ac5258012bb5a487d581f2ab2a2b457e81a8cdb432c955dfe9cba93d4f",
+          "schedule_sha256": "c6ca41b52547f804cf4a65821ffb7062fca9e69a565c575c0ce1f44b7a985983",
+          "stage_delays": [
+            {
+              "numerator": 33,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 260,
+          "register_count": 4,
+          "linear_comb": {
+            "numerator": 33,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 65,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 33,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 293,
+              "denominator": 1
+            },
+            "register_bits": 260,
+            "register_count": 4,
+            "candidate_id": "original"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 33,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 325,
+              "denominator": 1
+            },
+            "register_bits": 260,
+            "register_count": 4,
+            "candidate_id": "original"
+          },
+          "linear_rank": 3,
+          "square_rank": 3
+        },
+        {
+          "structure": "half",
+          "graph_sha256": "2f821233f3534504c9a247ec38a1aabd9ad2f6e88b52627035764b26fa5b7cbc",
+          "schedule_sha256": "630cff30967f2612042307c8ca62df25c273af9cb0a17a2fc58f9968dbb9784f",
+          "stage_delays": [
+            {
+              "numerator": 16,
+              "denominator": 1
+            },
+            {
+              "numerator": 3,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 644,
+          "register_count": 8,
+          "linear_comb": {
+            "numerator": 68,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 68,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 16,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 712,
+              "denominator": 1
+            },
+            "register_bits": 644,
+            "register_count": 8,
+            "candidate_id": "half"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 16,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 712,
+              "denominator": 1
+            },
+            "register_bits": 644,
+            "register_count": 8,
+            "candidate_id": "half"
+          },
+          "linear_rank": 2,
+          "square_rank": 2
+        },
+        {
+          "structure": "quarter",
+          "graph_sha256": "e339f3b9310622f29ee5ada155d78254a19d814b8c5f1b4c022c283fc59db0e8",
+          "schedule_sha256": "c2abf8a33970235dfd11d13d21a23bd2fa8d96afa955ff301ff86c615ebdd772",
+          "stage_delays": [
+            {
+              "numerator": 8,
+              "denominator": 1
+            },
+            {
+              "numerator": 5,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 1540,
+          "register_count": 20,
+          "linear_comb": {
+            "numerator": 144,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 80,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 8,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 1684,
+              "denominator": 1
+            },
+            "register_bits": 1540,
+            "register_count": 20,
+            "candidate_id": "quarter"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 8,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 1620,
+              "denominator": 1
+            },
+            "register_bits": 1540,
+            "register_count": 20,
+            "candidate_id": "quarter"
+          },
+          "linear_rank": 1,
+          "square_rank": 1
+        }
+      ],
+      "linear_selected": "quarter",
+      "square_selected": "quarter",
+      "selected_changed": false
+    },
+    {
+      "W": 128,
+      "family": "MUL",
+      "structures": [
+        {
+          "structure": "original",
+          "graph_sha256": "180f508d5b62a897e58ab69b86427e1ee7271ffff5c572dcf511d03b19e10358",
+          "schedule_sha256": "e8edc724156de9146a07df3f5b378acddbb8ad2384f1fa810fddd358fa88de23",
+          "stage_delays": [
+            {
+              "numerator": 64,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 514,
+          "register_count": 4,
+          "linear_comb": {
+            "numerator": 64,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 256,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 64,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 578,
+              "denominator": 1
+            },
+            "register_bits": 514,
+            "register_count": 4,
+            "candidate_id": "original"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 64,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 770,
+              "denominator": 1
+            },
+            "register_bits": 514,
+            "register_count": 4,
+            "candidate_id": "original"
+          },
+          "linear_rank": 3,
+          "square_rank": 3
+        },
+        {
+          "structure": "half",
+          "graph_sha256": "7fd6b8dba4f1bf2045ba9ac6afa725f0010468ed3824058ba4bf28a71f686357",
+          "schedule_sha256": "8afdf3b03514f3c2e2e0404dbca609b150753245b02032574963cd95f79b0558",
+          "stage_delays": [
+            {
+              "numerator": 33,
+              "denominator": 1
+            },
+            {
+              "numerator": 1,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 708,
+          "register_count": 5,
+          "linear_comb": {
+            "numerator": 131,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 259,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 33,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 839,
+              "denominator": 1
+            },
+            "register_bits": 708,
+            "register_count": 5,
+            "candidate_id": "half"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 33,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 967,
+              "denominator": 1
+            },
+            "register_bits": 708,
+            "register_count": 5,
+            "candidate_id": "half"
+          },
+          "linear_rank": 2,
+          "square_rank": 2
+        },
+        {
+          "structure": "quarter",
+          "graph_sha256": "37f96392a3cedf96854c7e32f59f3e8ebef821c67d922294b7c7366235408587",
+          "schedule_sha256": "4341f861fbb9ecc7c6b8e43b1961faba63b765a5a04702afe095cd6819ea5ef5",
+          "stage_delays": [
+            {
+              "numerator": 16,
+              "denominator": 1
+            },
+            {
+              "numerator": 4,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 2818,
+          "register_count": 19,
+          "linear_comb": {
+            "numerator": 271,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 271,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 16,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 3089,
+              "denominator": 1
+            },
+            "register_bits": 2818,
+            "register_count": 19,
+            "candidate_id": "quarter"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 16,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 3089,
+              "denominator": 1
+            },
+            "register_bits": 2818,
+            "register_count": 19,
+            "candidate_id": "quarter"
+          },
+          "linear_rank": 1,
+          "square_rank": 1
+        }
+      ],
+      "linear_selected": "quarter",
+      "square_selected": "quarter",
+      "selected_changed": false
+    },
+    {
+      "W": 128,
+      "family": "MAC",
+      "structures": [
+        {
+          "structure": "original",
+          "graph_sha256": "f0b55cf7ea2cf01d712124748d31a55bc8ddbd5b8dbc8c6ba348427360602e0a",
+          "schedule_sha256": "37685c66fadeb61d89bee434c04e0cc5bdf4a96717a1773c7e7ea744ec8fa67a",
+          "stage_delays": [
+            {
+              "numerator": 65,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 516,
+          "register_count": 4,
+          "linear_comb": {
+            "numerator": 65,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 257,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 65,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 581,
+              "denominator": 1
+            },
+            "register_bits": 516,
+            "register_count": 4,
+            "candidate_id": "original"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 65,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 773,
+              "denominator": 1
+            },
+            "register_bits": 516,
+            "register_count": 4,
+            "candidate_id": "original"
+          },
+          "linear_rank": 3,
+          "square_rank": 3
+        },
+        {
+          "structure": "half",
+          "graph_sha256": "42b51ae1532365d59ea5ef62d7ebf5e660645d0bc0ce0692021758fc41f85020",
+          "schedule_sha256": "9caaf792c8f16d1d413538d5021008470d87e6e1579031311db53df59ba32078",
+          "stage_delays": [
+            {
+              "numerator": 33,
+              "denominator": 1
+            },
+            {
+              "numerator": 2,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 966,
+          "register_count": 6,
+          "linear_comb": {
+            "numerator": 132,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 260,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 33,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 1098,
+              "denominator": 1
+            },
+            "register_bits": 966,
+            "register_count": 6,
+            "candidate_id": "half"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 33,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 1226,
+              "denominator": 1
+            },
+            "register_bits": 966,
+            "register_count": 6,
+            "candidate_id": "half"
+          },
+          "linear_rank": 2,
+          "square_rank": 2
+        },
+        {
+          "structure": "quarter",
+          "graph_sha256": "2be588cc84cbf149579ebf5dfe3a60364c122a44a36f49393171c5b58ab63535",
+          "schedule_sha256": "72c1f192768b952fc3f73855d13eff7d0a2c9cb2f2db85ef6ce5b5c8fc30c4e1",
+          "stage_delays": [
+            {
+              "numerator": 16,
+              "denominator": 1
+            },
+            {
+              "numerator": 5,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          "register_bits": 3076,
+          "register_count": 20,
+          "linear_comb": {
+            "numerator": 272,
+            "denominator": 1
+          },
+          "square_comb": {
+            "numerator": 272,
+            "denominator": 1
+          },
+          "linear_score": {
+            "maximum_delay": {
+              "numerator": 16,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 3348,
+              "denominator": 1
+            },
+            "register_bits": 3076,
+            "register_count": 20,
+            "candidate_id": "quarter"
+          },
+          "square_score": {
+            "maximum_delay": {
+              "numerator": 16,
+              "denominator": 1
+            },
+            "comb_plus_register_bits": {
+              "numerator": 3348,
+              "denominator": 1
+            },
+            "register_bits": 3076,
+            "register_count": 20,
+            "candidate_id": "quarter"
+          },
+          "linear_rank": 1,
+          "square_rank": 1
+        }
+      ],
+      "linear_selected": "quarter",
+      "square_selected": "quarter",
+      "selected_changed": false
+    }
+  ]
+}

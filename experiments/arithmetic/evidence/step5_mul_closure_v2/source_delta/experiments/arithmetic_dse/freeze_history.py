@@ -1,0 +1,166 @@
+"""Resolve an explicitly superseded source against its immutable snapshot.
+
+Changed current source must itself match the successor freeze. This does not
+turn an old acceptance report into evidence for the new implementation.
+"""
+import hashlib
+import json
+import importlib.util
+from pathlib import Path
+
+def source_location(root, parent, relative, expected):
+    root=Path(root)
+    digest=lambda path:hashlib.sha256(path.read_bytes()).hexdigest()
+    if (root/relative).is_file() and digest(root/relative)==expected:return root/relative
+    closure=root/'experiments/arithmetic/mul_templates_freeze_v2.json'
+    if closure.exists():
+        current=json.loads(closure.read_text());active=root/relative
+        bound=active.is_file() and current['files_sha256'].get(relative)==digest(active)
+        retired=not active.exists() and relative in current.get('retired_active_paths',[])
+        if current['historical_freezes'].get(parent)==digest(root/parent) and (bound or retired):
+            for source_root in current['historical_source_roots']:
+                snapshot=root/source_root/relative
+                if snapshot.is_file() and digest(snapshot)==expected:return snapshot
+    mul_revision=root/'experiments/arithmetic/mul_templates_freeze_v1.json'
+    if mul_revision.exists():
+        current=json.loads(mul_revision.read_text());active=root/relative
+        bound=active.is_file() and current['files_sha256'].get(relative)==digest(active)
+        retired=not active.exists() and relative in current.get('retired_active_paths',[])
+        if current['historical_freezes'].get(parent)==digest(root/parent) and (bound or retired):
+            for source_root in current['historical_source_roots']:
+                snapshot=root/source_root/relative
+                if snapshot.is_file() and digest(snapshot)==expected:return snapshot
+    interfaces_review=root/'experiments/arithmetic/arithmetic_interfaces_freeze_v2.json'
+    if interfaces_review.exists():
+        current=json.loads(interfaces_review.read_text())
+        active=root/relative
+        bound=active.is_file() and current['files_sha256'].get(relative)==digest(active)
+        retired=not active.exists() and relative in current.get('retired_active_paths',[])
+        if current['historical_freezes'].get(parent)==digest(root/parent) and (bound or retired):
+            for source_root in current['historical_source_roots']:
+                snapshot=root/source_root/relative
+                if snapshot.is_file() and digest(snapshot)==expected:return snapshot
+    interfaces_revision=root/'experiments/arithmetic/arithmetic_interfaces_freeze_v1.json'
+    if interfaces_revision.exists():
+        current=json.loads(interfaces_revision.read_text())
+        active=root/relative
+        bound=active.is_file() and current['files_sha256'].get(relative)==digest(active)
+        retired=not active.exists() and relative in current.get('retired_active_paths',[])
+        if current['historical_freezes'].get(parent)==digest(root/parent) and (bound or retired):
+            for source_root in current['historical_source_roots']:
+                snapshot=root/source_root/relative
+                if snapshot.is_file() and digest(snapshot)==expected:return snapshot
+    review_revision=root/'experiments/arithmetic/backend_freeze_v7.json'
+    if review_revision.exists():
+        current=json.loads(review_revision.read_text())
+        active=root/relative
+        bound=active.is_file() and current['files_sha256'].get(relative)==digest(active)
+        retired=not active.exists() and relative in current.get('retired_active_paths',[])
+        if current['historical_freezes'].get(parent)==digest(root/parent) and (bound or retired):
+            for source_root in current['historical_source_roots']:
+                snapshot=root/source_root/relative
+                if snapshot.is_file() and digest(snapshot)==expected:return snapshot
+    sdc_revision=root/'experiments/arithmetic/backend_freeze_v6.json'
+    if sdc_revision.exists():
+        current=json.loads(sdc_revision.read_text())
+        active=root/relative
+        bound=active.is_file() and current['files_sha256'].get(relative)==digest(active)
+        retired=not active.exists() and relative in current.get('retired_active_paths',[])
+        if current['historical_freezes'].get(parent)==digest(root/parent) and (bound or retired):
+            for source_root in current['historical_source_roots']:
+                snapshot=root/source_root/relative
+                if snapshot.is_file() and digest(snapshot)==expected:return snapshot
+    platform_revision=root/'experiments/arithmetic/backend_freeze_v5.json'
+    if platform_revision.exists():
+        current=json.loads(platform_revision.read_text())
+        active=root/relative
+        bound=(active.is_file() and current['files_sha256'].get(relative)==digest(active))
+        retired=(not active.exists() and relative in current.get('retired_active_paths',[]))
+        if current['historical_freezes'].get(parent)==digest(root/parent) and (bound or retired):
+            for source_root in current['historical_source_roots']:
+                snapshot=root/source_root/relative
+                if snapshot.is_file() and digest(snapshot)==expected:return snapshot
+    revised=root/'experiments/arithmetic/step2_freeze_v4.json'
+    if revised.exists():
+        current=json.loads(revised.read_text())
+        if ((root/relative).is_file() and current['historical_freezes'].get(parent)==digest(root/parent)
+            and current['files_sha256'].get(relative)==digest(root/relative)):
+            for source_root in current['historical_source_roots']:
+                snapshot=root/source_root/relative
+                if snapshot.is_file() and digest(snapshot)==expected:return snapshot
+    successor=root/'experiments/arithmetic/mul_split_freeze_v1.json'
+    if not successor.exists():raise ValueError(f'changed source has no versioned successor: {relative}')
+    freeze=json.loads(successor.read_text())
+    if freeze['parents_sha256'].get(parent)!=digest(root/parent):
+        raise ValueError('historical freeze is not bound by the successor')
+    if freeze['files_sha256'].get(relative)!=digest(root/relative):
+        raise ValueError(f'current successor source mismatch: {relative}')
+    snapshot=root/freeze['historical_source_snapshots'][parent]/relative
+    if digest(snapshot)!=expected:raise ValueError(f'historical source mismatch: {relative}')
+    return snapshot
+
+
+def historical_case_manifest(root):
+    """Old evidence consumes its frozen data, never the active 43-case API."""
+    root=Path(root)
+    parent='experiments/arithmetic/freeze_v3.json'
+    relative='experiments/arithmetic/cases_v1.json'
+    freeze=json.loads((root/parent).read_text())
+    path=source_location(root,parent,relative,freeze['files_sha256'][relative])
+    return json.loads(path.read_text())
+
+
+def historical_budget(root):
+    """Historical forecasts execute their own frozen nine-case formulas only."""
+    root=Path(root)
+    parent='experiments/arithmetic/backend_freeze_v4.json'
+    relative='experiments/arithmetic_dse/budget.py'
+    expected=json.loads((root/parent).read_text())['files_sha256'][relative]
+    source=source_location(root,parent,relative,expected)
+    spec=importlib.util.spec_from_file_location('_vulsim_historical_budget_'+expected[:12],source)
+    module=importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def historical_stage_metrics(root):
+    """Reparse old reports with the exact parser bound by backend freeze v4."""
+    root=Path(root)
+    parent='experiments/arithmetic/backend_freeze_v4.json'
+    relative='experiments/arithmetic_dse/backend.py'
+    expected=json.loads((root/parent).read_text())['files_sha256'][relative]
+    source=source_location(root,parent,relative,expected)
+    name=__package__+'._frozen_backend_'+expected[:12]
+    spec=importlib.util.spec_from_file_location(name,source)
+    module=importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.stage_metrics
+
+
+def historical_placement_analyzer(root):
+    """Old cost formula is imported only from its immutable evidence namespace."""
+    root=Path(root);parent='experiments/arithmetic/placement_freeze_v1.json';relative='experiments/arithmetic_dse/placement_analysis.py'
+    expected=json.loads((root/parent).read_text())['files_sha256'][relative]
+    source=source_location(root,parent,relative,expected)
+    # The full step4 snapshot contains the original analysis, cost module and
+    # its configuration. Verify each consumed file against that parent freeze.
+    base=root/'experiments/arithmetic/evidence/step4_interfaces_v1/source_v1/experiments/arithmetic_dse'
+    freeze=json.loads((root/'experiments/arithmetic/arithmetic_interfaces_freeze_v1.json').read_text())
+    import sys,types
+    name='_vulsim_archived_placement_'+expected[:12]
+    pkg=types.ModuleType(name);pkg.__path__=[str(base)];sys.modules[name]=pkg
+    for file in ('placement_analysis.py','simple_cost.py','configs/simple_cost_v1.json'):
+        path=base/file;key='experiments/arithmetic_dse/'+file
+        if hashlib.sha256(path.read_bytes()).hexdigest()!=freeze['files_sha256'][key]:raise ValueError('archived analysis dependency mismatch')
+    spec=importlib.util.spec_from_file_location(name+'.placement_analysis',source)
+    module=importlib.util.module_from_spec(spec);sys.modules[spec.name]=module;spec.loader.exec_module(module)
+    return module.analyze
+
+
+def historical_step5_analysis(root):
+    root=Path(root);parent='experiments/arithmetic/mul_templates_freeze_v1.json';relative='experiments/arithmetic_dse/step5_analysis.py'
+    freeze=json.loads((root/parent).read_text());expected=freeze['files_sha256'][relative]
+    path=root/freeze['source_snapshots'][relative]
+    if hashlib.sha256(path.read_bytes()).hexdigest()!=expected:raise ValueError('historical step5 analysis snapshot mismatch')
+    name=__package__+'._frozen_step5_analysis_'+expected[:12]
+    spec=importlib.util.spec_from_file_location(name,path);module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module

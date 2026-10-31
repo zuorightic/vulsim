@@ -1,0 +1,690 @@
+{
+  "expected_regions": 219,
+  "expected_reports": 129,
+  "mutations": [
+    {
+      "failure_code": "invalid_expansion_graph",
+      "name": "duplicate_low_block",
+      "reason": "invalid_expansion_graph: duplicate partial-product coordinate",
+      "status": "rejected"
+    },
+    {
+      "failure_code": "invalid_expansion_graph",
+      "name": "omitted_reduction_high_term",
+      "reason": "invalid_expansion_graph: reduction omits or repeats a partial product",
+      "status": "rejected"
+    },
+    {
+      "failure_code": "invalid_expansion_graph",
+      "name": "wrong_original_source",
+      "reason": "invalid_expansion_graph: partial block uses wrong original operand",
+      "status": "rejected"
+    },
+    {
+      "failure_code": "invalid_expansion_graph",
+      "name": "wrong_partial_shift",
+      "reason": "invalid_expansion_graph: partial-product shift disagrees with block coordinates",
+      "status": "rejected"
+    },
+    {
+      "failure_code": "invalid_expansion_graph",
+      "name": "nonuniform_tail_coordinate",
+      "reason": "invalid_expansion_graph: block coordinate or tail width mismatch",
+      "status": "rejected"
+    }
+  ],
+  "reader_scope": "actual archived scalar graphs; nodes, slice/shift operands, constants, groups and parameters required; PortRead text from declared ports; split policy derived from registered template v1; facts recomputed",
+  "regions": 219,
+  "rejected_reports": 0,
+  "reports": 129,
+  "results": [
+    {
+      "name": "K16",
+      "regions": 3,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_128_0_0",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_128_0_1",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_128_0_2",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_128_0_3",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_128_1_0",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_128_1_1",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_128_1_2",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_128_1_3",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_16_0_0",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_16_0_1",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_16_0_2",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_16_0_3",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_16_1_0",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_16_1_1",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_16_1_2",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_16_1_3",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_32_0_0",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_32_0_1",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_32_0_2",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_32_0_3",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_32_1_0",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_32_1_1",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_32_1_2",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_32_1_3",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_64_0_0",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_64_0_1",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_64_0_2",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_64_0_3",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_64_1_0",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_64_1_1",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_64_1_2",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_64_1_3",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_8_0_0",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_8_0_1",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_8_0_2",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_8_0_3",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_8_1_0",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_8_1_1",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_8_1_2",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "sensitivity_8_1_3",
+      "regions": 1,
+      "status": "passed"
+    },
+    {
+      "name": "w128_full_0",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w128_full_1",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w128_full_2",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w128_full_3",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w128_low_0",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w128_low_1",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w128_low_2",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w128_low_3",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w12_full_0",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w12_full_1",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w12_full_2",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w12_full_3",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w12_low_0",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w12_low_1",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w12_low_2",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w12_low_3",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w13_full_0",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w13_full_1",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w13_full_2",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w13_full_3",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w13_low_0",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w13_low_1",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w13_low_2",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w13_low_3",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w16_full_0",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w16_full_1",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w16_full_2",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w16_full_3",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w16_low_0",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w16_low_1",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w16_low_2",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w16_low_3",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w17_full_0",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w17_full_1",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w17_full_2",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w17_full_3",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w17_low_0",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w17_low_1",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w17_low_2",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w17_low_3",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w24_full_0",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w24_full_1",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w24_full_2",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w24_full_3",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w24_low_0",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w24_low_1",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w24_low_2",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w24_low_3",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w32_full_0",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w32_full_1",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w32_full_2",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w32_full_3",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w32_low_0",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w32_low_1",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w32_low_2",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w32_low_3",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w48_full_0",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w48_full_1",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w48_full_2",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w48_full_3",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w48_low_0",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w48_low_1",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w48_low_2",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w48_low_3",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w64_full_0",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w64_full_1",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w64_full_2",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w64_full_3",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w64_low_0",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w64_low_1",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w64_low_2",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w64_low_3",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w8_full_0",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w8_full_1",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w8_full_2",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w8_full_3",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w8_low_0",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w8_low_1",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w8_low_2",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w8_low_3",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w96_full_0",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w96_full_1",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w96_full_2",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w96_full_3",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w96_low_0",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w96_low_1",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w96_low_2",
+      "regions": 2,
+      "status": "passed"
+    },
+    {
+      "name": "w96_low_3",
+      "regions": 2,
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "unreconstructable_reports": 0,
+  "version": "mul-historical-replay-v1"
+}

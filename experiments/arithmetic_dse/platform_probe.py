@@ -81,7 +81,10 @@ def revise_admission(parent_path,destination,revision_id,replacements,reason,*,a
 def verify_admission(args,p,rtl,ledger):
     path=args.admission.resolve()
     frozen=json.loads(path.read_text())
-    if (frozen['id']!=args.admission_id or frozen['purpose']!='platform_connection_only'
+    if frozen.get('purpose')=='mul_capacity_retest_only':
+        from .capacity_retest import verify_admission as verify_retest
+        return verify_retest(args,p,rtl,ledger)
+    if (frozen['id']!=args.admission_id or frozen['purpose'] not in ('platform_connection_only','mul_capacity_only')
             or frozen['policy_sha256']!=digest(POLICY)):
         raise ValueError('admission identity/policy mismatch')
     tasks=[t for t in frozen['tasks'] if t['id']==args.task_id]

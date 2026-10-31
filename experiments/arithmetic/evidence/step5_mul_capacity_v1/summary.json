@@ -1,0 +1,207 @@
+{
+  "version": "step5-capacity-v1",
+  "runs": [
+    {
+      "W": 64,
+      "status": "completed",
+      "task_id": "asap7-mul64-C-capacity-v1",
+      "metrics": [
+        {
+          "stage": "synth",
+          "target_period_ps": 1500.0,
+          "cell_area_um2": 4876.528859999999,
+          "functional_cell_area_um2": 4876.528859999999,
+          "excluded_filler_area_um2": 0,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 373.8312,
+          "sequential_cells": 1282,
+          "physical_only_area_um2": 0,
+          "setup_worst_slack_ps": 289.168793,
+          "hold_worst_slack_ps": 26.802675,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": 0.0,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 871.71,
+          "sta_feasibility": true,
+          "measured_feasibility": null,
+          "feasibility_scope": "synthesis_STA_only",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": true,
+          "hold_review_margin_ps": 5,
+          "hold_review_required": false,
+          "hold_margin_status": "review_band_met",
+          "parasitics": "none",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step5-parameterized-20261031/capacity64/reports/asap7/arithmetic_probe/base/vulsim_synth",
+          "target_platform": "asap7",
+          "platform_profile_sha256": "a29e056328a495af3f5815e3c56f4e6838eafd4b3f4f7844cc81d82ef99dd3df",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ps",
+              "to_ps": 1.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1fF",
+              "to_fF": 1.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": 289.168793,
+            "hold_worst_slack_ps": 26.802675,
+            "setup_tns_ps": 0.0,
+            "hold_tns_ps": 0.0,
+            "minimum_clock_period_ps": 871.71
+          },
+          "abc_target_ps": 1500.0,
+          "mapping_context_sha256": "87fe677775cc54a053c9e30d97ac4a6b70546cb768d9ef0ff2abdf0db66db3ae",
+          "target_dependent_measurement": true,
+          "mapped_netlist_sha256": "663befa8c83b2d168e1ee6445ac1730ec86a89240bf20bf6056bc0912a732935",
+          "mapped_netlist_hash_rule": "Yosys_Verilog_remove_banner_src_blank_lines_v1",
+          "comparison_identity_sha256": "97dd5a22b32dc164b60b17ca96676488d8f641b3e276cdce96eb5fe90a7a22e7",
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.00500001,
+            "absolute_difference_um2": 0.0011400000003050081
+          },
+          "orfs_stdcell_area_um2": 4876.53
+        },
+        {
+          "stage": "grt",
+          "target_period_ps": 1500.0,
+          "cell_area_um2": 4929.745859999998,
+          "functional_cell_area_um2": 4882.040099999998,
+          "excluded_filler_area_um2": 0,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 373.86036,
+          "sequential_cells": 1282,
+          "physical_only_area_um2": 47.70576,
+          "setup_worst_slack_ps": 215.205627,
+          "hold_worst_slack_ps": 5.854845,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": 0.0,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 1108.45,
+          "sta_feasibility": true,
+          "measured_feasibility": true,
+          "feasibility_scope": "TT_setup_only",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": true,
+          "hold_review_margin_ps": 5,
+          "hold_review_required": false,
+          "hold_margin_status": "review_band_met",
+          "parasitics": "global_route_estimate",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step5-parameterized-20261031/capacity64/reports/asap7/arithmetic_probe/base/vulsim_grt",
+          "target_platform": "asap7",
+          "platform_profile_sha256": "a29e056328a495af3f5815e3c56f4e6838eafd4b3f4f7844cc81d82ef99dd3df",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ps",
+              "to_ps": 1.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1fF",
+              "to_fF": 1.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": 215.205627,
+            "hold_worst_slack_ps": 5.854845,
+            "setup_tns_ps": 0.0,
+            "hold_tns_ps": 0.0,
+            "minimum_clock_period_ps": 1108.45
+          },
+          "abc_target_ps": 1500.0,
+          "mapping_context_sha256": "87fe677775cc54a053c9e30d97ac4a6b70546cb768d9ef0ff2abdf0db66db3ae",
+          "target_dependent_measurement": true,
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.00500001,
+            "absolute_difference_um2": 0.004140000001825683
+          },
+          "orfs_stdcell_area_um2": 4929.75
+        }
+      ],
+      "failure_stage": null,
+      "failure_code": null,
+      "failure_reason": null,
+      "directory": "experiments/arithmetic/evidence/step5_mul_capacity_v1/W64"
+    },
+    {
+      "W": 128,
+      "status": "failed",
+      "task_id": "asap7-mul128-C-capacity-v1",
+      "metrics": [
+        {
+          "stage": "synth",
+          "target_period_ps": 1500.0,
+          "cell_area_um2": 16968.07278,
+          "functional_cell_area_um2": 16968.07278,
+          "excluded_filler_area_um2": 0,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 747.0792,
+          "sequential_cells": 2562,
+          "physical_only_area_um2": 0,
+          "setup_worst_slack_ps": -13.169466,
+          "hold_worst_slack_ps": 26.444654,
+          "setup_tns_ps": -14.843904,
+          "hold_tns_ps": 0.0,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 915.16,
+          "sta_feasibility": false,
+          "measured_feasibility": null,
+          "feasibility_scope": "synthesis_STA_only",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": true,
+          "hold_review_margin_ps": 5,
+          "hold_review_required": false,
+          "hold_margin_status": "review_band_met",
+          "parasitics": "none",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step5-parameterized-20261031/capacity128/reports/asap7/arithmetic_probe/base/vulsim_synth",
+          "target_platform": "asap7",
+          "platform_profile_sha256": "a29e056328a495af3f5815e3c56f4e6838eafd4b3f4f7844cc81d82ef99dd3df",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ps",
+              "to_ps": 1.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1fF",
+              "to_fF": 1.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": -13.169466,
+            "hold_worst_slack_ps": 26.444654,
+            "setup_tns_ps": -14.843904,
+            "hold_tns_ps": 0.0,
+            "minimum_clock_period_ps": 915.16
+          },
+          "abc_target_ps": 1500.0,
+          "mapping_context_sha256": "87fe677775cc54a053c9e30d97ac4a6b70546cb768d9ef0ff2abdf0db66db3ae",
+          "target_dependent_measurement": true,
+          "mapped_netlist_sha256": "4a76bab112d6e2bcbcd5e2c78b5953fa11ecd9a7bb3647f6c1aed99cadbdd338",
+          "mapped_netlist_hash_rule": "Yosys_Verilog_remove_banner_src_blank_lines_v1",
+          "comparison_identity_sha256": "2956d3485a5d411acf3c64b43a9c8c13051182a2b1459348d507ba7a4ae5812b",
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.050000100000000006,
+            "absolute_difference_um2": 0.027219999999942956
+          },
+          "orfs_stdcell_area_um2": 16968.1
+        }
+      ],
+      "failure_stage": "grt",
+      "failure_code": "timeout",
+      "failure_reason": "grt: timeout",
+      "directory": "experiments/arithmetic/evidence/step5_mul_capacity_v1/W128"
+    }
+  ],
+  "scope": "ASAP7 selected C double Mul; no original/split PPA comparison; no final/SPEF/DRC claim",
+  "portable_metric_recompute": true,
+  "full_artifact_status": "local store catalogued and checked; remote retention unresolved; default portable verification does not claim full artifact replay"
+}

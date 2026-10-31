@@ -1,0 +1,74 @@
+{
+  "version": "step5-capacity-retest-v1",
+  "task_id": "asap7-mul128-C-postsynth-grt-3600-v1",
+  "source_task_id": "asap7-mul128-C-capacity-v1",
+  "status": "completed",
+  "failure_code": null,
+  "metrics": [
+    {
+      "stage": "grt",
+      "target_period_ps": 1500.0,
+      "cell_area_um2": 17679.314339999997,
+      "functional_cell_area_um2": 17545.761539999996,
+      "excluded_filler_area_um2": 0,
+      "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+      "sequential_area_um2": 747.1083600000001,
+      "sequential_cells": 2562,
+      "physical_only_area_um2": 133.5528,
+      "setup_worst_slack_ps": 0.278111,
+      "hold_worst_slack_ps": 7.473827,
+      "setup_tns_ps": 0.0,
+      "hold_tns_ps": 0.0,
+      "timing_coverage_complete": true,
+      "timing_coverage_diagnostics": "",
+      "minimum_clock_period_ps": 1264.3,
+      "sta_feasibility": true,
+      "measured_feasibility": true,
+      "feasibility_scope": "TT_setup_only",
+      "multi_corner_signoff": false,
+      "hold_feasible_at_TT": true,
+      "hold_review_margin_ps": 5,
+      "hold_review_required": false,
+      "hold_margin_status": "review_band_met",
+      "parasitics": "global_route_estimate",
+      "raw_reports_prefix": "/home/zyrv/vulsim/build/step5-closure-20261031/capacity-retest/reports/asap7/arithmetic_probe/base/vulsim_grt",
+      "target_platform": "asap7",
+      "platform_profile_sha256": "a29e056328a495af3f5815e3c56f4e6838eafd4b3f4f7844cc81d82ef99dd3df",
+      "raw_report_units": {
+        "time": {
+          "raw_unit": "time 1ps",
+          "to_ps": 1.0
+        },
+        "capacitance": {
+          "raw_unit": "capacitance 1fF",
+          "to_fF": 1.0
+        }
+      },
+      "unit_conversion": "Liberty_and_report_units_verified",
+      "raw_timing_values": {
+        "setup_worst_slack_ps": 0.278111,
+        "hold_worst_slack_ps": 7.473827,
+        "setup_tns_ps": 0.0,
+        "hold_tns_ps": 0.0,
+        "minimum_clock_period_ps": 1264.3
+      },
+      "abc_target_ps": 1500.0,
+      "mapping_context_sha256": "87fe677775cc54a053c9e30d97ac4a6b70546cb768d9ef0ff2abdf0db66db3ae",
+      "target_dependent_measurement": true,
+      "orfs_area_crosscheck": {
+        "native_json_significant_digits": 6,
+        "rounding_tolerance_um2": 0.050000100000000006,
+        "absolute_difference_um2": 0.014339999997901032
+      },
+      "orfs_stdcell_area_um2": 17679.3
+    }
+  ],
+  "full_chain_timing": "timing.json",
+  "new_calls": {
+    "synth": 0,
+    "grt": 1,
+    "final": 0
+  },
+  "scope": "exact admitted C implementation only; full new post-synthesis chain; no original paired run, no scale/split attribution, no blanket batch release",
+  "source_manifest_sha256": "69e24a9c277f03de0fad682c6a8e6ef38ae3ca967d748256c5c2efb8b1902dfb"
+}

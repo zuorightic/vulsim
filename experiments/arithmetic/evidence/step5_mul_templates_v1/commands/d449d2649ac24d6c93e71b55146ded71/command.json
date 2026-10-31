@@ -1,0 +1,32 @@
+{
+  "command": [
+    "env",
+    "PATH=/home/zyrv/circt/circt-full-shared-linux-x64/firtool-1.162.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+    "build/step4-rtlzz/testv2/mul-template-test",
+    "/home/zyrv/vulsim",
+    "/home/zyrv/vulsim/build/step5-parameterized-20261031/circt-final",
+    "--circt"
+  ],
+  "exit_code": 0,
+  "process_exit_code": 0,
+  "timed_out": false,
+  "CPU_limit_s": 360,
+  "CPU_limit_exceeded": false,
+  "sampled_process_tree_CPU_s": 3.5999999999999996,
+  "cancelled_signal": null,
+  "walltime_s": 4.622499241027981,
+  "unexpected_live_descendants": false,
+  "memory_limit_exceeded": false,
+  "memory_limit_MiB": 8192,
+  "sampled_process_tree_peak_rss_KiB": 149904,
+  "sampled_process_tree_peak_threads": 4,
+  "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+  "resource_sampling_interval_s": 0.5,
+  "cleanup": {
+    "term_sent": 0,
+    "kill_sent": 0,
+    "remaining_live_pids": []
+  },
+  "log": "/home/zyrv/vulsim/build/step5-parameterized-20261031/release-circt.log",
+  "gnu_time": "/home/zyrv/vulsim/build/step5-parameterized-20261031/release-circt.resources.txt"
+}

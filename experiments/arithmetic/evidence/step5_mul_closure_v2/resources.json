@@ -1,0 +1,68 @@
+{
+  "baseline_usage": {
+    "synth": 54,
+    "grt": 31,
+    "final": 14,
+    "support_calls": 629,
+    "walltime_s": 7114.546199123375,
+    "CPU_time_s": 11153.53,
+    "pending": 0
+  },
+  "new_usage": {
+    "synth": 0,
+    "grt": 1,
+    "final": 0,
+    "support_calls": 28,
+    "walltime_s": 1852.1124027564656,
+    "CPU_time_s": 2890.7,
+    "pending": 0
+  },
+  "cumulative_usage": {
+    "synth": 54,
+    "grt": 32,
+    "final": 14,
+    "support_calls": 657,
+    "walltime_s": 8966.65860187984,
+    "CPU_time_s": 14044.23,
+    "pending": 0
+  },
+  "new_physical_calls": {
+    "synth": 0,
+    "grt": 1,
+    "final": 0
+  },
+  "failed_leaves": 3,
+  "post_admission_support_usage": {
+    "synth": 0,
+    "grt": 0,
+    "final": 0,
+    "support_calls": 17,
+    "walltime_s": 332.2206996297464,
+    "CPU_time_s": 336.40999999999997,
+    "pending": 0
+  },
+  "post_admission_support_envelope": {
+    "walltime_s": 1800,
+    "CPU_time_s": 3600,
+    "contents": [
+      "environment and checkpoint/asset identity",
+      "snapshot and actual SDC/STA validation",
+      "substage timing extraction",
+      "historical replay and software verification",
+      "portable isolation and compact evidence audit"
+    ]
+  },
+  "post_admission_support_envelope_met": true,
+  "prelaunch_software_support_usage": {
+    "synth": 0,
+    "grt": 0,
+    "final": 0,
+    "support_calls": 11,
+    "walltime_s": 69.6984880247619,
+    "CPU_time_s": 64.96,
+    "pending": 0
+  },
+  "global_caps_changed": false,
+  "max_sampled_RSS_KiB": 2931364,
+  "CPU_note": "GNU time actual where present; timeout with missing GNU time charged full CPU reservation, sampled tree CPU kept separate"
+}

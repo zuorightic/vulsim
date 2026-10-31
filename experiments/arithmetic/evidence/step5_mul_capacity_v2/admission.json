@@ -1,0 +1,73 @@
+{
+  "id": "step5-closure-capacity-retest-v1",
+  "purpose": "mul_capacity_retest_only",
+  "policy_sha256": "3f4a230ca19b9b53a9da71cb19a52e718d29a8001106d354394f13e5d6ef995a",
+  "starting_usage_live": {
+    "synth": 54,
+    "grt": 31,
+    "final": 14,
+    "support_calls": 640,
+    "walltime_s": 7184.244687148137,
+    "CPU_time_s": 11218.49,
+    "pending": 0
+  },
+  "tasks": [
+    {
+      "id": "asap7-mul128-C-postsynth-grt-3600-v1",
+      "platform": "asap7",
+      "top": "w128_full_3",
+      "rtl_sha256": "99f619e9c597ac8e37d0a1c905e4eaa53ea5938f2e08e4542e3b9f63cbb84420",
+      "graph_sha256": "4e35774097bcbee8b8ee8e1e90d4a2e3848a1799989f0a8aa31666119484287b",
+      "schedule_sha256": "3eea014fbb7fc3cfe1220b2b71ca966c41502c44d8781f56356419a3ee2c8646",
+      "profile_sha256": "a29e056328a495af3f5815e3c56f4e6838eafd4b3f4f7844cc81d82ef99dd3df",
+      "selected_candidate": "candidate/quarter/quarter",
+      "L": 3,
+      "II": 1,
+      "period_ps": 1500,
+      "abc_target_ps": 1500,
+      "threads": 2,
+      "memory_limit_MiB": 8192,
+      "stage": "grt",
+      "grt_walltime_limit_s": 3600,
+      "grt_CPU_limit_s": 7200,
+      "resume_directory": "/home/zyrv/vulsim/build/step5-parameterized-20261031/capacity128",
+      "source_manifest_sha256": "69e24a9c277f03de0fad682c6a8e6ef38ae3ca967d748256c5c2efb8b1902dfb",
+      "checkpoint_sha256": {
+        "1_synth.odb": "75d0c32f420eb3fdc8d3678cc96257e28a1758d958c1dcfadff86369e868d0c3",
+        "1_synth.sdc": "cce24218972e7f53485883877ad516b7a7d1f5595f6d7992d0089dbb86c10d69",
+        "1_2_yosys.v": "a6be1c37d5ecffb24438d7c93754d9278e7846637cc4470077847bd0174cad79",
+        "1_2_yosys.sdc": "ae5fb19566bf95cd28f58b8928a1d481fac4a0adfe5abdc7b3a505b244cc5c4e"
+      },
+      "constraints_sha256": "ae5fb19566bf95cd28f58b8928a1d481fac4a0adfe5abdc7b3a505b244cc5c4e",
+      "sdc_contract_version": "serialized-sdc-contract-v2",
+      "purpose": "physical_recheck"
+    }
+  ],
+  "call_caps": {
+    "synth": 0,
+    "grt": 1,
+    "final": 0
+  },
+  "support_envelope": {
+    "walltime_s": 1800,
+    "CPU_time_s": 3600,
+    "contents": [
+      "environment and checkpoint/asset identity",
+      "snapshot and actual SDC/STA validation",
+      "substage timing extraction",
+      "historical replay and software verification",
+      "portable isolation and compact evidence audit"
+    ]
+  },
+  "remaining_launch_envelope": {
+    "walltime_s": 5400,
+    "CPU_time_s": 10800
+  },
+  "automatic_retries": 0,
+  "global_budget_raised": false,
+  "origin": "explicit user instruction: one same-circuit post-synthesis->grt retest with 3600s limit; no original comparison",
+  "timing_scope": "one complete floorplan->place->CTS->grt leaf after synthesis; reuse only original synthesis products",
+  "main_matrix_or_training_authorized": false,
+  "no_attribution_to_scale_or_split": "both remain unseparated; paired diagnostic deferred to separate admission",
+  "batch_gate": "only this exact implementation/context may be reviewed after actual result; no blanket 128-bit or A/B/C/D authorization"
+}

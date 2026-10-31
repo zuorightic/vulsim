@@ -1,0 +1,182 @@
+{
+  "version": "saved-STA-metric-scope-v1",
+  "rows": [
+    {
+      "case_stage": "W64_synth",
+      "period_ps": 1500.0,
+      "setup_worst_slack_ps": 289.168793,
+      "core_same_clock_min_period_ps": 871.71,
+      "core_same_clock_slack_approx_ps": 628.29,
+      "same_clock_slack_scope": "derived from 2-decimal rounded core_clk period_min; eligible same-clock paths at this fixed STA context; not overall interface slack or a new frequency sweep",
+      "worst_path": {
+        "startpoint": "c[20]",
+        "endpoint": "rtlzz_pipe_132_s1[47]$_SDFFE_PN0P_",
+        "launch_clock": "io_clk",
+        "capture_clock": "core_clk",
+        "path_group": "core_clk",
+        "input_port": true,
+        "output_port": false,
+        "input_external_delay_ps": 300.0,
+        "output_external_delay_ps": null,
+        "arrival_ps": 1180.876099,
+        "required_ps": 1470.044922,
+        "slack_ps": 289.168793
+      },
+      "saved_path_group_summaries": [
+        {
+          "startpoint": "c[20]",
+          "endpoint": "rtlzz_pipe_132_s1[47]$_SDFFE_PN0P_",
+          "launch_clock": "io_clk",
+          "capture_clock": "core_clk",
+          "path_group": "core_clk",
+          "input_port": true,
+          "output_port": false,
+          "input_external_delay_ps": 300.0,
+          "output_external_delay_ps": null,
+          "arrival_ps": 1180.876099,
+          "required_ps": 1470.044922,
+          "slack_ps": 289.168793
+        },
+        {
+          "startpoint": "y[102]$_SDFFE_PN0P_",
+          "endpoint": "y[102]",
+          "launch_clock": "core_clk",
+          "capture_clock": "io_clk",
+          "path_group": "io_clk",
+          "input_port": false,
+          "output_port": true,
+          "input_external_delay_ps": null,
+          "output_external_delay_ps": 300.0,
+          "arrival_ps": 81.389107,
+          "required_ps": 1180.0,
+          "slack_ps": 1098.61084
+        }
+      ],
+      "source_reports_sha256": {
+        "experiments/arithmetic/evidence/step5_mul_capacity_v1/W64/reports/asap7/arithmetic_probe/base/vulsim_synth_period.rpt.gz": "c2535e1f8cf2d555fc7df39d9cea3c49055aa1aed08ffff832e4168723374f15",
+        "experiments/arithmetic/evidence/step5_mul_capacity_v1/W64/reports/asap7/arithmetic_probe/base/vulsim_synth_setup.rpt.gz": "8bd41d90325f15141d0bfc95a8fcc35e84d646f9434330694cc80e2031cf2033",
+        "experiments/arithmetic/evidence/step5_mul_capacity_v1/W64/reports/asap7/arithmetic_probe/base/vulsim_synth_paths_max.rpt.gz": "c533b8b271c615b8e2c3c73cfc057af38a4274b2fbcb0a13616b055b3b96a25d"
+      }
+    },
+    {
+      "case_stage": "W64_grt",
+      "period_ps": 1500.0,
+      "setup_worst_slack_ps": 215.205627,
+      "core_same_clock_min_period_ps": 1108.45,
+      "core_same_clock_slack_approx_ps": 391.54999999999995,
+      "same_clock_slack_scope": "derived from 2-decimal rounded core_clk period_min; eligible same-clock paths at this fixed STA context; not overall interface slack or a new frequency sweep",
+      "worst_path": {
+        "startpoint": "a[3]",
+        "endpoint": "rtlzz_pipe_27_s1[62]$_SDFFE_PN0P_",
+        "launch_clock": "io_clk",
+        "capture_clock": "core_clk",
+        "path_group": "core_clk",
+        "input_port": true,
+        "output_port": false,
+        "input_external_delay_ps": 300.0,
+        "output_external_delay_ps": null,
+        "arrival_ps": 1396.156006,
+        "required_ps": 1611.361572,
+        "slack_ps": 215.205627
+      },
+      "saved_path_group_summaries": [
+        {
+          "startpoint": "a[3]",
+          "endpoint": "rtlzz_pipe_27_s1[62]$_SDFFE_PN0P_",
+          "launch_clock": "io_clk",
+          "capture_clock": "core_clk",
+          "path_group": "core_clk",
+          "input_port": true,
+          "output_port": false,
+          "input_external_delay_ps": 300.0,
+          "output_external_delay_ps": null,
+          "arrival_ps": 1396.156006,
+          "required_ps": 1611.361572,
+          "slack_ps": 215.205627
+        },
+        {
+          "startpoint": "y[43]$_SDFFE_PN0P_",
+          "endpoint": "y[43]",
+          "launch_clock": "core_clk",
+          "capture_clock": "io_clk",
+          "path_group": "io_clk",
+          "input_port": false,
+          "output_port": true,
+          "input_external_delay_ps": null,
+          "output_external_delay_ps": 300.0,
+          "arrival_ps": 326.061859,
+          "required_ps": 1180.0,
+          "slack_ps": 853.938171
+        }
+      ],
+      "source_reports_sha256": {
+        "experiments/arithmetic/evidence/step5_mul_capacity_v1/W64/reports/asap7/arithmetic_probe/base/vulsim_grt_period.rpt.gz": "c8259017e01d391eaa8e0d6878c275e0f0f738f1975a6687bb6053b6b9a9f25a",
+        "experiments/arithmetic/evidence/step5_mul_capacity_v1/W64/reports/asap7/arithmetic_probe/base/vulsim_grt_setup.rpt.gz": "22d720d80ba3a9cc04338ecf01ac10f9ddbffcec4faec8b90a293eb7d9007e8f",
+        "experiments/arithmetic/evidence/step5_mul_capacity_v1/W64/reports/asap7/arithmetic_probe/base/vulsim_grt_paths_max.rpt.gz": "dc76e9ffb7f7caee51e3caef7a01bbe42cfdd3ccfa5ceb3ba0c6d4fd09f757f1"
+      }
+    },
+    {
+      "case_stage": "W128_grt",
+      "period_ps": 1500.0,
+      "setup_worst_slack_ps": 0.278111,
+      "core_same_clock_min_period_ps": 1264.3,
+      "core_same_clock_slack_approx_ps": 235.70000000000005,
+      "same_clock_slack_scope": "derived from 2-decimal rounded core_clk period_min; eligible same-clock paths at this fixed STA context; not overall interface slack or a new frequency sweep",
+      "worst_path": {
+        "startpoint": "a[32]",
+        "endpoint": "rtlzz_pipe_148_s1[125]$_SDFFE_PN0P_",
+        "launch_clock": "io_clk",
+        "capture_clock": "core_clk",
+        "path_group": "core_clk",
+        "input_port": true,
+        "output_port": false,
+        "input_external_delay_ps": 300.0,
+        "output_external_delay_ps": null,
+        "arrival_ps": 1708.206299,
+        "required_ps": 1708.484375,
+        "slack_ps": 0.278111
+      },
+      "saved_path_group_summaries": [
+        {
+          "startpoint": "a[32]",
+          "endpoint": "rtlzz_pipe_148_s1[125]$_SDFFE_PN0P_",
+          "launch_clock": "io_clk",
+          "capture_clock": "core_clk",
+          "path_group": "core_clk",
+          "input_port": true,
+          "output_port": false,
+          "input_external_delay_ps": 300.0,
+          "output_external_delay_ps": null,
+          "arrival_ps": 1708.206299,
+          "required_ps": 1708.484375,
+          "slack_ps": 0.278111
+        },
+        {
+          "startpoint": "z[41]$_SDFFE_PN0P_",
+          "endpoint": "z[41]",
+          "launch_clock": "core_clk",
+          "capture_clock": "io_clk",
+          "path_group": "io_clk",
+          "input_port": false,
+          "output_port": true,
+          "input_external_delay_ps": null,
+          "output_external_delay_ps": 300.0,
+          "arrival_ps": 474.021545,
+          "required_ps": 1180.0,
+          "slack_ps": 705.978455
+        }
+      ],
+      "source_reports_sha256": {
+        "experiments/arithmetic/evidence/step5_mul_capacity_v2/reports/asap7/arithmetic_probe/base/vulsim_grt_period.rpt.gz": "061cd12db2687a854aa2c39d7f57ac098f4d42c9530bb57b020439813747d17e",
+        "experiments/arithmetic/evidence/step5_mul_capacity_v2/reports/asap7/arithmetic_probe/base/vulsim_grt_setup.rpt.gz": "edb9dc981054b0d86df24291ee277dd4027afab61f9b994e879896b458dd029a",
+        "experiments/arithmetic/evidence/step5_mul_capacity_v2/reports/asap7/arithmetic_probe/base/vulsim_grt_paths_max.rpt.gz": "18d1f31bd107fe7531688d37331f9468ba02212243c73af485c1b60c51dcf3a3"
+      }
+    }
+  ],
+  "minimum_period_command": "report_clock_min_period -include_port_paths",
+  "minimum_period_filter": "same launch/capture clock object; same transition; max check/output_delay; no multicycle; port flag does not include distinct-clock paths",
+  "setup_command": "report_worst_slack -max -digits 6",
+  "admission_rule": "use actual full constrained setup/hold and coverage in the same stage; core period_min is diagnostic only; no release from target_period > core period_min",
+  "physical_calls": 0,
+  "original_results_changed": false
+}

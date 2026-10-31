@@ -18,23 +18,11 @@
   "temporary_dependencies": [
     {
       "paths": [
-        "experiments/arithmetic_dse/simple_cost.py",
-        "experiments/arithmetic_dse/placement_analysis.py",
-        "rtlzz/src/backend/simple_cost.cpp",
-        "old_simple_cost_options"
-      ],
-      "used_by": "unmigrated_step5_split16_and_historical_placement_tests_only; new_ArithmeticRequest_rejects_these_flags",
-      "replace_at": "step5_parameterized_split_and_new_C_position_acceptance; mandatory_final_step9_scan"
-    },
-    {
-      "paths": [
         "cases_v1.json",
         "semantics_v1.json_integer_scope",
-        "simple_cost_v1.json",
-        "target_rules_v1.json",
-        "old_step5_pilot_and_placement_configs"
+        "target_rules_v1.json"
       ],
-      "used_by": "frozen_historical_evidence_or_not_yet_migrated_step5",
+      "used_by": "historical evidence only; remaining final archive scan at step9",
       "replace_at": "move_to_explicit_evidence_archive_when_users_migrated; mandatory_final_step9_scan"
     }
   ],
@@ -59,9 +47,21 @@
     "structured_request_cost_context_graph_schedule_RTL_and_protocol_reports"
   ],
   "stage4_boundaries": [
-    "original_Mul_only_in_new_request; no_half_quarter_generation_acceptance",
-    "model_requests_fail_cost_uncovered; offline_inference_step7",
-    "legacy_operation_weights_remain_general_RTLzz_feature_not_formal_revised_C",
-    "no_new_PPA_or_main_matrix_records"
+    "step4 acceptance remains historical original/atomic scope; current step5 adds blocked trees",
+    "backend model requests fail cost_uncovered; inference remains step7",
+    "general operation_delay_weights is unrelated base feature",
+    "no main matrix labels from connection/capacity probes"
+  ],
+  "stage5_replaced": [
+    "rtlzz simple_cost formula and use_simple_cost/arithmetic_candidate public fields",
+    "hardcoded expand32 split16 with registered unsigned block/tree template",
+    "legacy split/placement regression drivers and pilot entrypoint",
+    "active Python simple_cost and placement analysis; immutable archived analysis only",
+    "legacy simple_cost/step5_pilot/step5_placement config copies"
+  ],
+  "stage5_current": [
+    "ArithmeticRequest policies core-original-v1/mul-candidates-v1/mul-template-v1",
+    "fixed-op-width-v1 and K16 lexicographic original/half/quarter configurations",
+    "shared grouped scheduler with initial/final/move and candidate scoring evidence"
   ]
 }

@@ -1,0 +1,78 @@
+{
+  "id": "step5-bounded-wide-capacity-v1",
+  "purpose": "mul_capacity_only",
+  "policy_sha256": "3f4a230ca19b9b53a9da71cb19a52e718d29a8001106d354394f13e5d6ef995a",
+  "starting_usage": {
+    "synth": 52,
+    "grt": 29,
+    "final": 14,
+    "support_calls": 608,
+    "walltime_s": 5166.026674937457,
+    "CPU_time_s": 7691.72,
+    "pending": 0
+  },
+  "tasks": [
+    {
+      "id": "asap7-mul64-C-capacity-v1",
+      "kernel": "mul_u64_C",
+      "platform": "asap7",
+      "profile_sha256": "a29e056328a495af3f5815e3c56f4e6838eafd4b3f4f7844cc81d82ef99dd3df",
+      "rtl": "/home/zyrv/vulsim/build/step5-parameterized-20261031/accepted-final/w64_full_3.sv",
+      "rtl_sha256": "98aa3db609f42e20dde7ccff06388bced8411eff9ac5d79b6b1440c723d4845a",
+      "compiler_report": "/home/zyrv/vulsim/build/step5-parameterized-20261031/accepted-final/w64_full_3.json",
+      "compiler_report_sha256": "ec95e3fce6d9ca028275471b38c8e414f831c86e19d4547ea4a1372249cf5c2b",
+      "top": "w64_full_3",
+      "period_ps": 1500.0,
+      "abc_target_ps": 1500.0,
+      "stage": "grt",
+      "purpose": "prototype",
+      "constraints_sha256": "ae5fb19566bf95cd28f58b8928a1d481fac4a0adfe5abdc7b3a505b244cc5c4e",
+      "sdc_contract_version": "serialized-sdc-contract-v2",
+      "selected_candidate": "candidate/quarter/quarter"
+    },
+    {
+      "id": "asap7-mul128-C-capacity-v1",
+      "kernel": "mul_u128_C",
+      "platform": "asap7",
+      "profile_sha256": "a29e056328a495af3f5815e3c56f4e6838eafd4b3f4f7844cc81d82ef99dd3df",
+      "rtl": "/home/zyrv/vulsim/build/step5-parameterized-20261031/accepted-final/w128_full_3.sv",
+      "rtl_sha256": "99f619e9c597ac8e37d0a1c905e4eaa53ea5938f2e08e4542e3b9f63cbb84420",
+      "compiler_report": "/home/zyrv/vulsim/build/step5-parameterized-20261031/accepted-final/w128_full_3.json",
+      "compiler_report_sha256": "c4bbbe14d4959a0d2639dd8a87e6ba06fc57dd0a6d71ce204db17900a6c71831",
+      "top": "w128_full_3",
+      "period_ps": 1500.0,
+      "abc_target_ps": 1500.0,
+      "stage": "grt",
+      "purpose": "prototype",
+      "constraints_sha256": "ae5fb19566bf95cd28f58b8928a1d481fac4a0adfe5abdc7b3a505b244cc5c4e",
+      "sdc_contract_version": "serialized-sdc-contract-v2",
+      "selected_candidate": "candidate/quarter/quarter"
+    }
+  ],
+  "call_caps": {
+    "synth": 2,
+    "grt": 2,
+    "final": 0
+  },
+  "worst_case_leaf_walltime_s": 3600,
+  "CPU_envelope_s": 7200,
+  "threads": 2,
+  "physical_jobs": 1,
+  "memory_limit_MiB": 8192,
+  "automatic_retries": 0,
+  "main_case_targets": false,
+  "later_bulk_or_model_work_authorized": false,
+  "functional_preconditions": [
+    "88_configurations_1129_cycles",
+    "C_before_PPA_selection",
+    "four_platform_request_and_VUL_10000_cycles"
+  ],
+  "interpretation": "ASAP7 only; two selected wide structures at unchanged trial period; capacity/connection evidence, no B/C improvement claim, no training labels or main case targets",
+  "stops": [
+    "failed_stage",
+    "timeout",
+    "memory_limit",
+    "pending",
+    "inconsistent_units_assets_SDC"
+  ]
+}

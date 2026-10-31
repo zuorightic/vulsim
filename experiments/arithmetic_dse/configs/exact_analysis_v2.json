@@ -1,0 +1,446 @@
+{
+  "version": "arithmetic-exact-analysis-v2",
+  "scope": "position/sensitivity audit artifacts; not automatically accepted as step7 training labels/features or step8 production inputs",
+  "rational_schema": {
+    "type": "object",
+    "required": [
+      "numerator",
+      "denominator"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "numerator": {
+        "type": "integer"
+      },
+      "denominator": {
+        "type": "integer",
+        "minimum": 1
+      }
+    },
+    "canonical_rule": "gcd(abs(numerator),denominator)==1; zero is 0/1; bool/float/string tokens rejected"
+  },
+  "integer_fields": [
+    "W",
+    "L",
+    "II",
+    "rank",
+    "structures",
+    "contexts",
+    "selected_changes",
+    "feasible_count",
+    "register_bits",
+    "register_count",
+    "stage indices",
+    "minimum_bits_at_equal_delay_and_comb",
+    "equal_minimum_maps"
+  ],
+  "rational_fields": [
+    "comb",
+    "maximum_delay",
+    "stage_delays[]",
+    "cap",
+    "linear_comb",
+    "square_comb",
+    "score.maximum_delay",
+    "score.comb_plus_register_bits"
+  ],
+  "score_schema": {
+    "type": "object",
+    "required": [
+      "maximum_delay",
+      "comb_plus_register_bits",
+      "register_bits",
+      "register_count",
+      "candidate_id"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "maximum_delay": {
+        "type": "object",
+        "format": "canonical rational"
+      },
+      "comb_plus_register_bits": {
+        "type": "object",
+        "format": "canonical rational"
+      },
+      "register_bits": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "register_count": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "candidate_id": {
+        "type": "string"
+      }
+    }
+  },
+  "comparison": "parse to Fraction, then compare numeric fields in frozen tuple order; never stringify or lexicographically compare encoded rationals",
+  "production_cap_comparison": "same float(maximum_delay)<=report.pipeline.allowed_delay as the C++ fixed-cost scheduler; rational encoding does not silently change that existing comparison",
+  "decoder": "experiments.arithmetic_dse.exact_analysis.decode/score_key; rejects unsupported format, noncanonical rational and invalid tokens",
+  "position_format": "mul-position-analysis-v2",
+  "sensitivity_format": "mul-comb-sensitivity-v2",
+  "legacy": "v1 string encoding consumed only by its exact archived analyzer; old files never rewritten",
+  "document_schemas": {
+    "positions": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "$defs": {
+        "rational": {
+          "type": "object",
+          "required": [
+            "numerator",
+            "denominator"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "numerator": {
+              "type": "integer"
+            },
+            "denominator": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        "score": {
+          "type": "object",
+          "required": [
+            "maximum_delay",
+            "comb_plus_register_bits",
+            "register_bits",
+            "register_count",
+            "candidate_id"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "maximum_delay": {
+              "$ref": "#/$defs/rational"
+            },
+            "comb_plus_register_bits": {
+              "$ref": "#/$defs/rational"
+            },
+            "register_bits": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "register_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "candidate_id": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "required": [
+        "version",
+        "numeric_protocol",
+        "cap",
+        "feasible_count",
+        "context",
+        "placements",
+        "production"
+      ],
+      "properties": {
+        "numeric_protocol": {
+          "const": "arithmetic-exact-analysis-v2"
+        },
+        "version": {
+          "const": "mul-position-analysis-v2"
+        },
+        "cap": {
+          "$ref": "#/$defs/rational"
+        },
+        "feasible_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "context": {
+          "type": "object",
+          "required": [
+            "L",
+            "II",
+            "graph_sha256",
+            "groups_sha256",
+            "cost_mode",
+            "cost_source_sha256"
+          ],
+          "properties": {
+            "L": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "II": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "graph_sha256": {
+              "type": "string"
+            },
+            "groups_sha256": {
+              "type": "string"
+            },
+            "cost_mode": {
+              "type": "string"
+            },
+            "cost_source_sha256": {
+              "type": "string"
+            }
+          }
+        },
+        "placements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "stages",
+              "stage_delays",
+              "maximum_delay",
+              "comb",
+              "register_bits",
+              "register_count",
+              "within_production_cap"
+            ],
+            "properties": {
+              "stages": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "stage_delays": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/rational"
+                }
+              },
+              "maximum_delay": {
+                "$ref": "#/$defs/rational"
+              },
+              "comb": {
+                "$ref": "#/$defs/rational"
+              },
+              "register_bits": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "register_count": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "within_production_cap": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "production": {
+          "type": "object",
+          "required": [
+            "stages",
+            "maximum_delay",
+            "comb",
+            "register_bits",
+            "register_count",
+            "is_in_declared_enumeration",
+            "minimum_bits_at_equal_delay_and_comb",
+            "equal_minimum_maps"
+          ],
+          "properties": {
+            "stages": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "maximum_delay": {
+              "$ref": "#/$defs/rational"
+            },
+            "comb": {
+              "$ref": "#/$defs/rational"
+            },
+            "register_bits": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "register_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "minimum_bits_at_equal_delay_and_comb": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "equal_minimum_maps": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "is_in_declared_enumeration": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "sensitivity": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "$defs": {
+        "rational": {
+          "type": "object",
+          "required": [
+            "numerator",
+            "denominator"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "numerator": {
+              "type": "integer"
+            },
+            "denominator": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        "score": {
+          "type": "object",
+          "required": [
+            "maximum_delay",
+            "comb_plus_register_bits",
+            "register_bits",
+            "register_count",
+            "candidate_id"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "maximum_delay": {
+              "$ref": "#/$defs/rational"
+            },
+            "comb_plus_register_bits": {
+              "$ref": "#/$defs/rational"
+            },
+            "register_bits": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "register_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "candidate_id": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "required": [
+        "version",
+        "numeric_protocol",
+        "structures",
+        "contexts",
+        "selected_changes",
+        "rows"
+      ],
+      "properties": {
+        "numeric_protocol": {
+          "const": "arithmetic-exact-analysis-v2"
+        },
+        "version": {
+          "const": "mul-comb-sensitivity-v2"
+        },
+        "structures": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "contexts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "selected_changes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "W",
+              "structures",
+              "selected_changed"
+            ],
+            "properties": {
+              "W": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "selected_changed": {
+                "type": "boolean"
+              },
+              "structures": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "register_bits",
+                    "register_count",
+                    "stage_delays",
+                    "linear_comb",
+                    "square_comb",
+                    "linear_score",
+                    "square_score",
+                    "linear_rank",
+                    "square_rank"
+                  ],
+                  "properties": {
+                    "register_bits": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "register_count": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "stage_delays": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/$defs/rational"
+                      }
+                    },
+                    "linear_comb": {
+                      "$ref": "#/$defs/rational"
+                    },
+                    "square_comb": {
+                      "$ref": "#/$defs/rational"
+                    },
+                    "linear_score": {
+                      "$ref": "#/$defs/score"
+                    },
+                    "square_score": {
+                      "$ref": "#/$defs/score"
+                    },
+                    "linear_rank": {
+                      "type": "integer",
+                      "minimum": 1
+                    },
+                    "square_rank": {
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "strict_token_note": "The dedicated reader additionally rejects float/bool tokens for integer fields even when a generic JSON Schema implementation treats 1.0 as a mathematical integer."
+}

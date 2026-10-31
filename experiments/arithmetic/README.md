@@ -53,7 +53,7 @@ python3 -m experiments.arithmetic_dse.step2_evidence
 python3 -m experiments.arithmetic_dse.wide_evidence
 ```
 
-历史freeze、旧配置和证据只解释原版本。现行契约/参考/回归入口已替换九案例实现；旧simple_cost及依赖旧成本的放置分析仍支撑尚未迁移的步骤五，按[实现迁移清单](../arithmetic_dse/configs/implementation_migration_v1.json)替换。最终交付只保留现行实现和必要基础；被替代的公式、案例入口、命令行开关和脚本须退出活动路径。需要追溯的原字节限定在明确的归档/冻结证据中，不保留永久旧模式或旧案例兼容别名。
+历史freeze、旧配置和证据只解释原版本。现行契约/参考/回归入口已替换九案例实现；步骤五已按[实现迁移清单](../arithmetic_dse/configs/implementation_migration_v1.json)移除旧simple_cost及其活动位置分析，历史核验限定从原快照读取。最终交付只保留现行实现和必要基础；被替代的公式、案例入口、命令行开关和脚本须退出活动路径。需要追溯的原字节限定在明确的归档/冻结证据中，不保留永久旧模式或旧案例兼容别名。
 
 [四平台后端](../arithmetic_dse/backend/README.md)及[步骤三物理测量冻结](backend_freeze_v6.json)已按SDC单位修正重验完成32位共同探针接通，包含三个ns平台重跑的小核grt/完整乘法和单独核对后继承的ASAP7。原v5三个ns平台约束错误结果作废，具体更正见规划第四章步骤三§3.9；便携核验为`python3 -m experiments.arithmetic_dse.platform_evidence`。平台进程清理及共享账本沿用必要基础，旧ASAP7专用设置和九案例预算预测函数已退出活动路径；当前v5额度保持不变。预算命令行报告43例/688条新范围及待准入状态，已移除九案例目标列表和一次性旧迁移开关；实际批量清单、平台能力及预算须按规划逐阶段准入。
 
@@ -64,3 +64,10 @@ python3 -m experiments.arithmetic_dse.wide_evidence
 [步骤四公共编译接口](../../mission/lxy-plan-fix.md#step4-interface-acceptance)已实际贯通请求、原始Mul/FP原子区域、固定成本及图/物化校验，说明见[RTLzz接口文档](../../rtlzz/src/backend/arithmetic_interfaces.md)。当前后继冻结为[arithmetic_interfaces_freeze_v2.json](arithmetic_interfaces_freeze_v2.json)，[报告类型修订证据](evidence/step4_interfaces_v2/README.md)说明整数计数/历史导航/存储分层；[原v1证据](evidence/step4_interfaces_v1/README.md)保留原字节，便携入口为`python3 -m experiments.arithmetic_dse.interfaces_evidence`。这不是half/quarter内部拆分或D模型完成；旧simple_cost/split16按迁移清单在步骤五退出。步骤三v7物理证据仍按显式旧快照追溯，GF180 wire RC风险未关闭。
 
 证据目录的新旧含义见[总导航](evidence/README.md)。旧`step4/step4_review`已增加历史横幅，原冻结路径不迁移；新包遵循[分层存储规则](../arithmetic_dse/evidence_storage.md)，不重复复制父源码/账本，不仅凭hash宣称完整产物可重算。
+
+
+[新步骤五](../../mission/lxy-plan-fix.md#step5-mul-template-acceptance)已用参数化`mul-block-tree-v1`替代活动split16/旧成本路径，公共请求`mul-candidates-v1`执行正式C，`mul-template-v1`仅作强制诊断。五档及非整齐尺寸的完整/低位/共享实例、MAC最高进位、真实内部寄存器和位置/敏感性已验证，D仍未实现。说明见[编译器模板接口](../../rtlzz/src/backend/mul_templates.md)，冻结为[mul_templates_freeze_v1.json](mul_templates_freeze_v1.json)，只读核验`python3 -m experiments.arithmetic_dse.step5_evidence`。ASAP7 64位容量grt通过，128位grt在1200秒上限终止，原失败/费用保留，不准入该规模物理批量；没有主矩阵结果或原始/拆分PPA收益声明。大产物目录与默认/完整核验层级见[步骤五小证据](evidence/step5_mul_templates_v1/README.md)。旧冻结继续通过显式快照重算，旧公式只存在于历史namespace，旧公开选项及实验入口已退出。
+
+步骤五当前后继冻结为[mul_templates_freeze_v2.json](mul_templates_freeze_v2.json)，[收尾证据](evidence/step5_mul_closure_v2/README.md)与[指定容量复测](evidence/step5_mul_capacity_v2/README.md)补齐独立位置可行性／生产130位偏好、129报告／219区域历史图回放、部分积坐标移位证书及精确数值v2。旧v1证据及1200秒失败不改；同一128位C电路的唯一新任务在3600秒上限内以1450.19秒完成完整后综合→grt，当前setup/hold满足，未做original对照或final。批次仍按具体容量域、时序及实时预算复审，不统一放行128位。当前核验用`python3 -m experiments.arithmetic_dse.closure_evidence`，`--verify-external`要求实际取得大产物；原v1读取入口继续限定核验原版本。
+
+[步骤五时序口径说明](../arithmetic_dse/timing_metric_scopes.md)与[说明冻结v3](mul_templates_freeze_v3.json)澄清整体setup slack及core_clk同钟period_min的范围，原v1／v2物理数值不改。W128 grt的整体+0.278111ps仍为准入判断的真实窄余量，1264.30ps不能用来宣称完整接口裕量充足；W64的871.71ps来自synth。补充核验为`python3 -m experiments.arithmetic_dse.metric_scope_evidence`，本次只读既有报告，没有新增EDA或STA。

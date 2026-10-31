@@ -1,0 +1,211 @@
+{
+  "version": "capacity-full-chain-timing-v1",
+  "old": {
+    "status": "failed",
+    "failure_code": "timeout",
+    "full_post_synthesis_to_grt": {
+      "walltime_s": 1200.0226759600919,
+      "CPU_time_s": 2400,
+      "CPU_accounting": "full_reservation_conservative; missing_GNU_time",
+      "sampled_CPU_s": 2060.98,
+      "RSS_peak_KiB": 2147116,
+      "cleanup": {
+        "term_sent": 7,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      }
+    },
+    "substage_footers": [
+      {
+        "stage": "2_1_floorplan",
+        "walltime_s": 13.47,
+        "CPU_time_s": 16.73,
+        "source": "build/step5-parameterized-20261031/capacity128/logs/asap7/arithmetic_probe/base/2_1_floorplan.log",
+        "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+      },
+      {
+        "stage": "2_2_floorplan_macro",
+        "walltime_s": 1.6600000000000001,
+        "CPU_time_s": 1.6600000000000001,
+        "source": "build/step5-parameterized-20261031/capacity128/logs/asap7/arithmetic_probe/base/2_2_floorplan_macro.log",
+        "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+      },
+      {
+        "stage": "2_3_floorplan_tapcell",
+        "walltime_s": 1.49,
+        "CPU_time_s": 1.48,
+        "source": "build/step5-parameterized-20261031/capacity128/logs/asap7/arithmetic_probe/base/2_3_floorplan_tapcell.log",
+        "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+      },
+      {
+        "stage": "2_4_floorplan_pdn",
+        "walltime_s": 2.63,
+        "CPU_time_s": 2.64,
+        "source": "build/step5-parameterized-20261031/capacity128/logs/asap7/arithmetic_probe/base/2_4_floorplan_pdn.log",
+        "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+      },
+      {
+        "stage": "3_1_place_gp_skip_io",
+        "walltime_s": 50.15,
+        "CPU_time_s": 63.18,
+        "source": "build/step5-parameterized-20261031/capacity128/logs/asap7/arithmetic_probe/base/3_1_place_gp_skip_io.log",
+        "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+      },
+      {
+        "stage": "3_2_place_iop",
+        "walltime_s": 1.75,
+        "CPU_time_s": 1.75,
+        "source": "build/step5-parameterized-20261031/capacity128/logs/asap7/arithmetic_probe/base/3_2_place_iop.log",
+        "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+      },
+      {
+        "stage": "3_3_place_gp",
+        "walltime_s": 176.81,
+        "CPU_time_s": 229.32,
+        "source": "build/step5-parameterized-20261031/capacity128/logs/asap7/arithmetic_probe/base/3_3_place_gp.log",
+        "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+      },
+      {
+        "stage": "3_4_place_resized",
+        "walltime_s": 45.09,
+        "CPU_time_s": 55.21,
+        "source": "build/step5-parameterized-20261031/capacity128/logs/asap7/arithmetic_probe/base/3_4_place_resized.log",
+        "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+      },
+      {
+        "stage": "3_5_place_dp",
+        "walltime_s": 66.41,
+        "CPU_time_s": 74.39999999999999,
+        "source": "build/step5-parameterized-20261031/capacity128/logs/asap7/arithmetic_probe/base/3_5_place_dp.log",
+        "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+      },
+      {
+        "stage": "4_1_cts",
+        "walltime_s": 76.15,
+        "CPU_time_s": 103.64,
+        "source": "build/step5-parameterized-20261031/capacity128/logs/asap7/arithmetic_probe/base/4_1_cts.log",
+        "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+      }
+    ],
+    "completed_pre_grt_substage_sum_s": 435.61,
+    "separate_5_1_grt": {
+      "status": "incomplete; no final stage footer",
+      "last_logged_groups": 90000,
+      "total_groups_known": false,
+      "percentage": null
+    },
+    "substage_sum_scope": "footers omit Make and Python overhead; never replace complete leaf walltime or sum reused old stages into new run",
+    "source_manifest": "build/step5-parameterized-20261031/capacity128/manifest.json"
+  },
+  "retest": {
+    "status": "completed",
+    "failure_code": null,
+    "full_post_synthesis_to_grt": {
+      "walltime_s": 1450.1932151019573,
+      "CPU_time_s": 2489.33,
+      "CPU_accounting": "GNU_time_actual",
+      "sampled_CPU_s": 2480.04,
+      "RSS_peak_KiB": 2931364,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      }
+    },
+    "substage_footers": [
+      {
+        "stage": "2_1_floorplan",
+        "walltime_s": 12.96,
+        "CPU_time_s": 16.09,
+        "source": "build/step5-closure-20261031/capacity-retest/logs/asap7/arithmetic_probe/base/2_1_floorplan.log",
+        "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+      },
+      {
+        "stage": "2_2_floorplan_macro",
+        "walltime_s": 1.6,
+        "CPU_time_s": 1.6099999999999999,
+        "source": "build/step5-closure-20261031/capacity-retest/logs/asap7/arithmetic_probe/base/2_2_floorplan_macro.log",
+        "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+      },
+      {
+        "stage": "2_3_floorplan_tapcell",
+        "walltime_s": 1.45,
+        "CPU_time_s": 1.4500000000000002,
+        "source": "build/step5-closure-20261031/capacity-retest/logs/asap7/arithmetic_probe/base/2_3_floorplan_tapcell.log",
+        "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+      },
+      {
+        "stage": "2_4_floorplan_pdn",
+        "walltime_s": 2.54,
+        "CPU_time_s": 2.54,
+        "source": "build/step5-closure-20261031/capacity-retest/logs/asap7/arithmetic_probe/base/2_4_floorplan_pdn.log",
+        "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+      },
+      {
+        "stage": "3_1_place_gp_skip_io",
+        "walltime_s": 49.7,
+        "CPU_time_s": 62.97,
+        "source": "build/step5-closure-20261031/capacity-retest/logs/asap7/arithmetic_probe/base/3_1_place_gp_skip_io.log",
+        "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+      },
+      {
+        "stage": "3_2_place_iop",
+        "walltime_s": 1.7,
+        "CPU_time_s": 1.7,
+        "source": "build/step5-closure-20261031/capacity-retest/logs/asap7/arithmetic_probe/base/3_2_place_iop.log",
+        "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+      },
+      {
+        "stage": "3_3_place_gp",
+        "walltime_s": 172.2,
+        "CPU_time_s": 223.41000000000003,
+        "source": "build/step5-closure-20261031/capacity-retest/logs/asap7/arithmetic_probe/base/3_3_place_gp.log",
+        "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+      },
+      {
+        "stage": "3_4_place_resized",
+        "walltime_s": 43.63,
+        "CPU_time_s": 53.36,
+        "source": "build/step5-closure-20261031/capacity-retest/logs/asap7/arithmetic_probe/base/3_4_place_resized.log",
+        "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+      },
+      {
+        "stage": "3_5_place_dp",
+        "walltime_s": 64.26,
+        "CPU_time_s": 72.02,
+        "source": "build/step5-closure-20261031/capacity-retest/logs/asap7/arithmetic_probe/base/3_5_place_dp.log",
+        "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+      },
+      {
+        "stage": "4_1_cts",
+        "walltime_s": 73.5,
+        "CPU_time_s": 99.89,
+        "source": "build/step5-closure-20261031/capacity-retest/logs/asap7/arithmetic_probe/base/4_1_cts.log",
+        "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+      },
+      {
+        "stage": "5_1_grt",
+        "walltime_s": 1021.23,
+        "CPU_time_s": 1948.68,
+        "source": "build/step5-closure-20261031/capacity-retest/logs/asap7/arithmetic_probe/base/5_1_grt.log",
+        "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+      }
+    ],
+    "completed_pre_grt_substage_sum_s": 423.54,
+    "separate_5_1_grt": [
+      {
+        "stage": "5_1_grt",
+        "walltime_s": 1021.23,
+        "CPU_time_s": 1948.68,
+        "source": "build/step5-closure-20261031/capacity-retest/logs/asap7/arithmetic_probe/base/5_1_grt.log",
+        "source_scope": "ORFS tool footer, rounded by its logger; not an independently charged leaf"
+      }
+    ],
+    "substage_sum_scope": "footers omit Make and Python overhead; never replace complete leaf walltime or sum reused old stages into new run",
+    "source_manifest": "build/step5-closure-20261031/capacity-retest/manifest.json"
+  },
+  "same_physical_circuit_and_timing_conditions": true,
+  "one_new_full_post_synthesis_chain": true,
+  "stitched_historical_time_used": false,
+  "original_comparison_or_split_attribution": false
+}

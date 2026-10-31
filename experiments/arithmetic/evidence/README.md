@@ -11,6 +11,10 @@
 | [step4_interfaces_v2](step4_interfaces_v2/README.md) | 修订计划步骤四报告类型/导航/存储策略修订；当前软件核验入口 |
 | [step4](step4/README.md)、[step4_review](step4_review/README.md) | **旧计划**区域原型及复核；不代表现行步骤四 |
 | `step3`、`step3_budget`、`step3_closure` | **旧计划**ASAP7后端/预算/收尾；由后继冻结明确继承，不代表当前四平台/模型已完成 |
-| `step5`、`step5_placement` | **旧计划**split16及位置补验；不代表现行参数化步骤五完成 |
+| [step5_mul_templates_v1](step5_mul_templates_v1/README.md)、[step5_mul_capacity_v1](step5_mul_capacity_v1/README.md) | 修订计划步骤五软件/新C与有限容量；ASAP7 64位grt通过，128位grt超时，批量待复审 |
+| [step5_mul_closure_v2](step5_mul_closure_v2/README.md)、[step5_mul_capacity_v2](step5_mul_capacity_v2/README.md) | 现行步骤五收尾：位置独立判定、129历史图、精确协议及一次指定128位完整后综合链复测；1450.19秒完成grt，具体域仍按批次准入 |
+| [step5](step5/README.md)、[step5_placement](step5_placement/README.md) | **旧计划**split16及位置补验；不代表现行参数化步骤五完成 |
 
 已有冻结文件按原路径保留。旧目录新增的README只是导航，不重写当时索引或升级验收范围。后续新包使用[分层存储规则](../../arithmetic_dse/evidence_storage.md)：优先增量快照、按内容引用和压缩；索引与hash不能替代需要重算的实际内容。
+
+[step5_metric_scope_v1](step5_metric_scope_v1/README.md)是后加的时序口径澄清：解释整体setup与core_clk同钟最小周期，继承v2原报告和容量结论，无新增物理／STA。其后继冻结为`mul_templates_freeze_v3.json`。

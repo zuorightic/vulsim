@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "VUL_cycles": 10000,
+  "VUL_C_report_count": 1,
+  "four_platform_fixed_cost_graph_schedule_identical": true,
+  "rejects": [
+    {
+      "case": "missing_block",
+      "code": "template_ineligible"
+    },
+    {
+      "case": "block_one",
+      "code": "template_ineligible"
+    },
+    {
+      "case": "block_too_wide",
+      "code": "template_ineligible"
+    },
+    {
+      "case": "unknown_parameter",
+      "code": "template_ineligible"
+    },
+    {
+      "case": "unknown_template",
+      "code": "template_ineligible"
+    },
+    {
+      "case": "D_no_model",
+      "code": "cost_uncovered"
+    }
+  ],
+  "D_model_inference": false,
+  "PPA_calls": 0
+}

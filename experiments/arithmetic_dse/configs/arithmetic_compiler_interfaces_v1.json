@@ -15,19 +15,20 @@
     "core-original-v1": {
       "Mul": "mul-original-v1; unsigned typed operands; atomic",
       "F32MulRNE": "softfloat3d-bitvector-mul-v1; real bit-vector expansion; atomic"
+    },
+    "mul-candidates-v1": {
+      "Mul": "original, half and quarter through mul-block-tree-v1; deterministic K=16",
+      "F32MulRNE": "unchanged atomic implementation"
+    },
+    "mul-template-v1": {
+      "Mul": "forced diagnostic block_width 2..128, eligibility checked per occurrence; not formal C"
     }
   },
   "cost_modes": {
     "fixed": "fixed-op-width-v1; independent abstract delay/comb; state one per saved bit",
     "backend-model": "query identity and fail-closed rejection; inference not implemented until step7"
   },
-  "generated_not_selected": true,
   "later_steps": {
-    "step5": [
-      "half/quarter parameterized expansion",
-      "formal C candidate and position diagnostics",
-      "retire legacy simple_cost and split16 flags"
-    ],
     "step6": [
       "dynamic Div/Mod whole-graph integration",
       "complete safety wrapping and reset acceptance"
@@ -356,5 +357,12 @@
     }
   },
   "report_type_policy": "Strict JSON tokens, no string/float/bool coercion for integer counters; uint64 counters; node identities and limb words remain intentional decimal strings. Only key fields are covered; additional report fields are permitted.",
-  "report_v1_history": "Frozen reports retain their original string register_bits; only the archived v1 reader interprets them. Current emission and validation use report v2."
+  "report_v1_history": "Frozen reports retain their original string register_bits; only the archived v1 reader interprets them. Current emission and validation use report v2.",
+  "implemented_step5": [
+    "unsigned parameterized partial products and carry-preserving reduction levels",
+    "fixed C candidate enumeration and scoring",
+    "group placement/move evidence and diagnostic explicit templates",
+    "retired legacy simple_cost and split16 options"
+  ],
+  "capability_policy": "C_selected only for mul-candidates-v1; original and forced template generation are distinct from formal selection; numerical/physical states require separate evidence"
 }

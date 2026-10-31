@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "baseline": {
+    "status": "passed",
+    "scope": "documentation and saved-report interpretation; no new STA/physical run",
+    "reports_checked": 3,
+    "parent_status": "passed",
+    "new_usage": {
+      "synth": 0,
+      "grt": 0,
+      "final": 0,
+      "support_calls": 0,
+      "walltime_s": 0,
+      "CPU_time_s": 0,
+      "pending": 0
+    },
+    "cumulative_usage": {
+      "synth": 54,
+      "grt": 32,
+      "final": 14,
+      "support_calls": 657,
+      "walltime_s": 8966.65860187984,
+      "CPU_time_s": 14044.23,
+      "pending": 0
+    }
+  },
+  "negative_checks": [
+    {
+      "name": "confuse_internal_and_overall_slack",
+      "status": "rejected",
+      "reason": "STA scope interpretation mismatch"
+    },
+    {
+      "name": "mix_W64_synth_and_grt_period",
+      "status": "rejected",
+      "reason": "STA scope interpretation mismatch"
+    },
+    {
+      "name": "deduct_both_IO_delays_on_input_path",
+      "status": "rejected",
+      "reason": "STA scope interpretation mismatch"
+    }
+  ],
+  "original_reports_read_only": true,
+  "new_EDA_or_STA_calls": 0
+}

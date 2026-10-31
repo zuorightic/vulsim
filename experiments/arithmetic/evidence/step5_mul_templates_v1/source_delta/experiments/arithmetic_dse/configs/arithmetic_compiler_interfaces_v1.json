@@ -1,0 +1,368 @@
+{
+  "version": "arithmetic-compiler-interfaces-v1",
+  "request_version": "arithmetic-request-v1",
+  "report_version": "arithmetic-structure-report-v2",
+  "backend_contract": "native-beir-contract-v1",
+  "feature_schema": "beir-cost-features-v1",
+  "entrypoints": [
+    "rtlzz::CompileOptions",
+    "PipelineV2::PipelineConfig",
+    "VUL bridge",
+    "predicate-expand --arithmetic-request",
+    "vulrtlgen --arithmetic-request"
+  ],
+  "providers": {
+    "core-original-v1": {
+      "Mul": "mul-original-v1; unsigned typed operands; atomic",
+      "F32MulRNE": "softfloat3d-bitvector-mul-v1; real bit-vector expansion; atomic"
+    },
+    "mul-candidates-v1": {
+      "Mul": "original, half and quarter through mul-block-tree-v1; deterministic K=16",
+      "F32MulRNE": "unchanged atomic implementation"
+    },
+    "mul-template-v1": {
+      "Mul": "forced diagnostic block_width 2..128, eligibility checked per occurrence; not formal C"
+    }
+  },
+  "cost_modes": {
+    "fixed": "fixed-op-width-v1; independent abstract delay/comb; state one per saved bit",
+    "backend-model": "query identity and fail-closed rejection; inference not implemented until step7"
+  },
+  "later_steps": {
+    "step6": [
+      "dynamic Div/Mod whole-graph integration",
+      "complete safety wrapping and reset acceptance"
+    ],
+    "step7": [
+      "offline model inference",
+      "domain validation",
+      "stage-dependent cost queries and D selection"
+    ]
+  },
+  "extensions": "AES/Sigmoid/fixedpoint/new semantic profiles are reserved and explicitly rejected; no empty providers",
+  "no_physical_calls": true,
+  "report_schemas": {
+    "passed": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "const": "arithmetic-structure-report-v2"
+        },
+        "status": {
+          "type": "string",
+          "const": "passed"
+        },
+        "pipeline": {
+          "type": "object",
+          "properties": {
+            "baseline_delay": {
+              "type": "number",
+              "minimum": 0
+            },
+            "allowed_delay": {
+              "type": "number",
+              "minimum": 0
+            },
+            "final_delay": {
+              "type": "number",
+              "minimum": 0
+            },
+            "comb": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 18446744073709551615
+            },
+            "register_bits": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 18446744073709551615
+            },
+            "register_count": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 18446744073709551615
+            }
+          },
+          "required": [
+            "baseline_delay",
+            "allowed_delay",
+            "final_delay",
+            "comb",
+            "register_bits",
+            "register_count"
+          ],
+          "additionalProperties": true
+        },
+        "request": {
+          "type": "object",
+          "properties": {
+            "target_platform": {
+              "type": "string"
+            },
+            "platform_profile_sha256": {
+              "type": "string"
+            },
+            "cost_mode": {
+              "type": "string"
+            },
+            "L": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "II": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "target_period_ps": {
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "target_platform",
+            "platform_profile_sha256",
+            "cost_mode",
+            "L",
+            "II",
+            "target_period_ps"
+          ],
+          "additionalProperties": true
+        },
+        "stages": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "protocol": {
+          "type": "object",
+          "properties": {
+            "clock_name": {
+              "type": "string"
+            },
+            "reset_name": {
+              "type": "string"
+            },
+            "input_valid_name": {
+              "type": "string"
+            },
+            "output_valid_name": {
+              "type": "string"
+            },
+            "register_stages": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "reset_enabled": {
+              "type": "boolean"
+            },
+            "reset_active_low": {
+              "type": "boolean"
+            },
+            "input_reset_values": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "required": [
+            "clock_name",
+            "reset_name",
+            "input_valid_name",
+            "output_valid_name",
+            "register_stages",
+            "reset_enabled",
+            "reset_active_low",
+            "input_reset_values"
+          ],
+          "additionalProperties": true
+        },
+        "graph": {
+          "type": "object",
+          "properties": {
+            "nodes": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "kind": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "opcode": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "width": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "billing_width": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "delay": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "comb": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 18446744073709551615
+                  },
+                  "covered": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "id",
+                  "kind",
+                  "opcode",
+                  "width",
+                  "billing_width",
+                  "delay",
+                  "comb",
+                  "covered"
+                ],
+                "additionalProperties": true
+              }
+            },
+            "regions": {
+              "type": "array"
+            },
+            "ports": {
+              "type": "array"
+            }
+          },
+          "required": [
+            "nodes",
+            "regions",
+            "ports"
+          ],
+          "additionalProperties": true
+        },
+        "graph_sha256": {
+          "type": "string"
+        },
+        "schedule_sha256": {
+          "type": "string"
+        },
+        "rtl_sha256": {
+          "type": "string"
+        },
+        "D_inference_implemented": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "version",
+        "status",
+        "pipeline",
+        "request",
+        "stages",
+        "protocol",
+        "graph",
+        "graph_sha256",
+        "schedule_sha256",
+        "rtl_sha256",
+        "D_inference_implemented"
+      ],
+      "additionalProperties": true,
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "Arithmetic structure report v2 passed"
+    },
+    "failed": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "const": "arithmetic-structure-report-v2"
+        },
+        "status": {
+          "type": "string",
+          "const": "failed"
+        },
+        "failure_stage": {
+          "type": "string"
+        },
+        "failure_code": {
+          "type": "string"
+        },
+        "failure_reason": {
+          "type": "string"
+        },
+        "region_id": {
+          "type": "string"
+        },
+        "node_id": {
+          "type": "string"
+        },
+        "request": {
+          "type": "object",
+          "properties": {
+            "target_platform": {
+              "type": "string"
+            },
+            "platform_profile_sha256": {
+              "type": "string"
+            },
+            "cost_mode": {
+              "type": "string"
+            },
+            "L": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "II": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "target_period_ps": {
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "target_platform",
+            "platform_profile_sha256",
+            "cost_mode",
+            "L",
+            "II",
+            "target_period_ps"
+          ],
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "version",
+        "status",
+        "failure_stage",
+        "failure_code",
+        "failure_reason",
+        "region_id",
+        "node_id"
+      ],
+      "additionalProperties": true,
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "Arithmetic structure report v2 failed"
+    }
+  },
+  "report_type_policy": "Strict JSON tokens, no string/float/bool coercion for integer counters; uint64 counters; node identities and limb words remain intentional decimal strings. Only key fields are covered; additional report fields are permitted.",
+  "report_v1_history": "Frozen reports retain their original string register_bits; only the archived v1 reader interprets them. Current emission and validation use report v2.",
+  "implemented_step5": [
+    "unsigned parameterized partial products and carry-preserving reduction levels",
+    "fixed C candidate enumeration and scoring",
+    "group placement/move evidence and diagnostic explicit templates",
+    "retired legacy simple_cost and split16 options"
+  ],
+  "capability_policy": "C_selected only for mul-candidates-v1; original and forced template generation are distinct from formal selection; numerical/physical states require separate evidence"
+}

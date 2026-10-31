@@ -1,0 +1,729 @@
+[
+  {
+    "artifact_id": "step5-ASAP7-W64-complete",
+    "location": "experiments/arithmetic/artifact_store/step5_mul_capacity_v1/W64-complete-artifacts.tar.gz",
+    "encoding": "tar+gzip",
+    "stored_sha256": "1ca1fbbb5cdd79977d8c8467b1c66aa027680e83234ac360427ea0ae96c3594a",
+    "stored_size_bytes": 3341244,
+    "availability_status": "available_locally; durable_remote_retention_not_confirmed",
+    "license_or_source_constraints": "generated netlists/logs under local tool and platform licenses; no complete PDK copied",
+    "members": [
+      {
+        "relative_member_path": "environment.command.json",
+        "sha256": "a4241be865075f7906e4d469dc2d75c59e4a5fc1e64bfeefebb37beee2e55a5c",
+        "content_size_bytes": 1767
+      },
+      {
+        "relative_member_path": "environment.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_size_bytes": 0
+      },
+      {
+        "relative_member_path": "environment.resources.txt",
+        "sha256": "3af57c8730c7084e734ba2dddb88c81fbfa555797c22accca562fac18645692c",
+        "content_size_bytes": 1479
+      },
+      {
+        "relative_member_path": "grt-snapshot.command.json",
+        "sha256": "e36c314bb35bdcbdf3b08a04442a41df6aeb41df7ad46011f19fc7dd54443b2e",
+        "content_size_bytes": 1875
+      },
+      {
+        "relative_member_path": "grt-snapshot.log",
+        "sha256": "2584e7162db363b00b56e9bb93c62053922211ef95c5e1f7539cb4cf1dac20af",
+        "content_size_bytes": 1554
+      },
+      {
+        "relative_member_path": "grt-snapshot.resources.txt",
+        "sha256": "109bb4d42da7ec575220abf755715f5ed4792da96bc9065556cd72ebff566af3",
+        "content_size_bytes": 1548
+      },
+      {
+        "relative_member_path": "grt.command.json",
+        "sha256": "4e0bc466fe8829e6277e72040bf9de55033cb95a6f7124c7d6724be5480b5eb4",
+        "content_size_bytes": 1631
+      },
+      {
+        "relative_member_path": "grt.log",
+        "sha256": "503ebd03c2820712700ed98cd097522c3ad842b87b176741be69c18f5b94cd5b",
+        "content_size_bytes": 79407
+      },
+      {
+        "relative_member_path": "grt.resources.txt",
+        "sha256": "60546d030eb87d91a17ea729f980ea69f1348751f2bc37d2988a21cb7dfe47ee",
+        "content_size_bytes": 1373
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/1_1_yosys_canonicalize.log",
+        "sha256": "28cff9db57e0d67783919c4c717fbeb94aee16104e683efc8b23d92ecc52d5a1",
+        "content_size_bytes": 20126
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/1_2_yosys.log",
+        "sha256": "513cb01695fad225b044a62fd42c9dd4cba50b0b73b638c345236ed71b2962f6",
+        "content_size_bytes": 10035961
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/1_synth.json",
+        "sha256": "1ac42f06fab9021c0ca7a4815b77bbac98225067c2fe6464fd243e94b402661d",
+        "content_size_bytes": 803
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/1_synth.log",
+        "sha256": "d0cf082fff752d0b5ae58cce090e9e66cfac15efaa227727ac6261369e2b79af",
+        "content_size_bytes": 2172
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/2_1_floorplan.json",
+        "sha256": "cfefeb10ec515a646eb7aa0e1caec88a6729d78f0b051077dedb0dfc2e06ad53",
+        "content_size_bytes": 2036
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/2_1_floorplan.log",
+        "sha256": "9fdc3b2eecd7a725525ded3c1ed71c417fd4d69b696a47b93e2c28dc1684bb20",
+        "content_size_bytes": 4978
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/2_2_floorplan_macro.json",
+        "sha256": "c13d2bd4b630b1e6feca2157c9087978f506aa131997bdabda848e36b5a076b1",
+        "content_size_bytes": 134
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/2_2_floorplan_macro.log",
+        "sha256": "939cd1ef80ca68e66bbd4ad2b14729d52d9662e35af8220a6f27e6b7eb09264b",
+        "content_size_bytes": 1770
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/2_3_floorplan_tapcell.json",
+        "sha256": "c13d2bd4b630b1e6feca2157c9087978f506aa131997bdabda848e36b5a076b1",
+        "content_size_bytes": 134
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/2_3_floorplan_tapcell.log",
+        "sha256": "feb55216ef3edcf9967ec3f5f411955170aa4a92527df93cfe7faf8d0106e80e",
+        "content_size_bytes": 1979
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/2_4_floorplan_pdn.json",
+        "sha256": "031f1e76c79ae574db6f23179a8d5eabda074d4ba57a086bbc3fe81903ce81ec",
+        "content_size_bytes": 172
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/2_4_floorplan_pdn.log",
+        "sha256": "332d0f720e40a250f0d6d49cb3a4c4b68c8a2ed1234b445a5b41d656a290bd9f",
+        "content_size_bytes": 1937
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/3_1_place_gp_skip_io.json",
+        "sha256": "12992bc9772741b101bd7411749a1489cc07a03f676c57bdb33528848867f6e4",
+        "content_size_bytes": 274
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/3_1_place_gp_skip_io.log",
+        "sha256": "311ff32df9af1d62b0693a37d9ef09288ef8a7209270a254fefa90586437689d",
+        "content_size_bytes": 8234
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/3_2_place_iop.json",
+        "sha256": "580c3b604b798f743e6580e0cbe43cfb12bef06d38d8840d24cf97022012fc0b",
+        "content_size_bytes": 196
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/3_2_place_iop.log",
+        "sha256": "1bfb40c3240fc8e656e412acf5eb449f9d00b714b6c50c7b5c8361aa2dd00de2",
+        "content_size_bytes": 2182
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/3_3_place_gp.json",
+        "sha256": "1006fe037b0ad392e56aec10e921597137d98e6553565c9d1d96461906ed78d0",
+        "content_size_bytes": 2245
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/3_3_place_gp.log",
+        "sha256": "d0bf93ab6bb4af1ec722ab0b72c3d6abdd9bdebfbe671de6539361214b71a422",
+        "content_size_bytes": 15593
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/3_4_place_resized.json",
+        "sha256": "536f0a5b11316c8a93dc4b6e5a98d3c5f4221381501801cb3c92b1a966495062",
+        "content_size_bytes": 1980
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/3_4_place_resized.log",
+        "sha256": "b86e2d7fe0fab6efea9511df84f305064d383cad3550941de9f21c2fe40a622b",
+        "content_size_bytes": 6644
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/3_5_place_dp.json",
+        "sha256": "9bd5335503cd601011590efcbf7a5665132e2f7a515a998b8ef85ee8158d5314",
+        "content_size_bytes": 2605
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/3_5_place_dp.log",
+        "sha256": "b17d4a21301223b2b205570ca77a0924a9d8698f166d0167aca6d3f49dcd149a",
+        "content_size_bytes": 7010
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/4_1_cts.json",
+        "sha256": "a964885f7001dc469d4cf87eb3a48503651826c2a51fdf5042c1aab3f5d7924f",
+        "content_size_bytes": 2637
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/4_1_cts.log",
+        "sha256": "34563fc1d13fcb460338e2164b55b8cbe72ba512ae0c22e3b3120120d329a8d2",
+        "content_size_bytes": 11212
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/4_rsz_lec_check.log",
+        "sha256": "45f3759d1501b691a4907ecdda645f1728bde7a6178bfb73dc058dddfd24eb16",
+        "content_size_bytes": 4081
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/5_1_grt.json",
+        "sha256": "7ddeed5138e9db8cb533871245bde919a7941d2be5f2d34819650b671806fdde",
+        "content_size_bytes": 4737
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/5_1_grt.log",
+        "sha256": "8b4a7f39d2711cbb8ad92f28fedbab0b5824c3dda917a26555b1012828f2d841",
+        "content_size_bytes": 18526
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/vulsim_grt.log",
+        "sha256": "9f242f018a7133f915b2f9c2916cd84a13457042fa660f4316de1d5f3d325976",
+        "content_size_bytes": 1175
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/vulsim_synth.log",
+        "sha256": "fab2d46d695f6d7df7028ecb5e4bd9ce49fa5214b6b6dfb65f983324dcd81496",
+        "content_size_bytes": 1114
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/2_floorplan_final.rpt",
+        "sha256": "605e005f3b303537984619774522b22d2b17648b6b494c1b54a269be0f88fc15",
+        "content_size_bytes": 24596
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/3_detailed_place.rpt",
+        "sha256": "1851aa289c75a3649fa8fd870b8ccc23c204841cb4ca4f28c0615ecfbe914384",
+        "content_size_bytes": 33206
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/3_global_place.rpt",
+        "sha256": "92376055eb755d47158e0fd46e2e446c70cec95bb7b898e1a69abf1eb86ca1ab",
+        "content_size_bytes": 24940
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/3_resizer.rpt",
+        "sha256": "ccecbfa7e395e067cafaced7f1d603541ed4c1e580928f06196288343720e354",
+        "content_size_bytes": 33085
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/4_cts_final.rpt",
+        "sha256": "92ac7e5d2a2f458b58f5894cd14663e451207c8455704769910e7d1bf3abf189",
+        "content_size_bytes": 41125
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/5_global_route.rpt",
+        "sha256": "6996d6aaf9f7b8f4db976bcc255c53d7b83fed1cb8b94a1ead18d4cf55f5618c",
+        "content_size_bytes": 41281
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/grt_antennas.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_size_bytes": 0
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/synth_check.txt",
+        "sha256": "0a7ed21e58150d83a81ab93a9ef64947bab29ba0259d69a1036be8717d1dbf67",
+        "content_size_bytes": 120
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/synth_stat.txt",
+        "sha256": "5b929d9ec5d8f114cfa8da6420981b61b7fcf653bc8fd93cac95ea773f0a0155",
+        "content_size_bytes": 3795
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_grt.v",
+        "sha256": "ef4a49cb779adde1680e923a57a1f7a4e1ec282e3c9a25efe7cd873628461ea1",
+        "content_size_bytes": 5163628
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_grt_area.rpt",
+        "sha256": "e9ed029d3fd2b2cd6aec6944bc9861ae6fb7b25743f09de1fed93d29ef3f8622",
+        "content_size_bytes": 39
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_grt_cells.tsv",
+        "sha256": "4a6e2210cd85820b27a45dcbfda33887769b1b87f140ccabaae48a0e74b99044",
+        "content_size_bytes": 2259
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_grt_coverage.rpt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_size_bytes": 0
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_grt_hold.rpt",
+        "sha256": "3ac062fdf3585b7af29089d4dd76e2d454035882dabae9f136a2615c5b20c430",
+        "content_size_bytes": 25
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_grt_hold_tns.rpt",
+        "sha256": "d2cd5ac33c7e5ae94363b6f4cee3f294aa0852daa624c390b572ee0b5ed6f5db",
+        "content_size_bytes": 17
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_grt_instances.tsv",
+        "sha256": "77c80955537888b3fc372a2188a0ff66de7cb4d14cdda7a75bbc7333433f2ff9",
+        "content_size_bytes": 2223592
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_grt_paths_max.rpt",
+        "sha256": "429a8447bf60b3cb6eead10830cb48a57394d0dd8c0b1cc69e9648cf70e2d459",
+        "content_size_bytes": 13929
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_grt_paths_min.rpt",
+        "sha256": "ca41854f11b6f67c2b328f7e6975840be25f5fa9314b208ae6339e29ab9f629c",
+        "content_size_bytes": 7952
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_grt_period.rpt",
+        "sha256": "ea67135dd4ff762c3fca4d9a60a95612434f8d775b4906c73d05b464f097e71f",
+        "content_size_bytes": 80
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_grt_setup.rpt",
+        "sha256": "210160244ee92c644450c29731285e305c709172da5fd5b9ffa67f0ef889b6c9",
+        "content_size_bytes": 27
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_grt_setup_tns.rpt",
+        "sha256": "44f23fe41be6907ffbb46685b3ddca75e2346eb1009578f7dcf1a0c5a4bdc1d5",
+        "content_size_bytes": 17
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_grt_unconstrained.rpt",
+        "sha256": "48fec668289e1fce7fe21f6794d8f52bc5f9882c737f860ef0eebdb8b4b65072",
+        "content_size_bytes": 3672
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_grt_units.rpt",
+        "sha256": "0a157b0d181fbc6e23e234ac2c14bb1b416f8860671d089692850be91286637b",
+        "content_size_bytes": 95
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth.v",
+        "sha256": "a11a739fe8a1986b8ebf77efead46787a29d853c7e53e2e5449b56d63d87ad61",
+        "content_size_bytes": 5161474
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_area.rpt",
+        "sha256": "a64919b03de4da98d409343b8f9201b99ce3af2e643597043f24560cade11f07",
+        "content_size_bytes": 40
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_cells.tsv",
+        "sha256": "fe6552c0c4d0d12846033be909bb7a806039b15ad873374416b7eda2cf8262d1",
+        "content_size_bytes": 1425
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_coverage.rpt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_size_bytes": 0
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_hold.rpt",
+        "sha256": "70eab8dd17dcc9931d5eded3993ed0bfa9125fc1274d288d2d3bbb6e0d972bea",
+        "content_size_bytes": 26
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_hold_tns.rpt",
+        "sha256": "d2cd5ac33c7e5ae94363b6f4cee3f294aa0852daa624c390b572ee0b5ed6f5db",
+        "content_size_bytes": 17
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_instances.tsv",
+        "sha256": "d5e199bfb75fec8236b63b92184f618d49d1262b28716ffdbcb109cf134e1eba",
+        "content_size_bytes": 1754406
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_paths_max.rpt",
+        "sha256": "7e857ffcb0301d645c0946c81a87d7ee305cf1c91b460f39284cea9a70ba193e",
+        "content_size_bytes": 11414
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_paths_min.rpt",
+        "sha256": "e57622298c76dc9c80e5f772b0cebf4df8a622afcbc5fec539867d6a810ecd5b",
+        "content_size_bytes": 4438
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_period.rpt",
+        "sha256": "f19d08e769604db27c4393f77a2bd5513a1e107d51fc63820717f8f92f1cc657",
+        "content_size_bytes": 80
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_setup.rpt",
+        "sha256": "018bdb3b63f4e50707149ae5af2cb474a7f53830edd39e4030d4e2625252a4f4",
+        "content_size_bytes": 27
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_setup_tns.rpt",
+        "sha256": "44f23fe41be6907ffbb46685b3ddca75e2346eb1009578f7dcf1a0c5a4bdc1d5",
+        "content_size_bytes": 17
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_unconstrained.rpt",
+        "sha256": "cc280d7d2142e661e41a5beb009253e2e5d8a7db39ffcd6b3dc989943a31fed5",
+        "content_size_bytes": 3672
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_units.rpt",
+        "sha256": "0a157b0d181fbc6e23e234ac2c14bb1b416f8860671d089692850be91286637b",
+        "content_size_bytes": 95
+      },
+      {
+        "relative_member_path": "synth-snapshot.command.json",
+        "sha256": "6a920da0d24e4c74752264a271be7d61eac2eebdcd90a81de0f8bd2a6c4e81f3",
+        "content_size_bytes": 1870
+      },
+      {
+        "relative_member_path": "synth-snapshot.log",
+        "sha256": "7a4b96c04985812e7d46720230aa07e83e5f9c8b4d9022ba1981edb6c1a6db83",
+        "content_size_bytes": 1495
+      },
+      {
+        "relative_member_path": "synth-snapshot.resources.txt",
+        "sha256": "b22751002b5fc8cbc5e5c4e3ec8ba2e440c6ebcdaf41dd91f0ffc7554d433a83",
+        "content_size_bytes": 1550
+      },
+      {
+        "relative_member_path": "synth.command.json",
+        "sha256": "9693422e92421587ce036c3ad7d467b26250b0407b1f41d26830d6970d503bd1",
+        "content_size_bytes": 1648
+      },
+      {
+        "relative_member_path": "synth.log",
+        "sha256": "656952e6c3568e043158066bdba8113f8691446a781f45ac218adbf65a869c7a",
+        "content_size_bytes": 10059491
+      },
+      {
+        "relative_member_path": "synth.resources.txt",
+        "sha256": "168c2cb5e9a738a35b3b0998c29678cffe5336ed209273eb8c77c63da93a193d",
+        "content_size_bytes": 1369
+      }
+    ]
+  },
+  {
+    "artifact_id": "step5-ASAP7-W128-complete",
+    "location": "experiments/arithmetic/artifact_store/step5_mul_capacity_v1/W128-complete-artifacts.tar.gz",
+    "encoding": "tar+gzip",
+    "stored_sha256": "1074f96d2ba738d9fb630c70a655f6fa69762f8b3b4e038ab0456239e3c51ef5",
+    "stored_size_bytes": 8208618,
+    "availability_status": "available_locally; durable_remote_retention_not_confirmed",
+    "license_or_source_constraints": "generated netlists/logs under local tool and platform licenses; no complete PDK copied",
+    "members": [
+      {
+        "relative_member_path": "environment.command.json",
+        "sha256": "df155737c8c789dcd41d5d379bc47316f4bf0cab0b7a927889845b6ad5d2601c",
+        "content_size_bytes": 1773
+      },
+      {
+        "relative_member_path": "environment.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_size_bytes": 0
+      },
+      {
+        "relative_member_path": "environment.resources.txt",
+        "sha256": "88f947aaf06aa15f01e616162c864ebccb4b91487a45a98d6e94aa2c4c5bfbff",
+        "content_size_bytes": 1481
+      },
+      {
+        "relative_member_path": "grt.command.json",
+        "sha256": "e30a8de6c8e8ae78899b76ba6cb014eb387ec5b8075b607eb3c07e1727295ff1",
+        "content_size_bytes": 1641
+      },
+      {
+        "relative_member_path": "grt.log",
+        "sha256": "ee2e5a4203e10d268f4d9afb172a74af466f2a51f6650505156a87cf471ecdc5",
+        "content_size_bytes": 93551
+      },
+      {
+        "relative_member_path": "grt.resources.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_size_bytes": 0
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/1_1_yosys_canonicalize.log",
+        "sha256": "eed2e7ff717d6508170f87de01611eea2031e24321935b925fbfa17f31d91df4",
+        "content_size_bytes": 20138
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/1_2_yosys.log",
+        "sha256": "024843cd48457413ab2abb5aeb3ba3518f313623ab6be4513e596b22eca0cdfb",
+        "content_size_bytes": 39742741
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/1_synth.json",
+        "sha256": "c565e78c4bc9b022e47a585125ce6c8dcb208d3cb24853f3b28529e49e6034d5",
+        "content_size_bytes": 806
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/1_synth.log",
+        "sha256": "eb7018e34589ca5bdefc78c4b36943f21b1de61a1e148397fb42efcfc88fcf0e",
+        "content_size_bytes": 2177
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/2_1_floorplan.json",
+        "sha256": "b27f2d498a540da155e98cd29b03fc3f9c2a34221837164a8c3fc05eb0db341c",
+        "content_size_bytes": 2038
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/2_1_floorplan.log",
+        "sha256": "d2d94b691df4b3757b966b67b430e1970fae979bbb4861180dfb5a2406f2fd19",
+        "content_size_bytes": 7564
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/2_2_floorplan_macro.json",
+        "sha256": "c13d2bd4b630b1e6feca2157c9087978f506aa131997bdabda848e36b5a076b1",
+        "content_size_bytes": 134
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/2_2_floorplan_macro.log",
+        "sha256": "85dd172b2eaee07a1aaa21d43f0a64ed6212b091332ad3f1d259670b30d99636",
+        "content_size_bytes": 1774
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/2_3_floorplan_tapcell.json",
+        "sha256": "c13d2bd4b630b1e6feca2157c9087978f506aa131997bdabda848e36b5a076b1",
+        "content_size_bytes": 134
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/2_3_floorplan_tapcell.log",
+        "sha256": "0bf9d6c8d053fd0b1c6541c5b218b9f636ca5a1d18ca4212b162108cc4ccf5e8",
+        "content_size_bytes": 1985
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/2_4_floorplan_pdn.json",
+        "sha256": "031f1e76c79ae574db6f23179a8d5eabda074d4ba57a086bbc3fe81903ce81ec",
+        "content_size_bytes": 172
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/2_4_floorplan_pdn.log",
+        "sha256": "16fab4387c2db9f50751750a03a1ee8157818fb11975274f62765d5009fe48cd",
+        "content_size_bytes": 1941
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/3_1_place_gp_skip_io.json",
+        "sha256": "7ca4699337b29bbacce36cfecfd8d6586b328117c0f004f75a81f78a9f8e57f5",
+        "content_size_bytes": 275
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/3_1_place_gp_skip_io.log",
+        "sha256": "2f7f7ab7572f2adaf7bd23c50c894ea062d8d12c5766f411127acc6df370f037",
+        "content_size_bytes": 8512
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/3_2_place_iop.json",
+        "sha256": "6add6d3cda11dda9a52a91104b2ef8ead5c99851a7401b6bf98aa5663e916430",
+        "content_size_bytes": 196
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/3_2_place_iop.log",
+        "sha256": "26fa08766a83226180a93ce4b34bddff8f3a1910a7e37d902be4b014bba5299c",
+        "content_size_bytes": 2187
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/3_3_place_gp.json",
+        "sha256": "a602d5306b5dff64913b91660e8751cd152d99c0fee5c3b52b2bb93ac6487376",
+        "content_size_bytes": 2261
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/3_3_place_gp.log",
+        "sha256": "e3cd248be70786a0b8caf1cb8e9da1af91fab013c6c26834612f85c7a5b300bd",
+        "content_size_bytes": 15779
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/3_4_place_resized.json",
+        "sha256": "28bf5067711cdf9fc22f0627f2dc99990d69bf36dcef6bd587a582b513e26b38",
+        "content_size_bytes": 1996
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/3_4_place_resized.log",
+        "sha256": "f55924e335677dd3fc7cb74ba0bfb74014327c39f43107f584490ec4ac778b01",
+        "content_size_bytes": 17939
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/3_5_place_dp.json",
+        "sha256": "d8fdb09d46599010f17a62d3bfe0153c3afd3e7290548fbc6a4f910048ab7341",
+        "content_size_bytes": 2614
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/3_5_place_dp.log",
+        "sha256": "7a4223d05c46bb513fc16d51312ce8bcb0b79f93fc4d9458a355cc4f627ec4e4",
+        "content_size_bytes": 7072
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/4_1_cts.json",
+        "sha256": "6975987537abd5179845e15f69c7e571e5d0d57e60f4e431e9533c46a69deeba",
+        "content_size_bytes": 2643
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/4_1_cts.log",
+        "sha256": "50b35f084c4b67a9df17d103badb27d7f66a5846bc69576fcc5322144b995f2a",
+        "content_size_bytes": 23247
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/4_rsz_lec_check.log",
+        "sha256": "db0692cfabf6ce4554c944e7f1a7fcf4811aeae1f8bbbecec336751ee8d1a35a",
+        "content_size_bytes": 4083
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/5_1_grt.log",
+        "sha256": "370ff7230262f392ca4b7f2be8d4a34f251b83211afd50536fd5ff999cf321e6",
+        "content_size_bytes": 5902
+      },
+      {
+        "relative_member_path": "logs/asap7/arithmetic_probe/base/vulsim_synth.log",
+        "sha256": "554bb81efc86f7a3dad933c47bc557f8e5c944aeee2300c6d0039303cacb961f",
+        "content_size_bytes": 1116
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/2_floorplan_final.rpt",
+        "sha256": "168b800d90866f6a59bf98b31de767c6bc3f9a242ca8c3c0258eb1144eaa6ee6",
+        "content_size_bytes": 27023
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/3_detailed_place.rpt",
+        "sha256": "4063f8e084e1bf35bbdd8bae20f08bab9569320f0e0b02e8fc4f4b5bcf07bf17",
+        "content_size_bytes": 36161
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/3_global_place.rpt",
+        "sha256": "75f980aa6d2cfd390b62775ef43a582a57d0430d6bd967581f02e77e4295ed12",
+        "content_size_bytes": 27985
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/3_resizer.rpt",
+        "sha256": "b326db39be41c898f4a6d05d77a13d8e3c3f68836be24d947a5c95295e4bea62",
+        "content_size_bytes": 36186
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/4_cts_final.rpt",
+        "sha256": "62ca954486669bc7589b43ec3c3446eb21ee0b45c08ef50e89758c59a46a45cc",
+        "content_size_bytes": 52728
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/synth_check.txt",
+        "sha256": "43c846727722b7e1e144739547d465e01040d7b703d14cfa882ff67740082bd3",
+        "content_size_bytes": 121
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/synth_stat.txt",
+        "sha256": "2749eb588058b4498b4b292669984265150ff56b9d51bc79e9bceca2e7a429a9",
+        "content_size_bytes": 3914
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth.v",
+        "sha256": "2de273eded80f5d7abb0953b3b694da1ba497bd555c8d33c08188ed21afb99fc",
+        "content_size_bytes": 18143913
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_area.rpt",
+        "sha256": "cf387c69f6c16d4b44afa79acdee8e68ce7ca1e96ef7b5855ffb918e5581f030",
+        "content_size_bytes": 41
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_cells.tsv",
+        "sha256": "1ffaa413b41773dbaaf6b075d18ef0c9c3f343dcb59ce9dfdc9f50e0ce468289",
+        "content_size_bytes": 1512
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_coverage.rpt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_size_bytes": 0
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_hold.rpt",
+        "sha256": "4a4423f49d3a82de0a5cf3879391b1f95cf354406d75253a068903c4142ab34a",
+        "content_size_bytes": 26
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_hold_tns.rpt",
+        "sha256": "d2cd5ac33c7e5ae94363b6f4cee3f294aa0852daa624c390b572ee0b5ed6f5db",
+        "content_size_bytes": 17
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_instances.tsv",
+        "sha256": "54a161cf4d73334999cc00798f4b599a4e81a798e1d8bdfd44d3c6a45a011809",
+        "content_size_bytes": 6161229
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_paths_max.rpt",
+        "sha256": "1269ba2808257ffc13eff06f2a0d0bf9d43c148a9794d581a9d7e096fe06bf69",
+        "content_size_bytes": 12900
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_paths_min.rpt",
+        "sha256": "ccd07e58187292a65b46b4756b587dd99b0d8030f6a0d9020b5d7322f4c437b6",
+        "content_size_bytes": 4477
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_period.rpt",
+        "sha256": "9fc9b554dad3a0966a1543332e0bbf9578302a76c5572de42e341e7a9547b745",
+        "content_size_bytes": 80
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_setup.rpt",
+        "sha256": "cc30d13295358fc4628813074b77c35b0a0d754356b829698a91a7d6590061bb",
+        "content_size_bytes": 27
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_setup_tns.rpt",
+        "sha256": "949b8a46ea734e4f9d102ded5f91b4fdc8cfbc68e103d419372e607ba6c661dc",
+        "content_size_bytes": 19
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_unconstrained.rpt",
+        "sha256": "e9d84a68936136676504964750c02e62cb043b2e88f6be646a0229751f5e4802",
+        "content_size_bytes": 3971
+      },
+      {
+        "relative_member_path": "reports/asap7/arithmetic_probe/base/vulsim_synth_units.rpt",
+        "sha256": "0a157b0d181fbc6e23e234ac2c14bb1b416f8860671d089692850be91286637b",
+        "content_size_bytes": 95
+      },
+      {
+        "relative_member_path": "synth-snapshot.command.json",
+        "sha256": "6ede953abff26a4fa119347abd18f25d175946f6804edc1dafe0bfdee5e75036",
+        "content_size_bytes": 1875
+      },
+      {
+        "relative_member_path": "synth-snapshot.log",
+        "sha256": "25f71f602bdfb628ad707ef69854bf974bf2a023d0878d44baf6c388de921298",
+        "content_size_bytes": 1498
+      },
+      {
+        "relative_member_path": "synth-snapshot.resources.txt",
+        "sha256": "134a9d5e1ba18368a809d09742f20c7e35572359afe3416edea880fb98eae24d",
+        "content_size_bytes": 1554
+      },
+      {
+        "relative_member_path": "synth.command.json",
+        "sha256": "737405ff175488b07cc932d85182c183b1695eae8a167430bc7c78b0b0cde2be",
+        "content_size_bytes": 1642
+      },
+      {
+        "relative_member_path": "synth.log",
+        "sha256": "7e332ae8d4c4f2eee3cb858b826a7be00d2e74fc6954f4ba3ab5f5e43ba2c246",
+        "content_size_bytes": 39766300
+      },
+      {
+        "relative_member_path": "synth.resources.txt",
+        "sha256": "ca7e3b31c326131fa8b0db727a73ed9bb69cea99525cce54414dcc5d85d750e1",
+        "content_size_bytes": 1376
+      }
+    ]
+  }
+]

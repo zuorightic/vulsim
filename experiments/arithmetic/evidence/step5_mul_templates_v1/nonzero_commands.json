@@ -1,0 +1,81 @@
+[
+  {
+    "id": "94fee6a18eea4f63a6638cfe764ead30",
+    "stage": null,
+    "purpose": "step5_parameterized_mul",
+    "command": [
+      "build/step4-rtlzz/testv2/mul-template-test",
+      "/home/zyrv/vulsim",
+      "/home/zyrv/vulsim/build/step5-parameterized-20261031/generated"
+    ],
+    "exit_code": 1,
+    "timed_out": false
+  },
+  {
+    "id": "9f06edd2e7c845ada931a07388b0d231",
+    "stage": null,
+    "purpose": "step5_parameterized_mul",
+    "command": [
+      "build/step4-rtlzz/testv2/mul-template-test",
+      "/home/zyrv/vulsim",
+      "/home/zyrv/vulsim/build/step5-parameterized-20261031/generated-2"
+    ],
+    "exit_code": 1,
+    "timed_out": false
+  },
+  {
+    "id": "c84351c4e6fc46ef96412a55e703c38c",
+    "stage": null,
+    "purpose": "step5_parameterized_mul",
+    "command": [
+      "build/step4-rtlzz/testv2/mul-template-test",
+      "/home/zyrv/vulsim",
+      "/home/zyrv/vulsim/build/step5-parameterized-20261031/acceptance"
+    ],
+    "exit_code": 1,
+    "timed_out": false
+  },
+  {
+    "id": "aef34745ab6c44c0bef19a44f2967e5e",
+    "stage": null,
+    "purpose": "step5_parameterized_mul",
+    "command": [
+      "build/step4-rtlzz/testv2/mul-template-test",
+      "/home/zyrv/vulsim",
+      "/home/zyrv/vulsim/build/step5-parameterized-20261031/accepted"
+    ],
+    "exit_code": 1,
+    "timed_out": false
+  },
+  {
+    "id": "d33c04445bab4a95aa6988da167dae4d",
+    "stage": "grt",
+    "purpose": "prototype",
+    "command": [
+      "make",
+      "--no-print-directory",
+      "-C",
+      "/home/zyrv/OpenROAD-flow-scripts/flow",
+      "-f",
+      "/home/zyrv/OpenROAD-flow-scripts/flow/Makefile",
+      "-f",
+      "/home/zyrv/vulsim/experiments/arithmetic_dse/backend/environment.mk",
+      "DESIGN_CONFIG=/home/zyrv/vulsim/build/step5-parameterized-20261031/capacity128/config.mk",
+      "WORK_HOME=/home/zyrv/vulsim/build/step5-parameterized-20261031/capacity128",
+      "NUM_CORES=2",
+      "ABC_CLOCK_PERIOD_IN_PS=1500.0",
+      "SCRIPTS_DIR=/home/zyrv/vulsim/build/step5-parameterized-20261031/capacity128/flow-scripts",
+      "CORNER=TC",
+      "ASAP7_USE_VT=RVT",
+      "LIB_MODEL=NLDM",
+      "TC_TEMPERATURE=25C",
+      "IO_PLACER_H=M4 M6",
+      "IO_PLACER_V=M5 M7",
+      "ABC_DRIVER_CELL=BUFx2_ASAP7_75t_R",
+      "ABC_LOAD_IN_FF=3.898",
+      "grt"
+    ],
+    "exit_code": -15,
+    "timed_out": true
+  }
+]

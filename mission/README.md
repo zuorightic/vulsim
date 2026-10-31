@@ -1,6 +1,10 @@
 # 任务与现行规划导航
 
-后续算术拆分、代价模型和流水线工作按 [lxy-plan-fix.md 第一章](lxy-plan-fix.md) 推进。先读第一章§2“既有成果如何迁移”、§10“九个步骤”和§10.10“阶段里程碑”；[第四章步骤一](lxy-plan-fix.md#step1-wide-acceptance)的宽位宽补验及[第四章步骤二](lxy-plan-fix.md#step2-revised-acceptance)的新契约/静态表/43例生成补验已完成对应范围。[第四章步骤三](lxy-plan-fix.md#step3-platform-acceptance)的原v5验收因SDC整数除法缺陷撤回；[§3.9的v6修订](lxy-plan-fix.md#step3-sdc-correction)已修复、核对实际SDC并重跑三个ns平台后重新通过。[§3.10的v7收尾](lxy-plan-fix.md#step3-validator-closure)已关闭SDC命令边界P2并补来源/交接规则，物理结果继承v6，GF180 wire RC校准仍登记待核。[第四章步骤四](lxy-plan-fix.md#step4-interface-acceptance)已完成本步公共请求/原始Mul与FP区域/固定成本及保护验收；half/quarter内部展开和D模型仍未完成。[§4.8报告类型修订](lxy-plan-fix.md#step4-report-type-review)将计数改为JSON整数，并补历史证据横幅及存储分层；v1原证据保留。下一入口是步骤五参数化内部拆分与新C位置选择。
+后续算术拆分、代价模型和流水线工作按 [lxy-plan-fix.md 第一章](lxy-plan-fix.md) 推进。先读第一章§2“既有成果如何迁移”、§10“九个步骤”和§10.10“阶段里程碑”；[第四章步骤一](lxy-plan-fix.md#step1-wide-acceptance)的宽位宽补验及[第四章步骤二](lxy-plan-fix.md#step2-revised-acceptance)的新契约/静态表/43例生成补验已完成对应范围。[第四章步骤三](lxy-plan-fix.md#step3-platform-acceptance)的原v5验收因SDC整数除法缺陷撤回；[§3.9的v6修订](lxy-plan-fix.md#step3-sdc-correction)已修复、核对实际SDC并重跑三个ns平台后重新通过。[§3.10的v7收尾](lxy-plan-fix.md#step3-validator-closure)已关闭SDC命令边界P2并补来源/交接规则，物理结果继承v6，GF180 wire RC校准仍登记待核。[第四章步骤四](lxy-plan-fix.md#step4-interface-acceptance)已完成本步公共请求/原始Mul与FP区域/固定成本及保护验收；half/quarter内部展开和D模型仍未完成。[§4.8报告类型修订](lxy-plan-fix.md#step4-report-type-review)将计数改为JSON整数，并补历史证据横幅及存储分层；v1原证据保留。[第四章步骤五](lxy-plan-fix.md#step5-mul-template-acceptance)已完成参数化Mul/新C软件与有限容量验收；ASAP7 64位grt通过，128位grt超时保留，受影响物理批量待复审。下一入口是步骤六整图接入。
+
+[步骤五收尾§5.8](lxy-plan-fix.md#step5-closure-review)为当前后继状态：位置核验、部分积覆盖／129份实际历史图回放和精确数值协议已补齐；相同双128位C实现的一次3600秒容量复测在1450.19秒完成完整后综合→grt，当前目标时序满足。原1200秒超时及费用保留，具体批次仍须按容量域和实时预算准入，不把单探针外推全部128位或A/B/C/D。核验入口为`experiments.arithmetic_dse.closure_evidence`，冻结v2继承v1。
+
+[步骤五§5.9时序口径澄清](lxy-plan-fix.md#step5-metric-scope-review)补充当前报告读法：core_clk最小周期只统计符合OpenSTA筛选的同钟路径，整体setup slack还包含io_clk↔core_clk接口路径；批次准入读取后者及hold／覆盖，不能由前者推定整体裕量。说明冻结v3继承原v2数值，无新增EDA。
 
 | 文档 | 作用 | 阅读边界 |
 | --- | --- | --- |
