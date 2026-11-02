@@ -1,0 +1,30 @@
+{
+  "version": "step6-capacity-postmortem-v1",
+  "old_scoped_reader_error": "duplicate RTL port",
+  "cause": "single-module reader combined child and top port declarations; comma-shared ports were also incomplete",
+  "corrected_static_SDC_check": {
+    "version": "serialized-sdc-contract-v2",
+    "status": "passed",
+    "sdc_sha256": "a70fe6df68a624de1162ab74035edfaef0b8de77cde82618bc9452571c9f7f93",
+    "platform": "asap7",
+    "time_to_ps": 1.0,
+    "capacitance_to_fF": 1.0,
+    "clock_periods_native": {
+      "core_clk": 1500.0,
+      "io_clk": 1500.0
+    },
+    "clock_transition_native": 10.0,
+    "setup_uncertainty_native": 20.0,
+    "hold_uncertainty_native": 5.0,
+    "output_load_native": 3.898,
+    "input_ports_checked": 98,
+    "output_ports_checked": 38,
+    "write_sdc_decimal_digits": 4,
+    "native_rounding_tolerance": 5.00001e-05
+  },
+  "original_manifest_modified": false,
+  "accepted_PPA_metrics": 0,
+  "new_STA_or_physical_calls": 0,
+  "grt_capacity": "not measured; paused after original failure; no automatic retry",
+  "physical_followup": "any checkpoint continuation or corrective physical run requires a new explicit finite admission; no change to L/II, circuit, clock or global budget in this closure"
+}

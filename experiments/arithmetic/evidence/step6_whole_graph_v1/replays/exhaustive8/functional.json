@@ -1,0 +1,56 @@
+{
+  "version": "step6-whole-graph-cycle-v1",
+  "status": "passed",
+  "seed": 20261031,
+  "cycles": 65542,
+  "implementations": 6,
+  "formal_cases": 1,
+  "A_B_C_formal_implementations": 3,
+  "diagnostic_implementations": 3,
+  "exhaustive_8bit_pairs": 65536,
+  "counts": {
+    "valid": 393252,
+    "data": 655360,
+    "reset": 10,
+    "bubble_hold": 50
+  },
+  "per_implementation": {
+    "UDR_8_A": {
+      "valid": 65542,
+      "data": 131072,
+      "reset": 2,
+      "bubble_hold": 10
+    },
+    "UDR_8_B": {
+      "valid": 65542,
+      "data": 131072,
+      "reset": 2,
+      "bubble_hold": 10
+    },
+    "UDR_8_C": {
+      "valid": 65542,
+      "data": 131072,
+      "reset": 2,
+      "bubble_hold": 10
+    },
+    "shared_divrem_8_C": {
+      "valid": 65542,
+      "data": 131072,
+      "reset": 2,
+      "bubble_hold": 10
+    },
+    "single_div_8_C": {
+      "valid": 65542,
+      "data": 65536,
+      "reset": 1,
+      "bubble_hold": 5
+    },
+    "single_mod_8_C": {
+      "valid": 65542,
+      "data": 65536,
+      "reset": 1,
+      "bubble_hold": 5
+    }
+  },
+  "scope": "actual RTL; external output capture counts toward L; continuous inputs, bubbles, in-flight reset, flush; shared diagnostic is quotient-reuse DAG, not a fused primitive"
+}

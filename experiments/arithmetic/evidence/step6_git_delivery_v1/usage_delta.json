@@ -1,0 +1,76 @@
+{
+  "prefix": "experiments/arithmetic/evidence/step6_review_v2/usage_delta.json",
+  "prefix_sha256": "5007cc80cbdcef4ed302b87de9f3ed0270016114f4231fb8acbd93c1927f2ce3",
+  "entries": [
+    {
+      "id": "ff8b359bb80044beb76ac64f6c33ddc8",
+      "kind": "live",
+      "stage": null,
+      "status": "completed",
+      "purpose": "step6_git_delivery_support",
+      "command": [
+        "python3",
+        "build/step6-git-delivery-20261102/verify_git_delivery.py",
+        "--before-fix"
+      ],
+      "output": "/home/zyrv/vulsim/build/step6-git-delivery-20261102/reproduce-before",
+      "reserved_at": "2026-11-02T09:02:57.354559+00:00",
+      "walltime_s": 1.1663799658417702,
+      "CPU_time_s": 1.13,
+      "target_platform": "common",
+      "admission_id": "step6-git-delivery-review-v1",
+      "task_id": "reproduce-before",
+      "model_version": "not_implemented_step7",
+      "exit_code": 0,
+      "timed_out": false,
+      "command_record": "/home/zyrv/vulsim/build/step6-git-delivery-20261102/reproduce-before.command.json",
+      "CPU_accounting": "GNU_time_leaf_command"
+    },
+    {
+      "id": "5c3abc6ddd4c4365a510ac8dead27da3",
+      "kind": "live",
+      "stage": null,
+      "status": "completed",
+      "purpose": "step6_git_delivery_support",
+      "command": [
+        "python3",
+        "build/step6-git-delivery-20261102/verify_git_delivery.py"
+      ],
+      "output": "/home/zyrv/vulsim/build/step6-git-delivery-20261102/verify-after",
+      "reserved_at": "2026-11-02T09:04:22.678294+00:00",
+      "walltime_s": 16.186709423083812,
+      "CPU_time_s": 16.12,
+      "target_platform": "common",
+      "admission_id": "step6-git-delivery-review-v1",
+      "task_id": "verify-after",
+      "model_version": "not_implemented_step7",
+      "exit_code": 0,
+      "timed_out": false,
+      "command_record": "/home/zyrv/vulsim/build/step6-git-delivery-20261102/verify-after.command.json",
+      "CPU_accounting": "GNU_time_leaf_command"
+    },
+    {
+      "id": "3b0ce60f3c424f1a8b29b04f124a29ad",
+      "kind": "live",
+      "stage": null,
+      "status": "completed",
+      "purpose": "step6_git_delivery_support",
+      "command": [
+        "python3",
+        "build/step6-git-delivery-20261102/verify_git_delivery.py"
+      ],
+      "output": "/home/zyrv/vulsim/build/step6-git-delivery-20261102/verify-staged-delivery",
+      "reserved_at": "2026-11-02T09:07:56.581284+00:00",
+      "walltime_s": 16.135171404108405,
+      "CPU_time_s": 16.11,
+      "target_platform": "common",
+      "admission_id": "step6-git-delivery-review-v1",
+      "task_id": "verify-staged-delivery",
+      "model_version": "not_implemented_step7",
+      "exit_code": 0,
+      "timed_out": false,
+      "command_record": "/home/zyrv/vulsim/build/step6-git-delivery-20261102/verify-staged-delivery.command.json",
+      "CPU_accounting": "GNU_time_leaf_command"
+    }
+  ]
+}

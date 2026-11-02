@@ -108,7 +108,7 @@ def main():
     commands = []
     report = {'version':'step2-generated-kernels-v1','status':'running','case_ids':cases,
               'native_case_ids':[c for c in NATIVE_CASES if c in cases],
-              'native_dynamic_divmod':'step6_pending; current_s8_rejects_nonconstant_rhs',
+              'native_dynamic_divmod':'implemented_step6; this_driver_retains_the_original_bounded_step2_native_smoke_scope',
               'commands':commands,'physical_calls':{'synth':0,'grt':0,'final':0}}
     def run(command,stem,timeout=120):
         reservation = ledger.reserve(None,timeout,2,'step2_contract_generation_validation',command,out/stem)

@@ -1,0 +1,1075 @@
+{
+  "version": "step6-whole-graph-cycle-v1",
+  "status": "passed",
+  "seed": 20261031,
+  "cycles": 1222,
+  "implementations": 176,
+  "formal_cases": 43,
+  "A_B_C_formal_implementations": 129,
+  "diagnostic_implementations": 47,
+  "counts": {
+    "valid": 215072,
+    "data": 256005,
+    "reset": 1710,
+    "bubble_hold": 90555
+  },
+  "per_implementation": {
+    "MUL_8_A": {
+      "valid": 1222,
+      "data": 901,
+      "reset": 6,
+      "bubble_hold": 315
+    },
+    "MUL_8_B": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "MUL_8_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "MUL_16_A": {
+      "valid": 1222,
+      "data": 901,
+      "reset": 6,
+      "bubble_hold": 315
+    },
+    "MUL_16_B": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "MUL_16_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "MUL_32_A": {
+      "valid": 1222,
+      "data": 901,
+      "reset": 6,
+      "bubble_hold": 315
+    },
+    "MUL_32_B": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "MUL_32_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "MUL_64_A": {
+      "valid": 1222,
+      "data": 901,
+      "reset": 6,
+      "bubble_hold": 315
+    },
+    "MUL_64_B": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "MUL_64_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "MUL_128_A": {
+      "valid": 1222,
+      "data": 901,
+      "reset": 6,
+      "bubble_hold": 315
+    },
+    "MUL_128_B": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "MUL_128_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "MAC_8_A": {
+      "valid": 1222,
+      "data": 901,
+      "reset": 6,
+      "bubble_hold": 315
+    },
+    "MAC_8_B": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "MAC_8_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "MAC_16_A": {
+      "valid": 1222,
+      "data": 901,
+      "reset": 6,
+      "bubble_hold": 315
+    },
+    "MAC_16_B": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "MAC_16_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "MAC_32_A": {
+      "valid": 1222,
+      "data": 901,
+      "reset": 6,
+      "bubble_hold": 315
+    },
+    "MAC_32_B": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "MAC_32_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "MAC_64_A": {
+      "valid": 1222,
+      "data": 901,
+      "reset": 6,
+      "bubble_hold": 315
+    },
+    "MAC_64_B": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "MAC_64_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "MAC_128_A": {
+      "valid": 1222,
+      "data": 901,
+      "reset": 6,
+      "bubble_hold": 315
+    },
+    "MAC_128_B": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "MAC_128_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "DOT2_8_A": {
+      "valid": 1222,
+      "data": 901,
+      "reset": 6,
+      "bubble_hold": 315
+    },
+    "DOT2_8_B": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "DOT2_8_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "DOT2_16_A": {
+      "valid": 1222,
+      "data": 901,
+      "reset": 6,
+      "bubble_hold": 315
+    },
+    "DOT2_16_B": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "DOT2_16_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "DOT2_32_A": {
+      "valid": 1222,
+      "data": 901,
+      "reset": 6,
+      "bubble_hold": 315
+    },
+    "DOT2_32_B": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "DOT2_32_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "DOT2_64_A": {
+      "valid": 1222,
+      "data": 901,
+      "reset": 6,
+      "bubble_hold": 315
+    },
+    "DOT2_64_B": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "DOT2_64_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "DOT2_128_A": {
+      "valid": 1222,
+      "data": 901,
+      "reset": 6,
+      "bubble_hold": 315
+    },
+    "DOT2_128_B": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "DOT2_128_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "UDR_8_A": {
+      "valid": 1222,
+      "data": 1802,
+      "reset": 12,
+      "bubble_hold": 630
+    },
+    "UDR_8_B": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "UDR_8_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "UDR_16_A": {
+      "valid": 1222,
+      "data": 1802,
+      "reset": 12,
+      "bubble_hold": 630
+    },
+    "UDR_16_B": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "UDR_16_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "UDR_32_A": {
+      "valid": 1222,
+      "data": 1802,
+      "reset": 12,
+      "bubble_hold": 630
+    },
+    "UDR_32_B": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "UDR_32_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "UDR_64_A": {
+      "valid": 1222,
+      "data": 1802,
+      "reset": 12,
+      "bubble_hold": 630
+    },
+    "UDR_64_B": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "UDR_64_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "UDR_128_A": {
+      "valid": 1222,
+      "data": 1802,
+      "reset": 12,
+      "bubble_hold": 630
+    },
+    "UDR_128_B": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "UDR_128_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "DIVSEL_8_A": {
+      "valid": 1222,
+      "data": 1802,
+      "reset": 12,
+      "bubble_hold": 630
+    },
+    "DIVSEL_8_B": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "DIVSEL_8_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "DIVSEL_16_A": {
+      "valid": 1222,
+      "data": 1802,
+      "reset": 12,
+      "bubble_hold": 630
+    },
+    "DIVSEL_16_B": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "DIVSEL_16_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "DIVSEL_32_A": {
+      "valid": 1222,
+      "data": 1802,
+      "reset": 12,
+      "bubble_hold": 630
+    },
+    "DIVSEL_32_B": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "DIVSEL_32_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "DIVSEL_64_A": {
+      "valid": 1222,
+      "data": 1802,
+      "reset": 12,
+      "bubble_hold": 630
+    },
+    "DIVSEL_64_B": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "DIVSEL_64_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "DIVSEL_128_A": {
+      "valid": 1222,
+      "data": 1802,
+      "reset": 12,
+      "bubble_hold": 630
+    },
+    "DIVSEL_128_B": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "DIVSEL_128_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "MIX_8_A": {
+      "valid": 1222,
+      "data": 1802,
+      "reset": 12,
+      "bubble_hold": 630
+    },
+    "MIX_8_B": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "MIX_8_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "MIX_16_A": {
+      "valid": 1222,
+      "data": 1802,
+      "reset": 12,
+      "bubble_hold": 630
+    },
+    "MIX_16_B": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "MIX_16_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "MIX_32_A": {
+      "valid": 1222,
+      "data": 1802,
+      "reset": 12,
+      "bubble_hold": 630
+    },
+    "MIX_32_B": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "MIX_32_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "MIX_64_A": {
+      "valid": 1222,
+      "data": 1802,
+      "reset": 12,
+      "bubble_hold": 630
+    },
+    "MIX_64_B": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "MIX_64_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "MIX_128_A": {
+      "valid": 1222,
+      "data": 1802,
+      "reset": 12,
+      "bubble_hold": 630
+    },
+    "MIX_128_B": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "MIX_128_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "F1_A": {
+      "valid": 1222,
+      "data": 1802,
+      "reset": 12,
+      "bubble_hold": 630
+    },
+    "F1_B": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "F1_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "F2_A": {
+      "valid": 1222,
+      "data": 1802,
+      "reset": 12,
+      "bubble_hold": 630
+    },
+    "F2_B": {
+      "valid": 1222,
+      "data": 1790,
+      "reset": 12,
+      "bubble_hold": 642
+    },
+    "F2_C": {
+      "valid": 1222,
+      "data": 1790,
+      "reset": 12,
+      "bubble_hold": 642
+    },
+    "H_M_8_A": {
+      "valid": 1222,
+      "data": 901,
+      "reset": 6,
+      "bubble_hold": 315
+    },
+    "H_M_8_B": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "H_M_8_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "H_M_16_A": {
+      "valid": 1222,
+      "data": 901,
+      "reset": 6,
+      "bubble_hold": 315
+    },
+    "H_M_16_B": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "H_M_16_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "H_M_32_A": {
+      "valid": 1222,
+      "data": 901,
+      "reset": 6,
+      "bubble_hold": 315
+    },
+    "H_M_32_B": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "H_M_32_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "H_M_64_A": {
+      "valid": 1222,
+      "data": 901,
+      "reset": 6,
+      "bubble_hold": 315
+    },
+    "H_M_64_B": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "H_M_64_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "H_M_128_A": {
+      "valid": 1222,
+      "data": 901,
+      "reset": 6,
+      "bubble_hold": 315
+    },
+    "H_M_128_B": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "H_M_128_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "H_D_8_A": {
+      "valid": 1222,
+      "data": 2703,
+      "reset": 18,
+      "bubble_hold": 945
+    },
+    "H_D_8_B": {
+      "valid": 1222,
+      "data": 2685,
+      "reset": 18,
+      "bubble_hold": 963
+    },
+    "H_D_8_C": {
+      "valid": 1222,
+      "data": 2685,
+      "reset": 18,
+      "bubble_hold": 963
+    },
+    "H_D_16_A": {
+      "valid": 1222,
+      "data": 2703,
+      "reset": 18,
+      "bubble_hold": 945
+    },
+    "H_D_16_B": {
+      "valid": 1222,
+      "data": 2685,
+      "reset": 18,
+      "bubble_hold": 963
+    },
+    "H_D_16_C": {
+      "valid": 1222,
+      "data": 2685,
+      "reset": 18,
+      "bubble_hold": 963
+    },
+    "H_D_32_A": {
+      "valid": 1222,
+      "data": 2703,
+      "reset": 18,
+      "bubble_hold": 945
+    },
+    "H_D_32_B": {
+      "valid": 1222,
+      "data": 2685,
+      "reset": 18,
+      "bubble_hold": 963
+    },
+    "H_D_32_C": {
+      "valid": 1222,
+      "data": 2685,
+      "reset": 18,
+      "bubble_hold": 963
+    },
+    "H_D_64_A": {
+      "valid": 1222,
+      "data": 2703,
+      "reset": 18,
+      "bubble_hold": 945
+    },
+    "H_D_64_B": {
+      "valid": 1222,
+      "data": 2685,
+      "reset": 18,
+      "bubble_hold": 963
+    },
+    "H_D_64_C": {
+      "valid": 1222,
+      "data": 2685,
+      "reset": 18,
+      "bubble_hold": 963
+    },
+    "H_D_128_A": {
+      "valid": 1222,
+      "data": 2703,
+      "reset": 18,
+      "bubble_hold": 945
+    },
+    "H_D_128_B": {
+      "valid": 1222,
+      "data": 2685,
+      "reset": 18,
+      "bubble_hold": 963
+    },
+    "H_D_128_C": {
+      "valid": 1222,
+      "data": 2685,
+      "reset": 18,
+      "bubble_hold": 963
+    },
+    "H_F1_A": {
+      "valid": 1222,
+      "data": 1802,
+      "reset": 12,
+      "bubble_hold": 630
+    },
+    "H_F1_B": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "H_F1_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "MUL_12_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "MAC_12_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "DOT2_12_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "UDR_12_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "DIVSEL_12_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "MIX_12_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "H_M_12_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "H_D_12_C": {
+      "valid": 1222,
+      "data": 2685,
+      "reset": 18,
+      "bubble_hold": 963
+    },
+    "MUL_24_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "MAC_24_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "DOT2_24_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "UDR_24_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "DIVSEL_24_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "MIX_24_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "H_M_24_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "H_D_24_C": {
+      "valid": 1222,
+      "data": 2685,
+      "reset": 18,
+      "bubble_hold": 963
+    },
+    "MUL_48_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "MAC_48_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "DOT2_48_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "UDR_48_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "DIVSEL_48_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "MIX_48_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "H_M_48_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "H_D_48_C": {
+      "valid": 1222,
+      "data": 2685,
+      "reset": 18,
+      "bubble_hold": 963
+    },
+    "MUL_96_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "MAC_96_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "DOT2_96_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "UDR_96_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "DIVSEL_96_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "MIX_96_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "H_M_96_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "H_D_96_C": {
+      "valid": 1222,
+      "data": 2685,
+      "reset": 18,
+      "bubble_hold": 963
+    },
+    "shared_divrem_8_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "single_div_8_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "single_mod_8_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "shared_divrem_16_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "single_div_16_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "single_mod_16_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "shared_divrem_32_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "single_div_32_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "single_mod_32_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "shared_divrem_64_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "single_div_64_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "single_mod_64_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "shared_divrem_128_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "single_div_128_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    },
+    "single_mod_128_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    }
+  },
+  "scope": "actual native RTL; external output capture counts toward L; continuous inputs, bubbles, in-flight reset, flush; shared diagnostic is quotient-reuse DAG, not a fused primitive"
+}

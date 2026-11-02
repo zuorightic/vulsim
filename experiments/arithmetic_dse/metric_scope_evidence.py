@@ -51,8 +51,9 @@ def analyze(root=ROOT):
 
 def verify(root=ROOT,parents=True):
  root=Path(root);f=json.loads((root/FREEZE).read_text());e=root/EVIDENCE
+ from .freeze_history import source_location
  for path,h in f['files_sha256'].items():
-  if sha(root/path)!=h or sha(root/f['source_snapshots'][path])!=h:raise ValueError('metric note source mismatch '+path)
+  if sha(source_location(root,FREEZE,path,h))!=h or sha(root/f['source_snapshots'][path])!=h:raise ValueError('metric note source mismatch '+path)
  for path,h in f['historical_freezes'].items():
   if sha(root/path)!=h:raise ValueError('historical freeze changed '+path)
  if sha(root/f['evidence_index'])!=f['evidence_index_sha256']:raise ValueError('metric note index changed')

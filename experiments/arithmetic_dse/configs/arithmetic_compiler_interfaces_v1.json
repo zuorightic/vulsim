@@ -14,14 +14,20 @@
   "providers": {
     "core-original-v1": {
       "Mul": "mul-original-v1; unsigned typed operands; atomic",
-      "F32MulRNE": "softfloat3d-bitvector-mul-v1; real bit-vector expansion; atomic"
+      "F32MulRNE": "softfloat3d-bitvector-mul-v1; real bit-vector expansion; atomic",
+      "Div": "udiv-original-v1; unsigned equal-width <=128; statically nonzero divisor; atomic",
+      "Mod": "umod-original-v1; unsigned equal-width <=128; statically nonzero divisor; atomic"
     },
     "mul-candidates-v1": {
       "Mul": "original, half and quarter through mul-block-tree-v1; deterministic K=16",
-      "F32MulRNE": "unchanged atomic implementation"
+      "F32MulRNE": "unchanged atomic implementation",
+      "Div_Mod": "same atomic original operators; no internal division groups"
     },
     "mul-template-v1": {
       "Mul": "forced diagnostic block_width 2..128, eligibility checked per occurrence; not formal C"
+    },
+    "ordinary_helpers": {
+      "UDivRemShared": "registered library helper inlines one Div plus quotient-reuse low Mul/Sub; each actual primitive billed; no fused DivRem opcode or discount"
     }
   },
   "cost_modes": {
@@ -29,14 +35,16 @@
     "backend-model": "query identity and fail-closed rejection; inference not implemented until step7"
   },
   "later_steps": {
-    "step6": [
-      "dynamic Div/Mod whole-graph integration",
-      "complete safety wrapping and reset acceptance"
-    ],
+    "step6": [],
     "step7": [
       "offline model inference",
       "domain validation",
       "stage-dependent cost queries and D selection"
+    ],
+    "step6_capacity": [
+      "UDR128 selected independent Div/Mod implementation exceeded 8GiB synth envelope",
+      "F2 grt capacity and four conditional synth controls remain unmeasured; original baseline failed at interface verification",
+      "other platform/scale domains require their own finite admission"
     ]
   },
   "extensions": "AES/Sigmoid/fixedpoint/new semantic profiles are reserved and explicitly rejected; no empty providers",
@@ -364,5 +372,6 @@
     "group placement/move evidence and diagnostic explicit templates",
     "retired legacy simple_cost and split16 options"
   ],
-  "capability_policy": "C_selected only for mul-candidates-v1; original and forced template generation are distinct from formal selection; numerical/physical states require separate evidence"
+  "capability_policy": "C_selected only for mul-candidates-v1; original and forced template generation are distinct from formal selection; numerical/physical states require separate evidence",
+  "whole_graph_scope": "43 core cases A/B/C source and fixed-L interfaces validated in step6; D input graph/request reserved, inference step7"
 }

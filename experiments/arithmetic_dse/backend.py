@@ -154,7 +154,9 @@ def evaluate(args):
                 'sdc_contract_version':SDC_CONTRACT_VERSION,'sdc_contracts':{}}
     env = os.environ.copy()
     env.update({'OMP_NUM_THREADS':str(args.threads), 'OPENBLAS_NUM_THREADS':str(args.threads),
-                'QT_QPA_PLATFORM':'offscreen'})
+                'YOSYS_MAX_THREADS':str(args.threads), 'QT_QPA_PLATFORM':'offscreen'})
+    manifest['tool_thread_controls']={'YOSYS_MAX_THREADS':args.threads,'OMP_NUM_THREADS':args.threads,
+                                     'OPENBLAS_NUM_THREADS':args.threads,'NUM_CORES':args.threads}
     try:
         parameter_provenance(p['platform'],selected=p)
         manifest['parameter_provenance']={'path':str(PARAMETER_SOURCES.relative_to(ROOT)),
@@ -169,7 +171,11 @@ def evaluate(args):
                       Path(__file__).with_name('processes.py'),Path(__file__).with_name('characterization.py'),
                       Path(__file__).parent/'configs/platforms'/(p['platform']+'.json'),POLICY]
         source_paths += [s for s in ASSETS.iterdir() if s.is_file()]
-        if args.resume_synth_from:source_paths.append(Path(__file__).with_name('capacity_retest.py'))
+        relaxation=(args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_clock_relaxation_only')
+        if relaxation:source_paths.append(Path(__file__).with_name('clock_relaxation.py'))
+        elif args.resume_synth_from:source_paths.append(Path(__file__).with_name('capacity_retest.py'))
+        if args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_capacity_recheck_only':
+            source_paths.append(Path(__file__).with_name('bounded_recheck.py'))
         manifest['source_sha256']={}
         for source in source_paths:
             relative=source.relative_to(ROOT)
@@ -184,6 +190,10 @@ def evaluate(args):
             if re.search(r'\s|[#:$]', str(path)):
                 raise ValueError(f'unsupported Make path characters: {path}')
         shutil.copy2(rtl, out/'input.sv')
+        # Validate the exact selected interface before spending synthesis time.
+        # Hierarchical children must not alter the top's SDC port coverage.
+        selected_ports=rtl_ports((out/'input.sv').read_text(),args.top)
+        manifest['rtl_interface']=selected_ports
         # Yosys sources a named custom script verbatim: its -D switch does not
         # reach commands in ORFS abc_speed.script. Render explicit constraints
         # without modifying the external ORFS installation.
@@ -193,6 +203,19 @@ def evaluate(args):
             if original.name != 'abc_speed.script':
                 (scripts/original.name).symlink_to(original)
         (scripts/'abc_speed.script').write_text(render_abc_script(args.abc_target_ps))
+        completion_mode=(args.admission and json.loads(args.admission.read_text()).get('execution_mode')=='complete_initial_backend')
+        if completion_mode:
+            # An observational checkpoint preserves the expensive lowering if
+            # ABC must later continue under another explicitly funded envelope.
+            # No synthesis pass, target, optimization or RTL is changed.
+            original_synth=(flow/'scripts/synth.tcl').read_text()
+            marker='  log_cmd abc {*}$abc_args'
+            if original_synth.count(marker)!=1:raise ValueError('unsupported synth script checkpoint insertion point')
+            (scripts/'synth.tcl').unlink()
+            (scripts/'synth.tcl').write_text(original_synth.replace(marker,'  write_rtlil $::env(RESULTS_DIR)/1_1_pre_abc.rtlil\n'+marker))
+            manifest['observational_checkpoint']={'stage':'before_ABC','path':'results/asap7/arithmetic_probe/base/1_1_pre_abc.rtlil',
+                'source_script_sha256':sha256(flow/'scripts/synth.tcl'),'executed_script_sha256':sha256(scripts/'synth.tcl'),
+                'transformation':'one write_rtlil immediately before existing abc invocation; synthesis passes unchanged'}
         config = out/'config.mk'
         settings = {'PLATFORM':p['platform'], **p['make_overrides'],
                     'CORE_MARGIN':p['core_margin_um'],
@@ -218,7 +241,7 @@ def evaluate(args):
                              if args.io_delay_max_ps is not None else ''))
         command = ['make', '--no-print-directory', '-C', str(flow), '-f', str(flow/'Makefile'),
                    '-f', str(ASSETS/'environment.mk'), f'DESIGN_CONFIG={config}', f'WORK_HOME={out}',
-                   f'NUM_CORES={args.threads}',f'ABC_CLOCK_PERIOD_IN_PS={args.abc_target_ps}',
+                   f'NUM_CORES={args.threads}',f'YOSYS_MAX_THREADS={args.threads}',f'ABC_CLOCK_PERIOD_IN_PS={args.abc_target_ps}',
                    f'SCRIPTS_DIR={scripts}']
         # Platform config.mk may use unconditional assignments (ASAP7's
         # nominal-temperature metadata does); command-line overrides must win.
@@ -252,6 +275,8 @@ def evaluate(args):
         raw = dict(line.strip().split('=', 1) for line in (out/'effective-environment.txt').read_text().splitlines() if line.strip())
         manifest['raw_make_environment'] = raw
         effective, origins = resolve_environment(raw)
+        if effective.get('YOSYS_MAX_THREADS')!=str(args.threads):
+            raise ValueError('Yosys thread limit missing from effective Make environment')
         manifest['effective_environment'] = effective
         manifest['asset_resolution'] = origins
         validate_environment(effective,p)
@@ -261,6 +286,7 @@ def evaluate(args):
         files = {str(rtl), str(out/'input.sv'), str(ROOT/'experiments/arithmetic/step2_freeze_v4.json'),
                  str(POLICY), str(Path(__file__).with_name('processes.py')),
                  str(Path(__file__).with_name('budget.py')), str(scripts/'abc_speed.script')}
+        if completion_mode:files.add(str(scripts/'synth.tcl'))
         for key in ['TECH_LEF','SC_LEF','ADDER_MAP_FILE','LATCH_MAP_FILE','CLKGATE_MAP_FILE','RCX_RULES','LAYER_PARASITICS_FILE','MAKE_TRACKS','PDN_TCL','FASTROUTE_TCL','TAPCELL_TCL','ADDITIONAL_LEFS']:
             files.update(effective.get(key,'').split())
         files.add(str(Path(effective['PLATFORM_DIR'])/'setRC.tcl'))
@@ -279,6 +305,8 @@ def evaluate(args):
         manifest['orfs_commit'] = subprocess.check_output(['git','-C',str(orfs),'rev-parse','HEAD'],text=True).strip()
         manifest['orfs_status'] = subprocess.check_output(['git','-C',str(orfs),'status','--short'],text=True)
         manifest['mapping_context'] = {
+            'tool_thread_controls':manifest['tool_thread_controls'],
+            'executed_synth_script_sha256':sha256(scripts/'synth.tcl'),
             'abc_target_ps':float(effective['ABC_CLOCK_PERIOD_IN_PS']), 'sdc_period_ps':args.period_ps,
             'abc_mode':'speed', 'abc_script_sha256':sha256(scripts/'abc_speed.script'),
             'abc_script_template_sha256':sha256(ASSETS/'abc_speed_target.script'),
@@ -307,9 +335,13 @@ def evaluate(args):
                   ('grt','grt','5_1_grt.odb','5_1_grt.sdc',args.route_timeout_s),
                   ('final',str(logs/'6_report.log'),'6_final.odb','6_final.sdc',args.route_timeout_s)]
         if args.resume_synth_from:
-            from .capacity_retest import seed_checkpoint
-            manifest['checkpoint_reuse']=seed_checkpoint(args,out,results,command,effective)
-            stages=[row for row in stages if row[0]=='grt']
+            if relaxation:
+                from .clock_relaxation import seed_mapped
+                manifest['checkpoint_reuse']=seed_mapped(args,out,results,effective,command,manifest['tools'])
+            else:
+                from .capacity_retest import seed_checkpoint
+                manifest['checkpoint_reuse']=seed_checkpoint(args,out,results,command,effective)
+                stages=[row for row in stages if row[0]=='grt']
         for stage, target, db, sdc, timeout in stages:
             manifest['active_stage'] = stage
             run([target], stage, timeout, stage)
@@ -318,7 +350,7 @@ def evaluate(args):
             if stage == 'final' and not (results/'6_final.spef').exists():
                 raise ValueError('missing extracted SPEF; detailed-route metrics unavailable')
             manifest['sdc_contracts'][stage]=verify_sdc((results/sdc).read_text(),p,args.period_ps,
-                rtl_ports((out/'input.sv').read_text()),io_delay_max_ps=args.io_delay_max_ps)
+                selected_ports,io_delay_max_ps=args.io_delay_max_ps)
             write_json(out/'manifest.json',manifest)
             run(['run', f'RUN_SCRIPT={ASSETS}/snapshot.tcl', f'RUN_LOG_NAME_STEM=vulsim_{stage}',
                  f'VULSIM_EVAL_STAGE={stage}', f'VULSIM_EVAL_DB={db}', f'VULSIM_EVAL_SDC={sdc}'],
@@ -389,7 +421,7 @@ def main():
     parser.add_argument('--memory-limit-mib', type=int, default=8192, help='sampled aggregate process-group RSS cap')
     parser.add_argument('--stage', choices=['synth','grt','final'], default='final')
     parser.add_argument('--budget-purpose', choices=['prototype','characterization','search','final_evaluation','physical_recheck','repeat','retry'], default='prototype')
-    parser.add_argument('--resume-synth-from',type=Path,help='only a named checkpoint retest admission may reuse exact synth ODB/SDC')
+    parser.add_argument('--resume-synth-from',type=Path,help='named admission only: exact synth checkpoint, or mapped netlist with fresh SDC/ODB for clock relaxation')
     parser.add_argument('--synth-timeout-s', type=float, default=300)
     parser.add_argument('--route-timeout-s', type=float, default=1200)
     args = parser.parse_args()
@@ -402,13 +434,27 @@ def main():
     if args.io_delay_max_ps is not None and (not math.isfinite(args.io_delay_max_ps) or args.io_delay_max_ps < 0):
         parser.error('absolute I/O delay must be finite and nonnegative')
     route_limit=limits['floorplan_through_global_route_timeout_s'] if args.stage=='grt' else min(limits['floorplan_through_global_route_timeout_s'],limits['detailed_route_extraction_timeout_s'])
-    if args.resume_synth_from or args.route_timeout_s>route_limit:
+    recheck=(args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_capacity_recheck_only')
+    relaxation=(args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_clock_relaxation_only')
+    memory_limit=limits['memory_limit_MiB'];synth_limit=limits['synthesis_timeout_s']
+    if relaxation:
+        from .clock_relaxation import task
+        try:task(args)
+        except ValueError as error:parser.error(str(error))
+        memory_limit=32768;synth_limit=300;route_limit=14400
+    elif recheck:
+        from .bounded_recheck import limits as recheck_limits
+        try:recheck_limits(args)
+        except ValueError as error:parser.error(str(error))
+        resource_exception=json.loads(args.admission.read_text())
+        memory_limit=32768;synth_limit=int(resource_exception['synthesis_timeout_s']);route_limit=int(resource_exception['post_synthesis_through_grt_timeout_s'])
+    elif args.resume_synth_from or args.route_timeout_s>route_limit:
         from .capacity_retest import task
         try:task(args)
         except ValueError as error:parser.error(str(error))
         route_limit=3600
-    if (args.threads > limits['threads_per_tool'] or args.memory_limit_mib > limits['memory_limit_MiB']
-        or args.synth_timeout_s > limits['synthesis_timeout_s']
+    if (args.threads > limits['threads_per_tool'] or args.memory_limit_mib > memory_limit
+        or args.synth_timeout_s > synth_limit
         or args.route_timeout_s > route_limit):
         parser.error('requested resources exceed frozen per-job policy')
     if not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', args.top):

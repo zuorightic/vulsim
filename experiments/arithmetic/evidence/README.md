@@ -18,3 +18,9 @@
 已有冻结文件按原路径保留。旧目录新增的README只是导航，不重写当时索引或升级验收范围。后续新包使用[分层存储规则](../../arithmetic_dse/evidence_storage.md)：优先增量快照、按内容引用和压缩；索引与hash不能替代需要重算的实际内容。
 
 [step5_metric_scope_v1](step5_metric_scope_v1/README.md)是后加的时序口径澄清：解释整体setup与core_clk同钟最小周期，继承v2原报告和容量结论，无新增物理／STA。其后继冻结为`mul_templates_freeze_v3.json`。
+
+- **修订步骤六**：[step6_whole_graph_v1](step6_whole_graph_v1/README.md)为43案例整图软件/RTL验收，[step6_capacity_v1](step6_capacity_v1/README.md)保存两项失败容量探针和四项暂停控制点；不作为训练数据、目标标签或主矩阵。冻结为`whole_graph_freeze_v1.json`，继承步骤五v3。
+
+- **步骤六P1与容量后继**：`step6_review_v2`为实际位宽非零证明、原图回放及文档快照修订；`step6_capacity_v2`保留32GiB复测和Yosys线程约束纠正前后的独立准入/实跑。原v1目录保持原字节。默认whole_graph_evidence核验最新后继；物理完成与时序可行分别判断，数据不用于训练或主矩阵。
+
+步骤六当前最终验收为whole_graph_freeze_v2：软件／原生整图和P1安全证明、F2及UDR100ns有限grt容量均有实际证据，旧失败及收费全部保留。两个后继小包含源码增量、逐阶段报告／SDC、资源回执、独立图回放和便携正负例。原UDR两项synth控制仍not_run，不宣称两轴模型覆盖；模型和688主矩阵未完成。

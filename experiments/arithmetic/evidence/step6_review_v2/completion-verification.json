@@ -1,0 +1,186 @@
+{
+  "version": "step6-clock100ns-completion-verification-v1",
+  "status": "passed",
+  "manifest": "build/step6-relaxed-clock-20261102/run/manifest.json",
+  "manifest_sha256": "c64f66151c8068c5b0122292c201ff3cd2ce22de5d01e355d7f7ee5336ec93cb",
+  "evidence_files_checked": 90,
+  "source_snapshots_checked": 20,
+  "completed_at": "2026-11-02T08:09:16.264817+00:00",
+  "stages": [
+    {
+      "stage": "synth",
+      "sdc_sha256": "50982e3587d1c4e9af2a6cb219e68030d7251d4110344e575498d7e170c2ede3",
+      "sdc_contract": {
+        "version": "serialized-sdc-contract-v2",
+        "status": "passed",
+        "sdc_sha256": "50982e3587d1c4e9af2a6cb219e68030d7251d4110344e575498d7e170c2ede3",
+        "platform": "asap7",
+        "time_to_ps": 1.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 100000.0,
+          "io_clk": 100000.0
+        },
+        "clock_transition_native": 10.0,
+        "setup_uncertainty_native": 20.0,
+        "hold_uncertainty_native": 5.0,
+        "output_load_native": 3.898,
+        "input_ports_checked": 258,
+        "output_ports_checked": 257,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05
+      },
+      "metrics_recomputed": true,
+      "metrics": {
+        "cell_area_um2": 8276.6286,
+        "setup_worst_slack_ps": 23599.611328,
+        "hold_worst_slack_ps": -1.577139,
+        "minimum_clock_period_ps": 76400.39,
+        "timing_coverage_complete": true,
+        "hold_review_required": true
+      }
+    },
+    {
+      "stage": "grt",
+      "sdc_sha256": "7158860cf3fe132c38bc9adbf98cfc7975179b5f2d8df94b6b499935799a11dd",
+      "sdc_contract": {
+        "version": "serialized-sdc-contract-v2",
+        "status": "passed",
+        "sdc_sha256": "7158860cf3fe132c38bc9adbf98cfc7975179b5f2d8df94b6b499935799a11dd",
+        "platform": "asap7",
+        "time_to_ps": 1.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 100000.0,
+          "io_clk": 100000.0
+        },
+        "clock_transition_native": 10.0,
+        "setup_uncertainty_native": 20.0,
+        "hold_uncertainty_native": 5.0,
+        "output_load_native": 3.898,
+        "input_ports_checked": 258,
+        "output_ports_checked": 257,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05
+      },
+      "metrics_recomputed": true,
+      "metrics": {
+        "cell_area_um2": 8444.9547,
+        "setup_worst_slack_ps": 21883.324219,
+        "hold_worst_slack_ps": 0.670713,
+        "minimum_clock_period_ps": 78116.68,
+        "timing_coverage_complete": true,
+        "hold_review_required": true
+      }
+    }
+  ],
+  "commands": [
+    {
+      "log": "build/step6-relaxed-clock-20261102/run/environment.log",
+      "walltime_s": 0.16540385829284787,
+      "CPU_time_s": 0.15000000000000002
+    },
+    {
+      "log": "build/step6-relaxed-clock-20261102/run/synth.log",
+      "walltime_s": 2.772319534327835,
+      "CPU_time_s": 2.74
+    },
+    {
+      "log": "build/step6-relaxed-clock-20261102/run/synth-snapshot.log",
+      "walltime_s": 3.4713024678640068,
+      "CPU_time_s": 4.18
+    },
+    {
+      "log": "build/step6-relaxed-clock-20261102/run/grt.log",
+      "walltime_s": 1671.48678957019,
+      "CPU_time_s": 2008.5500000000002
+    },
+    {
+      "log": "build/step6-relaxed-clock-20261102/run/grt-snapshot.log",
+      "walltime_s": 9.554439730010927,
+      "CPU_time_s": 11.54
+    }
+  ],
+  "child_stage_times": [
+    {
+      "stage_log": "1_synth.log",
+      "walltime_s": 2.15,
+      "CPU_time_s": 2.15,
+      "precision": "ORFS child GNU-time log rounding; not additional charges"
+    },
+    {
+      "stage_log": "2_1_floorplan.log",
+      "walltime_s": 7.15,
+      "CPU_time_s": 7.91,
+      "precision": "ORFS child GNU-time log rounding; not additional charges"
+    },
+    {
+      "stage_log": "2_2_floorplan_macro.log",
+      "walltime_s": 1.33,
+      "CPU_time_s": 1.32,
+      "precision": "ORFS child GNU-time log rounding; not additional charges"
+    },
+    {
+      "stage_log": "2_3_floorplan_tapcell.log",
+      "walltime_s": 1.27,
+      "CPU_time_s": 1.27,
+      "precision": "ORFS child GNU-time log rounding; not additional charges"
+    },
+    {
+      "stage_log": "2_4_floorplan_pdn.log",
+      "walltime_s": 1.79,
+      "CPU_time_s": 1.79,
+      "precision": "ORFS child GNU-time log rounding; not additional charges"
+    },
+    {
+      "stage_log": "3_1_place_gp_skip_io.log",
+      "walltime_s": 14.49,
+      "CPU_time_s": 19.080000000000002,
+      "precision": "ORFS child GNU-time log rounding; not additional charges"
+    },
+    {
+      "stage_log": "3_2_place_iop.log",
+      "walltime_s": 1.36,
+      "CPU_time_s": 1.35,
+      "precision": "ORFS child GNU-time log rounding; not additional charges"
+    },
+    {
+      "stage_log": "3_3_place_gp.log",
+      "walltime_s": 77.63,
+      "CPU_time_s": 98.36,
+      "precision": "ORFS child GNU-time log rounding; not additional charges"
+    },
+    {
+      "stage_log": "3_4_place_resized.log",
+      "walltime_s": 21.88,
+      "CPU_time_s": 25.470000000000002,
+      "precision": "ORFS child GNU-time log rounding; not additional charges"
+    },
+    {
+      "stage_log": "3_5_place_dp.log",
+      "walltime_s": 29.95,
+      "CPU_time_s": 33.1,
+      "precision": "ORFS child GNU-time log rounding; not additional charges"
+    },
+    {
+      "stage_log": "4_1_cts.log",
+      "walltime_s": 1171.5,
+      "CPU_time_s": 1194.84,
+      "precision": "ORFS child GNU-time log rounding; not additional charges"
+    },
+    {
+      "stage_log": "5_1_grt.log",
+      "walltime_s": 337.99,
+      "CPU_time_s": 618.72,
+      "precision": "ORFS child GNU-time log rounding; not additional charges"
+    }
+  ],
+  "physical_chain": {
+    "walltime_s": 1671.48678957019,
+    "CPU_time_s": 2008.5500000000002,
+    "sampled_process_tree_peak_rss_KiB": 1690392,
+    "sampled_process_tree_peak_threads": 29,
+    "thread_scope": "requested OpenROAD workers2; total sampled threads29 includes other pools/wrappers; not a hard OS-thread cap"
+  },
+  "scope": "grt estimated parasitics TT only; no final/SPEF/DRC/multicorner claim; mapping inherited"
+}

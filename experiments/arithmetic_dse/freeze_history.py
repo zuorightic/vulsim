@@ -8,10 +8,38 @@ import json
 import importlib.util
 from pathlib import Path
 
+# Plans and navigation are editable narratives, not compiler/model inputs.
+# Their frozen bytes remain protected, but current prose need not be identical
+# to those bytes for historical numerical evidence to remain reproducible.
+MUTABLE_DOCUMENTATION={
+    'mission/lxy-plan-fix.md','mission/README.md',
+    'experiments/arithmetic/README.md','experiments/arithmetic/evidence/README.md',
+}
+
 def source_location(root, parent, relative, expected):
     root=Path(root)
     digest=lambda path:hashlib.sha256(path.read_bytes()).hexdigest()
     if (root/relative).is_file() and digest(root/relative)==expected:return root/relative
+    if relative in MUTABLE_DOCUMENTATION:
+        owner=json.loads((root/parent).read_text())
+        stored=owner.get('source_snapshots',{}).get(relative)
+        if stored and (root/stored).is_file() and digest(root/stored)==expected:return root/stored
+    review=root/'experiments/arithmetic/whole_graph_freeze_v2.json'
+    if review.exists():
+        current=json.loads(review.read_text());active=root/relative
+        bound=relative in MUTABLE_DOCUMENTATION or (active.is_file() and current['files_sha256'].get(relative)==digest(active))
+        if current['historical_freezes'].get(parent)==digest(root/parent) and bound:
+            for source_root in current['historical_source_roots']:
+                snapshot=root/source_root/relative
+                if snapshot.is_file() and digest(snapshot)==expected:return snapshot
+    whole=root/'experiments/arithmetic/whole_graph_freeze_v1.json'
+    if whole.exists():
+        current=json.loads(whole.read_text());active=root/relative
+        bound=active.is_file() and current['files_sha256'].get(relative)==digest(active)
+        if current['historical_freezes'].get(parent)==digest(root/parent) and bound:
+            for source_root in current['historical_source_roots']:
+                snapshot=root/source_root/relative
+                if snapshot.is_file() and digest(snapshot)==expected:return snapshot
     metric_note=root/'experiments/arithmetic/mul_templates_freeze_v3.json'
     if metric_note.exists():
         current=json.loads(metric_note.read_text());active=root/relative

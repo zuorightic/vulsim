@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "reports": 176,
+  "nodes": 12127,
+  "regions": 298,
+  "candidates": 312,
+  "block_regions": 45,
+  "safe_Div_Mod": 186,
+  "shared_divrem": [
+    {
+      "W": 8,
+      "actual_primitive_counts": {
+        "Div": 1,
+        "Mod": 0,
+        "Mul": 1,
+        "Sub": 1
+      },
+      "comb": 25,
+      "selected_candidate": "candidate/original",
+      "scope": "explicit quotient reuse; Div+Mul+Sub costs charged once per real node; not fused DivRem"
+    },
+    {
+      "W": 16,
+      "actual_primitive_counts": {
+        "Div": 1,
+        "Mod": 0,
+        "Mul": 1,
+        "Sub": 1
+      },
+      "comb": 45,
+      "selected_candidate": "candidate/original",
+      "scope": "explicit quotient reuse; Div+Mul+Sub costs charged once per real node; not fused DivRem"
+    },
+    {
+      "W": 32,
+      "actual_primitive_counts": {
+        "Div": 1,
+        "Mod": 0,
+        "Mul": 1,
+        "Sub": 1
+      },
+      "comb": 85,
+      "selected_candidate": "candidate/original",
+      "scope": "explicit quotient reuse; Div+Mul+Sub costs charged once per real node; not fused DivRem"
+    },
+    {
+      "W": 64,
+      "actual_primitive_counts": {
+        "Div": 1,
+        "Mod": 0,
+        "Mul": 1,
+        "Sub": 1
+      },
+      "comb": 165,
+      "selected_candidate": "candidate/original",
+      "scope": "explicit quotient reuse; Div+Mul+Sub costs charged once per real node; not fused DivRem"
+    },
+    {
+      "W": 128,
+      "actual_primitive_counts": {
+        "Div": 1,
+        "Mod": 0,
+        "Mul": 1,
+        "Sub": 1
+      },
+      "comb": 325,
+      "selected_candidate": "candidate/original",
+      "scope": "explicit quotient reuse; Div+Mul+Sub costs charged once per real node; not fused DivRem"
+    }
+  ],
+  "trace_RTL_logic_and_schedule_unchanged": true,
+  "raw_RTL_debug_comments_changed_in_shared_helper_diagnostics_only": 5,
+  "comment_change_reason": "one static_assert line added to helper, source-location comments and debug-derived candidate shape hashes shift; typed graph, schedule, selection cost/moves and RTL logic identical",
+  "formal_L_unchanged": true,
+  "D_inference": "not implemented; fail-closed step7",
+  "physical_calls": 0
+}

@@ -1,0 +1,56 @@
+{
+  "version": "step6-whole-graph-cycle-v1",
+  "status": "passed",
+  "seed": 20261031,
+  "cycles": 1222,
+  "implementations": 6,
+  "formal_cases": 5,
+  "A_B_C_formal_implementations": 5,
+  "diagnostic_implementations": 1,
+  "exhaustive_8bit_pairs": 0,
+  "counts": {
+    "valid": 7332,
+    "data": 9872,
+    "reset": 66,
+    "bubble_hold": 3504
+  },
+  "per_implementation": {
+    "UDR_8_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "UDR_128_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "MIX_128_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "F2_C": {
+      "valid": 1222,
+      "data": 1790,
+      "reset": 12,
+      "bubble_hold": 642
+    },
+    "H_F1_C": {
+      "valid": 1222,
+      "data": 1796,
+      "reset": 12,
+      "bubble_hold": 636
+    },
+    "single_mod_64_C": {
+      "valid": 1222,
+      "data": 898,
+      "reset": 6,
+      "bubble_hold": 318
+    }
+  },
+  "scope": "actual RTL; external output capture counts toward L; continuous inputs, bubbles, in-flight reset, flush; shared diagnostic is quotient-reuse DAG, not a fused primitive"
+}

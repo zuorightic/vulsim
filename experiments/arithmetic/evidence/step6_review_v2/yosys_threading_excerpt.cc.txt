@@ -1,0 +1,56 @@
+#include "kernel/yosys_common.h"
+#include "kernel/threading.h"
+
+YOSYS_NAMESPACE_BEGIN
+
+static int init_max_threads()
+{
+	const char *v = getenv("YOSYS_MAX_THREADS");
+	if (v == nullptr)
+		return INT32_MAX;
+	return atoi(v);
+}
+
+static int get_max_threads()
+{
+	static int max_threads = init_max_threads();
+	return max_threads;
+}
+
+static int init_work_units_per_thread_override()
+{
+	const char *v = getenv("YOSYS_WORK_UNITS_PER_THREAD");
+	if (v == nullptr)
+		return 0;
+	return atoi(v);
+}
+
+static int get_work_units_per_thread_override()
+{
+	static int work_units_per_thread = init_work_units_per_thread_override();
+	return work_units_per_thread;
+}
+
+void DeferredLogs::flush()
+{
+	for (auto &m : logs)
+		if (m.error)
+			YOSYS_NAMESPACE_PREFIX log_error("%s", m.text.c_str());
+		else
+			YOSYS_NAMESPACE_PREFIX log("%s", m.text.c_str());
+}
+
+int ThreadPool::pool_size(int reserved_cores, int max_worker_threads)
+{
+#ifdef YOSYS_ENABLE_THREADS
+	int available_threads = std::min<int>(std::thread::hardware_concurrency(), get_max_threads());
+	int num_threads = std::min(available_threads - reserved_cores, max_worker_threads);
+	return std::max(0, num_threads);
+#else
+	(void)reserved_cores;
+	(void)max_worker_threads;
+	(void)get_max_threads();
+	return 0;
+#endif
+}
+

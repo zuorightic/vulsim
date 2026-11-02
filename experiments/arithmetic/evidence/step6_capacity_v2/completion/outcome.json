@@ -1,0 +1,90 @@
+{
+  "version": "step6-capacity-outcome-v2",
+  "admission": "/home/zyrv/vulsim/build/step6-review-20261102/completion-admission-v4.json",
+  "runs": [
+    {
+      "task_id": "asap7-step6-udr_unsigned_128-capacity-complete-v4",
+      "status": "failed",
+      "driver_exit_code": 1,
+      "failure_code": "timeout",
+      "failure_stage": "grt",
+      "failure_reason": "grt: timeout",
+      "metrics": [
+        {
+          "stage": "synth",
+          "target_period_ps": 1500.0,
+          "cell_area_um2": 8276.6286,
+          "functional_cell_area_um2": 8276.6286,
+          "excluded_filler_area_um2": 0,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 150.174,
+          "sequential_cells": 515,
+          "physical_only_area_um2": 0,
+          "setup_worst_slack_ps": -74900.382812,
+          "hold_worst_slack_ps": -1.577139,
+          "setup_tns_ps": -13514918.0,
+          "hold_tns_ps": -1.577139,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 76400.38,
+          "sta_feasibility": false,
+          "measured_feasibility": null,
+          "feasibility_scope": "synthesis_STA_only",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": false,
+          "hold_review_margin_ps": 5,
+          "hold_review_required": true,
+          "hold_margin_status": "negative",
+          "parasitics": "none",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step6-review-20261102/physical-complete/asap7-step6-udr_unsigned_128-capacity-complete-v4/reports/asap7/arithmetic_probe/base/vulsim_synth",
+          "target_platform": "asap7",
+          "platform_profile_sha256": "a29e056328a495af3f5815e3c56f4e6838eafd4b3f4f7844cc81d82ef99dd3df",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ps",
+              "to_ps": 1.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1fF",
+              "to_fF": 1.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": -74900.382812,
+            "hold_worst_slack_ps": -1.577139,
+            "setup_tns_ps": -13514918.0,
+            "hold_tns_ps": -1.577139,
+            "minimum_clock_period_ps": 76400.38
+          },
+          "abc_target_ps": 1500.0,
+          "mapping_context_sha256": "434529519cea3654c0d91a56fe811a6d80f4d17c479b303a22fea29b14f2404f",
+          "target_dependent_measurement": true,
+          "mapped_netlist_sha256": "e34d1c48374284004233cd139df33642ec775ca248a2b6fc6e5b0b373c06ad9f",
+          "mapped_netlist_hash_rule": "Yosys_Verilog_remove_banner_src_blank_lines_v1",
+          "comparison_identity_sha256": "80dc9f9b99b119f8f4eaf6786863bdbe0ab342369968f610fc7f8c6c2672ed9f",
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.00500001,
+            "absolute_difference_um2": 0.001399999999193824
+          },
+          "orfs_stdcell_area_um2": 8276.63
+        }
+      ],
+      "manifest": "/home/zyrv/vulsim/build/step6-review-20261102/physical-complete/asap7-step6-udr_unsigned_128-capacity-complete-v4/manifest.json"
+    },
+    {
+      "task_id": "asap7-step6-udr_unsigned_128-abc0750-complete-v4",
+      "status": "not_run",
+      "physical_calls": 0,
+      "reason": "baseline did not complete in admitted resource envelope; controls paused"
+    },
+    {
+      "task_id": "asap7-step6-udr_unsigned_128-sdc3000-complete-v4",
+      "status": "not_run",
+      "physical_calls": 0,
+      "reason": "baseline did not complete in admitted resource envelope; controls paused"
+    }
+  ],
+  "scope": "independent bounded rechecks; preserved original failures; no training/main matrix"
+}

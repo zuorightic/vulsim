@@ -1,0 +1,112 @@
+{
+  "status": "passed",
+  "scope": "step6 software and bounded failed-capacity evidence; no full physical or D acceptance",
+  "graphs": {
+    "reports": 176,
+    "nodes": 12127,
+    "regions": 298,
+    "candidates": 312,
+    "block_regions": 45,
+    "safe_Div_Mod": 186,
+    "public_reports_recomputed": 43,
+    "representative_reports_recomputed": 24
+  },
+  "cycles": {
+    "native": {
+      "version": "step6-whole-graph-cycle-v1",
+      "status": "passed",
+      "seed": 20261031,
+      "cycles": 1222,
+      "implementations": 176,
+      "formal_cases": 43,
+      "A_B_C_formal_implementations": 129,
+      "diagnostic_implementations": 47,
+      "exhaustive_8bit_pairs": 0,
+      "counts": {
+        "valid": 215072,
+        "data": 256005,
+        "reset": 1710,
+        "bubble_hold": 90555
+      }
+    },
+    "exhaustive8": {
+      "version": "step6-whole-graph-cycle-v1",
+      "status": "passed",
+      "seed": 20261031,
+      "cycles": 65542,
+      "implementations": 6,
+      "formal_cases": 1,
+      "A_B_C_formal_implementations": 3,
+      "diagnostic_implementations": 3,
+      "exhaustive_8bit_pairs": 65536,
+      "counts": {
+        "valid": 393252,
+        "data": 655360,
+        "reset": 10,
+        "bubble_hold": 50
+      }
+    },
+    "circt": {
+      "version": "step6-whole-graph-cycle-v1",
+      "status": "passed",
+      "seed": 20261031,
+      "cycles": 1222,
+      "implementations": 6,
+      "formal_cases": 5,
+      "A_B_C_formal_implementations": 5,
+      "diagnostic_implementations": 1,
+      "exhaustive_8bit_pairs": 0,
+      "counts": {
+        "valid": 7332,
+        "data": 9872,
+        "reset": 66,
+        "bubble_hold": 3504
+      }
+    },
+    "public": {
+      "status": "passed",
+      "public_VUL_cases": 43,
+      "new_physical_calls": 0
+    }
+  },
+  "capacity": {
+    "attempted_baselines": 2,
+    "successful_grt": 0,
+    "paused_synth_controls": 4,
+    "UDR128": "synth memory_limit at 8192 MiB; this implementation only",
+    "F2": "synth command completed; original stage rejected by interface reader; static SDC now passes; grt unmeasured",
+    "training_or_main_matrix_released": false
+  },
+  "new_usage": {
+    "synth": 2,
+    "grt": 0,
+    "final": 0,
+    "support_calls": 159,
+    "walltime_s": 1084.9733452331275,
+    "CPU_time_s": 1767.39,
+    "pending": 0
+  },
+  "cumulative_usage": {
+    "synth": 56,
+    "grt": 32,
+    "final": 14,
+    "support_calls": 817,
+    "walltime_s": 10056.602469389094,
+    "CPU_time_s": 15816.56,
+    "pending": 0
+  },
+  "parent_status": "passed",
+  "external_artifacts": "actual local bytes verified; remote retention unconfirmed",
+  "requires_compiler_or_EDA": false,
+  "previous_chapters_and_closed_step_records_preserved": true,
+  "protected_old_payload_files": 6747,
+  "final_backend_regression_tests": 69,
+  "physical_calls": {
+    "synth": 2,
+    "grt": 0,
+    "final": 0
+  },
+  "full_step6_acceptance": false,
+  "software_stage_accepted": true,
+  "commits_created": false
+}

@@ -15,6 +15,20 @@ from experiments.arithmetic_dse.sdc import verify_sdc,rtl_ports
 
 
 class SdcContracts(unittest.TestCase):
+    def test_explicit_top_excludes_child_ports_and_reads_comma_declarations(self):
+        child='module Child(input logic clk,rstn,iv,output logic ov); endmodule\n'
+        top='module Top(input logic clk,rstn,iv,input logic [3:0] a,b,output logic [1:0] y,z); Child core(); endmodule'
+        ports=rtl_ports(child+top,'Top')
+        self.assertEqual(ports,{'design':'Top','inputs':sorted(['rstn','iv']+[f'{p}[{i}]' for p in ('a','b') for i in range(4)]),'outputs':sorted(f'{p}[{i}]' for p in ('y','z') for i in range(2))})
+        self.assertNotIn('ov',ports['outputs'])
+        self.assertEqual(rtl_ports('// input logic fake\n'+top+'/* output logic fake */','Top'),ports)
+        for text,name in ((child+top,None),(child+top,'Missing'),(top+top,'Top'),
+                          ('module Top(input logic clk,rstn,clk); endmodule','Top'),
+                          ('module Top(clk,rstn); input clk,rstn; endmodule','Top'),
+                          ('module Top(input logic clk,rstn,input logic [W-1:0] a); endmodule','Top'),
+                          ('module Top(input logic clk,rstn,inout logic a); endmodule','Top')):
+            with self.subTest(text=text,name=name),self.assertRaises(ValueError):rtl_ports(text,name)
+
     def actual(self):
         run=ROOT/'experiments/arithmetic/evidence/step3_platforms_v2/runs/nangate45-mul-sdcfix'
         return (gzip.decompress((run/'1_synth.sdc.gz').read_bytes()).decode(),

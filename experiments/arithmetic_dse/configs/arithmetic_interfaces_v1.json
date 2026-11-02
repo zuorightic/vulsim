@@ -47,7 +47,8 @@
     "schedule_latency_lower_bound": "scheduling; requires_verifiable_stage_lower_bound",
     "schedule_no_placement_found": "scheduling; no_unsat_proof",
     "schedule_search_limit": "scheduling; preserve_attempts_limits_usage",
-    "schedule_validation_error": "schedule_or_materialization_defect"
+    "schedule_validation_error": "schedule_or_materialization_defect",
+    "unsafe_divisor": "graph_validation; nonzero proof or explicit safe-divisor wrapper required before scheduling"
   },
   "new_template_invariant": "lower_to_current_version_and_selected_path_supported_op_kind_opcode_types_shapes_before_consumer_handoff",
   "numerical_format_extensions": "unregistered_or_unknown_fields_rejected; no_implicit_unsigned_fallback",

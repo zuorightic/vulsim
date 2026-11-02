@@ -1,0 +1,54 @@
+{
+  "version": "step6-capacity-outcome-v1",
+  "runs": [
+    {
+      "task_id": "asap7-step6-udr_unsigned_128-capacity-v1",
+      "status": "failed",
+      "failure_stage": "synth",
+      "failure_code": "memory_limit",
+      "failure_reason": "synth: memory_limit",
+      "actual_synth_command_exit": -15,
+      "actual_walltime_s": 48.39718110207468,
+      "peak_tree_RSS_KiB": 8569688,
+      "CPU_settlement": "full_reservation_missing_CPU_evidence",
+      "stored_rtl_sha256": "3851e5fed145fb2154e376d311354a40fc9a825895cc2619d39ba81b7421130c"
+    },
+    {
+      "task_id": "asap7-step6-udr_unsigned_128-abc0750-v1",
+      "status": "not_run",
+      "physical_calls": 0,
+      "reason": "baseline capacity task did not complete; dependent sensitivity domain paused"
+    },
+    {
+      "task_id": "asap7-step6-udr_unsigned_128-sdc3000-v1",
+      "status": "not_run",
+      "physical_calls": 0,
+      "reason": "baseline capacity task did not complete; dependent sensitivity domain paused"
+    },
+    {
+      "task_id": "asap7-step6-fp32_serial-capacity-v1",
+      "status": "failed",
+      "failure_stage": "synth",
+      "failure_code": "stage_evidence_rejected",
+      "failure_reason": "duplicate RTL port",
+      "actual_synth_command_exit": 0,
+      "actual_walltime_s": 63.877963735954836,
+      "peak_tree_RSS_KiB": 268820,
+      "CPU_settlement": "GNU_time_leaf_command",
+      "stored_rtl_sha256": "dd693a01b69efacae7bd7171137e6f69a227fbc1f99f46caf2e0c93c971106ff"
+    },
+    {
+      "task_id": "asap7-step6-fp32_serial-abc0750-v1",
+      "status": "not_run",
+      "physical_calls": 0,
+      "reason": "baseline capacity task did not complete; dependent sensitivity domain paused"
+    },
+    {
+      "task_id": "asap7-step6-fp32_serial-sdc3000-v1",
+      "status": "not_run",
+      "physical_calls": 0,
+      "reason": "baseline capacity task did not complete; dependent sensitivity domain paused"
+    }
+  ],
+  "scope": "two attempted baselines, four paused controls; no training labels or main matrix records"
+}

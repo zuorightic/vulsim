@@ -1,0 +1,29 @@
+{
+  "version": "step6-capacity-outcome-v2",
+  "admission": "/home/zyrv/vulsim/build/step6-review-20261102/thread-admission-v3.json",
+  "runs": [
+    {
+      "task_id": "asap7-step6-udr_unsigned_128-capacity-threads-v3",
+      "status": "failed",
+      "driver_exit_code": 1,
+      "failure_code": "timeout",
+      "failure_stage": "synth",
+      "failure_reason": "synth: timeout",
+      "metrics": [],
+      "manifest": "/home/zyrv/vulsim/build/step6-review-20261102/physical-threads/asap7-step6-udr_unsigned_128-capacity-threads-v3/manifest.json"
+    },
+    {
+      "task_id": "asap7-step6-udr_unsigned_128-abc0750-threads-v3",
+      "status": "not_run",
+      "physical_calls": 0,
+      "reason": "baseline did not complete in admitted resource envelope; controls paused"
+    },
+    {
+      "task_id": "asap7-step6-udr_unsigned_128-sdc3000-threads-v3",
+      "status": "not_run",
+      "physical_calls": 0,
+      "reason": "baseline did not complete in admitted resource envelope; controls paused"
+    }
+  ],
+  "scope": "independent bounded rechecks; preserved original failures; no training/main matrix"
+}

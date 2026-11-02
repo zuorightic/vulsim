@@ -97,19 +97,42 @@ def collection(value,kind):
     return atom(w[1])
 
 
-def rtl_ports(text):
+def rtl_ports(text,top=None):
+    """Read the literal ANSI interface of one explicitly selected RTL module.
+
+    This is a restricted interface reader, not a Verilog elaborator. Child
+    modules must not contribute ports to the selected top's SDC coverage.
+    Parameterized, non-ANSI and non-literal interfaces are rejected.
+    """
+    text=re.sub(r'/\*.*?\*/|//[^\n]*','',text,flags=re.S)
+    modules=re.findall(r'\bmodule\s+([A-Za-z_][A-Za-z0-9_]*)\s*\((.*?)\)\s*;(.*?)\bendmodule\b',text,re.S)
+    declared=re.findall(r'\bmodule\s+([A-Za-z_][A-Za-z0-9_]*)',text)
+    if len(declared)!=len(set(declared)) or len(modules)!=len(declared):
+        raise ValueError('duplicate or unsupported RTL module declaration')
+    if top is None:
+        if len(modules)!=1:raise ValueError('multiple RTL modules require an explicit top')
+        top=modules[0][0]
+    selected=[m for m in modules if m[0]==top]
+    if len(selected)!=1:raise ValueError('missing or ambiguous RTL top')
+    _,header,body=selected[0]
+    if re.search(r'\b(input|output|inout)\b',body):raise ValueError('unsupported non-ANSI RTL interface')
     ports={}
-    for direction,high,low,name in re.findall(
-            r'\b(input|output)\s+(?:wire\s+|logic\s+|reg\s+)?(?:\[(\d+)\s*:\s*(\d+)\]\s*)?(\\?[^\s,;()]+)',text):
+    direction=None;high=low=None
+    for declaration in header.split(','):
+        match=re.fullmatch(r'\s*(?:(input|output)\s+(?:(?:wire|logic|reg)\s+)?(?:\[(\d+)\s*:\s*(\d+)\]\s*)?)?(\\[^\s]+\s+|[A-Za-z_][A-Za-z0-9_$]*)\s*',declaration)
+        if not match:raise ValueError('unsupported RTL port declaration')
+        new_direction,new_high,new_low,name=match.groups()
+        if new_direction:direction,high,low=new_direction,new_high,new_low
+        if direction is None:raise ValueError('RTL port missing direction')
+        if high is not None and int(high)<int(low):raise ValueError('unsupported ascending RTL range')
+        name=name.strip()
         name=name.lstrip('\\')
         names=([name] if not high else [f'{name}[{i}]' for i in range(int(low),int(high)+1)])
         for bit in names:
             if bit in ports:raise ValueError('duplicate RTL port')
             ports[bit]=direction
     if ports.get('clk')!='input' or ports.get('rstn')!='input':raise ValueError('probe ports missing clk/rstn')
-    modules=re.findall(r'\bmodule\s+([A-Za-z_][A-Za-z0-9_]*)\s*\(',text)
-    if len(modules)!=1:raise ValueError('probe RTL must declare exactly one top module')
-    return {'design':modules[0],'inputs':sorted(n for n,d in ports.items() if d=='input' and n!='clk'),
+    return {'design':top,'inputs':sorted(n for n,d in ports.items() if d=='input' and n!='clk'),
             'outputs':sorted(n for n,d in ports.items() if d=='output')}
 
 

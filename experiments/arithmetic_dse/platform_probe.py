@@ -81,15 +81,27 @@ def revise_admission(parent_path,destination,revision_id,replacements,reason,*,a
 def verify_admission(args,p,rtl,ledger):
     path=args.admission.resolve()
     frozen=json.loads(path.read_text())
+    if frozen.get('purpose')=='arithmetic_clock_relaxation_only':
+        from .clock_relaxation import verify_admission as verify_relaxation
+        return verify_relaxation(args,p,rtl,ledger)
+    if frozen.get('purpose')=='arithmetic_capacity_recheck_only':
+        from .bounded_recheck import verify_admission as verify_recheck
+        return verify_recheck(args,p,rtl,ledger)
     if frozen.get('purpose')=='mul_capacity_retest_only':
         from .capacity_retest import verify_admission as verify_retest
         return verify_retest(args,p,rtl,ledger)
-    if (frozen['id']!=args.admission_id or frozen['purpose'] not in ('platform_connection_only','mul_capacity_only')
+    if (frozen['id']!=args.admission_id or frozen['purpose'] not in ('platform_connection_only','mul_capacity_only','arithmetic_capacity_only')
             or frozen['policy_sha256']!=digest(POLICY)):
         raise ValueError('admission identity/policy mismatch')
     tasks=[t for t in frozen['tasks'] if t['id']==args.task_id]
     if len(tasks)!=1:raise ValueError('task not in frozen admission list')
     task=tasks[0]
+    if frozen['purpose']=='arithmetic_capacity_only':
+        if (frozen['call_caps']!={'synth':6,'grt':2,'final':0} or len(frozen['tasks'])!=6
+                or task['kernel'] not in ('udr_unsigned_128','fp32_serial') or args.platform!='asap7'
+                or args.stage not in ('synth','grt') or args.threads!=2 or args.memory_limit_mib!=8192
+                or args.synth_timeout_s!=300 or args.route_timeout_s!=1200):
+            raise ValueError('step6 only admits the two named capacity tasks and four named synth sensitivity controls')
     if task.get('constraints_sha256'):
         from .sdc import VERSION
         if (task['constraints_sha256']!=digest(Path(__file__).with_suffix('').parent/'backend/constraints.sdc')

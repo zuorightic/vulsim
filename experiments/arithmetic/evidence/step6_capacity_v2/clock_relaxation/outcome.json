@@ -1,0 +1,136 @@
+{
+  "version": "step6-clock-relaxation-outcome-v1",
+  "runs": [
+    {
+      "task_id": "asap7-step6-udr_unsigned_128-sdc100ns-v5",
+      "version": "clock100ns-outcome-v1",
+      "driver_exit_code": 0,
+      "admission": "/home/zyrv/vulsim/build/step6-relaxed-clock-20261102/admission-v5.json",
+      "admission_sha256": "4d27cb3da7edf909f9102820996cc3878edb3eb6812ddd084339fdba0ea0abcc",
+      "manifest": "/home/zyrv/vulsim/build/step6-relaxed-clock-20261102/run/manifest.json",
+      "status": "completed",
+      "failure_stage": null,
+      "failure_reason": null,
+      "metrics": [
+        {
+          "stage": "synth",
+          "target_period_ps": 100000.0,
+          "cell_area_um2": 8276.6286,
+          "functional_cell_area_um2": 8276.6286,
+          "excluded_filler_area_um2": 0,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 150.174,
+          "sequential_cells": 515,
+          "physical_only_area_um2": 0,
+          "setup_worst_slack_ps": 23599.611328,
+          "hold_worst_slack_ps": -1.577139,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": -1.577139,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 76400.39,
+          "sta_feasibility": false,
+          "measured_feasibility": null,
+          "feasibility_scope": "synthesis_STA_only",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": false,
+          "hold_review_margin_ps": 5,
+          "hold_review_required": true,
+          "hold_margin_status": "negative",
+          "parasitics": "none",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step6-relaxed-clock-20261102/run/reports/asap7/arithmetic_probe/base/vulsim_synth",
+          "target_platform": "asap7",
+          "platform_profile_sha256": "a29e056328a495af3f5815e3c56f4e6838eafd4b3f4f7844cc81d82ef99dd3df",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ps",
+              "to_ps": 1.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1fF",
+              "to_fF": 1.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": 23599.611328,
+            "hold_worst_slack_ps": -1.577139,
+            "setup_tns_ps": 0.0,
+            "hold_tns_ps": -1.577139,
+            "minimum_clock_period_ps": 76400.39
+          },
+          "abc_target_ps": 1500.0,
+          "mapping_context_sha256": "4553544eb2b95861039f4e24dadab0fe142237d4f73459a15cb90d06d5a67235",
+          "target_dependent_measurement": true,
+          "mapped_netlist_sha256": "e34d1c48374284004233cd139df33642ec775ca248a2b6fc6e5b0b373c06ad9f",
+          "mapped_netlist_hash_rule": "Yosys_Verilog_remove_banner_src_blank_lines_v1",
+          "comparison_identity_sha256": "21003bbb7599c9a0dc8a41b8164d518720405a56d1da027fa2b6e35cf0a0213c",
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.00500001,
+            "absolute_difference_um2": 0.001399999999193824
+          },
+          "orfs_stdcell_area_um2": 8276.63
+        },
+        {
+          "stage": "grt",
+          "target_period_ps": 100000.0,
+          "cell_area_um2": 8444.9547,
+          "functional_cell_area_um2": 8374.99986,
+          "excluded_filler_area_um2": 0,
+          "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+          "sequential_area_um2": 153.1629,
+          "sequential_cells": 515,
+          "physical_only_area_um2": 69.95483999999999,
+          "setup_worst_slack_ps": 21883.324219,
+          "hold_worst_slack_ps": 0.670713,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": 0.0,
+          "timing_coverage_complete": true,
+          "timing_coverage_diagnostics": "",
+          "minimum_clock_period_ps": 78116.68,
+          "sta_feasibility": true,
+          "measured_feasibility": true,
+          "feasibility_scope": "TT_setup_only",
+          "multi_corner_signoff": false,
+          "hold_feasible_at_TT": true,
+          "hold_review_margin_ps": 5,
+          "hold_review_required": true,
+          "hold_margin_status": "below_review_band",
+          "parasitics": "global_route_estimate",
+          "raw_reports_prefix": "/home/zyrv/vulsim/build/step6-relaxed-clock-20261102/run/reports/asap7/arithmetic_probe/base/vulsim_grt",
+          "target_platform": "asap7",
+          "platform_profile_sha256": "a29e056328a495af3f5815e3c56f4e6838eafd4b3f4f7844cc81d82ef99dd3df",
+          "raw_report_units": {
+            "time": {
+              "raw_unit": "time 1ps",
+              "to_ps": 1.0
+            },
+            "capacitance": {
+              "raw_unit": "capacitance 1fF",
+              "to_fF": 1.0
+            }
+          },
+          "unit_conversion": "Liberty_and_report_units_verified",
+          "raw_timing_values": {
+            "setup_worst_slack_ps": 21883.324219,
+            "hold_worst_slack_ps": 0.670713,
+            "setup_tns_ps": 0.0,
+            "hold_tns_ps": 0.0,
+            "minimum_clock_period_ps": 78116.68
+          },
+          "abc_target_ps": 1500.0,
+          "mapping_context_sha256": "4553544eb2b95861039f4e24dadab0fe142237d4f73459a15cb90d06d5a67235",
+          "target_dependent_measurement": true,
+          "orfs_area_crosscheck": {
+            "native_json_significant_digits": 6,
+            "rounding_tolerance_um2": 0.00500001,
+            "absolute_difference_um2": 0.0046999999995023245
+          },
+          "orfs_stdcell_area_um2": 8444.95
+        }
+      ],
+      "scope": "singleUDR128; no controls/final/new structure/platform; original1500ps outcome and costs retained"
+    }
+  ]
+}

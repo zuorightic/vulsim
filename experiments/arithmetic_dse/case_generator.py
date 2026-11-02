@@ -1,7 +1,8 @@
 """Generate revised case definitions and real VUL combination kernels.
 
 The source DAG is a versioned experiment representation, not compiler BEIR.
-It retains semantic FP calls; compiler lowering/grouping remains a later step.
+It retains semantic FP calls; whole_graph supplies companion fixed-L fixtures.
+Actual compiler BEIR and region reports are a separate representation.
 """
 import argparse
 import json

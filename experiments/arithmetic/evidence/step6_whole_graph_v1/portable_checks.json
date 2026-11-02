@@ -1,0 +1,162 @@
+{
+  "status": "passed",
+  "isolated_root_has_build": false,
+  "isolated_has_EDA_or_artifact_store": false,
+  "PATH": "empty",
+  "parent_chain_status": "passed",
+  "positive": {
+    "status": "passed",
+    "scope": "step6 software and bounded failed-capacity evidence; no full physical or D acceptance",
+    "graphs": {
+      "reports": 176,
+      "nodes": 12127,
+      "regions": 298,
+      "candidates": 312,
+      "block_regions": 45,
+      "safe_Div_Mod": 186,
+      "public_reports_recomputed": 43,
+      "representative_reports_recomputed": 24
+    },
+    "cycles": {
+      "native": {
+        "version": "step6-whole-graph-cycle-v1",
+        "status": "passed",
+        "seed": 20261031,
+        "cycles": 1222,
+        "implementations": 176,
+        "formal_cases": 43,
+        "A_B_C_formal_implementations": 129,
+        "diagnostic_implementations": 47,
+        "exhaustive_8bit_pairs": 0,
+        "counts": {
+          "valid": 215072,
+          "data": 256005,
+          "reset": 1710,
+          "bubble_hold": 90555
+        }
+      },
+      "exhaustive8": {
+        "version": "step6-whole-graph-cycle-v1",
+        "status": "passed",
+        "seed": 20261031,
+        "cycles": 65542,
+        "implementations": 6,
+        "formal_cases": 1,
+        "A_B_C_formal_implementations": 3,
+        "diagnostic_implementations": 3,
+        "exhaustive_8bit_pairs": 65536,
+        "counts": {
+          "valid": 393252,
+          "data": 655360,
+          "reset": 10,
+          "bubble_hold": 50
+        }
+      },
+      "circt": {
+        "version": "step6-whole-graph-cycle-v1",
+        "status": "passed",
+        "seed": 20261031,
+        "cycles": 1222,
+        "implementations": 6,
+        "formal_cases": 5,
+        "A_B_C_formal_implementations": 5,
+        "diagnostic_implementations": 1,
+        "exhaustive_8bit_pairs": 0,
+        "counts": {
+          "valid": 7332,
+          "data": 9872,
+          "reset": 66,
+          "bubble_hold": 3504
+        }
+      },
+      "public": {
+        "status": "passed",
+        "public_VUL_cases": 43,
+        "new_physical_calls": 0
+      }
+    },
+    "capacity": {
+      "attempted_baselines": 2,
+      "successful_grt": 0,
+      "paused_synth_controls": 4,
+      "UDR128": "synth memory_limit at 8192 MiB; this implementation only",
+      "F2": "synth command completed; original stage rejected by interface reader; static SDC now passes; grt unmeasured",
+      "training_or_main_matrix_released": false
+    },
+    "new_usage": {
+      "synth": 2,
+      "grt": 0,
+      "final": 0,
+      "support_calls": 156,
+      "walltime_s": 999.8290861612186,
+      "CPU_time_s": 1687.6299999999999,
+      "pending": 0
+    },
+    "cumulative_usage": {
+      "synth": 56,
+      "grt": 32,
+      "final": 14,
+      "support_calls": 814,
+      "walltime_s": 9971.458210317185,
+      "CPU_time_s": 15736.8,
+      "pending": 0
+    },
+    "parent_status": "passed",
+    "external_artifacts": "not requested; compact evidence only",
+    "requires_compiler_or_EDA": false
+  },
+  "semantic_and_identity_negative_checks": [
+    {
+      "name": "independently_recomputed_node_cost",
+      "status": "rejected",
+      "diagnostic_excerpt": "ValueError: step4 evidence mismatch: node delay: 2 != 1.0"
+    },
+    {
+      "name": "fake_D_success",
+      "status": "rejected",
+      "diagnostic_excerpt": "ValueError: step4 evidence mismatch: inference scope: True != False"
+    },
+    {
+      "name": "changed_latency",
+      "status": "rejected",
+      "diagnostic_excerpt": "ValueError: step4 evidence mismatch: L/N protocol: 1 != 2"
+    },
+    {
+      "name": "actual_wide_RTL_trace_data",
+      "status": "rejected",
+      "diagnostic_excerpt": "AssertionError: (2, 'MUL_8_A', [1, 57896044618658097711785492504343953926634992332820282019728792003956564819968, 0, 0], [1, 0, 0, 0])"
+    },
+    {
+      "name": "actual_F2_stage_SDC",
+      "status": "rejected",
+      "diagnostic_excerpt": "experiments.arithmetic_dse.sdc.SdcContractError: SDC transition mismatch: 0.0 != 10.0 (native units)"
+    },
+    {
+      "name": "fake_capacity_completion",
+      "status": "rejected",
+      "diagnostic_excerpt": "ValueError: step4 evidence mismatch: outcome agrees with original manifest: 'completed' != 'failed'"
+    },
+    {
+      "name": "public_VUL_shared_register_count",
+      "status": "rejected",
+      "diagnostic_excerpt": "ValueError: step4 evidence mismatch: shared register bits: 259 != 258"
+    },
+    {
+      "name": "changed_active_compiler",
+      "status": "rejected",
+      "diagnostic_excerpt": "ValueError: historical freeze is not bound by the successor"
+    },
+    {
+      "name": "missing_complete_artifacts",
+      "status": "rejected",
+      "diagnostic_excerpt": "artifact_unavailable"
+    },
+    {
+      "name": "saved_graph_zero_divisor",
+      "status": "rejected",
+      "diagnostic_excerpt": "unsafe_divisor in saved graph"
+    }
+  ],
+  "rebound_archive_hashes_for_semantic_mutations": true,
+  "physical_calls": 0
+}

@@ -1,0 +1,180 @@
+{
+  "version": "backend-probe-v1",
+  "status": "completed",
+  "commands": [
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/vulsimgen",
+        "-m",
+        "/home/zyrv/vulsim/experiments/arithmetic/backend_probe/Main.utb",
+        "-f",
+        "-o",
+        "/home/zyrv/vulsim/build/step3-budget-20261027/bound-entrypoint/sim"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": null,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 0,
+      "cancelled_signal": null,
+      "walltime_s": 0.03408740391023457,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 2000,
+      "sampled_process_tree_peak_threads": 2,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step3-budget-20261027/bound-entrypoint/generate-sim.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step3-budget-20261027/bound-entrypoint/generate-sim.resources.txt"
+    },
+    {
+      "command": [
+        "bash",
+        "/home/zyrv/vulsim/build/step3-budget-20261027/bound-entrypoint/sim/run.sh"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": null,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 1.98,
+      "cancelled_signal": null,
+      "walltime_s": 2.268857595976442,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 272116,
+      "sampled_process_tree_peak_threads": 5,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step3-budget-20261027/bound-entrypoint/validate-sim.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step3-budget-20261027/bound-entrypoint/validate-sim.resources.txt"
+    },
+    {
+      "command": [
+        "/home/zyrv/vulsim/build/vulrtlgen",
+        "-m",
+        "/home/zyrv/vulsim/experiments/arithmetic/backend_probe/Main.utb",
+        "-f",
+        "-o",
+        "/home/zyrv/vulsim/build/step3-budget-20261027/bound-entrypoint/native"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": null,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 1.49,
+      "cancelled_signal": null,
+      "walltime_s": 2.0042881781701,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 146112,
+      "sampled_process_tree_peak_threads": 2,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step3-budget-20261027/bound-entrypoint/generate-native.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step3-budget-20261027/bound-entrypoint/generate-native.resources.txt"
+    },
+    {
+      "command": [
+        "bash",
+        "/home/zyrv/vulsim/build/step3-budget-20261027/bound-entrypoint/native/run.sh"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": null,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 2.98,
+      "cancelled_signal": null,
+      "walltime_s": 3.922941724071279,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 313564,
+      "sampled_process_tree_peak_threads": 8,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step3-budget-20261027/bound-entrypoint/validate-native.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step3-budget-20261027/bound-entrypoint/validate-native.resources.txt"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "experiments.arithmetic_dse.backend",
+        "--rtl",
+        "/home/zyrv/vulsim/build/step3-budget-20261027/bound-entrypoint/native/sim/top.sv",
+        "--top",
+        "MulProbe_sim_top",
+        "--out",
+        "/home/zyrv/vulsim/build/step3-budget-20261027/bound-entrypoint/evaluation",
+        "--orfs",
+        "/home/zyrv/OpenROAD-flow-scripts",
+        "--period-ps",
+        "1500.0",
+        "--threads",
+        "2",
+        "--stage",
+        "final",
+        "--budget-purpose",
+        "prototype"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": null,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 367.15999999999997,
+      "cancelled_signal": null,
+      "walltime_s": 221.34191733784974,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 2007436,
+      "sampled_process_tree_peak_threads": 33,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step3-budget-20261027/bound-entrypoint/evaluate.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step3-budget-20261027/bound-entrypoint/evaluate.resources.txt"
+    }
+  ],
+  "main_case_target": false,
+  "probe": "full_unsigned_32x32_to_64",
+  "source_sha256": {
+    "experiments/arithmetic/backend_probe/MulProbe.vul": "4ea7ed06a706568e4a4238080d6b3ea45d90b4308df66031ff06884d28187a2e",
+    "experiments/arithmetic/backend_probe/header.uh": "e357d20bfd49f1b2c1ef1b0662267dd343f51c2eac8a3ec1b55ebca8152d00dc",
+    "experiments/arithmetic/backend_probe/Main.utb": "58c8952250ea7f4498cf652d6a715076fc33cf26b7d2471bd2e4c43e0deabfd9"
+  },
+  "vulsimgen_sha256": "b9eae049ff6fd24af30026977c7b02d5dae00d1b5214c386b30f0fa78ea9fae9",
+  "vulrtlgen_sha256": "7a4204470511c2265fbe3660cef822efc882e91116361cb688d23d34c2d78cb2"
+}

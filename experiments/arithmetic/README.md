@@ -34,7 +34,7 @@ JSON
 python3 -m experiments.arithmetic_dse.step2_validation --output build/step2-recheck
 ```
 
-该命令验证全部43例的组合软件路径，以及MUL_128、MAC_128、DOT2_128、H_M_128、F2的原生RTL。现有S8仍拒绝动态Div/Mod，相关原生接入及所有案例的固定L/valid/reset验收按步骤六和后续步骤推进；不能把软件通过写成动态商余RTL通过。新增Int无符号`/`、`%`软件求值只支持同宽无符号操作数，原始零除抛出诊断，由共同safe_d包装定义实验结果。它不新增商余内部拆分模板。
+该命令验证全部43例的组合软件路径，以及MUL_128、MAC_128、DOT2_128、H_M_128、F2的原生RTL；它本身不承担全部流水验收。步骤六现已贯通S8至BEIR的动态Div/Mod和全43例固定L/valid/reset验收，见下方整图入口。Int无符号`/`、`%`只支持同宽无符号操作数，原始零除抛出诊断，由共同safe_d包装定义实验结果；整图预检拒绝未证明非零的除数。Div/Mod内部仍为原子。
 
 独立SoftFloat核对继续使用原环境变量，源目录无效时验证失败，不伪装为跳过：
 
@@ -71,3 +71,9 @@ python3 -m experiments.arithmetic_dse.wide_evidence
 步骤五当前后继冻结为[mul_templates_freeze_v2.json](mul_templates_freeze_v2.json)，[收尾证据](evidence/step5_mul_closure_v2/README.md)与[指定容量复测](evidence/step5_mul_capacity_v2/README.md)补齐独立位置可行性／生产130位偏好、129报告／219区域历史图回放、部分积坐标移位证书及精确数值v2。旧v1证据及1200秒失败不改；同一128位C电路的唯一新任务在3600秒上限内以1450.19秒完成完整后综合→grt，当前setup/hold满足，未做original对照或final。批次仍按具体容量域、时序及实时预算复审，不统一放行128位。当前核验用`python3 -m experiments.arithmetic_dse.closure_evidence`，`--verify-external`要求实际取得大产物；原v1读取入口继续限定核验原版本。
 
 [步骤五时序口径说明](../arithmetic_dse/timing_metric_scopes.md)与[说明冻结v3](mul_templates_freeze_v3.json)澄清整体setup slack及core_clk同钟period_min的范围，原v1／v2物理数值不改。W128 grt的整体+0.278111ps仍为准入判断的真实窄余量，1264.30ps不能用来宣称完整接口裕量充足；W64的871.71ps来自synth。补充核验为`python3 -m experiments.arithmetic_dse.metric_scope_evidence`，本次只读既有报告，没有新增EDA或STA。
+
+[步骤六整图接口](../arithmetic_dse/whole_graph.md)已验收43正式/保留案例的129个A/B/C实现及47个宽度/商余诊断；包含安全商余、移位、正式binary32串联/旁路与flags、宽复位和公共VUL路径。当前[整图冻结](whole_graph_freeze_v1.json)继承步骤五v3，核验入口`python3 -m experiments.arithmetic_dse.whole_graph_evidence`，小证据见[step6_whole_graph_v1](evidence/step6_whole_graph_v1/README.md)。ASAP7128位UDR（独立Div/Mod）综合触及8GiB；F2综合命令成功但原接口解析器误报，已修软件并静态重核SDC，grt尚未测。四个从属条件控制点暂停；本步未放行相关训练/主矩阵，也未实现除法/FP内部展开或D模型。后续可继续步骤七已满足容量及预算条件的局部域，其余范围保留未完成原因。
+
+步骤六当前修订见[规划§6.6](../../mission/lxy-plan-fix.md#step6-width-proof-review)和[后继冻结v2](whole_graph_freeze_v2.json)：P1证明按实际保留低位传播，合法异宽Ite保留；真实C++与便携入口均回放原176图/186个Div/Mod通过，新生成176份报告/RTL逐字节不变。默认核验入口保持不变，使用最新后继；可编辑规划/导航改动只报告漂移，原快照仍保护。32GiB物理复测及Yosys线程控制缺口分别记账，不将原始失败、CPU_limit纠正尝试或时序不满足隐藏。
+
+步骤六最终后继验收完成，见规划第四章§6.9和whole_graph_freeze_v2。F2实际完成原1500ps grt但setup未满足；UDR128复用原映射、100ns／固定300ps I/O诊断完成完整后综合→grt，1671.49秒，setup+21.883ns、hold+0.671ps、覆盖完整，hold仍待工程复核。v1的未测状态保留为历史，当前结果均可在后继小证据中离线重算，完整大产物按本机catalog核验。Div/Mod与FP内部仍原子，正式目标及D模型留给步骤七；不把容量诊断改作训练或目标标签。

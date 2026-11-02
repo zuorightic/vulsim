@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "step6_acceptance": "whole_graph_safety_and_declared_finite_capacity",
+  "software": {
+    "native_cases": 14,
+    "old_wrong_acceptances": 5,
+    "new_wrong_acceptances": 0,
+    "historical_reports": 176,
+    "historical_Div_Mod": 186,
+    "regenerated_byte_identity": 176,
+    "case_role_counts": {
+      "mul_internal_structure_choice": 20,
+      "atomic_integer_whole_graph": 20,
+      "atomic_FP_whole_graph": 3
+    },
+    "atomic_B_C_equal": 23,
+    "existing_functional_traces_inherited": "exact RTL bytes; no new RTL simulation claimed"
+  },
+  "backend_completion": true,
+  "UDR_100ns": [
+    {
+      "task_id": "asap7-step6-udr_unsigned_128-sdc100ns-v5",
+      "status": "completed",
+      "failure_code": null,
+      "metrics": [
+        {
+          "stage": "synth",
+          "cell_area_um2": 8276.6286,
+          "setup_worst_slack_ps": 23599.611328,
+          "hold_worst_slack_ps": -1.577139,
+          "minimum_clock_period_ps": 76400.39,
+          "timing_coverage_complete": true,
+          "measured_feasibility": null,
+          "hold_feasible_at_TT": false
+        },
+        {
+          "stage": "grt",
+          "cell_area_um2": 8444.9547,
+          "setup_worst_slack_ps": 21883.324219,
+          "hold_worst_slack_ps": 0.670713,
+          "minimum_clock_period_ps": 78116.68,
+          "timing_coverage_complete": true,
+          "measured_feasibility": true,
+          "hold_feasible_at_TT": true
+        }
+      ]
+    }
+  ],
+  "F2_original_target_status": "flow complete; setup fails at1500ps",
+  "parent_chain": "passed",
+  "full_artifacts_verified": true,
+  "normalized_netlists_recomputed": 5,
+  "remote_durable_retention_confirmed": false,
+  "isolated_portable_verification": true,
+  "semantic_negative_cases": 11,
+  "software_regressions": 85,
+  "current_freeze_usage": {
+    "synth": 63,
+    "grt": 35,
+    "final": 14,
+    "support_calls": 852,
+    "walltime_s": 30907.707931798184,
+    "CPU_time_s": 55504.67,
+    "pending": 0
+  },
+  "scope_boundaries": [
+    "no_D_model_or_training",
+    "no_Div_Mod_or_FP_internal_splitting",
+    "capacity_diagnostics_not_training_or_formal_targets",
+    "two_old_UDR_synth_controls_not_run",
+    "other_platform_capacity_and_688_main_records_remain_step7_8"
+  ],
+  "statistics_timing": "verification candidate before final support settlement; final index and resource table are subsequently refreshed without changing source or numerical measurements"
+}

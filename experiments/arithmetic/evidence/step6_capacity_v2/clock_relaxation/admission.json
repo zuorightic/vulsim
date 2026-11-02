@@ -1,0 +1,75 @@
+{
+  "id": "step6-udr-clock100ns-v5",
+  "purpose": "arithmetic_clock_relaxation_only",
+  "created_at": "2026-11-02T07:41:06.694438+00:00",
+  "policy_sha256": "3f4a230ca19b9b53a9da71cb19a52e718d29a8001106d354394f13e5d6ef995a",
+  "authorization": "user requested relaxed clock rerun; subsequent steering sets100ns, replacing unlaunched200ns proposal",
+  "parent_admission": {
+    "path": "/home/zyrv/vulsim/build/step6-review-20261102/completion-admission-v4.json",
+    "sha256": "0b389b7a9658367d2a70528daecd6f2def3d3b7037af66dd4a6ddf2ad7827244",
+    "id": "step6-udr-completion-v4"
+  },
+  "starting_usage_live": {
+    "synth": 62,
+    "grt": 34,
+    "final": 14,
+    "support_calls": 844,
+    "walltime_s": 28945.32341003907,
+    "CPU_time_s": 53208.6,
+    "pending": 0
+  },
+  "tasks": [
+    {
+      "id": "asap7-step6-udr_unsigned_128-sdc100ns-v5",
+      "platform": "asap7",
+      "profile_sha256": "a29e056328a495af3f5815e3c56f4e6838eafd4b3f4f7844cc81d82ef99dd3df",
+      "kernel": "udr_unsigned_128",
+      "top": "Step6UDR128",
+      "rtl": "/home/zyrv/vulsim/build/step6-integration-20261031/capacity-inputs/UDR_128_C/input.sv",
+      "rtl_sha256": "e8dd983a73c8da5e2a42af448d00da929164a7c565a6d7e989924b726ecf2bac",
+      "compiler_report": "/home/zyrv/vulsim/build/step6-integration-20261031/generated-final/UDR_128_C.json",
+      "compiler_report_sha256": "669778f01af1e369948f81d1fecb8ebeb1fa68a916dee4a0c11648bd21dd309f",
+      "graph_sha256": "2aa25c36eb9a3d77972b7c8cb8423c0e89e28a62e3f72ebeb1c2908a3ee13e01",
+      "schedule_sha256": "f712751fd3d4f0b3b7135dab052e9be71dc1d206dc596d5332c68b55c84dffaf",
+      "L": 2,
+      "II": 1,
+      "selected_candidate": "candidate",
+      "period_ps": 100000,
+      "abc_target_ps": 1500,
+      "stage": "grt",
+      "purpose": "physical_recheck",
+      "diagnostic_role": "SDC_only_relaxation_from_verified_mapping",
+      "constraints_sha256": "ae5fb19566bf95cd28f58b8928a1d481fac4a0adfe5abdc7b3a505b244cc5c4e",
+      "sdc_contract_version": "serialized-sdc-contract-v2",
+      "IO_delay_policy": "fixed_absolute_max_300ps_min_0ps; matches original1500ps x0.2",
+      "data_role": "capacity_constraint_diagnostic_only; prohibited_as_training_target_or_C_D_benefit",
+      "supersedes_task_id": "asap7-step6-udr_unsigned_128-capacity-complete-v4",
+      "current_compiler_report_sha256": "669778f01af1e369948f81d1fecb8ebeb1fa68a916dee4a0c11648bd21dd309f",
+      "current_compiler_source_sha256": "7112a74d9cdd1b2b932fbb332b5c9485e56877659227f07e27ad718ef7afcabe",
+      "io_delay_max_ps": 300,
+      "source_run": "/home/zyrv/vulsim/build/step6-review-20261102/physical-complete/asap7-step6-udr_unsigned_128-capacity-complete-v4",
+      "source_manifest_sha256": "16ea294454eb958f7a013767353aefc4001ee0567984de89f208f4c1f1e05983",
+      "mapped_netlist_file_sha256": "0f501c246f9b6fb1d527b1e8a0ad3b70af7f1f7badfafc3122181ea2fe8d88b9"
+    }
+  ],
+  "call_caps": {
+    "synth": 1,
+    "grt": 1,
+    "final": 0
+  },
+  "threads": 2,
+  "yosys_max_threads": 2,
+  "memory_limit_MiB": 32768,
+  "synthesis_timeout_s": 300,
+  "post_synthesis_through_grt_timeout_s": 14400,
+  "automatic_retries": 0,
+  "support_envelope": {
+    "walltime_s": 1800,
+    "CPU_time_s": 3600
+  },
+  "worst_case_walltime_s": 16500,
+  "CPU_envelope_s": 33000,
+  "reuse": "only identity-checked mapped netlist; fresh synthesis ODB/SDC and full floorplan-through-grt",
+  "unexecuted_proposal_period_ps": 200000,
+  "scope": "singleUDR128; no controls/final/new structure/platform; original1500ps outcome and costs retained"
+}

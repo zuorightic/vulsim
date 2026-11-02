@@ -96,8 +96,9 @@ def verify_report(report,rtl,features,*,embedded=False,report_schemas=None):
             if i not in members:continue
             arrivals[i]=costs[i][0]+max((arrivals[v['node']] for v in nodes[i]['operands'] if v['kind']==0 and v['node'] in members),default=0)
         same(region['delay'],max(arrivals.values()),'atomic longest path');same(region['comb'],sum(costs[i][1] for i in members),'atomic unique sum')
-        if region['template_id']=='mul-original-v1':
-            same(len(members),1,'original Mul member');n=nodes[next(iter(members))];same(kinds[n['kind']],'Binary','original Mul kind');same(opcodes[n['opcode']],'Mul','original Mul opcode')
+        if region['template_id'] in ('mul-original-v1','udiv-original-v1','umod-original-v1'):
+            expected_op={'mul-original-v1':'Mul','udiv-original-v1':'Div','umod-original-v1':'Mod'}[region['template_id']]
+            same(len(members),1,'original arithmetic member');n=nodes[next(iter(members))];same(kinds[n['kind']],'Binary','original arithmetic kind');same(opcodes[n['opcode']],expected_op,'original arithmetic opcode')
             parameters={'lhs_width':width(n['operands'][0]),'rhs_width':width(n['operands'][1]),'result_width':n['width']};same(region['parameters'],parameters,'template width parameters')
         elif region['template_id']=='mul-block-tree-v1':
             params=region['parameters'];same(set(params),{'lhs_width','rhs_width','result_width','block_width'},'block parameters')

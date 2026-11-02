@@ -1,0 +1,1078 @@
+{
+  "version": "step6-case-interpretation-audit-v1",
+  "cases": 43,
+  "reports_read": 86,
+  "role_counts": {
+    "atomic_FP_whole_graph": 3,
+    "atomic_integer_whole_graph": 20,
+    "mul_internal_structure_choice": 20
+  },
+  "atomic_cases_with_identical_B_C_nodes_and_stages": 23,
+  "D_evaluated": false,
+  "interpretation": "candidate availability and actual scheduled graphs, not D benefit or exhaustive position-space proof",
+  "cases_detail": [
+    {
+      "case_id": "MUL_8",
+      "family": "MUL",
+      "role": "mul_internal_structure_choice",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "3bc91a5e15588adbd5124777fd0ce05578044ff61d11349c4593372e17e6297f",
+        "C": "edee62c07b720c831445d3abe3f941f80f6c407caeb7c0803f4b7681a6e89f47"
+      },
+      "C_structure_candidates": 3,
+      "C_selected": "candidate/half",
+      "C_internally_cuttable_regions": 1,
+      "B_C_nodes_equal": false,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": false,
+      "B_C_register_bits": [
+        17,
+        49
+      ],
+      "region_templates": [
+        "mul-block-tree-v1"
+      ]
+    },
+    {
+      "case_id": "MUL_16",
+      "family": "MUL",
+      "role": "mul_internal_structure_choice",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "453ef20c5f38373106ea7468b45650296780281d2b178074c6e236f0e5df98a0",
+        "C": "025ac6034a2f0e4ea5b2f729f764ffb5bb334c323b5836cd63b682f16792279d"
+      },
+      "C_structure_candidates": 3,
+      "C_selected": "candidate/quarter",
+      "C_internally_cuttable_regions": 1,
+      "B_C_nodes_equal": false,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": false,
+      "B_C_register_bits": [
+        33,
+        185
+      ],
+      "region_templates": [
+        "mul-block-tree-v1"
+      ]
+    },
+    {
+      "case_id": "MUL_32",
+      "family": "MUL",
+      "role": "mul_internal_structure_choice",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "0b8fd85b7cdfdc459bc6d557f7aca23dbbd84b67f8b18b6872981a4c264f3ea4",
+        "C": "3b9ebf866ebd8b5a8f339cc389ff19376c25fd3947032de3999dcc1ca75fd950"
+      },
+      "C_structure_candidates": 3,
+      "C_selected": "candidate/quarter",
+      "C_internally_cuttable_regions": 1,
+      "B_C_nodes_equal": false,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": false,
+      "B_C_register_bits": [
+        65,
+        641
+      ],
+      "region_templates": [
+        "mul-block-tree-v1"
+      ]
+    },
+    {
+      "case_id": "MUL_64",
+      "family": "MUL",
+      "role": "mul_internal_structure_choice",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "3f76b5370c69e40df0cebaef09df52c12ed39acccaad45dd51d00949b27602c5",
+        "C": "e4fd3d1c4f3911f2a6d2f5315a1c84ca0f438773641eba0f75c0d23192b7e100"
+      },
+      "C_structure_candidates": 3,
+      "C_selected": "candidate/quarter",
+      "C_internally_cuttable_regions": 1,
+      "B_C_nodes_equal": false,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": false,
+      "B_C_register_bits": [
+        129,
+        1281
+      ],
+      "region_templates": [
+        "mul-block-tree-v1"
+      ]
+    },
+    {
+      "case_id": "MUL_128",
+      "family": "MUL",
+      "role": "mul_internal_structure_choice",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "5520188aab03ea59d80b7f8d2965856720a28c9c0c8bfa43d49ed1893b6d5e00",
+        "C": "21c1c42168c3a83c3a19c33dcbce0269deb66d7823fe17d711a72e644e5d2fca"
+      },
+      "C_structure_candidates": 3,
+      "C_selected": "candidate/quarter",
+      "C_internally_cuttable_regions": 1,
+      "B_C_nodes_equal": false,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": false,
+      "B_C_register_bits": [
+        257,
+        2561
+      ],
+      "region_templates": [
+        "mul-block-tree-v1"
+      ]
+    },
+    {
+      "case_id": "MAC_8",
+      "family": "MAC",
+      "role": "mul_internal_structure_choice",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "292faa9e38f8b81b9ae5014fda01283edca6d70f5be1b2dc91b2d12fd5b4cbac",
+        "C": "082dd526515232cce31cbc481d255880ee167cc5c07f9aaf40f5bdf82702ecf7"
+      },
+      "C_structure_candidates": 3,
+      "C_selected": "candidate/half",
+      "C_internally_cuttable_regions": 1,
+      "B_C_nodes_equal": false,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": false,
+      "B_C_register_bits": [
+        33,
+        47
+      ],
+      "region_templates": [
+        "mul-block-tree-v1"
+      ]
+    },
+    {
+      "case_id": "MAC_16",
+      "family": "MAC",
+      "role": "mul_internal_structure_choice",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "39ea4c9583f3707772fd501ad6a35c256e5e11cbf704730e71d7b3d9e2a6160e",
+        "C": "0c6d6e7246303e1d6c890f7d845c3263ee6488d1c9947e426f40db525dea38f6"
+      },
+      "C_structure_candidates": 3,
+      "C_selected": "candidate/half",
+      "C_internally_cuttable_regions": 1,
+      "B_C_nodes_equal": false,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": false,
+      "B_C_register_bits": [
+        65,
+        129
+      ],
+      "region_templates": [
+        "mul-block-tree-v1"
+      ]
+    },
+    {
+      "case_id": "MAC_32",
+      "family": "MAC",
+      "role": "mul_internal_structure_choice",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "8924528aa21190a2477ca70324a65563f9729ff19e19484e94a0e0dde9b0faf7",
+        "C": "c1462550661ad9127df2feab30e8ce7cf7ac650de9d9e09d49a9f90ef2e935dc"
+      },
+      "C_structure_candidates": 3,
+      "C_selected": "candidate/quarter",
+      "C_internally_cuttable_regions": 1,
+      "B_C_nodes_equal": false,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": false,
+      "B_C_register_bits": [
+        129,
+        425
+      ],
+      "region_templates": [
+        "mul-block-tree-v1"
+      ]
+    },
+    {
+      "case_id": "MAC_64",
+      "family": "MAC",
+      "role": "mul_internal_structure_choice",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "79f0de754075bb4e9834978fafe91ceba68a9f7c805e51806fe85a340fec1a1e",
+        "C": "e11b396bb01fe8d03fbd1672b788985a1723b6008f2fdb35110ca4de13c8095c"
+      },
+      "C_structure_candidates": 3,
+      "C_selected": "candidate/quarter",
+      "C_internally_cuttable_regions": 1,
+      "B_C_nodes_equal": false,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": false,
+      "B_C_register_bits": [
+        129,
+        1409
+      ],
+      "region_templates": [
+        "mul-block-tree-v1"
+      ]
+    },
+    {
+      "case_id": "MAC_128",
+      "family": "MAC",
+      "role": "mul_internal_structure_choice",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "a7be33bb3626bf8b7207c7468d22afb1f514aa6baf6237655cf50c09b48dc112",
+        "C": "356ce4f4e76e269575bf226d8429747e9be61475a77d1b205af27535c200ecbf"
+      },
+      "C_structure_candidates": 3,
+      "C_selected": "candidate/quarter",
+      "C_internally_cuttable_regions": 1,
+      "B_C_nodes_equal": false,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": false,
+      "B_C_register_bits": [
+        257,
+        2817
+      ],
+      "region_templates": [
+        "mul-block-tree-v1"
+      ]
+    },
+    {
+      "case_id": "DOT2_8",
+      "family": "DOT2",
+      "role": "mul_internal_structure_choice",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "53013d046f0aad7801e1ad31ad331dc7451cbe43d6733e37fb1ce2691206236f",
+        "C": "bd9769a2be1a6bbe5f34057385f0e6dbe5f44a415688fecdce13088f35ffa53e"
+      },
+      "C_structure_candidates": 9,
+      "C_selected": "candidate/half/half",
+      "C_internally_cuttable_regions": 2,
+      "B_C_nodes_equal": false,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": false,
+      "B_C_register_bits": [
+        33,
+        61
+      ],
+      "region_templates": [
+        "mul-block-tree-v1",
+        "mul-block-tree-v1"
+      ]
+    },
+    {
+      "case_id": "DOT2_16",
+      "family": "DOT2",
+      "role": "mul_internal_structure_choice",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "99072e93029dc7b9b46c02982cbfaa7466a56a3cf1bc481c0e39348a74a2e080",
+        "C": "b7c00469b2714317259aebba8fa45be5572a16531b7cf8b23a7c3d3062cae0fb"
+      },
+      "C_structure_candidates": 9,
+      "C_selected": "candidate/half/half",
+      "C_internally_cuttable_regions": 2,
+      "B_C_nodes_equal": false,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": false,
+      "B_C_register_bits": [
+        65,
+        193
+      ],
+      "region_templates": [
+        "mul-block-tree-v1",
+        "mul-block-tree-v1"
+      ]
+    },
+    {
+      "case_id": "DOT2_32",
+      "family": "DOT2",
+      "role": "mul_internal_structure_choice",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "b75a5f6243b4eb6ac490426db8c5dc0536c22df3bd558ae9a43183a8260153c2",
+        "C": "04003fe57f863b3a53df617799f8c5a6094b4838e198e004244665c098611ce1"
+      },
+      "C_structure_candidates": 9,
+      "C_selected": "candidate/quarter/quarter",
+      "C_internally_cuttable_regions": 2,
+      "B_C_nodes_equal": false,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": false,
+      "B_C_register_bits": [
+        129,
+        721
+      ],
+      "region_templates": [
+        "mul-block-tree-v1",
+        "mul-block-tree-v1"
+      ]
+    },
+    {
+      "case_id": "DOT2_64",
+      "family": "DOT2",
+      "role": "mul_internal_structure_choice",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "3f82a600a2a07c48c2c65da2ec22733f84f28fb816bc4dcf4b2b4aa3afb62155",
+        "C": "6920651c669b4b5dcd91d80e7aed75bfed4cd11f5355d386d08ac88610d62605"
+      },
+      "C_structure_candidates": 9,
+      "C_selected": "candidate/quarter/quarter",
+      "C_internally_cuttable_regions": 2,
+      "B_C_nodes_equal": false,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": false,
+      "B_C_register_bits": [
+        130,
+        2561
+      ],
+      "region_templates": [
+        "mul-block-tree-v1",
+        "mul-block-tree-v1"
+      ]
+    },
+    {
+      "case_id": "DOT2_128",
+      "family": "DOT2",
+      "role": "mul_internal_structure_choice",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "48687c61f6648a58e98f58749e18e50861eaac688fe6332e8974459c11a35f73",
+        "C": "820a02a7d6fe871d53b241f0a415a8a82170b4b845cb5fd9fc399cd56f263e52"
+      },
+      "C_structure_candidates": 9,
+      "C_selected": "candidate/quarter/quarter",
+      "C_internally_cuttable_regions": 2,
+      "B_C_nodes_equal": false,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": false,
+      "B_C_register_bits": [
+        258,
+        5121
+      ],
+      "region_templates": [
+        "mul-block-tree-v1",
+        "mul-block-tree-v1"
+      ]
+    },
+    {
+      "case_id": "UDR_8",
+      "family": "UDR",
+      "role": "atomic_integer_whole_graph",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "8bcc95cdab4b0916608df1e5ddc8b9a0f26e4f26e891515b44c80867ce7a39ef",
+        "C": "3b03d296f7d2afb0feaf3aa85d1632389fb83def4df54306254391229061ded2"
+      },
+      "C_structure_candidates": 1,
+      "C_selected": "candidate",
+      "C_internally_cuttable_regions": 0,
+      "B_C_nodes_equal": true,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": true,
+      "B_C_register_bits": [
+        18,
+        18
+      ],
+      "region_templates": [
+        "udiv-original-v1",
+        "umod-original-v1"
+      ]
+    },
+    {
+      "case_id": "UDR_16",
+      "family": "UDR",
+      "role": "atomic_integer_whole_graph",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "13829bb37ac1be9157b8d4e7893c14ccc10ee529c67375b377551c55a691cff5",
+        "C": "9da66fb17a4294f253f4470e9f3abe5cba11b5b88895b154545e7290ccd8efc0"
+      },
+      "C_structure_candidates": 1,
+      "C_selected": "candidate",
+      "C_internally_cuttable_regions": 0,
+      "B_C_nodes_equal": true,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": true,
+      "B_C_register_bits": [
+        34,
+        34
+      ],
+      "region_templates": [
+        "udiv-original-v1",
+        "umod-original-v1"
+      ]
+    },
+    {
+      "case_id": "UDR_32",
+      "family": "UDR",
+      "role": "atomic_integer_whole_graph",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "e7f15f6adce56972bccdb2b01516f6b6515a2076b91fbbde52e77a1dc08416f1",
+        "C": "e17f1cd347bc9205aa9cfd0a05831fe28f9e2a892c7971515b71cb4ff0b9a3c6"
+      },
+      "C_structure_candidates": 1,
+      "C_selected": "candidate",
+      "C_internally_cuttable_regions": 0,
+      "B_C_nodes_equal": true,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": true,
+      "B_C_register_bits": [
+        66,
+        66
+      ],
+      "region_templates": [
+        "udiv-original-v1",
+        "umod-original-v1"
+      ]
+    },
+    {
+      "case_id": "UDR_64",
+      "family": "UDR",
+      "role": "atomic_integer_whole_graph",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "5b4ff7667d145f526331bf115f047ea68981e3175eeeee21ffc10186a073c276",
+        "C": "ae7d950eee71c0da4fc3292bcfcee7e88f4bfdda5a579d73da4473d442a3aca8"
+      },
+      "C_structure_candidates": 1,
+      "C_selected": "candidate",
+      "C_internally_cuttable_regions": 0,
+      "B_C_nodes_equal": true,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": true,
+      "B_C_register_bits": [
+        130,
+        130
+      ],
+      "region_templates": [
+        "udiv-original-v1",
+        "umod-original-v1"
+      ]
+    },
+    {
+      "case_id": "UDR_128",
+      "family": "UDR",
+      "role": "atomic_integer_whole_graph",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "af6ba0e5db9debeaf93bf3fc68d866ab4fe97d223e8aba8592caf65fba0cda1f",
+        "C": "360838111406f115574a5aa8091e94f0068e321dfa12681aae9d39a4b8242112"
+      },
+      "C_structure_candidates": 1,
+      "C_selected": "candidate",
+      "C_internally_cuttable_regions": 0,
+      "B_C_nodes_equal": true,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": true,
+      "B_C_register_bits": [
+        258,
+        258
+      ],
+      "region_templates": [
+        "udiv-original-v1",
+        "umod-original-v1"
+      ]
+    },
+    {
+      "case_id": "DIVSEL_8",
+      "family": "DIVSEL",
+      "role": "atomic_integer_whole_graph",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "6ccc445e9d98c1c5069e4062b5b19a80f5b30640001995159acc6efccb47101a",
+        "C": "55c07e13bcb241049dd56f74d5b8d5f6719003ef34efbd365a00330b42e9a371"
+      },
+      "C_structure_candidates": 1,
+      "C_selected": "candidate",
+      "C_internally_cuttable_regions": 0,
+      "B_C_nodes_equal": true,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": true,
+      "B_C_register_bits": [
+        43,
+        43
+      ],
+      "region_templates": [
+        "udiv-original-v1",
+        "umod-original-v1"
+      ]
+    },
+    {
+      "case_id": "DIVSEL_16",
+      "family": "DIVSEL",
+      "role": "atomic_integer_whole_graph",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "ead3849ab1087956a63f78446003f531c06e608180a8f014d9acc4721324392e",
+        "C": "fcd2b4f4bd94c33a3f0232a64e14a8d5ba7835b58137588a63a3ae17f3f442e7"
+      },
+      "C_structure_candidates": 1,
+      "C_selected": "candidate",
+      "C_internally_cuttable_regions": 0,
+      "B_C_nodes_equal": true,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": true,
+      "B_C_register_bits": [
+        66,
+        66
+      ],
+      "region_templates": [
+        "udiv-original-v1",
+        "umod-original-v1"
+      ]
+    },
+    {
+      "case_id": "DIVSEL_32",
+      "family": "DIVSEL",
+      "role": "atomic_integer_whole_graph",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "b1eefaf2597ef3bca6858e0c3d7b44be74e05027e05c3209c0c22ff660e51231",
+        "C": "3395cf6a01790402a1d80eacdc2ccc1604febcec2ab8a319d212d5aa9d8c51da"
+      },
+      "C_structure_candidates": 1,
+      "C_selected": "candidate",
+      "C_internally_cuttable_regions": 0,
+      "B_C_nodes_equal": true,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": true,
+      "B_C_register_bits": [
+        65,
+        65
+      ],
+      "region_templates": [
+        "udiv-original-v1",
+        "umod-original-v1"
+      ]
+    },
+    {
+      "case_id": "DIVSEL_64",
+      "family": "DIVSEL",
+      "role": "atomic_integer_whole_graph",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "14b5c8278d005da19e7b34cc42cde19abed14c483cb18acfc3c4a02ec3ceff2f",
+        "C": "d73938dc61f2dd055f07d0449066ccea2ab096cd0dd96c14faa6d57182842ce1"
+      },
+      "C_structure_candidates": 1,
+      "C_selected": "candidate",
+      "C_internally_cuttable_regions": 0,
+      "B_C_nodes_equal": true,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": true,
+      "B_C_register_bits": [
+        129,
+        129
+      ],
+      "region_templates": [
+        "udiv-original-v1",
+        "umod-original-v1"
+      ]
+    },
+    {
+      "case_id": "DIVSEL_128",
+      "family": "DIVSEL",
+      "role": "atomic_integer_whole_graph",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "e9bf89ce7cb8b8703d7abec755f73204cd86ec15157cd0292325ce838fe8abaf",
+        "C": "5b16695e82c5eafffa3f1a48b6c626a37f24d69bf2f359f8886b0b98ee4bb081"
+      },
+      "C_structure_candidates": 1,
+      "C_selected": "candidate",
+      "C_internally_cuttable_regions": 0,
+      "B_C_nodes_equal": true,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": true,
+      "B_C_register_bits": [
+        257,
+        257
+      ],
+      "region_templates": [
+        "udiv-original-v1",
+        "umod-original-v1"
+      ]
+    },
+    {
+      "case_id": "MIX_8",
+      "family": "MIX",
+      "role": "atomic_integer_whole_graph",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "195ff284abaacd45dda961c2d3cbe8f6f80e8ff08a0dbf381ee49c321586d90f",
+        "C": "d322fe07fb2e108fd509d5e34d8d229c0ed1c92a938bd0dfbd1eb9b20c353657"
+      },
+      "C_structure_candidates": 1,
+      "C_selected": "candidate",
+      "C_internally_cuttable_regions": 0,
+      "B_C_nodes_equal": true,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": true,
+      "B_C_register_bits": [
+        27,
+        27
+      ],
+      "region_templates": [
+        "umod-original-v1"
+      ]
+    },
+    {
+      "case_id": "MIX_16",
+      "family": "MIX",
+      "role": "atomic_integer_whole_graph",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "0aa8871e23a1af22eddcaf26443147421fef46204f2592a354c444cf8efb2ba0",
+        "C": "9ed2fb1cab446db7743a343af51fe22605bf42eca89a88a9d2a7096d1d1e3834"
+      },
+      "C_structure_candidates": 1,
+      "C_selected": "candidate",
+      "C_internally_cuttable_regions": 0,
+      "B_C_nodes_equal": true,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": true,
+      "B_C_register_bits": [
+        34,
+        34
+      ],
+      "region_templates": [
+        "umod-original-v1"
+      ]
+    },
+    {
+      "case_id": "MIX_32",
+      "family": "MIX",
+      "role": "atomic_integer_whole_graph",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "9df6b00521ae25e5f9696c9b8d5c62181109e1d9cf3e7929a84a4e5c636beb5d",
+        "C": "18a1124a98edddef96cf202c6aac029ad0b178bf288cf19bd9fe663c4aa9d934"
+      },
+      "C_structure_candidates": 1,
+      "C_selected": "candidate",
+      "C_internally_cuttable_regions": 0,
+      "B_C_nodes_equal": true,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": true,
+      "B_C_register_bits": [
+        34,
+        34
+      ],
+      "region_templates": [
+        "umod-original-v1"
+      ]
+    },
+    {
+      "case_id": "MIX_64",
+      "family": "MIX",
+      "role": "atomic_integer_whole_graph",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "40aaf904a5bb9f1472e8c46a4de62850427a2f2833229642c0698f724242b217",
+        "C": "53d9ee0f534eef320315df3e8958ce8a0d158ac03ca50c75d9ee970e6e51d164"
+      },
+      "C_structure_candidates": 1,
+      "C_selected": "candidate",
+      "C_internally_cuttable_regions": 0,
+      "B_C_nodes_equal": true,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": true,
+      "B_C_register_bits": [
+        66,
+        66
+      ],
+      "region_templates": [
+        "umod-original-v1"
+      ]
+    },
+    {
+      "case_id": "MIX_128",
+      "family": "MIX",
+      "role": "atomic_integer_whole_graph",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "435616ea3a4e56c82d129a5dae1a94e58bbe8b8f497c7a9f9b1241e958326305",
+        "C": "cfcc22bd1fa693edfe78443dbbd076fe39df9084f26020787e2a14985cbe80cc"
+      },
+      "C_structure_candidates": 1,
+      "C_selected": "candidate",
+      "C_internally_cuttable_regions": 0,
+      "B_C_nodes_equal": true,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": true,
+      "B_C_register_bits": [
+        130,
+        130
+      ],
+      "region_templates": [
+        "umod-original-v1"
+      ]
+    },
+    {
+      "case_id": "F1",
+      "family": "F1",
+      "role": "atomic_FP_whole_graph",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "e0933410dfb363c260c5b783df450fbfac934b02b62d56a32508c5625ce89412",
+        "C": "58693f2e90f99a21cd768b18fa6d8bb8792fe323d9763917d4d78498ead4e868"
+      },
+      "C_structure_candidates": 1,
+      "C_selected": "candidate",
+      "C_internally_cuttable_regions": 0,
+      "B_C_nodes_equal": true,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": true,
+      "B_C_register_bits": [
+        38,
+        38
+      ],
+      "region_templates": [
+        "softfloat3d-bitvector-mul-v1"
+      ]
+    },
+    {
+      "case_id": "F2",
+      "family": "F2",
+      "role": "atomic_FP_whole_graph",
+      "L": 3,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "c9b8b9ebadf31c4c3dc745e61c63ad6e9f331acd9030b88c42ff5065da3ebc06",
+        "C": "9dac55d702b29347e3e2e093f0d8f29cd07c3836c39b121478e738f202faba20"
+      },
+      "C_structure_candidates": 1,
+      "C_selected": "candidate",
+      "C_internally_cuttable_regions": 0,
+      "B_C_nodes_equal": true,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": true,
+      "B_C_register_bits": [
+        108,
+        108
+      ],
+      "region_templates": [
+        "softfloat3d-bitvector-mul-v1",
+        "softfloat3d-bitvector-mul-v1"
+      ]
+    },
+    {
+      "case_id": "H_M_8",
+      "family": "H_M",
+      "role": "mul_internal_structure_choice",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "5063091e5ade553f7d3135d4fc438739233ff244dec6713670aa995400ff3ee8",
+        "C": "d5c5d3506c7a9af32d099858f2205af1c4cf9552abc958f425bc6dc14656069d"
+      },
+      "C_structure_candidates": 3,
+      "C_selected": "candidate/half",
+      "C_internally_cuttable_regions": 1,
+      "B_C_nodes_equal": false,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": false,
+      "B_C_register_bits": [
+        17,
+        39
+      ],
+      "region_templates": [
+        "mul-block-tree-v1"
+      ]
+    },
+    {
+      "case_id": "H_M_16",
+      "family": "H_M",
+      "role": "mul_internal_structure_choice",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "c71bc3871a98c083e58b4795d9f3981f88093aa9ba5888031ef1dec45b0e20c7",
+        "C": "88718275037572ddbf96a62ca8dd7a8b9a05f69b915e45d96e61678d5373bd2f"
+      },
+      "C_structure_candidates": 3,
+      "C_selected": "candidate/half",
+      "C_internally_cuttable_regions": 1,
+      "B_C_nodes_equal": false,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": false,
+      "B_C_register_bits": [
+        33,
+        113
+      ],
+      "region_templates": [
+        "mul-block-tree-v1"
+      ]
+    },
+    {
+      "case_id": "H_M_32",
+      "family": "H_M",
+      "role": "mul_internal_structure_choice",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "9ae7da8d34297f0fb6323a4427cf2b807468504012b2654c31e126f10a91d67d",
+        "C": "2b6dc9d1655fdd70b98c16884558cd4cdedaf7070dfae5ab04bdbe0ccde88cb7"
+      },
+      "C_structure_candidates": 3,
+      "C_selected": "candidate/quarter",
+      "C_internally_cuttable_regions": 1,
+      "B_C_nodes_equal": false,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": false,
+      "B_C_register_bits": [
+        65,
+        393
+      ],
+      "region_templates": [
+        "mul-block-tree-v1"
+      ]
+    },
+    {
+      "case_id": "H_M_64",
+      "family": "H_M",
+      "role": "mul_internal_structure_choice",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "c51d30e10dc50898d00b8e9f5733403943bee94a13caffecfecfeaf069caf1b1",
+        "C": "25fb2f4450aba37b79d087c2cef0aef2f4f098686de9823a2e78e44701b5e5ad"
+      },
+      "C_structure_candidates": 3,
+      "C_selected": "candidate/quarter",
+      "C_internally_cuttable_regions": 1,
+      "B_C_nodes_equal": false,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": false,
+      "B_C_register_bits": [
+        65,
+        1345
+      ],
+      "region_templates": [
+        "mul-block-tree-v1"
+      ]
+    },
+    {
+      "case_id": "H_M_128",
+      "family": "H_M",
+      "role": "mul_internal_structure_choice",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "66a80089a1f7bda09361f649f436cddfc5876f67d42d3b58bcc1147f7103ce2e",
+        "C": "466909039e645fc5c3ac330dc206113edd363ffb409f94dd7dd9aeb3bc878e4e"
+      },
+      "C_structure_candidates": 3,
+      "C_selected": "candidate/quarter",
+      "C_internally_cuttable_regions": 1,
+      "B_C_nodes_equal": false,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": false,
+      "B_C_register_bits": [
+        129,
+        2689
+      ],
+      "region_templates": [
+        "mul-block-tree-v1"
+      ]
+    },
+    {
+      "case_id": "H_D_8",
+      "family": "H_D",
+      "role": "atomic_integer_whole_graph",
+      "L": 3,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "b471452c6acb4cf74c08b91875688b2cf78639c6de40ddd370aec9cf45a91ee8",
+        "C": "7660827db91b77bf27542d5656a56693d6325cf14c57d9636508f4fb99cc8883"
+      },
+      "C_structure_candidates": 1,
+      "C_selected": "candidate",
+      "C_internally_cuttable_regions": 0,
+      "B_C_nodes_equal": true,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": true,
+      "B_C_register_bits": [
+        53,
+        53
+      ],
+      "region_templates": [
+        "udiv-original-v1",
+        "umod-original-v1",
+        "udiv-original-v1",
+        "umod-original-v1"
+      ]
+    },
+    {
+      "case_id": "H_D_16",
+      "family": "H_D",
+      "role": "atomic_integer_whole_graph",
+      "L": 3,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "6a16738576c877a0f105db5dd236959f02d7f227278ba0446a733a98b30ddeab",
+        "C": "20aa9a8a615796dfe6a2aace2f9db20483757e701e4538384b02eeca044783aa"
+      },
+      "C_structure_candidates": 1,
+      "C_selected": "candidate",
+      "C_internally_cuttable_regions": 0,
+      "B_C_nodes_equal": true,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": true,
+      "B_C_register_bits": [
+        101,
+        101
+      ],
+      "region_templates": [
+        "udiv-original-v1",
+        "umod-original-v1",
+        "udiv-original-v1",
+        "umod-original-v1"
+      ]
+    },
+    {
+      "case_id": "H_D_32",
+      "family": "H_D",
+      "role": "atomic_integer_whole_graph",
+      "L": 3,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "bdcc8cf2bd6dd4856177bd5210b86edb99c8fa1267b3c47fdc6bfacf88fa94ff",
+        "C": "a7197e97f875ac829fb57b679ceeb78fdf23def857c4b95396216181756180ff"
+      },
+      "C_structure_candidates": 1,
+      "C_selected": "candidate",
+      "C_internally_cuttable_regions": 0,
+      "B_C_nodes_equal": true,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": true,
+      "B_C_register_bits": [
+        197,
+        197
+      ],
+      "region_templates": [
+        "udiv-original-v1",
+        "umod-original-v1",
+        "udiv-original-v1",
+        "umod-original-v1"
+      ]
+    },
+    {
+      "case_id": "H_D_64",
+      "family": "H_D",
+      "role": "atomic_integer_whole_graph",
+      "L": 3,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "fdf2003e396073e544142e4e6d89f685f12ed6d087630f3af797f7f37b263714",
+        "C": "7ca3462b0e7bbaa272146d70cc818c66b70a3cc35ab1b5770ce96435bbabe4ed"
+      },
+      "C_structure_candidates": 1,
+      "C_selected": "candidate",
+      "C_internally_cuttable_regions": 0,
+      "B_C_nodes_equal": true,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": true,
+      "B_C_register_bits": [
+        389,
+        389
+      ],
+      "region_templates": [
+        "udiv-original-v1",
+        "umod-original-v1",
+        "udiv-original-v1",
+        "umod-original-v1"
+      ]
+    },
+    {
+      "case_id": "H_D_128",
+      "family": "H_D",
+      "role": "atomic_integer_whole_graph",
+      "L": 3,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "3eb26dc8179036b21aac7772dcb7a702df411ca8b8267c3198833719ee712985",
+        "C": "4e014f3fbf4ba26e1d6428b2d21fa5271cc9a6b044968222b43a5be9cb9d06d9"
+      },
+      "C_structure_candidates": 1,
+      "C_selected": "candidate",
+      "C_internally_cuttable_regions": 0,
+      "B_C_nodes_equal": true,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": true,
+      "B_C_register_bits": [
+        773,
+        773
+      ],
+      "region_templates": [
+        "udiv-original-v1",
+        "umod-original-v1",
+        "udiv-original-v1",
+        "umod-original-v1"
+      ]
+    },
+    {
+      "case_id": "H_F1",
+      "family": "H_F1",
+      "role": "atomic_FP_whole_graph",
+      "L": 2,
+      "report_source": "actual archived compressed BEIR; not regenerated",
+      "archived_B_C_sha256": {
+        "B": "a964a1985188294f5de7ba3955a706d9c27217d2534c47c6a95ea6048725b4ee",
+        "C": "fe6e301f0486c800c902c6554a9ddbd32b9a235c703ac9d961f25b789166269a"
+      },
+      "C_structure_candidates": 1,
+      "C_selected": "candidate",
+      "C_internally_cuttable_regions": 0,
+      "B_C_nodes_equal": true,
+      "B_C_ports_equal": true,
+      "B_C_stage_map_equal": true,
+      "B_C_register_bits": [
+        38,
+        38
+      ],
+      "region_templates": [
+        "softfloat3d-bitvector-mul-v1"
+      ]
+    }
+  ]
+}

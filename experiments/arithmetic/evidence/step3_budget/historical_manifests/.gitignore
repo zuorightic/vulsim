@@ -1,0 +1,7 @@
+# Added during step6 Git-delivery review; not an original frozen member.
+# Preserve the root ignore rule; publish only the required historical manifests.
+!/build/
+/build/**
+!/build/**/
+!/build/**/manifest.json
+!/build/**/probe-manifest.json

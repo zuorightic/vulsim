@@ -1,0 +1,11 @@
+{
+  "source": "/home/zyrv/OpenROAD-flow-scripts/tools/yosys/kernel/threading.cc",
+  "source_sha256": "410089e1ebdd339d4471ea3d8cd1462b06a3fb9fa83db7664c387608104a64f2",
+  "excerpt_sha256": "495409ea2e071cf04dbf27a5f533a635d366ab29c09e5ac04826ab1c428a9902",
+  "observed_recheck_peak_tree_threads": 26,
+  "observed_CPU_s": 1800.13,
+  "observed_walltime_s": 240.42483574384823,
+  "cause": "Yosys ThreadPool reads YOSYS_MAX_THREADS, defaults INT32_MAX; OMP_NUM_THREADS and NUM_CORES do not bound this pool",
+  "fix": "explicit YOSYS_MAX_THREADS=2 in task-specific effective Make/process environment, separate measured resource identity; no change to cell/RTL/SDC conditions",
+  "scope": "v2 attempted run retained as CPU-limited configured-two-thread but Yosys-unbounded attempt; cannot call it an enforced two-thread capacity result"
+}
