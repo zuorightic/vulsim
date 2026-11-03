@@ -1,6 +1,6 @@
 {
-  "schema": "platform-parameter-provenance-v1",
-  "effective_parameters_changed": false,
+  "schema": "platform-parameter-provenance-v2",
+  "effective_parameters_changed": true,
   "measurement_freeze": {
     "path": "experiments/arithmetic/backend_freeze_v6.json",
     "sha256": "62c43d7ab9182c2c05954f1ba4e7a6894c93392b40b95fa75bed7106a3901e55"
@@ -12,7 +12,7 @@
   "profiles": {
     "asap7": {
       "profile_path": "experiments/arithmetic_dse/configs/platforms/asap7.json",
-      "profile_sha256": "a29e056328a495af3f5815e3c56f4e6838eafd4b3f4f7844cc81d82ef99dd3df",
+      "profile_sha256": "f9d3e71d377d0fef70b66e43828186962caa04fcec31b8f78ad8760c5459f1c7",
       "parameters": {
         "setup_uncertainty_ps": {
           "value": 20,
@@ -233,12 +233,25 @@
           "selection_reason": "Report a review trigger separately from feasibility; not a calibrated noise floor.",
           "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
           "change_impact": "recompute_review_flags; no_EDA_if_reporting_only; retain_historical_flags"
+        },
+        "timing_repair_max_buffer_percent": {
+          "value": 100,
+          "unit": "percent",
+          "source_category": "engineering_capacity_decision",
+          "basis": [
+            {
+              "decision": "step7 observed CTS RSZ-0060 at default20 percent on pure input/capture fixtures; bounded increase to100 percent; timing constraints preserved"
+            }
+          ],
+          "selection_reason": "Allow complete hold repair for many very short boundary paths; still bounded by physical memory/time and buffer-count cap.",
+          "applicability": "new step7 calibration and subsequent matching-profile evaluation; previous measurements retain original setting",
+          "change_impact": "new profile/flow/model identity; revalidate physical batches; no retroactive relabeling"
         }
       }
     },
     "nangate45": {
       "profile_path": "experiments/arithmetic_dse/configs/platforms/nangate45.json",
-      "profile_sha256": "f4ff4c89159379ad030fca2780ae71e17409492b2d003240912fbf63cf634911",
+      "profile_sha256": "e3adefb4440f6dbcf84c84dad87c0da4bcac5c2e5ade81792c9a8aab18caf728",
       "parameters": {
         "setup_uncertainty_ps": {
           "value": 20,
@@ -444,12 +457,25 @@
           "selection_reason": "Report a review trigger separately from feasibility; not a calibrated noise floor.",
           "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
           "change_impact": "recompute_review_flags; no_EDA_if_reporting_only; retain_historical_flags"
+        },
+        "timing_repair_max_buffer_percent": {
+          "value": 100,
+          "unit": "percent",
+          "source_category": "engineering_capacity_decision",
+          "basis": [
+            {
+              "decision": "step7 observed CTS RSZ-0060 at default20 percent on pure input/capture fixtures; bounded increase to100 percent; timing constraints preserved"
+            }
+          ],
+          "selection_reason": "Allow complete hold repair for many very short boundary paths; still bounded by physical memory/time and buffer-count cap.",
+          "applicability": "new step7 calibration and subsequent matching-profile evaluation; previous measurements retain original setting",
+          "change_impact": "new profile/flow/model identity; revalidate physical batches; no retroactive relabeling"
         }
       }
     },
     "sky130hd": {
       "profile_path": "experiments/arithmetic_dse/configs/platforms/sky130hd.json",
-      "profile_sha256": "b167ee95ee7092393e79f1a3ba4d37897d1214d30cc9cd95229b3f1d2d9e2ca7",
+      "profile_sha256": "d7c52aacbfc2bdc468680ced28a58832b203b83af7df0c4df94a3c97ab6edd32",
       "parameters": {
         "setup_uncertainty_ps": {
           "value": 100,
@@ -655,12 +681,25 @@
           "selection_reason": "Report a review trigger separately from feasibility; not a calibrated noise floor.",
           "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
           "change_impact": "recompute_review_flags; no_EDA_if_reporting_only; retain_historical_flags"
+        },
+        "timing_repair_max_buffer_percent": {
+          "value": 100,
+          "unit": "percent",
+          "source_category": "engineering_capacity_decision",
+          "basis": [
+            {
+              "decision": "step7 observed CTS RSZ-0060 at default20 percent on pure input/capture fixtures; bounded increase to100 percent; timing constraints preserved"
+            }
+          ],
+          "selection_reason": "Allow complete hold repair for many very short boundary paths; still bounded by physical memory/time and buffer-count cap.",
+          "applicability": "new step7 calibration and subsequent matching-profile evaluation; previous measurements retain original setting",
+          "change_impact": "new profile/flow/model identity; revalidate physical batches; no retroactive relabeling"
         }
       }
     },
     "gf180": {
       "profile_path": "experiments/arithmetic_dse/configs/platforms/gf180.json",
-      "profile_sha256": "96e1c0c7fe0c9df178fde863272f1bc8e3ed44e6e8457d50bbadcf9a53036bc7",
+      "profile_sha256": "646c4097a20f82b0abeab2e05f30bdb7847e16cbd992569eabf72fda402eda18",
       "parameters": {
         "setup_uncertainty_ps": {
           "value": 100,
@@ -866,6 +905,19 @@
           "selection_reason": "Report a review trigger separately from feasibility; not a calibrated noise floor.",
           "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
           "change_impact": "recompute_review_flags; no_EDA_if_reporting_only; retain_historical_flags"
+        },
+        "timing_repair_max_buffer_percent": {
+          "value": 100,
+          "unit": "percent",
+          "source_category": "engineering_capacity_decision",
+          "basis": [
+            {
+              "decision": "step7 observed CTS RSZ-0060 at default20 percent on pure input/capture fixtures; bounded increase to100 percent; timing constraints preserved"
+            }
+          ],
+          "selection_reason": "Allow complete hold repair for many very short boundary paths; still bounded by physical memory/time and buffer-count cap.",
+          "applicability": "new step7 calibration and subsequent matching-profile evaluation; previous measurements retain original setting",
+          "change_impact": "new profile/flow/model identity; revalidate physical batches; no retroactive relabeling"
         }
       }
     }
@@ -873,6 +925,15 @@
   "unresolved": [
     "Engineering clock/hold-review assumptions have no independent noise calibration; valid only in declared probe scope.",
     "GF180 13.43fF is a project choice; no PDK mandate is claimed.",
-    "GF180 wire RC calibration command, data and output units remain unresolved; see D5."
-  ]
+    "Native GF180 original wire-regression inputs remain unavailable; new calibrated profile uses independent RCX/geometry fit; top Metal5 heldout coverage is small."
+  ],
+  "physical_condition_revision": {
+    "wire_RC_platform": "gf180",
+    "wire_RC_changed": true,
+    "timing_repair_all_platforms_max_buffer_percent": 100,
+    "clock_IO_uncertainty_slew_load_unchanged": true,
+    "old_measurements_keep_old_identities": true,
+    "basis": "independent GF wire-segment calibration and observed CTS max-buffer failures in tiny arithmetic fixtures; engineering capacity setting, not PDK prescription"
+  },
+  "declared_clock_IO_parameters_changed": false
 }

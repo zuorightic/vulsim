@@ -1,0 +1,950 @@
+{
+  "version": "arithmetic-backend-model-v1",
+  "id": "asap7-local-grt-qualified-v1",
+  "target_platform": "asap7",
+  "platform_profile_sha256": "f9d3e71d377d0fef70b66e43828186962caa04fcec31b8f78ad8760c5459f1c7",
+  "feature_schema": "arithmetic-physical-features-v2",
+  "mapping_abc_target_ps": 1500,
+  "quality_status": "passed",
+  "stages": {
+    "grt": {
+      "operations": {
+        "add": {
+          "quality_status": "passed",
+          "validation_ready": true,
+          "delay": {
+            "kind": "tree",
+            "features": [
+              "lhs_width",
+              "rhs_width",
+              "result_width",
+              "log_width",
+              "width_product",
+              "fanout",
+              "lhs_zero_bits",
+              "rhs_zero_bits",
+              "abc_target_ps",
+              "sdc_period_ps",
+              "width_result_product",
+              "retained_product_terms"
+            ],
+            "nodes": [
+              {
+                "feature": 3,
+                "threshold": 3.5,
+                "left": 1,
+                "right": 6
+              },
+              {
+                "feature": 2,
+                "threshold": 6.0,
+                "left": 2,
+                "right": 5
+              },
+              {
+                "feature": 4,
+                "threshold": 10.0,
+                "left": 3,
+                "right": 4
+              },
+              {
+                "value": 113.58527133333332
+              },
+              {
+                "value": 143.33457966666666
+              },
+              {
+                "value": 236.41363033333334
+              },
+              {
+                "feature": 4,
+                "threshold": 640.0,
+                "left": 7,
+                "right": 8
+              },
+              {
+                "value": 322.9544926666667
+              },
+              {
+                "value": 406.938553
+              }
+            ]
+          },
+          "delay_margin_ps": 1.5,
+          "area": {
+            "kind": "tree",
+            "features": [
+              "lhs_width",
+              "rhs_width",
+              "result_width",
+              "log_width",
+              "width_product",
+              "fanout",
+              "lhs_zero_bits",
+              "rhs_zero_bits",
+              "abc_target_ps",
+              "sdc_period_ps",
+              "width_result_product",
+              "retained_product_terms"
+            ],
+            "nodes": [
+              {
+                "feature": 3,
+                "threshold": 4.5,
+                "left": 1,
+                "right": 8
+              },
+              {
+                "feature": 2,
+                "threshold": 12.0,
+                "left": 2,
+                "right": 7
+              },
+              {
+                "feature": 4,
+                "threshold": 40.0,
+                "left": 3,
+                "right": 6
+              },
+              {
+                "feature": 4,
+                "threshold": 10.0,
+                "left": 4,
+                "right": 5
+              },
+              {
+                "value": 0.49572
+              },
+              {
+                "value": 1.4142599999999996
+              },
+              {
+                "value": 4.038659999999999
+              },
+              {
+                "value": 11.484180000000011
+              },
+              {
+                "value": 24.596459999999965
+              }
+            ]
+          },
+          "domain": {
+            "conditions": [
+              {
+                "lhs_min": 2,
+                "lhs_max": 2,
+                "rhs_min": 2,
+                "rhs_max": 2,
+                "result_shape": "same_width",
+                "fanout_max": 6,
+                "abc_target_ps": 1500,
+                "sdc_min_ps": 1500,
+                "sdc_max_ps": 2250.0
+              },
+              {
+                "lhs_min": 4,
+                "lhs_max": 4,
+                "rhs_min": 4,
+                "rhs_max": 4,
+                "result_shape": "same_width",
+                "fanout_max": 6,
+                "abc_target_ps": 1500,
+                "sdc_min_ps": 1500,
+                "sdc_max_ps": 2250.0
+              },
+              {
+                "lhs_min": 8,
+                "lhs_max": 8,
+                "rhs_min": 8,
+                "rhs_max": 8,
+                "result_shape": "same_width",
+                "fanout_max": 6,
+                "abc_target_ps": 1500,
+                "sdc_min_ps": 1500,
+                "sdc_max_ps": 2250.0
+              },
+              {
+                "lhs_min": 16,
+                "lhs_max": 16,
+                "rhs_min": 16,
+                "rhs_max": 16,
+                "result_shape": "same_width",
+                "fanout_max": 6,
+                "abc_target_ps": 1500,
+                "sdc_min_ps": 1500,
+                "sdc_max_ps": 2250.0
+              },
+              {
+                "lhs_min": 32,
+                "lhs_max": 32,
+                "rhs_min": 32,
+                "rhs_max": 32,
+                "result_shape": "same_width",
+                "fanout_max": 6,
+                "abc_target_ps": 1500,
+                "sdc_min_ps": 1500,
+                "sdc_max_ps": 2250.0
+              }
+            ],
+            "known_zero_policy": "none",
+            "constant_operand_policy": "dynamic_only"
+          }
+        },
+        "addcarry": {
+          "quality_status": "passed",
+          "validation_ready": true,
+          "delay": {
+            "kind": "tree",
+            "features": [
+              "lhs_width",
+              "rhs_width",
+              "result_width",
+              "log_width",
+              "width_product",
+              "fanout",
+              "lhs_zero_bits",
+              "rhs_zero_bits",
+              "abc_target_ps",
+              "sdc_period_ps",
+              "width_result_product",
+              "retained_product_terms"
+            ],
+            "nodes": [
+              {
+                "feature": 3,
+                "threshold": 3.5,
+                "left": 1,
+                "right": 6
+              },
+              {
+                "feature": 2,
+                "threshold": 7.0,
+                "left": 2,
+                "right": 5
+              },
+              {
+                "feature": 4,
+                "threshold": 10.0,
+                "left": 3,
+                "right": 4
+              },
+              {
+                "value": 133.20668566666666
+              },
+              {
+                "value": 149.82913700000003
+              },
+              {
+                "value": 246.07055666666668
+              },
+              {
+                "feature": 4,
+                "threshold": 640.0,
+                "left": 7,
+                "right": 8
+              },
+              {
+                "value": 316.610209
+              },
+              {
+                "value": 443.55306
+              }
+            ]
+          },
+          "delay_margin_ps": 8.947900866666679,
+          "area": {
+            "kind": "tree",
+            "features": [
+              "lhs_width",
+              "rhs_width",
+              "result_width",
+              "log_width",
+              "width_product",
+              "fanout",
+              "lhs_zero_bits",
+              "rhs_zero_bits",
+              "abc_target_ps",
+              "sdc_period_ps",
+              "width_result_product",
+              "retained_product_terms"
+            ],
+            "nodes": [
+              {
+                "feature": 3,
+                "threshold": 4.5,
+                "left": 1,
+                "right": 8
+              },
+              {
+                "feature": 2,
+                "threshold": 13.0,
+                "left": 2,
+                "right": 7
+              },
+              {
+                "feature": 4,
+                "threshold": 40.0,
+                "left": 3,
+                "right": 6
+              },
+              {
+                "feature": 4,
+                "threshold": 10.0,
+                "left": 4,
+                "right": 5
+              },
+              {
+                "value": 0.5831999999999999
+              },
+              {
+                "value": 1.6766999999999996
+              },
+              {
+                "value": 5.088419999999999
+              },
+              {
+                "value": 11.547360000000012
+              },
+              {
+                "value": 29.835539999999956
+              }
+            ]
+          },
+          "domain": {
+            "conditions": [
+              {
+                "lhs_min": 2,
+                "lhs_max": 2,
+                "rhs_min": 2,
+                "rhs_max": 2,
+                "result_shape": "carry",
+                "fanout_max": 6,
+                "abc_target_ps": 1500,
+                "sdc_min_ps": 1500,
+                "sdc_max_ps": 2250.0
+              },
+              {
+                "lhs_min": 4,
+                "lhs_max": 4,
+                "rhs_min": 4,
+                "rhs_max": 4,
+                "result_shape": "carry",
+                "fanout_max": 6,
+                "abc_target_ps": 1500,
+                "sdc_min_ps": 1500,
+                "sdc_max_ps": 2250.0
+              },
+              {
+                "lhs_min": 8,
+                "lhs_max": 8,
+                "rhs_min": 8,
+                "rhs_max": 8,
+                "result_shape": "carry",
+                "fanout_max": 6,
+                "abc_target_ps": 1500,
+                "sdc_min_ps": 1500,
+                "sdc_max_ps": 2250.0
+              },
+              {
+                "lhs_min": 16,
+                "lhs_max": 16,
+                "rhs_min": 16,
+                "rhs_max": 16,
+                "result_shape": "carry",
+                "fanout_max": 6,
+                "abc_target_ps": 1500,
+                "sdc_min_ps": 1500,
+                "sdc_max_ps": 2250.0
+              },
+              {
+                "lhs_min": 32,
+                "lhs_max": 32,
+                "rhs_min": 32,
+                "rhs_max": 32,
+                "result_shape": "carry",
+                "fanout_max": 6,
+                "abc_target_ps": 1500,
+                "sdc_min_ps": 1500,
+                "sdc_max_ps": 2250.0
+              }
+            ],
+            "known_zero_policy": "none",
+            "constant_operand_policy": "dynamic_only"
+          }
+        },
+        "mul": {
+          "quality_status": "passed",
+          "validation_ready": true,
+          "delay": {
+            "kind": "tree",
+            "features": [
+              "lhs_width",
+              "rhs_width",
+              "result_width",
+              "log_width",
+              "width_product",
+              "fanout",
+              "lhs_zero_bits",
+              "rhs_zero_bits",
+              "abc_target_ps",
+              "sdc_period_ps",
+              "width_result_product",
+              "retained_product_terms"
+            ],
+            "nodes": [
+              {
+                "feature": 2,
+                "threshold": 12.0,
+                "left": 1,
+                "right": 10
+              },
+              {
+                "feature": 3,
+                "threshold": 1.5,
+                "left": 2,
+                "right": 5
+              },
+              {
+                "feature": 2,
+                "threshold": 3.0,
+                "left": 3,
+                "right": 4
+              },
+              {
+                "value": 75.13709999999999
+              },
+              {
+                "value": 118.82234166666667
+              },
+              {
+                "feature": 10,
+                "threshold": 48.0,
+                "left": 6,
+                "right": 9
+              },
+              {
+                "feature": 2,
+                "threshold": 6.0,
+                "left": 7,
+                "right": 8
+              },
+              {
+                "value": 263.3375246666667
+              },
+              {
+                "value": 354.89767966666665
+              },
+              {
+                "value": 467.379868
+              },
+              {
+                "feature": 4,
+                "threshold": 640.0,
+                "left": 11,
+                "right": 16
+              },
+              {
+                "feature": 11,
+                "threshold": 196.0,
+                "left": 12,
+                "right": 15
+              },
+              {
+                "feature": 4,
+                "threshold": 160.0,
+                "left": 13,
+                "right": 14
+              },
+              {
+                "value": 645.0101266666667
+              },
+              {
+                "value": 730.3850256666666
+              },
+              {
+                "value": 912.8446653333334
+              },
+              {
+                "feature": 11,
+                "threshold": 776.0,
+                "left": 17,
+                "right": 18
+              },
+              {
+                "value": 1089.5815226666666
+              },
+              {
+                "value": 1225.2344003333335
+              }
+            ]
+          },
+          "delay_margin_ps": 12.662116133333278,
+          "area": {
+            "kind": "linear",
+            "features": [
+              "lhs_width",
+              "rhs_width",
+              "result_width",
+              "log_width",
+              "width_product",
+              "fanout",
+              "lhs_zero_bits",
+              "rhs_zero_bits",
+              "abc_target_ps",
+              "sdc_period_ps",
+              "width_result_product",
+              "retained_product_terms"
+            ],
+            "intercept": -0.3012125201239968,
+            "coefficients": [
+              0.3235989503134586,
+              0.3235989503082482,
+              -0.23419475798257194,
+              -1.1564784187368164,
+              -0.09443199189278699,
+              2.029320975037613e-08,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.1429948292655914,
+              0.28495659318648725
+            ]
+          },
+          "domain": {
+            "conditions": [
+              {
+                "lhs_min": 2,
+                "lhs_max": 2,
+                "rhs_min": 2,
+                "rhs_max": 2,
+                "result_shape": "full_mul",
+                "fanout_max": 6,
+                "abc_target_ps": 1500,
+                "sdc_min_ps": 1500,
+                "sdc_max_ps": 2250.0
+              },
+              {
+                "lhs_min": 4,
+                "lhs_max": 4,
+                "rhs_min": 4,
+                "rhs_max": 4,
+                "result_shape": "full_mul",
+                "fanout_max": 6,
+                "abc_target_ps": 1500,
+                "sdc_min_ps": 1500,
+                "sdc_max_ps": 2250.0
+              },
+              {
+                "lhs_min": 8,
+                "lhs_max": 8,
+                "rhs_min": 8,
+                "rhs_max": 8,
+                "result_shape": "full_mul",
+                "fanout_max": 6,
+                "abc_target_ps": 1500,
+                "sdc_min_ps": 1500,
+                "sdc_max_ps": 2250.0
+              },
+              {
+                "lhs_min": 16,
+                "lhs_max": 16,
+                "rhs_min": 16,
+                "rhs_max": 16,
+                "result_shape": "full_mul",
+                "fanout_max": 6,
+                "abc_target_ps": 1500,
+                "sdc_min_ps": 1500,
+                "sdc_max_ps": 2250.0
+              },
+              {
+                "lhs_min": 32,
+                "lhs_max": 32,
+                "rhs_min": 32,
+                "rhs_max": 32,
+                "result_shape": "full_mul",
+                "fanout_max": 6,
+                "abc_target_ps": 1500,
+                "sdc_min_ps": 1500,
+                "sdc_max_ps": 2250.0
+              },
+              {
+                "lhs_min": 2,
+                "lhs_max": 2,
+                "rhs_min": 2,
+                "rhs_max": 2,
+                "result_shape": "low_mul",
+                "fanout_max": 6,
+                "abc_target_ps": 1500,
+                "sdc_min_ps": 1500,
+                "sdc_max_ps": 2250.0
+              },
+              {
+                "lhs_min": 4,
+                "lhs_max": 4,
+                "rhs_min": 4,
+                "rhs_max": 4,
+                "result_shape": "low_mul",
+                "fanout_max": 6,
+                "abc_target_ps": 1500,
+                "sdc_min_ps": 1500,
+                "sdc_max_ps": 2250.0
+              },
+              {
+                "lhs_min": 8,
+                "lhs_max": 8,
+                "rhs_min": 8,
+                "rhs_max": 8,
+                "result_shape": "low_mul",
+                "fanout_max": 6,
+                "abc_target_ps": 1500,
+                "sdc_min_ps": 1500,
+                "sdc_max_ps": 2250.0
+              },
+              {
+                "lhs_min": 16,
+                "lhs_max": 16,
+                "rhs_min": 16,
+                "rhs_max": 16,
+                "result_shape": "low_mul",
+                "fanout_max": 6,
+                "abc_target_ps": 1500,
+                "sdc_min_ps": 1500,
+                "sdc_max_ps": 2250.0
+              },
+              {
+                "lhs_min": 32,
+                "lhs_max": 32,
+                "rhs_min": 32,
+                "rhs_max": 32,
+                "result_shape": "low_mul",
+                "fanout_max": 6,
+                "abc_target_ps": 1500,
+                "sdc_min_ps": 1500,
+                "sdc_max_ps": 2250.0
+              }
+            ],
+            "known_zero_policy": "none",
+            "constant_operand_policy": "dynamic_only"
+          }
+        }
+      },
+      "state_model": {
+        "bit_area_um2": 0.5615408023350567,
+        "signal_area_um2": 0.08886258620687768,
+        "clock_area_per_bit_um2": 0.25986737943924854,
+        "overhead_scope": "clock and unassigned physical/port repair allocation, not exclusively clock cells",
+        "protocol_id": "sync_zero_reset_valid_enable_v1",
+        "domain": {
+          "max_bits": 508,
+          "max_signals": 28,
+          "max_data_word_width": 64,
+          "min_variable_data_word_bits": 1
+        },
+        "protocol": "synchronous_zero_reset_enabled_data; nonenabled valid uses same conservative local surrogate"
+      },
+      "single_operation_models": {
+        "add": {
+          "delay": {
+            "kind": "linear",
+            "features": [
+              "lhs_width",
+              "rhs_width",
+              "result_width",
+              "log_width",
+              "width_product",
+              "fanout",
+              "lhs_zero_bits",
+              "rhs_zero_bits",
+              "abc_target_ps",
+              "sdc_period_ps",
+              "width_result_product",
+              "retained_product_terms"
+            ],
+            "intercept": 52.102665583054744,
+            "coefficients": [
+              1.9478239072420007,
+              1.9478239072420007,
+              1.9478239072420007,
+              45.929528300863126,
+              -0.020492305065287087,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              -0.020492305065287087,
+              -0.03587541789218698
+            ]
+          },
+          "delay_margin_ps": 39.985495413810476,
+          "validation_delay_scale": 1.0654685888119582,
+          "area": {
+            "kind": "linear",
+            "features": [
+              "lhs_width",
+              "rhs_width",
+              "result_width",
+              "log_width",
+              "width_product",
+              "fanout",
+              "lhs_zero_bits",
+              "rhs_zero_bits",
+              "abc_target_ps",
+              "sdc_period_ps",
+              "width_result_product",
+              "retained_product_terms"
+            ],
+            "intercept": -0.5016401447924492,
+            "coefficients": [
+              0.14601152711113244,
+              0.14601152711113244,
+              0.14601152711113244,
+              0.06576608558615941,
+              0.003264315520151519,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.003264315520151519,
+              0.006404022944684494
+            ]
+          }
+        },
+        "addcarry": {
+          "delay": {
+            "kind": "linear",
+            "features": [
+              "lhs_width",
+              "rhs_width",
+              "result_width",
+              "log_width",
+              "width_product",
+              "fanout",
+              "lhs_zero_bits",
+              "rhs_zero_bits",
+              "abc_target_ps",
+              "sdc_period_ps",
+              "width_result_product",
+              "retained_product_terms"
+            ],
+            "intercept": 64.67822724793811,
+            "coefficients": [
+              6.098891434429081,
+              6.098891434429081,
+              6.098891434429081,
+              14.844368116520867,
+              -0.11347120455549475,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              -0.10286555821613448,
+              -0.16870233497864373
+            ]
+          },
+          "delay_margin_ps": 8.818759049958905,
+          "validation_delay_scale": 1.05,
+          "area": {
+            "kind": "linear",
+            "features": [
+              "lhs_width",
+              "rhs_width",
+              "result_width",
+              "log_width",
+              "width_product",
+              "fanout",
+              "lhs_zero_bits",
+              "rhs_zero_bits",
+              "abc_target_ps",
+              "sdc_period_ps",
+              "width_result_product",
+              "retained_product_terms"
+            ],
+            "intercept": -0.8103354026731964,
+            "coefficients": [
+              0.16254075235702417,
+              0.16254075235702417,
+              0.16254075235702417,
+              0.1855630325007018,
+              0.0032623505792935886,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.003212634727183672,
+              0.006229401202047932
+            ]
+          }
+        },
+        "mul": {
+          "delay": {
+            "kind": "linear",
+            "features": [
+              "lhs_width",
+              "rhs_width",
+              "result_width",
+              "log_width",
+              "width_product",
+              "fanout",
+              "lhs_zero_bits",
+              "rhs_zero_bits",
+              "abc_target_ps",
+              "sdc_period_ps",
+              "width_result_product",
+              "retained_product_terms"
+            ],
+            "intercept": -94.68575228831583,
+            "coefficients": [
+              4.4019532464378655,
+              4.4019532464378655,
+              7.922716553487698,
+              149.84747724854878,
+              -0.03502440027631669,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              -0.02112977357928537,
+              -0.05017833172564269
+            ]
+          },
+          "delay_margin_ps": 33.87369946991606,
+          "validation_delay_scale": 1.053012200324261,
+          "area": {
+            "kind": "linear",
+            "features": [
+              "lhs_width",
+              "rhs_width",
+              "result_width",
+              "log_width",
+              "width_product",
+              "fanout",
+              "lhs_zero_bits",
+              "rhs_zero_bits",
+              "abc_target_ps",
+              "sdc_period_ps",
+              "width_result_product",
+              "retained_product_terms"
+            ],
+            "intercept": -0.2807006842899682,
+            "coefficients": [
+              0.2865750122096525,
+              0.2865750122096525,
+              -0.22493760123508358,
+              -1.0570758437518788,
+              -0.08549815157077241,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.1403373503722081,
+              0.2796150272509742
+            ]
+          }
+        }
+      },
+      "stage_correction": {
+        "delay_base_scale": 0.4544253237455289,
+        "area_base_scale": 0.7411777187976456,
+        "intercept_ps": 268.6371326120927,
+        "per_operation_ps": 0.0,
+        "per_result_bit_ps": 0.0,
+        "intercept_um2": 0.9431301476460556,
+        "per_operation_um2": 0.0,
+        "per_result_bit_um2": 0.0,
+        "max_operations": 11,
+        "max_live_result_bits": 176,
+        "monotone_group_lower_bound": false,
+        "composition_schema": "cardinality-specific-stage-v1",
+        "method": "nonnegative base scale/interactions; independent stage validation/test required",
+        "graph_domain": {
+          "version": "independent-single-output-arithmetic-tree-v1",
+          "max_multiplications": 4,
+          "max_output_roots": 1,
+          "multi_node_operations": [
+            "mul",
+            "add"
+          ],
+          "single_node_operations": [
+            "mul",
+            "add",
+            "addcarry"
+          ],
+          "primary_input_policy": "independent operands; no shared arithmetic intermediate fanout",
+          "source": "registered v5 mixed contexts; numeric size bounds alone never imply arbitrary-DAG coverage"
+        },
+        "validation_ratio_margin": 1.366152175000505,
+        "margin_rule": "max validation actual/predicted ratio (floor1) times predeclared 1.05; no test use"
+      },
+      "boundary_model": {
+        "io_delay_fraction": 0.2,
+        "input_overhead_ps": 240.73674000000005,
+        "register_overhead_ps": 240.73674000000005,
+        "actual_boundary_H_max_ps": 114.03402700000004,
+        "capture_control_path_max_ps": 76.702713,
+        "engineering_clock_reserve_ps": 50,
+        "definition": "H=T-QD-slack includes clkQ/setup/skew/uncertainty once; reset/enable capture path and declared reserve separate; input conservatively retains clkQ"
+      },
+      "calibration_validation_ready": true
+    }
+  },
+  "dataset_sha256": "d72234b2a482af37fa5a7d4cda0d9aabfb9f122851d5c8530cbb381a7d762578",
+  "protocol_sha256": "7f729aff62de0bf105d916f85b55707bbdb88f9fa2cc8904eafad971db73819d",
+  "measurement_domain": {
+    "complete_contexts_in_dataset_sha256": "d72234b2a482af37fa5a7d4cda0d9aabfb9f122851d5c8530cbb381a7d762578",
+    "context_sha256": [
+      "4fee8918935e18399d251fb3505158113d3bdc4847571c5c3ab73f1cb5ab324e",
+      "eecbcfbc35ce7e083d21f019da7deb63cf448526a4f6fdad2ebfbc816474336c"
+    ],
+    "identities": [
+      {
+        "tool_thread_controls": {
+          "YOSYS_MAX_THREADS": 2,
+          "OMP_NUM_THREADS": 2,
+          "OPENBLAS_NUM_THREADS": 2,
+          "NUM_CORES": 2
+        },
+        "executed_synth_script_sha256": "81cb1177c4103778f760c73944b59c8e62a4ec966b731448bedf392081cf1a5f",
+        "executed_util_script_sha256": "c03aef0159c07610f9376ca59816cae345a9cd2a9369c16328060788c8701d99",
+        "io_delay_policy": "fraction_of_period",
+        "io_delay_max_ps": 300.0,
+        "libraries_sha256": {
+          "asap7sc7p5t_AO_RVT_TT_nldm_211120.lib.gz": "fe9f1c18e88ab129d63ad82adc256f3a85c7e38e47dabbe0a96749b41087dea1",
+          "asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib.gz": "8d6db2c2f83c3c162be54a5e102b2d379fcaaaef2db5f0b1d4152c395d01fea1",
+          "asap7sc7p5t_OA_RVT_TT_nldm_211120.lib.gz": "bbe6d904d58c7367de1ed7639e4eae386c65fa0a5af26ae62dc5e4e2ec52b08b",
+          "asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib": "57a0b403485b99ebd676942af4673ac086b86c7c75fbdc3e5c0038501dd22ba3",
+          "asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz": "073ac4b6b08f272b6953b0ad54d1d9743767a7d15a0e2964ed86cf44c3dbe00e"
+        },
+        "tool_binaries_sha256": {
+          "yosys": "0c0d6674d38e48d1637003c2542977f74a550103b252f61776c158b2ebeeaca9",
+          "openroad": "c24e4e3a75e223e51e203440992a0364fb8c83a239162238d0772b87a1193f75",
+          "abc": "fab637b96f401f8b3fcadd3e256728f91528960e6da35d5b7e74b13c30ae83e0"
+        },
+        "abc_driver_cell": "BUFx2_ASAP7_75t_R",
+        "abc_load_fF": 3.898,
+        "corner": "TC",
+        "VT": "RVT",
+        "liberty_model": "NLDM"
+      }
+    ]
+  },
+  "fitting": "independent per-platform fitted coefficients/trees, validation-only algorithm and margin selection",
+  "support_status": "qualified local grt domain only; synth including Sky failed result remains in the source package",
+  "base_node_model_id": "asap7-isolated-mul-local-v2",
+  "isolated_tested_model_sha256": "d98cc7a0ec8cf8fb04e98a74da936d14d835f73ce562b186c6746eb9a6dc1779",
+  "calibration_dataset_sha256": "58f19617dea4bbf1cf0dfab2d7e78f80fcc252f02e112f4a24744aa7ab29f2c2",
+  "calibration_protocol_sha256": "48e174c84f2ddf81a53d63b853c2a3311b5b4c0369a7ab514d450f47606421a1",
+  "calibration_fit_protocol_sha256": "ddd7ac473930aa4ae35aefed646a12255c6b44b622b7022602c5bd5a5eaf3510",
+  "release_scope": "grt local dynamic Mul/Add/AddCarry and independent single-output synthetic trees only; original stage/node/state domains still apply; no full candidate or five-width readiness",
+  "qualified_source_model_sha256": "f5ee880097285caf570d3eb135561c89eee13c3017595554de60288dff9a7138",
+  "qualification_protocol_sha256": "bde0f7f81269d912dfb2eec0244ec70c3563d95ee9a8d603c94621c486aef0af",
+  "qualification_dataset_sha256": "b0413c59ac630878cc45cc40348c609d13d95cb0d2b15f8c55bed5d381360e81",
+  "boundary_qualification_protocol_sha256": "ce1445e326e67f1fecccb5b0ffa58c3ea28a6dcff8c2a19ac44c6475a7fc5429"
+}

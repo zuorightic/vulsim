@@ -1,0 +1,51 @@
+{
+  "schema": "arithmetic-platform-v1",
+  "version": 1,
+  "corner": "TC",
+  "temperature_C": 25.0,
+  "liberty_model": "NLDM",
+  "abc_time_unit": "ps",
+  "abc_load_unit": "fF",
+  "abc_unit_basis": "Yosys ABC Liberty reader scales delay to ps and capacitance to fF; logs retain stime evidence",
+  "hold_review_band_role": "predeclared engineering trigger; not noise floor or signoff",
+  "exclude_area_master_types": [
+    "CORE_SPACER"
+  ],
+  "physical_master_types": [
+    "CORE_WELLTAP",
+    "CORE_ENDCAP",
+    "ENDCAP_PRE",
+    "ENDCAP_POST",
+    "ENDCAP_TOPLEFT",
+    "ENDCAP_TOPRIGHT",
+    "ENDCAP_BOTTOMLEFT",
+    "ENDCAP_BOTTOMRIGHT"
+  ],
+  "seed": 42,
+  "core_utilization": 40,
+  "place_density": 0.65,
+  "multi_corner_signoff": false,
+  "platform": "nangate45",
+  "voltage_V": 1.1,
+  "time_unit": "ns",
+  "capacitance_unit": "fF",
+  "library_count": 1,
+  "library_name_pattern": "NangateOpenCellLibrary_typical\\.lib",
+  "VT": "library_default",
+  "driver_cell": "BUF_X1",
+  "driver_pin": "Z",
+  "output_load_fF": 3.898,
+  "setup_uncertainty_ps": 20,
+  "hold_uncertainty_ps": 5,
+  "clock_transition_ps": 10,
+  "hold_review_margin_ps": 5,
+  "core_margin_um": 5,
+  "trial_period_ps": 3000,
+  "make_overrides": {
+    "CORNER": "TC"
+  },
+  "allowed_physical_prefixes": [
+    "FILLCELL",
+    "TAPCELL"
+  ]
+}

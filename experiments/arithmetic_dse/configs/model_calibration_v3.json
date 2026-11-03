@@ -1,0 +1,70 @@
+{
+  "version": "arithmetic-state-stage-calibration-v3",
+  "data_role": "new synthetic contexts and reset/enable state fixtures; never formal/holdout PPA",
+  "splits": {
+    "train": {
+      "fanout": 3,
+      "chain_lengths": [
+        3,
+        5,
+        7
+      ]
+    },
+    "validation": {
+      "fanout": 2,
+      "chain_lengths": [
+        4,
+        6
+      ]
+    },
+    "test": {
+      "fanout": 4,
+      "topology": "three independent products reduced by two additions"
+    }
+  },
+  "context_multiply_widths": [
+    4,
+    8
+  ],
+  "state_widths": [
+    8,
+    16,
+    32
+  ],
+  "source_group": "entire split bundle, including all operations, target variants and backend stages",
+  "fit": "nonnegative base scale plus nonnegative intercept/per-operation/per-result-bit terms, separately delay and area; validation gates before independent test; all coefficients frozen before reading test labels",
+  "quality_gates_before_test": {
+    "stage_delay_median_relative_error_max": 0.3,
+    "stage_delay_p95_relative_error_max": 0.75,
+    "stage_area_median_relative_error_max": 0.3,
+    "stage_area_p95_relative_error_max": 0.75,
+    "false_feasible_fraction_max": 0.05,
+    "state_area_median_relative_error_max": 0.2,
+    "state_area_p95_relative_error_max": 0.5
+  },
+  "feasibility_budgets": [
+    0.5,
+    0.75,
+    0.9,
+    0.95,
+    0.99,
+    1.0,
+    1.01,
+    1.05,
+    1.1,
+    1.25,
+    1.5
+  ],
+  "feasibility_budget_definition": "multiples of each independently measured Q-D label; comparison evaluates classification, never supplies predictor features",
+  "support": "local model only, max7 cost-bearing operations and max112 result bits per actual stage; no arbitrary topology/large-width coverage claim",
+  "boundary": "launch clkQ, capture setup, capture reset/enable mux and uncertainty separated; frozen engineering clock reserve explicitly reported",
+  "clock_reserve_ps": {
+    "asap7": 50,
+    "nangate45": 100,
+    "sky130hd": 300,
+    "gf180": 300
+  },
+  "main_matrix_authorized": false,
+  "supersedes": "v2 validation failed; independent calibration test remains unevaluated",
+  "reason": "isolated complete data paths/adder costs overcount optimized multi-operation stages; a positive-only residual cannot remove repeated boundary costs or stage optimization; nonnegative scale retains monotonicity"
+}

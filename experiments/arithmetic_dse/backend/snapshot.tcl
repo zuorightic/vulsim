@@ -57,3 +57,5 @@ foreach inst [$block getInsts] {
 }
 close $out
 puts "VULSIM_SNAPSHOT_COMPLETE $::env(VULSIM_EVAL_STAGE)"
+source [file join [file dirname [info script]] rc_readback.tcl]
+source [file join [file dirname [info script]] model_labels.tcl]

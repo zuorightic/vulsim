@@ -81,6 +81,12 @@ def revise_admission(parent_path,destination,revision_id,replacements,reason,*,a
 def verify_admission(args,p,rtl,ledger):
     path=args.admission.resolve()
     frozen=json.loads(path.read_text())
+    if frozen.get('purpose')=='arithmetic_model_collection':
+        from .model_collection import verify_admission as verify_collection
+        return verify_collection(args,p,rtl,ledger)
+    if frozen.get('purpose')=='arithmetic_model_probe_only':
+        from .model_samples import verify_admission as verify_model
+        return verify_model(args,p,rtl,ledger)
     if frozen.get('purpose')=='arithmetic_clock_relaxation_only':
         from .clock_relaxation import verify_admission as verify_relaxation
         return verify_relaxation(args,p,rtl,ledger)

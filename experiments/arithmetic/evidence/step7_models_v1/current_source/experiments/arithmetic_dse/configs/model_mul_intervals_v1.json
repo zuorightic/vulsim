@@ -1,0 +1,22 @@
+{
+  "version": "arithmetic-mul-group-interval-model-v1",
+  "purpose": "price real compiler expanded unsigned full/low multiplication stage intervals; no formal or holdout graph PPA",
+  "template": "mul-block-tree-v1",
+  "splits": {"train": [8, 16, 32], "validation": [12, 24], "test": [20, 28]},
+  "configurations": ["half", "quarter"],
+  "result_shapes": ["full", "low"],
+  "intervals": "every nonempty contiguous complete legal-group interval; no registers inserted inside a group",
+  "boundary": "independent packed variable-bit launch and capture DFFs; reconstruct proven constants, Q-D stops before unconditional capture; parity observer outside core",
+  "context": {"fanout": 1, "ABC": "fixed per-platform R", "SDC": "fixed R; wider target range not claimed"},
+  "pack_limit": {"samples": 6, "input_variable_bits": 640},
+  "algorithms": ["constant", "linear-width", "quadratic-width", "ridge-relative-1e-6", "ridge-relative-1e-4", "ridge-relative-1e-2", "tree-depth-2"],
+  "selection": "train fit, original stage quality gates first, validation normalized MAE, complexity; no test fitting",
+  "margin": "validation maximum delay underprediction ratio times 1.05, frozen before independent test",
+  "quality_gates": {"delay_median_relative_error_max": 0.30, "delay_p95_relative_error_max": 0.75, "area_median_relative_error_max": 0.30, "area_p95_relative_error_max": 0.75, "false_feasible_fraction_max": 0.05},
+  "feasibility_ratios": [0.5, 0.75, 0.9, 0.95, 0.99, 1.0, 1.01, 1.05, 1.1, 1.25, 1.5],
+  "supported_queries_if_passed": "equal unsigned widths divisible by four in [8,32], registered half/quarter, full or low result, one expanded region without extra paid arithmetic in same stage; exact interval class; no arbitrary multi-region composition",
+  "data_exclusions": ["all formal/holdout PPA", "old capacity probes", "failed prior independent test labels"],
+  "stages": ["synth", "grt"],
+  "main_matrix_authorized": false,
+  "automatic_retries": 0
+}

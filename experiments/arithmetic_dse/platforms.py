@@ -31,7 +31,10 @@ def parameter_provenance(platform, *, document=None, selected=None):
     """
     p=selected or profile(platform)
     data=json.loads(PARAMETER_SOURCES.read_text()) if document is None else document
-    if data['schema']!='platform-parameter-provenance-v1' or data['effective_parameters_changed'] is not False:
+    legacy=data['schema']=='platform-parameter-provenance-v1' and data['effective_parameters_changed'] is False
+    revised=(data['schema']=='platform-parameter-provenance-v2' and data['effective_parameters_changed'] is True
+             and data.get('declared_clock_IO_parameters_changed') is False and bool(data.get('physical_condition_revision')))
+    if not (legacy or revised):
         raise ValueError('invalid parameter provenance metadata')
     item=data['profiles'][platform]
     if item['profile_sha256']!=p['profile_sha256']:
@@ -39,10 +42,11 @@ def parameter_provenance(platform, *, document=None, selected=None):
     expected={key:p[key] for key in ('setup_uncertainty_ps','hold_uncertainty_ps','clock_transition_ps',
               'driver_cell','driver_pin','output_load_fF','trial_period_ps','hold_review_margin_ps')}
     expected.update(abc_load_fF=p.get('abc_load_fF',p['output_load_fF']),io_delay_min_ps=0,io_delay_max_period_fraction=0.2)
+    if 'timing_repair_max_buffer_percent' in p:expected['timing_repair_max_buffer_percent']=p['timing_repair_max_buffer_percent']
     if set(item['parameters'])!=set(expected):raise ValueError('parameter provenance coverage mismatch')
     for key,value in expected.items():
         row=item['parameters'][key]
-        unit=('ps' if key.endswith('_ps') else 'fF' if key.endswith('_fF')
+        unit=('percent' if key.endswith('_percent') else 'ps' if key.endswith('_ps') else 'fF' if key.endswith('_fF')
               else 'cell_name' if key=='driver_cell' else 'pin_name' if key=='driver_pin' else 'dimensionless')
         if (row['value']!=value or row['unit']!=unit
                 or not all(row.get(k) for k in ('source_category','basis','selection_reason','applicability','change_impact'))):
@@ -118,6 +122,24 @@ def report_scales(text, selected):
             raise ValueError(f'STA and selected Liberty disagree on {name}')
         result[name]={'raw_unit':m[0].strip(),'to_ps' if kind=='time' else 'to_fF':scale}
     return result
+
+def verify_wire_readback(path,selected):
+    calibration=selected.get('rc_adapter',{}).get('wire_calibration')
+    if not calibration:return None
+    rows={}
+    lines=Path(path).read_text().splitlines()
+    if not lines or lines[0]!='layer\tresistance_ohm_per_um\tcapacitance_fF_per_um':raise ValueError('missing wire RC units/header')
+    for line in lines[1:]:
+        layer,r,c=line.split('\t');values=float(r),float(c)
+        if layer in rows or any(not math.isfinite(v) or v<0 for v in values):raise ValueError('invalid or duplicate wire RC layer')
+        rows[layer]=values
+    for layer,expected in calibration['resistance_ohm_per_um'].items():
+        # STA's native-unit scale is stored as a float (e.g. 1e-6 for ohms).
+        # Round-tripping SI through that scale loses several parts in 1e9.
+        # A single-precision relative ULP bounds the conversion, not RC error.
+        if layer not in rows or not math.isclose(rows[layer][0],expected,rel_tol=1e-7):raise ValueError('actual wire resistance differs from calibrated profile: '+layer)
+        if not math.isclose(rows[layer][1],calibration['capacitance_fF_per_um'][layer],rel_tol=1e-7):raise ValueError('actual wire capacitance differs from profile: '+layer)
+    return {'status':'passed','units':'ohm/um and fF/um','layers':rows,'basis':calibration['version'],'unit_roundtrip_relative_tolerance':1e-7}
 
 
 def resolve_environment(raw):

@@ -1,0 +1,20 @@
+{
+  "version": "arithmetic-frozen-model-context-qualification-v1",
+  "purpose": "qualify grt domain of immutable v6 numerical models, not retraining or algorithm selection",
+  "base_collection_protocol": "model_calibration_v5.json",
+  "base_fit_protocol": "model_calibration_fit_v6.json",
+  "source_family": "predeclared v5 independent test family only, all target variants stay test",
+  "capture_fanout": 1,
+  "ABC": "unchanged platform reference R_p",
+  "SDC_reference_multipliers": [1.0, 1.25, 1.5],
+  "IO": "unchanged profile proportional 0.2 times requested SDC, both axes and actual SDC kept",
+  "stages": ["synth", "grt"],
+  "release_stage": "grt",
+  "gates": "same v5 delay/area/state/false-feasible gates per platform and each context; no tuning after these tests",
+  "domain_if_passed": "grt only; fixed ABC reference and bounded SDC R_p..1.5R_p; single-bank boundary explicitly measured, other v5 mixed-context limits unchanged",
+  "synth_limitation": "Sky130HD v6 synth failed independent delay P95; keep it failed, do not release a synth model by cropping test rows",
+  "candidate_limitation": "this does not validate masked partial-product groups, 64/128, Div/Mod/FP or formal complete D selection",
+  "numerical_parameter_changes": false,
+  "main_matrix_authorized": false,
+  "automatic_retries": 0
+}

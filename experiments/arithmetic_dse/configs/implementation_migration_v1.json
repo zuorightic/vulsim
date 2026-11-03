@@ -48,7 +48,7 @@
   ],
   "stage4_boundaries": [
     "step4 acceptance remains historical original/atomic scope; current step5 adds blocked trees",
-    "backend model requests fail cost_uncovered; inference remains step7",
+    "historical step4 rejected all backend models; current step7 replaces that branch with offline native inference and explicit qualified domains",
     "general operation_delay_weights is unrelated base feature",
     "no main matrix labels from connection/capacity probes"
   ],
@@ -73,10 +73,23 @@
     "explicit_top_RTL_interface_preflight_and_static_SDC_coverage"
   ],
   "stage6_boundaries": [
-    "D_model_inference_remains_step7",
+    "step6 acceptance excludes D model fitting; current step7 implementation and readiness are recorded separately",
     "Div_Mod_and_binary32_internal_groups_not_opened",
     "F2_1500ps_grt_completed_setup_failed_and_UDR128_100ns_grt_completed_hold_review_required",
     "original_UDR_1500ps_timeout_and_two_unrun_synth_controls_retained_not_training_coverage",
     "no_training_or_main_matrix_labels_from_capacity_or_sensitivity_probes"
+  ],
+  "stage7_current": [
+    "native portable coefficients/trees and shared platform/profile/model identities; no Python or EDA in production cost queries",
+    "actual stage membership/shape, state protocol and nonconstant saved-bit area domains",
+    "model used consistently by initial placement, local group moves and final validation",
+    "same K16 C/D structure enumeration; D offline physical-area ranking and explicit partial-candidate coverage status",
+    "four-platform isolated v2 regression tests and v6 per-stage tests; Sky130HD synth failed and grt passed are retained separately"
+  ],
+  "stage7_unfinished": [
+    "single-bank and bounded ABC/SDC context qualification in progress, no coefficients changed",
+    "masked half/quarter groups and full joint candidate coverage remain uncovered",
+    "64/128, Div/Mod, binary32, remaining helpers and complete five-width model domains remain to be admitted and validated",
+    "no full step7 or main-matrix completion claim from local models or TEST_ONLY fixtures"
   ]
 }

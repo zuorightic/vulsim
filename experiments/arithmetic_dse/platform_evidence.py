@@ -225,9 +225,12 @@ def verify(root=ROOT,verify_external=False):
     same(digest(root/inherited['path']),inherited['sha256'],'inherited v6 physical freeze')
     measured=json.loads((root/inherited['path']).read_text())
     report=verify_measurements(root,measured,verify_external)
-    provenance=json.loads((root/'experiments/arithmetic_dse/configs/platform_parameter_sources_v1.json').read_text())
+    provenance_relative='experiments/arithmetic_dse/configs/platform_parameter_sources_v1.json'
+    provenance_path=source_location(root,FREEZE,provenance_relative,freeze['files_sha256'][provenance_relative])
+    provenance=json.loads(provenance_path.read_text())
     for platform in report['platforms']:
-        path=root/provenance['profiles'][platform]['profile_path']
+        relative=provenance['profiles'][platform]['profile_path']
+        path=source_location(root,FREEZE,relative,freeze['files_sha256'][relative])
         selected=json.loads(path.read_text());selected['profile_sha256']=digest(path)
         item=parameter_provenance(platform,document=provenance,selected=selected)
         same(item['profile_sha256'],measured['files_sha256'][item['profile_path']],'unchanged effective profile')

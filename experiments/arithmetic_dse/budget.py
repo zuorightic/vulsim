@@ -7,6 +7,7 @@ Outer wrappers are excluded to avoid double counting.
 from contextlib import contextmanager
 from datetime import datetime, timezone
 import fcntl
+import gzip
 import hashlib
 import json
 import math
@@ -17,8 +18,8 @@ import tempfile
 import uuid
 
 ROOT = Path(__file__).resolve().parents[2]
-POLICY = ROOT/'experiments/arithmetic_dse/configs/backend_policy_v5.json'
-CHECKPOINT = ROOT/'experiments/arithmetic/evidence/step5/usage_before.json'
+POLICY = ROOT/'experiments/arithmetic_dse/configs/backend_policy_v7.json'
+CHECKPOINT = ROOT/'experiments/arithmetic/evidence/step7_budget_v2/checkpoint.json.gz'
 LEDGER = ROOT/'experiments/arithmetic/backend_usage.json'
 STAGE_LIMITS = {'synth':'max_synthesis_calls', 'grt':'max_global_route_calls',
                 'final':'max_detailed_route_calls'}
@@ -30,6 +31,10 @@ class BudgetExceeded(RuntimeError):
 
 def digest(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+def checkpoint_data(path):
+    path=Path(path);raw=path.read_bytes()
+    return json.loads(gzip.decompress(raw) if path.suffix=='.gz' else raw)
 
 
 def usage(entries):
@@ -71,7 +76,7 @@ class Ledger:
             else:
                 if initialized:
                     raise ValueError('live budget ledger missing after initialization; restore it from evidence')
-                checkpoint = json.loads(self.checkpoint.read_text())
+                checkpoint = checkpoint_data(self.checkpoint)
                 state = {'version':'physical-budget-ledger-v1', 'policy_sha256':digest(self.policy),
                          'checkpoint_sha256':digest(self.checkpoint), 'entries':checkpoint['entries']}
             yield state
@@ -106,7 +111,7 @@ class Ledger:
             total = usage(state['entries'])
             if total['pending']:
                 raise ValueError('cannot migrate an unsettled ledger')
-            if json.loads(self.checkpoint.read_text())['entries'] != state['entries']:
+            if checkpoint_data(self.checkpoint)['entries'] != state['entries']:
                 raise ValueError('migration checkpoint must preserve every historical entry')
             limits = json.loads(self.policy.read_text())['resources']
             if (any(total[k] > limits[v] for k,v in STAGE_LIMITS.items()) or

@@ -1,6 +1,6 @@
 {
   "schema": "arithmetic-platform-v1",
-  "version": 1,
+  "version": 2,
   "corner": "TC",
   "temperature_C": 25.0,
   "liberty_model": "NLDM",
@@ -47,5 +47,6 @@
   "allowed_physical_prefixes": [
     "FILLCELL",
     "TAPCELL"
-  ]
+  ],
+  "timing_repair_max_buffer_percent": 100
 }

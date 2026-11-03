@@ -1,0 +1,12 @@
+{
+  "version": "arithmetic-template-interval-label-audit-v1",
+  "applies_to": "single capture bank of a frozen actual typed native template interval",
+  "static_feature": "input_bits and capture_bits count bits not proven constant and consumed by the typed graph before mapping; these are capacity features, not a claim that every bit becomes a distinct DFF",
+  "mapped_boundary": "record actual launch/capture unique sequential cell counts separately; synthesis may remove further constants, unused logic or equivalent bits; require positive counts not exceeding declared bit capacity and complete actual timing coverage",
+  "difference_records": "actual counts, static capacity, elided-or-merged count, source/netlist/report identities; never substitute actual counts into predictor inputs",
+  "fanout": "exactly one capture bank, no independent multi-bank nominal fanout claim; do not apply this rule to isolated multi-bank characterization",
+  "functional_requirement": "independent RTL integer evaluation checks every declared result bit before mapping; supported mapping flow preserves original graph semantics, mapped LEC not yet included",
+  "history": "initial five v1 pilot runs rejected by equality check remain excluded; revised consumed-bit collection uses a separate protocol, and this audit is frozen before any model fitting or independent test evaluation",
+  "area": "actual unique nonsequential core masters; capture/launch/state/observer excluded",
+  "missing_paths_or_zero_area": "reject, never invent zero timing labels"
+}

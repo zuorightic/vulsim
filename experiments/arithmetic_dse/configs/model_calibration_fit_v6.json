@@ -1,0 +1,15 @@
+{
+  "version": "arithmetic-state-stage-fit-v6",
+  "collection_protocol": "model_calibration_v5.json",
+  "supersedes": "v5 mixed single/multiple-node scaling failed validation; v5 independent physical tests remain unrun and unread",
+  "data_reuse": "same measured v5 train/validation rows; numerical protocol revision only, no physical condition change",
+  "stage_architecture": "cardinality-specific-stage-v1",
+  "single_operation": "compare constant, linear, ridge, relative weighted regression and bounded trees on measured single-operation stages; validation-only selection; existing per-operation gates retained; validation maximum low-estimation ratio times 1.05 margin",
+  "multiple_operations": "fit nonnegative base delay/area scale plus intercept/count/result-bit terms only on synthetic multi-operation trees; validation maximum low-estimation ratio times 1.05 margin",
+  "state_and_boundary": "unchanged v5 state fit, actual H=T-QD-slack, capture control path and engineering reserve",
+  "quality_gates": "inherit v5 without relaxation; validation before independent physical test; no test-driven revision",
+  "group_lower_bound_policy": "cardinality-specific prediction is not assumed monotone under adding operations; standalone group prediction is not an unconditional infeasibility proof; failed finite search is reported separately",
+  "selection_phase": "no EDA or Python in production inference; freeze both numerical and collection protocol hashes before test",
+  "test_identity": "same predeclared v5 independent width/topology tasks, still unrun at this revision",
+  "main_matrix_authorized": false
+}

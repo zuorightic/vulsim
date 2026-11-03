@@ -45,6 +45,12 @@ def render_abc_script(period_ps):
     return (ASSETS/'abc_speed_target.script').read_text().replace('@TARGET_PS@',str(float(period_ps)))
 
 
+def render_repair_script(original):
+    marker='  lappend additional_args {*}$args -verbose'
+    if original.count(marker)!=1:raise ValueError('unsupported timing-repair helper shape')
+    return original.replace(marker,'  lappend additional_args -max_buffer_percent $::env(VULSIM_REPAIR_MAX_BUFFER_PERCENT)\n'+marker)
+
+
 def verify_orfs_area(area,native_area):
     # OpenROAD utl::Logger::metric emits doubles using defaultfloat with six
     # significant digits. The independent per-master LEF/Liberty checks above
@@ -161,7 +167,8 @@ def evaluate(args):
         parameter_provenance(p['platform'],selected=p)
         manifest['parameter_provenance']={'path':str(PARAMETER_SOURCES.relative_to(ROOT)),
             'metadata_sha256':sha256(PARAMETER_SOURCES),'effective_profile_sha256':p['profile_sha256'],
-            'effective_parameters_changed':False,'role':'explanatory_metadata; not_physical_calibration'}
+            'effective_parameters_changed':json.loads(PARAMETER_SOURCES.read_text())['effective_parameters_changed'],
+            'role':'timing assumptions and explicit physical-condition revision; inspect profile and measured readbacks'}
         # Capture executable source before any environment/physical command;
         # later edits cannot change the provenance of an in-flight run.
         source_paths=[Path(__file__),Path(__file__).with_name('platforms.py'),
@@ -171,6 +178,11 @@ def evaluate(args):
                       Path(__file__).with_name('processes.py'),Path(__file__).with_name('characterization.py'),
                       Path(__file__).parent/'configs/platforms'/(p['platform']+'.json'),POLICY]
         source_paths += [s for s in ASSETS.iterdir() if s.is_file()]
+        if getattr(args,'sample_contract',None):
+            source_paths.append(Path(__file__).with_name('model_samples.py'))
+            if args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_model_collection':
+                from .model_collection import PROTOCOL
+                source_paths += [Path(__file__).with_name('model_collection.py'),Path(__file__).with_name('model_features.py'),PROTOCOL]
         relaxation=(args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_clock_relaxation_only')
         if relaxation:source_paths.append(Path(__file__).with_name('clock_relaxation.py'))
         elif args.resume_synth_from:source_paths.append(Path(__file__).with_name('capacity_retest.py'))
@@ -203,6 +215,13 @@ def evaluate(args):
             if original.name != 'abc_speed.script':
                 (scripts/original.name).symlink_to(original)
         (scripts/'abc_speed.script').write_text(render_abc_script(args.abc_target_ps))
+        if 'timing_repair_max_buffer_percent' in p:
+            limit=p['timing_repair_max_buffer_percent']
+            if isinstance(limit,bool) or not isinstance(limit,(int,float)) or not 0<limit<=100:raise ValueError('invalid timing repair buffer limit')
+            (scripts/'util.tcl').unlink()
+            (scripts/'util.tcl').write_text(render_repair_script((flow/'scripts/util.tcl').read_text()))
+            manifest['timing_repair_control']={'max_buffer_percent':limit,'executed_util_sha256':sha256(scripts/'util.tcl'),
+                'original_util_sha256':sha256(flow/'scripts/util.tcl'),'constraint_change':False}
         completion_mode=(args.admission and json.loads(args.admission.read_text()).get('execution_mode')=='complete_initial_backend')
         if completion_mode:
             # An observational checkpoint preserves the expensive lowering if
@@ -217,6 +236,13 @@ def evaluate(args):
                 'source_script_sha256':sha256(flow/'scripts/synth.tcl'),'executed_script_sha256':sha256(scripts/'synth.tcl'),
                 'transformation':'one write_rtlil immediately before existing abc invocation; synthesis passes unchanged'}
         config = out/'config.mk'
+        if getattr(args,'sample_contract',None):
+            from .model_samples import render_label_requests
+            request_file=out/'label_requests.tcl'
+            request_file.write_text(render_label_requests(args.sample_contract))
+            shutil.copy2(args.sample_contract,out/'sample-contract.json')
+            env['VULSIM_LABEL_REQUESTS']=str(request_file)
+            manifest['sample_contract_sha256']=sha256(args.sample_contract)
         settings = {'PLATFORM':p['platform'], **p['make_overrides'],
                     'CORE_MARGIN':p['core_margin_um'],
                     'ABC_DRIVER_CELL':p['driver_cell'],
@@ -231,6 +257,7 @@ def evaluate(args):
         if p.get('rc_adapter'):
             settings['LAYER_PARASITICS_FILE']=str(ASSETS/p['rc_adapter']['file'])
             settings['VULSIM_TC_VIA_RESISTANCE_OHM']=p['rc_adapter']['via_resistance_ohm']
+        if 'timing_repair_max_buffer_percent' in p:settings['VULSIM_REPAIR_MAX_BUFFER_PERCENT']=p['timing_repair_max_buffer_percent']
         config.write_text(f'include {ASSETS}/platform.mk\n'
                           + ''.join(f'export {key} = {value}\n' for key,value in settings.items())
                           + f'export DESIGN_NAME = {args.top}\nexport DESIGN_NICKNAME = arithmetic_probe\n'
@@ -256,6 +283,9 @@ def evaluate(args):
         if args.admission:
             from .platform_probe import verify_admission
             context['admission_sha256']=verify_admission(args,p,rtl,ledger)
+            if getattr(args,'selection_freeze',None):
+                context['selection_freeze_sha256']=sha256(args.selection_freeze)
+                manifest['selection_freeze_sha256']=context['selection_freeze_sha256']
         def run(extra, stem, timeout, stage=None):
             reservation = ledger.reserve(stage, timeout, args.threads, args.budget_purpose, command+extra, out/stem, context=context)
             manifest['active_reservation'] = reservation['id']
@@ -278,6 +308,8 @@ def evaluate(args):
         if effective.get('YOSYS_MAX_THREADS')!=str(args.threads):
             raise ValueError('Yosys thread limit missing from effective Make environment')
         manifest['effective_environment'] = effective
+        if 'timing_repair_max_buffer_percent' in p and effective.get('VULSIM_REPAIR_MAX_BUFFER_PERCENT')!=str(p['timing_repair_max_buffer_percent']):
+            raise ValueError('timing-repair buffer limit missing from effective environment')
         manifest['asset_resolution'] = origins
         validate_environment(effective,p)
         libraries, cells = library_data([Path(s) for s in effective['LIB_FILES'].split()],p)
@@ -287,6 +319,7 @@ def evaluate(args):
                  str(POLICY), str(Path(__file__).with_name('processes.py')),
                  str(Path(__file__).with_name('budget.py')), str(scripts/'abc_speed.script')}
         if completion_mode:files.add(str(scripts/'synth.tcl'))
+        if 'timing_repair_max_buffer_percent' in p:files.add(str(scripts/'util.tcl'))
         for key in ['TECH_LEF','SC_LEF','ADDER_MAP_FILE','LATCH_MAP_FILE','CLKGATE_MAP_FILE','RCX_RULES','LAYER_PARASITICS_FILE','MAKE_TRACKS','PDN_TCL','FASTROUTE_TCL','TAPCELL_TCL','ADDITIONAL_LEFS']:
             files.update(effective.get(key,'').split())
         files.add(str(Path(effective['PLATFORM_DIR'])/'setRC.tcl'))
@@ -295,6 +328,7 @@ def evaluate(args):
         files.update(map(str, [flow/'Makefile', flow/'platforms'/p['platform']/'config.mk', config, Path(__file__)]))
         files.add(str(Path(__file__).with_name('platforms.py')))
         files.add(str(Path(__file__).parent/'configs/platforms'/(p['platform']+'.json')))
+        if getattr(args,'sample_contract',None):files.update(map(str,[args.sample_contract.resolve(),out/'label_requests.tcl',out/'sample-contract.json']))
         manifest['files_sha256'] = {p:sha256(p) for p in sorted(files)}
         manifest['tools'] = {}
         for name, path, flags in [('yosys',effective['YOSYS_EXE'],['-V']),
@@ -307,6 +341,7 @@ def evaluate(args):
         manifest['mapping_context'] = {
             'tool_thread_controls':manifest['tool_thread_controls'],
             'executed_synth_script_sha256':sha256(scripts/'synth.tcl'),
+            'executed_util_script_sha256':sha256(scripts/'util.tcl'),
             'abc_target_ps':float(effective['ABC_CLOCK_PERIOD_IN_PS']), 'sdc_period_ps':args.period_ps,
             'abc_mode':'speed', 'abc_script_sha256':sha256(scripts/'abc_speed.script'),
             'abc_script_template_sha256':sha256(ASSETS/'abc_speed_target.script'),
@@ -356,6 +391,12 @@ def evaluate(args):
                  f'VULSIM_EVAL_STAGE={stage}', f'VULSIM_EVAL_DB={db}', f'VULSIM_EVAL_SDC={sdc}'],
                 f'{stage}-snapshot', 120)
             metrics = stage_metrics(reports, stage, cells, args.period_ps, selected=p)
+            from .platforms import verify_wire_readback
+            wire=verify_wire_readback(reports/('vulsim_'+stage+'_layer_rc.tsv'),p)
+            if wire is not None:metrics['wire_RC_readback']=wire
+            if getattr(args,'sample_contract',None):
+                from .model_samples import read_labels
+                metrics['model_labels']=read_labels(reports/('vulsim_'+stage),args.sample_contract,metrics['raw_report_units']['time']['to_ps'])
             metrics.update(abc_target_ps=manifest['mapping_context']['abc_target_ps'],
                            mapping_context_sha256=manifest['mapping_context_sha256'],
                            target_dependent_measurement=True)
@@ -409,6 +450,7 @@ def main():
     parser.add_argument('--admission',type=Path,help='frozen bounded platform/stage task list')
     parser.add_argument('--admission-id',default='explicit-backend-request')
     parser.add_argument('--task-id',default='explicit-single-kernel')
+    parser.add_argument('--selection-freeze',type=Path,help='immutable fitting selection required by deferred-test admissions')
     parser.add_argument('--rtl', type=Path, required=True, help='native generated single-module SystemVerilog')
     parser.add_argument('--top', required=True)
     parser.add_argument('--out', type=Path, required=True)
@@ -422,6 +464,7 @@ def main():
     parser.add_argument('--stage', choices=['synth','grt','final'], default='final')
     parser.add_argument('--budget-purpose', choices=['prototype','characterization','search','final_evaluation','physical_recheck','repeat','retry'], default='prototype')
     parser.add_argument('--resume-synth-from',type=Path,help='named admission only: exact synth checkpoint, or mapped netlist with fresh SDC/ODB for clock relaxation')
+    parser.add_argument('--sample-contract',type=Path,help='frozen characterization Q-to-D reporting boundaries')
     parser.add_argument('--synth-timeout-s', type=float, default=300)
     parser.add_argument('--route-timeout-s', type=float, default=1200)
     args = parser.parse_args()

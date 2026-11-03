@@ -32,18 +32,16 @@
   },
   "cost_modes": {
     "fixed": "fixed-op-width-v1; independent abstract delay/comb; state one per saved bit",
-    "backend-model": "query identity and fail-closed rejection; inference not implemented until step7"
+    "backend-model": "native offline coefficients/trees; explicit platform/profile/model hash and validated joint domain; physical ps/um2; no backend or fixed-cost fallback"
   },
   "later_steps": {
     "step6": [],
     "step7": [
-      "offline model inference",
-      "domain validation",
-      "stage-dependent cost queries and D selection"
+      "four-platform model fitting, independent quality and stage/state validation; currently in progress",
+      "64/128, Div/Mod, binary32 and additional contexts remain individually admitted domains"
     ],
     "step6_capacity": [
-      "UDR128 selected independent Div/Mod implementation exceeded 8GiB synth envelope",
-      "F2 grt capacity and four conditional synth controls remain unmeasured; original baseline failed at interface verification",
+      "original UDR1.5ns timeout retained; UDR100ns and F2grt completion are bounded capacity diagnostics, never training labels",
       "other platform/scale domains require their own finite admission"
     ]
   },
@@ -112,7 +110,8 @@
               "type": "string"
             },
             "cost_mode": {
-              "type": "string"
+              "type": "string",
+              "const": "fixed"
             },
             "L": {
               "type": "integer",
@@ -372,6 +371,393 @@
     "group placement/move evidence and diagnostic explicit templates",
     "retired legacy simple_cost and split16 options"
   ],
-  "capability_policy": "C_selected only for mul-candidates-v1; original and forced template generation are distinct from formal selection; numerical/physical states require separate evidence",
-  "whole_graph_scope": "43 core cases A/B/C source and fixed-L interfaces validated in step6; D input graph/request reserved, inference step7"
+  "capability_policy": "C/D candidate enumeration is shared; covered/evaluated and selected flags are separate. Only the final chosen model candidate has D_selected. Numerical/physical states require separate evidence.",
+  "whole_graph_scope": "step6 covers43core A/B/C source/fixed-L; nativeD inference now implemented, trained domains and readiness require step7 evidence",
+  "report_schemas_backend_model": {
+    "passed": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "const": "arithmetic-structure-report-v2"
+        },
+        "status": {
+          "type": "string",
+          "const": "passed"
+        },
+        "pipeline": {
+          "type": "object",
+          "properties": {
+            "baseline_delay": {
+              "type": "number",
+              "minimum": 0
+            },
+            "allowed_delay": {
+              "type": "number",
+              "minimum": 0
+            },
+            "final_delay": {
+              "type": "number",
+              "minimum": 0
+            },
+            "comb": {
+              "type": "number",
+              "minimum": 0
+            },
+            "register_bits": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 18446744073709551615
+            },
+            "register_count": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 18446744073709551615
+            },
+            "predicted_comb_area_um2": {
+              "type": "number",
+              "minimum": 0
+            },
+            "predicted_state_area_um2": {
+              "type": "number",
+              "minimum": 0
+            },
+            "predicted_total_area_um2": {
+              "type": "number",
+              "minimum": 0
+            },
+            "input_data_budget_ps": {
+              "type": "number",
+              "minimum": 0
+            },
+            "register_data_budget_ps": {
+              "type": "number",
+              "minimum": 0
+            },
+            "predicted_feasible": {
+              "type": "boolean"
+            },
+            "stage_delays_ps": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "minimum": 0
+              }
+            },
+            "allowed_stage_delays_ps": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "minimum": 0
+              }
+            },
+            "model_state_bits": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 18446744073709551615
+            },
+            "model_state_signals": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 18446744073709551615
+            }
+          },
+          "required": [
+            "baseline_delay",
+            "allowed_delay",
+            "final_delay",
+            "comb",
+            "register_bits",
+            "register_count",
+            "predicted_comb_area_um2",
+            "predicted_state_area_um2",
+            "predicted_total_area_um2",
+            "input_data_budget_ps",
+            "register_data_budget_ps",
+            "predicted_feasible",
+            "stage_delays_ps",
+            "allowed_stage_delays_ps",
+            "model_state_bits",
+            "model_state_signals"
+          ],
+          "additionalProperties": true
+        },
+        "request": {
+          "type": "object",
+          "properties": {
+            "target_platform": {
+              "type": "string"
+            },
+            "platform_profile_sha256": {
+              "type": "string"
+            },
+            "cost_mode": {
+              "type": "string",
+              "const": "backend-model"
+            },
+            "L": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "II": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "target_period_ps": {
+              "type": "number",
+              "minimum": 0
+            },
+            "model_bundle_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "target_platform",
+            "platform_profile_sha256",
+            "cost_mode",
+            "L",
+            "II",
+            "target_period_ps",
+            "model_bundle_sha256"
+          ],
+          "additionalProperties": true
+        },
+        "stages": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "protocol": {
+          "type": "object",
+          "properties": {
+            "clock_name": {
+              "type": "string"
+            },
+            "reset_name": {
+              "type": "string"
+            },
+            "input_valid_name": {
+              "type": "string"
+            },
+            "output_valid_name": {
+              "type": "string"
+            },
+            "register_stages": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "reset_enabled": {
+              "type": "boolean"
+            },
+            "reset_active_low": {
+              "type": "boolean"
+            },
+            "input_reset_values": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "required": [
+            "clock_name",
+            "reset_name",
+            "input_valid_name",
+            "output_valid_name",
+            "register_stages",
+            "reset_enabled",
+            "reset_active_low",
+            "input_reset_values"
+          ],
+          "additionalProperties": true
+        },
+        "graph": {
+          "type": "object",
+          "properties": {
+            "nodes": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "kind": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "opcode": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "width": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "billing_width": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "delay": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "comb": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "covered": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "id",
+                  "kind",
+                  "opcode",
+                  "width",
+                  "billing_width",
+                  "delay",
+                  "comb",
+                  "covered"
+                ],
+                "additionalProperties": true
+              }
+            },
+            "regions": {
+              "type": "array"
+            },
+            "ports": {
+              "type": "array"
+            }
+          },
+          "required": [
+            "nodes",
+            "regions",
+            "ports"
+          ],
+          "additionalProperties": true
+        },
+        "graph_sha256": {
+          "type": "string"
+        },
+        "schedule_sha256": {
+          "type": "string"
+        },
+        "rtl_sha256": {
+          "type": "string"
+        },
+        "D_inference_implemented": {
+          "type": "boolean",
+          "const": true
+        },
+        "delay_unit": {
+          "type": "string",
+          "const": "ps"
+        },
+        "comb_unit": {
+          "type": "string",
+          "const": "um2"
+        }
+      },
+      "required": [
+        "version",
+        "status",
+        "pipeline",
+        "request",
+        "stages",
+        "protocol",
+        "graph",
+        "graph_sha256",
+        "schedule_sha256",
+        "rtl_sha256",
+        "D_inference_implemented",
+        "delay_unit",
+        "comb_unit"
+      ],
+      "additionalProperties": true,
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "Arithmetic structure report v2 offline physical model"
+    },
+    "failed": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "const": "arithmetic-structure-report-v2"
+        },
+        "status": {
+          "type": "string",
+          "const": "failed"
+        },
+        "failure_stage": {
+          "type": "string"
+        },
+        "failure_code": {
+          "type": "string"
+        },
+        "failure_reason": {
+          "type": "string"
+        },
+        "region_id": {
+          "type": "string"
+        },
+        "node_id": {
+          "type": "string"
+        },
+        "request": {
+          "type": "object",
+          "properties": {
+            "target_platform": {
+              "type": "string"
+            },
+            "platform_profile_sha256": {
+              "type": "string"
+            },
+            "cost_mode": {
+              "type": "string"
+            },
+            "L": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "II": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "target_period_ps": {
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "target_platform",
+            "platform_profile_sha256",
+            "cost_mode",
+            "L",
+            "II",
+            "target_period_ps"
+          ],
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "version",
+        "status",
+        "failure_stage",
+        "failure_code",
+        "failure_reason",
+        "region_id",
+        "node_id"
+      ],
+      "additionalProperties": true,
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "Arithmetic structure report v2 failed"
+    }
+  },
+  "physical_feature_schema": "arithmetic-physical-features-v2"
 }

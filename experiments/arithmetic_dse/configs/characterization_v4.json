@@ -1,0 +1,42 @@
+{
+  "version": "arithmetic-model-characterization-v4",
+  "status": "protocol_before_training_collection; actual batch manifests required",
+  "purpose": "fit independent platform models; no formal/holdout/capacity PPA as training",
+  "platform_order": ["asap7", "nangate45", "sky130hd", "gf180"],
+  "reference_abc_ps": {"asap7": 1500, "nangate45": 3000, "sky130hd": 30000, "gf180": 30000},
+  "integer_widths": [8, 16, 32, 64, 128],
+  "mul_leaf_widths": [1, 2, 4, 8, 16, 32, 64, 128],
+  "wide_linear_widths": [1, 2, 4, 8, 16, 32, 64, 128, 256, 257, 260, 512],
+  "label_definitions": {
+    "combinational_delay": "launch-Q to capture-D arrival difference; unconditional data boundary flops; clock/clkQ/setup excluded",
+    "combinational_area": "sum unique nonsequential Liberty master area in isolated sample scope; boundary flops/clock/physical cells separate",
+    "grt": "same database/stage, global routing estimates; physical overhead unassigned to a sample remains separate",
+    "state": "separate reset/enable/shared-valid/clock fixtures, no repeated boundary charge per arithmetic node"
+  },
+  "split_unit": "complete source topology and mapped-source equivalence group, including every ABC/SDC target variant; whole multi-sample bundles remain together",
+  "context_partitions": {"train_fanouts": [1, 3, 5], "validation_fanouts": [2], "test_fanouts": [4]},
+  "independent_test_policy": "one evaluation after validation-based algorithm/margin freeze; failures retained; no tuning against test or formal/holdout PPA",
+  "algorithms": [
+    {"name": "constant_per_operation"},
+    {"name": "linear_per_operation"},
+    {"name": "ridge", "alphas": [0.01, 0.1, 1.0, 10.0]},
+    {"name": "decision_tree", "max_depths": [2, 3, 4], "min_samples_leaf": 2}
+  ],
+  "seed": 20261102,
+  "selection": "validation normalized MAE, then p95 relative error, then smaller portable model; no D benefit used",
+  "quality_gates_frozen_before_test": {
+    "delay_median_relative_error_max": 0.30,
+    "delay_p95_relative_error_max": 0.75,
+    "area_median_relative_error_max": 0.20,
+    "area_p95_relative_error_max": 0.50,
+    "synthetic_context_false_feasible_fraction_max": 0.05,
+    "positive_label_floor": "max(1ps, reference_platform_period*0.001) for delay; 1e-4um2 for area"
+  },
+  "margin": "positive validation underprediction p95 plus unit-resolution floor; measured heldout coverage reported, no statistical/signoff guarantee",
+  "prediction": "portable numeric coefficients or bounded tree; identical C++/Python features; no Python or EDA in compilation",
+  "support_domain": "explicit operation/template/semantics plus validated width/result/fanout and joint ABC/SDC condition; no nearest-table or independent-minmax rectangle fallback",
+  "wide_capacity": "declare platform/family/width/stage envelope and stretched reference clock before execution; preserve original failure; a capacity diagnostic cannot silently become a training or target label",
+  "GF180_gate": "wire RC calibration unresolved until independent bounded evidence closes it; original diagnostic probes are not training clearance",
+  "main_matrix": "not authorized by this protocol; 688 records remain step8",
+  "resource_policy": "one shared append-only ledger; actual phase list and bounded support, capacity and storage estimates before collection"
+}

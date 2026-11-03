@@ -1,0 +1,10 @@
+{
+  "version": "arithmetic-boundary-qualification-v1",
+  "purpose": "check frozen boundary budget without fitting or altering it",
+  "required_measured_overhead": "maximum actual H=T-QD-slack over context rows plus maximum observed reset/enable state Q-D delay in that context",
+  "available_overhead": "already-frozen register_overhead_ps/input_overhead_ps including declared engineering reserve",
+  "condition": "both available overheads at least required measured overhead; no added test-based reserve",
+  "tolerance_ps": 0.000001,
+  "identity": "evaluated alongside context-qualification-v1 before releasing bounded SDC domain",
+  "training": false
+}

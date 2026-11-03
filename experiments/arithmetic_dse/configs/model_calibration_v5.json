@@ -1,0 +1,31 @@
+{
+  "version": "arithmetic-state-stage-calibration-v5",
+  "supersedes": "v4b ASAP train complete; Nangate train stopped at explicit IO pin capacity; all retained, no model/test evaluated",
+  "data_role": "new registered microbenchmarks and synthetic operation mixtures; formal/holdout PPA excluded",
+  "splits": {
+    "train": {"fanout": 3, "primitive_widths": [2, 4, 8, 16, 32], "context_widths": [4, 8], "topology": "one through four products, serial reduction and independent addends"},
+    "validation": {"fanout": 2, "primitive_widths": [3, 6, 12, 24], "context_widths": [3, 6], "topology": "two through four products with per-branch addends before reduction"},
+    "test": {"fanout": 4, "primitive_widths": [5, 10, 20, 28], "context_widths": [5, 7], "topology": "two through four products with unequal branch depths and balanced reduction"}
+  },
+  "primitive_operations": ["mul", "mul_low", "add", "addcarry"],
+  "state_widths": [1, 2, 4, 8, 16, 32, 64],
+  "observer": "parity output per sample after all kept capture banks; Q-D labels stop before capture; functional tests inspect every internal captured bit; observation logic excluded from core/scoped state area and separately retained as unassigned overhead",
+  "source_group": "whole source bundle and every mapping/SDC variant; each split has distinct primitive widths and combination topology",
+  "fit": "nonnegative base scale/intercept/operation-count/result-bit terms, delay and area separately; train only; maximum validation underprediction ratio times 1.05; no independent-test labels used",
+  "quality_gates_before_test": {
+    "stage_delay_median_relative_error_max": 0.3, "stage_delay_p95_relative_error_max": 0.75,
+    "stage_area_median_relative_error_max": 0.3, "stage_area_p95_relative_error_max": 0.75,
+    "false_feasible_fraction_max": 0.05,
+    "state_area_median_relative_error_max": 0.2, "state_area_p95_relative_error_max": 0.5
+  },
+  "delay_validation_ratio_reserve": 1.05,
+  "feasibility_budgets": [0.5, 0.75, 0.9, 0.95, 0.99, 1.0, 1.01, 1.05, 1.1, 1.25, 1.5],
+  "feasibility_budget_definition": "multiples of measured Q-D label for classification evaluation only; never predictor input",
+  "support": "bounded unsigned Mul/Add/AddCarry single-output DAGs; independent primary inputs; no masks/literals/correlated inputs, wide division or FP; out-of-domain stage composition rejected",
+  "max_operations": 11, "max_live_result_bits": 176,
+  "boundary": "H=T-QD-slack includes clkQ/setup/skew/uncertainty once; capture control path and engineering reserve separate",
+  "clock_reserve_ps": {"asap7": 50, "nangate45": 100, "sky130hd": 300, "gf180": 300},
+  "main_matrix_authorized": false, "automatic_retries": 0,
+  "independent_test_read_after_selection_freeze_only": true,
+  "sealed_failed_tests_excluded": ["isolated v1 fanout4", "calibration v3 DOT3"]
+}

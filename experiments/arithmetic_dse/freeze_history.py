@@ -6,6 +6,8 @@ turn an old acceptance report into evidence for the new implementation.
 import hashlib
 import json
 import importlib.util
+from contextlib import contextmanager
+from contextvars import ContextVar
 from pathlib import Path
 
 # Plans and navigation are editable narratives, not compiler/model inputs.
@@ -15,6 +17,15 @@ MUTABLE_DOCUMENTATION={
     'mission/lxy-plan-fix.md','mission/README.md',
     'experiments/arithmetic/README.md','experiments/arithmetic/evidence/README.md',
 }
+MODEL_REVISION=ContextVar('offline_model_revision',default='experiments/arithmetic/offline_model_freeze_v1.json')
+
+
+@contextmanager
+def model_revision(path):
+    """Use an explicitly supplied candidate for the same strict parent chain."""
+    token=MODEL_REVISION.set(str(path))
+    try:yield
+    finally:MODEL_REVISION.reset(token)
 
 def source_location(root, parent, relative, expected):
     root=Path(root)
@@ -24,6 +35,14 @@ def source_location(root, parent, relative, expected):
         owner=json.loads((root/parent).read_text())
         stored=owner.get('source_snapshots',{}).get(relative)
         if stored and (root/stored).is_file() and digest(root/stored)==expected:return root/stored
+    model_path=root/MODEL_REVISION.get()
+    if model_path.exists():
+        current=json.loads(model_path.read_text());active=root/relative
+        bound=relative in MUTABLE_DOCUMENTATION or (active.is_file() and current['files_sha256'].get(relative)==digest(active))
+        if current['historical_freezes'].get(parent)==digest(root/parent) and bound:
+            for source_root in current['historical_source_roots']:
+                snapshot=root/source_root/relative
+                if snapshot.is_file() and digest(snapshot)==expected:return snapshot
     review=root/'experiments/arithmetic/whole_graph_freeze_v2.json'
     if review.exists():
         current=json.loads(review.read_text());active=root/relative

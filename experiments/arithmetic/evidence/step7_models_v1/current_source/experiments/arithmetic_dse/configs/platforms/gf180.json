@@ -1,0 +1,86 @@
+{
+  "schema": "arithmetic-platform-v1",
+  "version": 5,
+  "corner": "TC",
+  "temperature_C": 25.0,
+  "liberty_model": "NLDM",
+  "abc_time_unit": "ps",
+  "abc_load_unit": "fF",
+  "abc_unit_basis": "Yosys ABC Liberty reader scales delay to ps and capacitance to fF; logs retain stime evidence",
+  "hold_review_band_role": "predeclared engineering trigger; not noise floor or signoff",
+  "exclude_area_master_types": [
+    "CORE_SPACER"
+  ],
+  "physical_master_types": [
+    "CORE_WELLTAP",
+    "CORE_ENDCAP",
+    "ENDCAP_PRE",
+    "ENDCAP_POST",
+    "ENDCAP_TOPLEFT",
+    "ENDCAP_TOPRIGHT",
+    "ENDCAP_BOTTOMLEFT",
+    "ENDCAP_BOTTOMRIGHT"
+  ],
+  "seed": 42,
+  "core_utilization": 40,
+  "place_density": 0.65,
+  "multi_corner_signoff": false,
+  "platform": "gf180",
+  "voltage_V": 5.0,
+  "time_unit": "ns",
+  "capacitance_unit": "pF",
+  "library_count": 1,
+  "library_name_pattern": "gf180mcu_fd_sc_mcu9t5v0__tt_025C_5v00\\.lib\\.gz",
+  "VT": "library_default",
+  "driver_cell": "gf180mcu_fd_sc_mcu9t5v0__buf_4",
+  "driver_pin": "Z",
+  "output_load_fF": 13.43,
+  "abc_load_fF": 13.43,
+  "setup_uncertainty_ps": 100,
+  "hold_uncertainty_ps": 25,
+  "clock_transition_ps": 100,
+  "hold_review_margin_ps": 25,
+  "core_margin_um": 25,
+  "trial_period_ps": 30000,
+  "make_overrides": {
+    "CORNER": "TC",
+    "TRACK_OPTION": "9t",
+    "METAL_OPTION": "5LM_1TM",
+    "KVALUE": "9",
+    "POWER_OPTION": "5v0"
+  },
+  "allowed_physical_prefixes": [
+    "gf180mcu_fd_sc_mcu9t5v0__fill",
+    "gf180mcu_fd_sc_mcu9t5v0__endcap"
+  ],
+  "rc_adapter": {
+    "file": "gf180_tc_rc.tcl",
+    "sha256": "b907c1ecb72c6510397c77c4d512f7e44601b42fc7f2ade71f5603a660cd973e",
+    "via_resistance_ohm": 4.5,
+    "via_layers": [
+      "Via1",
+      "Via2",
+      "Via3",
+      "Via4"
+    ],
+    "basis": "selected LEF 4.5ohm single-cut vias; wire R independently fitted in ohm/um from immutable routed geometry and selected OpenRCX rules, grouped heldout nets; capacitance unchanged",
+    "wire_calibration": {
+      "version": "gf180-wire-segment-calibration-v1",
+      "resistance_ohm_per_um": {
+        "Metal2": 0.32502850540936595,
+        "Metal3": 0.3250333828878646,
+        "Metal4": 0.32502708223006027,
+        "Metal5": 0.09319989711886044
+      },
+      "capacitance_fF_per_um": {
+        "Metal2": 0.135357,
+        "Metal3": 0.146141,
+        "Metal4": 0.15068800000000002,
+        "Metal5": 0.15559499999999998
+      },
+      "calibration_segments_sha256": "70b553cd521d5d019f8305909df95522bc36fa4362cafa81253abb3e41189b2e",
+      "role": "physical flow condition revision; prior results retain original profile; not operator PPA training"
+    }
+  },
+  "timing_repair_max_buffer_percent": 100
+}

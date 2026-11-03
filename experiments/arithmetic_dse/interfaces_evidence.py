@@ -85,7 +85,9 @@ def verify_report(report,rtl,features,*,embedded=False,report_schemas=None):
     region_results=[]
     for region in graph['regions']:
         same(region['internally_cuttable'],region['template_id']=='mul-block-tree-v1','registered cut scope')
-        for field in ('C_selected','D_covered','D_selected','physically_evaluated'):same(region[field],field=='C_selected' and report['request']['candidate_policy']=='mul-candidates-v1','capability '+field)
+        role=report.get('selection_role','selected_implementation')
+        if role not in ('selected_implementation','evaluated_candidate'):raise ValueError('unsupported selection role')
+        for field in ('C_selected','D_covered','D_selected','physically_evaluated'):same(region[field],field=='C_selected' and role=='selected_implementation' and report['request']['candidate_policy']=='mul-candidates-v1','capability '+field)
         members=set(region['members'])
         if len(members)!=len(region['members']) or not members or not set(region['outputs'])<=members or members&port_ids:raise ValueError('invalid region membership/ports')
         for i in members:

@@ -1,0 +1,878 @@
+{
+  "schema": "platform-parameter-provenance-v1",
+  "effective_parameters_changed": false,
+  "measurement_freeze": {
+    "path": "experiments/arithmetic/backend_freeze_v6.json",
+    "sha256": "62c43d7ab9182c2c05954f1ba4e7a6894c93392b40b95fa75bed7106a3901e55"
+  },
+  "source_excerpt_archive": {
+    "path": "experiments/arithmetic/evidence/step3_platforms_v3/parameter_source_excerpts.json",
+    "sha256": "68cab4ddd92c895cfd0d2eb22cb1b696785441b4008c56e5cb5205a766799116"
+  },
+  "profiles": {
+    "asap7": {
+      "profile_path": "experiments/arithmetic_dse/configs/platforms/asap7.json",
+      "profile_sha256": "a29e056328a495af3f5815e3c56f4e6838eafd4b3f4f7844cc81d82ef99dd3df",
+      "parameters": {
+        "setup_uncertainty_ps": {
+          "value": 20,
+          "unit": "ps",
+          "source_category": "inherited_experiment",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D1"
+            },
+            {
+              "path": "experiments/arithmetic/evidence/step3_closure/source_v4/experiments/arithmetic_dse/backend/constraints.sdc",
+              "sha256": "5cd2443e7ec6c107cee629221f1acf8f299aba845fa2e03f58bf50c201936401",
+              "locator": "clock uncertainty / transition / IO / driver / load"
+            }
+          ],
+          "selection_reason": "Preserve the predeclared probe clock assumptions; no independently calibrated PDK jitter/slew claim.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "hold_uncertainty_ps": {
+          "value": 5,
+          "unit": "ps",
+          "source_category": "inherited_experiment",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D1"
+            },
+            {
+              "path": "experiments/arithmetic/evidence/step3_closure/source_v4/experiments/arithmetic_dse/backend/constraints.sdc",
+              "sha256": "5cd2443e7ec6c107cee629221f1acf8f299aba845fa2e03f58bf50c201936401",
+              "locator": "clock uncertainty / transition / IO / driver / load"
+            }
+          ],
+          "selection_reason": "Preserve the predeclared probe clock assumptions; no independently calibrated PDK jitter/slew claim.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "clock_transition_ps": {
+          "value": 10,
+          "unit": "ps",
+          "source_category": "inherited_experiment",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D1"
+            },
+            {
+              "path": "experiments/arithmetic/evidence/step3_closure/source_v4/experiments/arithmetic_dse/backend/constraints.sdc",
+              "sha256": "5cd2443e7ec6c107cee629221f1acf8f299aba845fa2e03f58bf50c201936401",
+              "locator": "clock uncertainty / transition / IO / driver / load"
+            }
+          ],
+          "selection_reason": "Preserve the predeclared probe clock assumptions; no independently calibrated PDK jitter/slew claim.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "io_delay_min_ps": {
+          "value": 0,
+          "unit": "ps",
+          "source_category": "inherited_experiment",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "experiments/arithmetic/evidence/step3_closure/source_v4/experiments/arithmetic_dse/backend/constraints.sdc",
+              "sha256": "5cd2443e7ec6c107cee629221f1acf8f299aba845fa2e03f58bf50c201936401",
+              "locator": "clock uncertainty / transition / IO / driver / load"
+            }
+          ],
+          "selection_reason": "Common virtual-I/O shell includes reset/valid/data.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "io_delay_max_period_fraction": {
+          "value": 0.2,
+          "unit": "dimensionless",
+          "source_category": "inherited_experiment",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "experiments/arithmetic/evidence/step3_closure/source_v4/experiments/arithmetic_dse/backend/constraints.sdc",
+              "sha256": "5cd2443e7ec6c107cee629221f1acf8f299aba845fa2e03f58bf50c201936401",
+              "locator": "clock uncertainty / transition / IO / driver / load"
+            }
+          ],
+          "selection_reason": "Default max IO delay is 20% of each requested period; explicit absolute request is separately identified.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "driver_cell": {
+          "value": "BUFx2_ASAP7_75t_R",
+          "unit": "cell_name",
+          "source_category": "ORFS_default",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/config.mk",
+              "sha256": "c5c868f35c7c04365a074aef2d81c72641441a8070a117bcb1a35b696942507c",
+              "locator": "ABC_DRIVER_CELL / ABC_LOAD_IN_FF"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib.gz",
+              "sha256": "8d6db2c2f83c3c162be54a5e102b2d379fcaaaef2db5f0b1d4152c395d01fea1",
+              "locator": "BUFx2_ASAP7_75t_R/Y direction output"
+            }
+          ],
+          "selection_reason": "Use the platform driver and its actual output pin as a declared input-environment assumption.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "driver_pin": {
+          "value": "Y",
+          "unit": "pin_name",
+          "source_category": "selected_Liberty_interface",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/config.mk",
+              "sha256": "c5c868f35c7c04365a074aef2d81c72641441a8070a117bcb1a35b696942507c",
+              "locator": "ABC_DRIVER_CELL / ABC_LOAD_IN_FF"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib.gz",
+              "sha256": "8d6db2c2f83c3c162be54a5e102b2d379fcaaaef2db5f0b1d4152c395d01fea1",
+              "locator": "BUFx2_ASAP7_75t_R/Y direction output"
+            }
+          ],
+          "selection_reason": "Use the platform driver and its actual output pin as a declared input-environment assumption.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "output_load_fF": {
+          "value": 3.898,
+          "unit": "fF",
+          "source_category": "ORFS_default",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/config.mk",
+              "sha256": "c5c868f35c7c04365a074aef2d81c72641441a8070a117bcb1a35b696942507c",
+              "locator": "ABC_DRIVER_CELL / ABC_LOAD_IN_FF"
+            }
+          ],
+          "selection_reason": "Preserve the platform default load for bounded connection probes.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "abc_load_fF": {
+          "value": 3.898,
+          "unit": "fF",
+          "source_category": "ORFS_default",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/config.mk",
+              "sha256": "c5c868f35c7c04365a074aef2d81c72641441a8070a117bcb1a35b696942507c",
+              "locator": "ABC_DRIVER_CELL / ABC_LOAD_IN_FF"
+            }
+          ],
+          "selection_reason": "Preserve the platform default load for bounded connection probes.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "trial_period_ps": {
+          "value": 1500,
+          "unit": "ps",
+          "source_category": "inherited_experiment",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D3"
+            }
+          ],
+          "selection_reason": "Predeclared connection target, not best frequency, main-case target or model domain.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "hold_review_margin_ps": {
+          "value": 5,
+          "unit": "ps",
+          "source_category": "inherited_experiment",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D1"
+            }
+          ],
+          "selection_reason": "Report a review trigger separately from feasibility; not a calibrated noise floor.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "recompute_review_flags; no_EDA_if_reporting_only; retain_historical_flags"
+        }
+      }
+    },
+    "nangate45": {
+      "profile_path": "experiments/arithmetic_dse/configs/platforms/nangate45.json",
+      "profile_sha256": "f4ff4c89159379ad030fca2780ae71e17409492b2d003240912fbf63cf634911",
+      "parameters": {
+        "setup_uncertainty_ps": {
+          "value": 20,
+          "unit": "ps",
+          "source_category": "engineering_convention",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D1"
+            }
+          ],
+          "selection_reason": "Preserve the predeclared probe clock assumptions; no independently calibrated PDK jitter/slew claim.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "hold_uncertainty_ps": {
+          "value": 5,
+          "unit": "ps",
+          "source_category": "engineering_convention",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D1"
+            }
+          ],
+          "selection_reason": "Preserve the predeclared probe clock assumptions; no independently calibrated PDK jitter/slew claim.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "clock_transition_ps": {
+          "value": 10,
+          "unit": "ps",
+          "source_category": "engineering_convention",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D1"
+            }
+          ],
+          "selection_reason": "Preserve the predeclared probe clock assumptions; no independently calibrated PDK jitter/slew claim.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "io_delay_min_ps": {
+          "value": 0,
+          "unit": "ps",
+          "source_category": "inherited_experiment",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "experiments/arithmetic/evidence/step3_closure/source_v4/experiments/arithmetic_dse/backend/constraints.sdc",
+              "sha256": "5cd2443e7ec6c107cee629221f1acf8f299aba845fa2e03f58bf50c201936401",
+              "locator": "clock uncertainty / transition / IO / driver / load"
+            }
+          ],
+          "selection_reason": "Common virtual-I/O shell includes reset/valid/data.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "io_delay_max_period_fraction": {
+          "value": 0.2,
+          "unit": "dimensionless",
+          "source_category": "inherited_experiment",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "experiments/arithmetic/evidence/step3_closure/source_v4/experiments/arithmetic_dse/backend/constraints.sdc",
+              "sha256": "5cd2443e7ec6c107cee629221f1acf8f299aba845fa2e03f58bf50c201936401",
+              "locator": "clock uncertainty / transition / IO / driver / load"
+            }
+          ],
+          "selection_reason": "Default max IO delay is 20% of each requested period; explicit absolute request is separately identified.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "driver_cell": {
+          "value": "BUF_X1",
+          "unit": "cell_name",
+          "source_category": "ORFS_default",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/config.mk",
+              "sha256": "1d8e639ccc138e72b5fe02dc0130e167455aee1c53b5aa3ee50ff442dc47d6cc",
+              "locator": "ABC_DRIVER_CELL / ABC_LOAD_IN_FF"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib",
+              "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+              "locator": "BUF_X1/Z direction output"
+            }
+          ],
+          "selection_reason": "Use the platform driver and its actual output pin as a declared input-environment assumption.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "driver_pin": {
+          "value": "Z",
+          "unit": "pin_name",
+          "source_category": "selected_Liberty_interface",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/config.mk",
+              "sha256": "1d8e639ccc138e72b5fe02dc0130e167455aee1c53b5aa3ee50ff442dc47d6cc",
+              "locator": "ABC_DRIVER_CELL / ABC_LOAD_IN_FF"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib",
+              "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+              "locator": "BUF_X1/Z direction output"
+            }
+          ],
+          "selection_reason": "Use the platform driver and its actual output pin as a declared input-environment assumption.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "output_load_fF": {
+          "value": 3.898,
+          "unit": "fF",
+          "source_category": "ORFS_default",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/config.mk",
+              "sha256": "1d8e639ccc138e72b5fe02dc0130e167455aee1c53b5aa3ee50ff442dc47d6cc",
+              "locator": "ABC_DRIVER_CELL / ABC_LOAD_IN_FF"
+            }
+          ],
+          "selection_reason": "Preserve the platform default load for bounded connection probes.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "abc_load_fF": {
+          "value": 3.898,
+          "unit": "fF",
+          "source_category": "ORFS_default",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/config.mk",
+              "sha256": "1d8e639ccc138e72b5fe02dc0130e167455aee1c53b5aa3ee50ff442dc47d6cc",
+              "locator": "ABC_DRIVER_CELL / ABC_LOAD_IN_FF"
+            }
+          ],
+          "selection_reason": "Preserve the platform default load for bounded connection probes.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "trial_period_ps": {
+          "value": 3000,
+          "unit": "ps",
+          "source_category": "engineering_convention",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D3"
+            }
+          ],
+          "selection_reason": "Predeclared connection target, not best frequency, main-case target or model domain.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "hold_review_margin_ps": {
+          "value": 5,
+          "unit": "ps",
+          "source_category": "engineering_convention",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D1"
+            }
+          ],
+          "selection_reason": "Report a review trigger separately from feasibility; not a calibrated noise floor.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "recompute_review_flags; no_EDA_if_reporting_only; retain_historical_flags"
+        }
+      }
+    },
+    "sky130hd": {
+      "profile_path": "experiments/arithmetic_dse/configs/platforms/sky130hd.json",
+      "profile_sha256": "b167ee95ee7092393e79f1a3ba4d37897d1214d30cc9cd95229b3f1d2d9e2ca7",
+      "parameters": {
+        "setup_uncertainty_ps": {
+          "value": 100,
+          "unit": "ps",
+          "source_category": "engineering_convention",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D1"
+            }
+          ],
+          "selection_reason": "Preserve the predeclared probe clock assumptions; no independently calibrated PDK jitter/slew claim.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "hold_uncertainty_ps": {
+          "value": 25,
+          "unit": "ps",
+          "source_category": "engineering_convention",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D1"
+            }
+          ],
+          "selection_reason": "Preserve the predeclared probe clock assumptions; no independently calibrated PDK jitter/slew claim.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "clock_transition_ps": {
+          "value": 100,
+          "unit": "ps",
+          "source_category": "engineering_convention",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D1"
+            }
+          ],
+          "selection_reason": "Preserve the predeclared probe clock assumptions; no independently calibrated PDK jitter/slew claim.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "io_delay_min_ps": {
+          "value": 0,
+          "unit": "ps",
+          "source_category": "inherited_experiment",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "experiments/arithmetic/evidence/step3_closure/source_v4/experiments/arithmetic_dse/backend/constraints.sdc",
+              "sha256": "5cd2443e7ec6c107cee629221f1acf8f299aba845fa2e03f58bf50c201936401",
+              "locator": "clock uncertainty / transition / IO / driver / load"
+            }
+          ],
+          "selection_reason": "Common virtual-I/O shell includes reset/valid/data.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "io_delay_max_period_fraction": {
+          "value": 0.2,
+          "unit": "dimensionless",
+          "source_category": "inherited_experiment",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "experiments/arithmetic/evidence/step3_closure/source_v4/experiments/arithmetic_dse/backend/constraints.sdc",
+              "sha256": "5cd2443e7ec6c107cee629221f1acf8f299aba845fa2e03f58bf50c201936401",
+              "locator": "clock uncertainty / transition / IO / driver / load"
+            }
+          ],
+          "selection_reason": "Default max IO delay is 20% of each requested period; explicit absolute request is separately identified.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "driver_cell": {
+          "value": "sky130_fd_sc_hd__buf_1",
+          "unit": "cell_name",
+          "source_category": "ORFS_default",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/sky130hd/config.mk",
+              "sha256": "1a36b8fbd58ee4b6b961bc14f3ca44e7b44a4ea47faf6f116f827eb5177509d5",
+              "locator": "ABC_DRIVER_CELL / ABC_LOAD_IN_FF"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib",
+              "sha256": "ec0e1067a35c8bf20b11e58d1e8ac53326067e4dac84a125cc1b917a3518d0d9",
+              "locator": "sky130_fd_sc_hd__buf_1/X direction output"
+            }
+          ],
+          "selection_reason": "Use the platform driver and its actual output pin as a declared input-environment assumption.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "driver_pin": {
+          "value": "X",
+          "unit": "pin_name",
+          "source_category": "selected_Liberty_interface",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/sky130hd/config.mk",
+              "sha256": "1a36b8fbd58ee4b6b961bc14f3ca44e7b44a4ea47faf6f116f827eb5177509d5",
+              "locator": "ABC_DRIVER_CELL / ABC_LOAD_IN_FF"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib",
+              "sha256": "ec0e1067a35c8bf20b11e58d1e8ac53326067e4dac84a125cc1b917a3518d0d9",
+              "locator": "sky130_fd_sc_hd__buf_1/X direction output"
+            }
+          ],
+          "selection_reason": "Use the platform driver and its actual output pin as a declared input-environment assumption.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "output_load_fF": {
+          "value": 5.0,
+          "unit": "fF",
+          "source_category": "ORFS_default",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/sky130hd/config.mk",
+              "sha256": "1a36b8fbd58ee4b6b961bc14f3ca44e7b44a4ea47faf6f116f827eb5177509d5",
+              "locator": "ABC_DRIVER_CELL / ABC_LOAD_IN_FF"
+            }
+          ],
+          "selection_reason": "Preserve the platform default load for bounded connection probes.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "abc_load_fF": {
+          "value": 5.0,
+          "unit": "fF",
+          "source_category": "ORFS_default",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/sky130hd/config.mk",
+              "sha256": "1a36b8fbd58ee4b6b961bc14f3ca44e7b44a4ea47faf6f116f827eb5177509d5",
+              "locator": "ABC_DRIVER_CELL / ABC_LOAD_IN_FF"
+            }
+          ],
+          "selection_reason": "Preserve the platform default load for bounded connection probes.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "trial_period_ps": {
+          "value": 30000,
+          "unit": "ps",
+          "source_category": "engineering_convention",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D3"
+            }
+          ],
+          "selection_reason": "Predeclared connection target, not best frequency, main-case target or model domain.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "hold_review_margin_ps": {
+          "value": 25,
+          "unit": "ps",
+          "source_category": "engineering_convention",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D1"
+            }
+          ],
+          "selection_reason": "Report a review trigger separately from feasibility; not a calibrated noise floor.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "recompute_review_flags; no_EDA_if_reporting_only; retain_historical_flags"
+        }
+      }
+    },
+    "gf180": {
+      "profile_path": "experiments/arithmetic_dse/configs/platforms/gf180.json",
+      "profile_sha256": "96e1c0c7fe0c9df178fde863272f1bc8e3ed44e6e8457d50bbadcf9a53036bc7",
+      "parameters": {
+        "setup_uncertainty_ps": {
+          "value": 100,
+          "unit": "ps",
+          "source_category": "engineering_convention",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D1"
+            }
+          ],
+          "selection_reason": "Preserve the predeclared probe clock assumptions; no independently calibrated PDK jitter/slew claim.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "hold_uncertainty_ps": {
+          "value": 25,
+          "unit": "ps",
+          "source_category": "engineering_convention",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D1"
+            }
+          ],
+          "selection_reason": "Preserve the predeclared probe clock assumptions; no independently calibrated PDK jitter/slew claim.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "clock_transition_ps": {
+          "value": 100,
+          "unit": "ps",
+          "source_category": "engineering_convention",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D1"
+            }
+          ],
+          "selection_reason": "Preserve the predeclared probe clock assumptions; no independently calibrated PDK jitter/slew claim.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "io_delay_min_ps": {
+          "value": 0,
+          "unit": "ps",
+          "source_category": "inherited_experiment",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "experiments/arithmetic/evidence/step3_closure/source_v4/experiments/arithmetic_dse/backend/constraints.sdc",
+              "sha256": "5cd2443e7ec6c107cee629221f1acf8f299aba845fa2e03f58bf50c201936401",
+              "locator": "clock uncertainty / transition / IO / driver / load"
+            }
+          ],
+          "selection_reason": "Common virtual-I/O shell includes reset/valid/data.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "io_delay_max_period_fraction": {
+          "value": 0.2,
+          "unit": "dimensionless",
+          "source_category": "inherited_experiment",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "experiments/arithmetic/evidence/step3_closure/source_v4/experiments/arithmetic_dse/backend/constraints.sdc",
+              "sha256": "5cd2443e7ec6c107cee629221f1acf8f299aba845fa2e03f58bf50c201936401",
+              "locator": "clock uncertainty / transition / IO / driver / load"
+            }
+          ],
+          "selection_reason": "Default max IO delay is 20% of each requested period; explicit absolute request is separately identified.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "driver_cell": {
+          "value": "gf180mcu_fd_sc_mcu9t5v0__buf_4",
+          "unit": "cell_name",
+          "source_category": "ORFS_default",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/config.mk",
+              "sha256": "1ab8a25c54e376c5aa2ef5f983f969cdd943cc747785f9a641bb47467e64a6d3",
+              "locator": "ABC_DRIVER_CELL / ABC_LOAD_IN_FF"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/lib/gf180mcu_fd_sc_mcu9t5v0__tt_025C_5v00.lib.gz",
+              "sha256": "75de8f18d2ecc8564a8ff73e48f1507cb184fd0915ba15f4ff72785cbeb243d2",
+              "locator": "gf180mcu_fd_sc_mcu9t5v0__buf_4/Z direction output"
+            }
+          ],
+          "selection_reason": "Use the platform driver and its actual output pin as a declared input-environment assumption.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "driver_pin": {
+          "value": "Z",
+          "unit": "pin_name",
+          "source_category": "selected_Liberty_interface",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/config.mk",
+              "sha256": "1ab8a25c54e376c5aa2ef5f983f969cdd943cc747785f9a641bb47467e64a6d3",
+              "locator": "ABC_DRIVER_CELL / ABC_LOAD_IN_FF"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/lib/gf180mcu_fd_sc_mcu9t5v0__tt_025C_5v00.lib.gz",
+              "sha256": "75de8f18d2ecc8564a8ff73e48f1507cb184fd0915ba15f4ff72785cbeb243d2",
+              "locator": "gf180mcu_fd_sc_mcu9t5v0__buf_4/Z direction output"
+            }
+          ],
+          "selection_reason": "Use the platform driver and its actual output pin as a declared input-environment assumption.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "output_load_fF": {
+          "value": 13.43,
+          "unit": "fF",
+          "source_category": "engineering_override",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/config.mk",
+              "sha256": "1ab8a25c54e376c5aa2ef5f983f969cdd943cc747785f9a641bb47467e64a6d3",
+              "locator": "ABC_DRIVER_CELL / ABC_LOAD_IN_FF"
+            }
+          ],
+          "selection_reason": "Keep STA output and ABC load explicit in fF; GF180 13.43 is the project override, ORFS raw default is 0.01343.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "abc_load_fF": {
+          "value": 13.43,
+          "unit": "fF",
+          "source_category": "engineering_override",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D2"
+            },
+            {
+              "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/gf180/config.mk",
+              "sha256": "1ab8a25c54e376c5aa2ef5f983f969cdd943cc747785f9a641bb47467e64a6d3",
+              "locator": "ABC_DRIVER_CELL / ABC_LOAD_IN_FF"
+            }
+          ],
+          "selection_reason": "Keep STA output and ABC load explicit in fF; GF180 13.43 is the project override, ORFS raw default is 0.01343.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "trial_period_ps": {
+          "value": 30000,
+          "unit": "ps",
+          "source_category": "engineering_convention",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D3"
+            }
+          ],
+          "selection_reason": "Predeclared connection target, not best frequency, main-case target or model domain.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "measurement_environment_change_requires_domain_review_and_admitted_revalidation"
+        },
+        "hold_review_margin_ps": {
+          "value": 25,
+          "unit": "ps",
+          "source_category": "engineering_convention",
+          "basis": [
+            {
+              "path": "experiments/arithmetic_dse/configs/platform_parameter_decisions_v1.md",
+              "sha256": "822a1a69c445e877952e4d38e15c04acb2998a5fd961e4d862b149c893dc4b70",
+              "section": "D1"
+            }
+          ],
+          "selection_reason": "Report a review trigger separately from feasibility; not a calibrated noise floor.",
+          "applicability": "TT/typical platform connection probes only; not automatically training or formal evaluation",
+          "change_impact": "recompute_review_flags; no_EDA_if_reporting_only; retain_historical_flags"
+        }
+      }
+    }
+  },
+  "unresolved": [
+    "Engineering clock/hold-review assumptions have no independent noise calibration; valid only in declared probe scope.",
+    "GF180 13.43fF is a project choice; no PDK mandate is claimed.",
+    "GF180 wire RC calibration command, data and output units remain unresolved; see D5."
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schema": "arithmetic-platform-v1",
-  "version": 2,
+  "version": 3,
   "corner": "TC",
   "temperature_C": 25.0,
   "liberty_model": "NLDM",
@@ -56,5 +56,6 @@
       "sha256": "d5bd9b1077ceac9929416abca272a6d52e51cd9a575453a31d129817bb286476",
       "reason": "ORFS sky130hd explicitly links the same Sky130 interconnect extraction rules shipped under sky130hs; HD Liberty/LEF selection is unchanged"
     }
-  }
+  },
+  "timing_repair_max_buffer_percent": 100
 }
