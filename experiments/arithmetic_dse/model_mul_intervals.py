@@ -12,6 +12,12 @@ from .platforms import profile
 
 CONFIG=Path(__file__).with_name('configs')/'model_mul_intervals_v2.json'
 ROOT=Path(__file__).resolve().parents[2]
+INTERVAL_FEATURES=('width','width_squared','log_width','capture_bits','input_bits','block_width','first','last')
+CONTEXT_FEATURES=INTERVAL_FEATURES+('capture_fanout','width_fanout','log_width_fanout')
+
+def infer(predictor,values):
+    from .model_features import infer as portable_infer
+    return portable_infer(predictor,values,feature_names=INTERVAL_FEATURES)
 
 def interval(report,first,last):
     graph=report['graph'];r=graph['regions'][0];nodes={n['id']:n for n in graph['nodes']};groups=r['legal_groups']
@@ -61,6 +67,12 @@ def features(s):
     w=s['width'];return {'width':w,'width_squared':w*w,'log_width':math.log2(w),'capture_bits':s['capture_width'],
        'input_bits':sum(s['input_widths']),'block_width':s['block_width'],'first':s['first'],'last':s['last']}
 
+def context_features(s,capture_fanout):
+    if type(capture_fanout) is not int or not 1<=capture_fanout<=4:raise ValueError('registered capture-bank count required')
+    f=features(s)
+    return {**f,'capture_fanout':capture_fanout,'width_fanout':s['width']*capture_fanout,
+            'log_width_fanout':math.log2(s['width'])*capture_fanout}
+
 def expression(node,operand):
     vs=[operand(v) for v in node['operands']];kind=node['kind']
     if kind in (0,8,11,13):return vs[0]
@@ -70,7 +82,8 @@ def expression(node,operand):
     if kind==2:return ' + '.join(vs)
     raise ValueError('unregistered interval operation')
 
-def source(items):
+def source(items,*,capture_fanout=1):
+    if type(capture_fanout) is not int or not 1<=capture_fanout<=4:raise ValueError('registered capture-bank count required')
     modules=[];ports=['input wire clk,rstn,iv','output reg ov'];instances=[];labels=[]
     def rng(w):return f'[{w-1}:0] ' if w>1 else ''
     for idx,(report,spec) in enumerate(items):
@@ -95,15 +108,28 @@ def source(items):
         args=[f'input wire {rng(w)}in{k}' for k,w in enumerate(spec['input_widths'])];body=[]
         for k,w in enumerate(spec['input_widths']):body.append(f'(* keep *) reg [{w-1}:0] src{k};always @(posedge clk)if(!rstn)src{k}<=0;else if(iv)src{k}<=in{k};')
         body.append(f'wire [{width-1}:0] value;Core_{name} core('+','.join(f'.x{k}(src{k})' for k in range(len(ins)))+',.value(value));')
-        body.append(f'(* keep, dont_touch *) reg [{width-1}:0] dst;always @(posedge clk)dst<=value;assign y=^dst;')
-        modules.append(f'(* keep_hierarchy=1 *) module Cell_{name}(input wire clk,rstn,iv,'+','.join(args)+',output wire y);\n'+'\n'.join(body)+'\nendmodule\n')
-        connections=['.clk(clk)','.rstn(rstn)','.iv(iv)',f'.y(y{idx})'];ports.append(f'output wire y{idx}')
+        if capture_fanout==1:
+            body.append(f'(* keep, dont_touch *) reg [{width-1}:0] dst;always @(posedge clk)dst<=value;assign y=^dst;')
+            outputs='output wire y';connections=['.clk(clk)','.rstn(rstn)','.iv(iv)',f'.y(y{idx})'];ports.append(f'output wire y{idx}')
+        else:
+            for bank in range(capture_fanout):
+                body.append(f'(* keep, dont_touch *) reg [{width-1}:0] dst{bank};(* keep *) always @(posedge clk)dst{bank}<=value;assign y{bank}=^dst{bank};')
+            outputs=','.join(f'output wire y{bank}' for bank in range(capture_fanout))
+            connections=['.clk(clk)','.rstn(rstn)','.iv(iv)']
+            for bank in range(capture_fanout):
+                ports.append(f'output wire y{idx}_b{bank}');connections.append(f'.y{bank}(y{idx}_b{bank})')
+        modules.append(f'(* keep_hierarchy=1 *) module Cell_{name}(input wire clk,rstn,iv,'+','.join(args)+','+outputs+');\n'+'\n'.join(body)+'\nendmodule\n')
         for k,w in enumerate(spec['input_widths']):ports.append(f'input wire {rng(w)}x{idx}_{k}');connections.append(f'.in{k}(x{idx}_{k})')
         instances.append(f'Cell_{name} {name}('+','.join(connections)+');')
         saved={k:v for k,v in spec.items() if k!='facts'}
         labels.append({**saved,'id':name,'source_cells':name+'/src*','target_cells':[name+'/dst*',name+'/y*'],'instance_scope':name+'/',
                        'arithmetic_scope':name+'/core/','fanout':1,'result_width':width,'semantic_result_width':spec['result_width'],
                        'features':features(spec),'interval_key':key(spec),'role':'template_interval','boundary':'native typed graph; packed variable launch/capture, known constants reconstructed'})
+        if capture_fanout>1:
+            banks=[{'id':name+f'_bank{bank}','target_cells':[name+f'/dst{bank}*',name+f'/y{bank}*'],'static_bit_capacity':width} for bank in range(capture_fanout)]
+            labels[-1].update(fanout=capture_fanout,capture_banks=banks,features=context_features(spec,capture_fanout),
+                target_cells=[pattern for bank in banks for pattern in bank['target_cells']],role='template_interval_context',
+                boundary='same native core; distinct kept capture banks and per-bank Q-D paths; actual mapped load must be verified')
     return '\n'.join(modules)+'module ModelBundle('+',\n'.join(ports)+');\nalways @(posedge clk)if(!rstn)ov<=0;else ov<=iv;\n'+'\n'.join(instances)+'\nendmodule\n',labels
 
 def prepare(graphs,out,platforms):
@@ -174,7 +200,6 @@ def stage_query(report,bundle,members,*,allow_none=True):
         if n['delay'] or n['comb'] or n.get('deferred_to_stage'):raise ValueError('unvalidated arithmetic combined with template interval')
     entry=model['intervals'][key(spec)]
     if entry['quality_status']!='passed':raise ValueError('unqualified template interval model')
-    from .model_features import infer
     f=features(spec);return {'delay_ps':infer(entry['delay'],f)*entry['validation_delay_scale'],'comb_area_um2':infer(entry['area'],f),'features':f,'interval_key':key(spec)}
 
 

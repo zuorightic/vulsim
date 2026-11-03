@@ -1,16 +1,43 @@
 """Fit per native legal-group interval; independent test stays sealed."""
-import argparse,json,math
+import argparse,json,math,shutil,sys,os
+from importlib.metadata import version as package_version
 from pathlib import Path
-from .model_mul_intervals import CONFIG,key,features
+from .model_mul_intervals import CONFIG,key,features,infer
 from .model_collection import sha,write,verify_test_release
-from .model_features import infer
 from .model_training import metric
 
 
 LABEL_AUDIT=Path(__file__).with_name('configs')/'model_mul_interval_labels_v1.json'
 
+def verify_measurement(directory,manifest,task,admission,cells):
+    """Reparse actual labels, units and SDC before admitting fitting/test rows."""
+    from .backend import stage_metrics
+    from .model_samples import read_labels
+    from .sdc import verify_sdc,rtl_ports
+    from .platforms import verify_wire_readback
+    if (manifest.get('budget_purpose')!='characterization' or manifest['target_platform']!=task['platform']
+        or manifest['task_id']!=task['id'] or manifest['admission_id']!=admission['id']
+        or manifest['platform_profile']['profile_sha256']!=task['profile_sha256']
+        or manifest['period_ps']!=task['period_ps'] or manifest['abc_target_ps']!=task['abc_target_ps']):raise ValueError('actual measurement differs from frozen task')
+    for name,digest in manifest['evidence_sha256'].items():
+        if sha(directory/name)!=digest:raise ValueError('changed raw measurement evidence: '+name)
+    def same(actual,archived):
+        if json.dumps(actual,sort_keys=True)!=json.dumps(archived,sort_keys=True):raise ValueError('actual interval stage/SDC/Q-D evidence differs from manifest')
+    reports=directory/f'reports/{task["platform"]}/arithmetic_probe/base'
+    for archived in manifest['metrics']:
+        stage=archived['stage'];parsed=stage_metrics(reports,stage,cells,manifest['period_ps'],selected=manifest['platform_profile'])
+        for name,value in parsed.items():
+            if name!='raw_reports_prefix':same(value,archived[name])
+        labels=read_labels(reports/('vulsim_'+stage),directory/'sample-contract.json',parsed['raw_report_units']['time']['to_ps'])
+        same(labels,archived['model_labels'])
+        if 'wire_RC_readback' in archived:same(verify_wire_readback(reports/('vulsim_'+stage+'_layer_rc.tsv'),manifest['platform_profile']),archived['wire_RC_readback'])
+        prefix={'synth':'1_synth','grt':'5_1_grt'}[stage]
+        sdc=directory/f'results/{task["platform"]}/arithmetic_probe/base/{prefix}.sdc'
+        verify_sdc(sdc.read_text(),manifest['platform_profile'],task['period_ps'],rtl_ports((directory/'input.sv').read_text(),manifest['rtl_interface']['design']))
+
 def extract(folder,splits,selection_freeze=None):
     a=json.loads((folder/'admission.json').read_text())
+    if a.get('purpose')!='arithmetic_model_collection' or a.get('test_read_after_fit_only') is not True:raise ValueError('declared interval characterization with deferred independent test required')
     if a['supplemental_protocol']['sha256']!=sha(CONFIG):raise ValueError('changed interval sampling protocol')
     if 'test' in splits:verify_test_release(folder/'admission.json',selection_freeze,{t['platform'] for t in a['tasks'] if t['split']=='test'})
     rows=[];failures=[]
@@ -22,6 +49,7 @@ def extract(folder,splits,selection_freeze=None):
         if m['status']!='completed':failures.append({'task':t['id'],'status':m['status'],'reason':m.get('failure_reason')});continue
         if sha(d/'input.sv')!=t['rtl_sha256'] or sha(d/'sample-contract.json')!=t['sample_contract_sha256']:raise ValueError('changed interval sample')
         contract=json.loads((d/'sample-contract.json').read_text());specs={s['id']:s for s in contract['labels']};cells=json.loads((d/'liberty_cells.json').read_text())['cells']
+        verify_measurement(d,m,t,a,cells)
         for stage in m['metrics']:
             instances=d/f'reports/{t["platform"]}/arithmetic_probe/base/vulsim_{stage["stage"]}_instances.tsv'
             if sha(instances)!=m['evidence_sha256'][str(instances.relative_to(d))]:raise ValueError('changed interval instance labels')
@@ -41,7 +69,7 @@ def extract(folder,splits,selection_freeze=None):
                     'features':s['features'],'spec':s,'delay_ps':label['data_delay_ps'],'comb_area_um2':comb,'capture_DFFs':capture,'launch_DFFs':launch,'elided_or_merged_capture_bits':s['capture_width']-capture,'elided_or_merged_launch_bits':sum(s['input_widths'])-launch,
                     'source_sha256':t['rtl_sha256'],'contract_sha256':t['sample_contract_sha256'],'manifest_sha256':sha(path),'instances_sha256':sha(instances),
                     'points_sha256':label['points_sha256'],'profile_sha256':t['profile_sha256'],'period_ps':t['period_ps'],'abc_target_ps':t['abc_target_ps']})
-    return {'version':'arithmetic-mul-interval-dataset-v1','protocol_sha256':sha(CONFIG),'admission_sha256':sha(folder/'admission.json'),'rows':rows,'failures':failures,
+    return {'version':'arithmetic-mul-interval-dataset-v1','protocol_sha256':sha(CONFIG),'admission_sha256':sha(folder/'admission.json'),'admission_path':str((folder/'admission.json').resolve()),'rows':rows,'failures':failures,
             'no_formal_or_holdout_data':True,'label_audit_sha256':sha(LABEL_AUDIT),'label_limitation':'static unknown-bit capacities are pre-mapping features; actual mapped boundary counts recorded separately; no mapped LEC claim'}
 
 
@@ -72,10 +100,17 @@ def quality(model,rows,ref):
 
 
 def fit(data,base,out):
-    d=json.loads(data.read_text());rows=d['rows'];out.mkdir(parents=True,exist_ok=False);cfg=json.loads(CONFIG.read_text());index=[]
-    if d['failures'] or any(r['split']=='test' for r in rows):raise ValueError('complete fitting partitions only, no test labels')
+    from .model_mul_interval_evaluation import validate_dataset
+    d,admission=validate_dataset(data,['train','validation']);rows=d['rows'];out.mkdir(parents=True,exist_ok=False);cfg=json.loads(CONFIG.read_text());index=[]
+    root=Path(__file__).resolve().parents[2]
+    source_paths=[Path(__file__),CONFIG,LABEL_AUDIT,*[Path(__file__).with_name(name) for name in ('model_mul_interval_evaluation.py','model_mul_intervals.py','model_features.py','model_training.py','model_collection.py','model_samples.py','backend.py','platforms.py','sdc.py')]]
+    sources={str(p.relative_to(root)):sha(p) for p in source_paths}
+    for name in sources:
+        destination=out/'training-source'/name;destination.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(root/name,destination)
     for platform in sorted({r['platform'] for r in rows}):
         source=base/(platform+'.json');bundle=json.loads(source.read_text());ref=bundle['mapping_abc_target_ps'];reports={}
+        if bundle.get('quality_status')!='passed' or set(bundle['stages'])!={'grt'} or bundle['target_platform']!=platform:raise ValueError('qualified grt-only base model required')
+        if any(r['profile_sha256']!=bundle['platform_profile_sha256'] or r['abc_target_ps']!=ref or r['period_ps']!=ref for r in rows if r['platform']==platform):raise ValueError('interval measurements differ from base platform/context')
         for stage in ('synth','grt'):
             entries={};detail={}
             for group in sorted({r['interval_key'] for r in rows if r['platform']==platform and r['stage']==stage}):
@@ -97,9 +132,11 @@ def fit(data,base,out):
             # evaluated separately and never authorizes a missing base model.
             reports[stage]={'intervals':detail,'model':model,'base_stage_available':stage in bundle['stages']}
             if stage in bundle['stages']:bundle['stages'][stage]['mul_interval_model']=model
-        bundle['quality_status']='awaiting_independent_test';bundle['id']=platform+'-native-mul-interval-v1';bundle['interval_fit_dataset_sha256']=sha(data);bundle['interval_fit_protocol_sha256']=sha(CONFIG)
-        write(out/(platform+'.candidate.json'),bundle);write(out/(platform+'.fit.json'),reports);index.append({'platform':platform,'candidate_sha256':sha(out/(platform+'.candidate.json'))})
-    write(out/'selection-freeze.json',{'version':'arithmetic-mul-interval-selection-freeze-v1','dataset_sha256':sha(data),'fitting_dataset_path':str(data.resolve()),'protocol_sha256':sha(CONFIG),'admission_sha256':d['admission_sha256'],'models':index,'test_consumed':False})
+        bundle['quality_status']='awaiting_independent_test';bundle['id']=platform+'-native-mul-interval-v1';bundle['interval_fit_dataset_sha256']=sha(data);bundle['interval_fit_protocol_sha256']=sha(CONFIG);bundle['interval_base_model_sha256']=sha(source)
+        write(out/(platform+'.candidate.json'),bundle);write(out/(platform+'.fit.json'),reports);index.append({'platform':platform,'candidate_sha256':sha(out/(platform+'.candidate.json')),'fit_report_sha256':sha(out/(platform+'.fit.json')),'base_model_sha256':sha(source)})
+    environment={'python':sys.version,'numpy':package_version('numpy'),'scikit-learn':package_version('scikit-learn'),'seed':20261103,
+                 'threads':{k:os.environ.get(k) for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS')}}
+    write(out/'selection-freeze.json',{'version':'arithmetic-mul-interval-selection-freeze-v1','dataset_sha256':sha(data),'fitting_dataset_path':str(data.resolve()),'protocol_sha256':sha(CONFIG),'admission_sha256':d['admission_sha256'],'models':index,'test_consumed':False,'training_sources':sources,'training_environment':environment})
 
 
 def main():

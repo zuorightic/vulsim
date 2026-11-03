@@ -4,6 +4,7 @@ An explicit output capture makes the public L=3 transaction boundary visible.
 The expected values use Python integer multiplication, never BEIR evaluation.
 """
 import hashlib
+import argparse
 import json
 import random
 import subprocess
@@ -12,11 +13,11 @@ import tempfile
 from pathlib import Path
 
 
-def run(directory):
+def run(directory,platforms=('asap7','nangate45','sky130hd','gf180')):
     rng=random.Random(20261102);vectors=[];checks=valids=bubbles=resets=0;identities=[]
     for i in range(256):vectors.append((rng.randrange(256),rng.randrange(256),int(i<32 or i%7 not in (1,2,3)),int(i not in (0,1,65,66,150))))
     vectors += [(0,0,0,1)]*4
-    for platform in ('asap7','nangate45','sky130hd','gf180'):
+    for platform in platforms:
         for mode in ('','C.'):
             rtl=directory/(platform+'.'+mode+'sv');report=json.loads((directory/(platform+'.'+mode+'report.json')).read_text())
             actual=hashlib.sha256(rtl.read_bytes()).hexdigest()
@@ -49,4 +50,7 @@ initial begin
     print(json.dumps(result));return result
 
 
-if __name__=='__main__':run(Path(sys.argv[1]))
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('directory',type=Path)
+    parser.add_argument('--platforms',nargs='+',choices=['asap7','nangate45','sky130hd','gf180'],default=['asap7','nangate45','sky130hd','gf180'])
+    args=parser.parse_args();run(args.directory,args.platforms)

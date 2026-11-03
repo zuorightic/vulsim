@@ -184,6 +184,10 @@ def evaluate(args):
                 from .model_collection import PROTOCOL
                 source_paths += [Path(__file__).with_name('model_collection.py'),Path(__file__).with_name('model_features.py'),PROTOCOL]
         relaxation=(args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_clock_relaxation_only')
+        interval_clock=(args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_interval_clock_diagnosis_only')
+        if interval_clock:
+            from .model_interval_clock import source_files
+            source_paths += source_files()
         if relaxation:source_paths.append(Path(__file__).with_name('clock_relaxation.py'))
         elif args.resume_synth_from:source_paths.append(Path(__file__).with_name('capacity_retest.py'))
         if args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_capacity_recheck_only':
@@ -370,7 +374,10 @@ def evaluate(args):
                   ('grt','grt','5_1_grt.odb','5_1_grt.sdc',args.route_timeout_s),
                   ('final',str(logs/'6_report.log'),'6_final.odb','6_final.sdc',args.route_timeout_s)]
         if args.resume_synth_from:
-            if relaxation:
+            if interval_clock:
+                from .model_interval_clock import seed_mapped
+                manifest['checkpoint_reuse']=seed_mapped(args,out,results,effective,command,manifest['tools'])
+            elif relaxation:
                 from .clock_relaxation import seed_mapped
                 manifest['checkpoint_reuse']=seed_mapped(args,out,results,effective,command,manifest['tools'])
             else:
@@ -395,8 +402,10 @@ def evaluate(args):
             wire=verify_wire_readback(reports/('vulsim_'+stage+'_layer_rc.tsv'),p)
             if wire is not None:metrics['wire_RC_readback']=wire
             if getattr(args,'sample_contract',None):
-                from .model_samples import read_labels
+                from .model_samples import read_labels,verify_capture_banks
                 metrics['model_labels']=read_labels(reports/('vulsim_'+stage),args.sample_contract,metrics['raw_report_units']['time']['to_ps'])
+                bank_counts=verify_capture_banks(reports/('vulsim_'+stage),args.sample_contract,cells)
+                if bank_counts:metrics['model_capture_banks']=bank_counts
             metrics.update(abc_target_ps=manifest['mapping_context']['abc_target_ps'],
                            mapping_context_sha256=manifest['mapping_context_sha256'],
                            target_dependent_measurement=True)
@@ -479,8 +488,13 @@ def main():
     route_limit=limits['floorplan_through_global_route_timeout_s'] if args.stage=='grt' else min(limits['floorplan_through_global_route_timeout_s'],limits['detailed_route_extraction_timeout_s'])
     recheck=(args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_capacity_recheck_only')
     relaxation=(args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_clock_relaxation_only')
+    interval_clock=(args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_interval_clock_diagnosis_only')
     memory_limit=limits['memory_limit_MiB'];synth_limit=limits['synthesis_timeout_s']
-    if relaxation:
+    if interval_clock:
+        from .model_interval_clock import task
+        try:task(args)
+        except ValueError as error:parser.error(str(error))
+    elif relaxation:
         from .clock_relaxation import task
         try:task(args)
         except ValueError as error:parser.error(str(error))

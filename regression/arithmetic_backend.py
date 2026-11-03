@@ -270,6 +270,20 @@ cell (BUF_X1) { area: 1.0; } }'''
         with self.assertRaises(BudgetExceeded):
             Ledger(ledger.path,ledger.policy,ledger.checkpoint).reserve('synth',1,1,'retry',[],self.directory)
 
+    def test_independent_test_selection_identity_is_preserved_in_ledger(self):
+        ledger=self.budget_ledger();context={'target_platform':'asap7','admission_id':'TEST_ONLY_deferred_test',
+            'task_id':'test-b000','admission_sha256':'a'*64,'selection_freeze_sha256':'b'*64}
+        reservation=ledger.reserve(None,10,2,'characterization',['environment'],self.directory,context=context)
+        entry=json.loads(ledger.path.read_text())['entries'][-1]
+        self.assertEqual(entry['selection_freeze_sha256'],context['selection_freeze_sha256'])
+        self.assertEqual(entry['admission_sha256'],context['admission_sha256'])
+        ledger.finish(reservation,{'exit_code':1,'walltime_s':.1,'timed_out':False,
+            'log':str(self.directory/'context.log'),'gnu_time':str(self.directory/'missing')})
+        self.assertEqual(ledger.summary()['pending'],0)
+        for bad in ({**context,'selection_freeze_sha256':None},{**context,'unregistered_field':'x'}):
+            with self.assertRaisesRegex(ValueError,'accounting context'):
+                ledger.reserve(None,10,2,'characterization',[],self.directory,context=bad)
+
     def test_concurrent_admission_cannot_overspend_and_pending_is_not_refunded(self):
         ledger = self.budget_ledger()
         def reserve(_):

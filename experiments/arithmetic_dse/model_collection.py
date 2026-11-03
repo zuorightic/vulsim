@@ -43,6 +43,9 @@ def verify_test_release(admission, selection_freeze, platforms):
         or f.get('protocol_sha256')!=a['supplemental_protocol']['sha256']
         or f.get('test_consumed') is not False):raise ValueError('independent test selection/admission/protocol mismatch')
     if sha(a['supplemental_protocol']['path'])!=f['protocol_sha256']:raise ValueError('changed independent test protocol')
+    for name,digest in f.get('training_sources',{}).items():
+        if sha(ROOT/name)!=digest or sha(path.parent/'training-source'/name)!=digest:
+            raise ValueError('changed frozen training/evaluation source before independent test')
     data_path=Path(f['fitting_dataset_path'])
     if sha(data_path)!=f['dataset_sha256']:raise ValueError('changed frozen fitting dataset')
     data=json.loads(data_path.read_text())
@@ -55,6 +58,8 @@ def verify_test_release(admission, selection_freeze, platforms):
         if platform not in models:raise ValueError('test platform has no frozen model')
         candidate=path.parent/(platform+'.candidate.json')
         if sha(candidate)!=models[platform]['candidate_sha256']:raise ValueError('changed frozen interval candidate')
+        if models[platform].get('fit_report_sha256') and sha(path.parent/(platform+'.fit.json'))!=models[platform]['fit_report_sha256']:
+            raise ValueError('changed frozen interval fitting report')
         b=json.loads(candidate.read_text());m=b['stages']['grt']['mul_interval_model']
         if (b['target_platform']!=platform or b.get('quality_status')!='awaiting_independent_test'
             or b.get('interval_fit_dataset_sha256')!=f['dataset_sha256']

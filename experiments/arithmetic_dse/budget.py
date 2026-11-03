@@ -134,7 +134,7 @@ class Ledger:
         if not math.isfinite(timeout_s) or timeout_s <= 0 or threads < 1:
             raise ValueError('invalid resource reservation')
         if context is not None:
-            allowed={'target_platform','admission_id','admission_sha256','task_id','model_version','sample_id','case_id'}
+            allowed={'target_platform','admission_id','admission_sha256','task_id','model_version','sample_id','case_id','selection_freeze_sha256'}
             if (not isinstance(context,dict) or context.keys()-allowed
                     or any(not isinstance(v,str) or not v for v in context.values())):
                 raise ValueError('invalid platform/admission accounting context')

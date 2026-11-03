@@ -1,0 +1,32 @@
+{
+  "version": "arithmetic-mul-interval-context-redesign-draft-v1",
+  "status": "draft_for_method_decision_not_physical_admission",
+  "platform": "asap7",
+  "predecessor_checkpoint": "experiments/arithmetic/interval_model_checkpoint_v1.json",
+  "reason": "Four of 42 grt interval classes failed independent false-feasible gates despite modest aggregate regression errors; original test is sealed and excluded from new fitting/calibration.",
+  "unchanged": ["unsigned registered full/low half/quarter native templates", "original per-interval quality gates", "fixed reference ABC/SDC and platform profile", "single physical job and cumulative ledger", "no formal or holdout application PPA"],
+  "proposed_context": {
+    "axis": "real capture-bank fanout, verified after mapping; not seed/name-only repetitions",
+    "train": {"widths": [8, 16, 32], "capture_banks": [1, 2, 3]},
+    "validation": {"widths": [12, 24], "capture_banks": [1, 2, 3]},
+    "independent_test": {"widths": [20, 28], "capture_banks": [2, 4]},
+    "possible_reuse": "Only exact old train/validation single-bank measurements with all identities and raw evidence checked; no old test row reused.",
+    "production_query_scope": "Existing shared-chain pipeline has one capture bank; new sampling load contexts must not imply support for an unimplemented multi-bank runtime architecture.",
+    "independence_claim": "New complete source/load topologies at previously exposed widths; not a new unseen-width claim. All variants of a complete source family stay in the same split."
+  },
+  "model_design_to_freeze_before_collection": {
+    "features": "Add explicit capture fanout and pre-mapping load interaction features; never use mapped counts as prediction inputs.",
+    "calibration": "Use only new/eligible training and validation contexts; consider interior-width cross-fit residuals as well as validation underprediction; exact rule must be fixed before independent tests.",
+    "selection": "Evaluate each candidate with its validation-derived reserve before deciding validation eligibility; no test-based coefficient/margin selection."
+  },
+  "required_before_any_new_physical_batch": [
+    "Confirm the new-context evidence claim versus wider unseen-width coverage",
+    "Implement real boundary topology and independent bit/cycle reference checks",
+    "Verify every mapped capture bank and retained load; reject merged/missing banks",
+    "Predeclare actual task lists, grouped splits, fitting/calibration rule, quality gates, storage and resource estimate",
+    "Run only bounded new-context capacity/label probes first; expand after audit"
+  ],
+  "alternative": "Expand the ASAP7 width domain to 64 first and reserve genuinely unobserved widths for testing; also requires new original-Mul, state and boundary support/capacity.",
+  "main_matrix_authorized": false,
+  "physical_collection_authorized_by_this_file": false
+}

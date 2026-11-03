@@ -39,3 +39,9 @@ C/D 使用相同的有序 original/half/quarter 候选和 K=16；C 保留原整�
 区间证据由`model_interval_package`从已有产物打包：38份真实typed图、实际输入RTL／边界契约、逐项RTL观测值、四平台TEST_ONLY三候选报告及其模型进入Git小包。默认核验重建402个区间、静态特征／位映射和RTL整数观测，并重算机制报告成本与排序；`--verify-external`另读取独立的区间原始归档，重新解析实际阶段、SDC、Q→D路径、唯一core面积与映射后DFF数量。最初5个v1探针保留为排除拟合的历史，不因归档核验通过而成为训练标签。旧原始归档保持原字节。
 
 尚未发布正式freeze时，可用`python3 -m experiments.arithmetic_dse.model_evidence --freeze build/step7-models-20261102/candidate-offline-model-freeze-v1.json`核验当前候选，追加`--verify-external`检查本机完整产物。显式候选与正式freeze执行相同的源码／父链校验，不跳过哈希或历史绑定；通过候选核验不表示全步骤七已完成。
+
+2026-11-03区间续作：恢复原ASAP7 v2清单的train／validation，独立test仍须等待验证通过及选择冻结。非恒定区间预测使用显式的八维区间特征表，普通算子的十二维特征表保持原边界；原实现将两者混用，常数TEST_ONLY包没有触发该错误。本轮同时补充实际SDC／阶段报告／Q→D点回放、完整任务／区间／阶段及位宽覆盖检查。新的拟合数据登记实际准入路径，选择冻结保存实际训练源码、验证报告、基础模型哈希、Python／numpy／sklearn版本、线程环境及seed。旧数据与旧冻结按其原始字节解释，新增字段不追写旧包。
+
+区间独立评价入口为`model_mul_interval_evaluation`。`test`只消费已冻结并验证就绪的候选，用选择目录中的独占消费记录阻止更换输出目录后重复测试；`verify`只重算既有测试；`publish`只导出通过原门槛的grt范围，保持全部数值系数、裕量、基础模型与支持域不变，synth失败另行保留。`reproduce`只重新读取冻结train／validation及基础模型，要求候选与验证报告字节一致，不读取独立test标签。逐区间原门槛仍为准，另报整体误差、错误可行预测和保守拒绝；half／quarter排序只比较同位宽、同结果语义的完整模板区间，属于固定R下的诊断，不冒充含状态开销的整流水候选PPA排名。
+
+新增`model_interval_successor`用于建立后继证据包，引用父包字节池并单独保存新原始归档；`prepare`之后先结算support，再`seal`资源前缀。便携核验重算冻结裕量、独立测试和发布状态，external另读取实际测量产物。后继尚未seal时，旧候选绑定的是旧源码检查点；当前源码修改后的验收须使用对应后继，不能跳过失配或覆盖旧候选。具体实际执行和完成范围见现行计划第四章§7.11。

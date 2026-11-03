@@ -19,12 +19,12 @@ def features(lhs_width,rhs_width,result_width,fanout,abc_target_ps,sdc_period_ps
     return {**dict(zip(FEATURES,values)),'literal_operands':literal_operands,'known_one_operands':known_one_operands,
             'constant_carry':constant_carry,'correlated_operands':correlated_operands}
 
-def infer(predictor,values):
+def infer(predictor,values,*,feature_names=FEATURES):
     def numeric(value):
         if isinstance(value,bool) or not isinstance(value,(int,float)) or not math.isfinite(value):raise ValueError('finite model number required')
         return float(value)
     names=predictor['features']
-    if not isinstance(names,list) or len(set(names))!=len(names) or any(k not in FEATURES for k in names):raise ValueError('invalid predictor feature names')
+    if not isinstance(names,list) or len(set(names))!=len(names) or any(k not in feature_names for k in names):raise ValueError('invalid predictor feature names')
     x=[numeric(values[k]) for k in predictor['features']]
     if predictor['kind']=='linear':
         result=numeric(predictor['intercept'])

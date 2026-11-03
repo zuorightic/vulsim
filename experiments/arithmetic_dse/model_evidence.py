@@ -154,7 +154,7 @@ def _verify(root,external,parents,freeze):
                  'raw_stage_replay':'requires explicit --verify-external and retained local full archive'}
         replay={}
         if external:
-            notes=['run-summary.json']+(['interval-run-summary.json'] if 'interval_evidence' in index else [])
+            notes=['run-summary.json']+(['interval-run-summary.json'] if 'interval_evidence' in index else [])+index.get('additional_raw_archives',[])
             for name in notes:
                 note=json.loads(objects[index['documents'][name]]);full_directory=root/note['full_archive']
                 if not full_directory.is_dir():raise ValueError('artifact_unavailable: '+note['full_archive'])
@@ -178,6 +178,9 @@ def _verify(root,external,parents,freeze):
         from .model_interval_evidence import verify_intervals
         interval_summary=verify_intervals(index,objects,documents,replay,same)
         replayed_rows+=interval_summary['interval_raw_rows_recomputed']
+    if index.get('interval_training_evidence'):
+        from .model_interval_training_evidence import verify_training
+        interval_summary.update(verify_training(index,objects,documents,same,replay))
     isolated={p:documents['isolated-models-v2/'+p+'.tested.json'] for p in ('asap7','nangate45','sky130hd','gf180')}
     scopes=isolated_test(documents['isolated-independent-dataset-v2.json'],isolated,documents['isolated-models-v2/independent-test.json'])
     calibration_scopes=0

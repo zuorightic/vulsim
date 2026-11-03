@@ -1,0 +1,36 @@
+{
+  "baseline_usage": {
+    "synth": 63,
+    "grt": 35,
+    "final": 14,
+    "support_calls": 859,
+    "walltime_s": 31036.087946801214,
+    "CPU_time_s": 55632.77,
+    "pending": 0
+  },
+  "new_usage": {
+    "synth": 175,
+    "grt": 169,
+    "final": 2,
+    "support_calls": 706,
+    "walltime_s": 19660.16594559746,
+    "CPU_time_s": 30727.29,
+    "pending": 0
+  },
+  "cumulative_usage": {
+    "synth": 238,
+    "grt": 204,
+    "final": 16,
+    "support_calls": 1565,
+    "walltime_s": 50696.25389239867,
+    "CPU_time_s": 86360.06,
+    "pending": 0
+  },
+  "synth_grt_final_counts_include_all_failed_attempts": true,
+  "global_caps_changed_by_step7_v6_authorization": true,
+  "v7_limits_equal_v6": true,
+  "remote_retention": "not confirmed",
+  "note": "v7 only corrects inherited metadata; all physical/model tasks kept their original policy/admission identities",
+  "ledger_snapshot_scope": "settled prefix at candidate seal; later verification charges remain in the same live ledger",
+  "checkpoint_note": "settled immutable prefix at interval successor seal; subsequent verification remains in live ledger"
+}
