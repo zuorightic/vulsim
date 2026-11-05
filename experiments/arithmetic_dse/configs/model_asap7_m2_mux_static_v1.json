@@ -1,0 +1,21 @@
+{
+  "version": "asap7-m2-mux-static-context-fit-v1",
+  "parent_collection": "model_asap7_m2_mux_context_v1.json",
+  "user_authorization": "advance with Mux-specific static context; retain all11 numeric models, margins, domains and independent qualifications",
+  "feature_schema": "arithmetic-mux-static-features-v1",
+  "base_features": "unchanged arithmetic-physical-features-v2 twelve numeric values",
+  "context_features": ["context_operation_count", "context_dynamic_mux_count", "context_constant_mux_count", "context_boolean_count", "context_launch_bits", "context_capture_bits", "context_result_bits", "selector_fanout_bits"],
+  "logical_semantics": "actual register-delimited disjoint-input control forest; count paid operations and semantic live operands, not unused sampler ports or mapped cells; capture records explicitly describe retained logical banks; shared valid bit stays a fixed boundary protocol, outside numeric context",
+  "context_operations": ["mux", "mux_zero", "mux_one", "mux_ones", "eq_zero", "or"],
+  "domain": "only disjoint-input parallel control forests represented by original six-control bundle or new parallel dynamic Mux bundles; no shared input/select, connected arithmetic, FP/Div context or arbitrary whole-graph extrapolation",
+  "independent_contexts": "same48 preregistered P4 source tasks, still untouched; model/domain/feature equations frozen before their measurement",
+  "algorithms": "same15 constant/linear/ridge/relative-weighted/depth2-4 tree families; compare original12-feature v2 baseline with pooled, exact-width and exact-width/target context models",
+  "calibration": "same positive validation residualP95 plus1.5ps, or complete-training-source crossfit max-ratio times1.05 plus1.5ps; choose on validation after reserve",
+  "selection": "original mandatory operation-level gates first, then MAE, P95, portable size and stable name; no independent labels",
+  "area": "inherit Mux area from frozen mux-fit-v2; remaining11 exact inherited objects are never fitted",
+  "forbidden_features": ["sample or source id", "declared split", "mapped cells/buffers", "measured STA/slack", "measured area", "post-mapping DFF counts", "formal or holdout PPA"],
+  "missing_context": "explicit uncovered; never silently substitute zero or old12-feature Mux price",
+  "quality_gates_changed": false,
+  "test_read_after_fit_only": true,
+  "automatic_retries": 0
+}

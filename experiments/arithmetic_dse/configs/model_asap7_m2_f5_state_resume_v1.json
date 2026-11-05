@@ -1,0 +1,14 @@
+{
+  "version": "asap7-m2-F5-state-graph-resume-v1",
+  "parent": "independent-F5-v1",
+  "failed_task": "test-F5-arithmetic-w32-t3",
+  "period_ps": 375,
+  "completed_tasks_inherited": 15,
+  "unstarted_tasks": 40,
+  "reason": "two physical DFFHQNx1 masters upsized to DFFHQNx2; exact actual Liberty primitive state graphs match while area, capacitance and generated names differ",
+  "proof": "full top and Q/D/CLK boundary, identical actual state primitive graphs after removing only names/area/capacitance, then full combinational CEC and negative controls",
+  "recovery": "exact saved post-repair ODB and netlists; no synthesis/placement/repair replay",
+  "model_parameters_or_quality_gates_changed": false,
+  "test_cohort_changed": false,
+  "automatic_retries": 0
+}

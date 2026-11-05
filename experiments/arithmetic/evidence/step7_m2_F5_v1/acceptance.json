@@ -1,0 +1,41 @@
+{
+  "version": "asap7-m2-F5-acceptance-receipt-v1",
+  "parent_index_sha256": "7e5ee1c5c9dbd8392f4d6f2033097c965d282d15af5c128492b9f37b06ea85fd",
+  "resource_prefix_sha256": "fa20407246e634cd9b6bdcc7fdc30494c04da6b8a233d14b4fc3aa082dd88b3c",
+  "entry_count": 6759,
+  "usage": {
+    "synth": 1132,
+    "grt": 1111,
+    "final": 16,
+    "support_calls": 4500,
+    "walltime_s": 176667.7801393636,
+    "CPU_time_s": 413731.48,
+    "pending": 0
+  },
+  "checks": {
+    "numerical-independent": {
+      "path": "build/step7-m2-models-20261104/F5-evaluation-execution-v2/verify.log",
+      "sha256": "c07ff944b37ce452c465ae9263d0e22f4aae2e303daa7c1a1f7435cfd8fbd6a4",
+      "result": "{\"status\": \"verified\", \"quality_status\": \"failed\"}"
+    },
+    "portable": {
+      "path": "build/step7-m2-models-20261104/F5-evidence-execution-v1/portable.log",
+      "sha256": "0b97eee5dda3050a77b22933ac472285f0c27e4528ba9d1380a1c97edffd7e48",
+      "result": "{\"status\": \"verified\", \"quality_status\": \"failed\", \"runs\": 224, \"stages\": 448, \"rows\": 1952, \"external\": false}"
+    },
+    "external": {
+      "path": "build/step7-m2-models-20261104/F5-evidence-execution-v1/external.log",
+      "sha256": "2e996a355acc5c1b8169a96763dd7d68feaa2b1d55008961a34717ba3d86aeb3",
+      "result": "{\"status\": \"verified\", \"quality_status\": \"failed\", \"runs\": 224, \"stages\": 448, \"rows\": 1952, \"external\": true}"
+    },
+    "no-build-no-EDA-and-tamper": {
+      "path": "build/step7-m2-models-20261104/F5-portability-execution-v1/portable-isolation-and-tamper.log",
+      "sha256": "fee5c9f824d970d45b72624d256cf65b064139e8de4e62aeb1b7898feec06260",
+      "result": "PORTABLE_WITHOUT_BUILD_EDA_OR_LEDGER_PASSED"
+    }
+  },
+  "quality_status": "failed",
+  "published": [],
+  "full_step7_complete": false,
+  "timestamp": "2026-11-05T09:29:12+08:00"
+}

@@ -1,0 +1,14 @@
+{
+  "version": "asap7-m2-test-constant-output-resume-v1",
+  "parent": "independent-test-v3",
+  "failed_task": "test-F4-binary32-w32-t0",
+  "inherited_completed_tasks": 49,
+  "unstarted_task_ids": ["test-F4-divrem-w32-t1", "test-F4-divrem-w32-t2", "test-F4-divrem-w32-t3", "test-F4-binary32-w32-t1", "test-F4-binary32-w32-t2", "test-F4-binary32-w32-t3"],
+  "cause": "Yosys short map omits four constant-zero register D outputs; complete AIG retains all431 outputs and symbols",
+  "fix": "verify complete binary AIG symbols against every flattened port bit; only short-map omissions proved to be constant outputs are accepted; full CEC and constant-output mutation remain mandatory",
+  "recovery": "complete saved pair proof and load exact post-repair ODB; preserve synth and all49 successful task manifests",
+  "test_cohort_changed": false,
+  "model_parameters_or_margins_changed": false,
+  "sampling_or_quality_gates_changed": false,
+  "automatic_retries": 0
+}

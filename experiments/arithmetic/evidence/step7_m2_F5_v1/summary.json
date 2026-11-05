@@ -1,0 +1,85 @@
+{
+  "quality_status": "failed",
+  "published": [],
+  "stages": {
+    "synth": {
+      "status": "passed",
+      "passing_operations": 12,
+      "operation_count": 12,
+      "delay": {
+        "n": 244,
+        "MAE": 43.048521172707055,
+        "median_relative_error": 0.0666813194497476,
+        "p95_relative_error": 0.14502269423604366,
+        "max_relative_error": 0.20810476729290603,
+        "relative_error_floor": 1.5
+      },
+      "area": {
+        "n": 244,
+        "MAE": 0.13002491803278624,
+        "median_relative_error": 0.0,
+        "p95_relative_error": 0.0013239772275916322,
+        "max_relative_error": 0.032508491023774816,
+        "relative_error_floor": 0.0001
+      },
+      "false_feasible": 0,
+      "denominator": 2684,
+      "actual_target_false_feasible": 0,
+      "actual_target_denominator": 244
+    },
+    "grt": {
+      "status": "failed",
+      "passing_operations": 11,
+      "operation_count": 12,
+      "delay": {
+        "n": 244,
+        "MAE": 66.13985012815476,
+        "median_relative_error": 0.09830190888961723,
+        "p95_relative_error": 0.4659972426590701,
+        "max_relative_error": 1.8363077230120741,
+        "relative_error_floor": 1.5
+      },
+      "area": {
+        "n": 244,
+        "MAE": 0.5049888275535112,
+        "median_relative_error": 0.0,
+        "p95_relative_error": 0.023020196729312634,
+        "max_relative_error": 0.04761904761904771,
+        "relative_error_floor": 0.0001
+      },
+      "false_feasible": 10,
+      "denominator": 2684,
+      "actual_target_false_feasible": 0,
+      "actual_target_denominator": 244
+    }
+  },
+  "failed_operations": {
+    "synth": {},
+    "grt": {
+      "mux": {
+        "delay": {
+          "n": 24,
+          "MAE": 52.92140246873438,
+          "median_relative_error": 0.12060049231101716,
+          "p95_relative_error": 0.9857343737052956,
+          "max_relative_error": 1.8363077230120741,
+          "relative_error_floor": 1.5,
+          "status": "failed",
+          "false_feasible": 5,
+          "denominator": 264,
+          "actual_target_false_feasible": 0,
+          "actual_target_denominator": 24
+        },
+        "area": {
+          "n": 24,
+          "MAE": 0.015673834911118345,
+          "median_relative_error": 0.0,
+          "p95_relative_error": 0.009635109261238044,
+          "max_relative_error": 0.015384615384615424,
+          "relative_error_floor": 0.0001,
+          "status": "passed"
+        }
+      }
+    }
+  }
+}

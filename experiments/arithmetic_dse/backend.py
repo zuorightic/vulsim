@@ -141,11 +141,16 @@ def stage_metrics(reports, stage, cells, period_ps, report_tag=None, selected=No
 
 
 def evaluate(args):
+    ledger = Ledger()
+    with ledger.job({'target_platform':args.platform, 'admission_id':args.admission_id, 'task_id':args.task_id}):
+        return _evaluate(args, ledger)
+
+
+def _evaluate(args, ledger):
     out = args.out.resolve()
     if out.exists():
         raise ValueError(f'output must be a new directory to preserve prior evidence: {out}')
     out.mkdir(parents=True)
-    ledger = Ledger()
     p = profile(args.platform)
     manifest = {'version':'multiplatform-evaluation-v2', 'started_at':datetime.now(timezone.utc).isoformat(),
                 'status':'running', 'target_platform':p['platform'], 'platform_profile':p, 'commands':[], 'metrics':[], 'retry_count':0,
@@ -156,6 +161,7 @@ def evaluate(args):
                 'io_delay_max_ps':args.io_delay_max_ps,
                 'BC_rules_modified':False, 'policy_version':json.loads(POLICY.read_text())['version'],
                 'budget_ledger':str(ledger.path), 'budget_purpose':args.budget_purpose,
+                'budget_job_id':ledger.job_id,
                 'admission_id':args.admission_id, 'task_id':args.task_id,
                 'sdc_contract_version':SDC_CONTRACT_VERSION,'sdc_contracts':{}}
     env = os.environ.copy()
@@ -185,6 +191,15 @@ def evaluate(args):
                 source_paths += [Path(__file__).with_name('model_collection.py'),Path(__file__).with_name('model_features.py'),PROTOCOL]
         relaxation=(args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_clock_relaxation_only')
         interval_clock=(args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_interval_clock_diagnosis_only')
+        target_load=(args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_interval_target_load_collection')
+        m2_collection=(args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_m2_model_collection')
+        if m2_collection:
+            from .model_m2_collection import sources
+            source_paths += sources()
+        if target_load:
+            from .model_target_collection import sources
+            source_paths += sources()
+            if getattr(args,'selection_freeze',None):source_paths.append(Path(__file__).with_name('model_target_fit.py'))
         if interval_clock:
             from .model_interval_clock import source_files
             source_paths += source_files()
@@ -226,6 +241,12 @@ def evaluate(args):
             (scripts/'util.tcl').write_text(render_repair_script((flow/'scripts/util.tcl').read_text()))
             manifest['timing_repair_control']={'max_buffer_percent':limit,'executed_util_sha256':sha256(scripts/'util.tcl'),
                 'original_util_sha256':sha256(flow/'scripts/util.tcl'),'constraint_change':False}
+        if m2_collection:
+            from .model_m2_phase_resume import render_observational_cts
+            original_cts=(flow/'scripts/cts.tcl').read_text()
+            (scripts/'cts.tcl').unlink();(scripts/'cts.tcl').write_text(render_observational_cts(original_cts))
+            manifest['CTS_observational_checkpoint']={'original_script_sha256':sha256(flow/'scripts/cts.tcl'),
+                'executed_script_sha256':sha256(scripts/'cts.tcl'),'role':'save exact post-repair database before LEC; no optimization change'}
         completion_mode=(args.admission and json.loads(args.admission.read_text()).get('execution_mode')=='complete_initial_backend')
         if completion_mode:
             # An observational checkpoint preserves the expensive lowering if
@@ -290,11 +311,11 @@ def evaluate(args):
             if getattr(args,'selection_freeze',None):
                 context['selection_freeze_sha256']=sha256(args.selection_freeze)
                 manifest['selection_freeze_sha256']=context['selection_freeze_sha256']
-        def run(extra, stem, timeout, stage=None):
-            reservation = ledger.reserve(stage, timeout, args.threads, args.budget_purpose, command+extra, out/stem, context=context)
+        def execute(full_command, stem, timeout, stage=None):
+            reservation = ledger.reserve(stage, timeout, args.threads, args.budget_purpose, full_command, out/stem, context=context)
             manifest['active_reservation'] = reservation['id']
             write_json(out/'manifest.json', manifest)
-            record = run_command(command+extra, out, stem, timeout, env, args.memory_limit_mib,
+            record = run_command(full_command, out, stem, timeout, env, args.memory_limit_mib,
                                  cpu_limit_s=reservation['CPU_time_s'])
             ledger.finish(reservation, record)
             record['budget_reservation_id'] = reservation['id']
@@ -305,6 +326,8 @@ def evaluate(args):
                           else 'memory_limit' if record['memory_limit_exceeded']
                           else 'tool_nonzero_exit')
                 raise BackendCommandError(stem,reason)
+            return record
+        def run(extra, stem, timeout, stage=None):return execute(command+extra,stem,timeout,stage)
         run(['vulsim-environment', f'VULSIM_ENV_FILE={out}/effective-environment.txt'], 'environment', 60)
         raw = dict(line.strip().split('=', 1) for line in (out/'effective-environment.txt').read_text().splitlines() if line.strip())
         manifest['raw_make_environment'] = raw
@@ -324,6 +347,7 @@ def evaluate(args):
                  str(Path(__file__).with_name('budget.py')), str(scripts/'abc_speed.script')}
         if completion_mode:files.add(str(scripts/'synth.tcl'))
         if 'timing_repair_max_buffer_percent' in p:files.add(str(scripts/'util.tcl'))
+        if m2_collection:files.add(str(scripts/'cts.tcl'))
         for key in ['TECH_LEF','SC_LEF','ADDER_MAP_FILE','LATCH_MAP_FILE','CLKGATE_MAP_FILE','RCX_RULES','LAYER_PARASITICS_FILE','MAKE_TRACKS','PDN_TCL','FASTROUTE_TCL','TAPCELL_TCL','ADDITIONAL_LEFS']:
             files.update(effective.get(key,'').split())
         files.add(str(Path(effective['PLATFORM_DIR'])/'setRC.tcl'))
@@ -374,7 +398,17 @@ def evaluate(args):
                   ('grt','grt','5_1_grt.odb','5_1_grt.sdc',args.route_timeout_s),
                   ('final',str(logs/'6_report.log'),'6_final.odb','6_final.sdc',args.route_timeout_s)]
         if args.resume_synth_from:
-            if interval_clock:
+            if m2_collection:
+                from .model_m2_collection import seed_mapped,task
+                _,_,m2_task=task(args)
+                if m2_task.get('phase_resume'):
+                    from .model_m2_phase_resume import seed
+                    manifest['checkpoint_reuse']=seed(args,out,results,effective,command,manifest['tools'],execute,manifest)
+                else:manifest['checkpoint_reuse']=seed_mapped(args,out,results,effective,command,manifest['tools'])
+            elif target_load:
+                from .model_target_collection import seed_mapped
+                manifest['checkpoint_reuse']=seed_mapped(args,out,results,effective,command,manifest['tools'])
+            elif interval_clock:
                 from .model_interval_clock import seed_mapped
                 manifest['checkpoint_reuse']=seed_mapped(args,out,results,effective,command,manifest['tools'])
             elif relaxation:
@@ -489,8 +523,19 @@ def main():
     recheck=(args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_capacity_recheck_only')
     relaxation=(args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_clock_relaxation_only')
     interval_clock=(args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_interval_clock_diagnosis_only')
+    target_load=(args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_interval_target_load_collection')
+    m2_collection=(args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_m2_model_collection')
     memory_limit=limits['memory_limit_MiB'];synth_limit=limits['synthesis_timeout_s']
-    if interval_clock:
+    if m2_collection:
+        from .model_m2_collection import task
+        try:_,_,m2_task=task(args)
+        except ValueError as error:parser.error(str(error))
+        route_limit=m2_task.get('route_timeout_s',route_limit)
+    elif target_load:
+        from .model_target_collection import task
+        try:task(args)
+        except ValueError as error:parser.error(str(error))
+    elif interval_clock:
         from .model_interval_clock import task
         try:task(args)
         except ValueError as error:parser.error(str(error))

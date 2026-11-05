@@ -1,0 +1,441 @@
+{
+  "version": "asap7-m2-mux-static-handoff-v1",
+  "updated_at": "2026-11-05T11:43:43+08:00",
+  "status": "passed",
+  "quality_status": "passed",
+  "combined_passing_operations": 12,
+  "required_operations": 12,
+  "full_D_ready": false,
+  "full_step7_complete": false,
+  "evidence_files_sha256": {
+    "README.md": "ee054600b1cc74852667c80b49d952792f374f3760275a1812f62e7c11c0a412",
+    "asap7-primitives.json": "f49990d5aa68045a7127636e074d07f4140404b8b007c19b8f8b70bd16524e15",
+    "capabilities.json": "fa7d35594ed36995067d80a68744a2678748d59d7b5ead07373d6892362c427d",
+    "consumed-run-ledger.json": "d94dcffefe19f2dfbc8e978b181f51b5fd3232096493150d6609e5be6e2aca2f",
+    "index.json": "57de41e3574100dbc27aabb3dfa11577331725aa97f291f1c9dd16a3023cf998",
+    "publication.json": "81e0d2f29fbb44ee88dae6cc489b937bd46ff647eea8fee18852a55d3bca3fed",
+    "text-000.json.gz": "e3cf3e499c2d9e90f735c981bafed7eb4fd14cd147d6474e32a12158e842bfd8",
+    "text-001.json.gz": "0f1e3dc8b50dffc04f0854293c0de3c17690574e073500fed4facc87540f5bd5",
+    "text-002.json.gz": "32d9d907d739d1688db67a4ceb3d6b747a79427a71d9d87df94f4d522341ecd2",
+    "text-003.json.gz": "daafc1c1847a6d7226490f4d59bad405674d16b6b99e82bcc0c8a6b6d3561892",
+    "text-004.json.gz": "09c1c06b0fdf3fbfba298dc054c04cae9beead4396d2cc5c4627251c9411776c",
+    "text-005.json.gz": "c583429cb91cbfb7616d7ba7adc5c2b1065017b07cada733fa8d839983461100",
+    "text-006.json.gz": "c2700daa2a4839be30586b51ae2de614e9403e88e3a4ace6feb23bdd05a5d146"
+  },
+  "commands": {
+    "independent-raw-replay": {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "experiments.arithmetic_dse.model_m2_mux_static_evaluate",
+        "extract",
+        "--folder",
+        "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-independent-v1",
+        "--out",
+        "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-independent-data-v1.json"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 2400,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 16.0,
+      "cancelled_signal": null,
+      "walltime_s": 16.33782698214054,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 167160,
+      "sampled_process_tree_peak_threads": 2,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-verdict-work-v1/independent-raw-replay.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-verdict-work-v1/independent-raw-replay.resources.txt",
+      "budget_reservation_id": "10db53330cca47bab708d738f69e05a8"
+    },
+    "evaluate": {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "experiments.arithmetic_dse.model_m2_mux_static_evaluate",
+        "evaluate",
+        "--data",
+        "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-independent-data-v1.json",
+        "--selection",
+        "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-fit-v1/selection-freeze.json",
+        "--out",
+        "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-independent-result-v1"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 720,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 2.49,
+      "cancelled_signal": null,
+      "walltime_s": 3.0051616956479847,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 196448,
+      "sampled_process_tree_peak_threads": 2,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-verdict-work-v1/evaluate.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-verdict-work-v1/evaluate.resources.txt",
+      "budget_reservation_id": "36f0b920b30b462480f6164ee0aa5e41"
+    },
+    "verify": {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "experiments.arithmetic_dse.model_m2_mux_static_evaluate",
+        "verify",
+        "--result",
+        "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-independent-result-v1/result.json"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 720,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 2.49,
+      "cancelled_signal": null,
+      "walltime_s": 2.9687466360628605,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 197432,
+      "sampled_process_tree_peak_threads": 2,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-verdict-work-v1/verify.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-verdict-work-v1/verify.resources.txt",
+      "budget_reservation_id": "669f15d387504fe6beea0ee3b7a8278f"
+    },
+    "publish": {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "experiments.arithmetic_dse.model_m2_mux_static_evaluate",
+        "publish",
+        "--result",
+        "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-independent-result-v1/result.json",
+        "--out",
+        "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-publication-v1"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 720,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 4.0,
+      "cancelled_signal": null,
+      "walltime_s": 4.320487571880221,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 202384,
+      "sampled_process_tree_peak_threads": 2,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-verdict-work-v1/publish.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-verdict-work-v1/publish.resources.txt",
+      "budget_reservation_id": "9ff89bb6d05a4bacb20eefc1b2eb8ee9"
+    },
+    "fitting-replay-and-query-v2": {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-c",
+        "import copy,json\nfrom pathlib import Path\nfrom tempfile import TemporaryDirectory\nfrom experiments.arithmetic_dse.model_m2_mux_fit import extract\nfrom experiments.arithmetic_dse.model_m2_mux_static_features import descriptor,features\nfrom experiments.arithmetic_dse.model_m2_mux_static_query import query\nfrom experiments.arithmetic_dse.model_m2_mux_static_fit import predict\nfrom experiments.arithmetic_dse.model_collection import sha,write\nb=Path(\"build/step7-m2-models-20261105\"); read=lambda p:json.loads(Path(p).read_text())\nfit=read(b/\"mux-static-data-v1.json\")\nwith TemporaryDirectory() as td:\n    p=Path(td)/\"raw.json\";extract((b/\"mux-context-v1\").resolve(),p)\n    if read(p)!=read(b/\"mux-fitting-data-v1.json\"):raise ValueError(\"fitting raw replay differs\")\nfor r in fit[\"rows\"]:\n    cut=fit[\"static_contexts\"][r[\"static_context_sha256\"]]\n    if features(r[\"features\"],cut,r[\"spec\"][\"id\"])!=r[\"static_features\"]:raise ValueError(\"changed static features\")\nbundle=read(b/\"mux-static-publication-v1/asap7-primitives.json\");test=read(b/\"mux-static-independent-data-v1.json\")\ncount=0;first=None\nfor r in test[\"rows\"]:\n    if r[\"stage\"]!=\"grt\" or r[\"spec\"][\"fanout\"]!=1:continue\n    cut=test[\"static_contexts\"][r[\"static_context_sha256\"]]\n    actual=query(bundle,r[\"features\"],cut,r[\"spec\"][\"id\"],profile_sha256=bundle[\"platform_profile_sha256\"])\n    for q,key in ((\"delay\",\"delay_ps\"),(\"area\",\"comb_area_um2\")):\n        if actual[key]!=predict(bundle[\"stages\"][\"grt\"][\"operations\"][\"mux\"][q],r,q):raise ValueError(\"published production query differs\")\n    if actual[\"PPA_calls\"]:raise ValueError(\"query launched PPA\")\n    count+=1\n    if first is None:first=(r,cut)\nr,cut=first;rejected=[]\nfor label,model,base,ctx,profile in [\n    (\"missing_context\",bundle,r[\"features\"],None,bundle[\"platform_profile_sha256\"]),\n    (\"wrong_profile\",bundle,r[\"features\"],cut,\"wrong\"),\n    (\"wrong_target\",bundle,{**r[\"features\"],\"sdc_period_ps\":1234},cut,bundle[\"platform_profile_sha256\"]),\n    (\"unqualified\",{**bundle,\"quality_status\":\"awaiting_independent_test\"},r[\"features\"],cut,bundle[\"platform_profile_sha256\"])]:\n    try:query(model,base,ctx,r[\"spec\"][\"id\"],profile_sha256=profile)\n    except ValueError:rejected.append(label)\n    else:raise ValueError(\"unqualified production query accepted: \"+label)\nlegacy=next(v for v in fit[\"rows\"] if v[\"source_context\"]==\"legacy_mixed_control\" and v[\"spec\"][\"fanout\"]==1)\ntry:query(bundle,legacy[\"features\"],fit[\"static_contexts\"][legacy[\"static_context_sha256\"]],legacy[\"spec\"][\"id\"],profile_sha256=bundle[\"platform_profile_sha256\"])\nexcept ValueError:rejected.append(\"mixed_control_no_independent_qualification\")\nelse:raise ValueError(\"unqualified legacy mixed context accepted\")\nresult={\"status\":\"passed\",\"fitting_raw_measurements\":192,\"fitting_main_rows\":768,\"independent_query_rows\":count,\"PPA_calls\":0,\"rejections\":rejected,\"published_model_sha256\":sha(b/\"mux-static-publication-v1/asap7-primitives.json\"),\"full_D_ready\":False}\nwrite(b/\"mux-static-verdict-work-v1/raw-fitting-and-production-query.json\",result);print(json.dumps(result))\n"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 2400,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 25.52,
+      "cancelled_signal": null,
+      "walltime_s": 25.797432202845812,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 169588,
+      "sampled_process_tree_peak_threads": 2,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-verdict-work-v1/fitting-replay-and-query-v2.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-verdict-work-v1/fitting-replay-and-query-v2.resources.txt",
+      "budget_reservation_id": "be6c684043114df68485886003c64284"
+    },
+    "evidence-portable": {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "experiments.arithmetic_dse.model_m2_mux_static_evidence",
+        "verify",
+        "--folder",
+        "/home/zyrv/vulsim/experiments/arithmetic/evidence/step7_m2_mux_static_v1"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 1200,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 7.49,
+      "cancelled_signal": null,
+      "walltime_s": 7.574952639173716,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 298732,
+      "sampled_process_tree_peak_threads": 2,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-verdict-work-v1/evidence-portable.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-verdict-work-v1/evidence-portable.resources.txt",
+      "budget_reservation_id": "8b66a6b2e3944755b528c1bf91310cb7"
+    },
+    "evidence-external": {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "experiments.arithmetic_dse.model_m2_mux_static_evidence",
+        "verify",
+        "--folder",
+        "/home/zyrv/vulsim/experiments/arithmetic/evidence/step7_m2_mux_static_v1",
+        "--external"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 3600,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 54.06,
+      "cancelled_signal": null,
+      "walltime_s": 54.24221463408321,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 492732,
+      "sampled_process_tree_peak_threads": 2,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-verdict-work-v1/evidence-external.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-verdict-work-v1/evidence-external.resources.txt",
+      "budget_reservation_id": "e4fbafffe6094fdd82b29cb6eb059cd5"
+    },
+    "git-visible-copy-and-tamper": {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/zyrv/vulsim/build/step7-m2-models-20261105/git-delivery-audit-v1.py"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 2400,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 11.95,
+      "cancelled_signal": null,
+      "walltime_s": 13.053419211413711,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 310064,
+      "sampled_process_tree_peak_threads": 3,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-verdict-work-v1/git-visible-copy-and-tamper.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-verdict-work-v1/git-visible-copy-and-tamper.resources.txt",
+      "budget_reservation_id": "576eedc5acb846c89e4a83bd76059deb"
+    }
+  },
+  "evaluator_unit_tests": {
+    "tests": 3,
+    "status": "passed",
+    "command": {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "regression.arithmetic_mux_static_evaluate",
+        "-v"
+      ],
+      "exit_code": 0,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "CPU_limit_s": 720,
+      "CPU_limit_exceeded": false,
+      "sampled_process_tree_CPU_s": 0,
+      "cancelled_signal": null,
+      "walltime_s": 0.11534100072458386,
+      "unexpected_live_descendants": false,
+      "memory_limit_exceeded": false,
+      "memory_limit_MiB": 8192,
+      "sampled_process_tree_peak_rss_KiB": 1464,
+      "sampled_process_tree_peak_threads": 1,
+      "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+      "resource_sampling_interval_s": 0.5,
+      "cleanup": {
+        "term_sent": 0,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "log": "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-evaluator-checks-v2/unit-tests.log",
+      "gnu_time": "/home/zyrv/vulsim/build/step7-m2-models-20261105/mux-static-evaluator-checks-v2/unit-tests.resources.txt",
+      "budget_reservation_id": "956c28cf71cd411fbaf60df206ece1e1"
+    }
+  },
+  "raw_replay": {
+    "measurements": 240,
+    "stages": 480,
+    "main_mux_rows": 1152,
+    "diagnostic_parents": 1008,
+    "portable": true,
+    "external": true,
+    "no_EDA_or_refit": true
+  },
+  "published_query": {
+    "status": "passed",
+    "fitting_raw_measurements": 192,
+    "fitting_main_rows": 768,
+    "independent_query_rows": 96,
+    "PPA_calls": 0,
+    "rejections": [
+      "missing_context",
+      "wrong_profile",
+      "wrong_target",
+      "unqualified",
+      "mixed_control_no_independent_qualification"
+    ],
+    "published_model_sha256": "f49990d5aa68045a7127636e074d07f4140404b8b007c19b8f8b70bd16524e15",
+    "full_D_ready": false
+  },
+  "git_audit": {
+    "status": "passed",
+    "scope": "Git-visible cached/untracked working files before user staging; no git add/commit/push",
+    "main_files": 8692,
+    "main_working_bytes": 268258650,
+    "changed_main_files": 148,
+    "changed_main_working_bytes": 125687547,
+    "rtlzz_files": 258,
+    "rtlzz_working_bytes": 3144724,
+    "new_mux_evidence_bytes": 43527742,
+    "largest10": [
+      {
+        "path": "experiments/arithmetic/backend_usage.json",
+        "bytes": 16185719
+      },
+      {
+        "path": "experiments/arithmetic/evidence/step7_m2_mux_static_v1/index.json",
+        "bytes": 10390602
+      },
+      {
+        "path": "experiments/arithmetic/evidence/step7_m2_F5_v1/index.json",
+        "bytes": 8824904
+      },
+      {
+        "path": "experiments/arithmetic/evidence/step7_m2_mux_static_v1/text-002.json.gz",
+        "bytes": 4674496
+      },
+      {
+        "path": "experiments/arithmetic/evidence/step7_m2_mux_static_v1/text-001.json.gz",
+        "bytes": 4673053
+      },
+      {
+        "path": "experiments/arithmetic/evidence/step7_m2_mux_static_v1/text-003.json.gz",
+        "bytes": 4503139
+      },
+      {
+        "path": "experiments/arithmetic/evidence/step7_m2_F5_v1/text-002.json.gz",
+        "bytes": 4458118
+      },
+      {
+        "path": "experiments/arithmetic/evidence/step7_m2_F5_v1/text-001.json.gz",
+        "bytes": 4441868
+      },
+      {
+        "path": "experiments/arithmetic/evidence/step7_m2_F5_v1/text-006.json.gz",
+        "bytes": 4426354
+      },
+      {
+        "path": "experiments/arithmetic/evidence/step7_m2_F5_v1/text-007.json.gz",
+        "bytes": 4410491
+      }
+    ],
+    "unwanted_build_artifacts": [],
+    "no_original_build_EDA_or_Ledger_reads": true,
+    "portable_raw_replay_rows": 1152,
+    "tamper_rejected": true,
+    "submodule_order": "commit rtlzz sources first, then parent gitlink and remaining main files",
+    "main_git_count_objects": "count: 238\nsize: 9.51 MiB\nin-pack: 10502\npacks: 3\nsize-pack: 45.58 MiB\nprune-packable: 0\ngarbage: 0\nsize-garbage: 0 bytes\n",
+    "rtlzz_git_count_objects": "count: 191\nsize: 1.15 MiB\nin-pack: 2288\npacks: 1\nsize-pack: 1.48 MiB\nprune-packable: 0\ngarbage: 0\nsize-garbage: 0 bytes\n"
+  },
+  "global_ledger_prefix": {
+    "entries": 7681,
+    "entries_canonical_sha256": "555378aeef789a2e187c91371d761809cef8e1f894e7aaf878f4634185accabb",
+    "file_sha256_at_handoff": "0bbf93fc882250acc81b4eae261cf99731fb625d76f4c0cf1b066703c384460e",
+    "usage": {
+      "synth": 1300,
+      "grt": 1279,
+      "final": 16,
+      "support_calls": 5086,
+      "walltime_s": 183857.22900879593,
+      "CPU_time_s": 424384.13,
+      "pending": 0
+    },
+    "active_or_unsettled_jobs": 0,
+    "historical_failures_and_support_retained": true
+  },
+  "git_mutations_performed": [],
+  "next_work": "production model-package and stage-cut/capture interfaces, qualified small-graph integration, then nine-case model coverage gaps; see mission/asap7-d-interface.md"
+}

@@ -1,0 +1,19 @@
+{
+  "version": "asap7-m2-primitives-context-calibration-v3",
+  "parent": "model_asap7_m2_fit_v2.json",
+  "data": "unchanged registered train F1/F3 and validation F2 only; all consumed F4 and earlier independent labels permanently excluded",
+  "algorithms": "same characterization_v5 constant/linear/ridge/relative-weighted/depth2-4 tree families",
+  "partition_candidates": ["pooled", "exact_operand_and_result_width"],
+  "crossfit_unit": "entire training capture/source context, retaining all four target variants; F1 predicts withheld F3, F3 predicts withheld F1",
+  "calibration": "max(1, validation actual/raw, training-context-crossfit actual/raw)*1.05, then +1.5ps; raw denominator floor1.5ps",
+  "reserve_basis": "use the existing predeclared max-ratio plus1.05 guard architecture from earlier calibration protocols; scale is calculated solely from train/validation and training group crossfit",
+  "selection": "same operation/stage error and false-feasible gates after reserve; then MAE, p95, serialized size, stable algorithm name",
+  "area": "inherit the exact pretest v2 area choices and numbers; this successor revises delay calibration only",
+  "quality_gates_changed": false,
+  "sampling_clocks_changed": false,
+  "production_domain_changed": false,
+  "new_independent_test": "fresh F5 real capture-bank/source contexts at the same exposed widths and original four SDC targets; freeze choices and reproduce before launch",
+  "independence_claim": "new load/source contexts, not unseen widths; F5 beyond training maximum3 is explicitly measured and never assumed covered",
+  "test_read_after_fit_only": true,
+  "automatic_retries": 0
+}

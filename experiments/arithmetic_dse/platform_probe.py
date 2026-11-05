@@ -81,6 +81,12 @@ def revise_admission(parent_path,destination,revision_id,replacements,reason,*,a
 def verify_admission(args,p,rtl,ledger):
     path=args.admission.resolve()
     frozen=json.loads(path.read_text())
+    if frozen.get('purpose')=='arithmetic_m2_model_collection':
+        from .model_m2_collection import verify_admission as verify_m2
+        return verify_m2(args,p,rtl,ledger)
+    if frozen.get('purpose')=='arithmetic_interval_target_load_collection':
+        from .model_target_collection import verify_admission as verify_target_load
+        return verify_target_load(args,p,rtl,ledger)
     if frozen.get('purpose')=='arithmetic_interval_clock_diagnosis_only':
         from .model_interval_clock import verify_admission as verify_clock_diagnosis
         return verify_clock_diagnosis(args,p,rtl,ledger)

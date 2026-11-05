@@ -1,0 +1,25 @@
+{
+  "version": "asap7-m2-mux-static-independent-v1",
+  "cohort": "the original48 P4 tasks from model_asap7_m2_mux_context_v1, with identical source, clock, load and physical identities; never measured before static selection freeze",
+  "feature_schema": "arithmetic-mux-static-features-v1",
+  "quality_gates": "unchanged original mandatory per-operation error and false-feasible thresholds after frozen reserve",
+  "capacity_pilot": "mux-test-P4-F3-w64-t0",
+  "max_parallel_jobs": 4,
+  "threads": 4,
+  "memory_limit_MiB": 8192,
+  "synth_timeout_s": 300,
+  "grt_timeout_s": 1200,
+  "once_only": true,
+  "sampling_or_quality_gates_changed": false,
+  "retained11": "byte-identical inherited models/margins/domains and F5 pass receipts; original F5 overall failed stays unchanged",
+  "prospective_release_scope": {
+    "independent_family": "parallel_dynamic_mux",
+    "pure_dynamic_mux_counts": [2, 3, 4],
+    "production_capture_banks": 1,
+    "width_and_target": "unchanged original joint exact width/result/ABC-SDC conditions",
+    "legacy_mixed_control": "fitting/validation characterization only for the new predictor; not independently qualified by P4, must remain uncovered by a qualified production query until separate prospective evidence",
+    "formal_and_arbitrary_composition": "not qualified; no full-D selection claim"
+  },
+  "release_rule": "all48 tasks complete and new Mux passes original independent gates, all11 inherited pass receipts match, physical identity is common; otherwise publish empty; no posterior interval/source removal",
+  "automatic_retries": 0
+}

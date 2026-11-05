@@ -1,0 +1,17 @@
+{
+  "version": "asap7-m2-timeout-recovery-v1",
+  "parent_plan_id": "primitives-v3",
+  "reason": "2026-11-04 user authorized a longer time limit after two DivRem32 CTS repair LEC solvers exhausted the 1200s physical-command envelope; preserve clocks, LEC, gates, failed attempts and paid successful measurements",
+  "route_timeout_s": 3600,
+  "attempts_per_failed_task": 1,
+  "failed_task_ids": ["train-F1-divrem-w32-t2", "train-F1-divrem-w32-t3"],
+  "extended_task_ids": [
+    "train-F1-divrem-w32-t2", "train-F1-divrem-w32-t3",
+    "train-F3-divrem-w32-t2", "train-F3-divrem-w32-t3",
+    "validation-F2-divrem-w32-t2", "validation-F2-divrem-w32-t3"
+  ],
+  "priority": "run the two explicit recovery attempts first; continue remaining fitting tasks only if both complete",
+  "unchanged": ["sampling protocol", "source partitions", "SDC", "ABC", "IO policy", "mapped netlist reuse", "LEC", "4 jobs x 4 threads", "8192MiB", "300s synthesis", "quality gates", "independent test lock"],
+  "automatic_retries": 0,
+  "independent_test_resource_extension": false
+}

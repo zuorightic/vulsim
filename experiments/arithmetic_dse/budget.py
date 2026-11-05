@@ -18,8 +18,8 @@ import tempfile
 import uuid
 
 ROOT = Path(__file__).resolve().parents[2]
-POLICY = ROOT/'experiments/arithmetic_dse/configs/backend_policy_v7.json'
-CHECKPOINT = ROOT/'experiments/arithmetic/evidence/step7_budget_v2/checkpoint.json.gz'
+POLICY = ROOT/'experiments/arithmetic_dse/configs/backend_policy_v9.json'
+CHECKPOINT = ROOT/'experiments/arithmetic/evidence/step7_budget_v4/checkpoint.json.gz'
 LEDGER = ROOT/'experiments/arithmetic/backend_usage.json'
 STAGE_LIMITS = {'synth':'max_synthesis_calls', 'grt':'max_global_route_calls',
                 'final':'max_detailed_route_calls'}
@@ -56,6 +56,74 @@ def cpu_seconds(resource_log):
 class Ledger:
     def __init__(self, path=LEDGER, policy=POLICY, checkpoint=CHECKPOINT):
         self.path, self.policy, self.checkpoint = map(Path, (path, policy, checkpoint))
+        self.job_id = None
+
+    def _job_lock_path(self, identity):
+        return self.path.parent/(self.path.stem+'.jobs')/(identity+'.lock')
+
+    def _live_jobs(self, state):
+        """Kernel locks work across PID namespaces; a dead owner never refunds work."""
+        active = []
+        for job in state.get('jobs', []):
+            if job['status'] == 'unsettled':
+                raise BudgetExceeded('unfinished backend job requires evidence reconciliation')
+            if job['status'] != 'active':
+                continue
+            try:
+                with self._job_lock_path(job['id']).open('r') as lock:
+                    try:
+                        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                    except BlockingIOError:
+                        active.append(job)
+                        continue
+            except FileNotFoundError:
+                pass
+            raise BudgetExceeded('orphaned backend job requires evidence reconciliation')
+        ids = {j['id'] for j in active}
+        for entry in state['entries']:
+            if entry['status'] == 'reserved' and entry.get('job_id') not in ids:
+                raise BudgetExceeded('unfinished backend reservation requires evidence reconciliation')
+        return active
+
+    @contextmanager
+    def job(self, context):
+        """Hold a whole-job slot through all leaf stages, including their gaps."""
+        if self.job_id is not None:
+            raise ValueError('nested backend job')
+        required = {'target_platform', 'admission_id', 'task_id'}
+        if set(context) != required or any(not isinstance(v,str) or not v for v in context.values()):
+            raise ValueError('explicit backend job identity required')
+        identity = uuid.uuid4().hex
+        path = self._job_lock_path(identity)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with path.open('x') as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX)
+            with self._transaction() as state:
+                active = self._live_jobs(state)
+                if len(active) >= json.loads(self.policy.read_text())['resources']['parallel_jobs']:
+                    raise BudgetExceeded('all backend job slots occupied')
+                if any(j['admission_id']==context['admission_id'] and j['task_id']==context['task_id']
+                       for j in state.get('jobs', [])):
+                    raise BudgetExceeded('backend task already claimed; no automatic retry')
+                state.setdefault('jobs', []).append({'id':identity, 'status':'active', **context,
+                    'owner_pid_in_namespace':os.getpid(), 'started_at':datetime.now(timezone.utc).isoformat()})
+            self.job_id = identity
+            try:
+                yield identity
+            finally:
+                with self._transaction() as state:
+                    job = next(j for j in state['jobs'] if j['id']==identity)
+                    pending = any(e.get('job_id')==identity and e['status']=='reserved' for e in state['entries'])
+                    job.update(status='unsettled' if pending else 'released',
+                               finished_at=datetime.now(timezone.utc).isoformat())
+                self.job_id = None
+
+    def check_job_admission(self):
+        with self._transaction() as state:
+            active = self._live_jobs(state)
+            if self.job_id is None or self.job_id not in {j['id'] for j in active}:
+                raise BudgetExceeded('backend admission requires its live job slot')
+            return usage(state['entries'])
 
     @contextmanager
     def _transaction(self):
@@ -109,7 +177,7 @@ class Ledger:
             raise ValueError('migration reason required')
         with old._transaction() as state:
             total = usage(state['entries'])
-            if total['pending']:
+            if total['pending'] or any(j['status'] in ('active','unsettled') for j in state.get('jobs', [])):
                 raise ValueError('cannot migrate an unsettled ledger')
             if checkpoint_data(self.checkpoint)['entries'] != state['entries']:
                 raise ValueError('migration checkpoint must preserve every historical entry')
@@ -141,10 +209,19 @@ class Ledger:
         policy = json.loads(self.policy.read_text())['resources']
         with self._transaction() as state:
             total = usage(state['entries'])
-            # Serial physical jobs: a crashed reservation blocks admission until
-            # explicitly reconciled with its command evidence, never auto-refunded.
-            if total['pending']:
-                raise BudgetExceeded('unfinished backend reservation requires evidence reconciliation')
+            active = self._live_jobs(state)
+            if self.job_id is None:
+                # Unscoped support/legacy leaves remain exclusive with whole jobs.
+                if active:
+                    raise BudgetExceeded('support/legacy leaf cannot overlap backend jobs')
+            else:
+                job = next((j for j in active if j['id']==self.job_id), None)
+                if job is None or any((context or {}).get(k)!=job[k] for k in ('target_platform','admission_id','task_id')):
+                    raise BudgetExceeded('leaf does not own matching backend job')
+                if any(e.get('job_id')==self.job_id and e['status']=='reserved' for e in state['entries']):
+                    raise BudgetExceeded('one leaf at a time per backend job')
+            if threads > policy['threads_per_tool']:
+                raise ValueError('threads exceed current resource policy')
             if stage and total[stage] >= policy[STAGE_LIMITS[stage]]:
                 raise BudgetExceeded(f'{stage} call cap exhausted before launch')
             # GNU time is actual CPU usage, not threads times wall time. Reserve
@@ -159,6 +236,8 @@ class Ledger:
                            'walltime_s':timeout_s, 'CPU_time_s':cpu_allowance}
             if context is not None:
                 reservation.update(context)
+            if self.job_id is not None:
+                reservation['job_id'] = self.job_id
             state['entries'].append(reservation)
             return reservation.copy()
 

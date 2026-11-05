@@ -1,0 +1,13 @@
+{
+  "version": "asap7-m2-primitives-fit-v2",
+  "supersedes": "model_asap7_m2_fit_v1.json; first failed validation and all measurements preserved",
+  "base_protocol": "model_asap7_m2_fit_v1.json",
+  "partition_candidates": ["pooled", "exact_operand_and_result_width"],
+  "rationale": "deployment already enumerates measured widths and result shapes; width-local validation margins do not impose a large-width absolute reserve on one-bit controls",
+  "partition_policy": "fit each lhs/rhs/result-width slice using the same predeclared constant/linear/ridge/weighted/tree algorithms and p95 positive-residual margin; no test reads; no new target or width interpolation",
+  "selection": "per operation and quantity compare pooled and width-partitioned predictors after reserve; unchanged operation-level gates first, normalized MAE, p95, portable size, stable name",
+  "reporting": "each operation/stage remains a mandatory gate; also report every width/result slice; no cross-operation or cross-stage aggregate rescue",
+  "quality_gates_changed": false,
+  "reference_targets_changed": false,
+  "test_consumed": false
+}

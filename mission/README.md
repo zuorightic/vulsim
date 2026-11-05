@@ -1,6 +1,20 @@
 # 任务与现行规划导航
 
-[第四章步骤七](lxy-plan-fix.md#step7-offline-model-acceptance)正在推进四平台离线训练与原生模型选择。四平台局部grt模型已通过独立质量门槛、12个目标上下文及真实原生推理／RTL周期检查；Sky130HD synth失败保留。[§7.10审查修补](lxy-plan-fix.md#step7-evidence-integrity-review)检查点已补独立测试门禁、区间证据重算及正确功能归档。[§7.11区间续作](lxy-plan-fix.md#step7-interval-model-continuation)完成ASAP7首轮67任务／588行区间数据、拟合及独立测试；grt仅38／42类通过，因逐区间错误可行预测门槛拒绝发布。失败检查点及Git交付核验完成，完整父链回放为332份SDC、2828行数据。[§7.12后继工作](lxy-plan-fix.md#step7-load-context-clock-pressure)的新真实捕获负载探针通过，批量未启动。[§7.13时钟压力诊断](lxy-plan-fix.md#step7-clock-pressure-diagnosis)按用户确认完成24个实现点／48份阶段回放，观察到固定映射的SDC响应；ABC在本轮范围内未改变映射。一次SDC浮点表示失败原样保留，经同内部周期的显式表示校正完成剩余点，未放宽校验。下一轮目标／负载联合设计比较简单基线与目标条件修正，尚待具体清单和准入。四平台三候选机制报告仍为TEST_ONLY；完整联合覆盖、64/128、商余及binary32未完成，不启动688条主矩阵。参数／wire RC条件与步骤三旧快照分开，详见[模型协议](../experiments/arithmetic_dse/model_protocol.md)。
+当前优先交付已由用户确认为[ASAP7 M2九例36条完整闭环](asap7-m2-closure.md)，完成该范围的步骤七模型／原生选择、步骤八实测及步骤九复现审计后，再由用户决定扩展拆分范围还是平台；不预先安排扩展次序。决策与当前实施见[第四章§7.17](lxy-plan-fix.md#step7-asap7-m2-priority)。原四平台／五档／43例／688条保留后续总范围，不作为九例阶段交付的全部前置条件。
+
+**当前执行入口为[§7.30：Mux静态上下文独立验收、组件发布及Git交接](lxy-plan-fix.md#step7-m2-mux-static-independent-verdict)。** 原48个P4独立任务全部完成，完整原始回放后按冻结选择一次性评价通过，grt组件资格12／12；其余11类完整模型、裕量、域及F5合格证据保持，原F5整体失败不改写。本轮没有降低门槛、回调目标或重训已合格11类。
+
+Mux独立synth时延中位／P95为1.6208%／3.0494%，grt为8.2758%／54.9834%；grt错误可行25／2112＝1.1837%、实际目标局部0／192，面积P95为0.7844%，均通过原门槛。48任务／384主标签及分路径、原192份拟合测量／768主标签的原始回放成立，验证／测试分离和冻结参数保持。[发布与证据入口](../experiments/arithmetic/evidence/step7_m2_mux_static_v1/README.md)包含可部署组件模型、范围及能力清单；状态命令仍为`python3 experiments/arithmetic_dse/model_m2_status.py`。后台已结束，没有自动后继采样。
+
+新Mux资格仅覆盖parallel_dynamic_mux家族、2／3／4个独立同宽动态Mux、生产单银行及原精确位宽／ABC-SDC；该限制在P4测量前已登记。mixed-control新系数仍只有训练／验证，one-Mux、共享／混合算术、任意阶段及正式目标不能据本轮扩域。原生BEIR特征和候选数值核对、已发布Python查询及域外拒绝已完成，生产CostProvider阶段绑定、状态／组合、真实区间及完整D仍待后继。用户要求发布并检查Git后先补接口，实施依赖见[ASAP7 D端接口清单](asap7-d-interface.md)；九例36条尚未完成，Git由用户提交。
+
+旧12维候选的79.0148%验证P95及48项锁定时的有限池诊断已保存在[§7.28数值检查点](../experiments/arithmetic/evidence/step7_m2_mux_validation_v1/README.md)，没有修改或回填F4／F5独立Mux数值。§7.29记录验证／冻结／原P4放行，§7.30已完成该48项独立评价并发布有据范围；旧失败和父链保持，不表示完整D／九例36条完成。
+
+最近已完成的结果见[§7.26](lxy-plan-fix.md#step7-m2-F5-independent-verdict)：F5完整56／56，原模型独立synth12／12、grt11／12，Mux时延P95为98.573%超过75%，发布为空。488行F5标签和1464行原拟合标签的原始回放、便携／完整外部、无build／EDA／账本副本和篡改核验均通过，[封存包](../experiments/arithmetic/evidence/step7_m2_F5_v1/README.md)保持原结论。其余11类本次只继承该合格组件的固定数值／域与独立收据，未改写F5整包失败或单独宣称11类已构成完整D。区间后继、组合／状态、正式目标及九例36条仍待完成；Git仍由用户后续提交。
+
+[§7.16后继模型](lxy-plan-fix.md#step7-baseline-validation-test)的80个训练＋260个验证＋235个新独立测试已全部采集。3276行训练／验证标签、1680行测试标签回放完成；基线验证synth／grt均42／42通过、重拟合字节一致，但独立测试grt41／42、synth38／42，发布清单为空。grt唯一失败是quarter/low/1/1的时延误差中位数34.2549%超过30%，并非该类错误可行门槛；原参数、门槛及已消费测试封存，不能直接改裕量重测。当前235任务后台已正常退出、账本已结算。九例模型／接口缺口审计已生成，后续采样围绕其实际必需域推进。§7.10七项保留为最终缺口，当前优先顺序由§7.17及九例清单解释；完整步骤七及688条矩阵未完成。
+
+[第四章步骤七](lxy-plan-fix.md#step7-offline-model-acceptance)已增加逐节状态索引，历史检查点与当前入口分别说明。§7.1–§7.8完成四平台局部grt模型、12个目标上下文及有限真实原生推理／RTL周期验收，Sky130HD synth失败保留；§7.9–§7.11完成首轮67任务／588行区间数据及独立评价，grt38／42，因逐区间错误可行门槛拒绝发布，失败与父链核验已封存；§7.12的固定R负载v1批量未执行，已由§7.13的24点时钟诊断及§7.14–§7.17目标／负载后继替代，不再从旧提案续跑。24点诊断均not_training，后继575任务独立结果见上文。四平台TEST_ONLY三候选只证明机制，完整九例D联合覆盖及全任务扩域尚未完成；参数／wire RC身份与步骤三旧快照分开，详见[模型协议](../experiments/arithmetic_dse/model_protocol.md)。
 
 后续算术拆分、代价模型和流水线工作按 [lxy-plan-fix.md 第一章](lxy-plan-fix.md) 推进。先读第一章§2“既有成果如何迁移”、§10“九个步骤”和§10.10“阶段里程碑”；[第四章步骤一](lxy-plan-fix.md#step1-wide-acceptance)的宽位宽补验及[第四章步骤二](lxy-plan-fix.md#step2-revised-acceptance)的新契约/静态表/43例生成补验已完成对应范围。[第四章步骤三](lxy-plan-fix.md#step3-platform-acceptance)的原v5验收因SDC整数除法缺陷撤回；[§3.9的v6修订](lxy-plan-fix.md#step3-sdc-correction)已修复、核对实际SDC并重跑三个ns平台后重新通过。[§3.10的v7收尾](lxy-plan-fix.md#step3-validator-closure)已关闭SDC命令边界P2并补来源/交接规则，物理结果继承v6，GF180 wire RC校准仍登记待核。[第四章步骤四](lxy-plan-fix.md#step4-interface-acceptance)已完成本步公共请求/原始Mul与FP区域/固定成本及保护验收；half/quarter内部展开和D模型仍未完成。[§4.8报告类型修订](lxy-plan-fix.md#step4-report-type-review)将计数改为JSON整数，并补历史证据横幅及存储分层；v1原证据保留。[第四章步骤五](lxy-plan-fix.md#step5-mul-template-acceptance)已完成参数化Mul/新C软件与有限容量验收；ASAP7 64位grt通过，128位grt超时保留，受影响物理批量待复审。步骤六整图接入的后继状态见下方独立记录。
 

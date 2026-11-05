@@ -1,0 +1,21 @@
+{
+  "version": "asap7-m2-postrepair-resume-v1",
+  "parent_plan": "build/step7-m2-models-20261104/primitives-v6/plan.json",
+  "task_id": "train-F3-divrem-w32-t2",
+  "period_ps": 4500,
+  "abc_target_ps": 1500,
+  "checkpoint": "4_1_post_repair_pre_lec.odb",
+  "lec_solver": "glucose",
+  "lec_timeout_s": 7200,
+  "post_CTS_timeout_s": 600,
+  "route_timeout_s": 3600,
+  "expected_boundary": {"primary_inputs": 454, "primary_outputs": 649},
+  "parallel_jobs": 4,
+  "threads": 4,
+  "memory_limit_MiB": 8192,
+  "tail_task_ids": ["validation-F2-binary32-w32-t0", "validation-F2-binary32-w32-t1", "validation-F2-binary32-w32-t2", "validation-F2-binary32-w32-t3"],
+  "automatic_retries": 0,
+  "source_and_completed_results_preserved": true,
+  "test_locked": true,
+  "sampling_and_quality_gates_changed": false
+}

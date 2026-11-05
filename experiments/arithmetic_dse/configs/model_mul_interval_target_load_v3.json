@@ -1,0 +1,144 @@
+{
+  "version": "arithmetic-mul-interval-target-load-v3",
+  "purpose": "arithmetic_interval_target_load_collection",
+  "platform": "asap7",
+  "template": "mul-block-tree-v1",
+  "ABC_ps": 1500,
+  "IO": "0.2 * requested SDC, unchanged formal profile",
+  "splits": {
+    "train": [
+      8,
+      16,
+      32
+    ],
+    "validation": [
+      12,
+      24
+    ],
+    "test": [
+      20,
+      28
+    ]
+  },
+  "capture_fanouts": {
+    "train": [
+      1,
+      2,
+      3
+    ],
+    "validation": [
+      1,
+      2,
+      3
+    ],
+    "test": [
+      2,
+      4
+    ]
+  },
+  "reference": "only original train grt rows; per-interval piecewise-linear width interpolation of D; maximum train same-path H; no old test labels",
+  "relative_data_budgets": [
+    0.8,
+    1.0,
+    1.5
+  ],
+  "absolute_SDC_ps": [
+    1500,
+    2250
+  ],
+  "clock_grid_ps": 25,
+  "clock_representation": "round upward to grid, then canonical OpenSTA binary32 clock representation; require unchanged internal clock and stable four-decimal serialization of clock and proportional IO; advance grid only for numeric representability before measurement",
+  "pack": {
+    "max_samples": 6,
+    "max_input_bits": 640,
+    "max_capture_bits": 2048,
+    "max_reference_delay_ratio": 1.25
+  },
+  "packing_order": "split, capture_fanout, reference_delay, width, interval; same RTL bundle across all targets; shared relative target uses maximum H+k*D of its intervals",
+  "duplicate_targets": "one actual measurement with all declared target roles retained; no repeated-row inflation",
+  "baseline_training": "only widest common absolute SDC 2250 rows",
+  "conditional_training": "all declared training contexts",
+  "acquisition_order": "collect loose2250 training and all validation first; if every grt interval passes after frozen reserve, freeze baseline selection and leave other training targets unmeasured by protocol; otherwise collect the preregistered remaining training targets once and compare baseline/conditional candidates; independent test always waits for validated frozen selection",
+  "algorithms": [
+    "constant",
+    "linear-width-load",
+    "linear-log-width-load",
+    "quadratic-width-load",
+    "ridge-relative-1e-6",
+    "ridge-relative-1e-4",
+    "ridge-relative-1e-2",
+    "tree-depth-2"
+  ],
+  "calibration": "for each candidate max(1, validation actual/predicted, train W16 cross-fit actual/predicted from W8/W32) * 1.05; no test labels; same feature family in cross-fit",
+  "selection": "evaluate original validation gates after reserve; prefer eligible baseline family, then normalized MAE and serialized complexity; conditional family only if no baseline candidate is eligible for that quantity",
+  "quality_gates": {
+    "delay_median_relative_error_max": 0.3,
+    "delay_p95_relative_error_max": 0.75,
+    "area_median_relative_error_max": 0.3,
+    "area_p95_relative_error_max": 0.75,
+    "false_feasible_fraction_max": 0.05
+  },
+  "quality_scope": "every interval class and stage; keep synth/grt outcomes separate; no aggregate rescue",
+  "feasibility_ratios": [
+    0.5,
+    0.75,
+    0.9,
+    0.95,
+    0.99,
+    1.0,
+    1.01,
+    1.05,
+    1.1,
+    1.25,
+    1.5
+  ],
+  "actual_target_feasibility": "also report local QD+observed H versus actual target; observed H is evaluation evidence only, not a model input; whole setup/hold reported separately",
+  "reference_pressure_bound": "deployment lower pressure is max over fitting width/load groups of their smallest sampled pressure; upper target2250; numerical/width/template/load relationships jointly enforced",
+  "production_capture_fanout": 1,
+  "stages": [
+    "synth",
+    "grt"
+  ],
+  "release_stage": "grt",
+  "seed": 20261103,
+  "independence_claim": "new capture-load/source/target contexts at exposed widths20/28, not unseen-width generalization",
+  "excluded": [
+    "old failed independent test labels",
+    "all capacity-only probes",
+    "24 clock diagnosis implementations",
+    "formal and holdout application PPA"
+  ],
+  "resource_limits": {
+    "threads": 4,
+    "memory_limit_MiB": 8192,
+    "synth_timeout_s": 300,
+    "route_timeout_s": 1200,
+    "backend_support_s_per_task": 300,
+    "max_tasks_per_wave": 48,
+    "parallel_jobs": 4
+  },
+  "later_work_reserved": {
+    "walltime_s": 86400,
+    "CPU_time_s": 172800,
+    "synth": 688,
+    "grt": 688
+  },
+  "model_schema": "arithmetic-mul-group-interval-target-load-v1",
+  "automatic_retries": 0,
+  "main_matrix_authorized": false,
+  "D_selection_PPA_calls": 0,
+  "supersedes": "arithmetic-mul-interval-target-load-v2",
+  "execution_context": "Deployment, new train, validation and independent test use four threads per tool. Exactly the sealed 43 completed two-thread baseline training runs may be inherited; no two-thread validation/test. Thread controls are explicitly allowed training variation, not assumed numerical invariance. Same-input thread diagnostics are excluded from fitting; original gates and independent four-thread test determine release.",
+  "thread_diagnostics": {
+    "split": "train-only",
+    "targets": [
+      2250
+    ],
+    "sample_count": 4,
+    "role": "not_training",
+    "purpose": "measure actual 2-to-4 thread effect on representative large bundles; not an all-circuit equality proof"
+  },
+  "inherited_training_threads": [
+    2
+  ]
+}

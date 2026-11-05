@@ -1,0 +1,832 @@
+{
+  "version": "asap7-m2-model-requirements-inventory-v1",
+  "scope_path": "experiments/arithmetic_dse/configs/asap7_m2_closure_v1.json",
+  "scope_sha256": "66d5686b3681dc41c3eb2f0d2c34f97acd408d523fdefc1f6f681aee68b75a62",
+  "base_model_sha256": "ac25a054493ddb468510c3d58bab8ad5d41d1f6f4c78622dc252fda7a12e747e",
+  "base_model_operations": [
+    "add",
+    "addcarry",
+    "mul"
+  ],
+  "records": [
+    {
+      "case": "MAC_32",
+      "partition": "formal",
+      "L_BCD": 2,
+      "report_path": "build/step6-integration-20261031/generated-final/MAC_32_C.json",
+      "report_sha256": "843aadce6158c7f0987b6d1aebb3b4ecfc5f2890594c2fdb7e6123f90825f9a8",
+      "C_candidate_count": 3,
+      "selected_C_candidate": "candidate/quarter",
+      "data_outputs": [
+        {
+          "name": "y",
+          "width": 64
+        }
+      ],
+      "C_logical_register_bits": 425,
+      "candidates": [
+        {
+          "candidate": "candidate/original",
+          "graph_sha256": "8427b1f61722b612eb25ee53822fb178f97e661064ab5b0ee0d31c2798951bd0",
+          "template_regions": 0,
+          "atomic_fp_regions": 0,
+          "ordinary_requirements": [
+            {
+              "operation": "add",
+              "input_billing_widths": [
+                64,
+                64
+              ],
+              "result_width": 64,
+              "nodes": 1
+            },
+            {
+              "operation": "mul",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 64,
+              "nodes": 1
+            }
+          ]
+        },
+        {
+          "candidate": "candidate/half",
+          "graph_sha256": "9d1d848814771a8ed8f69d15222e1fc06e0d443da0af3430450e91c566f0b296",
+          "template_regions": 1,
+          "atomic_fp_regions": 0,
+          "ordinary_requirements": [
+            {
+              "operation": "add",
+              "input_billing_widths": [
+                64,
+                64
+              ],
+              "result_width": 64,
+              "nodes": 1
+            }
+          ]
+        },
+        {
+          "candidate": "candidate/quarter",
+          "graph_sha256": "b36aa220e99e3281004ddc8caacfb55756604739be18bc14f0db9e718a54d5ac",
+          "template_regions": 1,
+          "atomic_fp_regions": 0,
+          "ordinary_requirements": [
+            {
+              "operation": "add",
+              "input_billing_widths": [
+                64,
+                64
+              ],
+              "result_width": 64,
+              "nodes": 1
+            }
+          ]
+        }
+      ],
+      "required_gaps": [
+        "formal target numbers and joint ABC/SDC/IO/load qualification",
+        "four-thread qualification of ordinary/state/boundary context",
+        "interval package failed independent test; publication empty",
+        "template with external paid nodes or multiple templates requires qualified stage composition"
+      ]
+    },
+    {
+      "case": "DOT2_16",
+      "partition": "formal",
+      "L_BCD": 2,
+      "report_path": "build/step6-integration-20261031/generated-final/DOT2_16_C.json",
+      "report_sha256": "7065ced3d224b5d04cd87eee40d59b0f8084eff12935446c54c3c84b12744cea",
+      "C_candidate_count": 9,
+      "selected_C_candidate": "candidate/half/half",
+      "data_outputs": [
+        {
+          "name": "y",
+          "width": 33
+        }
+      ],
+      "C_logical_register_bits": 193,
+      "candidates": [
+        {
+          "candidate": "candidate/original/original",
+          "graph_sha256": "8291118864f35e29bd9258343fde5bf1cf2c8dca574d4d9d1a9f1cf80f9b3cb5",
+          "template_regions": 0,
+          "atomic_fp_regions": 0,
+          "ordinary_requirements": [
+            {
+              "operation": "add",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 33,
+              "nodes": 1
+            },
+            {
+              "operation": "mul",
+              "input_billing_widths": [
+                16,
+                16
+              ],
+              "result_width": 32,
+              "nodes": 2
+            }
+          ]
+        },
+        {
+          "candidate": "candidate/original/half",
+          "graph_sha256": "6d4a89dab5ab63a8c2dc073b9de8fac6409f2eba9b07e7249583e64ee3358d16",
+          "template_regions": 1,
+          "atomic_fp_regions": 0,
+          "ordinary_requirements": [
+            {
+              "operation": "add",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 33,
+              "nodes": 1
+            },
+            {
+              "operation": "mul",
+              "input_billing_widths": [
+                16,
+                16
+              ],
+              "result_width": 32,
+              "nodes": 1
+            }
+          ]
+        },
+        {
+          "candidate": "candidate/original/quarter",
+          "graph_sha256": "c394004969e7b01f24628d433bf5120603e5f380f14a107009957f60edcfe98e",
+          "template_regions": 1,
+          "atomic_fp_regions": 0,
+          "ordinary_requirements": [
+            {
+              "operation": "add",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 33,
+              "nodes": 1
+            },
+            {
+              "operation": "mul",
+              "input_billing_widths": [
+                16,
+                16
+              ],
+              "result_width": 32,
+              "nodes": 1
+            }
+          ]
+        },
+        {
+          "candidate": "candidate/half/original",
+          "graph_sha256": "0baacbc4f2f785fb67339482b654b4009ecdf5b659507e0bc9c78b07a2bf52f3",
+          "template_regions": 1,
+          "atomic_fp_regions": 0,
+          "ordinary_requirements": [
+            {
+              "operation": "add",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 33,
+              "nodes": 1
+            },
+            {
+              "operation": "mul",
+              "input_billing_widths": [
+                16,
+                16
+              ],
+              "result_width": 32,
+              "nodes": 1
+            }
+          ]
+        },
+        {
+          "candidate": "candidate/half/half",
+          "graph_sha256": "e5f1b9bb75f28d805a73948953defb0e03ddfa54a4e517cf9efb0be541cf98ee",
+          "template_regions": 2,
+          "atomic_fp_regions": 0,
+          "ordinary_requirements": [
+            {
+              "operation": "add",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 33,
+              "nodes": 1
+            }
+          ]
+        },
+        {
+          "candidate": "candidate/half/quarter",
+          "graph_sha256": "8d3fbf644c34c2a154e6743bb311706f2b170d403d1daebe64998a30be44afa5",
+          "template_regions": 2,
+          "atomic_fp_regions": 0,
+          "ordinary_requirements": [
+            {
+              "operation": "add",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 33,
+              "nodes": 1
+            }
+          ]
+        },
+        {
+          "candidate": "candidate/quarter/original",
+          "graph_sha256": "3349c271f75e711c33885448f9cd135d25efab3216227fb188e8dc4ee43a749d",
+          "template_regions": 1,
+          "atomic_fp_regions": 0,
+          "ordinary_requirements": [
+            {
+              "operation": "add",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 33,
+              "nodes": 1
+            },
+            {
+              "operation": "mul",
+              "input_billing_widths": [
+                16,
+                16
+              ],
+              "result_width": 32,
+              "nodes": 1
+            }
+          ]
+        },
+        {
+          "candidate": "candidate/quarter/half",
+          "graph_sha256": "1c583068d57df863438332678c69d09d205f864d71afabf3082d41b46f02837e",
+          "template_regions": 2,
+          "atomic_fp_regions": 0,
+          "ordinary_requirements": [
+            {
+              "operation": "add",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 33,
+              "nodes": 1
+            }
+          ]
+        },
+        {
+          "candidate": "candidate/quarter/quarter",
+          "graph_sha256": "68929525638718f4078f416f6ecee2d4918d049f1c5eedcc672de6d3ebef2808",
+          "template_regions": 2,
+          "atomic_fp_regions": 0,
+          "ordinary_requirements": [
+            {
+              "operation": "add",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 33,
+              "nodes": 1
+            }
+          ]
+        }
+      ],
+      "required_gaps": [
+        "formal target numbers and joint ABC/SDC/IO/load qualification",
+        "four-thread qualification of ordinary/state/boundary context",
+        "interval package failed independent test; publication empty",
+        "template with external paid nodes or multiple templates requires qualified stage composition"
+      ]
+    },
+    {
+      "case": "UDR_16",
+      "partition": "formal",
+      "L_BCD": 2,
+      "report_path": "build/step6-integration-20261031/generated-final/UDR_16_C.json",
+      "report_sha256": "1bebf9c82e1574345b275f509f80b5349089424d95bd94f39be79cbe98eab280",
+      "C_candidate_count": 1,
+      "selected_C_candidate": "candidate",
+      "data_outputs": [
+        {
+          "name": "q",
+          "width": 16
+        },
+        {
+          "name": "r",
+          "width": 16
+        }
+      ],
+      "C_logical_register_bits": 34,
+      "candidates": [
+        {
+          "candidate": "candidate",
+          "graph_sha256": "05f34c31063d7b09c9073adbfff1a7ee4ee2f48f4e096564bb8dcb21228c0047",
+          "template_regions": 0,
+          "atomic_fp_regions": 0,
+          "ordinary_requirements": [
+            {
+              "operation": "compare_eq",
+              "input_billing_widths": [
+                16,
+                16
+              ],
+              "result_width": 1,
+              "nodes": 1
+            },
+            {
+              "operation": "div",
+              "input_billing_widths": [
+                16,
+                16
+              ],
+              "result_width": 16,
+              "nodes": 1
+            },
+            {
+              "operation": "mod",
+              "input_billing_widths": [
+                16,
+                16
+              ],
+              "result_width": 16,
+              "nodes": 1
+            },
+            {
+              "operation": "mux",
+              "input_billing_widths": [
+                1,
+                16,
+                16
+              ],
+              "result_width": 16,
+              "nodes": 3
+            }
+          ]
+        }
+      ],
+      "required_gaps": [
+        "formal target numbers and joint ABC/SDC/IO/load qualification",
+        "four-thread qualification of ordinary/state/boundary context",
+        "native model currently rejects multiple data outputs",
+        "Div/Mod, safe-divisor Mux/eq-zero and multi-output stage models absent"
+      ]
+    },
+    {
+      "case": "DIVSEL_32",
+      "partition": "formal",
+      "L_BCD": 2,
+      "report_path": "build/step6-integration-20261031/generated-final/DIVSEL_32_C.json",
+      "report_sha256": "8f87f0362dd3b89f7db5126ed6769044cecc58d9cc3b2b6b13060961bb019f18",
+      "C_candidate_count": 1,
+      "selected_C_candidate": "candidate",
+      "data_outputs": [
+        {
+          "name": "y",
+          "width": 32
+        },
+        {
+          "name": "r",
+          "width": 32
+        }
+      ],
+      "C_logical_register_bits": 65,
+      "candidates": [
+        {
+          "candidate": "candidate",
+          "graph_sha256": "9504b1a335da96b31037ee40c0e674bc97b70263f55fc673fafa047cc844b478",
+          "template_regions": 0,
+          "atomic_fp_regions": 0,
+          "ordinary_requirements": [
+            {
+              "operation": "add",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 32,
+              "nodes": 1
+            },
+            {
+              "operation": "compare_eq",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 1,
+              "nodes": 1
+            },
+            {
+              "operation": "div",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 32,
+              "nodes": 1
+            },
+            {
+              "operation": "mod",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 32,
+              "nodes": 1
+            },
+            {
+              "operation": "mux",
+              "input_billing_widths": [
+                1,
+                32,
+                32
+              ],
+              "result_width": 32,
+              "nodes": 4
+            }
+          ]
+        }
+      ],
+      "required_gaps": [
+        "formal target numbers and joint ABC/SDC/IO/load qualification",
+        "four-thread qualification of ordinary/state/boundary context",
+        "native model currently rejects multiple data outputs",
+        "Div/Mod, safe-divisor Mux/eq-zero and multi-output stage models absent"
+      ]
+    },
+    {
+      "case": "F1",
+      "partition": "formal",
+      "L_BCD": 2,
+      "report_path": "build/step6-integration-20261031/generated-final/F1_C.json",
+      "report_sha256": "14684afe751515a9fed1db4967492bc7c957eff0d065baf4b32bec7a68f27a65",
+      "C_candidate_count": 1,
+      "selected_C_candidate": "candidate",
+      "data_outputs": [
+        {
+          "name": "bits",
+          "width": 32
+        },
+        {
+          "name": "flags",
+          "width": 5
+        }
+      ],
+      "C_logical_register_bits": 38,
+      "candidates": [
+        {
+          "candidate": "candidate",
+          "graph_sha256": "c01914ff9c0e618e1092d060d0e1bcb5a2473f3358a8f579675d54d55102116f",
+          "template_regions": 0,
+          "atomic_fp_regions": 1,
+          "ordinary_requirements": [
+            {
+              "operation": "fp32",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 37,
+              "nodes": 1
+            }
+          ]
+        }
+      ],
+      "required_gaps": [
+        "formal target numbers and joint ABC/SDC/IO/load qualification",
+        "four-thread qualification of ordinary/state/boundary context",
+        "native model currently rejects multiple data outputs",
+        "complete atomic binary32 and bits/flags/state/stage models absent"
+      ]
+    },
+    {
+      "case": "F2",
+      "partition": "formal",
+      "L_BCD": 3,
+      "report_path": "build/step6-integration-20261031/generated-final/F2_C.json",
+      "report_sha256": "3a4e3f920654fb984ba98c736d4c1780c5ccf69489220017d2af509bf5340a74",
+      "C_candidate_count": 1,
+      "selected_C_candidate": "candidate",
+      "data_outputs": [
+        {
+          "name": "bits",
+          "width": 32
+        },
+        {
+          "name": "flags",
+          "width": 5
+        }
+      ],
+      "C_logical_register_bits": 108,
+      "candidates": [
+        {
+          "candidate": "candidate",
+          "graph_sha256": "91aff7b41d534568c055dcb979598990f2ba7bc14181ddbe7e9afd59da43c7f8",
+          "template_regions": 0,
+          "atomic_fp_regions": 2,
+          "ordinary_requirements": [
+            {
+              "operation": "fp32",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 37,
+              "nodes": 2
+            },
+            {
+              "operation": "or",
+              "input_billing_widths": [
+                5,
+                5
+              ],
+              "result_width": 5,
+              "nodes": 1
+            }
+          ]
+        }
+      ],
+      "required_gaps": [
+        "formal target numbers and joint ABC/SDC/IO/load qualification",
+        "four-thread qualification of ordinary/state/boundary context",
+        "native model currently rejects multiple data outputs",
+        "complete atomic binary32 and bits/flags/state/stage models absent"
+      ]
+    },
+    {
+      "case": "H_M_32",
+      "partition": "holdout",
+      "L_BCD": 2,
+      "report_path": "build/step6-integration-20261031/generated-final/H_M_32_C.json",
+      "report_sha256": "10fee8c494a28a10f94fd5c214063ed8c63f00f8cfcc4074069912b9e12bd1ad",
+      "C_candidate_count": 3,
+      "selected_C_candidate": "candidate/quarter",
+      "data_outputs": [
+        {
+          "name": "y",
+          "width": 32
+        }
+      ],
+      "C_logical_register_bits": 393,
+      "candidates": [
+        {
+          "candidate": "candidate/original",
+          "graph_sha256": "4f5e28a32db53d584c267f4d853c657506ced56f853bcb5d08954d1bd7834234",
+          "template_regions": 0,
+          "atomic_fp_regions": 0,
+          "ordinary_requirements": [
+            {
+              "operation": "add",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 32,
+              "nodes": 1
+            },
+            {
+              "operation": "mul",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 32,
+              "nodes": 1
+            },
+            {
+              "operation": "mux",
+              "input_billing_widths": [
+                1,
+                32,
+                32
+              ],
+              "result_width": 32,
+              "nodes": 1
+            }
+          ]
+        },
+        {
+          "candidate": "candidate/half",
+          "graph_sha256": "91a12a0f34d5bb96200ddae81cdfd78039ae9cae1d1e34bfa590f574ec375da4",
+          "template_regions": 1,
+          "atomic_fp_regions": 0,
+          "ordinary_requirements": [
+            {
+              "operation": "add",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 32,
+              "nodes": 1
+            },
+            {
+              "operation": "mux",
+              "input_billing_widths": [
+                1,
+                32,
+                32
+              ],
+              "result_width": 32,
+              "nodes": 1
+            }
+          ]
+        },
+        {
+          "candidate": "candidate/quarter",
+          "graph_sha256": "fddf268dda29caed0848ee78e7d0f5427d0709d3e57a00d360ca6d8e16cb4e81",
+          "template_regions": 1,
+          "atomic_fp_regions": 0,
+          "ordinary_requirements": [
+            {
+              "operation": "add",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 32,
+              "nodes": 1
+            },
+            {
+              "operation": "mux",
+              "input_billing_widths": [
+                1,
+                32,
+                32
+              ],
+              "result_width": 32,
+              "nodes": 1
+            }
+          ]
+        }
+      ],
+      "required_gaps": [
+        "formal target numbers and joint ABC/SDC/IO/load qualification",
+        "four-thread qualification of ordinary/state/boundary context",
+        "interval package failed independent test; publication empty",
+        "template with external paid nodes or multiple templates requires qualified stage composition"
+      ]
+    },
+    {
+      "case": "H_D_32",
+      "partition": "holdout",
+      "L_BCD": 3,
+      "report_path": "build/step6-integration-20261031/generated-final/H_D_32_C.json",
+      "report_sha256": "4f0f4ef4b8a3252f5fcfb7d2abba5ee866173ac3c36996bcc45ee0403694a2c0",
+      "C_candidate_count": 1,
+      "selected_C_candidate": "candidate",
+      "data_outputs": [
+        {
+          "name": "q",
+          "width": 32
+        },
+        {
+          "name": "r1",
+          "width": 32
+        },
+        {
+          "name": "r2",
+          "width": 32
+        }
+      ],
+      "C_logical_register_bits": 197,
+      "candidates": [
+        {
+          "candidate": "candidate",
+          "graph_sha256": "a155337c5520d15ecdbbefed50d3b2c5ff7773ecc726be410d905c173bf44224",
+          "template_regions": 0,
+          "atomic_fp_regions": 0,
+          "ordinary_requirements": [
+            {
+              "operation": "compare_eq",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 1,
+              "nodes": 2
+            },
+            {
+              "operation": "div",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 32,
+              "nodes": 2
+            },
+            {
+              "operation": "mod",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 32,
+              "nodes": 2
+            },
+            {
+              "operation": "mux",
+              "input_billing_widths": [
+                1,
+                32,
+                32
+              ],
+              "result_width": 32,
+              "nodes": 6
+            }
+          ]
+        }
+      ],
+      "required_gaps": [
+        "formal target numbers and joint ABC/SDC/IO/load qualification",
+        "four-thread qualification of ordinary/state/boundary context",
+        "native model currently rejects multiple data outputs",
+        "Div/Mod, safe-divisor Mux/eq-zero and multi-output stage models absent"
+      ]
+    },
+    {
+      "case": "H_F1",
+      "partition": "holdout",
+      "L_BCD": 2,
+      "report_path": "build/step6-integration-20261031/generated-final/H_F1_C.json",
+      "report_sha256": "0e4cabf86690e86bdb3b7251ca707fef5f5c9a729aef2ee9703560262519df62",
+      "C_candidate_count": 1,
+      "selected_C_candidate": "candidate",
+      "data_outputs": [
+        {
+          "name": "bits",
+          "width": 32
+        },
+        {
+          "name": "flags",
+          "width": 5
+        }
+      ],
+      "C_logical_register_bits": 38,
+      "candidates": [
+        {
+          "candidate": "candidate",
+          "graph_sha256": "f35bd79910ea9db37def2be71ae90a5fa68081bfcd4ac5d046ed6cb63f9706a5",
+          "template_regions": 0,
+          "atomic_fp_regions": 1,
+          "ordinary_requirements": [
+            {
+              "operation": "fp32",
+              "input_billing_widths": [
+                32,
+                32
+              ],
+              "result_width": 37,
+              "nodes": 1
+            },
+            {
+              "operation": "mux",
+              "input_billing_widths": [
+                1,
+                5,
+                5
+              ],
+              "result_width": 5,
+              "nodes": 1
+            },
+            {
+              "operation": "mux",
+              "input_billing_widths": [
+                1,
+                32,
+                32
+              ],
+              "result_width": 32,
+              "nodes": 1
+            }
+          ]
+        }
+      ],
+      "required_gaps": [
+        "formal target numbers and joint ABC/SDC/IO/load qualification",
+        "four-thread qualification of ordinary/state/boundary context",
+        "native model currently rejects multiple data outputs",
+        "complete atomic binary32 and bits/flags/state/stage models absent"
+      ]
+    }
+  ],
+  "planned_evaluation_records": 36,
+  "PPA_calls": 0,
+  "role": "static requirements audit only; not new model qualification or final D selection; C schedules are historical and do not define the only allowed D positions"
+}

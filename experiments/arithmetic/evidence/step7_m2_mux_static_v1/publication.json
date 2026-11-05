@@ -1,0 +1,33 @@
+{
+  "version": "asap7-m2-mux-static-composite-publication-v1",
+  "result_sha256": "dac67e226a35a623257a2052568eb0a1d73f36ee87c74ebd4408a195309896d4",
+  "quality_status": "passed",
+  "published": [
+    {
+      "file": "asap7-primitives.json",
+      "sha256": "f49990d5aa68045a7127636e074d07f4140404b8b007c19b8f8b70bd16524e15"
+    }
+  ],
+  "combined_passing_operations": 12,
+  "required_operations": 12,
+  "full_D_ready": false,
+  "scope": {
+    "independent_family": "parallel_dynamic_mux",
+    "pure_dynamic_mux_counts": [
+      2,
+      3,
+      4
+    ],
+    "production_capture_banks": 1,
+    "width_and_target": "unchanged original joint exact width/result/ABC-SDC conditions",
+    "legacy_mixed_control": "fitting/validation characterization only for the new predictor; not independently qualified by P4, must remain uncovered by a qualified production query until separate prospective evidence",
+    "formal_and_arbitrary_composition": "not qualified; no full-D selection claim"
+  },
+  "old_F5_overall_result_changed": false,
+  "remaining": [
+    "production stage-boundary adapter and state/composition qualification",
+    "mixed/arithmetic Mux contexts",
+    "real half/quarter interval successor",
+    "formal targets and nine-case D closure"
+  ]
+}

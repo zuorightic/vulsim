@@ -1,0 +1,13 @@
+{
+  "version": "asap7-m2-mux-global-candidate-selection-v2",
+  "parent_protocol": "model_asap7_m2_mux_context_v1.json",
+  "reason": "the first legal fit selected each width/target independently; assembled grt Mux P95=79.0365% fails the mandatory operation-level75% gate",
+  "candidate_pool": "identical predeclared15 algorithm families and two calibration choices fitted on the same eligible training rows; no new coefficient family or calibration scale search",
+  "selection": "start from frozen v1 width/target model; deterministic coordinate search over the existing per-component candidate pool using full-operation validation gates first, then MAE and P95; up to24 strictly improving replacements",
+  "score": "pass all original gates first; otherwise smallest maximum normalized gate violation; then MAE, P95 and stable component/candidate order",
+  "max_replacements": 24,
+  "unchanged": ["all11 inherited models and domains", "synth Mux", "Mux area", "test cohort and source split", "quality thresholds", "sampling clocks and physical flow"],
+  "data": "same train/validation only; no independent Mux labels or diagnostic arcs used for model inputs",
+  "independent_test_still_locked": true,
+  "automatic_retries": 0
+}

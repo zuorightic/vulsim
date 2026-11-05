@@ -1,0 +1,23 @@
+{
+  "version": "asap7-m2-primitives-fit-v1",
+  "collection_protocol": "model_asap7_m2_primitives_v1.json",
+  "algorithms": "unchanged characterization_v5 constant, linear, ridge, relative-weighted linear/ridge and depth2/3/4 trees; model_training.algorithms",
+  "group": "stage and semantic operation; jointly retain result shape, width, target and load features",
+  "delay_margin": "positive validation underprediction p95 plus max(1ps, ABC*0.001), per candidate; no independent test used",
+  "quality_scope": "each operation and stage separately, after applying the frozen delay margin; also report point metrics",
+  "quality_gates": {
+    "delay_median_relative_error_max": 0.3,
+    "delay_p95_relative_error_max": 0.75,
+    "area_median_relative_error_max": 0.2,
+    "area_p95_relative_error_max": 0.5,
+    "false_feasible_fraction_max": 0.05
+  },
+  "feasibility_ratios": [0.5, 0.75, 0.9, 0.95, 0.99, 1.0, 1.01, 1.05, 1.1, 1.25, 1.5],
+  "feasibility_scope": "report synthetic local QD budgets and measured target minus observed H; H is evaluation-only and never an inference feature",
+  "selection": "validation-ready first, normalized MAE, p95, serialized size and stable algorithm name; unready operation cannot release its test",
+  "independent_test": "all grt operations validation-ready, full168 collection and byte-identical refit before any of the registered56 F4 tasks; evaluate once after parameter/margin/domain freeze",
+  "release_stage": "grt",
+  "production_domain": "only measured integer widths/result shapes and registered ABC/SDC points, single capture bank; no unqualified combination/stage/state/interval or target interpolation claim",
+  "old_tests_used": false,
+  "quality_gate_revision": "none"
+}

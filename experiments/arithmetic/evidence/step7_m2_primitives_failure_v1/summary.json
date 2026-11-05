@@ -1,0 +1,252 @@
+{
+  "quality_status": "failed",
+  "published": [],
+  "stages": {
+    "synth": {
+      "status": "failed",
+      "passing_operations": 8,
+      "operation_count": 12,
+      "delay": {
+        "n": 244,
+        "MAE": 5.229670276971273,
+        "median_relative_error": 0.016405359856597617,
+        "p95_relative_error": 0.07617555440059026,
+        "max_relative_error": 0.11635872519581246,
+        "relative_error_floor": 1.5
+      },
+      "area": {
+        "n": 244,
+        "MAE": 0.2650691803278686,
+        "median_relative_error": 0.0,
+        "p95_relative_error": 0.0013401232913428805,
+        "max_relative_error": 0.03857280617164897,
+        "relative_error_floor": 0.0001
+      },
+      "false_feasible": 132,
+      "denominator": 2684,
+      "actual_target_false_feasible": 0,
+      "actual_target_denominator": 244,
+      "failed_operations": {
+        "eq_zero": {
+          "delay": {
+            "n": 24,
+            "MAE": 3.258272999999999,
+            "median_relative_error": 0.04293156537613642,
+            "p95_relative_error": 0.11635872519581246,
+            "max_relative_error": 0.11635872519581246,
+            "relative_error_floor": 1.5,
+            "status": "failed",
+            "false_feasible": 32,
+            "denominator": 264,
+            "actual_target_false_feasible": 0,
+            "actual_target_denominator": 24
+          },
+          "area": {
+            "n": 24,
+            "MAE": 0.0,
+            "median_relative_error": 0.0,
+            "p95_relative_error": 0.0,
+            "max_relative_error": 0.0,
+            "relative_error_floor": 0.0001,
+            "status": "passed"
+          }
+        },
+        "fp32": {
+          "delay": {
+            "n": 4,
+            "MAE": 56.90716289524835,
+            "median_relative_error": 0.016405359856597617,
+            "p95_relative_error": 0.016405359856597617,
+            "max_relative_error": 0.016405359856597617,
+            "relative_error_floor": 1.5,
+            "status": "failed",
+            "false_feasible": 4,
+            "denominator": 44,
+            "actual_target_false_feasible": 0,
+            "actual_target_denominator": 4
+          },
+          "area": {
+            "n": 4,
+            "MAE": 14.53625999999997,
+            "median_relative_error": 0.023841978142860508,
+            "p95_relative_error": 0.023841978142860508,
+            "max_relative_error": 0.023841978142860508,
+            "relative_error_floor": 0.0001,
+            "status": "passed"
+          }
+        },
+        "mux_ones": {
+          "delay": {
+            "n": 24,
+            "MAE": 3.551245333333332,
+            "median_relative_error": 0.04490023475137088,
+            "p95_relative_error": 0.07617555440059026,
+            "max_relative_error": 0.07617555440059026,
+            "relative_error_floor": 1.5,
+            "status": "failed",
+            "false_feasible": 36,
+            "denominator": 264,
+            "actual_target_false_feasible": 0,
+            "actual_target_denominator": 24
+          },
+          "area": {
+            "n": 24,
+            "MAE": 0.0,
+            "median_relative_error": 0.0,
+            "p95_relative_error": 0.0,
+            "max_relative_error": 0.0,
+            "relative_error_floor": 0.0001,
+            "status": "passed"
+          }
+        },
+        "or": {
+          "delay": {
+            "n": 24,
+            "MAE": 1.2027906666666677,
+            "median_relative_error": 0.03160995457739417,
+            "p95_relative_error": 0.043106454333710346,
+            "max_relative_error": 0.043106454333710346,
+            "relative_error_floor": 1.5,
+            "status": "failed",
+            "false_feasible": 20,
+            "denominator": 264,
+            "actual_target_false_feasible": 0,
+            "actual_target_denominator": 24
+          },
+          "area": {
+            "n": 24,
+            "MAE": 0.0,
+            "median_relative_error": 0.0,
+            "p95_relative_error": 0.0,
+            "max_relative_error": 0.0,
+            "relative_error_floor": 0.0001,
+            "status": "passed"
+          }
+        }
+      }
+    },
+    "grt": {
+      "status": "failed",
+      "passing_operations": 8,
+      "operation_count": 12,
+      "delay": {
+        "n": 244,
+        "MAE": 18.34491511842793,
+        "median_relative_error": 0.02465094958050597,
+        "p95_relative_error": 0.2956714587679489,
+        "max_relative_error": 1.2715662859229888,
+        "relative_error_floor": 1.5
+      },
+      "area": {
+        "n": 244,
+        "MAE": 0.6580868051511827,
+        "median_relative_error": 0.0,
+        "p95_relative_error": 0.024386795072460835,
+        "max_relative_error": 0.04415422885572141,
+        "relative_error_floor": 0.0001
+      },
+      "false_feasible": 101,
+      "denominator": 2684,
+      "actual_target_false_feasible": 0,
+      "actual_target_denominator": 244,
+      "failed_operations": {
+        "mux": {
+          "delay": {
+            "n": 24,
+            "MAE": 36.48512589670997,
+            "median_relative_error": 0.05745863289486926,
+            "p95_relative_error": 0.6890140546639063,
+            "max_relative_error": 1.2715662859229888,
+            "relative_error_floor": 1.5,
+            "status": "failed",
+            "false_feasible": 15,
+            "denominator": 264,
+            "actual_target_false_feasible": 0,
+            "actual_target_denominator": 24
+          },
+          "area": {
+            "n": 24,
+            "MAE": 0.014986098629838518,
+            "median_relative_error": 0.0,
+            "p95_relative_error": 0.009465410946143539,
+            "max_relative_error": 0.015384615384615424,
+            "relative_error_floor": 0.0001,
+            "status": "passed"
+          }
+        },
+        "mux_one": {
+          "delay": {
+            "n": 24,
+            "MAE": 7.231798100200017,
+            "median_relative_error": 0.05801779790116483,
+            "p95_relative_error": 0.13632670339108618,
+            "max_relative_error": 0.17287530259984576,
+            "relative_error_floor": 1.5,
+            "status": "failed",
+            "false_feasible": 17,
+            "denominator": 264,
+            "actual_target_false_feasible": 0,
+            "actual_target_denominator": 24
+          },
+          "area": {
+            "n": 24,
+            "MAE": 0.010934999999999992,
+            "median_relative_error": 0.0,
+            "p95_relative_error": 0.027663210664235986,
+            "max_relative_error": 0.029850746268656643,
+            "relative_error_floor": 0.0001,
+            "status": "passed"
+          }
+        },
+        "mux_zero": {
+          "delay": {
+            "n": 24,
+            "MAE": 10.33699243740584,
+            "median_relative_error": 0.03607597137820054,
+            "p95_relative_error": 0.37620963143770186,
+            "max_relative_error": 0.4610778637833531,
+            "relative_error_floor": 1.5,
+            "status": "failed",
+            "false_feasible": 15,
+            "denominator": 264,
+            "actual_target_false_feasible": 0,
+            "actual_target_denominator": 24
+          },
+          "area": {
+            "n": 24,
+            "MAE": 0.014494653374998315,
+            "median_relative_error": 0.0,
+            "p95_relative_error": 0.017484597862884498,
+            "max_relative_error": 0.023104571881322554,
+            "relative_error_floor": 0.0001,
+            "status": "passed"
+          }
+        },
+        "or": {
+          "delay": {
+            "n": 24,
+            "MAE": 1.505664424999999,
+            "median_relative_error": 0.026259599510739876,
+            "p95_relative_error": 0.08241798144607802,
+            "max_relative_error": 0.08709451523575408,
+            "relative_error_floor": 1.5,
+            "status": "failed",
+            "false_feasible": 24,
+            "denominator": 264,
+            "actual_target_false_feasible": 0,
+            "actual_target_denominator": 24
+          },
+          "area": {
+            "n": 24,
+            "MAE": 0.0,
+            "median_relative_error": 0.0,
+            "p95_relative_error": 0.0,
+            "max_relative_error": 0.0,
+            "relative_error_floor": 0.0001,
+            "status": "passed"
+          }
+        }
+      }
+    }
+  }
+}

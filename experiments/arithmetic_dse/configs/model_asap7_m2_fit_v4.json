@@ -1,0 +1,16 @@
+{
+  "version": "asap7-m2-primitives-target-context-calibration-v4",
+  "parent": "model_asap7_m2_fit_v3.json",
+  "reason": "v3 train/validation-only crossfit is too conservative for grt mux across dissimilar registered target responses",
+  "partition_candidates": ["v3_context_crossfit", "exact_operand_result_width_and_registered_SDC"],
+  "crossfit": "same complete source/capture grouping F1/F3, no target sibling from a heldout source enters the fitting fold; each target-conditioned component uses that target only",
+  "algorithms_and_reserve": "unchanged v3 model families and max validation/context-crossfit ratio times1.05 plus1.5ps",
+  "quality_scope": "unchanged mandatory per-operation/stage gates; also retain every width/target component report",
+  "deployment": "already enumerated exact SDC points only; no interpolation or new target coverage",
+  "area": "inherit exact pretest v2 area choices via v3",
+  "excluded": ["all F4 independent numeric labels", "older consumed tests", "formal/holdout PPA"],
+  "new_test_context": "F5 capture/source bundles, original widths/targets; independently capacity-checked after selection freeze",
+  "quality_gates_changed": false,
+  "test_read_after_fit_only": true,
+  "automatic_retries": 0
+}

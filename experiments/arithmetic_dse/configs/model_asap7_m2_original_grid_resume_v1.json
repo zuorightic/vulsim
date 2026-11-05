@@ -1,0 +1,19 @@
+{
+  "version": "asap7-m2-original-grid-resume-v1",
+  "parent_plan_id": "primitives-v4",
+  "reason": "2026-11-04 user clarified that the original grid already includes long clocks and explicitly requested continuing the original sampling; resume the one manually cancelled attempt, preserve all successful measurements and cancellation evidence",
+  "route_timeout_s": 3600,
+  "attempts_per_failed_task": 1,
+  "failed_task_ids": ["train-F1-divrem-w32-t2"],
+  "extended_task_ids": [
+    "train-F1-divrem-w32-t2", "train-F1-divrem-w32-t3",
+    "train-F3-divrem-w32-t2", "train-F3-divrem-w32-t3",
+    "validation-F2-divrem-w32-t2", "validation-F2-divrem-w32-t3"
+  ],
+  "priority": "resume the cancelled point within the original bounded 24-task wave, at most four whole jobs concurrently; preserve stop-on-error dispatch",
+  "priority_wave_limit": 24,
+  "unchanged": ["224-task sampling grid", "ABC1500ps", "SDC", "IO0.2T", "source partitions", "mapped netlist reuse", "LEC", "quality gates", "independent test lock", "global policy v9"],
+  "automatic_retries": 0,
+  "independent_test_resource_extension": false,
+  "abandoned_clock_draft_launched": false
+}

@@ -1,0 +1,32 @@
+{
+  "version": "asap7-m2-primitives-v1",
+  "purpose": "arithmetic_m2_model_collection",
+  "scope": "primitive and atomic-region prerequisites for the confirmed nine-case 36-record ASAP7 delivery",
+  "ABC_ps": 1500,
+  "IO": "0.2*T; unchanged formal ASAP7 profile",
+  "families": {
+    "arithmetic": {"widths": [8, 16, 32, 64], "operations": ["add", "add_wide", "addcarry", "mul", "mul_low"], "multiply_max_width": 32, "SDC_ps": [2250, 1500, 750, 375]},
+    "control": {"widths": [1, 5, 8, 16, 32, 64], "operations": ["mux", "mux_zero", "mux_one", "mux_ones", "eq_zero", "or"], "SDC_ps": [2250, 1500, 750, 375]},
+    "divrem": {"widths": [8, 16, 32], "operations": ["div", "mod"], "SDC_ps": [40500, 13500, 4500, 1500]},
+    "binary32": {"widths": [32], "operations": ["fp32"], "SDC_ps": [40500, 13500, 4500, 1500]}
+  },
+  "split_capture_banks": {"train": [1, 3], "validation": [2], "test": [4]},
+  "split_unit": "complete capture-context source bundle with all target variants; no RTL source shared between partitions",
+  "independence_claim": "new complete source/load/target contexts at exposed widths; no unseen-width claim; same semantic atom may occur in different registered load contexts",
+  "clock_representation": "25ps upward grid and canonical OpenSTA binary32 request before measurement; original SDC checks unchanged",
+  "mapping": "one loose-target t0 mapping per source bundle; exact mapped Verilog reused for other registered SDCs; fresh ODB/SDC and floorplan-through-grt each time",
+  "divisor_policy": "dynamic safe nonzero divisor is constructed before launch Q; reset divisor=1; zero-divisor wrapper/control priced separately",
+  "capture_policy": "real kept unconditional DFF banks, parity observation, exact bank count and Q-D witnesses; per-bank retention checked after mapping",
+  "reference_use": "only designated train t0 labels may supply frozen primitive D_ref/H_ref; formal case numbers still require the complete registered original-path and boundary calculation",
+  "acquisition": "four registered train t0 capacity pilots -> all remaining train and validation in bounded waves -> stop; independent test requires validated frozen selection and remains locked",
+  "capacity_pilots": ["train-F1-binary32-w32-t0", "train-F1-divrem-w32-t0", "train-F1-arithmetic-w64-t0", "train-F3-control-w64-t0"],
+  "resource_limits": {"threads": 4, "parallel_jobs": 4, "memory_limit_MiB": 8192, "synth_timeout_s": 300, "route_timeout_s": 1200, "max_tasks_per_wave": 24, "max_input_bits": 640, "max_capture_bits": 2048, "storage_per_task_bytes": 536870912},
+  "later_work_reserved": {"walltime_s": 86400, "CPU_time_s": 172800, "synth": 688, "grt": 688},
+  "fitting": "per-operation portable constant/linear, relative weighted ridge and bounded tree families from characterization_v5; validation chooses only; no fitted coefficients chosen during collection",
+  "quality_gates": {"delay_median_relative_error_max": 0.3, "delay_p95_relative_error_max": 0.75, "area_median_relative_error_max": 0.2, "area_p95_relative_error_max": 0.5, "false_feasible_fraction_max": 0.05},
+  "gate_revision": "none; any point-versus-bound protocol revision needs an explicit successor before independent evaluation",
+  "excluded": ["all consumed old independent tests", "formal/holdout full-graph PPA", "capacity-only and timing diagnostics", "TEST_ONLY prices"],
+  "formal_36_record_PPA_authorized": false,
+  "automatic_retries": 0,
+  "not_yet_covered": ["template interval successor qualification", "multiple templates and external paid operations", "multi-output state/stage and reset/control qualification", "formal target numbers", "complete native D selection and 36 evaluation records"]
+}

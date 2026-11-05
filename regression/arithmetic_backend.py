@@ -252,7 +252,8 @@ cell (BUF_X1) { area: 1.0; } }'''
     def budget_ledger(self):
         policy = self.directory/'policy.json'
         policy.write_text(json.dumps({'resources':{'max_synthesis_calls':2,'max_global_route_calls':1,
-            'max_detailed_route_calls':1,'max_global_walltime_h':1,'max_tool_CPU_time_h':1}}))
+            'max_detailed_route_calls':1,'max_global_walltime_h':1,'max_tool_CPU_time_h':1,
+            'threads_per_tool':2,'parallel_jobs':1}}))
         checkpoint = self.directory/'checkpoint.json'
         checkpoint.write_text(json.dumps({'entries':[{'id':'history','stage':'synth', 'status':'failed',
             'walltime_s':3,'CPU_time_s':2}]}))
