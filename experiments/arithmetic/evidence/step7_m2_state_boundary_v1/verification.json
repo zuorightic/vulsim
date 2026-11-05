@@ -1,0 +1,61 @@
+{
+  "version": "asap7-state-bank-verification-receipt-v1",
+  "status": "passed",
+  "checked_at": "2026-11-05T16:36:02+08:00",
+  "index_sha256": "b4777a852cd7af30fd95f17b71731f65a8103c18cd96b7631f786a47a22dbbe6",
+  "model_sha256": "0cf99c9944f40aad7f4d4a2a9bb91afcbaf26048ad64d3e6131d5fcafc3bf904",
+  "publication_sha256": "4416e66818ac9555b1e519426330b7f7e36eba49b0e893fa7988a2b34b648996",
+  "capabilities_sha256": "f6a89b71fccd0df79edd923b818f3a888e9b64e4f57f8402527f69a499d21711",
+  "checks": [
+    {
+      "name": "package",
+      "command_record_path": "/home/zyrv/vulsim/build/step7-state-boundary-20261105-publication-checks-v1/package.command.json",
+      "command_record_sha256": "dcaff57eea6d44f5043edfe2cb038accac8246ed0d712c7fdc1ed3a4b520455f",
+      "log_sha256": "915d567be61bb038200d132cf3a071084ebbf45f179503a0e1c68273c304ab64",
+      "budget_reservation_id": "c11d9669df9b45479eac8f0d558e4d82"
+    },
+    {
+      "name": "portable",
+      "command_record_path": "/home/zyrv/vulsim/build/step7-state-boundary-20261105-publication-checks-v1/portable.command.json",
+      "command_record_sha256": "60605328d71bb756223fd781e02a9d9183e86e9af20af8570b623352b442571d",
+      "log_sha256": "a872a7c2abe9573f2139210f236488a0907d2f043672c0058a473e4d72864d67",
+      "budget_reservation_id": "01f9ab72596e475a94260bc3cd326852"
+    },
+    {
+      "name": "external",
+      "command_record_path": "/home/zyrv/vulsim/build/step7-state-boundary-20261105-publication-checks-v1/external.command.json",
+      "command_record_sha256": "3b4a268a7430ee2785ea3fa5e04a2de00cd909ac137e8a72a4249e692ffeb1ab",
+      "log_sha256": "ea08f23d45c6b0d896c4a68629c02fd627f54120e7bc422c158a7cae61d55af8",
+      "budget_reservation_id": "d73a569147b94d88ad6400f5c878b18a"
+    },
+    {
+      "name": "isolated-portable-tamper",
+      "command_record_path": "/home/zyrv/vulsim/build/step7-state-boundary-20261105-publication-checks-v1/isolated-portable-tamper.command.json",
+      "command_record_sha256": "6757b76b3bebbb66652554396a77f8fcf07e35e713161d2896af34b874985897",
+      "log_sha256": "aabb150a7f306c498fd62755776f7a0d24c2e57cc1af7a1b7212078d3ad746de",
+      "budget_reservation_id": "fd267f1b50804036902f0e7a78b62487"
+    }
+  ],
+  "portable_original_build_tools_and_live_ledger_denied": true,
+  "PATH_empty_copy_passed": true,
+  "copied_required_files_git_visible": 199,
+  "pool_tamper_rejected": true,
+  "native_state_binding_qualified": false,
+  "full_D_ready": false,
+  "global_accounting": {
+    "usage": {
+      "synth": 1445,
+      "grt": 1423,
+      "final": 16,
+      "support_calls": 5589,
+      "walltime_s": 191682.7020289593,
+      "CPU_time_s": 437660.21,
+      "pending": 0
+    },
+    "entries": 8473,
+    "entries_prefix_sha256": "cf26733e02b5a36fd8d5e011cf41cfde268148e6285eb4d52a72c56405f6fd8e",
+    "active_jobs": 0,
+    "unsettled_jobs": 0
+  },
+  "scope": "bounded state-bank component publication; not complete D, nine-case36 or whole step7/9"
+}

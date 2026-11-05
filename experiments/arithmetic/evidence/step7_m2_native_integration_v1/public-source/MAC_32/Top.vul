@@ -1,0 +1,12 @@
+#include "header.uh"
+INTERFACE(){SERVICE(push,ARG(CaseInput) value,ARG(bool) v);QUERY(result,CaseOutput);QUERY(valid,bool);}
+USE_VERSION(main);VERSION(main){
+PIPELINE(core,2,IREG(a,Int<32>){a=Int<32>(2147483701ull);},IREG(b,Int<32>){b=Int<32>(2147483701ull);},IREG(c,Int<64>){c=Int<64>(9223372036854775861ull);},IVALID(iv),OREG(y,Int<64>),OVALID(ov)){
+    Int<64> n_product = (a * b);
+    Int<64> n_sum = (Int<64>(n_product) + Int<64>(c));
+    y = n_sum;
+
+}
+SERVICE(push,ARG(CaseInput) value,ARG(bool) v){a.setnext(value.a);b.setnext(value.b);c.setnext(value.c);iv.setnext(v);}
+QUERY(result,CaseOutput){return CaseOutput{y};}QUERY(valid,bool){return ov;}
+}

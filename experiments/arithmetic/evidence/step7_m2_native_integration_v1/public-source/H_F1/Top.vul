@@ -1,0 +1,17 @@
+#include "header.uh"
+INTERFACE(){SERVICE(push,ARG(CaseInput) value,ARG(bool) v);QUERY(result,CaseOutput);QUERY(valid,bool);}
+USE_VERSION(main);VERSION(main){
+PIPELINE(core,2,IREG(a,Int<32>){a=Int<32>(2139095040ull);},IREG(b,Int<32>){b=Int<32>(0ull);},IREG(bypass,Int<32>){bypass=Int<32>(2139169605ull);},IREG(sel,bool){sel=false;},IVALID(iv),OREG(bits,Int<32>),OREG(flags,Int<5>),OVALID(ov)){
+    Int<5> n_zero_flags = Int<5>(0ull);
+    Int<37> n_fp1 = vularith::F32MulRNE(a, b);
+    Int<32> n_bits1 = Int<32>((n_fp1 >> 0u));
+    Int<5> n_flags1 = Int<5>((n_fp1 >> 32u));
+    Int<32> n_selected_bits = (sel ? n_bits1 : bypass);
+    Int<5> n_selected_flags = (sel ? n_flags1 : n_zero_flags);
+    bits = n_selected_bits;
+    flags = n_selected_flags;
+
+}
+SERVICE(push,ARG(CaseInput) value,ARG(bool) v){a.setnext(value.a);b.setnext(value.b);bypass.setnext(value.bypass);sel.setnext(value.select);iv.setnext(v);}
+QUERY(result,CaseOutput){return CaseOutput{bits,flags};}QUERY(valid,bool){return ov;}
+}

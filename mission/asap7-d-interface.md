@@ -1,12 +1,29 @@
 # ASAP7已发布组件接入D端的接口工作
 
-2026-11-05。承接[lxy-plan-fix.md第四章§7.30](lxy-plan-fix.md#step7-m2-mux-static-independent-verdict)。用户要求本轮模型发布并检查Git后，先补接口、接入D端。本文件登记下一轮实现顺序；本轮完成发布与接口审查，尚未修改生产CostProvider或启动新后端采样。
+2026-11-05。承接[lxy-plan-fix.md第四章§7.30](lxy-plan-fix.md#step7-m2-mux-static-independent-verdict)。用户要求本轮模型发布并检查Git后，先补接口、接入D端。本文件登记接口与资格依赖；§7.31已完成生产组件消费、实际cut／capture查询及D诊断。[§7.34](lxy-plan-fix.md#step7-m2-state-boundary-independent-verdict)的状态银行36个新独立test及冻结参数一次性评价已通过，grt状态／边界有界组件发布；原生state绑定与联合阶段／目标资格仍待完成，不能据JSON发布直接放行完整D。
 
 当前可用组件为`experiments/arithmetic/evidence/step7_m2_mux_static_v1/asap7-primitives.json`：ASAP7 grt的12类基础／原子操作，11类继承原参数／域／裕量及F5合格证据，动态Mux使用20维静态上下文。Mux的新独立资格仅覆盖2／3／4个独立同宽动态Mux的并行森林、生产单捕获银行和原精确位宽／ABC-SDC条件。完整D、混合算术／控制、one-Mux阶段、共享输入／选择端及状态／组合尚未因此合格。
 
+新增`experiments/arithmetic/evidence/step7_m2_state_boundary_v1/asap7-state-boundary.json`（SHA256 0cf99c9944f40aad7f4d4a2a9bb91afcbaf26048ad64d3e6131d5fcafc3bf904）：仅ASAP7 grt受限合成valid_chain状态银行、ABC1500ps／精确SDC40500、1500、375ps／IO0.2T。状态总面积含state／control、时钟／井接触及未归属repair，排除post-capture observer；与整阶段算术面积须明确所有权。状态银行边界开销910.766404ps，375ps可能无正数据预算，且该边界未授予联合算术／正式I/O资格。下一步应从真实PipelineV2导出完整数据／valid／enable状态、复位每位值与变量位宽，匹配该特征及拓扑域；超域拒绝，不把实际数据银行强行归到合成家族。原组件／新状态包的共同物理身份已经核对，旧stage_correction仍不能继承。
+
+当前实现状态（2026-11-05，详见§7.31）：
+
+| 工作 | 已完成 | 仍待完成 |
+| --- | --- | --- |
+| 模型包入口 | 新schema、hash／profile／质量和12类检查；makeCostProvider路由到生产组件消费者 | 具有共同身份／目标域的状态、边界、阶段及区间组合清单 |
+| 实际阶段查询 | stageCostQuery、逻辑capture／共享链、原子出口、nodeInStage；按完整放置重算，无NodeId-only上下文缓存 | 已有范围外上下文的独立资格 |
+| 调度计价 | evaluate接入完整放置重查入口；双Mux真实PipelineV2阶段绑定成功 | 受资格约束的初始／试移／最终完整阶段、状态和总面积验收；不能称整项完成 |
+| D选择／轨迹 | 公共VUL加载新包；九例21候选保留有序cost_uncovered及组件缺口；PPA0 | 缺少必需模型时不选D；合格完整候选的选择／RTL闭环 |
+| 九例需求审计 | 已由真实公共源／新D请求生成具体阻塞和已知请求特征 | 得到阶段／状态资格后进一步审计实际位置和全部目标域 |
+| 周期与36条 | 旧模型／流水线／reset／valid回归通过 | 新D连续事务／气泡／复位／L-II及36条正式PPA |
+
+本轮父模型字节保持。旧state／boundary／stage模型不能仅凭profile相同就拼到新价格上，尤其stage_correction依赖原节点价格及已验收组合；须核对并资格验证共同物理身份、目标、控制和拓扑域。下一轮先围绕这些缺口复用可用证据、建立必要后继；不把11类全部重训。
+
+用户已确认阶段组合采用**受限阶段拓扑独立建模**：原12类组件保持，另以合成微基准登记阶段拓扑／连接／输入相关性／出口和捕获边界，独立拟合整阶段Q-D与组合面积，不以旧节点价格加总或旧stage_correction代替。初始放置、试移、最终放置须使用同一完整阶段查询；整阶段价格拥有该阶段全部组合逻辑，组件查询只用于其明确分支或诊断，不能重复收费。状态／控制／时钟和边界另有明确所有者；其独立资格不能自动转授任意算术组合。未覆盖拓扑拒绝，正式／保留整图不进入训练，原已消费测试不复用。独立阶段采样协议、生成器及具体任务数尚未冻结，不能将本方法选择写成已取得阶段资格。
+
 ## 1. 建立生产模型包适配及组件身份核验
 
-当前`rtlzz/src/backend/arithmetic_model.cpp`的`ModelCostProvider`读取`arithmetic-backend-model-v1`／12维普通schema，并直接要求state_model、boundary_model及stage_correction。本轮发布是版本化组件包，不能只改version字段或直接替换旧文件。实现应显式识别各组件schema，绑定包内容哈希、profile、库／物理阶段、ABC、SDC、I/O和各联合支持域，保留现有普通模型的有效入口。
+原`rtlzz/src/backend/arithmetic_model.cpp`的`ModelCostProvider`读取`arithmetic-backend-model-v1`／12维普通schema，并直接要求state_model、boundary_model及stage_correction。本轮发布是版本化组件包，不能只改version字段或直接替换旧文件。实现应显式识别各组件schema，绑定包内容哈希、profile、库／物理阶段、ABC、SDC、I/O和各联合支持域，保留现有普通模型的有效入口。
 
 新增适配器或版本化组合清单引用发布组件；仅在普通、Mux、状态、边界、阶段和区间的物理身份及目标域有交集时组合。某个组件已发布不自动补出其他字段。生产查询缺组件、缺上下文或域不匹配时返回可定位的cost_uncovered，不能退回固定表、TEST_ONLY、0价格或普通Mul替代区间。
 
@@ -14,7 +31,7 @@
 
 ## 2. 让代价查询接收真实候选阶段与逻辑捕获边界
 
-当前`node(Program, NodeId)`及按NodeId缓存不足以表达Mux上下文。同一个节点在初始放置、试移及最终放置中的同阶段邻居和捕获槽可能变化。应在CostProvider层提供明确的阶段查询对象，包含候选图版本、阶段成员、输入边界、逻辑capture槽／银行、输出／live-through、复位／valid协议和目标条件。
+原`node(Program, NodeId)`及按NodeId缓存不足以表达Mux上下文；本轮新增nodeInStage及实际cut入口。同一个节点在初始放置、试移及最终放置中的同阶段邻居和捕获槽可能变化。应在CostProvider层提供明确的阶段查询对象，包含候选图版本、阶段成员、输入边界、逻辑capture槽／银行、输出／live-through、复位／valid协议和目标条件。
 
 复用`arithmetic_mux_context.hpp`的语义计数；由PipelineV2实际寄存器切口构造BEIR阶段投影和`MuxStaticCapture`，而非用案例名、整图操作数或后端DFF推测。跨阶段输入须保留原始符号来源、类型与已知位属性；投影不能使真实共享输入看起来互相独立。捕获／对齐／共享链也不能重复算作独立银行。
 

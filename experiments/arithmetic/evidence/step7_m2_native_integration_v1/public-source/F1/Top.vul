@@ -1,0 +1,14 @@
+#include "header.uh"
+INTERFACE(){SERVICE(push,ARG(CaseInput) value,ARG(bool) v);QUERY(result,CaseOutput);QUERY(valid,bool);}
+USE_VERSION(main);VERSION(main){
+PIPELINE(core,2,IREG(a,Int<32>){a=Int<32>(2139095040ull);},IREG(b,Int<32>){b=Int<32>(0ull);},IVALID(iv),OREG(bits,Int<32>),OREG(flags,Int<5>),OVALID(ov)){
+    Int<37> n_fp1 = vularith::F32MulRNE(a, b);
+    Int<32> n_bits1 = Int<32>((n_fp1 >> 0u));
+    Int<5> n_flags1 = Int<5>((n_fp1 >> 32u));
+    bits = n_bits1;
+    flags = n_flags1;
+
+}
+SERVICE(push,ARG(CaseInput) value,ARG(bool) v){a.setnext(value.a);b.setnext(value.b);iv.setnext(v);}
+QUERY(result,CaseOutput){return CaseOutput{bits,flags};}QUERY(valid,bool){return ov;}
+}

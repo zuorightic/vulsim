@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "model_sha256": "f49990d5aa68045a7127636e074d07f4140404b8b007c19b8f8b70bd16524e15",
+  "native_queries": 436,
+  "operations": [
+    "add",
+    "addcarry",
+    "div",
+    "eq_zero",
+    "fp32",
+    "mod",
+    "mul",
+    "mux",
+    "mux_one",
+    "mux_ones",
+    "mux_zero",
+    "or"
+  ],
+  "maximum_native_Python_delta": 0.0,
+  "placement_refresh": true,
+  "guard_rejections": 14,
+  "D_original_half_quarter_attempts_retained": true,
+  "PPA_calls": 0,
+  "production_component_consumer": true,
+  "full_D_ready": false,
+  "scope": "native factory and real stage/capture component queries; whole pipeline still requires independent state/boundary/composition/interval qualification"
+}

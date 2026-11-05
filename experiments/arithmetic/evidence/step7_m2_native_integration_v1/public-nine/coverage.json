@@ -1,0 +1,295 @@
+{
+  "version": "asap7-m2-native-D-coverage-v1",
+  "status": "audit_complete",
+  "model_sha256": "f49990d5aa68045a7127636e074d07f4140404b8b007c19b8f8b70bd16524e15",
+  "compiler_sha256": "b3513d507f69ebdf86a5f3aad2e6858f02d38f919908e194dbfff4bd9a6f0574",
+  "cases": [
+    {
+      "case": "MAC_32",
+      "status": "cost_uncovered",
+      "L": 2,
+      "II": 1,
+      "source_sha256": {
+        "Top.vul": "9d7e7d38a35af209d252a5faf6a28b8b98de802c48db8cc22e005e6146cb3134",
+        "header.uh": "3e84fcc29054d574237732d42b4cc300834f728df00df77020d801a14f0be173",
+        "Main.utb": "7e2f42a93e29aa2adc53b696c0b70c7e0079164f71e7e87168278512a1f1106b"
+      },
+      "request_sha256": "e8073f6eddb6e658409e79c79486177fcb355df2eeeddebb13ab4feebb4b4d44",
+      "command": [
+        "/home/zyrv/vulsim/build/vulrtlgen",
+        "-m",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/source/MAC_32/Main.utb",
+        "-f",
+        "-o",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/generated/MAC_32",
+        "--arithmetic-request",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/source/MAC_32/request.json"
+      ],
+      "exit_code": 1,
+      "report": "MAC_32.D.json",
+      "report_sha256": "c32bfba6afa24b7043f23738957e7b30dd6b705fdfd1fcc138438f8ee5d21344",
+      "evaluated_structures": 3,
+      "candidate_order": [
+        "candidate/original",
+        "candidate/half",
+        "candidate/quarter"
+      ],
+      "failure_reason": "published_primitive_model_missing_state_model: reset/valid/state qualification required"
+    },
+    {
+      "case": "DOT2_16",
+      "status": "cost_uncovered",
+      "L": 2,
+      "II": 1,
+      "source_sha256": {
+        "Top.vul": "4e1a88af87948a1f6555d85d296df99c631899e6a504bc2210d53fc362a7ee28",
+        "header.uh": "f04213254ccfd99a8d1e8be80472a38acf3503f98633c992b1c91ee61d30f69e",
+        "Main.utb": "d52b1ea63e5a7d6d3373cf8d44ddbddbab6988020b085467a841fb230701cdc2"
+      },
+      "request_sha256": "e8073f6eddb6e658409e79c79486177fcb355df2eeeddebb13ab4feebb4b4d44",
+      "command": [
+        "/home/zyrv/vulsim/build/vulrtlgen",
+        "-m",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/source/DOT2_16/Main.utb",
+        "-f",
+        "-o",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/generated/DOT2_16",
+        "--arithmetic-request",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/source/DOT2_16/request.json"
+      ],
+      "exit_code": 1,
+      "report": "DOT2_16.D.json",
+      "report_sha256": "4a5fc3ca549368f750abc1188b0b155030919cf3b7e406e82cb43b2c76ba39f3",
+      "evaluated_structures": 9,
+      "candidate_order": [
+        "candidate/original/original",
+        "candidate/original/half",
+        "candidate/original/quarter",
+        "candidate/half/original",
+        "candidate/half/half",
+        "candidate/half/quarter",
+        "candidate/quarter/original",
+        "candidate/quarter/half",
+        "candidate/quarter/quarter"
+      ],
+      "failure_reason": "published_primitive_model_missing_state_model: reset/valid/state qualification required"
+    },
+    {
+      "case": "UDR_16",
+      "status": "cost_uncovered",
+      "L": 2,
+      "II": 1,
+      "source_sha256": {
+        "Top.vul": "b3d3a5384db2dfb90ff18decf5493147c304d81a3d62e6721f3d8420f6ac7de7",
+        "header.uh": "27d7859b0bff10a0a382de7446d397884ce1184ecdad72f1cce9ceeb0ed84d0b",
+        "Main.utb": "9ab90a47e7d95a5acf8ab69443f9097b4ed84ad147d24390b5d3921d0a46b0b1"
+      },
+      "request_sha256": "e8073f6eddb6e658409e79c79486177fcb355df2eeeddebb13ab4feebb4b4d44",
+      "command": [
+        "/home/zyrv/vulsim/build/vulrtlgen",
+        "-m",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/source/UDR_16/Main.utb",
+        "-f",
+        "-o",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/generated/UDR_16",
+        "--arithmetic-request",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/source/UDR_16/request.json"
+      ],
+      "exit_code": 1,
+      "report": "UDR_16.D.json",
+      "report_sha256": "77f944453c9c3e5dc2211c17f6570d7486d318939f84e6633a5f6dc4478fffac",
+      "evaluated_structures": 1,
+      "candidate_order": [
+        "candidate"
+      ],
+      "failure_reason": "published_primitive_model_missing_state_model: reset/valid/state qualification required"
+    },
+    {
+      "case": "DIVSEL_32",
+      "status": "cost_uncovered",
+      "L": 2,
+      "II": 1,
+      "source_sha256": {
+        "Top.vul": "07c133ff09e19a917df9e661b3d861beb40ed4e84aabda688c5c378785c393be",
+        "header.uh": "2cd8ae7177fea27148bfe4835fed98022c10407eb01f1fc65f3e1ddd5f1a7c8e",
+        "Main.utb": "fbf15e78d94402cbc1ad862ff34e46c125670c94ade4407f3d24d736aecdc07f"
+      },
+      "request_sha256": "e8073f6eddb6e658409e79c79486177fcb355df2eeeddebb13ab4feebb4b4d44",
+      "command": [
+        "/home/zyrv/vulsim/build/vulrtlgen",
+        "-m",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/source/DIVSEL_32/Main.utb",
+        "-f",
+        "-o",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/generated/DIVSEL_32",
+        "--arithmetic-request",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/source/DIVSEL_32/request.json"
+      ],
+      "exit_code": 1,
+      "report": "DIVSEL_32.D.json",
+      "report_sha256": "3c48ffa576531d8422239686a74eda056630f55f5987c236281c401d60e0d8df",
+      "evaluated_structures": 1,
+      "candidate_order": [
+        "candidate"
+      ],
+      "failure_reason": "published_primitive_model_missing_state_model: reset/valid/state qualification required"
+    },
+    {
+      "case": "F1",
+      "status": "cost_uncovered",
+      "L": 2,
+      "II": 1,
+      "source_sha256": {
+        "Top.vul": "e121499355d7c775ae3c4361fd0f4f5749c551227a13e99f473c7ab5ac48dc9f",
+        "header.uh": "8acf8c9fb8e4984810c88b96c509db674f317a556c7d927a78819186a2de3f0e",
+        "Main.utb": "3ccb29c19bbdb869254548118c5d0f70f9fd55f66114d49f6f10b074b384be75"
+      },
+      "request_sha256": "e8073f6eddb6e658409e79c79486177fcb355df2eeeddebb13ab4feebb4b4d44",
+      "command": [
+        "/home/zyrv/vulsim/build/vulrtlgen",
+        "-m",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/source/F1/Main.utb",
+        "-f",
+        "-o",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/generated/F1",
+        "--arithmetic-request",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/source/F1/request.json"
+      ],
+      "exit_code": 1,
+      "report": "F1.D.json",
+      "report_sha256": "fae77978083ada494eb77a0b14885e2204e6a3d428c576caae89e1f19951b393",
+      "evaluated_structures": 1,
+      "candidate_order": [
+        "candidate"
+      ],
+      "failure_reason": "published_primitive_model_missing_state_model: reset/valid/state qualification required"
+    },
+    {
+      "case": "F2",
+      "status": "cost_uncovered",
+      "L": 3,
+      "II": 1,
+      "source_sha256": {
+        "Top.vul": "eaf03365216e88039e0202879fdd6738d5d3f25a3043b2f36fd3c36c983898b6",
+        "header.uh": "b6a079b0e72fa3c5d1e04d8ef409c031d1e4c27cad9fd70e60821ff029fcbb3c",
+        "Main.utb": "eac9e4e85318304221765e4d3ca57d4544fcb9fab19209295fbd5aed994ae557"
+      },
+      "request_sha256": "9443ecdcc37e5ff5ff6c1b2f4193312af2766e9986861294a4694d2fb677d44f",
+      "command": [
+        "/home/zyrv/vulsim/build/vulrtlgen",
+        "-m",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/source/F2/Main.utb",
+        "-f",
+        "-o",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/generated/F2",
+        "--arithmetic-request",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/source/F2/request.json"
+      ],
+      "exit_code": 1,
+      "report": "F2.D.json",
+      "report_sha256": "3cc97a4b544d3e056f0e64740f79a176128146798a285041276ba260069c8f51",
+      "evaluated_structures": 1,
+      "candidate_order": [
+        "candidate"
+      ],
+      "failure_reason": "published_primitive_model_missing_state_model: reset/valid/state qualification required"
+    },
+    {
+      "case": "H_M_32",
+      "status": "cost_uncovered",
+      "L": 2,
+      "II": 1,
+      "source_sha256": {
+        "Top.vul": "35ac177ccd9a220e05fd1e85ce0badf3e2e96883558c2f346e0a5524bb8f2f96",
+        "header.uh": "b83c70cfa528c1dec9bb8903279a8747bbb1cfa46d949b7f30a281fbd6cb8271",
+        "Main.utb": "e080a7db069d2f710e3e540d548731ced4eeb930c874d0e722efa4d14b2b7467"
+      },
+      "request_sha256": "e8073f6eddb6e658409e79c79486177fcb355df2eeeddebb13ab4feebb4b4d44",
+      "command": [
+        "/home/zyrv/vulsim/build/vulrtlgen",
+        "-m",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/source/H_M_32/Main.utb",
+        "-f",
+        "-o",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/generated/H_M_32",
+        "--arithmetic-request",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/source/H_M_32/request.json"
+      ],
+      "exit_code": 1,
+      "report": "H_M_32.D.json",
+      "report_sha256": "f8350d3d371231194762558b7087631dc723e1eb8040fec1a4a7eb3d099e4338",
+      "evaluated_structures": 3,
+      "candidate_order": [
+        "candidate/original",
+        "candidate/half",
+        "candidate/quarter"
+      ],
+      "failure_reason": "published_primitive_model_missing_state_model: reset/valid/state qualification required"
+    },
+    {
+      "case": "H_D_32",
+      "status": "cost_uncovered",
+      "L": 3,
+      "II": 1,
+      "source_sha256": {
+        "Top.vul": "7c6fbe09b6a13a0ac29989679a298ab1b35f21562f20a31de35de9093f4d9c6a",
+        "header.uh": "ba19dd3a2f8a0208c6f57cf57014516171ed715555d4e7eb7a92b77395ca93e9",
+        "Main.utb": "9abe731f77f9093f6328e80c46d33498be3d0ab0fdb8b30bcb959a4225f21bde"
+      },
+      "request_sha256": "9443ecdcc37e5ff5ff6c1b2f4193312af2766e9986861294a4694d2fb677d44f",
+      "command": [
+        "/home/zyrv/vulsim/build/vulrtlgen",
+        "-m",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/source/H_D_32/Main.utb",
+        "-f",
+        "-o",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/generated/H_D_32",
+        "--arithmetic-request",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/source/H_D_32/request.json"
+      ],
+      "exit_code": 1,
+      "report": "H_D_32.D.json",
+      "report_sha256": "237e067bd2eee39c146718ef86e7669b7687d8154f901e5b8d6babd15a82a3d6",
+      "evaluated_structures": 1,
+      "candidate_order": [
+        "candidate"
+      ],
+      "failure_reason": "published_primitive_model_missing_state_model: reset/valid/state qualification required"
+    },
+    {
+      "case": "H_F1",
+      "status": "cost_uncovered",
+      "L": 2,
+      "II": 1,
+      "source_sha256": {
+        "Top.vul": "5b3616c5d04de4dc8928a49e39c1942a1d29a171d095bdad78c58ba8fbfdc795",
+        "header.uh": "9e232642fa361712f8a290148d0e187e422eb11d50dd22b038201fc4a4635d97",
+        "Main.utb": "d758cefcb45852909c629d8df588b5dc3e6470adbeac27239fe3e98db4d6f5e6"
+      },
+      "request_sha256": "e8073f6eddb6e658409e79c79486177fcb355df2eeeddebb13ab4feebb4b4d44",
+      "command": [
+        "/home/zyrv/vulsim/build/vulrtlgen",
+        "-m",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/source/H_F1/Main.utb",
+        "-f",
+        "-o",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/generated/H_F1",
+        "--arithmetic-request",
+        "/home/zyrv/vulsim/build/step7-d-interface-20261105/public-nine-v1/source/H_F1/request.json"
+      ],
+      "exit_code": 1,
+      "report": "H_F1.D.json",
+      "report_sha256": "e417fbfc419385047748451976fe9596686d07eb186cae725bb7d8e5e54403ba",
+      "evaluated_structures": 1,
+      "candidate_order": [
+        "candidate"
+      ],
+      "failure_reason": "published_primitive_model_missing_state_model: reset/valid/state qualification required"
+    }
+  ],
+  "PPA_calls": 0,
+  "full_D_ready": false,
+  "formal_target_qualification": false,
+  "target_role": "1500ps exact-model diagnostic only; formal nine-case targets remain to be qualified",
+  "scope": "actual common public VUL PIPELINE -> native request/factory -> ordered D attempts; compilation support remains uncovered; not 36 final records"
+}

@@ -1,0 +1,20 @@
+#include "header.uh"
+INTERFACE(){SERVICE(push,ARG(CaseInput) value,ARG(bool) v);QUERY(result,CaseOutput);QUERY(valid,bool);}
+USE_VERSION(main);VERSION(main){
+PIPELINE(core,2,IREG(a,Int<16>){a=Int<16>(32821ull);},IREG(d,Int<16>){d=Int<16>(0ull);},IVALID(iv),OREG(q,Int<16>),OREG(r,Int<16>),OVALID(ov)){
+    Int<16> n_first_one = Int<16>(1ull);
+    Int<16> n_first_ones = ~Int<16>(0);
+    Int<16> n_first_zero = Int<16>(0ull);
+    bool n_first_is_zero = (d == n_first_zero);
+    Int<16> n_first_safe_d = (n_first_is_zero ? n_first_one : d);
+    Int<16> n_first_raw_q = (a / n_first_safe_d);
+    Int<16> n_first_raw_r = (a % n_first_safe_d);
+    Int<16> n_first_q = (n_first_is_zero ? n_first_ones : n_first_raw_q);
+    Int<16> n_first_r = (n_first_is_zero ? a : n_first_raw_r);
+    q = n_first_q;
+    r = n_first_r;
+
+}
+SERVICE(push,ARG(CaseInput) value,ARG(bool) v){a.setnext(value.a);d.setnext(value.d);iv.setnext(v);}
+QUERY(result,CaseOutput){return CaseOutput{q,r};}QUERY(valid,bool){return ov;}
+}

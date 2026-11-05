@@ -2,11 +2,19 @@
 
 当前优先交付已由用户确认为[ASAP7 M2九例36条完整闭环](asap7-m2-closure.md)，完成该范围的步骤七模型／原生选择、步骤八实测及步骤九复现审计后，再由用户决定扩展拆分范围还是平台；不预先安排扩展次序。决策与当前实施见[第四章§7.17](lxy-plan-fix.md#step7-asap7-m2-priority)。原四平台／五档／43例／688条保留后续总范围，不作为九例阶段交付的全部前置条件。
 
-**当前执行入口为[§7.30：Mux静态上下文独立验收、组件发布及Git交接](lxy-plan-fix.md#step7-m2-mux-static-independent-verdict)。** 原48个P4独立任务全部完成，完整原始回放后按冻结选择一次性评价通过，grt组件资格12／12；其余11类完整模型、裕量、域及F5合格证据保持，原F5整体失败不改写。本轮没有降低门槛、回调目标或重训已合格11类。
+**当前执行入口为[§7.34：状态／边界独立通过与有界组件发布](lxy-plan-fix.md#step7-m2-state-boundary-independent-verdict)。** 状态银行72 train／36 validation／36新独立test全部完成，冻结参数一次性独立评价通过：状态总面积synth中位2.4549%／P95 6.1466%，grt为6.4017%／8.6246%，均低于原20%／50%门槛；三个精确SDC的边界覆盖全通过，grt最小裕量105.1820ps。参数／支持域／50ps reserve未改，原12类组件保持。144份银行／288阶段／864路径的便携数值回放和本机完整外部核验通过；历史支持副本覆盖及原失败／费用继续明确保留。
+
+发布及复现入口为[状态／边界证据包](../experiments/arithmetic/evidence/step7_m2_state_boundary_v1/README.md)，grt组件`asap7-state-boundary.json`只覆盖受限合成valid_chain银行和原精确ABC／SDC／I/O；synth只作通过的诊断结果。原生state／reset／control特征绑定、联合算术／正式目标边界、受限整阶段价格及真实区间仍待完成，full_D_ready=false，九例36条未完成。当前没有后台EDA或自动后继采样，独立test标签已消费，永久排除后续拟合／验证／算法／裕量／域选择。交接见[状态／边界记录](asap7-state-boundary-handoff.md)；原§7.32–§7.33的锁定／启动停点只作历史。
+
+[§7.31：ASAP7发布组件接入原生D入口与九例覆盖诊断](lxy-plan-fix.md#step7-m2-native-component-integration)已完成生产模型工厂、实际阶段／capture查询及候选失败轨迹。436次12类原生查询与Python最大数值差0，14项拒绝和同节点上下文刷新通过；真实PipelineV2双Mux阶段绑定通过。原四平台250项模型检查及pipeline／reset／valid（含CIRCT）回归通过。[接口证据](../experiments/arithmetic/evidence/step7_m2_native_integration_v1/README.md)约1.64MiB，父发布模型／参数／裕量／域保持。
+
+九例公共VUL经实际生成器进入新D入口，共21个按原政策顺序的候选尝试；全部明确cost_uncovered，共同首缺为合格状态模型，另保留控制模式和真实区间等缺口。PPA0、无新拟合／测量；1500ps仅接口诊断，不是正式目标资格。生产组件消费已接通，完整阶段计价／初始放置／移动／D选择及新D的RTL周期闭环仍需资格，不把这21条诊断写成36条完成。下一步优先补状态／边界／阶段组合与实际支持域，详见[接口清单](asap7-d-interface.md)。
+
+[§7.30](lxy-plan-fix.md#step7-m2-mux-static-independent-verdict)记录上一版独立验收与组件发布。 原48个P4独立任务全部完成，完整原始回放后按冻结选择一次性评价通过，grt组件资格12／12；其余11类完整模型、裕量、域及F5合格证据保持，原F5整体失败不改写。本轮没有降低门槛、回调目标或重训已合格11类。
 
 Mux独立synth时延中位／P95为1.6208%／3.0494%，grt为8.2758%／54.9834%；grt错误可行25／2112＝1.1837%、实际目标局部0／192，面积P95为0.7844%，均通过原门槛。48任务／384主标签及分路径、原192份拟合测量／768主标签的原始回放成立，验证／测试分离和冻结参数保持。[发布与证据入口](../experiments/arithmetic/evidence/step7_m2_mux_static_v1/README.md)包含可部署组件模型、范围及能力清单；状态命令仍为`python3 experiments/arithmetic_dse/model_m2_status.py`。后台已结束，没有自动后继采样。
 
-新Mux资格仅覆盖parallel_dynamic_mux家族、2／3／4个独立同宽动态Mux、生产单银行及原精确位宽／ABC-SDC；该限制在P4测量前已登记。mixed-control新系数仍只有训练／验证，one-Mux、共享／混合算术、任意阶段及正式目标不能据本轮扩域。原生BEIR特征和候选数值核对、已发布Python查询及域外拒绝已完成，生产CostProvider阶段绑定、状态／组合、真实区间及完整D仍待后继。用户要求发布并检查Git后先补接口，实施依赖见[ASAP7 D端接口清单](asap7-d-interface.md)；九例36条尚未完成，Git由用户提交。
+新Mux资格仅覆盖parallel_dynamic_mux家族、2／3／4个独立同宽动态Mux、生产单银行及原精确位宽／ABC-SDC；该限制在P4测量前已登记。mixed-control新系数仍只有训练／验证，one-Mux、共享／混合算术、任意阶段及正式目标不能据本轮扩域。原生BEIR特征和候选数值核对、已发布Python查询及域外拒绝已完成，生产CostProvider阶段绑定、状态／组合、真实区间及完整D仍待后继。生产组件接口现已在§7.31接入，完整D所需资格和后续接口边界见[ASAP7 D端接口清单](asap7-d-interface.md)；九例36条尚未完成，Git由用户提交。
 
 旧12维候选的79.0148%验证P95及48项锁定时的有限池诊断已保存在[§7.28数值检查点](../experiments/arithmetic/evidence/step7_m2_mux_validation_v1/README.md)，没有修改或回填F4／F5独立Mux数值。§7.29记录验证／冻结／原P4放行，§7.30已完成该48项独立评价并发布有据范围；旧失败和父链保持，不表示完整D／九例36条完成。
 

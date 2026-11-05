@@ -1,0 +1,17 @@
+{
+  "version": "arithmetic-request-v1",
+  "target_platform": "asap7",
+  "platform_profile": "/home/zyrv/vulsim/experiments/arithmetic_dse/configs/platforms/asap7.json",
+  "platform_profile_sha256": "f9d3e71d377d0fef70b66e43828186962caa04fcec31b8f78ad8760c5459f1c7",
+  "cost_mode": "backend-model",
+  "fixed_cost_table": "",
+  "fixed_cost_table_sha256": "",
+  "model_bundle": "/home/zyrv/vulsim/experiments/arithmetic/evidence/step7_m2_mux_static_v1/asap7-primitives.json",
+  "model_bundle_sha256": "f49990d5aa68045a7127636e074d07f4140404b8b007c19b8f8b70bd16524e15",
+  "candidate_policy": "mul-candidates-v1",
+  "semantic_profile": "arithmetic-semantics-v2",
+  "L": 2,
+  "II": 1,
+  "target_period_ps": 1500,
+  "template_parameters": {}
+}

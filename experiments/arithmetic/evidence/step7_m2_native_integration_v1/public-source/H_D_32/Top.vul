@@ -1,0 +1,30 @@
+#include "header.uh"
+INTERFACE(){SERVICE(push,ARG(CaseInput) value,ARG(bool) v);QUERY(result,CaseOutput);QUERY(valid,bool);}
+USE_VERSION(main);VERSION(main){
+PIPELINE(core,3,IREG(a,Int<32>){a=Int<32>(2147483701ull);},IREG(d,Int<32>){d=Int<32>(0ull);},IREG(e,Int<32>){e=Int<32>(0ull);},IVALID(iv),OREG(q,Int<32>),OREG(r1,Int<32>),OREG(r2,Int<32>),OVALID(ov)){
+    Int<32> n_first_one = Int<32>(1ull);
+    Int<32> n_first_ones = ~Int<32>(0);
+    Int<32> n_first_zero = Int<32>(0ull);
+    Int<32> n_second_one = Int<32>(1ull);
+    Int<32> n_second_ones = ~Int<32>(0);
+    Int<32> n_second_zero = Int<32>(0ull);
+    bool n_first_is_zero = (d == n_first_zero);
+    bool n_second_is_zero = (e == n_second_zero);
+    Int<32> n_first_safe_d = (n_first_is_zero ? n_first_one : d);
+    Int<32> n_second_safe_d = (n_second_is_zero ? n_second_one : e);
+    Int<32> n_first_raw_q = (a / n_first_safe_d);
+    Int<32> n_first_raw_r = (a % n_first_safe_d);
+    Int<32> n_first_q = (n_first_is_zero ? n_first_ones : n_first_raw_q);
+    Int<32> n_first_r = (n_first_is_zero ? a : n_first_raw_r);
+    Int<32> n_second_raw_q = (n_first_q / n_second_safe_d);
+    Int<32> n_second_raw_r = (n_first_q % n_second_safe_d);
+    Int<32> n_second_q = (n_second_is_zero ? n_second_ones : n_second_raw_q);
+    Int<32> n_second_r = (n_second_is_zero ? n_first_q : n_second_raw_r);
+    q = n_second_q;
+    r1 = n_first_r;
+    r2 = n_second_r;
+
+}
+SERVICE(push,ARG(CaseInput) value,ARG(bool) v){a.setnext(value.a);d.setnext(value.d);e.setnext(value.e);iv.setnext(v);}
+QUERY(result,CaseOutput){return CaseOutput{q,r1,r2};}QUERY(valid,bool){return ov;}
+}

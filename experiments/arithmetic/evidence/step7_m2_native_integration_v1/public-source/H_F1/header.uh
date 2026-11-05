@@ -1,0 +1,12 @@
+#include <defhelper.hpp>
+STRUCT(CaseInput) {
+    Int<32> a;
+    Int<32> b;
+    Int<32> bypass;
+    bool select;
+};
+STRUCT(CaseOutput) {
+    Int<32> bits;
+    Int<5> flags;
+};
+#include <arithmetic.hpp>

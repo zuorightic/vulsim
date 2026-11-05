@@ -1,0 +1,76 @@
+{
+  "failure_code": "cost_uncovered",
+  "failure_reason": "published_primitive_model_missing_state_model: reset/valid/state qualification required",
+  "failure_stage": "cost",
+  "node_id": "",
+  "region_id": "",
+  "request": {
+    "II": 1,
+    "L": 2,
+    "candidate_policy": "mul-candidates-v1",
+    "cost_mode": "backend-model",
+    "model_bundle_sha256": "f49990d5aa68045a7127636e074d07f4140404b8b007c19b8f8b70bd16524e15",
+    "platform_profile_sha256": "f9d3e71d377d0fef70b66e43828186962caa04fcec31b8f78ad8760c5459f1c7",
+    "semantic_profile": "arithmetic-semantics-v2",
+    "target_period_ps": 1500,
+    "target_platform": "asap7"
+  },
+  "selection": {
+    "K": 16,
+    "candidate_PPA_calls": 0,
+    "candidate_model_coverage_complete": false,
+    "candidates": [
+      {
+        "component_coverage": {
+          "candidate_PPA_calls": 0,
+          "covered_components": 0,
+          "deferred_components": 1,
+          "graph_sha256": "50a7584a88c8e74f4dbcdb1e9e9eaa9e7e2285460e33308291623768b22f274b",
+          "missing_pipeline_components": [
+            "state_model",
+            "boundary_model",
+            "stage_composition_model",
+            "mul_interval_model_when_split"
+          ],
+          "model_bundle_sha256": "f49990d5aa68045a7127636e074d07f4140404b8b007c19b8f8b70bd16524e15",
+          "model_id": "asap7-published-primitives/f49990d5aa68045a7127636e074d07f4140404b8b007c19b8f8b70bd16524e15",
+          "nodes": [
+            {
+              "known_request_features": {
+                "abc_target_ps": 1500,
+                "lhs_width": 32,
+                "result_width": 37,
+                "rhs_width": 32,
+                "sdc_period_ps": 1500
+              },
+              "node": "6",
+              "operation": "fp32",
+              "status": "requires_actual_stage_cut",
+              "width": 37
+            }
+          ],
+          "pipeline_qualified": false,
+          "platform_profile_sha256": "f9d3e71d377d0fef70b66e43828186962caa04fcec31b8f78ad8760c5459f1c7",
+          "target_period_ps": 1500,
+          "uncovered_components": 0,
+          "version": "published-primitive-coverage-v1"
+        },
+        "failure_code": "cost_uncovered",
+        "failure_stage": "cost",
+        "id": "candidate",
+        "reason": "published_primitive_model_missing_state_model: reset/valid/state qualification required",
+        "shape_sha256": "50a7584a88c8e74f4dbcdb1e9e9eaa9e7e2285460e33308291623768b22f274b",
+        "status": "rejected"
+      }
+    ],
+    "cost_mode": "backend-model",
+    "evaluated_structures": 1,
+    "formal_D_selection": false,
+    "model_bundle_sha256": "f49990d5aa68045a7127636e074d07f4140404b8b007c19b8f8b70bd16524e15",
+    "policy": "mul-candidates-v1",
+    "selection_status": "cost_uncovered",
+    "version": "arithmetic-selection-v1"
+  },
+  "status": "failed",
+  "version": "arithmetic-structure-report-v2"
+}

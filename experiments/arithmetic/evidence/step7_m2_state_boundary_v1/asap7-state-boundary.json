@@ -1,0 +1,632 @@
+{
+  "version": "arithmetic-state-boundary-qualified-v1",
+  "id": "asap7-m2-state-bank-grt-qualified-v1",
+  "quality_status": "passed",
+  "target_platform": "asap7",
+  "ABC_ps": 1500,
+  "exact_SDC_ps": [
+    40500,
+    1500,
+    375
+  ],
+  "IO": "0.2T",
+  "measurement_static_identity_sha256": "151a9a6a8cfab9d4605f174b4c35af20365ba370e118370ebb2959fe7fdace24",
+  "feature_schema": "arithmetic-state-bank-features-v1",
+  "feature_names": [
+    "state_bits",
+    "state_signals",
+    "data_bits",
+    "data_signals",
+    "valid_bits",
+    "valid_signals",
+    "enable_domains",
+    "reset_one_bits",
+    "max_declared_width",
+    "min_variable_width",
+    "sdc_period_ps"
+  ],
+  "stages": {
+    "grt": {
+      "quality_status": "passed",
+      "area_model": {
+        "kind": "exact_SDC_nonnegative_linear",
+        "slices": {
+          "40500": {
+            "kind": "nonnegative_linear",
+            "features": [
+              "data_bits",
+              "data_signals",
+              "valid_bits",
+              "enable_domains",
+              "reset_one_bits"
+            ],
+            "coefficients": [
+              0.740948091127196,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "1500": {
+            "kind": "nonnegative_linear",
+            "features": [
+              "data_bits",
+              "data_signals",
+              "valid_bits",
+              "enable_domains",
+              "reset_one_bits"
+            ],
+            "coefficients": [
+              0.7425120230799318,
+              0.0,
+              0.0,
+              0.0,
+              0.0006014621530752979
+            ]
+          },
+          "375": {
+            "kind": "nonnegative_linear",
+            "features": [
+              "data_bits",
+              "data_signals",
+              "valid_bits",
+              "enable_domains",
+              "reset_one_bits"
+            ],
+            "coefficients": [
+              0.7503938855374853,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "algorithm": "exact_SDC_NNLS_typed_state_and_controls",
+      "boundary_model": {
+        "io_delay_fraction": 0.2,
+        "input_overhead_ps": 910.7664039999974,
+        "register_overhead_ps": 910.7664039999974,
+        "actual_boundary_H_max_ps": 205.8638159999973,
+        "capture_control_path_max_ps": 654.902588,
+        "engineering_clock_reserve_ps": 50,
+        "H_witness": {
+          "id": "state_valid",
+          "QD_ps": 242.784622,
+          "slack_ps": 40051.351562,
+          "H_ps": 205.8638159999973,
+          "start_pin": "bank/valid_q0$_SDFF_PN0_/QN",
+          "end_pin": "bank/ov$_SDFF_PN0_/D",
+          "row_id": "state-train-small-w32-t0/grt"
+        },
+        "QD_witness": {
+          "id": "state_enable",
+          "QD_ps": 654.902588,
+          "slack_ps": 39684.242188,
+          "H_ps": 160.85522400000627,
+          "start_pin": "bank/valid_q1$_SDFF_PN0_/QN",
+          "end_pin": "bank/src1[57]$_SDFFE_PN1P_/D",
+          "row_id": "state-train-large-w64-t0/grt"
+        },
+        "fit_splits": [
+          "train",
+          "validation"
+        ],
+        "scope": "registered state-bank paths only; joint arithmetic/input boundary remains unqualified",
+        "definition": "H=T-QD-slack includes clkQ/setup/skew/uncertainty once; control QD and engineering reserve separate"
+      },
+      "independent_quality": {
+        "status": "passed",
+        "state_area": {
+          "status": "passed",
+          "n": 36,
+          "MAE": 24.38820089647542,
+          "median_relative_error": 0.06401676281602686,
+          "p95_relative_error": 0.08624626583370251,
+          "max_relative_error": 0.0931158814411192,
+          "relative_error_floor": 0.0001,
+          "normalized_MAE": 0.060722015608913764,
+          "underpredicted_banks": 3,
+          "predictions": [
+            {
+              "id": "state-test-w1-t0/grt",
+              "actual_um2": 21.243060000000007,
+              "predicted_um2": 20.746546551561487
+            },
+            {
+              "id": "state-test-w1-t1/grt",
+              "actual_um2": 21.243060000000007,
+              "predicted_um2": 20.79635126776884
+            },
+            {
+              "id": "state-test-w1-t2/grt",
+              "actual_um2": 21.243060000000007,
+              "predicted_um2": 21.01102879504959
+            },
+            {
+              "id": "state-test-w5-t0/grt",
+              "actual_um2": 71.25246,
+              "predicted_um2": 77.05860147722838
+            },
+            {
+              "id": "state-test-w5-t1/grt",
+              "actual_um2": 71.64612000000001,
+              "predicted_um2": 77.24230157567055
+            },
+            {
+              "id": "state-test-w5-t2/grt",
+              "actual_um2": 72.71046000000001,
+              "predicted_um2": 78.04096409589847
+            },
+            {
+              "id": "state-test-w8-t0/grt",
+              "actual_um2": 157.65353999999996,
+              "predicted_um2": 165.9723724124919
+            },
+            {
+              "id": "state-test-w8-t1/grt",
+              "actual_um2": 158.80535999999995,
+              "predicted_um2": 166.36780283138535
+            },
+            {
+              "id": "state-test-w8-t2/grt",
+              "actual_um2": 162.42119999999997,
+              "predicted_um2": 168.08823036039672
+            },
+            {
+              "id": "state-test-w16-t0/grt",
+              "actual_um2": 97.49646,
+              "predicted_um2": 100.76894039329865
+            },
+            {
+              "id": "state-test-w16-t1/grt",
+              "actual_um2": 97.37982,
+              "predicted_um2": 101.0093023979122
+            },
+            {
+              "id": "state-test-w16-t2/grt",
+              "actual_um2": 100.22292,
+              "predicted_um2": 102.05356843309801
+            },
+            {
+              "id": "state-test-w17-t0/grt",
+              "actual_um2": 325.73177999999996,
+              "predicted_um2": 352.6912913765453
+            },
+            {
+              "id": "state-test-w17-t1/grt",
+              "actual_um2": 324.7549199999999,
+              "predicted_um2": 353.53135546838655
+            },
+            {
+              "id": "state-test-w17-t2/grt",
+              "actual_um2": 335.34,
+              "predicted_um2": 357.187489515843
+            },
+            {
+              "id": "state-test-w24-t0/grt",
+              "actual_um2": 229.35798,
+              "predicted_um2": 248.95855861873784
+            },
+            {
+              "id": "state-test-w24-t1/grt",
+              "actual_um2": 228.29363999999998,
+              "predicted_um2": 249.55140351600153
+            },
+            {
+              "id": "state-test-w24-t2/grt",
+              "actual_um2": 234.63594,
+              "predicted_um2": 252.13234554059505
+            },
+            {
+              "id": "state-test-w32-t0/grt",
+              "actual_um2": 618.9647400000001,
+              "predicted_um2": 663.8894896499676
+            },
+            {
+              "id": "state-test-w32-t1/grt",
+              "actual_um2": 622.1140200000001,
+              "predicted_um2": 665.4706098633884
+            },
+            {
+              "id": "state-test-w32-t2/grt",
+              "actual_um2": 638.4582,
+              "predicted_um2": 672.3529214415869
+            },
+            {
+              "id": "state-test-w33-t0/grt",
+              "actual_um2": 390.14621999999997,
+              "predicted_um2": 414.93093103122976
+            },
+            {
+              "id": "state-test-w33-t1/grt",
+              "actual_um2": 390.71484,
+              "predicted_um2": 415.91860488523383
+            },
+            {
+              "id": "state-test-w33-t2/grt",
+              "actual_um2": 401.8102200000001,
+              "predicted_um2": 420.2205759009918
+            },
+            {
+              "id": "state-test-w37-t0/grt",
+              "actual_um2": 720.252,
+              "predicted_um2": 767.622222407775
+            },
+            {
+              "id": "state-test-w37-t1/grt",
+              "actual_um2": 731.0995199999998,
+              "predicted_um2": 769.4505618157734
+            },
+            {
+              "id": "state-test-w37-t2/grt",
+              "actual_um2": 750.62214,
+              "predicted_um2": 777.4080654168348
+            },
+            {
+              "id": "state-test-w48-t0/grt",
+              "actual_um2": 349.83251999999993,
+              "predicted_um2": 373.4378379281068
+            },
+            {
+              "id": "state-test-w48-t1/grt",
+              "actual_um2": 350.3136599999999,
+              "predicted_um2": 374.3271052740023
+            },
+            {
+              "id": "state-test-w48-t2/grt",
+              "actual_um2": 359.4115800000001,
+              "predicted_um2": 378.1985183108926
+            },
+            {
+              "id": "state-test-w64-t0/grt",
+              "actual_um2": 1249.1706599999993,
+              "predicted_um2": 1327.7789792999351
+            },
+            {
+              "id": "state-test-w64-t1/grt",
+              "actual_um2": 1248.8353199999992,
+              "predicted_um2": 1330.9412197267768
+            },
+            {
+              "id": "state-test-w64-t2/grt",
+              "actual_um2": 1286.2184399999996,
+              "predicted_um2": 1344.7058428831738
+            },
+            {
+              "id": "state-test-w65-t0/grt",
+              "actual_um2": 534.5173800000001,
+              "predicted_um2": 572.0119263501953
+            },
+            {
+              "id": "state-test-w65-t1/grt",
+              "actual_um2": 536.4565200000001,
+              "predicted_um2": 573.3744590532008
+            },
+            {
+              "id": "state-test-w65-t2/grt",
+              "actual_um2": 548.5579200000001,
+              "predicted_um2": 579.3040796349387
+            }
+          ]
+        },
+        "state_area_by_exact_SDC": {
+          "40500": {
+            "status": "passed",
+            "n": 12,
+            "MAE": 26.77016036616256,
+            "median_relative_error": 0.06662250509807491,
+            "p95_relative_error": 0.0839775961049463,
+            "max_relative_error": 0.08545845502623385,
+            "relative_error_floor": 0.0001,
+            "normalized_MAE": 0.06740822920917443,
+            "underpredicted_banks": 1,
+            "predictions": [
+              {
+                "id": "state-test-w1-t0/grt",
+                "actual_um2": 21.243060000000007,
+                "predicted_um2": 20.746546551561487
+              },
+              {
+                "id": "state-test-w5-t0/grt",
+                "actual_um2": 71.25246,
+                "predicted_um2": 77.05860147722838
+              },
+              {
+                "id": "state-test-w8-t0/grt",
+                "actual_um2": 157.65353999999996,
+                "predicted_um2": 165.9723724124919
+              },
+              {
+                "id": "state-test-w16-t0/grt",
+                "actual_um2": 97.49646,
+                "predicted_um2": 100.76894039329865
+              },
+              {
+                "id": "state-test-w17-t0/grt",
+                "actual_um2": 325.73177999999996,
+                "predicted_um2": 352.6912913765453
+              },
+              {
+                "id": "state-test-w24-t0/grt",
+                "actual_um2": 229.35798,
+                "predicted_um2": 248.95855861873784
+              },
+              {
+                "id": "state-test-w32-t0/grt",
+                "actual_um2": 618.9647400000001,
+                "predicted_um2": 663.8894896499676
+              },
+              {
+                "id": "state-test-w33-t0/grt",
+                "actual_um2": 390.14621999999997,
+                "predicted_um2": 414.93093103122976
+              },
+              {
+                "id": "state-test-w37-t0/grt",
+                "actual_um2": 720.252,
+                "predicted_um2": 767.622222407775
+              },
+              {
+                "id": "state-test-w48-t0/grt",
+                "actual_um2": 349.83251999999993,
+                "predicted_um2": 373.4378379281068
+              },
+              {
+                "id": "state-test-w64-t0/grt",
+                "actual_um2": 1249.1706599999993,
+                "predicted_um2": 1327.7789792999351
+              },
+              {
+                "id": "state-test-w65-t0/grt",
+                "actual_um2": 534.5173800000001,
+                "predicted_um2": 572.0119263501953
+              }
+            ]
+          },
+          "1500": {
+            "status": "passed",
+            "n": 12,
+            "MAE": 26.434807928330333,
+            "median_relative_error": 0.0671471953566882,
+            "p95_relative_error": 0.0906374806893633,
+            "max_relative_error": 0.0931158814411192,
+            "relative_error_floor": 0.0001,
+            "normalized_MAE": 0.06634054019518174,
+            "underpredicted_banks": 1,
+            "predictions": [
+              {
+                "id": "state-test-w1-t1/grt",
+                "actual_um2": 21.243060000000007,
+                "predicted_um2": 20.79635126776884
+              },
+              {
+                "id": "state-test-w5-t1/grt",
+                "actual_um2": 71.64612000000001,
+                "predicted_um2": 77.24230157567055
+              },
+              {
+                "id": "state-test-w8-t1/grt",
+                "actual_um2": 158.80535999999995,
+                "predicted_um2": 166.36780283138535
+              },
+              {
+                "id": "state-test-w16-t1/grt",
+                "actual_um2": 97.37982,
+                "predicted_um2": 101.0093023979122
+              },
+              {
+                "id": "state-test-w17-t1/grt",
+                "actual_um2": 324.7549199999999,
+                "predicted_um2": 353.53135546838655
+              },
+              {
+                "id": "state-test-w24-t1/grt",
+                "actual_um2": 228.29363999999998,
+                "predicted_um2": 249.55140351600153
+              },
+              {
+                "id": "state-test-w32-t1/grt",
+                "actual_um2": 622.1140200000001,
+                "predicted_um2": 665.4706098633884
+              },
+              {
+                "id": "state-test-w33-t1/grt",
+                "actual_um2": 390.71484,
+                "predicted_um2": 415.91860488523383
+              },
+              {
+                "id": "state-test-w37-t1/grt",
+                "actual_um2": 731.0995199999998,
+                "predicted_um2": 769.4505618157734
+              },
+              {
+                "id": "state-test-w48-t1/grt",
+                "actual_um2": 350.3136599999999,
+                "predicted_um2": 374.3271052740023
+              },
+              {
+                "id": "state-test-w64-t1/grt",
+                "actual_um2": 1248.8353199999992,
+                "predicted_um2": 1330.9412197267768
+              },
+              {
+                "id": "state-test-w65-t1/grt",
+                "actual_um2": 536.4565200000001,
+                "predicted_um2": 573.3744590532008
+              }
+            ]
+          },
+          "375": {
+            "status": "passed",
+            "n": 12,
+            "MAE": 19.95963439493337,
+            "median_relative_error": 0.04904495649852342,
+            "p95_relative_error": 0.07387699804880557,
+            "max_relative_error": 0.07456831012587009,
+            "relative_error_floor": 0.0001,
+            "normalized_MAE": 0.04876477585098016,
+            "underpredicted_banks": 1,
+            "predictions": [
+              {
+                "id": "state-test-w1-t2/grt",
+                "actual_um2": 21.243060000000007,
+                "predicted_um2": 21.01102879504959
+              },
+              {
+                "id": "state-test-w5-t2/grt",
+                "actual_um2": 72.71046000000001,
+                "predicted_um2": 78.04096409589847
+              },
+              {
+                "id": "state-test-w8-t2/grt",
+                "actual_um2": 162.42119999999997,
+                "predicted_um2": 168.08823036039672
+              },
+              {
+                "id": "state-test-w16-t2/grt",
+                "actual_um2": 100.22292,
+                "predicted_um2": 102.05356843309801
+              },
+              {
+                "id": "state-test-w17-t2/grt",
+                "actual_um2": 335.34,
+                "predicted_um2": 357.187489515843
+              },
+              {
+                "id": "state-test-w24-t2/grt",
+                "actual_um2": 234.63594,
+                "predicted_um2": 252.13234554059505
+              },
+              {
+                "id": "state-test-w32-t2/grt",
+                "actual_um2": 638.4582,
+                "predicted_um2": 672.3529214415869
+              },
+              {
+                "id": "state-test-w33-t2/grt",
+                "actual_um2": 401.8102200000001,
+                "predicted_um2": 420.2205759009918
+              },
+              {
+                "id": "state-test-w37-t2/grt",
+                "actual_um2": 750.62214,
+                "predicted_um2": 777.4080654168348
+              },
+              {
+                "id": "state-test-w48-t2/grt",
+                "actual_um2": 359.4115800000001,
+                "predicted_um2": 378.1985183108926
+              },
+              {
+                "id": "state-test-w64-t2/grt",
+                "actual_um2": 1286.2184399999996,
+                "predicted_um2": 1344.7058428831738
+              },
+              {
+                "id": "state-test-w65-t2/grt",
+                "actual_um2": 548.5579200000001,
+                "predicted_um2": 579.3040796349387
+              }
+            ]
+          }
+        },
+        "boundary_coverage": {
+          "40500": {
+            "status": "passed",
+            "required_H_plus_control_ps": 739.7579339999984,
+            "frozen_overhead_ps": 910.7664039999974,
+            "margin_ps": 171.00846999999897
+          },
+          "1500": {
+            "status": "passed",
+            "required_H_plus_control_ps": 805.5843819999998,
+            "frozen_overhead_ps": 910.7664039999974,
+            "margin_ps": 105.18202199999757
+          },
+          "375": {
+            "status": "passed",
+            "required_H_plus_control_ps": 406.663734,
+            "frozen_overhead_ps": 910.7664039999974,
+            "margin_ps": 504.1026699999974
+          }
+        },
+        "whole_setup_failed": 11,
+        "whole_hold_negative": 2
+      }
+    }
+  },
+  "domain": {
+    "control_family": "valid_chain",
+    "clock_reset": "single-clock synchronous active-low reset",
+    "word_widths": [
+      1,
+      2,
+      4,
+      5,
+      8,
+      16,
+      17,
+      24,
+      32,
+      33,
+      37,
+      48,
+      64,
+      65
+    ],
+    "max_data_depth": 3,
+    "max_parallel_words": 16,
+    "max_enable_domains": 3,
+    "max_input_bits": 640,
+    "max_capture_bits": 2048,
+    "max_state_bits": 2304,
+    "max_state_signals": 80,
+    "topology": "registered synthetic state-bank family; native bank equivalence binding still required",
+    "reset": "variable zero/one per bit; test independent pattern unobserved",
+    "width_padding": "only declared65/variable64 zero padding or unpadded sampled word widths",
+    "continuous_SDC_qualified": false,
+    "arbitrary_stage_boundary_qualified": false
+  },
+  "parent_primitives_sha256": "f49990d5aa68045a7127636e074d07f4140404b8b007c19b8f8b70bd16524e15",
+  "dataset_sha256": "1388342d16177b98321918953506075feb807f7d2eb7b8b74366f64e8f0259d1",
+  "protocol_sha256": "411b1517d2c432fb8e630dc1def2b12c65b148b502060e92d1902483481ed275",
+  "execution_definition": {
+    "version": "asap7-m2-state-fitting-execution-v1",
+    "area_target": "whole_stdcell_area_including_taps_minus_postcapture_observer",
+    "NNLS_bits_signals": [
+      "state_bits",
+      "state_signals"
+    ],
+    "NNLS_typed_state_and_controls": [
+      "data_bits",
+      "data_signals",
+      "valid_bits",
+      "enable_domains",
+      "reset_one_bits"
+    ],
+    "exact_SDC_NNLS_typed_state_and_controls": [
+      "data_bits",
+      "data_signals",
+      "valid_bits",
+      "enable_domains",
+      "reset_one_bits"
+    ],
+    "NNLS_loss": "unweighted train-only squared error; no intercept or added margins",
+    "exact_SDC": "independent nonnegative coefficients at each predeclared exact SDC; no interpolation",
+    "ranking": "passing original median/P95 gates first; then MAE/mean_actual; serialized model bytes; stable candidate name",
+    "gate_aggregation": "all complete validation banks within each physical stage; exact-target breakdown also reported",
+    "boundary": "global maximum nonnegative H plus global maximum of all state data/enable/valid Q-D paths plus original 50ps reserve, separately per physical stage",
+    "test_data": "forbidden; old state formula coefficients immutable and only grt available"
+  },
+  "native_state_binding_qualified": false,
+  "full_D_ready": false,
+  "test_labels_read": true,
+  "qualification_scope": "bounded synthetic valid-chain state-bank component",
+  "independent_verdict_sha256": "3dc22b0ec19f2cac3b299e1929a1fc0e6c1e1d5aff6372cbb3812455c13ccc62",
+  "selection_sha256": "f1f1d08c452e8a01062740cc41b4890d03d48c8cb725354fb895a8093283b7a9",
+  "independent_labels_consumed": true,
+  "independent_labels_excluded_from_future_fitting": true
+}

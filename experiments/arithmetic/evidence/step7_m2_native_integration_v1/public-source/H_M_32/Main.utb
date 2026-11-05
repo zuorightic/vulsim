@@ -1,0 +1,12 @@
+#include <run.hpp>
+#include <cstdlib>
+#include <cstdio>
+#include <fstream>
+TOP("Top.vul");PROJECT(".");REQUEST(push,ARG(CaseInput) value,ARG(bool) v);QUERY(result,CaseOutput);QUERY(valid,bool);
+GLOBAL(){
+template<uint32_t W> Int<W> hexread(std::istream& s){std::string text;s>>text;Int<W> r(0);for(unsigned i=0;i<text.size();++i){unsigned digit=text[text.size()-1-i]>='a'?text[text.size()-1-i]-'a'+10:text[text.size()-1-i]-'0';for(unsigned k=0;k<4;++k)if(i*4+k<W){if constexpr(W==1)r=(digit>>k)&1;else r.template pick<1>(i*4+k)=(digit>>k)&1;}}return r;}
+template<uint32_t W>void hexprint(Int<W> v){auto words=v.get_data();std::putchar(' ');for(int i=(W+3)/4-1;i>=0;--i){unsigned digit=0;for(unsigned k=0;k<4;++k)if(i*4+k<W&&((words[(i*4+k)/64]>>((i*4+k)%64))&1))digit|=1u<<k;std::putchar("0123456789abcdef"[digit]);}}
+void print_result(){auto r=result();
+hexprint(Int<32>(r.y));std::putchar('\n');}}
+SIMULATION(){
+std::ifstream stream("/home/zyrv/vulsim/build/step6-integration-20261031/vul-v5/H_M_32/vectors.txt");unsigned count;stream>>count;for(unsigned i=0;i<count;++i){CaseInput in;in.a=hexread<32>(stream);in.b=hexread<32>(stream);in.c=hexread<32>(stream);in.select=hexread<1>(stream).to<bool>();unsigned v,reset;stream>>std::hex>>v>>reset;if(reset){sim_reset();std::printf("RESET %u %u",i,unsigned(valid()));print_result();}push(in,bool(v));sim_nextcycle();std::printf("ROW %u %u",i,unsigned(valid()));print_result();}std::printf("PUBLIC VUL PASS rows=%u\n",count);}
