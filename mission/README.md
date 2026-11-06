@@ -2,9 +2,27 @@
 
 当前优先交付已由用户确认为[ASAP7 M2九例36条完整闭环](asap7-m2-closure.md)，完成该范围的步骤七模型／原生选择、步骤八实测及步骤九复现审计后，再由用户决定扩展拆分范围还是平台；不预先安排扩展次序。决策与当前实施见[第四章§7.17](lxy-plan-fix.md#step7-asap7-m2-priority)。原四平台／五档／43例／688条保留后续总范围，不作为九例阶段交付的全部前置条件。
 
-**当前执行入口为[§7.34：状态／边界独立通过与有界组件发布](lxy-plan-fix.md#step7-m2-state-boundary-independent-verdict)。** 状态银行72 train／36 validation／36新独立test全部完成，冻结参数一次性独立评价通过：状态总面积synth中位2.4549%／P95 6.1466%，grt为6.4017%／8.6246%，均低于原20%／50%门槛；三个精确SDC的边界覆盖全通过，grt最小裕量105.1820ps。参数／支持域／50ps reserve未改，原12类组件保持。144份银行／288阶段／864路径的便携数值回放和本机完整外部核验通过；历史支持副本覆盖及原失败／费用继续明确保留。
+**当前结果入口为[§7.48：一般状态S新独立通过与限定组件发布](lxy-plan-fix.md#step7-general-state-qualified-publication)。** 新54独立全部完成，原始回放及冻结参数一次性评价通过，synth／grt八类状态边界均72／72；grt最小覆盖余量37.372788ps，三面积分项中位／P95为0.33944%／1.09599%、0.48657%／0.90230%、0.04684%／0.17216%，原20%／50%门槛保持。原三面积系数、六类边界、九目标及50ps reserve不改，全部已消费测试永久封存。[约2.47MiB发布包](../experiments/arithmetic/evidence/step7_general_state_v1/README.md)只发布ASAP7 grt合成原生银行的功能状态／控制面积和状态边界；完整378银行／756阶段／6804路径归档在build。便携／完整external／隔离／篡改、冻结训练精确复现及本组件Git视图通过，当前无本实验后台EDA／未结算任务。范围、复现及后续见[一般状态S交接](asap7-general-state-handoff.md)；生产状态价格绑定、G／I及完整D／正式36条仍未放行。
 
-发布及复现入口为[状态／边界证据包](../experiments/arithmetic/evidence/step7_m2_state_boundary_v1/README.md)，grt组件`asap7-state-boundary.json`只覆盖受限合成valid_chain银行和原精确ABC／SDC／I/O；synth只作通过的诊断结果。原生state／reset／control特征绑定、联合算术／正式目标边界、受限整阶段价格及真实区间仍待完成，full_D_ready=false，九例36条未完成。当前没有后台EDA或自动后继采样，独立test标签已消费，永久排除后续拟合／验证／算法／裕量／域选择。交接见[状态／边界记录](asap7-state-boundary-handoff.md)；原§7.32–§7.33的锁定／启动停点只作历史。
+[§7.42正式目标冻结](lxy-plan-fix.md#step7-m2-numerical-target-freeze)保持：用户确认H_ref按必需data路径joint overhead最大值汇总，其他完整路径另报诊断；原公式冻结九例周期1431／1119／4528／11913／3141／4162／1253／14897／3385ps。[约0.35MiB冻结证据](../experiments/arithmetic/evidence/step7_m2_targets_v1/README.md)的生产公式／external／隔离／篡改核验通过。G受限整阶段／联合边界、I真实区间及C++完整消费者仍待后续，不由S组件发布转授资格。
+
+[§7.41](lxy-plan-fix.md#step7-reference-raw-audit)的17／17参考采集及原始封存保持：34阶段／272路径、108付费叶及4151文件核验，前三项综合复用；原始标签／归属／SDC／RC便携回放、完整本机工具／Liberty／CTS CEC、隔离与篡改通过，[参考证据](../experiments/arithmetic/evidence/step7_reference_v1/README.md)约6.4MiB。原target-proposal保持当时待确认状态，本轮由后继冻结承接，不覆盖旧证据。17项参考不是正式ABCD36条。
+
+[§7.40](lxy-plan-fix.md#step7-reference-cohort-admission)保留软件／标签前检和参考准入：17源×144周期／19728状态检查及九项读取负控通过，固定ABC1500ps／SDC40500ps／IO0.2T，最多4任务×4线程／每任务8GiB。真实公共VUL内部valid使能与外部无条件捕获已分开，旧读取／续作元数据失败及费用保持。[参考交接](asap7-reference-handoff.md)包含恢复父链及采后依赖；没有自动拟合、独立模型测试或目标冻结。
+
+[§7.39：九例全部候选静态需求与计费规则冻结](lxy-plan-fix.md#step7-all-candidate-static-requirements)保持。生产与诊断共用候选枚举／分组，九例21个有序候选与旧生产图hash一致，另与当前真实C核对；K=16独立顺序检查通过。已完成108个去重合法放置视图、582次非法提案、每候选C最终实际物化状态及140种阶段需求描述的审计。[证据及复现](../experiments/arithmetic/evidence/step7_d_requirements_v1/README.md)约0.70MiB，便携／external／隔离及篡改核验通过，无新PPA或拟合。
+
+静态诊断已列出一般语义复位、相关来源、无完整数据链、非旧离散字宽／掩码、移位补零及18通道等同时缺口。实际中间状态到66位，34组实际／42组保守区间需求保持。原[联合需求v1](../experiments/arithmetic_dse/configs/model_asap7_m2_joint_requirements_v1.json)及目标绑定v2均保留原字节；v2的physical_admission_allowed=false是共同需求范围，S组件仅由§7.46–§7.48具体源／目标／容量准入与独立验收授予范围内资格，不转授G／I或正式矩阵。**下一步完善实际C++ service／native／external状态特征／所有权／条件上界价格绑定，并推进G／I合成资格；完整初始／试移／最终统一查询、D选择／RTL及正式36条仍待。** [静态需求交接](asap7-d-requirements-handoff.md)保留旧检查点，当前状态以顶部S入口为准。
+
+[§7.38](lxy-plan-fix.md#step7-native-state-production-binding)的生产primitive＋native_state组合清单和受限状态价格消费保持：175次查询／168次实际物化与Python差0，35项拒绝及旧回归通过；[绑定证据](../experiments/arithmetic/evidence/step7_native_state_binding_v1/README.md)保持。完整D仍待实际状态、外围／联合边界、受限整阶段、真实区间、正式目标、完整初始／移动／选择与RTL资格；九例正式36条尚未开始。
+
+[§7.37](lxy-plan-fix.md#step7-native-state-independent-publication)保留原生协议72 train／36 validation／36新独立测试及冻结参数一次性评价通过结果：grt状态面积中位6.0347%／P95 18.9229%，原20%／50%门槛不变，边界最小余量183.134460ps。原[状态发布包](../experiments/arithmetic/evidence/step7_native_state_v1/README.md)及全部原参数／域／803.206085ps边界／50ps reserve不变；144银行／288阶段／1152路径和12原生结构的发布核验保持。其production_price_binding_qualified=false是历史检查点，本轮受限消费资格另由后继记录，不改旧发布；新独立标签永久排除后继拟合／验证／调参／域选择。
+
+[§7.35](lxy-plan-fix.md#step7-native-state-query-and-successor)保留九公共VUL原始核＋3诊断的真实状态查询、使能拓扑差异和用户确认后继路线；6银行×80周期／8240状态检查通过。整阶段需求见[草案](asap7-stage-topologies-draft.md)，尚未冻结采样或启动该部分后端。原§7.35的“36 test锁定”是当时检查点，§7.36在验证／冻结／复现后才另放行，不追改旧角色。
+
+[§7.34：状态／边界独立通过与有界组件发布](lxy-plan-fix.md#step7-m2-state-boundary-independent-verdict)保持原结论：72 train／36 validation／36独立test全部完成，冻结参数一次性评价通过；状态总面积synth中位2.4549%／P95 6.1466%，grt为6.4017%／8.6246%，边界最小裕量105.1820ps。参数／支持域／50ps reserve未改，原12类组件保持。144份银行的便携／完整external／隔离副本／篡改核验已完成；旧失败及支持副本追溯保留。
+
+发布及复现入口为[状态／边界证据包](../experiments/arithmetic/evidence/step7_m2_state_boundary_v1/README.md)，grt组件只覆盖原受限合成银行及精确条件；不能据“valid_chain”标签直接继承到任意原生拓扑。该独立标签已消费、永久排除后继拟合／验证／调参／域选择；新批次不回填它。联合算术／正式边界、受限整阶段价格、真实区间及有效D选择／RTL仍待完成，full_D_ready=false，九例36条未完成。旧“无后台”是§7.34发布收尾检查点；§7.35的新队列亦已完成并由§7.37发布，当前§7.38无后台EDA。
 
 [§7.31：ASAP7发布组件接入原生D入口与九例覆盖诊断](lxy-plan-fix.md#step7-m2-native-component-integration)已完成生产模型工厂、实际阶段／capture查询及候选失败轨迹。436次12类原生查询与Python最大数值差0，14项拒绝和同节点上下文刷新通过；真实PipelineV2双Mux阶段绑定通过。原四平台250项模型检查及pipeline／reset／valid（含CIRCT）回归通过。[接口证据](../experiments/arithmetic/evidence/step7_m2_native_integration_v1/README.md)约1.64MiB，父发布模型／参数／裕量／域保持。
 

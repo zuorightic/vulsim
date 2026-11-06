@@ -1,0 +1,30 @@
+{
+  "version": "asap7-reference-verification-v2",
+  "parent_evidence_manifest_sha256": "276f8a40cbf4876e0a871a76a7f3691a80bbc0be3d86ffdf88757891cd445979",
+  "portable_raw_replay_passed": true,
+  "full_external_tool_Liberty_CTS_CEC_and_raw_replay_passed": true,
+  "isolated_original_tree_denied": true,
+  "isolated_PATH_empty": true,
+  "isolated_replay_subprocess_denied": true,
+  "raw_pool_tamper_rejected": true,
+  "external_v1_failure_preserved": "frozen producer tree lacks live backend_usage.json; explicit live-ledger binding in v2; no measurement or label changed",
+  "verification_receipts_sha256": "69353bbc01622bf11b7039624636477a616e7e64845daf9d60c25f24a35ca07c",
+  "external_verifier_source": "experiments/arithmetic_dse/model_reference_evidence_v2.py",
+  "external_verifier_sha256": "dbcfa09a019be0dbbeebd26830ba0ba1400f6d863e4694e1c2c7f0f746c0e60f",
+  "archived_external_verifier_sha256": "dbcfa09a019be0dbbeebd26830ba0ba1400f6d863e4694e1c2c7f0f746c0e60f",
+  "PPA_calls_for_verification": 0,
+  "global_settled_ledger_prefix": {
+    "entries": 9455,
+    "synth": 1606,
+    "grt": 1584,
+    "final": 16,
+    "support": 6249,
+    "walltime_s": 199046.42448878684,
+    "CPU_time_s": 448543.44,
+    "pending": 0,
+    "active_jobs": 0,
+    "unsettled_jobs": 0
+  },
+  "numerical_targets_frozen": false,
+  "full_D_ready": false
+}

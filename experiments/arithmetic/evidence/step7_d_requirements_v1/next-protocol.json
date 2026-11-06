@@ -1,0 +1,220 @@
+{
+  "version": "asap7-m2-joint-model-requirements-v1",
+  "status": "static_requirements_and_accounting_frozen_measurement_admission_pending",
+  "static_audit_sha256": "ad23a2f4320547e94656ab6239a5af5abbb07d715e9b85574092e9e91412f2cc",
+  "reference_requirements_sha256": "b5ad085887ccb4bbb7b897d8b3b804ef859c1097946c2a1692ccc55116122185",
+  "current_delivery": "ASAP7 nine cases /36 final A-B-C-D records",
+  "other_platforms_deferred": true,
+  "policy": {
+    "K": 16,
+    "same_ordered_C_D_candidates": true,
+    "search_PPA_calls": 0,
+    "Div_FP_remain_atomic": true
+  },
+  "physical_identity": {
+    "platform": "asap7",
+    "stage": "grt",
+    "ABC_ps": 1500,
+    "IO": "0.2T on declared external path classes",
+    "diagnostic_SDC_ps": 1500,
+    "diagnostic_SDC_is_formal_target": false
+  },
+  "target_reference": {
+    "rules": "target_rules_v2",
+    "required_labels": [
+      "add_u32",
+      "add_u33",
+      "add_u64",
+      "bitor_u5",
+      "div_u16",
+      "div_u32",
+      "eq_u16",
+      "eq_u32",
+      "f32_mul_rne",
+      "ite_u16",
+      "ite_u32",
+      "ite_u5",
+      "mod_u16",
+      "mod_u32",
+      "mul_u16_r32",
+      "mul_u32_r32",
+      "mul_u32_r64"
+    ],
+    "D_ref": "same-platform grt microbenchmark labels on original graph longest dependency path",
+    "H_ref": "qualified joint boundary with explicit nonoverlapping clock/setup/uncertainty/IO terms",
+    "state_bank_803ps_is_joint_H_ref": false,
+    "reference_settings_frozen": false,
+    "reference_labels_complete": false,
+    "numerical_targets_frozen": false,
+    "formal_PPA_or_model_predictions_as_reference": false
+  },
+  "cost_ownership": {
+    "whole_stage": "all owned functional combination and internal data-net repair, one stage price; no additive node prices",
+    "template_interval": "real blocked-Mul leaf/reduction interval price when explicitly consumed; not ordinary Mul and not charged again inside owning whole-stage price",
+    "native_state": "deduplicated logical data/valid chains and owned hold/reset/control overhead; explicit external capture inclusion",
+    "input_service_wrapper": "separate explicit query/owner; not zero and not silently included in core bank",
+    "clock_tap_and_unassigned_repair": "one shared physical owner; isolated bank labels include these, so joint stage labels must exclude or reconcile them",
+    "boundary_time": "clkQ/setup/skew/uncertainty once; Q-D label excludes these; IO only for actual external path class",
+    "unattributed_cells_or_paths": "block label acceptance; never silently ignore",
+    "physical_label_partition_implemented_and_verified": false
+  },
+  "work_packages": [
+    {
+      "id": "R",
+      "scope": "freeze reference microbenchmark source/settings and capacity, collect17 label keys plus joint boundary evidence; freeze D_ref/H_ref/targets before model target grid",
+      "depends_on": [
+        "static_requirements",
+        "physical_label_partition_and_reference_preflight"
+      ]
+    },
+    {
+      "id": "S",
+      "scope": "native synthetic banks with general reset distributions, related sources, no-full-chain layouts, shifted zero-padding and needed nonpower intermediate widths",
+      "observed_word_widths": [
+        1,
+        5,
+        13,
+        16,
+        17,
+        21,
+        22,
+        24,
+        25,
+        26,
+        27,
+        29,
+        30,
+        32,
+        33,
+        34,
+        35,
+        37,
+        40,
+        41,
+        42,
+        48,
+        49,
+        50,
+        56,
+        57,
+        58,
+        64,
+        65,
+        66
+      ],
+      "observed_feature_ranges": {
+        "data_bits": [
+          64,
+          488
+        ],
+        "data_signals": [
+          2,
+          18
+        ],
+        "enable_domains": [
+          2,
+          3
+        ],
+        "max_declared_width": [
+          16,
+          66
+        ],
+        "min_variable_width": [
+          1,
+          64
+        ],
+        "reset_one_bits": [
+          16,
+          149
+        ],
+        "sdc_period_ps": [
+          1500,
+          1500
+        ],
+        "state_bits": [
+          66,
+          490
+        ],
+        "state_signals": [
+          4,
+          20
+        ],
+        "valid_bits": [
+          2,
+          3
+        ],
+        "valid_signals": [
+          2,
+          3
+        ]
+      },
+      "old_coefficients": "immutable baseline candidate; no automatic refit or domain extension",
+      "depends_on": [
+        "R"
+      ]
+    },
+    {
+      "id": "G",
+      "scope": "independent bounded synthetic whole-stage topology model; single atoms/serial/mux/multiple branches and exits; joint state/boundary qualification",
+      "formal_or_holdout_graphs_copied_into_training": false,
+      "depends_on": [
+        "R",
+        "physical_label_partition_and_reference_preflight"
+      ]
+    },
+    {
+      "id": "I",
+      "scope": "real half/quarter intervals; retain old failure and test exclusion; reuse matching train/validation only",
+      "observed_group_sets": 34,
+      "observed_noncontiguous_group_sets": 0,
+      "conservative_monotone_group_interval_envelope": 42,
+      "observed_sets_exhaust_all_future_D_positions": false,
+      "depends_on": [
+        "R"
+      ]
+    },
+    {
+      "id": "C",
+      "scope": "whole-stage consumer ownership; initial/trial/final complete queries, safe partial-stage bounds, unified budget and typed state validation",
+      "can_progress_while_collection_runs": true,
+      "formal_D_release_depends_on": [
+        "S",
+        "G",
+        "I",
+        "joint_boundary_qualification"
+      ]
+    },
+    {
+      "id": "F",
+      "scope": "all-candidate D coverage, actual selection and RTL transaction/reset/L-II closure, then freeze36 final physical jobs and step9 audit",
+      "depends_on": [
+        "C",
+        "qualified_joint_domains"
+      ]
+    }
+  ],
+  "independence": {
+    "all_previous_consumed_tests_excluded": true,
+    "same_source_all_clock_and_stage_variants_one_split": true,
+    "new_train_validation_sources_and_test_lock_before_collection": true,
+    "freeze_parameters_domain_reserve_before_independent_test": true,
+    "quality_gates_changed": false,
+    "no_formal_or_holdout_PPA_for_fitting_or_target_feedback": true
+  },
+  "resources": {
+    "parallel_jobs": 4,
+    "threads_per_job": 4,
+    "memory_limit_MiB": 8192,
+    "shared_ledger": true,
+    "automatic_retries": 0
+  },
+  "physical_admission_allowed": false,
+  "missing_for_admission": [
+    "executable synthetic sources and complete task/split manifests",
+    "raw cell/path ownership extractor and software preflight",
+    "reference settings/capacity and exact tasks/budget/storage reservation"
+  ],
+  "full_D_ready": false,
+  "formal_36_complete": false,
+  "PPA_calls": 0
+}

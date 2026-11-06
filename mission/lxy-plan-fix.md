@@ -2722,7 +2722,7 @@ ORFS子日志中完整CTS为1171.50秒、单独`5_1_grt`为337.99秒，前者所
 
 ## 步骤七：四平台训练及离线模型驱动的联合选择
 
-**状态索引（2026-11-05复核）。** 本章按实施时间追加记录；各小节的采集、质量及发布状态分别解释，不把历史“下一步”当成当前执行入口。当前先完成ASAP7 M2九例36条的步骤七→八→九，之后由用户决定扩展方向；完整四平台步骤七仍未关闭。当前执行见[§7.34](#step7-m2-state-boundary-independent-verdict)：状态银行36／36新独立test及冻结参数一次性评价通过，grt有界状态／边界组件发布，便携／完整external／隔离Git视图／篡改核验通过；无后台EDA。原生state绑定、联合算术／正式边界、整阶段／区间和完整D仍待完成。§7.32–§7.33的采集／冻结停点及支持副本追溯保持。生产组件接入见[§7.31](#step7-m2-native-component-integration)：新模型工厂、实际stage／capture查询及九例21候选未覆盖诊断完成，PPA0；完整D仍缺状态／边界／阶段组合及区间／上下文／目标资格。原48个P4独立通过和grt组件12／12发布保留在§7.30，原F5失败保持。后继依赖见[接口清单](asap7-d-interface.md)。§7.29记录静态契约、验证／冻结和当时的P4放行。旧12维拟合和有限候选池失败封存见§7.28。只补Mux、继承其余11类的清单和决策见§7.27。F5完整独立评价与封存见§7.26：synth12／12、grt11／12，Mux时延P95未通过、发布为空；原服务已退出。训练侧后继及新测试准入见§7.25。§7.23的结构化等价恢复已完成，F4独立失败封存见§7.24。§7.21–§7.22为已经结算的阶段续作／滚动采集及F3补充尝试，旧超时和费用保留；原周期恢复见§7.19–§7.20。
+**状态索引（2026-11-06复核）。** 本章按实施时间追加记录；各小节的采集、质量及发布状态分别解释，不把历史“下一步”当成当前执行入口。当前先完成ASAP7 M2九例36条的步骤七→八→九，之后由用户决定扩展方向；完整四平台步骤七仍未关闭。当前结果见[§7.48](#step7-general-state-qualified-publication)：新54独立原始核验／冻结参数一次性评价通过，ASAP7 grt有界S组件发布，三面积分项原门槛通过、八状态边界72／72，最小覆盖余量37.372788ps；原三面积模型／六类边界／九目标／50ps保持。378银行／756阶段／6804路径原始归档、便携／external／隔离／篡改、冻结训练精确复现与本组件Git视图通过，当前无本实验后台EDA或未结算任务。§7.45首轮失败／已消费测试与§7.46–§7.47的源准入／验证冻结保持；S生产价格绑定、G／I及完整消费者／D选择／RTL／正式36条仍待，完整D未放行。§7.42用户确认的九例正式目标与external／隔离／篡改证据保持，原无后台／结清数字属于其检查点。§7.41保留17／17参考完成检查点；34阶段／272路径、108付费叶及4151文件的完整原始回放和便携／完整external／隔离／篡改核验通过。固定ABC1500ps／SDC40500ps／IO0.2T，三个旧综合复用，读取／元数据／external失败及费用保留；当前无后台且账本结清。§7.41当时的D_ref／H_ref提案与待确认状态保持，现由§7.42承接数值冻结；S／G／I资格仍待完成。§7.40保留17源前检／专用准入／4×4采集恢复历史。§7.39的21候选／108视图／140种阶段描述及旧图hash／当前C／K16核对保持，17参考键与计费责任需求不转授完整D资格。§7.38的有界生产状态价格绑定通过，完整D仍待联合／外围／阶段／区间及实际域。§7.37保留原生状态发布检查点：原生协议新独立36／36完成，冻结参数一次性评价通过，grt后继及144银行／12原生结构的便携／external／隔离副本／篡改证据发布，当前无后台EDA。§7.37当时待生产价格绑定；有界绑定现由§7.38承接，全候选／位置、实际银行、外围／联合边界、阶段／区间和完整D仍待完成。§7.35–§7.36的采集／冻结停点及§7.34旧发布保持。生产组件接入见[§7.31](#step7-m2-native-component-integration)：新模型工厂、实际stage／capture查询及九例21候选未覆盖诊断完成，PPA0；完整D仍缺状态／边界／阶段组合及区间／上下文／目标资格。原48个P4独立通过和grt组件12／12发布保留在§7.30，原F5失败保持。后继依赖见[接口清单](asap7-d-interface.md)。§7.29记录静态契约、验证／冻结和当时的P4放行。旧12维拟合和有限候选池失败封存见§7.28。只补Mux、继承其余11类的清单和决策见§7.27。F5完整独立评价与封存见§7.26：synth12／12、grt11／12，Mux时延P95未通过、发布为空；原服务已退出。训练侧后继及新测试准入见§7.25。§7.23的结构化等价恢复已完成，F4独立失败封存见§7.24。§7.21–§7.22为已经结算的阶段续作／滚动采集及F3补充尝试，旧超时和费用保留；原周期恢复见§7.19–§7.20。
 
 | 记录 | 当前结论 | 后继／执行边界 |
 | --- | --- | --- |
@@ -2740,6 +2740,20 @@ ORFS子日志中完整CTS为1171.50秒、单独`5_1_grt`为337.99秒，前者所
 | §7.32 状态／边界后继与独立阶段拓扑 | 48源／144任务登记；真实RTL预检通过，后台先采108个拟合侧任务 | 两个容量先导后最多4×4线程；36 test锁定，阶段拓扑协议及全部资格仍待完成 |
 | §7.33 状态银行回放／验证／冻结 | 108拟合任务原始与费用回放、面积原门槛验证及字节复现通过；支持副本覆盖已追溯 | 36预登记独立test已另准入；独立评价／发布、原生state绑定及阶段组合仍待完成 |
 | §7.34 状态银行新独立资格与组件发布 | 36／36独立完成、原门槛一次性评价通过，grt受限状态银行／边界组件发布 | 原生state绑定、联合算术／正式边界、整阶段／区间及完整D仍待完成；无后台EDA |
+| §7.35 原生状态查询与协议后继 | 九公共VUL原始核＋3补充图的真实投影／物化及RTL核对通过；发现使能拓扑差异，用户确认后继采样 | 48源／144任务登记，两个容量先导通过，先采108拟合侧、36 test锁定；价格未放行 |
+| §7.36 原生状态回放／验证／冻结 | 108拟合任务完整回放、原面积门槛及字节复现通过，803.206085ps grt边界冻结 | 36新独立状态测试已另准入；待独立评价、实际价格绑定与其余D资格 |
+| §7.37 原生协议状态新独立与发布 | 36／36独立完成、原门槛一次性评价通过，grt后继及可复现证据发布 | 生产价格绑定、全候选／位置、外围／联合域、阶段／区间及完整D仍待完成；无后台EDA |
+| §7.38 生产组合清单与状态消费 | 175次状态价格查询／168次实际物化，Python数值差0，35项拒绝；旧回归及便携／external／隔离／篡改通过 | 九例原始银行仍被保守复位域拒绝；联合边界、外围、相关状态、全候选／位置、阶段／区间及完整D待完成；无后台EDA |
+| §7.39 全候选静态需求与规则冻结 | 21候选／108去重合法视图、140种阶段描述；旧生产图及当前C／K16一致，累积缺口／42保守区间／17参考键及计费责任登记，原回归与便携／external／隔离／篡改通过 | 实际标签提取／采样准入／数值目标未完成；未来D轨迹仍逐查询检查；完整D／正式36条未放行，无后台EDA |
+| §7.40 目标参考前检与恢复采集 | 17源×144周期／19728状态检查、九项读取负控及三份实际综合完整暂存回放通过；参考专用准入、三个grt容量先导通过，最多4×4线程采17项，三个旧综合复用 | 完整17项原始／祖先回放与数值目标冻结待完成；不自动拟合／独立测试／冻结；S／G／I和完整D／正式36条仍未放行 |
+| §7.41 参考完整原始回放与H汇总提案 | 17／17采完；34阶段／272路径、108付费叶／4151文件核验，便携／完整external／隔离／篡改通过；原始DAG的D_ref及H汇总数值提案可审阅 | H_ref统一规则待用户确认、数值目标未冻结；S／G／I及完整D／正式36条仍未放行；无后台，账本结清 |
+| §7.42 用户确认H口径与正式目标冻结 | 原公式生产接口冻结九例数值目标；external／隔离／目标篡改拒绝通过，后继需求v2绑定九个精确目标上下文，PPA0 | 下一步S／G／I合成源前检、完整任务／划分／容量／预算准入及新目标独立资格；完整D／正式36条未放行，无后台 |
+| §7.43 一般状态S源与拟合侧采集 | 24源／93696状态检查、错误门控RTL与实际SDC存储／14负控通过；后继六个容量点通过，当时4×4采162 train／validation、54 test锁定 | 当时的采集／锁定停点由§7.44的完成、验证冻结与独立准入承接；原软件、诊断与费用保持 |
+| §7.44 一般状态S回放／验证／冻结与独立准入 | train108／108、validation54／54，162任务／324阶段／2916路径、972收费叶／34772文件hash核验通过；三所有者原面积门槛及四产物字节复现通过 | 原54 test已另行准入，自身两个容量点通过后4×4采集；原参数／域／边界冻结，采完一次性评价及有据范围发布／生产绑定仍待，G／I及完整D／正式36条未放行 |
+| §7.45 一般状态S首轮独立评价／失败封存 | 54／54独立完成，108阶段／972路径原始核验；synth通过，grt三面积分项通过、控制边界69／72，发布为空；原始与数值封存／external／隔离／篡改核验通过 | 54项test已永久封存；原参数／域／九目标／50ps不改，用户确认只补控制边界，完整D未放行 |
+| §7.46 保留面积参数的控制边界后继 | 新24源／216任务及仅两类控制路径候选登记；86784状态检查和真实负控／FF几何通过，108 train／54 validation具体准入，原面积／六类边界冻结 | 当时的拟合侧采集／54新test锁定停点由§7.47的完成、验证冻结及独立准入承接；G／I、生产完整消费及正式36条仍待 |
+| §7.47 控制边界后继回放／验证冻结与独立准入 | 新108 train／54 validation完成；原162复用，合计324测量／648阶段／5832路径、1944收费叶／69199文件hash回放通过；原面积／六类边界合格，两控制路径验证、三文件字节复现及1728实际查询守卫通过 | 当时新54 test准入／采集停点已由§7.48独立通过与限定发布承接；原参数和来源保持 |
+| §7.48 一般状态S独立通过与grt组件发布 | 新54／54独立、原门槛一次性评价通过，三面积分项及八状态边界72／72；378银行／756阶段／6804路径完整归档，便携／external／隔离／篡改、冻结训练精确复现与组件Git视图通过；grt有界S发布 | 当前无本实验后台EDA／未结算；实际生产特征／所有权／价格绑定、G／I、完整D选择／RTL及正式36条仍待；完整步骤七未关闭 |
 
 ### 7.1 当前范围与继承边界
 
@@ -2858,11 +2872,11 @@ v1先跑ASAP7的5个有限任务，均完成synth→grt；标签读取发现一�
 
 本轮检查点账本为173 synth／139 grt／16 final／1340 support，叶命令墙钟42444.008722s、CPU73402.63s、pending=0。相较§7.9封存时新增8次support，含一次seal导入路径错误后的旧索引核验拒绝；失败与费用保留，后继修正核验通过。封存后的交付复核另在同一活账本追加计费；候选内资源是seal时已结算的不可变前缀，不能把封存后的审计收据倒填成先前已经存在。未改变物理额度或采集清单。
 
-**步骤七全任务剩余范围清单（2026-11-05按§7.34同步；当前九例优先及资格依赖见§7.17、§7.31–§7.34和九例清单）：**
+**步骤七全任务剩余范围清单（2026-11-06按§7.48同步；当前九例优先及资格依赖见§7.17、§7.31–§7.48和九例清单）：**
 
-用户于2026-11-04确认先完成ASAP7 M2九例36条及其复现审计。以下七项保留全任务最终缺口；当前先做第1项和第3–7项中九例必需的ASAP7子域，再推进这批记录的步骤八、九。第2项其他平台和非九例必需的扩域暂后置，阶段交付后再讨论下一扩展方向。第1项两轮独立评价均已完成并拒绝发布：首轮grt38／42、目标／负载后继grt41／42；失败已封存。当前基础／完整原子组件已在原域形成12／12合格后继（§7.30），其中新Mux资格只覆盖预登记并行动态家族；真实区间后继、状态／组合及正式目标缺口仍在。用户要求的生产组件接口现已由§7.31接入，九例实际D入口保留21候选未覆盖轨迹；后继先补状态／边界／阶段组合等必需资格，再完成有效放置／选择／RTL闭环，不必等四平台或大位宽扩展。旧采集停点及有界恢复仅作历史，不再从§7.18–§7.19重复续跑。
+用户于2026-11-04确认先完成ASAP7 M2九例36条及其复现审计。以下七项保留全任务最终缺口；当前先做第1项和第3–7项中九例必需的ASAP7子域，再推进这批记录的步骤八、九。第2项其他平台和非九例必需的扩域暂后置，阶段交付后再讨论下一扩展方向。第1项两轮独立评价均已完成并拒绝发布：首轮grt38／42、目标／负载后继grt41／42；失败已封存。当前基础／完整原子组件已在原域形成12／12合格后继（§7.30），其中新Mux资格只覆盖预登记并行动态家族；真实区间、S实际生产绑定／联合组合及其余模型正式目标域仍待完成。用户要求的生产组件接口现已由§7.31接入，九例实际D入口保留21候选未覆盖轨迹；后继先补状态／边界／阶段组合等必需资格，再完成有效放置／选择／RTL闭环，不必等四平台或大位宽扩展。旧采集停点及有界恢复仅作历史，不再从§7.18–§7.19重复续跑。
 
-1. **完成ASAP7当前8–32位目标／负载条件区间的后继模型资格，并补九例必需基础／原子域。** 首轮28 train／18 validation／21 test和后继80 baseline／260 validation／235 test均已采集、拟合与独立评价；首轮因错误可行超限拒绝发布，后继quarter/low/1/1因时延误差中位数34.2549%超过30%拒绝发布。全部原始成功测量保留，匹配条件的train／validation可复用；已消费测试永久排除后续拟合、验证、算法／裕量选择。后继须围绕九例真实缺口先登记训练侧参考、目标／负载域、分组、容量及新的独立测试，再拟合、验证、冻结和一次性验收，不能直接在旧测试上改裕量重测；旧317条件训练不能在基线验证通过后绕过协议门禁启动。固定ABC=1500ps、正式I/O=0.2×T及真实捕获银行的已实施条件保留，覆盖独立性如实声明为已暴露位宽的新负载／目标上下文。原基础／完整原子224任务、F5及Mux后继已形成§7.30的限定组件发布；它们不是区间后继、状态／组合或36条整图评价通过证明。新Mux的P4已消费，亦永久排除后继拟合／验证／算法／裕量／域选择。下一轮接口先行并导出缺口；已合格且域匹配的11类保持，不为接口改造全部重训。原五个v1探针、负载容量探针、24点时钟诊断继续排除拟合；TEST_ONLY价格和普通Mul模型不能替代真实half／quarter区间价格。不沿用已完成首轮的“剩余26／18／21”。
+1. **完成ASAP7当前8–32位目标／负载条件区间的后继模型资格，并补九例必需基础／原子域。** 首轮28 train／18 validation／21 test和后继80 baseline／260 validation／235 test均已采集、拟合与独立评价；首轮因错误可行超限拒绝发布，后继quarter/low/1/1因时延误差中位数34.2549%超过30%拒绝发布。全部原始成功测量保留，匹配条件的train／validation可复用；已消费测试永久排除后续拟合、验证、算法／裕量选择。后继须围绕九例真实缺口先登记训练侧参考、目标／负载域、分组、容量及新的独立测试，再拟合、验证、冻结和一次性验收，不能直接在旧测试上改裕量重测；旧317条件训练不能在基线验证通过后绕过协议门禁启动。固定ABC=1500ps、正式I/O=0.2×T及真实捕获银行的已实施条件保留，覆盖独立性如实声明为已暴露位宽的新负载／目标上下文。原基础／完整原子224任务、F5及Mux后继已形成§7.30的限定组件发布；它们不是区间后继、状态／组合或36条整图评价通过证明。新Mux的P4已消费，亦永久排除后继拟合／验证／算法／裕量／域选择。§7.39已完成21候选静态需求导出；§7.40完成17源参考／联合标签前检与专用准入，§7.41完成原始／证据核验，§7.42按用户确认口径及生产公式冻结九例正式目标，§7.43完成S源与拟合侧准入，§7.44完成162项原始回放／验证冻结及字节复现，§7.45原54独立完成并因控制边界69／72拒绝发布、永久封存，§7.46按用户确认保留面积参数另立控制边界后继，§7.47完成原／新324测量的原始回放／验证冻结及字节复现，§7.48完成新54独立并发布有据grt S组件；余下S实际价格／所有权绑定与全候选／位置资格、G／I合成前检／采样准入；已合格且域匹配的11类保持，不为接口改造全部重训。原五个v1探针、负载容量探针、24点时钟诊断继续排除拟合；TEST_ONLY价格和普通Mul模型不能替代真实half／quarter区间价格。不沿用已完成首轮的“剩余26／18／21”。
 2. 按各平台准入／容量／预算，将ASAP7验证后的采样／分组／模型选择与质量验收方法迁移到Nangate45、Sky130HD、GF180，分别冻结其库、参考尺度、ABC／SDC、I/O和负载域，独立采集／训练／验证／测试并报告误差、排序、错误可行预测及覆盖。不能照搬ASAP7绝对周期或假定相同响应分界；Sky130HD synth既有失败继续按阶段保留，不追改门槛。
 3. 补齐64／128位及完整256／257位中间结果所需的原始Mul、叶乘积／归约、状态与阶段模型；先做具体结构／平台／阶段容量探针，不能由32位域外推或用一个128位探针放行全部实现。
 4. 扩展完整VUL与正式案例所需的基础操作及组合域：AND等逻辑、加减／比较、移位／Mux、安全Div／Mod／商余、完整binary32原子区域，以及模板与外部算术同级、多模板、多出口／共享状态。Div／FP内部切分仍按首版支持清单，保持原子性即可，不将其额外内部拆分误列为本步必做。
@@ -3450,3 +3464,394 @@ model_m2_state_evidence封装144份测量的原始报告／SDC／路径／面积
 199份发布及Python／配置依赖均在实际Git可见工作文件集合中；复制到临时仓库后，禁读原build／OpenROAD工具／活账本、PATH清空且禁止子进程的便携回放通过，压缩池字节篡改被拒绝。核验不把复制件称为已提交内容；本轮未git add／commit／push。verification.json绑定原index、模型／发布／能力清单及实际四条package／portable／external／隔离篡改命令收据。独立原始评价只消费一次，证据verify只重算既有结论。
 
 本次查看后新增support5，叶墙钟107.132s／CPU106.63s，synth／grt／final新增均0；全历史结清为synth1445／grt1423／final16／support5589，墙钟191682.702s／CPU437660.21s，共8473条entry，pending0、active／unsettled0。没有后台EDA或自动后继采样；新阶段协议和原生state绑定未由此完成，完整步骤七仍未关闭。
+
+
+<a id="step7-native-state-query-and-successor"></a>
+
+### 7.35 原生状态投影／物化接口、实际协议差异与合成银行后继（2026-11-05）
+
+本节对应第一章§5.1／§7.2／§7.5–§7.6／§10.7，承接§7.34。用户已将上一版提交，当前起点主仓库700cd30、rtlzz 258e701；本轮新文件尚未提交，不把起点commit当作本次代码身份。原12类模型f49990d5aa68045a7127636e074d07f4140404b8b007c19b8f8b70bd16524e15及状态银行v1的0cf99c9944f40aad7f4d4a2a9bb91afcbaf26048ad64d3e6131d5fcafc3bf904保持原字节与资格。
+
+#### 实际状态查询接口及核验
+
+新增rtlzz/src/backend/arithmetic_state.hpp／cpp的StateCostQuery：从真实组合图、完整放置和流水协议导出每个内部／显式外部输出capture槽的逻辑origin、级号、声明位宽、变量掩码、完整复位limbs、valid角色和enable_stage。typed特征仍为arithmetic-state-bank-features-v1，不使用映射FF／buffer或实测PPA。输入／service外壳状态另列所有者，不默认为核心已计费；外部输出capture必须显式请求，源及后继共享链按真实寄存器结构计数，不按NodeId价格缓存。
+
+物化重载先调用现有pipeline::validateProgram，再与投影逐槽核对真实source、级号、reset_values、type及实际valid使能，保留layout身份。新arithmetic_native_state_test通过实际PipelineV2 C原始结构编译九个公共VUL所生成的真实kernel C++，另加双Mux、共享值／多出口及declared65／variable64小图，共12个图；Python独立重建11维特征、核对内部寄存器位／信号总数、逐字复位和实际发射RTL的valid链／数据guard。直接验证端口到内部valid别名，避免把VUL的__vul_port_iv与实际vul_port_iv信号混淆。5项负例覆盖错enable、错reset、重复register、输入错级及无效目标，全部拒绝，PPA0。
+
+最终软件入口为build/step7-native-state-20261105/checks-v5/audit.json；queries SHA256 e27a722ab62a26c80431ad5df934337062a37ac644664c7e41019e2f93d9bc66。v1／v2请求缺目标／select端口别名，以及后续RTL输入valid别名读取错误的支持失败均保留，最终成功不覆盖旧目录或退款。当前证明是原始结构和3个诊断的状态语义／接口，未覆盖全21候选、全部移动位置或D的有效选择，未给旧stateArea数量接口补默认价格。
+
+#### 发现的真实资格缺口与用户决策
+
+原生每个数据capture在stage1由内核输入valid使能，stage s>1由valid(s−1)使能，同一cut内所有数据使用同一级valid；valid寄存器始终前进。VUL外围IREG可能为内核提供该输入，但其自身更新／面积不属于本次核心查询。原v1合成银行的数据全部受寄存后的控制驱动，且按(word+level)轮转enable domain；不能仅凭同为valid_chain和位数落在上限内就视作原生拓扑独立合格。
+
+实际F1／F2／H_F1还包含5位声明、4位变量的flags掩码0x17；它不是原v1唯一特例declared65／variable64的高位填充。新接口完整保留该掩码和复位值，不用声明位宽、单一bit数或bank名称伪装兼容。原状态组件在原限定域内继续有效，当前查询qualified_price=false、needs_native_protocol_qualification=true，CostProvider生产缺项拒绝未撤销。
+
+按用户要求使用grilling确认后，用户明确选择“补原生协议合成银行的后继资格”：保留已发布模型和旧测试结论，以旧参数作固定基线，另登记原生协议合成源的train／validation／新独立test；不拆成彼此无联合资格的内部／外部默认单价。旧独立标签永久隔离，不用它选择后继算法、裕量或域。整阶段仍按先前确认的受限合成拓扑独立价格路线推进，不额外拆Div／FP内部。
+
+#### 后继协议、软件检查与预算准入
+
+协议experiments/arithmetic_dse/configs/model_asap7_native_state_v1.json，生成器model_native_state_samples.py，采集器model_native_state_collection.py与独立标签读取器model_native_state_labels.py。48个新合成源按完整源／全部目标／阶段分组：24 train／12 validation／12 test，各40500／1500／375ps、ABC1500ps、IO0.2T，共72／36／36。前两类先采，独立test锁定；这三档不代表已继承750／2250／4500／13500ps、连续目标或正式目标域。
+
+合成银行独立构造，无算术／正式case图拷贝：同一cut按前级valid捕获，包含2／3级、均匀大银行与非均匀通道生存期，零／全一训练复位、交替验证复位和每三位一位为一的测试复位；声明／变量掩码覆盖全动态、高零填充及通用单已知零位孔洞，含5／4和65／64。源实际最大data1746／state1749位、51个状态信号，协议上限state2304／signals80；上限不是未经验证的任意银行资格。输入service外壳、算术混合及不支持掩码仍单列。
+
+regression/arithmetic_native_state_bank.py的最终bank-software-v2实际使用Icarus验证6个代表银行各80周期，8240次完整状态核对、258个当前输入valid与旧valid不同的周期，终端observer／valid、气泡／复位及掩码均通过；PI-D标签数值／负控检查亦通过，PPA0。proof绑定当前协议0b015d105c7eb5a6b58b63ad3e4025fbb9531f1fd4aaec3d976355c628ab3cfb、生成器b6313a9a0a73d7b8f0b9147efa193cd4ee990076191066186fbaf9e37d9950a0及实际C++／Python绑定源码。
+
+原后端及已发布源不修改。新的只读native_state_assets/labels.tcl位于旧backend资产目录之外，避免给原物理身份新增优化配置；每任务本地snapshot显式记录新报告脚本，物理库／工具／ABC／SDC／I/O／resizer等静态身份仍与发布组件一致。除了原Q-D三类，还登记input_enable的内核iv端口→首级D路径，纯到达差扣除输入arrival；input H=T−0.2T−P-D−slack，注册H=T−Q-D−slack。input／register开销分别从合法train／validation最大值及原50ps reserve冻结，独立逐目标验收，不把0.2T重复计费。
+
+面积候选仍为不可改发布v1基线、bits/signals NNLS、typed NNLS和精确SDC typed NNLS，原中位20%／P95 50%门槛不变；训练非负系数，validation按原规则选择，完整冻结／字节复现后才另准入test。本轮尚未拟合或发布新模型，旧11类不重训。每源t0一次ABC、t1／t2精确复用映射并重建SDC／ODB，实际调用照常收费。
+
+新准入build/step7-native-state-20261105/collection-v1/admission.json SHA256 bbdba8029719cb1101c0f120bb405eb51bdfcfc5f296a292c7a13b2d56582efe，冻结源码／协议／新源任务／双父模型／软件proof；两个容量点属于train。144任务保守包络288720叶墙钟秒／1154880 CPU秒，含原通用综合快照及新增只读native快照；后续86400墙钟秒／172800 CPU秒、688 synth／grt、30GiB仍预留，总存储预留66GiB。启动前约46GiB可用内存／208GiB可用磁盘，预算未迁移或重置。
+
+#### 容量和当前后台交接
+
+先导native-state-train-large-w37-t0和w65-t0均完整完成synth／grt、四条原始路径、SDC／RC／面积及完整CTS状态CEC。真实data1746＋valid3、data377＋valid3位，最大进程树RSS595.723／410.527MiB；容量证书只放行本批登记拟合银行，不自动授予新独立或算术阶段资格。17:32:15实查train14／72完成、4运行、54未启动，validation0／36、test0／36，错误0，capacity_qualified=true，test_locked=true。
+
+活动服务vulsim-asap7-native-state-20261105.service，最多4完整任务×4线程／8GiB、synth300s／grt1200s，无自动重试。当前状态命令：`python3 -B -m experiments.arithmetic_dse.model_native_state_collection status --folder build/step7-native-state-20261105/collection-v1`；日志为该目录advance.log。只采108个拟合侧任务，全部完成写fitting_collection_complete后退出；任一失败停新派发、结算在途并保留失败／费用。不会自动拟合、修改旧模型、放行36test或发布。
+
+整阶段需求草案见mission/asap7-stage-topologies-draft.md，目前只定义候选家族和归属／独立性边界，尚未冻结具体任务／容量／预算或启动该部分EDA。状态后继采完仍须完整回放、训练／验证、冻结／复现、新独立资格和生产价格绑定；全候选／移动位置、VUL外围状态、联合算术／正式边界、真实区间、有效D选择／RTL及36条仍待完成。full_D_ready=false、full_step7_complete=false，本轮未git add／commit／push。
+
+17:37:52交接复核：train48／72完成、4个完整任务运行、20未启动，validation0／36、test0／36锁定，错误0。t1／t2网表复用和自动补位已实际成立；当前准入／源码verify和两个仓库diff --check通过。后续由用户监看，完整拟合、冻结／新独立和生产价格绑定仍待采完后推进。
+
+
+<a id="step7-native-state-validation-freeze"></a>
+
+### 7.36 原生状态协议完整回放、验证／冻结与36项新独立准入（2026-11-05）
+
+本节对应第一章§7.2／§7.5–§7.6／§10.7，承接§7.35，继续ASAP7九例优先范围。用户告知训练／验证停止后，18:52:54实查为正常fitting_collection_complete：train72／72、validation36／36全部completed、错误0、test0／36仍锁定；原准入／生产者hash检查通过。全历史当时synth1553／grt1531／final16／support5971，叶墙钟196394.104s／CPU445045.56s、pending／active／unsettled0。原12类及状态银行v1发布字节／参数／旧独立结果保持，本轮不重跑旧实验或读旧测试选择。
+
+新增model_native_state_fit.py，以原冻结生成器逐源重建RTL、寿命／mask／reset、11维特征与完整角色；重新解析原始synth／grt单元面积和Liberty表、实际data／valid FF、完整SDC、wire RC、Q-D三类与PI-D输入使能、所有点到达差／展开路径、完整已存CTS状态图／CEC及576收费叶命令／映射祖先。108任务得到216阶段行、864路径标签，核对19446份原始／物理文件hash，覆盖完整且PPA新增0。没有legacy支持副本损坏例外进入该原生批次；上一批原有追溯仍保留。
+
+当前拟合数据为build/step7-native-state-20261105/review-v1/dataset.json，SHA256 2c5ee02e1f80622bb30f421aced1bb0add892c391bc1b5b7c7ddf15443d21ebe。只比较§7.35预登记四类候选：旧发布模型的不可改面积系数、bits/signals NNLS、typed NNLS和精确SDC typed NNLS；不使用旧发布中的独立误差／预测值。系数非负、训练侧无截距最小二乘；所有完整validation银行按原门槛通过优先、归一化MAE、序列化大小和稳定名称选取，未因观察结果扩大候选池、换权重或缩域。
+
+| 阶段 | 选中面积候选 | validation中位误差 | validation P95 | 冻结input／register开销 |
+| --- | --- | --- | --- | --- |
+| synth | exact_SDC_NNLS_typed_state_and_controls | 2.717283% | 16.535639% | 316.470119ps／316.470119ps |
+| grt | NNLS_bits_signals | 5.235279% | 32.412883% | 803.206085ps／803.206085ps |
+
+原面积门槛中位≤20%／P95≤50%保持。grt不可改旧基线为中位12.944240%／P95 22.816973%，也是合格候选；bits/signals在预登记归一化MAE排序中胜出，未宣称每项误差都优于旧模型。两类typed新grt候选P95分别104.728617%／94.078436%，均未过门槛并保留，不因特征更多而优先使用。面积标签仍为整银行总面积减observer，包含state／control、clock／tap及未归属repair，禁止同阶段重复计费。
+
+边界按原协议分开提取再冻结：synth注册Hmax93.588821＋注册Q-Dmax172.881298＋50＝316.470119ps；输入项31.241546＋181.584961＋50较小，input取两者较大值。grt注册项215.104050＋538.102035＋50＝803.206085ps；输入H按规则下限0、输入P-Dmax707.126953，输入项也较小。每个PI-D的H已扣一次0.2T，注册Q-D不扣IO；未重复计算clkQ／setup／skew／uncertainty或后验增加50ps reserve。该银行控制／保持边界不自动赋予联合算术／正式I/O目标资格，375ps仍可能无正预算。
+
+candidate.json、validation.json、selection-freeze.json两次拟合逐字节一致，冻结verify通过。候选SHA256 82af81d71e6a43a2bf2de3fdd60134cbbe912c0875b2b9909577a015aea66a37，选择1c066bdfda97f8842d24abbb58c74c625caba3c456434cf35ddff1b111b975d0；模型／参数／域／边界全部在读任何新独立标签前固定，quality_status仍awaiting_independent_test、production_price_binding_qualified=false、full_D_ready=false。旧v1开销910.766404ps不覆盖或追改，新803.206085ps只属于本后继候选。
+
+#### 新独立任务与一次性评价规则
+
+新增model_native_state_test.py，物理worker为原已准入同协议worker的显式代码副本，独立TestLedger在每条收费叶前强制test角色、源／契约、冻结选择、平台／线程及准入hash；未将test伪装为train调用原拟合入口。采样／评价源码在首条test命令前冻结，独立worker保留Q-D／PI-D四类路径、原完整CEC与每源一次ABC精确映射。外来／训练任务在工具或job之前拒绝，寄存／输入边界独立覆盖的纯数值正／负例通过；这些fixture明确不是测量标签。
+
+原§7.35已登记的36个test在验证／冻结／字节复现后才另准入；源与train／validation分离，独立性仍为暴露位宽上的新装箱／寿命／掩码／复位上下文。完整36项后独占evaluation-claim一次性评价：逐阶段原面积门槛；每个精确SDC的冻结register必须覆盖独立最大注册H＋最大注册Q-D，input必须同时覆盖该注册项和独立最大输入H＋最大P-D，不能读test改系数、reserve或域。verify只可回算原结果，不再选择模型。
+
+活动目录build/step7-native-state-20261105/independent-v1，准入SHA256 337e47c040e52e308dcd80a7d9d792920e586b1d0020ab56eea1dc399650e260；服务vulsim-asap7-native-state-independent-20261105.service。36任务连同支持预留71880叶墙钟秒／287520 CPU秒，后续86400墙钟秒／172800 CPU秒、688 synth／grt及30GiB继续预留，原全局政策未改。只采集，采完test_collection_complete后退出，不自动评价／拟合／发布，无自动重试；失败停新派发并结算在途，保留所有阶段／费用。
+
+19:05:08实查独立容量点native-state-test-w65-t0已完整通过，实际data461＋valid3，进程树峰值403.531MiB；证书只覆盖登记原生独立银行，不授予整阶段或完整D。队列已完成7／36、滚动派发、错误0，最多4完整任务×4线程／8GiB；短暂少于4个叶命令可能为映射依赖或快照切换。状态入口：`python3 -B -m experiments.arithmetic_dse.model_native_state_test status --folder build/step7-native-state-20261105/independent-v1`，旧collection-v1只表示拟合已完成，旧model_m2_state_test是上一轮银行，均不代表本轮test进度。
+
+当前未发布原生状态后继或撤销D缺项拒绝；新独立资格、实际银行价格绑定、输入service外壳归属、联合算术／正式边界、受限整阶段与真实区间、全候选／位置及D选择／RTL／正式九例36条仍待后继。此处36项是状态组件独立样本，不是九例A/B/C/D正式记录。计划／接口／交接同步到新入口，原§7.35锁定及启动停点只作历史；本轮未git add／commit／push。
+
+
+<a id="step7-native-state-independent-publication"></a>
+
+### 7.37 原生协议状态新独立通过、后继组件发布与可复现核验（2026-11-05）
+
+本节对应第一章§7.2／§7.5–§7.6／§10.7，承接§7.36。当前轮次在完成交接检查时，19:11:14发现新独立36／36已全部completed、test_collection_complete、错误0、pending／active／unsettled0，因此顺接冻结参数评价，没有额外启动测试轮或重跑拟合。选择仍为1c066bdfda97f8842d24abbb58c74c625caba3c456434cf35ddff1b111b975d0，候选82af81d71e6a43a2bf2de3fdd60134cbbe912c0875b2b9909577a015aea66a37，原协议／门槛／域／输入及注册边界／reserve保持。
+
+#### 一次性新独立结果
+
+model_native_state_test按首个test前冻结的源码、独占evaluation-claim，对全部36任务重新核对源／mask／寿命／特征／角色、Liberty／实际FF、完整SDC／RC／面积、Q-D／PI-D四类点轨迹、已存完整CTS状态等价／负控、支付命令与准确映射祖先。得到72阶段行／288路径，独立源与拟合源不交叉。一次性verdict保存在build/step7-native-state-20261105/independent-review-v1/evaluation，SHA256 440a1dad7303a46956de0da8d703a6d1cc876d750937af8b1d507be8ddac46a7，测试数据bc066cf6124df9a2ed001ed839348d28f837b488a07a73ac8ec6cc84b620f54b。后续证据verify只回算同一结论，不再选择算法、改变参数或重新消费测试。
+
+| 阶段 | 独立状态总面积中位误差 | 独立P95 | 独立最大误差 | input／register覆盖 |
+| --- | --- | --- | --- | --- |
+| synth | 3.755745% | 17.635903% | 17.635903% | 三个精确目标均通过，最小余量55.218919ps |
+| grt | 6.034688% | 18.922855% | 19.460623% | 三个精确目标均通过，最小余量183.134460ps |
+
+原面积中位≤20%／P95≤50%全部通过。grt冻结input／register均803.206085ps，独立40500／1500／375ps的注册最大H＋最大Q-D分别620.071625／531.657562／395.356476ps，主输入最大H＋最大P-D分别516.265625／420.935364／304.912842ps，input按两者较大者验收；余量183.134460／271.548523／407.849609ps。synth仍316.470119ps。没有后验增加50ps reserve、调整SDC、缩域或重拟合。
+
+synth独立有8份整银行setup未满足，grt有11份setup未满足、2份负hold，均保留在原始行及分母中；面积／控制边界通过不改写其物理可行性，不要求375ps一定有正数据预算，也不作为TT以外签核。独立36项只是组件新样本，不是正式九例ABCD36条。
+
+#### 后继组件与实际D边界
+
+新增experiments/arithmetic/evidence/step7_native_state_v1/asap7-native-state.json，schema arithmetic-native-state-qualified-v1，模型SHA256 ce280fb25047038d0a9ff80084d744191419546d72072864f316ec7c4a8d9bff。遵循冻结选择只发布grt；synth保留通过的诊断。新模型完整复制冻结grt面积系数、域与输入／注册开销，仅增加独立资格及版本化收据，不覆盖旧12类或旧受限状态银行的文件／参数／独立结论。
+
+资格限原生协议的合成银行：首级在内核接口由输入valid使能，其后由前级valid使能，同cut共享；预登记2／3级、通道寿命／装箱、已知零孔洞／高零填充及复位上下文，ABC1500ps／精确SDC40500、1500、375ps／IO0.2T。面积拥有state／control、clock／tap及未归属repair，排除observer；VUL输入／service外壳、联合算术／正式边界、其他或连续目标均未继承。先前12个真实原生查询／RTL的投影／物化和数值特征证明仍成立，其历史qualified_price=false代表当时未消费价格组件，不因本次JSON发布就修改成全部候选／移动或正式D已验收。
+
+publication.json与capabilities.json明确native_query_extraction_checked=true、production_price_binding_qualified=false、full_D_ready=false。下一步需在生产模型入口显式识别新schema／hash，核对每个实际StateCostQuery的银行域和所有权并绑定冻结数值；不能把该文件当普通primitive bundle替换，也不能给旧stateArea(bits,signals)默认放行。全21候选／位置、外围状态计费、联合目标、受限整阶段、真实half／quarter后继及有效D选择／RTL／正式36条仍待完成。
+
+新36项独立标签已消费，永久排除后继拟合／验证／算法／裕量／域选择。旧发布和全部失败费用保持，full_step7_complete=false，688条未放行。本轮未git add／commit／push。
+
+#### 原始／便携／外部、Git视图与资源
+
+model_native_state_evidence封装原生144银行／288阶段／1152条Q-D及PI-D路径、Liberty／FF／SDC／RC／面积及CTS收据、固定验证及一次性独立结果、已冻结源码与12个实际原生查询／RTL；新包约20.52MiB，文本压缩池13339896字节。便携回放不依赖原build／EDA／活账本，不重训或SAT；external另核对原始大产物、实际Liberty表、完整已存CTS状态图／CEC和支付映射祖先。两种模式均通过，评价／发布核验PPA新增0。
+
+206份依赖和证据均来自实际Git可见工作文件集合，副本在禁读原build／OpenROAD工具／活账本、PATH清空且禁子进程时回放通过，压缩池字节篡改被拒绝。没有ODB／对象／波形进入新可提交证据；保留Git未提交状态，不把工作文件副本称为已提交版本。verification.json绑定原index、模型／publication／capabilities、四条实际package／portable／external／隔离篡改命令和已结清完整账本前缀。
+
+本次用户查看后新增synth36／grt36，均为原预登记新独立样本，无final；原始回放／拟合／冻结／预检／独立评价／发布核验等新增support11，另有该36个测试内部环境／快照support120，合计新增support131；失败费用仍在原历史。最终全历史结清synth1589／grt1567／final16／support6102，累计叶墙钟197848.051s／CPU446943.53s，共9274条entry、pending／active／unsettled0。当前无后台EDA或自动后继采样；计划／导航／接口／交接同步到§7.37，旧§7.35–§7.36的锁定／采集中仅作历史。
+
+
+<a id="step7-native-state-production-binding"></a>
+
+### 7.38 生产组合清单、原生状态价格消费与实际银行覆盖缺口（2026-11-05）
+
+用户要求继续推进ASAP7生产D；本节承接§7.37，落实第一章§7及§10.7的离线模型消费／范围拒绝要求，未新增拟合、采集或独立测试选模。原12类primitive和新原生state的发布JSON、参数／裕量／域／测试结论均保持原字节；其生产价格标志是当时检查点，本轮组件消费资格另由版本化后继记录。
+
+**生产代码与入口。** 新增 `arithmetic-component-manifest-v1`，现行配置为 `experiments/arithmetic_dse/configs/model_asap7_d_components_v1.json`，SHA256 `54ff7b6e706bdfc465b425e6d51ef288f23d43c17d57fd2029fce212819b4a18`。request验证和makeCostProvider显式路由CompositeCostProvider；清单引用不变的primitive与native_state，核对schema／hash／ASAP7 profile／grt／ABC1500／IO0.2T／primitive父链及measurement身份。清单仅components_passed，不将两个组件域取并集，不是full-D发布。
+
+新增NativeStateModel和typed stateCost入口。查询保留投影输入，消费者从实际图／协议／完整placement重构StateCostQuery，核对features、layout和每槽mask／reset／enable／宽度；检查精确SDC375／1500／40500ps、最多3capture阶段、16独立通道、640输入位、2304状态位、80状态信号、连续寿命及至少一条完整链。数据不能依赖valid或与其他通道共用动态来源；external输出capture显式计费，输入／service外壳另有所有者。
+
+状态数值从原grt NNLS的state_bits／state_signals系数读取；input预算为0.8T−803.206085ps，register预算为T−803.206085ps，已含原50ps reserve，不重复扣IO。375ps的负预算保留，不能称物理可行。旧scalar stateArea拒绝绕过结构检查。pipeline完整放置evaluate及最终物化增加typed调用／计数一致性钩子；但当前生产清单仍在联合算术／service边界预检处拒绝，**该钩子尚未在合格完整D调度中验收**，不据此宣称初始／试移／最终或有效选择已通过。
+
+**消费范围与实际缺口。** 消费者保守支持采样中的零、全一、交替、每三位一位数据复位（按变量位打包）；原发布域及参数未扩大。任意语义复位值仍须后继资格，不能因面积公式只有两个数量特征就忽略它。九个公共VUL原始核及3个诊断经真实PipelineV2物化查询后，均在该复位条件拒绝（例如0x80000035），当前九例原始银行覆盖为0／9。此为消费支持域缺口，不是独立模型误差新失败，也不推断复位之外的相关／共享状态、边界或所有候选已覆盖。未读取正式／保留整图PPA；原始核审计不替代全21候选和每个移动位置。
+
+**实际核验。** 175次价格查询，其中168次从实际原生寄存器物化核对，独立Python逐槽重构特征／面积／预算，最大数值差0；35项拒绝检查覆盖内容／schema／profile／阶段／父链／物理身份、过期placement、伪造features／mask／reset／enable、依赖／重复capture、已知一／多孔洞、实际错误使能及越域目标／复位。包含5位4变量mask0x17与65位64变量高零填充、合法非零复位、56个负输入预算和两次不同实际placement的价格刷新。生产D小图保留original／half／quarter三次有序cost_uncovered，首缺更新为联合算术／service边界；PPA0。原436次12类查询与14项拒绝、实际双Mux绑定、250项旧模型检查和pipeline／reset／valid回归通过。
+
+证据为 `experiments/arithmetic/evidence/step7_native_state_binding_v1/`，manifest SHA256 `c1dc3769b83ba495ac8337d8a8ebccca894b1c05a943d4afa284fd4a72be87f9`。212份C++源／组件／查询／收据快照受保护，便携和external回放通过；小型隔离副本禁读原树、PATH为空、禁止回放子进程时数值复现通过，查询字节篡改拒绝。它不等于无工具重新编译C++。包约3.79MiB，不含对象／EDA大产物；verification.json另绑定实际核验和结清账本前缀。复现入口：`python3 -B -m experiments.arithmetic_dse.model_native_state_binding_evidence verify --folder experiments/arithmetic/evidence/step7_native_state_binding_v1`，可增加--external核对本机原件。原证据／测试不改写。
+
+本轮新增support24、synth／grt／final均0。全历史1589 synth／1567 grt／16 final／6126 support，叶墙钟197923.066499s／CPU447036.48s，9298条entry、pending／active／unsettled均0。当前无后台EDA，无需用户监看。未git add／commit／push。
+
+下一依赖为：先登记实际语义复位、共享／相关状态及外围／联合算术边界的合成后继资格，和已确认的受限整阶段模型统一明确状态／时钟／repair所有权；再完成真实half／quarter后继、全候选／位置和正式目标交集，接通并验收完整D预算／初始放置／整组移动／选择／RTL，最后执行正式九例36条与步骤九。新测量须独立冻结协议／容量／预算；不重跑已经合格且未改域的11类，不复用任何已消费测试作选择。full_D_ready=false、formal_36_complete=false，完整步骤七和688条未关闭。
+
+
+<a id="step7-all-candidate-static-requirements"></a>
+
+### 7.39 九例全部生产候选静态需求、参考前置条件与计费规则冻结（2026-11-05）
+
+用户要求按上一轮路线推进。承接§7.38，落实第一章§7.3–§7.6、§8.4及§10.7，先完成全部候选静态审计与目标／计费前置清单。没有新增拟合、EDA或独立测试选模；原模型、参数／裕量／支持域／独立结论保持。四平台及更宽原始Mul仍后置，当前优先ASAP7九例36条。
+
+**共享生产枚举与组边界。** 从select抽出visitCandidateGraphs，生产与审计共用registry顺序、资格筛选、精确图去重和K=16；原计分／选择政策保持。审计逐候选核对21个有序ID及hash与§7.31旧报告一致，再与当前真实C选择核对。四独立乘法发生点的81种组合另核对前16种，与Python笛卡尔积顺序相同。新增diagnosticSchedulingUnits调用生产Graph导出实际不可拆组，只允许fixed／abstract诊断上下文；模型消费者拒绝未改变，未用诊断价格替代D价格。
+
+**实际范围。** 公共VUL来源和生成C++源的hash复核成立。MAC_32为3候选／9视图，DOT2_16为9／40，UDR_16为1／4，DIVSEL_32为1／11，F1为1／3，F2为1／12，H_M_32为3／12，H_D_32为1／10，H_F1为1／7，共21候选／108去重结构合法视图。视图包括真实C初始／最终、其记录移动轨迹及两端全部单组结构合法邻居；另保留582次非法移动提案。每候选最终C状态投影与实际物化一致。此范围不是未来D搜索轨迹的穷举或正式36条，正式D仍须逐查询验证新位置。
+
+**累积状态缺口。** 同一视图可同时有多项：一般语义复位108／108、共同动态来源101／108、没有旧合成域要求的完整数据链88／108、旧离散宽度／掩码之外26／108、已知零模式之外16／108、超过16通道2／108。实际最多66位声明中间字、18数据通道、490变量状态位及20状态信号，输入变量位最多130。典型24位字mask0xffff00需要低位补零。故后继需要一般复位／相关源／无完整链／所需非齐整位宽及移位掩码的联合资格，不能只补0x80000035或删除生产守卫；这些是静态覆盖缺口，不是新的独立误差失败。
+
+**阶段／真实区间。** 导出节点、FP完整原子出口、数据来源、实际capture、合法组、阶段成员和连接，共140种操作／宽度／连接／capture需求描述。它们用于定义合成语法和消费支持域，不作为140份正式／保留组合图训练样本。当前视图出现34个含参数模板组集合；实际组间依赖证明half／quarter为有序级链，由所有单调级分配得到42组保守区间需求（整图端口／依赖仍可进一步约束）。包括旧失败quarter/low/1/1，不可普通Mul替价或跳过。未出现不连续区间不授权任意新拓扑，Div／FP继续原子。
+
+**正式目标与计费前置冻结。** 从原始参考图提取17类必需标签键：add_u32／33／64、bitor_u5、div_u16／32、eq_u16／32、f32_mul_rne、ite_u5／16／32、mod_u16／32、mul_u16_r32、mul_u32_r32／r64。17是标签种类，不是已准入任务数。D_ref仍须来自同平台grt登记微基准并按原图最长依赖路径映射，H_ref须有同口径联合边界／时钟／I/O分解。没有把模型预测、1500ps诊断目标、803.206085ps状态银行开销或整图后验STA当作参考。沿原公式，数值目标尚未计算／冻结。
+
+新增 `model_asap7_m2_joint_requirements_v1.json`（SHA256 `270e0e448eeabe6a4c9001d36695d364095c910c44fcc47526527ae3be5a98df`），冻结需求、R→S／G／I与并行C++→选择／RTL→正式36条的依赖，以及组合／状态／外围／clock／repair／边界的唯一计费责任。整阶段拥有其组合价格，不与内部节点或已包含的真实区间再加总；时钟／tap／未归属repair只给一个物理所有者，原孤立状态银行包含这些项，联合标签必须剔除或明确协调；外壳不默认零价；无法归属的单元／路径阻断标签验收。该文件明确physical_admission_allowed=false：原始标签归属提取、合成源及完整任务／划分、参考设置、容量／预算／存储准入尚待完成，不能把需求冻结冒称采样准入或数值目标已冻结。
+
+**回归与可复现。** 原436次primitive／14拒绝、175次state／35拒绝与Python差0，250旧模型及pipeline／reset／valid通过。首轮分析因复制路径进入调试身份而在旧图hash核对处失败，收据与费用保留；后继固定虚拟源码标识后，旧图hash及当前生产C核对通过，无物理重测。新证据 `experiments/arithmetic/evidence/step7_d_requirements_v1/` 约0.70MiB，manifest SHA256 `614486071ac1fe87405798be30ea186c66dd23daaa813100c61ca7eec648ca55`。166份冻结源／父条件、63份审计／公共源及48份收费收据逐成员保护；便携／external、禁读原树／PATH空／禁回放子进程的隔离复现和池篡改拒绝均通过。默认回放冻结生产者，不要求未来活动源码保持旧字节；external核对保留产物及版本化二进制，不冒称新EDA／拟合／C++重编译。
+
+复现命令为 `python3 -B -m experiments.arithmetic_dse.model_d_requirements_evidence verify --folder experiments/arithmetic/evidence/step7_d_requirements_v1`，可加--external核对本机原始审计产物。下一步交接见 `mission/asap7-d-requirements-handoff.md`：先做17类参考及联合标签提取的软件前检和具体准入，再采有效参考、冻结数值目标，随后并行状态S／整阶段G／真实区间I与调度消费者C。所有已消费测试继续排除，未改且域匹配的11类不重训。
+
+本轮新增support28（含1次分析失败），synth／grt／final新增0。全历史1589 synth／1567 grt／16 final／6154 support，叶墙钟198008.193435s／CPU447141.80s，9326条entry，pending／active／unsettled均0。无后台EDA，无需用户监看，未git add／commit／push。full_D_ready=false、formal_36_complete=false；完整步骤七及688条仍未关闭。
+
+
+<a id="step7-reference-cohort-admission"></a>
+
+### 7.40 目标参考RTL／标签前检、专用准入与检查点恢复采集（2026-11-06）
+
+用户要求继续推进。承接§7.39，落实第一章§7.3–§7.6、§8.4和§10.7的实际目标参考与唯一计费责任，完成软件前检并启动R参考采集。原已发布模型、系数／裕量／域及所有独立结论保持；本批不作为模型train／validation／test，不将正式／保留整图PPA用于拟合或目标回调。优先范围仍为ASAP7九例36条。
+
+**真实协议与参考源。** 新`model_reference_samples.py`实现17个单原子参考外壳，一一对应§7.39参考键。实际公共VUL外壳核对发现：input／service寄存器有独立使能，内部原生数据由前级valid使能，公共外部输出数据无条件捕获。三类所有者及valid推进分别实现，不将旧显式external-capture消费条件转授公共外壳。safe Div／Mod将零改1的适配器位于launch Q之前，保留非零偶数除数；raw核保持原子。FP沿用完整AtomicFp，37位逻辑结果中恒零divide-by-zero flag在捕获端重建，变量payload36位加valid，Div／FP不内部拆分。
+
+**原始路径与面积归属。** 新只读OpenDB连接／OpenSTA快照保存八类路径：data、native_enable、valid、external_data、external_valid、input_data、input_enable、input_valid。读取器从实际Liberty ff／clock／data pin及逻辑函数解析状态和常量，时钟从真实clock pin反向追踪，归属先于层次名；input_service、arithmetic、native_state、external_state、observer、shared_clock、shared_physical及root_boundary_repair互斥覆盖全部单元。未知功能／顺序逻辑、冲突／遗漏或面积不守恒阻断验收。保留完整Q-D，数据参考止于最后core输出；捕获侧布线／hold／reset后缀和H=T−QD−slack中的时钟／setup／skew／uncertainty分开，输入只扣一次0.2T，不把后缀或旧803.206085ps整体银行开销冒充数据参考。
+
+**前检。** 17源×144周期、19728个完整状态检查通过，包含124个非零偶数除数周期和1343个区分协议周期；通用未映射Yosys几何核对17源，未做技术映射或PPA。旧TRAIN状态数据库仅用于只读STA API／原始归属前检，不充当新数值参考。九项合成负控检查路径差、clock误作D、非有限时钟、缺core输出、负捕获后缀、未知功能、重归属、缺clock和重复物理单元拒绝；另核对输入IO只扣一次，fixture明确不称实测。软件proof为`build/step7-reference-20261106/preflight-v4/software/proof.json`，读取proof为`label-preflight-v1/software/proof.json`；原早期Liberty内部pin方向读取失败及费用保留。
+
+**参考专用准入。** `model_asap7_m2_reference_v1.json`的SHA256为`69839acf53024dcbb5cc78389ea761396067a7679c764a2719f58c8f1f393594`。本批17源固定ABC1500ps／SDC40500ps／IO0.2T，采用预登记统一宽松参考条件，保留违例／失败，不按后验Tmin修改。容量先导为div_u32／f32_mul_rne／add_u64，随后最多4任务×4线程／8GiB，综合300s、grt1200s、每次只读快照120s、任务完整包络2040s；17项及support总叶墙钟包络41880s、CPU167520s、存储4.25GiB，并另保留后续86400s墙钟／172800sCPU／688 synth／688 grt／30GiB。准入范围只含明确17外壳，不转授S／G／I或正式36条；§7.39静态需求文件原physical_admission_allowed=false保持。
+
+**恢复与失败保留。** collection-v1的三个综合均工具成功，读取器随后因OpenDB／STA方括号转义及FP根常量归属停止，无grt。版本化labels_v2只对实际转义建立无碰撞身份，从Liberty纯常量函数识别根驱动，未知功能逻辑仍拒绝；三个实际综合的24条路径、面积／FF数量及名称碰撞负控通过。collection-v2复用同三个综合，三次只读快照后因缺原ORFS `1_synth.json`元数据停止，也无新综合／grt。collection_v3明确继承该原生面积JSON及hash，并通过三个完整暂存目录stage_metrics／面积交叉核对／归属／八路径预检后才启动。所有祖先成功命令和读取／支持失败保持，不伪造新综合命令、退款或覆盖原记录；后继只新增14 synth＋17 grt，唯一源综合总数仍为17。
+
+当前准入为`build/step7-reference-20261106/collection-v3/admission.json`，SHA256 `0fcbb7a1e7a296d9cf2b781dd106ac93e1a5fc313f66928c94a5f3b36ad9df75`；生产者／输入／工具／库／环境及两个停止父链均绑定。服务`vulsim-reference-r3-20261106.service`采用Restart=no、CPUQuota1600%、MemoryMax36GiB。三个先导完整通过，grt分别61.58／75.68／39.08s、采样峰值506.04／557.52／403.55MiB，余下14项自动滚动采集。后台采完或错误结算后退出，无自动重试、拟合、独立模型测试或数值目标冻结；共享Ledger运行中，不将§7.39旧结清数值当当前结算。状态命令及完整恢复链见 `mission/asap7-reference-handoff.md`。
+
+**余下依赖。** 采完先完整回放17项原始报告／工具与付费祖先／单元归属／八路径／SDC／RC／CTS CEC并封存真实停止证据，再按第一章原公式计算D_ref／同口径H_ref并版本化冻结九例数值目标。然后按共同目标登记S一般状态、G受限合成整阶段／联合边界、I真实区间的新独立资格，期间推进C++计费所有权／部分阶段安全界／初始试移最终统一查询；旧测试继续隔离，未改且域匹配的11类不重训。D完整选择／RTL后才正式36条及步骤九。full_D_ready=false、formal_36_complete=false；本批17项不是正式36条，完整步骤七及688条未关闭，未git add／commit／push。
+
+
+<a id="step7-reference-raw-audit"></a>
+
+### 7.41 17项参考完整回放、证据封存与H_ref统一汇总提案（2026-11-06）
+
+§7.40后台在本轮文档同步期间已完成17／17，错误0，正常退出；继续完成完整原始核验。本轮R仍为参考角色，不是模型训练／独立评价或正式36条。固定原ABC1500ps／SDC40500ps／IO0.2T，旧发布及所有已消费测试保持。
+
+**原始回放完成。** 新`model_reference_audit.py`从实际报告重提取34阶段／272路径，核对单元互斥归属、状态FF数量、数据／捕获后缀／时钟与输入I/O分解、原生面积JSON、SDC／RC及完整CTS CEC；从Liberty重建area／FF／pin／函数表。108个实际付费叶命令、4151份原始文件及23个当前／失败祖先manifest核验通过：synth17、grt17、support74；前三个综合确实只执行一次。六个v1／v2读取／续作停止及其成功工具命令保留，不视为需要重跑的物理失败。原始审核输出`build/step7-reference-20261106/audit-check-v1/raw-audit.json`，SHA256 `801ed7e2f37ab3774a8b5f2f530a8d724e4b4beb48bd0e3255fb8219af369d58`。
+
+17个参考在40500ps设置下setup均非负、时序覆盖完整；ite_u16的grt hold为−0.321049ps，其余grt hold非负，多个点仍低于5ps复核带。参考验收限于setup标签及边界分解有效，不把该hold负值改写为通过或称多角签核，不据此调目标、退款或重采。
+
+**便携及完整external证据。** `experiments/arithmetic/evidence/step7_reference_v1/`约6.4MiB；manifest SHA256 `276f8a40cbf4876e0a871a76a7f3691a80bbc0be3d86ffdf88757891cd445979`。源池224份、原始池1278份、收据池359份，重算34阶段原始路径／面积／FF／SDC／RC和原始DAG最长路径，核对108个付费叶。便携回放不重跑EDA或完整CTS CEC；完整external另外重核工具／Liberty／全部原始与完整CTS CEC。禁读原`/home/zyrv/`树、PATH空、禁回放子进程的隔离副本通过，raw池篡改拒绝。
+
+首次external因冻结生产者树下无活账本而失败；后继`model_reference_evidence_v2.py`只显式绑定真实Ledger路径后，完整external通过。原v1包及失败收据／费用不改；未重采物理数据。补充核验收据、v2源hash与结清前缀在verification.json。复现入口见证据README；默认`model_reference_evidence verify`，完整本机用`model_reference_evidence_v2 --external`，隔离／篡改用`model_reference_evidence isolated`。
+
+**目标提案，尚未冻结。** 原始DAG上用17类grt数据标签精确计算九例D_ref，保留关键节点路径、L和参考身份。现行§8.4／target_rules_v2只规定H_ref应含不重叠的边界／时钟／I/O等分量，未明确一个案例有多标签时的汇总规则。按用户要求以grilling提交统一规则提案：各案例在其必需参考键中取data路径joint_reference_overhead（捕获后缀＋时钟／setup／skew／uncertainty）的最大值；使能／valid／input／external完整路径另报参考上下文最低周期，不加进D_ref、不回调目标；不额外新增数值reserve。保留原ceil(H_ref＋1.5D_ref/L)。
+
+可审阅的`target-proposal.json`给出全部九例：MAC_32／DOT2_16／UDR_16／DIVSEL_32／F1／F2／H_M_32／H_D_32／H_F1的提案周期分别1431／1119／4528／11913／3141／4162／1253／14897／3385ps，全部由未舍入参考计算。此处仅为待确认研究口径的提案，numeric_targets_frozen=false，不调用生产freeze_target_batch、不授予新周期模型资格。原子UDR等可能在既定L及公式下不可行，保留结果，不逐例放宽。确认汇总规则后才版本化冻结正式目标并启动依赖它的S／G／I新资格；等待期间不重读已消费测试调参。
+
+**资源与交接。** 108个物理／快照叶墙钟合计968.631850s、CPU1333.54s，另有前检／原始审计／封存费用。相对§7.39全局检查点，本轮共新增17 synth／17 grt／95 support（含软件／读取／external真实失败），全历史1606 synth／1584 grt／16 final／6249 support、9455 entries，叶墙钟199046.424489s／CPU448543.44s，pending／active／unsettled均0。后续见 `mission/asap7-reference-handoff.md`。无后台EDA，无需用户监看；未git add／commit／push。完整D／正式36条、全步骤七及688条仍未完成。
+
+
+<a id="step7-m2-numerical-target-freeze"></a>
+
+### 7.42 用户确认分离H_ref口径、生产公式数值冻结与后继目标入口（2026-11-06）
+
+用户明确回复“采用上述分离口径”。落实第一章§8.4／§9.2／§10.7，承接§7.41完整参考核验，不改原始参考、原提案、既有模型／测试或失败。新`model_asap7_m2_target_policy_v1.json`登记用户决定及准确范围；每案例H_ref为必需data路径joint overhead最大值，其他enable／valid／input／external完整路径另报参考上下文最低周期诊断，不并入D_ref或回调目标，额外reserve为0，原ceil(H_ref＋1.5D_ref/L)和L规则保持。
+
+新`model_m2_targets.py`调用真实`contracts.freeze_target_batch`／`target_period_ps`，从完整原始case定义核对参考图／依赖／标签和固定L，按未舍入有理数计算并逐例核对用户确认提案。MAC_32／DOT2_16／UDR_16／DIVSEL_32／F1／F2／H_M_32／H_D_32／H_F1正式周期分别为1431／1119／4528／11913／3141／4162／1253／14897／3385ps。冻结同时保存原始case hash、参考源manifest、关键路径、H最大值来源、精确数据预算和rho_ref；ABC1500ps／IO0.2T保持，不因后续采集／模型或正式PPA重算。
+
+活动`model_asap7_m2_targets_v1.json`的SHA256为`6dd49589bae6e6be0be8d35bdd16259064a1f84a2910129249421c4bc458763e`；生产batch hash为`211307811c67998d3f0cddd08eafe24f4fc6c96986e495375c96148ba20ebe71`。新证据`experiments/arithmetic/evidence/step7_m2_targets_v1/`约0.35MiB，manifest SHA256 `708decbc3b98714879e516d2ff2950701265e647ea5184ebe7324735e6b33576`。冻结生产者重建九例定义及原公式结果一致；完整external核对活动目标与参考父链通过。禁读原`/home/zyrv/`树／PATH空／禁回放子进程的隔离副本通过，MAC_32被篡改1ps时拒绝；无EDA或重拟合。
+
+后继`model_m2_joint_targets.py`生成`model_asap7_m2_joint_requirements_v2.json`（SHA256 `49d8578a2c793b631e221ac8ff6fdd84bd6448e3146fe406055f3ba4813ef3db`），显式继承不变v1需求和本次目标／证据hash。R参考与目标工作完成，S／G／I绑定全部九个精确目标上下文；采样时钟网格、完整合成源／train／validation／锁定test、原始归属／协议前检和具体容量／预算尚待登记。参考归属资格只覆盖17个原子外壳；孤立state总面积不得直接与联合价格叠加，共享clock／physical／repair仍一次计费；真实公共external无条件捕获与native内部使能分开。
+
+当前numerical_targets_frozen=true，model_targets_qualified=false，physical_admission_allowed=false，full_D_ready=false，formal_36_complete=false。数值目标冻结不授予现有组件的新周期或完整图资格；原子UDR等在既定L下可以不可行，不逐例改公式／周期。接下来推进S一般状态、G受限合成整阶段／联合边界、I真实half／quarter区间的合成源前检和完整采样准入，期间完善C++计费／统一查询；旧已消费测试仍隔离，未改且域匹配的11类不重训。
+
+复现命令见目标证据README：`model_m2_targets verify`默认只消费冻结源与输入，可加--external；`model_m2_targets isolated`执行隔离与篡改。本轮新增support5、synth／grt／final0、PPA0；全历史1606 synth／1584 grt／16 final／6254 support，9460 entries，叶墙钟199046.901518s／CPU448543.74s，pending／active／unsettled均0。无后台EDA，未git add／commit／push；完整步骤七及688条未关闭。
+
+
+<a id="step7-general-state-fitting-admission"></a>
+
+### 7.43 一般状态S合成源、真实协议／存储前检与拟合侧采集准入（2026-11-06）
+
+用户要求继续推进。承接§7.42，落实第一章§7／§8.4／§10.7，先完成S一般状态与外围状态的可执行源、前检、完整划分及资源准入。原参考、正式目标、旧模型／参数／独立结论保持；G受限整阶段／联合边界、I真实区间及完整D尚未放行。
+
+**协议与完整清单。** `model_asap7_general_state_v2.json`（SHA256 `9aaa9c8503ee8e84b34ab41ff08f52e817e4f6fcf43bb868b9b12e96b79895b6`）登记24个独立合成源，各采九个冻结周期，共train108／validation54／locked test54。覆盖30种声明字宽至66位、变量字至64位、18通道、130个service输入位、一般复位、零孔洞／高低补零及无完整链生存期。共享注册根上的不同两输入XOR／排列／反相提供相关来源，adapter面积单列；其资格不推及任意算术相关性，后者仍需G。每个源所有目标／阶段同split，24个语义签名不同；独立性为已见宽度的新源上下文，不称未见位宽。
+
+实际公共VUL输入valid也由service写使能控制、停写保持；native valid逐拍推进，native数据按前级valid使能，external数据／valid无条件捕获。源分别实现独立／共享写使能及连续input-valid三种模式；九例真实公共外壳见证核对通过。显式观察并保留每个service／native／external状态位，observer面积排除；组合adapter、state三所有者及shared clock／physical／repair互斥归属。原native总价只作固定诊断基线，不作为联合分项；不得与G重复收费。九类路径分别保存native／external／input及birth数据，birth adapter路径仅诊断，不改D_ref或state纯控制边界定义。
+
+**软件与SDC前检。** 最终`preflight-v6/software/proof.json`完成24源×128周期／93696完整状态检查、544个service valid保持区分周期、18573个valid为0的external更新检查；故意加错valid门控的实际RTL被拒绝，通用未映射状态几何成立。每个split都覆盖30种宽度、18通道及无完整链。首次未准入软件检查的容量、外部区分覆盖及历史目录问题均保留收据；它们不是独立物理标签或PPA。
+
+首轮collection-v1四个综合工具命令全部成功、grt0；两份14897ps的SDC将0.2T写为2979.4001ps，超过旧仅十进制舍入界约0.0001ps，另两份快照缺native_valid。进一步核验确认未使用的导出状态口会被裁剪／置常量、相关位可共享，原名字与保留FF数量假设不足；四份作为诊断及费用保留，不拟合、不冒充新源检查点。新v2改为不同两输入相关位和全状态观察／keep，原v1源／准入原字节保留；源已改变，当前新综合有独立身份，并未重测原发布组件或R参考。
+
+新`sdc_storage_v3.py`仅为IO延迟增加精确IEEE binary32秒存储再十进制write_sdc舍入的核验，原严格语法／clock／transition／uncertainty／driver／load不变，未引入相对容差或改0.2T。四份实际SDC和14项负控通过；超出精确存储差、正延迟归零、非有限IO、改时钟／uncertainty、时序例外与注入均拒绝。旧`sdc.py`和旧证据不改，新验证器只在当前后继显式绑定。准入守卫按真实叶调用的显式context签名核验，拒绝独立test／外来任务，pilot后继Ledger父类路由和hash身份成立；初次负控漏传context的支持失败保持，无额外物理预约。
+
+**预算／容量／后台。** 当前`collection-v2/admission.json`的SHA256为`55a4b0a565c255bd22e1e0af64a35c3b57c75af4bd048df81161185d500946bc`，绑定完整源／目标／角色／工具／库、软件及SDC proof、原停止父链和四份诊断manifest。全216项独立新综合／新grt，每任务environment60＋synth120＋初始快照120＋专用synth快照60＋grt180＋专用grt快照60＝600s；含support7200s的总包络136800s墙钟／547200sCPU／54GiB，另保留后续86400s墙钟／172800sCPU／688 synth／688 grt／30GiB，原共享Ledger下准入通过，无清零或退款。
+
+train-04／05／10在1119／14897ps的六个容量点全部通过完整两阶段、FF／归属／九路径／SDC／RC／CTS CEC；grt51.751–73.570s，采样峰值427.496–569.820MiB，native实际FF分别542／233／781，与声明一致。服务`vulsim-general-state-r2-20261106.service`已按最多4任务×4线程／8GiB滚动采162拟合侧任务，54独立锁定；Restart=no、CPUQuota1600%、MemoryMax36GiB。采完停止，不自动拟合／测试／发布；错误停止新任务并结算已运行任务。容量仅授予明确24源／九目标，不转授G／I／任意实际银行或正式36条。
+
+状态与交接见 `mission/asap7-general-state-handoff.md`：`python3 -B -m experiments.arithmetic_dse.model_general_state_collection_v2 status --folder build/step7-general-state-20261106/collection-v2`。采完须完整回放后按预登记分项NNLS及原面积20%／50%门槛、边界50ps reserve拟合／验证，参数／支持域／边界冻结并字节复现后另准入54项独立测试。软件预检及原始路径有效不等于模型质量通过；model_targets_qualified=false、full_D_ready=false、formal_36_complete=false。运行中不宣称全局结清；未git add／commit／push，完整步骤七及688条未关闭。
+
+<a id="step7-general-state-validation-freeze"></a>
+
+### 7.44 一般状态S完整原始回放、验证冻结与新独立测试准入（2026-11-06）
+
+用户确认采集完成并要求继续。承接§7.43，落实第一章§7／§8.4／§10.7；原`collection-v2`的108 train与54 validation全部完成、错误0，原驱动中的54 test锁保持。以下独立测试由新准入承接；旧模型、参考、九例正式目标、已消费测试及失败／费用均不改写。本节的54项是S组件独立样本，不是九例ABCD正式36条。
+
+**原始数据与冻结前模型选择。** `fitting-check-v1/fitting-dataset.json`完整回放18个源／162任务／324阶段／2916路径，核验972付费叶、34772文件hash；重生成RTL／特征，逐项核验真实Liberty面积／FF／pin／函数、唯一所有权及实际状态FF、SDC存储v3、RC、原生面积JSON、完整CTS CEC和收费祖先。原四个失败综合诊断另外核验／保留，数值不继承；提取时原54独立运行目录不存在。回放PPA调用0，不重采有效train／validation。
+
+执行定义`model_asap7_general_state_fit_v1.json`与拟合源在提取前登记／复制，SHA256为`79141ad6d46c31b33a54de614c1fb0e7169fc2cc10a875398abf1d2acdc7c047`。三候选为按所有者的bits／signals NNLS、typed-state NNLS及逐精确SDC的typed-state NNLS；只用train拟合，无截距和后验面积裕量。每物理阶段整组选一个三所有者候选，先检查各所有者原中位20%／P95 50%门槛，再按归一化总绝对误差、序列化大小和稳定名选择。synth及grt均选择`per_owner_NNLS_typed_state`，使用data_bits、data_signals、valid_bits、enable_domains、reset_one_bits。逐精确周期的面积明细只报告，不事后改作独立门槛。
+
+| 阶段 | 功能状态／控制面积所有者 | 验证中位误差 | 验证P95误差 |
+| --- | --- | ---: | ---: |
+| synth | input_service | 0.08164% | 0.20230% |
+| synth | native_state | 0.22637% | 1.62826% |
+| synth | external_state | 0.02105% | 0.03978% |
+| grt | input_service | 0.23707% | 0.56572% |
+| grt | native_state | 0.17054% | 1.75095% |
+| grt | external_state | 0.04248% | 0.16485% |
+
+这些误差只覆盖三个互斥所有者的功能状态／控制面积，不包括shared_clock／shared_physical／root_boundary_repair，亦非整阶段PPA误差。原native总价系数保持，仅在immutable-baseline-diagnostic.json中对新源作域外诊断，不参与选择或联合分项叠加。任意算术来源相关性仍需G资格，不由两输入XOR合成相关源转授。
+
+每阶段／九个精确周期／八个非birth路径类分别冻结边界`max(0,max train/validation H) + max train/validation delay + 50ps`，保存独立最大值的各自见证，输入IO仅扣一次。birth路径只诊断，不能作为纯状态或任意算术联合边界价格。独立要求对应最大H＋delay不超过冻结值，禁止看测试加reserve。面积及边界只绑定§7.43的明确源域、ABC1500ps、九个精确SDC和IO0.2T，不插值或转授完整D。
+
+**字节复现与独立门禁。** `fit-v1`／`fit-v2`重复拟合后，candidate.json、validation.json、immutable-baseline-diagnostic.json及selection-freeze.json四文件逐字节一致，proof为`fit-byte-proof.json`。拟合数据SHA256 `d9be0843352f110aa6e37e013423051fc49e21c7e42f850ecfcf5bacd05cb4c5`，candidate SHA256 `5300b9a7076a9bc583ba5f1bc651cd65904bfaf1dbcb71042576774a85fb89da`，selection-freeze SHA256 `16dba85ab9237c6be1a7d8416f00d2571e03d4de32808fb37158fd297696a834`。该候选仍为awaiting_independent_test、production_price_binding_qualified=false；字节复现不是完整便携发布验收。
+
+`model_general_state_test.py`在独立测试前冻结完整准入／提取／一次性评价实现。`independent-v1/admission.json` SHA256 `16f9d0cfe72f5e09c984ddfe6fce019b83c495139f4d37887d9ab488fd92b745`绑定50份生产／拟合／评价源、原拟合准入、数据、candidate和selection-freeze。仅放行原六个test源×九周期；错误split、错周期任务和改变candidate均拒绝，逐付费叶Ledger绑定selection-freeze身份，守卫没有新增物理预约。日志与proof保留于`freeze-and-test-admission-v1`及`independent-lock-guards.json`。
+
+**预算、容量与交接。** 独立准入54个新synth／54个新grt及support，墙钟包络36000s、CPU144000s、存储13.5GiB，另保留后续86400s墙钟／172800sCPU／688 synth／688 grt／30GiB；旧费用不退款，实际共用原Ledger。启动时约46GiB可用内存／163GiB可用磁盘。自身容量点test-04-t0／t8在1119／14897ps完整通过两阶段／FF／归属／九路径／SDC／RC／CTS CEC，采样峰值513.305／511.449MiB；当前已自动扩至4任务并行。服务为`vulsim-general-state-independent-20261106.service`，每任务4线程／8GiB，总CPUQuota1600%、MemoryMax36GiB、TasksMax512、Restart=no；无自动重试／评价／拟合／发布，采完停止，错误停止新任务并结算已有任务。
+
+独立启动前结清前缀为1772 synth／1746 grt／16 final／6932 support、10466 entries，叶墙钟211160.546305s／CPU471438.80s、pending0；运行中的独立费用在此后累加，不能把此前数字写作实时结清。监看改用`python3 -B -m experiments.arithmetic_dse.model_general_state_test status --folder build/step7-general-state-20261106/independent-v1`，详见[一般状态S交接](asap7-general-state-handoff.md)。旧§7.43的“拟合侧采集中／test锁定”为当时检查点，不再由旧服务继续。
+
+**采完后的依赖。** 完整回放54任务／108阶段／972路径与收费祖先后，严格按冻结参数执行一次性评价，逐所有者／阶段保持原面积中位20%／P95 50%，逐精确周期／非birth路径保持边界全覆盖。评价写入test-consumed.json，测试永久排除后续拟合／验证／算法／裕量／域选择。只有全部grt门槛通过才发布有据范围，再做生产所有权／实际查询绑定和便携／external／隔离／篡改核验。G受限合成整阶段／联合边界、I真实half／quarter区间、C++完整初始／移动／最终查询及预算、D选择／RTL、正式36条和步骤九仍待；full_D_ready=false、formal_36_complete=false，完整步骤七及688条未关闭，未git add／commit／push。
+
+<a id="step7-general-state-independent-verdict"></a>
+
+### 7.45 一般状态S首轮新独立评价及失败封存（2026-11-06）
+
+用户确认采完并要求继续。承接§7.44，原54独立任务全部完成、错误0；完整回放54任务／108阶段／972路径，324收费叶与11658文件hash通过，PPA0。`model_general_state_test`按原selection-freeze及candidate执行一次性评价，写入test-consumed.json，不重新拟合、选参数或改reserve。独立数据SHA256为`8f1bce271e689159d90db0e0648eb2cd9a1750cf4fdfeb3a0359dbf13c0b7444`；原candidate／selection／九目标字节保持。
+
+| 阶段 | 功能状态／控制面积所有者 | 独立中位误差 | 独立P95误差 |
+| --- | --- | ---: | ---: |
+| synth | input_service | 0.08726% | 0.30311% |
+| synth | native_state | 0.29239% | 1.62991% |
+| synth | external_state | 0.03259% | 0.04335% |
+| grt | input_service | 0.32954% | 1.21461% |
+| grt | native_state | 0.28542% | 1.71838% |
+| grt | external_state | 0.02239% | 0.16256% |
+
+三个所有者分别通过原面积中位20%／P95 50%门槛。这是互斥功能状态／控制面积，不包含shared clock／physical／root repair，不是整阶段PPA误差。synth边界72／72通过，最小余量49.259109ps；grt边界69／72，最小余量−60.583038ps，故S整体失败、eligible_deployable_stages为空、发布为空，不能据面积分项合格改写整体结论。
+
+| grt失败上下文 | 冻结上界ps | 独立所需H＋delay ps | 超界ps |
+| --- | ---: | ---: | ---: |
+| 1431ps native_enable | 793.935883 | 808.473206 | 14.537323 |
+| 4528ps native_valid | 498.802216 | 559.385254 | 60.583038 |
+| 11913ps native_valid | 486.033676 | 488.299805 | 2.266129 |
+
+三个见证均为test-04的控制网。4528ps主要是控制Q-D从训练最大264.899170ps变为375.223679ps，而H仅比冻结H最大值多约0.259ps；原始报告中valid网反相／buffer分支不同。相近的18通道大银行已在validation中存在（第二级476位，test为475位），所以不能把差异简化为缺少大位宽样本、时钟数值错误或单一总状态位数不足。当前证据支持补显式控制负载／分支及新上下文资格，不证明某种后继模型必然通过。
+
+完整原始归档保留216银行／432阶段／3888路径和四份旧失败综合诊断，1308收费收据；便携原始回放、实际Liberty／工具／完整已存CTS CEC的external、禁原树／PATH空／禁子进程隔离与raw／verdict／publication篡改负控均通过。约106MiB全原始包按存储分层移至`build/step7-general-state-20261106/failure-raw-archive-v1`，原manifest与全部内容字节保持，迁移收据保留；没有把大型报告包放入Git交付范围。另立约1.54MiB的[数值封存v2](../experiments/arithmetic/evidence/step7_general_state_failure_v2/README.md)，其便携模式重算固定特征、验证、边界与独立结论，完整原始物理回放由external读取大归档，二者范围明确分开。新模块分别为`model_general_state_evidence`和`model_general_state_summary`，原生产／拟合／评价源不改。
+
+两次计费上下文前置拒绝发生在物理／付费叶预约之前，随后按原Ledger字段执行原始核验；另一次支持守卫命令误用runpy模块入口，付费失败保留，改用路径入口后通过，无新增物理调用或修改模型。独立测试永久排除后续拟合／验证／算法／裕量／域选择。用户按grilling明确选择“保留面积参数，只补控制边界后继”，由§7.46另立完整协议；不降低门槛，不用本轮失败值回调reserve，不重跑首轮有效162项拟合测量。full_D_ready=false、formal_36_complete=false，未git add／commit／push。
+
+<a id="step7-general-control-fitting-admission"></a>
+
+### 7.46 保留面积参数的控制边界后继、完整预登记与拟合侧准入（2026-11-06）
+
+落实用户确认，承接§7.45和第一章§7／§8.4／§10.7。`model_asap7_general_control_v1.json` SHA256为`51cbbfc436de2c689907374f7b02d2ce588bf76e4ad3d4ed99490b5f38bd7193`，绑定原candidate／selection／162拟合测量／独立verdict与consumption。仅native_enable／native_valid两类控制路径允许另建模型；三个面积模型原系数及其余六类非birth边界的精确周期值均保持。配置中的继承面积候选不启用，新area_refit_permitted=false与明确控制候选决定本后继行为；最终仍同时检查各面积分项及全部八类非birth边界。原S整体失败及所有旧模型／测试保持。
+
+**源、划分与软件前检。** 新`model_general_control_samples.py`登记24个合成源×九个原冻结周期，train108／validation54／locked test54，同源全部目标／阶段同split。新固定盐值生成reset／不同两输入相关来源和每级寿命／使能负载分布，所有规范化语义签名与原24源分离；保留30种声明宽度至66位、18通道、一般复位、零孔洞／补零、无完整链及三种service协议。不是复制正式／保留整图；独立性声明为已暴露宽度上的新控制负载／复位／来源／寿命上下文，不宣称未见位宽或任意算术相关性。
+
+`regression/arithmetic_general_control.py`的真实RTL前检为24×128周期／86784状态检查，含544个service-valid保持区分周期、15867次invalid时external无条件捕获检查及实际错误external门控RTL负控，通用未映射FF几何及各split全部30宽度通过。新训练最大使能位负载552、最大native data位779；这些是明确源几何，不是任意银行容量或联合G资格。
+
+**前瞻拟合定义。** 后继拟合侧复用原162个有效train／validation，并补新162项，原54 consumed test绝不进入算法比较、拟合或校正。预登记的两个控制路径候选为：跨九个已登记周期的train最大值基线、静态控制负载NNLS、带九个精确周期指示的NNLS。静态特征包括使能位负载及sqrt／log、词分支数、valid目标数、原生状态／复位one位、输入／external位数，不含映射单元、后端标签、源／split ID。NNLS上界校正只取train最大正残差，另加原50ps工程reserve；每阶段整组选两路径候选，先要求全部旧／新validation行覆盖，再按平均预测上界、序列化大小和登记顺序选择。此为采集前定义，不是在旧测试上试验新算法；具体拟合实现及字节复现仍须后续执行。三个面积模型不重训，六类保留边界不暗改，它们亦须通过后继验证和新独立测试。
+
+**预算、守卫与后台。** 新`collection-v1/admission.json` SHA256为`14cc02d03991d5d8d83f080c865c7a51b350d34e373be03fba50976c3e36be00`，绑定46份源、软件proof、工具／库、原面积冻结副本及全部任务／目标／角色。全216项新synth／grt及support7200s预留136800s墙钟／547200sCPU／54GiB，另保留后续86400s墙钟／172800sCPU／688 synth／688 grt／30GiB；复用原162测量不计伪造新命令，共用原Ledger、旧失败不退款。锁定新test、错周期、外来任务和改面积副本均拒绝，真实pilot的Ledger父类路由／身份核验通过，无额外物理预约。
+
+服务`vulsim-general-control-20261106.service`按最多4任务×4线程／每任务8GiB，CPUQuota1600%、MemoryMax36GiB、TasksMax512、Restart=no，只采108 train／54 validation；四个容量点为train-04／10在1119／14897ps，完整两阶段／FF／互斥归属／九路径／SDC／RC／CTS CEC通过后才派发其余任务。采完停止，不自动拟合／测试／发布；错误停止新派发并结算在途任务，无自动重试。具体启动及容量检查点另附本节末，实时命令为`python3 -B -m experiments.arithmetic_dse.model_general_control_collection status --folder build/step7-general-control-20261106/collection-v1`，交接见[一般状态S入口](asap7-general-state-handoff.md)。
+
+采完须回放新增原始／收费祖先，复核原面积及六类不变边界的验证，再按本协议拟合两类控制边界、原门槛验证、参数／域冻结和字节复现，随后另准入原54项新test。仍需一次性检查全部面积与八类非birth边界，合格后再发布S／做生产绑定。G受限整阶段／联合边界、I真实区间、C++完整初始／移动／最终所有权／查询及预算、D选择／RTL、正式36条和步骤九仍待，full_D_ready=false、formal_36_complete=false；完整步骤七及688条未关闭，未git add／commit／push。
+
+13:42:33启动交接核验：四个容量点全部通过完整两阶段／FF／唯一归属／九路径／SDC存储／RC／CTS CEC，grt75.318–86.999s、采样峰值483.020–521.535MiB。队列已自动补位：train完成4／108、4项grt并行，validation0／54，54新test锁定且无运行目录，错误0；实际主机四个OpenROAD进程成立。服务active/running，当前内存约1.75GiB、峰值2.39GiB；启动可用内存约46GiB、磁盘157GiB。小型数值封存v2便携／完整external／隔离／篡改通过，1612045字节。新服务启动前结清前缀1826 synth／1800 grt／16 final／7163 support、10805 entries，叶墙钟215597.671158s／CPU479271.80s、pending／active／unsettled均0；此后采集费用实时累加，不将此前数字当作运行中全局结清。
+
+<a id="step7-general-control-validation-freeze"></a>
+
+### 7.47 控制边界后继完整回放、原门槛验证冻结与新独立准入（2026-11-06）
+
+用户确认采完并要求继续。承接§7.46，新108 train／54 validation全部完成、错误0，54新test仍未启动；原拟合队列正常停止，pending／active／unsettled均0。原§7.45的54项已消费测试、失败结论及全部旧参数／发布保持，不由本节验证通过追改旧结论。
+
+**全量原始回放。** 新`model_general_control_fit.py`与执行定义`model_asap7_general_control_fit_v1.json`在提取前快照登记。复用原162个train／validation并完整核对其原始标签／身份，加入新162个任务，合计36个拟合侧语义源／324份测量／648阶段／5832路径；1944付费叶、69199文件hash核验通过，PPA0。原始RTL／语义特征重生成、真实Liberty面积／FF／pin／函数、状态几何／互斥归属、SDC存储v3／RC、原生面积JSON、完整已存CTS CEC及计费祖先均成立；全部48个原／新源的语义签名分离，所有同源时钟／阶段同split。数据SHA256为`cda58a769d49dd1ea61a957cedadcf9a79d776ebfb64bcfa572712c08a243500`，旧已消费测试及新锁定test的物理标签未进入拟合／选择。
+
+**保留参数与控制模型验证。** 三个面积模型原系数逐项相同，六类非birth边界在九个精确周期的完整参数亦逐项相同。面积在原验证、新验证及合并验证中分别通过原中位20%／P95 50%；六类保留边界在合并验证全覆盖，synth／grt最小余量均50ps。下表只报告新增54项validation的功能状态／控制面积误差，不含shared clock／physical／root repair，亦非整阶段PPA误差。
+
+| 阶段 | 功能状态／控制面积所有者 | 新验证中位误差 | 新验证P95误差 |
+| --- | --- | ---: | ---: |
+| synth | input_service | 0.06766% | 0.28753% |
+| synth | native_state | 0.48684% | 1.10988% |
+| synth | external_state | 0.03289% | 0.09068% |
+| grt | input_service | 0.20269% | 2.96235% |
+| grt | native_state | 0.56409% | 1.71520% |
+| grt | external_state | 0.04634% | 0.24574% |
+
+只为native_enable／native_valid按预登记比较三候选，train-only拟合及最大正残差校正，不将validation用于系数／上界残差校正。每阶段整组选两路径模型，所有旧／新validation覆盖后按平均预测上界、序列化大小和登记顺序选择。synth选择`train_NNLS_semantic_control_load`，两控制路径最小验证余量40.969143ps；grt选择`train_NNLS_semantic_control_load_exact_clock`，最小余量97.135391ps。grt平均预测控制上界641.948721ps，预登记跨周期最大值基线为718.770218ps；这是验证侧模型选择量，不是独立泛化或整图收益。九个目标／ABC1500ps／IO0.2T、原50ps工程reserve及全部门槛保持，不插值、不转授任意算术相关性／G联合边界。
+
+**冻结／复现与条件查询守卫。** `fit-v1`／`fit-v2`重复拟合的candidate.json、validation.json、selection-freeze.json三文件逐字节一致。candidate SHA256 `ed506072834b9744ff8a817b1e071a92d71e3ee080db6edc48781e2723696a17`，selection-freeze SHA256 `b27fced59c3a61b2fbcebd37cc52346c4fa2f523305b56acaaa9680e059852e3`。候选仍为awaiting_independent_test、production_price_binding_qualified=false、full_D_ready=false；验证／复现不等于S已发布。
+
+`regression/arithmetic_general_control_fit.py`核对1728次真实验证行上的冻结独立查询，面积和六类边界保持；错误周期／负特征／非有限特征及将validation／test放入校正均拒绝。另用反例证明独立评价检查每个样本自身的条件上界：所需时延更小的样本也可能因预测上界更低而超界，不能只检查该类最大所需时延的样本。该守卫只读拟合侧标签，不是独立评价。
+
+**新独立准入与交接。** `model_general_control_test.py`另立提取／一次性评价及驱动，在测试前绑定实现与53份源。`independent-v1/admission.json` SHA256 `f7dbf878b7041a17f04dc9a08850b783ab303a930657ef54e00e397007c25265`绑定原新54任务、数据、candidate和selection-freeze。错角色／错周期／错线程数／改candidate均拒绝，实际pilot Ledger路由与逐叶selection-freeze身份成立，守卫无新增物理预约。
+
+服务`vulsim-general-control-independent-20261106.service`先核验自身test-04-t0／t8（1119／14897ps）两个完整容量点，再最多4任务×4线程／每任务8GiB，总CPUQuota1600%、MemoryMax36GiB、TasksMax512、Restart=no。54新synth／54新grt加support的包络为36000s墙钟／144000sCPU／13.5GiB，另保留后续86400s墙钟／172800sCPU／688 synth／688 grt／30GiB；启动可用内存约45GiB、磁盘164GiB。无自动评价／拟合／发布／重试，采完停止，错误停止新派发并结算在途任务；具体容量／启动检查点附后，监看改用`python3 -B -m experiments.arithmetic_dse.model_general_control_test status --folder build/step7-general-control-20261106/independent-v1`，见[一般状态S交接](asap7-general-state-handoff.md)。
+
+启动前结清前缀为1988 synth／1962 grt／16 final／7819 support、11785 entries，叶墙钟227555.105971s／CPU501500.95s、pending／active／unsettled均0；运行中新增费用继续按原Ledger累加，不宣称实时全局结清。采完须完整回放54任务／108阶段／972路径与收费祖先，再严格按冻结上界函数一次性评价：每个独立样本、每个精确周期、八类非birth路径均须被覆盖，三个面积分项仍过原20%／50%。评价写test-consumed.json，新标签永久排除后续拟合／验证／算法／裕量／域选择；只有全部grt门槛通过才发布有据S范围并另做生产绑定及发布核验。G／I、C++完整所有权／初始移动最终统一查询／预算、D选择／RTL、正式36条及步骤九仍待；full_D_ready=false、formal_36_complete=false，完整步骤七及688条未关闭，未git add／commit／push。
+
+15:00:51启动交接核验：两个自身独立容量点test-04-t0／t8完整通过两阶段／FF／唯一归属／九路径／SDC存储／RC／CTS CEC，进程树采样峰值486.559／485.914MiB；已自动补位到4任务并行，完成15／54、4在途、35未启动，错误0。服务active/running、当前内存约2.17GiB、峰值2.57GiB；配置及53份源／快照、三份重复拟合产物哈希再次匹配，文档入口与Git空白检查通过。这是容量与采集进度检查点，不提前评价独立标签；后续由用户监看，采完再完整核验／一次性评价。
+
+<a id="step7-general-state-qualified-publication"></a>
+
+### 7.48 一般状态S新独立通过、限定grt组件发布与训练复现（2026-11-06）
+
+用户确认采完并要求查看。承接§7.47，原新54独立全部完成、错误0，任务停止且pending／active／unsettled均0。完整原始回放54任务／108阶段／972路径、324收费叶及11658文件hash通过；按原selection-freeze和candidate执行一次性评价，synth／grt均通过全部面积与边界门槛，不重拟合、不改范围／目标／reserve。独立数据SHA256为`7e1f3aac17a4b45f93f8c0d45c8266f6e30b72c4ff4492e84c73bf462aa37ffb`，verdict SHA256为`c4ea9e209ccc5ae8bbb73edbe8829b9694bc810cf0a92b0d1ac6e3ada9509f62`；test-consumed.json写入后永久排除本54项后续拟合／验证／算法／裕量／域选择。§7.45旧54项独立失败、全部旧组件及冻结字节保持。
+
+| 阶段 | 功能状态／控制面积所有者 | 新独立中位误差 | 新独立P95误差 |
+| --- | --- | ---: | ---: |
+| synth | input_service | 0.09759% | 0.12805% |
+| synth | native_state | 0.37001% | 0.88684% |
+| synth | external_state | 0.05966% | 0.06477% |
+| grt | input_service | 0.33944% | 1.09599% |
+| grt | native_state | 0.48657% | 0.90230% |
+| grt | external_state | 0.04684% | 0.17216% |
+
+三个面积所有者各自通过原中位20%／P95 50%。八类非birth边界在九精确周期全部通过，synth／grt均72／72；synth最小覆盖余量44.471734ps，grt全体最小37.372788ps（4162ps external_data，为保留边界），两类后继控制路径的grt最小余量68.873866ps。后者不等于目标setup slack；评价严格逐样本比较其冻结条件上界，没有仅取最大所需时延样本。原三面积模型、六类边界完整参数及九目标／ABC1500ps／IO0.2T／50ps工程reserve均不变。
+
+**发布范围。** [step7_general_state_v1](../experiments/arithmetic/evidence/step7_general_state_v1/README.md)中的`asap7-general-state.json`为`arithmetic-general-state-qualified-v1`，仅发布ASAP7 grt三个互斥所有者的功能状态／控制面积、六类保留精确周期边界及native_enable／native_valid冻结上界函数；模型SHA256为`1b61a68d80b704532ff38483a034ec2c03de921448095deb6acdcbbb00be383d`。覆盖九个已登记精确周期、一般复位／已知零位／部分寿命／service使能与无条件external捕获的合成原生银行。相关来源只限登记的两输入XOR／排列／反相，不能转授任意算术相关性或联合G资格。面积排除shared clock／physical／root repair、adapter和observer，未来与G必须明确一次计费；原12类primitive与旧native总价不能重复叠加到本分项上。
+
+**原始证据与存储分层。** 新`model_general_control_evidence.py`将原162拟合、新162拟合和新54独立共378银行／756阶段／6804路径、2268测量收费叶封存于`build/step7-general-control-20261106/release-raw-archive-v1`。32MiB分块内容池共37块、全包144400007字节，避免将大原始产物纳入Git。独立固定数值／完整原始报告回放、实际Liberty面积／FF／pin／函数、全部单元互斥归属／状态几何、SDC存储v3／RC、原生面积JSON、完整已存CTS CEC和计费祖先分别核验；不执行新EDA／SAT。Git侧小包2594036字节，保存冻结源／数据／模型／固定评价、训练复现和原始核验收据及大归档身份；其便携模式不冒称包含全部物理报告，external显式读取大归档完成完整回放。
+
+**可复现训练与隔离。** `model_general_control_evidence_v2`为发布／验证入口：`verify`重生成语义特征并重算固定验证／选择／独立结论，`retrain`在冻结train／validation上重算三候选的全部NNLS系数／校正与选择并精确比较，不用任何独立标签拟合或调参。原`fit-v1`／`fit-v2`三文件字节复现收据保持。数值运行库实际安装于用户Python包目录，v2只显式允许已登记版本的NumPy／SciPy运行库及元数据；原项目／build／账本及其他原home读取禁止，PATH为空且禁回放子进程。此为版本化验证适配，不改独立生产者、数值参数、支持域、原始归档或reserve。文档／发布参数／能力清单和原始池／索引篡改负控均须拒绝，完整发布验收检查点在本节末结算。
+
+复核入口为`python3 -B -m experiments.arithmetic_dse.model_general_control_evidence_v2 verify --folder experiments/arithmetic/evidence/step7_general_state_v1`；增加`--external`执行完整本机回放，改用`retrain`或`isolated`分别执行训练及隔离／篡改复现。本轮S独立资格通过只授予明确组件范围，production_price_binding_qualified=false、full_D_ready=false、formal_36_complete=false。下一步仍须实际C++ service／native／external所有权／特征／条件边界价格绑定及全候选／位置核验；G受限整阶段／联合边界、I真实half／quarter区间、统一初始／试移／最终预算、D选择／RTL和正式36条／步骤九继续待完成。完整四平台步骤七及688条未关闭，未git add／commit／push。
+
+**发布收尾验收。** 完整原始378银行回放、实际Liberty／工具／完整已存CTS CEC external、禁原树原始回放／篡改均通过；小包固定数值回放、全部train-only NNLS系数／校正／选择精确复现、完整external及允许登记数值运行库的隔离数值／训练／篡改也全部通过，未执行新EDA／SAT。实际Git文件集合中的13份发布文件与manifest字节一致、2594036字节、最大单文件1493018字节，入口源码可见，约137.71MiB原始归档被build忽略规则排除；这是本组件Git视图，非全项目步骤九验收。发布manifest SHA256为`a05f864ed99407fbb30747043e1dc8e153284bedae27ca103e84a48e043571f4`，原始归档manifest SHA256为`b227bf5a4955dfa7cf3f71d7746316a66d9ab89d747ecc3793dc1d9caaa3d2ac`。收尾及Git副本proof在`publication-closure-v1.json`／`publication-git-view-proof.json`，绑定12条成功support命令；本轮新增synth／grt／final均0。全局结清前缀为2042 synth／2016 grt／16 final／8047 support、12121 entries，叶墙钟232268.820083s／CPU509320.29s，pending／active／unsettled均0，无本实验后台EDA；旧失败／费用保持，无退款、未git add／commit／push。

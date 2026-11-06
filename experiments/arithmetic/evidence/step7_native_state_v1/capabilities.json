@@ -1,0 +1,23 @@
+{
+  "native_protocol_synthetic_state_bank_grt": true,
+  "input_and_register_control_boundary_grt": true,
+  "native_query_extraction_checked": true,
+  "query_coverage": "nine public VUL original cores plus three diagnostics; not every D candidate/move",
+  "source_schema": "arithmetic-state-bank-features-v1",
+  "ABC_ps": 1500,
+  "exact_SDC_ps": [
+    40500,
+    1500,
+    375
+  ],
+  "IO": "0.2T",
+  "native_enable_policy": "single clock, synchronous active-low reset; valid1<=iv; validN<=valid(N-1) always advances; every data capture at stage s enabled by iv at s=1, otherwise valid(s-1); same across all words at a cut",
+  "known_bits": "all dynamic, high-zero padding, or one rotating known-zero hole; include generic5-bit/four-variable and65-bit/64-variable masks; no known-one constants or dependence between different channels",
+  "production_price_binding_qualified": false,
+  "input_service_wrapper_state_covered": false,
+  "joint_arithmetic_or_formal_boundary_qualified": false,
+  "whole_stage_model_qualified": false,
+  "full_D_ready": false,
+  "nine_case_36_complete": false,
+  "independent_labels_consumed_and_excluded_from_future_fitting": true
+}

@@ -1,0 +1,20 @@
+{
+  "version": "asap7-general-state-fitting-execution-v1",
+  "collection_protocol_sha256": "9aaa9c8503ee8e84b34ab41ff08f52e817e4f6fcf43bb868b9b12e96b79895b6",
+  "owners": ["input_service","native_state","external_state"],
+  "candidate_order": ["per_owner_NNLS_bits_signals","per_owner_NNLS_typed_state","per_owner_exact_SDC_NNLS_typed_state"],
+  "bits_signals_features": ["state_bits","state_signals"],
+  "typed_features": ["data_bits","data_signals","valid_bits","enable_domains","reset_one_bits"],
+  "loss": "unweighted train-only NNLS, no intercept, no post-fit area margin",
+  "exact_SDC": "separate train-only coefficients at each of the nine frozen exact periods; no interpolation",
+  "selection": "one complete three-owner candidate per physical stage; all owner validation gates first, then sum owner absolute errors / sum owner actual area, serialized model size, stable candidate name",
+  "gates": "each of the three owned state/control area classes separately must satisfy original median20% and P95 50%; total owned-state area and exact-clock breakdown also reported",
+  "baseline": "immutable published native coefficients on total semantic state counts, compared with standalone bank total excluding adapter/observer; diagnostic outside original ownership/domain, never selectable or used to change parameters",
+  "boundary": "for each exact period and non-birth path class: max(0,max train/validation H)+max train/validation QD or PD+50ps; retain witnesses; independent test must be covered without adaptation",
+  "birth_data": "diagnostic only; excluded from state-control boundary fitting and gates",
+  "shared_areas": "clock/physical/root repair recorded, not an owned-state price and not silently added to a G stage",
+  "deployable_stage_if_independent_passes": "grt",
+  "independent_tasks": 54,
+  "test_labels_allowed": false,
+  "full_D_ready": false
+}

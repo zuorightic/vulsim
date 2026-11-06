@@ -1,0 +1,34 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "experiments.arithmetic_dse.model_native_state_binding_evidence",
+    "isolated",
+    "--folder",
+    "/home/zyrv/vulsim/experiments/arithmetic/evidence/step7_native_state_binding_v1"
+  ],
+  "exit_code": 0,
+  "process_exit_code": 0,
+  "timed_out": false,
+  "CPU_limit_s": 1200,
+  "CPU_limit_exceeded": false,
+  "sampled_process_tree_CPU_s": 0,
+  "cancelled_signal": null,
+  "walltime_s": 0.2151764058507979,
+  "unexpected_live_descendants": false,
+  "memory_limit_exceeded": false,
+  "memory_limit_MiB": 8192,
+  "sampled_process_tree_peak_rss_KiB": 1204,
+  "sampled_process_tree_peak_threads": 1,
+  "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+  "resource_sampling_interval_s": 0.5,
+  "cleanup": {
+    "term_sent": 0,
+    "kill_sent": 0,
+    "remaining_live_pids": []
+  },
+  "log": "/home/zyrv/vulsim/build/step7-native-state-binding-20261105/publication-v1/isolated.log",
+  "gnu_time": "/home/zyrv/vulsim/build/step7-native-state-binding-20261105/publication-v1/isolated.resources.txt",
+  "budget_reservation_id": "af666dd4ccc240a2a5a531c2ca69bef4"
+}

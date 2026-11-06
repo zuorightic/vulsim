@@ -1,0 +1,32 @@
+{
+  "command": [
+    "env",
+    "--chdir=/home/zyrv/vulsim/rtlzz",
+    "PATH=/home/zyrv/circt/circt-full-shared-linux-x64/firtool-1.162.0/bin:/home/zyrv/.local/bin:/home/zyrv/.codex/packages/app-server-daemon/releases/0.166.0-x86_64-unknown-linux-musl/codex-path:/home/zyrv/.codex/tmp/arg0-linux/codex-arg0nxAY74:/home/zyrv/.codex/tmp/arg0/codex-arg0FG3pbj:/home/zyrv/.codex/packages/app-server-daemon/releases/0.161.0-x86_64-unknown-linux-musl/codex-path:/home/zyrv/.codex/tmp/arg0/codex-arg0vFptE3:/home/zyrv/.nvm/versions/node/v22.22.2/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path:/home/zyrv/.nvm/versions/node/v22.22.2/bin:/home/zyrv/.local/bin:/home/zyrv/vitis/2025.2/Model_Composer/bin:/home/zyrv/vitis/2025.2/Vivado/bin:/home/zyrv/vitis/2025.2/Vitis/bin:/home/zyrv/vitis/DocNav:/home/zyrv/vitis/2025.2/Model_Composer/bin:/home/zyrv/vitis/2025.2/Vivado/bin:/home/zyrv/vitis/2025.2/Vitis/bin:/home/zyrv/vitis/DocNav:/home/zyrv/.local/bin:/home/zyrv/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/usr/local/share/scala-2.12.12/bin:/home/zyrv/synopsys/vcs-mx/O-2018.09-SP2/gui/dve/bin:/home/zyrv/synopsys/vcs-mx/O-2018.09-SP2/bin:/home/zyrv/synopsys/verdi/Verdi_O-2018.09-SP2/bin:/home/zyrv/synopsys/scl/2018.06/linux64/bin:/usr/local/share/scala-2.12.12/bin",
+    "/home/zyrv/vulsim/build/step4-rtlzz/testv2/pipeline-valid-test",
+    "/home/zyrv/vulsim/build/step7-native-state-binding-20261105/checks-v1/pipeline-valid-test"
+  ],
+  "exit_code": 0,
+  "process_exit_code": 0,
+  "timed_out": false,
+  "CPU_limit_s": 1200,
+  "CPU_limit_exceeded": false,
+  "sampled_process_tree_CPU_s": 0.99,
+  "cancelled_signal": null,
+  "walltime_s": 1.2167880008928478,
+  "unexpected_live_descendants": false,
+  "memory_limit_exceeded": false,
+  "memory_limit_MiB": 8192,
+  "sampled_process_tree_peak_rss_KiB": 82472,
+  "sampled_process_tree_peak_threads": 2,
+  "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+  "resource_sampling_interval_s": 0.5,
+  "cleanup": {
+    "term_sent": 0,
+    "kill_sent": 0,
+    "remaining_live_pids": []
+  },
+  "log": "/home/zyrv/vulsim/build/step7-native-state-binding-20261105/checks-v1/pipeline-valid-test.log",
+  "gnu_time": "/home/zyrv/vulsim/build/step7-native-state-binding-20261105/checks-v1/pipeline-valid-test.resources.txt",
+  "budget_reservation_id": "4fd0cb2f9d524b8b8468945742530c5e"
+}

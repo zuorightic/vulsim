@@ -1,0 +1,1291 @@
+#include "backend/rtlgen.hpp"
+#include "backend/rtl_names.hpp"
+
+#include <algorithm>
+#include <cctype>
+#include <cstdint>
+#include <iomanip>
+#include <sstream>
+#include <stdexcept>
+#include <unordered_map>
+#include <unordered_set>
+
+namespace pred::rtlgen {
+namespace {
+
+using pred::beir::NodeId;
+
+static int widthOf(const beir::ValueType& type) {
+    return type.width > 0 ? type.width : 1;
+}
+
+static int unsignedWidthForValue(unsigned value) {
+    int width = 1;
+    while (value >>= 1U) ++width;
+    return width;
+}
+
+static int flattenedArraySize(const beir::ValueType& type) {
+    if (!type.array_dims.empty()) {
+        int size = 1;
+        for (int dim : type.array_dims) size *= dim;
+        return size;
+    }
+    return 0;
+}
+
+static std::vector<int> arrayDims(const beir::ValueType& type) {
+    if (!type.array_dims.empty()) return type.array_dims;
+    return {};
+}
+
+using rtl_names::sanitizeIdentifier;
+
+static std::string packedRange(const beir::ValueType& type) {
+    int width = widthOf(type);
+    if (width <= 1) return "";
+    return "[" + std::to_string(width - 1) + ":0] ";
+}
+
+static std::string unpackedDims(const beir::ValueType& type) {
+    std::ostringstream os;
+    for (int dim : arrayDims(type)) {
+        os << " [0:" << (dim - 1) << "]";
+    }
+    return os.str();
+}
+
+static std::string logicType(const beir::ValueType& type) {
+    return "logic " + packedRange(type);
+}
+
+static std::string constExpr(const beir::Operand::Constant& constant) {
+    int width = constant.width > 0 ? constant.width : 1;
+    std::ostringstream hex;
+    hex << std::hex << std::setfill('0');
+    bool started = false;
+    for (std::size_t i = constant.limbs.size(); i > 0; --i) {
+        std::uint64_t limb = constant.limbs[i - 1];
+        if (!started) {
+            if (limb == 0 && i > 1) continue;
+            hex << limb;
+            started = true;
+        } else {
+            hex << std::setw(16) << limb;
+        }
+    }
+    std::string digits = started ? hex.str() : "0";
+    return std::to_string(width) + "'h" + digits;
+}
+
+static beir::Operand::Constant parseSmallConst(const std::string& text, int width) {
+    beir::Operand::Constant constant;
+    constant.width = width > 0 ? width : 32;
+    constant.limbs.assign(static_cast<std::size_t>((constant.width + 63) / 64), 0);
+    if (text == "true" || text == "false") {
+        if (text == "true" && !constant.limbs.empty()) constant.limbs[0] = 1;
+        return constant;
+    }
+    std::string value = text;
+    while (!value.empty()) {
+        char ch = value.back();
+        if (ch == 'u' || ch == 'U' || ch == 'l' || ch == 'L') value.pop_back();
+        else break;
+    }
+    std::uint64_t raw = static_cast<std::uint64_t>(std::stoull(value, nullptr, 0));
+    if (!constant.limbs.empty()) constant.limbs[0] = raw;
+    return constant;
+}
+
+static std::string zeroFor(const beir::ValueType& type) {
+    return std::to_string(widthOf(type)) + "'h0";
+}
+
+static bool endsWithNumber(const std::string& name, std::string& base) {
+    std::size_t pos = name.rfind('_');
+    if (pos == std::string::npos || pos + 1 >= name.size()) return false;
+    for (std::size_t i = pos + 1; i < name.size(); ++i) {
+        if (!std::isdigit(static_cast<unsigned char>(name[i]))) return false;
+    }
+    base = name.substr(0, pos);
+    return true;
+}
+
+static bool isSimpleIdentifier(const std::string& text) {
+    if (text.empty()) return false;
+    unsigned char first = static_cast<unsigned char>(text.front());
+    if (!std::isalpha(first) && text.front() != '_') return false;
+    for (char ch : text) {
+        unsigned char c = static_cast<unsigned char>(ch);
+        if (!std::isalnum(c) && ch != '_') return false;
+    }
+    return true;
+}
+
+static std::string svBinaryOp(beir::OpCode op) {
+    switch (op) {
+    case beir::OpCode::Add: return "+";
+    case beir::OpCode::Sub: return "-";
+    case beir::OpCode::Mul: return "*";
+    case beir::OpCode::Div: return "/";
+    case beir::OpCode::Mod: return "%";
+    case beir::OpCode::BitAnd: return "&";
+    case beir::OpCode::BitOr: return "|";
+    case beir::OpCode::BitXor: return "^";
+    case beir::OpCode::LogicAnd: return "&&";
+    case beir::OpCode::LogicOr: return "||";
+    case beir::OpCode::Eq: return "==";
+    case beir::OpCode::Ne: return "!=";
+    case beir::OpCode::Lt: return "<";
+    case beir::OpCode::Le: return "<=";
+    case beir::OpCode::Gt: return ">";
+    case beir::OpCode::Ge: return ">=";
+    case beir::OpCode::Shl: return "<<";
+    case beir::OpCode::Shr: return ">>";
+    default:
+        throw std::runtime_error("rtlgen unsupported binary opcode");
+    }
+}
+
+static void emitLocList(std::ostream& os, const std::vector<DebugLoc>& locs) {
+    bool any = false;
+    for (const auto& loc : locs) {
+        if (!loc.valid()) continue;
+        if (any) os << ", ";
+        os << loc.file << ":" << loc.line << ":" << loc.column;
+        if (loc.end_line || loc.end_column) {
+            os << "-" << loc.end_line << ":" << loc.end_column;
+        }
+        any = true;
+    }
+    if (!any) os << "<none>";
+}
+
+class Emitter {
+public:
+    explicit Emitter(const beir::Program& program, const pipeline::Program* pipeline = nullptr)
+        : program_(program), pipeline_(pipeline && pipeline->options.register_stages > 0 ? pipeline : nullptr) {
+        if (pipeline_) {
+            const auto& clock = pipeline_->options.clock_name;
+            if (rtl_names::isSystemVerilogKeyword(clock) || sanitizeIdentifier(clock) != clock)
+                throw std::runtime_error("pipeline: clock_name is a reserved RTL identifier");
+            for (const auto& signal : program_.signals)
+                if (sanitizeIdentifier(signal.name) == clock)
+                    throw std::runtime_error("pipeline: sanitized signal name collides with clock");
+            for (const auto& port : program_.ports)
+                if (port.name != clock && sanitizeIdentifier(port.name) == clock)
+                    throw std::runtime_error("pipeline: sanitized data port name collides with clock");
+            for (const auto& reg : pipeline_->registers) register_nodes_.insert(reg.node);
+        }
+        for (const auto& signal : program_.signals) {
+            name_to_node_[signal.name] = signal.id;
+        }
+    }
+
+    std::string emit() {
+        std::ostringstream os;
+        os << "`timescale 1ns/1ps\n\n";
+        prepareConstantLookups();
+        emitModuleHeader(os);
+        emitSignalDecls(os);
+        emitConstantLookupFunctions(os);
+        emitPortElementConnections(os);
+        emitSignalAssignments(os);
+        emitRegisters(os);
+        os << "endmodule\n";
+        return os.str();
+    }
+
+    std::string emitBody(const std::vector<std::pair<std::string, std::string>>& bindings) {
+        std::unordered_map<std::string, std::string> bound_ports;
+        for (const auto& [port, expression] : bindings) {
+            if (!bound_ports.emplace(port, expression).second)
+                throw std::runtime_error("rtlgen duplicate module-body port binding: " + port);
+        }
+        std::ostringstream os;
+        prepareConstantLookups();
+        for (const auto& port : program_.ports) {
+            auto it = bound_ports.find(port.name);
+            if (it == bound_ports.end())
+                throw std::runtime_error("rtlgen missing module-body port binding: " + port.name);
+            if (it->second.empty())
+                throw std::runtime_error("rtlgen empty module-body port binding: " + port.name);
+            if (it->second == sanitizeIdentifier(port.name)) continue;
+            os << "    " << logicType(port.type) << sanitizeIdentifier(port.name)
+               << unpackedDims(port.type) << ";" << debugComment(portDebug(port)) << "\n";
+        }
+        os << "\n";
+        emitSignalDecls(os);
+        emitConstantLookupFunctions(os);
+        for (const auto& port : program_.ports) {
+            const auto& external = bound_ports.at(port.name);
+            const auto local = sanitizeIdentifier(port.name);
+            if (external == local) continue;
+            if (port.direction == beir::PortDirection::Output)
+                os << "    assign " << external << " = " << local << ";\n";
+            else
+                os << "    assign " << local << " = " << external << ";\n";
+        }
+        os << "\n";
+        emitPortElementConnections(os);
+        emitSignalAssignments(os);
+        emitRegisters(os);
+        return os.str();
+    }
+
+    std::string emitDebugReport() {
+        std::ostringstream os;
+        os << "rtlzz rtl debug report\n";
+        os << "function " << program_.function_name << "\n";
+        os << "signals\n";
+        for (const auto& entry : collectDebugSignals("")) emitDebugSignal(os, entry);
+        return os.str();
+    }
+
+    std::string emitDebugReport(const std::string& rtl_text) {
+        std::ostringstream os;
+        os << "rtlzz rtl debug report\n";
+        os << "function " << program_.function_name << "\n";
+        os << "signals\n";
+        for (const auto& entry : collectDebugSignals(rtl_text)) emitDebugSignal(os, entry);
+        return os.str();
+    }
+
+    std::vector<RtlDebugSignal> collectDebugSignals(const std::string& rtl_text) {
+        std::vector<std::string> lines = splitLines(rtl_text);
+        std::vector<RtlDebugSignal> out;
+        out.reserve(program_.signals.size());
+        for (const auto& signal : program_.signals) {
+            beir::DebugInfo debug = signalDebug(signal);
+            RtlDebugSignal entry;
+            entry.id = signal.id;
+            entry.signal_name = sanitizeIdentifier(signal.name);
+            entry.rtl_line = findSignalLine(lines, entry.signal_name);
+            entry.port_name = signal.port_name;
+            entry.port_element_index = signal.port_element_index;
+            entry.type = signal.type;
+            entry.decl_loc = debug.decl_loc;
+            entry.primary_locs = debug.primary_locs;
+            entry.related_locs = debug.related_locs;
+            entry.messages = beir::messageStack(debug);
+            for (NodeId id : debug.derived_nodes) {
+                RtlDebugDerivedNode node;
+                node.id = id;
+                if (const auto* source = program_.findSignal(id)) {
+                    node.name = sanitizeIdentifier(source->name);
+                }
+                entry.derived_nodes.push_back(std::move(node));
+            }
+            entry.derived_names = debug.derived_names;
+            out.push_back(std::move(entry));
+        }
+        return out;
+    }
+
+private:
+    const beir::Program& program_;
+    const pipeline::Program* pipeline_ = nullptr;
+    std::unordered_set<NodeId> register_nodes_;
+    std::unordered_map<std::string, NodeId> name_to_node_;
+
+    struct ConstantTable {
+        beir::ValueType element_type;
+        std::vector<beir::Operand::Constant> values;
+        std::size_t hash = 0;
+        std::string function_name;
+    };
+    std::vector<ConstantTable> constant_tables_;
+    std::unordered_map<std::size_t, std::vector<std::size_t>> table_hash_index_;
+    std::unordered_map<NodeId, std::size_t> constant_lookups_;
+    std::unordered_set<NodeId> omitted_arrays_;
+
+    static beir::Operand::Constant resizeConstant(beir::Operand::Constant value, int width) {
+        // Normalize unused bits and zero-extend exactly as the RTL wiring does.
+        const int old_width = std::max(value.width, 1);
+        value.limbs.resize(static_cast<std::size_t>((old_width + 63) / 64), 0);
+        if (old_width % 64) value.limbs.back() &= (uint64_t{1} << (old_width % 64)) - 1;
+        value.width = width;
+        value.signed_view = false;
+        value.limbs.resize(static_cast<std::size_t>((width + 63) / 64), 0);
+        if (width % 64) value.limbs.back() &= (uint64_t{1} << (width % 64)) - 1;
+        return value;
+    }
+
+    // Resolve constants independently of BEOPT and canonicalize their bit values,
+    // so different literal spellings and assignment chains share the same table.
+    std::optional<beir::Operand::Constant> constantValue(const beir::Operand& value,
+                                                       std::size_t depth = 0) const {
+        if (depth > program_.signals.size()) return std::nullopt;
+        if (value.kind == beir::OperandKind::Literal)
+            return resizeConstant(value.constant, widthOf(value.type));
+        if (value.kind != beir::OperandKind::Symbol) return std::nullopt;
+        const auto* source = program_.findSignal(value.node);
+        if (!source || !source->driver || source->type.isArray() || register_nodes_.count(source->id)) return std::nullopt;
+        const auto& op = *source->driver;
+        if (op.operands.size() != 1 ||
+            (op.kind != beir::OperationKind::Assign &&
+             op.kind != beir::OperationKind::Cast &&
+             op.kind != beir::OperationKind::ZExt &&
+             op.kind != beir::OperationKind::Trunc)) return std::nullopt;
+        if (op.signed_truncation) return std::nullopt;
+        auto result = constantValue(op.operands[0], depth + 1);
+        if (!result) return std::nullopt;
+        return resizeConstant(resizeConstant(*result, widthOf(op.type)), widthOf(source->type));
+    }
+
+    std::size_t internConstantTable(ConstantTable table) {
+        auto mix = [&](std::size_t value) {
+            table.hash ^= value + std::size_t{0x9e3779b9} + (table.hash << 6) + (table.hash >> 2);
+        };
+        mix(static_cast<std::size_t>(table.element_type.width));
+        mix(table.values.size());
+        for (const auto& value : table.values)
+            for (auto limb : value.limbs) mix(std::hash<uint64_t>{}(limb));
+        auto& bucket = table_hash_index_[table.hash];
+        for (auto id : bucket) {
+            const auto& existing = constant_tables_[id];
+            if (existing.element_type.width != table.element_type.width ||
+                existing.values.size() != table.values.size()) continue;
+            bool equal = true;
+            for (std::size_t i = 0; i < table.values.size(); ++i)
+                if (existing.values[i].limbs != table.values[i].limbs) { equal = false; break; }
+            if (equal) return id;
+        }
+        const auto id = constant_tables_.size();
+        table.function_name = "rtlzz_const_lookup_" + std::to_string(id);
+        auto collides = [&](const std::string& name) {
+            for (const auto& signal : program_.signals)
+                if (sanitizeIdentifier(signal.name) == name) return true;
+            for (const auto& port : program_.ports)
+                if (sanitizeIdentifier(port.name) == name) return true;
+            return sanitizeIdentifier(program_.function_name) == name;
+        };
+        while (collides(table.function_name)) table.function_name += "_";
+        bucket.push_back(id);
+        constant_tables_.push_back(std::move(table));
+        return id;
+    }
+
+    const beir::Operation* tableAggregate(beir::Operand value) const {
+        for (std::size_t depth = 0; depth <= program_.signals.size(); ++depth) {
+            if (value.kind != beir::OperandKind::Symbol) return nullptr;
+            const auto* source = program_.findSignal(value.node);
+            if (!source || !source->driver || register_nodes_.count(source->id)) return nullptr;
+            const auto& op = *source->driver;
+            if (op.kind == beir::OperationKind::Aggregate) return &op;
+            if (op.kind != beir::OperationKind::Assign || op.operands.size() != 1 ||
+                op.operands[0].type.width != source->type.width ||
+                op.operands[0].type.array_dims != source->type.array_dims)
+                return nullptr;
+            value = op.operands[0];
+        }
+        return nullptr;
+    }
+
+    void prepareConstantLookups() {
+        for (const auto& signal : program_.signals) {
+            if (!signal.driver) continue;
+            const auto& op = *signal.driver;
+            if ((op.kind != beir::OperationKind::Lookup &&
+                 op.kind != beir::OperationKind::ArrayAccess) ||
+                op.operands.size() != 2 || signal.type.isArray() ||
+                op.operands[0].type.array_dims.size() != 1) continue;
+            const auto* table = tableAggregate(op.operands[0]);
+            if (!table || table->operands.empty() ||
+                table->operands.size() != static_cast<std::size_t>(
+                    flattenedArraySize(op.operands[0].type))) continue;
+            ConstantTable entries;
+            entries.element_type.width = widthOf(table->type);
+            for (const auto& entry : table->operands) {
+                auto value = constantValue(entry);
+                if (!value) break;
+                entries.values.push_back(resizeConstant(*value, widthOf(table->type)));
+            }
+            if (entries.values.size() == table->operands.size())
+                constant_lookups_.emplace(signal.id, internConstantTable(std::move(entries)));
+        }
+        // Omit arrays only if no remaining emitted operation or port needs them.
+        std::unordered_set<NodeId> live;
+        std::vector<NodeId> pending;
+        for (const auto& signal : program_.signals) {
+            if (!signal.type.isArray() || !signal.port_name.empty())
+                pending.push_back(signal.id);
+        }
+        for (const auto& port : program_.ports)
+            for (NodeId id : port.element_nodes) pending.push_back(id);
+        while (!pending.empty()) {
+            NodeId id = pending.back();
+            pending.pop_back();
+            if (!live.insert(id).second) continue;
+            const auto* signal = program_.findSignal(id);
+            if (!signal || !signal->driver) continue;
+            const auto& operands = signal->driver->operands;
+            for (std::size_t i = 0; i < operands.size(); ++i) {
+                if (i == 0 && constant_lookups_.count(id)) continue;
+                if (operands[i].kind == beir::OperandKind::Symbol)
+                    pending.push_back(operands[i].node);
+            }
+        }
+        for (const auto& signal : program_.signals)
+            if (signal.type.isArray() && !live.count(signal.id))
+                omitted_arrays_.insert(signal.id);
+    }
+
+    void emitConstantLookupFunctions(std::ostream& os) const {
+        for (const auto& table : constant_tables_) {
+            const int index_width = indexWidthForCount(table.values.size());
+            os << "    function automatic " << logicType(table.element_type)
+               << table.function_name << "(input logic [" << index_width - 1 << ":0] index);\n"
+               << "        case (index)\n";
+            for (std::size_t i = 0; i < table.values.size(); ++i)
+                os << "            " << index_width << "'d" << i << ": "
+                   << table.function_name << " = " << constExpr(table.values[i]) << ";\n";
+            os << "            default: " << table.function_name << " = 'x;\n"
+               << "        endcase\n    endfunction\n\n";
+        }
+    }
+
+    void emitConstantLookup(std::ostream& os, const beir::Signal& signal,
+                            std::size_t table_id) const {
+        const auto& op = *signal.driver;
+        const auto& table = constant_tables_[table_id];
+        const auto call = table.function_name + "(" +
+                          arrayIndexExpr(op.operands[0], op.operands[1]) + ")";
+        os << "    assign " << sig(signal.id) << " = "
+           << resizeExpr(resizeExpr(call, widthOf(table.element_type), widthOf(op.type), false),
+                         widthOf(op.type), widthOf(signal.type), false)
+           << ";" << debugComment(op.debug) << "\n";
+    }
+
+    std::vector<std::string> splitLines(const std::string& text) const {
+        std::vector<std::string> lines;
+        std::size_t begin = 0;
+        while (begin < text.size()) {
+            std::size_t end = text.find('\n', begin);
+            if (end == std::string::npos) {
+                lines.push_back(text.substr(begin));
+                break;
+            }
+            lines.push_back(text.substr(begin, end - begin));
+            begin = end + 1;
+        }
+        return lines;
+    }
+
+    bool tokenAt(const std::string& line, const std::string& token, std::size_t pos) const {
+        auto is_ident = [](char ch) {
+            unsigned char c = static_cast<unsigned char>(ch);
+            return std::isalnum(c) || ch == '_';
+        };
+        if (pos > 0 && is_ident(line[pos - 1])) return false;
+        std::size_t end = pos + token.size();
+        if (end < line.size() && is_ident(line[end])) return false;
+        return true;
+    }
+
+    int findSignalLine(const std::vector<std::string>& lines, const std::string& name) const {
+        if (lines.empty() || name.empty()) return 0;
+        for (std::size_t i = 0; i < lines.size(); ++i) {
+            std::size_t pos = lines[i].find(name);
+            while (pos != std::string::npos) {
+                if (tokenAt(lines[i], name, pos)) return static_cast<int>(i + 1);
+                pos = lines[i].find(name, pos + name.size());
+            }
+        }
+        return 0;
+    }
+
+    void emitDebugSignal(std::ostream& os, const RtlDebugSignal& entry) const {
+        os << "- #" << entry.id << " " << entry.signal_name
+           << " : " << logicType(entry.type) << unpackedDims(entry.type) << "\n";
+        os << "  rtl_line: " << entry.rtl_line << "\n";
+        if (!entry.port_name.empty()) {
+            os << "  port: " << entry.port_name;
+            if (entry.port_element_index >= 0) os << "[" << entry.port_element_index << "]";
+            os << "\n";
+        }
+        os << "  decl:\n";
+        if (entry.decl_loc && entry.decl_loc->valid()) {
+            os << "    - " << locText(*entry.decl_loc) << "\n";
+        } else {
+            os << "    - <none>\n";
+        }
+        os << "  primary:\n";
+        emitLocVector(os, entry.primary_locs);
+        os << "  related:\n";
+        emitLocVector(os, entry.related_locs);
+        os << "  messages:\n";
+        if (entry.messages.empty()) {
+            os << "    - <none>\n";
+        } else {
+            for (const auto& message : entry.messages) os << "    - " << message << "\n";
+        }
+        if (!entry.derived_nodes.empty()) {
+            os << "  derived_nodes:\n";
+            for (const auto& node : entry.derived_nodes) {
+                os << "    - #" << node.id;
+                if (!node.name.empty()) os << " " << node.name;
+                os << "\n";
+            }
+        }
+        if (!entry.derived_names.empty()) {
+            os << "  derived_names:\n";
+            for (const auto& name : entry.derived_names) os << "    - " << name << "\n";
+        }
+    }
+
+    std::string sig(NodeId id) const {
+        return sanitizeIdentifier(program_.signal(id).name);
+    }
+
+    std::vector<int> linearIndices(const beir::ValueType& type, std::size_t linear) const {
+        std::vector<int> dims = arrayDims(type);
+        std::vector<int> indices(dims.size(), 0);
+        std::size_t remaining = linear;
+        for (std::size_t reverse = dims.size(); reverse-- > 0;) {
+            int dim = dims[reverse];
+            if (dim <= 0) throw std::runtime_error("rtlgen array port has invalid dimension");
+            indices[reverse] = static_cast<int>(remaining % static_cast<std::size_t>(dim));
+            remaining /= static_cast<std::size_t>(dim);
+        }
+        if (remaining != 0) throw std::runtime_error("rtlgen array port element index out of range");
+        return indices;
+    }
+
+    std::string indexedRef(std::string base, const std::vector<int>& indices) const {
+        for (int index : indices) base += "[" + std::to_string(index) + "]";
+        return base;
+    }
+
+    std::string portElementRef(const beir::Port& port, std::size_t linear) const {
+        return indexedRef(sanitizeIdentifier(port.name), linearIndices(port.type, linear));
+    }
+
+    std::string portElementRef(const beir::Operand& port, std::size_t linear) const {
+        return indexedRef(sanitizeIdentifier(port.text), linearIndices(port.type, linear));
+    }
+
+    bool isDirectPortSignal(const beir::Signal& signal) const {
+        return !signal.port_name.empty() && signal.name == signal.port_name;
+    }
+
+    std::string locText(const DebugLoc& loc) const {
+        if (!loc.valid()) return "<none>";
+        std::ostringstream os;
+        os << loc.file << ":" << loc.line << ":" << loc.column;
+        if (loc.end_line || loc.end_column) {
+            os << "-" << loc.end_line << ":" << loc.end_column;
+        }
+        return os.str();
+    }
+
+    const DebugLoc* lastPrimary(const beir::DebugInfo& debug) const {
+        for (auto it = debug.primary_locs.rbegin(); it != debug.primary_locs.rend(); ++it) {
+            if (it->valid()) return &*it;
+        }
+        return nullptr;
+    }
+
+    void emitLocVector(std::ostream& os, const std::vector<DebugLoc>& locs) const {
+        bool any = false;
+        for (const auto& loc : locs) {
+            if (!loc.valid()) continue;
+            os << "    - " << locText(loc) << "\n";
+            any = true;
+        }
+        if (!any) os << "    - <none>\n";
+    }
+
+    std::string debugComment(const beir::DebugInfo& debug) const {
+        std::ostringstream os;
+        os << " // decl: ";
+        if (debug.decl_loc && debug.decl_loc->valid()) os << locText(*debug.decl_loc);
+        else os << "<none>";
+        os << "; prim: ";
+        if (const DebugLoc* primary = lastPrimary(debug)) os << locText(*primary);
+        else os << "<none>";
+        return os.str();
+    }
+
+    beir::DebugInfo signalDebug(const beir::Signal& signal) const {
+        if (signal.debug.hasSourceLoc() ||
+            (!signal.debug.reason.empty() && signal.debug.reason != "signal allocated by BEIR builder")) {
+            return signal.debug;
+        }
+        if (signal.driver) return signal.driver->debug;
+        std::string base;
+        if (endsWithNumber(signal.name, base)) {
+            auto it = name_to_node_.find(base);
+            if (it != name_to_node_.end()) {
+                const auto& base_signal = program_.signal(it->second);
+                beir::DebugInfo debug = signal.debug;
+                beir::addDebugInfoLocs(debug, base_signal.debug);
+                if (base_signal.driver) {
+                    beir::addDebugInfoLocs(debug, base_signal.driver->debug);
+                }
+                if (debug.hasSourceLoc()) return debug;
+            }
+        }
+        beir::DebugInfo debug;
+        debug.origin = beir::DebugOrigin::Generated;
+        beir::addDebugMessage(debug, "signal allocated without source location");
+        debug.reason = "signal allocated without source location";
+        return debug;
+    }
+
+    beir::DebugInfo portDebug(const beir::Port& port) const {
+        beir::DebugInfo debug;
+        debug.origin = beir::DebugOrigin::Source;
+        beir::addDebugMessage(debug, "module port from source parameter '" + port.name + "'");
+        debug.reason = "module port from source parameter '" + port.name + "'";
+        for (NodeId id : port.element_nodes) {
+            const auto& signal = program_.signal(id);
+            beir::addDebugInfoLocs(debug, signal.debug);
+            if (signal.driver) beir::addDebugInfoLocs(debug, signal.driver->debug);
+        }
+        if (!debug.hasSourceLoc()) {
+            debug.origin = beir::DebugOrigin::Generated;
+            beir::addDebugMessage(debug, "module port generated from BEIR port '" + port.name + "'");
+            debug.reason = "module port generated from BEIR port '" + port.name + "'";
+        }
+        return debug;
+    }
+
+    void emitModuleHeader(std::ostream& os) const {
+        os << "module " << sanitizeIdentifier(program_.function_name) << "(\n";
+        for (std::size_t i = 0; i < program_.ports.size(); ++i) {
+            const auto& port = program_.ports[i];
+            os << "    ";
+            switch (port.direction) {
+            case beir::PortDirection::Input: os << "input "; break;
+            case beir::PortDirection::Output: os << "output "; break;
+            case beir::PortDirection::Unknown: os << "input "; break;
+            }
+            os << logicType(port.type) << sanitizeIdentifier(port.name)
+               << unpackedDims(port.type);
+            if (i + 1 < program_.ports.size()) os << ",";
+            os << debugComment(portDebug(port));
+            os << "\n";
+        }
+        os << ");\n\n";
+    }
+
+    void emitSignalDecls(std::ostream& os) const {
+        for (const auto& signal : program_.signals) {
+            if (isDirectPortSignal(signal) || omitted_arrays_.count(signal.id)) continue;
+            os << "    " << logicType(signal.type) << sanitizeIdentifier(signal.name)
+               << unpackedDims(signal.type) << ";"
+               << debugComment(signalDebug(signal)) << "\n";
+        }
+        if (!program_.signals.empty()) os << "\n";
+    }
+
+    void emitPortElementConnections(std::ostream& os) const {
+        for (const auto& port : program_.ports) {
+            if (port.direction == beir::PortDirection::Output) {
+                if (!port.type.isArray()) {
+                    if (port.element_nodes.size() > 1) {
+                        throw std::runtime_error("rtlgen scalar output port has multiple element nodes");
+                    }
+                    if (!port.element_nodes.empty()) {
+                        const auto& signal = program_.signal(port.element_nodes.front());
+                        if (!isDirectPortSignal(signal)) {
+                            os << "    assign " << sanitizeIdentifier(port.name) << " = "
+                               << sig(signal.id) << ";" << debugComment(signalDebug(signal)) << "\n";
+                        }
+                    }
+                    continue;
+                }
+                for (std::size_t i = 0; i < port.element_nodes.size(); ++i) {
+                    const auto& signal = program_.signal(port.element_nodes[i]);
+                    if (isDirectPortSignal(signal)) continue;
+                    os << "    assign " << portElementRef(port, i) << " = "
+                       << sig(signal.id) << ";" << debugComment(signalDebug(signal)) << "\n";
+                }
+                continue;
+            }
+            if (!port.type.isArray()) {
+                if (port.element_nodes.size() > 1) {
+                    throw std::runtime_error("rtlgen scalar input port has multiple element nodes");
+                }
+                if (!port.element_nodes.empty()) {
+                    const auto& signal = program_.signal(port.element_nodes.front());
+                    if (!isDirectPortSignal(signal)) {
+                        os << "    assign " << sig(signal.id) << " = "
+                           << sanitizeIdentifier(port.name) << ";"
+                           << debugComment(signalDebug(signal)) << "\n";
+                    }
+                }
+                continue;
+            }
+            for (std::size_t i = 0; i < port.element_nodes.size(); ++i) {
+                const auto& signal = program_.signal(port.element_nodes[i]);
+                if (isDirectPortSignal(signal)) continue;
+                os << "    assign " << sig(port.element_nodes[i]) << " = "
+                   << portElementRef(port, i) << ";"
+                   << debugComment(signalDebug(signal)) << "\n";
+            }
+        }
+        os << "\n";
+    }
+
+    void emitRegisters(std::ostream& os) const {
+        if (!pipeline_ || pipeline_->registers.empty()) return;
+        os << "    always_ff @(posedge " << pipeline_->options.clock_name << ") begin\n";
+        if (pipeline_->options.reset_enabled) {
+            os << "        if (" << (pipeline_->options.reset_active_low ? "!" : "") << pipeline_->options.reset_name << ") begin\n";
+            for (const auto& reg : pipeline_->registers) {
+                const auto& signal = program_.signal(reg.node);
+                const std::size_t stride = (widthOf(signal.type) + 63) / 64;
+                const int count = signal.type.isArray() ? flattenedArraySize(signal.type) : 1;
+                if (reg.reset_values.size() != stride * count) throw std::runtime_error("pipeline: missing register reset literal");
+                for (int i=0; i<count; ++i) {
+                    beir::Operand::Constant literal;
+                    literal.width = widthOf(signal.type);
+                    literal.limbs.assign(reg.reset_values.begin()+i*stride, reg.reset_values.begin()+(i+1)*stride);
+                    os << "            " << (signal.type.isArray() ? indexedRef(sig(reg.node), linearIndices(signal.type, i)) : sig(reg.node)) << " <= " << constExpr(literal) << ";\n";
+                }
+            }
+            os << "        end else begin\n";
+        }
+        for (const auto& reg : pipeline_->registers) {
+            if (reg.enable != beir::kInvalidNodeId) os << "        if (" << sig(reg.enable) << ") begin\n";
+            const auto& signal = program_.signal(reg.node);
+            if (signal.type.isArray()) {
+                for (int i = 0; i < flattenedArraySize(signal.type); ++i) {
+                    auto indices = linearIndices(signal.type, static_cast<std::size_t>(i));
+                    os << "        " << indexedRef(sig(reg.node), indices) << " <= "
+                       << indexedRef(sig(reg.source), indices) << ";" << debugComment(signal.debug) << "\n";
+                }
+            } else {
+                os << "        " << sig(reg.node) << " <= " << sig(reg.source)
+                   << ";" << debugComment(signal.debug) << "\n";
+            }
+            if (reg.enable != beir::kInvalidNodeId) os << "        end\n";
+        }
+        if (pipeline_->options.reset_enabled) os << "        end\n";
+        os << "    end\n";
+    }
+
+    void emitSignalAssignments(std::ostream& os) const {
+        for (const auto& signal : program_.signals) {
+            if (omitted_arrays_.count(signal.id) || register_nodes_.count(signal.id)) continue;
+            auto table = constant_lookups_.find(signal.id);
+            if (table != constant_lookups_.end()) {
+                emitConstantLookup(os, signal, table->second);
+                continue;
+            }
+            if (signal.driver) {
+                if (signal.driver->kind == beir::OperationKind::PortRead &&
+                    isDirectPortSignal(signal)) {
+                    continue;
+                }
+                if (signal.driver->kind == beir::OperationKind::PortRead &&
+                    signal.port_element_index >= 0) {
+                    continue;
+                }
+                if (signal.driver->kind == beir::OperationKind::Aggregate) {
+                    emitAggregateAssignment(os, signal, *signal.driver);
+                    continue;
+                }
+                if (signal.driver->kind == beir::OperationKind::Case) {
+                    emitCaseAssignment(os, signal, *signal.driver);
+                    continue;
+                }
+                if (isDynamicWrite(*signal.driver)) {
+                    emitDynamicWriteAssignment(os, signal, *signal.driver);
+                    continue;
+                }
+                os << "    assign " << sig(signal.id) << " = "
+                   << resizeExpr(expr(*signal.driver),
+                                 widthOf(signal.driver->type),
+                                 widthOf(signal.type),
+                                 false) << ";"
+                   << debugComment(signal.driver->debug) << "\n";
+                continue;
+            }
+
+            std::string base;
+            if (endsWithNumber(signal.name, base)) {
+                auto it = name_to_node_.find(base);
+                if (it != name_to_node_.end()) {
+                    os << "    assign " << sig(signal.id) << " = " << sig(it->second) << ";"
+                       << debugComment(signalDebug(program_.signal(it->second))) << "\n";
+                    continue;
+                }
+            }
+            if (!isDirectPortSignal(signal) && !signal.type.isArray()) {
+                beir::DebugInfo debug;
+                debug.origin = beir::DebugOrigin::Generated;
+                beir::addDebugMessage(debug, "default zero for undriven intermediate signal '" + signal.name + "'");
+                debug.reason = "default zero for undriven intermediate signal '" + signal.name + "'";
+                os << "    assign " << sig(signal.id) << " = " << zeroFor(signal.type) << ";"
+                   << debugComment(debug) << "\n";
+            }
+        }
+    }
+
+    void emitCaseAssignment(std::ostream& os, const beir::Signal& signal,
+                            const beir::Operation& op) const {
+        if (!beir::hasValidCaseShape(op)) {
+            throw std::runtime_error("rtlgen malformed BEIR case operation");
+        }
+        if (signal.type.isArray() || op.type.isArray()) {
+            throw std::runtime_error("rtlgen does not support array-valued BEIR case operation");
+        }
+        const auto& fallback = op.operands.back();
+        const auto fallback_expr = resizeExpr(operand(fallback), widthOf(fallback.type),
+                                              widthOf(signal.type), false);
+        os << "    always_comb begin" << debugComment(op.debug) << "\n"
+           << "        unique case (1'b1)\n";
+        for (std::size_t branch = 0; branch < beir::caseBranchCount(op); ++branch) {
+            const auto& condition = op.operands[branch * 2];
+            const auto& value = op.operands[branch * 2 + 1];
+            if (condition.type.isArray() || widthOf(condition.type) != 1) {
+                throw std::runtime_error("rtlgen BEIR case condition must be one bit");
+            }
+            const auto value_expr = resizeExpr(operand(value), widthOf(value.type),
+                                               widthOf(signal.type), false);
+            if (value_expr == fallback_expr) continue;
+            os << "            " << operand(condition) << ": " << sig(signal.id)
+               << " = " << value_expr << ";\n";
+        }
+        os << "            default: " << sig(signal.id) << " = "
+           << fallback_expr << ";\n"
+           << "        endcase\n"
+           << "    end\n";
+    }
+
+    void emitAggregateAssignment(std::ostream& os, const beir::Signal& signal, const beir::Operation& op) const {
+        int count = flattenedArraySize(signal.type);
+        if (count != static_cast<int>(op.operands.size())) {
+            throw std::runtime_error("rtlgen aggregate operand count does not match array size");
+        }
+        for (int i = 0; i < count; ++i) {
+            os << "    assign " << sig(signal.id) << "[" << i << "] = "
+               << resizeExpr(operand(op.operands[static_cast<std::size_t>(i)]),
+                             widthOf(op.operands[static_cast<std::size_t>(i)].type),
+                             widthOf(signal.type),
+                             false)
+               << ";" << debugComment(op.debug) << "\n";
+        }
+    }
+
+    bool isDynamicWrite(const beir::Operation& op) const {
+        return op.kind == beir::OperationKind::DynamicWriteSlice ||
+               op.kind == beir::OperationKind::DynamicWriteBit;
+    }
+
+    void emitDynamicWriteAssignment(std::ostream& os,
+                                    const beir::Signal& signal,
+                                    const beir::Operation& op) const {
+        const auto& ops = op.operands;
+        if (op.kind == beir::OperationKind::DynamicWriteSlice) {
+            if (ops.size() < 3) throw std::runtime_error("rtlgen malformed dynamic write-slice operands");
+            emitDynamicWriteAssignment(os, signal, op, ops[0], ops[1], ops[2], widthOf(ops[2].type));
+            return;
+        }
+        if (op.kind == beir::OperationKind::DynamicWriteBit) {
+            if (ops.size() < 3) throw std::runtime_error("rtlgen malformed dynamic write-bit operands");
+            emitDynamicWriteAssignment(os, signal, op, ops[0], ops[1], ops[2], 1);
+            return;
+        }
+        throw std::runtime_error("rtlgen unsupported dynamic write operation");
+    }
+
+    void emitDynamicWriteAssignment(std::ostream& os,
+                                    const beir::Signal& signal,
+                                    const beir::Operation& op,
+                                    const beir::Operand& base,
+                                    const beir::Operand& index,
+                                    const beir::Operand& value,
+                                    int write_width) const {
+        std::string target = sig(signal.id);
+        os << "    always_comb begin "
+           << target << " = "
+           << resizeExpr(operand(base), widthOf(base.type), widthOf(signal.type), false)
+           << "; " << target << "[" << dynamicIndexExpr(index, widthOf(signal.type))
+           << " +: " << write_width << "] = "
+           << resizeExpr(operand(value), widthOf(value.type), write_width, false)
+           << "; end" << debugComment(op.debug) << "\n";
+    }
+
+    std::string dynamicIndexExpr(const beir::Operand& index, int target_width) const {
+        int required_width = indexWidthForCount(static_cast<std::size_t>(std::max(target_width, 1)));
+        return resizeExpr(operand(index), widthOf(index.type), required_width, false);
+    }
+
+    std::string operand(const beir::Operand& op) const {
+        switch (op.kind) {
+        case beir::OperandKind::Symbol:
+            return sig(op.node);
+        case beir::OperandKind::Literal:
+            return constExpr(op.constant);
+        case beir::OperandKind::Port:
+            return sanitizeIdentifier(op.text);
+        }
+        throw std::runtime_error("rtlgen unsupported operand kind");
+    }
+
+    std::string resizeExpr(std::string value, int from_width, int to_width, bool sign_extend) const {
+        if (to_width <= 0 || from_width <= 0 || to_width == from_width) return value;
+        if (to_width < from_width) {
+            if (isSimpleIdentifier(value)) {
+                if (to_width == 1) return value + "[0]";
+                return value + "[" + std::to_string(to_width - 1) + ":0]";
+            }
+            return std::to_string(to_width) + "'(" + value + ")";
+        }
+        int pad = to_width - from_width;
+        if (sign_extend && from_width > 0) {
+            return "({{" + std::to_string(pad) + "{" + value + "[" +
+                   std::to_string(from_width - 1) + "]}}, " + value + "})";
+        }
+        return "({" + std::to_string(pad) + "'h0, " + value + "})";
+    }
+
+    std::string signedTruncateExpr(const std::string& value,
+                                   int from_width,
+                                   int to_width) const {
+        if (to_width <= 0 || from_width <= to_width) {
+            return resizeExpr(value, from_width, to_width, true);
+        }
+        std::string sign = partSelectExpr(value, from_width - 1, from_width - 1);
+        if (to_width == 1) return sign;
+        return "{" + sign + ", " + partSelectExpr(value, to_width - 2, 0) + "}";
+    }
+
+    std::string binaryOperand(const beir::Operand& op, bool signed_context) const {
+        std::string value = operand(op);
+        bool operand_is_signed = op.signed_view ||
+                                 op.constant.signed_view;
+        if (signed_context && operand_is_signed) return "$signed(" + value + ")";
+        return value;
+    }
+
+    std::string expr(const beir::Operation& op) const {
+        const auto& ops = op.operands;
+        auto need = [&](std::size_t count) {
+            if (ops.size() < count) throw std::runtime_error("rtlgen malformed operation operands");
+        };
+
+        switch (op.kind) {
+        case beir::OperationKind::Assign:
+            need(1);
+            return resizeExpr(operand(ops[0]), widthOf(ops[0].type), widthOf(op.type), false);
+        case beir::OperationKind::PortRead:
+            need(1);
+            if (ops.size() == 1) return operand(ops[0]);
+            if (arrayDims(ops[0].type).size() > 1) {
+                if (ops[1].kind != beir::OperandKind::Literal ||
+                    !ops[1].constant.fitsU64()) {
+                    throw std::runtime_error("rtlgen dynamic linear read of multidimensional port is unsupported");
+                }
+                return portElementRef(ops[0], static_cast<std::size_t>(ops[1].constant.toU64()));
+            }
+            return operand(ops[0]) + "[" + operand(ops[1]) + "]";
+        case beir::OperationKind::AddCarry: {
+            need(3);
+            const int width = widthOf(op.type);
+            // AddCarry is unsigned. Size every operand before addition so the
+            // one-bit carry is explicitly zero-extended, including after BEOPT
+            // narrows the result. The sum is modulo the BEIR result width.
+            auto addend = [&](const beir::Operand& value) {
+                return resizeExpr(operand(value), widthOf(value.type), width, false);
+            };
+            return std::to_string(width) + "'((" + addend(ops[0]) + " + " +
+                   addend(ops[1]) + " + " + addend(ops[2]) + "))";
+        }
+        case beir::OperationKind::Binary:
+            need(2);
+            {
+                if (op.op == beir::OpCode::Mul) {
+                    // Multiply modulo the BEIR result width. Extend each operand
+                    // using its own signed view before combining their bit patterns;
+                    // SV otherwise makes mixed signed/unsigned multiplication unsigned.
+                    const auto width = std::to_string(widthOf(op.type));
+                    auto multiplyOperand = [&](const beir::Operand& value) {
+                        const bool is_signed = value.signed_view || value.constant.signed_view;
+                        const auto view = std::string(is_signed ? "$signed(" : "$unsigned(") +
+                                          operand(value) + ")";
+                        return "$unsigned(" + width + "'(" + view + "))";
+                    };
+                    return width + "'((" + multiplyOperand(ops[0]) + " * " +
+                           multiplyOperand(ops[1]) + "))";
+                }
+                // BEIR width normalization can leave a bitwise operand wider
+                // than the operation result (for example after lowering a
+                // narrow slice of a wide packed value). Size both operands
+                // before applying the operator so Verilator and other SV
+                // tools do not infer a wide intermediate and truncate it
+                // implicitly at the destination.
+                if (op.op == beir::OpCode::BitAnd || op.op == beir::OpCode::BitOr ||
+                    op.op == beir::OpCode::BitXor) {
+                    const int result_width = widthOf(op.type);
+                    auto bitwiseOperand = [&](const beir::Operand& value) {
+                        return resizeExpr(operand(value), widthOf(value.type), result_width, false);
+                    };
+                    return "(" + bitwiseOperand(ops[0]) + " " + svBinaryOp(op.op) + " " +
+                           bitwiseOperand(ops[1]) + ")";
+                }
+                bool signed_context =
+                    ops[0].signed_view || ops[1].signed_view ||
+                    ops[0].constant.signed_view || ops[1].constant.signed_view;
+                if (op.op == beir::OpCode::Shr) {
+                    signed_context = ops[0].signed_view || ops[0].constant.signed_view;
+                }
+                std::string sv_op = svBinaryOp(op.op);
+                if (op.op == beir::OpCode::Shr && signed_context) sv_op = ">>>";
+                std::string value =
+                    "(" + binaryOperand(ops[0], signed_context) + " " + sv_op + " " +
+                    binaryOperand(ops[1], signed_context) + ")";
+                if ((op.op == beir::OpCode::Add || op.op == beir::OpCode::Sub) &&
+                    widthOf(op.type) < std::max(widthOf(ops[0].type), widthOf(ops[1].type)))
+                    return std::to_string(widthOf(op.type)) + "'(" + value + ")";
+                if (op.op != beir::OpCode::Shl && op.op != beir::OpCode::Shr) {
+                    return value;
+                }
+
+                // A SystemVerilog shift expression has the width of its left
+                // operand, even when BEIR has narrowed the operation result.
+                // Make that truncation explicit instead of relying on the
+                // assignment target to discard high bits.
+                const int lhs_width = widthOf(ops[0].type);
+                if (op.op == beir::OpCode::Shr && signed_context) {
+                    // Size at the source width before any result narrowing, so
+                    // the signed shift retains its sign bit and sign fill.
+                    value = std::to_string(lhs_width) + "'(" + value + ")";
+                }
+                value = resizeExpr(value, lhs_width, widthOf(op.type), false);
+
+                // Int<W> defines every shift by an amount >= W as zero.  This
+                // differs from SystemVerilog arithmetic right shift, which
+                // sign-fills and therefore produces all ones for a negative
+                // operand.  Emit a guard whenever the shift operand can encode
+                // W so RTL and direct simulation have the same totalized
+                // semantics.
+                const int rhs_width = widthOf(ops[1].type);
+                if (rhs_width >= unsignedWidthForValue(static_cast<unsigned>(lhs_width))) {
+                    return "(" + operand(ops[1]) + " >= " +
+                           std::to_string(rhs_width) + "'d" + std::to_string(lhs_width) +
+                           " ? " + zeroFor(op.type) + " : " + value + ")";
+                }
+                return value;
+            }
+        case beir::OperationKind::Unary:
+            need(1);
+            if (op.op == beir::OpCode::LogicNot) return "(!" + operand(ops[0]) + ")";
+            if (op.op == beir::OpCode::BitNot) return "(~" + operand(ops[0]) + ")";
+            if (op.op == beir::OpCode::Neg) return "(-" + operand(ops[0]) + ")";
+            throw std::runtime_error("rtlgen unsupported unary opcode");
+        case beir::OperationKind::Cast:
+        case beir::OperationKind::ZExt:
+        case beir::OperationKind::Trunc:
+            need(1);
+            if (op.signed_truncation &&
+                widthOf(op.type) < widthOf(ops[0].type)) {
+                return signedTruncateExpr(operand(ops[0]),
+                                          widthOf(ops[0].type),
+                                          widthOf(op.type));
+            }
+            return resizeExpr(operand(ops[0]), widthOf(ops[0].type), widthOf(op.type), false);
+        case beir::OperationKind::SExt:
+            need(1);
+            return resizeExpr(operand(ops[0]), widthOf(ops[0].type), widthOf(op.type), true);
+        case beir::OperationKind::Ite:
+            need(3);
+            return "(" + operand(ops[0]) + " ? " +
+                   resizeExpr(operand(ops[1]), widthOf(ops[1].type), widthOf(op.type), false) +
+                   " : " +
+                   resizeExpr(operand(ops[2]), widthOf(ops[2].type), widthOf(op.type), false) +
+                   ")";
+        case beir::OperationKind::Case:
+            throw std::runtime_error("rtlgen case operation must be emitted as an always_comb block");
+        case beir::OperationKind::Slice:
+            need(1);
+            return partSelectExpr(operand(ops[0]), op.hi, op.lo);
+        case beir::OperationKind::BitSelect:
+            need(1);
+            return partSelectExpr(operand(ops[0]), op.bit, op.bit);
+        case beir::OperationKind::WriteSlice:
+            need(2);
+            return writeSliceExpr(operand(ops[0]), operand(ops[1]), widthOf(op.type),
+                                  op.lo, op.hi - op.lo + 1, widthOf(ops[1].type));
+        case beir::OperationKind::WriteBit:
+            need(2);
+            return writeSliceExpr(operand(ops[0]), operand(ops[1]), widthOf(op.type),
+                                  op.bit, 1, widthOf(ops[1].type));
+        case beir::OperationKind::DynamicBitSelect:
+            need(2);
+            return dynamicPartSelectExpr(operand(ops[0]), ops[1], widthOf(ops[0].type), 1);
+        case beir::OperationKind::DynamicSlice:
+            need(2);
+            return dynamicPartSelectExpr(operand(ops[0]), ops[1], widthOf(ops[0].type), widthOf(op.type));
+        case beir::OperationKind::DynamicWriteSlice:
+            need(3);
+            return writeSliceExpr(operand(ops[0]), operand(ops[2]), widthOf(op.type),
+                                  operand(ops[1]), widthOf(ops[2].type), widthOf(ops[2].type));
+        case beir::OperationKind::DynamicWriteBit:
+            need(3);
+            return writeSliceExpr(operand(ops[0]), operand(ops[2]), widthOf(op.type),
+                                  operand(ops[1]), 1, widthOf(ops[2].type));
+        case beir::OperationKind::Concat:
+            return concatExpr(ops);
+        case beir::OperationKind::Repeat:
+            need(1);
+            return "{" + std::to_string(op.times) + "{" + operand(ops[0]) + "}}";
+        case beir::OperationKind::ReduceOr:
+            need(1);
+            return "(|" + operand(ops[0]) + ")";
+        case beir::OperationKind::ReduceAnd:
+            need(1);
+            return "(&" + operand(ops[0]) + ")";
+        case beir::OperationKind::ReduceXor:
+            need(1);
+            return "(^" + operand(ops[0]) + ")";
+        case beir::OperationKind::Lookup:
+        case beir::OperationKind::ArrayAccess:
+            need(2);
+            return operand(ops[0]) + "[" + arrayIndexExpr(ops[0], ops[1]) + "]";
+        case beir::OperationKind::Aggregate:
+            throw std::runtime_error("rtlgen aggregate operation must be emitted as element assignments");
+        case beir::OperationKind::Call:
+            throw std::runtime_error("rtlgen cannot lower call operation");
+        }
+        throw std::runtime_error("rtlgen unsupported operation");
+    }
+
+    std::string concatExpr(const std::vector<beir::Operand>& ops) const {
+        std::ostringstream os;
+        os << "{";
+        for (std::size_t i = 0; i < ops.size(); ++i) {
+            if (i) os << ", ";
+            os << operand(ops[i]);
+        }
+        os << "}";
+        return os.str();
+    }
+
+    static int indexWidthForCount(std::size_t count) {
+        if (count <= 1) return 1;
+        int width = 0;
+        std::size_t value = count - 1;
+        while (value) {
+            ++width;
+            value >>= 1;
+        }
+        return std::max(width, 1);
+    }
+
+    std::string arrayIndexExpr(const beir::Operand& array_op, const beir::Operand& index_op) const {
+        std::size_t count = static_cast<std::size_t>(flattenedArraySize(array_op.type));
+        if (count == 0) return operand(index_op);
+        int index_width = indexWidthForCount(count);
+        if (widthOf(index_op.type) == index_width) return operand(index_op);
+        return std::to_string(index_width) + "'(" + operand(index_op) + ")";
+    }
+
+    std::string maskConst(int base_width, int write_width) const {
+        beir::Operand::Constant c;
+        c.width = base_width;
+        c.limbs.assign(static_cast<std::size_t>((base_width + 63) / 64), 0);
+        for (int i = 0; i < write_width; ++i) {
+            std::size_t limb = static_cast<std::size_t>(i / 64);
+            int bit = i % 64;
+            if (limb < c.limbs.size()) c.limbs[limb] |= (std::uint64_t{1} << bit);
+        }
+        return constExpr(c);
+    }
+
+    std::string writeSliceExpr(const std::string& base, const std::string& value,
+                               int base_width, int lo, int write_width, int value_width) const {
+        int hi = lo + write_width - 1;
+        if (base_width <= 0 || write_width <= 0 || lo < 0 || hi >= base_width) {
+            throw std::runtime_error("rtlgen malformed static write-slice range");
+        }
+
+        std::vector<std::string> parts;
+        if (hi + 1 < base_width) {
+            parts.push_back(partSelectExpr(base, base_width - 1, hi + 1));
+        }
+        parts.push_back(resizeExpr(value, value_width, write_width, false));
+        if (lo > 0) {
+            parts.push_back(partSelectExpr(base, lo - 1, 0));
+        }
+
+        if (parts.size() == 1) return parts.front();
+        std::ostringstream os;
+        os << "{";
+        for (std::size_t i = 0; i < parts.size(); ++i) {
+            if (i) os << ", ";
+            os << parts[i];
+        }
+        os << "}";
+        return os.str();
+    }
+
+    std::string partSelectExpr(const std::string& base, int hi, int lo) const {
+        int width = hi - lo + 1;
+        if (width <= 0) throw std::runtime_error("rtlgen malformed static part-select range");
+        if (isSimpleIdentifier(base)) {
+            if (width == 1) return base + "[" + std::to_string(lo) + "]";
+            return base + "[" + std::to_string(hi) + ":" + std::to_string(lo) + "]";
+        }
+        return std::to_string(width) + "'((" + base + ") >> " + std::to_string(lo) + ")";
+    }
+
+    std::string dynamicPartSelectExpr(const std::string& base,
+                                      const beir::Operand& index,
+                                      int base_width,
+                                      int width) const {
+        if (width <= 0) throw std::runtime_error("rtlgen malformed dynamic part-select width");
+        if (isSimpleIdentifier(base)) {
+            return base + "[" + dynamicIndexExpr(index, base_width) + " +: " +
+                   std::to_string(width) + "]";
+        }
+        return std::to_string(width) + "'((" + base + ") >> " + dynamicIndexExpr(index, base_width) + ")";
+    }
+
+    std::string writeSliceExpr(const std::string& base, const std::string& value,
+                               int base_width, const std::string& index, int write_width,
+                               int value_width) const {
+        std::string mask = maskConst(base_width, write_width);
+        std::string resized_value = resizeExpr(value, value_width, base_width, false);
+        return "((" + base + " & ~(" + mask + " << " + index + ")) | " +
+               "((" + resized_value + " & " + mask + ") << " + index + "))";
+    }
+};
+
+} // namespace
+
+std::string emitSystemVerilog(const pipeline::Program& program) {
+    return Emitter(program.rtl_program, &program).emit();
+}
+
+std::string emitSystemVerilogBody(
+    const pipeline::Program& program,
+    const std::vector<std::pair<std::string, std::string>>& port_bindings) {
+    return Emitter(program.rtl_program, &program).emitBody(port_bindings);
+}
+
+std::string emitSystemVerilog(const beir::Program& program) {
+    return Emitter(program).emit();
+}
+
+std::string emitSystemVerilogBody(
+    const beir::Program& program,
+    const std::vector<std::pair<std::string, std::string>>& port_bindings) {
+    return Emitter(program).emitBody(port_bindings);
+}
+
+std::vector<RtlDebugSignal> collectDebugSignals(const beir::Program& program,
+                                                const std::string& rtl_text) {
+    return Emitter(program).collectDebugSignals(rtl_text);
+}
+
+std::string emitDebugReport(const beir::Program& program,
+                            const std::string& rtl_text) {
+    return Emitter(program).emitDebugReport(rtl_text);
+}
+
+} // namespace pred::rtlgen

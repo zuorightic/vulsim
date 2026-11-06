@@ -1,0 +1,64 @@
+{
+  "version": "native-state-binding-verification-v1",
+  "status": "passed",
+  "checked_at": "2026-11-05T20:17:33.525412+08:00",
+  "manifest_sha256": "c1dc3769b83ba495ac8337d8a8ebccca894b1c05a943d4afa284fd4a72be87f9",
+  "actual_checks": {
+    "latest-parity": {
+      ".command.json": {
+        "path": "verification/latest-parity.command.json",
+        "sha256": "66d1b3b7e10a20a3cb5f8ab4d3864a77463a7f1aefc17355b062620d282029b5"
+      },
+      ".log": {
+        "path": "verification/latest-parity.log",
+        "sha256": "ad78a3b7fd37c7fea62a83e5fc5f1e118de884a95e7ca323fd9893dd781d488e"
+      }
+    },
+    "portable": {
+      ".command.json": {
+        "path": "verification/portable.command.json",
+        "sha256": "94491b121e5014ac22bcbbebb6efd4bdcd0743b32191fe2fdcbf9b782013f1a1"
+      },
+      ".log": {
+        "path": "verification/portable.log",
+        "sha256": "ec5510f6c70197a363ce7826a7353b538e3dd79f3016e6449d5117fc91443229"
+      }
+    },
+    "external": {
+      ".command.json": {
+        "path": "verification/external.command.json",
+        "sha256": "8919fba89b9008d3f6d50eb2b04bb07957d3049151f0a7154fb303d5526b612f"
+      },
+      ".log": {
+        "path": "verification/external.log",
+        "sha256": "a884eb9f333de0e205e94af6c54bcb2c95e35ca27b1ce5f758b160d82b780ccb"
+      }
+    },
+    "isolated": {
+      ".command.json": {
+        "path": "verification/isolated.command.json",
+        "sha256": "23a5332db458c0df496676b6c9b1c6506746e2a1622f82b8f5f687857f12c543"
+      },
+      ".log": {
+        "path": "verification/isolated.log",
+        "sha256": "d8903324bcc51bb6dcddb6d92c3df5faf4b805ecd9276ce629c7eeec9087905e"
+      }
+    }
+  },
+  "settled_ledger_prefix": {
+    "entries": 9298,
+    "usage": {
+      "synth": 1589,
+      "grt": 1567,
+      "final": 16,
+      "support_calls": 6126,
+      "walltime_s": 197923.06649882137,
+      "CPU_time_s": 447036.48,
+      "pending": 0
+    },
+    "active_jobs": 0,
+    "unsettled_jobs": 0
+  },
+  "PPA_calls": 0,
+  "full_D_ready": false
+}

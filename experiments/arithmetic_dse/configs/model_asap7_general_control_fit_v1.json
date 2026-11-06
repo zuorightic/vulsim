@@ -1,0 +1,22 @@
+{
+  "version": "asap7-general-control-fitting-execution-v1",
+  "protocol_sha256": "51cbbfc436de2c689907374f7b02d2ce588bf76e4ad3d4ed99490b5f38bd7193",
+  "mutable_paths": ["native_enable", "native_valid"],
+  "area_parameters": "copy parent three-owner area_models exactly; no NNLS area refit",
+  "immutable_paths": "copy all other six non-birth parent bounds at every exact clock; no calibration or reserve change",
+  "fitting_rows": "324 measured train/validation banks: old162 plus new162; same-source clocks/stages in one split; no consumed or fresh independent numeric labels",
+  "control_candidates": ["train_pooled_path_max", "train_NNLS_semantic_control_load", "train_NNLS_semantic_control_load_exact_clock"],
+  "target": "H_ps+delay_ps of each control path, per physical stage",
+  "baseline": "global train maximum required control time plus original50ps, pooling only nine registered exact clocks",
+  "NNLS": "unweighted train-only nonnegative least squares on protocol control_features; one is the declared constant feature; optional nine exact-clock indicators; no interpolation",
+  "upper_correction": "max(0,max train required-regression_prediction), independent of validation and test",
+  "engineering_reserve_ps": 50,
+  "validation": "all old/new rows covered for both mutable controls; original area20%/50% checked combined and each source cohort; unchanged six paths must cover all validation rows",
+  "selection": "one complete two-control candidate per stage; passing validation first, mean predicted validation upper bound, compact serialized model bytes, declared order; no selectable model if none passes",
+  "rounding_epsilon_ps": 0.000001,
+  "deployable_stage_if_independent_passes": "grt",
+  "required_new_independent_tasks": 54,
+  "test_labels_allowed": false,
+  "production_price_binding_qualified": false,
+  "full_D_ready": false
+}

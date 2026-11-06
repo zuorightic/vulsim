@@ -1,0 +1,27 @@
+{
+  "version": "arithmetic-component-manifest-v1",
+  "id": "asap7-d-components-native-state-v1",
+  "quality_status": "components_passed",
+  "target_platform": "asap7",
+  "platform_profile_sha256": "f9d3e71d377d0fef70b66e43828186962caa04fcec31b8f78ad8760c5459f1c7",
+  "evaluation_stage": "grt",
+  "ABC_ps": 1500,
+  "IO": "0.2T",
+  "components": {
+    "primitives": {
+      "schema": "asap7-m2-primitives-static-composite-qualified-v1",
+      "path": "../../arithmetic/evidence/step7_m2_mux_static_v1/asap7-primitives.json",
+      "sha256": "f49990d5aa68045a7127636e074d07f4140404b8b007c19b8f8b70bd16524e15"
+    },
+    "native_state": {
+      "schema": "arithmetic-native-state-qualified-v1",
+      "path": "../../arithmetic/evidence/step7_native_state_v1/asap7-native-state.json",
+      "sha256": "ce280fb25047038d0a9ff80084d744191419546d72072864f316ec7c4a8d9bff"
+    }
+  },
+  "target_rule": "every query must satisfy each owning component exact joint domain; no union or continuous interpolation",
+  "state_scope": "qualified independent native-protocol banks; core plus explicit external output capture; input/service wrapper excluded",
+  "joint_arithmetic_boundary_qualified": false,
+  "full_D_ready": false,
+  "missing_components": ["joint_arithmetic_and_service_boundary", "qualified_whole_stage", "real_half_quarter_intervals_when_split"]
+}

@@ -1,0 +1,204 @@
+{
+  "version": "asap7-general-state-control-boundary-successor-v1",
+  "purpose": "preserve all area coefficients; qualify native enable/valid boundary using semantic control-load contexts",
+  "requirements": "experiments/arithmetic_dse/configs/model_asap7_m2_joint_requirements_v2.json",
+  "requirements_sha256": "49d8578a2c793b631e221ac8ff6fdd84bd6448e3146fe406055f3ba4813ef3db",
+  "targets": "experiments/arithmetic_dse/configs/model_asap7_m2_targets_v1.json",
+  "targets_sha256": "6dd49589bae6e6be0be8d35bdd16259064a1f84a2910129249421c4bc458763e",
+  "parent_model": "experiments/arithmetic/evidence/step7_native_state_v1/asap7-native-state.json",
+  "parent_model_sha256": "ce280fb25047038d0a9ff80084d744191419546d72072864f316ec7c4a8d9bff",
+  "prior_independent_labels": "permanently excluded; original coefficients as an immutable total-bank diagnostic baseline only",
+  "ABC_ps": 1500,
+  "SDC_ps": [
+    1119,
+    1253,
+    1431,
+    3141,
+    3385,
+    4162,
+    4528,
+    11913,
+    14897
+  ],
+  "IO": "0.2T",
+  "splits": {
+    "train": {
+      "sources": 12,
+      "tasks": 108
+    },
+    "validation": {
+      "sources": 6,
+      "tasks": 54
+    },
+    "test": {
+      "sources": 6,
+      "tasks": 54,
+      "locked": true
+    }
+  },
+  "grouping": "one semantic synthetic source and all its exact clock/stage variants stay in one split; normalized semantic signatures must be unique across sources",
+  "word_widths": [
+    1,
+    5,
+    13,
+    16,
+    17,
+    21,
+    22,
+    24,
+    25,
+    26,
+    27,
+    29,
+    30,
+    32,
+    33,
+    34,
+    35,
+    37,
+    40,
+    41,
+    42,
+    48,
+    49,
+    50,
+    56,
+    57,
+    58,
+    64,
+    65,
+    66
+  ],
+  "max_variable_word_bits": 64,
+  "max_parallel_words": 18,
+  "max_input_data_bits": 130,
+  "max_native_data_bits": 1024,
+  "max_external_data_bits": 256,
+  "native_depths": [
+    1,
+    2
+  ],
+  "reset": "synchronous active-low; per-channel zero/ones/alternating/hash-derived general bit patterns; same logical value reset along its lifetime",
+  "source_relations": "kept combinational two-input XOR/permutation/inversion adapters over shared registered roots; every semantic state bit observed exactly once; adapter arithmetic excluded from owned state area",
+  "relation_limit": "synthetic affine two-root-bit relations only; arbitrary arithmetic source correlation still requires joint G qualification",
+  "lifetime": "contiguous native lifetime; include no-full-chain layouts; channels born after first cut and channels ending before last cut; valid always advances inside native bank",
+  "known_bits": "all dynamic, high/low zero padding, interior zero holes including 37-bit/36-variable and66-bit/64-variable layouts",
+  "service_protocols": [
+    "independent write enables including input-valid",
+    "one shared write enable including input-valid",
+    "independent data write enables with continuously advancing input-valid"
+  ],
+  "external_protocol": "unconditional output data/valid capture from declared terminal native values; never gated by valid",
+  "ownership": "disjoint input_service/native_state/external_state/adapter/observer/shared_clock/shared_physical/root_boundary_repair; retain every class; unknown functional cells or FF geometry mismatches reject",
+  "diagnostic_baseline": "immutable_native_total_baseline; original unpartitioned total is not eligible as a per-owner joint addend",
+  "area_candidates": [
+    "per_owner_NNLS_bits_signals",
+    "per_owner_NNLS_typed_state",
+    "per_owner_exact_SDC_NNLS_typed_state"
+  ],
+  "model_features": "semantic bits/signals/reset-one bits/capture-enable domains/widths/known masks/shared-source and lifetime descriptors/SDC only; no mapped cell counts, timing, area or source/split IDs",
+  "state_area_label": "input_service, native_state and external_state owned functional state/control area separately; shared physical/clock/repair labels retained separately, never silently added twice to a joint stage",
+  "quality_gates": {
+    "state_area_median_relative_error_max": 0.2,
+    "state_area_p95_relative_error_max": 0.5
+  },
+  "selection": "train-only nonnegative least squares; original gates on validation; normalized MAE, serialized size and stable candidate order break ties; parameters/domain/reserve frozen before fresh test",
+  "boundary": {
+    "engineering_reserve_ps": 50,
+    "register_H": "T-QD-slack",
+    "input_H": "T-0.2T-PD-slack",
+    "birth_adapter_path": "diagnostic only; not a state-only control bound or D_ref",
+    "test_gate": "all eight non-birth paths at each exact registered clock; independent max(H+delay)<=frozen upper bound; all three unchanged area models pass original20%/50%",
+    "model_features": "semantic per-cut fanout only; no mapped cell count, path delay or PPA in query features"
+  },
+  "timing_labels": [
+    "native_data",
+    "native_enable",
+    "native_valid",
+    "external_data",
+    "external_valid",
+    "input_data",
+    "input_enable",
+    "input_valid",
+    "birth_data"
+  ],
+  "capacity_pilot_sources": [
+    "general-control-train-04",
+    "general-control-train-10"
+  ],
+  "capacity_pilot_clock_indices": [
+    0,
+    8
+  ],
+  "independent_capacity_pilot_source": "general-control-test-04",
+  "mapping_reuse": "none in this cohort; each target gets independent synthesis and fresh SDC/ODB; all leaves paid",
+  "resources": {
+    "parallel_jobs": 4,
+    "threads": 4,
+    "memory_limit_MiB": 8192,
+    "synth_timeout_s": 120,
+    "grt_timeout_s": 180,
+    "snapshot_timeout_s": 60,
+    "backend_initial_snapshot_timeout_s": 120,
+    "environment_timeout_s": 60,
+    "per_task_walltime_envelope_s": 600,
+    "storage_per_task_bytes": 268435456
+  },
+  "support_walltime_envelope_s": 7200,
+  "later_work_reserved": {
+    "walltime_s": 86400,
+    "CPU_time_s": 172800,
+    "synth": 688,
+    "grt": 688,
+    "storage_bytes": 32212254720
+  },
+  "automatic_retries": 0,
+  "test_locked": true,
+  "joint_arithmetic_boundary_qualified": false,
+  "full_D_ready": false,
+  "main_36_or_688_admitted": false,
+  "predecessor_protocol_sha256": "5886a3d30c717b08a2e29d22a000db4aa86962b8d11fe2ab61fa6067af7f9905",
+  "observation": "post-state observer receives each service/native/external data and valid state exactly once; prevents unused-output pruning; observer area excluded",
+  "SDC_validation": "strict serialized-sdc v2 syntax plus exact binary32-second IO storage and write_sdc decimal rounding; no relative tolerance or target change",
+  "predecessor_stop": "four successful synth probes retained as diagnostic only; no grt; two SDC storage checks and two missing native-valid paths exposed unused output pruning; new versioned sources require new synthesis",
+  "parent_general_candidate": "build/step7-general-state-20261106/fit-v1/candidate.json",
+  "parent_general_candidate_sha256": "5300b9a7076a9bc583ba5f1bc651cd65904bfaf1dbcb71042576774a85fb89da",
+  "parent_general_selection": "build/step7-general-state-20261106/fit-v1/selection-freeze.json",
+  "parent_general_selection_sha256": "16dba85ab9237c6be1a7d8416f00d2571e03d4de32808fb37158fd297696a834",
+  "parent_fitting_dataset": "build/step7-general-state-20261106/fitting-check-v1/fitting-dataset.json",
+  "parent_fitting_dataset_sha256": "d9be0843352f110aa6e37e013423051fc49e21c7e42f850ecfcf5bacd05cb4c5",
+  "parent_independent_verdict": "build/step7-general-state-20261106/independent-verdict-v1/verdict.json",
+  "parent_independent_verdict_sha256": "479193153772a8bc466dd3ab7ddd07f2cdd66c17d8ba18ba9d5671b1f16c1680",
+  "parent_test_consumed": "build/step7-general-state-20261106/independent-v1/test-consumed.json",
+  "parent_test_consumed_sha256": "697bfd535a9d4cb049a82eaaa6ce3d01f3a05423a369b0c5aefd61ede07c128d",
+  "boundary_mutable_paths": [
+    "native_enable",
+    "native_valid"
+  ],
+  "area_coefficients_policy": "byte-identical area models from frozen parent candidate; no refit; all owner area gates checked on successor validation and new independent test",
+  "immutable_boundary_paths": "native_data/external_data/external_valid/input_data/input_enable/input_valid retain exact parent per-clock bounds; all must pass successor qualification",
+  "reuse": "only the old162 train/validation rows at exact physical identity; old54 consumed test never used for fitting, selection, calibration, margins or domain choices",
+  "new_source_seed": "S-control-boundary/20261106/v1",
+  "source_population": "24 newly salted sources with explicit per-cut load/lifetime distributions; 12train/6validation/6lockedtest and nine exact frozen targets; exclude every prior semantic signature",
+  "source_independence": "new reset/source-relation/lifetime and control-load contexts at already exposed widths; not unseen widths or arbitrary arithmetic correlation",
+  "control_features": [
+    "one",
+    "native_enable_bits_max",
+    "native_enable_bits_sqrt",
+    "native_enable_bits_log2",
+    "native_enable_words_max",
+    "native_valid_targets_max",
+    "native_data_bits",
+    "native_reset_one_bits",
+    "input_data_bits",
+    "external_data_bits"
+  ],
+  "boundary_candidates": [
+    "train_pooled_path_max",
+    "train_NNLS_semantic_control_load",
+    "train_NNLS_semantic_control_load_exact_clock"
+  ],
+  "boundary_fitting": "only native_enable/native_valid H+delay per stage; NNLS on fixed features, optionally nine exact-clock indicators; upper correction=max(0,max train required-prediction), original engineering reserve remains50ps; baseline=max train H+delay+50ps pooled across registered clocks",
+  "boundary_selection": "entire two-path candidate per stage must cover every old/new validation row; lowest mean validation predicted upper bound, then serialized bytes, then stable declared order; no independent labels observed",
+  "post_collection": "raw replay; unchanged areas and six unchanged path classes must pass validation; fit the two control paths; freeze/reproduce; then separately admit54 new test; no automatic fitting or test"
+}

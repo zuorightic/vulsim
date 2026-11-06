@@ -1,0 +1,481 @@
+{
+  "version": "asap7-m2-numerical-target-freeze-v1",
+  "status": "numerical_targets_frozen",
+  "platform": "asap7",
+  "stage": "grt",
+  "user_decision": "采用上述分离口径",
+  "decision_date": "2026-11-06",
+  "policy": {
+    "version": "asap7-m2-target-policy-v1",
+    "decision_date": "2026-11-06",
+    "user_decision": "采用上述分离口径",
+    "scope": "ASAP7 nine-case delivery; numerical target freeze only",
+    "cases": [
+      "MAC_32",
+      "DOT2_16",
+      "UDR_16",
+      "DIVSEL_32",
+      "F1",
+      "F2",
+      "H_M_32",
+      "H_D_32",
+      "H_F1"
+    ],
+    "platform": "asap7",
+    "stage": "grt",
+    "ABC_ps": 1500,
+    "IO": "0.2T",
+    "target_rules": "target_rules_v2",
+    "reference_manifest_sha256": "276f8a40cbf4876e0a871a76a7f3691a80bbc0be3d86ffdf88757891cd445979",
+    "reference_raw_audit_sha256": "801ed7e2f37ab3774a8b5f2f530a8d724e4b4beb48bd0e3255fb8219af369d58",
+    "D_ref": "exact longest dependency path on the original unexpanded graph using required same-platform grt reference data labels",
+    "H_ref": "max(0, data-path joint_reference_overhead_ps across the case's required reference keys)",
+    "H_components": "capture suffix plus clock/setup/skew/uncertainty; excludes launch-Q-to-last-core-output data",
+    "other_paths": "keep enable/valid/input/external full-path minimum-period diagnostics at reference context; never sum them into D_ref or use them to adjust the target",
+    "additional_numeric_reserve_ps": 0,
+    "period_rule": "ceil(H_ref + (3/2)*D_ref/L) ps",
+    "approved_proposed_periods_ps": {
+      "MAC_32": 1431,
+      "DOT2_16": 1119,
+      "UDR_16": 4528,
+      "DIVSEL_32": 11913,
+      "F1": 3141,
+      "F2": 4162,
+      "H_M_32": 1253,
+      "H_D_32": 14897,
+      "H_F1": 3385
+    },
+    "reference_labels_used_for_model_fitting": false,
+    "formal_or_holdout_PPA_used": false,
+    "model_qualification_inherited": false,
+    "main_36_or_688_admitted": false
+  },
+  "provenance": {
+    "reference_evidence": "/home/zyrv/vulsim/experiments/arithmetic/evidence/step7_reference_v1",
+    "reference_manifest_sha256": "276f8a40cbf4876e0a871a76a7f3691a80bbc0be3d86ffdf88757891cd445979",
+    "reference_verification_sha256": "f90d7d024edfba95fab61559e891df1ebd0ceba23b9467ae525b18d0913607c9",
+    "raw_audit_sha256": "801ed7e2f37ab3774a8b5f2f530a8d724e4b4beb48bd0e3255fb8219af369d58",
+    "proposal_sha256": "4525cc16c7f1b6ad14a72539b173cc7bd3284917374ed1d468646521b1fbe8aa",
+    "requirements_sha256": "b5ad085887ccb4bbb7b897d8b3b804ef859c1097946c2a1692ccc55116122185",
+    "target_rules_sha256": "01250b9a4b97f10a87c7a06306c16c9a4ac00f918925bcfe56dda4acd797ac68",
+    "policy_sha256": "00c3ed109cf9130dfd33ad278c0856ea694ca8cf1ca68e48f150c6b743366462"
+  },
+  "reference_bundle": {
+    "platform": "asap7",
+    "stage": "grt",
+    "label_definition": "combinational_data_path_excluding_boundary",
+    "reference_set_id": "asap7-m2-reference-v1-ABC1500-SDC40500",
+    "settings_sha256": "69839acf53024dcbb5cc78389ea761396067a7679c764a2719f58c8f1f393594",
+    "source_role": "microbenchmark_only",
+    "delays_ps": {
+      "add_u32": "20170697/50000",
+      "add_u33": "21463443/50000",
+      "add_u64": "47907890299999997/100000000000000",
+      "bitor_u5": "16210350499999997/500000000000000",
+      "div_u16": "10772198792000001/2000000000000",
+      "div_u32": "7110643631/500000",
+      "eq_u16": "114808899/1000000",
+      "eq_u32": "48355961/500000",
+      "f32_mul_rne": "12502036/3125",
+      "ite_u16": "85875019/500000",
+      "ite_u32": "326468811/1000000",
+      "ite_u5": "8014399700000001/100000000000000",
+      "mod_u16": "996179207/200000",
+      "mod_u32": "12506665787/1000000",
+      "mul_u16_r32": "9037406619999999/10000000000000",
+      "mul_u32_r32": "1072890213/1000000",
+      "mul_u32_r64": "1220217713/1000000"
+    },
+    "actual_data_definition": "launch Q to last core-owned output, including launch wire; capture suffix/clock terms excluded",
+    "reference_SDC_ps": 40500,
+    "ABC_ps": 1500,
+    "IO": "0.2T",
+    "reference_manifest_sha256": "276f8a40cbf4876e0a871a76a7f3691a80bbc0be3d86ffdf88757891cd445979",
+    "raw_audit_sha256": "801ed7e2f37ab3774a8b5f2f530a8d724e4b4beb48bd0e3255fb8219af369d58"
+  },
+  "production_batch": {
+    "version": "arithmetic-target-batch-v2",
+    "platform": "asap7",
+    "rules_version": "arithmetic-targets-v2",
+    "stage": "grt",
+    "reference_bundle_sha256": "23244f61d3f3409dfcac91191707751a1c642cbe6141fcdbd90d7926243e0a30",
+    "overhead_ps": {
+      "MAC_32": "7800547050000199/50000000000000",
+      "DOT2_16": "594812314999989/5000000000000",
+      "UDR_16": "1438124620000017/10000000000000",
+      "DIVSEL_32": "85485224374997/625000000000",
+      "F1": "348937605000001/2500000000000",
+      "F2": "14422383000000173/100000000000000",
+      "H_M_32": "3642002475000163/25000000000000",
+      "H_D_32": "85485224374997/625000000000",
+      "H_F1": "348937605000001/2500000000000"
+    },
+    "case_sha256": {
+      "MAC_32": "476b3734490bb3d31dadfe301f37e9fc18658dbb3d88bcbba4551262ee799314",
+      "DOT2_16": "02f9e8a194c5e2d2b0f269b73e79a673757296cca98bf602c9981a55b509cb37",
+      "UDR_16": "223ee1a00c29d7621dcfeba343eb29a8bc08336732ad607670646178612ad374",
+      "DIVSEL_32": "72f8e264795576c7d9045192b4608573d70465549a739af69be3a6258b55bca5",
+      "F1": "f7c2bf4885c2617dd2aef8b073122459d1e9a8aeb6b91d8b8aaeb22f2d967018",
+      "F2": "b32f23638d61f593b68fabff96eb0bdc0e3522de82a62a71eee2e4bc056c218a",
+      "H_M_32": "5f75e16b26e783729cd5753e5233ed3956f2b2ebef7cbaaf08c66c775fbea42a",
+      "H_D_32": "8943f2005659ecfdf94bd41cdecc278fb75b489d40e1465d71a0a20a1bdab1c5",
+      "H_F1": "7c48a8f7f0fa4f44b5bc625535d8eef2daf30b46fa90eda5ebb958c089dad6d4"
+    },
+    "L": {
+      "MAC_32": 2,
+      "DOT2_16": 2,
+      "UDR_16": 2,
+      "DIVSEL_32": 2,
+      "F1": 2,
+      "F2": 3,
+      "H_M_32": 2,
+      "H_D_32": 3,
+      "H_F1": 2
+    },
+    "periods_ps": {
+      "MAC_32": 1431,
+      "DOT2_16": 1119,
+      "UDR_16": 4528,
+      "DIVSEL_32": 11913,
+      "F1": 3141,
+      "F2": 4162,
+      "H_M_32": 1253,
+      "H_D_32": 14897,
+      "H_F1": 3385
+    },
+    "batch_sha256": "211307811c67998d3f0cddd08eafe24f4fc6c96986e495375c96148ba20ebe71"
+  },
+  "cases": {
+    "MAC_32": {
+      "L": 2,
+      "partition": "formal",
+      "D_ref_ps": "169929661599999997/100000000000000",
+      "D_ref_decimal_ps": 1699.2966159999999,
+      "H_ref_ps": "7800547050000199/50000000000000",
+      "H_ref_decimal_ps": 156.01094100000398,
+      "required_labels": [
+        "add_u64",
+        "mul_u32_r64"
+      ],
+      "critical_node_path": [
+        "a",
+        "product",
+        "sum"
+      ],
+      "reference_manifest_hashes": {
+        "add_u64": "15ac4757a6a7ca95565422b14bce19638c6ba5bb8a403168f1e332c08796cd8c",
+        "mul_u32_r64": "fdd028b5cf9d172ad85251605d59081df554102bd0e16ef97c5fbb796d8172b5"
+      },
+      "H_maximizer_keys": [
+        "add_u64"
+      ],
+      "reference_context_other_path_minimum_period_ps": 417.34374999999665,
+      "other_paths_are_reference_context_diagnostics_not_target_corrections": true,
+      "T_target_ps": 1431,
+      "target_data_budget_ps": "63749452949999801/50000000000000",
+      "target_data_budget_decimal_ps": 1274.9890589999961,
+      "rho_ref": "127498905899999602/169929661599999997",
+      "rho_ref_decimal": 0.7503040063724791
+    },
+    "DOT2_16": {
+      "L": 2,
+      "partition": "formal",
+      "D_ref_ps": "13330095219999999/10000000000000",
+      "D_ref_decimal_ps": 1333.0095219999998,
+      "H_ref_ps": "594812314999989/5000000000000",
+      "H_ref_decimal_ps": 118.9624629999978,
+      "required_labels": [
+        "add_u33",
+        "mul_u16_r32"
+      ],
+      "critical_node_path": [
+        "a",
+        "product",
+        "wide_p",
+        "sum"
+      ],
+      "reference_manifest_hashes": {
+        "add_u33": "ad2c0d08c8ad79214d173bfab7a6e440f769db57535cc3e93a175c26e54bb178",
+        "mul_u16_r32": "1bbd29a54ff9c8bc498643d899a7de60d8a6d816c0bc2c1fe025b917a34ed4eb"
+      },
+      "H_maximizer_keys": [
+        "mul_u16_r32"
+      ],
+      "reference_context_other_path_minimum_period_ps": 334.0742189999988,
+      "other_paths_are_reference_context_diagnostics_not_target_corrections": true,
+      "T_target_ps": 1119,
+      "target_data_budget_ps": "5000187685000011/5000000000000",
+      "target_data_budget_decimal_ps": 1000.0375370000022,
+      "rho_ref": "476208350952382/634766439047619",
+      "rho_ref_decimal": 0.7502103477097309
+    },
+    "UDR_16": {
+      "L": 2,
+      "partition": "formal",
+      "D_ref_ps": "11688816742000001/2000000000000",
+      "D_ref_decimal_ps": 5844.408371,
+      "H_ref_ps": "1438124620000017/10000000000000",
+      "H_ref_decimal_ps": 143.8124620000017,
+      "required_labels": [
+        "div_u16",
+        "eq_u16",
+        "ite_u16",
+        "mod_u16"
+      ],
+      "critical_node_path": [
+        "d",
+        "first_is_zero",
+        "first_safe_d",
+        "first_raw_q",
+        "first_q"
+      ],
+      "reference_manifest_hashes": {
+        "div_u16": "28289cd92dcf65feadefb9254372ad0d8592b053a3530e56dd61296aade9bcef",
+        "eq_u16": "8d45abcbe8e99ab451be8ac4cafd3cf2211f649bb48d2d5f5d8d677be0211696",
+        "ite_u16": "1b672250515a243a29bce50dc6a305668a849cb7d58d1f5543be07059a6e1e42",
+        "mod_u16": "0126ebb7f2ece02e2195f0667fb94c76a57139434c50c2f59b58d557ec8bd495"
+      },
+      "H_maximizer_keys": [
+        "ite_u16"
+      ],
+      "reference_context_other_path_minimum_period_ps": 302.28906200000154,
+      "other_paths_are_reference_context_diagnostics_not_target_corrections": true,
+      "T_target_ps": 4528,
+      "target_data_budget_ps": "43841875379999983/10000000000000",
+      "target_data_budget_decimal_ps": 4384.187537999998,
+      "rho_ref": "43841875379999983/58444083710000005",
+      "rho_ref_decimal": 0.7501507868194788
+    },
+    "DIVSEL_32": {
+      "L": 2,
+      "partition": "formal",
+      "D_ref_ps": "15700819557/1000000",
+      "D_ref_decimal_ps": 15700.819557,
+      "H_ref_ps": "85485224374997/625000000000",
+      "H_ref_decimal_ps": 136.7763589999952,
+      "required_labels": [
+        "add_u32",
+        "div_u32",
+        "eq_u32",
+        "ite_u32",
+        "mod_u32"
+      ],
+      "critical_node_path": [
+        "d",
+        "first_is_zero",
+        "first_safe_d",
+        "first_raw_q",
+        "first_q",
+        "biased_q",
+        "chosen"
+      ],
+      "reference_manifest_hashes": {
+        "add_u32": "0905645e753ce1ac652256d74733c818d751baf11239af288764e7f2cdf8dc2f",
+        "div_u32": "05926c8b9c87be27ab808a98d83b9105cc380e18227e0e34e9e6b4e43c72154d",
+        "eq_u32": "3b176108aefc1e32228544c5bc5b1a68d26bebf20ca39ab1654016ad2f252453",
+        "ite_u32": "98a5606aba7909eef34d3b250df7b705bce6d522f4aae14b3643ea59bfccc264",
+        "mod_u32": "9496d9c04f4fd7e3203e5918c79ba0b1cabf3b65bfc8b5d676524005457ec02d"
+      },
+      "H_maximizer_keys": [
+        "eq_u32"
+      ],
+      "reference_context_other_path_minimum_period_ps": 327.9516599999972,
+      "other_paths_are_reference_context_diagnostics_not_target_corrections": true,
+      "T_target_ps": 11913,
+      "target_data_budget_ps": "7360139775625003/625000000000",
+      "target_data_budget_decimal_ps": 11776.223641000004,
+      "rho_ref": "7360139775625003/9813012223125000",
+      "rho_ref_decimal": 0.7500387860804204
+    },
+    "F1": {
+      "L": 2,
+      "partition": "formal",
+      "D_ref_ps": "12502036/3125",
+      "D_ref_decimal_ps": 4000.65152,
+      "H_ref_ps": "348937605000001/2500000000000",
+      "H_ref_decimal_ps": 139.5750420000004,
+      "required_labels": [
+        "f32_mul_rne"
+      ],
+      "critical_node_path": [
+        "a",
+        "fp1"
+      ],
+      "reference_manifest_hashes": {
+        "f32_mul_rne": "561974dccc6146abe2ef59531c5d2bb3e75b9f98dfb33eea409e47e509e58659"
+      },
+      "H_maximizer_keys": [
+        "f32_mul_rne"
+      ],
+      "reference_context_other_path_minimum_period_ps": 298.94531200000176,
+      "other_paths_are_reference_context_diagnostics_not_target_corrections": true,
+      "T_target_ps": 3141,
+      "target_data_budget_ps": "7503562394999999/2500000000000",
+      "target_data_budget_decimal_ps": 3001.4249579999996,
+      "rho_ref": "7503562394999999/10001628800000000",
+      "rho_ref_decimal": 0.75023404137934
+    },
+    "F2": {
+      "L": 3,
+      "partition": "formal",
+      "D_ref_ps": "4016861870499999997/500000000000000",
+      "D_ref_decimal_ps": 8033.723741,
+      "H_ref_ps": "14422383000000173/100000000000000",
+      "H_ref_decimal_ps": 144.22383000000173,
+      "required_labels": [
+        "bitor_u5",
+        "f32_mul_rne"
+      ],
+      "critical_node_path": [
+        "a",
+        "fp1",
+        "bits1",
+        "fp2",
+        "flags2",
+        "flags_or"
+      ],
+      "reference_manifest_hashes": {
+        "bitor_u5": "078ff737f8c4a5faf07c5ac596c9502d98e979d944905d246700e046f3a19b62",
+        "f32_mul_rne": "561974dccc6146abe2ef59531c5d2bb3e75b9f98dfb33eea409e47e509e58659"
+      },
+      "H_maximizer_keys": [
+        "bitor_u5"
+      ],
+      "reference_context_other_path_minimum_period_ps": 298.94531200000176,
+      "other_paths_are_reference_context_diagnostics_not_target_corrections": true,
+      "T_target_ps": 4162,
+      "target_data_budget_ps": "401777616999999827/100000000000000",
+      "target_data_budget_decimal_ps": 4017.7761699999983,
+      "rho_ref": "2008888084999999135/4016861870499999997",
+      "rho_ref_decimal": 0.5001138076848887
+    },
+    "H_M_32": {
+      "L": 2,
+      "partition": "holdout",
+      "D_ref_ps": "1476304153/1000000",
+      "D_ref_decimal_ps": 1476.304153,
+      "H_ref_ps": "3642002475000163/25000000000000",
+      "H_ref_decimal_ps": 145.68009900000652,
+      "required_labels": [
+        "add_u32",
+        "ite_u32",
+        "mul_u32_r32"
+      ],
+      "critical_node_path": [
+        "a",
+        "product",
+        "sum"
+      ],
+      "reference_manifest_hashes": {
+        "add_u32": "0905645e753ce1ac652256d74733c818d751baf11239af288764e7f2cdf8dc2f",
+        "ite_u32": "98a5606aba7909eef34d3b250df7b705bce6d522f4aae14b3643ea59bfccc264",
+        "mul_u32_r32": "3b5751986363f93a5411808798869530f11385c11d73b0c2860d658f6fa54d5b"
+      },
+      "H_maximizer_keys": [
+        "mul_u32_r32"
+      ],
+      "reference_context_other_path_minimum_period_ps": 313.3593749999999,
+      "other_paths_are_reference_context_diagnostics_not_target_corrections": true,
+      "T_target_ps": 1253,
+      "target_data_budget_ps": "27682997524999837/25000000000000",
+      "target_data_budget_decimal_ps": 1107.3199009999935,
+      "rho_ref": "27682997524999837/36907603825000000",
+      "rho_ref_decimal": 0.7500621729945058
+    },
+    "H_D_32": {
+      "L": 3,
+      "partition": "holdout",
+      "D_ref_ps": "29518692879/1000000",
+      "D_ref_decimal_ps": 29518.692879,
+      "H_ref_ps": "85485224374997/625000000000",
+      "H_ref_decimal_ps": 136.7763589999952,
+      "required_labels": [
+        "div_u32",
+        "eq_u32",
+        "ite_u32",
+        "mod_u32"
+      ],
+      "critical_node_path": [
+        "d",
+        "first_is_zero",
+        "first_safe_d",
+        "first_raw_q",
+        "first_q",
+        "second_raw_q",
+        "second_q"
+      ],
+      "reference_manifest_hashes": {
+        "div_u32": "05926c8b9c87be27ab808a98d83b9105cc380e18227e0e34e9e6b4e43c72154d",
+        "eq_u32": "3b176108aefc1e32228544c5bc5b1a68d26bebf20ca39ab1654016ad2f252453",
+        "ite_u32": "98a5606aba7909eef34d3b250df7b705bce6d522f4aae14b3643ea59bfccc264",
+        "mod_u32": "9496d9c04f4fd7e3203e5918c79ba0b1cabf3b65bfc8b5d676524005457ec02d"
+      },
+      "H_maximizer_keys": [
+        "eq_u32"
+      ],
+      "reference_context_other_path_minimum_period_ps": 327.9516599999972,
+      "other_paths_are_reference_context_diagnostics_not_target_corrections": true,
+      "T_target_ps": 14897,
+      "target_data_budget_ps": "9225139775625003/625000000000",
+      "target_data_budget_decimal_ps": 14760.223641000004,
+      "rho_ref": "3075046591875001/6149727683125000",
+      "rho_ref_decimal": 0.5000297168138034
+    },
+    "H_F1": {
+      "L": 2,
+      "partition": "holdout",
+      "D_ref_ps": "4327120331/1000000",
+      "D_ref_decimal_ps": 4327.120331,
+      "H_ref_ps": "348937605000001/2500000000000",
+      "H_ref_decimal_ps": 139.5750420000004,
+      "required_labels": [
+        "f32_mul_rne",
+        "ite_u32",
+        "ite_u5"
+      ],
+      "critical_node_path": [
+        "a",
+        "fp1",
+        "bits1",
+        "selected_bits"
+      ],
+      "reference_manifest_hashes": {
+        "f32_mul_rne": "561974dccc6146abe2ef59531c5d2bb3e75b9f98dfb33eea409e47e509e58659",
+        "ite_u32": "98a5606aba7909eef34d3b250df7b705bce6d522f4aae14b3643ea59bfccc264",
+        "ite_u5": "3898fda656b1d0d788c268cdc97008b56f4fec2db723b9996d98108df68c24f8"
+      },
+      "H_maximizer_keys": [
+        "f32_mul_rne"
+      ],
+      "reference_context_other_path_minimum_period_ps": 312.86718799999727,
+      "other_paths_are_reference_context_diagnostics_not_target_corrections": true,
+      "T_target_ps": 3385,
+      "target_data_budget_ps": "8113562394999999/2500000000000",
+      "target_data_budget_decimal_ps": 3245.4249579999996,
+      "rho_ref": "8113562394999999/10817800827500000",
+      "rho_ref_decimal": 0.7500195764719998
+    }
+  },
+  "exact_SDC_ps": [
+    1119,
+    1253,
+    1431,
+    3141,
+    3385,
+    4162,
+    4528,
+    11913,
+    14897
+  ],
+  "ABC_ps": 1500,
+  "IO": "0.2T",
+  "C_D_candidate_order_unchanged": true,
+  "K": 16,
+  "numerical_targets_frozen": true,
+  "model_targets_qualified": false,
+  "reference_rows_allowed_for_model_fitting": false,
+  "formal_PPA_read": false,
+  "PPA_calls": 0,
+  "main_36_or_688_admitted": false,
+  "full_D_ready": false
+}

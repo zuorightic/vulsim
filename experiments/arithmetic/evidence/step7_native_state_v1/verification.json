@@ -1,0 +1,60 @@
+{
+  "version": "native-state-publication-verification-v1",
+  "status": "passed",
+  "checked_at": "2026-11-05T19:23:50+08:00",
+  "index_sha256": "1081785be9f54fffce830515409790b85f37f6712aebd8dc79850f6b8aa5d869",
+  "model_sha256": "ce280fb25047038d0a9ff80084d744191419546d72072864f316ec7c4a8d9bff",
+  "publication_sha256": "3ef462cf71c7e173e74144d64a5644f55f46463511a7beb3d310dfcfb241da05",
+  "capabilities_sha256": "500c289d65191af34c29b2058244e7f2fe50ebc76f145cd868e428d38890cae8",
+  "checks": [
+    {
+      "name": "package",
+      "command_record_path": "/home/zyrv/vulsim/build/step7-native-state-20261105/publication-checks-v1/package.command.json",
+      "command_record_sha256": "a49e63803257dd619cac7e0d456064aecc925fefc3aca696995f27944099ad12",
+      "log_sha256": "5e0b70dc4c765979dd2f6763eb2cd701bc6f0ab89f1ea135b814a2692fcfee26",
+      "budget_reservation_id": "8dbc043640654e5b8c25cc53f9960dbf"
+    },
+    {
+      "name": "portable",
+      "command_record_path": "/home/zyrv/vulsim/build/step7-native-state-20261105/publication-checks-v1/portable.command.json",
+      "command_record_sha256": "e18409d38c84afd4a6ee84c482495bb568e7aa941fed8ecb150b8db1dee5294c",
+      "log_sha256": "d63c122fdf5ec72a85e6be48cfd2ed408822c8293fbe2d1c02bf69eac0d033b4",
+      "budget_reservation_id": "b9e8b73c12294c0ab9a929c72e0153f1"
+    },
+    {
+      "name": "external",
+      "command_record_path": "/home/zyrv/vulsim/build/step7-native-state-20261105/publication-checks-v1/external.command.json",
+      "command_record_sha256": "3f6d9d2e18fbb49e203fff898749d44fe20d02b1790682e1f11730bab1cbc5ea",
+      "log_sha256": "616b6efc8eaa903bd68143b93ed6559162747f72889d9ca110326c3b182b8db2",
+      "budget_reservation_id": "14c7982654574f7cb3b36d056afcd7fe"
+    },
+    {
+      "name": "isolated-tamper",
+      "command_record_path": "/home/zyrv/vulsim/build/step7-native-state-20261105/publication-checks-v1/isolated-tamper.command.json",
+      "command_record_sha256": "0f5af447a818d9f5ab276a10717cc4726ee3c408c03798379cd5959ac6b4ef7b",
+      "log_sha256": "883cf298e58ab6377e59d03ed0bc0120b1139ff331fc7fe1ae718e73ddd6ac71",
+      "budget_reservation_id": "b6987b7912f44ac7a1735925ccb30d2c"
+    }
+  ],
+  "isolated_git_view_required_files": 206,
+  "original_build_tools_and_live_ledger_denied": true,
+  "PATH_empty_and_subprocess_forbidden": true,
+  "pool_tamper_rejected": true,
+  "production_price_binding_qualified": false,
+  "full_D_ready": false,
+  "accounting": {
+    "usage": {
+      "synth": 1589,
+      "grt": 1567,
+      "final": 16,
+      "support_calls": 6102,
+      "walltime_s": 197848.0511790563,
+      "CPU_time_s": 446943.53,
+      "pending": 0
+    },
+    "entries": 9274,
+    "entries_prefix_sha256": "290fbf286f14d89103b07cebc5d1c1d9cd8f8ffbd43e02dd1ade1ba31e3cd45b",
+    "active_jobs": 0,
+    "unsettled_jobs": 0
+  }
+}

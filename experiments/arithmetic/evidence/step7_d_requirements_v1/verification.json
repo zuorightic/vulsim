@@ -1,0 +1,65 @@
+{
+  "version": "D-requirements-verification-v1",
+  "status": "passed",
+  "checked_at": "2026-11-05T20:52:40.309087+08:00",
+  "manifest_sha256": "614486071ac1fe87405798be30ea186c66dd23daaa813100c61ca7eec648ca55",
+  "actual_checks": {
+    "analysis-freeze": {
+      ".command.json": {
+        "path": "verification/analysis-freeze.command.json",
+        "sha256": "1d42468cbe48ba89165caf024d64be78f0d32b37b7119defd96ac03ea17550ac"
+      },
+      ".log": {
+        "path": "verification/analysis-freeze.log",
+        "sha256": "7ef5240eff0fc8ddbba4d26b27fcf07b67f836d5d0cffd9e409b447629b56974"
+      }
+    },
+    "portable": {
+      ".command.json": {
+        "path": "verification/portable.command.json",
+        "sha256": "32ed019e8e7a5ff16fb460d1cfc147cd24a06f46c6701962f0fe366158ba8002"
+      },
+      ".log": {
+        "path": "verification/portable.log",
+        "sha256": "3952db9dda60b4b88f66d2aa00d816e4b67498f9e9dda052879208f2659ba204"
+      }
+    },
+    "external": {
+      ".command.json": {
+        "path": "verification/external.command.json",
+        "sha256": "a08f307ac0abb71d5f82e2ee8b5d75e5173aa56524403dff602d264fdcb929cf"
+      },
+      ".log": {
+        "path": "verification/external.log",
+        "sha256": "380ed5f84bbe5d27896f400952ef82bae049afe313b73f90f3157ee5e8b40be8"
+      }
+    },
+    "isolated": {
+      ".command.json": {
+        "path": "verification/isolated.command.json",
+        "sha256": "7b47b709aaa76ff2f04d0fd72c9f79dcd3ce90b2cad3358750cd237f31c50216"
+      },
+      ".log": {
+        "path": "verification/isolated.log",
+        "sha256": "0e7c0fabf095f5267ddcbc7618aae50ed905e87014f90306df71367769b005fa"
+      }
+    }
+  },
+  "ledger_prefix": {
+    "entries": 9326,
+    "usage": {
+      "synth": 1589,
+      "grt": 1567,
+      "final": 16,
+      "support_calls": 6154,
+      "walltime_s": 198008.1934347262,
+      "CPU_time_s": 447141.8,
+      "pending": 0
+    },
+    "active": 0,
+    "unsettled": 0
+  },
+  "PPA_calls": 0,
+  "physical_admission_allowed": false,
+  "full_D_ready": false
+}

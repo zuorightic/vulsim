@@ -1,0 +1,3610 @@
+{
+  "version": "asap7-general-control-independent-verdict-v1",
+  "status": "passed",
+  "stages": {
+    "synth": {
+      "status": "passed",
+      "owner_area_quality": {
+        "input_service": {
+          "status": "passed",
+          "n": 54,
+          "MAE": 0.0657593386773551,
+          "median_relative_error": 0.000975877219793535,
+          "p95_relative_error": 0.001280521368890863,
+          "max_relative_error": 0.001280521368890863,
+          "relative_error_floor": 0.0001,
+          "normalized_MAE": 0.0008273903520905345,
+          "underpredicted_banks": 18,
+          "predictions": [
+            {
+              "id": "general-control-test-00-t0/synth/input_service",
+              "actual_um2": 80.91900000000008,
+              "predicted_um2": 81.00535995991991
+            },
+            {
+              "id": "general-control-test-00-t1/synth/input_service",
+              "actual_um2": 80.91900000000008,
+              "predicted_um2": 81.00535995991991
+            },
+            {
+              "id": "general-control-test-00-t2/synth/input_service",
+              "actual_um2": 80.91900000000008,
+              "predicted_um2": 81.00535995991991
+            },
+            {
+              "id": "general-control-test-00-t3/synth/input_service",
+              "actual_um2": 80.91900000000008,
+              "predicted_um2": 81.00535995991991
+            },
+            {
+              "id": "general-control-test-00-t4/synth/input_service",
+              "actual_um2": 80.91900000000008,
+              "predicted_um2": 81.00535995991991
+            },
+            {
+              "id": "general-control-test-00-t5/synth/input_service",
+              "actual_um2": 80.91900000000008,
+              "predicted_um2": 81.00535995991991
+            },
+            {
+              "id": "general-control-test-00-t6/synth/input_service",
+              "actual_um2": 80.91900000000008,
+              "predicted_um2": 81.00535995991991
+            },
+            {
+              "id": "general-control-test-00-t7/synth/input_service",
+              "actual_um2": 80.91900000000008,
+              "predicted_um2": 81.00535995991991
+            },
+            {
+              "id": "general-control-test-00-t8/synth/input_service",
+              "actual_um2": 80.91900000000008,
+              "predicted_um2": 81.00535995991991
+            },
+            {
+              "id": "general-control-test-01-t0/synth/input_service",
+              "actual_um2": 79.67970000000008,
+              "predicted_um2": 79.68955635270552
+            },
+            {
+              "id": "general-control-test-01-t1/synth/input_service",
+              "actual_um2": 79.67970000000008,
+              "predicted_um2": 79.68955635270552
+            },
+            {
+              "id": "general-control-test-01-t2/synth/input_service",
+              "actual_um2": 79.67970000000008,
+              "predicted_um2": 79.68955635270552
+            },
+            {
+              "id": "general-control-test-01-t3/synth/input_service",
+              "actual_um2": 79.67970000000008,
+              "predicted_um2": 79.68955635270552
+            },
+            {
+              "id": "general-control-test-01-t4/synth/input_service",
+              "actual_um2": 79.67970000000008,
+              "predicted_um2": 79.68955635270552
+            },
+            {
+              "id": "general-control-test-01-t5/synth/input_service",
+              "actual_um2": 79.67970000000008,
+              "predicted_um2": 79.68955635270552
+            },
+            {
+              "id": "general-control-test-01-t6/synth/input_service",
+              "actual_um2": 79.67970000000008,
+              "predicted_um2": 79.68955635270552
+            },
+            {
+              "id": "general-control-test-01-t7/synth/input_service",
+              "actual_um2": 79.67970000000008,
+              "predicted_um2": 79.68955635270552
+            },
+            {
+              "id": "general-control-test-01-t8/synth/input_service",
+              "actual_um2": 79.67970000000008,
+              "predicted_um2": 79.68955635270552
+            },
+            {
+              "id": "general-control-test-02-t0/synth/input_service",
+              "actual_um2": 78.58620000000013,
+              "predicted_um2": 78.65571066132277
+            },
+            {
+              "id": "general-control-test-02-t1/synth/input_service",
+              "actual_um2": 78.58620000000013,
+              "predicted_um2": 78.65571066132277
+            },
+            {
+              "id": "general-control-test-02-t2/synth/input_service",
+              "actual_um2": 78.58620000000013,
+              "predicted_um2": 78.65571066132277
+            },
+            {
+              "id": "general-control-test-02-t3/synth/input_service",
+              "actual_um2": 78.58620000000013,
+              "predicted_um2": 78.65571066132277
+            },
+            {
+              "id": "general-control-test-02-t4/synth/input_service",
+              "actual_um2": 78.58620000000013,
+              "predicted_um2": 78.65571066132277
+            },
+            {
+              "id": "general-control-test-02-t5/synth/input_service",
+              "actual_um2": 78.58620000000013,
+              "predicted_um2": 78.65571066132277
+            },
+            {
+              "id": "general-control-test-02-t6/synth/input_service",
+              "actual_um2": 78.58620000000013,
+              "predicted_um2": 78.65571066132277
+            },
+            {
+              "id": "general-control-test-02-t7/synth/input_service",
+              "actual_um2": 78.58620000000013,
+              "predicted_um2": 78.65571066132277
+            },
+            {
+              "id": "general-control-test-02-t8/synth/input_service",
+              "actual_um2": 78.58620000000013,
+              "predicted_um2": 78.65571066132277
+            },
+            {
+              "id": "general-control-test-03-t0/synth/input_service",
+              "actual_um2": 79.02360000000012,
+              "predicted_um2": 78.93766857715443
+            },
+            {
+              "id": "general-control-test-03-t1/synth/input_service",
+              "actual_um2": 79.02360000000012,
+              "predicted_um2": 78.93766857715443
+            },
+            {
+              "id": "general-control-test-03-t2/synth/input_service",
+              "actual_um2": 79.02360000000012,
+              "predicted_um2": 78.93766857715443
+            },
+            {
+              "id": "general-control-test-03-t3/synth/input_service",
+              "actual_um2": 79.02360000000012,
+              "predicted_um2": 78.93766857715443
+            },
+            {
+              "id": "general-control-test-03-t4/synth/input_service",
+              "actual_um2": 79.02360000000012,
+              "predicted_um2": 78.93766857715443
+            },
+            {
+              "id": "general-control-test-03-t5/synth/input_service",
+              "actual_um2": 79.02360000000012,
+              "predicted_um2": 78.93766857715443
+            },
+            {
+              "id": "general-control-test-03-t6/synth/input_service",
+              "actual_um2": 79.02360000000012,
+              "predicted_um2": 78.93766857715443
+            },
+            {
+              "id": "general-control-test-03-t7/synth/input_service",
+              "actual_um2": 79.02360000000012,
+              "predicted_um2": 78.93766857715443
+            },
+            {
+              "id": "general-control-test-03-t8/synth/input_service",
+              "actual_um2": 79.02360000000012,
+              "predicted_um2": 78.93766857715443
+            },
+            {
+              "id": "general-control-test-04-t0/synth/input_service",
+              "actual_um2": 79.8692400000001,
+              "predicted_um2": 79.97151426853718
+            },
+            {
+              "id": "general-control-test-04-t1/synth/input_service",
+              "actual_um2": 79.8692400000001,
+              "predicted_um2": 79.97151426853718
+            },
+            {
+              "id": "general-control-test-04-t2/synth/input_service",
+              "actual_um2": 79.8692400000001,
+              "predicted_um2": 79.97151426853718
+            },
+            {
+              "id": "general-control-test-04-t3/synth/input_service",
+              "actual_um2": 79.8692400000001,
+              "predicted_um2": 79.97151426853718
+            },
+            {
+              "id": "general-control-test-04-t4/synth/input_service",
+              "actual_um2": 79.8692400000001,
+              "predicted_um2": 79.97151426853718
+            },
+            {
+              "id": "general-control-test-04-t5/synth/input_service",
+              "actual_um2": 79.8692400000001,
+              "predicted_um2": 79.97151426853718
+            },
+            {
+              "id": "general-control-test-04-t6/synth/input_service",
+              "actual_um2": 79.8692400000001,
+              "predicted_um2": 79.97151426853718
+            },
+            {
+              "id": "general-control-test-04-t7/synth/input_service",
+              "actual_um2": 79.8692400000001,
+              "predicted_um2": 79.97151426853718
+            },
+            {
+              "id": "general-control-test-04-t8/synth/input_service",
+              "actual_um2": 79.8692400000001,
+              "predicted_um2": 79.97151426853718
+            },
+            {
+              "id": "general-control-test-05-t0/synth/input_service",
+              "actual_um2": 78.79032000000012,
+              "predicted_um2": 78.74969663326667
+            },
+            {
+              "id": "general-control-test-05-t1/synth/input_service",
+              "actual_um2": 78.79032000000012,
+              "predicted_um2": 78.74969663326667
+            },
+            {
+              "id": "general-control-test-05-t2/synth/input_service",
+              "actual_um2": 78.79032000000012,
+              "predicted_um2": 78.74969663326667
+            },
+            {
+              "id": "general-control-test-05-t3/synth/input_service",
+              "actual_um2": 78.79032000000012,
+              "predicted_um2": 78.74969663326667
+            },
+            {
+              "id": "general-control-test-05-t4/synth/input_service",
+              "actual_um2": 78.79032000000012,
+              "predicted_um2": 78.74969663326667
+            },
+            {
+              "id": "general-control-test-05-t5/synth/input_service",
+              "actual_um2": 78.79032000000012,
+              "predicted_um2": 78.74969663326667
+            },
+            {
+              "id": "general-control-test-05-t6/synth/input_service",
+              "actual_um2": 78.79032000000012,
+              "predicted_um2": 78.74969663326667
+            },
+            {
+              "id": "general-control-test-05-t7/synth/input_service",
+              "actual_um2": 78.79032000000012,
+              "predicted_um2": 78.74969663326667
+            },
+            {
+              "id": "general-control-test-05-t8/synth/input_service",
+              "actual_um2": 78.79032000000012,
+              "predicted_um2": 78.74969663326667
+            }
+          ]
+        },
+        "native_state": {
+          "status": "passed",
+          "n": 54,
+          "MAE": 0.9705070247044105,
+          "median_relative_error": 0.0037001182037420845,
+          "p95_relative_error": 0.008868416641405755,
+          "max_relative_error": 0.008868416641405755,
+          "relative_error_floor": 0.0001,
+          "normalized_MAE": 0.004660112328322762,
+          "underpredicted_banks": 54,
+          "predictions": [
+            {
+              "id": "general-control-test-00-t0/synth/native_state",
+              "actual_um2": 42.209100000000014,
+              "predicted_um2": 41.9766043583838
+            },
+            {
+              "id": "general-control-test-00-t1/synth/native_state",
+              "actual_um2": 42.209100000000014,
+              "predicted_um2": 41.9766043583838
+            },
+            {
+              "id": "general-control-test-00-t2/synth/native_state",
+              "actual_um2": 42.209100000000014,
+              "predicted_um2": 41.9766043583838
+            },
+            {
+              "id": "general-control-test-00-t3/synth/native_state",
+              "actual_um2": 42.209100000000014,
+              "predicted_um2": 41.9766043583838
+            },
+            {
+              "id": "general-control-test-00-t4/synth/native_state",
+              "actual_um2": 42.209100000000014,
+              "predicted_um2": 41.9766043583838
+            },
+            {
+              "id": "general-control-test-00-t5/synth/native_state",
+              "actual_um2": 42.209100000000014,
+              "predicted_um2": 41.9766043583838
+            },
+            {
+              "id": "general-control-test-00-t6/synth/native_state",
+              "actual_um2": 42.209100000000014,
+              "predicted_um2": 41.9766043583838
+            },
+            {
+              "id": "general-control-test-00-t7/synth/native_state",
+              "actual_um2": 42.209100000000014,
+              "predicted_um2": 41.9766043583838
+            },
+            {
+              "id": "general-control-test-00-t8/synth/native_state",
+              "actual_um2": 42.209100000000014,
+              "predicted_um2": 41.9766043583838
+            },
+            {
+              "id": "general-control-test-01-t0/synth/native_state",
+              "actual_um2": 147.59333999999913,
+              "predicted_um2": 147.5751035342051
+            },
+            {
+              "id": "general-control-test-01-t1/synth/native_state",
+              "actual_um2": 147.59333999999913,
+              "predicted_um2": 147.5751035342051
+            },
+            {
+              "id": "general-control-test-01-t2/synth/native_state",
+              "actual_um2": 147.59333999999913,
+              "predicted_um2": 147.5751035342051
+            },
+            {
+              "id": "general-control-test-01-t3/synth/native_state",
+              "actual_um2": 147.59333999999913,
+              "predicted_um2": 147.5751035342051
+            },
+            {
+              "id": "general-control-test-01-t4/synth/native_state",
+              "actual_um2": 147.59333999999913,
+              "predicted_um2": 147.5751035342051
+            },
+            {
+              "id": "general-control-test-01-t5/synth/native_state",
+              "actual_um2": 147.59333999999913,
+              "predicted_um2": 147.5751035342051
+            },
+            {
+              "id": "general-control-test-01-t6/synth/native_state",
+              "actual_um2": 147.59333999999913,
+              "predicted_um2": 147.5751035342051
+            },
+            {
+              "id": "general-control-test-01-t7/synth/native_state",
+              "actual_um2": 147.59333999999913,
+              "predicted_um2": 147.5751035342051
+            },
+            {
+              "id": "general-control-test-01-t8/synth/native_state",
+              "actual_um2": 147.59333999999913,
+              "predicted_um2": 147.5751035342051
+            },
+            {
+              "id": "general-control-test-02-t0/synth/native_state",
+              "actual_um2": 265.5892799999956,
+              "predicted_um2": 263.5693638805502
+            },
+            {
+              "id": "general-control-test-02-t1/synth/native_state",
+              "actual_um2": 265.5892799999956,
+              "predicted_um2": 263.5693638805502
+            },
+            {
+              "id": "general-control-test-02-t2/synth/native_state",
+              "actual_um2": 265.5892799999956,
+              "predicted_um2": 263.5693638805502
+            },
+            {
+              "id": "general-control-test-02-t3/synth/native_state",
+              "actual_um2": 265.5892799999956,
+              "predicted_um2": 263.5693638805502
+            },
+            {
+              "id": "general-control-test-02-t4/synth/native_state",
+              "actual_um2": 265.5892799999956,
+              "predicted_um2": 263.5693638805502
+            },
+            {
+              "id": "general-control-test-02-t5/synth/native_state",
+              "actual_um2": 265.5892799999956,
+              "predicted_um2": 263.5693638805502
+            },
+            {
+              "id": "general-control-test-02-t6/synth/native_state",
+              "actual_um2": 265.5892799999956,
+              "predicted_um2": 263.5693638805502
+            },
+            {
+              "id": "general-control-test-02-t7/synth/native_state",
+              "actual_um2": 265.5892799999956,
+              "predicted_um2": 263.5693638805502
+            },
+            {
+              "id": "general-control-test-02-t8/synth/native_state",
+              "actual_um2": 265.5892799999956,
+              "predicted_um2": 263.5693638805502
+            },
+            {
+              "id": "general-control-test-03-t0/synth/native_state",
+              "actual_um2": 316.3422599999985,
+              "predicted_um2": 313.5368050370346
+            },
+            {
+              "id": "general-control-test-03-t1/synth/native_state",
+              "actual_um2": 316.3422599999985,
+              "predicted_um2": 313.5368050370346
+            },
+            {
+              "id": "general-control-test-03-t2/synth/native_state",
+              "actual_um2": 316.3422599999985,
+              "predicted_um2": 313.5368050370346
+            },
+            {
+              "id": "general-control-test-03-t3/synth/native_state",
+              "actual_um2": 316.3422599999985,
+              "predicted_um2": 313.5368050370346
+            },
+            {
+              "id": "general-control-test-03-t4/synth/native_state",
+              "actual_um2": 316.3422599999985,
+              "predicted_um2": 313.5368050370346
+            },
+            {
+              "id": "general-control-test-03-t5/synth/native_state",
+              "actual_um2": 316.3422599999985,
+              "predicted_um2": 313.5368050370346
+            },
+            {
+              "id": "general-control-test-03-t6/synth/native_state",
+              "actual_um2": 316.3422599999985,
+              "predicted_um2": 313.5368050370346
+            },
+            {
+              "id": "general-control-test-03-t7/synth/native_state",
+              "actual_um2": 316.3422599999985,
+              "predicted_um2": 313.5368050370346
+            },
+            {
+              "id": "general-control-test-03-t8/synth/native_state",
+              "actual_um2": 316.3422599999985,
+              "predicted_um2": 313.5368050370346
+            },
+            {
+              "id": "general-control-test-04-t0/synth/native_state",
+              "actual_um2": 325.2068999999994,
+              "predicted_um2": 324.5915926756663
+            },
+            {
+              "id": "general-control-test-04-t1/synth/native_state",
+              "actual_um2": 325.2068999999994,
+              "predicted_um2": 324.5915926756663
+            },
+            {
+              "id": "general-control-test-04-t2/synth/native_state",
+              "actual_um2": 325.2068999999994,
+              "predicted_um2": 324.5915926756663
+            },
+            {
+              "id": "general-control-test-04-t3/synth/native_state",
+              "actual_um2": 325.2068999999994,
+              "predicted_um2": 324.5915926756663
+            },
+            {
+              "id": "general-control-test-04-t4/synth/native_state",
+              "actual_um2": 325.2068999999994,
+              "predicted_um2": 324.5915926756663
+            },
+            {
+              "id": "general-control-test-04-t5/synth/native_state",
+              "actual_um2": 325.2068999999994,
+              "predicted_um2": 324.5915926756663
+            },
+            {
+              "id": "general-control-test-04-t6/synth/native_state",
+              "actual_um2": 325.2068999999994,
+              "predicted_um2": 324.5915926756663
+            },
+            {
+              "id": "general-control-test-04-t7/synth/native_state",
+              "actual_um2": 325.2068999999994,
+              "predicted_um2": 324.5915926756663
+            },
+            {
+              "id": "general-control-test-04-t8/synth/native_state",
+              "actual_um2": 325.2068999999994,
+              "predicted_um2": 324.5915926756663
+            },
+            {
+              "id": "general-control-test-05-t0/synth/native_state",
+              "actual_um2": 152.60885999999886,
+              "predicted_um2": 152.47722836592501
+            },
+            {
+              "id": "general-control-test-05-t1/synth/native_state",
+              "actual_um2": 152.60885999999886,
+              "predicted_um2": 152.47722836592501
+            },
+            {
+              "id": "general-control-test-05-t2/synth/native_state",
+              "actual_um2": 152.60885999999886,
+              "predicted_um2": 152.47722836592501
+            },
+            {
+              "id": "general-control-test-05-t3/synth/native_state",
+              "actual_um2": 152.60885999999886,
+              "predicted_um2": 152.47722836592501
+            },
+            {
+              "id": "general-control-test-05-t4/synth/native_state",
+              "actual_um2": 152.60885999999886,
+              "predicted_um2": 152.47722836592501
+            },
+            {
+              "id": "general-control-test-05-t5/synth/native_state",
+              "actual_um2": 152.60885999999886,
+              "predicted_um2": 152.47722836592501
+            },
+            {
+              "id": "general-control-test-05-t6/synth/native_state",
+              "actual_um2": 152.60885999999886,
+              "predicted_um2": 152.47722836592501
+            },
+            {
+              "id": "general-control-test-05-t7/synth/native_state",
+              "actual_um2": 152.60885999999886,
+              "predicted_um2": 152.47722836592501
+            },
+            {
+              "id": "general-control-test-05-t8/synth/native_state",
+              "actual_um2": 152.60885999999886,
+              "predicted_um2": 152.47722836592501
+            }
+          ]
+        },
+        "external_state": {
+          "status": "passed",
+          "n": 54,
+          "MAE": 0.02739726475207623,
+          "median_relative_error": 0.0005966391103857406,
+          "p95_relative_error": 0.0006477381084635542,
+          "max_relative_error": 0.0006477381084635542,
+          "relative_error_floor": 0.0001,
+          "normalized_MAE": 0.0004138528997606539,
+          "underpredicted_banks": 18,
+          "predictions": [
+            {
+              "id": "general-control-test-00-t0/synth/external_state",
+              "actual_um2": 30.151439999999955,
+              "predicted_um2": 30.170970236713007
+            },
+            {
+              "id": "general-control-test-00-t1/synth/external_state",
+              "actual_um2": 30.151439999999955,
+              "predicted_um2": 30.170970236713007
+            },
+            {
+              "id": "general-control-test-00-t2/synth/external_state",
+              "actual_um2": 30.151439999999955,
+              "predicted_um2": 30.170970236713007
+            },
+            {
+              "id": "general-control-test-00-t3/synth/external_state",
+              "actual_um2": 30.151439999999955,
+              "predicted_um2": 30.170970236713007
+            },
+            {
+              "id": "general-control-test-00-t4/synth/external_state",
+              "actual_um2": 30.151439999999955,
+              "predicted_um2": 30.170970236713007
+            },
+            {
+              "id": "general-control-test-00-t5/synth/external_state",
+              "actual_um2": 30.151439999999955,
+              "predicted_um2": 30.170970236713007
+            },
+            {
+              "id": "general-control-test-00-t6/synth/external_state",
+              "actual_um2": 30.151439999999955,
+              "predicted_um2": 30.170970236713007
+            },
+            {
+              "id": "general-control-test-00-t7/synth/external_state",
+              "actual_um2": 30.151439999999955,
+              "predicted_um2": 30.170970236713007
+            },
+            {
+              "id": "general-control-test-00-t8/synth/external_state",
+              "actual_um2": 30.151439999999955,
+              "predicted_um2": 30.170970236713007
+            },
+            {
+              "id": "general-control-test-01-t0/synth/external_state",
+              "actual_um2": 75.21822000000022,
+              "predicted_um2": 75.24250401203746
+            },
+            {
+              "id": "general-control-test-01-t1/synth/external_state",
+              "actual_um2": 75.21822000000022,
+              "predicted_um2": 75.24250401203746
+            },
+            {
+              "id": "general-control-test-01-t2/synth/external_state",
+              "actual_um2": 75.21822000000022,
+              "predicted_um2": 75.24250401203746
+            },
+            {
+              "id": "general-control-test-01-t3/synth/external_state",
+              "actual_um2": 75.21822000000022,
+              "predicted_um2": 75.24250401203746
+            },
+            {
+              "id": "general-control-test-01-t4/synth/external_state",
+              "actual_um2": 75.21822000000022,
+              "predicted_um2": 75.24250401203746
+            },
+            {
+              "id": "general-control-test-01-t5/synth/external_state",
+              "actual_um2": 75.21822000000022,
+              "predicted_um2": 75.24250401203746
+            },
+            {
+              "id": "general-control-test-01-t6/synth/external_state",
+              "actual_um2": 75.21822000000022,
+              "predicted_um2": 75.24250401203746
+            },
+            {
+              "id": "general-control-test-01-t7/synth/external_state",
+              "actual_um2": 75.21822000000022,
+              "predicted_um2": 75.24250401203746
+            },
+            {
+              "id": "general-control-test-01-t8/synth/external_state",
+              "actual_um2": 75.21822000000022,
+              "predicted_um2": 75.24250401203746
+            },
+            {
+              "id": "general-control-test-02-t0/synth/external_state",
+              "actual_um2": 56.89116000000009,
+              "predicted_um2": 56.85467997877028
+            },
+            {
+              "id": "general-control-test-02-t1/synth/external_state",
+              "actual_um2": 56.89116000000009,
+              "predicted_um2": 56.85467997877028
+            },
+            {
+              "id": "general-control-test-02-t2/synth/external_state",
+              "actual_um2": 56.89116000000009,
+              "predicted_um2": 56.85467997877028
+            },
+            {
+              "id": "general-control-test-02-t3/synth/external_state",
+              "actual_um2": 56.89116000000009,
+              "predicted_um2": 56.85467997877028
+            },
+            {
+              "id": "general-control-test-02-t4/synth/external_state",
+              "actual_um2": 56.89116000000009,
+              "predicted_um2": 56.85467997877028
+            },
+            {
+              "id": "general-control-test-02-t5/synth/external_state",
+              "actual_um2": 56.89116000000009,
+              "predicted_um2": 56.85467997877028
+            },
+            {
+              "id": "general-control-test-02-t6/synth/external_state",
+              "actual_um2": 56.89116000000009,
+              "predicted_um2": 56.85467997877028
+            },
+            {
+              "id": "general-control-test-02-t7/synth/external_state",
+              "actual_um2": 56.89116000000009,
+              "predicted_um2": 56.85467997877028
+            },
+            {
+              "id": "general-control-test-02-t8/synth/external_state",
+              "actual_um2": 56.89116000000009,
+              "predicted_um2": 56.85467997877028
+            },
+            {
+              "id": "general-control-test-03-t0/synth/external_state",
+              "actual_um2": 60.37578000000011,
+              "predicted_um2": 60.34199975204659
+            },
+            {
+              "id": "general-control-test-03-t1/synth/external_state",
+              "actual_um2": 60.37578000000011,
+              "predicted_um2": 60.34199975204659
+            },
+            {
+              "id": "general-control-test-03-t2/synth/external_state",
+              "actual_um2": 60.37578000000011,
+              "predicted_um2": 60.34199975204659
+            },
+            {
+              "id": "general-control-test-03-t3/synth/external_state",
+              "actual_um2": 60.37578000000011,
+              "predicted_um2": 60.34199975204659
+            },
+            {
+              "id": "general-control-test-03-t4/synth/external_state",
+              "actual_um2": 60.37578000000011,
+              "predicted_um2": 60.34199975204659
+            },
+            {
+              "id": "general-control-test-03-t5/synth/external_state",
+              "actual_um2": 60.37578000000011,
+              "predicted_um2": 60.34199975204659
+            },
+            {
+              "id": "general-control-test-03-t6/synth/external_state",
+              "actual_um2": 60.37578000000011,
+              "predicted_um2": 60.34199975204659
+            },
+            {
+              "id": "general-control-test-03-t7/synth/external_state",
+              "actual_um2": 60.37578000000011,
+              "predicted_um2": 60.34199975204659
+            },
+            {
+              "id": "general-control-test-03-t8/synth/external_state",
+              "actual_um2": 60.37578000000011,
+              "predicted_um2": 60.34199975204659
+            },
+            {
+              "id": "general-control-test-04-t0/synth/external_state",
+              "actual_um2": 114.27804000000037,
+              "predicted_um2": 114.29013965811677
+            },
+            {
+              "id": "general-control-test-04-t1/synth/external_state",
+              "actual_um2": 114.27804000000037,
+              "predicted_um2": 114.29013965811677
+            },
+            {
+              "id": "general-control-test-04-t2/synth/external_state",
+              "actual_um2": 114.27804000000037,
+              "predicted_um2": 114.29013965811677
+            },
+            {
+              "id": "general-control-test-04-t3/synth/external_state",
+              "actual_um2": 114.27804000000037,
+              "predicted_um2": 114.29013965811677
+            },
+            {
+              "id": "general-control-test-04-t4/synth/external_state",
+              "actual_um2": 114.27804000000037,
+              "predicted_um2": 114.29013965811677
+            },
+            {
+              "id": "general-control-test-04-t5/synth/external_state",
+              "actual_um2": 114.27804000000037,
+              "predicted_um2": 114.29013965811677
+            },
+            {
+              "id": "general-control-test-04-t6/synth/external_state",
+              "actual_um2": 114.27804000000037,
+              "predicted_um2": 114.29013965811677
+            },
+            {
+              "id": "general-control-test-04-t7/synth/external_state",
+              "actual_um2": 114.27804000000037,
+              "predicted_um2": 114.29013965811677
+            },
+            {
+              "id": "general-control-test-04-t8/synth/external_state",
+              "actual_um2": 114.27804000000037,
+              "predicted_um2": 114.29013965811677
+            },
+            {
+              "id": "general-control-test-05-t0/synth/external_state",
+              "actual_um2": 60.288300000000106,
+              "predicted_um2": 60.326509412462535
+            },
+            {
+              "id": "general-control-test-05-t1/synth/external_state",
+              "actual_um2": 60.288300000000106,
+              "predicted_um2": 60.326509412462535
+            },
+            {
+              "id": "general-control-test-05-t2/synth/external_state",
+              "actual_um2": 60.288300000000106,
+              "predicted_um2": 60.326509412462535
+            },
+            {
+              "id": "general-control-test-05-t3/synth/external_state",
+              "actual_um2": 60.288300000000106,
+              "predicted_um2": 60.326509412462535
+            },
+            {
+              "id": "general-control-test-05-t4/synth/external_state",
+              "actual_um2": 60.288300000000106,
+              "predicted_um2": 60.326509412462535
+            },
+            {
+              "id": "general-control-test-05-t5/synth/external_state",
+              "actual_um2": 60.288300000000106,
+              "predicted_um2": 60.326509412462535
+            },
+            {
+              "id": "general-control-test-05-t6/synth/external_state",
+              "actual_um2": 60.288300000000106,
+              "predicted_um2": 60.326509412462535
+            },
+            {
+              "id": "general-control-test-05-t7/synth/external_state",
+              "actual_um2": 60.288300000000106,
+              "predicted_um2": 60.326509412462535
+            },
+            {
+              "id": "general-control-test-05-t8/synth/external_state",
+              "actual_um2": 60.288300000000106,
+              "predicted_um2": 60.326509412462535
+            }
+          ]
+        }
+      },
+      "boundary_coverage": {
+        "status": "passed",
+        "minimum_margin_ps": 44.47173371099802,
+        "contexts": [
+          {
+            "period_ps": 1119,
+            "path_class": "native_data",
+            "covered": true,
+            "minimum_margin_ps": 53.00717899999998,
+            "witness": {
+              "row_id": "general-control-test-04-t0/synth",
+              "required_ps": 138.17089800000005,
+              "upper_ps": 191.17807700000003,
+              "margin_ps": 53.00717899999998
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1119,
+            "path_class": "native_enable",
+            "covered": true,
+            "minimum_margin_ps": 44.4717947109981,
+            "witness": {
+              "row_id": "general-control-test-03-t0/synth",
+              "required_ps": 278.114441,
+              "upper_ps": 322.5862357109981,
+              "margin_ps": 44.4717947109981
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1119,
+            "path_class": "native_valid",
+            "covered": true,
+            "minimum_margin_ps": 55.16106584354927,
+            "witness": {
+              "row_id": "general-control-test-01-t0/synth",
+              "required_ps": 199.58111599999992,
+              "upper_ps": 254.7421818435492,
+              "margin_ps": 55.16106584354927
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1119,
+            "path_class": "external_data",
+            "covered": true,
+            "minimum_margin_ps": 50.60843199999985,
+            "witness": {
+              "row_id": "general-control-test-05-t0/synth",
+              "required_ps": 122.3952030000001,
+              "upper_ps": 173.00363499999995,
+              "margin_ps": 50.60843199999985
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1119,
+            "path_class": "external_valid",
+            "covered": true,
+            "minimum_margin_ps": 50.025390000000186,
+            "witness": {
+              "row_id": "general-control-test-03-t0/synth",
+              "required_ps": 112.20959499999995,
+              "upper_ps": 162.23498500000014,
+              "margin_ps": 50.025390000000186
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1119,
+            "path_class": "input_data",
+            "covered": true,
+            "minimum_margin_ps": 51.20716900000002,
+            "witness": {
+              "row_id": "general-control-test-00-t0/synth",
+              "required_ps": 83.29802200000009,
+              "upper_ps": 134.5051910000001,
+              "margin_ps": 51.20716900000002
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1119,
+            "path_class": "input_enable",
+            "covered": true,
+            "minimum_margin_ps": 51.47949200000005,
+            "witness": {
+              "row_id": "general-control-test-00-t0/synth",
+              "required_ps": 184.4983400000001,
+              "upper_ps": 235.97783200000015,
+              "margin_ps": 51.47949200000005
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1119,
+            "path_class": "input_valid",
+            "covered": true,
+            "minimum_margin_ps": 56.31741300000009,
+            "witness": {
+              "row_id": "general-control-test-00-t0/synth",
+              "required_ps": 77.29228499999995,
+              "upper_ps": 133.60969800000004,
+              "margin_ps": 56.31741300000009
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1253,
+            "path_class": "native_data",
+            "covered": true,
+            "minimum_margin_ps": 53.007178999999866,
+            "witness": {
+              "row_id": "general-control-test-04-t1/synth",
+              "required_ps": 138.17089800000016,
+              "upper_ps": 191.17807700000003,
+              "margin_ps": 53.007178999999866
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1253,
+            "path_class": "native_enable",
+            "covered": true,
+            "minimum_margin_ps": 44.47185571099817,
+            "witness": {
+              "row_id": "general-control-test-03-t1/synth",
+              "required_ps": 278.1143799999999,
+              "upper_ps": 322.5862357109981,
+              "margin_ps": 44.47185571099817
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1253,
+            "path_class": "native_valid",
+            "covered": true,
+            "minimum_margin_ps": 55.161126843549,
+            "witness": {
+              "row_id": "general-control-test-01-t1/synth",
+              "required_ps": 199.5810550000002,
+              "upper_ps": 254.7421818435492,
+              "margin_ps": 55.161126843549
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1253,
+            "path_class": "external_data",
+            "covered": true,
+            "minimum_margin_ps": 50.60837099999989,
+            "witness": {
+              "row_id": "general-control-test-05-t1/synth",
+              "required_ps": 122.39526400000005,
+              "upper_ps": 173.00363499999995,
+              "margin_ps": 50.60837099999989
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1253,
+            "path_class": "external_valid",
+            "covered": true,
+            "minimum_margin_ps": 50.02551200000033,
+            "witness": {
+              "row_id": "general-control-test-03-t1/synth",
+              "required_ps": 112.2094729999998,
+              "upper_ps": 162.23498500000014,
+              "margin_ps": 50.02551200000033
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1253,
+            "path_class": "input_data",
+            "covered": true,
+            "minimum_margin_ps": 51.20721400000002,
+            "witness": {
+              "row_id": "general-control-test-00-t1/synth",
+              "required_ps": 83.29794899999999,
+              "upper_ps": 134.505163,
+              "margin_ps": 51.20721400000002
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1253,
+            "path_class": "input_enable",
+            "covered": true,
+            "minimum_margin_ps": 51.47943099999995,
+            "witness": {
+              "row_id": "general-control-test-00-t1/synth",
+              "required_ps": 184.49832800000004,
+              "upper_ps": 235.977759,
+              "margin_ps": 51.47943099999995
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1253,
+            "path_class": "input_valid",
+            "covered": true,
+            "minimum_margin_ps": 56.31744400000001,
+            "witness": {
+              "row_id": "general-control-test-00-t1/synth",
+              "required_ps": 77.2922119999999,
+              "upper_ps": 133.60965599999992,
+              "margin_ps": 56.31744400000001
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1431,
+            "path_class": "native_data",
+            "covered": true,
+            "minimum_margin_ps": 53.007178999999866,
+            "witness": {
+              "row_id": "general-control-test-04-t2/synth",
+              "required_ps": 138.17089800000016,
+              "upper_ps": 191.17807700000003,
+              "margin_ps": 53.007178999999866
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1431,
+            "path_class": "native_enable",
+            "covered": true,
+            "minimum_margin_ps": 44.47185571099817,
+            "witness": {
+              "row_id": "general-control-test-03-t2/synth",
+              "required_ps": 278.1143799999999,
+              "upper_ps": 322.5862357109981,
+              "margin_ps": 44.47185571099817
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1431,
+            "path_class": "native_valid",
+            "covered": true,
+            "minimum_margin_ps": 55.16100484354908,
+            "witness": {
+              "row_id": "general-control-test-01-t2/synth",
+              "required_ps": 199.5811770000001,
+              "upper_ps": 254.7421818435492,
+              "margin_ps": 55.16100484354908
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1431,
+            "path_class": "external_data",
+            "covered": true,
+            "minimum_margin_ps": 50.60837099999989,
+            "witness": {
+              "row_id": "general-control-test-05-t2/synth",
+              "required_ps": 122.39526400000005,
+              "upper_ps": 173.00363499999995,
+              "margin_ps": 50.60837099999989
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1431,
+            "path_class": "external_valid",
+            "covered": true,
+            "minimum_margin_ps": 50.025390000000186,
+            "witness": {
+              "row_id": "general-control-test-03-t2/synth",
+              "required_ps": 112.20959499999995,
+              "upper_ps": 162.23498500000014,
+              "margin_ps": 50.025390000000186
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1431,
+            "path_class": "input_data",
+            "covered": true,
+            "minimum_margin_ps": 51.2071840000001,
+            "witness": {
+              "row_id": "general-control-test-00-t2/synth",
+              "required_ps": 83.29804699999991,
+              "upper_ps": 134.505231,
+              "margin_ps": 51.2071840000001
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1431,
+            "path_class": "input_enable",
+            "covered": true,
+            "minimum_margin_ps": 51.47946099999996,
+            "witness": {
+              "row_id": "general-control-test-00-t2/synth",
+              "required_ps": 184.49836399999992,
+              "upper_ps": 235.97782499999988,
+              "margin_ps": 51.47946099999996
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1431,
+            "path_class": "input_valid",
+            "covered": true,
+            "minimum_margin_ps": 56.31738199999995,
+            "witness": {
+              "row_id": "general-control-test-00-t2/synth",
+              "required_ps": 77.29231000000007,
+              "upper_ps": 133.60969200000002,
+              "margin_ps": 56.31738199999995
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3141,
+            "path_class": "native_data",
+            "covered": true,
+            "minimum_margin_ps": 53.00730100000024,
+            "witness": {
+              "row_id": "general-control-test-04-t3/synth",
+              "required_ps": 138.1708979999997,
+              "upper_ps": 191.17819899999995,
+              "margin_ps": 53.00730100000024
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3141,
+            "path_class": "native_enable",
+            "covered": true,
+            "minimum_margin_ps": 44.47173371099802,
+            "witness": {
+              "row_id": "general-control-test-03-t3/synth",
+              "required_ps": 278.1145020000001,
+              "upper_ps": 322.5862357109981,
+              "margin_ps": 44.47173371099802
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3141,
+            "path_class": "native_valid",
+            "covered": true,
+            "minimum_margin_ps": 55.161126843549,
+            "witness": {
+              "row_id": "general-control-test-01-t3/synth",
+              "required_ps": 199.5810550000002,
+              "upper_ps": 254.7421818435492,
+              "margin_ps": 55.161126843549
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3141,
+            "path_class": "external_data",
+            "covered": true,
+            "minimum_margin_ps": 50.60824899999997,
+            "witness": {
+              "row_id": "general-control-test-05-t3/synth",
+              "required_ps": 122.39526400000005,
+              "upper_ps": 173.00351300000003,
+              "margin_ps": 50.60824899999997
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3141,
+            "path_class": "external_valid",
+            "covered": true,
+            "minimum_margin_ps": 50.02538999999973,
+            "witness": {
+              "row_id": "general-control-test-03-t3/synth",
+              "required_ps": 112.20971700000032,
+              "upper_ps": 162.23510700000006,
+              "margin_ps": 50.02538999999973
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3141,
+            "path_class": "input_data",
+            "covered": true,
+            "minimum_margin_ps": 51.20727600000009,
+            "witness": {
+              "row_id": "general-control-test-00-t3/synth",
+              "required_ps": 83.29804700000031,
+              "upper_ps": 134.5053230000004,
+              "margin_ps": 51.20727600000009
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3141,
+            "path_class": "input_enable",
+            "covered": true,
+            "minimum_margin_ps": 51.47955400000026,
+            "witness": {
+              "row_id": "general-control-test-00-t3/synth",
+              "required_ps": 184.49848599999987,
+              "upper_ps": 235.97804000000014,
+              "margin_ps": 51.47955400000026
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3141,
+            "path_class": "input_valid",
+            "covered": true,
+            "minimum_margin_ps": 56.31689400000005,
+            "witness": {
+              "row_id": "general-control-test-00-t3/synth",
+              "required_ps": 77.29267600000014,
+              "upper_ps": 133.6095700000002,
+              "margin_ps": 56.31689400000005
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3385,
+            "path_class": "native_data",
+            "covered": true,
+            "minimum_margin_ps": 53.007300000000356,
+            "witness": {
+              "row_id": "general-control-test-04-t4/synth",
+              "required_ps": 138.17065399999987,
+              "upper_ps": 191.17795400000023,
+              "margin_ps": 53.007300000000356
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3385,
+            "path_class": "native_enable",
+            "covered": true,
+            "minimum_margin_ps": 44.47173371099802,
+            "witness": {
+              "row_id": "general-control-test-03-t4/synth",
+              "required_ps": 278.1145020000001,
+              "upper_ps": 322.5862357109981,
+              "margin_ps": 44.47173371099802
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3385,
+            "path_class": "native_valid",
+            "covered": true,
+            "minimum_margin_ps": 55.161126843549,
+            "witness": {
+              "row_id": "general-control-test-01-t4/synth",
+              "required_ps": 199.5810550000002,
+              "upper_ps": 254.7421818435492,
+              "margin_ps": 55.161126843549
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3385,
+            "path_class": "external_data",
+            "covered": true,
+            "minimum_margin_ps": 50.60824800000009,
+            "witness": {
+              "row_id": "general-control-test-05-t4/synth",
+              "required_ps": 122.39501999999976,
+              "upper_ps": 173.00326799999985,
+              "margin_ps": 50.60824800000009
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3385,
+            "path_class": "external_valid",
+            "covered": true,
+            "minimum_margin_ps": 50.025634000000025,
+            "witness": {
+              "row_id": "general-control-test-03-t4/synth",
+              "required_ps": 112.20947300000003,
+              "upper_ps": 162.23510700000006,
+              "margin_ps": 50.025634000000025
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3385,
+            "path_class": "input_data",
+            "covered": true,
+            "minimum_margin_ps": 51.20733599999994,
+            "witness": {
+              "row_id": "general-control-test-00-t4/synth",
+              "required_ps": 83.29785200000006,
+              "upper_ps": 134.505188,
+              "margin_ps": 51.20733599999994
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3385,
+            "path_class": "input_enable",
+            "covered": true,
+            "minimum_margin_ps": 51.479552999999925,
+            "witness": {
+              "row_id": "general-control-test-00-t4/synth",
+              "required_ps": 184.49829100000008,
+              "upper_ps": 235.977844,
+              "margin_ps": 51.479552999999925
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3385,
+            "path_class": "input_valid",
+            "covered": true,
+            "minimum_margin_ps": 56.31744400000025,
+            "witness": {
+              "row_id": "general-control-test-00-t4/synth",
+              "required_ps": 77.29223599999969,
+              "upper_ps": 133.60967999999994,
+              "margin_ps": 56.31744400000025
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4162,
+            "path_class": "native_data",
+            "covered": true,
+            "minimum_margin_ps": 53.00729999999945,
+            "witness": {
+              "row_id": "general-control-test-04-t5/synth",
+              "required_ps": 138.17065400000033,
+              "upper_ps": 191.17795399999977,
+              "margin_ps": 53.00729999999945
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4162,
+            "path_class": "native_enable",
+            "covered": true,
+            "minimum_margin_ps": 44.47197771099786,
+            "witness": {
+              "row_id": "general-control-test-03-t5/synth",
+              "required_ps": 278.11425800000023,
+              "upper_ps": 322.5862357109981,
+              "margin_ps": 44.47197771099786
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4162,
+            "path_class": "native_valid",
+            "covered": true,
+            "minimum_margin_ps": 55.161126843549,
+            "witness": {
+              "row_id": "general-control-test-01-t5/synth",
+              "required_ps": 199.5810550000002,
+              "upper_ps": 254.7421818435492,
+              "margin_ps": 55.161126843549
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4162,
+            "path_class": "external_data",
+            "covered": true,
+            "minimum_margin_ps": 50.608492999999356,
+            "witness": {
+              "row_id": "general-control-test-05-t5/synth",
+              "required_ps": 122.39526400000051,
+              "upper_ps": 173.00375699999987,
+              "margin_ps": 50.608492999999356
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4162,
+            "path_class": "external_valid",
+            "covered": true,
+            "minimum_margin_ps": 50.0249019999996,
+            "witness": {
+              "row_id": "general-control-test-03-t5/synth",
+              "required_ps": 112.20971700000032,
+              "upper_ps": 162.23461899999992,
+              "margin_ps": 50.0249019999996
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4162,
+            "path_class": "input_data",
+            "covered": true,
+            "minimum_margin_ps": 51.207092999999986,
+            "witness": {
+              "row_id": "general-control-test-00-t5/synth",
+              "required_ps": 83.29799799999992,
+              "upper_ps": 134.5050909999999,
+              "margin_ps": 51.207092999999986
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4162,
+            "path_class": "input_enable",
+            "covered": true,
+            "minimum_margin_ps": 51.47973599999983,
+            "witness": {
+              "row_id": "general-control-test-00-t5/synth",
+              "required_ps": 184.4981930000001,
+              "upper_ps": 235.97792899999993,
+              "margin_ps": 51.47973599999983
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4162,
+            "path_class": "input_valid",
+            "covered": true,
+            "minimum_margin_ps": 56.31768699999975,
+            "witness": {
+              "row_id": "general-control-test-00-t5/synth",
+              "required_ps": 77.29213900000005,
+              "upper_ps": 133.6098259999998,
+              "margin_ps": 56.31768699999975
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4528,
+            "path_class": "native_data",
+            "covered": true,
+            "minimum_margin_ps": 53.0072999999999,
+            "witness": {
+              "row_id": "general-control-test-04-t6/synth",
+              "required_ps": 138.17041000000003,
+              "upper_ps": 191.17770999999993,
+              "margin_ps": 53.0072999999999
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4528,
+            "path_class": "native_enable",
+            "covered": true,
+            "minimum_margin_ps": 44.47197771099877,
+            "witness": {
+              "row_id": "general-control-test-03-t6/synth",
+              "required_ps": 278.1142579999993,
+              "upper_ps": 322.5862357109981,
+              "margin_ps": 44.47197771099877
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4528,
+            "path_class": "native_valid",
+            "covered": true,
+            "minimum_margin_ps": 55.16112684354991,
+            "witness": {
+              "row_id": "general-control-test-01-t6/synth",
+              "required_ps": 199.58105499999928,
+              "upper_ps": 254.7421818435492,
+              "margin_ps": 55.16112684354991
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4528,
+            "path_class": "external_data",
+            "covered": true,
+            "minimum_margin_ps": 50.60849299999981,
+            "witness": {
+              "row_id": "general-control-test-05-t6/synth",
+              "required_ps": 122.39502000000022,
+              "upper_ps": 173.00351300000003,
+              "margin_ps": 50.60849299999981
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4528,
+            "path_class": "external_valid",
+            "covered": true,
+            "minimum_margin_ps": 50.024902000000054,
+            "witness": {
+              "row_id": "general-control-test-03-t6/synth",
+              "required_ps": 112.20947300000003,
+              "upper_ps": 162.23437500000009,
+              "margin_ps": 50.024902000000054
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4528,
+            "path_class": "input_data",
+            "covered": true,
+            "minimum_margin_ps": 51.20690900000001,
+            "witness": {
+              "row_id": "general-control-test-00-t6/synth",
+              "required_ps": 83.29819299999996,
+              "upper_ps": 134.50510199999997,
+              "margin_ps": 51.20690900000001
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4528,
+            "path_class": "input_enable",
+            "covered": true,
+            "minimum_margin_ps": 51.47961400000028,
+            "witness": {
+              "row_id": "general-control-test-00-t6/synth",
+              "required_ps": 184.49814499999985,
+              "upper_ps": 235.97775900000013,
+              "margin_ps": 51.47961400000028
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4528,
+            "path_class": "input_valid",
+            "covered": true,
+            "minimum_margin_ps": 56.31768800000009,
+            "witness": {
+              "row_id": "general-control-test-00-t6/synth",
+              "required_ps": 77.29208999999983,
+              "upper_ps": 133.60977799999992,
+              "margin_ps": 56.31768800000009
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 11913,
+            "path_class": "native_data",
+            "covered": true,
+            "minimum_margin_ps": 53.0077880000014,
+            "witness": {
+              "row_id": "general-control-test-04-t7/synth",
+              "required_ps": 138.16992199999854,
+              "upper_ps": 191.17770999999993,
+              "margin_ps": 53.0077880000014
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 11913,
+            "path_class": "native_enable",
+            "covered": true,
+            "minimum_margin_ps": 44.47197771099877,
+            "witness": {
+              "row_id": "general-control-test-03-t7/synth",
+              "required_ps": 278.1142579999993,
+              "upper_ps": 322.5862357109981,
+              "margin_ps": 44.47197771099877
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 11913,
+            "path_class": "native_valid",
+            "covered": true,
+            "minimum_margin_ps": 55.16112684354809,
+            "witness": {
+              "row_id": "general-control-test-01-t7/synth",
+              "required_ps": 199.5810550000011,
+              "upper_ps": 254.7421818435492,
+              "margin_ps": 55.16112684354809
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 11913,
+            "path_class": "external_data",
+            "covered": true,
+            "minimum_margin_ps": 50.608005000000134,
+            "witness": {
+              "row_id": "general-control-test-05-t7/synth",
+              "required_ps": 122.39453099999929,
+              "upper_ps": 173.00253599999942,
+              "margin_ps": 50.608005000000134
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 11913,
+            "path_class": "external_valid",
+            "covered": true,
+            "minimum_margin_ps": 50.026367999997944,
+            "witness": {
+              "row_id": "general-control-test-03-t7/synth",
+              "required_ps": 112.20898400000092,
+              "upper_ps": 162.23535199999887,
+              "margin_ps": 50.026367999997944
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 11913,
+            "path_class": "input_data",
+            "covered": true,
+            "minimum_margin_ps": 51.20654300000024,
+            "witness": {
+              "row_id": "general-control-test-00-t7/synth",
+              "required_ps": 83.29746099999926,
+              "upper_ps": 134.5040039999995,
+              "margin_ps": 51.20654300000024
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 11913,
+            "path_class": "input_enable",
+            "covered": true,
+            "minimum_margin_ps": 51.47998099999893,
+            "witness": {
+              "row_id": "general-control-test-00-t7/synth",
+              "required_ps": 184.49765599999918,
+              "upper_ps": 235.9776369999981,
+              "margin_ps": 51.47998099999893
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 11913,
+            "path_class": "input_valid",
+            "covered": true,
+            "minimum_margin_ps": 56.31689499999811,
+            "witness": {
+              "row_id": "general-control-test-00-t7/synth",
+              "required_ps": 77.29257800000133,
+              "upper_ps": 133.60947299999944,
+              "margin_ps": 56.31689499999811
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 14897,
+            "path_class": "native_data",
+            "covered": true,
+            "minimum_margin_ps": 53.00876500000109,
+            "witness": {
+              "row_id": "general-control-test-04-t8/synth",
+              "required_ps": 138.16992199999854,
+              "upper_ps": 191.17868699999963,
+              "margin_ps": 53.00876500000109
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 14897,
+            "path_class": "native_enable",
+            "covered": true,
+            "minimum_margin_ps": 44.47197771099877,
+            "witness": {
+              "row_id": "general-control-test-03-t8/synth",
+              "required_ps": 278.1142579999993,
+              "upper_ps": 322.5862357109981,
+              "margin_ps": 44.47197771099877
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 14897,
+            "path_class": "native_valid",
+            "covered": true,
+            "minimum_margin_ps": 55.160150843548735,
+            "witness": {
+              "row_id": "general-control-test-01-t8/synth",
+              "required_ps": 199.58203100000046,
+              "upper_ps": 254.7421818435492,
+              "margin_ps": 55.160150843548735
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 14897,
+            "path_class": "external_data",
+            "covered": true,
+            "minimum_margin_ps": 50.60702800000044,
+            "witness": {
+              "row_id": "general-control-test-05-t8/synth",
+              "required_ps": 122.39550799999898,
+              "upper_ps": 173.00253599999942,
+              "margin_ps": 50.60702800000044
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 14897,
+            "path_class": "external_valid",
+            "covered": true,
+            "minimum_margin_ps": 50.02539099999825,
+            "witness": {
+              "row_id": "general-control-test-03-t8/synth",
+              "required_ps": 112.20996100000062,
+              "upper_ps": 162.23535199999887,
+              "margin_ps": 50.02539099999825
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 14897,
+            "path_class": "input_data",
+            "covered": true,
+            "minimum_margin_ps": 51.20849600000109,
+            "witness": {
+              "row_id": "general-control-test-00-t8/synth",
+              "required_ps": 83.29726599999914,
+              "upper_ps": 134.50576200000023,
+              "margin_ps": 51.20849600000109
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 14897,
+            "path_class": "input_enable",
+            "covered": true,
+            "minimum_margin_ps": 51.47973599999966,
+            "witness": {
+              "row_id": "general-control-test-00-t8/synth",
+              "required_ps": 184.49843799999982,
+              "upper_ps": 235.97817399999948,
+              "margin_ps": 51.47973599999966
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 14897,
+            "path_class": "input_valid",
+            "covered": true,
+            "minimum_margin_ps": 56.31689300000107,
+            "witness": {
+              "row_id": "general-control-test-00-t8/synth",
+              "required_ps": 77.29238299999975,
+              "upper_ps": 133.60927600000082,
+              "margin_ps": 56.31689300000107
+            },
+            "rows": 6
+          }
+        ]
+      },
+      "minimum_boundary_margin_ps": 44.47173371099802
+    },
+    "grt": {
+      "status": "passed",
+      "owner_area_quality": {
+        "input_service": {
+          "status": "passed",
+          "n": 54,
+          "MAE": 0.5413970415593368,
+          "median_relative_error": 0.0033943991189738613,
+          "p95_relative_error": 0.01095993414750499,
+          "max_relative_error": 0.02371906282356005,
+          "relative_error_floor": 0.0001,
+          "normalized_MAE": 0.005336344743152548,
+          "underpredicted_banks": 30,
+          "predictions": [
+            {
+              "id": "general-control-test-00-t0/grt/input_service",
+              "actual_um2": 103.25556000000157,
+              "predicted_um2": 104.28345499047958
+            },
+            {
+              "id": "general-control-test-00-t1/grt/input_service",
+              "actual_um2": 103.25556000000157,
+              "predicted_um2": 104.28345499047958
+            },
+            {
+              "id": "general-control-test-00-t2/grt/input_service",
+              "actual_um2": 103.25556000000157,
+              "predicted_um2": 104.28345499047958
+            },
+            {
+              "id": "general-control-test-00-t3/grt/input_service",
+              "actual_um2": 103.32846000000157,
+              "predicted_um2": 104.28345499047958
+            },
+            {
+              "id": "general-control-test-00-t4/grt/input_service",
+              "actual_um2": 103.25556000000157,
+              "predicted_um2": 104.28345499047958
+            },
+            {
+              "id": "general-control-test-00-t5/grt/input_service",
+              "actual_um2": 103.25556000000157,
+              "predicted_um2": 104.28345499047958
+            },
+            {
+              "id": "general-control-test-00-t6/grt/input_service",
+              "actual_um2": 103.25556000000157,
+              "predicted_um2": 104.28345499047958
+            },
+            {
+              "id": "general-control-test-00-t7/grt/input_service",
+              "actual_um2": 103.25556000000157,
+              "predicted_um2": 104.28345499047958
+            },
+            {
+              "id": "general-control-test-00-t8/grt/input_service",
+              "actual_um2": 103.25556000000157,
+              "predicted_um2": 104.28345499047958
+            },
+            {
+              "id": "general-control-test-01-t0/grt/input_service",
+              "actual_um2": 101.44764000000151,
+              "predicted_um2": 101.05594388932572
+            },
+            {
+              "id": "general-control-test-01-t1/grt/input_service",
+              "actual_um2": 101.44764000000151,
+              "predicted_um2": 101.05594388932572
+            },
+            {
+              "id": "general-control-test-01-t2/grt/input_service",
+              "actual_um2": 101.38932000000152,
+              "predicted_um2": 101.05594388932572
+            },
+            {
+              "id": "general-control-test-01-t3/grt/input_service",
+              "actual_um2": 101.36016000000151,
+              "predicted_um2": 101.05594388932572
+            },
+            {
+              "id": "general-control-test-01-t4/grt/input_service",
+              "actual_um2": 101.36016000000151,
+              "predicted_um2": 101.05594388932572
+            },
+            {
+              "id": "general-control-test-01-t5/grt/input_service",
+              "actual_um2": 101.38932000000152,
+              "predicted_um2": 101.05594388932572
+            },
+            {
+              "id": "general-control-test-01-t6/grt/input_service",
+              "actual_um2": 101.33100000000152,
+              "predicted_um2": 101.05594388932572
+            },
+            {
+              "id": "general-control-test-01-t7/grt/input_service",
+              "actual_um2": 101.38932000000152,
+              "predicted_um2": 101.05594388932572
+            },
+            {
+              "id": "general-control-test-01-t8/grt/input_service",
+              "actual_um2": 101.38932000000152,
+              "predicted_um2": 101.05594388932572
+            },
+            {
+              "id": "general-control-test-02-t0/grt/input_service",
+              "actual_um2": 99.59598000000143,
+              "predicted_um2": 100.8570040058265
+            },
+            {
+              "id": "general-control-test-02-t1/grt/input_service",
+              "actual_um2": 100.39788000000149,
+              "predicted_um2": 100.8570040058265
+            },
+            {
+              "id": "general-control-test-02-t2/grt/input_service",
+              "actual_um2": 100.10628000000146,
+              "predicted_um2": 100.8570040058265
+            },
+            {
+              "id": "general-control-test-02-t3/grt/input_service",
+              "actual_um2": 100.10628000000146,
+              "predicted_um2": 100.8570040058265
+            },
+            {
+              "id": "general-control-test-02-t4/grt/input_service",
+              "actual_um2": 99.66888000000144,
+              "predicted_um2": 100.8570040058265
+            },
+            {
+              "id": "general-control-test-02-t5/grt/input_service",
+              "actual_um2": 101.49138000000154,
+              "predicted_um2": 100.8570040058265
+            },
+            {
+              "id": "general-control-test-02-t6/grt/input_service",
+              "actual_um2": 99.81468000000146,
+              "predicted_um2": 100.8570040058265
+            },
+            {
+              "id": "general-control-test-02-t7/grt/input_service",
+              "actual_um2": 100.32498000000149,
+              "predicted_um2": 100.8570040058265
+            },
+            {
+              "id": "general-control-test-02-t8/grt/input_service",
+              "actual_um2": 100.39788000000148,
+              "predicted_um2": 100.8570040058265
+            },
+            {
+              "id": "general-control-test-03-t0/grt/input_service",
+              "actual_um2": 99.98964000000124,
+              "predicted_um2": 99.66381965498054
+            },
+            {
+              "id": "general-control-test-03-t1/grt/input_service",
+              "actual_um2": 99.98964000000126,
+              "predicted_um2": 99.66381965498054
+            },
+            {
+              "id": "general-control-test-03-t2/grt/input_service",
+              "actual_um2": 100.13544000000125,
+              "predicted_um2": 99.66381965498054
+            },
+            {
+              "id": "general-control-test-03-t3/grt/input_service",
+              "actual_um2": 99.96048000000124,
+              "predicted_um2": 99.66381965498054
+            },
+            {
+              "id": "general-control-test-03-t4/grt/input_service",
+              "actual_um2": 99.96048000000127,
+              "predicted_um2": 99.66381965498054
+            },
+            {
+              "id": "general-control-test-03-t5/grt/input_service",
+              "actual_um2": 99.96048000000125,
+              "predicted_um2": 99.66381965498054
+            },
+            {
+              "id": "general-control-test-03-t6/grt/input_service",
+              "actual_um2": 99.96048000000124,
+              "predicted_um2": 99.66381965498054
+            },
+            {
+              "id": "general-control-test-03-t7/grt/input_service",
+              "actual_um2": 99.93132000000126,
+              "predicted_um2": 99.66381965498054
+            },
+            {
+              "id": "general-control-test-03-t8/grt/input_service",
+              "actual_um2": 100.06254000000125,
+              "predicted_um2": 99.66381965498054
+            },
+            {
+              "id": "general-control-test-04-t0/grt/input_service",
+              "actual_um2": 104.4511200000013,
+              "predicted_um2": 101.97363732273006
+            },
+            {
+              "id": "general-control-test-04-t1/grt/input_service",
+              "actual_um2": 101.75382000000117,
+              "predicted_um2": 101.97363732273006
+            },
+            {
+              "id": "general-control-test-04-t2/grt/input_service",
+              "actual_um2": 102.6286200000012,
+              "predicted_um2": 101.97363732273006
+            },
+            {
+              "id": "general-control-test-04-t3/grt/input_service",
+              "actual_um2": 101.82672000000116,
+              "predicted_um2": 101.97363732273006
+            },
+            {
+              "id": "general-control-test-04-t4/grt/input_service",
+              "actual_um2": 101.82672000000117,
+              "predicted_um2": 101.97363732273006
+            },
+            {
+              "id": "general-control-test-04-t5/grt/input_service",
+              "actual_um2": 101.75382000000118,
+              "predicted_um2": 101.97363732273006
+            },
+            {
+              "id": "general-control-test-04-t6/grt/input_service",
+              "actual_um2": 101.75382000000116,
+              "predicted_um2": 101.97363732273006
+            },
+            {
+              "id": "general-control-test-04-t7/grt/input_service",
+              "actual_um2": 101.75382000000117,
+              "predicted_um2": 101.97363732273006
+            },
+            {
+              "id": "general-control-test-04-t8/grt/input_service",
+              "actual_um2": 101.75382000000118,
+              "predicted_um2": 101.97363732273006
+            },
+            {
+              "id": "general-control-test-05-t0/grt/input_service",
+              "actual_um2": 101.5642800000016,
+              "predicted_um2": 101.42666638064455
+            },
+            {
+              "id": "general-control-test-05-t1/grt/input_service",
+              "actual_um2": 101.6371800000016,
+              "predicted_um2": 101.42666638064455
+            },
+            {
+              "id": "general-control-test-05-t2/grt/input_service",
+              "actual_um2": 101.71008000000161,
+              "predicted_um2": 101.42666638064455
+            },
+            {
+              "id": "general-control-test-05-t3/grt/input_service",
+              "actual_um2": 101.78298000000161,
+              "predicted_um2": 101.42666638064455
+            },
+            {
+              "id": "general-control-test-05-t4/grt/input_service",
+              "actual_um2": 101.6371800000016,
+              "predicted_um2": 101.42666638064455
+            },
+            {
+              "id": "general-control-test-05-t5/grt/input_service",
+              "actual_um2": 101.6371800000016,
+              "predicted_um2": 101.42666638064455
+            },
+            {
+              "id": "general-control-test-05-t6/grt/input_service",
+              "actual_um2": 101.6371800000016,
+              "predicted_um2": 101.42666638064455
+            },
+            {
+              "id": "general-control-test-05-t7/grt/input_service",
+              "actual_um2": 101.85588000000162,
+              "predicted_um2": 101.42666638064455
+            },
+            {
+              "id": "general-control-test-05-t8/grt/input_service",
+              "actual_um2": 101.85588000000162,
+              "predicted_um2": 101.42666638064455
+            }
+          ]
+        },
+        "native_state": {
+          "status": "passed",
+          "n": 54,
+          "MAE": 1.0173164848110974,
+          "median_relative_error": 0.004865662961732273,
+          "p95_relative_error": 0.009023017505075106,
+          "max_relative_error": 0.009084588580251728,
+          "relative_error_floor": 0.0001,
+          "normalized_MAE": 0.005065654432615348,
+          "underpredicted_banks": 47,
+          "predictions": [
+            {
+              "id": "general-control-test-00-t0/grt/native_state",
+              "actual_um2": 40.63445999999998,
+              "predicted_um2": 40.41781373941859
+            },
+            {
+              "id": "general-control-test-00-t1/grt/native_state",
+              "actual_um2": 40.63445999999998,
+              "predicted_um2": 40.41781373941859
+            },
+            {
+              "id": "general-control-test-00-t2/grt/native_state",
+              "actual_um2": 40.63445999999998,
+              "predicted_um2": 40.41781373941859
+            },
+            {
+              "id": "general-control-test-00-t3/grt/native_state",
+              "actual_um2": 40.63445999999998,
+              "predicted_um2": 40.41781373941859
+            },
+            {
+              "id": "general-control-test-00-t4/grt/native_state",
+              "actual_um2": 40.63445999999998,
+              "predicted_um2": 40.41781373941859
+            },
+            {
+              "id": "general-control-test-00-t5/grt/native_state",
+              "actual_um2": 40.63445999999998,
+              "predicted_um2": 40.41781373941859
+            },
+            {
+              "id": "general-control-test-00-t6/grt/native_state",
+              "actual_um2": 40.63445999999998,
+              "predicted_um2": 40.41781373941859
+            },
+            {
+              "id": "general-control-test-00-t7/grt/native_state",
+              "actual_um2": 40.63445999999998,
+              "predicted_um2": 40.41781373941859
+            },
+            {
+              "id": "general-control-test-00-t8/grt/native_state",
+              "actual_um2": 40.63445999999998,
+              "predicted_um2": 40.41781373941859
+            },
+            {
+              "id": "general-control-test-01-t0/grt/native_state",
+              "actual_um2": 142.15499999999943,
+              "predicted_um2": 142.2497048318088
+            },
+            {
+              "id": "general-control-test-01-t1/grt/native_state",
+              "actual_um2": 142.18415999999942,
+              "predicted_um2": 142.2497048318088
+            },
+            {
+              "id": "general-control-test-01-t2/grt/native_state",
+              "actual_um2": 142.2133199999994,
+              "predicted_um2": 142.2497048318088
+            },
+            {
+              "id": "general-control-test-01-t3/grt/native_state",
+              "actual_um2": 142.15499999999943,
+              "predicted_um2": 142.2497048318088
+            },
+            {
+              "id": "general-control-test-01-t4/grt/native_state",
+              "actual_um2": 142.15499999999943,
+              "predicted_um2": 142.2497048318088
+            },
+            {
+              "id": "general-control-test-01-t5/grt/native_state",
+              "actual_um2": 142.28621999999942,
+              "predicted_um2": 142.2497048318088
+            },
+            {
+              "id": "general-control-test-01-t6/grt/native_state",
+              "actual_um2": 142.2133199999994,
+              "predicted_um2": 142.2497048318088
+            },
+            {
+              "id": "general-control-test-01-t7/grt/native_state",
+              "actual_um2": 142.67987999999943,
+              "predicted_um2": 142.2497048318088
+            },
+            {
+              "id": "general-control-test-01-t8/grt/native_state",
+              "actual_um2": 142.24247999999943,
+              "predicted_um2": 142.2497048318088
+            },
+            {
+              "id": "general-control-test-02-t0/grt/native_state",
+              "actual_um2": 256.1851799999947,
+              "predicted_um2": 254.120282505125
+            },
+            {
+              "id": "general-control-test-02-t1/grt/native_state",
+              "actual_um2": 256.1560199999947,
+              "predicted_um2": 254.120282505125
+            },
+            {
+              "id": "general-control-test-02-t2/grt/native_state",
+              "actual_um2": 256.0976999999947,
+              "predicted_um2": 254.120282505125
+            },
+            {
+              "id": "general-control-test-02-t3/grt/native_state",
+              "actual_um2": 256.0685399999947,
+              "predicted_um2": 254.120282505125
+            },
+            {
+              "id": "general-control-test-02-t4/grt/native_state",
+              "actual_um2": 256.0685399999947,
+              "predicted_um2": 254.120282505125
+            },
+            {
+              "id": "general-control-test-02-t5/grt/native_state",
+              "actual_um2": 256.0685399999947,
+              "predicted_um2": 254.120282505125
+            },
+            {
+              "id": "general-control-test-02-t6/grt/native_state",
+              "actual_um2": 256.0102199999947,
+              "predicted_um2": 254.120282505125
+            },
+            {
+              "id": "general-control-test-02-t7/grt/native_state",
+              "actual_um2": 256.1851799999947,
+              "predicted_um2": 254.120282505125
+            },
+            {
+              "id": "general-control-test-02-t8/grt/native_state",
+              "actual_um2": 256.1560199999947,
+              "predicted_um2": 254.120282505125
+            },
+            {
+              "id": "general-control-test-03-t0/grt/native_state",
+              "actual_um2": 304.9844399999975,
+              "predicted_um2": 302.3004671194101
+            },
+            {
+              "id": "general-control-test-03-t1/grt/native_state",
+              "actual_um2": 305.07191999999753,
+              "predicted_um2": 302.3004671194101
+            },
+            {
+              "id": "general-control-test-03-t2/grt/native_state",
+              "actual_um2": 305.04275999999754,
+              "predicted_um2": 302.3004671194101
+            },
+            {
+              "id": "general-control-test-03-t3/grt/native_state",
+              "actual_um2": 305.04275999999754,
+              "predicted_um2": 302.3004671194101
+            },
+            {
+              "id": "general-control-test-03-t4/grt/native_state",
+              "actual_um2": 305.07191999999753,
+              "predicted_um2": 302.3004671194101
+            },
+            {
+              "id": "general-control-test-03-t5/grt/native_state",
+              "actual_um2": 305.07191999999753,
+              "predicted_um2": 302.3004671194101
+            },
+            {
+              "id": "general-control-test-03-t6/grt/native_state",
+              "actual_um2": 304.9844399999975,
+              "predicted_um2": 302.3004671194101
+            },
+            {
+              "id": "general-control-test-03-t7/grt/native_state",
+              "actual_um2": 304.9844399999975,
+              "predicted_um2": 302.3004671194101
+            },
+            {
+              "id": "general-control-test-03-t8/grt/native_state",
+              "actual_um2": 304.9844399999975,
+              "predicted_um2": 302.3004671194101
+            },
+            {
+              "id": "general-control-test-04-t0/grt/native_state",
+              "actual_um2": 313.46999999999815,
+              "predicted_um2": 312.88793161167655
+            },
+            {
+              "id": "general-control-test-04-t1/grt/native_state",
+              "actual_um2": 313.5574799999982,
+              "predicted_um2": 312.88793161167655
+            },
+            {
+              "id": "general-control-test-04-t2/grt/native_state",
+              "actual_um2": 313.5283199999982,
+              "predicted_um2": 312.88793161167655
+            },
+            {
+              "id": "general-control-test-04-t3/grt/native_state",
+              "actual_um2": 313.5283199999982,
+              "predicted_um2": 312.88793161167655
+            },
+            {
+              "id": "general-control-test-04-t4/grt/native_state",
+              "actual_um2": 313.5283199999982,
+              "predicted_um2": 312.88793161167655
+            },
+            {
+              "id": "general-control-test-04-t5/grt/native_state",
+              "actual_um2": 313.93655999999817,
+              "predicted_um2": 312.88793161167655
+            },
+            {
+              "id": "general-control-test-04-t6/grt/native_state",
+              "actual_um2": 313.9948799999982,
+              "predicted_um2": 312.88793161167655
+            },
+            {
+              "id": "general-control-test-04-t7/grt/native_state",
+              "actual_um2": 313.5283199999982,
+              "predicted_um2": 312.88793161167655
+            },
+            {
+              "id": "general-control-test-04-t8/grt/native_state",
+              "actual_um2": 313.5283199999982,
+              "predicted_um2": 312.88793161167655
+            },
+            {
+              "id": "general-control-test-05-t0/grt/native_state",
+              "actual_um2": 147.24341999999913,
+              "predicted_um2": 146.97299991094238
+            },
+            {
+              "id": "general-control-test-05-t1/grt/native_state",
+              "actual_um2": 147.18509999999915,
+              "predicted_um2": 146.97299991094238
+            },
+            {
+              "id": "general-control-test-05-t2/grt/native_state",
+              "actual_um2": 147.24341999999913,
+              "predicted_um2": 146.97299991094238
+            },
+            {
+              "id": "general-control-test-05-t3/grt/native_state",
+              "actual_um2": 147.62249999999915,
+              "predicted_um2": 146.97299991094238
+            },
+            {
+              "id": "general-control-test-05-t4/grt/native_state",
+              "actual_um2": 147.28715999999915,
+              "predicted_um2": 146.97299991094238
+            },
+            {
+              "id": "general-control-test-05-t5/grt/native_state",
+              "actual_um2": 147.28715999999915,
+              "predicted_um2": 146.97299991094238
+            },
+            {
+              "id": "general-control-test-05-t6/grt/native_state",
+              "actual_um2": 147.28715999999915,
+              "predicted_um2": 146.97299991094238
+            },
+            {
+              "id": "general-control-test-05-t7/grt/native_state",
+              "actual_um2": 147.31631999999914,
+              "predicted_um2": 146.97299991094238
+            },
+            {
+              "id": "general-control-test-05-t8/grt/native_state",
+              "actual_um2": 147.31631999999914,
+              "predicted_um2": 146.97299991094238
+            }
+          ]
+        },
+        "external_state": {
+          "status": "passed",
+          "n": 54,
+          "MAE": 0.02756699988020741,
+          "median_relative_error": 0.0004684442271567911,
+          "p95_relative_error": 0.001721640403473455,
+          "max_relative_error": 0.001721640403473455,
+          "relative_error_floor": 0.0001,
+          "normalized_MAE": 0.00042385898305528647,
+          "underpredicted_banks": 11,
+          "predictions": [
+            {
+              "id": "general-control-test-00-t0/grt/external_state",
+              "actual_um2": 29.64113999999996,
+              "predicted_um2": 29.692171384228974
+            },
+            {
+              "id": "general-control-test-00-t1/grt/external_state",
+              "actual_um2": 29.64113999999996,
+              "predicted_um2": 29.692171384228974
+            },
+            {
+              "id": "general-control-test-00-t2/grt/external_state",
+              "actual_um2": 29.64113999999996,
+              "predicted_um2": 29.692171384228974
+            },
+            {
+              "id": "general-control-test-00-t3/grt/external_state",
+              "actual_um2": 29.64113999999996,
+              "predicted_um2": 29.692171384228974
+            },
+            {
+              "id": "general-control-test-00-t4/grt/external_state",
+              "actual_um2": 29.64113999999996,
+              "predicted_um2": 29.692171384228974
+            },
+            {
+              "id": "general-control-test-00-t5/grt/external_state",
+              "actual_um2": 29.64113999999996,
+              "predicted_um2": 29.692171384228974
+            },
+            {
+              "id": "general-control-test-00-t6/grt/external_state",
+              "actual_um2": 29.64113999999996,
+              "predicted_um2": 29.692171384228974
+            },
+            {
+              "id": "general-control-test-00-t7/grt/external_state",
+              "actual_um2": 29.64113999999996,
+              "predicted_um2": 29.692171384228974
+            },
+            {
+              "id": "general-control-test-00-t8/grt/external_state",
+              "actual_um2": 29.64113999999996,
+              "predicted_um2": 29.692171384228974
+            },
+            {
+              "id": "general-control-test-01-t0/grt/external_state",
+              "actual_um2": 73.90602000000018,
+              "predicted_um2": 73.92670957714252
+            },
+            {
+              "id": "general-control-test-01-t1/grt/external_state",
+              "actual_um2": 73.90602000000018,
+              "predicted_um2": 73.92670957714252
+            },
+            {
+              "id": "general-control-test-01-t2/grt/external_state",
+              "actual_um2": 73.90602000000018,
+              "predicted_um2": 73.92670957714252
+            },
+            {
+              "id": "general-control-test-01-t3/grt/external_state",
+              "actual_um2": 73.90602000000018,
+              "predicted_um2": 73.92670957714252
+            },
+            {
+              "id": "general-control-test-01-t4/grt/external_state",
+              "actual_um2": 73.90602000000018,
+              "predicted_um2": 73.92670957714252
+            },
+            {
+              "id": "general-control-test-01-t5/grt/external_state",
+              "actual_um2": 73.90602000000018,
+              "predicted_um2": 73.92670957714252
+            },
+            {
+              "id": "general-control-test-01-t6/grt/external_state",
+              "actual_um2": 73.90602000000018,
+              "predicted_um2": 73.92670957714252
+            },
+            {
+              "id": "general-control-test-01-t7/grt/external_state",
+              "actual_um2": 73.90602000000018,
+              "predicted_um2": 73.92670957714252
+            },
+            {
+              "id": "general-control-test-01-t8/grt/external_state",
+              "actual_um2": 73.90602000000018,
+              "predicted_um2": 73.92670957714252
+            },
+            {
+              "id": "general-control-test-02-t0/grt/external_state",
+              "actual_um2": 55.870560000000076,
+              "predicted_um2": 55.89673224130009
+            },
+            {
+              "id": "general-control-test-02-t1/grt/external_state",
+              "actual_um2": 55.870560000000076,
+              "predicted_um2": 55.89673224130009
+            },
+            {
+              "id": "general-control-test-02-t2/grt/external_state",
+              "actual_um2": 55.870560000000076,
+              "predicted_um2": 55.89673224130009
+            },
+            {
+              "id": "general-control-test-02-t3/grt/external_state",
+              "actual_um2": 55.870560000000076,
+              "predicted_um2": 55.89673224130009
+            },
+            {
+              "id": "general-control-test-02-t4/grt/external_state",
+              "actual_um2": 55.870560000000076,
+              "predicted_um2": 55.89673224130009
+            },
+            {
+              "id": "general-control-test-02-t5/grt/external_state",
+              "actual_um2": 55.870560000000076,
+              "predicted_um2": 55.89673224130009
+            },
+            {
+              "id": "general-control-test-02-t6/grt/external_state",
+              "actual_um2": 55.870560000000076,
+              "predicted_um2": 55.89673224130009
+            },
+            {
+              "id": "general-control-test-02-t7/grt/external_state",
+              "actual_um2": 55.870560000000076,
+              "predicted_um2": 55.89673224130009
+            },
+            {
+              "id": "general-control-test-02-t8/grt/external_state",
+              "actual_um2": 55.870560000000076,
+              "predicted_um2": 55.89673224130009
+            },
+            {
+              "id": "general-control-test-03-t0/grt/external_state",
+              "actual_um2": 59.2822800000001,
+              "predicted_um2": 59.30977849660851
+            },
+            {
+              "id": "general-control-test-03-t1/grt/external_state",
+              "actual_um2": 59.2822800000001,
+              "predicted_um2": 59.30977849660851
+            },
+            {
+              "id": "general-control-test-03-t2/grt/external_state",
+              "actual_um2": 59.2822800000001,
+              "predicted_um2": 59.30977849660851
+            },
+            {
+              "id": "general-control-test-03-t3/grt/external_state",
+              "actual_um2": 59.2822800000001,
+              "predicted_um2": 59.30977849660851
+            },
+            {
+              "id": "general-control-test-03-t4/grt/external_state",
+              "actual_um2": 59.2822800000001,
+              "predicted_um2": 59.30977849660851
+            },
+            {
+              "id": "general-control-test-03-t5/grt/external_state",
+              "actual_um2": 59.2822800000001,
+              "predicted_um2": 59.30977849660851
+            },
+            {
+              "id": "general-control-test-03-t6/grt/external_state",
+              "actual_um2": 59.2822800000001,
+              "predicted_um2": 59.30977849660851
+            },
+            {
+              "id": "general-control-test-03-t7/grt/external_state",
+              "actual_um2": 59.3551800000001,
+              "predicted_um2": 59.30977849660851
+            },
+            {
+              "id": "general-control-test-03-t8/grt/external_state",
+              "actual_um2": 59.2822800000001,
+              "predicted_um2": 59.30977849660851
+            },
+            {
+              "id": "general-control-test-04-t0/grt/external_state",
+              "actual_um2": 112.23684000000038,
+              "predicted_um2": 112.2366246260719
+            },
+            {
+              "id": "general-control-test-04-t1/grt/external_state",
+              "actual_um2": 112.23684000000038,
+              "predicted_um2": 112.2366246260719
+            },
+            {
+              "id": "general-control-test-04-t2/grt/external_state",
+              "actual_um2": 112.23684000000038,
+              "predicted_um2": 112.2366246260719
+            },
+            {
+              "id": "general-control-test-04-t3/grt/external_state",
+              "actual_um2": 112.30974000000039,
+              "predicted_um2": 112.2366246260719
+            },
+            {
+              "id": "general-control-test-04-t4/grt/external_state",
+              "actual_um2": 112.23684000000038,
+              "predicted_um2": 112.2366246260719
+            },
+            {
+              "id": "general-control-test-04-t5/grt/external_state",
+              "actual_um2": 112.23684000000038,
+              "predicted_um2": 112.2366246260719
+            },
+            {
+              "id": "general-control-test-04-t6/grt/external_state",
+              "actual_um2": 112.23684000000038,
+              "predicted_um2": 112.2366246260719
+            },
+            {
+              "id": "general-control-test-04-t7/grt/external_state",
+              "actual_um2": 112.23684000000038,
+              "predicted_um2": 112.2366246260719
+            },
+            {
+              "id": "general-control-test-04-t8/grt/external_state",
+              "actual_um2": 112.23684000000038,
+              "predicted_um2": 112.2366246260719
+            },
+            {
+              "id": "general-control-test-05-t0/grt/external_state",
+              "actual_um2": 59.2677000000001,
+              "predicted_um2": 59.29547876112491
+            },
+            {
+              "id": "general-control-test-05-t1/grt/external_state",
+              "actual_um2": 59.2677000000001,
+              "predicted_um2": 59.29547876112491
+            },
+            {
+              "id": "general-control-test-05-t2/grt/external_state",
+              "actual_um2": 59.2677000000001,
+              "predicted_um2": 59.29547876112491
+            },
+            {
+              "id": "general-control-test-05-t3/grt/external_state",
+              "actual_um2": 59.340600000000094,
+              "predicted_um2": 59.29547876112491
+            },
+            {
+              "id": "general-control-test-05-t4/grt/external_state",
+              "actual_um2": 59.2677000000001,
+              "predicted_um2": 59.29547876112491
+            },
+            {
+              "id": "general-control-test-05-t5/grt/external_state",
+              "actual_um2": 59.2677000000001,
+              "predicted_um2": 59.29547876112491
+            },
+            {
+              "id": "general-control-test-05-t6/grt/external_state",
+              "actual_um2": 59.2677000000001,
+              "predicted_um2": 59.29547876112491
+            },
+            {
+              "id": "general-control-test-05-t7/grt/external_state",
+              "actual_um2": 59.2677000000001,
+              "predicted_um2": 59.29547876112491
+            },
+            {
+              "id": "general-control-test-05-t8/grt/external_state",
+              "actual_um2": 59.2677000000001,
+              "predicted_um2": 59.29547876112491
+            }
+          ]
+        }
+      },
+      "boundary_coverage": {
+        "status": "passed",
+        "minimum_margin_ps": 37.37278800000024,
+        "contexts": [
+          {
+            "period_ps": 1119,
+            "path_class": "native_data",
+            "covered": true,
+            "minimum_margin_ps": 59.36848600000005,
+            "witness": {
+              "row_id": "general-control-test-04-t0/grt",
+              "required_ps": 158.10320999999993,
+              "upper_ps": 217.47169599999998,
+              "margin_ps": 59.36848600000005
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1119,
+            "path_class": "native_enable",
+            "covered": true,
+            "minimum_margin_ps": 220.3101879567567,
+            "witness": {
+              "row_id": "general-control-test-05-t0/grt",
+              "required_ps": 475.58294699999993,
+              "upper_ps": 695.8931349567566,
+              "margin_ps": 220.3101879567567
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1119,
+            "path_class": "native_valid",
+            "covered": true,
+            "minimum_margin_ps": 68.87386551560905,
+            "witness": {
+              "row_id": "general-control-test-01-t0/grt",
+              "required_ps": 393.96160899999995,
+              "upper_ps": 462.835474515609,
+              "margin_ps": 68.87386551560905
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1119,
+            "path_class": "external_data",
+            "covered": true,
+            "minimum_margin_ps": 59.28661999999997,
+            "witness": {
+              "row_id": "general-control-test-04-t0/grt",
+              "required_ps": 170.72253400000005,
+              "upper_ps": 230.00915400000002,
+              "margin_ps": 59.28661999999997
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1119,
+            "path_class": "external_valid",
+            "covered": true,
+            "minimum_margin_ps": 71.25416599999994,
+            "witness": {
+              "row_id": "general-control-test-03-t0/grt",
+              "required_ps": 131.8685299999999,
+              "upper_ps": 203.12269599999985,
+              "margin_ps": 71.25416599999994
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1119,
+            "path_class": "input_data",
+            "covered": true,
+            "minimum_margin_ps": 124.02329699999996,
+            "witness": {
+              "row_id": "general-control-test-04-t0/grt",
+              "required_ps": 121.02696500000005,
+              "upper_ps": 245.050262,
+              "margin_ps": 124.02329699999996
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1119,
+            "path_class": "input_enable",
+            "covered": true,
+            "minimum_margin_ps": 144.143872,
+            "witness": {
+              "row_id": "general-control-test-00-t0/grt",
+              "required_ps": 315.90013400000004,
+              "upper_ps": 460.044006,
+              "margin_ps": 144.143872
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1119,
+            "path_class": "input_valid",
+            "covered": true,
+            "minimum_margin_ps": 124.66013799999999,
+            "witness": {
+              "row_id": "general-control-test-05-t0/grt",
+              "required_ps": 98.65214800000001,
+              "upper_ps": 223.312286,
+              "margin_ps": 124.66013799999999
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1253,
+            "path_class": "native_data",
+            "covered": true,
+            "minimum_margin_ps": 57.49099700000008,
+            "witness": {
+              "row_id": "general-control-test-05-t1/grt",
+              "required_ps": 161.17590300000003,
+              "upper_ps": 218.6669000000001,
+              "margin_ps": 57.49099700000008
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1253,
+            "path_class": "native_enable",
+            "covered": true,
+            "minimum_margin_ps": 248.58641320675673,
+            "witness": {
+              "row_id": "general-control-test-05-t1/grt",
+              "required_ps": 466.92407199999997,
+              "upper_ps": 715.5104852067567,
+              "margin_ps": 248.58641320675673
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1253,
+            "path_class": "native_valid",
+            "covered": true,
+            "minimum_margin_ps": 115.10844130727554,
+            "witness": {
+              "row_id": "general-control-test-01-t1/grt",
+              "required_ps": 390.9561770000001,
+              "upper_ps": 506.0646183072756,
+              "margin_ps": 115.10844130727554
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1253,
+            "path_class": "external_data",
+            "covered": true,
+            "minimum_margin_ps": 56.11042800000024,
+            "witness": {
+              "row_id": "general-control-test-04-t1/grt",
+              "required_ps": 167.1457519999998,
+              "upper_ps": 223.25618000000003,
+              "margin_ps": 56.11042800000024
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1253,
+            "path_class": "external_valid",
+            "covered": true,
+            "minimum_margin_ps": 71.43266199999988,
+            "witness": {
+              "row_id": "general-control-test-03-t1/grt",
+              "required_ps": 130.85156200000006,
+              "upper_ps": 202.28422399999994,
+              "margin_ps": 71.43266199999988
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1253,
+            "path_class": "input_data",
+            "covered": true,
+            "minimum_margin_ps": 140.07071800000006,
+            "witness": {
+              "row_id": "general-control-test-05-t1/grt",
+              "required_ps": 112.29721699999993,
+              "upper_ps": 252.367935,
+              "margin_ps": 140.07071800000006
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1253,
+            "path_class": "input_enable",
+            "covered": true,
+            "minimum_margin_ps": 169.358164,
+            "witness": {
+              "row_id": "general-control-test-00-t1/grt",
+              "required_ps": 309.60373500000003,
+              "upper_ps": 478.961899,
+              "margin_ps": 169.358164
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1253,
+            "path_class": "input_valid",
+            "covered": true,
+            "minimum_margin_ps": 162.60108300000002,
+            "witness": {
+              "row_id": "general-control-test-05-t1/grt",
+              "required_ps": 97.089697,
+              "upper_ps": 259.69078,
+              "margin_ps": 162.60108300000002
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1431,
+            "path_class": "native_data",
+            "covered": true,
+            "minimum_margin_ps": 78.8131859999998,
+            "witness": {
+              "row_id": "general-control-test-01-t2/grt",
+              "required_ps": 158.39050300000014,
+              "upper_ps": 237.20368899999994,
+              "margin_ps": 78.8131859999998
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1431,
+            "path_class": "native_enable",
+            "covered": true,
+            "minimum_margin_ps": 212.59882266770012,
+            "witness": {
+              "row_id": "general-control-test-02-t2/grt",
+              "required_ps": 573.539062,
+              "upper_ps": 786.1378846677001,
+              "margin_ps": 212.59882266770012
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1431,
+            "path_class": "native_valid",
+            "covered": true,
+            "minimum_margin_ps": 120.80703422394231,
+            "witness": {
+              "row_id": "general-control-test-01-t2/grt",
+              "required_ps": 392.48364300000003,
+              "upper_ps": 513.2906772239423,
+              "margin_ps": 120.80703422394231
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1431,
+            "path_class": "external_data",
+            "covered": true,
+            "minimum_margin_ps": 54.335342999999796,
+            "witness": {
+              "row_id": "general-control-test-04-t2/grt",
+              "required_ps": 178.48681600000015,
+              "upper_ps": 232.82215899999994,
+              "margin_ps": 54.335342999999796
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1431,
+            "path_class": "external_valid",
+            "covered": true,
+            "minimum_margin_ps": 73.53393499999979,
+            "witness": {
+              "row_id": "general-control-test-03-t2/grt",
+              "required_ps": 126.73046900000011,
+              "upper_ps": 200.2644039999999,
+              "margin_ps": 73.53393499999979
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1431,
+            "path_class": "input_data",
+            "covered": true,
+            "minimum_margin_ps": 135.63606600000014,
+            "witness": {
+              "row_id": "general-control-test-05-t2/grt",
+              "required_ps": 132.62940699999984,
+              "upper_ps": 268.265473,
+              "margin_ps": 135.63606600000014
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1431,
+            "path_class": "input_enable",
+            "covered": true,
+            "minimum_margin_ps": 187.29661800000014,
+            "witness": {
+              "row_id": "general-control-test-01-t2/grt",
+              "required_ps": 330.76966599999986,
+              "upper_ps": 518.066284,
+              "margin_ps": 187.29661800000014
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 1431,
+            "path_class": "input_valid",
+            "covered": true,
+            "minimum_margin_ps": 122.28801300000012,
+            "witness": {
+              "row_id": "general-control-test-05-t2/grt",
+              "required_ps": 131.99079599999988,
+              "upper_ps": 254.278809,
+              "margin_ps": 122.28801300000012
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3141,
+            "path_class": "native_data",
+            "covered": true,
+            "minimum_margin_ps": 75.99342400000003,
+            "witness": {
+              "row_id": "general-control-test-04-t3/grt",
+              "required_ps": 156.71386699999988,
+              "upper_ps": 232.7072909999999,
+              "margin_ps": 75.99342400000003
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3141,
+            "path_class": "native_enable",
+            "covered": true,
+            "minimum_margin_ps": 117.80125690173918,
+            "witness": {
+              "row_id": "general-control-test-04-t3/grt",
+              "required_ps": 705.7460939999999,
+              "upper_ps": 823.547350901739,
+              "margin_ps": 117.80125690173918
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3141,
+            "path_class": "native_valid",
+            "covered": true,
+            "minimum_margin_ps": 115.6254876406091,
+            "witness": {
+              "row_id": "general-control-test-01-t3/grt",
+              "required_ps": 391.0529789999999,
+              "upper_ps": 506.678466640609,
+              "margin_ps": 115.6254876406091
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3141,
+            "path_class": "external_data",
+            "covered": true,
+            "minimum_margin_ps": 49.00051900000025,
+            "witness": {
+              "row_id": "general-control-test-04-t3/grt",
+              "required_ps": 168.35620099999988,
+              "upper_ps": 217.35672000000014,
+              "margin_ps": 49.00051900000025
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3141,
+            "path_class": "external_valid",
+            "covered": true,
+            "minimum_margin_ps": 76.5348050000001,
+            "witness": {
+              "row_id": "general-control-test-04-t3/grt",
+              "required_ps": 125.99121100000006,
+              "upper_ps": 202.52601600000017,
+              "margin_ps": 76.5348050000001
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3141,
+            "path_class": "input_data",
+            "covered": true,
+            "minimum_margin_ps": 109.64482499999994,
+            "witness": {
+              "row_id": "general-control-test-05-t3/grt",
+              "required_ps": 129.79340800000006,
+              "upper_ps": 239.438233,
+              "margin_ps": 109.64482499999994
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3141,
+            "path_class": "input_enable",
+            "covered": true,
+            "minimum_margin_ps": 86.24718099999996,
+            "witness": {
+              "row_id": "general-control-test-01-t3/grt",
+              "required_ps": 464.59223600000007,
+              "upper_ps": 550.839417,
+              "margin_ps": 86.24718099999996
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3141,
+            "path_class": "input_valid",
+            "covered": true,
+            "minimum_margin_ps": 93.89305499999966,
+            "witness": {
+              "row_id": "general-control-test-05-t3/grt",
+              "required_ps": 129.37666000000033,
+              "upper_ps": 223.269715,
+              "margin_ps": 93.89305499999966
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3385,
+            "path_class": "native_data",
+            "covered": true,
+            "minimum_margin_ps": 80.72491500000004,
+            "witness": {
+              "row_id": "general-control-test-05-t4/grt",
+              "required_ps": 160.039062,
+              "upper_ps": 240.76397700000004,
+              "margin_ps": 80.72491500000004
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3385,
+            "path_class": "native_enable",
+            "covered": true,
+            "minimum_margin_ps": 148.14092844340598,
+            "witness": {
+              "row_id": "general-control-test-04-t4/grt",
+              "required_ps": 668.3203119999998,
+              "upper_ps": 816.4612404434058,
+              "margin_ps": 148.14092844340598
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3385,
+            "path_class": "native_valid",
+            "covered": true,
+            "minimum_margin_ps": 133.84764576560912,
+            "witness": {
+              "row_id": "general-control-test-01-t4/grt",
+              "required_ps": 366.9807129999999,
+              "upper_ps": 500.82835876560904,
+              "margin_ps": 133.84764576560912
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3385,
+            "path_class": "external_data",
+            "covered": true,
+            "minimum_margin_ps": 51.41915899999961,
+            "witness": {
+              "row_id": "general-control-test-04-t4/grt",
+              "required_ps": 164.9299320000002,
+              "upper_ps": 216.34909099999982,
+              "margin_ps": 51.41915899999961
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3385,
+            "path_class": "external_valid",
+            "covered": true,
+            "minimum_margin_ps": 76.06210299999978,
+            "witness": {
+              "row_id": "general-control-test-04-t4/grt",
+              "required_ps": 130.31225600000008,
+              "upper_ps": 206.37435899999986,
+              "margin_ps": 76.06210299999978
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3385,
+            "path_class": "input_data",
+            "covered": true,
+            "minimum_margin_ps": 136.550232,
+            "witness": {
+              "row_id": "general-control-test-05-t4/grt",
+              "required_ps": 115.980469,
+              "upper_ps": 252.530701,
+              "margin_ps": 136.550232
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3385,
+            "path_class": "input_enable",
+            "covered": true,
+            "minimum_margin_ps": 145.54541100000017,
+            "witness": {
+              "row_id": "general-control-test-01-t4/grt",
+              "required_ps": 451.6308589999999,
+              "upper_ps": 597.17627,
+              "margin_ps": 145.54541100000017
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 3385,
+            "path_class": "input_valid",
+            "covered": true,
+            "minimum_margin_ps": 160.67254699999978,
+            "witness": {
+              "row_id": "general-control-test-05-t4/grt",
+              "required_ps": 96.07202100000018,
+              "upper_ps": 256.74456799999996,
+              "margin_ps": 160.67254699999978
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4162,
+            "path_class": "native_data",
+            "covered": true,
+            "minimum_margin_ps": 78.96524000000014,
+            "witness": {
+              "row_id": "general-control-test-05-t5/grt",
+              "required_ps": 160.03955100000002,
+              "upper_ps": 239.00479100000015,
+              "margin_ps": 78.96524000000014
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4162,
+            "path_class": "native_enable",
+            "covered": true,
+            "minimum_margin_ps": 225.24161496223667,
+            "witness": {
+              "row_id": "general-control-test-03-t5/grt",
+              "required_ps": 598.3854980000002,
+              "upper_ps": 823.6271129622369,
+              "margin_ps": 225.24161496223667
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4162,
+            "path_class": "native_valid",
+            "covered": true,
+            "minimum_margin_ps": 119.32076030727575,
+            "witness": {
+              "row_id": "general-control-test-01-t5/grt",
+              "required_ps": 380.5249019999999,
+              "upper_ps": 499.84566230727563,
+              "margin_ps": 119.32076030727575
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4162,
+            "path_class": "external_data",
+            "covered": true,
+            "minimum_margin_ps": 37.37278800000024,
+            "witness": {
+              "row_id": "general-control-test-04-t5/grt",
+              "required_ps": 174.90844699999974,
+              "upper_ps": 212.28123499999998,
+              "margin_ps": 37.37278800000024
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4162,
+            "path_class": "external_valid",
+            "covered": true,
+            "minimum_margin_ps": 74.5306999999998,
+            "witness": {
+              "row_id": "general-control-test-03-t5/grt",
+              "required_ps": 127.03247100000016,
+              "upper_ps": 201.56317099999995,
+              "margin_ps": 74.5306999999998
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4162,
+            "path_class": "input_data",
+            "covered": true,
+            "minimum_margin_ps": 125.0400759999998,
+            "witness": {
+              "row_id": "general-control-test-02-t5/grt",
+              "required_ps": 123.78115200000019,
+              "upper_ps": 248.821228,
+              "margin_ps": 125.0400759999998
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4162,
+            "path_class": "input_enable",
+            "covered": true,
+            "minimum_margin_ps": 180.80692199999964,
+            "witness": {
+              "row_id": "general-control-test-01-t5/grt",
+              "required_ps": 372.76040000000035,
+              "upper_ps": 553.567322,
+              "margin_ps": 180.80692199999964
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4162,
+            "path_class": "input_valid",
+            "covered": true,
+            "minimum_margin_ps": 162.57889400000016,
+            "witness": {
+              "row_id": "general-control-test-05-t5/grt",
+              "required_ps": 96.07216799999986,
+              "upper_ps": 258.651062,
+              "margin_ps": 162.57889400000016
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4528,
+            "path_class": "native_data",
+            "covered": true,
+            "minimum_margin_ps": 78.96879599999957,
+            "witness": {
+              "row_id": "general-control-test-05-t6/grt",
+              "required_ps": 160.03955100000002,
+              "upper_ps": 239.0083469999996,
+              "margin_ps": 78.96879599999957
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4528,
+            "path_class": "native_enable",
+            "covered": true,
+            "minimum_margin_ps": 204.1901870426999,
+            "witness": {
+              "row_id": "general-control-test-02-t6/grt",
+              "required_ps": 599.24707,
+              "upper_ps": 803.4372570426999,
+              "margin_ps": 204.1901870426999
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4528,
+            "path_class": "native_valid",
+            "covered": true,
+            "minimum_margin_ps": 128.58482893227523,
+            "witness": {
+              "row_id": "general-control-test-01-t6/grt",
+              "required_ps": 375.18115200000045,
+              "upper_ps": 503.7659809322757,
+              "margin_ps": 128.58482893227523
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4528,
+            "path_class": "external_data",
+            "covered": true,
+            "minimum_margin_ps": 50.78645299999968,
+            "witness": {
+              "row_id": "general-control-test-04-t6/grt",
+              "required_ps": 172.6127930000004,
+              "upper_ps": 223.3992460000001,
+              "margin_ps": 50.78645299999968
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4528,
+            "path_class": "external_valid",
+            "covered": true,
+            "minimum_margin_ps": 67.74824399999986,
+            "witness": {
+              "row_id": "general-control-test-04-t6/grt",
+              "required_ps": 131.8037109999999,
+              "upper_ps": 199.55195499999977,
+              "margin_ps": 67.74824399999986
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4528,
+            "path_class": "input_data",
+            "covered": true,
+            "minimum_margin_ps": 134.27700100000004,
+            "witness": {
+              "row_id": "general-control-test-05-t6/grt",
+              "required_ps": 115.98081099999996,
+              "upper_ps": 250.257812,
+              "margin_ps": 134.27700100000004
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4528,
+            "path_class": "input_enable",
+            "covered": true,
+            "minimum_margin_ps": 173.88576599999976,
+            "witness": {
+              "row_id": "general-control-test-03-t6/grt",
+              "required_ps": 369.21347700000024,
+              "upper_ps": 543.099243,
+              "margin_ps": 173.88576599999976
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 4528,
+            "path_class": "input_valid",
+            "covered": true,
+            "minimum_margin_ps": 157.43715799999984,
+            "witness": {
+              "row_id": "general-control-test-05-t6/grt",
+              "required_ps": 96.07187500000015,
+              "upper_ps": 253.509033,
+              "margin_ps": 157.43715799999984
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 11913,
+            "path_class": "native_data",
+            "covered": true,
+            "minimum_margin_ps": 79.31565999999827,
+            "witness": {
+              "row_id": "general-control-test-04-t7/grt",
+              "required_ps": 161.08691400000026,
+              "upper_ps": 240.40257399999854,
+              "margin_ps": 79.31565999999827
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 11913,
+            "path_class": "native_enable",
+            "covered": true,
+            "minimum_margin_ps": 91.65022492057017,
+            "witness": {
+              "row_id": "general-control-test-03-t7/grt",
+              "required_ps": 730.4238280000001,
+              "upper_ps": 822.0740529205702,
+              "margin_ps": 91.65022492057017
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 11913,
+            "path_class": "native_valid",
+            "covered": true,
+            "minimum_margin_ps": 146.25199489087572,
+            "witness": {
+              "row_id": "general-control-test-04-t7/grt",
+              "required_ps": 423.6865230000001,
+              "upper_ps": 569.9385178908758,
+              "margin_ps": 146.25199489087572
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 11913,
+            "path_class": "external_data",
+            "covered": true,
+            "minimum_margin_ps": 56.664612000000375,
+            "witness": {
+              "row_id": "general-control-test-04-t7/grt",
+              "required_ps": 170.19824200000036,
+              "upper_ps": 226.86285400000074,
+              "margin_ps": 56.664612000000375
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 11913,
+            "path_class": "external_valid",
+            "covered": true,
+            "minimum_margin_ps": 78.96470800000218,
+            "witness": {
+              "row_id": "general-control-test-03-t7/grt",
+              "required_ps": 126.6386719999983,
+              "upper_ps": 205.60338000000047,
+              "margin_ps": 78.96470800000218
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 11913,
+            "path_class": "input_data",
+            "covered": true,
+            "minimum_margin_ps": 122.007226,
+            "witness": {
+              "row_id": "general-control-test-05-t7/grt",
+              "required_ps": 128.16660199999998,
+              "upper_ps": 250.173828,
+              "margin_ps": 122.007226
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 11913,
+            "path_class": "input_enable",
+            "covered": true,
+            "minimum_margin_ps": 168.5033200000002,
+            "witness": {
+              "row_id": "general-control-test-03-t7/grt",
+              "required_ps": 393.5464839999998,
+              "upper_ps": 562.049804,
+              "margin_ps": 168.5033200000002
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 11913,
+            "path_class": "input_valid",
+            "covered": true,
+            "minimum_margin_ps": 124.27016599999871,
+            "witness": {
+              "row_id": "general-control-test-05-t7/grt",
+              "required_ps": 130.6558590000013,
+              "upper_ps": 254.926025,
+              "margin_ps": 124.27016599999871
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 14897,
+            "path_class": "native_data",
+            "covered": true,
+            "minimum_margin_ps": 79.48388600000132,
+            "witness": {
+              "row_id": "general-control-test-04-t8/grt",
+              "required_ps": 161.22851599999927,
+              "upper_ps": 240.7124020000006,
+              "margin_ps": 79.48388600000132
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 14897,
+            "path_class": "native_enable",
+            "covered": true,
+            "minimum_margin_ps": 220.2307650426999,
+            "witness": {
+              "row_id": "general-control-test-02-t8/grt",
+              "required_ps": 580.586914,
+              "upper_ps": 800.8176790426999,
+              "margin_ps": 220.2307650426999
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 14897,
+            "path_class": "native_valid",
+            "covered": true,
+            "minimum_margin_ps": 145.79260364087435,
+            "witness": {
+              "row_id": "general-control-test-04-t8/grt",
+              "required_ps": 439.6464840000012,
+              "upper_ps": 585.4390876408755,
+              "margin_ps": 145.79260364087435
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 14897,
+            "path_class": "external_data",
+            "covered": true,
+            "minimum_margin_ps": 62.88246199999986,
+            "witness": {
+              "row_id": "general-control-test-03-t8/grt",
+              "required_ps": 163.3154300000001,
+              "upper_ps": 226.19789199999997,
+              "margin_ps": 62.88246199999986
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 14897,
+            "path_class": "external_valid",
+            "covered": true,
+            "minimum_margin_ps": 72.28540000000078,
+            "witness": {
+              "row_id": "general-control-test-03-t8/grt",
+              "required_ps": 129.04003899999987,
+              "upper_ps": 201.32543900000064,
+              "margin_ps": 72.28540000000078
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 14897,
+            "path_class": "input_data",
+            "covered": true,
+            "minimum_margin_ps": 125.99790099999973,
+            "witness": {
+              "row_id": "general-control-test-05-t8/grt",
+              "required_ps": 128.16738300000029,
+              "upper_ps": 254.165284,
+              "margin_ps": 125.99790099999973
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 14897,
+            "path_class": "input_enable",
+            "covered": true,
+            "minimum_margin_ps": 145.02158199999872,
+            "witness": {
+              "row_id": "general-control-test-03-t8/grt",
+              "required_ps": 451.7005860000013,
+              "upper_ps": 596.722168,
+              "margin_ps": 145.02158199999872
+            },
+            "rows": 6
+          },
+          {
+            "period_ps": 14897,
+            "path_class": "input_valid",
+            "covered": true,
+            "minimum_margin_ps": 124.26938500000097,
+            "witness": {
+              "row_id": "general-control-test-05-t8/grt",
+              "required_ps": 130.65664099999904,
+              "upper_ps": 254.926026,
+              "margin_ps": 124.26938500000097
+            },
+            "rows": 6
+          }
+        ]
+      },
+      "minimum_boundary_margin_ps": 37.37278800000024
+    }
+  },
+  "parameters_domain_or_reserve_changed": false,
+  "area_models_and_six_path_bounds_unchanged": true,
+  "test_labels_consumed": true,
+  "test_labels_permanently_excluded_from_future_fitting": true,
+  "eligible_deployable_stages": [
+    "grt"
+  ],
+  "production_price_binding_qualified": false,
+  "full_D_ready": false,
+  "PPA_calls": 0
+}

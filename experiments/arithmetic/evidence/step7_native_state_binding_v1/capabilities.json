@@ -1,0 +1,22 @@
+{
+  "version": "asap7-native-state-production-binding-evidence-v1",
+  "state_component_binding_qualified": true,
+  "qualified_scope": "independent native-protocol scalar banks with checked masks/lifetimes and registered reset-pattern subset; core plus explicit external capture",
+  "reset_subset": "zero, one, alternating or one-in-three on packed variable bits; arbitrary semantic resets remain refused",
+  "public_original_banks_covered": 0,
+  "all_candidates_and_moves_checked": false,
+  "initial_move_final_full_pipeline_qualified": false,
+  "joint_arithmetic_boundary_qualified": false,
+  "wrapper_state_included": false,
+  "whole_stage_model_qualified": false,
+  "real_interval_model_qualified": false,
+  "full_D_ready": false,
+  "formal_36_complete": false,
+  "PPA_calls": 0,
+  "limitations": [
+    "state-bank budgets are conditional residuals, not formal arithmetic boundary qualification",
+    "whole-D scheduling still refuses absent joint/service boundary and whole-stage/interval qualification",
+    "nine public original cores plus three diagnostic layouts checked; all currently refuse state bank price",
+    "published component bytes/coefficients/domains/test verdicts unchanged; consumer conservatively narrows reset support"
+  ]
+}

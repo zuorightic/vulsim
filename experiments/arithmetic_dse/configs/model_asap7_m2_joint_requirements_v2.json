@@ -1,0 +1,395 @@
+{
+  "version": "asap7-m2-joint-model-requirements-v2",
+  "status": "numerical_targets_frozen_synthetic_source_and_sampling_admission_pending",
+  "static_audit_sha256": "ad23a2f4320547e94656ab6239a5af5abbb07d715e9b85574092e9e91412f2cc",
+  "reference_requirements_sha256": "b5ad085887ccb4bbb7b897d8b3b804ef859c1097946c2a1692ccc55116122185",
+  "current_delivery": "ASAP7 nine cases /36 final A-B-C-D records",
+  "other_platforms_deferred": true,
+  "policy": {
+    "K": 16,
+    "same_ordered_C_D_candidates": true,
+    "search_PPA_calls": 0,
+    "Div_FP_remain_atomic": true
+  },
+  "physical_identity": {
+    "platform": "asap7",
+    "stage": "grt",
+    "ABC_ps": 1500,
+    "IO": "0.2T on declared external path classes",
+    "diagnostic_SDC_ps": 1500,
+    "diagnostic_SDC_is_formal_target": false,
+    "formal_SDC_ps": [
+      1119,
+      1253,
+      1431,
+      3141,
+      3385,
+      4162,
+      4528,
+      11913,
+      14897
+    ],
+    "target_clock_grid_for_training_frozen": false,
+    "reference_SDC_ps": 40500
+  },
+  "target_reference": {
+    "rules": "target_rules_v2",
+    "required_labels": [
+      "add_u32",
+      "add_u33",
+      "add_u64",
+      "bitor_u5",
+      "div_u16",
+      "div_u32",
+      "eq_u16",
+      "eq_u32",
+      "f32_mul_rne",
+      "ite_u16",
+      "ite_u32",
+      "ite_u5",
+      "mod_u16",
+      "mod_u32",
+      "mul_u16_r32",
+      "mul_u32_r32",
+      "mul_u32_r64"
+    ],
+    "D_ref": "same-platform grt microbenchmark labels on original graph longest dependency path",
+    "H_ref": "per-case max data capture suffix plus clock/setup/skew/uncertainty across required reference keys; other full paths diagnostic separately",
+    "state_bank_803ps_is_joint_H_ref": false,
+    "reference_settings_frozen": true,
+    "reference_labels_complete": true,
+    "numerical_targets_frozen": true,
+    "formal_PPA_or_model_predictions_as_reference": false,
+    "numerical_target_file": "experiments/arithmetic_dse/configs/model_asap7_m2_targets_v1.json",
+    "numerical_target_sha256": "6dd49589bae6e6be0be8d35bdd16259064a1f84a2910129249421c4bc458763e",
+    "production_batch_sha256": "211307811c67998d3f0cddd08eafe24f4fc6c96986e495375c96148ba20ebe71",
+    "additional_numeric_reserve_ps": 0
+  },
+  "cost_ownership": {
+    "whole_stage": "all owned functional combination and internal data-net repair, one stage price; no additive node prices",
+    "template_interval": "real blocked-Mul leaf/reduction interval price when explicitly consumed; not ordinary Mul and not charged again inside owning whole-stage price",
+    "native_state": "deduplicated logical data/valid chains and owned hold/reset/control overhead; explicit external capture inclusion",
+    "input_service_wrapper": "separate explicit query/owner; not zero and not silently included in core bank",
+    "clock_tap_and_unassigned_repair": "one shared physical owner; isolated bank labels include these, so joint stage labels must exclude or reconcile them",
+    "boundary_time": "clkQ/setup/skew/uncertainty once; Q-D label excludes these; IO only for actual external path class",
+    "unattributed_cells_or_paths": "block label acceptance; never silently ignore",
+    "physical_label_partition_implemented_and_verified": true,
+    "partition_verification_scope": "17 isolated reference shells only; future S/G/I sources must independently prove complete ownership",
+    "public_capture_protocol": "input service independently enabled; native internal data uses previous-stage valid; public external output unconditional",
+    "isolated_state_total_area_is_direct_joint_addend": false
+  },
+  "work_packages": [
+    {
+      "id": "R",
+      "scope": "freeze reference microbenchmark source/settings and capacity, collect17 label keys plus joint boundary evidence; freeze D_ref/H_ref/targets before model target grid",
+      "depends_on": [
+        "static_requirements",
+        "physical_label_partition_and_reference_preflight"
+      ],
+      "status": "complete_reference_and_user_approved_numerical_target_freeze",
+      "reference_model_fitting_allowed": false
+    },
+    {
+      "id": "S",
+      "scope": "native synthetic banks with general reset distributions, related sources, no-full-chain layouts, shifted zero-padding and needed nonpower intermediate widths",
+      "observed_word_widths": [
+        1,
+        5,
+        13,
+        16,
+        17,
+        21,
+        22,
+        24,
+        25,
+        26,
+        27,
+        29,
+        30,
+        32,
+        33,
+        34,
+        35,
+        37,
+        40,
+        41,
+        42,
+        48,
+        49,
+        50,
+        56,
+        57,
+        58,
+        64,
+        65,
+        66
+      ],
+      "observed_feature_ranges": {
+        "data_bits": [
+          64,
+          488
+        ],
+        "data_signals": [
+          2,
+          18
+        ],
+        "enable_domains": [
+          2,
+          3
+        ],
+        "max_declared_width": [
+          16,
+          66
+        ],
+        "min_variable_width": [
+          1,
+          64
+        ],
+        "reset_one_bits": [
+          16,
+          149
+        ],
+        "sdc_period_ps": [
+          1500,
+          1500
+        ],
+        "state_bits": [
+          66,
+          490
+        ],
+        "state_signals": [
+          4,
+          20
+        ],
+        "valid_bits": [
+          2,
+          3
+        ],
+        "valid_signals": [
+          2,
+          3
+        ]
+      },
+      "old_coefficients": "immutable baseline candidate; no automatic refit or domain extension",
+      "depends_on": [
+        "R"
+      ],
+      "status": "synthetic_source_preflight_and_sampling_admission_pending",
+      "required_target_contexts_ref": "target_contexts",
+      "precise_collection_grid_and_complete_tasks_frozen": false,
+      "existing_qualified_clock_domain_inherited": false,
+      "target_expansion_from_formal_PPA_allowed": false
+    },
+    {
+      "id": "G",
+      "scope": "independent bounded synthetic whole-stage topology model; single atoms/serial/mux/multiple branches and exits; joint state/boundary qualification",
+      "formal_or_holdout_graphs_copied_into_training": false,
+      "depends_on": [
+        "R",
+        "physical_label_partition_and_reference_preflight"
+      ],
+      "status": "synthetic_source_preflight_and_sampling_admission_pending",
+      "required_target_contexts_ref": "target_contexts",
+      "precise_collection_grid_and_complete_tasks_frozen": false,
+      "existing_qualified_clock_domain_inherited": false,
+      "target_expansion_from_formal_PPA_allowed": false
+    },
+    {
+      "id": "I",
+      "scope": "real half/quarter intervals; retain old failure and test exclusion; reuse matching train/validation only",
+      "observed_group_sets": 34,
+      "observed_noncontiguous_group_sets": 0,
+      "conservative_monotone_group_interval_envelope": 42,
+      "observed_sets_exhaust_all_future_D_positions": false,
+      "depends_on": [
+        "R"
+      ],
+      "status": "synthetic_source_preflight_and_sampling_admission_pending",
+      "required_target_contexts_ref": "target_contexts",
+      "precise_collection_grid_and_complete_tasks_frozen": false,
+      "existing_qualified_clock_domain_inherited": false,
+      "target_expansion_from_formal_PPA_allowed": false
+    },
+    {
+      "id": "C",
+      "scope": "whole-stage consumer ownership; initial/trial/final complete queries, safe partial-stage bounds, unified budget and typed state validation",
+      "can_progress_while_collection_runs": true,
+      "formal_D_release_depends_on": [
+        "S",
+        "G",
+        "I",
+        "joint_boundary_qualification"
+      ]
+    },
+    {
+      "id": "F",
+      "scope": "all-candidate D coverage, actual selection and RTL transaction/reset/L-II closure, then freeze36 final physical jobs and step9 audit",
+      "depends_on": [
+        "C",
+        "qualified_joint_domains"
+      ]
+    }
+  ],
+  "independence": {
+    "all_previous_consumed_tests_excluded": true,
+    "same_source_all_clock_and_stage_variants_one_split": true,
+    "new_train_validation_sources_and_test_lock_before_collection": true,
+    "freeze_parameters_domain_reserve_before_independent_test": true,
+    "quality_gates_changed": false,
+    "no_formal_or_holdout_PPA_for_fitting_or_target_feedback": true
+  },
+  "resources": {
+    "parallel_jobs": 4,
+    "threads_per_job": 4,
+    "memory_limit_MiB": 8192,
+    "shared_ledger": true,
+    "automatic_retries": 0
+  },
+  "physical_admission_allowed": false,
+  "missing_for_admission": [
+    "executable S/G/I synthetic sources, exact source relation/reset/mask/capture and topology support grammar",
+    "full source preflight, separate native/internal and service/external ownership, complete grouped train/validation/locked-test manifests",
+    "exact collection clock grid and prospective qualification of the formal target domain",
+    "per-source/stage capacity probes and complete residual wall/CPU/calls/support/storage budget"
+  ],
+  "full_D_ready": false,
+  "formal_36_complete": false,
+  "PPA_calls": 0,
+  "predecessor": {
+    "requirements_file": "experiments/arithmetic_dse/configs/model_asap7_m2_joint_requirements_v1.json",
+    "requirements_sha256": "270e0e448eeabe6a4c9001d36695d364095c910c44fcc47526527ae3be5a98df",
+    "target_file": "experiments/arithmetic_dse/configs/model_asap7_m2_targets_v1.json",
+    "target_sha256": "6dd49589bae6e6be0be8d35bdd16259064a1f84a2910129249421c4bc458763e",
+    "target_evidence_manifest_sha256": "708decbc3b98714879e516d2ff2950701265e647ea5184ebe7324735e6b33576"
+  },
+  "source_sha256": "babb6d9466619660ac6a02518d73e912c2bd14e3b6218b4d8ca2307b0e132296",
+  "target_contexts": [
+    {
+      "case_id": "MAC_32",
+      "platform": "asap7",
+      "stage": "grt",
+      "ABC_ps": 1500,
+      "SDC_ps": 1431,
+      "IO": "0.2T",
+      "L": 2,
+      "D_ref_ps": "169929661599999997/100000000000000",
+      "H_ref_ps": "7800547050000199/50000000000000",
+      "target_data_budget_ps": "63749452949999801/50000000000000",
+      "rho_ref": "127498905899999602/169929661599999997"
+    },
+    {
+      "case_id": "DOT2_16",
+      "platform": "asap7",
+      "stage": "grt",
+      "ABC_ps": 1500,
+      "SDC_ps": 1119,
+      "IO": "0.2T",
+      "L": 2,
+      "D_ref_ps": "13330095219999999/10000000000000",
+      "H_ref_ps": "594812314999989/5000000000000",
+      "target_data_budget_ps": "5000187685000011/5000000000000",
+      "rho_ref": "476208350952382/634766439047619"
+    },
+    {
+      "case_id": "UDR_16",
+      "platform": "asap7",
+      "stage": "grt",
+      "ABC_ps": 1500,
+      "SDC_ps": 4528,
+      "IO": "0.2T",
+      "L": 2,
+      "D_ref_ps": "11688816742000001/2000000000000",
+      "H_ref_ps": "1438124620000017/10000000000000",
+      "target_data_budget_ps": "43841875379999983/10000000000000",
+      "rho_ref": "43841875379999983/58444083710000005"
+    },
+    {
+      "case_id": "DIVSEL_32",
+      "platform": "asap7",
+      "stage": "grt",
+      "ABC_ps": 1500,
+      "SDC_ps": 11913,
+      "IO": "0.2T",
+      "L": 2,
+      "D_ref_ps": "15700819557/1000000",
+      "H_ref_ps": "85485224374997/625000000000",
+      "target_data_budget_ps": "7360139775625003/625000000000",
+      "rho_ref": "7360139775625003/9813012223125000"
+    },
+    {
+      "case_id": "F1",
+      "platform": "asap7",
+      "stage": "grt",
+      "ABC_ps": 1500,
+      "SDC_ps": 3141,
+      "IO": "0.2T",
+      "L": 2,
+      "D_ref_ps": "12502036/3125",
+      "H_ref_ps": "348937605000001/2500000000000",
+      "target_data_budget_ps": "7503562394999999/2500000000000",
+      "rho_ref": "7503562394999999/10001628800000000"
+    },
+    {
+      "case_id": "F2",
+      "platform": "asap7",
+      "stage": "grt",
+      "ABC_ps": 1500,
+      "SDC_ps": 4162,
+      "IO": "0.2T",
+      "L": 3,
+      "D_ref_ps": "4016861870499999997/500000000000000",
+      "H_ref_ps": "14422383000000173/100000000000000",
+      "target_data_budget_ps": "401777616999999827/100000000000000",
+      "rho_ref": "2008888084999999135/4016861870499999997"
+    },
+    {
+      "case_id": "H_M_32",
+      "platform": "asap7",
+      "stage": "grt",
+      "ABC_ps": 1500,
+      "SDC_ps": 1253,
+      "IO": "0.2T",
+      "L": 2,
+      "D_ref_ps": "1476304153/1000000",
+      "H_ref_ps": "3642002475000163/25000000000000",
+      "target_data_budget_ps": "27682997524999837/25000000000000",
+      "rho_ref": "27682997524999837/36907603825000000"
+    },
+    {
+      "case_id": "H_D_32",
+      "platform": "asap7",
+      "stage": "grt",
+      "ABC_ps": 1500,
+      "SDC_ps": 14897,
+      "IO": "0.2T",
+      "L": 3,
+      "D_ref_ps": "29518692879/1000000",
+      "H_ref_ps": "85485224374997/625000000000",
+      "target_data_budget_ps": "9225139775625003/625000000000",
+      "rho_ref": "3075046591875001/6149727683125000"
+    },
+    {
+      "case_id": "H_F1",
+      "platform": "asap7",
+      "stage": "grt",
+      "ABC_ps": 1500,
+      "SDC_ps": 3385,
+      "IO": "0.2T",
+      "L": 2,
+      "D_ref_ps": "4327120331/1000000",
+      "H_ref_ps": "348937605000001/2500000000000",
+      "target_data_budget_ps": "8113562394999999/2500000000000",
+      "rho_ref": "8113562394999999/10817800827500000"
+    }
+  ],
+  "sampling_preconditions": {
+    "source_and_context_rules": "synthetic semantic sources independent of formal/holdout complete graphs; all source/clock/stage variants share one split",
+    "software_preflight": "reset/bubbles/previous-valid/external-unconditional/known-mask/source-relation semantics; full-state RTL simulation and unmapped geometry",
+    "raw_labels": "actual ownership/FF/path/SDC/RC/CEC checks under each family; reference partition alone does not qualify unseen templates",
+    "test": "fresh locked independent sources registered before collection; freeze parameters/domain/reserve before release; preserve all consumed tests",
+    "capacity_and_budget": "exact source/platform/stage probes and complete task grid, shared residual wall/CPU/calls/storage envelope before physical launch",
+    "mapping_reuse": "only explicit byte-exact compatible mapping ancestry; fresh target SDC/ODB, every actual leaf paid",
+    "quality": "original family gates; no automatic refit/margin/clock change from independent or whole-graph PPA"
+  },
+  "model_target_domains_qualified": false
+}

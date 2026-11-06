@@ -1,0 +1,115 @@
+{
+  "candidate_count": 21,
+  "view_count": 108,
+  "illegal_move_proposals": 582,
+  "state_condition_view_counts": {
+    "dependent_channels": 101,
+    "no_full_channel_chain": 88,
+    "semantic_reset_pattern": 108,
+    "known_zero_pattern": 16,
+    "data_width_or_mask": 26,
+    "max_parallel_words": 2
+  },
+  "state_feature_ranges": {
+    "data_bits": [
+      64,
+      488
+    ],
+    "data_signals": [
+      2,
+      18
+    ],
+    "enable_domains": [
+      2,
+      3
+    ],
+    "max_declared_width": [
+      16,
+      66
+    ],
+    "min_variable_width": [
+      1,
+      64
+    ],
+    "reset_one_bits": [
+      16,
+      149
+    ],
+    "sdc_period_ps": [
+      1500,
+      1500
+    ],
+    "state_bits": [
+      66,
+      490
+    ],
+    "state_signals": [
+      4,
+      20
+    ],
+    "valid_bits": [
+      2,
+      3
+    ],
+    "valid_signals": [
+      2,
+      3
+    ]
+  },
+  "observed_state_word_widths": [
+    1,
+    5,
+    13,
+    16,
+    17,
+    21,
+    22,
+    24,
+    25,
+    26,
+    27,
+    29,
+    30,
+    32,
+    33,
+    34,
+    35,
+    37,
+    40,
+    41,
+    42,
+    48,
+    49,
+    50,
+    56,
+    57,
+    58,
+    64,
+    65,
+    66
+  ],
+  "semantic_operation_inventory": {
+    "add": 16,
+    "mul": 168,
+    "addcarry": 144,
+    "eq_zero": 4,
+    "mux": 18,
+    "div": 4,
+    "mod": 4,
+    "fp32": 4,
+    "or": 1
+  },
+  "stage_shape_count": 140,
+  "production_C_graph_and_order_parity": true,
+  "independent_K16_order_checked": true,
+  "placement_scope": "actual C initial/final and recorded trajectory plus every one-unit structural neighbour of initial/final; future D trajectories are not exhaustively enumerated",
+  "version": "asap7-D-static-requirements-evidence-v1",
+  "status": "static_requirements_frozen",
+  "observed_template_sets": 34,
+  "conservative_template_interval_sets": 42,
+  "required_reference_labels": 17,
+  "numerical_targets_frozen": false,
+  "physical_admission_allowed": false,
+  "full_D_ready": false,
+  "PPA_calls": 0
+}

@@ -1,0 +1,233 @@
+{
+  "version": "asap7-reference-H-proposal-v1",
+  "status": "proposal_pending_research_decision",
+  "H_rule": "per case max(0, joint_reference_overhead_ps of data paths for required keys)",
+  "joint_H": "capture suffix plus clock/setup/skew/uncertainty; excludes launch-Q-to-core-output data",
+  "control_input_external_paths": "retain as separate minimum-period diagnostics at reference context; do not sum into D_ref or adjust targets",
+  "additional_numeric_reserve_ps": 0,
+  "period_rule_unchanged": "ceil(H_ref + 1.5*D_ref/L)",
+  "model_qualification_inherited": false,
+  "numeric_targets_frozen": false,
+  "cases": {
+    "MAC_32": {
+      "L": 2,
+      "D_ref_ps": "169929661599999997/100000000000000",
+      "D_ref_decimal_ps": 1699.2966159999999,
+      "critical_node_path": [
+        "a",
+        "product",
+        "sum"
+      ],
+      "required_labels": [
+        "add_u64",
+        "mul_u32_r64"
+      ],
+      "H_ref_ps": "7800547050000199/50000000000000",
+      "T_target_ps": null,
+      "H_ref_decimal_ps": 156.01094100000398,
+      "proposed_T_target_ps": 1431,
+      "proposed_data_budget_ps": 1274.9890589999961,
+      "proposed_rho_ref": 0.7503040063724791,
+      "reference_context_other_path_minimum_period_ps": 417.34374999999665,
+      "other_path_values_are_diagnostics_at_reference_clock_only": true
+    },
+    "DOT2_16": {
+      "L": 2,
+      "D_ref_ps": "13330095219999999/10000000000000",
+      "D_ref_decimal_ps": 1333.0095219999998,
+      "critical_node_path": [
+        "a",
+        "product",
+        "wide_p",
+        "sum"
+      ],
+      "required_labels": [
+        "add_u33",
+        "mul_u16_r32"
+      ],
+      "H_ref_ps": "594812314999989/5000000000000",
+      "T_target_ps": null,
+      "H_ref_decimal_ps": 118.9624629999978,
+      "proposed_T_target_ps": 1119,
+      "proposed_data_budget_ps": 1000.0375370000022,
+      "proposed_rho_ref": 0.7502103477097309,
+      "reference_context_other_path_minimum_period_ps": 334.0742189999988,
+      "other_path_values_are_diagnostics_at_reference_clock_only": true
+    },
+    "UDR_16": {
+      "L": 2,
+      "D_ref_ps": "11688816742000001/2000000000000",
+      "D_ref_decimal_ps": 5844.408371,
+      "critical_node_path": [
+        "d",
+        "first_is_zero",
+        "first_safe_d",
+        "first_raw_q",
+        "first_q"
+      ],
+      "required_labels": [
+        "div_u16",
+        "eq_u16",
+        "ite_u16",
+        "mod_u16"
+      ],
+      "H_ref_ps": "1438124620000017/10000000000000",
+      "T_target_ps": null,
+      "H_ref_decimal_ps": 143.8124620000017,
+      "proposed_T_target_ps": 4528,
+      "proposed_data_budget_ps": 4384.187537999998,
+      "proposed_rho_ref": 0.7501507868194788,
+      "reference_context_other_path_minimum_period_ps": 302.28906200000154,
+      "other_path_values_are_diagnostics_at_reference_clock_only": true
+    },
+    "DIVSEL_32": {
+      "L": 2,
+      "D_ref_ps": "15700819557/1000000",
+      "D_ref_decimal_ps": 15700.819557,
+      "critical_node_path": [
+        "d",
+        "first_is_zero",
+        "first_safe_d",
+        "first_raw_q",
+        "first_q",
+        "biased_q",
+        "chosen"
+      ],
+      "required_labels": [
+        "add_u32",
+        "div_u32",
+        "eq_u32",
+        "ite_u32",
+        "mod_u32"
+      ],
+      "H_ref_ps": "85485224374997/625000000000",
+      "T_target_ps": null,
+      "H_ref_decimal_ps": 136.7763589999952,
+      "proposed_T_target_ps": 11913,
+      "proposed_data_budget_ps": 11776.223641000004,
+      "proposed_rho_ref": 0.7500387860804204,
+      "reference_context_other_path_minimum_period_ps": 327.9516599999972,
+      "other_path_values_are_diagnostics_at_reference_clock_only": true
+    },
+    "F1": {
+      "L": 2,
+      "D_ref_ps": "12502036/3125",
+      "D_ref_decimal_ps": 4000.65152,
+      "critical_node_path": [
+        "a",
+        "fp1"
+      ],
+      "required_labels": [
+        "f32_mul_rne"
+      ],
+      "H_ref_ps": "348937605000001/2500000000000",
+      "T_target_ps": null,
+      "H_ref_decimal_ps": 139.5750420000004,
+      "proposed_T_target_ps": 3141,
+      "proposed_data_budget_ps": 3001.4249579999996,
+      "proposed_rho_ref": 0.75023404137934,
+      "reference_context_other_path_minimum_period_ps": 298.94531200000176,
+      "other_path_values_are_diagnostics_at_reference_clock_only": true
+    },
+    "F2": {
+      "L": 3,
+      "D_ref_ps": "4016861870499999997/500000000000000",
+      "D_ref_decimal_ps": 8033.723741,
+      "critical_node_path": [
+        "a",
+        "fp1",
+        "bits1",
+        "fp2",
+        "flags2",
+        "flags_or"
+      ],
+      "required_labels": [
+        "bitor_u5",
+        "f32_mul_rne"
+      ],
+      "H_ref_ps": "14422383000000173/100000000000000",
+      "T_target_ps": null,
+      "H_ref_decimal_ps": 144.22383000000173,
+      "proposed_T_target_ps": 4162,
+      "proposed_data_budget_ps": 4017.7761699999983,
+      "proposed_rho_ref": 0.5001138076848887,
+      "reference_context_other_path_minimum_period_ps": 298.94531200000176,
+      "other_path_values_are_diagnostics_at_reference_clock_only": true
+    },
+    "H_M_32": {
+      "L": 2,
+      "D_ref_ps": "1476304153/1000000",
+      "D_ref_decimal_ps": 1476.304153,
+      "critical_node_path": [
+        "a",
+        "product",
+        "sum"
+      ],
+      "required_labels": [
+        "add_u32",
+        "ite_u32",
+        "mul_u32_r32"
+      ],
+      "H_ref_ps": "3642002475000163/25000000000000",
+      "T_target_ps": null,
+      "H_ref_decimal_ps": 145.68009900000652,
+      "proposed_T_target_ps": 1253,
+      "proposed_data_budget_ps": 1107.3199009999935,
+      "proposed_rho_ref": 0.7500621729945058,
+      "reference_context_other_path_minimum_period_ps": 313.3593749999999,
+      "other_path_values_are_diagnostics_at_reference_clock_only": true
+    },
+    "H_D_32": {
+      "L": 3,
+      "D_ref_ps": "29518692879/1000000",
+      "D_ref_decimal_ps": 29518.692879,
+      "critical_node_path": [
+        "d",
+        "first_is_zero",
+        "first_safe_d",
+        "first_raw_q",
+        "first_q",
+        "second_raw_q",
+        "second_q"
+      ],
+      "required_labels": [
+        "div_u32",
+        "eq_u32",
+        "ite_u32",
+        "mod_u32"
+      ],
+      "H_ref_ps": "85485224374997/625000000000",
+      "T_target_ps": null,
+      "H_ref_decimal_ps": 136.7763589999952,
+      "proposed_T_target_ps": 14897,
+      "proposed_data_budget_ps": 14760.223641000004,
+      "proposed_rho_ref": 0.5000297168138034,
+      "reference_context_other_path_minimum_period_ps": 327.9516599999972,
+      "other_path_values_are_diagnostics_at_reference_clock_only": true
+    },
+    "H_F1": {
+      "L": 2,
+      "D_ref_ps": "4327120331/1000000",
+      "D_ref_decimal_ps": 4327.120331,
+      "critical_node_path": [
+        "a",
+        "fp1",
+        "bits1",
+        "selected_bits"
+      ],
+      "required_labels": [
+        "f32_mul_rne",
+        "ite_u32",
+        "ite_u5"
+      ],
+      "H_ref_ps": "348937605000001/2500000000000",
+      "T_target_ps": null,
+      "H_ref_decimal_ps": 139.5750420000004,
+      "proposed_T_target_ps": 3385,
+      "proposed_data_budget_ps": 3245.4249579999996,
+      "proposed_rho_ref": 0.7500195764719998,
+      "reference_context_other_path_minimum_period_ps": 312.86718799999727,
+      "other_path_values_are_diagnostics_at_reference_clock_only": true
+    }
+  }
+}

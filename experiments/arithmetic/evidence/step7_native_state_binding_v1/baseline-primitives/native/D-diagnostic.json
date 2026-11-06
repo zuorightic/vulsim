@@ -1,0 +1,938 @@
+{
+  "failure_code": "cost_uncovered",
+  "failure_reason": "published_primitive_model_missing_state_model: reset/valid/state qualification required",
+  "failure_stage": "cost",
+  "node_id": "",
+  "region_id": "",
+  "request": {
+    "II": 1,
+    "L": 2,
+    "candidate_policy": "mul-candidates-v1",
+    "cost_mode": "backend-model",
+    "model_bundle_sha256": "f49990d5aa68045a7127636e074d07f4140404b8b007c19b8f8b70bd16524e15",
+    "platform_profile_sha256": "f9d3e71d377d0fef70b66e43828186962caa04fcec31b8f78ad8760c5459f1c7",
+    "semantic_profile": "arithmetic-semantics-v2",
+    "target_period_ps": 1500,
+    "target_platform": "asap7"
+  },
+  "selection": {
+    "K": 16,
+    "candidate_PPA_calls": 0,
+    "candidate_model_coverage_complete": false,
+    "candidates": [
+      {
+        "component_coverage": {
+          "candidate_PPA_calls": 0,
+          "covered_components": 0,
+          "deferred_components": 1,
+          "graph_sha256": "c1e16c395f70d5cb5bd109835ebea6a3577e2690b45cde77bcf069d7d3a01791",
+          "missing_pipeline_components": [
+            "state_model",
+            "boundary_model",
+            "stage_composition_model",
+            "mul_interval_model_when_split"
+          ],
+          "model_bundle_sha256": "f49990d5aa68045a7127636e074d07f4140404b8b007c19b8f8b70bd16524e15",
+          "model_id": "asap7-published-primitives/f49990d5aa68045a7127636e074d07f4140404b8b007c19b8f8b70bd16524e15",
+          "nodes": [
+            {
+              "known_request_features": {
+                "abc_target_ps": 1500,
+                "lhs_width": 8,
+                "result_width": 16,
+                "rhs_width": 8,
+                "sdc_period_ps": 1500
+              },
+              "node": "10",
+              "operation": "mul",
+              "status": "requires_actual_stage_cut",
+              "width": 16
+            }
+          ],
+          "pipeline_qualified": false,
+          "platform_profile_sha256": "f9d3e71d377d0fef70b66e43828186962caa04fcec31b8f78ad8760c5459f1c7",
+          "target_period_ps": 1500,
+          "uncovered_components": 0,
+          "version": "published-primitive-coverage-v1"
+        },
+        "failure_code": "cost_uncovered",
+        "failure_stage": "cost",
+        "id": "candidate/original",
+        "reason": "published_primitive_model_missing_state_model: reset/valid/state qualification required",
+        "shape_sha256": "c1e16c395f70d5cb5bd109835ebea6a3577e2690b45cde77bcf069d7d3a01791",
+        "status": "rejected"
+      },
+      {
+        "component_coverage": {
+          "candidate_PPA_calls": 0,
+          "covered_components": 0,
+          "deferred_components": 0,
+          "graph_sha256": "f135383fe1f0bfd7516d8f8eda15fd921f109c7cca52fac12f22435d8be8bfda",
+          "missing_pipeline_components": [
+            "state_model",
+            "boundary_model",
+            "stage_composition_model",
+            "mul_interval_model_when_split"
+          ],
+          "model_bundle_sha256": "f49990d5aa68045a7127636e074d07f4140404b8b007c19b8f8b70bd16524e15",
+          "model_id": "asap7-published-primitives/f49990d5aa68045a7127636e074d07f4140404b8b007c19b8f8b70bd16524e15",
+          "nodes": [
+            {
+              "node": "11",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "12",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "13",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 8
+            },
+            {
+              "node": "14",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "15",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "16",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 8
+            },
+            {
+              "node": "17",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 12
+            },
+            {
+              "node": "18",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "19",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "20",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 8
+            },
+            {
+              "node": "21",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 12
+            },
+            {
+              "node": "22",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "23",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "24",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 8
+            },
+            {
+              "node": "25",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 16
+            },
+            {
+              "node": "26",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 13
+            },
+            {
+              "node": "27",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 13
+            },
+            {
+              "node": "28",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 13
+            },
+            {
+              "node": "29",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 17
+            },
+            {
+              "node": "30",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 17
+            },
+            {
+              "node": "31",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 17
+            },
+            {
+              "node": "32",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 18
+            },
+            {
+              "node": "33",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 18
+            },
+            {
+              "node": "34",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 18
+            },
+            {
+              "node": "35",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 16
+            }
+          ],
+          "pipeline_qualified": false,
+          "platform_profile_sha256": "f9d3e71d377d0fef70b66e43828186962caa04fcec31b8f78ad8760c5459f1c7",
+          "target_period_ps": 1500,
+          "uncovered_components": 25,
+          "version": "published-primitive-coverage-v1"
+        },
+        "failure_code": "cost_uncovered",
+        "failure_stage": "cost",
+        "id": "candidate/half",
+        "reason": "published_primitive_model_missing_state_model: reset/valid/state qualification required",
+        "shape_sha256": "f135383fe1f0bfd7516d8f8eda15fd921f109c7cca52fac12f22435d8be8bfda",
+        "status": "rejected"
+      },
+      {
+        "component_coverage": {
+          "candidate_PPA_calls": 0,
+          "covered_components": 0,
+          "deferred_components": 0,
+          "graph_sha256": "65de14fde08fff3224f58b252e2aa5dfc6d70b83eb0a65eb3e22c1f14e3921ac",
+          "missing_pipeline_components": [
+            "state_model",
+            "boundary_model",
+            "stage_composition_model",
+            "mul_interval_model_when_split"
+          ],
+          "model_bundle_sha256": "f49990d5aa68045a7127636e074d07f4140404b8b007c19b8f8b70bd16524e15",
+          "model_id": "asap7-published-primitives/f49990d5aa68045a7127636e074d07f4140404b8b007c19b8f8b70bd16524e15",
+          "nodes": [
+            {
+              "node": "11",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "12",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "13",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "14",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "15",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "16",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "17",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 6
+            },
+            {
+              "node": "18",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "19",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "20",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "21",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 8
+            },
+            {
+              "node": "22",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "23",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "24",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "25",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 10
+            },
+            {
+              "node": "26",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "27",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "28",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "29",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 6
+            },
+            {
+              "node": "30",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "31",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "32",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "33",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 8
+            },
+            {
+              "node": "34",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "35",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "36",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "37",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 10
+            },
+            {
+              "node": "38",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "39",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "40",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "41",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 12
+            },
+            {
+              "node": "42",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "43",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "44",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "45",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 8
+            },
+            {
+              "node": "46",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "47",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "48",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "49",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 10
+            },
+            {
+              "node": "50",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "51",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "52",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "53",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 12
+            },
+            {
+              "node": "54",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "55",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "56",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "57",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 14
+            },
+            {
+              "node": "58",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "59",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "60",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "61",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 10
+            },
+            {
+              "node": "62",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "63",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "64",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "65",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 12
+            },
+            {
+              "node": "66",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "67",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "68",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "69",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 14
+            },
+            {
+              "node": "70",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "71",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 2
+            },
+            {
+              "node": "72",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 4
+            },
+            {
+              "node": "73",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 16
+            },
+            {
+              "node": "74",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 7
+            },
+            {
+              "node": "75",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 7
+            },
+            {
+              "node": "76",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 7
+            },
+            {
+              "node": "77",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 11
+            },
+            {
+              "node": "78",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 11
+            },
+            {
+              "node": "79",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 11
+            },
+            {
+              "node": "80",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 9
+            },
+            {
+              "node": "81",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 9
+            },
+            {
+              "node": "82",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 9
+            },
+            {
+              "node": "83",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 13
+            },
+            {
+              "node": "84",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 13
+            },
+            {
+              "node": "85",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 13
+            },
+            {
+              "node": "86",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 11
+            },
+            {
+              "node": "87",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 11
+            },
+            {
+              "node": "88",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 11
+            },
+            {
+              "node": "89",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 15
+            },
+            {
+              "node": "90",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 15
+            },
+            {
+              "node": "91",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 15
+            },
+            {
+              "node": "92",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 13
+            },
+            {
+              "node": "93",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 13
+            },
+            {
+              "node": "94",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 13
+            },
+            {
+              "node": "95",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 17
+            },
+            {
+              "node": "96",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 17
+            },
+            {
+              "node": "97",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 17
+            },
+            {
+              "node": "98",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 12
+            },
+            {
+              "node": "99",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 12
+            },
+            {
+              "node": "100",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 12
+            },
+            {
+              "node": "101",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 14
+            },
+            {
+              "node": "102",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 14
+            },
+            {
+              "node": "103",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 14
+            },
+            {
+              "node": "104",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 16
+            },
+            {
+              "node": "105",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 16
+            },
+            {
+              "node": "106",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 16
+            },
+            {
+              "node": "107",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 18
+            },
+            {
+              "node": "108",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 18
+            },
+            {
+              "node": "109",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 18
+            },
+            {
+              "node": "110",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 15
+            },
+            {
+              "node": "111",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 15
+            },
+            {
+              "node": "112",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 15
+            },
+            {
+              "node": "113",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 19
+            },
+            {
+              "node": "114",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 19
+            },
+            {
+              "node": "115",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 19
+            },
+            {
+              "node": "116",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 20
+            },
+            {
+              "node": "117",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 20
+            },
+            {
+              "node": "118",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 20
+            },
+            {
+              "node": "119",
+              "reason": "missing_qualified_mul_interval_model: template members cannot use ordinary Mul prices",
+              "status": "cost_uncovered",
+              "width": 16
+            }
+          ],
+          "pipeline_qualified": false,
+          "platform_profile_sha256": "f9d3e71d377d0fef70b66e43828186962caa04fcec31b8f78ad8760c5459f1c7",
+          "target_period_ps": 1500,
+          "uncovered_components": 109,
+          "version": "published-primitive-coverage-v1"
+        },
+        "failure_code": "cost_uncovered",
+        "failure_stage": "cost",
+        "id": "candidate/quarter",
+        "reason": "published_primitive_model_missing_state_model: reset/valid/state qualification required",
+        "shape_sha256": "65de14fde08fff3224f58b252e2aa5dfc6d70b83eb0a65eb3e22c1f14e3921ac",
+        "status": "rejected"
+      }
+    ],
+    "cost_mode": "backend-model",
+    "evaluated_structures": 3,
+    "formal_D_selection": false,
+    "model_bundle_sha256": "f49990d5aa68045a7127636e074d07f4140404b8b007c19b8f8b70bd16524e15",
+    "policy": "mul-candidates-v1",
+    "selection_status": "cost_uncovered",
+    "version": "arithmetic-selection-v1"
+  },
+  "status": "failed",
+  "version": "arithmetic-structure-report-v2"
+}
