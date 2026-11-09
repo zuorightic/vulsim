@@ -1,0 +1,35 @@
+{
+  "version": "arithmetic-fast-measurement-probe-v1",
+  "purpose": "finite_software_geometry_label_and_capacity_diagnosis",
+  "source_role": "not_training",
+  "model_fitting_allowed": false,
+  "independent_test_allowed": false,
+  "platform": "asap7",
+  "ABC_ps": 1500,
+  "SDC_ps": [1500, 750],
+  "IO": "0.2T",
+  "paired_label_band": {
+    "epsilon_numerator": 5,
+    "epsilon_denominator": 100,
+    "confirmation": "2026-11-09 user chose5percent for near-fast paired-label selection; separate from D5percent",
+    "metric": "whole launch_Q-to-capture_D data delay; matching implementation combinational area",
+    "applied_to_probe_as_training": false
+  },
+  "probes": [
+    {"id":"mul32_capture1","spec":{"operation":"mul","lhs_width":32,"rhs_width":32,"result_width":64,"capture_banks":1}},
+    {"id":"mul32_capture4","spec":{"operation":"mul","lhs_width":32,"rhs_width":32,"result_width":64,"capture_banks":4}},
+    {"id":"wide_add_low64","spec":{"operation":"add","lhs_width":51,"rhs_width":67,"result_width":64}},
+    {"id":"padded_add49","spec":{"operation":"add","lhs_width":32,"rhs_width":48,"rhs_zero_hex":"ffff","result_width":49}},
+    {"id":"sparse_add_low64","spec":{"operation":"add","lhs_width":56,"rhs_width":64,"lhs_zero_hex":"ffffffffff","rhs_zero_hex":"ffffffffffff","result_width":64}}
+  ],
+  "capacity_first": ["mul32_capture4-t0", "wide_add_low64-t0", "sparse_add_low64-t0"],
+  "resources": {
+    "threads":4,"parallel_jobs":4,"memory_limit_MiB":8192,
+    "synth_timeout_s":300,"grt_timeout_s":1200,"snapshot_timeout_s":120,
+    "per_task_walltime_envelope_s":1920,"support_walltime_envelope_s":3600,
+    "storage_per_task_bytes":268435456
+  },
+  "later_work_reserved":{"synth":688,"grt":688,"walltime_s":86400,"CPU_time_s":172800,"storage_bytes":32212254720},
+  "automatic_retries":0,
+  "full_D_ready":false
+}

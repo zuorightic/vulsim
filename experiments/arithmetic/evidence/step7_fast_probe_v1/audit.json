@@ -1,0 +1,499 @@
+{
+  "version": "arithmetic-fast-probe-evidence-v1",
+  "status": "passed",
+  "admission": "/home/zyrv/vulsim/build/step7-fast-measurement-20261109/probes-v4/admission.json",
+  "admission_sha256": "c8ea8ca98bd430b6ef89939fbfb2cc9dbbf999af474a69303d7fef153f33998d",
+  "measurement_points": 10,
+  "stage_rows": 20,
+  "raw_path_rows": 52,
+  "rows": [
+    {
+      "task_id": "mul32_capture1-t0",
+      "source_group": "mul32_capture1",
+      "stage": "synth",
+      "period_ps": 1500,
+      "data_delay_ps": 987.48183,
+      "combinational_area_um2": 462.37553999999443,
+      "total_area_um2": 544.9275,
+      "setup_slack_ps": 428.834625,
+      "hold_slack_ps": 3.208026,
+      "mapped_capture_banks": {
+        "data0": 64
+      },
+      "paths": 2,
+      "mapped_netlist_sha256": null,
+      "source_role": "not_training"
+    },
+    {
+      "task_id": "mul32_capture1-t0",
+      "source_group": "mul32_capture1",
+      "stage": "grt",
+      "period_ps": 1500,
+      "data_delay_ps": 1203.383087,
+      "combinational_area_um2": 451.36763999999386,
+      "total_area_um2": 559.8282600000001,
+      "setup_slack_ps": 204.769424,
+      "hold_slack_ps": 2.335132,
+      "mapped_capture_banks": {
+        "data0": 64
+      },
+      "paths": 2,
+      "mapped_netlist_sha256": null,
+      "source_role": "not_training"
+    },
+    {
+      "task_id": "mul32_capture1-t1",
+      "source_group": "mul32_capture1",
+      "stage": "synth",
+      "period_ps": 750,
+      "data_delay_ps": 987.48183,
+      "combinational_area_um2": 462.37553999999443,
+      "total_area_um2": 544.9275,
+      "setup_slack_ps": -321.165314,
+      "hold_slack_ps": 3.208026,
+      "mapped_capture_banks": {
+        "data0": 64
+      },
+      "paths": 2,
+      "mapped_netlist_sha256": null,
+      "source_role": "not_training"
+    },
+    {
+      "task_id": "mul32_capture1-t1",
+      "source_group": "mul32_capture1",
+      "stage": "grt",
+      "period_ps": 750,
+      "data_delay_ps": 1004.16629,
+      "combinational_area_um2": 508.1421600000017,
+      "total_area_um2": 629.2436400000001,
+      "setup_slack_ps": -349.598145,
+      "hold_slack_ps": 2.301465,
+      "mapped_capture_banks": {
+        "data0": 64
+      },
+      "paths": 2,
+      "mapped_netlist_sha256": null,
+      "source_role": "not_training"
+    },
+    {
+      "task_id": "mul32_capture4-t0",
+      "source_group": "mul32_capture4",
+      "stage": "synth",
+      "period_ps": 1500,
+      "data_delay_ps": 1007.048114,
+      "combinational_area_um2": 460.43639999999453,
+      "total_area_um2": 651.6822600000002,
+      "setup_slack_ps": 408.154968,
+      "hold_slack_ps": 3.208026,
+      "mapped_capture_banks": {
+        "data0": 64,
+        "data1": 64,
+        "data2": 64,
+        "data3": 64
+      },
+      "paths": 5,
+      "mapped_netlist_sha256": null,
+      "source_role": "not_training"
+    },
+    {
+      "task_id": "mul32_capture4-t0",
+      "source_group": "mul32_capture4",
+      "stage": "grt",
+      "period_ps": 1500,
+      "data_delay_ps": 1221.777832,
+      "combinational_area_um2": 450.3616199999938,
+      "total_area_um2": 660.9114000000001,
+      "setup_slack_ps": 176.848419,
+      "hold_slack_ps": 3.731751,
+      "mapped_capture_banks": {
+        "data0": 64,
+        "data1": 64,
+        "data2": 64,
+        "data3": 64
+      },
+      "paths": 5,
+      "mapped_netlist_sha256": null,
+      "source_role": "not_training"
+    },
+    {
+      "task_id": "mul32_capture4-t1",
+      "source_group": "mul32_capture4",
+      "stage": "synth",
+      "period_ps": 750,
+      "data_delay_ps": 1007.048114,
+      "combinational_area_um2": 460.43639999999453,
+      "total_area_um2": 651.6822600000002,
+      "setup_slack_ps": -341.845123,
+      "hold_slack_ps": 3.208026,
+      "mapped_capture_banks": {
+        "data0": 64,
+        "data1": 64,
+        "data2": 64,
+        "data3": 64
+      },
+      "paths": 5,
+      "mapped_netlist_sha256": null,
+      "source_role": "not_training"
+    },
+    {
+      "task_id": "mul32_capture4-t1",
+      "source_group": "mul32_capture4",
+      "stage": "grt",
+      "period_ps": 750,
+      "data_delay_ps": 1036.080353,
+      "combinational_area_um2": 499.933620000001,
+      "total_area_um2": 720.7477200000002,
+      "setup_slack_ps": -388.466248,
+      "hold_slack_ps": 4.13361,
+      "mapped_capture_banks": {
+        "data0": 64,
+        "data1": 64,
+        "data2": 64,
+        "data3": 64
+      },
+      "paths": 5,
+      "mapped_netlist_sha256": null,
+      "source_role": "not_training"
+    },
+    {
+      "task_id": "wide_add_low64-t0",
+      "source_group": "wide_add_low64",
+      "stage": "synth",
+      "period_ps": 1500,
+      "data_delay_ps": 465.250572,
+      "combinational_area_um2": 49.32414000000007,
+      "total_area_um2": 168.13656000000006,
+      "setup_slack_ps": 903.490845,
+      "hold_slack_ps": 1.949342,
+      "mapped_capture_banks": {
+        "data0": 64
+      },
+      "paths": 2,
+      "mapped_netlist_sha256": null,
+      "source_role": "not_training"
+    },
+    {
+      "task_id": "wide_add_low64-t0",
+      "source_group": "wide_add_low64",
+      "stage": "grt",
+      "period_ps": 1500,
+      "data_delay_ps": 527.364487,
+      "combinational_area_um2": 48.52224000000006,
+      "total_area_um2": 200.02302000000006,
+      "setup_slack_ps": 790.538513,
+      "hold_slack_ps": 0.077695,
+      "mapped_capture_banks": {
+        "data0": 64
+      },
+      "paths": 2,
+      "mapped_netlist_sha256": null,
+      "source_role": "not_training"
+    },
+    {
+      "task_id": "wide_add_low64-t1",
+      "source_group": "wide_add_low64",
+      "stage": "synth",
+      "period_ps": 750,
+      "data_delay_ps": 465.250572,
+      "combinational_area_um2": 49.32414000000007,
+      "total_area_um2": 168.13656000000006,
+      "setup_slack_ps": 200.218613,
+      "hold_slack_ps": 1.949342,
+      "mapped_capture_banks": {
+        "data0": 64
+      },
+      "paths": 2,
+      "mapped_netlist_sha256": null,
+      "source_role": "not_training"
+    },
+    {
+      "task_id": "wide_add_low64-t1",
+      "source_group": "wide_add_low64",
+      "stage": "grt",
+      "period_ps": 750,
+      "data_delay_ps": 521.368058,
+      "combinational_area_um2": 48.78468000000006,
+      "total_area_um2": 202.31208000000007,
+      "setup_slack_ps": 136.310791,
+      "hold_slack_ps": -1.000797,
+      "mapped_capture_banks": {
+        "data0": 64
+      },
+      "paths": 2,
+      "mapped_netlist_sha256": null,
+      "source_role": "not_training"
+    },
+    {
+      "task_id": "padded_add49-t0",
+      "source_group": "padded_add49",
+      "stage": "synth",
+      "period_ps": 1500,
+      "data_delay_ps": 327.708092,
+      "combinational_area_um2": 18.89567999999998,
+      "total_area_um2": 92.91834,
+      "setup_slack_ps": 903.548767,
+      "hold_slack_ps": 3.208026,
+      "mapped_capture_banks": {
+        "data0": 49
+      },
+      "paths": 2,
+      "mapped_netlist_sha256": null,
+      "source_role": "not_training"
+    },
+    {
+      "task_id": "padded_add49-t0",
+      "source_group": "padded_add49",
+      "stage": "grt",
+      "period_ps": 1500,
+      "data_delay_ps": 360.006378,
+      "combinational_area_um2": 17.656379999999974,
+      "total_area_um2": 111.18708000000001,
+      "setup_slack_ps": 800.267517,
+      "hold_slack_ps": 3.276927,
+      "mapped_capture_banks": {
+        "data0": 49
+      },
+      "paths": 2,
+      "mapped_netlist_sha256": null,
+      "source_role": "not_training"
+    },
+    {
+      "task_id": "padded_add49-t1",
+      "source_group": "padded_add49",
+      "stage": "synth",
+      "period_ps": 750,
+      "data_delay_ps": 327.708092,
+      "combinational_area_um2": 18.89567999999998,
+      "total_area_um2": 92.91834,
+      "setup_slack_ps": 303.548798,
+      "hold_slack_ps": 3.208026,
+      "mapped_capture_banks": {
+        "data0": 49
+      },
+      "paths": 2,
+      "mapped_netlist_sha256": null,
+      "source_role": "not_training"
+    },
+    {
+      "task_id": "padded_add49-t1",
+      "source_group": "padded_add49",
+      "stage": "grt",
+      "period_ps": 750,
+      "data_delay_ps": 360.095489,
+      "combinational_area_um2": 17.656379999999974,
+      "total_area_um2": 110.03526000000001,
+      "setup_slack_ps": 202.482285,
+      "hold_slack_ps": 4.46284,
+      "mapped_capture_banks": {
+        "data0": 49
+      },
+      "paths": 2,
+      "mapped_netlist_sha256": null,
+      "source_role": "not_training"
+    },
+    {
+      "task_id": "sparse_add_low64-t0",
+      "source_group": "sparse_add_low64",
+      "stage": "synth",
+      "period_ps": 1500,
+      "data_delay_ps": 265.626152,
+      "combinational_area_um2": 9.710280000000013,
+      "total_area_um2": 46.83096,
+      "setup_slack_ps": 937.064331,
+      "hold_slack_ps": 5.649207,
+      "mapped_capture_banks": {
+        "data0": 24
+      },
+      "paths": 2,
+      "mapped_netlist_sha256": null,
+      "source_role": "not_training"
+    },
+    {
+      "task_id": "sparse_add_low64-t0",
+      "source_group": "sparse_add_low64",
+      "stage": "grt",
+      "period_ps": 1500,
+      "data_delay_ps": 336.184357,
+      "combinational_area_um2": 8.937540000000006,
+      "total_area_um2": 52.21098,
+      "setup_slack_ps": 852.305908,
+      "hold_slack_ps": 2.297336,
+      "mapped_capture_banks": {
+        "data0": 24
+      },
+      "paths": 2,
+      "mapped_netlist_sha256": null,
+      "source_role": "not_training"
+    },
+    {
+      "task_id": "sparse_add_low64-t1",
+      "source_group": "sparse_add_low64",
+      "stage": "synth",
+      "period_ps": 750,
+      "data_delay_ps": 265.626152,
+      "combinational_area_um2": 9.710280000000013,
+      "total_area_um2": 46.83096,
+      "setup_slack_ps": 337.064331,
+      "hold_slack_ps": 5.649207,
+      "mapped_capture_banks": {
+        "data0": 24
+      },
+      "paths": 2,
+      "mapped_netlist_sha256": null,
+      "source_role": "not_training"
+    },
+    {
+      "task_id": "sparse_add_low64-t1",
+      "source_group": "sparse_add_low64",
+      "stage": "grt",
+      "period_ps": 750,
+      "data_delay_ps": 336.184357,
+      "combinational_area_um2": 8.937540000000006,
+      "total_area_um2": 52.21098,
+      "setup_slack_ps": 252.305893,
+      "hold_slack_ps": 2.297336,
+      "mapped_capture_banks": {
+        "data0": 24
+      },
+      "paths": 2,
+      "mapped_netlist_sha256": null,
+      "source_role": "not_training"
+    }
+  ],
+  "response": [
+    {
+      "source_group": "mul32_capture1",
+      "SDC_ps": [
+        1500,
+        750
+      ],
+      "data_delay_ps": [
+        1203.383087,
+        1004.16629
+      ],
+      "combinational_area_um2": [
+        451.36763999999386,
+        508.1421600000017
+      ],
+      "data_delay_change_percent": -16.554728012393937,
+      "combinational_area_change_percent": 12.578331933589348,
+      "mapped_netlist_same": true
+    },
+    {
+      "source_group": "mul32_capture4",
+      "SDC_ps": [
+        1500,
+        750
+      ],
+      "data_delay_ps": [
+        1221.777832,
+        1036.080353
+      ],
+      "combinational_area_um2": [
+        450.3616199999938,
+        499.933620000001
+      ],
+      "data_delay_change_percent": -15.198956318925905,
+      "combinational_area_change_percent": 11.007154650524576,
+      "mapped_netlist_same": true
+    },
+    {
+      "source_group": "padded_add49",
+      "SDC_ps": [
+        1500,
+        750
+      ],
+      "data_delay_ps": [
+        360.006378,
+        360.095489
+      ],
+      "combinational_area_um2": [
+        17.656379999999974,
+        17.656379999999974
+      ],
+      "data_delay_change_percent": 0.024752617021683854,
+      "combinational_area_change_percent": 0.0,
+      "mapped_netlist_same": true
+    },
+    {
+      "source_group": "sparse_add_low64",
+      "SDC_ps": [
+        1500,
+        750
+      ],
+      "data_delay_ps": [
+        336.184357,
+        336.184357
+      ],
+      "combinational_area_um2": [
+        8.937540000000006,
+        8.937540000000006
+      ],
+      "data_delay_change_percent": 0.0,
+      "combinational_area_change_percent": 0.0,
+      "mapped_netlist_same": true
+    },
+    {
+      "source_group": "wide_add_low64",
+      "SDC_ps": [
+        1500,
+        750
+      ],
+      "data_delay_ps": [
+        527.364487,
+        521.368058
+      ],
+      "combinational_area_um2": [
+        48.52224000000006,
+        48.78468000000006
+      ],
+      "data_delay_change_percent": -1.1370558973570088,
+      "combinational_area_change_percent": 0.5408653846153744,
+      "mapped_netlist_same": true
+    }
+  ],
+  "run_directories": {
+    "mul32_capture1-t0": "/home/zyrv/vulsim/build/step7-fast-measurement-20261109/probes-v4/runs/mul32_capture1-t0",
+    "mul32_capture1-t1": "/home/zyrv/vulsim/build/step7-fast-measurement-20261109/probes-v4/runs/mul32_capture1-t1",
+    "mul32_capture4-t0": "/home/zyrv/vulsim/build/step7-fast-measurement-20261109/probes-v3/runs/mul32_capture4-t0",
+    "mul32_capture4-t1": "/home/zyrv/vulsim/build/step7-fast-measurement-20261109/probes-v4/runs/mul32_capture4-t1",
+    "wide_add_low64-t0": "/home/zyrv/vulsim/build/step7-fast-measurement-20261109/probes-v4/runs/wide_add_low64-t0",
+    "wide_add_low64-t1": "/home/zyrv/vulsim/build/step7-fast-measurement-20261109/probes-v4/runs/wide_add_low64-t1",
+    "padded_add49-t0": "/home/zyrv/vulsim/build/step7-fast-measurement-20261109/probes-v4/runs/padded_add49-t0",
+    "padded_add49-t1": "/home/zyrv/vulsim/build/step7-fast-measurement-20261109/probes-v4/runs/padded_add49-t1",
+    "sparse_add_low64-t0": "/home/zyrv/vulsim/build/step7-fast-measurement-20261109/probes-v4/runs/sparse_add_low64-t0",
+    "sparse_add_low64-t1": "/home/zyrv/vulsim/build/step7-fast-measurement-20261109/probes-v4/runs/sparse_add_low64-t1"
+  },
+  "historical_admissions": [
+    {
+      "admission": "/home/zyrv/vulsim/build/step7-fast-measurement-20261109/probes-v1/admission.json",
+      "sha256": "a5bd6be4ef36ea8f397e83f49cf0c0ffa84a9e5d419be69cf21ceb00d1940ca1"
+    },
+    {
+      "admission": "/home/zyrv/vulsim/build/step7-fast-measurement-20261109/probes-v2/admission.json",
+      "sha256": "7bb6bc256605a65aaf7ef606f810597bb0dd5fa3b2c2d7da79ce0ba5bb4d94cf"
+    },
+    {
+      "admission": "/home/zyrv/vulsim/build/step7-fast-measurement-20261109/probes-v3/admission.json",
+      "sha256": "d9db67f43c3703b50c20cb8e35ecc58e8cea30096bfb8355e5c0d67e82e2ab7d"
+    },
+    {
+      "admission": "/home/zyrv/vulsim/build/step7-fast-measurement-20261109/probes-v4/admission.json",
+      "sha256": "c8ea8ca98bd430b6ef89939fbfb2cc9dbbf999af474a69303d7fef153f33998d"
+    }
+  ],
+  "paid_leaves_checked": 62,
+  "raw_files_hashed": 2172,
+  "audit": {
+    "actual_Liberty_checked": true,
+    "exact_saved_CTS_CEC_verified": true,
+    "full_area_partition_checked": true,
+    "all_mapped_banks_checked": true,
+    "SDC_RC_checked": true,
+    "all_failed_support_retained": true
+  },
+  "source_role": "not_training",
+  "model_fitting_allowed": false,
+  "new_PPA_calls": 0,
+  "full_D_ready": false
+}

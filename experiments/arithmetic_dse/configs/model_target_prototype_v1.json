@@ -1,0 +1,230 @@
+{
+  "version": "arithmetic-target-conditioned-prototype-protocol-v1",
+  "status": "plan_and_config_registered_sampling_fitting_and_production_implementation_pending",
+  "supersedes": "model_fast_prototype_v1.json revision3 speed-first primary policy; frozen old evidence retains its identity",
+  "confirmation": "2026-11-09 user: operator-only input-to-output delay and combinational area conditioned on features/load/T; three measured operator-data-slack regions with three points each as a goal and at most thirteen targets including locators; owner-specific S and frozen-base G residuals; planning only this round",
+  "platform": "asap7",
+  "pilot_cases": [
+    "MAC_32"
+  ],
+  "case_identity_is_a_model_feature": false,
+  "candidate_policy": "mul-candidates-v1",
+  "K": 16,
+  "latency_policy": "MAC32 L=2 II=1; no automatic increase to hide timing infeasibility",
+  "request": {
+    "target_period_ps": "required finite positive user input; no implicit target inherited from old experiments",
+    "platform": "required supported target platform",
+    "latency_and_II": "fixed request contract"
+  },
+  "selection": {
+    "objective": "minimum_predicted_total_area_subject_to_complete_stage_timing_at_user_target_and_fixed_L_II",
+    "candidate_PPA_calls": 0,
+    "speed_band_enabled": false,
+    "target_relaxation_allowed": false,
+    "timing_context": "all stage node, S and G queries share the user target and compatible declared ABC/SDC/IO conditions",
+    "tie_breaking": "predicted complete stage delay then shared register bits then stable candidate/placement order; exact numerical comparison rules frozen before evaluation",
+    "failure_categories": [
+      "cost_uncovered",
+      "bounded_search_no_feasible_schedule",
+      "predicted_infeasible_in_qualified_evaluated_scope",
+      "functional_failure",
+      "tool_failure",
+      "measured_timing_violation"
+    ],
+    "fallback": {
+      "enabled": true,
+      "confirmation": "2026-11-09 user: emit target_unmet RTL minimizing predicted timing violation then area when no qualified evaluated candidate meets target",
+      "trigger": "no complete-model-covered evaluated schedule satisfies the original target under fixed L/II",
+      "eligible_candidates": "only fully covered and semantically/legal evaluated schedules",
+      "violation_ps": "max over complete constrained paths of max(0, -predicted_slack_ps), same boundaries/margins as feasibility check",
+      "ranking": [
+        "predicted_timing_violation_ps",
+        "predicted_total_area_um2",
+        "stable_tie_breaking"
+      ],
+      "output_RTL": true,
+      "selection_status": "target_unmet",
+      "counts_as_timing_success": false,
+      "target_relaxation_allowed": false,
+      "automatic_latency_or_II_increase": false,
+      "no_covered_candidate": "report cost_uncovered or bounded_search limitation; no fabricated model-backed fallback",
+      "scope": "best among qualified evaluated schedules only; do not claim global infeasibility or global optimality",
+      "functional_and_temporal_validation_required": true,
+      "later_measured_timing_status": "reported separately at original target; no reselection",
+      "implemented": false
+    }
+  },
+  "operator_model": {
+    "target": "paired measured operator input-to-output maximum delay and operator combinational area conditioned on target",
+    "feature_inputs": [
+      "operation",
+      "lhs_width",
+      "rhs_width",
+      "result_width",
+      "result_shape",
+      "known_bit_positions",
+      "load_context",
+      "sdc_period_ps",
+      "abc_target_ps"
+    ],
+    "ABC_SDC_relation": "ABC=SDC; only this joint relation is claimed; independent effects are not identified",
+    "input_slew_and_load": "frozen or calculable before prediction; no measured current-design feature",
+    "primary_clock_dependence": "piecewise nonlinear; compare bounded segmented regression and shallow tree candidates with simple baselines",
+    "shape_hypothesis": "tight/loose plateaus and a transition region are hypotheses; discontinuities and local regressions retained; continuity or monotonicity not imposed without validation",
+    "width_policy": "prefer shared across-width model; allow registered width-group or operand-width-pair functions if train/validation justifies them; retain target/load/shape dependence and report lost across-width coverage",
+    "breakpoints_and_grouping": "learned on train and selected with validation under preregistered limits, frozen before new independent test",
+    "exact_period_price_lookup_is_the_primary_model": false,
+    "training_rows": "all complete eligible train/validation-role target points, including locator and nonmonotonic points; locked_test never enters fitting",
+    "test_grouping": "all clocks, stages and replicas of one source stay in one role; independent source/context validation of target interpolation and of each claimed width domain",
+    "whole_Q_to_D_witness_alone_qualifies_operator_maximum": false,
+    "output_labels": {
+      "operator_delay_ps": "independent maximum within the declared operator input-to-output boundary; not historical launch-Q to capture-D or a segment on one witness",
+      "comb_area_um2": "operator-owned combinational cell area of the same implementation at the same target",
+      "data_setup_slack_ps": "measured minimum signed setup slack on declared data paths through the operator; offline region selection and joint verification only"
+    }
+  },
+  "sampling": {
+    "strategy": "three_regions_of_measured_operator_data_setup_slack_divided_by_SDC",
+    "nominal_effective_point_goal": 9,
+    "target_effective_points_per_region": 3,
+    "total_unique_points_per_source_max": 13,
+    "locator_attempts_count_toward_total": true,
+    "locator_points_count_in_measured_region_when_eligible": true,
+    "duplicate_targets_rerun": false,
+    "ABC_equals_SDC": true,
+    "region_quantity": "data_setup_slack_ps / sdc_period_ps",
+    "region_slack_definition": "minimum required-arrival minus actual-arrival over complete declared functional data paths through the operator; includes real consumer/capture context; positive slack not clipped",
+    "whole_shell_WNS_used_for_region": false,
+    "regions": [
+      {
+        "id": "negative",
+        "condition": "r < -0.10",
+        "reference_ratios": [
+          -0.5,
+          -0.3,
+          -0.15
+        ]
+      },
+      {
+        "id": "transition",
+        "condition": "-0.10 <= r <= 0.10",
+        "reference_ratios": [
+          -0.05,
+          0,
+          0.05
+        ]
+      },
+      {
+        "id": "positive",
+        "condition": "r > 0.10",
+        "reference_ratios": [
+          0.15,
+          0.3,
+          0.5
+        ]
+      }
+    ],
+    "exact_reference_ratio_hit_required": false,
+    "region_quantity_is_a_production_feature": false,
+    "region_boundaries_are_model_breakpoints": false,
+    "confirmed_parameters": "data-path scope, strict outside-ten-percent regions, nine reference ratios, three-per-region goal, thirteen total attempts including locators, retain all eligible role-appropriate labels",
+    "adaptive_proposal_spacing_rounding_and_stop_rules_frozen": false,
+    "sampling_source_roles_quality_capacity_and_budget_frozen": false,
+    "coverage_shortfall": "report measured counts, T/r span, reference deviations, missing regions and bounded stopping reason; no infinite points, no claim of absent region or unvalidated cross-region support",
+    "historical_scan_implemented_policy": "model_fast_scan_v2.json; historical ten-point protocol only, not the current execution policy",
+    "extended_13point_runner_implemented": false,
+    "three_region_runner_implemented": false,
+    "near_fast_stability_band": {
+      "epsilon_numerator": 2,
+      "epsilon_denominator": 100
+    },
+    "near_fast_stability_role": "optional evidence-based auxiliary summary; not a conditional-label gate and not mandatory extra runs beyond thirteen",
+    "near_fast_paired_label_band": {
+      "epsilon_numerator": 5,
+      "epsilon_denominator": 100
+    },
+    "near_fast_summary_role": "auxiliary same-implementation summary, not the sole conditional labels",
+    "conditional_point_eligibility": "complete source/stage/ownership and independent operator endpoint maximum; negative setup and nonmonotonic labels retained; test role stays test; failed/incomplete points have no invented zero label",
+    "automatic_retries": 0
+  },
+  "S_reuse": "unchanged coefficients first; validate three actual owners, protocol and current ABC=SDC joint target domain; old exact-clock qualification does not transfer automatically",
+  "G": "frozen-base stage residual validation with zero correction as a formal candidate; operator and S versions, target, path scope and ownership bound before fit/test",
+  "I": "optional replacement price, never additive on owned nodes",
+  "historical_speed_first": {
+    "active": false,
+    "epsilon_numerator": 5,
+    "epsilon_denominator": 100,
+    "scope": "old prototype selection only; not the current timing allowance"
+  },
+  "later_work_reserved": {
+    "synth": 688,
+    "grt": 688,
+    "walltime_s": 86400,
+    "CPU_time_s": 172800,
+    "storage_bytes": 32212254720
+  },
+  "sampling_parameters_frozen": false,
+  "physical_admission_allowed": false,
+  "independent_test_allowed": false,
+  "production_binding_implemented": false,
+  "full_D_ready": false,
+  "revision": 3,
+  "S_model": {
+    "status": "plan_only_not_current_production_qualification",
+    "owners": [
+      "input_service",
+      "native_state",
+      "external_state"
+    ],
+    "area_labels": "mutually exclusive owner-specific functional state/control area from independent state sources; no total-stage label",
+    "area_candidates": [
+      "unchanged_qualified_coefficients_as_fixed_baseline",
+      "per_owner_constrained_linear_or_NNLS"
+    ],
+    "features": "precomputable variable data bits, words/signals, valid/enable/reset-one bits and domains, widths, bank geometry, shared chains/lifetimes, owner and actual update protocol; new dimensions require a successor schema",
+    "boundary_output": "separate path-class state/control delay or frozen bound; area and boundary quality accepted independently",
+    "excluded_owners": [
+      "shared_clock",
+      "shared_physical",
+      "root_boundary_repair",
+      "adapter",
+      "observer"
+    ],
+    "target_scope": "validate new common target/ABC/IO context; no automatic interpolation from old nine exact SDC points",
+    "sampling": "finite owner/protocol/scale/target coverage; do not mechanically copy operator three-region grid"
+  },
+  "G_model": {
+    "status": "plan_only_no_new_qualified_stage_model",
+    "base_dependencies": "freeze operator and S model/feature/domain/boundary bytes before residual extraction, fitting and independent evaluation",
+    "area_residual": "measured stage combinational ownership area minus sum of unique frozen-model operator area predictions",
+    "delay_residual": "measured combinational maximum for a declared path class minus frozen-model DAG longest-path baseline for that same class",
+    "explicit_wire_baseline": "if independently qualified, include and subtract once; otherwise owned by residual",
+    "signed_residuals_allowed": true,
+    "corrected_totals": "finite nonnegative area/delay in qualified support; do not delete negative residuals to fit a positive-only algorithm",
+    "candidates": [
+      "zero_correction",
+      "bounded_linear_or_Ridge_residual",
+      "shallow_tree"
+    ],
+    "features": "precomputable topology, operation counts/types, serial/parallel/reduction depth, width and bit mapping, fanout, connections, sharing/correlation structure, live-through/capture and target T",
+    "prediction_features_exclude_measured_current_design": true,
+    "residual_scope": "explicit path, path-class maximum or stage maximum; never broadcast a stage scalar as a per-node/per-path additive charge",
+    "data_sources": "new synthetic stages and real consumer contexts; no full MAC evaluation PPA for fitting or tuning",
+    "validation": "compare base and corrected errors/false feasibility/coverage; zero may qualify; new independent complete-stage test after freeze",
+    "model_change": "recompute/revalidate on base or boundary changes; preserve old failed tests and their roles"
+  },
+  "joint_qualification": {
+    "order": [
+      "operator_endpoint_and_model_qualification",
+      "S_reuse_or_fit_and_independent_qualification",
+      "G_zero_or_residual_and_independent_qualification",
+      "new_independent_complete_stage_validation",
+      "D_initial_trial_final_queries"
+    ],
+    "area": "unique operator area + G residual + three S owner areas + separately qualified shared clock/physical/repair",
+    "timing": "actual DAG/path-class combinational prediction plus applicable state/boundary, IO and remaining frozen reserve, each once; slack is an observed comparison, not an additive delay",
+    "missing_shared_or_boundary_price": "cost_uncovered; never fill with zero",
+    "test_policy": "all clocks/stages/replicas of a complete source share one role; locked or consumed tests never fit or tune; new independent test only after all dependency freezes",
+    "implemented": false
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "manifest_sha256": "648aeb7d0b1cf1bce6ee61eb394c0f50e021fc04eeb405e1913ade7d1186ed15",
+  "entries": [
+    {
+      "id": "c89948fc38ec479d96e7a448a436c4f5",
+      "kind": "live",
+      "stage": null,
+      "status": "completed",
+      "purpose": "fast_characterization_evidence",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/zyrv/vulsim/regression/arithmetic_fast_characterization_evidence.py",
+        "seal",
+        "--software",
+        "/home/zyrv/vulsim/build/step7-fast-characterization-20261109/software-v3",
+        "--node-probes",
+        "/home/zyrv/vulsim/build/step7-fast-characterization-20261109/node-probe-v2",
+        "--evidence",
+        "/home/zyrv/vulsim/experiments/arithmetic/evidence/step7_fast_characterization_v3"
+      ],
+      "output": "/home/zyrv/vulsim/build/step7-fast-characterization-20261109/evidence-v3/seal",
+      "reserved_at": "2026-11-09T09:00:40.535300+00:00",
+      "walltime_s": 0.11517257895320654,
+      "CPU_time_s": 0.06,
+      "target_platform": "asap7",
+      "admission_id": "evidence-v3",
+      "task_id": "fast-characterization-evidence",
+      "job_id": "fa3c40fa172a427082b8079428a725ce",
+      "exit_code": 0,
+      "timed_out": false,
+      "command_record": "/home/zyrv/vulsim/build/step7-fast-characterization-20261109/evidence-v3/seal.command.json",
+      "CPU_accounting": "GNU_time_leaf_command"
+    },
+    {
+      "id": "ce00f6b6491a410fa8a6487c17508e5d",
+      "kind": "live",
+      "stage": null,
+      "status": "completed",
+      "purpose": "fast_characterization_evidence",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/zyrv/vulsim/regression/arithmetic_fast_characterization_evidence.py",
+        "portable",
+        "--evidence",
+        "/home/zyrv/vulsim/experiments/arithmetic/evidence/step7_fast_characterization_v3"
+      ],
+      "output": "/home/zyrv/vulsim/build/step7-fast-characterization-20261109/evidence-v3/portable",
+      "reserved_at": "2026-11-09T09:00:41.499525+00:00",
+      "walltime_s": 0.11511524394154549,
+      "CPU_time_s": 0.08,
+      "target_platform": "asap7",
+      "admission_id": "evidence-v3",
+      "task_id": "fast-characterization-evidence",
+      "job_id": "fa3c40fa172a427082b8079428a725ce",
+      "exit_code": 0,
+      "timed_out": false,
+      "command_record": "/home/zyrv/vulsim/build/step7-fast-characterization-20261109/evidence-v3/portable.command.json",
+      "CPU_accounting": "GNU_time_leaf_command"
+    },
+    {
+      "id": "677b91b7e5904e62a40b71d2050e72f8",
+      "kind": "live",
+      "stage": null,
+      "status": "completed",
+      "purpose": "fast_characterization_evidence",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/zyrv/vulsim/regression/arithmetic_fast_characterization_evidence.py",
+        "isolated",
+        "--evidence",
+        "/home/zyrv/vulsim/experiments/arithmetic/evidence/step7_fast_characterization_v3"
+      ],
+      "output": "/home/zyrv/vulsim/build/step7-fast-characterization-20261109/evidence-v3/isolated",
+      "reserved_at": "2026-11-09T09:00:42.464224+00:00",
+      "walltime_s": 0.36523214215412736,
+      "CPU_time_s": 0.31,
+      "target_platform": "asap7",
+      "admission_id": "evidence-v3",
+      "task_id": "fast-characterization-evidence",
+      "job_id": "fa3c40fa172a427082b8079428a725ce",
+      "exit_code": 0,
+      "timed_out": false,
+      "command_record": "/home/zyrv/vulsim/build/step7-fast-characterization-20261109/evidence-v3/isolated.command.json",
+      "CPU_accounting": "GNU_time_leaf_command"
+    }
+  ],
+  "usage": {
+    "synth": 2052,
+    "grt": 2026,
+    "final": 16,
+    "support_calls": 8182,
+    "walltime_s": 233323.90914131305,
+    "CPU_time_s": 511060.27,
+    "pending": 0
+  },
+  "PPA_calls": 0
+}

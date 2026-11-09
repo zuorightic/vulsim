@@ -1,0 +1,57 @@
+{
+  "version": "arithmetic-fast-prototype-protocol-v1",
+  "superseded_by": "model_target_prototype_v1.json",
+  "current_usage_scope": "historical speed-first protocol and existing static P0 audit only; not the current D selection policy or13point sampling admission",
+  "status": "P1_bounded_scan_and_exact_load_inventory_ready_node_reader_mechanism_probed_formal_training_not_admitted",
+  "platform": "asap7",
+  "pilot_cases": [
+    "MAC_32"
+  ],
+  "case_identity_is_a_model_feature": false,
+  "candidate_policy": "mul-candidates-v1",
+  "K": 16,
+  "latency_policy": "inherit validated case L; II=1; do not increase L to hide infeasibility",
+  "selection": {
+    "objective": "shortest_predicted_feasible_period_then_minimum_area_in_global_speed_band",
+    "epsilon_numerator": 5,
+    "epsilon_denominator": 100,
+    "confirmation": "2026-11-09 user selected5percent; distinct from legacy C move cap",
+    "area_comparison_context": "one common T_limit and qualified complete stage/state context",
+    "candidate_PPA_calls": 0
+  },
+  "preflight": {
+    "exhaustive_assignment_limit_per_candidate": 65536,
+    "fixed_units": "retain production input/output/control and constant assignments",
+    "schedule_validator": "pipeline::evaluateSchedule, abstract costs for structure only",
+    "physical_label_reads": "only previously registered train/validation dataset; no test/reference/diagnostic labels",
+    "support_walltime_envelope_s": 7200,
+    "threads": 4,
+    "memory_limit_MiB": 8192
+  },
+  "small_operator_target": "paired data-path delay and combinational area of near-speed-limit implementation",
+  "scan_rule": "configs/model_fast_scan_v2.json: ABC=SDC; at most10points per source; two pressured tighter points and2percent stability; paired label5percent",
+  "sampling_parameters_frozen": false,
+  "physical_admission_allowed": false,
+  "independent_test_allowed": false,
+  "S_reuse": "unchanged coefficients first; actual owner/protocol/clock/source validation and production binding still required",
+  "G": "validate semantic node composition and joint boundaries; fit residual correction only if required",
+  "I": "optional replacement price, never additional charge on the same nodes",
+  "later_work_reserved": {
+    "synth": 688,
+    "grt": 688,
+    "walltime_s": 86400,
+    "CPU_time_s": 172800,
+    "storage_bytes": 32212254720
+  },
+  "full_D_ready": false,
+  "revision": 3,
+  "node_timing_definition": "independent operator input-to-output maximum in declared context; service/boundary/inter-owner wiring excluded and retained separately; Q-D witness segment alone is insufficient",
+  "exact_load_inventory": "experiments/arithmetic/evidence/step7_fast_loads_v1/loads.json;63exact maps corresponding to57legacy descriptors; static requirements only",
+  "paired_label_selection": {
+    "epsilon_numerator": 5,
+    "epsilon_denominator": 100,
+    "confirmation": "2026-11-09 user chose5percent; independent of D speed band",
+    "same_measured_implementation_for_delay_and_area": true,
+    "probe_labels_are_training": false
+  }
+}

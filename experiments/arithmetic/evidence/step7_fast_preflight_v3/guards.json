@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "structural_replay": true,
+  "case_renaming_invariant": true,
+  "known_bit_geometry_affects_shape_and_reuse": true,
+  "rejections": [
+    "consumed_independent_feature_metadata",
+    "partial_search_claimed_complete",
+    "state_count_without_actual_slots",
+    "physical_measurement_in_static_scope",
+    "contradictory_known_bits",
+    "invalid_operand_provenance_width",
+    "incorrect_concat_bit_demand"
+  ],
+  "native_candidate_count": 3,
+  "complete_unit_assignment_trials": 5248,
+  "PPA_calls": 0,
+  "independent_labels_read": false
+}

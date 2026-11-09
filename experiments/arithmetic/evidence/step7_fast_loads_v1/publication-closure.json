@@ -1,0 +1,75 @@
+{
+  "manifest_sha256": "56c266f222790db447cda18c68f61e38a0f87b09df775a3a9797681a46632f81",
+  "entries": [
+    {
+      "id": "746e9172f0e44d2185e9167408d664be",
+      "kind": "live",
+      "stage": null,
+      "status": "completed",
+      "purpose": "fast_exact_local_load_software",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "experiments.arithmetic_dse.model_fast_loads",
+        "--native",
+        "/home/zyrv/vulsim/build/step7-fast-prototype-20261109/P0-v4/native",
+        "--requirements",
+        "/home/zyrv/vulsim/experiments/arithmetic/evidence/step7_fast_preflight_v3/requirements.json",
+        "--out",
+        "/home/zyrv/vulsim/build/step7-fast-characterization-20261109/loads-v2/inventory"
+      ],
+      "output": "/home/zyrv/vulsim/build/step7-fast-characterization-20261109/loads-v2/inventory",
+      "reserved_at": "2026-11-09T08:58:05.623119+00:00",
+      "walltime_s": 0.2153450809419155,
+      "CPU_time_s": 0.17,
+      "target_platform": "asap7",
+      "admission_id": "loads-v2",
+      "task_id": "fast-exact-local-load-inventory",
+      "job_id": "ed1a79d6790444228b833fa2545fda32",
+      "exit_code": 0,
+      "timed_out": false,
+      "command_record": "/home/zyrv/vulsim/build/step7-fast-characterization-20261109/loads-v2/inventory.command.json",
+      "CPU_accounting": "GNU_time_leaf_command"
+    },
+    {
+      "id": "18ea71dd4954430bb830af6d7aa13884",
+      "kind": "live",
+      "stage": null,
+      "status": "completed",
+      "purpose": "fast_exact_local_load_software",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/zyrv/vulsim/regression/arithmetic_fast_loads.py",
+        "verify",
+        "--out",
+        "/home/zyrv/vulsim/build/step7-fast-characterization-20261109/loads-v2/inventory",
+        "--evidence",
+        "/home/zyrv/vulsim/experiments/arithmetic/evidence/step7_fast_loads_v1"
+      ],
+      "output": "/home/zyrv/vulsim/build/step7-fast-characterization-20261109/loads-v2/verify",
+      "reserved_at": "2026-11-09T08:58:06.693980+00:00",
+      "walltime_s": 0.21500341407954693,
+      "CPU_time_s": 0.17,
+      "target_platform": "asap7",
+      "admission_id": "loads-v2",
+      "task_id": "fast-exact-local-load-inventory",
+      "job_id": "ed1a79d6790444228b833fa2545fda32",
+      "exit_code": 0,
+      "timed_out": false,
+      "command_record": "/home/zyrv/vulsim/build/step7-fast-characterization-20261109/loads-v2/verify.command.json",
+      "CPU_accounting": "GNU_time_leaf_command"
+    }
+  ],
+  "usage": {
+    "synth": 2052,
+    "grt": 2026,
+    "final": 16,
+    "support_calls": 8178,
+    "walltime_s": 233319.89345307066,
+    "CPU_time_s": 511056.45,
+    "pending": 0
+  },
+  "PPA_calls": 0
+}

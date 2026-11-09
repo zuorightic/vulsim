@@ -1,0 +1,69 @@
+{
+  "version": "arithmetic-fast-scan-policy-v2",
+  "status": "software_protocol_only_physical_cohort_not_admitted",
+  "confirmations": {
+    "ABC_SDC": "2026-11-09 user: ABC=SDC; at most 10 points per source",
+    "stability": "2026-11-09 user: two tighter pressured points; improvement no more than 2 percent",
+    "paired_labels": "2026-11-09 user: minimum area within 5 percent of fastest measured delay"
+  },
+  "clock": {
+    "ABC_equals_SDC": true,
+    "initial_ps": 1500,
+    "minimum_ps": 25,
+    "maximum_ps": 12000,
+    "max_points": 10,
+    "coarse_max_points": 5,
+    "coarse_tighten_divisor": 2,
+    "coarse_relax_multiplier": 2,
+    "boundary_max_points": 3,
+    "boundary_midpoint": "integer_floor_between_observed_failing_and_feasible_data_targets",
+    "tighter_factors": [
+      [
+        3,
+        4
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "rounding": "ceil_to_integer_ps_for_tighter_targets",
+    "automatic_retries": 0
+  },
+  "measurement": {
+    "operator_delay_ps": "worst operator input-to-output delay with declared launch and consumer context; excludes external service and inter-owner wiring",
+    "data_setup_slack_ps": "minimum setup slack over the declared operator data-path endpoint coverage; never whole-shell WNS",
+    "area_um2": "matching implementation operator combinational cell area",
+    "hold": "retained and reviewed; not a grt label gate",
+    "all_fields_are_measured_labels_not_prediction_features": true,
+    "whole_Q_to_D_witness_alone_qualifies_operator_maximum": false
+  },
+  "stability": {
+    "epsilon_numerator": 2,
+    "epsilon_denominator": 100,
+    "require_two_tighter_points": true,
+    "require_negative_data_setup_slack_at_both": true,
+    "require_observed_feasible_failing_bracket": true,
+    "compare": "both tighter delays and pre-tighter best must all lie within 2 percent of their minimum; large regressions also fail",
+    "nonmonotonic_data_feasibility": "retain measurements and reject stable qualification",
+    "failed_or_incomplete_point": "stop_without_retry_and_reject_qualification",
+    "require_internal_operator_delay_exceeds_target_at_both": true,
+    "pressure_note": "data Q-D setup failure must not be caused only by service/boundary H; independent internal node maximum must also exceed the target"
+  },
+  "paired_label_band": {
+    "epsilon_numerator": 5,
+    "epsilon_denominator": 100
+  },
+  "paired_order": [
+    "area_um2",
+    "operator_delay_ps",
+    "SDC_ps",
+    "implementation_id"
+  ],
+  "role_policy": "one source and all its clocks have one immutable role; locked tests evaluated only after model freeze",
+  "physical_admission_allowed": false,
+  "fitting_allowed": false,
+  "independent_test_allowed": false,
+  "full_D_ready": false,
+  "supersedes": "arithmetic-fast-scan-policy-v1"
+}

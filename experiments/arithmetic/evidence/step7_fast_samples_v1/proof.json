@@ -1,0 +1,23 @@
+{
+  "version": "arithmetic-fast-samples-proof-v1",
+  "status": "passed",
+  "unique_kernels": 23,
+  "required_shape_aliases": 19,
+  "additional_parameter_contexts": 4,
+  "arithmetic_comparisons": 2208,
+  "capture_and_valid_comparisons": true,
+  "reset_bubbles_and_invalid_capture_checked": true,
+  "rejections": [
+    "unknown_operation",
+    "overlap_known_bits",
+    "out_of_width_mask",
+    "invalid_width",
+    "case_identity_as_semantics",
+    "carry_on_mul"
+  ],
+  "source_role": "software_preflight_only_not_training",
+  "physical_geometry_qualified": false,
+  "physical_admission_allowed": false,
+  "independent_physical_labels_read": false,
+  "PPA_calls": 0
+}
