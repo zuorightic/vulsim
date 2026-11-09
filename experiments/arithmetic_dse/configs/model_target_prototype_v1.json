@@ -1,6 +1,7 @@
 {
   "version": "arithmetic-target-conditioned-prototype-protocol-v1",
-  "status": "plan_and_config_registered_sampling_fitting_and_production_implementation_pending",
+  "status": "round1_software_prepared_physical_measurement_fitting_and_production_pending",
+  "implementation_checkpoint": "2026-11-09 round1: consumer shells, raw-reader software/negative checks, deterministic three-region decisions, source-role/quality protocols and finite capacity plan; physical endpoint qualification and admitted physical runner still pending",
   "supersedes": "model_fast_prototype_v1.json revision3 speed-first primary policy; frozen old evidence retains its identity",
   "confirmation": "2026-11-09 user: operator-only input-to-output delay and combinational area conditioned on features/load/T; three measured operator-data-slack regions with three points each as a goal and at most thirteen targets including locators; owner-specific S and frozen-base G residuals; planning only this round",
   "platform": "asap7",
@@ -128,12 +129,20 @@
     "region_quantity_is_a_production_feature": false,
     "region_boundaries_are_model_breakpoints": false,
     "confirmed_parameters": "data-path scope, strict outside-ten-percent regions, nine reference ratios, three-per-region goal, thirteen total attempts including locators, retain all eligible role-appropriate labels",
-    "adaptive_proposal_spacing_rounding_and_stop_rules_frozen": false,
+    "adaptive_proposal_spacing_rounding_and_stop_rules_frozen": true,
     "sampling_source_roles_quality_capacity_and_budget_frozen": false,
+    "source_roles_frozen": true,
+    "quality_and_model_candidates_preregistered": true,
+    "planned_capacity_list_frozen": true,
+    "physical_execution_budget_and_capacity_admitted": false,
+    "execution_policy": "model_three_region_scan_v1.json",
+    "source_and_quality_protocol": "model_target_round1_v1.json",
     "coverage_shortfall": "report measured counts, T/r span, reference deviations, missing regions and bounded stopping reason; no infinite points, no claim of absent region or unvalidated cross-region support",
     "historical_scan_implemented_policy": "model_fast_scan_v2.json; historical ten-point protocol only, not the current execution policy",
     "extended_13point_runner_implemented": false,
     "three_region_runner_implemented": false,
+    "three_region_pure_decision_engine_implemented": true,
+    "runner_note": "pure engine validated; actual EDA orchestration, mapped semantic endpoint coverage and freeze-gated test execution are not admitted by this software milestone",
     "near_fast_stability_band": {
       "epsilon_numerator": 2,
       "epsilon_denominator": 100
@@ -163,12 +172,12 @@
     "CPU_time_s": 172800,
     "storage_bytes": 32212254720
   },
-  "sampling_parameters_frozen": false,
+  "sampling_parameters_frozen": true,
   "physical_admission_allowed": false,
   "independent_test_allowed": false,
   "production_binding_implemented": false,
   "full_D_ready": false,
-  "revision": 3,
+  "revision": 4,
   "S_model": {
     "status": "plan_only_not_current_production_qualification",
     "owners": [

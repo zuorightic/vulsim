@@ -1,0 +1,38 @@
+{
+  "version": "arithmetic-target-round1-protocol-v1",
+  "scope": "ASAP7 MAC32 requirements and software preparation; no new physical training, fitting, or independent timing-label consumption",
+  "pilot": {"operation": "unsigned 32x32 plus 64-bit add modulo 2^64", "L": 2, "II": 1, "candidates": ["original", "half", "quarter"]},
+  "operator_labels": ["independent input-to-output maximum operator_delay_ps", "same-implementation comb_area_um2"],
+  "conditions": {"ABC_equals_SDC": true, "IO_fraction": "1/5", "platform": "asap7", "main_stage": "grt", "threads_per_tool": 4},
+  "source_roles": {"required_exact_contexts": "train", "fresh_validation_contexts": 12, "fresh_locked_test_contexts": 12, "capacity_contexts": "not_training"},
+  "grouping": "canonical complete producer/consumer/capture bit graph; all periods, stages and repeats of that source stay in one role; no seed-based duplicates across roles",
+  "role_exclusions": "old diagnostic/reference/consumed-test rows remain excluded; software functional vectors are not physical training/test labels",
+  "operator_candidates": {
+    "baselines": ["constant", "Ridge with semantic width/load features and numerical T"],
+    "segmented_Ridge": {"coordinate": "log2(T_ps)", "maximum_internal_knots": [1, 2], "knots": "pooled train-only target quantiles; validation chooses candidate", "alpha": [0.01, 1.0, 100.0]},
+    "shallow_tree": {"maximum_depth": [2, 3, 4], "minimum_distinct_training_sources_per_leaf": 3, "seed": 20261109},
+    "width_policy": "compare shared model first; optional operand-width groups selected with validation; each group needs >=3 train and >=2 validation source groups, else uncovered",
+    "selection": "quality-passing validation candidate with smallest source-macro normalized absolute error, then complexity and stable declared order",
+    "prohibited": ["case or NodeId or whole-graph hash as features", "measured current-design slack/Tmin/capacitance/mapped counts", "mandatory monotone or continuous response"]
+  },
+  "quality": {
+    "status": "new preregistered thresholds; not retroactive to old models",
+    "delay_and_area_relative_error": {"source_macro_median_max": 0.15, "source_macro_P95_max": 0.35, "per_operation_P95_max": 0.50, "quantile": "nearest-rank over per-source median relative errors"},
+    "absolute_error_floors": {"delay_ps": 10, "area_um2": 0.01, "role": "relative denominator max(abs(label), floor); also report raw MAE"},
+    "minimum_sources_per_reported_operation": {"train": 3, "validation": 2, "independent_test": 2},
+    "validation_delay_reserve": "max(0, worst validation source/target delay underprediction) in ps per qualified operation/width group, frozen before test; no duplicate reserve in S/G",
+    "coverage": "mandatory required-domain inventory, three-region counts/spans/shortfalls, held-out source/context errors and actual new-target interpolation coverage; no domain inferred from independent min/max alone",
+    "independent_target_interpolation": "role-specific initial targets preregistered in sampler; after collection report which test targets are unmeasured in fit and within supported train range; require at least one such point per claimed operation; no substitution after test",
+    "full_stage_false_feasible_rate_max": 0.01,
+    "full_stage_false_feasible_scope": "future joint stage gate including all owners/IO/reserves, never compare bare operator delay with T as full feasibility",
+    "conservative_rejection": "report separately; validation selects reserve, locked_test never changes it"
+  },
+  "capacity": {"sources": 3, "targets_per_source": 2, "role": "not_training", "automatic_retries": 0, "synth_timeout_s": 300, "grt_timeout_s": 1200, "memory_limit_MiB": 8192, "parallel_jobs_max": 4, "status": "plan only; software proof and live funding/capacity admission required before physical execution"},
+  "later_work_reserved": {"synth": 688, "grt": 688, "walltime_s": 86400, "CPU_time_s": 172800, "storage_bytes": 32212254720},
+  "S_G_order": "operator freeze and independent pass -> S reuse/necessary successor and shared ownership -> frozen-base G -> new complete-stage independent gate -> D",
+  "physical_admission_allowed": false,
+  "independent_test_allowed": false,
+  "fitting_allowed": false,
+  "production_binding_implemented": false,
+  "full_D_ready": false
+}
