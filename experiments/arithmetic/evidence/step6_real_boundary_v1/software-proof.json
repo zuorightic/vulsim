@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "actual_views": 132,
+  "candidate_targets": 3,
+  "negative_checks": 18,
+  "S_sha256": "1b61a68d80b704532ff38483a034ec2c03de921448095deb6acdcbbb00be383d",
+  "binding_sha256": "76dd37094be027dd5e4c6565d63ae037be1b541a88e63e0dfe233fe571ef3542",
+  "S_coefficients_unchanged": true,
+  "actual_state_masks_resets_enables_and_shared_terms_recomputed": true,
+  "nonarith_and_DAG_recomputed": true,
+  "selections": [
+    {
+      "target_ps": 500,
+      "view": "candidate/original/view1",
+      "area_um2": 314.81967038463074,
+      "violation_ps": 202.70232873221016
+    },
+    {
+      "target_ps": 1500,
+      "view": "candidate/original/view0",
+      "area_um2": 277.30742005881257,
+      "violation_ps": 0
+    },
+    {
+      "target_ps": 3000,
+      "view": "candidate/original/view0",
+      "area_um2": 277.30742005881257,
+      "violation_ps": 0
+    }
+  ],
+  "old_test_labels_read": false,
+  "operator_physical_labels_read": false,
+  "production_qualified": false,
+  "full_D_ready": false
+}

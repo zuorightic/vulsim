@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "cycles_per_RTL": 160,
+  "RTL": [
+    {
+      "rtl_file": "selected-500.sv",
+      "sha256": "9d3d075f2fade6082f6477d2a997149a58b54819c5dc7e02e03b8cf0ff5f6b70"
+    },
+    {
+      "rtl_file": "selected-1500.sv",
+      "sha256": "64c547a0b3baa950dea022049c13b698f1fdabfdae211cc686519a342d139642"
+    },
+    {
+      "rtl_file": "selected-3000.sv",
+      "sha256": "64c547a0b3baa950dea022049c13b698f1fdabfdae211cc686519a342d139642"
+    }
+  ],
+  "vectors_and_testbench_sha256": {
+    "cycles.hex": "a6f2ed6fe2bc974cc2b49810fed2b43f70fbc29aef344fb87b1095fe344ce4fc",
+    "cycles-tb.sv": "ae353b1d7c8c2d742437317f3a3f720efa8b81ee3f3257bba067b09dbda50768",
+    "cycles.sv": "12c132e2d3448a9af6add4a4e2f03b112d3ba97e99659eece4af6c10cc61d665"
+  },
+  "command_record": {
+    "command": [
+      "vvp",
+      "build/step6-real-boundary-20261110/cycles-v2/sim"
+    ],
+    "exit_code": 0,
+    "process_exit_code": 0,
+    "timed_out": false,
+    "CPU_limit_s": 720,
+    "CPU_limit_exceeded": false,
+    "sampled_process_tree_CPU_s": 0,
+    "cancelled_signal": null,
+    "walltime_s": 0.00877847895026207,
+    "unexpected_live_descendants": false,
+    "memory_limit_exceeded": false,
+    "memory_limit_MiB": 8192,
+    "sampled_process_tree_peak_rss_KiB": 1464,
+    "sampled_process_tree_peak_threads": 1,
+    "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+    "resource_sampling_interval_s": 0.5,
+    "cleanup": {
+      "term_sent": 0,
+      "kill_sent": 0,
+      "remaining_live_pids": []
+    },
+    "log": "/home/zyrv/vulsim/build/step6-real-boundary-20261110/cycles-run-v1/real-S-selected-cycles.log",
+    "gnu_time": "/home/zyrv/vulsim/build/step6-real-boundary-20261110/cycles-run-v1/real-S-selected-cycles.resources.txt",
+    "budget_reservation_id": "011ad72d0f0d4ec99c6c4e95aca347d9"
+  },
+  "physical_or_PPA_qualification": false
+}

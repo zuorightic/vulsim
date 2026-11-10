@@ -4749,3 +4749,40 @@ Python `operator_condition_model.py`与RTLzz `arithmetic_condition.*`已接入�
 v2已实际恢复106文件并完整重放通过，含结清共556489字节；28个接口支持叶全部结清，墙钟108.155136s、CPU116.59s，synth／grt／final增量仍均0。最终只读核对后台仍运行，累计311个有效点、batch-027，locked_test未启动，93个测量依赖保持冻结。主仓库与RTLzz的`git diff --check`通过。
 
 **完成边界：第8步消费软件接口、44视图条件评分／选择／RTL和跨语言验收已完成；正式节点价格发布、真实S/G提供者绑定及公共请求的完整自动D调度仍待第5—7步资格。** 当前`full_D_ready=false`。第4—5步后台继续推进；原任务、archive及既有冻结证据保持原身份，未git add／commit／push。
+
+<a id="step6-real-conditional-boundary-provider"></a>
+
+### 7.63 第6步交错开发：真实ConditionalBoundaryProvider与S有限复用验证（2026-11-10）
+
+**交付与当前身份。** 用户要求在第4—5步后台采集中优先复用S、实现实际状态／placement的提供者。本轮新增RTLzz `ReusedStateBoundaryProvider`，替换新消费链路中的边界夹具；节点函数仍用§7.62的软件夹具检验接口。原S面积系数、六固定边界、两条件控制回归器及原50ps reserve均未重训。两新状态银行的有限物理补验通过预先冻结的复用门限；这不授予真实算术状态／最终服务／G及完整D联合资格，`joint_qualified=false`、`full_D_ready=false`。§7.62末尾“真实提供者待实现”按该节检查点解释，当前以本节为准。
+
+**实际查询与互斥面积。** 实现重新构建typed状态查询，核对真实物化标志、graph／layout、内部级数、valid身份、全部slot的变量掩码／复位／使能／寿命及阶段请求。输入服务按公共包装器见证的逐输入写使能与独立保持valid建模；native数据由前级valid使能、valid逐级推进；external无条件捕获。三者使用原S grt非负线性系数，actual shared链／寿命只计一次，变量FF、reset-one和enable域从图与placement计算。shared clock按预测FF计费；shared physical按三状态所有者预测面积与同一节点函数的唯一算术面积之和计费；root repair为独立常量项。六个非算术所有者与节点组合面积互斥，不能把旧S/native总价再次叠加。
+
+共享基线在新验证前仅从原S的216条grt train记录及其真实连接／Liberty路径导出：clock为0.024799861711322396µm²/FF，physical比例为0.0317992671262653，root repair为50.31557999999941µm²，wire每边为88.03430200000003ps。均是经验上界估计，不是任意算术情境的保证；未读取原已消费test或新算子训练标签选参数。诊断保留的旧physical绝对最大值不进入实际计价。
+
+**时序与依赖。** 原S只提供完整边界和，当前采用每级launch相对到达0、capture required扣完整S和一次的坐标，不能解释成物理clk→Q为0。六固定边界取旧九周期的上界最大值；native enable／valid用原条件回归器、训练修正和reserve在九周期上取最大值。逐依赖边显式计wire，输入0.2T IO仅在port→input service检查中消耗，不在已由服务寄存器启动的算术路径重复扣除。显式非算术检查覆盖input data／enable／valid、native enable／valid、external valid、输出IO及真实slot中的forward／bypass；后者即使未进入算术cut也必须检查。
+
+价格与报告同时绑定T、布局、节点函数、binding、原S及服务协议哈希，返回各所有者特征、控制特征、逐级端点／wire和非算术违约详情。复制的控制系数／九周期清单／六固定上界必须与原S相同，服务见证须包含四个完整且唯一的协议项。`RequireQualified`默认拒绝缺完整联合资格的复用；显式`CandidateReuse`返回实际参数候选，不放宽生产选择门禁。
+
+**64→67变量位缺口。** 首次真实查询发现MAC32部分状态保留65／66／67变量位，原S最多64位，严格守卫正确拒绝。后继binding显式登记最多67变量位、目标250–3000ps的候选域，原S文件和原域字节保持不变；保留原失败及父proposal。两个新银行之一加入实际65／66／67位字，三目标均核对保留FF。候选区间只有500／1500／3000ps三点受本轮验证，不把它宣称为连续域或任意已知位／算术相关性资格。
+
+**六点有限补验。** 新源角色为`binding_validation`，两个银行×500／1500／3000ps，ABC=T；每点仅一次synth及grt，单槽执行、无重试。两个银行分别保留491／812个总FF；12阶段均核对独占面积守恒、实际SDC／RC、逐路径端点、实际连通与Liberty弧，6项CTS前后真实CEC通过。非birth八类路径比较`H+delay`与冻结上界，input的H已排除IO，验收时不再扣一次。birth adapter为诊断路径，adapter／observer不混入状态模型价格。
+
+| 检查 | 结果与边界 |
+| --- | --- |
+| 三状态面积门限 | 每源三目标中位≤20%、P95≤50%，六组全部通过；input_service最大中位／P95为1.595%／6.277%，native为1.510%／8.139%，external为0.02194%／5.954% |
+| 八类状态／控制边界 | 48/48覆盖，包括input三类、native三类及external两类 |
+| shared clock／physical／root repair／wire | 各6/6覆盖，参数未按新观测调整；算术情境仍待G联合核对 |
+| 完整物理可行性 | 两个500ps点setup违约；银行0在500／1500ps的hold slack为−0.153197／−0.224723ps，均原样保留；其余hold虽非负也不足5ps review band |
+
+状态面积复用和边界上界通过不覆盖物理setup／hold违约，也不证明该S能在所有候选上作紧致排序。若后续零修正组合失败，先查节点标签、所有权／重复计费、负载、路径边界及最大延迟组合的保守程度，再决定最小修正；本轮未另训一套S或G。
+
+**软件与可复核证据。** 真实提供者在44视图×3T共132次评估中与独立Python重算一致，覆盖实际状态、六所有者、控制、DAG与统一排序。18项拒绝检查包含伪造特征／mask／reset／enable／级数／valid、未物化、错误T／节点模型／binding哈希、漏wire／capture／stage、修改S参数／边界／时钟、空服务证据及未合格生产复用。三份入选RTL各160周期的算术／valid／复位检查通过；两个新银行的软件检查为各128周期、共5248项。500ps候选为target_unmet；其余两个目标在软件节点价格下预测可行，这些值均不能作正式PPA结果。
+
+[step6_real_boundary_v1小证据](../experiments/arithmetic/evidence/step6_real_boundary_v1/README.md)保留S／binding／服务见证、原train推导身份、六点观测／结论、原生报告／RTL、向量与日志、当前源码和独立回放。包已实际恢复69文件，重算六点结论及132视图价格／DAG／选择一致。有限物理的完整1873个本地文件保存在`/home/zyrv/vulsim-artifacts/conditional-boundary-20261110-v3`；其中1867个测量／源／协议成员实际归档恢复并逐hash核对，逻辑592014657字节、压缩60716664字节，原始文件保留。archive及其索引也在该目录，小证据收录恢复收据。它是明确保留的本地存储，不宣称抵抗同盘故障。
+
+物理补验的源冻结不包含C++消费实现；补验后增强的依赖拒绝检查另经build-v4／native-v4／parity-v3验证，并在新证据绑定最终源码；不改原proposal的初始实现哈希。原S、旧证据、旧test与后台93个测量依赖保持原字节。一次共享槽位繁忙导致向量准备未启动，紧随的仿真编译因输入尚未生成失败，已按依赖顺序完成新尝试并保留原记录／费用；未因此重复任何物理阶段。
+
+**下一步。** 等第5步正式节点函数冻结后，经同一提供者接口接入，限定实际算术状态保留／相关性、公共最终服务与输出路径及完整stage，对DAG零修正和共享项作联合验证；合格后再授予生产价格和公共自动D选择资格。本节完成第6步的真实实现与有限S复用，完整第6—7步联合资格仍待。后台第4—5步继续运行，locked_test未启动，未git add／commit／push；本任务费用以新证据的精确reservation／物理admission收据为准，不能混入后台算子采集或宣称全局Ledger已收口。
+
+最终本任务含关闭叶共63项，6 synth／6 grt／51 support／0 final，叶墙钟619.152540s、CPU1125.12s，pending为0，三项失败保留；精确记录与已完成关闭叶身份见小证据resource closure。最终原S／当前证据源码／后台93冻结文件、123本地链接及两个仓库diff格式核对通过。后台最新检查点397有效点、batch-034、locked_test未启动；这是当时快照，后续继续增长。

@@ -12,6 +12,8 @@
 
 **并行完成第8步的模型消费软件接口，见[§7.62](lxy-plan-fix.md#step8-conditional-consumer-interface)。** 第5步函数文件可直接经公共请求／CostProvider加载；新增真实S/边界提供者接口、公共有限视图评估／选择／物化。TEST_ONLY下5248次结构赋值得到44视图，3目标／2064 Query、18项拒绝检查、三份入选RTL各160周期及原接口3786项兼容性检查通过；[v2证据包](../experiments/arithmetic/evidence/step8_condition_consumer_v2/README.md)收录最终接口，v1保留原检查点。正式节点函数仍须第5步独立验收，完整生产D仍须第6—7步合格S/G提供者；软件成功不转授物理价格资格。后台采集的93个冻结测量文件保持原哈希。
 
+**第6步真实边界提供者已实现并完成有限S复用验证，见[§7.63](lxy-plan-fix.md#step6-real-conditional-boundary-provider)。** `ReusedStateBoundaryProvider` 从真实状态／placement输出三个状态所有者及clock／physical／repair独占面积、逐级launch／capture／wire、valid／控制／旁路检查和完整依赖身份。原S系数不变，先用旧train导出共享基线；实际65–67变量位缺口登记为候选后继。两个新银行×500／1500／3000ps共6点／12阶段验证通过预设复用门限，八类边界48/48；44视图×3T独立重算、18项拒绝及入选RTL周期验证通过。[新证据](../experiments/arithmetic/evidence/step6_real_boundary_v1/README.md)含原始产物归档恢复及可搬移回放。它仍是候选复用：节点测试价格为软件夹具，实际算术状态保留、最终服务／输出边界、G及完整D联合资格仍待；负hold／setup实测不被模型门限通过覆盖。
+
 原九例36条闭环后置，四平台／五档整数／43例／688条保留后续总范围，不作为原型全部前置条件。旧固定目标实验、速度优先原型及各自失败保持原身份；当前用户目标T不能由旧1431ps等数值自动填入。I可由独立通过的小算子组合计价替代。
 
 | 阅读入口 | 用途与边界 |
@@ -30,6 +32,7 @@
 | [第四章§7.59](lxy-plan-fix.md#step7-steps123-completion) | 第1—3步完成：公共发射、4点8阶段物理资格、58源后继协议及有限批次资源计划 |
 | [第四章§7.60](lxy-plan-fix.md#step7-liberty-arc-reader-fix) | 普通组合时序弧漏检修复；同8阶段、16项真实单弧删除及2项方向负控；v3增量后继 |
 | [第四章§7.62](lxy-plan-fix.md#step8-conditional-consumer-interface) | 与采集交错完成第8步消费软件接口；44视图／条件函数／S边界／选择／RTL，生产资格仍待 |
+| [第四章§7.63](lxy-plan-fix.md#step6-real-conditional-boundary-provider) | 第6步真实S提供者、六点有限复用验证与完整联合价格的剩余边界 |
 | [archive/README.md](archive/README.md) | 旧规划追溯，不能从旧“下一步”续作 |
 
 ## 当前已有成果与下一步

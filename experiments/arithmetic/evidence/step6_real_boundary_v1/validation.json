@@ -1,0 +1,737 @@
+{
+  "version": "conditional-S-reuse-validation-result-v1",
+  "status": "passed_limited",
+  "physical_points": 6,
+  "source_banks": 2,
+  "synth_grt_stages": 12,
+  "area_by_source": [
+    {
+      "source": "conditional-S-validation-0",
+      "owner": "external_state",
+      "points": 3,
+      "median_relative_error": 0.0002194410881242826,
+      "P95_relative_error": 0.059541579944933296,
+      "passed": true
+    },
+    {
+      "source": "conditional-S-validation-0",
+      "owner": "input_service",
+      "points": 3,
+      "median_relative_error": 0.015949872915735436,
+      "P95_relative_error": 0.0532013364274244,
+      "passed": true
+    },
+    {
+      "source": "conditional-S-validation-0",
+      "owner": "native_state",
+      "points": 3,
+      "median_relative_error": 0.01509971561886023,
+      "P95_relative_error": 0.08138402359249976,
+      "passed": true
+    },
+    {
+      "source": "conditional-S-validation-1",
+      "owner": "external_state",
+      "points": 3,
+      "median_relative_error": 9.546171537893618e-05,
+      "P95_relative_error": 0.05395411234863358,
+      "passed": true
+    },
+    {
+      "source": "conditional-S-validation-1",
+      "owner": "input_service",
+      "points": 3,
+      "median_relative_error": 0.007055028543679441,
+      "P95_relative_error": 0.06277147140449436,
+      "passed": true
+    },
+    {
+      "source": "conditional-S-validation-1",
+      "owner": "native_state",
+      "points": 3,
+      "median_relative_error": 0.0011468338630671107,
+      "P95_relative_error": 0.07019224808618862,
+      "passed": true
+    }
+  ],
+  "boundary_coverage": {
+    "external_data": {
+      "covered": 6,
+      "total": 6
+    },
+    "external_valid": {
+      "covered": 6,
+      "total": 6
+    },
+    "input_data": {
+      "covered": 6,
+      "total": 6
+    },
+    "input_enable": {
+      "covered": 6,
+      "total": 6
+    },
+    "input_valid": {
+      "covered": 6,
+      "total": 6
+    },
+    "native_data": {
+      "covered": 6,
+      "total": 6
+    },
+    "native_enable": {
+      "covered": 6,
+      "total": 6
+    },
+    "native_valid": {
+      "covered": 6,
+      "total": 6
+    }
+  },
+  "shared_coverage": {
+    "root_boundary_repair": {
+      "covered": 6,
+      "total": 6
+    },
+    "shared_clock": {
+      "covered": 6,
+      "total": 6
+    },
+    "shared_physical": {
+      "covered": 6,
+      "total": 6
+    },
+    "wire": {
+      "covered": 6,
+      "total": 6
+    }
+  },
+  "points": [
+    {
+      "task_id": "conditional-S-validation-0-T500",
+      "target_ps": 500,
+      "area": {
+        "input_service": {
+          "predicted_um2": 100.78458439694766,
+          "actual_um2": 106.9151400000015,
+          "relative_error": 0.05734038792872319
+        },
+        "native_state": {
+          "predicted_um2": 103.40525209934081,
+          "actual_um2": 113.47613999999993,
+          "relative_error": 0.08874894670068194
+        },
+        "external_state": {
+          "predicted_um2": 80.0471817868952,
+          "actual_um2": 85.71582000000019,
+          "relative_error": 0.06613292870680097
+        }
+      },
+      "boundaries": [
+        {
+          "path_class": "native_data",
+          "measured_requirement_ps": 151.485992,
+          "upper_ps": 240.76397700000004,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "native_enable",
+          "measured_requirement_ps": 307.68373099999997,
+          "upper_ps": 731.7242763813597,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "native_valid",
+          "measured_requirement_ps": 146.949097,
+          "upper_ps": 495.39504412099717,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "external_data",
+          "measured_requirement_ps": 162.945984,
+          "upper_ps": 232.82215899999994,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "external_valid",
+          "measured_requirement_ps": 147.925049,
+          "upper_ps": 206.37435899999986,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "input_data",
+          "measured_requirement_ps": 107.44830300000001,
+          "upper_ps": 268.265473,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "input_enable",
+          "measured_requirement_ps": 184.591003,
+          "upper_ps": 597.17627,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "input_valid",
+          "measured_requirement_ps": 98.74316399999998,
+          "upper_ps": 259.69078,
+          "deficit_ps": 0.0,
+          "covered": true
+        }
+      ],
+      "shared": {
+        "shared_clock": {
+          "actual_um2": 8.543880000000001,
+          "upper_um2": 12.176732100259297,
+          "covered": true
+        },
+        "shared_physical": {
+          "actual_um2": 8.25228000000001,
+          "upper_um2": 9.038528871560112,
+          "covered": true
+        },
+        "root_boundary_repair": {
+          "actual_um2": 40.98437999999978,
+          "upper_um2": 50.31557999999941,
+          "covered": true
+        }
+      },
+      "wire": {
+        "actual_ps": 23.57995599999998,
+        "upper_ps": 88.03430200000003,
+        "covered": true
+      },
+      "whole_setup_slack_ps": -146.840424,
+      "whole_hold_slack_ps": -0.153197
+    },
+    {
+      "task_id": "conditional-S-validation-0-T1500",
+      "target_ps": 1500,
+      "area": {
+        "input_service": {
+          "predicted_um2": 100.78458439694766,
+          "actual_um2": 99.20232000000152,
+          "relative_error": 0.015949872915735436
+        },
+        "native_state": {
+          "predicted_um2": 103.40525209934081,
+          "actual_um2": 104.99058000000001,
+          "relative_error": 0.01509971561886023
+        },
+        "external_state": {
+          "predicted_um2": 80.0471817868952,
+          "actual_um2": 80.02962000000022,
+          "relative_error": 0.0002194410881242826
+        }
+      },
+      "boundaries": [
+        {
+          "path_class": "native_data",
+          "measured_requirement_ps": 143.58764599999984,
+          "upper_ps": 240.76397700000004,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "native_enable",
+          "measured_requirement_ps": 544.0780029999999,
+          "upper_ps": 731.7242763813597,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "native_valid",
+          "measured_requirement_ps": 148.8465579999999,
+          "upper_ps": 495.39504412099717,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "external_data",
+          "measured_requirement_ps": 156.82543899999988,
+          "upper_ps": 232.82215899999994,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "external_valid",
+          "measured_requirement_ps": 138.78845199999995,
+          "upper_ps": 206.37435899999986,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "input_data",
+          "measured_requirement_ps": 96.56433099999995,
+          "upper_ps": 268.265473,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "input_enable",
+          "measured_requirement_ps": 271.75097700000003,
+          "upper_ps": 597.17627,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "input_valid",
+          "measured_requirement_ps": 95.5589600000001,
+          "upper_ps": 259.69078,
+          "deficit_ps": 0.0,
+          "covered": true
+        }
+      ],
+      "shared": {
+        "shared_clock": {
+          "actual_um2": 8.22312,
+          "upper_um2": 12.176732100259297,
+          "covered": true
+        },
+        "shared_physical": {
+          "actual_um2": 8.25228000000001,
+          "upper_um2": 9.038528871560112,
+          "covered": true
+        },
+        "root_boundary_repair": {
+          "actual_um2": 37.835099999999926,
+          "upper_um2": 50.31557999999941,
+          "covered": true
+        }
+      },
+      "wire": {
+        "actual_ps": 34.96920800000004,
+        "upper_ps": 88.03430200000003,
+        "covered": true
+      },
+      "whole_setup_slack_ps": 546.305298,
+      "whole_hold_slack_ps": -0.224723
+    },
+    {
+      "task_id": "conditional-S-validation-0-T3000",
+      "target_ps": 3000,
+      "area": {
+        "input_service": {
+          "predicted_um2": 100.78458439694766,
+          "actual_um2": 99.34812000000153,
+          "relative_error": 0.014458898637901889
+        },
+        "native_state": {
+          "predicted_um2": 103.40525209934081,
+          "actual_um2": 104.96142000000002,
+          "relative_error": 0.01482609420355788
+        },
+        "external_state": {
+          "predicted_um2": 80.0471817868952,
+          "actual_um2": 80.02962000000022,
+          "relative_error": 0.0002194410881242826
+        }
+      },
+      "boundaries": [
+        {
+          "path_class": "native_data",
+          "measured_requirement_ps": 146.10205099999988,
+          "upper_ps": 240.76397700000004,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "native_enable",
+          "measured_requirement_ps": 598.571045,
+          "upper_ps": 731.7242763813597,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "native_valid",
+          "measured_requirement_ps": 153.02856400000033,
+          "upper_ps": 495.39504412099717,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "external_data",
+          "measured_requirement_ps": 159.53198199999986,
+          "upper_ps": 232.82215899999994,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "external_valid",
+          "measured_requirement_ps": 135.44506800000002,
+          "upper_ps": 206.37435899999986,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "input_data",
+          "measured_requirement_ps": 99.78100599999999,
+          "upper_ps": 268.265473,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "input_enable",
+          "measured_requirement_ps": 264.60864300000026,
+          "upper_ps": 597.17627,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "input_valid",
+          "measured_requirement_ps": 126.35082999999992,
+          "upper_ps": 259.69078,
+          "deficit_ps": 0.0,
+          "covered": true
+        }
+      ],
+      "shared": {
+        "shared_clock": {
+          "actual_um2": 8.543880000000001,
+          "upper_um2": 12.176732100259297,
+          "covered": true
+        },
+        "shared_physical": {
+          "actual_um2": 8.25228000000001,
+          "upper_um2": 9.038528871560112,
+          "covered": true
+        },
+        "root_boundary_repair": {
+          "actual_um2": 40.8239999999998,
+          "upper_um2": 50.31557999999941,
+          "covered": true
+        }
+      },
+      "wire": {
+        "actual_ps": 18.028564000000074,
+        "upper_ps": 88.03430200000003,
+        "covered": true
+      },
+      "whole_setup_slack_ps": 1744.455933,
+      "whole_hold_slack_ps": 0.135073
+    },
+    {
+      "task_id": "conditional-S-validation-1-T500",
+      "target_ps": 500,
+      "area": {
+        "input_service": {
+          "predicted_um2": 98.72756621390722,
+          "actual_um2": 106.04034000000145,
+          "relative_error": 0.06896218727791825
+        },
+        "native_state": {
+          "predicted_um2": 280.78002224868686,
+          "actual_um2": 304.4887200000029,
+          "relative_error": 0.07786396077764658
+        },
+        "external_state": {
+          "predicted_um2": 87.67790908467516,
+          "actual_um2": 93.26826000000025,
+          "relative_error": 0.05993840686343965
+        }
+      },
+      "boundaries": [
+        {
+          "path_class": "native_data",
+          "measured_requirement_ps": 175.62478599999997,
+          "upper_ps": 240.76397700000004,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "native_enable",
+          "measured_requirement_ps": 495.937527,
+          "upper_ps": 799.2745091015736,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "native_valid",
+          "measured_requirement_ps": 246.26544199999998,
+          "upper_ps": 569.980253949422,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "external_data",
+          "measured_requirement_ps": 164.084808,
+          "upper_ps": 232.82215899999994,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "external_valid",
+          "measured_requirement_ps": 145.46106,
+          "upper_ps": 206.37435899999986,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "input_data",
+          "measured_requirement_ps": 106.83663899999999,
+          "upper_ps": 268.265473,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "input_enable",
+          "measured_requirement_ps": 236.369217,
+          "upper_ps": 597.17627,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "input_valid",
+          "measured_requirement_ps": 68.528503,
+          "upper_ps": 259.69078,
+          "deficit_ps": 0.0,
+          "covered": true
+        }
+      ],
+      "shared": {
+        "shared_clock": {
+          "actual_um2": 13.384440000000001,
+          "upper_um2": 20.137487709593785,
+          "covered": true
+        },
+        "shared_physical": {
+          "actual_um2": 10.818359999999938,
+          "upper_um2": 14.856156434022779,
+          "covered": true
+        },
+        "root_boundary_repair": {
+          "actual_um2": 49.01795999999944,
+          "upper_um2": 50.31557999999941,
+          "covered": true
+        }
+      },
+      "wire": {
+        "actual_ps": 57.87625099999997,
+        "upper_ps": 88.03430200000003,
+        "covered": true
+      },
+      "whole_setup_slack_ps": -186.577927,
+      "whole_hold_slack_ps": 0.302702
+    },
+    {
+      "task_id": "conditional-S-validation-1-T1500",
+      "target_ps": 1500,
+      "area": {
+        "input_service": {
+          "predicted_um2": 98.72756621390722,
+          "actual_um2": 98.03592000000134,
+          "relative_error": 0.007055028543679441
+        },
+        "native_state": {
+          "predicted_um2": 280.78002224868686,
+          "actual_um2": 281.0732399999963,
+          "relative_error": 0.0010432076397932633
+        },
+        "external_state": {
+          "predicted_um2": 87.67790908467516,
+          "actual_um2": 87.66954000000028,
+          "relative_error": 9.546171537893618e-05
+        }
+      },
+      "boundaries": [
+        {
+          "path_class": "native_data",
+          "measured_requirement_ps": 162.81005899999985,
+          "upper_ps": 240.76397700000004,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "native_enable",
+          "measured_requirement_ps": 546.664673,
+          "upper_ps": 799.2745091015736,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "native_valid",
+          "measured_requirement_ps": 382.13806199999993,
+          "upper_ps": 569.980253949422,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "external_data",
+          "measured_requirement_ps": 162.74328599999996,
+          "upper_ps": 232.82215899999994,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "external_valid",
+          "measured_requirement_ps": 137.2485349999999,
+          "upper_ps": 206.37435899999986,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "input_data",
+          "measured_requirement_ps": 96.79003900000006,
+          "upper_ps": 268.265473,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "input_enable",
+          "measured_requirement_ps": 319.07659899999993,
+          "upper_ps": 597.17627,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "input_valid",
+          "measured_requirement_ps": 56.77026399999991,
+          "upper_ps": 259.69078,
+          "deficit_ps": 0.0,
+          "covered": true
+        }
+      ],
+      "shared": {
+        "shared_clock": {
+          "actual_um2": 13.063679999999998,
+          "upper_um2": 20.137487709593785,
+          "covered": true
+        },
+        "shared_physical": {
+          "actual_um2": 10.818359999999938,
+          "upper_um2": 14.856156434022779,
+          "covered": true
+        },
+        "root_boundary_repair": {
+          "actual_um2": 43.47755999999974,
+          "upper_um2": 50.31557999999941,
+          "covered": true
+        }
+      },
+      "wire": {
+        "actual_ps": 48.34014899999994,
+        "upper_ps": 88.03430200000003,
+        "covered": true
+      },
+      "whole_setup_slack_ps": 468.123749,
+      "whole_hold_slack_ps": 2.79185
+    },
+    {
+      "task_id": "conditional-S-validation-1-T3000",
+      "target_ps": 3000,
+      "area": {
+        "input_service": {
+          "predicted_um2": 98.72756621390722,
+          "actual_um2": 98.03592000000134,
+          "relative_error": 0.007055028543679441
+        },
+        "native_state": {
+          "predicted_um2": 280.78002224868686,
+          "actual_um2": 281.1023999999963,
+          "relative_error": 0.0011468338630671107
+        },
+        "external_state": {
+          "predicted_um2": 87.67790908467516,
+          "actual_um2": 87.66954000000028,
+          "relative_error": 9.546171537893618e-05
+        }
+      },
+      "boundaries": [
+        {
+          "path_class": "native_data",
+          "measured_requirement_ps": 158.70434599999996,
+          "upper_ps": 240.76397700000004,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "native_enable",
+          "measured_requirement_ps": 558.875,
+          "upper_ps": 799.2745091015736,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "native_valid",
+          "measured_requirement_ps": 419.7788089999999,
+          "upper_ps": 569.980253949422,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "external_data",
+          "measured_requirement_ps": 159.8020019999998,
+          "upper_ps": 232.82215899999994,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "external_valid",
+          "measured_requirement_ps": 131.79833999999988,
+          "upper_ps": 206.37435899999986,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "input_data",
+          "measured_requirement_ps": 101.25976600000016,
+          "upper_ps": 268.265473,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "input_enable",
+          "measured_requirement_ps": 361.78149400000007,
+          "upper_ps": 597.17627,
+          "deficit_ps": 0.0,
+          "covered": true
+        },
+        {
+          "path_class": "input_valid",
+          "measured_requirement_ps": 56.81030300000023,
+          "upper_ps": 259.69078,
+          "deficit_ps": 0.0,
+          "covered": true
+        }
+      ],
+      "shared": {
+        "shared_clock": {
+          "actual_um2": 13.063679999999998,
+          "upper_um2": 20.137487709593785,
+          "covered": true
+        },
+        "shared_physical": {
+          "actual_um2": 10.818359999999938,
+          "upper_um2": 14.856156434022779,
+          "covered": true
+        },
+        "root_boundary_repair": {
+          "actual_um2": 44.06075999999973,
+          "upper_um2": 50.31557999999941,
+          "covered": true
+        }
+      },
+      "wire": {
+        "actual_ps": 28.933289000000002,
+        "upper_ps": 88.03430200000003,
+        "covered": true
+      },
+      "whole_setup_slack_ps": 1632.578125,
+      "whole_hold_slack_ps": 0.343628
+    }
+  ],
+  "failures": [],
+  "original_S_coefficients_changed": false,
+  "binding_parameters_changed": false,
+  "new_labels_used_for_fitting": false,
+  "old_consumed_test_labels_read": false,
+  "arithmetic_joint_qualified": false,
+  "production_qualified": false,
+  "full_D_ready": false
+}
