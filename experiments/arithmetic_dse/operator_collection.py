@@ -232,15 +232,24 @@ def execute_next(folder,source_id,state_folder,admission,selection_freeze=None):
     if point.exists():raise ValueError('point already attempted; no automatic retries')
     point.mkdir();task=dict(id=source_id+'-T'+str(q['SDC_ps']),source_group=row['source_group'],features=row['features'],rtl=str(folder/'sources'/row['id']/'input.sv'),
         rtl_sha256=row['rtl_sha256'],period_ps=q['SDC_ps'],abc_target_ps=q['ABC_ps'],source_role=row['role'])
+    inherited=release.get('inherit_synth_by_source',{}).get(source_id)
+    if inherited and inherited['target_ps']==q['SDC_ps']:
+        if inherited['source_role']!=row['role']:raise ValueError('inherited source role mismatch')
+        task['inherit_synth']=inherited
     shared=admission.parent/('measurement-source-'+sha(admission)[:16])
-    for name,h in release['measurement_source_sha256'].items():
-        dest=shared/name
-        if dest.exists():
-            if sha(dest)!=h:raise ValueError('shared measurement source freeze changed')
-        else:
-            dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes((ROOT/name).read_bytes())
+    import fcntl
+    with shared.with_suffix('.lock').open('a') as lock:
+        fcntl.flock(lock,fcntl.LOCK_EX)
+        for name,h in release['measurement_source_sha256'].items():
+            dest=shared/name
+            if dest.exists():
+                if sha(dest)!=h:raise ValueError('shared measurement source freeze changed')
+            else:
+                dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes((ROOT/name).read_bytes())
     (point/'source').symlink_to(shared.resolve(),target_is_directory=True)
-    write(point/'admission.json',dict(version='operator-conditional-point-v1',id='conditional-'+source_id+'-'+str(q['SDC_ps']),tasks=[task],
+    admission_id='conditional-'+source_id+'-'+str(q['SDC_ps'])
+    if task.get('inherit_synth'):admission_id+='-reader-continuation-'+key(task['inherit_synth'])[:12]
+    write(point/'admission.json',dict(version='operator-conditional-point-v1',id=admission_id,tasks=[task],
         source_sha256=release['measurement_source_sha256'],synth_timeout_s=300,grt_timeout_s=1200,support_max=12,
         source_manifest_sha256=sha(folder/'manifest.json'),stage4_admission_sha256=sha(admission),exact_proposal=q,immutable_role=row['role'],physical_training_admitted=True))
     try:

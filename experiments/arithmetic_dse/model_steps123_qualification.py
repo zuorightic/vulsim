@@ -15,7 +15,7 @@ from types import FunctionType,SimpleNamespace
 from .budget import Ledger,POLICY,usage
 from .model_fast_preflight import read,write,sha
 from . import model_sampling_v2 as samples
-from . import model_fast_sdc
+from . import model_fast_sdc_v3 as model_fast_sdc
 from .model_mapped_contract import mapped_contract,operator_port_contract,render_query_contract
 
 ROOT=Path(__file__).resolve().parents[2];ORFS=Path('/home/zyrv/OpenROAD-flow-scripts');SUFFIX=Path('asap7/arithmetic_probe/base')
@@ -112,7 +112,7 @@ def task_run(folder,t):
     if role not in ('not_training','train','validation','locked_test') or (role!='not_training' and not a.get('physical_training_admitted')):
         raise ValueError('immutable physical source role requires a valid collection admission')
     env=os.environ.copy();env.update(OMP_NUM_THREADS='4',OPENBLAS_NUM_THREADS='4',YOSYS_MAX_THREADS='4',PYTHONDONTWRITEBYTECODE='1',QT_QPA_PLATFORM='offscreen')
-    namespace=dict(backend._evaluate.__globals__);namespace.update(rtl_ports=model_fast_sdc.rtl_ports,verify_sdc=model_fast_sdc.verify_sdc,os=SimpleNamespace(environ=env))
+    namespace=dict(backend._evaluate.__globals__);namespace.update(rtl_ports=model_fast_sdc.rtl_ports,verify_sdc=model_fast_sdc.verify_sdc,SDC_CONTRACT_VERSION=model_fast_sdc.VERSION,os=SimpleNamespace(environ=env))
     evaluate=FunctionType(backend._evaluate.__code__,namespace,closure=backend._evaluate.__closure__)
     with ledger.job(ctx):
         args=SimpleNamespace(out=out,platform='asap7',threads=4,stage='synth',memory_limit_mib=8192,period_ps=t['period_ps'],period_role='resource_trial',abc_target_ps=t['period_ps'],io_delay_max_ps=None,
@@ -122,9 +122,9 @@ def task_run(folder,t):
             seed_synth(out,t)
         elif evaluate(args,ledger):raise ValueError('qualification synth failed')
         m=read(out/'manifest.json');base=m.get('continuation_base_command') or next(c['command'][:-1] for c in m['commands'] if c['log'].endswith('/synth.log'));commands=[]
-        write(out/'qualification-status.json',dict(phase='synth_complete',source_role='not_training'))
+        write(out/'qualification-status.json',dict(phase='synth_complete',source_role=role))
         def execute(cmd,name,timeout=120,stage=None):
-            r=ledger.reserve(stage,timeout,4,'steps123_not_training_qualification',cmd,out/name,context=ctx)
+            r=ledger.reserve(stage,timeout,4,'steps123_not_training_qualification' if role=='not_training' else 'operator_conditional_collection',cmd,out/name,context=ctx)
             record=run_command(cmd,out,name,timeout,env,8192,cpu_limit_s=r['CPU_time_s']);ledger.finish(r,record);commands.append(dict(**record,budget_reservation_id=r['id']));write(out/'qualification-commands.json',commands)
             if record['exit_code']:raise ValueError('qualification leaf failed '+record['log'])
         libs=read(out/'liberty_cells.json')['cells'];pins=labels.with_timing_arcs(liberty(m['libraries'],libs),m['libraries']);write(out/'liberty-pins.json',pins)
@@ -154,7 +154,7 @@ def task_run(folder,t):
                 if name not in all_pins:all_pins[name]=dict(sequential=False,buffer_or_inverter=False,physical_only=True,data_pins=[],pins={},area_um2=0 if filler=='1' else float(area))
             result=labels.read_snapshot(prefix,t['period_ps'],g['raw_report_units']['time']['to_ps'],all_pins,scopes,banks)
             stored=out/'results'/SUFFIX/(stem+'.sdc')
-            sdc_check=model_fast_sdc.verify_sdc(stored.read_text(),profile('asap7'),t['period_ps'],model_fast_sdc.rtl_ports((out/'input.sv').read_text(),'ModelBundle'))
+            sdc_check=model_fast_sdc.verify_sdc(stored.read_text(),profile('asap7'),t['period_ps'],model_fast_sdc.rtl_ports((out/'input.sv').read_text(),'ModelBundle'),serialization_stage=stage)
             from .platforms import verify_wire_readback
             rc=verify_wire_readback(Path(str(reports/('vulsim_'+stage))+'_layer_rc.tsv'),profile('asap7'))
             native=read(out/'logs'/SUFFIX/(stem+'.json'))[('synth' if stage=='synth' else 'globalroute')+'__design__instance__area__stdcell']
@@ -170,9 +170,9 @@ def task_run(folder,t):
             if name.startswith('results/') and sha(out/name)!=h:raise ValueError('completed synth checkpoint changed during continuation')
         for name,h in t.get('inherit_synth',{}).get('files_sha256',{}).items():
             if sha(out/name)!=h:raise ValueError('inherited paid synthesis checkpoint changed')
-        write(out/'qualification-status.json',dict(phase='qualified_diagnostic_complete',source_role='not_training',stages=['synth','grt'],operator_boundary_policy='unsigned-op-hierarchy-v1',formal_training_allowed=False,
+        write(out/'qualification-status.json',dict(phase='qualified_diagnostic_complete' if role=='not_training' else 'conditional_point_complete',source_role=role,stages=['synth','grt'],operator_boundary_policy='unsigned-op-hierarchy-v1',formal_training_allowed=role!='not_training',
             proof_sha256=sha(out/'logs'/SUFFIX/'structural_cec/proof.json')))
-    print(t['id']+' complete diagnostic synth/grt labels and bank/CEC checks',flush=True)
+    print(t['id']+' complete '+role+' synth/grt labels and bank/CEC checks',flush=True)
 
 
 def run(folder,task=None):

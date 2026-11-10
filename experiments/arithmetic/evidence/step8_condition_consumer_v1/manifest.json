@@ -1,0 +1,32 @@
+{
+  "version": "conditional-consumer-evidence-v1",
+  "mode": "TEST_ONLY",
+  "chunks": {
+    "pool-000.json.gz.part": {
+      "sha256": "c3b7ffe65addf05de653e3c7caa5a8278944beb992bea1094dbd43f3a8940abf",
+      "bytes": 516436
+    }
+  },
+  "payload_sha256": "e8ec8bc36ee7a9af35da1796e734d1056933949ad4136f5c3a0cde462adab2de",
+  "source_sha256": {
+    "rtlzz/src/arithmetic_request.cpp": "79d75f66dcc719884fa5770ec17b937f807da4db9cc72221502461c72e765af5",
+    "rtlzz/src/backend/arithmetic_model.cpp": "89170b477e620f1bc5e1d869335efb314367c2ed782829aefca98504e0cef632",
+    "rtlzz/src/backend/arithmetic_condition.cpp": "3c1f6f06fb8d326af45112a7ddb3bc1d8b1362a2abc82cc2207dde00d0df9cd9",
+    "rtlzz/src/backend/arithmetic_condition.hpp": "24649043733e83053d5371848daf73c6dbb37ced74b442eebb9a78fc748008c7",
+    "rtlzz/src/backend/arithmetic_condition_provider.cpp": "10103c10ea873419dd59123f432f4ff75ff214268d46ee1417b69e6c0198beff",
+    "rtlzz/src/backend/arithmetic_condition_provider.hpp": "c4e10cb3c27c83da8ef51776e6fbc9594394e3f98fa77eaedb3085d822d90318",
+    "rtlzz/src/backend/arithmetic_condition_selection.cpp": "dba3d8cb1753a5d130c2ecec3243facb39210fc8c73a1dea33ce980e0b74a653",
+    "rtlzz/src/backend/arithmetic_condition_selection.hpp": "409d85b595d5082a4ad59e110a79d66b75f8c99c75231c802674cdb60b32f5ae",
+    "rtlzz/src/backend/arithmetic_operator_query.cpp": "4bf7c86dce7f5b4c69cb99464cd40f1171556fa99842abe9d3b2c1608f91c301",
+    "rtlzz/src/backend/arithmetic_operator_query.hpp": "50492d469ce7c8d595e5d7aa0b588dd7b43d151f43857bc0b7b5035abf265dc9",
+    "rtlzz/testv2/arithmetic_condition_consumer.cpp": "f58ee179349195482f3d46d88b20c9e5011aa91139dac53b51bfc7c2e0e28480",
+    "rtlzz/docs/arithmetic-conditional-consumer.md": "2f87c0958a2b6d9c70e812a7263d3c56fe68f25a7f0145a0ced565f82b32d5fe",
+    "experiments/arithmetic_dse/operator_query.py": "6633565cae1bf46bc1b489c98cbaad0bd590092e4c3a1823d9e29ed19f0d9cae",
+    "experiments/arithmetic_dse/operator_condition_model.py": "44055dcf9bcf148aeb0336515612b009cd8e408e8578b265ff0d05b18cc64f9b",
+    "regression/arithmetic_condition_consumer.py": "a1162776901bd1daa36809fadd84f86055856f362af6ac764287e2f0e81c610f",
+    "regression/arithmetic_condition_consumer_evidence.py": "42ccfbe661c9301ced4883c64f38b7c608537c599b0147cdef9af601f7efbc7e"
+  },
+  "proof_sha256": "23771cad8ed184d192c6485f9a9e9ec81d7d88ad4c87e162b519f2b48d360f91",
+  "new_EDA_calls": 0,
+  "full_D_ready": false
+}

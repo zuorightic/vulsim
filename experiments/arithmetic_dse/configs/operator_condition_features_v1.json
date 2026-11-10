@@ -1,0 +1,16 @@
+{
+  "version": "operator-condition-semantic-transforms-v1",
+  "timing": "defined before the first formal fit or independent-label read; supplements the frozen Query ABI without changing measurement sources or source roles",
+  "basis": "Query widths, demand precision and known-zero summaries only; no measured slack, area, mapped cells, shape IDs or source IDs",
+  "features": ["lhs_active_bits", "rhs_active_bits", "active_width_product", "add_overlap_bits", "add_carry_span", "log2_add_carry_span", "retained_product_terms"],
+  "active_bits": "operand width minus known-zero count",
+  "add_overlap_bits": "max(0,min(lhs variable upper end,rhs variable upper end,result width)-max(lhs zero-LSB run,rhs zero-LSB run))",
+  "add_carry_span": "max(0,min(max(lhs variable upper end,rhs variable upper end)+1,result width)-max(lhs zero-LSB run,rhs zero-LSB run))",
+  "variable_upper_end": "operand width minus known-zero MSB run",
+  "retained_product_terms": "sum over lhs positions outside its known-zero end runs of max(0,min(rhs variable upper end,result width-lhs position)-rhs zero-LSB run)",
+  "limit": "end-run transforms describe zero padding and shifts; interior known-zero holes require explicit later support qualification",
+  "candidate_families_and_quality": "unchanged operator_condition_fit_v1.json candidates and operator_collection_protocol_v2.json gates",
+  "load_domain": "training bounds for intrinsic widths/known-zero count/T; validation checks direct capture or one Add consumer up to demanded precision plus one pad bit and at most two capture banks; no exact wiring-ID allowlist",
+  "joint_domain": "three nearest fit/validation semantic support witnesses by training-normalized width/result/known-zero/load distance; validation-to-train distance freezes the radius; target/reference-function-delay ratio must lie in one of those witnesses' requested-clock intervals. Witnesses contain no measured delay/area prices. Reference is the same train-fitted frozen function evaluated at1500ps, never a measured current-design quantity. Numeric min/max alone cannot grant a Cartesian product. Domain validation failure blocks test admission.",
+  "full_D_ready": false
+}

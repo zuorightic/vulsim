@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "mode": "TEST_ONLY",
+  "views": 44,
+  "targets": 3,
+  "query_count": 2064,
+  "selections": [
+    {
+      "target_ps": 50,
+      "view": "candidate/half/view4",
+      "area_um2": 149.3,
+      "violation_ps": 81.64,
+      "status": "TEST_ONLY_target_unmet"
+    },
+    {
+      "target_ps": 150,
+      "view": "candidate/half/view5",
+      "area_um2": 152.23000000000002,
+      "violation_ps": 0,
+      "status": "TEST_ONLY_predicted_feasible_selected"
+    },
+    {
+      "target_ps": 1500,
+      "view": "candidate/original/view0",
+      "area_um2": 109.3,
+      "violation_ps": 0,
+      "status": "TEST_ONLY_predicted_feasible_selected"
+    }
+  ],
+  "negative_checks": [
+    "candidate_in_production",
+    "candidate_factory",
+    "wrong_hash",
+    "wrong_boundary",
+    "parent",
+    "layout",
+    "target",
+    "owner",
+    "nan",
+    "capture",
+    "wire",
+    "other_timing",
+    "partial_node_coverage",
+    "incomplete_inventory",
+    "changed_inventory",
+    "node_only_pipeline",
+    "unqualified_joint_price",
+    "forged_cut_members"
+  ],
+  "actual_state_and_node_Query_checked": true,
+  "independent_Python_DAG_ownership_and_selection_checked": true,
+  "physical_labels_read": false,
+  "new_EDA_calls": 0,
+  "full_D_ready": false
+}

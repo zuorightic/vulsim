@@ -1,0 +1,40 @@
+{
+  "version": "operator-condition-fit-implementation-v1",
+  "protocol": "operator_collection_protocol_v2.json revision4; unchanged quality, roles, complexity limits and test policy",
+  "fit_roles": ["train", "validation"],
+  "main_stage": "grt",
+  "fitting_weight": "source equal, then equal targets within each source; relative squared-error fitting using the preregistered label denominator floors",
+  "standardization": "training source/target weighted mean and scale only; coefficients exported in raw units",
+  "prediction": "finite numerical prediction clamped to nonnegative, report unclamped negatives separately",
+  "feature_policy": "available Query numerical features except the three excluded traces; discard training-constant features; no posterior or source/shape identity",
+  "semantic_transformations": {
+    "width_product": ["lhs_width", "rhs_width"],
+    "width_result_product": ["result_width", "result_width"],
+    "lhs_result_product": ["lhs_width", "result_width"],
+    "rhs_result_product": ["rhs_width", "result_width"]
+  },
+  "constant": "per-operation source-weighted mean",
+  "ridge_alpha": [0.01, 1.0, 100.0],
+  "piecewise_ridge": {
+    "coordinate": "log2_target_ps",
+    "knots": [1, 2],
+    "positions": "pooled training-only nearest-rank target quantiles j/(k+1)",
+    "minimum_distinct_training_sources_per_segment": 3,
+    "continuity": "independent segment coefficients; no continuity or monotonicity constraint",
+    "alpha": [0.01, 1.0, 100.0]
+  },
+  "shallow_tree": {
+    "depth": [2, 3, 4],
+    "minimum_distinct_training_sources_per_leaf": 3,
+    "seed": 20261109,
+    "training_only_pruning": "collapse any subtree whose proposed leaf has fewer than three source groups"
+  },
+  "width_groups": "shared operation model first; only compare <=16 and >16 maximum-operand-width groups if each has >=3 train and >=2 validation source groups; no exact width/shape tables",
+  "validation_selection": "gate passing source-macro median/P95 and per-operation P95 first; minimum source-macro normalized absolute error, then serialized coefficient/node count and stable candidate order",
+  "delay_reserve": "maximum positive validation underprediction per selected operation/width group; frozen before test",
+  "domain": "semantic rules plus training-feature numeric support and per-operation observed target interval, validated held-out sources; unsupported values explicitly uncovered; no exact-shape allowlist",
+  "test_gate": "one frozen candidate, actual bound validation receipt, all predeclared locked_test sources and their bounded deterministic scans; no retune or test-derived reserve",
+  "static_unit_bridge": "one global nonnegative delay alpha and one global nonnegative area alpha from source-equal train least squares through origin; fixed proxies bound to frozen fixed_op_width_v1.json",
+  "quality_source": "unchanged source-macro median<=0.15, P95<=0.35, per-operation P95<=0.50; floors10ps/0.01um2",
+  "full_D_ready": false
+}

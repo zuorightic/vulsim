@@ -34,10 +34,12 @@ def mapped_contract(design,features,pins):
             if net in visited or net not in drivers:raise ValueError('unresolved/cyclic mapped state alias')
             visited.add(net);name,pin,master=drivers[net];meta=pins[master]
             if meta['sequential']:return (name,pin,inverted)
-            if not meta['buffer_or_inverter']:raise ValueError('logical FF output driven by arithmetic instead of storage')
             inputs=[p for p,v in meta['pins'].items() if v['direction']=='input']
-            if len(inputs)!=1:raise ValueError('non-unary alias repair')
             fn=re.sub(r'[\s()]','',meta['pins'][pin]['function'] or '')
+            if not inputs and fn in ('0','1',"1'b0","1'b1"):
+                value=int(fn[-1]);return ('constant',str(value ^ inverted))
+            if not meta['buffer_or_inverter']:raise ValueError('logical FF output driven by arithmetic instead of storage')
+            if len(inputs)!=1:raise ValueError('non-unary alias repair')
             if fn not in (inputs[0],'!'+inputs[0],"~"+inputs[0]):raise ValueError('unknown buffer/inverter alias semantics')
             inverted^=fn!=inputs[0];connection=module['cells'][name]['connections'][inputs[0]]
             if len(connection)!=1:raise ValueError('non-scalar mapped pin')
