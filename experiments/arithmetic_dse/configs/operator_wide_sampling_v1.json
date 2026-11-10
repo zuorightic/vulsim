@@ -1,0 +1,15 @@
+{
+  "version": "operator-wide-load-sampling-v1",
+  "parent": "model_three_region_scan_v1.json; original histories and roles unchanged",
+  "new_source_guard_targets_ps": {
+    "train": [1500, 500, 3000],
+    "validation": [1500, 500, 3000],
+    "locked_test": [1481, 1000, 500, 1500, 3000]
+  },
+  "fitting_reserved_exact_targets_ps": [1000],
+  "after_guards": "unchanged three-region proposal and spread rules; all guards/locators count toward the same thirteen-target source cap",
+  "reserved_target_nudge": "first unused integer ps within plus/minus 1..16 of a reserved proposal, preserving original one-percent separation and registered bounds",
+  "first_failure": "stop source, retain earlier valid points; no automatic retry or invented label",
+  "required_D_query_targets_ps": [500, 1000, 1500, 3000],
+  "full_D_ready": false
+}

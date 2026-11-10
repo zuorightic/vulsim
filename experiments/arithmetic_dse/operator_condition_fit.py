@@ -39,7 +39,9 @@ def extract(root,out,mode='fitting',selection=None):
             lhs_width=source['features']['producer']['lhs_width'],rhs_width=source['features']['producer']['rhs_width'],result_width=source['features']['producer']['result_width'],
             consumer_count=len(source['features']['consumers']),regions=decision['regions'],stop_reason=decision['stop_reason'],coverage_shortfall=decision['coverage_shortfall']))
         for point in history:
-            if point['status']=='failed':failures.append(dict(source_id=source['id'],**point));continue
+            if point.get('source_id')!=source['id'] or point.get('role')!=source['role']:
+                raise ValueError('history source/role mismatch')
+            if point['status']=='failed':failures.append(dict(point,source_id=source['id']));continue
             folder=state/('target-'+str(point['SDC_ps']))/'runs'/(source['id']+'-T'+str(point['SDC_ps']))
             if sha(folder/'grt-labels.json')!=point['implementation_id']:raise ValueError('completed measurement label changed')
             pins=read(folder/'liberty-pins.json');design=read(folder/'mapped.json')

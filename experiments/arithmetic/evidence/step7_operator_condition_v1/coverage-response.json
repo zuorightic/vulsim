@@ -1,0 +1,1467 @@
+{
+  "version": "operator-condition-coverage-response-v1",
+  "main_stage": "grt",
+  "sources": 44,
+  "valid_points": 405,
+  "point_roles": {
+    "train": 269,
+    "validation": 136
+  },
+  "regions": {
+    "negative": 129,
+    "transition": 146,
+    "positive": 130
+  },
+  "shortfall_sources": [
+    "s68decd5321da7cf0",
+    "s98757fe1b49b8a81"
+  ],
+  "stop_reasons": {
+    "regions_complete": 42,
+    "failed_point_no_retry": 2
+  },
+  "failures": [
+    {
+      "SDC_ps": 463,
+      "ABC_ps": 463,
+      "proposal": "ratio_proposal",
+      "reference_ratio": "-3/20",
+      "status": "failed",
+      "source_id": "s68decd5321da7cf0",
+      "role": "train",
+      "failure_reason": "unowned physical cell"
+    },
+    {
+      "SDC_ps": 491,
+      "ABC_ps": 491,
+      "proposal": "ratio_proposal",
+      "reference_ratio": "0",
+      "status": "failed",
+      "source_id": "s98757fe1b49b8a81",
+      "role": "train",
+      "failure_reason": "unowned physical cell"
+    }
+  ],
+  "node_response_by_source": [
+    {
+      "source_id": "s00d5537c4126bb7d",
+      "role": "validation",
+      "operation": "mul",
+      "points": 11,
+      "target_ps": {
+        "min": 937,
+        "max": 3329,
+        "range": 2392,
+        "relative_range": 1.7421704297159504
+      },
+      "delay_ps": {
+        "min": 1004.099792,
+        "max": 1084.855103,
+        "range": 80.75531100000012,
+        "relative_range": 0.07781715303383664
+      },
+      "area_um2": {
+        "min": 455.5520999999936,
+        "max": 502.1935200000027,
+        "range": 46.641420000009134,
+        "relative_range": 0.09731094481963354
+      },
+      "minimum_through_data_slack_ps": -448.091339
+    },
+    {
+      "source_id": "s0388f4d055bf9626",
+      "role": "train",
+      "operation": "mul",
+      "points": 9,
+      "target_ps": {
+        "min": 490,
+        "max": 1500,
+        "range": 1010,
+        "relative_range": 1.2546583850931676
+      },
+      "delay_ps": {
+        "min": 622.221436,
+        "max": 663.921814,
+        "range": 41.700378,
+        "relative_range": 0.06376650913719001
+      },
+      "area_um2": {
+        "min": 53.37738000000004,
+        "max": 61.22142000000006,
+        "range": 7.844040000000021,
+        "relative_range": 0.14647427171249688
+      },
+      "minimum_through_data_slack_ps": -241.266785
+    },
+    {
+      "source_id": "s05bfae0041648f7c",
+      "role": "validation",
+      "operation": "mul",
+      "points": 9,
+      "target_ps": {
+        "min": 711,
+        "max": 2499,
+        "range": 1788,
+        "relative_range": 1.6433823529411764
+      },
+      "delay_ps": {
+        "min": 803.920349,
+        "max": 843.360901,
+        "range": 39.440552000000025,
+        "relative_range": 0.04729168115658584
+      },
+      "area_um2": {
+        "min": 116.43588000000025,
+        "max": 133.84440000000026,
+        "range": 17.40852000000001,
+        "relative_range": 0.1402725563909773
+      },
+      "minimum_through_data_slack_ps": -370.286469
+    },
+    {
+      "source_id": "s07aece14a10b6ae0",
+      "role": "validation",
+      "operation": "add",
+      "points": 9,
+      "target_ps": {
+        "min": 467,
+        "max": 1777,
+        "range": 1310,
+        "relative_range": 1.6925064599483204
+      },
+      "delay_ps": {
+        "min": 323.011505,
+        "max": 421.769501,
+        "range": 98.75799599999999,
+        "relative_range": 0.26921400403448104
+      },
+      "area_um2": {
+        "min": 35.720999999999975,
+        "max": 46.81637999999991,
+        "range": 11.095379999999935,
+        "relative_range": 0.28533933258342575
+      },
+      "minimum_through_data_slack_ps": -230.279465
+    },
+    {
+      "source_id": "s189e97d51e27dab2",
+      "role": "train",
+      "operation": "mul",
+      "points": 9,
+      "target_ps": {
+        "min": 339,
+        "max": 1500,
+        "range": 1161,
+        "relative_range": 2.15
+      },
+      "delay_ps": {
+        "min": 390.125824,
+        "max": 425.689972,
+        "range": 35.56414799999999,
+        "relative_range": 0.08510769764285202
+      },
+      "area_um2": {
+        "min": 12.553380000000006,
+        "max": 14.5071,
+        "range": 1.9537199999999935,
+        "relative_range": 0.15455594002306747
+      },
+      "minimum_through_data_slack_ps": -159.611969
+    },
+    {
+      "source_id": "s18a3129ad370781b",
+      "role": "train",
+      "operation": "add",
+      "points": 9,
+      "target_ps": {
+        "min": 268,
+        "max": 1500,
+        "range": 1232,
+        "relative_range": 2.933333333333333
+      },
+      "delay_ps": {
+        "min": 293.502594,
+        "max": 387.143951,
+        "range": 93.64135700000003,
+        "relative_range": 0.29698314814732896
+      },
+      "area_um2": {
+        "min": 26.92925999999994,
+        "max": 36.931139999999886,
+        "range": 10.001879999999947,
+        "relative_range": 0.33430799220272817
+      },
+      "minimum_through_data_slack_ps": -122.842461
+    },
+    {
+      "source_id": "s22917d4e8815b0c2",
+      "role": "validation",
+      "operation": "mul",
+      "points": 9,
+      "target_ps": {
+        "min": 599,
+        "max": 2075,
+        "range": 1476,
+        "relative_range": 1.5905172413793103
+      },
+      "delay_ps": {
+        "min": 685.365112,
+        "max": 722.915222,
+        "range": 37.55011000000002,
+        "relative_range": 0.05317742436059655
+      },
+      "area_um2": {
+        "min": 70.23186000000014,
+        "max": 78.45498000000008,
+        "range": 8.223119999999938,
+        "relative_range": 0.11074023169055468
+      },
+      "minimum_through_data_slack_ps": -302.628876
+    },
+    {
+      "source_id": "s27c64a48f98bc3e9",
+      "role": "train",
+      "operation": "add",
+      "points": 9,
+      "target_ps": {
+        "min": 328,
+        "max": 1500,
+        "range": 1172,
+        "relative_range": 2.2890625
+      },
+      "delay_ps": {
+        "min": 374.745483,
+        "max": 490.257904,
+        "range": 115.51242100000002,
+        "relative_range": 0.28539722954549773
+      },
+      "area_um2": {
+        "min": 58.05756000000023,
+        "max": 75.20364000000009,
+        "range": 17.146079999999863,
+        "relative_range": 0.27933491686460493
+      },
+      "minimum_through_data_slack_ps": -156.822723
+    },
+    {
+      "source_id": "s2a5d71cccd00c03a",
+      "role": "train",
+      "operation": "add",
+      "points": 9,
+      "target_ps": {
+        "min": 255,
+        "max": 1500,
+        "range": 1245,
+        "relative_range": 3.2253886010362693
+      },
+      "delay_ps": {
+        "min": 281.198792,
+        "max": 350.514374,
+        "range": 69.31558199999995,
+        "relative_range": 0.24103115527635963
+      },
+      "area_um2": {
+        "min": 17.437679999999975,
+        "max": 23.47379999999994,
+        "range": 6.036119999999965,
+        "relative_range": 0.30218978102189675
+      },
+      "minimum_through_data_slack_ps": -124.466164
+    },
+    {
+      "source_id": "s2d19edf1dd312a17",
+      "role": "train",
+      "operation": "add",
+      "points": 9,
+      "target_ps": {
+        "min": 263,
+        "max": 1500,
+        "range": 1237,
+        "relative_range": 3.024449877750611
+      },
+      "delay_ps": {
+        "min": 287.580963,
+        "max": 378.738434,
+        "range": 91.15747099999999,
+        "relative_range": 0.30065742072833884
+      },
+      "area_um2": {
+        "min": 17.831339999999965,
+        "max": 22.584419999999938,
+        "range": 4.753079999999972,
+        "relative_range": 0.2471569370735397
+      },
+      "minimum_through_data_slack_ps": -130.584549
+    },
+    {
+      "source_id": "s3e74bc90bcaf275c",
+      "role": "validation",
+      "operation": "add",
+      "points": 9,
+      "target_ps": {
+        "min": 498,
+        "max": 1870,
+        "range": 1372,
+        "relative_range": 1.683435582822086
+      },
+      "delay_ps": {
+        "min": 393.673828,
+        "max": 482.859924,
+        "range": 89.18609599999996,
+        "relative_range": 0.20029141239512527
+      },
+      "area_um2": {
+        "min": 36.08549999999995,
+        "max": 48.58055999999987,
+        "range": 12.495059999999917,
+        "relative_range": 0.32974220854174513
+      },
+      "minimum_through_data_slack_ps": -243.896072
+    },
+    {
+      "source_id": "s40b122c23d1c514d",
+      "role": "train",
+      "operation": "add",
+      "points": 9,
+      "target_ps": {
+        "min": 211,
+        "max": 1500,
+        "range": 1289,
+        "relative_range": 3.8592814371257487
+      },
+      "delay_ps": {
+        "min": 206.073776,
+        "max": 278.064697,
+        "range": 71.99092100000001,
+        "relative_range": 0.3250741620413053
+      },
+      "area_um2": {
+        "min": 8.354340000000004,
+        "max": 11.474459999999988,
+        "range": 3.120119999999984,
+        "relative_range": 0.34130781499202373
+      },
+      "minimum_through_data_slack_ps": -105.502441
+    },
+    {
+      "source_id": "s417806be6220c4ef",
+      "role": "train",
+      "operation": "add",
+      "points": 9,
+      "target_ps": {
+        "min": 218,
+        "max": 1500,
+        "range": 1282,
+        "relative_range": 3.896656534954407
+      },
+      "delay_ps": {
+        "min": 208.281067,
+        "max": 282.157135,
+        "range": 73.87606799999998,
+        "relative_range": 0.32997958618339623
+      },
+      "area_um2": {
+        "min": 8.354340000000004,
+        "max": 11.649419999999989,
+        "range": 3.2950799999999845,
+        "relative_range": 0.34503816793892955
+      },
+      "minimum_through_data_slack_ps": -102.293121
+    },
+    {
+      "source_id": "s49449a495a10f701",
+      "role": "train",
+      "operation": "add",
+      "points": 9,
+      "target_ps": {
+        "min": 213,
+        "max": 1500,
+        "range": 1287,
+        "relative_range": 3.88821752265861
+      },
+      "delay_ps": {
+        "min": 206.399429,
+        "max": 280.999146,
+        "range": 74.599717,
+        "relative_range": 0.33590989961749357
+      },
+      "area_um2": {
+        "min": 8.354340000000004,
+        "max": 11.445299999999989,
+        "range": 3.090959999999985,
+        "relative_range": 0.3349131121642953
+      },
+      "minimum_through_data_slack_ps": -105.875641
+    },
+    {
+      "source_id": "s4af444ebb0dd1bd5",
+      "role": "train",
+      "operation": "mul",
+      "points": 10,
+      "target_ps": {
+        "min": 403,
+        "max": 1500,
+        "range": 1097,
+        "relative_range": 1.798360655737705
+      },
+      "delay_ps": {
+        "min": 494.242584,
+        "max": 577.199097,
+        "range": 82.95651300000003,
+        "relative_range": 0.16162606828671827
+      },
+      "area_um2": {
+        "min": 30.16601999999988,
+        "max": 37.164419999999865,
+        "range": 6.998399999999986,
+        "relative_range": 0.20851433536055644
+      },
+      "minimum_through_data_slack_ps": -205.011093
+    },
+    {
+      "source_id": "s4f9a62d82c48c184",
+      "role": "train",
+      "operation": "add",
+      "points": 10,
+      "target_ps": {
+        "min": 331,
+        "max": 1500,
+        "range": 1169,
+        "relative_range": 2.2655038759689923
+      },
+      "delay_ps": {
+        "min": 385.462372,
+        "max": 511.374268,
+        "range": 125.91189599999996,
+        "relative_range": 0.3059908601461654
+      },
+      "area_um2": {
+        "min": 48.52224000000006,
+        "max": 63.13139999999997,
+        "range": 14.60915999999991,
+        "relative_range": 0.27535037098103693
+      },
+      "minimum_through_data_slack_ps": -153.099976
+    },
+    {
+      "source_id": "s5b2bf5545b8e82a4",
+      "role": "validation",
+      "operation": "add",
+      "points": 9,
+      "target_ps": {
+        "min": 406,
+        "max": 1373,
+        "range": 967,
+        "relative_range": 1.4116788321167884
+      },
+      "delay_ps": {
+        "min": 282.928833,
+        "max": 342.750946,
+        "range": 59.822113,
+        "relative_range": 0.19308936900332552
+      },
+      "area_um2": {
+        "min": 12.990780000000008,
+        "max": 17.379359999999977,
+        "range": 4.388579999999969,
+        "relative_range": 0.31919406150583013
+      },
+      "minimum_through_data_slack_ps": -200.75946
+    },
+    {
+      "source_id": "s5c7417bde760a185",
+      "role": "validation",
+      "operation": "mul",
+      "points": 9,
+      "target_ps": {
+        "min": 661,
+        "max": 2437,
+        "range": 1776,
+        "relative_range": 1.6834123222748816
+      },
+      "delay_ps": {
+        "min": 678.579407,
+        "max": 738.417114,
+        "range": 59.83770700000002,
+        "relative_range": 0.08305479773437875
+      },
+      "area_um2": {
+        "min": 104.85936000000027,
+        "max": 122.20956000000007,
+        "range": 17.350199999999802,
+        "relative_range": 0.15724101479915223
+      },
+      "minimum_through_data_slack_ps": -337.176025
+    },
+    {
+      "source_id": "s5ca77c9d1f255ea8",
+      "role": "train",
+      "operation": "add",
+      "points": 9,
+      "target_ps": {
+        "min": 209,
+        "max": 1500,
+        "range": 1291,
+        "relative_range": 3.912121212121212
+      },
+      "delay_ps": {
+        "min": 206.480118,
+        "max": 280.266144,
+        "range": 73.78602599999999,
+        "relative_range": 0.3250195371313062
+      },
+      "area_um2": {
+        "min": 8.354340000000004,
+        "max": 11.736899999999988,
+        "range": 3.382559999999984,
+        "relative_range": 0.3630672926447557
+      },
+      "minimum_through_data_slack_ps": -109.97139
+    },
+    {
+      "source_id": "s5f65fb41790f6c16",
+      "role": "validation",
+      "operation": "add",
+      "points": 11,
+      "target_ps": {
+        "min": 545,
+        "max": 1924,
+        "range": 1379,
+        "relative_range": 1.7045735475896169
+      },
+      "delay_ps": {
+        "min": 422.628906,
+        "max": 476.52832,
+        "range": 53.899414000000036,
+        "relative_range": 0.1174520237914104
+      },
+      "area_um2": {
+        "min": 43.317180000000064,
+        "max": 55.27277999999998,
+        "range": 11.955599999999919,
+        "relative_range": 0.2508412358519406
+      },
+      "minimum_through_data_slack_ps": -278.03537
+    },
+    {
+      "source_id": "s68decd5321da7cf0",
+      "role": "train",
+      "operation": "add",
+      "points": 2,
+      "target_ps": {
+        "min": 584,
+        "max": 1500,
+        "range": 916,
+        "relative_range": 0.8790786948176583
+      },
+      "delay_ps": {
+        "min": 426.132477,
+        "max": 446.594635,
+        "range": 20.462157999999988,
+        "relative_range": 0.04689245405269359
+      },
+      "area_um2": {
+        "min": 36.872819999999976,
+        "max": 36.960299999999975,
+        "range": 0.08747999999999934,
+        "relative_range": 0.0023696682464454813
+      },
+      "minimum_through_data_slack_ps": 51.631977
+    },
+    {
+      "source_id": "s709aeff3dccd2349",
+      "role": "train",
+      "operation": "mul",
+      "points": 9,
+      "target_ps": {
+        "min": 492,
+        "max": 1500,
+        "range": 1008,
+        "relative_range": 1.3865199449793673
+      },
+      "delay_ps": {
+        "min": 519.821716,
+        "max": 581.386414,
+        "range": 61.56469799999991,
+        "relative_range": 0.11273661325074784
+      },
+      "area_um2": {
+        "min": 30.093119999999878,
+        "max": 37.63097999999986,
+        "range": 7.537859999999981,
+        "relative_range": 0.22715289982425346
+      },
+      "minimum_through_data_slack_ps": -244.649353
+    },
+    {
+      "source_id": "s71f4d1a799c4cff0",
+      "role": "validation",
+      "operation": "mul",
+      "points": 9,
+      "target_ps": {
+        "min": 522,
+        "max": 1920,
+        "range": 1398,
+        "relative_range": 1.7301980198019802
+      },
+      "delay_ps": {
+        "min": 536.527527,
+        "max": 575.509644,
+        "range": 38.98211700000002,
+        "relative_range": 0.07078269380205993
+      },
+      "area_um2": {
+        "min": 28.999619999999883,
+        "max": 34.62749999999986,
+        "range": 5.62787999999998,
+        "relative_range": 0.1846006695361072
+      },
+      "minimum_through_data_slack_ps": -256.644714
+    },
+    {
+      "source_id": "s7715bca8cad3e2f8",
+      "role": "train",
+      "operation": "add",
+      "points": 10,
+      "target_ps": {
+        "min": 353,
+        "max": 1500,
+        "range": 1147,
+        "relative_range": 2.176470588235294
+      },
+      "delay_ps": {
+        "min": 426.336334,
+        "max": 511.440155,
+        "range": 85.10382099999998,
+        "relative_range": 0.19509134414799734
+      },
+      "area_um2": {
+        "min": 50.65092000000021,
+        "max": 66.4264800000001,
+        "range": 15.775559999999885,
+        "relative_range": 0.27637292464878394
+      },
+      "minimum_through_data_slack_ps": -173.642014
+    },
+    {
+      "source_id": "s89dcf966fb70c9c8",
+      "role": "train",
+      "operation": "mul",
+      "points": 9,
+      "target_ps": {
+        "min": 737,
+        "max": 2640,
+        "range": 1903,
+        "relative_range": 1.7128712871287128
+      },
+      "delay_ps": {
+        "min": 999.226807,
+        "max": 1164.988403,
+        "range": 165.76159600000005,
+        "relative_range": 0.16380038030374497
+      },
+      "area_um2": {
+        "min": 449.53055999999344,
+        "max": 505.43028000000083,
+        "range": 55.89972000000739,
+        "relative_range": 0.11921641791046492
+      },
+      "minimum_through_data_slack_ps": -372.999573
+    },
+    {
+      "source_id": "s9484b0bec3f65078",
+      "role": "validation",
+      "operation": "add",
+      "points": 13,
+      "target_ps": {
+        "min": 471,
+        "max": 1849,
+        "range": 1378,
+        "relative_range": 1.9272727272727272
+      },
+      "delay_ps": {
+        "min": 322.788879,
+        "max": 455.378021,
+        "range": 132.58914199999998,
+        "relative_range": 0.3885570540485509
+      },
+      "area_um2": {
+        "min": 30.58883999999999,
+        "max": 42.15077999999992,
+        "range": 11.561939999999929,
+        "relative_range": 0.33207705192629644
+      },
+      "minimum_through_data_slack_ps": -236.04335
+    },
+    {
+      "source_id": "s959c080551a4e2ca",
+      "role": "validation",
+      "operation": "mul",
+      "points": 9,
+      "target_ps": {
+        "min": 695,
+        "max": 2458,
+        "range": 1763,
+        "relative_range": 1.6492048643592143
+      },
+      "delay_ps": {
+        "min": 785.996582,
+        "max": 854.84967,
+        "range": 68.85308799999996,
+        "relative_range": 0.08498704041555863
+      },
+      "area_um2": {
+        "min": 116.43588000000025,
+        "max": 132.38640000000024,
+        "range": 15.950519999999983,
+        "relative_range": 0.1303311889444838
+      },
+      "minimum_through_data_slack_ps": -349.95401
+    },
+    {
+      "source_id": "s9728e21c697586d2",
+      "role": "train",
+      "operation": "add",
+      "points": 9,
+      "target_ps": {
+        "min": 218,
+        "max": 1500,
+        "range": 1282,
+        "relative_range": 3.896656534954407
+      },
+      "delay_ps": {
+        "min": 208.281067,
+        "max": 282.157135,
+        "range": 73.87606799999998,
+        "relative_range": 0.32997958618339623
+      },
+      "area_um2": {
+        "min": 8.354340000000004,
+        "max": 11.649419999999989,
+        "range": 3.2950799999999845,
+        "relative_range": 0.34503816793892955
+      },
+      "minimum_through_data_slack_ps": -102.293121
+    },
+    {
+      "source_id": "s98757fe1b49b8a81",
+      "role": "train",
+      "operation": "add",
+      "points": 9,
+      "target_ps": {
+        "min": 314,
+        "max": 1500,
+        "range": 1186,
+        "relative_range": 2.4453608247422682
+      },
+      "delay_ps": {
+        "min": 367.29657,
+        "max": 464.417542,
+        "range": 97.12097200000005,
+        "relative_range": 0.251513884392132
+      },
+      "area_um2": {
+        "min": 39.93462000000003,
+        "max": 51.68609999999996,
+        "range": 11.75147999999993,
+        "relative_range": 0.2721134368669801
+      },
+      "minimum_through_data_slack_ps": -148.337265
+    },
+    {
+      "source_id": "s9e6b6f375ba65622",
+      "role": "train",
+      "operation": "mul",
+      "points": 9,
+      "target_ps": {
+        "min": 750,
+        "max": 2640,
+        "range": 1890,
+        "relative_range": 1.6578947368421053
+      },
+      "delay_ps": {
+        "min": 996.842957,
+        "max": 1154.166382,
+        "range": 157.32342500000016,
+        "relative_range": 0.1524463332468561
+      },
+      "area_um2": {
+        "min": 448.7869799999935,
+        "max": 499.01507999999876,
+        "range": 50.22810000000527,
+        "relative_range": 0.10805809102601545
+      },
+      "minimum_through_data_slack_ps": -362.683716
+    },
+    {
+      "source_id": "sa2387076731966ff",
+      "role": "train",
+      "operation": "mul",
+      "points": 9,
+      "target_ps": {
+        "min": 573,
+        "max": 1955,
+        "range": 1382,
+        "relative_range": 1.5615819209039548
+      },
+      "delay_ps": {
+        "min": 736.166443,
+        "max": 828.470337,
+        "range": 92.30389400000001,
+        "relative_range": 0.11951602351253614
+      },
+      "area_um2": {
+        "min": 117.68976000000023,
+        "max": 138.5100000000003,
+        "range": 20.82024000000007,
+        "relative_range": 0.1685552407932014
+      },
+      "minimum_through_data_slack_ps": -294.62204
+    },
+    {
+      "source_id": "sab0d7910fe90ff83",
+      "role": "train",
+      "operation": "add",
+      "points": 9,
+      "target_ps": {
+        "min": 210,
+        "max": 1500,
+        "range": 1290,
+        "relative_range": 4.056603773584905
+      },
+      "delay_ps": {
+        "min": 206.131973,
+        "max": 258.535767,
+        "range": 52.40379400000003,
+        "relative_range": 0.24943266150574878
+      },
+      "area_um2": {
+        "min": 7.946099999999999,
+        "max": 10.585079999999996,
+        "range": 2.6389799999999974,
+        "relative_range": 0.27675840978593275
+      },
+      "minimum_through_data_slack_ps": -103.026588
+    },
+    {
+      "source_id": "sbe3b2347b0e2cf7c",
+      "role": "train",
+      "operation": "mul",
+      "points": 12,
+      "target_ps": {
+        "min": 449,
+        "max": 1500,
+        "range": 1051,
+        "relative_range": 1.5501474926253687
+      },
+      "delay_ps": {
+        "min": 549.459229,
+        "max": 655.417358,
+        "range": 105.95812899999999,
+        "relative_range": 0.18381338585134324
+      },
+      "area_um2": {
+        "min": 56.759940000000086,
+        "max": 68.43852000000004,
+        "range": 11.678579999999954,
+        "relative_range": 0.18869257950529938
+      },
+      "minimum_through_data_slack_ps": -216.488876
+    },
+    {
+      "source_id": "sc33346af4a614fa2",
+      "role": "train",
+      "operation": "mul",
+      "points": 9,
+      "target_ps": {
+        "min": 585,
+        "max": 1940,
+        "range": 1355,
+        "relative_range": 1.552119129438717
+      },
+      "delay_ps": {
+        "min": 752.796936,
+        "max": 824.420898,
+        "range": 71.623962,
+        "relative_range": 0.0928448975140614
+      },
+      "area_um2": {
+        "min": 117.68976000000023,
+        "max": 136.10430000000034,
+        "range": 18.414540000000102,
+        "relative_range": 0.1463838664812245
+      },
+      "minimum_through_data_slack_ps": -283.572266
+    },
+    {
+      "source_id": "sc44ef9ef9f1e41fc",
+      "role": "train",
+      "operation": "mul",
+      "points": 9,
+      "target_ps": {
+        "min": 649,
+        "max": 2267,
+        "range": 1618,
+        "relative_range": 1.6493374108053007
+      },
+      "delay_ps": {
+        "min": 866.541382,
+        "max": 969.621582,
+        "range": 103.08019999999999,
+        "relative_range": 0.11723435996901656
+      },
+      "area_um2": {
+        "min": 214.61759999999762,
+        "max": 243.9379799999973,
+        "range": 29.320379999999687,
+        "relative_range": 0.12802393684746646
+      },
+      "minimum_through_data_slack_ps": -336.81958
+    },
+    {
+      "source_id": "sc58007ec5bb9607e",
+      "role": "train",
+      "operation": "mul",
+      "points": 9,
+      "target_ps": {
+        "min": 409,
+        "max": 1500,
+        "range": 1091,
+        "relative_range": 1.748397435897436
+      },
+      "delay_ps": {
+        "min": 501.797943,
+        "max": 570.291565,
+        "range": 68.49362200000002,
+        "relative_range": 0.13090509483055618
+      },
+      "area_um2": {
+        "min": 30.16601999999988,
+        "max": 37.06235999999988,
+        "range": 6.896339999999999,
+        "relative_range": 0.2047619047619055
+      },
+      "minimum_through_data_slack_ps": -206.633514
+    },
+    {
+      "source_id": "sc7d005ce14a8dc06",
+      "role": "train",
+      "operation": "mul",
+      "points": 9,
+      "target_ps": {
+        "min": 709,
+        "max": 2529,
+        "range": 1820,
+        "relative_range": 1.6605839416058394
+      },
+      "delay_ps": {
+        "min": 818.714539,
+        "max": 861.402283,
+        "range": 42.687744000000066,
+        "relative_range": 0.050769082535106765
+      },
+      "area_um2": {
+        "min": 116.43588000000025,
+        "max": 133.1154000000002,
+        "range": 16.67951999999994,
+        "relative_range": 0.13641783925590195
+      },
+      "minimum_through_data_slack_ps": -359.899231
+    },
+    {
+      "source_id": "scb7c469fe84c9e24",
+      "role": "validation",
+      "operation": "mul",
+      "points": 11,
+      "target_ps": {
+        "min": 900,
+        "max": 3264,
+        "range": 2364,
+        "relative_range": 1.7217771303714493
+      },
+      "delay_ps": {
+        "min": 991.256104,
+        "max": 1099.788818,
+        "range": 108.53271399999994,
+        "relative_range": 0.10445199686094417
+      },
+      "area_um2": {
+        "min": 455.72705999999357,
+        "max": 511.4809800000057,
+        "range": 55.7539200000121,
+        "relative_range": 0.11783920372256182
+      },
+      "minimum_through_data_slack_ps": -462.682465
+    },
+    {
+      "source_id": "sda2558c0fcc4c3f4",
+      "role": "train",
+      "operation": "mul",
+      "points": 9,
+      "target_ps": {
+        "min": 932,
+        "max": 3362,
+        "range": 2430,
+        "relative_range": 1.62
+      },
+      "delay_ps": {
+        "min": 1022.88147,
+        "max": 1117.323853,
+        "range": 94.44238300000006,
+        "relative_range": 0.08860511031865209
+      },
+      "area_um2": {
+        "min": 451.25099999999344,
+        "max": 493.1685000000033,
+        "range": 41.91750000000985,
+        "relative_range": 0.0905055719952373
+      },
+      "minimum_through_data_slack_ps": -477.467834
+    },
+    {
+      "source_id": "se50706ebf5a28fa7",
+      "role": "validation",
+      "operation": "mul",
+      "points": 9,
+      "target_ps": {
+        "min": 540,
+        "max": 1926,
+        "range": 1386,
+        "relative_range": 1.6578947368421053
+      },
+      "delay_ps": {
+        "min": 558.24231,
+        "max": 587.836365,
+        "range": 29.594055000000026,
+        "relative_range": 0.05238722274577685
+      },
+      "area_um2": {
+        "min": 29.072519999999884,
+        "max": 34.99199999999986,
+        "range": 5.919479999999979,
+        "relative_range": 0.19538017324350349
+      },
+      "minimum_through_data_slack_ps": -274.487061
+    },
+    {
+      "source_id": "se5d4844c679d8db6",
+      "role": "train",
+      "operation": "add",
+      "points": 9,
+      "target_ps": {
+        "min": 312,
+        "max": 1500,
+        "range": 1188,
+        "relative_range": 2.3294117647058825
+      },
+      "delay_ps": {
+        "min": 361.699829,
+        "max": 497.884125,
+        "range": 136.18429599999996,
+        "relative_range": 0.3393838013822372
+      },
+      "area_um2": {
+        "min": 36.52289999999998,
+        "max": 49.9948199999999,
+        "range": 13.471919999999919,
+        "relative_range": 0.3410852713178278
+      },
+      "minimum_through_data_slack_ps": -147.557556
+    },
+    {
+      "source_id": "se64f9c8bdd570148",
+      "role": "train",
+      "operation": "mul",
+      "points": 9,
+      "target_ps": {
+        "min": 581,
+        "max": 2078,
+        "range": 1497,
+        "relative_range": 1.6396495071193866
+      },
+      "delay_ps": {
+        "min": 755.431213,
+        "max": 874.200745,
+        "range": 118.76953200000003,
+        "relative_range": 0.14749621047994105
+      },
+      "area_um2": {
+        "min": 169.20090000000013,
+        "max": 197.83601999999968,
+        "range": 28.635119999999546,
+        "relative_range": 0.16289292527162408
+      },
+      "minimum_through_data_slack_ps": -288.635437
+    },
+    {
+      "source_id": "seba23c17c5ebd647",
+      "role": "train",
+      "operation": "add",
+      "points": 9,
+      "target_ps": {
+        "min": 338,
+        "max": 1500,
+        "range": 1162,
+        "relative_range": 2.2475822050290137
+      },
+      "delay_ps": {
+        "min": 401.075012,
+        "max": 508.18811,
+        "range": 107.11309799999998,
+        "relative_range": 0.2582139816655006
+      },
+      "area_um2": {
+        "min": 47.72034000000013,
+        "max": 63.80208000000005,
+        "range": 16.081739999999925,
+        "relative_range": 0.2981081081081062
+      },
+      "minimum_through_data_slack_ps": -166.279663
+    },
+    {
+      "source_id": "sfa1bcb59b10e9350",
+      "role": "validation",
+      "operation": "add",
+      "points": 9,
+      "target_ps": {
+        "min": 462,
+        "max": 1679,
+        "range": 1217,
+        "relative_range": 1.667123287671233
+      },
+      "delay_ps": {
+        "min": 348.699646,
+        "max": 404.734009,
+        "range": 56.03436300000004,
+        "relative_range": 0.15519659399940813
+      },
+      "area_um2": {
+        "min": 22.759379999999975,
+        "max": 30.676319999999926,
+        "range": 7.916939999999951,
+        "relative_range": 0.30852272727272595
+      },
+      "minimum_through_data_slack_ps": -235.277527
+    }
+  ],
+  "semantic_coverage": {
+    "add": {
+      "sources": 22,
+      "source_counts": {
+        "train": 16,
+        "validation": 6,
+        "locked_test": 0
+      },
+      "widths": [
+        [
+          16,
+          24,
+          25
+        ],
+        [
+          17,
+          29,
+          30
+        ],
+        [
+          23,
+          35,
+          36
+        ],
+        [
+          24,
+          32,
+          33
+        ],
+        [
+          25,
+          41,
+          42
+        ],
+        [
+          31,
+          47,
+          48
+        ],
+        [
+          32,
+          40,
+          41
+        ],
+        [
+          32,
+          48,
+          49
+        ],
+        [
+          33,
+          49,
+          50
+        ],
+        [
+          39,
+          51,
+          52
+        ],
+        [
+          40,
+          48,
+          49
+        ],
+        [
+          41,
+          57,
+          58
+        ],
+        [
+          42,
+          50,
+          51
+        ],
+        [
+          48,
+          56,
+          57
+        ],
+        [
+          48,
+          64,
+          64
+        ],
+        [
+          49,
+          65,
+          64
+        ],
+        [
+          51,
+          67,
+          64
+        ],
+        [
+          55,
+          64,
+          64
+        ],
+        [
+          56,
+          64,
+          64
+        ],
+        [
+          57,
+          63,
+          64
+        ],
+        [
+          58,
+          66,
+          64
+        ],
+        [
+          64,
+          64,
+          64
+        ]
+      ],
+      "consumers": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          30,
+          28,
+          30
+        ],
+        [
+          1,
+          37,
+          34,
+          37
+        ],
+        [
+          1,
+          48,
+          46,
+          48
+        ],
+        [
+          1,
+          53,
+          50,
+          53
+        ],
+        [
+          1,
+          64,
+          62,
+          64
+        ],
+        [
+          1,
+          65,
+          62,
+          65
+        ]
+      ],
+      "capture_banks": [
+        0,
+        1
+      ],
+      "target_range_ps": [
+        209,
+        1924
+      ]
+    },
+    "mul": {
+      "sources": 22,
+      "source_counts": {
+        "train": 14,
+        "validation": 8,
+        "locked_test": 0
+      },
+      "widths": [
+        [
+          8,
+          8,
+          8
+        ],
+        [
+          8,
+          8,
+          16
+        ],
+        [
+          8,
+          16,
+          24
+        ],
+        [
+          12,
+          20,
+          32
+        ],
+        [
+          15,
+          27,
+          19
+        ],
+        [
+          16,
+          16,
+          16
+        ],
+        [
+          16,
+          16,
+          32
+        ],
+        [
+          16,
+          24,
+          40
+        ],
+        [
+          32,
+          32,
+          32
+        ],
+        [
+          32,
+          32,
+          64
+        ]
+      ],
+      "consumers": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          16,
+          8,
+          16
+        ],
+        [
+          1,
+          16,
+          14,
+          16
+        ],
+        [
+          1,
+          17,
+          14,
+          17
+        ],
+        [
+          1,
+          19,
+          13,
+          19
+        ],
+        [
+          1,
+          32,
+          24,
+          32
+        ],
+        [
+          1,
+          32,
+          26,
+          32
+        ],
+        [
+          1,
+          32,
+          30,
+          32
+        ],
+        [
+          1,
+          33,
+          30,
+          33
+        ],
+        [
+          1,
+          64,
+          56,
+          64
+        ],
+        [
+          1,
+          64,
+          62,
+          64
+        ],
+        [
+          1,
+          65,
+          62,
+          65
+        ]
+      ],
+      "capture_banks": [
+        0,
+        1,
+        2
+      ],
+      "target_range_ps": [
+        339,
+        3362
+      ]
+    }
+  },
+  "sampling_slack_is_not_operator_delay": true,
+  "three_regions_are_not_a_model_quality_gate": true,
+  "full_D_ready": false
+}

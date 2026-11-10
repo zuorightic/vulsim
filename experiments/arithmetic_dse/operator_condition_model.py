@@ -5,6 +5,48 @@ from . import operator_query
 VERSION='operator-condition-function-v1'
 
 
+CONSUMER_FEATURES=('consumer_lhs_active_bits','consumer_rhs_active_bits',
+    'consumer_lhs_zero_lsb_run','consumer_rhs_zero_lsb_run',
+    'consumer_lhs_zero_msb_run','consumer_rhs_zero_msb_run',
+    'consumer_add_overlap_bits','consumer_add_carry_span',
+    'consumer_known_one_bits','consumer_nonzero_carry')
+
+
+def consumer_features(query):
+    values=dict.fromkeys(CONSUMER_FEATURES,0)
+    for consumer in query['local_context']['consumers']:
+        spec=consumer['spec'];r=spec['result_width'];ends=[];ones=0
+        for prefix in ('lhs','rhs'):
+            width=spec[prefix+'_width'];live=min(width,r)
+            masks=[]
+            for name in ('zero','one'):
+                raw=spec.get(prefix+'_'+name+'_hex','0x0')
+                if not isinstance(raw,str) or len(raw)>4096:raise ValueError('invalid consumer known-bit mask')
+                digits=raw[2:] if raw.startswith(('0x','0X')) else raw
+                if not digits or any(c not in '0123456789abcdefABCDEF' for c in digits):raise ValueError('invalid consumer known-bit mask')
+                mask=int(digits,16)
+                if mask<0 or mask>>width:raise ValueError('consumer known-bit mask out of range')
+                masks.append(mask)
+            zero,one=masks
+            if zero&one:raise ValueError('contradictory consumer known bits')
+            zero&=(1<<live)-1;one&=(1<<live)-1;ones+=one.bit_count()
+            low=0
+            while low<live and zero>>low&1:low+=1
+            high=0
+            while high<live and zero>>(live-1-high)&1:high+=1
+            for name,value in (('active_bits',live-zero.bit_count()-one.bit_count()),('zero_lsb_run',low),('zero_msb_run',high)):
+                key='consumer_'+prefix+'_'+name;values[key]=max(values[key],value)
+            ends.append((low,live-high))
+        (al,ah),(bl,bh)=ends
+        values['consumer_add_overlap_bits']=max(values['consumer_add_overlap_bits'],max(0,min(ah,bh,r)-max(al,bl)))
+        values['consumer_add_carry_span']=max(values['consumer_add_carry_span'],max(0,min(max(ah,bh)+1,r)-max(al,bl)))
+        values['consumer_known_one_bits']=max(values['consumer_known_one_bits'],ones)
+        carry=spec.get('carry','zero')
+        if carry not in ('zero','one','dynamic'):raise ValueError('invalid consumer carry')
+        values['consumer_nonzero_carry']=max(values['consumer_nonzero_carry'],int(carry!='zero'))
+    return values
+
+
 def features(query):
     values=operator_query.features(query)
     values.update(width_product=values['lhs_width']*values['rhs_width'],
@@ -17,6 +59,7 @@ def features(query):
     values['add_overlap_bits']=max(0,min(ah,bh,r)-max(al,bl))
     values['add_carry_span']=max(0,min(max(ah,bh)+1,r)-max(al,bl));values['log2_add_carry_span']=math.log2(max(1,values['add_carry_span']))
     values['retained_product_terms']=sum(max(0,min(bh,r-i)-bl) for i in range(int(al),int(ah)))
+    values.update(consumer_features(query))
     return values
 
 
@@ -67,7 +110,7 @@ def query(model,descriptor,allow_candidate=False):
         entry=model['operations'][op]
         if entry['status']!='passed_independent' and not (allow_candidate and entry['status']=='awaiting_independent'):raise ValueError('operator function unqualified')
         domain=entry['domain']
-        if f['lhs_one_count'] or f['rhs_one_count'] or f['carry_dynamic'] or f['carry_one'] or f['consumer_mul'] or f['consumer_addcarry'] or f['consumer_count']>1:raise ValueError('unsupported operand or consumer semantics')
+        if f['lhs_one_count'] or f['rhs_one_count'] or f['carry_dynamic'] or f['carry_one'] or f['consumer_mul'] or f['consumer_addcarry'] or f['consumer_count']>1 or f['consumer_known_one_bits'] or f['consumer_nonzero_carry']:raise ValueError('unsupported operand or consumer semantics')
         if any(f[p+'_zero_count']!=f[p+'_zero_lsb_run']+f[p+'_zero_msb_run'] for p in ('lhs','rhs')):
             raise ValueError('interior known-zero pattern outside first interval domain')
         if domain.get('local_load_family'):

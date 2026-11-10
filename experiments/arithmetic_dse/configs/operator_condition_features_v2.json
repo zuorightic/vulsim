@@ -1,0 +1,17 @@
+{
+  "version": "operator-condition-consumer-mask-transforms-v2",
+  "parent": "operator_condition_features_v1.json; predecessor candidate/evidence unchanged",
+  "descriptor_ABI": "arithmetic-operator-query-v1 unchanged; derive from existing consumer specs",
+  "reason": "width and bound-bit mapping alone merge a dense other operand with a zero-padded or shifted other operand",
+  "features": ["consumer_lhs_active_bits", "consumer_rhs_active_bits", "consumer_lhs_zero_lsb_run", "consumer_rhs_zero_lsb_run", "consumer_lhs_zero_msb_run", "consumer_rhs_zero_msb_run", "consumer_add_overlap_bits", "consumer_add_carry_span", "consumer_known_one_bits", "consumer_nonzero_carry"],
+  "effective_operand_width": "min(consumer operand width, consumer demanded result width); declaration-only high bits excluded",
+  "active_bits": "effective width minus known-zero and known-one bit counts",
+  "end_runs": "consecutive known-zero bits from each end of the effective operand",
+  "overlap_and_carry_span": "same interval equations as the parent Add transforms, now applied to the two consumer operands",
+  "aggregation": "maximum over local consumers; first qualified model remains limited to at most one Add consumer",
+  "known_one_or_nonzero_carry": "explicitly rejected until separately qualified; dead high bits do not create live known-one features",
+  "model_input_exclusions": "no view, NodeId, source/shape ID, graph hash, actual slack or mapped-cell counts",
+  "domain_policy": "feature expression only; this extension does not relax numerical/load/neighborhood gates or grant prices",
+  "qualification": "new fit must rederive fitting features from retained descriptors under this hash and freeze a successor; validation/error/coverage/refusal all required before independent test",
+  "full_D_ready": false
+}

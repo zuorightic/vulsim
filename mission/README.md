@@ -1,5 +1,7 @@
 # 任务与现行规划导航
 
+**第1—3步补做验收已完成，见[§7.65](lxy-plan-fix.md#steps123-incremental-acceptance)及[增量证据](../experiments/arithmetic/evidence/step7_steps123_incremental_v1/README.md)。** 保留原验收，补齐宽消费者需求审计、10项已知位数值特征及4,666次跨语言／独立位集核对、后继协议／准入门禁和有限物理可测性。复用先前3点，新增3 synth／3 grt；共6点12阶段及24项真实单弧删除负控通过，证据实际恢复1,991文件后重放通过。原93测量依赖、58源身份、旧候选和S参数不变，18个locked_test仍锁定。累计有效原始点411，控制器已完成有界批次，无物理任务运行。第4—5步继续推进，v2拟合、覆盖／拒绝及独立精度验收仍待；第6／8步前置有效，完整联合及正式D资格仍未授予。44候选只作需求／搜索回归集，计价主线始终为通用算子函数＋S＋DAG／必要G。
+
 **当前优先：以ASAP7 MAC32产出可复用代价模型与D端论文原型。** 先读[lxy-plan-fix.md第一章§0](lxy-plan-fix.md#mac-prototype-offline-model-plan)，目标选择与后备输出见[§7.54](lxy-plan-fix.md#step7-target-conditioned-fallback-confirmation)，最新采样及分层拟合见[§7.55](lxy-plan-fix.md#step7-three-region-sampling-plan)／[§7.56](lxy-plan-fix.md#step7-layered-operator-state-stage-plan)。用户已确认：小算子模型显式输入SDC并考虑非线性分段；必要时按位宽／位宽组建函数；D接收目标周期T，在固定L／II下，完整时序预测满足T后选择总面积最小的拆分与流水位置。若合格已评估方案均不满足T，则输出预测时序超预算最少、相同时面积较小的后备RTL并标记target_unmet，不算时序成功；缺覆盖方案不能猜价参与。前一速度优先D及其5%等速带保留历史身份，不再作为当前主选择规则。
 
 采样改为按包含被测算子的功能数据路径最小有符号setup slack除以T分三区：r<−10%、−10%≤r≤+10%、r>+10%，每区3点为目标，定位运行在内每源最多13个不同目标，重复目标不重跑。参考落点为−50/−30/−15%、−5/0/+5%、+15/+30/+50%，不要求精确命中，缺区如实报告。ABC=SDC，模型只声明这一联合策略；所有合格目标点保留成对时延／面积标签用于条件模型，近极限5%代表点另作辅助摘要。两端平台／中间敏感是待验证假设，分段可以有跳变，不预先强制单调或连续。
@@ -14,6 +16,8 @@
 
 **第6步真实边界提供者已实现并完成有限S复用验证，见[§7.63](lxy-plan-fix.md#step6-real-conditional-boundary-provider)。** `ReusedStateBoundaryProvider` 从真实状态／placement输出三个状态所有者及clock／physical／repair独占面积、逐级launch／capture／wire、valid／控制／旁路检查和完整依赖身份。原S系数不变，先用旧train导出共享基线；实际65–67变量位缺口登记为候选后继。两个新银行×500／1500／3000ps共6点／12阶段验证通过预设复用门限，八类边界48/48；44视图×3T独立重算、18项拒绝及入选RTL周期验证通过。[新证据](../experiments/arithmetic/evidence/step6_real_boundary_v1/README.md)含原始产物归档恢复及可搬移回放。它仍是候选复用：节点测试价格为软件夹具，实际算术状态保留、最终服务／输出边界、G及完整D联合资格仍待；负hold／setup实测不被模型门限通过覆盖。
 
+**10步增量修订已确认。** 保留第1—3步与既有采集合格数据、第6／8步实现；审计宽消费者／位连接／capture／扇出，按后继协议有限补测。第5步联合验收误差、覆盖及拒绝，44候选只作搜索验收集；独立复用保持模型参数、覆盖规则和选择器不变，见[现行10步](lxy-plan-fix.md#mac-prototype-final-ten-steps)。本次文档修订不改变正在运行的采集协议或测试角色。
+
 原九例36条闭环后置，四平台／五档整数／43例／688条保留后续总范围，不作为原型全部前置条件。旧固定目标实验、速度优先原型及各自失败保持原身份；当前用户目标T不能由旧1431ps等数值自动填入。I可由独立通过的小算子组合计价替代。
 
 | 阅读入口 | 用途与边界 |
@@ -27,12 +31,13 @@
 | [第四章§7.49](lxy-plan-fix.md#step7-mac-prototype-plan-update) | 历史文档合并记录；当前决策见§7.54–§7.56 |
 | [第四章§7.48](lxy-plan-fix.md#step7-general-state-qualified-publication) | 最近已完成的一般状态S限定发布结果；生产价格绑定和完整D仍待 |
 | [第四章§7.57](lxy-plan-fix.md#step7-target-round1-preparation) | 第一轮软件、角色／质量／容量方案及证据；不授予新壳物理标签或采样执行许可 |
-| [第一章§0.12](lxy-plan-fix.md#mac-prototype-final-ten-steps) | 审查后的最终10步，双线推进、少量可测性先导、必做代价对照 |
+| [第一章§0.12](lxy-plan-fix.md#mac-prototype-final-ten-steps) | 现行10步：增量需求／负载、精度＋覆盖＋拒绝验收、正式绑定及不变规则复用 |
 | [第四章§7.58](lxy-plan-fix.md#step7-native-operator-query-software) | 原生Query／Python一致性、44视图TEST_ONLY软件RTL闭环，以及两项映射边界诊断 |
 | [第四章§7.59](lxy-plan-fix.md#step7-steps123-completion) | 第1—3步完成：公共发射、4点8阶段物理资格、58源后继协议及有限批次资源计划 |
 | [第四章§7.60](lxy-plan-fix.md#step7-liberty-arc-reader-fix) | 普通组合时序弧漏检修复；同8阶段、16项真实单弧删除及2项方向负控；v3增量后继 |
 | [第四章§7.62](lxy-plan-fix.md#step8-conditional-consumer-interface) | 与采集交错完成第8步消费软件接口；44视图／条件函数／S边界／选择／RTL，生产资格仍待 |
 | [第四章§7.63](lxy-plan-fix.md#step6-real-conditional-boundary-provider) | 第6步真实S提供者、六点有限复用验证与完整联合价格的剩余边界 |
+| [第四章§7.65](lxy-plan-fix.md#steps123-incremental-acceptance) | 修订后第1—3步补做验收：需求／消费者特征、后继协议／门禁、6点12阶段物理回放及便携证据 |
 | [archive/README.md](archive/README.md) | 旧规划追溯，不能从旧“下一步”续作 |
 
 ## 当前已有成果与下一步

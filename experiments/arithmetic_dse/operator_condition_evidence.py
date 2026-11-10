@@ -67,9 +67,11 @@ def publish(root,out):
         if path.is_file():include(path,'corpus/'+str(path.relative_to(root/'corpus')))
     names=set(freeze['implementation_sources'])
     names.update(read(root/read(root/'active-collection.json')['path'])['measurement_sources'])
-    names.update(['experiments/arithmetic_dse/operator_condition_evidence.py','regression/arithmetic_stage4_clone_stop.py'])
+    names.update(['experiments/arithmetic_dse/operator_condition_evidence.py','regression/arithmetic_stage4_clone_stop.py',
+        'regression/arithmetic_stage45_completion.py','regression/arithmetic_operator_evidence_replay.py'])
     for name in sorted(names):include(ROOT/name,'source/'+name)
-    for name in ('fit-data.json','test-data.json','progress.json','collection.json','active-collection.json','clone-stop-proof.json','fit-source-macro-preflight.json','independent-evaluation-consumed.json'):
+    for name in ('fit-data.json','test-data.json','progress.json','collection.json','active-collection.json','clone-stop-proof.json',
+        'completion-audit-v1.json','fit-source-macro-preflight.json','independent-evaluation-consumed.json'):
         if (root/name).exists():include(root/name,name)
     for directory in ('fit-v1','test-v1','amendments'):
         if (root/directory).exists():
@@ -97,6 +99,7 @@ def publish(root,out):
     for i,at in enumerate(range(0,len(compressed),512*1024)):
         name=f'pool-{i:03d}.json.gz.part';p=out/name;p.write_bytes(compressed[at:at+512*1024]);chunks[name]=dict(sha256=sha(p),bytes=p.stat().st_size)
     write(out/'coverage-response.json',report)
+    (out/'replay.py').write_text((ROOT/'regression/arithmetic_operator_evidence_replay.py').read_text())
     write(out/'manifest.json',dict(version='operator-condition-evidence-v1',chunks=chunks,payload_sha256=hashlib.sha256(raw).hexdigest(),
         source_sha256={name:sha(ROOT/name) for name in sorted(names)},fit_data_sha256=sha(root/'fit-data.json'),
         selection_sha256=sha(fit/'selection-freeze.json'),validation_passed=freeze['validation_passed'],
