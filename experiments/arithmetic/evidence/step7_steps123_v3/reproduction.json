@@ -1,0 +1,54 @@
+{
+  "status": "reproduced",
+  "points": 1,
+  "stages": 1,
+  "rows": [
+    {
+      "task": "mul-load-1500",
+      "stage": "synth",
+      "operator_delay_ps": 976.124084,
+      "comb_area_um2": 460.43639999999453,
+      "data_setup_slack_ps": 69.318886,
+      "all_saved_label_fields_unchanged": true
+    }
+  ],
+  "single_arc_mutations": [
+    {
+      "task": "mul-load-1500",
+      "stage": "synth",
+      "path_kind": "independent_node",
+      "deleted_only_one_master_arc": true,
+      "master": "BUFx2_ASAP7_75t_R",
+      "arc": [
+        "A",
+        "Y"
+      ],
+      "from_pin": "core/_08201_/A",
+      "to_pin": "core/_08201_/Y",
+      "outcome": "accepted_with_unchanged_labels",
+      "error": null
+    },
+    {
+      "task": "mul-load-1500",
+      "stage": "synth",
+      "path_kind": "through_data",
+      "deleted_only_one_master_arc": true,
+      "master": "BUFx2_ASAP7_75t_R",
+      "arc": [
+        "A",
+        "Y"
+      ],
+      "from_pin": "core/_08201_/A",
+      "to_pin": "core/_08201_/Y",
+      "outcome": "accepted_with_unchanged_labels",
+      "error": null
+    }
+  ],
+  "invalid_direction_arcs_rejected": [],
+  "original_eight_checks_replayed": false,
+  "source_role": "not_training",
+  "new_EDA_calls": 0,
+  "new_training_rows": 0,
+  "physical_measurements_reused": true,
+  "saved_label_values_unchanged": true
+}

@@ -164,6 +164,7 @@ RTLzzLogicRTLResult generateLogicRTLWithRTLzz(
     if (progress_line) progress_line->finish();
     RTLzzLogicRTLResult out;
     out.arithmetic_report=result.arithmetic_report;
+    out.rtl_module_definitions=std::move(result.rtl_module_definitions);
     if (!result.ok()) {
         out.error = result.error;
         out.error_debug_codelines = std::move(result.error_debug_codelines);

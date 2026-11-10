@@ -1,0 +1,217 @@
+{
+  "version": "steps123-measured-capacity-and-storage-v1",
+  "physical_admission_allowed": false,
+  "measured_points": [
+    {
+      "id": "mul-load-1500",
+      "synth_wall_s": 6.978716570418328,
+      "grt_wall_s": 65.79506834596395,
+      "all_associated_leaf_wall_s": 90.9277881165035,
+      "all_associated_leaf_CPU_s": 181.62000000000003,
+      "peak_tree_rss_MiB": 570.46484375,
+      "logical_working_bytes": 186224652,
+      "receipt_paths": [
+        "/home/zyrv/vulsim/build/step7-steps123-20261110/qualification-v1/runs/mul-load-1500/synth.command.json",
+        "/home/zyrv/vulsim/build/step7-steps123-20261110/qualification-v5/runs/mul-load-1500/grt.command.json"
+      ]
+    },
+    {
+      "id": "mul-load-750",
+      "synth_wall_s": 6.853664624970406,
+      "grt_wall_s": 174.6465941281058,
+      "all_associated_leaf_wall_s": 200.5595378014259,
+      "all_associated_leaf_CPU_s": 389.72999999999996,
+      "peak_tree_rss_MiB": 581.93359375,
+      "logical_working_bytes": 195725560,
+      "receipt_paths": [
+        "/home/zyrv/vulsim/build/step7-steps123-20261110/qualification-v6/runs/mul-load-750/synth.command.json",
+        "/home/zyrv/vulsim/build/step7-steps123-20261110/qualification-v6/runs/mul-load-750/grt.command.json"
+      ]
+    },
+    {
+      "id": "sparse-add-250",
+      "synth_wall_s": 4.28688383474946,
+      "grt_wall_s": 30.3090893169865,
+      "all_associated_leaf_wall_s": 43.70225793402642,
+      "all_associated_leaf_CPU_s": 60.9,
+      "peak_tree_rss_MiB": 380.95703125,
+      "logical_working_bytes": 40240052,
+      "receipt_paths": [
+        "/home/zyrv/vulsim/build/step7-steps123-20261110/qualification-v6/runs/sparse-add-250/synth.command.json",
+        "/home/zyrv/vulsim/build/step7-steps123-20261110/qualification-v6/runs/sparse-add-250/grt.command.json"
+      ]
+    },
+    {
+      "id": "wide-add-750",
+      "synth_wall_s": 5.028365748003125,
+      "grt_wall_s": 34.19344997499138,
+      "all_associated_leaf_wall_s": 49.81537643587217,
+      "all_associated_leaf_CPU_s": 75.9,
+      "peak_tree_rss_MiB": 400.3984375,
+      "logical_working_bytes": 60922211,
+      "receipt_paths": [
+        "/home/zyrv/vulsim/build/step7-steps123-20261110/qualification-v6/runs/wide-add-750/synth.command.json",
+        "/home/zyrv/vulsim/build/step7-steps123-20261110/qualification-v6/runs/wide-add-750/grt.command.json"
+      ]
+    }
+  ],
+  "source_counts": {
+    "train": 30,
+    "validation": 14,
+    "locked_test": 14
+  },
+  "target_limit_per_source": 13,
+  "train_validation_target_ceiling": 572,
+  "locked_test_target_ceiling": 182,
+  "total_target_ceiling": 754,
+  "ceiling_is_not_batch_authorization": true,
+  "later_work_reserved": {
+    "synth": 688,
+    "grt": 688,
+    "walltime_s": 86400,
+    "CPU_time_s": 172800,
+    "storage_bytes": 32212254720
+  },
+  "available_after_later_reserve": {
+    "synth": 1350,
+    "grt": 1378,
+    "walltime_s": 283952.7481723826,
+    "CPU_time_s": 1732686.66,
+    "disk_bytes": 84405350400
+  },
+  "proposed_first_stage4_batch": {
+    "max_source_targets": 12,
+    "roles": [
+      "train",
+      "validation"
+    ],
+    "parallel_jobs": 3,
+    "threads_per_tool": 4,
+    "memory_limit_MiB": 8192,
+    "point_timeout_envelope_wall_s": 2940,
+    "batch_timeout_envelope_wall_s": 35280,
+    "batch_timeout_envelope_CPU_s": 141120,
+    "point_planning_wall_s": 600,
+    "point_planning_CPU_s": 1200,
+    "point_planning_working_bytes": 391451120,
+    "planning_wall_s": 7200,
+    "planning_CPU_s": 14400,
+    "planning_working_bytes": 4697413440,
+    "admission": "separate exact source/target/sampler requests, runtime hashes, qualification proof and live funding/storage check; no automatic full-corpus launch"
+  },
+  "full_ceiling_extrapolation": {
+    "points": 754,
+    "observed_leaf_wall_range_s": [
+      32951.50248225592,
+      151221.89150227513
+    ],
+    "observed_CPU_range_s": [
+      45918.6,
+      293856.42
+    ],
+    "observed_working_bytes_range": [
+      30340999208,
+      147577072240
+    ],
+    "limitation": "four diagnostics are not capacity qualification for all widths/consumers/tighter targets; extrapolation excludes unobserved failures and fitting/evidence support"
+  },
+  "source_snapshot_policy": "one shared immutable source freeze per admission; no repeated entire parent evidence or ledger per case",
+  "required_measurement_paths": [
+    "experiments/arithmetic_dse/backend.py",
+    "experiments/arithmetic_dse/backend/README.md",
+    "experiments/arithmetic_dse/backend/abc_speed_target.script",
+    "experiments/arithmetic_dse/backend/constraints.sdc",
+    "experiments/arithmetic_dse/backend/environment.mk",
+    "experiments/arithmetic_dse/backend/gf180_tc_rc.tcl",
+    "experiments/arithmetic_dse/backend/handoff_checks.md",
+    "experiments/arithmetic_dse/backend/model_labels.tcl",
+    "experiments/arithmetic_dse/backend/platform.mk",
+    "experiments/arithmetic_dse/backend/rc_readback.tcl",
+    "experiments/arithmetic_dse/backend/snapshot.tcl",
+    "experiments/arithmetic_dse/bounded_recheck.py",
+    "experiments/arithmetic_dse/budget.py",
+    "experiments/arithmetic_dse/capacity_retest.py",
+    "experiments/arithmetic_dse/case_generator.py",
+    "experiments/arithmetic_dse/characterization.py",
+    "experiments/arithmetic_dse/clock_relaxation.py",
+    "experiments/arithmetic_dse/configs/model_three_region_scan_v1.json",
+    "experiments/arithmetic_dse/configs/platforms/asap7.json",
+    "experiments/arithmetic_dse/contracts.py",
+    "experiments/arithmetic_dse/exact_analysis.py",
+    "experiments/arithmetic_dse/model_analysis.py",
+    "experiments/arithmetic_dse/model_collection.py",
+    "experiments/arithmetic_dse/model_context_labels.py",
+    "experiments/arithmetic_dse/model_context_samples.py",
+    "experiments/arithmetic_dse/model_fast_loads.py",
+    "experiments/arithmetic_dse/model_fast_measurement.py",
+    "experiments/arithmetic_dse/model_fast_path.py",
+    "experiments/arithmetic_dse/model_fast_preflight.py",
+    "experiments/arithmetic_dse/model_fast_probe.py",
+    "experiments/arithmetic_dse/model_fast_samples.py",
+    "experiments/arithmetic_dse/model_fast_sdc.py",
+    "experiments/arithmetic_dse/model_features.py",
+    "experiments/arithmetic_dse/model_interval_clock.py",
+    "experiments/arithmetic_dse/model_m2_aig.py",
+    "experiments/arithmetic_dse/model_m2_cec.py",
+    "experiments/arithmetic_dse/model_m2_cec_resume.py",
+    "experiments/arithmetic_dse/model_m2_collection.py",
+    "experiments/arithmetic_dse/model_m2_evaluate.py",
+    "experiments/arithmetic_dse/model_m2_f5_evaluate.py",
+    "experiments/arithmetic_dse/model_m2_f5_resume.py",
+    "experiments/arithmetic_dse/model_m2_f5_tests.py",
+    "experiments/arithmetic_dse/model_m2_fit.py",
+    "experiments/arithmetic_dse/model_m2_fit_v2.py",
+    "experiments/arithmetic_dse/model_m2_fit_v3.py",
+    "experiments/arithmetic_dse/model_m2_fit_v4.py",
+    "experiments/arithmetic_dse/model_m2_labels5.py",
+    "experiments/arithmetic_dse/model_m2_live_cec.py",
+    "experiments/arithmetic_dse/model_m2_live_cec_v3.py",
+    "experiments/arithmetic_dse/model_m2_mux_collection.py",
+    "experiments/arithmetic_dse/model_m2_mux_labels.py",
+    "experiments/arithmetic_dse/model_m2_mux_samples.py",
+    "experiments/arithmetic_dse/model_m2_phase_resume.py",
+    "experiments/arithmetic_dse/model_m2_samples.py",
+    "experiments/arithmetic_dse/model_m2_source5.py",
+    "experiments/arithmetic_dse/model_m2_state.py",
+    "experiments/arithmetic_dse/model_m2_tests.py",
+    "experiments/arithmetic_dse/model_mapped_contract.py",
+    "experiments/arithmetic_dse/model_mul_interval_evaluation.py",
+    "experiments/arithmetic_dse/model_mul_interval_fit.py",
+    "experiments/arithmetic_dse/model_mul_intervals.py",
+    "experiments/arithmetic_dse/model_physical_labels_v2.py",
+    "experiments/arithmetic_dse/model_physical_path_v2.py",
+    "experiments/arithmetic_dse/model_qualification_labels.py",
+    "experiments/arithmetic_dse/model_reference_labels.py",
+    "experiments/arithmetic_dse/model_reference_labels_v2.py",
+    "experiments/arithmetic_dse/model_reference_samples.py",
+    "experiments/arithmetic_dse/model_samples.py",
+    "experiments/arithmetic_dse/model_sampling_v2.py",
+    "experiments/arithmetic_dse/model_steps123_qualification.py",
+    "experiments/arithmetic_dse/model_target_collection.py",
+    "experiments/arithmetic_dse/model_target_features.py",
+    "experiments/arithmetic_dse/model_target_fit.py",
+    "experiments/arithmetic_dse/model_three_region_scan.py",
+    "experiments/arithmetic_dse/model_training.py",
+    "experiments/arithmetic_dse/operator_collection.py",
+    "experiments/arithmetic_dse/operator_query.py",
+    "experiments/arithmetic_dse/platform_probe.py",
+    "experiments/arithmetic_dse/platforms.py",
+    "experiments/arithmetic_dse/processes.py",
+    "experiments/arithmetic_dse/reference.py",
+    "experiments/arithmetic_dse/reference_assets/boundary_census.tcl",
+    "experiments/arithmetic_dse/reference_assets/context_readout_v2.tcl",
+    "experiments/arithmetic_dse/report_types.py",
+    "experiments/arithmetic_dse/sdc.py",
+    "experiments/arithmetic_dse/sdc_storage_v3.py",
+    "experiments/arithmetic_dse/step5_analysis.py"
+  ],
+  "storage": {
+    "small_evidence_target_bytes": 5242880,
+    "file_limit_bytes": 1048576,
+    "chunk_limit_bytes": 524288,
+    "full_artifacts": "existing ignored local build cache; indexed with bytes and SHA256; not a durable delivery location",
+    "persistent_location": null,
+    "persistent_restore_verified": false,
+    "stage4_gate": "exact batch storage inventory and a real recoverable destination/restore receipt before claiming durable full collection; do not treat a hash or local cache as delivery"
+  }
+}

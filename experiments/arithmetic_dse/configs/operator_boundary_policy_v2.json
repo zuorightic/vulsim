@@ -1,0 +1,18 @@
+{
+  "version": "operator-boundary-policy-release-v2",
+  "policy_id": "unsigned-op-hierarchy-v1",
+  "confirmation": "2026-11-10 user explicitly chose common preserved operator hierarchy",
+  "request_schema": "arithmetic-request-v2",
+  "scope": "ASAP7 unsigned Mul/Add/AddCarry emission; first collection models only Mul and zero-carry Add",
+  "public_native_handoff": "implemented: body and module definitions separately carried through PipelineV2, CompileResult and VUL bridge; definitions emitted outside the parent module",
+  "same_policy_required_for": ["operator samples", "composition validation", "A", "B", "C", "D", "matched-cost ablation"],
+  "sampling_schema": "arithmetic-consumer-sampling-v2-independent-bank-observers",
+  "qualified_preparation_scope": "four not_training source/target points, Mul32 real Add consumer, sparse/shifted and wide Add consumers; per-output independent paths, through-operator data slack, semantic FF/bank aliases and CTS CEC verified",
+  "observations_are_training_labels": false,
+  "measurement_scope": "unconditional observable measurement-bank adapter; native enabled/reset loading still requires S/G joint-domain validation",
+  "prototype_model_status": "sampling/model interface and protocol prepared; no fitted/independently qualified condition model",
+  "formal_collection_admission_allowed": false,
+  "independent_test_allowed": false,
+  "production_binding_implemented": false,
+  "full_D_ready": false
+}

@@ -118,6 +118,10 @@ LogicRTLResult appendLogicRTL(
         lines.push_back("end\n");
         result.rtl_skeleten_codes.insert(end, lines.begin(), lines.end());
         result.rtl_skeleten_debug.insert(result.rtl_skeleten_debug.begin() + offset, lines.size(), {});
+        // Definitions belong outside the containing VUL module/generate block.
+        vector<string> definitions;appendTextAsLines(definitions,compiled.rtl_module_definitions);
+        result.rtl_skeleten_codes.insert(result.rtl_skeleten_codes.end(),definitions.begin(),definitions.end());
+        result.rtl_skeleten_debug.insert(result.rtl_skeleten_debug.end(),definitions.size(),{});
         for (auto &line : compiled.debug_codelines) {
             const string prefix = "  rtl_line: ";
             if (line.rfind(prefix, 0) != 0) continue;
@@ -175,6 +179,9 @@ LogicRTLResult appendLogicRTL(
     result.rtl_skeleten_codes.insert(endmodule, body_lines.begin(), body_lines.end());
     result.rtl_skeleten_debug.insert(result.rtl_skeleten_debug.begin() + offset,
                                      body_lines.size(), {});
+    vector<string> definitions;appendTextAsLines(definitions,logic_rtl.rtl_module_definitions);
+    result.rtl_skeleten_codes.insert(result.rtl_skeleten_codes.end(),definitions.begin(),definitions.end());
+    result.rtl_skeleten_debug.insert(result.rtl_skeleten_debug.end(),definitions.size(),{});
     vulDebugNormalize(result.rtl_skeleten_codes, result.rtl_skeleten_debug);
     result.rtl_skeleten_debug_lines = vulDebugBuildGeneratedMap(result.rtl_skeleten_debug);
     const string line_prefix = "  rtl_line: ";

@@ -24,6 +24,7 @@
 struct RTLzzLogicRTLResult {
     bool ok = false;
     std::string rtl_text;
+    std::string rtl_module_definitions;
     std::vector<std::string> debug_codelines;
     std::string error;
     std::string arithmetic_report;

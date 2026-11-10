@@ -1,0 +1,259 @@
+{
+  "version": "arithmetic-operator-collection-protocol-v2",
+  "scope": "steps123 successor: shared function interface and minimal fixed source roles; no stage4 admission",
+  "pilot": {
+    "operation": "unsigned 32x32 plus 64-bit add modulo 2^64",
+    "L": 2,
+    "II": 1,
+    "candidates": [
+      "original",
+      "half",
+      "quarter"
+    ]
+  },
+  "operator_labels": [
+    "independent input-to-output maximum operator_delay_ps",
+    "same-implementation comb_area_um2"
+  ],
+  "conditions": {
+    "ABC_equals_SDC": true,
+    "IO_fraction": "1/5",
+    "platform": "asap7",
+    "main_stage": "grt",
+    "threads_per_tool": 4
+  },
+  "source_roles": "see explicit immutable source groups, all target/stage/repeat variants inherit role",
+  "grouping": "canonical complete producer/consumer/capture bit graph; all periods, stages and repeats of that source stay in one role; no seed-based duplicates across roles",
+  "role_exclusions": "old diagnostic/reference/consumed-test rows remain excluded; software functional vectors are not physical training/test labels",
+  "operator_candidates": {
+    "baselines": [
+      "constant",
+      "Ridge with semantic width/load features and numerical T"
+    ],
+    "segmented_Ridge": {
+      "coordinate": "log2(T_ps)",
+      "maximum_internal_knots": [
+        1,
+        2
+      ],
+      "knots": "pooled train-only target quantiles; validation chooses candidate",
+      "alpha": [
+        0.01,
+        1.0,
+        100.0
+      ]
+    },
+    "shallow_tree": {
+      "maximum_depth": [
+        2,
+        3,
+        4
+      ],
+      "minimum_distinct_training_sources_per_leaf": 3,
+      "seed": 20261109
+    },
+    "width_policy": "compare shared model first; optional operand-width groups selected with validation; each group needs >=3 train and >=2 validation source groups, else uncovered",
+    "selection": "quality-passing validation candidate with smallest source-macro normalized absolute error, then complexity and stable declared order",
+    "prohibited": [
+      "case or NodeId or whole-graph hash as features",
+      "measured current-design slack/Tmin/capacitance/mapped counts",
+      "mandatory monotone or continuous response"
+    ]
+  },
+  "quality": {
+    "status": "new preregistered thresholds; not retroactive to old models",
+    "delay_and_area_relative_error": {
+      "source_macro_median_max": 0.15,
+      "source_macro_P95_max": 0.35,
+      "per_operation_P95_max": 0.5,
+      "quantile": "nearest-rank over per-source median relative errors"
+    },
+    "absolute_error_floors": {
+      "delay_ps": 10,
+      "area_um2": 0.01,
+      "role": "relative denominator max(abs(label), floor); also report raw MAE"
+    },
+    "minimum_sources_per_reported_operation": {
+      "train": 3,
+      "validation": 2,
+      "independent_test": 2
+    },
+    "validation_delay_reserve": "max(0, worst validation source/target delay underprediction) in ps per qualified operation/width group, frozen before test; no duplicate reserve in S/G",
+    "coverage": "mandatory required-domain inventory, three-region counts/spans/shortfalls, held-out source/context errors and actual new-target interpolation coverage; no domain inferred from independent min/max alone",
+    "independent_target_interpolation": "role-specific initial targets preregistered in sampler; after collection report which test targets are unmeasured in fit and within supported train range; require at least one such point per claimed operation; no substitution after test",
+    "full_stage_false_feasible_rate_max": 0.01,
+    "full_stage_false_feasible_scope": "future joint stage gate including all owners/IO/reserves, never compare bare operator delay with T as full feasibility",
+    "conservative_rejection": "report separately; validation selects reserve, locked_test never changes it"
+  },
+  "capacity": {
+    "status": "finite diagnostic qualification complete; formal source/target admission still separate",
+    "role": "not_training",
+    "successor_source_targets": [
+      "mul-load-1500",
+      "mul-load-750",
+      "sparse-add-250",
+      "wide-add-750"
+    ],
+    "earlier_synth_only_boundary_points": 2,
+    "total_preparation_points": 6,
+    "automatic_retries": 0,
+    "synth_timeout_s": 300,
+    "grt_timeout_s": 1200,
+    "memory_limit_MiB": 8192,
+    "parallel_jobs_max": 3,
+    "measured_plan": "steps123 evidence capacity-plan.json; measurements do not qualify arbitrary tighter targets"
+  },
+  "later_work_reserved": {
+    "synth": 688,
+    "grt": 688,
+    "walltime_s": 86400,
+    "CPU_time_s": 172800,
+    "storage_bytes": 32212254720
+  },
+  "S_G_order": "software interleaved; formal residuals and independent evaluation retain frozen dependencies",
+  "physical_admission_allowed": false,
+  "independent_test_allowed": false,
+  "fitting_allowed": false,
+  "production_binding_implemented": false,
+  "full_D_ready": false,
+  "revision": 4,
+  "flow_context": {
+    "target_platform": "asap7",
+    "evaluation_stage": "grt",
+    "profile_sha256": "f9d3e71d377d0fef70b66e43828186962caa04fcec31b8f78ad8760c5459f1c7",
+    "operator_boundary_policy": "unsigned-op-hierarchy-v1",
+    "ABC_equals_SDC": true,
+    "IO": "0.2T",
+    "source_generator_sha256": "7276405eee0963ab1a85756a05550f68399b8a4d1ca5a7ff690cce639a4622c7"
+  },
+  "operator_query_schema": "arithmetic-operator-query-v1",
+  "operator_boundary_policy": "unsigned-op-hierarchy-v1",
+  "sampler_sha256": "3bfb72093afec79492e7cd198011e1c72b79c68480c38cbc1618801ed670da93",
+  "source_counts": {
+    "train": 30,
+    "validation": 14,
+    "locked_test": 14
+  },
+  "feature_schema": {
+    "available": [
+      "abc_target_ps",
+      "capture_banks",
+      "capture_declared_bits",
+      "carry_dynamic",
+      "carry_one",
+      "consumer_add",
+      "consumer_addcarry",
+      "consumer_count",
+      "consumer_lhs_max",
+      "consumer_mul",
+      "consumer_result_max",
+      "consumer_rhs_max",
+      "declared_result_width",
+      "full_product",
+      "lhs_one_bin0",
+      "lhs_one_bin1",
+      "lhs_one_bin2",
+      "lhs_one_bin3",
+      "lhs_one_count",
+      "lhs_one_longest_run",
+      "lhs_one_lsb_run",
+      "lhs_one_msb_run",
+      "lhs_one_runs",
+      "lhs_width",
+      "lhs_zero_bin0",
+      "lhs_zero_bin1",
+      "lhs_zero_bin2",
+      "lhs_zero_bin3",
+      "lhs_zero_count",
+      "lhs_zero_longest_run",
+      "lhs_zero_lsb_run",
+      "lhs_zero_msb_run",
+      "lhs_zero_runs",
+      "log2_target_ps",
+      "low_result",
+      "mapped_dynamic_bits",
+      "mapped_external_bits",
+      "mapped_one_bits",
+      "mapped_origin_span",
+      "mapped_repeated_bits",
+      "mapped_undemanded_bits",
+      "mapped_unique_bits",
+      "mapped_zero_bits",
+      "mapping_runs",
+      "mapping_shift_max",
+      "mapping_shift_min",
+      "operand0_bindings",
+      "operand1_bindings",
+      "operand_shared_input_roots",
+      "operation_add",
+      "operation_addcarry",
+      "operation_mul",
+      "required_result_bits",
+      "result_width",
+      "rhs_one_bin0",
+      "rhs_one_bin1",
+      "rhs_one_bin2",
+      "rhs_one_bin3",
+      "rhs_one_count",
+      "rhs_one_longest_run",
+      "rhs_one_lsb_run",
+      "rhs_one_msb_run",
+      "rhs_one_runs",
+      "rhs_width",
+      "rhs_zero_bin0",
+      "rhs_zero_bin1",
+      "rhs_zero_bin2",
+      "rhs_zero_bin3",
+      "rhs_zero_count",
+      "rhs_zero_longest_run",
+      "rhs_zero_lsb_run",
+      "rhs_zero_msb_run",
+      "rhs_zero_runs",
+      "same_stage_remaining_depth",
+      "target_period_ps",
+      "width_product"
+    ],
+    "excluded_from_operator_predictor": [
+      "declared_result_width",
+      "operand_shared_input_roots",
+      "same_stage_remaining_depth"
+    ],
+    "exclusion_reason": "price models use canonical demanded precision; declaration-only padding remains in semantic certificates; upstream correlation/longer topology require G checks"
+  },
+  "measurement_boundary": {
+    "capture": "unconditional, separately observable FF bank adapter",
+    "launch": "registered data with explicit valid/enable/reset protocol",
+    "native_S_G_note": "actual native enable/reset/capture loading does not automatically inherit this local measurement scope; explicit S/G joint-domain validation required",
+    "native_padding_note": "declaration-only padding is not a learned extrapolation input; validate canonicalization/implementation effects in real composition before production pricing"
+  },
+  "function_support": "semantic operation/width/result/mask/load rules and source-neighbor support selected with validation, frozen before test; no shape-ID price table",
+  "reserved_generalization": [
+    "non-aligned/asymmetric operand widths",
+    "unseen low result and known-bit pattern",
+    "unseen consumer wiring",
+    "new exact target within supported training interval"
+  ],
+  "static_ablation": {
+    "required": true,
+    "scope": "same views/T/L/II/search/ranking; only cost function or explicitly dependency-complete cost package differs",
+    "delay_unit_bridge": "single nonnegative global alpha_d from source-equal train least squares through origin on fixed delay proxy",
+    "area_unit_bridge": "single nonnegative global alpha_A from source-equal train least squares through origin on fixed area proxy",
+    "G": "prefer common zero correction; never transplant base-dependent residual between models"
+  },
+  "collection_execution": {
+    "first_batch_source_targets_max": 12,
+    "formal_roles": [
+      "train",
+      "validation"
+    ],
+    "locked_test_separate": true,
+    "shared_source_freeze_per_admission": true,
+    "exact_sampler_requests_required": true,
+    "runtime_producer_hashes_and_qualification_receipt_required": true,
+    "live_later_work_and_storage_reserve_required": true,
+    "total_train_validation_target_ceiling": 572,
+    "total_locked_test_target_ceiling": 182,
+    "ceiling_is_not_admission": true,
+    "persistent_artifact_destination_and_restore_receipt": "required by batch storage protocol; not yet selected"
+  }
+}

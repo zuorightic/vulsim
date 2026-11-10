@@ -1,0 +1,15 @@
+{
+  "version": "unsigned-op-hierarchy-v1",
+  "confirmation": "2026-11-10 user: 统一保留算子层次（推荐）; same boundary strategy for operator sampling, composition validation and final A/B/C/D",
+  "scope": "first ASAP7 unsigned MAC32 prototype; no automatic transfer to Div or atomic binary32",
+  "operators": ["unsigned scalar Mul", "unsigned scalar Add", "unsigned scalar AddCarry"],
+  "RTL_strategy": "one keep_hierarchy module per real arithmetic node; use existing emitter expression/width semantics; transparent bit wiring and registers remain in the parent",
+  "same_strategy_required_for": ["operator microbenchmarks", "synthetic composition validation", "A", "B", "C", "D", "matched-cost ablation"],
+  "module_precision": "preserve actual typed operand and declared result widths; only proven dead demanded bits may optimize in the shared synthesis flow",
+  "implementation_entry": "rtlgen::emitSystemVerilogWithArithmeticBoundaries for beir::Program and pipeline::Program",
+  "public_VUL_body_bridge": "pending explicit body/module-definition integration; default emitter not silently changed",
+  "physical_qualification": "pending actual mapped semantic ports/constants/pass-through, capture bank/FF reconciliation, independent maxima and grt/CEC identity",
+  "diagnostic_flattened_pair_role": "not_training, never reused as training rows or declared equivalent boundary qualification",
+  "production_binding_implemented": false,
+  "full_D_ready": false
+}

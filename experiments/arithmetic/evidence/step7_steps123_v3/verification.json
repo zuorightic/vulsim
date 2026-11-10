@@ -1,0 +1,329 @@
+{
+  "status": "passed",
+  "points": 4,
+  "stages": 8,
+  "rows": [
+    {
+      "task": "mul-load-1500",
+      "stage": "synth",
+      "operator_delay_ps": 976.124084,
+      "comb_area_um2": 460.43639999999453,
+      "data_setup_slack_ps": 69.318886,
+      "all_saved_label_fields_unchanged": true
+    },
+    {
+      "task": "mul-load-1500",
+      "stage": "grt",
+      "operator_delay_ps": 1067.224365,
+      "comb_area_um2": 461.1216599999948,
+      "data_setup_slack_ps": -4.80449,
+      "all_saved_label_fields_unchanged": true
+    },
+    {
+      "task": "mul-load-750",
+      "stage": "synth",
+      "operator_delay_ps": 976.124084,
+      "comb_area_um2": 460.43639999999453,
+      "data_setup_slack_ps": -680.681152,
+      "all_saved_label_fields_unchanged": true
+    },
+    {
+      "task": "mul-load-750",
+      "stage": "grt",
+      "operator_delay_ps": 1058.536865,
+      "comb_area_um2": 497.5716600000009,
+      "data_setup_slack_ps": -668.091675,
+      "all_saved_label_fields_unchanged": true
+    },
+    {
+      "task": "sparse-add-250",
+      "stage": "synth",
+      "operator_delay_ps": 303.593262,
+      "comb_area_um2": 14.813280000000008,
+      "data_setup_slack_ps": -391.005463,
+      "all_saved_label_fields_unchanged": true
+    },
+    {
+      "task": "sparse-add-250",
+      "stage": "grt",
+      "operator_delay_ps": 322.579773,
+      "comb_area_um2": 19.551779999999976,
+      "data_setup_slack_ps": -320.059479,
+      "all_saved_label_fields_unchanged": true
+    },
+    {
+      "task": "wide-add-750",
+      "stage": "synth",
+      "operator_delay_ps": 392.16095,
+      "comb_area_um2": 34.00055999999993,
+      "data_setup_slack_ps": -100.306427,
+      "all_saved_label_fields_unchanged": true
+    },
+    {
+      "task": "wide-add-750",
+      "stage": "grt",
+      "operator_delay_ps": 412.031616,
+      "comb_area_um2": 37.87883999999994,
+      "data_setup_slack_ps": -41.530781,
+      "all_saved_label_fields_unchanged": true
+    }
+  ],
+  "single_arc_mutations": [
+    {
+      "task": "mul-load-1500",
+      "stage": "synth",
+      "path_kind": "independent_node",
+      "deleted_only_one_master_arc": true,
+      "master": "BUFx2_ASAP7_75t_R",
+      "arc": [
+        "A",
+        "Y"
+      ],
+      "from_pin": "core/_08201_/A",
+      "to_pin": "core/_08201_/Y",
+      "outcome": "rejected",
+      "error": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "mul-load-1500",
+      "stage": "synth",
+      "path_kind": "through_data",
+      "deleted_only_one_master_arc": true,
+      "master": "BUFx2_ASAP7_75t_R",
+      "arc": [
+        "A",
+        "Y"
+      ],
+      "from_pin": "core/_08201_/A",
+      "to_pin": "core/_08201_/Y",
+      "outcome": "rejected",
+      "error": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "mul-load-1500",
+      "stage": "grt",
+      "path_kind": "independent_node",
+      "deleted_only_one_master_arc": true,
+      "master": "BUFx4f_ASAP7_75t_R",
+      "arc": [
+        "A",
+        "Y"
+      ],
+      "from_pin": "core/place403/A",
+      "to_pin": "core/place403/Y",
+      "outcome": "rejected",
+      "error": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "mul-load-1500",
+      "stage": "grt",
+      "path_kind": "through_data",
+      "deleted_only_one_master_arc": true,
+      "master": "INVx3_ASAP7_75t_R",
+      "arc": [
+        "A",
+        "Y"
+      ],
+      "from_pin": "launch/_0548_/A",
+      "to_pin": "launch/_0548_/Y",
+      "outcome": "rejected",
+      "error": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "mul-load-750",
+      "stage": "synth",
+      "path_kind": "independent_node",
+      "deleted_only_one_master_arc": true,
+      "master": "BUFx2_ASAP7_75t_R",
+      "arc": [
+        "A",
+        "Y"
+      ],
+      "from_pin": "core/_08201_/A",
+      "to_pin": "core/_08201_/Y",
+      "outcome": "rejected",
+      "error": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "mul-load-750",
+      "stage": "synth",
+      "path_kind": "through_data",
+      "deleted_only_one_master_arc": true,
+      "master": "BUFx2_ASAP7_75t_R",
+      "arc": [
+        "A",
+        "Y"
+      ],
+      "from_pin": "core/_08201_/A",
+      "to_pin": "core/_08201_/Y",
+      "outcome": "rejected",
+      "error": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "mul-load-750",
+      "stage": "grt",
+      "path_kind": "independent_node",
+      "deleted_only_one_master_arc": true,
+      "master": "BUFx3_ASAP7_75t_R",
+      "arc": [
+        "A",
+        "Y"
+      ],
+      "from_pin": "core/rebuffer2425/A",
+      "to_pin": "core/rebuffer2425/Y",
+      "outcome": "rejected",
+      "error": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "mul-load-750",
+      "stage": "grt",
+      "path_kind": "through_data",
+      "deleted_only_one_master_arc": true,
+      "master": "INVx2_ASAP7_75t_R",
+      "arc": [
+        "A",
+        "Y"
+      ],
+      "from_pin": "launch/_0549_/A",
+      "to_pin": "launch/_0549_/Y",
+      "outcome": "rejected",
+      "error": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "sparse-add-250",
+      "stage": "synth",
+      "path_kind": "independent_node",
+      "deleted_only_one_master_arc": true,
+      "master": "BUFx2_ASAP7_75t_R",
+      "arc": [
+        "A",
+        "Y"
+      ],
+      "from_pin": "consumer0/_242_/A",
+      "to_pin": "consumer0/_242_/Y",
+      "outcome": "rejected",
+      "error": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "sparse-add-250",
+      "stage": "synth",
+      "path_kind": "through_data",
+      "deleted_only_one_master_arc": true,
+      "master": "INVx1_ASAP7_75t_R",
+      "arc": [
+        "A",
+        "Y"
+      ],
+      "from_pin": "launch/_427_/A",
+      "to_pin": "launch/_427_/Y",
+      "outcome": "rejected",
+      "error": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "sparse-add-250",
+      "stage": "grt",
+      "path_kind": "independent_node",
+      "deleted_only_one_master_arc": true,
+      "master": "HAxp5_ASAP7_75t_R",
+      "arc": [
+        "B",
+        "CON"
+      ],
+      "from_pin": "core/_259_/B",
+      "to_pin": "core/_259_/CON",
+      "outcome": "rejected",
+      "error": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "sparse-add-250",
+      "stage": "grt",
+      "path_kind": "through_data",
+      "deleted_only_one_master_arc": true,
+      "master": "INVx1_ASAP7_75t_R",
+      "arc": [
+        "A",
+        "Y"
+      ],
+      "from_pin": "launch/_438_/A",
+      "to_pin": "launch/_438_/Y",
+      "outcome": "rejected",
+      "error": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "wide-add-750",
+      "stage": "synth",
+      "path_kind": "independent_node",
+      "deleted_only_one_master_arc": true,
+      "master": "BUFx2_ASAP7_75t_R",
+      "arc": [
+        "A",
+        "Y"
+      ],
+      "from_pin": "core/_344_/A",
+      "to_pin": "core/_344_/Y",
+      "outcome": "rejected",
+      "error": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "wide-add-750",
+      "stage": "synth",
+      "path_kind": "through_data",
+      "deleted_only_one_master_arc": true,
+      "master": "INVx1_ASAP7_75t_R",
+      "arc": [
+        "A",
+        "Y"
+      ],
+      "from_pin": "launch/_0701_/A",
+      "to_pin": "launch/_0701_/Y",
+      "outcome": "rejected",
+      "error": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "wide-add-750",
+      "stage": "grt",
+      "path_kind": "independent_node",
+      "deleted_only_one_master_arc": true,
+      "master": "HAxp5_ASAP7_75t_R",
+      "arc": [
+        "A",
+        "CON"
+      ],
+      "from_pin": "core/_583_/A",
+      "to_pin": "core/_583_/CON",
+      "outcome": "rejected",
+      "error": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "wide-add-750",
+      "stage": "grt",
+      "path_kind": "through_data",
+      "deleted_only_one_master_arc": true,
+      "master": "INVx1_ASAP7_75t_R",
+      "arc": [
+        "A",
+        "Y"
+      ],
+      "from_pin": "launch/_0694_/A",
+      "to_pin": "launch/_0694_/Y",
+      "outcome": "rejected",
+      "error": "cell step is not an actual Liberty timing arc"
+    }
+  ],
+  "invalid_direction_arcs_rejected": [
+    [
+      "A",
+      "B"
+    ],
+    [
+      "Y",
+      "A"
+    ]
+  ],
+  "original_eight_checks_replayed": true,
+  "source_role": "not_training",
+  "new_EDA_calls": 0,
+  "new_training_rows": 0,
+  "physical_measurements_reused": true,
+  "saved_label_values_unchanged": true
+}

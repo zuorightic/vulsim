@@ -4,7 +4,9 @@
 
 采样改为按包含被测算子的功能数据路径最小有符号setup slack除以T分三区：r<−10%、−10%≤r≤+10%、r>+10%，每区3点为目标，定位运行在内每源最多13个不同目标，重复目标不重跑。参考落点为−50/−30/−15%、−5/0/+5%、+15/+30/+50%，不要求精确命中，缺区如实报告。ABC=SDC，模型只声明这一联合策略；所有合格目标点保留成对时延／面积标签用于条件模型，近极限5%代表点另作辅助摘要。两端平台／中间敏感是待验证假设，分段可以有跳变，不预先强制单调或连续。
 
-最新实施见[§7.57](lxy-plan-fix.md#step7-target-round1-preparation)：第一轮完成真实消费者／捕获壳、90源／8640次RTL比较、generic FF／常量／直通端口检查、严格读取软件和负控、三区13点纯决策器，以及87源角色／质量协议和3源6点容量方案。[§7.52](lxy-plan-fix.md#step7-fast-prototype-characterization-protocol)的旧诊断保持原身份。新壳物理端点资格、实际EDA采样执行器及容量准入仍待，正式采样／拟合、S绑定／G联合验收和生产D未完成。剩余六步见[§0.11](lxy-plan-fix.md#mac-prototype-remaining-work)。MAC32是首个验证载体，模型、模板和查询按可复用接口设计。
+当前执行以[第一章§0.12最终10步](lxy-plan-fix.md#mac-prototype-final-ten-steps)为准，函数与可测性契约见§0.3.1／§0.3.2；软件开发交错，正式残差／独立评价按冻结依赖推进，零修正通过即可采用，至少一组同策略代价对照为论文必做。最新实施见[§7.59](lxy-plan-fix.md#step7-steps123-completion)：第1—3步完成。承接§7.58的44视图／2064查询闭环，本轮补齐公共保层次RTL交接、4项not_training synth／grt物理标签资格，以及58源的角色／质量／有限执行协议。四项资格点均未满足grt setup，测量有效与时序成功分别报告。下一步为第4步有限train／validation采集；正式采集／拟合、S／G联合价格和生产D尚未完成。
+
+读取器补正见[§7.60](lxy-plan-fix.md#step7-liberty-arc-reader-fix)／[v3后继证据](../experiments/arithmetic/evidence/step7_steps123_v3/README.md)：普通input→output此前能绕过Liberty弧检查，独立节点及Q→D入口现均逐单元严格查方向与实际弧。同8阶段全部保存标签不变，新增16项真实单弧删除及2项方向负控通过，无新物理测量；后续资格绑定修复后的源码与新收据，v2父包原字节保留。
 
 原九例36条闭环后置，四平台／五档整数／43例／688条保留后续总范围，不作为原型全部前置条件。旧固定目标实验、速度优先原型及各自失败保持原身份；当前用户目标T不能由旧1431ps等数值自动填入。I可由独立通过的小算子组合计价替代。
 
@@ -19,6 +21,10 @@
 | [第四章§7.49](lxy-plan-fix.md#step7-mac-prototype-plan-update) | 历史文档合并记录；当前决策见§7.54–§7.56 |
 | [第四章§7.48](lxy-plan-fix.md#step7-general-state-qualified-publication) | 最近已完成的一般状态S限定发布结果；生产价格绑定和完整D仍待 |
 | [第四章§7.57](lxy-plan-fix.md#step7-target-round1-preparation) | 第一轮软件、角色／质量／容量方案及证据；不授予新壳物理标签或采样执行许可 |
+| [第一章§0.12](lxy-plan-fix.md#mac-prototype-final-ten-steps) | 审查后的最终10步，双线推进、少量可测性先导、必做代价对照 |
+| [第四章§7.58](lxy-plan-fix.md#step7-native-operator-query-software) | 原生Query／Python一致性、44视图TEST_ONLY软件RTL闭环，以及两项映射边界诊断 |
+| [第四章§7.59](lxy-plan-fix.md#step7-steps123-completion) | 第1—3步完成：公共发射、4点8阶段物理资格、58源后继协议及有限批次资源计划 |
+| [第四章§7.60](lxy-plan-fix.md#step7-liberty-arc-reader-fix) | 普通组合时序弧漏检修复；同8阶段、16项真实单弧删除及2项方向负控；v3增量后继 |
 | [archive/README.md](archive/README.md) | 旧规划追溯，不能从旧“下一步”续作 |
 
 ## 当前已有成果与下一步
@@ -29,7 +35,7 @@
 
 P0静态部分得到3候选、5248次级分配、44合法视图、19形状／57粗负载描述；§7.52补齐63项精确位映射。软件算术／周期前检及§7.51的10点／20阶段／52路径诊断均保留原身份。正式模型采用节点独立最大时延与同一实现的组合面积，服务／连线／状态／时钟边界分别计费；不能把Q→D中的节点段自动当作节点最大值。
 
-现行配置为[model_target_prototype_v1.json](../experiments/arithmetic_dse/configs/model_target_prototype_v1.json) revision4，首轮协议为[model_target_round1_v1.json](../experiments/arithmetic_dse/configs/model_target_round1_v1.json)，三区执行细则为[model_three_region_scan_v1.json](../experiments/arithmetic_dse/configs/model_three_region_scan_v1.json)。[首轮小证据](../experiments/arithmetic/evidence/step7_target_round1_v2/README.md)保留源、实际功能验证及generic投影回放。下一步完成mapped语义端口／银行别名与实际采样执行器，对3源6目标方案做有限容量准入，取得物理读取资格后重估正式时间／存储并分批采集；随后按“小算子冻结→S复用／必要NNLS及独立边界→G零修正／必要组合残差→独立完整阶段验收→D”推进。选择阶段PPA为0，完整MAC最终PPA及旧已消费test不得用于调参或重选。
+机器配置revision4及第一轮协议保留当时字节；现行[后继协议](../experiments/arithmetic_dse/configs/operator_collection_protocol_v2.json)revision4冻结30 train／14 validation／14 locked_test，源清单与资源方案见[第1—3步证据](../experiments/arithmetic/evidence/step7_steps123_v2/README.md)。用户已确认[统一保层次策略后继](../experiments/arithmetic_dse/configs/operator_boundary_policy_v2.json)，公共body／模块定义桥接及有限mapped银行／常量／直通／独立端点资格已完成。下一步按真实采样器请求准入最多12个train／validation源目标的小批次，再依耗时／容量及缺区调整后续批次；正式放行文件和完整产物持久恢复仍须落实。不无条件执行原87×13或新58×13全表，TEST_ONLY价格不进入正式D，最终PPA及已消费test不调参／重选。
 
 ## 历史阅读与文档整理
 
