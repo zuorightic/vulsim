@@ -1,0 +1,74 @@
+{
+  "status": "passed_actual_stage67_packet_qualification",
+  "positive_stages": 4,
+  "checks": [
+    {
+      "task": "serial-placement-0-T1500",
+      "stage": "synth",
+      "endpoint_checks": 871,
+      "nodes": 3,
+      "FF_bits": 291,
+      "actual_state_functions": true
+    },
+    {
+      "task": "serial-placement-0-T1500",
+      "stage": "grt",
+      "endpoint_checks": 871,
+      "nodes": 3,
+      "FF_bits": 291,
+      "actual_state_functions": true
+    },
+    {
+      "task": "serial-placement-1-T1500",
+      "stage": "synth",
+      "endpoint_checks": 826,
+      "nodes": 3,
+      "FF_bits": 276,
+      "actual_state_functions": true
+    },
+    {
+      "task": "serial-placement-1-T1500",
+      "stage": "grt",
+      "endpoint_checks": 826,
+      "nodes": 3,
+      "FF_bits": 276,
+      "actual_state_functions": true
+    }
+  ],
+  "negative_rejections": 28,
+  "negatives": [
+    "serial-placement-0-T1500/forged_variable_mask",
+    "serial-placement-0-T1500/removed_actual_enable",
+    "serial-placement-0-T1500/forged_reset",
+    "serial-placement-0-T1500/forged_FF_output_polarity",
+    "serial-placement-0-T1500/synth/deleted_real_Liberty_arc",
+    "serial-placement-0-T1500/synth/wrong_actual_pin_direction",
+    "serial-placement-0-T1500/synth/disconnected_actual_wire",
+    "serial-placement-0-T1500/synth/forged_arithmetic_owner",
+    "serial-placement-0-T1500/synth/stale_ownership_certificate",
+    "serial-placement-0-T1500/grt/deleted_real_Liberty_arc",
+    "serial-placement-0-T1500/grt/wrong_actual_pin_direction",
+    "serial-placement-0-T1500/grt/disconnected_actual_wire",
+    "serial-placement-0-T1500/grt/forged_arithmetic_owner",
+    "serial-placement-0-T1500/grt/stale_ownership_certificate",
+    "serial-placement-1-T1500/forged_variable_mask",
+    "serial-placement-1-T1500/removed_actual_enable",
+    "serial-placement-1-T1500/forged_reset",
+    "serial-placement-1-T1500/forged_FF_output_polarity",
+    "serial-placement-1-T1500/synth/deleted_real_Liberty_arc",
+    "serial-placement-1-T1500/synth/wrong_actual_pin_direction",
+    "serial-placement-1-T1500/synth/disconnected_actual_wire",
+    "serial-placement-1-T1500/synth/forged_arithmetic_owner",
+    "serial-placement-1-T1500/synth/stale_ownership_certificate",
+    "serial-placement-1-T1500/grt/deleted_real_Liberty_arc",
+    "serial-placement-1-T1500/grt/wrong_actual_pin_direction",
+    "serial-placement-1-T1500/grt/disconnected_actual_wire",
+    "serial-placement-1-T1500/grt/forged_arithmetic_owner",
+    "serial-placement-1-T1500/grt/stale_ownership_certificate"
+  ],
+  "node_model_sha256": "513f2f7693c702c492fec380ed81b385f4691f18bd05aaac6596d27f0340f0d2",
+  "state_coefficients_changed": false,
+  "physical_calls": 0,
+  "independent_joint_tests_unlocked": false,
+  "full_D_ready": false
+}

@@ -1,0 +1,81 @@
+{
+  "S_binding": "/home/zyrv/vulsim-artifacts/conditional-boundary-20261110-v3/binding-candidate.json",
+  "S_binding_sha256": "76dd37094be027dd5e4c6565d63ae037be1b541a88e63e0dfe233fe571ef3542",
+  "binary": "/home/zyrv/vulsim/build/step4-rtlzz/testv2/arithmetic-stage7-export",
+  "binary_sha256": "dc1d1dac0d0f6f4ac43aa7a12bdf8396cce70022ea33e9c8a696bb32c0c0015a",
+  "full_D_ready": false,
+  "model": "/home/zyrv/vulsim/experiments/arithmetic/models/asap7_conditional_operators_v1/operators.json",
+  "model_sha256": "513f2f7693c702c492fec380ed81b385f4691f18bd05aaac6596d27f0340f0d2",
+  "physical_calls": 0,
+  "preparation": "/home/zyrv/vulsim-artifacts/stage7-physical-preparation-20261110-v5",
+  "preparation_sources_sha256": "03443e0840dc40fedffe7022566384b0224dd192f66410c55801ac5dc2142dd5",
+  "status": "passed_stage_export",
+  "tasks": [
+    {
+      "arithmetic_nodes": [
+        14,
+        6,
+        7
+      ],
+      "export_sha256": "77a70531a9f4a2c80c0638f05dd6723487fa966b3fa2a2768dcd37d0ae891244",
+      "id": "serial",
+      "request_sha256": "245e29482458b70bf1152123042b17d19239047aa327c14fe29f6687f6fa453b",
+      "variants": 2
+    },
+    {
+      "arithmetic_nodes": [
+        16,
+        17,
+        7
+      ],
+      "export_sha256": "88da08528122243b644deaf926660468db5c74fb8381bc620d65e592f532b645",
+      "id": "parallel",
+      "request_sha256": "cd1e7ab56590e187fb137587a359f93ac356db6d804ee67697f40985739d8d05",
+      "variants": 2
+    },
+    {
+      "arithmetic_nodes": [
+        14,
+        5
+      ],
+      "export_sha256": "9aac1655776cb9e44ae89ba7f9473541eba57ecfa36698decf001550fbcc6257",
+      "id": "shared",
+      "request_sha256": "ad7e8c56ca49b14d6f8ed03ddeb12967c72f06a899573b9585536fe12ce1ad72",
+      "variants": 2
+    },
+    {
+      "arithmetic_nodes": [
+        20,
+        21,
+        9
+      ],
+      "export_sha256": "fbc1ca46eb88f067d3a7c8ef741ac9849c4b8ff64a6d4ed08fd57c3a852808f3",
+      "id": "wide_reduction",
+      "request_sha256": "7c308826067377a99fbef5c895f22cc25a9d8ed64c294625616e223f2d41416e",
+      "variants": 2
+    },
+    {
+      "arithmetic_nodes": [
+        14,
+        6
+      ],
+      "export_sha256": "d843dce7492a530bd73a545cf50a0b76572d90015ca615635e6af53971f19967",
+      "id": "bypass",
+      "request_sha256": "75226d30c85d4b77227e37884cee561f04360580e9da6a82b9823a2cbf31b50c",
+      "variants": 2
+    },
+    {
+      "arithmetic_nodes": [
+        12,
+        5,
+        6
+      ],
+      "export_sha256": "be8afcebf8f6ed4327573959d86898f16458febb291a71e6907a7163d400afa8",
+      "id": "cross_stage_saved_value",
+      "request_sha256": "5d0c8ae75e19337949023e159e84c241c71addbd552d2fe0df251358dd7c7ac7",
+      "variants": 2
+    }
+  ],
+  "version": "step67-joint-software-v1",
+  "zero_G_qualified": false
+}

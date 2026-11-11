@@ -1,6 +1,8 @@
 # 任务与现行规划导航
 
-**第5步已完成500–3000ps支持域内的节点函数发布验收，见[§7.70](lxy-plan-fix.md#step5-bounded-operator-release)、[发布模型](../experiments/arithmetic/models/asap7_conditional_operators_v1/README.md)及[独立证据](../experiments/arithmetic/evidence/step5_conditional_operator_release_v2/README.md)。** 4个全新独立源×4T共16项请求全部完成，32个物理阶段严格重读；新独立延迟／面积及精确1000ps误差门槛通过。735项真实参数跨语言核对、44种合法放置在500／1000／1500／3000ps下2752次生产节点查询及隔离恢复回放通过。函数系数、分段、语义／负载联合支持和reserve继承冻结候选，仅将周期数值支持与500–3000ps相交；不是按44视图或三个时钟查价。原v2整包失败及原周期域结论保留，经验reserve不是严格上界。第1—3步及第6／8步前置继续有效；下一步为真实算术状态、S／共享项和DAG零修正的第6—7步联合资格，`full_D_ready=false`。下列“采集中／待发布”均保留对应历史检查点含义。
+**第6—7步已完成边界／连线／预留计费后继及同快照零G复验，见[§7.72](lxy-plan-fix.md#step67-accounting-successor)和[后继证据](../experiments/arithmetic/evidence/step67_owned_accounting_v1/README.md)。** 训练侧推导S边界点估计及真实算术owner间wire，纯位连接规范化后只对实际责任项计费；点预测、原逐节点guard和单次50ps整级预留分开输出。serial四阶段点误差median／P95降至14.1624%／14.7381%，本pilot数值门槛及两位置排序通过；旧零G失败不改写。36项真实组合请求跨语言一致，18覆盖／18保持拒绝；shared clock面积、其他结构／T及新独立联合资格仍待，第二种放置hold失败保留。无新synth／grt，未解锁联合test，`full_D_ready=false`。
+
+**第5步已完成500–3000ps支持域内的节点函数发布验收，见[§7.70](lxy-plan-fix.md#step5-bounded-operator-release)、[发布模型](../experiments/arithmetic/models/asap7_conditional_operators_v1/README.md)及[独立证据](../experiments/arithmetic/evidence/step5_conditional_operator_release_v2/README.md)。** 4个全新独立源×4T共16项请求全部完成，32个物理阶段严格重读；新独立延迟／面积及精确1000ps误差门槛通过。735项真实参数跨语言核对、44种合法放置在500／1000／1500／3000ps下2752次生产节点查询及隔离恢复回放通过。函数系数、分段、语义／负载联合支持和reserve继承冻结候选，仅将周期数值支持与500–3000ps相交；不是按44视图或三个时钟查价。原v2整包失败及原周期域结论保留，经验reserve不是严格上界。第6—7步已完成首个真实serial两placement、1500ps pilot的状态／端点读取，但零G完整阶段预测失败，见[§7.71](lxy-plan-fix.md#step67-joint-pilot)；`full_D_ready=false`。下列“采集中／待发布”均保留对应历史检查点含义。
 
 **第4—5步已补入并完成保存快照的逻辑归属恢复资格，见[§7.69](lxy-plan-fix.md#operator-logical-ownership-recovery)及[后继证据](../experiments/arithmetic/evidence/step7_operator_ownership_recovery_v2/README.md)。** 四个历史失败阶段的4个clone及1个内部缓冲器已通过唯一所有者证书恢复，端点／最大路径／面积同步重读，46项负控及12个原成功阶段对照通过。全部524拟合点／1048阶段的原标签精确一致，因此继承原函数参数、支持域和reserve。原v2已完成692有效点（524拟合＋168独立）、一次性独立评价和证据回放，数值误差／1000ps检查通过，但保留Add采集失败及Mul3389ps超出冻结周期域的拒绝，整包为failed_independent。4个全新独立源×4T共16项请求已登记并通过软件／恢复检查，新控制器已实际完成首个500ps点并继续运行；新旧结论分开留证，`full_D_ready=false`。
 
@@ -53,11 +55,13 @@
 | [第四章§7.68](lxy-plan-fix.md#operator-v2-independent-continuation) | v2独立采集归属停点、真实拒绝审计、冻结续采与一次性评价／证据封存门禁 |
 | [第四章§7.69](lxy-plan-fix.md#operator-logical-ownership-recovery) | 第4—5步逻辑归属证书／端点重建、4失败恢复、1048原标签不变及后继新独立职责 |
 | [第四章§7.70](lxy-plan-fix.md#step5-bounded-operator-release) | 第5步500–3000ps节点函数发布、16项新独立／735跨语言／2752真实调用、隔离证据与S/G剩余资格 |
+| [第四章§7.71](lxy-plan-fix.md#step67-joint-pilot) | 第6—7步真实serial pilot：状态／端点／所有权通过，零G失败、setup／hold分开保留及后继G边计费缺口 |
+| [第四章§7.72](lxy-plan-fix.md#step67-accounting-successor) | 边界／真实owner间wire／单次预留后继，零G点误差复验通过；旧失败、hold及完整联合资格边界分别保留 |
 | [archive/README.md](archive/README.md) | 旧规划追溯，不能从旧“下一步”续作 |
 
 ## 当前已有成果与下一步
 
-当前小算子函数以[ASAP7条件算子发布v1](../experiments/arithmetic/models/asap7_conditional_operators_v1/README.md)为准，输出独立算子时延与组合面积。模型直接接入已有节点CostProvider，1000ps有独立物理证据，其他域内数值T按同一函数和联合支持规则查询。下一阶段沿用[§7.67的组合准备](lxy-plan-fix.md#step7-real-physical-preparation)与真实S提供者，先检验零G并分别定位基础函数、最大值相加保守性、边界／连线及计费误差；目前未授予完整阶段或正式D资格。
+当前小算子函数以[ASAP7条件算子发布v1](../experiments/arithmetic/models/asap7_conditional_operators_v1/README.md)为准，输出独立算子时延与组合面积。模型直接接入已有节点CostProvider，1000ps有独立物理证据，其他域内数值T按同一函数和联合支持规则查询。第6—7步pilot已核对实际FF／状态语义、端点、Liberty弧和所有权；原零G失败经§7.72计费后继，在同源四阶段通过点数值复验。下一步扩展其他validation结构／T，验证真实缺覆盖与shared clock，并保持hold独立判断；完整阶段及正式D资格仍待。
 
 已有参数化乘法模板、固定C、43例整图／周期基础、四平台后端、局部算子模型及真实数据。较新ASAP7包有12类合格grt组件，含8／16／32位完整／低位乘法和8／16／32／64位加法；其精确目标／形状／capture域不等于任意负载或新周期均覆盖。原始／half／quarter候选、实际阶段和typed状态查询、共享链、验证和Ledger继续复用。
 

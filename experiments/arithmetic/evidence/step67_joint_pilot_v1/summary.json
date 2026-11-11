@@ -1,0 +1,77 @@
+{
+  "S_binding_sha256": "76dd37094be027dd5e4c6565d63ae037be1b541a88e63e0dfe233fe571ef3542",
+  "S_shared_upper_qualification": false,
+  "actual_endpoint_checks": 3394,
+  "artifact_root": "/home/zyrv/vulsim-artifacts/stage67-joint-20261111-v2",
+  "files": {
+    "g-correction-failure.md": "4a3c9fff635e77e2af4793a987c87eb0a55ee66b2c31169231f765c5bac26657",
+    "qualification.json": "11d167d133cda46a3bfc02c1fd0da10f352aae6af7adbff1e9800efe9cb83cfb",
+    "software-manifest.json": "8bd38a38dd00abc1c78d32c8c0b2c873fa50e9efe4a18f85465c9d3c49518459",
+    "state-semantics-placement0.json": "99d6f03b239481f05f5d3414fcfd68baee358f736dc5d2f0ad51f4c2d8c666a0",
+    "state-semantics-placement1.json": "cc907b66b71c46dafe507df0fd4a5c4b615b45385ce9647eeddffc10de2b66a1",
+    "zero-g-diagnosis.json": "8c8bf4a59d9bff10b4579f432230dab5d6d7a951f9c9a375103e34c464b81967"
+  },
+  "full_D_ready": false,
+  "locked_joint_tests_unlocked": false,
+  "model_sha256": "513f2f7693c702c492fec380ed81b385f4691f18bd05aaac6596d27f0340f0d2",
+  "negative_controls": 28,
+  "physical_stages": 4,
+  "pilot_area_relative_error": [
+    0.027872899255913932,
+    0.03745543741694066
+  ],
+  "pilot_hold_slack_ps": [
+    0.158887,
+    -0.523505
+  ],
+  "pilot_setup_slack_ps": [
+    638.984619,
+    454.747681
+  ],
+  "placements": 2,
+  "resource_usage": {
+    "CPU_time_s": 265.88,
+    "final": 0,
+    "grt": 2,
+    "pending": 0,
+    "support_calls": 30,
+    "synth": 2,
+    "walltime_s": 170.42759738955647
+  },
+  "restore": {
+    "actual_restore_and_every_member_hash_checked": true,
+    "archive": "/home/zyrv/vulsim-artifacts/archives/stage67-pilot-20261111-v1.tar.gz",
+    "archive_bytes": 16677797,
+    "archive_sha256": "e73f8ee72afefb33d5970be1ddac6c3d146e2c44027254c937d9c34f8d4b459f",
+    "logical_bytes": 175474857,
+    "member_count": 4719,
+    "no_raw_artifacts_deleted": true,
+    "retention": "retain until explicit user cleanup",
+    "status": "passed",
+    "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+    "version": "operator-full-artifact-restore-v1"
+  },
+  "same_disk_artifact_retention": true,
+  "software_covered_queries": 78,
+  "software_queries": 78,
+  "software_query_total": 96,
+  "software_uncovered_queries": 18,
+  "sources": [
+    "serial"
+  ],
+  "state_qualification_scope": "mapped state functions and strict endpoint/owner reader; S/shared full timing prices not qualified",
+  "state_semantics_FF_bits": [
+    291,
+    276
+  ],
+  "status": "passed_state_boundary_and_endpoint_qualification_zero_G_failed",
+  "target_ps": 1500,
+  "version": "step67-joint-pilot-evidence-v1",
+  "zero_G_joint_qualified": false,
+  "zero_G_stage_failures": [
+    "serial-placement-0-T1500/stage0_delay_error_above_P95_gate",
+    "serial-placement-0-T1500/stage1_delay_error_above_P95_gate",
+    "serial-placement-1-T1500/stage0_delay_error_above_P95_gate",
+    "serial-placement-1-T1500/stage1_delay_error_above_P95_gate"
+  ]
+}

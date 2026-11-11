@@ -1,0 +1,3419 @@
+{
+  "version": "stage67-pilot-zero-G-diagnosis-v1",
+  "status": "pilot_quality_failed",
+  "measured_points": 2,
+  "complete_sources": 1,
+  "clock_ps": 1500,
+  "coverage_uncovered_nodes": 18,
+  "failures": [
+    "serial-placement-0-T1500/stage0_delay_error_above_P95_gate",
+    "serial-placement-0-T1500/stage1_delay_error_above_P95_gate",
+    "serial-placement-1-T1500/stage0_delay_error_above_P95_gate",
+    "serial-placement-1-T1500/stage1_delay_error_above_P95_gate"
+  ],
+  "points": [
+    {
+      "task": "serial-placement-0-T1500",
+      "source": "serial",
+      "placement": "placement-0",
+      "target_ps": 1500,
+      "node_errors": {
+        "node_14": {
+          "predicted_delay_ps": 567.0725557524758,
+          "observed_delay_ps": 584.372925,
+          "delay_error": 0.029605015063838315,
+          "predicted_area_um2": 30.74952117481974,
+          "observed_area_um2": 29.495339999999885,
+          "area_error": 0.042521333024805284,
+          "reserve_ps": 69.6497470705782
+        },
+        "node_6": {
+          "predicted_delay_ps": 355.53310874898193,
+          "observed_delay_ps": 349.825256,
+          "delay_error": 0.016316296925633942,
+          "predicted_area_um2": 18.344216374669998,
+          "observed_area_um2": 17.437679999999975,
+          "area_error": 0.05198721244282631,
+          "reserve_ps": 84.94270888361615
+        },
+        "node_7": {
+          "predicted_delay_ps": 476.97102399794124,
+          "observed_delay_ps": 420.512451,
+          "delay_error": 0.13426135864391148,
+          "predicted_area_um2": 36.60913286494756,
+          "observed_area_um2": 37.179,
+          "area_error": 0.015327661719046792,
+          "reserve_ps": 84.94270888361615
+        }
+      },
+      "S_shared_areas": {
+        "external_state": {
+          "predicted_um2": 27.529439600950255,
+          "observed_um2": 27.483299999999993
+        },
+        "input_service": {
+          "predicted_um2": 80.61005286701729,
+          "observed_um2": 90.41058000000147
+        },
+        "native_state": {
+          "predicted_um2": 60.26446400203696,
+          "observed_um2": 69.24042000000026
+        },
+        "root_repair": {
+          "predicted_um2": 50.31557999999941,
+          "observed_um2": 24.377760000000126
+        },
+        "shared_clock": {
+          "predicted_um2": 7.216759757994818,
+          "observed_um2": 8.631360000000003
+        },
+        "shared_physical": {
+          "predicted_um2": 8.08041086670602,
+          "observed_um2": 6.794280000000014
+        }
+      },
+      "total_area": {
+        "predicted_um2": 319.719577509142,
+        "observed_um2": 311.04972000000174,
+        "relative_error": 0.027872899255913932
+      },
+      "arithmetic_stages": [
+        {
+          "stage": 0,
+          "predicted_required_period_ps": 1229.6234878230541,
+          "observed_required_period_ps": 756.241394,
+          "relative_error": 0.6259669168850788,
+          "predicted_setup_slack_ps": 270.3765121769459,
+          "observed_setup_slack_ps": 743.758606,
+          "false_feasible": false,
+          "conservative_rejection": false
+        },
+        {
+          "stage": 1,
+          "predicted_required_period_ps": 1499.3146155141553,
+          "observed_required_period_ps": 861.015381,
+          "relative_error": 0.7413331382917017,
+          "predicted_setup_slack_ps": 0.6853844858446791,
+          "observed_setup_slack_ps": 638.984619,
+          "false_feasible": false,
+          "conservative_rejection": false
+        }
+      ],
+      "witness_decomposition": [
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_12_s1[0]$_SDFFE_PN0P_/D",
+          "slack_ps": 1296.993286,
+          "node_order": [
+            "node_14"
+          ],
+          "observed_node_segment_sum_ps": 27.798873999999984,
+          "observed_independent_max_sum_ps": 584.372925,
+          "independent_max_sum_conservatism_ps": 556.574051,
+          "predicted_node_sum_ps": 567.0725557524758,
+          "node_function_error_on_independent_max_sum_ps": -17.30036924752426,
+          "empirical_reserves_ps": 69.6497470705782,
+          "observed_complete_required_period_ps": 203.0067140000001,
+          "observed_nonnode_boundary_wire_clock_ps": 175.20784000000012
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_12_s1[1]$_SDFFE_PN0P_/D",
+          "slack_ps": 1248.366577,
+          "node_order": [
+            "node_14"
+          ],
+          "observed_node_segment_sum_ps": 78.73225400000001,
+          "observed_independent_max_sum_ps": 584.372925,
+          "independent_max_sum_conservatism_ps": 505.640671,
+          "predicted_node_sum_ps": 567.0725557524758,
+          "node_function_error_on_independent_max_sum_ps": -17.30036924752426,
+          "empirical_reserves_ps": 69.6497470705782,
+          "observed_complete_required_period_ps": 251.633423,
+          "observed_nonnode_boundary_wire_clock_ps": 172.90116899999998
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_12_s1[2]$_SDFFE_PN0P_/D",
+          "slack_ps": 1164.13147,
+          "node_order": [
+            "node_14"
+          ],
+          "observed_node_segment_sum_ps": 162.51451100000003,
+          "observed_independent_max_sum_ps": 584.372925,
+          "independent_max_sum_conservatism_ps": 421.858414,
+          "predicted_node_sum_ps": 567.0725557524758,
+          "node_function_error_on_independent_max_sum_ps": -17.30036924752426,
+          "empirical_reserves_ps": 69.6497470705782,
+          "observed_complete_required_period_ps": 335.86852999999996,
+          "observed_nonnode_boundary_wire_clock_ps": 173.35401899999994
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_12_s1[3]$_SDFFE_PN0P_/D",
+          "slack_ps": 1091.108276,
+          "node_order": [
+            "node_14"
+          ],
+          "observed_node_segment_sum_ps": 233.44784500000003,
+          "observed_independent_max_sum_ps": 584.372925,
+          "independent_max_sum_conservatism_ps": 350.92508,
+          "predicted_node_sum_ps": 567.0725557524758,
+          "node_function_error_on_independent_max_sum_ps": -17.30036924752426,
+          "empirical_reserves_ps": 69.6497470705782,
+          "observed_complete_required_period_ps": 408.89172400000007,
+          "observed_nonnode_boundary_wire_clock_ps": 175.44387900000004
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_12_s1[4]$_SDFFE_PN0P_/D",
+          "slack_ps": 1014.907715,
+          "node_order": [
+            "node_14"
+          ],
+          "observed_node_segment_sum_ps": 308.69174200000003,
+          "observed_independent_max_sum_ps": 584.372925,
+          "independent_max_sum_conservatism_ps": 275.681183,
+          "predicted_node_sum_ps": 567.0725557524758,
+          "node_function_error_on_independent_max_sum_ps": -17.30036924752426,
+          "empirical_reserves_ps": 69.6497470705782,
+          "observed_complete_required_period_ps": 485.09228499999995,
+          "observed_nonnode_boundary_wire_clock_ps": 176.4005429999999
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_12_s1[5]$_SDFFE_PN0P_/D",
+          "slack_ps": 956.796509,
+          "node_order": [
+            "node_14"
+          ],
+          "observed_node_segment_sum_ps": 368.682465,
+          "observed_independent_max_sum_ps": 584.372925,
+          "independent_max_sum_conservatism_ps": 215.69046000000003,
+          "predicted_node_sum_ps": 567.0725557524758,
+          "node_function_error_on_independent_max_sum_ps": -17.30036924752426,
+          "empirical_reserves_ps": 69.6497470705782,
+          "observed_complete_required_period_ps": 543.203491,
+          "observed_nonnode_boundary_wire_clock_ps": 174.521026
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_12_s1[6]$_SDFFE_PN0P_/D",
+          "slack_ps": 931.604126,
+          "node_order": [
+            "node_14"
+          ],
+          "observed_node_segment_sum_ps": 397.833664,
+          "observed_independent_max_sum_ps": 584.372925,
+          "independent_max_sum_conservatism_ps": 186.539261,
+          "predicted_node_sum_ps": 567.0725557524758,
+          "node_function_error_on_independent_max_sum_ps": -17.30036924752426,
+          "empirical_reserves_ps": 69.6497470705782,
+          "observed_complete_required_period_ps": 568.395874,
+          "observed_nonnode_boundary_wire_clock_ps": 170.56221000000005
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_12_s1[7]$_SDFFE_PN0P_/D",
+          "slack_ps": 879.393188,
+          "node_order": [
+            "node_14"
+          ],
+          "observed_node_segment_sum_ps": 445.938034,
+          "observed_independent_max_sum_ps": 584.372925,
+          "independent_max_sum_conservatism_ps": 138.434891,
+          "predicted_node_sum_ps": 567.0725557524758,
+          "node_function_error_on_independent_max_sum_ps": -17.30036924752426,
+          "empirical_reserves_ps": 69.6497470705782,
+          "observed_complete_required_period_ps": 620.606812,
+          "observed_nonnode_boundary_wire_clock_ps": 174.66877799999997
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_12_s1[8]$_SDFFE_PN0P_/D",
+          "slack_ps": 865.331055,
+          "node_order": [
+            "node_14"
+          ],
+          "observed_node_segment_sum_ps": 465.499374,
+          "observed_independent_max_sum_ps": 584.372925,
+          "independent_max_sum_conservatism_ps": 118.87355100000002,
+          "predicted_node_sum_ps": 567.0725557524758,
+          "node_function_error_on_independent_max_sum_ps": -17.30036924752426,
+          "empirical_reserves_ps": 69.6497470705782,
+          "observed_complete_required_period_ps": 634.668945,
+          "observed_nonnode_boundary_wire_clock_ps": 169.16957100000002
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_12_s1[9]$_SDFFE_PN0P_/D",
+          "slack_ps": 830.199829,
+          "node_order": [
+            "node_14"
+          ],
+          "observed_node_segment_sum_ps": 493.633774,
+          "observed_independent_max_sum_ps": 584.372925,
+          "independent_max_sum_conservatism_ps": 90.73915099999999,
+          "predicted_node_sum_ps": 567.0725557524758,
+          "node_function_error_on_independent_max_sum_ps": -17.30036924752426,
+          "empirical_reserves_ps": 69.6497470705782,
+          "observed_complete_required_period_ps": 669.800171,
+          "observed_nonnode_boundary_wire_clock_ps": 176.16639699999996
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_12_s1[10]$_SDFFE_PN0P_/D",
+          "slack_ps": 778.753967,
+          "node_order": [
+            "node_14"
+          ],
+          "observed_node_segment_sum_ps": 544.304855,
+          "observed_independent_max_sum_ps": 584.372925,
+          "independent_max_sum_conservatism_ps": 40.068070000000034,
+          "predicted_node_sum_ps": 567.0725557524758,
+          "node_function_error_on_independent_max_sum_ps": -17.30036924752426,
+          "empirical_reserves_ps": 69.6497470705782,
+          "observed_complete_required_period_ps": 721.246033,
+          "observed_nonnode_boundary_wire_clock_ps": 176.94117800000004
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_12_s1[11]$_SDFFE_PN0P_/D",
+          "slack_ps": 816.918091,
+          "node_order": [
+            "node_14"
+          ],
+          "observed_node_segment_sum_ps": 509.485672,
+          "observed_independent_max_sum_ps": 584.372925,
+          "independent_max_sum_conservatism_ps": 74.88725299999999,
+          "predicted_node_sum_ps": 567.0725557524758,
+          "node_function_error_on_independent_max_sum_ps": -17.30036924752426,
+          "empirical_reserves_ps": 69.6497470705782,
+          "observed_complete_required_period_ps": 683.081909,
+          "observed_nonnode_boundary_wire_clock_ps": 173.59623699999997
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_12_s1[12]$_SDFFE_PN0P_/D",
+          "slack_ps": 760.576294,
+          "node_order": [
+            "node_14"
+          ],
+          "observed_node_segment_sum_ps": 563.472397,
+          "observed_independent_max_sum_ps": 584.372925,
+          "independent_max_sum_conservatism_ps": 20.90052800000001,
+          "predicted_node_sum_ps": 567.0725557524758,
+          "node_function_error_on_independent_max_sum_ps": -17.30036924752426,
+          "empirical_reserves_ps": 69.6497470705782,
+          "observed_complete_required_period_ps": 739.423706,
+          "observed_nonnode_boundary_wire_clock_ps": 175.95130900000004
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_12_s1[13]$_SDFFE_PN0P_/D",
+          "slack_ps": 791.28656,
+          "node_order": [
+            "node_14"
+          ],
+          "observed_node_segment_sum_ps": 538.541459,
+          "observed_independent_max_sum_ps": 584.372925,
+          "independent_max_sum_conservatism_ps": 45.83146599999998,
+          "predicted_node_sum_ps": 567.0725557524758,
+          "node_function_error_on_independent_max_sum_ps": -17.30036924752426,
+          "empirical_reserves_ps": 69.6497470705782,
+          "observed_complete_required_period_ps": 708.71344,
+          "observed_nonnode_boundary_wire_clock_ps": 170.17198099999996
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_12_s1[14]$_SDFFE_PN0P_/D",
+          "slack_ps": 743.758606,
+          "node_order": [
+            "node_14"
+          ],
+          "observed_node_segment_sum_ps": 579.846725,
+          "observed_independent_max_sum_ps": 584.372925,
+          "independent_max_sum_conservatism_ps": 4.526200000000017,
+          "predicted_node_sum_ps": 567.0725557524758,
+          "node_function_error_on_independent_max_sum_ps": -17.30036924752426,
+          "empirical_reserves_ps": 69.6497470705782,
+          "observed_complete_required_period_ps": 756.241394,
+          "observed_nonnode_boundary_wire_clock_ps": 176.39466900000002
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_12_s1[15]$_SDFFE_PN0P_/D",
+          "slack_ps": 806.892456,
+          "node_order": [
+            "node_14"
+          ],
+          "observed_node_segment_sum_ps": 523.176834,
+          "observed_independent_max_sum_ps": 584.372925,
+          "independent_max_sum_conservatism_ps": 61.196091000000024,
+          "predicted_node_sum_ps": 567.0725557524758,
+          "node_function_error_on_independent_max_sum_ps": -17.30036924752426,
+          "empirical_reserves_ps": 69.6497470705782,
+          "observed_complete_required_period_ps": 693.107544,
+          "observed_nonnode_boundary_wire_clock_ps": 169.93070999999998
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[0]$_SDFF_PN0_/D",
+          "slack_ps": 1249.556274,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 122.98861600000001,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 647.349091,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 250.44372599999997,
+          "observed_nonnode_boundary_wire_clock_ps": 127.45510999999996
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[1]$_SDFF_PN0_/D",
+          "slack_ps": 1170.146973,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 200.38403399999996,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 569.9536730000001,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 329.8530270000001,
+          "observed_nonnode_boundary_wire_clock_ps": 129.46899300000015
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[2]$_SDFF_PN0_/D",
+          "slack_ps": 1110.104004,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 262.719559,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 507.618148,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 389.89599599999997,
+          "observed_nonnode_boundary_wire_clock_ps": 127.17643699999996
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[3]$_SDFF_PN0_/D",
+          "slack_ps": 1081.884644,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 293.625,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 476.712707,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 418.115356,
+          "observed_nonnode_boundary_wire_clock_ps": 124.49035600000002
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[4]$_SDFF_PN0_/D",
+          "slack_ps": 1057.099731,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 317.70193499999993,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 452.6357720000001,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 442.900269,
+          "observed_nonnode_boundary_wire_clock_ps": 125.19833400000005
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[5]$_SDFF_PN0_/D",
+          "slack_ps": 1006.278381,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 363.131439,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 407.206268,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 493.72161900000003,
+          "observed_nonnode_boundary_wire_clock_ps": 130.59018000000003
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[6]$_SDFF_PN0_/D",
+          "slack_ps": 929.695129,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 437.759186,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 332.578521,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 570.304871,
+          "observed_nonnode_boundary_wire_clock_ps": 132.54568500000005
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[7]$_SDFF_PN0_/D",
+          "slack_ps": 958.987793,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 410.30630499999995,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 360.03140200000007,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 541.012207,
+          "observed_nonnode_boundary_wire_clock_ps": 130.70590200000004
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[8]$_SDFF_PN0_/D",
+          "slack_ps": 915.41394,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 460.78183,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 309.555877,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 584.58606,
+          "observed_nonnode_boundary_wire_clock_ps": 123.80422999999996
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[9]$_SDFF_PN0_/D",
+          "slack_ps": 892.953796,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 480.50714200000004,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 289.830565,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 607.046204,
+          "observed_nonnode_boundary_wire_clock_ps": 126.53906199999994
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[10]$_SDFF_PN0_/D",
+          "slack_ps": 892.939941,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 486.77905300000003,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 283.558654,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 607.060059,
+          "observed_nonnode_boundary_wire_clock_ps": 120.28100599999999
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[11]$_SDFF_PN0_/D",
+          "slack_ps": 869.083557,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 504.34191999999996,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 265.99578700000006,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 630.916443,
+          "observed_nonnode_boundary_wire_clock_ps": 126.574523
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[12]$_SDFF_PN0_/D",
+          "slack_ps": 811.178162,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 566.49701,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 203.84069699999998,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 688.821838,
+          "observed_nonnode_boundary_wire_clock_ps": 122.32482799999991
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[13]$_SDFF_PN0_/D",
+          "slack_ps": 848.183777,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 522.044007,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 248.29370000000006,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 651.816223,
+          "observed_nonnode_boundary_wire_clock_ps": 129.77221600000007
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[14]$_SDFF_PN0_/D",
+          "slack_ps": 824.111023,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 547.4932249999999,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 222.84448200000008,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 675.888977,
+          "observed_nonnode_boundary_wire_clock_ps": 128.39575200000002
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[15]$_SDFF_PN0_/D",
+          "slack_ps": 800.929565,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 570.7206729999998,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 199.61703400000022,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 699.070435,
+          "observed_nonnode_boundary_wire_clock_ps": 128.34976200000017
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[16]$_SDFF_PN0_/D",
+          "slack_ps": 783.384888,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 588.4156799999998,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 181.92202700000018,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 716.615112,
+          "observed_nonnode_boundary_wire_clock_ps": 128.19943200000012
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[17]$_SDFF_PN0_/D",
+          "slack_ps": 808.167114,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 570.735688,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 199.60201900000004,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 691.832886,
+          "observed_nonnode_boundary_wire_clock_ps": 121.09719800000005
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[18]$_SDFF_PN0_/D",
+          "slack_ps": 781.638672,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 590.1028139999999,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 180.23489300000017,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 718.361328,
+          "observed_nonnode_boundary_wire_clock_ps": 128.2585140000001
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[19]$_SDFF_PN0_/D",
+          "slack_ps": 776.334045,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 595.8575139999998,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 174.4801930000002,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 723.665955,
+          "observed_nonnode_boundary_wire_clock_ps": 127.80844100000024
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[20]$_SDFF_PN0_/D",
+          "slack_ps": 758.677612,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 611.9582829999999,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 158.37942400000009,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 741.322388,
+          "observed_nonnode_boundary_wire_clock_ps": 129.3641050000001
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[21]$_SDFF_PN0_/D",
+          "slack_ps": 765.34491,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 606.7008979999998,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 163.6368090000002,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 734.65509,
+          "observed_nonnode_boundary_wire_clock_ps": 127.95419200000015
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[22]$_SDFF_PN0_/D",
+          "slack_ps": 754.166626,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 616.586761,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 153.750946,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 745.833374,
+          "observed_nonnode_boundary_wire_clock_ps": 129.24661300000002
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[23]$_SDFF_PN0_/D",
+          "slack_ps": 757.05304,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 614.225189,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 156.11251800000002,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 742.94696,
+          "observed_nonnode_boundary_wire_clock_ps": 128.721771
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[24]$_SDFF_PN0_/D",
+          "slack_ps": 737.197632,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 634.463379,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 135.874328,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 762.802368,
+          "observed_nonnode_boundary_wire_clock_ps": 128.33898899999997
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[25]$_SDFF_PN0_/D",
+          "slack_ps": 755.843811,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 616.0206599999999,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 154.31704700000012,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 744.156189,
+          "observed_nonnode_boundary_wire_clock_ps": 128.13552900000013
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[26]$_SDFF_PN0_/D",
+          "slack_ps": 729.979309,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 640.482086,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 129.85562100000004,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 770.020691,
+          "observed_nonnode_boundary_wire_clock_ps": 129.53860500000008
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[27]$_SDFF_PN0_/D",
+          "slack_ps": 733.807739,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 637.9174499999999,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 132.4202570000001,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 766.192261,
+          "observed_nonnode_boundary_wire_clock_ps": 128.2748110000001
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[28]$_SDFF_PN0_/D",
+          "slack_ps": 708.190735,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 663.526977,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 106.81073000000004,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 791.809265,
+          "observed_nonnode_boundary_wire_clock_ps": 128.282288
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[29]$_SDFF_PN0_/D",
+          "slack_ps": 705.314697,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 665.9770199999999,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 104.3606870000001,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 794.685303,
+          "observed_nonnode_boundary_wire_clock_ps": 128.70828300000005
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[30]$_SDFF_PN0_/D",
+          "slack_ps": 739.677856,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 630.7868959999998,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 139.55081100000018,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 760.322144,
+          "observed_nonnode_boundary_wire_clock_ps": 129.53524800000014
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[31]$_SDFF_PN0_/D",
+          "slack_ps": 720.419556,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 657.490631,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 112.84707600000002,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 779.580444,
+          "observed_nonnode_boundary_wire_clock_ps": 122.08981300000005
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[32]$_SDFF_PN0_/D",
+          "slack_ps": 682.733582,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 688.6224970000001,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 81.71520999999996,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 817.266418,
+          "observed_nonnode_boundary_wire_clock_ps": 128.64392099999998
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[33]$_SDFF_PN0_/D",
+          "slack_ps": 685.389587,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 687.27481,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 83.06289700000002,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 814.610413,
+          "observed_nonnode_boundary_wire_clock_ps": 127.33560299999999
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[34]$_SDFF_PN0_/D",
+          "slack_ps": 665.896423,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 707.4765929999999,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 62.86111400000016,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 834.103577,
+          "observed_nonnode_boundary_wire_clock_ps": 126.6269840000001
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[35]$_SDFF_PN0_/D",
+          "slack_ps": 661.572449,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 712.065277,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 58.272429999999986,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 838.427551,
+          "observed_nonnode_boundary_wire_clock_ps": 126.36227399999996
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[36]$_SDFF_PN0_/D",
+          "slack_ps": 652.700623,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 720.8424989999999,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 49.49520800000016,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 847.299377,
+          "observed_nonnode_boundary_wire_clock_ps": 126.45687800000019
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[37]$_SDFF_PN0_/D",
+          "slack_ps": 669.84021,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 703.68991,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 66.64779699999997,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 830.15979,
+          "observed_nonnode_boundary_wire_clock_ps": 126.46987999999999
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[38]$_SDFF_PN0_/D",
+          "slack_ps": 658.403503,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 715.187226,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 55.15048100000001,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 841.596497,
+          "observed_nonnode_boundary_wire_clock_ps": 126.40927099999999
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[39]$_SDFF_PN0_/D",
+          "slack_ps": 657.796509,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 715.799224,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 54.53848300000004,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 842.203491,
+          "observed_nonnode_boundary_wire_clock_ps": 126.404267
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[40]$_SDFF_PN0_/D",
+          "slack_ps": 652.740295,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 720.8775329999999,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 49.460174000000166,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 847.259705,
+          "observed_nonnode_boundary_wire_clock_ps": 126.3821720000002
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[41]$_SDFF_PN0_/D",
+          "slack_ps": 642.771606,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 730.799469,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 39.53823799999998,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 857.228394,
+          "observed_nonnode_boundary_wire_clock_ps": 126.42892499999994
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[42]$_SDFF_PN0_/D",
+          "slack_ps": 652.827454,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 720.6377869999999,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 49.699920000000134,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 847.172546,
+          "observed_nonnode_boundary_wire_clock_ps": 126.53475900000012
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[43]$_SDFF_PN0_/D",
+          "slack_ps": 642.894348,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 730.2334900000001,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 40.10421699999995,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 857.105652,
+          "observed_nonnode_boundary_wire_clock_ps": 126.87216199999989
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[44]$_SDFF_PN0_/D",
+          "slack_ps": 653.186646,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 720.2402649999999,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 50.097442000000115,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 846.813354,
+          "observed_nonnode_boundary_wire_clock_ps": 126.5730890000001
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[45]$_SDFF_PN0_/D",
+          "slack_ps": 651.325867,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 721.823028,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 48.514679,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 848.674133,
+          "observed_nonnode_boundary_wire_clock_ps": 126.85110499999996
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[46]$_SDFF_PN0_/D",
+          "slack_ps": 651.763977,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 721.474152,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 48.86355500000002,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 848.236023,
+          "observed_nonnode_boundary_wire_clock_ps": 126.76187100000004
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[47]$_SDFF_PN0_/D",
+          "slack_ps": 641.967773,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 731.29245,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 39.04525699999999,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 858.032227,
+          "observed_nonnode_boundary_wire_clock_ps": 126.739777
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[48]$_SDFF_PN0_/D",
+          "slack_ps": 654.794128,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 718.178803,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 52.15890400000001,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 845.205872,
+          "observed_nonnode_boundary_wire_clock_ps": 127.02706899999998
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[49]$_SDFF_PN0_/D",
+          "slack_ps": 642.242065,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 731.259368,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 39.07833900000003,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 857.757935,
+          "observed_nonnode_boundary_wire_clock_ps": 126.49856699999998
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[50]$_SDFF_PN0_/D",
+          "slack_ps": 638.984619,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 734.1546939999998,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 36.18301300000019,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 861.015381,
+          "observed_nonnode_boundary_wire_clock_ps": 126.86068700000021
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[51]$_SDFF_PN0_/D",
+          "slack_ps": 655.469666,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 717.485321,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 52.852386000000024,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 844.530334,
+          "observed_nonnode_boundary_wire_clock_ps": 127.04501300000004
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[52]$_SDFF_PN0_/D",
+          "slack_ps": 650.35907,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 723.125153,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 47.21255400000007,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 849.64093,
+          "observed_nonnode_boundary_wire_clock_ps": 126.51577700000007
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[53]$_SDFF_PN0_/D",
+          "slack_ps": 655.08905,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 717.640533,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 52.69717400000002,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 844.91095,
+          "observed_nonnode_boundary_wire_clock_ps": 127.27041699999995
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[54]$_SDFF_PN0_/D",
+          "slack_ps": 646.855835,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 725.7067569999999,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 44.6309500000001,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 853.144165,
+          "observed_nonnode_boundary_wire_clock_ps": 127.43740800000012
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[55]$_SDFF_PN0_/D",
+          "slack_ps": 650.922974,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 721.806671,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 48.53103599999997,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 849.077026,
+          "observed_nonnode_boundary_wire_clock_ps": 127.270355
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[56]$_SDFF_PN0_/D",
+          "slack_ps": 647.921875,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 724.556977,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 45.78073000000006,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 852.078125,
+          "observed_nonnode_boundary_wire_clock_ps": 127.52114800000004
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[57]$_SDFF_PN0_/D",
+          "slack_ps": 657.679199,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 714.6933280000001,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 55.64437899999996,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 842.320801,
+          "observed_nonnode_boundary_wire_clock_ps": 127.6274729999999
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[58]$_SDFF_PN0_/D",
+          "slack_ps": 646.733398,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 725.2720039999999,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 45.0657030000001,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 853.266602,
+          "observed_nonnode_boundary_wire_clock_ps": 127.99459800000011
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[59]$_SDFF_PN0_/D",
+          "slack_ps": 648.709595,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 724.386566,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 45.95114100000001,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 851.290405,
+          "observed_nonnode_boundary_wire_clock_ps": 126.90383899999995
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[60]$_SDFF_PN0_/D",
+          "slack_ps": 648.551025,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 724.715668,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 45.62203899999997,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 851.448975,
+          "observed_nonnode_boundary_wire_clock_ps": 126.73330699999997
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[61]$_SDFF_PN0_/D",
+          "slack_ps": 655.558899,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 716.957,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 53.38070700000003,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 844.441101,
+          "observed_nonnode_boundary_wire_clock_ps": 127.48410100000001
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[62]$_SDFF_PN0_/D",
+          "slack_ps": 650.840149,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 722.391388,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 47.94631900000002,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 849.159851,
+          "observed_nonnode_boundary_wire_clock_ps": 126.768463
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[63]$_SDFF_PN0_/D",
+          "slack_ps": 642.237549,
+          "node_order": [
+            "node_6",
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 730.834503,
+          "observed_independent_max_sum_ps": 770.337707,
+          "independent_max_sum_conservatism_ps": 39.50320399999998,
+          "predicted_node_sum_ps": 832.5041327469232,
+          "node_function_error_on_independent_max_sum_ps": 62.16642574692321,
+          "empirical_reserves_ps": 169.8854177672323,
+          "observed_complete_required_period_ps": 857.762451,
+          "observed_nonnode_boundary_wire_clock_ps": 126.92794800000001
+        }
+      ],
+      "whole_shell": {
+        "stage": "grt",
+        "target_period_ps": 1500,
+        "cell_area_um2": 311.04972000000004,
+        "functional_cell_area_um2": 304.25544,
+        "excluded_filler_area_um2": 0,
+        "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+        "sequential_area_um2": 84.85560000000001,
+        "sequential_cells": 291,
+        "physical_only_area_um2": 6.79428,
+        "setup_worst_slack_ps": 638.984619,
+        "hold_worst_slack_ps": 0.158887,
+        "setup_tns_ps": 0.0,
+        "hold_tns_ps": 0.0,
+        "timing_coverage_complete": true,
+        "timing_coverage_diagnostics": "",
+        "minimum_clock_period_ps": 861.02,
+        "sta_feasibility": true,
+        "measured_feasibility": true,
+        "feasibility_scope": "TT_setup_only",
+        "multi_corner_signoff": false,
+        "hold_feasible_at_TT": true,
+        "hold_review_margin_ps": 5,
+        "hold_review_required": true,
+        "hold_margin_status": "below_review_band",
+        "parasitics": "global_route_estimate",
+        "raw_reports_prefix": "/home/zyrv/vulsim-artifacts/stage67-joint-20261111-v1/runs/serial-placement-0-T1500/reports/asap7/arithmetic_probe/base/vulsim_grt",
+        "target_platform": "asap7",
+        "platform_profile_sha256": "f9d3e71d377d0fef70b66e43828186962caa04fcec31b8f78ad8760c5459f1c7",
+        "raw_report_units": {
+          "time": {
+            "raw_unit": "time 1ps",
+            "to_ps": 1.0
+          },
+          "capacitance": {
+            "raw_unit": "capacitance 1fF",
+            "to_fF": 1.0
+          }
+        },
+        "unit_conversion": "Liberty_and_report_units_verified",
+        "raw_timing_values": {
+          "setup_worst_slack_ps": 638.984619,
+          "hold_worst_slack_ps": 0.158887,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": 0.0,
+          "minimum_clock_period_ps": 861.02
+        }
+      },
+      "state_FF_bits": {
+        "native_state": 113,
+        "external_state": 65,
+        "input_service": 113
+      },
+      "S_reset_enable_qualification": "pending_actual_function_check",
+      "zero_G": 0,
+      "full_D_ready": false
+    },
+    {
+      "task": "serial-placement-1-T1500",
+      "source": "serial",
+      "placement": "placement-1",
+      "target_ps": 1500,
+      "node_errors": {
+        "node_14": {
+          "predicted_delay_ps": 581.4544316647009,
+          "observed_delay_ps": 589.700928,
+          "delay_error": 0.013984201047923518,
+          "predicted_area_um2": 30.422262587793888,
+          "observed_area_um2": 29.495339999999885,
+          "area_error": 0.03142606892458289,
+          "reserve_ps": 69.6497470705782
+        },
+        "node_6": {
+          "predicted_delay_ps": 376.0959194028825,
+          "observed_delay_ps": 349.822601,
+          "delay_error": 0.0751046911428186,
+          "predicted_area_um2": 18.344216374669998,
+          "observed_area_um2": 17.437679999999975,
+          "area_error": 0.05198721244282631,
+          "reserve_ps": 84.94270888361615
+        },
+        "node_7": {
+          "predicted_delay_ps": 476.97102399794124,
+          "observed_delay_ps": 431.65506,
+          "delay_error": 0.10498188993299709,
+          "predicted_area_um2": 36.60913286494756,
+          "observed_area_um2": 37.179,
+          "area_error": 0.015327661719046792,
+          "reserve_ps": 84.94270888361615
+        }
+      },
+      "S_shared_areas": {
+        "external_state": {
+          "predicted_um2": 27.529439600950255,
+          "observed_um2": 27.483299999999993
+        },
+        "input_service": {
+          "predicted_um2": 80.61005286701729,
+          "observed_um2": 88.51518000000137
+        },
+        "native_state": {
+          "predicted_um2": 52.171739787978346,
+          "observed_um2": 59.96754000000022
+        },
+        "root_repair": {
+          "predicted_um2": 50.31557999999941,
+          "observed_um2": 25.237980000000135
+        },
+        "shared_clock": {
+          "predicted_um2": 6.8447618323249815,
+          "observed_um2": 8.8209
+        },
+        "shared_physical": {
+          "predicted_um2": 7.812661584415775,
+          "observed_um2": 5.30712000000001
+        }
+      },
+      "total_area": {
+        "predicted_um2": 310.6598475000975,
+        "observed_um2": 299.44404000000156,
+        "relative_error": 0.03745543741694066
+      },
+      "arithmetic_stages": [
+        {
+          "stage": 0,
+          "predicted_required_period_ps": 1881.112596021778,
+          "observed_required_period_ps": 1045.252319,
+          "relative_error": 0.7996732098345893,
+          "predicted_setup_slack_ps": -381.112596021778,
+          "observed_setup_slack_ps": 454.74768100000006,
+          "false_feasible": false,
+          "conservative_rejection": true
+        },
+        {
+          "stage": 1,
+          "predicted_required_period_ps": 882.7701938815572,
+          "observed_required_period_ps": 554.334534,
+          "relative_error": 0.5924863773353823,
+          "predicted_setup_slack_ps": 617.2298061184428,
+          "observed_setup_slack_ps": 945.665466,
+          "false_feasible": false,
+          "conservative_rejection": false
+        }
+      ],
+      "witness_decomposition": [
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[0]$_SDFFE_PN0P_/D",
+          "slack_ps": 1231.580811,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 97.417969,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 842.1055600000001,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 268.41918899999996,
+          "observed_nonnode_boundary_wire_clock_ps": 171.00121999999996
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[1]$_SDFFE_PN0P_/D",
+          "slack_ps": 1153.925903,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 167.087525,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 772.436004,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 346.07409699999994,
+          "observed_nonnode_boundary_wire_clock_ps": 178.98657199999994
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[2]$_SDFFE_PN0P_/D",
+          "slack_ps": 1010.758911,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 312.88453699999997,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 626.6389920000001,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 489.241089,
+          "observed_nonnode_boundary_wire_clock_ps": 176.35655200000002
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[3]$_SDFFE_PN0P_/D",
+          "slack_ps": 936.080078,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 386.88236900000004,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 552.64116,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 563.919922,
+          "observed_nonnode_boundary_wire_clock_ps": 177.037553
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[4]$_SDFFE_PN0P_/D",
+          "slack_ps": 881.846191,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 455.19165100000004,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 484.331878,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 618.153809,
+          "observed_nonnode_boundary_wire_clock_ps": 162.962158
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[5]$_SDFFE_PN0P_/D",
+          "slack_ps": 831.946594,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 504.76294,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 434.76058900000004,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 668.053406,
+          "observed_nonnode_boundary_wire_clock_ps": 163.29046599999998
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[6]$_SDFFE_PN0P_/D",
+          "slack_ps": 771.9599,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 560.034455,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 379.4890740000001,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 728.0401,
+          "observed_nonnode_boundary_wire_clock_ps": 168.00564500000007
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[7]$_SDFFE_PN0P_/D",
+          "slack_ps": 715.397034,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 610.685211,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 328.8383180000001,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 784.602966,
+          "observed_nonnode_boundary_wire_clock_ps": 173.91775500000006
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[8]$_SDFFE_PN0P_/D",
+          "slack_ps": 669.135437,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 657.241546,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 282.2819830000001,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 830.864563,
+          "observed_nonnode_boundary_wire_clock_ps": 173.623017
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[9]$_SDFFE_PN0P_/D",
+          "slack_ps": 643.579529,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 686.507598,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 253.01593100000002,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 856.420471,
+          "observed_nonnode_boundary_wire_clock_ps": 169.912873
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[10]$_SDFFE_PN0P_/D",
+          "slack_ps": 607.493286,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 718.648895,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 220.87463400000001,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 892.506714,
+          "observed_nonnode_boundary_wire_clock_ps": 173.85781899999995
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[11]$_SDFFE_PN0P_/D",
+          "slack_ps": 547.943604,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 777.623565,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 161.89996400000007,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 952.056396,
+          "observed_nonnode_boundary_wire_clock_ps": 174.43283099999996
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[12]$_SDFFE_PN0P_/D",
+          "slack_ps": 574.362122,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 750.822662,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 188.70086700000002,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 925.637878,
+          "observed_nonnode_boundary_wire_clock_ps": 174.81521599999996
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[13]$_SDFFE_PN0P_/D",
+          "slack_ps": 516.775513,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 811.892242,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 127.63128700000004,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 983.224487,
+          "observed_nonnode_boundary_wire_clock_ps": 171.33224499999994
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[14]$_SDFFE_PN0P_/D",
+          "slack_ps": 532.98175,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 793.316254,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 146.2072750000001,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 967.01825,
+          "observed_nonnode_boundary_wire_clock_ps": 173.701996
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[15]$_SDFFE_PN0P_/D",
+          "slack_ps": 510.262939,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 815.324433,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 124.19909600000005,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 989.737061,
+          "observed_nonnode_boundary_wire_clock_ps": 174.41262800000004
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[16]$_SDFFE_PN0P_/D",
+          "slack_ps": 487.574768,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 843.484833,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 96.03869600000007,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 1012.425232,
+          "observed_nonnode_boundary_wire_clock_ps": 168.94039900000007
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[17]$_SDFFE_PN0P_/D",
+          "slack_ps": 469.442719,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 857.050262,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 82.47326700000008,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 1030.5572809999999,
+          "observed_nonnode_boundary_wire_clock_ps": 173.5070189999999
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[18]$_SDFFE_PN0P_/D",
+          "slack_ps": 469.947845,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 856.3805850000001,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 83.14294399999994,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 1030.052155,
+          "observed_nonnode_boundary_wire_clock_ps": 173.67156999999997
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[19]$_SDFFE_PN0P_/D",
+          "slack_ps": 470.625214,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 856.8575129999999,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 82.66601600000013,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 1029.3747859999999,
+          "observed_nonnode_boundary_wire_clock_ps": 172.51727299999993
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[20]$_SDFFE_PN0P_/D",
+          "slack_ps": 467.00943,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 860.101654,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 79.421875,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 1032.99057,
+          "observed_nonnode_boundary_wire_clock_ps": 172.88891599999988
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[21]$_SDFFE_PN0P_/D",
+          "slack_ps": 469.467682,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 857.3274839999999,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 82.19604500000014,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 1030.532318,
+          "observed_nonnode_boundary_wire_clock_ps": 173.20483400000012
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[22]$_SDFFE_PN0P_/D",
+          "slack_ps": 481.230164,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 845.556732,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 93.96679700000004,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 1018.7698359999999,
+          "observed_nonnode_boundary_wire_clock_ps": 173.21310399999993
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[23]$_SDFFE_PN0P_/D",
+          "slack_ps": 470.34433,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 857.2013850000001,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 82.32214399999998,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 1029.65567,
+          "observed_nonnode_boundary_wire_clock_ps": 172.45428500000003
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[24]$_SDFFE_PN0P_/D",
+          "slack_ps": 480.672394,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 846.61142,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 92.9121090000001,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 1019.3276060000001,
+          "observed_nonnode_boundary_wire_clock_ps": 172.7161860000001
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[25]$_SDFFE_PN0P_/D",
+          "slack_ps": 469.939301,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 857.4756769999999,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 82.04785200000015,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 1030.060699,
+          "observed_nonnode_boundary_wire_clock_ps": 172.5850220000002
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[26]$_SDFFE_PN0P_/D",
+          "slack_ps": 466.994904,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 860.224579,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 79.2989500000001,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 1033.0050959999999,
+          "observed_nonnode_boundary_wire_clock_ps": 172.78051699999992
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[27]$_SDFFE_PN0P_/D",
+          "slack_ps": 483.09845,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 848.464325,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 91.05920400000002,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 1016.90155,
+          "observed_nonnode_boundary_wire_clock_ps": 168.437225
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[28]$_SDFFE_PN0P_/D",
+          "slack_ps": 454.747681,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 875.3919370000001,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 64.13159199999996,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 1045.252319,
+          "observed_nonnode_boundary_wire_clock_ps": 169.86038199999984
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[29]$_SDFFE_PN0P_/D",
+          "slack_ps": 475.188568,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 856.7732850000001,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 82.75024399999995,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 1024.811432,
+          "observed_nonnode_boundary_wire_clock_ps": 168.03814699999987
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[30]$_SDFFE_PN0P_/D",
+          "slack_ps": 463.385895,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 866.7920839999999,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 72.73144500000012,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 1036.614105,
+          "observed_nonnode_boundary_wire_clock_ps": 169.82202100000018
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[31]$_SDFFE_PN0P_/D",
+          "slack_ps": 472.532471,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 857.990082,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 81.53344700000002,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 1027.467529,
+          "observed_nonnode_boundary_wire_clock_ps": 169.47744699999998
+        },
+        {
+          "path_class": "native_data",
+          "stage": 0,
+          "endpoint": "core/rtlzz_pipe_13_s1[32]$_SDFFE_PN0P_/D",
+          "slack_ps": 487.844421,
+          "node_order": [
+            "node_14",
+            "node_6"
+          ],
+          "observed_node_segment_sum_ps": 840.7153020000001,
+          "observed_independent_max_sum_ps": 939.523529,
+          "independent_max_sum_conservatism_ps": 98.80822699999999,
+          "predicted_node_sum_ps": 957.5503510675834,
+          "node_function_error_on_independent_max_sum_ps": 18.02682206758334,
+          "empirical_reserves_ps": 154.59245595419435,
+          "observed_complete_required_period_ps": 1012.155579,
+          "observed_nonnode_boundary_wire_clock_ps": 171.44027699999992
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[0]$_SDFF_PN0_/D",
+          "slack_ps": 1303.294678,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 63.820572,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 367.83448799999996,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 196.70532200000002,
+          "observed_nonnode_boundary_wire_clock_ps": 132.88475000000003
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[1]$_SDFF_PN0_/D",
+          "slack_ps": 1241.342041,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 129.67421000000002,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 301.98085,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 258.6579589999999,
+          "observed_nonnode_boundary_wire_clock_ps": 128.98374899999988
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[2]$_SDFF_PN0_/D",
+          "slack_ps": 1244.561523,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 127.24519399999997,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 304.409866,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 255.43847699999992,
+          "observed_nonnode_boundary_wire_clock_ps": 128.19328299999995
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[3]$_SDFF_PN0_/D",
+          "slack_ps": 1226.075928,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 145.57106,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 286.084,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 273.924072,
+          "observed_nonnode_boundary_wire_clock_ps": 128.35301200000004
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[4]$_SDFF_PN0_/D",
+          "slack_ps": 1194.313965,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 178.72090199999997,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 252.93415800000002,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 305.68603499999995,
+          "observed_nonnode_boundary_wire_clock_ps": 126.96513299999998
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[5]$_SDFF_PN0_/D",
+          "slack_ps": 1190.557251,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 181.11019900000002,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 250.54486099999997,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 309.44274900000005,
+          "observed_nonnode_boundary_wire_clock_ps": 128.33255000000003
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[6]$_SDFF_PN0_/D",
+          "slack_ps": 1156.694702,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 214.097656,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 217.557404,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 343.305298,
+          "observed_nonnode_boundary_wire_clock_ps": 129.207642
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[7]$_SDFF_PN0_/D",
+          "slack_ps": 1141.115967,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 230.10806200000002,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 201.54699799999997,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 358.88403300000004,
+          "observed_nonnode_boundary_wire_clock_ps": 128.77597100000003
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[8]$_SDFF_PN0_/D",
+          "slack_ps": 1136.587036,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 238.43335,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 193.22171,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 363.4129640000001,
+          "observed_nonnode_boundary_wire_clock_ps": 124.97961400000011
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[9]$_SDFF_PN0_/D",
+          "slack_ps": 1140.060547,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 228.60598699999997,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 203.04907300000002,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 359.93945299999996,
+          "observed_nonnode_boundary_wire_clock_ps": 131.333466
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[10]$_SDFF_PN0_/D",
+          "slack_ps": 1113.071533,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 263.96652200000005,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 167.68853799999994,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 386.92846699999996,
+          "observed_nonnode_boundary_wire_clock_ps": 122.9619449999999
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[11]$_SDFF_PN0_/D",
+          "slack_ps": 1117.680542,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 252.709381,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 178.94567899999998,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 382.31945799999994,
+          "observed_nonnode_boundary_wire_clock_ps": 129.61007699999993
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[12]$_SDFF_PN0_/D",
+          "slack_ps": 1086.48938,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 294.09758,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 137.55748,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 413.51062,
+          "observed_nonnode_boundary_wire_clock_ps": 119.41304000000002
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[13]$_SDFF_PN0_/D",
+          "slack_ps": 1101.749023,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 268.053314,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 163.601746,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 398.2509769999999,
+          "observed_nonnode_boundary_wire_clock_ps": 130.19766299999992
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[14]$_SDFF_PN0_/D",
+          "slack_ps": 1096.414795,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 277.21617200000003,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 154.43888799999996,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 403.5852050000001,
+          "observed_nonnode_boundary_wire_clock_ps": 126.36903300000006
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[15]$_SDFF_PN0_/D",
+          "slack_ps": 1086.478271,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 283.598572,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 148.056488,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 413.52172900000005,
+          "observed_nonnode_boundary_wire_clock_ps": 129.92315700000006
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[16]$_SDFF_PN0_/D",
+          "slack_ps": 1084.837524,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 288.47538799999995,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 143.17967200000004,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 415.16247599999997,
+          "observed_nonnode_boundary_wire_clock_ps": 126.68708800000002
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[17]$_SDFF_PN0_/D",
+          "slack_ps": 1088.741089,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 287.493957,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 144.16110299999997,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 411.2589109999999,
+          "observed_nonnode_boundary_wire_clock_ps": 123.76495399999988
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[18]$_SDFF_PN0_/D",
+          "slack_ps": 1088.442017,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 284.95723,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 146.69783,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 411.5579829999999,
+          "observed_nonnode_boundary_wire_clock_ps": 126.60075299999994
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[19]$_SDFF_PN0_/D",
+          "slack_ps": 1061.667725,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 308.215759,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 123.439301,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 438.332275,
+          "observed_nonnode_boundary_wire_clock_ps": 130.116516
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[20]$_SDFF_PN0_/D",
+          "slack_ps": 1061.720703,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 311.69981400000006,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 119.95524599999993,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 438.27929700000004,
+          "observed_nonnode_boundary_wire_clock_ps": 126.57948299999998
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[21]$_SDFF_PN0_/D",
+          "slack_ps": 1045.6427,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 323.83609,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 107.81896999999998,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 454.3572999999999,
+          "observed_nonnode_boundary_wire_clock_ps": 130.52120999999988
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[22]$_SDFF_PN0_/D",
+          "slack_ps": 1061.879517,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 311.759781,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 119.89527900000002,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 438.1204829999999,
+          "observed_nonnode_boundary_wire_clock_ps": 126.36070199999995
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[23]$_SDFF_PN0_/D",
+          "slack_ps": 1059.979614,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 311.170349,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 120.484711,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 440.0203859999999,
+          "observed_nonnode_boundary_wire_clock_ps": 128.85003699999993
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[24]$_SDFF_PN0_/D",
+          "slack_ps": 1049.602661,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 324.600998,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 107.05406199999999,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 450.3973390000001,
+          "observed_nonnode_boundary_wire_clock_ps": 125.7963410000001
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[25]$_SDFF_PN0_/D",
+          "slack_ps": 1063.891479,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 305.077606,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 126.57745399999999,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 436.1085210000001,
+          "observed_nonnode_boundary_wire_clock_ps": 131.0309150000001
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[26]$_SDFF_PN0_/D",
+          "slack_ps": 1037.29187,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 335.82969699999995,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 95.82536300000004,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 462.70813,
+          "observed_nonnode_boundary_wire_clock_ps": 126.87843300000003
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[27]$_SDFF_PN0_/D",
+          "slack_ps": 1033.609497,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 335.852325,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 95.80273499999998,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 466.3905030000001,
+          "observed_nonnode_boundary_wire_clock_ps": 130.53817800000007
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[28]$_SDFF_PN0_/D",
+          "slack_ps": 1019.119019,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 352.658738,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 78.99632199999996,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 480.880981,
+          "observed_nonnode_boundary_wire_clock_ps": 128.222243
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[29]$_SDFF_PN0_/D",
+          "slack_ps": 1013.759094,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 354.421997,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 77.23306300000002,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 486.240906,
+          "observed_nonnode_boundary_wire_clock_ps": 131.81890900000002
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[30]$_SDFF_PN0_/D",
+          "slack_ps": 1055.565186,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 317.85844499999996,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 113.79661500000003,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 444.43481399999996,
+          "observed_nonnode_boundary_wire_clock_ps": 126.576369
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[31]$_SDFF_PN0_/D",
+          "slack_ps": 1047.674194,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 327.253692,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 104.40136799999999,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 452.32580600000006,
+          "observed_nonnode_boundary_wire_clock_ps": 125.07211400000006
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[32]$_SDFF_PN0_/D",
+          "slack_ps": 995.618591,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 377.583786,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 54.07127400000002,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 504.38140899999996,
+          "observed_nonnode_boundary_wire_clock_ps": 126.79762299999999
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[33]$_SDFF_PN0_/D",
+          "slack_ps": 1009.574646,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 359.563293,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 72.091767,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 490.42535399999997,
+          "observed_nonnode_boundary_wire_clock_ps": 130.86206099999998
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[34]$_SDFF_PN0_/D",
+          "slack_ps": 972.705261,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 399.732651,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 31.922409000000016,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 527.294739,
+          "observed_nonnode_boundary_wire_clock_ps": 127.56208800000007
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[35]$_SDFF_PN0_/D",
+          "slack_ps": 984.27002,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 384.55255100000005,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 47.10250899999994,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 515.72998,
+          "observed_nonnode_boundary_wire_clock_ps": 131.1774289999999
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[36]$_SDFF_PN0_/D",
+          "slack_ps": 956.205811,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 415.72020000000003,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 15.934859999999958,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 543.794189,
+          "observed_nonnode_boundary_wire_clock_ps": 128.07398899999993
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[37]$_SDFF_PN0_/D",
+          "slack_ps": 993.153137,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 375.322021,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 56.333038999999985,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 506.846863,
+          "observed_nonnode_boundary_wire_clock_ps": 131.52484199999998
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[38]$_SDFF_PN0_/D",
+          "slack_ps": 962.580017,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 409.6934059999999,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 21.961654000000067,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 537.419983,
+          "observed_nonnode_boundary_wire_clock_ps": 127.72657700000008
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[39]$_SDFF_PN0_/D",
+          "slack_ps": 982.177246,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 388.377868,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 43.277192000000014,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 517.822754,
+          "observed_nonnode_boundary_wire_clock_ps": 129.44488600000005
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[40]$_SDFF_PN0_/D",
+          "slack_ps": 957.644836,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 416.010422,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 15.644637999999986,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 542.355164,
+          "observed_nonnode_boundary_wire_clock_ps": 126.34474199999994
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[41]$_SDFF_PN0_/D",
+          "slack_ps": 967.48645,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 402.381958,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 29.273101999999994,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 532.51355,
+          "observed_nonnode_boundary_wire_clock_ps": 130.131592
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[42]$_SDFF_PN0_/D",
+          "slack_ps": 957.164246,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 415.475022,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 16.180037999999968,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 542.835754,
+          "observed_nonnode_boundary_wire_clock_ps": 127.36073199999993
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[43]$_SDFF_PN0_/D",
+          "slack_ps": 966.432251,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 402.274109,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 29.380950999999982,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 533.567749,
+          "observed_nonnode_boundary_wire_clock_ps": 131.29364000000004
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[44]$_SDFF_PN0_/D",
+          "slack_ps": 959.832642,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 412.863266,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 18.79179399999998,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 540.167358,
+          "observed_nonnode_boundary_wire_clock_ps": 127.30409200000003
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[45]$_SDFF_PN0_/D",
+          "slack_ps": 975.317505,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 393.97918699999997,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 37.675873000000024,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 524.682495,
+          "observed_nonnode_boundary_wire_clock_ps": 130.70330800000005
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[46]$_SDFF_PN0_/D",
+          "slack_ps": 958.089844,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 415.169053,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 16.486006999999972,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 541.910156,
+          "observed_nonnode_boundary_wire_clock_ps": 126.74110300000001
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[47]$_SDFF_PN0_/D",
+          "slack_ps": 965.786682,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 404.22479200000004,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 27.430267999999955,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 534.213318,
+          "observed_nonnode_boundary_wire_clock_ps": 129.98852599999992
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[48]$_SDFF_PN0_/D",
+          "slack_ps": 958.334534,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 414.750473,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 16.904586999999992,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 541.665466,
+          "observed_nonnode_boundary_wire_clock_ps": 126.91499300000004
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[49]$_SDFF_PN0_/D",
+          "slack_ps": 964.580872,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 404.54089300000004,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 27.114166999999952,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 535.419128,
+          "observed_nonnode_boundary_wire_clock_ps": 130.87823499999996
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[50]$_SDFF_PN0_/D",
+          "slack_ps": 945.665466,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 427.854355,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 3.8007049999999936,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 554.334534,
+          "observed_nonnode_boundary_wire_clock_ps": 126.48017899999996
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[51]$_SDFF_PN0_/D",
+          "slack_ps": 977.757019,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 391.509704,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 40.14535599999999,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 522.242981,
+          "observed_nonnode_boundary_wire_clock_ps": 130.733277
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[52]$_SDFF_PN0_/D",
+          "slack_ps": 954.08905,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 419.496018,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 12.159042,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 545.91095,
+          "observed_nonnode_boundary_wire_clock_ps": 126.41493199999996
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[53]$_SDFF_PN0_/D",
+          "slack_ps": 979.453613,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 390.33398400000004,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 41.32107599999995,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 520.546387,
+          "observed_nonnode_boundary_wire_clock_ps": 130.21240299999994
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[54]$_SDFF_PN0_/D",
+          "slack_ps": 954.158752,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 419.196701,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 12.458358999999973,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 545.841248,
+          "observed_nonnode_boundary_wire_clock_ps": 126.64454699999993
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[55]$_SDFF_PN0_/D",
+          "slack_ps": 972.35199,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 397.479309,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 34.17575099999999,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 527.64801,
+          "observed_nonnode_boundary_wire_clock_ps": 130.168701
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[56]$_SDFF_PN0_/D",
+          "slack_ps": 951.236206,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 421.43260200000003,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 10.22245799999996,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 548.763794,
+          "observed_nonnode_boundary_wire_clock_ps": 127.33119199999993
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[57]$_SDFF_PN0_/D",
+          "slack_ps": 977.13739,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 391.233398,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 40.42166199999997,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 522.86261,
+          "observed_nonnode_boundary_wire_clock_ps": 131.629212
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[58]$_SDFF_PN0_/D",
+          "slack_ps": 951.450134,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 421.17979499999996,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 10.475265000000036,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 548.549866,
+          "observed_nonnode_boundary_wire_clock_ps": 127.370071
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[59]$_SDFF_PN0_/D",
+          "slack_ps": 970.439941,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 398.40112300000004,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 33.25393699999995,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 529.560059,
+          "observed_nonnode_boundary_wire_clock_ps": 131.15893599999998
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[60]$_SDFF_PN0_/D",
+          "slack_ps": 953.761047,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 419.38053899999994,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 12.27452100000005,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 546.238953,
+          "observed_nonnode_boundary_wire_clock_ps": 126.8584140000001
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[61]$_SDFF_PN0_/D",
+          "slack_ps": 978.69458,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 390.56848099999996,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 41.08657900000003,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 521.30542,
+          "observed_nonnode_boundary_wire_clock_ps": 130.73693900000006
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[62]$_SDFF_PN0_/D",
+          "slack_ps": 954.854187,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 417.545151,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 14.109909000000016,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 545.145813,
+          "observed_nonnode_boundary_wire_clock_ps": 127.600662
+        },
+        {
+          "path_class": "external_data",
+          "stage": 1,
+          "endpoint": "external_capture/y[63]$_SDFF_PN0_/D",
+          "slack_ps": 963.614746,
+          "node_order": [
+            "node_7"
+          ],
+          "observed_node_segment_sum_ps": 404.786133,
+          "observed_independent_max_sum_ps": 431.65506,
+          "independent_max_sum_conservatism_ps": 26.868926999999985,
+          "predicted_node_sum_ps": 476.97102399794124,
+          "node_function_error_on_independent_max_sum_ps": 45.31596399794125,
+          "empirical_reserves_ps": 84.94270888361615,
+          "observed_complete_required_period_ps": 536.385254,
+          "observed_nonnode_boundary_wire_clock_ps": 131.59912100000003
+        }
+      ],
+      "whole_shell": {
+        "stage": "grt",
+        "target_period_ps": 1500,
+        "cell_area_um2": 299.44404000000003,
+        "functional_cell_area_um2": 294.13692000000003,
+        "excluded_filler_area_um2": 0,
+        "area_definition": "OpenDB_stdcell_area_excluding_CORE_SPACER_including_taps",
+        "sequential_area_um2": 80.4816,
+        "sequential_cells": 276,
+        "physical_only_area_um2": 5.307119999999999,
+        "setup_worst_slack_ps": 454.747681,
+        "hold_worst_slack_ps": -0.523505,
+        "setup_tns_ps": 0.0,
+        "hold_tns_ps": -0.785719,
+        "timing_coverage_complete": true,
+        "timing_coverage_diagnostics": "",
+        "minimum_clock_period_ps": 1045.25,
+        "sta_feasibility": false,
+        "measured_feasibility": true,
+        "feasibility_scope": "TT_setup_only",
+        "multi_corner_signoff": false,
+        "hold_feasible_at_TT": false,
+        "hold_review_margin_ps": 5,
+        "hold_review_required": true,
+        "hold_margin_status": "negative",
+        "parasitics": "global_route_estimate",
+        "raw_reports_prefix": "/home/zyrv/vulsim-artifacts/stage67-joint-20261111-v2/runs/serial-placement-1-T1500/reports/asap7/arithmetic_probe/base/vulsim_grt",
+        "target_platform": "asap7",
+        "platform_profile_sha256": "f9d3e71d377d0fef70b66e43828186962caa04fcec31b8f78ad8760c5459f1c7",
+        "raw_report_units": {
+          "time": {
+            "raw_unit": "time 1ps",
+            "to_ps": 1.0
+          },
+          "capacitance": {
+            "raw_unit": "capacitance 1fF",
+            "to_fF": 1.0
+          }
+        },
+        "unit_conversion": "Liberty_and_report_units_verified",
+        "raw_timing_values": {
+          "setup_worst_slack_ps": 454.747681,
+          "hold_worst_slack_ps": -0.523505,
+          "setup_tns_ps": 0.0,
+          "hold_tns_ps": -0.785719,
+          "minimum_clock_period_ps": 1045.25
+        }
+      },
+      "state_FF_bits": {
+        "native_state": 98,
+        "external_state": 65,
+        "input_service": 113
+      },
+      "S_reset_enable_qualification": "pending_actual_function_check",
+      "zero_G": 0,
+      "full_D_ready": false
+    }
+  ],
+  "independent_joint_tests_unlocked": false,
+  "S_coefficients_changed": false,
+  "node_model_changed": false,
+  "zero_G_joint_qualified": false,
+  "full_D_ready": false
+}

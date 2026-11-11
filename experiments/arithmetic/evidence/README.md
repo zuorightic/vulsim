@@ -6,6 +6,9 @@
 | --- | --- |
 | [step5_conditional_operator_release_v2](step5_conditional_operator_release_v2/README.md) | 现行MAC32十步计划第5步：500–3000ps条件小算子函数限定发布，16项新独立、32阶段重读、735跨语言／2752真实节点查询及隔离回放；S/G联合待验 |
 | [step5_conditional_operator_release_v1](step5_conditional_operator_release_v1/README.md) | 同一发布模型的首次封包；保留恢复目录及推理依赖缺失失败，已由v2补齐，非另一轮拟合 |
+| [step67_joint_pilot_v1](step67_joint_pilot_v1/README.md) | 第6—7步真实serial两placement、1500ps pilot：状态／端点／归属通过，零G完整阶段失败；初次封包依赖缺失失败保留 |
+| [step67_joint_pilot_v2](step67_joint_pilot_v2/README.md) | v1封包依赖后继：补齐完整DSE依赖并通过隔离回放；模型／物理标签／零G失败不变，最新费用见resource closure |
+| [step67_owned_accounting_v1](step67_owned_accounting_v1/README.md) | 边界／真实owner间wire／单次reserve后继；同源四阶段零G点门槛通过、跨语言及隔离回放；旧失败及完整联合资格仍保留 |
 | `step1_wide_v1` | 修订计划步骤一宽位宽补验 |
 | `step2_v2` | 修订计划步骤二契约/参考/生成补验 |
 | `step3_platforms_v1/v2/v3` | 修订计划步骤三；v1原ns结果作废，v2单位修复重跑，v3软件收尾，当前继承链见导航 |

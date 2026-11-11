@@ -2,6 +2,10 @@
 
 **当前MAC32原型第5步已发布限定支持域的小算子函数：** [ASAP7条件Mul／Add模型v1](models/asap7_conditional_operators_v1/README.md)，证据见[发布验收v2](evidence/step5_conditional_operator_release_v2/README.md)及[规划§7.70](../../mission/lxy-plan-fix.md#step5-bounded-operator-release)。函数以结构、位宽、位连接／负载、capture及数值T为输入，发布目标区间500–3000ps，仍受语义／联合支持规则约束。新独立16项、735项Python／C++核对和2752次真实图生产节点查询通过；44放置仅作需求／搜索回归。S／G完整阶段及正式D资格仍待，原失败与原数据保留。下文较早步骤编号和状态按对应计划／冻结版本解释。
 
+第6—7步已完成[真实serial pilot与隔离证据](evidence/step67_joint_pilot_v2/README.md)：两种原生寄存器放置、1500ps的2 synth／2 grt，567个FF状态函数及3394个端点检查通过。零G完整阶段预测过于保守，联合资格未通过；面积、节点误差、独立最大值相加和S／wire边界误差分别保留。locked联合源保持锁定，完整D仍为false，当前记录见[§7.71](../../mission/lxy-plan-fix.md#step67-joint-pilot)。
+
+其[计费后继](evidence/step67_owned_accounting_v1/README.md)已按训练侧证据分开S完整边界、真实算术owner间wire及单次整级reserve；纯位连接规范化保留位映射、扇出及寄存器截断。同一serial四阶段零G点误差median／P95为14.1624%／14.7381%，36项真实C++／Python组合请求一致（18候选覆盖、18拒绝），见[§7.72](../../mission/lxy-plan-fix.md#step67-accounting-successor)。旧失败与原reserve保持；该结果不授予其他结构／T、新独立联合、shared clock或hold资格，无新EDA，完整D仍关闭。
+
 后续实施以 [修订规划第一章](../../mission/lxy-plan-fix.md) 为准，实际验收见该文件第四章。步骤一的五档宽位宽补验已完成；步骤二新增43例参数化定义、独立参考、固定权重和目标/选择协议。步骤二的组合软件验证不代表固定L流水调度、四平台模型或688条物理记录已经完成。
 
 现行入口如下：

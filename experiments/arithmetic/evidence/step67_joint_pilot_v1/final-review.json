@@ -1,0 +1,192 @@
+{
+  "area_order": "observed and predicted placement-1 smaller; area gap within preregistered 5% tie band",
+  "continuous_S_domain_qualified": false,
+  "exact_resource_ids": [
+    "0306b4d6dd834be4bd7064fee63dbb88",
+    "12e7c3c57e6a47d98fa58a00908046e6",
+    "13358bb6e26d471f89f9a620e1bea5c6",
+    "211a55e8bc7d4eacbebd5d5f0f59e52c",
+    "216c32f055c449b1835e713ebf592324",
+    "2bceeb7908c3462188a4a0c20151bd0e",
+    "31bf5fee5f2a45199b5ba22e76dd0e10",
+    "428f8e3147ec4cd28b54baa0081a1866",
+    "4c662ce7267349739dc852980b1c9933",
+    "4eacc2203b124e20a06aa88c24150918",
+    "50b04d39b54143d78a68f63efcc1bed2",
+    "526395fcaf2e4e7cae320269fa5ae266",
+    "571dcf4ad72f4734b804384c3aed4646",
+    "57bdfef354084bf8ba9332c11f414358",
+    "61efbebacae34b56bd49e4fe9fd7ae5f",
+    "646b1428fffc4db48ac5669532dbcf1d",
+    "6db21f0a74ff4c509eb6bb2cc459cf56",
+    "7d1a0e8a9302475bb9783e177478d0ff",
+    "80ae32a69eed40e1ada1503b7575d150",
+    "87c88472129249a7b27f58f46ab2ea62",
+    "92df5e79fbec45b08e2bb33cd2c19ac6",
+    "9d39b8b7f19b4c4e9108ba5c0e750758",
+    "af3f3f58baf7458eac78bb6fed7c0813",
+    "b1183f7f33c84724b931e74cd5e570d9",
+    "b2976741f4d04e31b9e0f12cc5203e34",
+    "b3293b4ea09643d1a0072ca3cbaa517c",
+    "b45a1bcef8be4d458227f2dd4a1b974c",
+    "b8fec151765c4c0a992c475489d200ef",
+    "bfbb8269ddf34438846bb542bd804990",
+    "cc32bcf9d315407d9181d35cea50607b",
+    "ccd23403026c4aebbc77777fdd978c62",
+    "d6eab576805d41ae966ac0d9a6b61916",
+    "f430b4e9996c4c64a7bc78efecd1d466",
+    "fb2134140e044680bf786da6d7e9e504"
+  ],
+  "feasibility_order": "placement-1 is predicted target_unmet but measured setup passes; preserve conservative rejection",
+  "full_D_ready": false,
+  "locked_joint_tests_unlocked": false,
+  "node_and_S_parameters_unchanged": true,
+  "reason": "actual shared_clock areas 8.63136/8.82090 exceed inherited 7.21676/6.84476 empirical baseline",
+  "rows": [
+    {
+      "area": {
+        "observed_um2": 311.04972000000174,
+        "predicted_um2": 319.719577509142,
+        "relative_error": 0.027872899255913932
+      },
+      "hold_ps": 0.158887,
+      "nodes": {
+        "node_14": {
+          "area_error": 0.042521333024805284,
+          "delay_error": 0.029605015063838315,
+          "observed_area_um2": 29.495339999999885,
+          "observed_delay_ps": 584.372925,
+          "predicted_area_um2": 30.74952117481974,
+          "predicted_delay_ps": 567.0725557524758,
+          "reserve_ps": 69.6497470705782
+        },
+        "node_6": {
+          "area_error": 0.05198721244282631,
+          "delay_error": 0.016316296925633942,
+          "observed_area_um2": 17.437679999999975,
+          "observed_delay_ps": 349.825256,
+          "predicted_area_um2": 18.344216374669998,
+          "predicted_delay_ps": 355.53310874898193,
+          "reserve_ps": 84.94270888361615
+        },
+        "node_7": {
+          "area_error": 0.015327661719046792,
+          "delay_error": 0.13426135864391148,
+          "observed_area_um2": 37.179,
+          "observed_delay_ps": 420.512451,
+          "predicted_area_um2": 36.60913286494756,
+          "predicted_delay_ps": 476.97102399794124,
+          "reserve_ps": 84.94270888361615
+        }
+      },
+      "placement": "placement-0",
+      "setup_ps": 638.984619,
+      "stage_errors": [
+        {
+          "conservative_rejection": false,
+          "false_feasible": false,
+          "observed_required_period_ps": 756.241394,
+          "observed_setup_slack_ps": 743.758606,
+          "predicted_required_period_ps": 1229.6234878230541,
+          "predicted_setup_slack_ps": 270.3765121769459,
+          "relative_error": 0.6259669168850788,
+          "stage": 0
+        },
+        {
+          "conservative_rejection": false,
+          "false_feasible": false,
+          "observed_required_period_ps": 861.015381,
+          "observed_setup_slack_ps": 638.984619,
+          "predicted_required_period_ps": 1499.3146155141553,
+          "predicted_setup_slack_ps": 0.6853844858446791,
+          "relative_error": 0.7413331382917017,
+          "stage": 1
+        }
+      ],
+      "state_FF_bits": {
+        "external_state": 65,
+        "input_service": 113,
+        "native_state": 113
+      }
+    },
+    {
+      "area": {
+        "observed_um2": 299.44404000000156,
+        "predicted_um2": 310.6598475000975,
+        "relative_error": 0.03745543741694066
+      },
+      "hold_ps": -0.523505,
+      "nodes": {
+        "node_14": {
+          "area_error": 0.03142606892458289,
+          "delay_error": 0.013984201047923518,
+          "observed_area_um2": 29.495339999999885,
+          "observed_delay_ps": 589.700928,
+          "predicted_area_um2": 30.422262587793888,
+          "predicted_delay_ps": 581.4544316647009,
+          "reserve_ps": 69.6497470705782
+        },
+        "node_6": {
+          "area_error": 0.05198721244282631,
+          "delay_error": 0.0751046911428186,
+          "observed_area_um2": 17.437679999999975,
+          "observed_delay_ps": 349.822601,
+          "predicted_area_um2": 18.344216374669998,
+          "predicted_delay_ps": 376.0959194028825,
+          "reserve_ps": 84.94270888361615
+        },
+        "node_7": {
+          "area_error": 0.015327661719046792,
+          "delay_error": 0.10498188993299709,
+          "observed_area_um2": 37.179,
+          "observed_delay_ps": 431.65506,
+          "predicted_area_um2": 36.60913286494756,
+          "predicted_delay_ps": 476.97102399794124,
+          "reserve_ps": 84.94270888361615
+        }
+      },
+      "placement": "placement-1",
+      "setup_ps": 454.747681,
+      "stage_errors": [
+        {
+          "conservative_rejection": true,
+          "false_feasible": false,
+          "observed_required_period_ps": 1045.252319,
+          "observed_setup_slack_ps": 454.74768100000006,
+          "predicted_required_period_ps": 1881.112596021778,
+          "predicted_setup_slack_ps": -381.112596021778,
+          "relative_error": 0.7996732098345893,
+          "stage": 0
+        },
+        {
+          "conservative_rejection": false,
+          "false_feasible": false,
+          "observed_required_period_ps": 554.334534,
+          "observed_setup_slack_ps": 945.665466,
+          "predicted_required_period_ps": 882.7701938815572,
+          "predicted_setup_slack_ps": 617.2298061184428,
+          "relative_error": 0.5924863773353823,
+          "stage": 1
+        }
+      ],
+      "state_FF_bits": {
+        "external_state": 65,
+        "input_service": 113,
+        "native_state": 98
+      }
+    }
+  ],
+  "shared_clock_upper_cover": false,
+  "state_functional_qualification": "passed 567 actual FF Boolean reset/enable/hold/update/clock checks; CTS correspondence preserved",
+  "status": "pilot_complete_joint_qualification_failed",
+  "usage": {
+    "CPU_time_s": 265.88,
+    "final": 0,
+    "grt": 2,
+    "pending": 0,
+    "support_calls": 30,
+    "synth": 2,
+    "walltime_s": 170.42759738955647
+  },
+  "zero_G_joint_qualified": false
+}
