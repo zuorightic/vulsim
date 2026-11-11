@@ -4,6 +4,11 @@
 
 | 目录 | 适用版本 |
 | --- | --- |
+| [step67_shared_function_v1](step67_shared_function_v1/README.md) | 24点兼容结构train拟合／冻结，9点新共享面积validation通过；通用数值T函数、308项MAC32覆盖、隔离回放及完整归档恢复；完整S/G／D仍待 |
+| [step67_state_shared_successor_v3](step67_state_shared_successor_v3/README.md) | S纯转发／physical后继改善；repair／clock及MAC32共享域失败，train-only参数／完整状态跨语言／独立NNLS隔离回放 |
+| [step67_state_shared_successor_v1](step67_state_shared_successor_v1/README.md)、[v2](step67_state_shared_successor_v2/README.md) | 同模型首次缺传递导入、二次缺隔离数值库的封包失败，原字节与费用保留 |
+| [step67_combination_batch1_v2](step67_combination_batch1_v2/README.md) | 第6—7步parallel／bypass两位置×1500ps：整级数值通过，S纯转发和共享面积失败；8阶段严格读取／状态／负控及隔离回放 |
+| [step67_combination_batch1_v1](step67_combination_batch1_v1/README.md) | 首次封包大小超限及过早回放失败；原字节搬移大产物留存，v2压缩索引后完成 |
 | [step5_conditional_operator_release_v2](step5_conditional_operator_release_v2/README.md) | 现行MAC32十步计划第5步：500–3000ps条件小算子函数限定发布，16项新独立、32阶段重读、735跨语言／2752真实节点查询及隔离回放；S/G联合待验 |
 | [step5_conditional_operator_release_v1](step5_conditional_operator_release_v1/README.md) | 同一发布模型的首次封包；保留恢复目录及推理依赖缺失失败，已由v2补齐，非另一轮拟合 |
 | [step67_joint_pilot_v1](step67_joint_pilot_v1/README.md) | 第6—7步真实serial两placement、1500ps pilot：状态／端点／归属通过，零G完整阶段失败；初次封包依赖缺失失败保留 |

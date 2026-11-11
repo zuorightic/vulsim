@@ -1,5 +1,11 @@
 # 算术实验：现行契约、验证和实施边界
 
+**当前共享函数拟合：** [规划§7.75](../../mission/lxy-plan-fix.md#step67-shared-function-fitting)完成24点兼容服务结构的train拟合与冻结，9项新validation全部通过：clock／physical／repair的median／P95为4.6509%／18.8526%、2.3492%／7.8236%、7.0377%／19.7289%，总面积2.4336%／4.6306%。MAC32的44候选在7个数值T下308项完整计价覆盖；Python／C++的76覆盖／1真实拒绝、改名／行序／独立NNLS核对通过。旧失败和费用保留；本包不逐候选采价格，完整阶段时序及新独立S／G／正式D资格仍待。
+
+**最新S／共享后继：** [train审计与复验v3](evidence/step67_state_shared_successor_v3/README.md)改善纯转发S输入和shared physical，六位置／12阶段点误差median／P95为12.7537%／19.6552%，总面积5.8306%／7.7231%。repair median26.1543%／clock P95 42.5219%仍失败，MAC32三档132请求仅81覆盖／51因共享域拒绝；原节点函数不变，正式D未绑定。新参数仅用原train，冻结后没有调参，无新EDA，见[§7.74](../../mission/lxy-plan-fix.md#step67-state-shared-train-audit)。
+
+**最新组合首批结果：** [parallel／bypass验证v2](evidence/step67_combination_batch1_v2/README.md)完成4实现／8阶段，整级点误差median／P95为10.9599%／19.6552%，总面积9.5567%／11.2255%。纯转发S输入边界和repair／clock／physical独占面积保持失败，完整联合及正式D仍待；原参数、50ps预留、失败和联合test锁定不变。下一步先审计原train中的这些责任项，见[§7.73](../../mission/lxy-plan-fix.md#step67-combination-validation-batch1)。
+
 **当前MAC32原型第5步已发布限定支持域的小算子函数：** [ASAP7条件Mul／Add模型v1](models/asap7_conditional_operators_v1/README.md)，证据见[发布验收v2](evidence/step5_conditional_operator_release_v2/README.md)及[规划§7.70](../../mission/lxy-plan-fix.md#step5-bounded-operator-release)。函数以结构、位宽、位连接／负载、capture及数值T为输入，发布目标区间500–3000ps，仍受语义／联合支持规则约束。新独立16项、735项Python／C++核对和2752次真实图生产节点查询通过；44放置仅作需求／搜索回归。S／G完整阶段及正式D资格仍待，原失败与原数据保留。下文较早步骤编号和状态按对应计划／冻结版本解释。
 
 第6—7步已完成[真实serial pilot与隔离证据](evidence/step67_joint_pilot_v2/README.md)：两种原生寄存器放置、1500ps的2 synth／2 grt，567个FF状态函数及3394个端点检查通过。零G完整阶段预测过于保守，联合资格未通过；面积、节点误差、独立最大值相加和S／wire边界误差分别保留。locked联合源保持锁定，完整D仍为false，当前记录见[§7.71](../../mission/lxy-plan-fix.md#step67-joint-pilot)。

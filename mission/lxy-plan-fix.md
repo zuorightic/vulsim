@@ -5099,3 +5099,127 @@ v2已实际恢复106文件并完整重放通过，含结清共556489字节；28�
 下一工作包应冻结此候选身份后，在预登记的其他validation组合及多个目标T上检验边界、连线、错误setup可行预测和排序；先处理节点函数真正缺覆盖的结构，再验证shared clock独占面积及hold风险。完成validation后才能按原门禁开启新联合独立职责；若新增证据显示稳定且影响选择的组合残差，再考虑最小通用G。本轮不启动这些新物理请求。
 
 **收尾验收与资源。** 候选后继SHA256为`1489c9caf94f1c9c676c5f5b439d09baefb77495154e6b7cfdb36d0262a59b07`。4,182成员的封存包约3.49MB，单文件不超过512KiB；隔离回放通过3394个端点检查、648条训练边界分区／源等权统计、110点算术wire统计、36项原生结果复算和四阶段误差守恒。25项原冻结推理源、8项新实现源、节点发布文件、原S绑定和S参数SHA全部复核通过，两个仓库`git diff --check`通过。资源按17项叶任务精确结清：0 synth／0 grt／0 detailed、17 support、135.085524秒墙钟／271.66秒CPU、pending=0，包含初次新目标尚未配置的build失败。后续688 synth／688 grt／86400秒墙钟／172800秒CPU／30GiB额度保持；未git add／commit／push，最终收据见[resource-closure.json](../experiments/arithmetic/evidence/step67_owned_accounting_v1/resource-closure.json)。本轮计费修正和有限零G复验完成，正式S／G联合与D仍待。
+
+<a id="step67-combination-validation-batch1"></a>
+
+### 7.73 第6—7步扩展验证首批：parallel／bypass两位置×1500ps（2026-11-11）
+
+**用户确认与执行范围。** 用户同意记录并推进下一工作包。本轮先分类原shared、wide_reduction、cross_stage_saved_value三个拒绝结构与最低MAC32需求的关系，保留原拒绝；原44放置是需求／搜索回归，不是函数白名单。先按当前节点发布及§7.72计费候选固定预测，再测已预登记且节点完整覆盖的parallel、bypass各placement-0／placement-1，T=1500ps，准确4项请求。未开启500／3000ps追加批次，精确1000ps及原locked_joint_test保持留出；是否追加根据首批结果和准确后继准入决定。
+
+**事前规则。** 原节点函数、S绑定、连线点值、50ps整级reserve、语义／联合支持和后端流程身份冻结；本批仅验证，不从新标签调参／校准reserve。物理失败、缺覆盖、setup／hold失败及所有者子项误差保持在分母。每任务synth≤300s、grt≤1200s、报告叶≤120s，4线程／8GiB，最多4 synth／4 grt，无自动重试；本轮准入同时登记support、wall／CPU和存储上限，并保留688／688物理调用、86400秒墙钟／172800秒CPU／30GiB后续职责。
+
+点误差median≤15%、P95≤35%，分类P95≤50%；加预留后的错误setup可行预测最多0。逐级捕获同时覆盖算术路径和纯旁路，检查并行max／寄存器截断、节点面积唯一计费、S／连线归属、shared clock／physical／repair独占面积。排序使用同源／同T／同L／II，面积5%及违约5ps并列带沿用原协议。hold单列并标注复核需求，grt setup可行与完整setup＋hold通过分别报告。原serial结论和本批结果分别保存，可另列三源汇总，但不宣称新独立联合资格。
+
+本节随后补入实际请求、预测、结果、失败及收据。`zero_G_joint_qualified=false`、`full_D_ready=false`；只有后续validation满足并冻结联合身份后，才进入新的独立测试与正式D绑定。
+
+**首项工具链停点及后继边界。** 首项parallel／placement-0已完成综合、状态census和CTS repair；完整CEC主检查及普通输出／D／CLK负控通过，随后旧`model_m2_live_cec_v3`将向量常量符号`y[33]`按端口名查找而StopIteration。原grt记失败，原ODB／SDC／前后网表和收费保留。显式v4后继按完整AIG边界的实际output index选常量位，并区分constant_top_output与constant_register_D；先在保存pair重验。通过后，以新准入仅从保存的post-repair-pre-LEC ODB／SDC继续CTS尾段和grt，不重跑综合、CTS或repair_timing；其余三项使用相同物理流程及v4检查器。原失败grt加一项后继grt分别计费，物理模型／RTL／SDC／候选参数不变，禁止自动重试与隐藏失败。
+
+**旁路状态别名停点。** 两项parallel完成后，bypass／placement-0综合census拒绝两个逻辑字共享FF。保存映射实际为346个逻辑FF位引用、330个唯一物理FF，16个同owner／同stage／同enable／同reset／同极性的共享组。显式`stage67_mapped_state_v3`保留所有逻辑引用、物理FF唯一计数，并要求每个引用单独通过reset／hold／update／clock布尔证明；不同生命周期或控制仍拒绝。原快照346位证明通过后，以v3准入继承两项parallel和已付bypass综合，仅新增另一项bypass综合及两项grt，不重复原物理工作。S价格仍按测量前冻结值报告，不用实测FF数回改价格。首次布尔检查误用尚未生成的CTS gold模型而缺文件失败，随后从同一保存综合网表／Liberty单独读取模型完成证明；失败收据保留。
+
+**四项物理及读取结果。** 四任务均完成synth／grt，累计4次synth、5次grt（含首项CEC工具链失败），不是5个不同训练点。三后继根依次为`/home/zyrv/vulsim-artifacts/stage67-batch1-20261111-v1`、`...-v2`、`...-v3`；最终有效物理与分析在v3，v1／v2停点不改写。所有原节点、S、计费候选参数和50ps reserve保持。940个逻辑状态引用的精确布尔证明通过，对应924个唯一物理FF；8阶段共5624项动态端点检查、124项常量顶层输出检查。新读取器用实际mapped常量位、完整top-port census及STA常量值证明常量端点，并保留全部动态路径／实际Liberty弧验证；不以空路径默认接受。33项真实负控全部拒绝，含逐阶段真实弧删除／伪造owner／遗漏动态端点、常量伪造及FF别名生命周期／enable／reset。
+
+| 结构／放置 | s0点预测／实测T−slack ps | s1点预测／实测T−slack ps | 总面积误差 | grt setup slack ps | grt hold slack ps |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| parallel／placement-0 | 803.759／763.812 | 1323.486／1201.302 | 11.2255% | +298.698181 | +3.475255 |
+| parallel／placement-1 | 1010.696／1006.410 | 531.413／475.542 | 10.7220% | +493.590271 | +7.131226 |
+| bypass／placement-0 | 822.506／756.449 | 629.644／526.216 | 8.3915% | +743.550720 | +0.138549 |
+| bypass／placement-1 | 1295.131／1084.092 | 155.317／133.933 | 3.1018% | +415.908417 | +2.228794 |
+
+8个完整阶段的点误差median／P95为10.9599%／19.6552%，4项总面积误差median／P95为9.5567%／11.2255%，通过首批整级数值门槛；本T下4项setup均满足，错误setup可行预测为0但仍缺实测违约样本。parallel面积实测差0.60%，bypass差0.46%，均处5%并列带；bypass预测顺序与实测方向相反必须保留，不能写成排序完全一致。3项hold位于5ps复核带内，当前4项均非负；不授予signoff或多角资格。
+
+**联合资格保持失败，明确后续修正位置。** 逐bank报告揭示S-only input_service→native共5个银行的点误差median／P95为56.6494%／59.8657%，超过50%分类门槛；S-only native→external为16.8315%／20.7677%。整级max通过没有掩盖纯转发边界错误。独占面积root_repair、shared_clock、shared_physical的诊断median／P95分别为211.5511%／328.6957%、32.9726%／60.8841%、47.4684%／56.4659%；尤其parallel的root_repair预测50.31558µm²、实测约11.74–11.80µm²，与clock低估互相抵消。节点、三类状态面积另列，禁止用G吸收这些已定位差异。
+
+因此当前首批状态为`batch1_numerical_validation_passed_not_joint`，仍保留4项联合失败：S-only输入边界、root repair、clock、physical。下一步先审计原训练路径中adapter剔除与纯转发责任，复用S训练及共享项train数据建立最小后继；冻结后再对本批validation作明确版本复验。只有这些项收敛，才登记500／3000ps后继批次；1000ps与原联合独立源继续锁定。本轮不追加新物理请求、不拟合G或改reserve，不发布正式D。
+
+**封存、完整性及资源收尾。** 当前[证据v2](../experiments/arithmetic/evidence/step67_combination_batch1_v2/README.md)含6818个成员，完成从封存源码与8阶段packet的隔离回放：5624动态端点、124常量、940逻辑状态引用／924唯一FF，冻结函数价格、完整整级／bank／面积／排序及四项联合失败均重现。完整原始归档约57.7MB、9322成员已实际恢复逐文件验SHA。首包索引超过1MiB且总量超过5MiB，全部原字节搬移至v3大产物下`failures/oversize-evidence-v1`，未删除；后继仅压缩索引。封包完成前一次回放触及尚未写出的replay.py失败，收费保留。v2最终约5.08MB、最大单文件512KiB，符合5MiB／1MiB限制；补入的最终说明与费用另存，不冒充进入较早归档。
+
+最终核对25项冻结推理源、241项封存后继源、四项测量前预测、RTL／端点及全部继承设计文件SHA不变，原节点发布、S绑定、计费候选SHA保持。两个仓库`git diff --check`通过。按精确reservation ID去重结清4 synth／5 grt／0 detailed、54 support、356.963593秒叶墙钟／543.64秒CPU、pending=0；含全部物理／软件／封包失败，不与原serial pilot或§7.72计费推导重复收费。后续688／688调用、86400秒墙钟／172800秒CPU／30GiB保留额度通过核对，未git add／commit／push。收据见[resource-closure.json](../experiments/arithmetic/evidence/step67_combination_batch1_v2/resource-closure.json)；本轮首批推进完成，S／共享后继、连续T和新独立联合资格仍待。
+
+<a id="step67-state-shared-train-audit"></a>
+
+### 7.74 第6—7步后继：纯转发边界与共享面积train审计（2026-11-11）
+
+用户同意继续处理§7.73已定位问题。本轮仅使用原S及原小算子train的保存产物推导后继；不新增物理测量，不解锁1000ps／联合独立test，不修改节点函数、原S功能状态系数或50ps整级reserve。旧候选及四项联合失败保留。先审计birth_data中的adapter／observer及层次外根部缓冲器责任、共享clock的固定／规模开销、physical与floorplan关系、repair常数的来源；所有剔除须有完整连接／所有者证据，不能按单元名或现有validation误差删除。
+
+若原train证据充分，优先采用可在D搜索前计算的少量语义特征，复用原状态模型，给出简单后继点函数及明确支持域。参数选择／统计只读train；接口、参数和支持规则冻结后，才回放已有serial及parallel／bypass validation，单列完整阶段、每类S-only银行、各面积所有者、排序／错误可行及hold。validation只判断后继，不调参或重设门槛；失败如实保留。每个实验／构建／核验叶按原共享Ledger计support，并继续保留后续688／688调用、86400秒墙钟／172800秒CPU／30GiB职责。没有训练证据的项继续拒绝或保持未合格，不强行为通过增加G。
+
+训练侧候选规则在新validation回放前固定：根部组合单元按完整驱动／负载图追踪最终非根所有者，只有所有终端均为采样adapter／observer的分支可从状态责任中剔除，触及真实状态或多责任则保留。边界继续逐源中位数；clock采用`one,total_FF_bits`非负仿射，physical采用`one,predicted_functional_area_um2`，repair采用`one,input_data_bits,total_FF_bits,reset_one_bits`，使用原S及原节点train源等权NNLS。predicted功能面积按冻结模型或明确的语义primitive基线计算，禁止使用实测功能面积作为D查询特征；仅把完整可计算的训练行纳入拟合。原最大值包络保留为历史对照。若训练上下文无法支撑physical迁移，则保持该项未合格，不用validation挑替代公式。
+
+**train审计后的冻结前补充。** 根部支路剔除仍不能让birth_data成为纯转发测量：其launch内部驱动也承受人工adapter／observer负载，减去串联段不会恢复原slew。因此纯寄存器转发改复用已有native_data的同类FF-Q／native capture边界，算术路径继续单列birth负载诊断；不从新validation提取纯转发常数。计时枚举补入真实state slots中的非算术保存银行，不只遍历算术cut captures。原S还把输入接clock、输出悬空的CTS负载单元留在root repair；后继按真实clock net归clock，旧标签不覆盖。初次train候选已保留为诊断；clock在冻结前补入可查询的预测功能面积特征以表达布局范围，仍只用train拟合，尚未读取新候选的组合validation结果。
+
+**训练侧产物与冻结。** 原S train的216个grt行／24源组、原节点train的352个grt行／38源组，合计568行／62源组。clock／physical需全部功能节点的冻结预测面积，其中106个node行因某个consumer缺冻结函数覆盖只保留repair行，clock／physical用462行／61源组；没有将实测节点面积作为预测特征。648条S路径继续验证实际Liberty弧、方向和连接，按源中位数统计。S完整birth点值由236.6864775降至231.422455ps，纯转发input_service→native明确复用native_data的147.7647705ps；native→external为155.316833ps。原节点函数、S三所有者功能面积系数及50ps整级reserve不变。
+
+修正S归属口径后，216个训练快照累计6829个clock负载单元从root repair归到clock，面积按快照累计1070.18658µm²；这不是新物理电路或唯一单元计数。纯instrumentation支路面积另计并保留完整sink／driver证书。函数采用源等权train-only NNLS，无validation选择；共享特征仅one、语义input位／FF位／reset-one位和冻结预测功能面积。纯FF类在实际Liberty中核对；真实根部census见证覆盖528个root单元、23个clock负载重归属，并证明改名不影响判断、触及状态的支路不能剔除，断开输入／多驱动负控拒绝。
+
+候选`8f9d79b80d0c8f12c60a0d55fef499b3a1fef1c05e230b74a299099c21ba00db`及5项实现／二进制身份先冻结，再运行新候选的validation。后继实现为`FactoredTimingCostProvider`和独立Python；原`OwnedTimingCostProvider`及原正式D门禁保持原身份。真实C++图36项请求与Python的全状态连接、typed边界、共享特征和独占面积一致，18覆盖／18保留原节点拒绝；12项实际原生拒绝、4类新增坏共享参数各36项请求全部拒绝。原来遗漏的bypass第0级纯转发银行已按真实state slots进入预测，未用实测银行价格填充。
+
+**冻结后六位置复验。** 仅用已有serial、parallel、bypass各两位置／1500ps，12个完整阶段，没有新物理调用。结果如下：
+
+| 项目 | 后继median／P95相对误差 | 结果 |
+| --- | ---: | --- |
+| 12个完整阶段点值 | 12.7537%／19.6552% | 通过15%／35% |
+| 6项总面积 | 5.8306%／7.7231% | 通过15%／35% |
+| 8个S-only输入转发银行 | 3.0147%／6.0190% | 通过50%分类门槛 |
+| 5个S-only外部转发银行 | 16.8315%／20.7677% | 通过50%分类门槛 |
+| shared physical面积 | 3.1213%／17.8894% | 通过15%／35%诊断门槛 |
+| root repair面积 | 26.1543%／29.0350% | median失败 |
+| shared clock面积 | 10.8506%／42.5219% | P95失败 |
+
+旧首批S-only输入P95 59.8657%及三项面积失败保留。新候选修复纯转发与physical，但root repair／clock仍不满足，不据此再次修改系数或reserve。现有6项setup均满足，仍缺实测违约样本；hold继续沿用原物理结论，serial／placement-1仍为负，不能改写完整时序资格。parallel、bypass两位置面积均处5%并列带，方向分歧仍保留。
+
+**真实MAC32需求覆盖退化，禁止正式绑定。** 新原生consumer从真实MAC32源码取得44合法放置，按同一后继在500／1500／3000ps分别查询。每档仅27项覆盖、17项拒绝，合计81覆盖／51拒绝，原因均为shared语义特征超冻结支持范围；原节点函数的2752项覆盖结论不变。后继没有用train外推价格或旧shared常数兜底，这51项是新的完整价格缺覆盖，不能混同原六组合中的18项节点拒绝。候选未满足最低全候选需求，不能宣称已完成S／G联合或正式D。这里44放置仅暴露需求域，不能成为模型形状白名单。
+
+**结论与下一步。** 当前后继为`failed_joint_validation`，两项数值失败加完整需求覆盖退化，`zero_G_joint_qualified=false`、`full_D_ready=false`。当前已证明的纯转发责任修正及physical简单函数可作为后续版本基础，原失败包完整封存。下一工作包应先登记后继共享需求域／角色与有限采样方案，补足小FF／不同功能布局范围和repair服务／reset连接特征；仅靠旧大银行与局部采样壳的train不能证明这些通用函数已合格。若补测，按train／validation职责分开，不在本六位置上反复调到通过；不拟合负G，不解锁1000ps及原联合独立test。本轮不启动新采集。
+
+**证据与最终结算。** [证据v3](../experiments/arithmetic/evidence/step67_state_shared_successor_v3/README.md)封存267成员，标准库独立活跃集NNLS从568个认证train标量行重算固定参数，648条路径分解复算边界，完整根部图见证、36项原生／Python推理、六位置12阶段及两项数值失败、MAC32的81／51覆盖记录均在隔离目录重现。小包不重开全部旧ODB，原全量Liberty／net提取及完整根部证书由本轮收费提取和保留产物承担。完整原始归档22成员约11.2MB，实际恢复逐文件验SHA；早期derive因clock悬空输出、Liberty XOR表达式识别的失败和两次封包／回放依赖失败全部保留。v1缺传递导入，v2隔离模式下用户目录numpy不可见，v3补依赖并用无数值库的独立最多4系数求解器重现，未修改模型／域／标签。
+
+最终25项原冻结推理源、5项冻结后继实现／二进制、247项封存源码与原S／节点身份核对通过；两个仓库`git diff --check`通过。小证据含最终费用约2.65MB，单文件≤512KiB；完整产物位于`/home/zyrv/vulsim-artifacts/stage67-state-shared-20261111-v1`，同盘留存不是异机备份，原始目录不删除。按精确reservation ID结清0 synth／0 grt／0 detailed、24 support、266.655795秒叶墙钟／409.08秒CPU、pending=0，包含本轮全部失败，不与§7.73物理费重复。后续688／688调用、86400秒墙钟／172800秒CPU／30GiB保留额度通过核对，未git add／commit／push。收据见[resource-closure.json](../experiments/arithmetic/evidence/step67_state_shared_successor_v3/resource-closure.json)。
+
+<a id="step67-shared-function-fitting"></a>
+
+### 7.75 第6—7步共享函数后继：需求域、有限采集与拟合（2026-11-11，限定拟合／新validation完成）
+
+用户要求记录并继续拟合，明确“不能退化成查表”。本工作包保持通用小算子函数＋S＋DAG／必要G主线，复用已发布节点与S状态／边界基础；针对shared clock／root repair及共享支持域建立明确后继。先提取真实D需求特征范围，按参数覆盖选择少量代表结构，不能逐个44放置物理测价。源ID、候选ID、placement ID、精确T编号及每源独立截距均禁止作为模型输入；身份只用于审计、角色隔离和错误追溯。
+
+新共享函数输入仅为测量前可计算的状态位／字／enable／reset负载、流水深度、预测功能面积和数值T（如log2T）等；采用预登记的低维共享函数，统一导出Python／C++参数。先登记新源train／validation／locked_test角色、准确T请求、预算、支持与质量门槛，再执行有限批次。1000ps及原联合独立测试继续锁定。完整新源和其所有T保持同一角色，旧测试不改角色。原S／node train保留，若共享采样壳与实际D服务／capture协议不相容，只作明确历史／诊断证据，不能当作同一共享标签混合拟合。
+
+参数、特征、支持规则和reserve冻结后，才消费新validation；未见结构、未见参数组合、数值T输入和域外拒绝分别验收。最低MAC32合法候选仅用于需求／搜索回归；新模型不得依赖其ID或以白名单接受。准确采样方案和后续执行／失败／结算补入本节，`full_D_ready=false`，未经联合独立资格不绑定正式D。
+
+**测量前登记与软件放行。** 实际132次需求审计表明唯一旧共享支持缺口为预测功能面积：需求681.140374–1349.744680µm²、旧上限913.268761µm²；语义FF为259–619位、reset-one为41–50位，原节点函数仍覆盖。新协议位于`/home/zyrv/vulsim-artifacts/stage67-shared-fit-20261111-v1/preparation-v1/protocol.json`。8个train源为products的16位单乘、24／32位四个不同乘法，以及16／24／32位归约、16／32位串联；3个全新validation源为20位三个独立乘法、28位归约和24位串联。另2个源保持locked_test。每源所有数值T、reset、物化结构及标签保持同一角色；具体源和reset常数在源清单中先行冻结。
+
+公共服务采用独立输入write-enable／held-valid、真实native状态及无条件外部capture，reset常数与编译器状态投影一致。11份真实RTL各192周期的独立整数／时序递推验证通过，33组目标上的全部节点与S前置查询覆盖。train预测特征范围为FF99–643位、预测功能面积173.342539–2365.125131µm²、input32–128位、reset-one0–140位、input-port2–4，数值clock_pressure定义为1500/T。前述范围由实际源计算，未使用物理标签。
+
+固定拟合式为源等权、非负线性函数：clock使用one／FF／sqrt(FF)／预测功能面积／1500/T；physical使用one／预测功能面积；root repair使用one／input位／FF／reset-one位／input-port数／1500/T。支持规则按eligible train实际数值范围及500–3000ps周期区间检查，不使用精确源或T白名单。旧不相容采样壳共享标签不混入本次训练。模型复杂度和门槛在新标签读取前登记，不依据已消费六位置调参。
+
+首批仅放行8train×3T共24 synth／24 grt，单任务300／1200秒，四任务并发、每任务4线程／8192MiB，最多288个support叶；费用仍经共享Ledger，后续688／688次调用、86400秒墙钟／172800秒CPU／30GiB保留。3validation×3T的9次容量已登记，但只有参数／支持／reserve／实现身份冻结后另行admit；1000ps及原联合test不解锁。采集保留CEC、实际FF／常量与精确Boolean reset／hold／update验证，以及全单元独占归属和OpenDB面积守恒。本包拟合共享面积，不以总面积相消代替clock／repair各自15%median／35%P95门槛；完整阶段／零G联合资格另行验收。
+
+**源生成器资格停点与显式恢复。** train_r24／train_r32原两乘归约表达式为a×b＋b×c，却声明了d输入；实际综合删除launch/d，变量FF检查正确拒绝。旧源、已付synth和失败记录保留，不将缺失FF视作合法状态。后继`preparation-v2`仅将这两个train及尚未物理消费的validation_r28改为a×b＋c×d，并使用新源ID／内容SHA；其他源和成功快照全部继承。重新执行真实编译、节点／S覆盖及192周期资格后，仅为两个新train源登记6 synth／6 grt、72support、原超时／并发和后续保留额度；不是对旧失败自动重试。拟合特征、算法、T、门槛与角色不变，旧失败不从历史移除。完整后继train必须为18个继承成功点＋6个新源点，再冻结，之后才消费新validation物理标签。
+
+**保存快照提取后继。** 原24项最终18成功、6项在synth后的闲置launch/d变量FF检查失败，6项均没有进入grt。18个成功点提取时，原Boolean检查逐算术输出扫描全单元，300秒叶超时，费用及部分证明原样保留。索引后继只将该存在性查询改为同一net→实际连接单元集合，完整布尔比较、cut判定、reset／hold／update／clock检查不变；真实99位快照的新旧完整证明逐字段一致。后继已读完18点，全部实际grt FF库存等于mapped状态证书，全单元唯一归属／OpenDB面积守恒通过；没有重跑这些物理点。补测按三路并发与一项提取共享四个任务槽，未超原并发上限。
+
+**拟合、冻结及真实调用检查。** 两个修复源6／6补测成功，最终24点为18继承＋6新点；六份旧已完成Boolean证明与索引后继逐字段相同，旧失败仍保留。按预登记函数拟合并冻结候选`460222628523b1c8e78b23f85f1e4d5778fdf3c86253da5e4528c2dd09975ce3`，参数文件为大产物`fit-v1/candidate.json`。train-only误差median／P95分别为clock8.0711%／31.4990%、physical4.4036%／35.1683%、repair9.0277%／20.3213%；physical的train P95略超35%，不改门槛或参数。
+
+首版Python／C++支持边界受浮点求和顺序影响，后继实现统一使用`1e-10×max(1,|low|,|high|)`数值容差，参数、经验支持区间和reserve原字节不变，先冻结`freeze-v2.json`再进入新物理validation。真实11源×7T共77项查询有76覆盖／1拒绝，跨语言一致，462项域外／坏特征检查通过；1051条位映射连接及591个capture的零G点值／预留复算一致。16位最小train结构在2200ps时预测功能面积173.284346µm²，确实低于173.342539µm²支持下限，此项继续拒绝，不用数值容差掩盖，也不以精确T特判。原首次检查失败及资格脚本找错合并数据见证路径的失败都保留收费。
+
+MAC32实际44候选在500／750／1000／1250／1500／2200／3000ps共308次完整计价全部覆盖，旧三档81覆盖／51拒绝结论保留于原版本。独立SciPy NNLS与标准库活跃集求解预测最大差约2.13e-14µm²；source改名／行序改变不改变系数，241项负控通过。44候选仍只用于需求／搜索回归，未逐候选测价。3个新validation源×三档共9项已按冻结后准入并启动，1000ps仅软件调用、物理联合test仍锁定；`full_D_ready=false`。
+
+**新validation一次性验收。** 3个未参与train的完整源20位三乘并行、28位双乘归约及24位串联，在500／1500／3000ps的9项物理请求全部成功；没有支持拒绝。参数、特征、数值支持和50ps预留保持冻结，未依据这9项选择另一公式。结果为`passed_shared_validation_not_joint`：
+
+| 独占责任 | validation相对误差median／P95 | 登记门槛 | 结论 |
+| --- | ---: | ---: | --- |
+| shared clock | 4.6509%／18.8526% | 15%／35% | 通过 |
+| shared physical | 2.3492%／7.8236% | 15%／35% | 通过 |
+| root repair | 7.0377%／19.7289% | 15%／35% | 通过 |
+| 完整总面积 | 2.4336%／4.6306% | 15%／35% | 通过 |
+
+令F为预测前语义FF位数，A为冻结节点函数及S三所有者的预测功能面积，I为输入数据位数，R为变量reset-one位数，p=1500/T；T单位为ps，面积为µm²。本候选非零参数为：`clock=0.018401064302F+0.006594856265A+0.245141680317p`，`physical=4.444542029756+0.009375960385A`，`repair=0.126442131732I+0.039797792032F+0.106223786960R+0.875323393779p`。登记的其余基函数系数为0，仍按冻结的原输入域检查；不因系数为0而静默删掉支持条件。总面积为A＋clock＋physical＋repair，各项只计一次。此处A是模型预测，绝非后端实测面积，也没有源／视图／精确T价格项。
+
+33个合格train／validation物理点共10263个逻辑FF引用／10263唯一FF，实际mapped与grt状态一致，逐位Boolean reset／hold／update／clock证明、全单元归属／OpenDB面积守恒及CEC通过。按快照累计，不是一个电路的FF数。共有12项setup为负、3项hold为负，均保留；面积模型通过不将它们改为时序成功。当前包没有重新提取完整阶段路径或授予false-feasible／排序资格，G保持0，旧六位置的共享失败原身份不覆盖。
+
+**本轮交付边界。** 已完成共享通用函数的train拟合、冻结及新validation，修复最低MAC32需求覆盖缺口。第6步共享面积取得这批新结构的限定validation证据；第7步应把冻结函数接入完整阶段的多结构／多T读取与误差分解，检查S控制、连线、最大值相加、错误可行及排序，再登记新独立联合资格。1000ps联合物理测试、两个新locked源及原联合test保持锁定，正式D仍未绑定，`zero_G_joint_qualified=false`、`full_D_ready=false`。证据封存、隔离回放和精确费用结算另补本节。
+
+**证据封存完成。** [便携证据](../experiments/arithmetic/evidence/step67_shared_function_v1/README.md)含400个封存成员，约4.24MB的压缩主体，单片≤512KiB。`python3 -I`的无用户目录数值库隔离回放通过：train24点独立NNLS重拟合、新validation9点与空失败表、实际归属见证及308项MAC32共享函数价均重现。完整原始归档11555成员、928236054字节，已真实恢复逐文件验SHA。首次高压缩归档在600秒限额超时，部分包保留；低压缩后继已完整写出，但恢复包装器误把compresslevel重复传给标准库，调用失败。保存此失败后，直接重用完整v2压缩包，以独立恢复叶逐文件核对成功，没有重新压缩、物理测量或拟合。后补失败收据和最终费用另存，不声称包含于较早归档。
+
+旧5项冻结推理源码、原native二进制、节点发布／S身份及本次所有拟合冻结文件均保持原SHA。所有原始目录继续保留，本机归档不等于异机备份；1000ps物理联合test未解锁，未git add／commit／push。最终精确费用及后续保留核对见便携包的`resource-closure.json`，本轮拟合与新validation推进完成，完整阶段与正式D仍待。
+
+最终结算为39 synth／33 grt／0 detailed、311 support，5390.481854秒叶墙钟／12081.42秒CPU，pending=0；包括6项闲置输入synth及所有读取／推理／封存／核验失败，不与旧包重复收费。小包连最终收据约4.42MB、最大单文件512KiB，后续688／688调用、86400秒墙钟／172800秒CPU／30GiB保留核对通过。收尾首次把宽泛快照中的所有证据发布脚本也当作物理依赖检查，因该脚本已补后继路径而拒绝；后继确认原快照字节仍在，实际物理／状态／CEC依赖闭包不导入该发布脚本，且冻结推理文件不变，核验通过。这是1项发布脚本差异，不是测量／标签／拟合实现漂移，差异SHA和失败费用均列入`final-integrity.json`／最终收据。两个仓库`git diff --check`通过。

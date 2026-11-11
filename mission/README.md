@@ -1,5 +1,11 @@
 # 任务与现行规划导航
 
+**第6—7步共享通用函数已完成拟合、冻结及新validation，见[§7.75](lxy-plan-fix.md#step67-shared-function-fitting)及[便携证据](../experiments/arithmetic/evidence/step67_shared_function_v1/README.md)。** 24个兼容真实服务／native／capture的train点拟合共享clock／physical／root repair，参数不使用源、shape、候选、placement或精确T编号。9个新validation物理点全部通过：clock／physical／repair的median／P95分别为4.6509%／18.8526%、2.3492%／7.8236%、7.0377%／19.7289%，总面积2.4336%／4.6306%。11源77项Python／C++查询为76覆盖／1真实域外拒绝，MAC32的44候选×7数值T全部308项覆盖，包含1000ps软件调用；400成员隔离回放及11555成员原始归档实际恢复通过。旧失败与费用保留；下一步完成整级多结构／多T验证与新独立联合资格。1000ps物理联合test保持锁定，`full_D_ready=false`。
+
+**第6—7步S／共享train审计与冻结后复验已完成，见[§7.74](lxy-plan-fix.md#step67-state-shared-train-audit)和[证据v3](../experiments/arithmetic/evidence/step67_state_shared_successor_v3/README.md)。** 复用原S及节点train，修正clock负载归属，纯转发改用同类native_data边界，简单共享函数及全状态C++／Python消费已完成。六位置／12阶段点误差median／P95为12.7537%／19.6552%，总面积5.8306%／7.7231%；S-only输入P95降至6.0190%、physical面积通过。root repair median26.1543%和clock P95 42.5219%仍失败；新共享支持域使MAC32三档132项仅81覆盖／51拒绝，原节点覆盖不变。参数未在validation后调整，标准库独立NNLS／隔离回放通过。下一步登记共享需求域和有限后继采样／新validation职责，不反复调本六位置；无新物理调用，1000ps／联合test保持锁定，`full_D_ready=false`。
+
+**第6—7步扩展首批已完成，见[§7.73](lxy-plan-fix.md#step67-combination-validation-batch1)和[证据v2](../experiments/arithmetic/evidence/step67_combination_batch1_v2/README.md)。** parallel／bypass各两位置、1500ps的4实现／8物理阶段，点误差median／P95为10.9599%／19.6552%，总面积9.5567%／11.2255%；整级数值门槛通过，联合资格仍失败。纯转发S输入边界P95为59.8657%，repair／clock／physical独占面积误差未通过，bypass两位置排序相反但处5%并列带。5624动态端点、124常量输出、940逻辑状态引用／924唯一FF及33项负控通过，隔离回放完成；两次工具链停点与费用保留。下一步先用原train审计S纯转发边界及共享项，不追加500／3000ps，不解锁1000ps／联合test，`full_D_ready=false`。
+
 **第6—7步已完成边界／连线／预留计费后继及同快照零G复验，见[§7.72](lxy-plan-fix.md#step67-accounting-successor)和[后继证据](../experiments/arithmetic/evidence/step67_owned_accounting_v1/README.md)。** 训练侧推导S边界点估计及真实算术owner间wire，纯位连接规范化后只对实际责任项计费；点预测、原逐节点guard和单次50ps整级预留分开输出。serial四阶段点误差median／P95降至14.1624%／14.7381%，本pilot数值门槛及两位置排序通过；旧零G失败不改写。36项真实组合请求跨语言一致，18覆盖／18保持拒绝；shared clock面积、其他结构／T及新独立联合资格仍待，第二种放置hold失败保留。无新synth／grt，未解锁联合test，`full_D_ready=false`。
 
 **第5步已完成500–3000ps支持域内的节点函数发布验收，见[§7.70](lxy-plan-fix.md#step5-bounded-operator-release)、[发布模型](../experiments/arithmetic/models/asap7_conditional_operators_v1/README.md)及[独立证据](../experiments/arithmetic/evidence/step5_conditional_operator_release_v2/README.md)。** 4个全新独立源×4T共16项请求全部完成，32个物理阶段严格重读；新独立延迟／面积及精确1000ps误差门槛通过。735项真实参数跨语言核对、44种合法放置在500／1000／1500／3000ps下2752次生产节点查询及隔离恢复回放通过。函数系数、分段、语义／负载联合支持和reserve继承冻结候选，仅将周期数值支持与500–3000ps相交；不是按44视图或三个时钟查价。原v2整包失败及原周期域结论保留，经验reserve不是严格上界。第6—7步已完成首个真实serial两placement、1500ps pilot的状态／端点读取，但零G完整阶段预测失败，见[§7.71](lxy-plan-fix.md#step67-joint-pilot)；`full_D_ready=false`。下列“采集中／待发布”均保留对应历史检查点含义。
@@ -57,11 +63,14 @@
 | [第四章§7.70](lxy-plan-fix.md#step5-bounded-operator-release) | 第5步500–3000ps节点函数发布、16项新独立／735跨语言／2752真实调用、隔离证据与S/G剩余资格 |
 | [第四章§7.71](lxy-plan-fix.md#step67-joint-pilot) | 第6—7步真实serial pilot：状态／端点／所有权通过，零G失败、setup／hold分开保留及后继G边计费缺口 |
 | [第四章§7.72](lxy-plan-fix.md#step67-accounting-successor) | 边界／真实owner间wire／单次预留后继，零G点误差复验通过；旧失败、hold及完整联合资格边界分别保留 |
+| [第四章§7.73](lxy-plan-fix.md#step67-combination-validation-batch1) | parallel／bypass首批真实物理验证；整级数值通过，S纯转发／共享独占面积失败与工具链恢复分别保留 |
+| [第四章§7.74](lxy-plan-fix.md#step67-state-shared-train-audit) | S纯转发／physical后继通过有限复验；repair／clock及完整MAC32共享域失败，原参数／角色与各次失败保留 |
+| [第四章§7.75](lxy-plan-fix.md#step67-shared-function-fitting) | 通用共享函数需求／源角色／有限采集、恢复、24点拟合冻结、跨语言与连续数值T检查及新validation |
 | [archive/README.md](archive/README.md) | 旧规划追溯，不能从旧“下一步”续作 |
 
 ## 当前已有成果与下一步
 
-当前小算子函数以[ASAP7条件算子发布v1](../experiments/arithmetic/models/asap7_conditional_operators_v1/README.md)为准，输出独立算子时延与组合面积。模型直接接入已有节点CostProvider，1000ps有独立物理证据，其他域内数值T按同一函数和联合支持规则查询。第6—7步pilot已核对实际FF／状态语义、端点、Liberty弧和所有权；原零G失败经§7.72计费后继，在同源四阶段通过点数值复验。下一步扩展其他validation结构／T，验证真实缺覆盖与shared clock，并保持hold独立判断；完整阶段及正式D资格仍待。
+当前小算子函数以[ASAP7条件算子发布v1](../experiments/arithmetic/models/asap7_conditional_operators_v1/README.md)为准，输出独立算子时延与组合面积。模型直接接入已有节点CostProvider，1000ps有独立节点物理证据，其他域内数值T按同一函数和联合支持规则查询。§7.74旧共享候选的repair／clock及MAC32域失败保留；§7.75已用兼容服务结构完成通用共享函数拟合、新validation及308项实际需求覆盖，原节点发布资格不变。下一步验证冻结后继的多结构／多T完整阶段、错误可行与排序，再做新独立联合验收和正式D；1000ps联合物理测试保持锁定，hold独立报告。
 
 已有参数化乘法模板、固定C、43例整图／周期基础、四平台后端、局部算子模型及真实数据。较新ASAP7包有12类合格grt组件，含8／16／32位完整／低位乘法和8／16／32／64位加法；其精确目标／形状／capture域不等于任意负载或新周期均覆盖。原始／half／quarter候选、实际阶段和typed状态查询、共享链、验证和Ledger继续复用。
 
