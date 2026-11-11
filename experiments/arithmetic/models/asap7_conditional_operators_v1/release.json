@@ -1,0 +1,17 @@
+{
+  "version": "asap7-conditional-operator-release-v1",
+  "status": "passed_bounded_node_release",
+  "model": "operators.json",
+  "model_sha256": "513f2f7693c702c492fec380ed81b385f4691f18bd05aaac6596d27f0340f0d2",
+  "scope": "node functions only, independent S/G/stage validation required",
+  "target_interval_ps": [
+    500,
+    3000
+  ],
+  "model_evidence": "experiments/arithmetic/evidence/step5_conditional_operator_release_v2",
+  "native_consumer_queries": 2752,
+  "parameters_inherited_from_candidate_sha256": "882d432c1bf1e3c06fcdf677977210b41af46ba171d8dd014c248edb60ab01d2",
+  "failed_ancestor_report": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/test-v2/independent-test.json",
+  "old_verdict_unchanged": true,
+  "full_D_ready": false
+}

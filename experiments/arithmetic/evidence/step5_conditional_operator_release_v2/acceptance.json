@@ -1,0 +1,241 @@
+{
+  "version": "step5-node-release-acceptance-v1",
+  "status": "passed_bounded_node_release",
+  "operations": {
+    "add": {
+      "status": "passed_bounded_node_release",
+      "fresh": {
+        "delay": {
+          "sources": 2,
+          "rows": 8,
+          "source_macro_median": 0.020300727302366227,
+          "source_macro_P95": 0.05771831073821117,
+          "source_macro_normalized_absolute_error": 0.044030669919927386,
+          "raw_MAE": 19.080705393932924,
+          "passed": true
+        },
+        "area": {
+          "sources": 2,
+          "rows": 8,
+          "source_macro_median": 0.04744167936760908,
+          "source_macro_P95": 0.05198721244282631,
+          "source_macro_normalized_absolute_error": 0.10166631131536194,
+          "raw_MAE": 3.4293901611936994,
+          "passed": true
+        }
+      },
+      "exact1000ps": {
+        "delay": {
+          "sources": 2,
+          "rows": 2,
+          "source_macro_median": 0.04320366337903351,
+          "source_macro_P95": 0.09728359067620894,
+          "source_macro_normalized_absolute_error": 0.07024362702762123,
+          "raw_MAE": 30.785543019006496,
+          "passed": true
+        },
+        "area": {
+          "sources": 2,
+          "rows": 2,
+          "source_macro_median": 0.05069396498433573,
+          "source_macro_P95": 0.05198721244282631,
+          "source_macro_normalized_absolute_error": 0.05134058871358102,
+          "raw_MAE": 1.4307517548612214,
+          "passed": true
+        }
+      },
+      "fresh_sources": 2,
+      "fresh_points": 8,
+      "fresh_refused": 0,
+      "ancestor_full_verdict": "failed",
+      "ancestor_in_release_interval": {
+        "points": 56,
+        "delay": {
+          "sources": 8,
+          "rows": 56,
+          "source_macro_median": 0.03825463519063575,
+          "source_macro_P95": 0.10320229629911529,
+          "source_macro_normalized_absolute_error": 0.05322792385257986,
+          "raw_MAE": 20.2310455447904,
+          "passed": true
+        },
+        "area": {
+          "sources": 8,
+          "rows": 56,
+          "source_macro_median": 0.04571879758955618,
+          "source_macro_P95": 0.393329685583187,
+          "source_macro_normalized_absolute_error": 0.12964502777563933,
+          "raw_MAE": 3.9556817847149692,
+          "passed": false
+        }
+      },
+      "reserve_underpredictions": 0,
+      "reserve_is_empirical_not_a_proven_upper_bound": true
+    },
+    "mul": {
+      "status": "passed_bounded_node_release",
+      "fresh": {
+        "delay": {
+          "sources": 2,
+          "rows": 8,
+          "source_macro_median": 0.023164215449088928,
+          "source_macro_P95": 0.04300833088057765,
+          "source_macro_normalized_absolute_error": 0.03508787281610764,
+          "raw_MAE": 26.132465752700426,
+          "passed": true
+        },
+        "area": {
+          "sources": 2,
+          "rows": 8,
+          "source_macro_median": 0.020122042620981613,
+          "source_macro_P95": 0.020561634748563574,
+          "source_macro_normalized_absolute_error": 0.04105925666530338,
+          "raw_MAE": 4.404418642112947,
+          "passed": true
+        }
+      },
+      "exact1000ps": {
+        "delay": {
+          "sources": 2,
+          "rows": 2,
+          "source_macro_median": 0.026374959259739185,
+          "source_macro_P95": 0.03451928277457013,
+          "source_macro_normalized_absolute_error": 0.030447121017154657,
+          "raw_MAE": 20.846375403977333,
+          "passed": true
+        },
+        "area": {
+          "sources": 2,
+          "rows": 2,
+          "source_macro_median": 0.09134521580597355,
+          "source_macro_P95": 0.1407448920946504,
+          "source_macro_normalized_absolute_error": 0.11604505395031198,
+          "raw_MAE": 12.624727164520081,
+          "passed": true
+        }
+      },
+      "fresh_sources": 2,
+      "fresh_points": 8,
+      "fresh_refused": 0,
+      "ancestor_full_verdict": "failed",
+      "ancestor_in_release_interval": {
+        "points": 98,
+        "delay": {
+          "sources": 10,
+          "rows": 98,
+          "source_macro_median": 0.038789597415005955,
+          "source_macro_P95": 0.05709433665445936,
+          "source_macro_normalized_absolute_error": 0.04083844588699507,
+          "raw_MAE": 31.620873497673045,
+          "passed": true
+        },
+        "area": {
+          "sources": 10,
+          "rows": 98,
+          "source_macro_median": 0.03729189674617169,
+          "source_macro_P95": 0.2904791121759148,
+          "source_macro_normalized_absolute_error": 0.0591302149872958,
+          "raw_MAE": 6.204699324493504,
+          "passed": true
+        }
+      },
+      "reserve_underpredictions": 8,
+      "reserve_is_empirical_not_a_proven_upper_bound": true
+    }
+  },
+  "original_candidate_sha256": "882d432c1bf1e3c06fcdf677977210b41af46ba171d8dd014c248edb60ab01d2",
+  "released_model_sha256": "513f2f7693c702c492fec380ed81b385f4691f18bd05aaac6596d27f0340f0d2",
+  "target_interval_ps": [
+    500,
+    3000
+  ],
+  "unchanged_predictors_reserves_semantic_and_joint_support": true,
+  "target_support_intersection_only": true,
+  "original_failed_independent_verdict_retained": true,
+  "all_prior_outcomes_in_denominator": true,
+  "historical_acquisition_failures": [
+    {
+      "source": "s32e03528a3472a5c",
+      "T": 500,
+      "status": "failed_in_ancestor_recovered_in_successor",
+      "fresh_repair_validation": "new independent clones successfully processed without rule changes"
+    }
+  ],
+  "historical_out_of_domain": [
+    {
+      "source": "s3468eb15798173e7",
+      "T": 3361,
+      "reason": "outside release interval"
+    },
+    {
+      "source": "s49e085077fc67cdc",
+      "T": 3389,
+      "reason": "outside trained numerical feature support target_period_ps"
+    },
+    {
+      "source": "sa914049579698e5f",
+      "T": 486,
+      "reason": "outside release interval"
+    },
+    {
+      "source": "sa914049579698e5f",
+      "T": 405,
+      "reason": "outside release interval"
+    },
+    {
+      "source": "s02d79df52b7d393d",
+      "T": 445,
+      "reason": "outside release interval"
+    },
+    {
+      "source": "s6d07272a9143e13e",
+      "T": 456,
+      "reason": "outside release interval"
+    },
+    {
+      "source": "s72531dc85cda3808",
+      "T": 464,
+      "reason": "outside release interval"
+    },
+    {
+      "source": "s9af81ed2e19c2b24",
+      "T": 498,
+      "reason": "outside release interval"
+    },
+    {
+      "source": "s47b478591b60663f",
+      "T": 441,
+      "reason": "outside release interval"
+    },
+    {
+      "source": "s27bf05c2a505c5a6",
+      "T": 434,
+      "reason": "outside release interval"
+    },
+    {
+      "source": "s27bf05c2a505c5a6",
+      "T": 405,
+      "reason": "outside release interval"
+    },
+    {
+      "source": "s27bf05c2a505c5a6",
+      "T": 352,
+      "reason": "outside release interval"
+    },
+    {
+      "source": "s27bf05c2a505c5a6",
+      "T": 308,
+      "reason": "outside release interval"
+    },
+    {
+      "source": "s27bf05c2a505c5a6",
+      "T": 444,
+      "reason": "outside release interval"
+    }
+  ],
+  "limited_four_source_new_independent_scope": true,
+  "no_new_full_domain_or_pipeline_claim": true,
+  "T_interpolation": "continuous numeric query inside [500,3000] and unchanged joint support; four exact independent clocks validate interpolation, not every possible context",
+  "S_G_joint_qualified": false,
+  "full_D_ready": false
+}

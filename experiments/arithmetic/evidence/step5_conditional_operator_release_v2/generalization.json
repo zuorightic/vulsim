@@ -1,0 +1,40 @@
+{
+  "fresh_sources": [
+    {
+      "source": "s31f15ef3e3ea74bf",
+      "operation": "mul",
+      "unseen_training_producer_shape": true,
+      "unseen_fitting_producer_shape": true,
+      "source_context_unseen": true,
+      "source_ids_used_as_predictors": false
+    },
+    {
+      "source": "s6792d9de71d0dbde",
+      "operation": "add",
+      "unseen_training_producer_shape": true,
+      "unseen_fitting_producer_shape": true,
+      "source_context_unseen": true,
+      "source_ids_used_as_predictors": false
+    },
+    {
+      "source": "sa3fb07b49b32ae35",
+      "operation": "add",
+      "unseen_training_producer_shape": true,
+      "unseen_fitting_producer_shape": true,
+      "source_context_unseen": true,
+      "source_ids_used_as_predictors": false
+    },
+    {
+      "source": "sfd070255ebd51076",
+      "operation": "mul",
+      "unseen_training_producer_shape": true,
+      "unseen_fitting_producer_shape": true,
+      "source_context_unseen": true,
+      "source_ids_used_as_predictors": false
+    }
+  ],
+  "exact1000ps_independent": true,
+  "continuous_support_not_exact_T_lookup": true,
+  "known_stage7_uncovered_structures": "shared, shifted wide reduction and some saved-value shapes retain their documented cost_uncovered; no stage7 qualification granted",
+  "full_D_ready": false
+}

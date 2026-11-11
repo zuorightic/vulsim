@@ -1,11 +1,14 @@
 # 算术实验：现行契约、验证和实施边界
 
+**当前MAC32原型第5步已发布限定支持域的小算子函数：** [ASAP7条件Mul／Add模型v1](models/asap7_conditional_operators_v1/README.md)，证据见[发布验收v2](evidence/step5_conditional_operator_release_v2/README.md)及[规划§7.70](../../mission/lxy-plan-fix.md#step5-bounded-operator-release)。函数以结构、位宽、位连接／负载、capture及数值T为输入，发布目标区间500–3000ps，仍受语义／联合支持规则约束。新独立16项、735项Python／C++核对和2752次真实图生产节点查询通过；44放置仅作需求／搜索回归。S／G完整阶段及正式D资格仍待，原失败与原数据保留。下文较早步骤编号和状态按对应计划／冻结版本解释。
+
 后续实施以 [修订规划第一章](../../mission/lxy-plan-fix.md) 为准，实际验收见该文件第四章。步骤一的五档宽位宽补验已完成；步骤二新增43例参数化定义、独立参考、固定权重和目标/选择协议。步骤二的组合软件验证不代表固定L流水调度、四平台模型或688条物理记录已经完成。
 
 现行入口如下：
 
 | 入口 | 当前作用 |
 | --- | --- |
+| [models/asap7_conditional_operators_v1](models/asap7_conditional_operators_v1/README.md) | 第5步发布的独立算子时延／组合面积函数及1000ps查询示例；不含S／G或完整D资格 |
 | [cases_v2.json](cases_v2.json) | 32正式＋11保留案例；原始依赖图、端口宽度及训练隔离策略 |
 | [contracts.py](../arithmetic_dse/contracts.py) | 核心数值profile、模板参数schema、43例校验、L和目标批次冻结 |
 | [reference.py](../arithmetic_dse/reference.py) | 参数化整数及binary32独立参考；原九案例别名不再接受 |

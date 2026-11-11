@@ -4,6 +4,8 @@
 
 | 目录 | 适用版本 |
 | --- | --- |
+| [step5_conditional_operator_release_v2](step5_conditional_operator_release_v2/README.md) | 现行MAC32十步计划第5步：500–3000ps条件小算子函数限定发布，16项新独立、32阶段重读、735跨语言／2752真实节点查询及隔离回放；S/G联合待验 |
+| [step5_conditional_operator_release_v1](step5_conditional_operator_release_v1/README.md) | 同一发布模型的首次封包；保留恢复目录及推理依赖缺失失败，已由v2补齐，非另一轮拟合 |
 | `step1_wide_v1` | 修订计划步骤一宽位宽补验 |
 | `step2_v2` | 修订计划步骤二契约/参考/生成补验 |
 | `step3_platforms_v1/v2/v3` | 修订计划步骤三；v1原ns结果作废，v2单位修复重跑，v3软件收尾，当前继承链见导航 |
