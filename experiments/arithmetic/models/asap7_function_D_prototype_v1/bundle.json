@@ -1,0 +1,56 @@
+{
+  "version": "asap7-function-D-prototype-v1",
+  "output_scope": "prototype-no-reset-timing-v1",
+  "dependencies": {
+    "operators": {
+      "path": "../asap7_conditional_operators_v1/operators.json",
+      "sha256": "513f2f7693c702c492fec380ed81b385f4691f18bd05aaac6596d27f0340f0d2"
+    },
+    "S_binding": {
+      "path": "binding.json",
+      "sha256": "76dd37094be027dd5e4c6565d63ae037be1b541a88e63e0dfe233fe571ef3542"
+    },
+    "composition": {
+      "path": "composition.json",
+      "sha256": "460222628523b1c8e78b23f85f1e4d5778fdf3c86253da5e4528c2dd09975ce3"
+    },
+    "state_model": {
+      "path": "reused-S.json",
+      "sha256": "1b61a68d80b704532ff38483a034ec2c03de921448095deb6acdcbbb00be383d"
+    },
+    "service_contract": {
+      "path": "public-service-witness.sv",
+      "sha256": "f75a888a68d95554c4bab560e43839104dde68f66a0b51e8803ba68e3c25bbd2"
+    }
+  },
+  "consumer_sources": {
+    "rtlzz/src/backend/arithmetic_function_selection.cpp": "9774ee750a9cbade62e9f199fdeeb9c80e8111d8a9e2052219a24258f2dcbdff",
+    "rtlzz/src/backend/arithmetic_function_selection.hpp": "adb818b3587905bf375df99d4257fd68ff2bf7872b36270c5f91dd288838b678",
+    "rtlzz/main/arithmetic_d.cpp": "3bbc93ed7312bce4eae8b12c8c723dc829e78f0d41191533d7b62d170029c6d6",
+    "experiments/arithmetic_dse/run_function_d.py": "97f4e3cbd5492667b9c9e51bb92db6b918eeb32484231b0532793c608e571e2c"
+  },
+  "consumer_binary_sha256": "6121f44f7b35c9506a4a7184ef9bc2007f69ac5c32ff7ebc5d22af99271940dc",
+  "numerical_T_interval_ps": [
+    500,
+    3000
+  ],
+  "actual_support": "intersection of node, S, shared numerical/semantic domains; refuse incomplete candidate coverage",
+  "candidate_policy": "mul-candidates-v1",
+  "arithmetic": "unsigned Mul/Add/AddCarry plus exact pure bit wiring",
+  "G_delay_ps": 0,
+  "G_area_um2": 0,
+  "joint_reserve_ps": 50,
+  "selection": "minimum total area among predicted feasible, else minimum worst violation and then area; stable ID tie",
+  "functional_reset_preserved": true,
+  "reset_timing_checked": false,
+  "independent_joint_qualified": false,
+  "formal_D_selection": false,
+  "full_D_ready": false,
+  "scope_authorization": "user explicitly deferred reset timing and requested D RTL output",
+  "software_acceptance": {
+    "query_checks": 3440,
+    "arc_checks": 8055,
+    "target_count": 5,
+    "negative_checks": 5
+  }
+}

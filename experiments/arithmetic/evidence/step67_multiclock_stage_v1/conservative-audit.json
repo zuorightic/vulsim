@@ -1,0 +1,80 @@
+{
+  "status": "decomposed_three_conservative_rejections",
+  "rows": [
+    {
+      "task": "validation_r28_disjoint-T1500",
+      "target_ps": 1500,
+      "word": "external_capture/y",
+      "stage": 1,
+      "actual_node_order": [
+        "node_16",
+        "node_7"
+      ],
+      "launch_owner": "native_state",
+      "capture_owner": "external_state",
+      "predicted_point_ps": 1635.6914781257003,
+      "observed_required_ps": 1497.022493,
+      "decision_ps": 1685.6914781257003,
+      "observed_shell_setup_slack_ps": 2.977507,
+      "parts": {
+        "base_function_error_ps": -28.47523887429952,
+        "independent_max_conservatism_ps": 190.05477900000005,
+        "inter_arithmetic_wire_error_ps": -0.22723399999995308,
+        "S_clock_adjacent_boundary_error_ps": -22.683321000000205,
+        "DAG_path_switch_or_scalar_arrival_effect_ps": 0.0,
+        "once_stage_reserve_ps": 50
+      }
+    },
+    {
+      "task": "validation_r28_disjoint-placement-1-T1500",
+      "target_ps": 1500,
+      "word": "core/rtlzz_pipe_14_s1",
+      "stage": 0,
+      "actual_node_order": [
+        "node_16",
+        "node_7"
+      ],
+      "launch_owner": "input_service",
+      "capture_owner": "native_state",
+      "predicted_point_ps": 1711.7971001257006,
+      "observed_required_ps": 1498.55127,
+      "decision_ps": 1761.7971001257006,
+      "observed_shell_setup_slack_ps": 1.44873,
+      "parts": {
+        "base_function_error_ps": -4.047778874299638,
+        "independent_max_conservatism_ps": 174.02797000000032,
+        "inter_arithmetic_wire_error_ps": -0.16558900000018184,
+        "S_clock_adjacent_boundary_error_ps": 43.43122800000015,
+        "DAG_path_switch_or_scalar_arrival_effect_ps": 0.0,
+        "once_stage_reserve_ps": 50
+      }
+    },
+    {
+      "task": "validation_c24-placement-1-T1500",
+      "target_ps": 1500,
+      "word": "core/rtlzz_pipe_5_s1",
+      "stage": 0,
+      "actual_node_order": [
+        "node_11",
+        "node_5"
+      ],
+      "launch_owner": "input_service",
+      "capture_owner": "native_state",
+      "predicted_point_ps": 1655.349173419174,
+      "observed_required_ps": 1498.739453,
+      "decision_ps": 1705.349173419174,
+      "observed_shell_setup_slack_ps": 1.260547,
+      "parts": {
+        "base_function_error_ps": 0.8776464191737432,
+        "independent_max_conservatism_ps": 107.57875100000001,
+        "inter_arithmetic_wire_error_ps": 0.04510499999992135,
+        "S_clock_adjacent_boundary_error_ps": 48.108218000000306,
+        "DAG_path_switch_or_scalar_arrival_effect_ps": 0.0,
+        "once_stage_reserve_ps": 50
+      }
+    }
+  ],
+  "parameters_changed": false,
+  "G_fitted": false,
+  "full_D_ready": false
+}

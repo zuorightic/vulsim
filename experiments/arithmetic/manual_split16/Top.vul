@@ -1,0 +1,57 @@
+#pragma once
+#include "header.uh"
+
+INTERFACE() {
+    SERVICE(write_a, ARG(Int<32>) value);
+    SERVICE(write_b, ARG(Int<32>) value);
+    SERVICE(write_c, ARG(Int<64>) value);
+    SERVICE(write_valid, ARG(bool) value);
+    QUERY(result, Int<64>);
+    QUERY(valid, bool);
+}
+
+// The same independent input writes and held valid as the MAC32 experiment.
+REGISTER(a, Int<32>) { a = Int<32>(0x80000035u); }
+REGISTER(b, Int<32>) { b = Int<32>(0x80000035u); }
+REGISTER(c, Int<64>) { c = Int<64>(0x8000000000000035ULL); }
+REGISTER(iv, bool) { iv = false; }
+
+// Stage 1: four unsigned16x16 products; carry c alongside the products.
+REGISTER(p00, Int<32>) { p00 = Int<32>(0x00000af9u); }
+REGISTER(p01, Int<32>) { p01 = Int<32>(0x001a8000u); }
+REGISTER(p10, Int<32>) { p10 = Int<32>(0x001a8000u); }
+REGISTER(p11, Int<32>) { p11 = Int<32>(0x40000000u); }
+REGISTER(c_s1, Int<64>) { c_s1 = Int<64>(0x8000000000000035ULL); }
+REGISTER(v_s1, bool) { v_s1 = false; }
+
+// Stage 2: constant shifts and a balanced sum, reduced modulo2^64.
+REGISTER(y, Int<64>) { y = Int<64>(0xc000003500000b2eULL); }
+REGISTER(ov, bool) { ov = false; }
+
+SERVICE(write_a, ARG(Int<32>) value) { a.setnext(value); }
+SERVICE(write_b, ARG(Int<32>) value) { b.setnext(value); }
+SERVICE(write_c, ARG(Int<64>) value) { c.setnext(value); }
+SERVICE(write_valid, ARG(bool) value) { iv.setnext(value); }
+
+TICK_IMPL() {
+    v_s1.setnext(iv.get());
+    if (iv.get()) {
+        Int<16> al = a.get().at<15, 0>();
+        Int<16> ah = a.get().at<31, 16>();
+        Int<16> bl = b.get().at<15, 0>();
+        Int<16> bh = b.get().at<31, 16>();
+        p00.setnext(Int<32>(al * bl));
+        p01.setnext(Int<32>(al * bh));
+        p10.setnext(Int<32>(ah * bl));
+        p11.setnext(Int<32>(ah * bh));
+        c_s1.setnext(c.get());
+    }
+
+    Int<64> low = Int<64>(p00.get()) + (Int<64>(p01.get()) << 16u);
+    Int<64> high = (Int<64>(p10.get()) << 16u) + (Int<64>(p11.get()) << 32u);
+    y.setnext(low + high + c_s1.get());
+    ov.setnext(v_s1.get());
+}
+
+QUERY(result, Int<64>) { return y.get(); }
+QUERY(valid, bool) { return ov.get(); }

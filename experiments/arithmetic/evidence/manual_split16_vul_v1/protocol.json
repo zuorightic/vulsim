@@ -1,0 +1,45 @@
+{
+  "version": "manual-split16-raw-vul-three-targets-v1",
+  "targets_ps": [
+    500,
+    1000,
+    1500
+  ],
+  "inputs": {
+    "/home/zyrv/vulsim-artifacts/manual-split16-vul-20261112-v1/generated/sim/top.sv": "281e00bcb34ebdcefc39eb4eb017cf5e9bc60039b60ab2463d0cf5da7839c0cd",
+    "/home/zyrv/vulsim-artifacts/manual-split16-vul-20261112-v1/generated/simulation.log": "5581059d2897a2f729265dd7dda769365e619265e57d84dd4e73cf215cebad6d",
+    "/home/zyrv/vulsim-artifacts/manual-split16-vul-20261112-v1/tools/clock-template.tcl": "1e0edae82308e82dc7134e774403b714d2fb422b001d724fb5b83deda2c1f7c4",
+    "/home/zyrv/vulsim-artifacts/manual-split16-vul-20261112-v1/tools/run_backend.py": "7bedd425e2ff6e652dd9b46da088290b1ec8aebbd8d50c610a3e7a4059e442c0",
+    "/home/zyrv/vulsim/experiments/arithmetic/manual_split16/Top.vul": "e47e1d713ea429a127393dd4bd988a401a0e5ec7b705691c48c1348c7e18441d",
+    "/home/zyrv/vulsim/experiments/arithmetic/manual_split16/header.uh": "e357d20bfd49f1b2c1ef1b0662267dd343f51c2eac8a3ec1b55ebca8152d00dc",
+    "/home/zyrv/vulsim/experiments/arithmetic/manual_split16/Main.utb": "08e641b84944c5554584f9227c73f0e37e7c94b8fd1445ce2d801b757752d30c"
+  },
+  "rtl": "/home/zyrv/vulsim-artifacts/manual-split16-vul-20261112-v1/generated/sim/top.sv",
+  "top": "Top_sim_top",
+  "generated_by": "public vulrtlgen, explicit REGISTER/TICK_IMPL, no arithmetic request or automatic pipeline selection",
+  "source_role": "user_requested_diagnostic_not_training_or_reselection",
+  "synth_max": 3,
+  "grt_max": 3,
+  "detailed_max": 0,
+  "physical_support_max": 36,
+  "analysis_support_max": 12,
+  "synth_timeout_s": 300,
+  "grt_timeout_s": 1200,
+  "report_timeout_s": 120,
+  "threads": 4,
+  "parallel_jobs": 3,
+  "memory_MiB": 8192,
+  "automatic_retries": 0,
+  "ABC_equals_SDC": true,
+  "IO_max_fraction": 0.2,
+  "boundary": "raw VUL output; arithmetic operations are not wrapped in separately kept scopes",
+  "comparison": "same ASAP7 profile/seed/density/targets as prior ABCD; raw flatten versus prior kept arithmetic boundaries is a declared difference",
+  "later_work_reserved": {
+    "synth": 688,
+    "grt": 688,
+    "walltime_s": 86400,
+    "CPU_time_s": 172800,
+    "storage_bytes": 32212254720
+  },
+  "full_D_ready": false
+}

@@ -1,5 +1,13 @@
 # 算术实验：现行契约、验证和实施边界
 
+**A／B／C／D整设计实测及最小周期已交付：** [§7.79](../../mission/lxy-plan-fix.md#step9-MAC32-ABCD-measurement)和[证据v2](evidence/step9_MAC32_ABCD_v2/README.md)完成五目标21方法、19 synth／19 grt。17个固定物理实现的完整setup最小周期经三类边界和阈值上下0.1ps STA核验；D@1500ps为761.134um²／1360.668ps，3000ps改变寄存器位置后为722.016um²／1735.386ps。前四档D与B同RTL，C静态quarter在本例未优于B／D；同策略静态成本1500ps对照为781.473um²／1501.371ps，临界复测一致。完整setup含reset，3负hold及全部不足5ps保留；C逐节点细查因长报告超时未完成，不阻断整设计PPA／周期交付，完整联合模型资格仍待。85,576成员实际恢复、424成员隔离回放和37项冻结D文件通过，最终PPA未调参／改选。
+
+**D原型已产出：** 按用户决定暂缓reset时序资格，已交付[通用函数D入口与依赖包](models/asap7_function_D_prototype_v1/README.md)、五档T的完整D RTL及[复现证据](evidence/step8_function_D_output_v1/README.md)，见[§7.78](../../mission/lxy-plan-fix.md#step8-function-D-output)。1500／3000ps预测可行，500／1000／1250ps输出最近时序后备；五档均为真实函数选择，功能reset及周期验证通过，无新物理PPA。原节点／S／共享冻结和完整联合未通过身份保留；原型交付不再等待reset，`full_D_ready=false`仍指完整资格。
+
+**最新缺口后继：** [§7.77](../../mission/lxy-plan-fix.md#step67-reset-shared-gap-successor)及[证据v2](evidence/step67_reset_shared_gap_v2/README.md)完成reset的24 train／9 validation旧快照读取与通用函数冻结；validation median21.8180%未过15%，保留失败，未授予正式保护。共享两位置可测性、205→141 FF的纯位别名恢复、CEC及预测侧等价类核对通过；新负载／相关消费者和S去重计价仍待资格。节点／S／共享面积冻结不变，G=0，独立联合test保持锁定，正式D未绑定。
+
+**完整阶段与排序最新结果：** [§7.76](../../mission/lxy-plan-fix.md#step67-multiclock-stage-validation)与[证据](evidence/step67_multiclock_stage_v1/README.md)完成18实现／36阶段的三类／三档／两放置验证，时序median／P95为7.4023%／17.3985%、总面积2.4089%／4.8853%，错误可行0。9组排序7组一致、2组处5%面积并列带；3保守拒绝与4负hold保留。继续零G，冻结参数不变；reset独立保护、shared三capture负载及剩余三类完整物理覆盖／新独立联合仍待，正式D关闭。
+
 **当前共享函数拟合：** [规划§7.75](../../mission/lxy-plan-fix.md#step67-shared-function-fitting)完成24点兼容服务结构的train拟合与冻结，9项新validation全部通过：clock／physical／repair的median／P95为4.6509%／18.8526%、2.3492%／7.8236%、7.0377%／19.7289%，总面积2.4336%／4.6306%。MAC32的44候选在7个数值T下308项完整计价覆盖；Python／C++的76覆盖／1真实拒绝、改名／行序／独立NNLS核对通过。旧失败和费用保留；本包不逐候选采价格，完整阶段时序及新独立S／G／正式D资格仍待。
 
 **最新S／共享后继：** [train审计与复验v3](evidence/step67_state_shared_successor_v3/README.md)改善纯转发S输入和shared physical，六位置／12阶段点误差median／P95为12.7537%／19.6552%，总面积5.8306%／7.7231%。repair median26.1543%／clock P95 42.5219%仍失败，MAC32三档132请求仅81覆盖／51因共享域拒绝；原节点函数不变，正式D未绑定。新参数仅用原train，冻结后没有调参，无新EDA，见[§7.74](../../mission/lxy-plan-fix.md#step67-state-shared-train-audit)。

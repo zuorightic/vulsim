@@ -1,0 +1,4210 @@
+{
+  "target_platform": "asap7",
+  "platform_profile_sha256": "f9d3e71d377d0fef70b66e43828186962caa04fcec31b8f78ad8760c5459f1c7",
+  "ABC_ps": 1500,
+  "exact_SDC_ps": [
+    1119,
+    1253,
+    1431,
+    3141,
+    3385,
+    4162,
+    4528,
+    11913,
+    14897
+  ],
+  "IO": "0.2T",
+  "owners": [
+    "input_service",
+    "native_state",
+    "external_state"
+  ],
+  "parent_model_sha256": "ce280fb25047038d0a9ff80084d744191419546d72072864f316ec7c4a8d9bff",
+  "measurement_static_identity_sha256": "151a9a6a8cfab9d4605f174b4c35af20365ba370e118370ebb2959fe7fdace24",
+  "domain": {
+    "word_widths": [
+      1,
+      5,
+      13,
+      16,
+      17,
+      21,
+      22,
+      24,
+      25,
+      26,
+      27,
+      29,
+      30,
+      32,
+      33,
+      34,
+      35,
+      37,
+      40,
+      41,
+      42,
+      48,
+      49,
+      50,
+      56,
+      57,
+      58,
+      64,
+      65,
+      66
+    ],
+    "max_variable_word_bits": 64,
+    "max_parallel_words": 18,
+    "max_input_data_bits": 130,
+    "max_native_data_bits": 1024,
+    "max_external_data_bits": 256,
+    "native_depths": [
+      1,
+      2
+    ],
+    "reset": "synchronous active-low; per-channel zero/ones/alternating/hash-derived general bit patterns; same logical value reset along its lifetime",
+    "source_relations": "kept combinational two-input XOR/permutation/inversion adapters over shared registered roots; every semantic state bit observed exactly once; adapter arithmetic excluded from owned state area",
+    "relation_limit": "synthetic affine two-root-bit relations only; arbitrary arithmetic source correlation still requires joint G qualification",
+    "lifetime": "contiguous native lifetime; include no-full-chain layouts; channels born after first cut and channels ending before last cut; valid always advances inside native bank",
+    "known_bits": "all dynamic, high/low zero padding, interior zero holes including 37-bit/36-variable and66-bit/64-variable layouts",
+    "service_protocols": [
+      "independent write enables including input-valid",
+      "one shared write enable including input-valid",
+      "independent data write enables with continuously advancing input-valid"
+    ],
+    "external_protocol": "unconditional output data/valid capture from declared terminal native values; never gated by valid",
+    "observation": "post-state observer receives each service/native/external data and valid state exactly once; prevents unused-output pruning; observer area excluded"
+  },
+  "shared_clock_physical_repair_prices_included": false,
+  "arbitrary_arithmetic_source_correlation_qualified": false,
+  "production_price_binding_qualified": false,
+  "test_observed": true,
+  "full_D_ready": false,
+  "version": "arithmetic-general-state-qualified-v1",
+  "quality_status": "passed",
+  "stages": {
+    "grt": {
+      "quality_status": "passed",
+      "area_models": {
+        "input_service": {
+          "kind": "nonnegative_linear",
+          "features": [
+            "data_bits",
+            "data_signals",
+            "valid_bits",
+            "enable_domains",
+            "reset_one_bits"
+          ],
+          "coefficients": [
+            0.6690720504347358,
+            0.92393724767559,
+            0.0,
+            0.39564684552490315,
+            0.17401552929314673
+          ]
+        },
+        "native_state": {
+          "kind": "nonnegative_linear",
+          "features": [
+            "data_bits",
+            "data_signals",
+            "valid_bits",
+            "enable_domains",
+            "reset_one_bits"
+          ],
+          "coefficients": [
+            0.5371088262665842,
+            0.036091820059842315,
+            0.0,
+            0.0,
+            0.08136390563745757
+          ]
+        },
+        "external_state": {
+          "kind": "nonnegative_linear",
+          "features": [
+            "data_bits",
+            "data_signals",
+            "valid_bits",
+            "enable_domains",
+            "reset_one_bits"
+          ],
+          "coefficients": [
+            0.4225657312852458,
+            0.002379440888032674,
+            0.48285335780648936,
+            0.0,
+            0.043602751905203234
+          ]
+        }
+      },
+      "area_parameters_unchanged": true,
+      "boundary_model": {
+        "kind": "fixed_six_paths_and_semantic_control_upper",
+        "immutable_by_exact_SDC": {
+          "1119": {
+            "native_data": {
+              "kind": "register",
+              "H_max_ps": 98.07025199999998,
+              "delay_max_ps": 69.401444,
+              "overhead_ps": 217.47169599999998,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "native_data",
+                "kind": "register",
+                "delay_ps": 41.913452,
+                "slack_ps": 979.016296,
+                "H_ps": 98.07025199999998,
+                "start_pin": "native/data_8_s2[8]$_SDFFE_PN1P_/QN",
+                "end_pin": "native/data_8_s2[8]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 16.191043297753005,
+                "raw_clock_skew_ps": 19.999999920083944,
+                "points_sha256": "6b8ad9ddb6779d2cf51c83cf30b2c39b699b6ecfcf6b6eacc97c9cb8c14259af",
+                "expanded_report_sha256": "fd738f88ce4a233eb8a41b9afe8152bc5c3ae14586dfc4187e2cd1a841183e96",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-05-t0/grt"
+              },
+              "delay_witness": {
+                "id": "native_data",
+                "kind": "register",
+                "delay_ps": 69.401444,
+                "slack_ps": 956.851257,
+                "H_ps": 92.74729899999988,
+                "start_pin": "native/data_0_s1[22]$_SDFFE_PN0P_/QN",
+                "end_pin": "native/data_0_s2[22]$_SDFFE_PN0P_/D",
+                "raw_setup_margin_ps": 9.787690623264123,
+                "raw_clock_skew_ps": 24.9453010331413,
+                "points_sha256": "c3f2f0a3f1095ddc1061bb269801b2735db75fd5f4b54255a89e37a90cc50c72",
+                "expanded_report_sha256": "8c7f8bb423db5026fedd48f9d8ee51856ecf8bc6fb4a60866367c49125dfe19d",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-01-t0/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "external_data": {
+              "kind": "register",
+              "H_max_ps": 109.82086100000004,
+              "delay_max_ps": 70.188293,
+              "overhead_ps": 230.00915400000002,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "external_data",
+                "kind": "register",
+                "delay_ps": 50.948975,
+                "slack_ps": 958.230164,
+                "H_ps": 109.82086100000004,
+                "start_pin": "native/data_1_s2[24]$_SDFFE_PN0P_/QN",
+                "end_pin": "external/data_1[24]$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 10.172075855241491,
+                "raw_clock_skew_ps": 29.179610117058274,
+                "points_sha256": "10fd80936dde5f1ffd43f89863b7a245a3bafedc4019214dd1ec3b76a27dd015",
+                "expanded_report_sha256": "e6c3d8d51b500719ca375311476492778d0fe3dac50dcc3155b3045abf944175",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t0/grt"
+              },
+              "delay_witness": {
+                "id": "external_data",
+                "kind": "register",
+                "delay_ps": 70.188293,
+                "slack_ps": 950.105469,
+                "H_ps": 98.7062380000001,
+                "start_pin": "native/data_0_s2[44]$_SDFFE_PN1P_/QN",
+                "end_pin": "external/data_0[44]$_SDFF_PN1_/D",
+                "raw_setup_margin_ps": 17.57820972114743,
+                "raw_clock_skew_ps": 25.882964174717138,
+                "points_sha256": "2ea5cff7f12a4ebbe625065d182d2d94d4289ad1d910783e2a18e9ae3b20370a",
+                "expanded_report_sha256": "6c96713864b67e78246cc334fb824c21393fbacc8c047cb87fdce7ecd73dbb0c",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-04-t0/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "external_valid": {
+              "kind": "register",
+              "H_max_ps": 89.92994699999986,
+              "delay_max_ps": 63.192749,
+              "overhead_ps": 203.12269599999985,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "external_valid",
+                "kind": "register",
+                "delay_ps": 55.265671,
+                "slack_ps": 973.804382,
+                "H_ps": 89.92994699999986,
+                "start_pin": "native/valid_1$_SDFF_PN0_/QN",
+                "end_pin": "external/valid$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 9.94675002086165,
+                "raw_clock_skew_ps": 30.17121968929004,
+                "points_sha256": "67a1b5cf6bb403dc63175a6a978a943aa126afd19975889b043fb2ee443b0dee",
+                "expanded_report_sha256": "2ff5e1938f96deba82da973b6b168adcc430f6db1f408e4f6c591aeee57136ab",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-03-t0/grt"
+              },
+              "delay_witness": {
+                "id": "external_valid",
+                "kind": "register",
+                "delay_ps": 63.192749,
+                "slack_ps": 973.447998,
+                "H_ps": 82.35925299999997,
+                "start_pin": "native/valid_2$_SDFF_PN0_/QN",
+                "end_pin": "external/valid$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 9.62569694090698,
+                "raw_clock_skew_ps": 23.277267266474944,
+                "points_sha256": "31ce30ae721a4d8cd6f0ef506c5f364479b46390a25fcd93dad11d1d2110e639",
+                "expanded_report_sha256": "756972c6a2666ed88f7d1afbc32313bbb427017714eea42173ce2d33a8641a52",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t0/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "input_data": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 195.050262,
+              "overhead_ps": 245.050262,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_data",
+                "kind": "port",
+                "delay_ps": 151.030731,
+                "slack_ps": 797.156982,
+                "H_ps": -52.987712999999985,
+                "start_pin": "in0[24]",
+                "end_pin": "launch/data_0[24]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 9.131924383343204,
+                "raw_clock_skew_ps": -62.11969827418784,
+                "points_sha256": "5794160304e688f194be7869155ab5d038607e4c2a4393a2be4621721ffbaf09",
+                "expanded_report_sha256": "3cc7ca4c78a89cfe3e0aaf04019bf4700a41f11d7a286b6925a91587f0118876",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-00-t0/grt"
+              },
+              "delay_witness": {
+                "id": "input_data",
+                "kind": "port",
+                "delay_ps": 195.050262,
+                "slack_ps": 769.177063,
+                "H_ps": -69.0273249999999,
+                "start_pin": "in2[20]",
+                "end_pin": "launch/data_2[20]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 8.653000191372051,
+                "raw_clock_skew_ps": -77.68027193710836,
+                "points_sha256": "fcbbcb525041c0149ae8718b1f1bbd4594b6233c86099fe9a3bf1147802bc31d",
+                "expanded_report_sha256": "d1030d968625f1947e5bb209c9a09237ca11799a8791aed747b4e44f7752071c",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-05-t0/grt"
+              },
+              "input_IO_subtracted_once": true
+            },
+            "input_enable": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 410.044006,
+              "overhead_ps": 460.044006,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_enable",
+                "kind": "port",
+                "delay_ps": 358.990661,
+                "slack_ps": 589.297424,
+                "H_ps": -53.08808499999998,
+                "start_pin": "we1",
+                "end_pin": "launch/data_1[50]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 9.080929584681652,
+                "raw_clock_skew_ps": -62.16905462652633,
+                "points_sha256": "2e82ccaa7c925097441e76f8bb5c497b7e46fa858c03831f007324ea71495160",
+                "expanded_report_sha256": "e5cef14addb3ed4636c8fdbf1db4ec5a0e5d899e3820831c9e39cfa709f25c70",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-00-t0/grt"
+              },
+              "delay_witness": {
+                "id": "input_enable",
+                "kind": "port",
+                "delay_ps": 410.044006,
+                "slack_ps": 550.354187,
+                "H_ps": -65.198193,
+                "start_pin": "we_iv",
+                "end_pin": "launch/data_0[11]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 9.127050677737447,
+                "raw_clock_skew_ps": -74.32521265116065,
+                "points_sha256": "4e714b891fbc4a3164d51627e15173729d6608c0b8d7daa26b48814b57c95a44",
+                "expanded_report_sha256": "8b5dd848caa8e9c67c92b3b64288053e2b116830f026e4dd44f362f0f0c59533",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-10-t0/grt"
+              },
+              "input_IO_subtracted_once": true
+            },
+            "input_valid": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 173.312286,
+              "overhead_ps": 223.312286,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_valid",
+                "kind": "port",
+                "delay_ps": 123.487884,
+                "slack_ps": 832.026978,
+                "H_ps": -60.31486199999995,
+                "start_pin": "iv",
+                "end_pin": "launch/valid$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 8.953655525334447,
+                "raw_clock_skew_ps": -69.26847984090045,
+                "points_sha256": "410e08272274f6b16cd83b4fb28a65a1638b91c736cad8bbef5cd57cf06de698",
+                "expanded_report_sha256": "dd1224a34c90703245d43f1704f5cca707b0469001d841dd6220a40a0c028d3d",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-04-t0/grt"
+              },
+              "delay_witness": {
+                "id": "input_valid",
+                "kind": "port",
+                "delay_ps": 173.312286,
+                "slack_ps": 792.730164,
+                "H_ps": -70.84244999999987,
+                "start_pin": "iv",
+                "end_pin": "launch/valid$_SDFFE_PN0P_/D",
+                "raw_setup_margin_ps": 1.3097593756089543,
+                "raw_clock_skew_ps": -72.15215924727403,
+                "points_sha256": "75fd7d6af2b416d63fc129a274eb6f72150032522197e936d1890334eca5f57e",
+                "expanded_report_sha256": "ceaf67c4da6a07c47745f8bd4c898ca695e19efac73e80ea4d9174cf6663907e",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t0/grt"
+              },
+              "input_IO_subtracted_once": true
+            }
+          },
+          "1253": {
+            "native_data": {
+              "kind": "register",
+              "H_max_ps": 99.60627700000009,
+              "delay_max_ps": 69.060623,
+              "overhead_ps": 218.6669000000001,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "native_data",
+                "kind": "register",
+                "delay_ps": 66.109299,
+                "slack_ps": 1087.284424,
+                "H_ps": 99.60627700000009,
+                "start_pin": "native/data_7_s2[10]$_SDFFE_PN1P_/QN",
+                "end_pin": "native/data_7_s2[10]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 13.672261239827677,
+                "raw_clock_skew_ps": 19.999999920083944,
+                "points_sha256": "f4b72fd8e1fc595710169f0ac7201fa222d73cc080c86745100386e14cd235d0",
+                "expanded_report_sha256": "f4d7724b4c6685801d0894afad94c2d7ed76c2b9a5510d983a0772639382ba31",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t1/grt"
+              },
+              "delay_witness": {
+                "id": "native_data",
+                "kind": "register",
+                "delay_ps": 69.060623,
+                "slack_ps": 1091.953979,
+                "H_ps": 91.98539800000003,
+                "start_pin": "native/data_0_s1[23]$_SDFFE_PN0P_/QN",
+                "end_pin": "native/data_0_s2[23]$_SDFFE_PN0P_/D",
+                "raw_setup_margin_ps": 10.216941875862418,
+                "raw_clock_skew_ps": 23.94221453039247,
+                "points_sha256": "966e56770170669b565685e4f0bb72aaebaa4c841f821dc31bf3bbf2ba6212cc",
+                "expanded_report_sha256": "2b28a7f471eeb2e96f73ca4fc29c34f26d04434bb31c9b0e3dcc6b5c2e40cff6",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-01-t1/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "external_data": {
+              "kind": "register",
+              "H_max_ps": 103.54568500000005,
+              "delay_max_ps": 69.710495,
+              "overhead_ps": 223.25618000000003,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "external_data",
+                "kind": "register",
+                "delay_ps": 54.544647,
+                "slack_ps": 1094.909668,
+                "H_ps": 103.54568500000005,
+                "start_pin": "native/data_2_s2[46]$_SDFFE_PN1P_/QN",
+                "end_pin": "external/data_2[46]$_SDFF_PN1_/D",
+                "raw_setup_margin_ps": 16.19466366564737,
+                "raw_clock_skew_ps": 25.227488500978446,
+                "points_sha256": "ef00ce905c2125d1edab854f259547eadb0dcd7b7bfd3bfb98ff3810eaae06fe",
+                "expanded_report_sha256": "3df608a6faa0636673cda783d7fdf5cc7ca83ff14da1823904b92978fd09973d",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t1/grt"
+              },
+              "delay_witness": {
+                "id": "external_data",
+                "kind": "register",
+                "delay_ps": 69.710495,
+                "slack_ps": 1083.07019,
+                "H_ps": 100.21931500000005,
+                "start_pin": "native/data_0_s2[44]$_SDFFE_PN1P_/QN",
+                "end_pin": "external/data_0[44]$_SDFF_PN1_/D",
+                "raw_setup_margin_ps": 19.164952611006036,
+                "raw_clock_skew_ps": 26.908685349380512,
+                "points_sha256": "c1be31ff9c2826137cff16081e85d4af0c9a4718cd5d53bab28db54106584aa3",
+                "expanded_report_sha256": "2757af70f2f0a3a327c9f995cc34f9354f3d627d1c0407272bdcc44afd4a96c0",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-04-t1/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "external_valid": {
+              "kind": "register",
+              "H_max_ps": 89.25826899999993,
+              "delay_max_ps": 63.025955,
+              "overhead_ps": 202.28422399999994,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "external_valid",
+                "kind": "register",
+                "delay_ps": 42.714753,
+                "slack_ps": 1121.026978,
+                "H_ps": 89.25826899999993,
+                "start_pin": "native/valid_1$_SDFF_PN0_/QN",
+                "end_pin": "external/valid$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 9.530811036218001,
+                "raw_clock_skew_ps": 28.951920721942415,
+                "points_sha256": "32dbabe9cc3ccb249a7a14d13a6d44d8658251629fe62b26c8420e41f07d9fd4",
+                "expanded_report_sha256": "c4833ae004073cb55dd05a27710cae2350565401aff55d78112d7544c48e3f45",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-06-t1/grt"
+              },
+              "delay_witness": {
+                "id": "external_valid",
+                "kind": "register",
+                "delay_ps": 63.025955,
+                "slack_ps": 1102.342285,
+                "H_ps": 87.63175999999999,
+                "start_pin": "native/valid_2$_SDFF_PN0_/QN",
+                "end_pin": "external/valid$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 10.576163209097267,
+                "raw_clock_skew_ps": 27.87779035395843,
+                "points_sha256": "96be36567974c20011e8ad879b2a07ea2e613a923f010011306ae75ccccca20e",
+                "expanded_report_sha256": "2c6d4f49509a6f904f91b609f11ec71a6c7310d416ecabb3006fed00fcf197b2",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t1/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "input_data": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 202.367935,
+              "overhead_ps": 252.367935,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_data",
+                "kind": "port",
+                "delay_ps": 149.341232,
+                "slack_ps": 905.876282,
+                "H_ps": -52.81751399999996,
+                "start_pin": "in0[60]",
+                "end_pin": "launch/data_0[60]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 9.332500917891284,
+                "raw_clock_skew_ps": -62.14990327935155,
+                "points_sha256": "86e30a08667af065f63205f5f9298ba11ccc2580e946d9ee9a47d0b0143162ad",
+                "expanded_report_sha256": "5d955e01e21dec7da92dcb56add3268ed3a9f232f608882186894db64816f81d",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-00-t1/grt"
+              },
+              "delay_witness": {
+                "id": "input_data",
+                "kind": "port",
+                "delay_ps": 202.367935,
+                "slack_ps": 868.931396,
+                "H_ps": -68.89933099999996,
+                "start_pin": "in1[8]",
+                "end_pin": "launch/data_1[8]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 8.660884509570366,
+                "raw_clock_skew_ps": -77.56002090575365,
+                "points_sha256": "7b94d96f7c972c019397defce3649c8b50cf56502495c8dfe063a69238165ec7",
+                "expanded_report_sha256": "969cd80c27dcfd3f2cb664f8834d8c9dd55c4b8d38d37a043122d0f272f10bc4",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-05-t1/grt"
+              },
+              "input_IO_subtracted_once": true
+            },
+            "input_enable": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 428.961899,
+              "overhead_ps": 478.961899,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_enable",
+                "kind": "port",
+                "delay_ps": 352.221359,
+                "slack_ps": 705.057251,
+                "H_ps": -54.87860999999998,
+                "start_pin": "we0",
+                "end_pin": "launch/data_0[44]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 9.038935398775205,
+                "raw_clock_skew_ps": -63.91744078459993,
+                "points_sha256": "2ad29d5f67da6f89b5318be40290ba2c40a17df5016252fe1540c797adc2049d",
+                "expanded_report_sha256": "711d6ca2db77326f705369db7ed30425a27b9519229125aa88c3185551c3a2e7",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-00-t1/grt"
+              },
+              "delay_witness": {
+                "id": "input_enable",
+                "kind": "port",
+                "delay_ps": 428.961899,
+                "slack_ps": 651.129089,
+                "H_ps": -77.69098800000006,
+                "start_pin": "we_iv",
+                "end_pin": "launch/data_1[14]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 8.76547445738396,
+                "raw_clock_skew_ps": -86.45641147442262,
+                "points_sha256": "aad3b1125fb3b2003f4effba3a43988859ffd085b7cd8659776461ebdc4207e1",
+                "expanded_report_sha256": "e4e7c5c35ee390849171635a94c85f2c136739c897945b20bfbe116352d76608",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-03-t1/grt"
+              },
+              "input_IO_subtracted_once": true
+            },
+            "input_valid": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 209.69078,
+              "overhead_ps": 259.69078,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_valid",
+                "kind": "port",
+                "delay_ps": 126.267471,
+                "slack_ps": 936.371887,
+                "H_ps": -60.23935800000004,
+                "start_pin": "iv",
+                "end_pin": "launch/valid$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 9.020356510347494,
+                "raw_clock_skew_ps": -69.25959805670345,
+                "points_sha256": "3e1deb50913db32ade6dbc7b997c7a3fcefef39f50fc10799d4116114751c3f1",
+                "expanded_report_sha256": "c39a070d2195f2e00920373cc1cd02d22d42042a7db4e0a3154b1343c211eac2",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-04-t1/grt"
+              },
+              "delay_witness": {
+                "id": "input_valid",
+                "kind": "port",
+                "delay_ps": 209.69078,
+                "slack_ps": 869.359375,
+                "H_ps": -76.65015500000004,
+                "start_pin": "iv",
+                "end_pin": "launch/valid$_SDFFE_PN0P_/D",
+                "raw_setup_margin_ps": 1.2856908463212968,
+                "raw_clock_skew_ps": -77.93581058290755,
+                "points_sha256": "a75ac2465e0a43c1014b2073181e505c9b9cd26a55552ff9dbe809ff78830387",
+                "expanded_report_sha256": "e1f40d13c75c07de49812c031f8a83618666c62dfdfd41db2670a20c282c7d5e",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-05-t1/grt"
+              },
+              "input_IO_subtracted_once": true
+            }
+          },
+          "1431": {
+            "native_data": {
+              "kind": "register",
+              "H_max_ps": 117.35629199999994,
+              "delay_max_ps": 69.847397,
+              "overhead_ps": 237.20368899999994,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "native_data",
+                "kind": "register",
+                "delay_ps": 44.227814,
+                "slack_ps": 1269.415894,
+                "H_ps": 117.35629199999994,
+                "start_pin": "native/data_7_s1[10]$_SDFFE_PN1P_/QN",
+                "end_pin": "native/data_7_s2[10]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 15.02992695578964,
+                "raw_clock_skew_ps": 31.232037789319378,
+                "points_sha256": "2eee1c98646a9cb1045917f386a6b83f5f6056e736c674d3d3538014e9f3b74e",
+                "expanded_report_sha256": "c064a5004bbbfa75e31dac3e61973e4da21b4384c081bef4075242de3958f785",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t2/grt"
+              },
+              "delay_witness": {
+                "id": "native_data",
+                "kind": "register",
+                "delay_ps": 69.847397,
+                "slack_ps": 1280.118042,
+                "H_ps": 81.03456099999994,
+                "start_pin": "native/data_0_s2[34]$_SDFFE_PN0P_/QN",
+                "end_pin": "native/data_0_s2[34]$_SDFFE_PN0P_/D",
+                "raw_setup_margin_ps": 9.703772507752007,
+                "raw_clock_skew_ps": 19.999999920083944,
+                "points_sha256": "97c55e55d1b2612c46ca8bdbf727df3b451cb0b1eedfb5270971586ea8c4e977",
+                "expanded_report_sha256": "4142e301f00df8288e2fb5f57ec029e4e06658684202d9a24c4799a0555b0f4a",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-11-t2/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "external_data": {
+              "kind": "register",
+              "H_max_ps": 110.66708399999993,
+              "delay_max_ps": 72.155075,
+              "overhead_ps": 232.82215899999994,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "external_data",
+                "kind": "register",
+                "delay_ps": 49.276764,
+                "slack_ps": 1271.056152,
+                "H_ps": 110.66708399999993,
+                "start_pin": "native/data_1_s2[24]$_SDFFE_PN0P_/QN",
+                "end_pin": "external/data_1[24]$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 10.158288273054428,
+                "raw_clock_skew_ps": 30.337933554225316,
+                "points_sha256": "36fd5e95979ec080be06b4707f50bd7a62954e0a292d85922e0028f72e3401ac",
+                "expanded_report_sha256": "8f35265c6d2980c69ca3ebce46f1e6c68ca854f81c11b21b37841a1382546cd0",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t2/grt"
+              },
+              "delay_witness": {
+                "id": "external_data",
+                "kind": "register",
+                "delay_ps": 72.155075,
+                "slack_ps": 1261.399048,
+                "H_ps": 97.44587700000011,
+                "start_pin": "native/data_0_s2[44]$_SDFFE_PN1P_/QN",
+                "end_pin": "external/data_0[44]$_SDFF_PN1_/D",
+                "raw_setup_margin_ps": 18.21333535378944,
+                "raw_clock_skew_ps": 24.812023963205476,
+                "points_sha256": "e2aa85a5089cc2d55837351dc3586f4b2e7b2e8e02c99ae68f00fc9ebeb8c8a5",
+                "expanded_report_sha256": "ad0c8828655bb3053c3e2f35df64f42e4b222e292e81ec71969176b8755ca997",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-04-t2/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "external_valid": {
+              "kind": "register",
+              "H_max_ps": 89.09963999999991,
+              "delay_max_ps": 61.164764,
+              "overhead_ps": 200.2644039999999,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "external_valid",
+                "kind": "register",
+                "delay_ps": 61.164764,
+                "slack_ps": 1280.735596,
+                "H_ps": 89.09963999999991,
+                "start_pin": "native/valid_2$_SDFF_PN0_/QN",
+                "end_pin": "external/valid$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 9.625018664027873,
+                "raw_clock_skew_ps": 28.339117510989276,
+                "points_sha256": "8a6c24796b88f475b019d0c39d1373e0722f053ad3fa07afb6871f14c2b90ca1",
+                "expanded_report_sha256": "9a06060402de83690126c9b8196d059b83dc5378d42eb6ee363d7d7de11e8056",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-02-t2/grt"
+              },
+              "delay_witness": {
+                "id": "external_valid",
+                "kind": "register",
+                "delay_ps": 61.164764,
+                "slack_ps": 1280.735596,
+                "H_ps": 89.09963999999991,
+                "start_pin": "native/valid_2$_SDFF_PN0_/QN",
+                "end_pin": "external/valid$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 9.625018664027873,
+                "raw_clock_skew_ps": 28.339117510989276,
+                "points_sha256": "8a6c24796b88f475b019d0c39d1373e0722f053ad3fa07afb6871f14c2b90ca1",
+                "expanded_report_sha256": "9a06060402de83690126c9b8196d059b83dc5378d42eb6ee363d7d7de11e8056",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-02-t2/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "input_data": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 218.265473,
+              "overhead_ps": 268.265473,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_data",
+                "kind": "port",
+                "delay_ps": 157.507416,
+                "slack_ps": 1040.800171,
+                "H_ps": -53.50758700000017,
+                "start_pin": "in0[60]",
+                "end_pin": "launch/data_0[60]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 9.085356598992345,
+                "raw_clock_skew_ps": -62.59296553290383,
+                "points_sha256": "f091a6b11757bcc0c12050226327028c4638a9d052921e391eefe278a843ab2b",
+                "expanded_report_sha256": "b50a698ada48a82cc6a454f7e58f28e38367b0e5cc7d4802b9ea2fdd2dcf3b60",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-00-t2/grt"
+              },
+              "delay_witness": {
+                "id": "input_data",
+                "kind": "port",
+                "delay_ps": 218.265473,
+                "slack_ps": 994.717102,
+                "H_ps": -68.18257499999993,
+                "start_pin": "in2[27]",
+                "end_pin": "launch/data_2[27]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 8.94122796635255,
+                "raw_clock_skew_ps": -77.1237795849089,
+                "points_sha256": "e95d7307ba3a0855bd30a4ab20eb79c6d8db2ce784e95dd85d7a49d4569777fe",
+                "expanded_report_sha256": "f62378a087292a1ce35fc841bbc3bb1a7b8eee985a3656b077512828cba0ef9b",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-05-t2/grt"
+              },
+              "input_IO_subtracted_once": true
+            },
+            "input_enable": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 468.066284,
+              "overhead_ps": 518.066284,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_enable",
+                "kind": "port",
+                "delay_ps": 358.702088,
+                "slack_ps": 839.86676,
+                "H_ps": -53.76884800000005,
+                "start_pin": "we0",
+                "end_pin": "launch/data_0[3]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 8.833519853090888,
+                "raw_clock_skew_ps": -62.60237467303753,
+                "points_sha256": "3df5a601dc02c10ac7363208202f113204aec0f3e14ce51a667a65ee5d5f315f",
+                "expanded_report_sha256": "8b5cc52149f0524163cec6eeb206f8545458f4e027615cb827ec682786e41809",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-00-t2/grt"
+              },
+              "delay_witness": {
+                "id": "input_enable",
+                "kind": "port",
+                "delay_ps": 468.066284,
+                "slack_ps": 753.168335,
+                "H_ps": -76.434619,
+                "start_pin": "we_iv",
+                "end_pin": "launch/data_1[28]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 8.740558624098504,
+                "raw_clock_skew_ps": -85.17524879847471,
+                "points_sha256": "67f17aa5050cc5e192246ae7f8bfd23c03e0a08b88b91d33dc8e179a39eb310b",
+                "expanded_report_sha256": "f3b7b3cbf596a482a4357b90a8695d8e780736afe0e851ce96fa64c6c2bae094",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-03-t2/grt"
+              },
+              "input_IO_subtracted_once": true
+            },
+            "input_valid": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 204.278809,
+              "overhead_ps": 254.278809,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_valid",
+                "kind": "port",
+                "delay_ps": 126.42572,
+                "slack_ps": 1078.980225,
+                "H_ps": -60.60594500000002,
+                "start_pin": "iv",
+                "end_pin": "launch/valid$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 8.903856818509581,
+                "raw_clock_skew_ps": -69.50989089871129,
+                "points_sha256": "62f875e485d9e87e115069b1ed2adb8a77b9278e4084ba13e503f4503ea86198",
+                "expanded_report_sha256": "c088be9f94a6f626fc1dd26f6a6cd27e03c9a4e16203b763a11872193ba00ba3",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-04-t2/grt"
+              },
+              "delay_witness": {
+                "id": "input_valid",
+                "kind": "port",
+                "delay_ps": 204.278809,
+                "slack_ps": 1017.09552,
+                "H_ps": -76.57432900000003,
+                "start_pin": "iv",
+                "end_pin": "launch/valid$_SDFFE_PN0P_/D",
+                "raw_setup_margin_ps": 1.0065300372688601,
+                "raw_clock_skew_ps": -77.58087228193489,
+                "points_sha256": "457183d6a84c6b6cb35d23c0712f8167a8e410a4fd39cb721ae573394c942430",
+                "expanded_report_sha256": "53ad510519c7f2ed07aa639b8e43a2e7d3d74fb657d2a7a8e346143a6cfb6b60",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-05-t2/grt"
+              },
+              "input_IO_subtracted_once": true
+            }
+          },
+          "3141": {
+            "native_data": {
+              "kind": "register",
+              "H_max_ps": 114.52412499999991,
+              "delay_max_ps": 68.183166,
+              "overhead_ps": 232.7072909999999,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "native_data",
+                "kind": "register",
+                "delay_ps": 46.956344,
+                "slack_ps": 2979.519531,
+                "H_ps": 114.52412499999991,
+                "start_pin": "native/data_7_s1[10]$_SDFFE_PN1P_/QN",
+                "end_pin": "native/data_7_s2[10]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 15.581935047803697,
+                "raw_clock_skew_ps": 26.451995108200954,
+                "points_sha256": "694e21e66337d61d4062c0fe34e82f393b8e8fbee6894f7c45b5b8a780d1cd2a",
+                "expanded_report_sha256": "893de6090e8234bf809cbce5eff2b7787d7edf62447d96ce6169e2eac10dfb5c",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t3/grt"
+              },
+              "delay_witness": {
+                "id": "native_data",
+                "kind": "register",
+                "delay_ps": 68.183166,
+                "slack_ps": 2979.094727,
+                "H_ps": 93.72210700000005,
+                "start_pin": "native/data_0_s1[23]$_SDFFE_PN0P_/QN",
+                "end_pin": "native/data_0_s2[23]$_SDFFE_PN0P_/D",
+                "raw_setup_margin_ps": 10.010837644958137,
+                "raw_clock_skew_ps": 25.681927071086186,
+                "points_sha256": "1f616b21776ba9c10118f2d9be237b1671029fc5487b43b30bdbd3ddb090c60b",
+                "expanded_report_sha256": "6c546f8476aa57f2ae01e65601a3c61a59cc01db7444741a86865487cc49006c",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-01-t3/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "external_data": {
+              "kind": "register",
+              "H_max_ps": 106.82014500000014,
+              "delay_max_ps": 60.536575,
+              "overhead_ps": 217.35672000000014,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "external_data",
+                "kind": "register",
+                "delay_ps": 48.72966,
+                "slack_ps": 2985.450195,
+                "H_ps": 106.82014500000014,
+                "start_pin": "native/data_1_s2[24]$_SDFFE_PN0P_/QN",
+                "end_pin": "external/data_1[24]$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 9.80646987225331,
+                "raw_clock_skew_ps": 27.266572680262335,
+                "points_sha256": "3fdfdeb32a3f75c6f3e3aed03560c328ce4dfe461f8947f39b4a2b0cb7ee6e27",
+                "expanded_report_sha256": "82be93ed0a601533f9fc90d29006302857566e2da01fa59fb2311f9f0cb59f54",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t3/grt"
+              },
+              "delay_witness": {
+                "id": "external_data",
+                "kind": "register",
+                "delay_ps": 60.536575,
+                "slack_ps": 2983.960693,
+                "H_ps": 96.50273199999992,
+                "start_pin": "native/data_5_s2[21]$_SDFFE_PN1P_/QN",
+                "end_pin": "external/data_5[21]$_SDFF_PN1_/D",
+                "raw_setup_margin_ps": 14.761912178751224,
+                "raw_clock_skew_ps": 24.706866760815238,
+                "points_sha256": "b1754cbc11625facb5edfd156662199f3e4d27d2f9fce6a0f64630f7787e7412",
+                "expanded_report_sha256": "dc67fb1d1798cc832be740831be492654bf96634c975fb59839eb0a7c608591d",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-01-t3/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "external_valid": {
+              "kind": "register",
+              "H_max_ps": 88.00218200000018,
+              "delay_max_ps": 64.523834,
+              "overhead_ps": 202.52601600000017,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "external_valid",
+                "kind": "register",
+                "delay_ps": 53.23317,
+                "slack_ps": 2999.764648,
+                "H_ps": 88.00218200000018,
+                "start_pin": "native/valid_1$_SDFF_PN0_/QN",
+                "end_pin": "external/valid$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 9.582049563527928,
+                "raw_clock_skew_ps": 28.132191021157382,
+                "points_sha256": "eb39d3d79002a3f4f67662746ad7a595d69918e2c4bcdad258fecd6389eb1290",
+                "expanded_report_sha256": "4f0214d32b30e85dbe8d437ef62fe543be48736a35de03d4f0a042ca6657f16b",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-03-t3/grt"
+              },
+              "delay_witness": {
+                "id": "external_valid",
+                "kind": "register",
+                "delay_ps": 64.523834,
+                "slack_ps": 2990.063721,
+                "H_ps": 86.41244499999993,
+                "start_pin": "native/valid_2$_SDFF_PN0_/QN",
+                "end_pin": "external/valid$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 9.720376413502319,
+                "raw_clock_skew_ps": 27.068730937274132,
+                "points_sha256": "9236a8e3e44d936b5d0e92a2376d796b8162025803ccf01ef56bc0647f4a8b3e",
+                "expanded_report_sha256": "ef2fd34f6a1f4a0e21c43059e7df0079470d2723a83df0a8a652fb4b96a9c0a2",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t3/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "input_data": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 189.438233,
+              "overhead_ps": 239.438233,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_data",
+                "kind": "port",
+                "delay_ps": 152.421936,
+                "slack_ps": 2412.974854,
+                "H_ps": -52.596790000000055,
+                "start_pin": "in1[12]",
+                "end_pin": "launch/data_1[12]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 9.189162451794797,
+                "raw_clock_skew_ps": -61.786242788741674,
+                "points_sha256": "08f9bde7fdb9ee5c6216dae5bbaaa1f9de41b89ad1391bb5210c9dc33ed57d80",
+                "expanded_report_sha256": "4bf49c938544e0a7b0548a7fd0614f6e333fa78e6d8a60df8c2e436e8fbf1fe8",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-00-t3/grt"
+              },
+              "delay_witness": {
+                "id": "input_data",
+                "kind": "port",
+                "delay_ps": 189.438233,
+                "slack_ps": 2401.014648,
+                "H_ps": -77.65288099999952,
+                "start_pin": "in0[63]",
+                "end_pin": "launch/data_0[63]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 8.761398724577152,
+                "raw_clock_skew_ps": -86.41447279966741,
+                "points_sha256": "91d28212275b269e2c607bcfdbc268e2d7349d2192853222e440f420d680918f",
+                "expanded_report_sha256": "f256c19db9fbadf0e9cae1fa666ebc8408dbbcc09892b936977510dc99782c80",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-04-t3/grt"
+              },
+              "input_IO_subtracted_once": true
+            },
+            "input_enable": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 500.839417,
+              "overhead_ps": 550.839417,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_enable",
+                "kind": "port",
+                "delay_ps": 362.845459,
+                "slack_ps": 2203.186035,
+                "H_ps": -53.23149400000011,
+                "start_pin": "we0",
+                "end_pin": "launch/data_0[3]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 8.883132944503824,
+                "raw_clock_skew_ps": -62.1146536983197,
+                "points_sha256": "5756e483c8bc50374f6ee71acf6f358e5ec0213b51bf1966b261d219a83d79c0",
+                "expanded_report_sha256": "407d70b647573ac9f6e86ab95bc76a39423ce1768c69650fae75469fa2bc0412",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-00-t3/grt"
+              },
+              "delay_witness": {
+                "id": "input_enable",
+                "kind": "port",
+                "delay_ps": 500.839417,
+                "slack_ps": 2074.650146,
+                "H_ps": -62.68956299999991,
+                "start_pin": "we_iv",
+                "end_pin": "launch/data_0[55]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 9.391407790326767,
+                "raw_clock_skew_ps": -72.08104946254679,
+                "points_sha256": "0a26a96a0b26b60eb990a79c0d42d8e67bd4ff685febf83c79415c7d465a4d9c",
+                "expanded_report_sha256": "5416d1dc90c0d61a59fb25a34020b6f614c04e3ba039f2bdc0f66b83998ca296",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-10-t3/grt"
+              },
+              "input_IO_subtracted_once": true
+            },
+            "input_valid": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 173.269715,
+              "overhead_ps": 223.269715,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_valid",
+                "kind": "port",
+                "delay_ps": 134.685974,
+                "slack_ps": 2438.879883,
+                "H_ps": -60.76585699999987,
+                "start_pin": "iv",
+                "end_pin": "launch/valid$_SDFFE_PN0P_/D",
+                "raw_setup_margin_ps": 1.3078123653476048,
+                "raw_clock_skew_ps": -62.07374197986226,
+                "points_sha256": "058273251bd2edbeb43966ec1a15a41f5588890cc9a6b93f0f0e6d3154fdb9eb",
+                "expanded_report_sha256": "cd8cdf9e7fa3c9ae84aeab8a42e791d065f675c26633b77fa65bb21b36924c1e",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-00-t3/grt"
+              },
+              "delay_witness": {
+                "id": "input_valid",
+                "kind": "port",
+                "delay_ps": 173.269715,
+                "slack_ps": 2412.334229,
+                "H_ps": -72.80394399999977,
+                "start_pin": "iv",
+                "end_pin": "launch/valid$_SDFFE_PN0P_/D",
+                "raw_setup_margin_ps": 1.1173621706703218,
+                "raw_clock_skew_ps": -73.92150086493743,
+                "points_sha256": "e111b8a79eda48ee0ef9639f6456476950279bcc92502e792d8304e0b109274a",
+                "expanded_report_sha256": "55f92ab4f0dd675ad161b5a567ee150806929fee6b042dc9d614647915453d62",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-05-t3/grt"
+              },
+              "input_IO_subtracted_once": true
+            }
+          },
+          "3385": {
+            "native_data": {
+              "kind": "register",
+              "H_max_ps": 121.67749000000003,
+              "delay_max_ps": 69.086487,
+              "overhead_ps": 240.76397700000004,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "native_data",
+                "kind": "register",
+                "delay_ps": 46.935059,
+                "slack_ps": 3216.387451,
+                "H_ps": 121.67749000000003,
+                "start_pin": "native/data_7_s1[10]$_SDFFE_PN1P_/QN",
+                "end_pin": "native/data_7_s2[10]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 16.73017280268141,
+                "raw_clock_skew_ps": 29.834287817998018,
+                "points_sha256": "27efa55beb978eb0fbb587d5c14a80e64f6bc2f50473b4c469a6849ba05918f5",
+                "expanded_report_sha256": "14d8fb592426e5ae3f65a345e74f69ce5ef27268150850dd8df446cb4d36eee5",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t4/grt"
+              },
+              "delay_witness": {
+                "id": "native_data",
+                "kind": "register",
+                "delay_ps": 69.086487,
+                "slack_ps": 3224.377686,
+                "H_ps": 91.53582700000015,
+                "start_pin": "native/data_0_s1[23]$_SDFFE_PN0P_/QN",
+                "end_pin": "native/data_0_s2[23]$_SDFFE_PN0P_/D",
+                "raw_setup_margin_ps": 10.06582490969965,
+                "raw_clock_skew_ps": 24.102502979572726,
+                "points_sha256": "732b24349bd5a5c62b57e5f633ced88dc5fbbebc4523153aa4040dde8c1be697",
+                "expanded_report_sha256": "7008586ad8b01eb27487cd5f758dc06053074a9e7850399d6503e97aeff5cea7",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-01-t4/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "external_data": {
+              "kind": "register",
+              "H_max_ps": 104.94062799999983,
+              "delay_max_ps": 61.408463,
+              "overhead_ps": 216.34909099999982,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "external_data",
+                "kind": "register",
+                "delay_ps": 49.291794,
+                "slack_ps": 3230.767578,
+                "H_ps": 104.94062799999983,
+                "start_pin": "native/data_1_s2[24]$_SDFFE_PN0P_/QN",
+                "end_pin": "external/data_1[24]$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 9.793813329772583,
+                "raw_clock_skew_ps": 26.52691434568144,
+                "points_sha256": "f37ba8f2a73e106d5ad4ba692b17dcf9f3861b7281a848e376f497048a879656",
+                "expanded_report_sha256": "e4f343cd42f111add34c34b7a93e2dabd2d3014c5f7463df18d8b8d97e239534",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t4/grt"
+              },
+              "delay_witness": {
+                "id": "external_data",
+                "kind": "register",
+                "delay_ps": 61.408463,
+                "slack_ps": 3231.67749,
+                "H_ps": 91.91404699999975,
+                "start_pin": "native/data_5_s1[30]$_SDFFE_PN0P_/QN",
+                "end_pin": "external/data_5[30]$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 9.683123226855717,
+                "raw_clock_skew_ps": 25.234132491891437,
+                "points_sha256": "b76651e288ec6d69ebd8bdccf42e73d107fcb86cf8aa82a60189a5a020833bc2",
+                "expanded_report_sha256": "321e03a4df6e1df67b7af2b259a598e559a5d00856ab19cc54bdfa9ea0705ce4",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-06-t4/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "external_valid": {
+              "kind": "register",
+              "H_max_ps": 92.10020399999985,
+              "delay_max_ps": 64.274155,
+              "overhead_ps": 206.37435899999986,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "external_valid",
+                "kind": "register",
+                "delay_ps": 53.717911,
+                "slack_ps": 3239.181885,
+                "H_ps": 92.10020399999985,
+                "start_pin": "native/valid_1$_SDFF_PN0_/QN",
+                "end_pin": "external/valid$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 9.677095930138435,
+                "raw_clock_skew_ps": 30.786453247833023,
+                "points_sha256": "d0bcd1e6aac7c3609613fd84bf7e70a533d8c64d64928d0c87c4821e6ec17775",
+                "expanded_report_sha256": "bf1c9a87fcf19c56304206dd59affd2b10f6a38a0d5eb8eca70dfab3930d391b",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-03-t4/grt"
+              },
+              "delay_witness": {
+                "id": "external_valid",
+                "kind": "register",
+                "delay_ps": 64.274155,
+                "slack_ps": 3238.357422,
+                "H_ps": 82.3684229999999,
+                "start_pin": "native/valid_2$_SDFF_PN0_/QN",
+                "end_pin": "external/valid$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 9.858076160940143,
+                "raw_clock_skew_ps": 23.358601511369592,
+                "points_sha256": "10edc839279f7eb862dcc6b70146011e4f344a0d610b2a6d4f9f5c0b8c247622",
+                "expanded_report_sha256": "fc6d2504fcfa1466083a6d8139e4e13f425d781f88b0b147107afee611cdaa58",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t4/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "input_data": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 202.530701,
+              "overhead_ps": 252.530701,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_data",
+                "kind": "port",
+                "delay_ps": 149.947083,
+                "slack_ps": 2610.665527,
+                "H_ps": -52.61261000000013,
+                "start_pin": "in1[64]",
+                "end_pin": "launch/data_1[64]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 9.218984950432052,
+                "raw_clock_skew_ps": -61.8313941713744,
+                "points_sha256": "8a4863db6723de3c0563dcd5a0adb7224b8825202c0935d7e2a11af20f784556",
+                "expanded_report_sha256": "d7b077de6cd616f7cf9d3d626b467432ad796c91834d549e67fe8118faf1a64f",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-00-t4/grt"
+              },
+              "delay_witness": {
+                "id": "input_data",
+                "kind": "port",
+                "delay_ps": 202.530701,
+                "slack_ps": 2578.861328,
+                "H_ps": -73.3920290000001,
+                "start_pin": "in2[23]",
+                "end_pin": "launch/data_2[23]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 8.707697757293076,
+                "raw_clock_skew_ps": -82.09963264782516,
+                "points_sha256": "72f1c143e7f376b89ecaa63baaa951b45c1cbbe39badbf86273c8037015d6298",
+                "expanded_report_sha256": "a3b2e200cfa54ae3e8620fab23c709fe38ec83826cf7743217635fb86b76ede5",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-02-t4/grt"
+              },
+              "input_IO_subtracted_once": true
+            },
+            "input_enable": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 547.17627,
+              "overhead_ps": 597.17627,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_enable",
+                "kind": "port",
+                "delay_ps": 357.364136,
+                "slack_ps": 2404.589355,
+                "H_ps": -53.95349100000021,
+                "start_pin": "we0",
+                "end_pin": "launch/data_0[3]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 8.899626695313412,
+                "raw_clock_skew_ps": -62.853139359830834,
+                "points_sha256": "e64be739852289ffd8be1785ae295ed0c70aee66904ad9a058281f29fc5460ad",
+                "expanded_report_sha256": "cbfb6efd03e015175d90aae41170af3f8d168e9d57a2bec9cce87942f4bf4c56",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-00-t4/grt"
+              },
+              "delay_witness": {
+                "id": "input_enable",
+                "kind": "port",
+                "delay_ps": 547.17627,
+                "slack_ps": 2229.652832,
+                "H_ps": -68.82910200000015,
+                "start_pin": "we_iv",
+                "end_pin": "launch/data_0[39]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 9.006953169410359,
+                "raw_clock_skew_ps": -77.83625827206819,
+                "points_sha256": "caf98205f0b7c88397b35359ba481f2e79cc1516cfdf10dedec7accd6a4843ec",
+                "expanded_report_sha256": "75d35a23b21e43c2f6a10e1030db73c704f86bd618a920f58d10dd5fe2bb6c16",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-01-t4/grt"
+              },
+              "input_IO_subtracted_once": true
+            },
+            "input_valid": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 206.744568,
+              "overhead_ps": 256.74456799999996,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_valid",
+                "kind": "port",
+                "delay_ps": 133.988281,
+                "slack_ps": 2634.96167,
+                "H_ps": -60.949951000000056,
+                "start_pin": "iv",
+                "end_pin": "launch/valid$_SDFFE_PN0P_/D",
+                "raw_setup_margin_ps": 1.3436857963095017,
+                "raw_clock_skew_ps": -62.29358001652585,
+                "points_sha256": "a3ce0a20acb6f53e788275fdcea77cd563839b6cc066a11b0b688a6dde92a9d2",
+                "expanded_report_sha256": "bd6092de539f6cf727afce64bb73d52482c9752f01db4d4acd866540cb871d1a",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-00-t4/grt"
+              },
+              "delay_witness": {
+                "id": "input_valid",
+                "kind": "port",
+                "delay_ps": 206.744568,
+                "slack_ps": 2578.768555,
+                "H_ps": -77.51312300000018,
+                "start_pin": "iv",
+                "end_pin": "launch/valid$_SDFFE_PN0P_/D",
+                "raw_setup_margin_ps": 1.0451685090312468,
+                "raw_clock_skew_ps": -78.55822936608803,
+                "points_sha256": "38c013b97227d1cc6d604f47fc026d23026cf37a1c71f6e4266c9810f9b49ef1",
+                "expanded_report_sha256": "1d7b71da55776246f9937c4ec0e8122a790cf540d006d8812d919c39440b33b7",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-05-t4/grt"
+              },
+              "input_IO_subtracted_once": true
+            }
+          },
+          "4162": {
+            "native_data": {
+              "kind": "register",
+              "H_max_ps": 118.80419900000015,
+              "delay_max_ps": 70.200592,
+              "overhead_ps": 239.00479100000015,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "native_data",
+                "kind": "register",
+                "delay_ps": 45.951416,
+                "slack_ps": 3997.244385,
+                "H_ps": 118.80419900000015,
+                "start_pin": "native/data_7_s1[10]$_SDFFE_PN1P_/QN",
+                "end_pin": "native/data_7_s2[10]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 16.69801449888375,
+                "raw_clock_skew_ps": 27.627285875686525,
+                "points_sha256": "ac901c0cbfecf0951f409cd5505f932c3243a2133cccee50590f6a56a08e106d",
+                "expanded_report_sha256": "d00e28fbb349c3be28ffcbf5beae973d33d77422df59f106a09b1a573b467c84",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t5/grt"
+              },
+              "delay_witness": {
+                "id": "native_data",
+                "kind": "register",
+                "delay_ps": 70.200592,
+                "slack_ps": 4001.414795,
+                "H_ps": 90.38461299999972,
+                "start_pin": "native/data_0_s1[23]$_SDFFE_PN0P_/QN",
+                "end_pin": "native/data_0_s2[23]$_SDFFE_PN0P_/D",
+                "raw_setup_margin_ps": 10.110373475924472,
+                "raw_clock_skew_ps": 23.305133864393035,
+                "points_sha256": "3a9b73183f7110a092a620961cfc265afa4eecf850ae659f1985008dedceeb8e",
+                "expanded_report_sha256": "8c532aa21c167862a960c6be7f630e9461d22eb71109e001d2bdc8403568ef7c",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-01-t5/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "external_data": {
+              "kind": "register",
+              "H_max_ps": 101.00059499999998,
+              "delay_max_ps": 61.28064,
+              "overhead_ps": 212.28123499999998,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "external_data",
+                "kind": "register",
+                "delay_ps": 57.906876,
+                "slack_ps": 4003.092529,
+                "H_ps": 101.00059499999998,
+                "start_pin": "native/data_4_s2[4]$_SDFFE_PN1P_/QN",
+                "end_pin": "external/data_4[4]$_SDFF_PN1_/D",
+                "raw_setup_margin_ps": 15.842082853878559,
+                "raw_clock_skew_ps": 29.19736327711142,
+                "points_sha256": "5395dbbe14abe27dc89ce828e33ffc94e8349450d189fb39871efa6c484b4b83",
+                "expanded_report_sha256": "0762fb5ca98e1b44f70ab0989bdbe1dffc723ef45318e0e65d95119a31111e33",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-02-t5/grt"
+              },
+              "delay_witness": {
+                "id": "external_data",
+                "kind": "register",
+                "delay_ps": 61.28064,
+                "slack_ps": 4010.564697,
+                "H_ps": 90.15466300000026,
+                "start_pin": "native/data_5_s1[30]$_SDFFE_PN0P_/QN",
+                "end_pin": "external/data_5[30]$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 9.724658578402767,
+                "raw_clock_skew_ps": 23.441039040394962,
+                "points_sha256": "d628c9c74a952d4e9457d729c5e232e4bc8b742a00236e2f7bd3e5d6060c96c4",
+                "expanded_report_sha256": "42d59abc1284e51844867efae2fa33f668583f43578787c1defc7306448ac619",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-06-t5/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "external_valid": {
+              "kind": "register",
+              "H_max_ps": 87.93049599999995,
+              "delay_max_ps": 63.632675,
+              "overhead_ps": 201.56317099999995,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "external_valid",
+                "kind": "register",
+                "delay_ps": 54.544358,
+                "slack_ps": 4019.525146,
+                "H_ps": 87.93049599999995,
+                "start_pin": "native/valid_1$_SDFF_PN0_/QN",
+                "end_pin": "external/valid$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 9.734744260692096,
+                "raw_clock_skew_ps": 28.44992470774077,
+                "points_sha256": "2ccdd47d589d901af94bc186d5fe62525da7a1bd41f2006ebba46dab7d4008ff",
+                "expanded_report_sha256": "f555e9bc8ff53cf0230b17e16900db90bd5a91d49d9aa3be4fe2e2774b120743",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-03-t5/grt"
+              },
+              "delay_witness": {
+                "id": "external_valid",
+                "kind": "register",
+                "delay_ps": 63.632675,
+                "slack_ps": 4013.784912,
+                "H_ps": 84.58241300000009,
+                "start_pin": "native/valid_2$_SDFF_PN0_/QN",
+                "end_pin": "external/valid$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 10.149681442528369,
+                "raw_clock_skew_ps": 25.437759537672022,
+                "points_sha256": "4eecacbdd4c47415ca6fa082c0313db4e123b4210a70fefc658d263a19a143ec",
+                "expanded_report_sha256": "873f15ef4459f3ae4a49f484f1970cc7dab386be9bc3c034106fc6bbd26a0c92",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t5/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "input_data": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 198.821228,
+              "overhead_ps": 248.821228,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_data",
+                "kind": "port",
+                "delay_ps": 149.947144,
+                "slack_ps": 3232.265625,
+                "H_ps": -52.6127690000003,
+                "start_pin": "in1[64]",
+                "end_pin": "launch/data_1[64]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 9.218984950432052,
+                "raw_clock_skew_ps": -61.8313941713744,
+                "points_sha256": "27f28332f64b30f175ab4af5863452711e8d323afb933113aa6f95c7d61fa47d",
+                "expanded_report_sha256": "c0df4fc16da9b2c871bf92e8f5971a4eb7fda2482105eaf271b5f0fe34716867",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-00-t5/grt"
+              },
+              "delay_witness": {
+                "id": "input_data",
+                "kind": "port",
+                "delay_ps": 198.821228,
+                "slack_ps": 3204.298584,
+                "H_ps": -73.519812,
+                "start_pin": "in2[30]",
+                "end_pin": "launch/data_2[30]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 8.85409454087771,
+                "raw_clock_skew_ps": -82.37415610734544,
+                "points_sha256": "10e22893bc577d9a7b503c9fb054cf572a7badc4e0f6f2fad5205eab4ab32a19",
+                "expanded_report_sha256": "1232ddd3480856776202d4fd47936b00de730e544538d06445001136e1ed46b7",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-02-t5/grt"
+              },
+              "input_IO_subtracted_once": true
+            },
+            "input_enable": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 503.567322,
+              "overhead_ps": 553.567322,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_enable",
+                "kind": "port",
+                "delay_ps": 357.364319,
+                "slack_ps": 3026.189453,
+                "H_ps": -53.953771999999844,
+                "start_pin": "we0",
+                "end_pin": "launch/data_0[3]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 8.899626695313412,
+                "raw_clock_skew_ps": -62.853139359830834,
+                "points_sha256": "e8b7075c2851390477e503fca44731490c615e2d964a82a0a28359e692f09118",
+                "expanded_report_sha256": "09eb5c335494b78ac1f2ccc12dd16f2bdad96b72416210b39023d0cedc1cd5e0",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-00-t5/grt"
+              },
+              "delay_witness": {
+                "id": "input_enable",
+                "kind": "port",
+                "delay_ps": 503.567322,
+                "slack_ps": 2890.544189,
+                "H_ps": -64.51151100000016,
+                "start_pin": "we_iv",
+                "end_pin": "launch/data_0[44]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 9.147636641226864,
+                "raw_clock_skew_ps": -73.65909965306727,
+                "points_sha256": "dca46817aeb485f89c1ccd1406bba7a7aad03fc6cc12f4cbfdd288250b5ea226",
+                "expanded_report_sha256": "6c366f3731a3ed9a3bee78b9bd22e8576a6798d2bc912ea41340687ee2857e4a",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-10-t5/grt"
+              },
+              "input_IO_subtracted_once": true
+            },
+            "input_valid": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 208.651062,
+              "overhead_ps": 258.651062,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_valid",
+                "kind": "port",
+                "delay_ps": 133.988343,
+                "slack_ps": 3256.561768,
+                "H_ps": -60.950111000000106,
+                "start_pin": "iv",
+                "end_pin": "launch/valid$_SDFFE_PN0P_/D",
+                "raw_setup_margin_ps": 1.3436857963095017,
+                "raw_clock_skew_ps": -62.29358001652585,
+                "points_sha256": "46ea0477d288b1658a5921fdaad0124ba0d10a10a9f4327f8971be6993b9f7c1",
+                "expanded_report_sha256": "b9100450eb89c71fbdf07a5491c4df44401090115d04323c700caa5a7f0b4b7b",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-00-t5/grt"
+              },
+              "delay_witness": {
+                "id": "input_valid",
+                "kind": "port",
+                "delay_ps": 208.651062,
+                "slack_ps": 3197.882568,
+                "H_ps": -76.93363,
+                "start_pin": "iv",
+                "end_pin": "launch/valid$_SDFFE_PN0P_/D",
+                "raw_setup_margin_ps": 1.4896866292607447,
+                "raw_clock_skew_ps": -78.42305971283992,
+                "points_sha256": "80d9dacb05e383572b46d687d1be64966abe0b242af178e30e9e5e3699eb5fe0",
+                "expanded_report_sha256": "69d2025ef8fc0e9a37b3dc7334d680f334bd9c43ba4449f39955a9436371b0f9",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-05-t5/grt"
+              },
+              "input_IO_subtracted_once": true
+            }
+          },
+          "4528": {
+            "native_data": {
+              "kind": "register",
+              "H_max_ps": 119.85363799999959,
+              "delay_max_ps": 69.154709,
+              "overhead_ps": 239.0083469999996,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "native_data",
+                "kind": "register",
+                "delay_ps": 45.88269,
+                "slack_ps": 4362.263672,
+                "H_ps": 119.85363799999959,
+                "start_pin": "native/data_7_s1[10]$_SDFFE_PN1P_/QN",
+                "end_pin": "native/data_7_s2[10]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 16.43534440487482,
+                "raw_clock_skew_ps": 29.478662566528868,
+                "points_sha256": "67d9df74ca367b65b2f8122e97b0e2d0048802912ad2bebf5811b42510e506d6",
+                "expanded_report_sha256": "c9629daf3efd35add9978de304e381e1bfc0677a04d6c42045117cdd24c315fa",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t6/grt"
+              },
+              "delay_witness": {
+                "id": "native_data",
+                "kind": "register",
+                "delay_ps": 69.154709,
+                "slack_ps": 4368.370117,
+                "H_ps": 90.47517399999924,
+                "start_pin": "native/data_0_s1[23]$_SDFFE_PN0P_/QN",
+                "end_pin": "native/data_0_s2[23]$_SDFFE_PN0P_/D",
+                "raw_setup_margin_ps": 10.079684482910967,
+                "raw_clock_skew_ps": 23.705778659510734,
+                "points_sha256": "d499c9a91f3d1454fc6a43afcd3a7d77b57de19edf2e162b5c945e1aaca10f9e",
+                "expanded_report_sha256": "a893a624c56d8d15b50b952053804baca15b371f417cc080b49413633474b201",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-01-t6/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "external_data": {
+              "kind": "register",
+              "H_max_ps": 110.44102500000008,
+              "delay_max_ps": 62.958221,
+              "overhead_ps": 223.3992460000001,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "external_data",
+                "kind": "register",
+                "delay_ps": 50.233291,
+                "slack_ps": 4367.325684,
+                "H_ps": 110.44102500000008,
+                "start_pin": "native/data_1_s2[24]$_SDFFE_PN0P_/QN",
+                "end_pin": "external/data_1[24]$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 10.052438915997275,
+                "raw_clock_skew_ps": 30.798710803914275,
+                "points_sha256": "5d3a49f62e8a7ff9c1d500fe0e9a29f2e353f1ab6669841577b7d6166a384428",
+                "expanded_report_sha256": "e3c437281a748056e008b0ce5d2f1078de934c17708b478b5421eee3c0664a54",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t6/grt"
+              },
+              "delay_witness": {
+                "id": "external_data",
+                "kind": "register",
+                "delay_ps": 62.958221,
+                "slack_ps": 4366.534668,
+                "H_ps": 98.5071109999999,
+                "start_pin": "native/data_1_s2[1]$_SDFFE_PN1P_/QN",
+                "end_pin": "external/data_1[1]$_SDFF_PN1_/D",
+                "raw_setup_margin_ps": 18.991863637296547,
+                "raw_clock_skew_ps": 24.595247713476986,
+                "points_sha256": "616eb36dc13bfc5ea29f738e09ff12a4bcaac4f48fdd232a878d38b55f4a73e5",
+                "expanded_report_sha256": "6922e6ca12c0e07033fa1cfdb7fad6035b078650388f78a8e9da97b012130e19",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-10-t6/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "external_valid": {
+              "kind": "register",
+              "H_max_ps": 85.91949399999976,
+              "delay_max_ps": 63.632461,
+              "overhead_ps": 199.55195499999977,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "external_valid",
+                "kind": "register",
+                "delay_ps": 51.824158,
+                "slack_ps": 4390.256348,
+                "H_ps": 85.91949399999976,
+                "start_pin": "native/valid_1$_SDFF_PN0_/QN",
+                "end_pin": "external/valid$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 9.57865557704718,
+                "raw_clock_skew_ps": 25.981196360991277,
+                "points_sha256": "869307551179f69bdda64630790af18af5ebf602218d717756cd176a67f7b994",
+                "expanded_report_sha256": "902eae2ef5f1f89d664fbb5834dceda415b210294d9a9a421b98235624d2ef83",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-03-t6/grt"
+              },
+              "delay_witness": {
+                "id": "external_valid",
+                "kind": "register",
+                "delay_ps": 63.632461,
+                "slack_ps": 4381.442383,
+                "H_ps": 82.92515600000024,
+                "start_pin": "native/valid_2$_SDFF_PN0_/QN",
+                "end_pin": "external/valid$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 10.164990377203864,
+                "raw_clock_skew_ps": 23.912196875364167,
+                "points_sha256": "ca97260c376015a763b1f34a02885e7511e9730c973e040631f905ee25adcf85",
+                "expanded_report_sha256": "d56808ad6b3c84c6ab5eb497fba0434fb53cc24e233a3bae7c979aaf767c718b",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t6/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "input_data": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 200.257812,
+              "overhead_ps": 250.257812,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_data",
+                "kind": "port",
+                "delay_ps": 149.947143,
+                "slack_ps": 3525.065674,
+                "H_ps": -52.61281699999972,
+                "start_pin": "in1[64]",
+                "end_pin": "launch/data_1[64]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 9.218984950432052,
+                "raw_clock_skew_ps": -61.8313941713744,
+                "points_sha256": "4275768d8cc0e23ec3b16b4b53f1cba2b6c71b91e85e118101cc288605935c2c",
+                "expanded_report_sha256": "f89a04dd35aad0e65bbfe1fc1a0ab57e8f59edfcaf5d150fa7449e6d200b3560",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-00-t6/grt"
+              },
+              "delay_witness": {
+                "id": "input_data",
+                "kind": "port",
+                "delay_ps": 200.257812,
+                "slack_ps": 3492.952637,
+                "H_ps": -70.81044899999961,
+                "start_pin": "in2[44]",
+                "end_pin": "launch/data_2[44]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 9.337764068917398,
+                "raw_clock_skew_ps": -80.14792995947317,
+                "points_sha256": "d8dfc747c45aaeadad8ba0ff39686ed284c0e18666d4f3619725964dda8c7a9d",
+                "expanded_report_sha256": "e5887c1a67126227dee40766cd3fbe02ba02dfda6634b7e7b698010f58085421",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-02-t6/grt"
+              },
+              "input_IO_subtracted_once": true
+            },
+            "input_enable": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 493.099243,
+              "overhead_ps": 543.099243,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_enable",
+                "kind": "port",
+                "delay_ps": 357.364257,
+                "slack_ps": 3318.989502,
+                "H_ps": -53.95375899999999,
+                "start_pin": "we0",
+                "end_pin": "launch/data_0[3]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 8.899626695313412,
+                "raw_clock_skew_ps": -62.853139359830834,
+                "points_sha256": "0fae3abc4616f3185f936c3f8072824a98da523c01ae9c86c1566694df2a99ed",
+                "expanded_report_sha256": "a715c4008a655f1a9061070ce2c30818de9ba6c84ba6e0f8cc084b3e79518c33",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-00-t6/grt"
+              },
+              "delay_witness": {
+                "id": "input_enable",
+                "kind": "port",
+                "delay_ps": 493.099243,
+                "slack_ps": 3192.430908,
+                "H_ps": -63.13015099999984,
+                "start_pin": "we_iv",
+                "end_pin": "launch/data_0[55]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 9.067514968041923,
+                "raw_clock_skew_ps": -72.19749798004216,
+                "points_sha256": "bcbd14f4f08cf543e793f32f27b8057c4324d4eee67ae1ca32854efbfa418461",
+                "expanded_report_sha256": "de52a273a6b54e9123378670c5240c53dcae4d4102e32fd9bd5232934d7fb6a7",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-10-t6/grt"
+              },
+              "input_IO_subtracted_once": true
+            },
+            "input_valid": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 203.509033,
+              "overhead_ps": 253.509033,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_valid",
+                "kind": "port",
+                "delay_ps": 133.988281,
+                "slack_ps": 3549.361816,
+                "H_ps": -60.950096999999914,
+                "start_pin": "iv",
+                "end_pin": "launch/valid$_SDFFE_PN0P_/D",
+                "raw_setup_margin_ps": 1.3436857963095017,
+                "raw_clock_skew_ps": -62.29358001652585,
+                "points_sha256": "c94e820c5d55d56a56a8be6c52ec42bfa6431bf558496f65aa5026613c0f661b",
+                "expanded_report_sha256": "9dde86515cdc8f9d9f37d8c6e3abffa021d0f4486f1608fb04dd651a5ea96c5d",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-00-t6/grt"
+              },
+              "delay_witness": {
+                "id": "input_valid",
+                "kind": "port",
+                "delay_ps": 203.509033,
+                "slack_ps": 3495.440674,
+                "H_ps": -76.54970699999967,
+                "start_pin": "iv",
+                "end_pin": "launch/valid$_SDFFE_PN0P_/D",
+                "raw_setup_margin_ps": 1.0616275653713148,
+                "raw_clock_skew_ps": -77.61120912608277,
+                "points_sha256": "a15e4aa797b6668de9d98c32ff0bdf6fa7a8a037426dd21c9ab218ac68cb9de3",
+                "expanded_report_sha256": "6895ab3cf20d1137865f04e358b8a76dbe878aa634d4c0bfa8f2af9ca20134f3",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-05-t6/grt"
+              },
+              "input_IO_subtracted_once": true
+            }
+          },
+          "11913": {
+            "native_data": {
+              "kind": "register",
+              "H_max_ps": 121.49485899999854,
+              "delay_max_ps": 68.907715,
+              "overhead_ps": 240.40257399999854,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "native_data",
+                "kind": "register",
+                "delay_ps": 45.389907,
+                "slack_ps": 11746.115234,
+                "H_ps": 121.49485899999854,
+                "start_pin": "native/data_7_s1[10]$_SDFFE_PN1P_/QN",
+                "end_pin": "native/data_7_s2[10]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 15.505192615949959,
+                "raw_clock_skew_ps": 29.546101676380943,
+                "points_sha256": "388b5ae6b4d210e198db069c2f2683ec50f0327ae6e0a832f09bdf0695aa3152",
+                "expanded_report_sha256": "a1daead4dd0dc0c55bacf0659881ad6c932bd2a2aa189f52bf766b4802cf37b6",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t7/grt"
+              },
+              "delay_witness": {
+                "id": "native_data",
+                "kind": "register",
+                "delay_ps": 68.907715,
+                "slack_ps": 11750.717773,
+                "H_ps": 93.37451200000032,
+                "start_pin": "native/data_0_s1[23]$_SDFFE_PN0P_/QN",
+                "end_pin": "native/data_0_s2[23]$_SDFFE_PN0P_/D",
+                "raw_setup_margin_ps": 10.178873369182107,
+                "raw_clock_skew_ps": 24.54529461626276,
+                "points_sha256": "4cedee61d4ebf43234561b697a555f2e03f6363905845de504e949f3e17394b7",
+                "expanded_report_sha256": "33de57b6577849f8e9deadb79ca884e58c2a5ca47c2c91bec576cf7f6a216f8c",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-01-t7/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "external_data": {
+              "kind": "register",
+              "H_max_ps": 113.61552400000073,
+              "delay_max_ps": 63.24733,
+              "overhead_ps": 226.86285400000074,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "external_data",
+                "kind": "register",
+                "delay_ps": 49.761429,
+                "slack_ps": 11749.623047,
+                "H_ps": 113.61552400000073,
+                "start_pin": "native/data_1_s2[24]$_SDFFE_PN0P_/QN",
+                "end_pin": "external/data_1[24]$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 10.078134507485181,
+                "raw_clock_skew_ps": 32.15320371063868,
+                "points_sha256": "78f80afda91b8730f1a8f1a211571e79a0bc5a0171805ece48f21f13fb1d527c",
+                "expanded_report_sha256": "e1986e9f91c46bef00f457c7ccf9615673f313463c691073008ad32113d034d2",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t7/grt"
+              },
+              "delay_witness": {
+                "id": "external_data",
+                "kind": "register",
+                "delay_ps": 63.24733,
+                "slack_ps": 11748.800781,
+                "H_ps": 100.95188899999994,
+                "start_pin": "native/data_1_s2[1]$_SDFFE_PN1P_/QN",
+                "end_pin": "external/data_1[1]$_SDFF_PN1_/D",
+                "raw_setup_margin_ps": 19.405388754223374,
+                "raw_clock_skew_ps": 25.96164082324659,
+                "points_sha256": "36e21a49974328c18ce5d09ea2ec638b66635ee9b6bb815a2e3ad914380aee0a",
+                "expanded_report_sha256": "7285856af15d530990bc90150859b74be86094ec55a65abb5521dd8ca5745639",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-10-t7/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "external_valid": {
+              "kind": "register",
+              "H_max_ps": 94.69740400000046,
+              "delay_max_ps": 60.905976,
+              "overhead_ps": 205.60338000000047,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "external_valid",
+                "kind": "register",
+                "delay_ps": 40.397323,
+                "slack_ps": 11777.905273,
+                "H_ps": 94.69740400000046,
+                "start_pin": "native/valid_1$_SDFF_PN0_/QN",
+                "end_pin": "external/valid$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 9.43557645211035,
+                "raw_clock_skew_ps": 33.9971731322386,
+                "points_sha256": "9404fd4defb5873e398789e8e9074a4448e5e483ea9e3df9add427202c264ad9",
+                "expanded_report_sha256": "26cc13922dfa67e3eeba21702483652f39c7db443c86d1de4e728c3796e45c12",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-03-t7/grt"
+              },
+              "delay_witness": {
+                "id": "external_valid",
+                "kind": "register",
+                "delay_ps": 60.905976,
+                "slack_ps": 11765.198242,
+                "H_ps": 86.8957819999996,
+                "start_pin": "native/valid_2$_SDFF_PN0_/QN",
+                "end_pin": "external/valid$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 10.232520560038427,
+                "raw_clock_skew_ps": 27.206461042372787,
+                "points_sha256": "d8cb1d83f10c4e7dfaccff8b79ae9435766e673c3fe5286961d7dc34392cc0f0",
+                "expanded_report_sha256": "870dbf810b802b9d88b033747f5f16a1393a8dcff8e3058ea2fa83314ace13b0",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t7/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "input_data": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 200.173828,
+              "overhead_ps": 250.173828,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_data",
+                "kind": "port",
+                "delay_ps": 152.505371,
+                "slack_ps": 9431.047852,
+                "H_ps": -53.15322299999934,
+                "start_pin": "in0[44]",
+                "end_pin": "launch/data_0[44]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 8.96513245585151,
+                "raw_clock_skew_ps": -62.11815090084727,
+                "points_sha256": "333ed0e989011dd5d5adecdfb1706fc9cfce3230acdae93189eafa68986d5bdd",
+                "expanded_report_sha256": "8ba13a5193dc819da6d4cb80c24b37fd336a4bb806ee62601b9cf1132c17ad09",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-00-t7/grt"
+              },
+              "delay_witness": {
+                "id": "input_data",
+                "kind": "port",
+                "delay_ps": 200.173828,
+                "slack_ps": 9397.334961,
+                "H_ps": -67.1087890000017,
+                "start_pin": "in2[6]",
+                "end_pin": "launch/data_2[6]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 9.476698939470118,
+                "raw_clock_skew_ps": -76.58462752857531,
+                "points_sha256": "83d8d1f35615bae2f050f721d0907c61e800bd85ca309b10bd95efb21a11fd0e",
+                "expanded_report_sha256": "4b683adee61bd278d6304932ab1ef416d1dd1eadb84f4daeed3e871e85dba5c3",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-05-t7/grt"
+              },
+              "input_IO_subtracted_once": true
+            },
+            "input_enable": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 512.049804,
+              "overhead_ps": 562.049804,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_enable",
+                "kind": "port",
+                "delay_ps": 353.575927,
+                "slack_ps": 9230.307617,
+                "H_ps": -53.48354400000062,
+                "start_pin": "we1",
+                "end_pin": "launch/data_1[56]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 8.988991842540095,
+                "raw_clock_skew_ps": -62.47216632893071,
+                "points_sha256": "b8f64de96892c600cc8abf59ce96fe5e304cfd95e0fbfd0ca377752d57e86d1a",
+                "expanded_report_sha256": "69adef8a3f28b9e4ad94d179b06d1ac8df3221a90668e9e47e47184f2e507d78",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-00-t7/grt"
+              },
+              "delay_witness": {
+                "id": "input_enable",
+                "kind": "port",
+                "delay_ps": 512.049804,
+                "slack_ps": 9097.040039,
+                "H_ps": -78.68984300000011,
+                "start_pin": "we_iv",
+                "end_pin": "launch/data_1[28]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 9.261791854286994,
+                "raw_clock_skew_ps": -87.95172923292682,
+                "points_sha256": "e549b77f7e9a79d6f23a32b51b948c1e240798c2f4a6d7d1ad0b5587fd1b19fc",
+                "expanded_report_sha256": "72ccf68dcb4936d2557f4a8356b431664712b97b41152a29c075fd2431a0fe7c",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-03-t7/grt"
+              },
+              "input_IO_subtracted_once": true
+            },
+            "input_valid": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 204.926025,
+              "overhead_ps": 254.926025,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_valid",
+                "kind": "port",
+                "delay_ps": 152.495849,
+                "slack_ps": 9439.670898,
+                "H_ps": -61.76674700000149,
+                "start_pin": "iv",
+                "end_pin": "launch/valid$_SDFFE_PN0P_/D",
+                "raw_setup_margin_ps": 1.037682309870669,
+                "raw_clock_skew_ps": -62.80279074566408,
+                "points_sha256": "e83748f5ce07d4afa71b1c74889fb718c686cb7049b6aca1b20e4822f53e6622",
+                "expanded_report_sha256": "36c1fc7092af7f7499632c382790c02f430ad5a415ff55335894d828cf5df696",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-00-t7/grt"
+              },
+              "delay_witness": {
+                "id": "input_valid",
+                "kind": "port",
+                "delay_ps": 204.926025,
+                "slack_ps": 9400.206055,
+                "H_ps": -74.73208000000159,
+                "start_pin": "iv",
+                "end_pin": "launch/valid$_SDFFE_PN0P_/D",
+                "raw_setup_margin_ps": 0.8656747736181247,
+                "raw_clock_skew_ps": -75.5977364041982,
+                "points_sha256": "5484228ca04e394023d70bdc4310ad42d74b3aa0b70fd86bd1a9a9034b3d69f1",
+                "expanded_report_sha256": "2f51c45517c76d10855d6b96f716a02b1979054c017beeaa1ff1947ee85bc1e3",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-05-t7/grt"
+              },
+              "input_IO_subtracted_once": true
+            }
+          },
+          "14897": {
+            "native_data": {
+              "kind": "register",
+              "H_max_ps": 122.22653200000059,
+              "delay_max_ps": 68.48587,
+              "overhead_ps": 240.7124020000006,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "native_data",
+                "kind": "register",
+                "delay_ps": 46.38382,
+                "slack_ps": 14728.389648,
+                "H_ps": 122.22653200000059,
+                "start_pin": "native/data_7_s1[10]$_SDFFE_PN1P_/QN",
+                "end_pin": "native/data_7_s2[10]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 15.849408591117609,
+                "raw_clock_skew_ps": 30.222567504178954,
+                "points_sha256": "7f136be60b1a4e34925b9c0ab54ad864ccbaa79c618106e1e9400d52863eda01",
+                "expanded_report_sha256": "0d72164dad8c22fd8d38e6259eb71574d11bf7d01036cfa412a69a44bff07598",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t8/grt"
+              },
+              "delay_witness": {
+                "id": "native_data",
+                "kind": "register",
+                "delay_ps": 68.48587,
+                "slack_ps": 14737.255859,
+                "H_ps": 91.25827099999879,
+                "start_pin": "native/data_0_s1[23]$_SDFFE_PN0P_/QN",
+                "end_pin": "native/data_0_s2[23]$_SDFFE_PN0P_/D",
+                "raw_setup_margin_ps": 10.283090351448365,
+                "raw_clock_skew_ps": 23.66041217116699,
+                "points_sha256": "f2540c4daeb6bf70b48c8ee4f072016f0dfd46e010d0d670735d722b0c25b955",
+                "expanded_report_sha256": "891e403b8d7c035a7ac5322b9475c8ac8c7a40025664a7c935eb4da5d7a62df8",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-01-t8/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "external_data": {
+              "kind": "register",
+              "H_max_ps": 114.44598399999995,
+              "delay_max_ps": 61.751908,
+              "overhead_ps": 226.19789199999997,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "external_data",
+                "kind": "register",
+                "delay_ps": 49.934875,
+                "slack_ps": 14732.619141,
+                "H_ps": 114.44598399999995,
+                "start_pin": "native/data_1_s2[24]$_SDFFE_PN0P_/QN",
+                "end_pin": "external/data_1[24]$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 10.153775389931674,
+                "raw_clock_skew_ps": 32.95309858319939,
+                "points_sha256": "d03a089084d95db16bcd2f66cabb249716ba617aa9fc6e38c3a159714c38590d",
+                "expanded_report_sha256": "8100bf24066658e478bcb8390676f1a1930760152634726b9c3c93231b9f5f5d",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t8/grt"
+              },
+              "delay_witness": {
+                "id": "external_data",
+                "kind": "register",
+                "delay_ps": 61.751908,
+                "slack_ps": 14733.496094,
+                "H_ps": 101.75199799999973,
+                "start_pin": "native/data_1_s2[1]$_SDFFE_PN1P_/QN",
+                "end_pin": "external/data_1[1]$_SDFF_PN1_/D",
+                "raw_setup_margin_ps": 19.843925114226835,
+                "raw_clock_skew_ps": 26.969268832055526,
+                "points_sha256": "a5db76a859cec4b046bd32bb51de60abb6298740066c3e0f7fbaef59552def16",
+                "expanded_report_sha256": "a004442ecddb2c7bea7c16477788d87385c597a4eb8c6057996ba13e72c4713d",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-10-t8/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "external_valid": {
+              "kind": "register",
+              "H_max_ps": 89.79693600000064,
+              "delay_max_ps": 61.528503,
+              "overhead_ps": 201.32543900000064,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "external_valid",
+                "kind": "register",
+                "delay_ps": 53.233337,
+                "slack_ps": 14753.969727,
+                "H_ps": 89.79693600000064,
+                "start_pin": "native/valid_1$_SDFF_PN0_/QN",
+                "end_pin": "external/valid$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 9.654005025949708,
+                "raw_clock_skew_ps": 28.876654539766733,
+                "points_sha256": "e3eacbacab4f3a3da0b17ae014526e7d02a604f0345e4d94c6246f3232b09e62",
+                "expanded_report_sha256": "6b8323769cb21709b5cdfd4a3df605453fdc080ed10d3aa5b0d30e1f5d5414b6",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-03-t8/grt"
+              },
+              "delay_witness": {
+                "id": "external_valid",
+                "kind": "register",
+                "delay_ps": 61.528503,
+                "slack_ps": 14750.369141,
+                "H_ps": 85.10235600000124,
+                "start_pin": "native/valid_2$_SDFF_PN0_/QN",
+                "end_pin": "external/valid$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 10.015002716023957,
+                "raw_clock_skew_ps": 24.931298345243214,
+                "points_sha256": "dc02d70ebe29d9ce68f28ecb6bca1f52c2901b93cb1a67e5c60c086c8a7b0a4b",
+                "expanded_report_sha256": "1ff0d325043ee74e5273dc1308465429048bfcef11959df93da30b5f006549c6",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-07-t8/grt"
+              },
+              "input_IO_subtracted_once": false
+            },
+            "input_data": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 204.165284,
+              "overhead_ps": 254.165284,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_data",
+                "kind": "port",
+                "delay_ps": 152.505372,
+                "slack_ps": 11818.248047,
+                "H_ps": -53.153418999998394,
+                "start_pin": "in0[44]",
+                "end_pin": "launch/data_0[44]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 8.96513245585151,
+                "raw_clock_skew_ps": -62.11815090084727,
+                "points_sha256": "09fe4265750fe22bdf06e98cdf79729d21c444b87e3add1259e41ff277b2edc2",
+                "expanded_report_sha256": "844f7464fffa11eab18fa6761a3602dd6bbbde7f70179c78ab77e3e4e43e23cc",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-00-t8/grt"
+              },
+              "delay_witness": {
+                "id": "input_data",
+                "kind": "port",
+                "delay_ps": 204.165284,
+                "slack_ps": 11783.217773,
+                "H_ps": -69.78305700000055,
+                "start_pin": "in2[16]",
+                "end_pin": "launch/data_2[16]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 8.632590302315446,
+                "raw_clock_skew_ps": -78.41702981403742,
+                "points_sha256": "55746cec988a6c14c07b1db5f82d2c9f140570ac6ee95fabfd83dc4c3fadd114",
+                "expanded_report_sha256": "73718dddfa506b38ac5983560bcd29431ebc2013f1b2578daf15f8a89c9e0eee",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-train-05-t8/grt"
+              },
+              "input_IO_subtracted_once": true
+            },
+            "input_enable": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 546.722168,
+              "overhead_ps": 596.722168,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_enable",
+                "kind": "port",
+                "delay_ps": 353.575684,
+                "slack_ps": 11617.507812,
+                "H_ps": -53.48349599999892,
+                "start_pin": "we1",
+                "end_pin": "launch/data_1[56]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 8.988991842540095,
+                "raw_clock_skew_ps": -62.47216632893071,
+                "points_sha256": "2811a0285664848958697671599a28b2c0a5d23b6f47272345690c5a54afe68d",
+                "expanded_report_sha256": "bba5a096d269271927be9463f1babf9bc7ee818d9b1d4b320701e6f18627fc46",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-00-t8/grt"
+              },
+              "delay_witness": {
+                "id": "input_enable",
+                "kind": "port",
+                "delay_ps": 546.722168,
+                "slack_ps": 11439.271484,
+                "H_ps": -68.39365200000066,
+                "start_pin": "we_iv",
+                "end_pin": "launch/data_0[29]$_SDFFE_PN1P_/D",
+                "raw_setup_margin_ps": 8.616895391666546,
+                "raw_clock_skew_ps": -77.01050908082152,
+                "points_sha256": "fc7cd57f1895eeaac910cf2bc5a96d7da3ce4727751be1ab18ed7ec4c127c0e4",
+                "expanded_report_sha256": "86dd205e48a1876b6b027a985020453293dbc0a6807debc35582e70e4f951aeb",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-01-t8/grt"
+              },
+              "input_IO_subtracted_once": true
+            },
+            "input_valid": {
+              "kind": "port",
+              "H_max_ps": 0.0,
+              "delay_max_ps": 204.926026,
+              "overhead_ps": 254.926026,
+              "reserve_ps": 50,
+              "H_witness": {
+                "id": "input_valid",
+                "kind": "port",
+                "delay_ps": 125.44043,
+                "slack_ps": 11853.55957,
+                "H_ps": -61.399999999999636,
+                "start_pin": "iv",
+                "end_pin": "launch/valid$_SDFF_PN0_/D",
+                "raw_setup_margin_ps": 8.869756491780567,
+                "raw_clock_skew_ps": -70.27040060947343,
+                "points_sha256": "0427fd2cdb86ce6565bcd766964a8aec27dd4a1f1d0f0a05f1e4c788ae99bdf8",
+                "expanded_report_sha256": "85e181001b06cf1f4345558af945ba53b63db19badc56600a1c8b66ff9ea66cf",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-04-t8/grt"
+              },
+              "delay_witness": {
+                "id": "input_valid",
+                "kind": "port",
+                "delay_ps": 204.926026,
+                "slack_ps": 11787.40625,
+                "H_ps": -74.73227599999882,
+                "start_pin": "iv",
+                "end_pin": "launch/valid$_SDFFE_PN0P_/D",
+                "raw_setup_margin_ps": 0.8656747736181247,
+                "raw_clock_skew_ps": -75.5977364041982,
+                "points_sha256": "5c518e7dc836ab8704fdc1cfaa954c175ba624018571296040eba5e3eedb607c",
+                "expanded_report_sha256": "1b55f66c034dfeb4ba3e5c74f75e95aae96f8de113f42f2057aa390340ac6c68",
+                "birth_adapter_path_diagnostic_only": false,
+                "row_id": "general-state-validation-05-t8/grt"
+              },
+              "input_IO_subtracted_once": true
+            }
+          }
+        },
+        "control_models": {
+          "native_enable": {
+            "kind": "train_NNLS_semantic_control_load_exact_clock",
+            "regression": {
+              "kind": "nonnegative_linear",
+              "features": [
+                "one",
+                "native_enable_bits_max",
+                "native_enable_bits_sqrt",
+                "native_enable_bits_log2",
+                "native_enable_words_max",
+                "native_valid_targets_max",
+                "native_data_bits",
+                "native_reset_one_bits",
+                "input_data_bits",
+                "external_data_bits",
+                "exact_SDC_1119",
+                "exact_SDC_1253",
+                "exact_SDC_1431",
+                "exact_SDC_3141",
+                "exact_SDC_3385",
+                "exact_SDC_4162",
+                "exact_SDC_4528",
+                "exact_SDC_11913",
+                "exact_SDC_14897"
+              ],
+              "coefficients": [
+                0.0,
+                0.0,
+                0.0,
+                24.41224545893409,
+                1.9532343965321033,
+                0.0,
+                0.1784756171371114,
+                0.0,
+                1.7285883559648032,
+                0.0,
+                0.0,
+                19.617350250000055,
+                20.377281208333372,
+                38.8882522083334,
+                31.802141750000104,
+                34.8154984166667,
+                37.67665358333339,
+                33.26243837500007,
+                35.05707558333322
+              ]
+            },
+            "train_upper_correction_ps": 194.64361844600631,
+            "train_residual_witness": "general-state-train-02-t0/grt",
+            "reserve_ps": 50,
+            "calibration_splits": [
+              "train"
+            ]
+          },
+          "native_valid": {
+            "kind": "train_NNLS_semantic_control_load_exact_clock",
+            "regression": {
+              "kind": "nonnegative_linear",
+              "features": [
+                "one",
+                "native_enable_bits_max",
+                "native_enable_bits_sqrt",
+                "native_enable_bits_log2",
+                "native_enable_words_max",
+                "native_valid_targets_max",
+                "native_data_bits",
+                "native_reset_one_bits",
+                "input_data_bits",
+                "external_data_bits",
+                "exact_SDC_1119",
+                "exact_SDC_1253",
+                "exact_SDC_1431",
+                "exact_SDC_3141",
+                "exact_SDC_3385",
+                "exact_SDC_4162",
+                "exact_SDC_4528",
+                "exact_SDC_11913",
+                "exact_SDC_14897"
+              ],
+              "coefficients": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.436170817710087,
+                1.623025397785529,
+                0.0,
+                0.0,
+                43.229143791666594,
+                50.4552027083333,
+                43.842992124999974,
+                37.99288425000003,
+                37.01018779166664,
+                40.93050641666666,
+                40.80507908333364,
+                56.3056488333333
+              ]
+            },
+            "train_upper_correction_ps": 146.44847895430922,
+            "train_residual_witness": "general-control-train-09-t3/grt",
+            "reserve_ps": 50,
+            "calibration_splits": [
+              "train"
+            ]
+          }
+        },
+        "mutable_paths": [
+          "native_enable",
+          "native_valid"
+        ],
+        "birth_data_diagnostic_only": true,
+        "arbitrary_joint_arithmetic_boundary_qualified": false
+      },
+      "control_algorithm": "train_NNLS_semantic_control_load_exact_clock",
+      "independent_quality": {
+        "status": "passed",
+        "owner_area_quality": {
+          "input_service": {
+            "status": "passed",
+            "n": 54,
+            "MAE": 0.5413970415593368,
+            "median_relative_error": 0.0033943991189738613,
+            "p95_relative_error": 0.01095993414750499,
+            "max_relative_error": 0.02371906282356005,
+            "relative_error_floor": 0.0001,
+            "normalized_MAE": 0.005336344743152548,
+            "underpredicted_banks": 30,
+            "predictions": [
+              {
+                "id": "general-control-test-00-t0/grt/input_service",
+                "actual_um2": 103.25556000000157,
+                "predicted_um2": 104.28345499047958
+              },
+              {
+                "id": "general-control-test-00-t1/grt/input_service",
+                "actual_um2": 103.25556000000157,
+                "predicted_um2": 104.28345499047958
+              },
+              {
+                "id": "general-control-test-00-t2/grt/input_service",
+                "actual_um2": 103.25556000000157,
+                "predicted_um2": 104.28345499047958
+              },
+              {
+                "id": "general-control-test-00-t3/grt/input_service",
+                "actual_um2": 103.32846000000157,
+                "predicted_um2": 104.28345499047958
+              },
+              {
+                "id": "general-control-test-00-t4/grt/input_service",
+                "actual_um2": 103.25556000000157,
+                "predicted_um2": 104.28345499047958
+              },
+              {
+                "id": "general-control-test-00-t5/grt/input_service",
+                "actual_um2": 103.25556000000157,
+                "predicted_um2": 104.28345499047958
+              },
+              {
+                "id": "general-control-test-00-t6/grt/input_service",
+                "actual_um2": 103.25556000000157,
+                "predicted_um2": 104.28345499047958
+              },
+              {
+                "id": "general-control-test-00-t7/grt/input_service",
+                "actual_um2": 103.25556000000157,
+                "predicted_um2": 104.28345499047958
+              },
+              {
+                "id": "general-control-test-00-t8/grt/input_service",
+                "actual_um2": 103.25556000000157,
+                "predicted_um2": 104.28345499047958
+              },
+              {
+                "id": "general-control-test-01-t0/grt/input_service",
+                "actual_um2": 101.44764000000151,
+                "predicted_um2": 101.05594388932572
+              },
+              {
+                "id": "general-control-test-01-t1/grt/input_service",
+                "actual_um2": 101.44764000000151,
+                "predicted_um2": 101.05594388932572
+              },
+              {
+                "id": "general-control-test-01-t2/grt/input_service",
+                "actual_um2": 101.38932000000152,
+                "predicted_um2": 101.05594388932572
+              },
+              {
+                "id": "general-control-test-01-t3/grt/input_service",
+                "actual_um2": 101.36016000000151,
+                "predicted_um2": 101.05594388932572
+              },
+              {
+                "id": "general-control-test-01-t4/grt/input_service",
+                "actual_um2": 101.36016000000151,
+                "predicted_um2": 101.05594388932572
+              },
+              {
+                "id": "general-control-test-01-t5/grt/input_service",
+                "actual_um2": 101.38932000000152,
+                "predicted_um2": 101.05594388932572
+              },
+              {
+                "id": "general-control-test-01-t6/grt/input_service",
+                "actual_um2": 101.33100000000152,
+                "predicted_um2": 101.05594388932572
+              },
+              {
+                "id": "general-control-test-01-t7/grt/input_service",
+                "actual_um2": 101.38932000000152,
+                "predicted_um2": 101.05594388932572
+              },
+              {
+                "id": "general-control-test-01-t8/grt/input_service",
+                "actual_um2": 101.38932000000152,
+                "predicted_um2": 101.05594388932572
+              },
+              {
+                "id": "general-control-test-02-t0/grt/input_service",
+                "actual_um2": 99.59598000000143,
+                "predicted_um2": 100.8570040058265
+              },
+              {
+                "id": "general-control-test-02-t1/grt/input_service",
+                "actual_um2": 100.39788000000149,
+                "predicted_um2": 100.8570040058265
+              },
+              {
+                "id": "general-control-test-02-t2/grt/input_service",
+                "actual_um2": 100.10628000000146,
+                "predicted_um2": 100.8570040058265
+              },
+              {
+                "id": "general-control-test-02-t3/grt/input_service",
+                "actual_um2": 100.10628000000146,
+                "predicted_um2": 100.8570040058265
+              },
+              {
+                "id": "general-control-test-02-t4/grt/input_service",
+                "actual_um2": 99.66888000000144,
+                "predicted_um2": 100.8570040058265
+              },
+              {
+                "id": "general-control-test-02-t5/grt/input_service",
+                "actual_um2": 101.49138000000154,
+                "predicted_um2": 100.8570040058265
+              },
+              {
+                "id": "general-control-test-02-t6/grt/input_service",
+                "actual_um2": 99.81468000000146,
+                "predicted_um2": 100.8570040058265
+              },
+              {
+                "id": "general-control-test-02-t7/grt/input_service",
+                "actual_um2": 100.32498000000149,
+                "predicted_um2": 100.8570040058265
+              },
+              {
+                "id": "general-control-test-02-t8/grt/input_service",
+                "actual_um2": 100.39788000000148,
+                "predicted_um2": 100.8570040058265
+              },
+              {
+                "id": "general-control-test-03-t0/grt/input_service",
+                "actual_um2": 99.98964000000124,
+                "predicted_um2": 99.66381965498054
+              },
+              {
+                "id": "general-control-test-03-t1/grt/input_service",
+                "actual_um2": 99.98964000000126,
+                "predicted_um2": 99.66381965498054
+              },
+              {
+                "id": "general-control-test-03-t2/grt/input_service",
+                "actual_um2": 100.13544000000125,
+                "predicted_um2": 99.66381965498054
+              },
+              {
+                "id": "general-control-test-03-t3/grt/input_service",
+                "actual_um2": 99.96048000000124,
+                "predicted_um2": 99.66381965498054
+              },
+              {
+                "id": "general-control-test-03-t4/grt/input_service",
+                "actual_um2": 99.96048000000127,
+                "predicted_um2": 99.66381965498054
+              },
+              {
+                "id": "general-control-test-03-t5/grt/input_service",
+                "actual_um2": 99.96048000000125,
+                "predicted_um2": 99.66381965498054
+              },
+              {
+                "id": "general-control-test-03-t6/grt/input_service",
+                "actual_um2": 99.96048000000124,
+                "predicted_um2": 99.66381965498054
+              },
+              {
+                "id": "general-control-test-03-t7/grt/input_service",
+                "actual_um2": 99.93132000000126,
+                "predicted_um2": 99.66381965498054
+              },
+              {
+                "id": "general-control-test-03-t8/grt/input_service",
+                "actual_um2": 100.06254000000125,
+                "predicted_um2": 99.66381965498054
+              },
+              {
+                "id": "general-control-test-04-t0/grt/input_service",
+                "actual_um2": 104.4511200000013,
+                "predicted_um2": 101.97363732273006
+              },
+              {
+                "id": "general-control-test-04-t1/grt/input_service",
+                "actual_um2": 101.75382000000117,
+                "predicted_um2": 101.97363732273006
+              },
+              {
+                "id": "general-control-test-04-t2/grt/input_service",
+                "actual_um2": 102.6286200000012,
+                "predicted_um2": 101.97363732273006
+              },
+              {
+                "id": "general-control-test-04-t3/grt/input_service",
+                "actual_um2": 101.82672000000116,
+                "predicted_um2": 101.97363732273006
+              },
+              {
+                "id": "general-control-test-04-t4/grt/input_service",
+                "actual_um2": 101.82672000000117,
+                "predicted_um2": 101.97363732273006
+              },
+              {
+                "id": "general-control-test-04-t5/grt/input_service",
+                "actual_um2": 101.75382000000118,
+                "predicted_um2": 101.97363732273006
+              },
+              {
+                "id": "general-control-test-04-t6/grt/input_service",
+                "actual_um2": 101.75382000000116,
+                "predicted_um2": 101.97363732273006
+              },
+              {
+                "id": "general-control-test-04-t7/grt/input_service",
+                "actual_um2": 101.75382000000117,
+                "predicted_um2": 101.97363732273006
+              },
+              {
+                "id": "general-control-test-04-t8/grt/input_service",
+                "actual_um2": 101.75382000000118,
+                "predicted_um2": 101.97363732273006
+              },
+              {
+                "id": "general-control-test-05-t0/grt/input_service",
+                "actual_um2": 101.5642800000016,
+                "predicted_um2": 101.42666638064455
+              },
+              {
+                "id": "general-control-test-05-t1/grt/input_service",
+                "actual_um2": 101.6371800000016,
+                "predicted_um2": 101.42666638064455
+              },
+              {
+                "id": "general-control-test-05-t2/grt/input_service",
+                "actual_um2": 101.71008000000161,
+                "predicted_um2": 101.42666638064455
+              },
+              {
+                "id": "general-control-test-05-t3/grt/input_service",
+                "actual_um2": 101.78298000000161,
+                "predicted_um2": 101.42666638064455
+              },
+              {
+                "id": "general-control-test-05-t4/grt/input_service",
+                "actual_um2": 101.6371800000016,
+                "predicted_um2": 101.42666638064455
+              },
+              {
+                "id": "general-control-test-05-t5/grt/input_service",
+                "actual_um2": 101.6371800000016,
+                "predicted_um2": 101.42666638064455
+              },
+              {
+                "id": "general-control-test-05-t6/grt/input_service",
+                "actual_um2": 101.6371800000016,
+                "predicted_um2": 101.42666638064455
+              },
+              {
+                "id": "general-control-test-05-t7/grt/input_service",
+                "actual_um2": 101.85588000000162,
+                "predicted_um2": 101.42666638064455
+              },
+              {
+                "id": "general-control-test-05-t8/grt/input_service",
+                "actual_um2": 101.85588000000162,
+                "predicted_um2": 101.42666638064455
+              }
+            ]
+          },
+          "native_state": {
+            "status": "passed",
+            "n": 54,
+            "MAE": 1.0173164848110974,
+            "median_relative_error": 0.004865662961732273,
+            "p95_relative_error": 0.009023017505075106,
+            "max_relative_error": 0.009084588580251728,
+            "relative_error_floor": 0.0001,
+            "normalized_MAE": 0.005065654432615348,
+            "underpredicted_banks": 47,
+            "predictions": [
+              {
+                "id": "general-control-test-00-t0/grt/native_state",
+                "actual_um2": 40.63445999999998,
+                "predicted_um2": 40.41781373941859
+              },
+              {
+                "id": "general-control-test-00-t1/grt/native_state",
+                "actual_um2": 40.63445999999998,
+                "predicted_um2": 40.41781373941859
+              },
+              {
+                "id": "general-control-test-00-t2/grt/native_state",
+                "actual_um2": 40.63445999999998,
+                "predicted_um2": 40.41781373941859
+              },
+              {
+                "id": "general-control-test-00-t3/grt/native_state",
+                "actual_um2": 40.63445999999998,
+                "predicted_um2": 40.41781373941859
+              },
+              {
+                "id": "general-control-test-00-t4/grt/native_state",
+                "actual_um2": 40.63445999999998,
+                "predicted_um2": 40.41781373941859
+              },
+              {
+                "id": "general-control-test-00-t5/grt/native_state",
+                "actual_um2": 40.63445999999998,
+                "predicted_um2": 40.41781373941859
+              },
+              {
+                "id": "general-control-test-00-t6/grt/native_state",
+                "actual_um2": 40.63445999999998,
+                "predicted_um2": 40.41781373941859
+              },
+              {
+                "id": "general-control-test-00-t7/grt/native_state",
+                "actual_um2": 40.63445999999998,
+                "predicted_um2": 40.41781373941859
+              },
+              {
+                "id": "general-control-test-00-t8/grt/native_state",
+                "actual_um2": 40.63445999999998,
+                "predicted_um2": 40.41781373941859
+              },
+              {
+                "id": "general-control-test-01-t0/grt/native_state",
+                "actual_um2": 142.15499999999943,
+                "predicted_um2": 142.2497048318088
+              },
+              {
+                "id": "general-control-test-01-t1/grt/native_state",
+                "actual_um2": 142.18415999999942,
+                "predicted_um2": 142.2497048318088
+              },
+              {
+                "id": "general-control-test-01-t2/grt/native_state",
+                "actual_um2": 142.2133199999994,
+                "predicted_um2": 142.2497048318088
+              },
+              {
+                "id": "general-control-test-01-t3/grt/native_state",
+                "actual_um2": 142.15499999999943,
+                "predicted_um2": 142.2497048318088
+              },
+              {
+                "id": "general-control-test-01-t4/grt/native_state",
+                "actual_um2": 142.15499999999943,
+                "predicted_um2": 142.2497048318088
+              },
+              {
+                "id": "general-control-test-01-t5/grt/native_state",
+                "actual_um2": 142.28621999999942,
+                "predicted_um2": 142.2497048318088
+              },
+              {
+                "id": "general-control-test-01-t6/grt/native_state",
+                "actual_um2": 142.2133199999994,
+                "predicted_um2": 142.2497048318088
+              },
+              {
+                "id": "general-control-test-01-t7/grt/native_state",
+                "actual_um2": 142.67987999999943,
+                "predicted_um2": 142.2497048318088
+              },
+              {
+                "id": "general-control-test-01-t8/grt/native_state",
+                "actual_um2": 142.24247999999943,
+                "predicted_um2": 142.2497048318088
+              },
+              {
+                "id": "general-control-test-02-t0/grt/native_state",
+                "actual_um2": 256.1851799999947,
+                "predicted_um2": 254.120282505125
+              },
+              {
+                "id": "general-control-test-02-t1/grt/native_state",
+                "actual_um2": 256.1560199999947,
+                "predicted_um2": 254.120282505125
+              },
+              {
+                "id": "general-control-test-02-t2/grt/native_state",
+                "actual_um2": 256.0976999999947,
+                "predicted_um2": 254.120282505125
+              },
+              {
+                "id": "general-control-test-02-t3/grt/native_state",
+                "actual_um2": 256.0685399999947,
+                "predicted_um2": 254.120282505125
+              },
+              {
+                "id": "general-control-test-02-t4/grt/native_state",
+                "actual_um2": 256.0685399999947,
+                "predicted_um2": 254.120282505125
+              },
+              {
+                "id": "general-control-test-02-t5/grt/native_state",
+                "actual_um2": 256.0685399999947,
+                "predicted_um2": 254.120282505125
+              },
+              {
+                "id": "general-control-test-02-t6/grt/native_state",
+                "actual_um2": 256.0102199999947,
+                "predicted_um2": 254.120282505125
+              },
+              {
+                "id": "general-control-test-02-t7/grt/native_state",
+                "actual_um2": 256.1851799999947,
+                "predicted_um2": 254.120282505125
+              },
+              {
+                "id": "general-control-test-02-t8/grt/native_state",
+                "actual_um2": 256.1560199999947,
+                "predicted_um2": 254.120282505125
+              },
+              {
+                "id": "general-control-test-03-t0/grt/native_state",
+                "actual_um2": 304.9844399999975,
+                "predicted_um2": 302.3004671194101
+              },
+              {
+                "id": "general-control-test-03-t1/grt/native_state",
+                "actual_um2": 305.07191999999753,
+                "predicted_um2": 302.3004671194101
+              },
+              {
+                "id": "general-control-test-03-t2/grt/native_state",
+                "actual_um2": 305.04275999999754,
+                "predicted_um2": 302.3004671194101
+              },
+              {
+                "id": "general-control-test-03-t3/grt/native_state",
+                "actual_um2": 305.04275999999754,
+                "predicted_um2": 302.3004671194101
+              },
+              {
+                "id": "general-control-test-03-t4/grt/native_state",
+                "actual_um2": 305.07191999999753,
+                "predicted_um2": 302.3004671194101
+              },
+              {
+                "id": "general-control-test-03-t5/grt/native_state",
+                "actual_um2": 305.07191999999753,
+                "predicted_um2": 302.3004671194101
+              },
+              {
+                "id": "general-control-test-03-t6/grt/native_state",
+                "actual_um2": 304.9844399999975,
+                "predicted_um2": 302.3004671194101
+              },
+              {
+                "id": "general-control-test-03-t7/grt/native_state",
+                "actual_um2": 304.9844399999975,
+                "predicted_um2": 302.3004671194101
+              },
+              {
+                "id": "general-control-test-03-t8/grt/native_state",
+                "actual_um2": 304.9844399999975,
+                "predicted_um2": 302.3004671194101
+              },
+              {
+                "id": "general-control-test-04-t0/grt/native_state",
+                "actual_um2": 313.46999999999815,
+                "predicted_um2": 312.88793161167655
+              },
+              {
+                "id": "general-control-test-04-t1/grt/native_state",
+                "actual_um2": 313.5574799999982,
+                "predicted_um2": 312.88793161167655
+              },
+              {
+                "id": "general-control-test-04-t2/grt/native_state",
+                "actual_um2": 313.5283199999982,
+                "predicted_um2": 312.88793161167655
+              },
+              {
+                "id": "general-control-test-04-t3/grt/native_state",
+                "actual_um2": 313.5283199999982,
+                "predicted_um2": 312.88793161167655
+              },
+              {
+                "id": "general-control-test-04-t4/grt/native_state",
+                "actual_um2": 313.5283199999982,
+                "predicted_um2": 312.88793161167655
+              },
+              {
+                "id": "general-control-test-04-t5/grt/native_state",
+                "actual_um2": 313.93655999999817,
+                "predicted_um2": 312.88793161167655
+              },
+              {
+                "id": "general-control-test-04-t6/grt/native_state",
+                "actual_um2": 313.9948799999982,
+                "predicted_um2": 312.88793161167655
+              },
+              {
+                "id": "general-control-test-04-t7/grt/native_state",
+                "actual_um2": 313.5283199999982,
+                "predicted_um2": 312.88793161167655
+              },
+              {
+                "id": "general-control-test-04-t8/grt/native_state",
+                "actual_um2": 313.5283199999982,
+                "predicted_um2": 312.88793161167655
+              },
+              {
+                "id": "general-control-test-05-t0/grt/native_state",
+                "actual_um2": 147.24341999999913,
+                "predicted_um2": 146.97299991094238
+              },
+              {
+                "id": "general-control-test-05-t1/grt/native_state",
+                "actual_um2": 147.18509999999915,
+                "predicted_um2": 146.97299991094238
+              },
+              {
+                "id": "general-control-test-05-t2/grt/native_state",
+                "actual_um2": 147.24341999999913,
+                "predicted_um2": 146.97299991094238
+              },
+              {
+                "id": "general-control-test-05-t3/grt/native_state",
+                "actual_um2": 147.62249999999915,
+                "predicted_um2": 146.97299991094238
+              },
+              {
+                "id": "general-control-test-05-t4/grt/native_state",
+                "actual_um2": 147.28715999999915,
+                "predicted_um2": 146.97299991094238
+              },
+              {
+                "id": "general-control-test-05-t5/grt/native_state",
+                "actual_um2": 147.28715999999915,
+                "predicted_um2": 146.97299991094238
+              },
+              {
+                "id": "general-control-test-05-t6/grt/native_state",
+                "actual_um2": 147.28715999999915,
+                "predicted_um2": 146.97299991094238
+              },
+              {
+                "id": "general-control-test-05-t7/grt/native_state",
+                "actual_um2": 147.31631999999914,
+                "predicted_um2": 146.97299991094238
+              },
+              {
+                "id": "general-control-test-05-t8/grt/native_state",
+                "actual_um2": 147.31631999999914,
+                "predicted_um2": 146.97299991094238
+              }
+            ]
+          },
+          "external_state": {
+            "status": "passed",
+            "n": 54,
+            "MAE": 0.02756699988020741,
+            "median_relative_error": 0.0004684442271567911,
+            "p95_relative_error": 0.001721640403473455,
+            "max_relative_error": 0.001721640403473455,
+            "relative_error_floor": 0.0001,
+            "normalized_MAE": 0.00042385898305528647,
+            "underpredicted_banks": 11,
+            "predictions": [
+              {
+                "id": "general-control-test-00-t0/grt/external_state",
+                "actual_um2": 29.64113999999996,
+                "predicted_um2": 29.692171384228974
+              },
+              {
+                "id": "general-control-test-00-t1/grt/external_state",
+                "actual_um2": 29.64113999999996,
+                "predicted_um2": 29.692171384228974
+              },
+              {
+                "id": "general-control-test-00-t2/grt/external_state",
+                "actual_um2": 29.64113999999996,
+                "predicted_um2": 29.692171384228974
+              },
+              {
+                "id": "general-control-test-00-t3/grt/external_state",
+                "actual_um2": 29.64113999999996,
+                "predicted_um2": 29.692171384228974
+              },
+              {
+                "id": "general-control-test-00-t4/grt/external_state",
+                "actual_um2": 29.64113999999996,
+                "predicted_um2": 29.692171384228974
+              },
+              {
+                "id": "general-control-test-00-t5/grt/external_state",
+                "actual_um2": 29.64113999999996,
+                "predicted_um2": 29.692171384228974
+              },
+              {
+                "id": "general-control-test-00-t6/grt/external_state",
+                "actual_um2": 29.64113999999996,
+                "predicted_um2": 29.692171384228974
+              },
+              {
+                "id": "general-control-test-00-t7/grt/external_state",
+                "actual_um2": 29.64113999999996,
+                "predicted_um2": 29.692171384228974
+              },
+              {
+                "id": "general-control-test-00-t8/grt/external_state",
+                "actual_um2": 29.64113999999996,
+                "predicted_um2": 29.692171384228974
+              },
+              {
+                "id": "general-control-test-01-t0/grt/external_state",
+                "actual_um2": 73.90602000000018,
+                "predicted_um2": 73.92670957714252
+              },
+              {
+                "id": "general-control-test-01-t1/grt/external_state",
+                "actual_um2": 73.90602000000018,
+                "predicted_um2": 73.92670957714252
+              },
+              {
+                "id": "general-control-test-01-t2/grt/external_state",
+                "actual_um2": 73.90602000000018,
+                "predicted_um2": 73.92670957714252
+              },
+              {
+                "id": "general-control-test-01-t3/grt/external_state",
+                "actual_um2": 73.90602000000018,
+                "predicted_um2": 73.92670957714252
+              },
+              {
+                "id": "general-control-test-01-t4/grt/external_state",
+                "actual_um2": 73.90602000000018,
+                "predicted_um2": 73.92670957714252
+              },
+              {
+                "id": "general-control-test-01-t5/grt/external_state",
+                "actual_um2": 73.90602000000018,
+                "predicted_um2": 73.92670957714252
+              },
+              {
+                "id": "general-control-test-01-t6/grt/external_state",
+                "actual_um2": 73.90602000000018,
+                "predicted_um2": 73.92670957714252
+              },
+              {
+                "id": "general-control-test-01-t7/grt/external_state",
+                "actual_um2": 73.90602000000018,
+                "predicted_um2": 73.92670957714252
+              },
+              {
+                "id": "general-control-test-01-t8/grt/external_state",
+                "actual_um2": 73.90602000000018,
+                "predicted_um2": 73.92670957714252
+              },
+              {
+                "id": "general-control-test-02-t0/grt/external_state",
+                "actual_um2": 55.870560000000076,
+                "predicted_um2": 55.89673224130009
+              },
+              {
+                "id": "general-control-test-02-t1/grt/external_state",
+                "actual_um2": 55.870560000000076,
+                "predicted_um2": 55.89673224130009
+              },
+              {
+                "id": "general-control-test-02-t2/grt/external_state",
+                "actual_um2": 55.870560000000076,
+                "predicted_um2": 55.89673224130009
+              },
+              {
+                "id": "general-control-test-02-t3/grt/external_state",
+                "actual_um2": 55.870560000000076,
+                "predicted_um2": 55.89673224130009
+              },
+              {
+                "id": "general-control-test-02-t4/grt/external_state",
+                "actual_um2": 55.870560000000076,
+                "predicted_um2": 55.89673224130009
+              },
+              {
+                "id": "general-control-test-02-t5/grt/external_state",
+                "actual_um2": 55.870560000000076,
+                "predicted_um2": 55.89673224130009
+              },
+              {
+                "id": "general-control-test-02-t6/grt/external_state",
+                "actual_um2": 55.870560000000076,
+                "predicted_um2": 55.89673224130009
+              },
+              {
+                "id": "general-control-test-02-t7/grt/external_state",
+                "actual_um2": 55.870560000000076,
+                "predicted_um2": 55.89673224130009
+              },
+              {
+                "id": "general-control-test-02-t8/grt/external_state",
+                "actual_um2": 55.870560000000076,
+                "predicted_um2": 55.89673224130009
+              },
+              {
+                "id": "general-control-test-03-t0/grt/external_state",
+                "actual_um2": 59.2822800000001,
+                "predicted_um2": 59.30977849660851
+              },
+              {
+                "id": "general-control-test-03-t1/grt/external_state",
+                "actual_um2": 59.2822800000001,
+                "predicted_um2": 59.30977849660851
+              },
+              {
+                "id": "general-control-test-03-t2/grt/external_state",
+                "actual_um2": 59.2822800000001,
+                "predicted_um2": 59.30977849660851
+              },
+              {
+                "id": "general-control-test-03-t3/grt/external_state",
+                "actual_um2": 59.2822800000001,
+                "predicted_um2": 59.30977849660851
+              },
+              {
+                "id": "general-control-test-03-t4/grt/external_state",
+                "actual_um2": 59.2822800000001,
+                "predicted_um2": 59.30977849660851
+              },
+              {
+                "id": "general-control-test-03-t5/grt/external_state",
+                "actual_um2": 59.2822800000001,
+                "predicted_um2": 59.30977849660851
+              },
+              {
+                "id": "general-control-test-03-t6/grt/external_state",
+                "actual_um2": 59.2822800000001,
+                "predicted_um2": 59.30977849660851
+              },
+              {
+                "id": "general-control-test-03-t7/grt/external_state",
+                "actual_um2": 59.3551800000001,
+                "predicted_um2": 59.30977849660851
+              },
+              {
+                "id": "general-control-test-03-t8/grt/external_state",
+                "actual_um2": 59.2822800000001,
+                "predicted_um2": 59.30977849660851
+              },
+              {
+                "id": "general-control-test-04-t0/grt/external_state",
+                "actual_um2": 112.23684000000038,
+                "predicted_um2": 112.2366246260719
+              },
+              {
+                "id": "general-control-test-04-t1/grt/external_state",
+                "actual_um2": 112.23684000000038,
+                "predicted_um2": 112.2366246260719
+              },
+              {
+                "id": "general-control-test-04-t2/grt/external_state",
+                "actual_um2": 112.23684000000038,
+                "predicted_um2": 112.2366246260719
+              },
+              {
+                "id": "general-control-test-04-t3/grt/external_state",
+                "actual_um2": 112.30974000000039,
+                "predicted_um2": 112.2366246260719
+              },
+              {
+                "id": "general-control-test-04-t4/grt/external_state",
+                "actual_um2": 112.23684000000038,
+                "predicted_um2": 112.2366246260719
+              },
+              {
+                "id": "general-control-test-04-t5/grt/external_state",
+                "actual_um2": 112.23684000000038,
+                "predicted_um2": 112.2366246260719
+              },
+              {
+                "id": "general-control-test-04-t6/grt/external_state",
+                "actual_um2": 112.23684000000038,
+                "predicted_um2": 112.2366246260719
+              },
+              {
+                "id": "general-control-test-04-t7/grt/external_state",
+                "actual_um2": 112.23684000000038,
+                "predicted_um2": 112.2366246260719
+              },
+              {
+                "id": "general-control-test-04-t8/grt/external_state",
+                "actual_um2": 112.23684000000038,
+                "predicted_um2": 112.2366246260719
+              },
+              {
+                "id": "general-control-test-05-t0/grt/external_state",
+                "actual_um2": 59.2677000000001,
+                "predicted_um2": 59.29547876112491
+              },
+              {
+                "id": "general-control-test-05-t1/grt/external_state",
+                "actual_um2": 59.2677000000001,
+                "predicted_um2": 59.29547876112491
+              },
+              {
+                "id": "general-control-test-05-t2/grt/external_state",
+                "actual_um2": 59.2677000000001,
+                "predicted_um2": 59.29547876112491
+              },
+              {
+                "id": "general-control-test-05-t3/grt/external_state",
+                "actual_um2": 59.340600000000094,
+                "predicted_um2": 59.29547876112491
+              },
+              {
+                "id": "general-control-test-05-t4/grt/external_state",
+                "actual_um2": 59.2677000000001,
+                "predicted_um2": 59.29547876112491
+              },
+              {
+                "id": "general-control-test-05-t5/grt/external_state",
+                "actual_um2": 59.2677000000001,
+                "predicted_um2": 59.29547876112491
+              },
+              {
+                "id": "general-control-test-05-t6/grt/external_state",
+                "actual_um2": 59.2677000000001,
+                "predicted_um2": 59.29547876112491
+              },
+              {
+                "id": "general-control-test-05-t7/grt/external_state",
+                "actual_um2": 59.2677000000001,
+                "predicted_um2": 59.29547876112491
+              },
+              {
+                "id": "general-control-test-05-t8/grt/external_state",
+                "actual_um2": 59.2677000000001,
+                "predicted_um2": 59.29547876112491
+              }
+            ]
+          }
+        },
+        "boundary_coverage": {
+          "status": "passed",
+          "minimum_margin_ps": 37.37278800000024,
+          "contexts": [
+            {
+              "period_ps": 1119,
+              "path_class": "native_data",
+              "covered": true,
+              "minimum_margin_ps": 59.36848600000005,
+              "witness": {
+                "row_id": "general-control-test-04-t0/grt",
+                "required_ps": 158.10320999999993,
+                "upper_ps": 217.47169599999998,
+                "margin_ps": 59.36848600000005
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 1119,
+              "path_class": "native_enable",
+              "covered": true,
+              "minimum_margin_ps": 220.3101879567567,
+              "witness": {
+                "row_id": "general-control-test-05-t0/grt",
+                "required_ps": 475.58294699999993,
+                "upper_ps": 695.8931349567566,
+                "margin_ps": 220.3101879567567
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 1119,
+              "path_class": "native_valid",
+              "covered": true,
+              "minimum_margin_ps": 68.87386551560905,
+              "witness": {
+                "row_id": "general-control-test-01-t0/grt",
+                "required_ps": 393.96160899999995,
+                "upper_ps": 462.835474515609,
+                "margin_ps": 68.87386551560905
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 1119,
+              "path_class": "external_data",
+              "covered": true,
+              "minimum_margin_ps": 59.28661999999997,
+              "witness": {
+                "row_id": "general-control-test-04-t0/grt",
+                "required_ps": 170.72253400000005,
+                "upper_ps": 230.00915400000002,
+                "margin_ps": 59.28661999999997
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 1119,
+              "path_class": "external_valid",
+              "covered": true,
+              "minimum_margin_ps": 71.25416599999994,
+              "witness": {
+                "row_id": "general-control-test-03-t0/grt",
+                "required_ps": 131.8685299999999,
+                "upper_ps": 203.12269599999985,
+                "margin_ps": 71.25416599999994
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 1119,
+              "path_class": "input_data",
+              "covered": true,
+              "minimum_margin_ps": 124.02329699999996,
+              "witness": {
+                "row_id": "general-control-test-04-t0/grt",
+                "required_ps": 121.02696500000005,
+                "upper_ps": 245.050262,
+                "margin_ps": 124.02329699999996
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 1119,
+              "path_class": "input_enable",
+              "covered": true,
+              "minimum_margin_ps": 144.143872,
+              "witness": {
+                "row_id": "general-control-test-00-t0/grt",
+                "required_ps": 315.90013400000004,
+                "upper_ps": 460.044006,
+                "margin_ps": 144.143872
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 1119,
+              "path_class": "input_valid",
+              "covered": true,
+              "minimum_margin_ps": 124.66013799999999,
+              "witness": {
+                "row_id": "general-control-test-05-t0/grt",
+                "required_ps": 98.65214800000001,
+                "upper_ps": 223.312286,
+                "margin_ps": 124.66013799999999
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 1253,
+              "path_class": "native_data",
+              "covered": true,
+              "minimum_margin_ps": 57.49099700000008,
+              "witness": {
+                "row_id": "general-control-test-05-t1/grt",
+                "required_ps": 161.17590300000003,
+                "upper_ps": 218.6669000000001,
+                "margin_ps": 57.49099700000008
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 1253,
+              "path_class": "native_enable",
+              "covered": true,
+              "minimum_margin_ps": 248.58641320675673,
+              "witness": {
+                "row_id": "general-control-test-05-t1/grt",
+                "required_ps": 466.92407199999997,
+                "upper_ps": 715.5104852067567,
+                "margin_ps": 248.58641320675673
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 1253,
+              "path_class": "native_valid",
+              "covered": true,
+              "minimum_margin_ps": 115.10844130727554,
+              "witness": {
+                "row_id": "general-control-test-01-t1/grt",
+                "required_ps": 390.9561770000001,
+                "upper_ps": 506.0646183072756,
+                "margin_ps": 115.10844130727554
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 1253,
+              "path_class": "external_data",
+              "covered": true,
+              "minimum_margin_ps": 56.11042800000024,
+              "witness": {
+                "row_id": "general-control-test-04-t1/grt",
+                "required_ps": 167.1457519999998,
+                "upper_ps": 223.25618000000003,
+                "margin_ps": 56.11042800000024
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 1253,
+              "path_class": "external_valid",
+              "covered": true,
+              "minimum_margin_ps": 71.43266199999988,
+              "witness": {
+                "row_id": "general-control-test-03-t1/grt",
+                "required_ps": 130.85156200000006,
+                "upper_ps": 202.28422399999994,
+                "margin_ps": 71.43266199999988
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 1253,
+              "path_class": "input_data",
+              "covered": true,
+              "minimum_margin_ps": 140.07071800000006,
+              "witness": {
+                "row_id": "general-control-test-05-t1/grt",
+                "required_ps": 112.29721699999993,
+                "upper_ps": 252.367935,
+                "margin_ps": 140.07071800000006
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 1253,
+              "path_class": "input_enable",
+              "covered": true,
+              "minimum_margin_ps": 169.358164,
+              "witness": {
+                "row_id": "general-control-test-00-t1/grt",
+                "required_ps": 309.60373500000003,
+                "upper_ps": 478.961899,
+                "margin_ps": 169.358164
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 1253,
+              "path_class": "input_valid",
+              "covered": true,
+              "minimum_margin_ps": 162.60108300000002,
+              "witness": {
+                "row_id": "general-control-test-05-t1/grt",
+                "required_ps": 97.089697,
+                "upper_ps": 259.69078,
+                "margin_ps": 162.60108300000002
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 1431,
+              "path_class": "native_data",
+              "covered": true,
+              "minimum_margin_ps": 78.8131859999998,
+              "witness": {
+                "row_id": "general-control-test-01-t2/grt",
+                "required_ps": 158.39050300000014,
+                "upper_ps": 237.20368899999994,
+                "margin_ps": 78.8131859999998
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 1431,
+              "path_class": "native_enable",
+              "covered": true,
+              "minimum_margin_ps": 212.59882266770012,
+              "witness": {
+                "row_id": "general-control-test-02-t2/grt",
+                "required_ps": 573.539062,
+                "upper_ps": 786.1378846677001,
+                "margin_ps": 212.59882266770012
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 1431,
+              "path_class": "native_valid",
+              "covered": true,
+              "minimum_margin_ps": 120.80703422394231,
+              "witness": {
+                "row_id": "general-control-test-01-t2/grt",
+                "required_ps": 392.48364300000003,
+                "upper_ps": 513.2906772239423,
+                "margin_ps": 120.80703422394231
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 1431,
+              "path_class": "external_data",
+              "covered": true,
+              "minimum_margin_ps": 54.335342999999796,
+              "witness": {
+                "row_id": "general-control-test-04-t2/grt",
+                "required_ps": 178.48681600000015,
+                "upper_ps": 232.82215899999994,
+                "margin_ps": 54.335342999999796
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 1431,
+              "path_class": "external_valid",
+              "covered": true,
+              "minimum_margin_ps": 73.53393499999979,
+              "witness": {
+                "row_id": "general-control-test-03-t2/grt",
+                "required_ps": 126.73046900000011,
+                "upper_ps": 200.2644039999999,
+                "margin_ps": 73.53393499999979
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 1431,
+              "path_class": "input_data",
+              "covered": true,
+              "minimum_margin_ps": 135.63606600000014,
+              "witness": {
+                "row_id": "general-control-test-05-t2/grt",
+                "required_ps": 132.62940699999984,
+                "upper_ps": 268.265473,
+                "margin_ps": 135.63606600000014
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 1431,
+              "path_class": "input_enable",
+              "covered": true,
+              "minimum_margin_ps": 187.29661800000014,
+              "witness": {
+                "row_id": "general-control-test-01-t2/grt",
+                "required_ps": 330.76966599999986,
+                "upper_ps": 518.066284,
+                "margin_ps": 187.29661800000014
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 1431,
+              "path_class": "input_valid",
+              "covered": true,
+              "minimum_margin_ps": 122.28801300000012,
+              "witness": {
+                "row_id": "general-control-test-05-t2/grt",
+                "required_ps": 131.99079599999988,
+                "upper_ps": 254.278809,
+                "margin_ps": 122.28801300000012
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 3141,
+              "path_class": "native_data",
+              "covered": true,
+              "minimum_margin_ps": 75.99342400000003,
+              "witness": {
+                "row_id": "general-control-test-04-t3/grt",
+                "required_ps": 156.71386699999988,
+                "upper_ps": 232.7072909999999,
+                "margin_ps": 75.99342400000003
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 3141,
+              "path_class": "native_enable",
+              "covered": true,
+              "minimum_margin_ps": 117.80125690173918,
+              "witness": {
+                "row_id": "general-control-test-04-t3/grt",
+                "required_ps": 705.7460939999999,
+                "upper_ps": 823.547350901739,
+                "margin_ps": 117.80125690173918
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 3141,
+              "path_class": "native_valid",
+              "covered": true,
+              "minimum_margin_ps": 115.6254876406091,
+              "witness": {
+                "row_id": "general-control-test-01-t3/grt",
+                "required_ps": 391.0529789999999,
+                "upper_ps": 506.678466640609,
+                "margin_ps": 115.6254876406091
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 3141,
+              "path_class": "external_data",
+              "covered": true,
+              "minimum_margin_ps": 49.00051900000025,
+              "witness": {
+                "row_id": "general-control-test-04-t3/grt",
+                "required_ps": 168.35620099999988,
+                "upper_ps": 217.35672000000014,
+                "margin_ps": 49.00051900000025
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 3141,
+              "path_class": "external_valid",
+              "covered": true,
+              "minimum_margin_ps": 76.5348050000001,
+              "witness": {
+                "row_id": "general-control-test-04-t3/grt",
+                "required_ps": 125.99121100000006,
+                "upper_ps": 202.52601600000017,
+                "margin_ps": 76.5348050000001
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 3141,
+              "path_class": "input_data",
+              "covered": true,
+              "minimum_margin_ps": 109.64482499999994,
+              "witness": {
+                "row_id": "general-control-test-05-t3/grt",
+                "required_ps": 129.79340800000006,
+                "upper_ps": 239.438233,
+                "margin_ps": 109.64482499999994
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 3141,
+              "path_class": "input_enable",
+              "covered": true,
+              "minimum_margin_ps": 86.24718099999996,
+              "witness": {
+                "row_id": "general-control-test-01-t3/grt",
+                "required_ps": 464.59223600000007,
+                "upper_ps": 550.839417,
+                "margin_ps": 86.24718099999996
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 3141,
+              "path_class": "input_valid",
+              "covered": true,
+              "minimum_margin_ps": 93.89305499999966,
+              "witness": {
+                "row_id": "general-control-test-05-t3/grt",
+                "required_ps": 129.37666000000033,
+                "upper_ps": 223.269715,
+                "margin_ps": 93.89305499999966
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 3385,
+              "path_class": "native_data",
+              "covered": true,
+              "minimum_margin_ps": 80.72491500000004,
+              "witness": {
+                "row_id": "general-control-test-05-t4/grt",
+                "required_ps": 160.039062,
+                "upper_ps": 240.76397700000004,
+                "margin_ps": 80.72491500000004
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 3385,
+              "path_class": "native_enable",
+              "covered": true,
+              "minimum_margin_ps": 148.14092844340598,
+              "witness": {
+                "row_id": "general-control-test-04-t4/grt",
+                "required_ps": 668.3203119999998,
+                "upper_ps": 816.4612404434058,
+                "margin_ps": 148.14092844340598
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 3385,
+              "path_class": "native_valid",
+              "covered": true,
+              "minimum_margin_ps": 133.84764576560912,
+              "witness": {
+                "row_id": "general-control-test-01-t4/grt",
+                "required_ps": 366.9807129999999,
+                "upper_ps": 500.82835876560904,
+                "margin_ps": 133.84764576560912
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 3385,
+              "path_class": "external_data",
+              "covered": true,
+              "minimum_margin_ps": 51.41915899999961,
+              "witness": {
+                "row_id": "general-control-test-04-t4/grt",
+                "required_ps": 164.9299320000002,
+                "upper_ps": 216.34909099999982,
+                "margin_ps": 51.41915899999961
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 3385,
+              "path_class": "external_valid",
+              "covered": true,
+              "minimum_margin_ps": 76.06210299999978,
+              "witness": {
+                "row_id": "general-control-test-04-t4/grt",
+                "required_ps": 130.31225600000008,
+                "upper_ps": 206.37435899999986,
+                "margin_ps": 76.06210299999978
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 3385,
+              "path_class": "input_data",
+              "covered": true,
+              "minimum_margin_ps": 136.550232,
+              "witness": {
+                "row_id": "general-control-test-05-t4/grt",
+                "required_ps": 115.980469,
+                "upper_ps": 252.530701,
+                "margin_ps": 136.550232
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 3385,
+              "path_class": "input_enable",
+              "covered": true,
+              "minimum_margin_ps": 145.54541100000017,
+              "witness": {
+                "row_id": "general-control-test-01-t4/grt",
+                "required_ps": 451.6308589999999,
+                "upper_ps": 597.17627,
+                "margin_ps": 145.54541100000017
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 3385,
+              "path_class": "input_valid",
+              "covered": true,
+              "minimum_margin_ps": 160.67254699999978,
+              "witness": {
+                "row_id": "general-control-test-05-t4/grt",
+                "required_ps": 96.07202100000018,
+                "upper_ps": 256.74456799999996,
+                "margin_ps": 160.67254699999978
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 4162,
+              "path_class": "native_data",
+              "covered": true,
+              "minimum_margin_ps": 78.96524000000014,
+              "witness": {
+                "row_id": "general-control-test-05-t5/grt",
+                "required_ps": 160.03955100000002,
+                "upper_ps": 239.00479100000015,
+                "margin_ps": 78.96524000000014
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 4162,
+              "path_class": "native_enable",
+              "covered": true,
+              "minimum_margin_ps": 225.24161496223667,
+              "witness": {
+                "row_id": "general-control-test-03-t5/grt",
+                "required_ps": 598.3854980000002,
+                "upper_ps": 823.6271129622369,
+                "margin_ps": 225.24161496223667
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 4162,
+              "path_class": "native_valid",
+              "covered": true,
+              "minimum_margin_ps": 119.32076030727575,
+              "witness": {
+                "row_id": "general-control-test-01-t5/grt",
+                "required_ps": 380.5249019999999,
+                "upper_ps": 499.84566230727563,
+                "margin_ps": 119.32076030727575
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 4162,
+              "path_class": "external_data",
+              "covered": true,
+              "minimum_margin_ps": 37.37278800000024,
+              "witness": {
+                "row_id": "general-control-test-04-t5/grt",
+                "required_ps": 174.90844699999974,
+                "upper_ps": 212.28123499999998,
+                "margin_ps": 37.37278800000024
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 4162,
+              "path_class": "external_valid",
+              "covered": true,
+              "minimum_margin_ps": 74.5306999999998,
+              "witness": {
+                "row_id": "general-control-test-03-t5/grt",
+                "required_ps": 127.03247100000016,
+                "upper_ps": 201.56317099999995,
+                "margin_ps": 74.5306999999998
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 4162,
+              "path_class": "input_data",
+              "covered": true,
+              "minimum_margin_ps": 125.0400759999998,
+              "witness": {
+                "row_id": "general-control-test-02-t5/grt",
+                "required_ps": 123.78115200000019,
+                "upper_ps": 248.821228,
+                "margin_ps": 125.0400759999998
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 4162,
+              "path_class": "input_enable",
+              "covered": true,
+              "minimum_margin_ps": 180.80692199999964,
+              "witness": {
+                "row_id": "general-control-test-01-t5/grt",
+                "required_ps": 372.76040000000035,
+                "upper_ps": 553.567322,
+                "margin_ps": 180.80692199999964
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 4162,
+              "path_class": "input_valid",
+              "covered": true,
+              "minimum_margin_ps": 162.57889400000016,
+              "witness": {
+                "row_id": "general-control-test-05-t5/grt",
+                "required_ps": 96.07216799999986,
+                "upper_ps": 258.651062,
+                "margin_ps": 162.57889400000016
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 4528,
+              "path_class": "native_data",
+              "covered": true,
+              "minimum_margin_ps": 78.96879599999957,
+              "witness": {
+                "row_id": "general-control-test-05-t6/grt",
+                "required_ps": 160.03955100000002,
+                "upper_ps": 239.0083469999996,
+                "margin_ps": 78.96879599999957
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 4528,
+              "path_class": "native_enable",
+              "covered": true,
+              "minimum_margin_ps": 204.1901870426999,
+              "witness": {
+                "row_id": "general-control-test-02-t6/grt",
+                "required_ps": 599.24707,
+                "upper_ps": 803.4372570426999,
+                "margin_ps": 204.1901870426999
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 4528,
+              "path_class": "native_valid",
+              "covered": true,
+              "minimum_margin_ps": 128.58482893227523,
+              "witness": {
+                "row_id": "general-control-test-01-t6/grt",
+                "required_ps": 375.18115200000045,
+                "upper_ps": 503.7659809322757,
+                "margin_ps": 128.58482893227523
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 4528,
+              "path_class": "external_data",
+              "covered": true,
+              "minimum_margin_ps": 50.78645299999968,
+              "witness": {
+                "row_id": "general-control-test-04-t6/grt",
+                "required_ps": 172.6127930000004,
+                "upper_ps": 223.3992460000001,
+                "margin_ps": 50.78645299999968
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 4528,
+              "path_class": "external_valid",
+              "covered": true,
+              "minimum_margin_ps": 67.74824399999986,
+              "witness": {
+                "row_id": "general-control-test-04-t6/grt",
+                "required_ps": 131.8037109999999,
+                "upper_ps": 199.55195499999977,
+                "margin_ps": 67.74824399999986
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 4528,
+              "path_class": "input_data",
+              "covered": true,
+              "minimum_margin_ps": 134.27700100000004,
+              "witness": {
+                "row_id": "general-control-test-05-t6/grt",
+                "required_ps": 115.98081099999996,
+                "upper_ps": 250.257812,
+                "margin_ps": 134.27700100000004
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 4528,
+              "path_class": "input_enable",
+              "covered": true,
+              "minimum_margin_ps": 173.88576599999976,
+              "witness": {
+                "row_id": "general-control-test-03-t6/grt",
+                "required_ps": 369.21347700000024,
+                "upper_ps": 543.099243,
+                "margin_ps": 173.88576599999976
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 4528,
+              "path_class": "input_valid",
+              "covered": true,
+              "minimum_margin_ps": 157.43715799999984,
+              "witness": {
+                "row_id": "general-control-test-05-t6/grt",
+                "required_ps": 96.07187500000015,
+                "upper_ps": 253.509033,
+                "margin_ps": 157.43715799999984
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 11913,
+              "path_class": "native_data",
+              "covered": true,
+              "minimum_margin_ps": 79.31565999999827,
+              "witness": {
+                "row_id": "general-control-test-04-t7/grt",
+                "required_ps": 161.08691400000026,
+                "upper_ps": 240.40257399999854,
+                "margin_ps": 79.31565999999827
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 11913,
+              "path_class": "native_enable",
+              "covered": true,
+              "minimum_margin_ps": 91.65022492057017,
+              "witness": {
+                "row_id": "general-control-test-03-t7/grt",
+                "required_ps": 730.4238280000001,
+                "upper_ps": 822.0740529205702,
+                "margin_ps": 91.65022492057017
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 11913,
+              "path_class": "native_valid",
+              "covered": true,
+              "minimum_margin_ps": 146.25199489087572,
+              "witness": {
+                "row_id": "general-control-test-04-t7/grt",
+                "required_ps": 423.6865230000001,
+                "upper_ps": 569.9385178908758,
+                "margin_ps": 146.25199489087572
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 11913,
+              "path_class": "external_data",
+              "covered": true,
+              "minimum_margin_ps": 56.664612000000375,
+              "witness": {
+                "row_id": "general-control-test-04-t7/grt",
+                "required_ps": 170.19824200000036,
+                "upper_ps": 226.86285400000074,
+                "margin_ps": 56.664612000000375
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 11913,
+              "path_class": "external_valid",
+              "covered": true,
+              "minimum_margin_ps": 78.96470800000218,
+              "witness": {
+                "row_id": "general-control-test-03-t7/grt",
+                "required_ps": 126.6386719999983,
+                "upper_ps": 205.60338000000047,
+                "margin_ps": 78.96470800000218
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 11913,
+              "path_class": "input_data",
+              "covered": true,
+              "minimum_margin_ps": 122.007226,
+              "witness": {
+                "row_id": "general-control-test-05-t7/grt",
+                "required_ps": 128.16660199999998,
+                "upper_ps": 250.173828,
+                "margin_ps": 122.007226
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 11913,
+              "path_class": "input_enable",
+              "covered": true,
+              "minimum_margin_ps": 168.5033200000002,
+              "witness": {
+                "row_id": "general-control-test-03-t7/grt",
+                "required_ps": 393.5464839999998,
+                "upper_ps": 562.049804,
+                "margin_ps": 168.5033200000002
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 11913,
+              "path_class": "input_valid",
+              "covered": true,
+              "minimum_margin_ps": 124.27016599999871,
+              "witness": {
+                "row_id": "general-control-test-05-t7/grt",
+                "required_ps": 130.6558590000013,
+                "upper_ps": 254.926025,
+                "margin_ps": 124.27016599999871
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 14897,
+              "path_class": "native_data",
+              "covered": true,
+              "minimum_margin_ps": 79.48388600000132,
+              "witness": {
+                "row_id": "general-control-test-04-t8/grt",
+                "required_ps": 161.22851599999927,
+                "upper_ps": 240.7124020000006,
+                "margin_ps": 79.48388600000132
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 14897,
+              "path_class": "native_enable",
+              "covered": true,
+              "minimum_margin_ps": 220.2307650426999,
+              "witness": {
+                "row_id": "general-control-test-02-t8/grt",
+                "required_ps": 580.586914,
+                "upper_ps": 800.8176790426999,
+                "margin_ps": 220.2307650426999
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 14897,
+              "path_class": "native_valid",
+              "covered": true,
+              "minimum_margin_ps": 145.79260364087435,
+              "witness": {
+                "row_id": "general-control-test-04-t8/grt",
+                "required_ps": 439.6464840000012,
+                "upper_ps": 585.4390876408755,
+                "margin_ps": 145.79260364087435
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 14897,
+              "path_class": "external_data",
+              "covered": true,
+              "minimum_margin_ps": 62.88246199999986,
+              "witness": {
+                "row_id": "general-control-test-03-t8/grt",
+                "required_ps": 163.3154300000001,
+                "upper_ps": 226.19789199999997,
+                "margin_ps": 62.88246199999986
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 14897,
+              "path_class": "external_valid",
+              "covered": true,
+              "minimum_margin_ps": 72.28540000000078,
+              "witness": {
+                "row_id": "general-control-test-03-t8/grt",
+                "required_ps": 129.04003899999987,
+                "upper_ps": 201.32543900000064,
+                "margin_ps": 72.28540000000078
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 14897,
+              "path_class": "input_data",
+              "covered": true,
+              "minimum_margin_ps": 125.99790099999973,
+              "witness": {
+                "row_id": "general-control-test-05-t8/grt",
+                "required_ps": 128.16738300000029,
+                "upper_ps": 254.165284,
+                "margin_ps": 125.99790099999973
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 14897,
+              "path_class": "input_enable",
+              "covered": true,
+              "minimum_margin_ps": 145.02158199999872,
+              "witness": {
+                "row_id": "general-control-test-03-t8/grt",
+                "required_ps": 451.7005860000013,
+                "upper_ps": 596.722168,
+                "margin_ps": 145.02158199999872
+              },
+              "rows": 6
+            },
+            {
+              "period_ps": 14897,
+              "path_class": "input_valid",
+              "covered": true,
+              "minimum_margin_ps": 124.26938500000097,
+              "witness": {
+                "row_id": "general-control-test-05-t8/grt",
+                "required_ps": 130.65664099999904,
+                "upper_ps": 254.926026,
+                "margin_ps": 124.26938500000097
+              },
+              "rows": 6
+            }
+          ]
+        },
+        "minimum_boundary_margin_ps": 37.37278800000024
+      }
+    }
+  },
+  "execution_definition": {
+    "version": "asap7-general-control-fitting-execution-v1",
+    "protocol_sha256": "51cbbfc436de2c689907374f7b02d2ce588bf76e4ad3d4ed99490b5f38bd7193",
+    "mutable_paths": [
+      "native_enable",
+      "native_valid"
+    ],
+    "area_parameters": "copy parent three-owner area_models exactly; no NNLS area refit",
+    "immutable_paths": "copy all other six non-birth parent bounds at every exact clock; no calibration or reserve change",
+    "fitting_rows": "324 measured train/validation banks: old162 plus new162; same-source clocks/stages in one split; no consumed or fresh independent numeric labels",
+    "control_candidates": [
+      "train_pooled_path_max",
+      "train_NNLS_semantic_control_load",
+      "train_NNLS_semantic_control_load_exact_clock"
+    ],
+    "target": "H_ps+delay_ps of each control path, per physical stage",
+    "baseline": "global train maximum required control time plus original50ps, pooling only nine registered exact clocks",
+    "NNLS": "unweighted train-only nonnegative least squares on protocol control_features; one is the declared constant feature; optional nine exact-clock indicators; no interpolation",
+    "upper_correction": "max(0,max train required-regression_prediction), independent of validation and test",
+    "engineering_reserve_ps": 50,
+    "validation": "all old/new rows covered for both mutable controls; original area20%/50% checked combined and each source cohort; unchanged six paths must cover all validation rows",
+    "selection": "one complete two-control candidate per stage; passing validation first, mean predicted validation upper bound, compact serialized model bytes, declared order; no selectable model if none passes",
+    "rounding_epsilon_ps": 1e-06,
+    "deployable_stage_if_independent_passes": "grt",
+    "required_new_independent_tasks": 54,
+    "test_labels_allowed": false,
+    "production_price_binding_qualified": false,
+    "full_D_ready": false
+  },
+  "dataset_sha256": "cda58a769d49dd1ea61a957cedadcf9a79d776ebfb64bcfa572712c08a243500",
+  "execution_sha256": "603ebeec565c0b09a9d1d5d300b644da825511627f3300a0df8a3b6ba8cc3828",
+  "protocol_sha256": "51cbbfc436de2c689907374f7b02d2ce588bf76e4ad3d4ed99490b5f38bd7193",
+  "parent_general_candidate_sha256": "5300b9a7076a9bc583ba5f1bc651cd65904bfaf1dbcb71042576774a85fb89da",
+  "id": "asap7-general-state-grt-qualified-v1",
+  "independent_labels_consumed": true,
+  "independent_labels_excluded_from_future_fitting": true,
+  "selection_freeze_sha256": "b27fced59c3a61b2fbcebd37cc52346c4fa2f523305b56acaaa9680e059852e3",
+  "independent_verdict_sha256": "c4ea9e209ccc5ae8bbb73edbe8829b9694bc810cf0a92b0d1ac6e3ada9509f62",
+  "area_models_and_six_path_bounds_unchanged": true,
+  "query_contract": {
+    "owners": [
+      "input_service",
+      "native_state",
+      "external_state"
+    ],
+    "control_features": [
+      "one",
+      "native_enable_bits_max",
+      "native_enable_bits_sqrt",
+      "native_enable_bits_log2",
+      "native_enable_words_max",
+      "native_valid_targets_max",
+      "native_data_bits",
+      "native_reset_one_bits",
+      "input_data_bits",
+      "external_data_bits"
+    ],
+    "exact_SDC_ps": [
+      1119,
+      1253,
+      1431,
+      3141,
+      3385,
+      4162,
+      4528,
+      11913,
+      14897
+    ],
+    "native_enable_and_valid": "semantic control-load upper function, including train-only correction and original50ps",
+    "other_six_paths": "unchanged exact-clock parent upper bounds",
+    "comparison": "each query uses its own conditional upper; do not compare a maximum required value to another sample upper",
+    "source_scope": "kept combinational two-input XOR/permutation/inversion adapters over shared registered roots; every semantic state bit observed exactly once; adapter arithmetic excluded from owned state area",
+    "arbitrary_arithmetic_source_correlation_qualified": false,
+    "shared_clock_physical_root_repair_area_included": false,
+    "production_binding_and_joint_arithmetic_qualification_required": true
+  }
+}

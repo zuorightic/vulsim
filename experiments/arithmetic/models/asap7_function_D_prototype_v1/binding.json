@@ -1,0 +1,197 @@
+{
+  "version": "conditional-boundary-binding-v1",
+  "quality_status": "candidate_reuse",
+  "target_platform": "asap7",
+  "profile_sha256": "f9d3e71d377d0fef70b66e43828186962caa04fcec31b8f78ad8760c5459f1c7",
+  "operator_boundary_policy": "unsigned-op-hierarchy-v1",
+  "state_model": {
+    "path": "reused-S.json",
+    "sha256": "1b61a68d80b704532ff38483a034ec2c03de921448095deb6acdcbbb00be383d",
+    "version": "arithmetic-general-state-qualified-v1"
+  },
+  "service_contract": {
+    "path": "public-service-witness.sv",
+    "sha256": "f75a888a68d95554c4bab560e43839104dde68f66a0b51e8803ba68e3c25bbd2",
+    "required_tokens": [
+      "assign wen_iv = push__vld;",
+      "if (wen_iv__)",
+      "__vul_pipeline_q_iv <= wdata_iv__;",
+      "__vul_pipeline_q_ov <= __vul_pipeline_d_ov;"
+    ],
+    "data_enable_policy": "independent_per_input_port",
+    "valid_enable_policy": "independent_held_valid",
+    "external_capture": "unconditional"
+  },
+  "candidate_domain": {
+    "target_min_ps": 250,
+    "target_max_ps": 3000,
+    "max_input_data_bits": 130,
+    "max_native_data_bits": 1024,
+    "max_external_data_bits": 256,
+    "max_variable_word_bits": 67,
+    "max_parallel_words": 18,
+    "max_internal_stages": 2
+  },
+  "six_path_upper_ps": {
+    "native_data": 240.76397700000004,
+    "external_data": 232.82215899999994,
+    "external_valid": 206.37435899999986,
+    "input_data": 268.265473,
+    "input_enable": 597.17627,
+    "input_valid": 259.69078
+  },
+  "control_models": {
+    "native_enable": {
+      "kind": "train_NNLS_semantic_control_load_exact_clock",
+      "regression": {
+        "kind": "nonnegative_linear",
+        "features": [
+          "one",
+          "native_enable_bits_max",
+          "native_enable_bits_sqrt",
+          "native_enable_bits_log2",
+          "native_enable_words_max",
+          "native_valid_targets_max",
+          "native_data_bits",
+          "native_reset_one_bits",
+          "input_data_bits",
+          "external_data_bits",
+          "exact_SDC_1119",
+          "exact_SDC_1253",
+          "exact_SDC_1431",
+          "exact_SDC_3141",
+          "exact_SDC_3385",
+          "exact_SDC_4162",
+          "exact_SDC_4528",
+          "exact_SDC_11913",
+          "exact_SDC_14897"
+        ],
+        "coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          24.41224545893409,
+          1.9532343965321033,
+          0.0,
+          0.1784756171371114,
+          0.0,
+          1.7285883559648032,
+          0.0,
+          0.0,
+          19.617350250000055,
+          20.377281208333372,
+          38.8882522083334,
+          31.802141750000104,
+          34.8154984166667,
+          37.67665358333339,
+          33.26243837500007,
+          35.05707558333322
+        ]
+      },
+      "train_upper_correction_ps": 194.64361844600631,
+      "train_residual_witness": "general-state-train-02-t0/grt",
+      "reserve_ps": 50,
+      "calibration_splits": [
+        "train"
+      ]
+    },
+    "native_valid": {
+      "kind": "train_NNLS_semantic_control_load_exact_clock",
+      "regression": {
+        "kind": "nonnegative_linear",
+        "features": [
+          "one",
+          "native_enable_bits_max",
+          "native_enable_bits_sqrt",
+          "native_enable_bits_log2",
+          "native_enable_words_max",
+          "native_valid_targets_max",
+          "native_data_bits",
+          "native_reset_one_bits",
+          "input_data_bits",
+          "external_data_bits",
+          "exact_SDC_1119",
+          "exact_SDC_1253",
+          "exact_SDC_1431",
+          "exact_SDC_3141",
+          "exact_SDC_3385",
+          "exact_SDC_4162",
+          "exact_SDC_4528",
+          "exact_SDC_11913",
+          "exact_SDC_14897"
+        ],
+        "coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.436170817710087,
+          1.623025397785529,
+          0.0,
+          0.0,
+          43.229143791666594,
+          50.4552027083333,
+          43.842992124999974,
+          37.99288425000003,
+          37.01018779166664,
+          40.93050641666666,
+          40.80507908333364,
+          56.3056488333333
+        ]
+      },
+      "train_upper_correction_ps": 146.44847895430922,
+      "train_residual_witness": "general-control-train-09-t3/grt",
+      "reserve_ps": 50,
+      "calibration_splits": [
+        "train"
+      ]
+    }
+  },
+  "control_exact_clocks": [
+    1119,
+    1253,
+    1431,
+    3141,
+    3385,
+    4162,
+    4528,
+    11913,
+    14897
+  ],
+  "shared": {
+    "clock_area_per_FF_um2": 0.024799861711322396,
+    "physical_area_um2": 13.296959999999869,
+    "physical_area_per_functional_um2": 0.0317992671262653,
+    "root_repair_area_um2": 50.31557999999941,
+    "wire_per_edge_ps": 88.03430200000003
+  },
+  "derivation": {
+    "fit_only_sha256": "cda58a769d49dd1ea61a957cedadcf9a79d776ebfb64bcfa572712c08a243500",
+    "training_rows": 216,
+    "wire_witness": {
+      "row": "general-control-train-01-t3/grt",
+      "path": "native_enable"
+    },
+    "S_coefficients_changed": false,
+    "shared_policy": "training-only empirical upper baseline; no independent/full-stage qualification"
+  },
+  "required_validation": [
+    "ABC_equals_SDC_new_targets",
+    "actual_native_projection_and_service_protocol",
+    "arithmetic_source_retention",
+    "shared_area_and_wire_context",
+    "full_joint_operator_boundary_G",
+    "65_66_67_variable_bits_beyond_legacy_64bit_S_domain"
+  ],
+  "full_D_ready": false,
+  "extension": {
+    "parent_proposal_sha256": "2146324d84a95fb5b03b6410bdb8d91f7a602c6141c54f7379a8555a07a824a3",
+    "parent_binding_sha256": "d6217e87ef9597b1cf957b4a85f3cbd7a52e6df106bce7ed9993894a6fa93387",
+    "reason": "actual MAC32 placements retain 65--67 variable state bits; old S 64-bit scope unchanged; new limited validation required",
+    "old_S_parameter_or_domain_modified": false,
+    "new_candidate_domain_is_unqualified": true
+  }
+}

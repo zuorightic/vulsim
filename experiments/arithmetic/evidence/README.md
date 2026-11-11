@@ -4,6 +4,12 @@
 
 | 目录 | 适用版本 |
 | --- | --- |
+| [manual_split16_vul_v1](manual_split16_vul_v1/README.md) | 用户手写两级VUL原始RTL：4个16×16部分积后寄存，第二级移位加法；500／1000／1500ps三档频率和面积对照，3 synth／3 grt，原始恢复通过；raw联合综合与此前保算子层次的差异单列 |
+| [step9_MAC32_ABCD_v2](step9_MAC32_ABCD_v2/README.md) | 五目标21条A／B／C／D及同策略成本对照，19 synth／19 grt；面积＋固定实现完整setup最小周期／Fmax，17组阈值检查、实际原始恢复和隔离回放通过；hold独立，C全节点细查未完成，模型／选择不回灌 |
+| [step8_function_D_output_v1](step8_function_D_output_v1/README.md) | 用户暂缓reset时序后的D原型：五档T／44候选真实函数选择与完整RTL，3440节点／8055位连接复算、周期与缺覆盖拒绝、公共入口及隔离回放通过；0物理PPA，完整联合仍待 |
+| [step67_reset_shared_gap_v2](step67_reset_shared_gap_v2/README.md) | reset通用函数冻结后validation失败并保留；共享两位置状态别名／Boolean／CEC和预测侧纯位投影通过，原始恢复与隔离回放完成；节点／S新域及正式D仍待 |
+| [step67_reset_shared_gap_v1](step67_reset_shared_gap_v1/README.md) | 首次便携封包缺传递regression导入，隔离回放失败保留，v2补齐 |
+| [step67_multiclock_stage_v1](step67_multiclock_stage_v1/README.md) | 三类／三档／两放置18实现的整级误差与排序通过；零错误可行，reset保护与shared三capture域仍待，联合及D未授予 |
 | [step67_shared_function_v1](step67_shared_function_v1/README.md) | 24点兼容结构train拟合／冻结，9点新共享面积validation通过；通用数值T函数、308项MAC32覆盖、隔离回放及完整归档恢复；完整S/G／D仍待 |
 | [step67_state_shared_successor_v3](step67_state_shared_successor_v3/README.md) | S纯转发／physical后继改善；repair／clock及MAC32共享域失败，train-only参数／完整状态跨语言／独立NNLS隔离回放 |
 | [step67_state_shared_successor_v1](step67_state_shared_successor_v1/README.md)、[v2](step67_state_shared_successor_v2/README.md) | 同模型首次缺传递导入、二次缺隔离数值库的封包失败，原字节与费用保留 |

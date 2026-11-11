@@ -1,0 +1,184 @@
+{
+  "version": "factored-state-shared-v2",
+  "quality_status": "candidate_accounting",
+  "full_D_ready": false,
+  "operator_model_sha256": "513f2f7693c702c492fec380ed81b385f4691f18bd05aaac6596d27f0340f0d2",
+  "S_binding_sha256": "76dd37094be027dd5e4c6565d63ae037be1b541a88e63e0dfe233fe571ef3542",
+  "state_model_sha256": "1b61a68d80b704532ff38483a034ec2c03de921448095deb6acdcbbb00be383d",
+  "target_interval_ps": [
+    500,
+    3000
+  ],
+  "boundary_point_ps": {
+    "native_state->native_state": 147.7647705000004,
+    "native_state->external_state": 155.31683299999986,
+    "input_service->native_state": 231.42245500000013
+  },
+  "inter_arithmetic_wire_point_ps": 0.091858000000002,
+  "reserve": {
+    "kind": "validation_max_positive_stage_residual_plus_engineering",
+    "engineering_ps": 50.0,
+    "joint_reserve_ps": 50.0,
+    "calibration_status": "inherited_50ps_not_recalibrated_for_successor",
+    "maximum_positive_validation_residual_ps": 0,
+    "validation_source_count": 1,
+    "validation_stages": 4,
+    "validation_native_sha256": "8765c35b5e4e5dbf606acadbc01341c98ad54a19406dcffdcbc1611b20df438a",
+    "validation_pilot_sha256": "8c8bf4a59d9bff10b4579f432230dab5d6d7a951f9c9a375103e34c464b81967"
+  },
+  "ownership": {
+    "node": "cell arcs and intra-node wires",
+    "S": "full register-data boundary including state gates, Q/setup/clock and adjacent data wires",
+    "inter_arithmetic": "one scalar propagation edge per source/sink arithmetic relationship after exact bit mapping",
+    "pure_bit_connections": "zero intrinsic delay; load and bit mapping preserved",
+    "nonarithmetic": "inherit original real S control/service/bypass checks"
+  },
+  "derivation": {
+    "S_train_fit_sha256": "cda58a769d49dd1ea61a957cedadcf9a79d776ebfb64bcfa572712c08a243500",
+    "node_fit_sha256": "d5067f08407a92bfe9fa632f6149a1b7eee6162224fc3e192c786e6dbc45c94a",
+    "parameter_rule": "median per whole training source, then median across sources",
+    "old_S_coefficients_changed": false,
+    "node_parameters_changed": false,
+    "consumed_tests_read": false,
+    "pilot_labels_used_for_point_parameters": false,
+    "root_policy": "exclude only branches whose complete final non-root loads are adapter/observer; keep all state or mixed responsibilities",
+    "shared_models": "simple train-only source-balanced NNLS; clock additionally includes semantic functional footprint",
+    "validation_labels_read": false,
+    "birth_data_remains_arithmetic_load_diagnostic": true,
+    "pure_forwarding_uses_existing_native_data_class": true
+  },
+  "shared_area_models": {
+    "shared_clock": {
+      "kind": "nonnegative_linear",
+      "features": [
+        "one",
+        "total_FF_bits",
+        "sqrt_FF_bits",
+        "predicted_functional_area_um2",
+        "clock_pressure"
+      ],
+      "coefficients": [
+        0.0,
+        0.018401064301765236,
+        0.0,
+        0.006594856264534683,
+        0.24514168031669373
+      ],
+      "numeric_support": {
+        "one": [
+          1.0,
+          1.0
+        ],
+        "total_FF_bits": [
+          99,
+          643
+        ],
+        "sqrt_FF_bits": [
+          9.9498743710662,
+          25.357444666211933
+        ],
+        "predicted_functional_area_um2": [
+          173.342538663435,
+          2365.125131471375
+        ],
+        "clock_pressure": [
+          0.5,
+          3.0
+        ]
+      },
+      "training_rows": 24,
+      "training_sources": 8,
+      "objective": "source-balanced train-only squared error; fixed features, no validation selection"
+    },
+    "shared_physical": {
+      "kind": "nonnegative_linear",
+      "features": [
+        "one",
+        "predicted_functional_area_um2"
+      ],
+      "coefficients": [
+        4.44454202975643,
+        0.00937596038464729
+      ],
+      "numeric_support": {
+        "one": [
+          1.0,
+          1.0
+        ],
+        "predicted_functional_area_um2": [
+          173.342538663435,
+          2365.125131471375
+        ]
+      },
+      "training_rows": 24,
+      "training_sources": 8,
+      "objective": "source-balanced train-only squared error; fixed features, no validation selection"
+    },
+    "root_repair": {
+      "kind": "nonnegative_linear",
+      "features": [
+        "one",
+        "input_data_bits",
+        "total_FF_bits",
+        "reset_one_bits",
+        "input_ports",
+        "clock_pressure"
+      ],
+      "coefficients": [
+        0.0,
+        0.1264421317319356,
+        0.03979779203231784,
+        0.10622378696046142,
+        0.0,
+        0.8753233937786772
+      ],
+      "numeric_support": {
+        "one": [
+          1.0,
+          1.0
+        ],
+        "input_data_bits": [
+          32,
+          128
+        ],
+        "total_FF_bits": [
+          99,
+          643
+        ],
+        "reset_one_bits": [
+          0,
+          140
+        ],
+        "input_ports": [
+          2,
+          4
+        ],
+        "clock_pressure": [
+          0.5,
+          3.0
+        ]
+      },
+      "training_rows": 24,
+      "training_sources": 8,
+      "objective": "source-balanced train-only squared error; fixed features, no validation selection"
+    }
+  },
+  "area_features": "prediction-time semantic numerical features; no source/shape/placement/exact-T indicators",
+  "parent_policy_sha256": "8f9d79b80d0c8f12c60a0d55fef499b3a1fef1c05e230b74a299099c21ba00db",
+  "training_primitive_baseline": {
+    "xor2_min_area_um2": 0.13122,
+    "plain_FF_min_area_um2": 0.2916,
+    "selection": "minimum matching actual Liberty function class; never cell-name whitelist"
+  },
+  "forward_boundary_point_ps": {
+    "native_state->native_state": 147.7647705000004,
+    "native_state->external_state": 155.31683299999986,
+    "input_service->native_state": 147.7647705000004
+  },
+  "forward_scope": "pure register-to-register data transfer; reuse native_data FF-Q/capture-state class, no birth adapter path; all dynamic state banks enumerated",
+  "fit_protocol_sha256": "9a6fa4e6946aedd2c576489c8ae6cbbb30145250ee1f2a39db3e0133c3ed1172",
+  "training_dataset_sha256": "7a420e659064567b775161d9fe4549afc000683af73f5bc21c609aa6e1e2727d",
+  "training_context": "actual compatible independent service writes, held-valid, native state, unconditional reset-bearing output capture",
+  "validation_labels_read": false,
+  "joint_quality": "not yet validated"
+}
