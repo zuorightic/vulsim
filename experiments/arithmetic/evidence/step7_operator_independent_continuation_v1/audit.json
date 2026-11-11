@@ -1,0 +1,259 @@
+{
+  "version": "operator-v2-independent-stop-audit-v1",
+  "status": "passed_refusal_audit",
+  "stops": [
+    {
+      "source": "s32e03528a3472a5c",
+      "role": "locked_test",
+      "target_ps": 500,
+      "root_arithmetic_cells": [
+        {
+          "instance": "clone283",
+          "master": "AO21x2_ASAP7_75t_R",
+          "liberty_function": {
+            "Y": "(A1 * A2) + (B)",
+            "A1": null,
+            "A2": null,
+            "B": null
+          },
+          "connections": {
+            "Y": {
+              "direction": "output",
+              "net": "net283"
+            },
+            "A1": {
+              "direction": "input",
+              "net": "consumer0/_080_"
+            },
+            "A2": {
+              "direction": "input",
+              "net": "consumer0/_086_"
+            },
+            "B": {
+              "direction": "input",
+              "net": "consumer0/_089_"
+            }
+          },
+          "net_neighbors": {
+            "Y": [
+              {
+                "pin": "consumer0/_245_/A",
+                "connection": {
+                  "direction": "input",
+                  "net": "net283"
+                }
+              },
+              {
+                "pin": "consumer0/_317_/A",
+                "connection": {
+                  "direction": "input",
+                  "net": "net283"
+                }
+              },
+              {
+                "pin": "consumer0/_323_/A",
+                "connection": {
+                  "direction": "input",
+                  "net": "net283"
+                }
+              },
+              {
+                "pin": "consumer0/rebuffer282/A",
+                "connection": {
+                  "direction": "input",
+                  "net": "net283"
+                }
+              }
+            ],
+            "A1": [
+              {
+                "pin": "consumer0/_233_/Y",
+                "connection": {
+                  "direction": "output",
+                  "net": "consumer0/_080_"
+                }
+              },
+              {
+                "pin": "consumer0/_243_/A1",
+                "connection": {
+                  "direction": "input",
+                  "net": "consumer0/_080_"
+                }
+              },
+              {
+                "pin": "consumer0/rebuffer526/A",
+                "connection": {
+                  "direction": "input",
+                  "net": "consumer0/_080_"
+                }
+              }
+            ],
+            "A2": [
+              {
+                "pin": "consumer0/_239_/Y",
+                "connection": {
+                  "direction": "output",
+                  "net": "consumer0/_086_"
+                }
+              },
+              {
+                "pin": "consumer0/_242_/B1",
+                "connection": {
+                  "direction": "input",
+                  "net": "consumer0/_086_"
+                }
+              },
+              {
+                "pin": "consumer0/_243_/A2",
+                "connection": {
+                  "direction": "input",
+                  "net": "consumer0/_086_"
+                }
+              }
+            ],
+            "B": [
+              {
+                "pin": "consumer0/_242_/Y",
+                "connection": {
+                  "direction": "output",
+                  "net": "consumer0/_089_"
+                }
+              },
+              {
+                "pin": "consumer0/_243_/B",
+                "connection": {
+                  "direction": "input",
+                  "net": "consumer0/_089_"
+                }
+              }
+            ]
+          },
+          "same_master_identical_input_scoped_instances": [
+            "consumer0/_243_"
+          ],
+          "owner_assigned": false
+        }
+      ],
+      "source_stopped": true,
+      "valid_prior_points": 2,
+      "exact_CEC_passed": true,
+      "FF_and_port_certificates_passed": true,
+      "invalid_grt_label_generated": false,
+      "history_sha256": "c70c42ee9d5925fbf387ee2175ca677521adb33a82af4f8ff136c7cb25e4a1f4"
+    }
+  ],
+  "selection_sha256": "7e16a3537f30ff984775f5df89441261cf54e8de1e812f66ed8a1dbd1631a99f",
+  "pending_sources": 17,
+  "completed_independent_batches": 4,
+  "remaining_original_batch_allowance": 16,
+  "next_requests": [
+    {
+      "source": "sd6a1d962d9ab1af3",
+      "role": "locked_test",
+      "SDC_ps": 1060,
+      "ABC_ps": 1060
+    },
+    {
+      "source": "s47b478591b60663f",
+      "role": "locked_test",
+      "SDC_ps": 616,
+      "ABC_ps": 616
+    },
+    {
+      "source": "sda59593423f0b4d6",
+      "role": "locked_test",
+      "SDC_ps": 984,
+      "ABC_ps": 984
+    },
+    {
+      "source": "s2400ce505ebbe8de",
+      "role": "locked_test",
+      "SDC_ps": 831,
+      "ABC_ps": 831
+    },
+    {
+      "source": "s55a02de487f98330",
+      "role": "locked_test",
+      "SDC_ps": 500,
+      "ABC_ps": 500
+    },
+    {
+      "source": "sfd64856250c1faf2",
+      "role": "locked_test",
+      "SDC_ps": 767,
+      "ABC_ps": 767
+    },
+    {
+      "source": "sa67ad597d54fb35a",
+      "role": "locked_test",
+      "SDC_ps": 733,
+      "ABC_ps": 733
+    },
+    {
+      "source": "s9af81ed2e19c2b24",
+      "role": "locked_test",
+      "SDC_ps": 700,
+      "ABC_ps": 700
+    },
+    {
+      "source": "s72531dc85cda3808",
+      "role": "locked_test",
+      "SDC_ps": 675,
+      "ABC_ps": 675
+    },
+    {
+      "source": "s6d07272a9143e13e",
+      "role": "locked_test",
+      "SDC_ps": 665,
+      "ABC_ps": 665
+    },
+    {
+      "source": "s27bf05c2a505c5a6",
+      "role": "locked_test",
+      "SDC_ps": 1500,
+      "ABC_ps": 1500
+    },
+    {
+      "source": "s3468eb15798173e7",
+      "role": "locked_test",
+      "SDC_ps": 1287,
+      "ABC_ps": 1287
+    },
+    {
+      "source": "s49e085077fc67cdc",
+      "role": "locked_test",
+      "SDC_ps": 1987,
+      "ABC_ps": 1987
+    },
+    {
+      "source": "s02d79df52b7d393d",
+      "role": "locked_test",
+      "SDC_ps": 615,
+      "ABC_ps": 615
+    },
+    {
+      "source": "sa914049579698e5f",
+      "role": "locked_test",
+      "SDC_ps": 561,
+      "ABC_ps": 561
+    },
+    {
+      "source": "s15ba3de6330428e1",
+      "role": "locked_test",
+      "SDC_ps": 1500,
+      "ABC_ps": 1500
+    },
+    {
+      "source": "s7c899718f4b85485",
+      "role": "locked_test",
+      "SDC_ps": 959,
+      "ABC_ps": 959
+    }
+  ],
+  "numerical_test_evaluation_performed": false,
+  "parameters_or_domain_changed": false,
+  "source_roles_changed": false,
+  "new_EDA_calls": 0,
+  "continuation": "retain failed source, failed point and all prior labels; other frozen independent sources may finish their original finite scan; acquisition failure remains a failed independent gate",
+  "full_D_ready": false
+}

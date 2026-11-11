@@ -1,0 +1,15 @@
+{
+  "version": "operator-condition-domain-execution-v6",
+  "parent": "operator_condition_domain_v5.json",
+  "reason": "source-calibrated clock support covers62/63 contexts; the remaining case is a full8x8 result captured with48 leading zero bits. Global bus padding/shift coordinates mix capture representation owned by S with arithmetic load. Compare a physical-load neighborhood using consumer known-bit geometry, capture bank count, live mapped bits and mapping runs, retaining all numeric limits and joint-T/source calibration.",
+  "candidates": ["legacy_narrow_load", "coupled_load_neighborhood", "joint_requested_clock", "joint_clock_source_radius", "physical_load_joint_clock"],
+  "physical_load_joint_clock": {
+    "joint_features": ["lhs_width", "rhs_width", "result_width", "lhs_zero_count", "rhs_zero_count", "consumer_count", "capture_banks", "consumer_lhs_active_bits", "consumer_rhs_active_bits", "consumer_lhs_zero_lsb_run", "consumer_rhs_zero_lsb_run", "consumer_result_max", "mapped_unique_bits", "mapping_runs"],
+    "clock_coordinate": "log2_target_ps appended",
+    "radius": "same kth-distinct-training-source calibration as v5; no demand-tuned radius or price coefficients",
+    "retained_checks": "producer semantics, scalar geometry/clock bounds, at most one Add consumer, capture-bank count, live mapped width, binding runs, joint feature/T neighborhood, validation and independent error/coverage/refusal gates",
+    "capture_scope": "word padding and bit placement do not independently prove a new arithmetic load; actual arithmetic-state/FF preservation and wire/boundary behavior remain subject to S/G qualification",
+    "no_price_lookup_or_feature_whitelist": true
+  },
+  "full_D_ready": false
+}

@@ -1,0 +1,340 @@
+{
+  "version": "stage7-physical-validation-preregistration-v1",
+  "zero_G_first": true,
+  "dependencies": {
+    "model": {
+      "path": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/fit-v2/candidate.json",
+      "sha256": "882d432c1bf1e3c06fcdf677977210b41af46ba171d8dd014c248edb60ab01d2"
+    },
+    "S_binding": {
+      "path": "/home/zyrv/vulsim-artifacts/conditional-boundary-20261110-v3/binding-candidate.json",
+      "sha256": "76dd37094be027dd5e4c6565d63ae037be1b541a88e63e0dfe233fe571ef3542"
+    },
+    "preparation_sources": {
+      "experiments/arithmetic_dse/stage7_physical_prepare.py": "ff33fe0dd72c87e1068bf23b45d28524ef559e2949a1d3114f54a825c127282b",
+      "rtlzz/testv2/arithmetic_stage7_export.cpp": "a97731d92404e72d64a9cacdaa414b0ccd9d3ad1ad33f97a82329d67c0e662cb",
+      "experiments/arithmetic_dse/reference_assets/stage7_readout_v1.tcl": "9e0cc91c8a08044a93ea12b5a284b89304b480e46f523d3b8492e48e1a14e401"
+    },
+    "backend_calls": 0,
+    "full_D_ready": false
+  },
+  "source_roles": "all targets/stages/placements of one source keep its role; no arithmetic training or old test reuse",
+  "clocks_ps": [
+    500,
+    1500,
+    3000
+  ],
+  "reserved_exact_T_ps": 1000,
+  "primary_matrix": [
+    {
+      "structure": "serial/placement-0",
+      "role": "combination_validation",
+      "target_ps": 500
+    },
+    {
+      "structure": "serial/placement-0",
+      "role": "combination_validation",
+      "target_ps": 1500
+    },
+    {
+      "structure": "serial/placement-0",
+      "role": "combination_validation",
+      "target_ps": 3000
+    },
+    {
+      "structure": "serial/placement-1",
+      "role": "combination_validation",
+      "target_ps": 500
+    },
+    {
+      "structure": "serial/placement-1",
+      "role": "combination_validation",
+      "target_ps": 1500
+    },
+    {
+      "structure": "serial/placement-1",
+      "role": "combination_validation",
+      "target_ps": 3000
+    },
+    {
+      "structure": "parallel/placement-0",
+      "role": "combination_validation",
+      "target_ps": 500
+    },
+    {
+      "structure": "parallel/placement-0",
+      "role": "combination_validation",
+      "target_ps": 1500
+    },
+    {
+      "structure": "parallel/placement-0",
+      "role": "combination_validation",
+      "target_ps": 3000
+    },
+    {
+      "structure": "parallel/placement-1",
+      "role": "combination_validation",
+      "target_ps": 500
+    },
+    {
+      "structure": "parallel/placement-1",
+      "role": "combination_validation",
+      "target_ps": 1500
+    },
+    {
+      "structure": "parallel/placement-1",
+      "role": "combination_validation",
+      "target_ps": 3000
+    },
+    {
+      "structure": "shared/placement-0",
+      "role": "combination_validation",
+      "target_ps": 500
+    },
+    {
+      "structure": "shared/placement-0",
+      "role": "combination_validation",
+      "target_ps": 1500
+    },
+    {
+      "structure": "shared/placement-0",
+      "role": "combination_validation",
+      "target_ps": 3000
+    },
+    {
+      "structure": "shared/placement-1",
+      "role": "combination_validation",
+      "target_ps": 500
+    },
+    {
+      "structure": "shared/placement-1",
+      "role": "combination_validation",
+      "target_ps": 1500
+    },
+    {
+      "structure": "shared/placement-1",
+      "role": "combination_validation",
+      "target_ps": 3000
+    },
+    {
+      "structure": "wide_reduction/placement-0",
+      "role": "combination_validation",
+      "target_ps": 500
+    },
+    {
+      "structure": "wide_reduction/placement-0",
+      "role": "combination_validation",
+      "target_ps": 1500
+    },
+    {
+      "structure": "wide_reduction/placement-0",
+      "role": "combination_validation",
+      "target_ps": 3000
+    },
+    {
+      "structure": "wide_reduction/placement-1",
+      "role": "combination_validation",
+      "target_ps": 500
+    },
+    {
+      "structure": "wide_reduction/placement-1",
+      "role": "combination_validation",
+      "target_ps": 1500
+    },
+    {
+      "structure": "wide_reduction/placement-1",
+      "role": "combination_validation",
+      "target_ps": 3000
+    },
+    {
+      "structure": "bypass/placement-0",
+      "role": "combination_validation",
+      "target_ps": 500
+    },
+    {
+      "structure": "bypass/placement-0",
+      "role": "combination_validation",
+      "target_ps": 1500
+    },
+    {
+      "structure": "bypass/placement-0",
+      "role": "combination_validation",
+      "target_ps": 3000
+    },
+    {
+      "structure": "bypass/placement-1",
+      "role": "combination_validation",
+      "target_ps": 500
+    },
+    {
+      "structure": "bypass/placement-1",
+      "role": "combination_validation",
+      "target_ps": 1500
+    },
+    {
+      "structure": "bypass/placement-1",
+      "role": "combination_validation",
+      "target_ps": 3000
+    },
+    {
+      "structure": "cross_stage_saved_value/placement-0",
+      "role": "combination_validation",
+      "target_ps": 500
+    },
+    {
+      "structure": "cross_stage_saved_value/placement-0",
+      "role": "combination_validation",
+      "target_ps": 1500
+    },
+    {
+      "structure": "cross_stage_saved_value/placement-0",
+      "role": "combination_validation",
+      "target_ps": 3000
+    },
+    {
+      "structure": "cross_stage_saved_value/placement-1",
+      "role": "combination_validation",
+      "target_ps": 500
+    },
+    {
+      "structure": "cross_stage_saved_value/placement-1",
+      "role": "combination_validation",
+      "target_ps": 1500
+    },
+    {
+      "structure": "cross_stage_saved_value/placement-1",
+      "role": "combination_validation",
+      "target_ps": 3000
+    },
+    {
+      "structure": "serial_heldout/placement-0",
+      "role": "locked_joint_test",
+      "target_ps": 500
+    },
+    {
+      "structure": "serial_heldout/placement-0",
+      "role": "locked_joint_test",
+      "target_ps": 1500
+    },
+    {
+      "structure": "serial_heldout/placement-0",
+      "role": "locked_joint_test",
+      "target_ps": 3000
+    },
+    {
+      "structure": "serial_heldout/placement-1",
+      "role": "locked_joint_test",
+      "target_ps": 500
+    },
+    {
+      "structure": "serial_heldout/placement-1",
+      "role": "locked_joint_test",
+      "target_ps": 1500
+    },
+    {
+      "structure": "serial_heldout/placement-1",
+      "role": "locked_joint_test",
+      "target_ps": 3000
+    },
+    {
+      "structure": "cross_stage_saved_value_heldout/placement-0",
+      "role": "locked_joint_test",
+      "target_ps": 500
+    },
+    {
+      "structure": "cross_stage_saved_value_heldout/placement-0",
+      "role": "locked_joint_test",
+      "target_ps": 1500
+    },
+    {
+      "structure": "cross_stage_saved_value_heldout/placement-0",
+      "role": "locked_joint_test",
+      "target_ps": 3000
+    },
+    {
+      "structure": "cross_stage_saved_value_heldout/placement-1",
+      "role": "locked_joint_test",
+      "target_ps": 500
+    },
+    {
+      "structure": "cross_stage_saved_value_heldout/placement-1",
+      "role": "locked_joint_test",
+      "target_ps": 1500
+    },
+    {
+      "structure": "cross_stage_saved_value_heldout/placement-1",
+      "role": "locked_joint_test",
+      "target_ps": 3000
+    }
+  ],
+  "matrix_is_capacity_envelope_not_admission": true,
+  "pilot": {
+    "requested": [
+      "serial/placement-0",
+      "serial/placement-1",
+      "cross_stage_saved_value/placement-0",
+      "cross_stage_saved_value/placement-1"
+    ],
+    "target_ps": 1500,
+    "max_synth": 4,
+    "max_grt": 4,
+    "automatic_retry": false,
+    "prerequisite": "new exact funded admission after node independent pass, complete query coverage and same real service contract"
+  },
+  "resources": {
+    "threads_per_tool": 4,
+    "max_concurrent_tasks": 2,
+    "timeout_synth_s": 300,
+    "timeout_grt_s": 1200,
+    "memory_limit_mib": 8192,
+    "preserve_future_synth": 688,
+    "preserve_future_grt": 688,
+    "preserve_future_wall_s": 86400,
+    "preserve_future_cpu_s": 172800,
+    "preserve_future_storage_gib": 30
+  },
+  "hard_gates": [
+    "cycle arithmetic/valid/reset/II contract",
+    "mapped source-stage-enable-reset-variable-bit retention",
+    "no undeclared owner or duplicated cell; owner sum equals physical area",
+    "all dynamic endpoints covered with exact connectivity and Liberty arcs",
+    "model/S/flow/RTL/layout/cut/target identities bound before measuring",
+    "all source/role/target/placements kept in denominator, including uncovered and failures"
+  ],
+  "area_owners": [
+    "operators",
+    "input_service",
+    "native_state",
+    "external_state",
+    "shared_clock",
+    "shared_physical",
+    "root_repair"
+  ],
+  "wire_owner": "existing S edge estimate charged once per DAG edge; measured inter-node wire once; residual never re-adds S wire",
+  "timing_checks": {
+    "full_stage_relative_error_median_max": 0.15,
+    "full_stage_relative_error_p95_max": 0.35,
+    "per_class_p95_max": 0.5,
+    "delay_denominator_floor_ps": 10,
+    "area_denominator_floor_um2": 0.01,
+    "false_feasible_max": 0,
+    "setup_pass_ps": 0,
+    "setup_near_zero_review_ps": 5,
+    "hold": "reported, not setup qualification",
+    "conservative_rejection": "report all counts/fractions and ps excess separately; do not hide using absolute error",
+    "ranking": "same source/T/L/II pair: feasible before unmet; min total area among feasible; else min worst violation then area; all non-tied pairs must agree",
+    "rank_tie_area_relative": 0.05,
+    "rank_tie_violation_ps": 5
+  },
+  "error_partition": [
+    "base predicted vs measured independent node maxima and exclusive area",
+    "DAG of measured independent maxima vs actual on-path segments: conservatism, not node fit error",
+    "measured wire and launch/capture/clock/IO boundary vs each distinct owner",
+    "unique state/shared/repair area and duplicate/missing charges",
+    "remaining stable selection-relevant residual only after preceding gates"
+  ],
+  "locked_joint_test": "two complete new parameter sources; collect only after node/S/G parameters, support, reserves, selector and stage validation decision freeze",
+  "frozen_node_model": "candidate frozen, independent result required before formal physical admission; failure is retained and blocks release",
+  "physical_admission_allowed": false,
+  "full_D_ready": false
+}

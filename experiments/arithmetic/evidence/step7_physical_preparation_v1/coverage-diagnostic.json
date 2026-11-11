@@ -1,0 +1,3236 @@
+{
+  "version": "stage7-physical-preparation-v1",
+  "model_sha256": "882d432c1bf1e3c06fcdf677977210b41af46ba171d8dd014c248edb60ab01d2",
+  "rows": [
+    {
+      "source": "serial",
+      "placement": "placement-0",
+      "role": "combination_validation",
+      "rows": [
+        {
+          "target_ps": 500,
+          "prices": [
+            {
+              "node": 14,
+              "status": "covered",
+              "operator_delay_ps": 511.8779261853497,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 581.5276732559279,
+              "comb_area_um2": 35.33013928914686,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 308.3683949482907,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 393.31110383190685,
+              "comb_area_um2": 18.344216374669998,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 7,
+              "status": "covered",
+              "operator_delay_ps": 429.80631019725007,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 514.7490190808662,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 12,
+                    "arrival_ps": 933.664881255928,
+                    "required_ps": 259.23602299999993,
+                    "slack_ps": -674.428858255928
+                  }
+                ],
+                "violation_ps": 674.428858255928
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 7,
+                    "arrival_ps": 1172.1630289127731,
+                    "required_ps": 267.17784100000006,
+                    "slack_ps": -904.9851879127731
+                  }
+                ],
+                "violation_ps": 904.9851879127731
+              }
+            ],
+            "owners_um2": {
+              "external_state": 27.529439600950255,
+              "input_service": 80.61005286701729,
+              "native_state": 60.26446400203696,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 7.216759757994818,
+              "shared_physical": 8.226071165726916,
+              "operators": 90.28348852876442
+            },
+            "total_area_um2": 324.44585592249007,
+            "violation_ps": 904.9851879127731,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        },
+        {
+          "target_ps": 1500,
+          "prices": [
+            {
+              "node": 14,
+              "status": "covered",
+              "operator_delay_ps": 567.0725557524758,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 636.722302823054,
+              "comb_area_um2": 30.74952117481974,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 355.53310874898193,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 440.4758176325981,
+              "comb_area_um2": 18.344216374669998,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 7,
+              "status": "covered",
+              "operator_delay_ps": 476.97102399794124,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 561.9137328815574,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 12,
+                    "arrival_ps": 988.859510823054,
+                    "required_ps": 1259.236023,
+                    "slack_ps": 270.3765121769459
+                  }
+                ],
+                "violation_ps": 0.0
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 7,
+                    "arrival_ps": 1266.4924565141555,
+                    "required_ps": 1267.1778410000002,
+                    "slack_ps": 0.6853844858446791
+                  }
+                ],
+                "violation_ps": 0.0
+              }
+            ],
+            "owners_um2": {
+              "external_state": 27.529439600950255,
+              "input_service": 80.61005286701729,
+              "native_state": 60.26446400203696,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 7.216759757994818,
+              "shared_physical": 8.08041086670602,
+              "operators": 85.7028704144373
+            },
+            "total_area_um2": 319.719577509142,
+            "violation_ps": 0.0,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        },
+        {
+          "target_ps": 3000,
+          "prices": [
+            {
+              "node": 14,
+              "status": "covered",
+              "operator_delay_ps": 593.7512189515318,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 663.40096602211,
+              "comb_area_um2": 30.736072023966052,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 363.7712512980312,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 448.71396018164734,
+              "comb_area_um2": 18.344216374669998,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 7,
+              "status": "covered",
+              "operator_delay_ps": 485.2091665469905,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 570.1518754306067,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 12,
+                    "arrival_ps": 1015.5381740221101,
+                    "required_ps": 2759.236023,
+                    "slack_ps": 1743.6978489778899
+                  }
+                ],
+                "violation_ps": 0.0
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 7,
+                    "arrival_ps": 1282.968741612254,
+                    "required_ps": 2767.177841,
+                    "slack_ps": 1484.2090993877462
+                  }
+                ],
+                "violation_ps": 0.0
+              }
+            ],
+            "owners_um2": {
+              "external_state": 27.529439600950255,
+              "input_service": 80.61005286701729,
+              "native_state": 60.26446400203696,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 7.216759757994818,
+              "shared_physical": 8.0799831935654,
+              "operators": 85.68942126358361
+            },
+            "total_area_um2": 319.70570068514775,
+            "violation_ps": 0.0,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        }
+      ],
+      "diagnostic_only": true
+    },
+    {
+      "source": "serial",
+      "placement": "placement-1",
+      "role": "combination_validation",
+      "rows": [
+        {
+          "target_ps": 500,
+          "prices": [
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 328.9312056021913,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 413.87391448580746,
+              "comb_area_um2": 18.344216374669998,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 14,
+              "status": "covered",
+              "operator_delay_ps": 526.259802097575,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 595.9095491681531,
+              "comb_area_um2": 36.23094934011909,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 7,
+              "status": "covered",
+              "operator_delay_ps": 429.80631019725007,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 514.7490190808662,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 13,
+                    "arrival_ps": 1537.989275653961,
+                    "required_ps": 259.23602299999993,
+                    "slack_ps": -1278.753252653961
+                  }
+                ],
+                "violation_ps": 1278.753252653961
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 7,
+                    "arrival_ps": 602.7833210808662,
+                    "required_ps": 267.17784100000006,
+                    "slack_ps": -335.6054800808662
+                  }
+                ],
+                "violation_ps": 335.6054800808662
+              }
+            ],
+            "owners_um2": {
+              "external_state": 27.529439600950255,
+              "input_service": 80.61005286701729,
+              "native_state": 52.171739787978346,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 6.8447618323249815,
+              "shared_physical": 7.997373566105761,
+              "operators": 91.18429857973665
+            },
+            "total_area_um2": 316.6532462341127,
+            "violation_ps": 1278.753252653961,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        },
+        {
+          "target_ps": 1500,
+          "prices": [
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 376.0959194028825,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 461.03862828649864,
+              "comb_area_um2": 18.344216374669998,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 14,
+              "status": "covered",
+              "operator_delay_ps": 581.4544316647009,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 651.1041787352791,
+              "comb_area_um2": 30.422262587793888,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 7,
+              "status": "covered",
+              "operator_delay_ps": 476.97102399794124,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 561.9137328815574,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 13,
+                    "arrival_ps": 1640.348619021778,
+                    "required_ps": 1259.236023,
+                    "slack_ps": -381.112596021778
+                  }
+                ],
+                "violation_ps": 381.112596021778
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 7,
+                    "arrival_ps": 649.9480348815574,
+                    "required_ps": 1267.1778410000002,
+                    "slack_ps": 617.2298061184428
+                  }
+                ],
+                "violation_ps": 0.0
+              }
+            ],
+            "owners_um2": {
+              "external_state": 27.529439600950255,
+              "input_service": 80.61005286701729,
+              "native_state": 52.171739787978346,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 6.8447618323249815,
+              "shared_physical": 7.812661584415775,
+              "operators": 85.37561182741145
+            },
+            "total_area_um2": 310.6598475000975,
+            "violation_ps": 381.112596021778,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        },
+        {
+          "target_ps": 3000,
+          "prices": [
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 384.33406195193174,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 469.2767708355479,
+              "comb_area_um2": 18.344216374669998,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 14,
+              "status": "covered",
+              "operator_delay_ps": 608.133094863757,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 677.7828419343352,
+              "comb_area_um2": 30.408813436940193,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 7,
+              "status": "covered",
+              "operator_delay_ps": 485.2091665469905,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 570.1518754306067,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 13,
+                    "arrival_ps": 1675.2654247698833,
+                    "required_ps": 2759.236023,
+                    "slack_ps": 1083.9705982301166
+                  }
+                ],
+                "violation_ps": 0.0
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 7,
+                    "arrival_ps": 658.1861774306067,
+                    "required_ps": 2767.177841,
+                    "slack_ps": 2108.9916635693935
+                  }
+                ],
+                "violation_ps": 0.0
+              }
+            ],
+            "owners_um2": {
+              "external_state": 27.529439600950255,
+              "input_service": 80.61005286701729,
+              "native_state": 52.171739787978346,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 6.8447618323249815,
+              "shared_physical": 7.812233911275156,
+              "operators": 85.36216267655774
+            },
+            "total_area_um2": 310.64597067610316,
+            "violation_ps": 0.0,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        }
+      ],
+      "diagnostic_only": true
+    },
+    {
+      "source": "parallel",
+      "placement": "placement-0",
+      "role": "combination_validation",
+      "rows": [
+        {
+          "target_ps": 500,
+          "prices": [
+            {
+              "node": 16,
+              "status": "covered",
+              "operator_delay_ps": 511.8779261853497,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 581.5276732559279,
+              "comb_area_um2": 35.33013928914686,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 7,
+              "status": "covered",
+              "operator_delay_ps": 328.9312056021913,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 413.87391448580746,
+              "comb_area_um2": 18.344216374669998,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 17,
+              "status": "covered",
+              "operator_delay_ps": 736.7867359526826,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 806.4364830232608,
+              "comb_area_um2": 134.38794371288088,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 12,
+                    "arrival_ps": 88.03430200000003,
+                    "required_ps": 259.23602299999993,
+                    "slack_ps": 171.2017209999999
+                  },
+                  {
+                    "node": 13,
+                    "arrival_ps": 88.03430200000003,
+                    "required_ps": 259.23602299999993,
+                    "slack_ps": 171.2017209999999
+                  },
+                  {
+                    "node": 14,
+                    "arrival_ps": 933.664881255928,
+                    "required_ps": 259.23602299999993,
+                    "slack_ps": -674.428858255928
+                  }
+                ],
+                "violation_ps": 674.428858255928
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 15,
+                    "arrival_ps": 1572.4476055090684,
+                    "required_ps": 267.17784100000006,
+                    "slack_ps": -1305.2697645090684
+                  }
+                ],
+                "violation_ps": 1305.2697645090684
+              }
+            ],
+            "owners_um2": {
+              "external_state": 14.429901931107635,
+              "input_service": 37.7894416391942,
+              "native_state": 25.889499120975568,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 3.2735817458945564,
+              "shared_physical": 8.464047247922654,
+              "operators": 188.06229937669775
+            },
+            "total_area_um2": 328.22435106179177,
+            "violation_ps": 1305.2697645090684,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        },
+        {
+          "target_ps": 1500,
+          "prices": [
+            {
+              "node": 16,
+              "status": "covered",
+              "operator_delay_ps": 567.0725557524758,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 636.722302823054,
+              "comb_area_um2": 30.74952117481974,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 7,
+              "status": "covered",
+              "operator_delay_ps": 376.0959194028825,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 461.03862828649864,
+              "comb_area_um2": 18.344216374669998,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 17,
+              "status": "covered",
+              "operator_delay_ps": 791.9813655198085,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 861.6311125903867,
+              "comb_area_um2": 117.20175043192793,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 12,
+                    "arrival_ps": 88.03430200000003,
+                    "required_ps": 1259.236023,
+                    "slack_ps": 1171.201721
+                  },
+                  {
+                    "node": 13,
+                    "arrival_ps": 88.03430200000003,
+                    "required_ps": 1259.236023,
+                    "slack_ps": 1171.201721
+                  },
+                  {
+                    "node": 14,
+                    "arrival_ps": 988.859510823054,
+                    "required_ps": 1259.236023,
+                    "slack_ps": 270.3765121769459
+                  }
+                ],
+                "violation_ps": 0.0
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 15,
+                    "arrival_ps": 1674.8069488768854,
+                    "required_ps": 1267.1778410000002,
+                    "slack_ps": -407.6291078768852
+                  }
+                ],
+                "violation_ps": 407.6291078768852
+              }
+            ],
+            "owners_um2": {
+              "external_state": 14.429901931107635,
+              "input_service": 37.7894416391942,
+              "native_state": 25.889499120975568,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 3.2735817458945564,
+              "shared_physical": 7.771878597877107,
+              "operators": 166.29548798141766
+            },
+            "total_area_um2": 305.76537101646613,
+            "violation_ps": 407.6291078768852,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        },
+        {
+          "target_ps": 3000,
+          "prices": [
+            {
+              "node": 16,
+              "status": "covered",
+              "operator_delay_ps": 593.7512189515318,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 663.40096602211,
+              "comb_area_um2": 30.736072023966052,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 7,
+              "status": "covered",
+              "operator_delay_ps": 384.33406195193174,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 469.2767708355479,
+              "comb_area_um2": 18.344216374669998,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 17,
+              "status": "covered",
+              "operator_delay_ps": 818.6600287188646,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 888.3097757894428,
+              "comb_area_um2": 117.18830128107425,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 12,
+                    "arrival_ps": 88.03430200000003,
+                    "required_ps": 2759.236023,
+                    "slack_ps": 2671.201721
+                  },
+                  {
+                    "node": 13,
+                    "arrival_ps": 88.03430200000003,
+                    "required_ps": 2759.236023,
+                    "slack_ps": 2671.201721
+                  },
+                  {
+                    "node": 14,
+                    "arrival_ps": 1015.5381740221101,
+                    "required_ps": 2759.236023,
+                    "slack_ps": 1743.6978489778899
+                  }
+                ],
+                "violation_ps": 0.0
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 15,
+                    "arrival_ps": 1709.723754624991,
+                    "required_ps": 2767.177841,
+                    "slack_ps": 1057.4540863750092
+                  }
+                ],
+                "violation_ps": 0.0
+              }
+            ],
+            "owners_um2": {
+              "external_state": 14.429901931107635,
+              "input_service": 37.7894416391942,
+              "native_state": 25.889499120975568,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 3.2735817458945564,
+              "shared_physical": 7.771023251595871,
+              "operators": 166.2685896797103
+            },
+            "total_area_um2": 305.7376173684775,
+            "violation_ps": 0.0,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        }
+      ],
+      "diagnostic_only": true
+    },
+    {
+      "source": "parallel",
+      "placement": "placement-1",
+      "role": "combination_validation",
+      "rows": [
+        {
+          "target_ps": 500,
+          "prices": [
+            {
+              "node": 16,
+              "status": "covered",
+              "operator_delay_ps": 511.8779261853497,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 581.5276732559279,
+              "comb_area_um2": 35.33013928914686,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 17,
+              "status": "covered",
+              "operator_delay_ps": 718.8153697101072,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 788.4651167806854,
+              "comb_area_um2": 134.95959792975518,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 7,
+              "status": "covered",
+              "operator_delay_ps": 328.9312056021913,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 413.87391448580746,
+              "comb_area_um2": 18.344216374669998,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 14,
+                    "arrival_ps": 933.664881255928,
+                    "required_ps": 259.23602299999993,
+                    "slack_ps": -674.428858255928
+                  },
+                  {
+                    "node": 17,
+                    "arrival_ps": 964.5337207806855,
+                    "required_ps": 259.23602299999993,
+                    "slack_ps": -705.2976977806856
+                  }
+                ],
+                "violation_ps": 705.2976977806856
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 15,
+                    "arrival_ps": 589.9425184858076,
+                    "required_ps": 267.17784100000006,
+                    "slack_ps": -322.7646774858075
+                  }
+                ],
+                "violation_ps": 322.7646774858075
+              }
+            ],
+            "owners_um2": {
+              "external_state": 14.429901931107635,
+              "input_service": 37.7894416391942,
+              "native_state": 25.853407300915727,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 3.2735817458945564,
+              "shared_physical": 8.481077739641739,
+              "operators": 188.63395359357202
+            },
+            "total_area_um2": 328.7769439503253,
+            "violation_ps": 705.2976977806856,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        },
+        {
+          "target_ps": 1500,
+          "prices": [
+            {
+              "node": 16,
+              "status": "covered",
+              "operator_delay_ps": 567.0725557524758,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 636.722302823054,
+              "comb_area_um2": 30.74952117481974,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 17,
+              "status": "covered",
+              "operator_delay_ps": 774.0099992772333,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 843.6597463478115,
+              "comb_area_um2": 117.6799567080383,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 7,
+              "status": "covered",
+              "operator_delay_ps": 376.0959194028825,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 461.03862828649864,
+              "comb_area_um2": 18.344216374669998,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 14,
+                    "arrival_ps": 988.859510823054,
+                    "required_ps": 1259.236023,
+                    "slack_ps": 270.3765121769459
+                  },
+                  {
+                    "node": 17,
+                    "arrival_ps": 1019.7283503478116,
+                    "required_ps": 1259.236023,
+                    "slack_ps": 239.50767265218838
+                  }
+                ],
+                "violation_ps": 0.0
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 15,
+                    "arrival_ps": 637.1072322864986,
+                    "required_ps": 1267.1778410000002,
+                    "slack_ps": 630.0706087135015
+                  }
+                ],
+                "violation_ps": 0.0
+              }
+            ],
+            "owners_um2": {
+              "external_state": 14.429901931107635,
+              "input_service": 37.7894416391942,
+              "native_state": 25.853407300915727,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 3.2735817458945564,
+              "shared_physical": 7.7859375135654405,
+              "operators": 166.77369425752804
+            },
+            "total_area_um2": 306.221544388205,
+            "violation_ps": 0.0,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        },
+        {
+          "target_ps": 3000,
+          "prices": [
+            {
+              "node": 16,
+              "status": "covered",
+              "operator_delay_ps": 593.7512189515318,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 663.40096602211,
+              "comb_area_um2": 30.736072023966052,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 17,
+              "status": "covered",
+              "operator_delay_ps": 800.6886624762894,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 870.3384095468676,
+              "comb_area_um2": 117.66650755718462,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 7,
+              "status": "covered",
+              "operator_delay_ps": 384.33406195193174,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 469.2767708355479,
+              "comb_area_um2": 18.344216374669998,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 14,
+                    "arrival_ps": 1015.5381740221101,
+                    "required_ps": 2759.236023,
+                    "slack_ps": 1743.6978489778899
+                  },
+                  {
+                    "node": 17,
+                    "arrival_ps": 1046.4070135468678,
+                    "required_ps": 2759.236023,
+                    "slack_ps": 1712.8290094531321
+                  }
+                ],
+                "violation_ps": 0.0
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 15,
+                    "arrival_ps": 645.345374835548,
+                    "required_ps": 2767.177841,
+                    "slack_ps": 2121.832466164452
+                  }
+                ],
+                "violation_ps": 0.0
+              }
+            ],
+            "owners_um2": {
+              "external_state": 14.429901931107635,
+              "input_service": 37.7894416391942,
+              "native_state": 25.853407300915727,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 3.2735817458945564,
+              "shared_physical": 7.785082167284205,
+              "operators": 166.74679595582066
+            },
+            "total_area_um2": 306.1937907402164,
+            "violation_ps": 0.0,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        }
+      ],
+      "diagnostic_only": true
+    },
+    {
+      "source": "shared",
+      "placement": "placement-0",
+      "role": "combination_validation",
+      "rows": [
+        {
+          "target_ps": 500,
+          "prices": [
+            {
+              "node": 14,
+              "status": "cost_uncovered",
+              "reason": "outside trained numerical feature support capture_banks"
+            },
+            {
+              "node": 5,
+              "status": "covered",
+              "operator_delay_ps": 260.3178788183448,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 345.26058770196096,
+              "comb_area_um2": 8.61845354251103,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": false,
+          "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "cost_uncovered",
+            "uncovered_nodes": [
+              14
+            ],
+            "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support"
+          }
+        },
+        {
+          "target_ps": 1500,
+          "prices": [
+            {
+              "node": 14,
+              "status": "cost_uncovered",
+              "reason": "outside trained numerical feature support capture_banks"
+            },
+            {
+              "node": 5,
+              "status": "covered",
+              "operator_delay_ps": 307.4825926190361,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 392.42530150265225,
+              "comb_area_um2": 8.61845354251103,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": false,
+          "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "cost_uncovered",
+            "uncovered_nodes": [
+              14
+            ],
+            "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support"
+          }
+        },
+        {
+          "target_ps": 3000,
+          "prices": [
+            {
+              "node": 14,
+              "status": "cost_uncovered",
+              "reason": "outside trained numerical feature support capture_banks"
+            },
+            {
+              "node": 5,
+              "status": "covered",
+              "operator_delay_ps": 315.7207351680853,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 400.66344405170145,
+              "comb_area_um2": 8.61845354251103,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": false,
+          "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "cost_uncovered",
+            "uncovered_nodes": [
+              14
+            ],
+            "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support"
+          }
+        }
+      ],
+      "diagnostic_only": true
+    },
+    {
+      "source": "shared",
+      "placement": "placement-1",
+      "role": "combination_validation",
+      "rows": [
+        {
+          "target_ps": 500,
+          "prices": [
+            {
+              "node": 5,
+              "status": "covered",
+              "operator_delay_ps": 260.3178788183448,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 345.26058770196096,
+              "comb_area_um2": 8.61845354251103,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 14,
+              "status": "cost_uncovered",
+              "reason": "outside joint semantic-neighbor/clock support"
+            }
+          ],
+          "S_covered": false,
+          "S_reason": "shared physical baseline lacks node-area coverage: outside joint semantic neighborhood",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "cost_uncovered",
+            "uncovered_nodes": [
+              14
+            ],
+            "S_reason": "shared physical baseline lacks node-area coverage: outside joint semantic neighborhood"
+          }
+        },
+        {
+          "target_ps": 1500,
+          "prices": [
+            {
+              "node": 5,
+              "status": "covered",
+              "operator_delay_ps": 307.4825926190361,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 392.42530150265225,
+              "comb_area_um2": 8.61845354251103,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 14,
+              "status": "cost_uncovered",
+              "reason": "outside joint semantic-neighbor/clock support"
+            }
+          ],
+          "S_covered": false,
+          "S_reason": "shared physical baseline lacks node-area coverage: outside joint semantic neighborhood",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "cost_uncovered",
+            "uncovered_nodes": [
+              14
+            ],
+            "S_reason": "shared physical baseline lacks node-area coverage: outside joint semantic neighborhood"
+          }
+        },
+        {
+          "target_ps": 3000,
+          "prices": [
+            {
+              "node": 5,
+              "status": "covered",
+              "operator_delay_ps": 315.7207351680853,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 400.66344405170145,
+              "comb_area_um2": 8.61845354251103,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 14,
+              "status": "cost_uncovered",
+              "reason": "outside joint semantic-neighbor/clock support"
+            }
+          ],
+          "S_covered": false,
+          "S_reason": "shared physical baseline lacks node-area coverage: outside joint semantic neighborhood",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "cost_uncovered",
+            "uncovered_nodes": [
+              14
+            ],
+            "S_reason": "shared physical baseline lacks node-area coverage: outside joint semantic neighborhood"
+          }
+        }
+      ],
+      "diagnostic_only": true
+    },
+    {
+      "source": "wide_reduction",
+      "placement": "placement-0",
+      "role": "combination_validation",
+      "rows": [
+        {
+          "target_ps": 500,
+          "prices": [
+            {
+              "node": 20,
+              "status": "covered",
+              "operator_delay_ps": 513.9070398940153,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 583.5567869645935,
+              "comb_area_um2": 34.913917209512874,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 9,
+              "status": "cost_uncovered",
+              "reason": "outside trained numerical feature support lhs_zero_count"
+            },
+            {
+              "node": 21,
+              "status": "covered",
+              "operator_delay_ps": 714.9331012199945,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 784.5828482905727,
+              "comb_area_um2": 133.11770355599765,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": false,
+          "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "cost_uncovered",
+            "uncovered_nodes": [
+              9
+            ],
+            "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support"
+          }
+        },
+        {
+          "target_ps": 1500,
+          "prices": [
+            {
+              "node": 20,
+              "status": "covered",
+              "operator_delay_ps": 569.1016694611412,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 638.7514165317194,
+              "comb_area_um2": 32.82530156803759,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 9,
+              "status": "cost_uncovered",
+              "reason": "outside trained numerical feature support lhs_zero_count"
+            },
+            {
+              "node": 21,
+              "status": "covered",
+              "operator_delay_ps": 770.1277307871203,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 839.7774778576985,
+              "comb_area_um2": 117.67755204213091,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": false,
+          "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "cost_uncovered",
+            "uncovered_nodes": [
+              9
+            ],
+            "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support"
+          }
+        },
+        {
+          "target_ps": 3000,
+          "prices": [
+            {
+              "node": 20,
+              "status": "covered",
+              "operator_delay_ps": 595.7803326601974,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 665.4300797307756,
+              "comb_area_um2": 32.8118524171839,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 9,
+              "status": "cost_uncovered",
+              "reason": "outside trained numerical feature support lhs_zero_count"
+            },
+            {
+              "node": 21,
+              "status": "covered",
+              "operator_delay_ps": 796.8063939861764,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 866.4561410567546,
+              "comb_area_um2": 117.66410289127722,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": false,
+          "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "cost_uncovered",
+            "uncovered_nodes": [
+              9
+            ],
+            "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support"
+          }
+        }
+      ],
+      "diagnostic_only": true
+    },
+    {
+      "source": "wide_reduction",
+      "placement": "placement-1",
+      "role": "combination_validation",
+      "rows": [
+        {
+          "target_ps": 500,
+          "prices": [
+            {
+              "node": 20,
+              "status": "covered",
+              "operator_delay_ps": 513.9070398940153,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 583.5567869645935,
+              "comb_area_um2": 34.913917209512874,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 21,
+              "status": "covered",
+              "operator_delay_ps": 721.6543585380433,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 791.3041056086215,
+              "comb_area_um2": 134.71019125837967,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 9,
+              "status": "cost_uncovered",
+              "reason": "outside trained numerical feature support lhs_zero_count"
+            }
+          ],
+          "S_covered": false,
+          "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "cost_uncovered",
+            "uncovered_nodes": [
+              9
+            ],
+            "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support"
+          }
+        },
+        {
+          "target_ps": 1500,
+          "prices": [
+            {
+              "node": 20,
+              "status": "covered",
+              "operator_delay_ps": 569.1016694611412,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 638.7514165317194,
+              "comb_area_um2": 32.82530156803759,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 21,
+              "status": "covered",
+              "operator_delay_ps": 776.8489881051692,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 846.4987351757474,
+              "comb_area_um2": 119.60950563455847,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 9,
+              "status": "cost_uncovered",
+              "reason": "outside trained numerical feature support lhs_zero_count"
+            }
+          ],
+          "S_covered": false,
+          "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "cost_uncovered",
+            "uncovered_nodes": [
+              9
+            ],
+            "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support"
+          }
+        },
+        {
+          "target_ps": 3000,
+          "prices": [
+            {
+              "node": 20,
+              "status": "covered",
+              "operator_delay_ps": 595.7803326601974,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 665.4300797307756,
+              "comb_area_um2": 32.8118524171839,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 21,
+              "status": "covered",
+              "operator_delay_ps": 803.5276513042253,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 873.1773983748035,
+              "comb_area_um2": 119.59605648370476,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 9,
+              "status": "cost_uncovered",
+              "reason": "outside trained numerical feature support lhs_zero_count"
+            }
+          ],
+          "S_covered": false,
+          "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "cost_uncovered",
+            "uncovered_nodes": [
+              9
+            ],
+            "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support"
+          }
+        }
+      ],
+      "diagnostic_only": true
+    },
+    {
+      "source": "bypass",
+      "placement": "placement-0",
+      "role": "combination_validation",
+      "rows": [
+        {
+          "target_ps": 500,
+          "prices": [
+            {
+              "node": 14,
+              "status": "covered",
+              "operator_delay_ps": 530.6247892588326,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 600.2745363294108,
+              "comb_area_um2": 35.90663852327863,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 427.1627384433654,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 512.1054473269816,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 13,
+                    "arrival_ps": 952.4117443294109,
+                    "required_ps": 259.23602299999993,
+                    "slack_ps": -693.175721329411
+                  },
+                  {
+                    "node": 14,
+                    "arrival_ps": 776.3431403294109,
+                    "required_ps": 259.23602299999993,
+                    "slack_ps": -517.1071173294109
+                  }
+                ],
+                "violation_ps": 693.175721329411
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 3,
+                    "arrival_ps": 0,
+                    "required_ps": 267.17784100000006,
+                    "slack_ps": 267.17784100000006
+                  },
+                  {
+                    "node": 5,
+                    "arrival_ps": 0,
+                    "required_ps": 267.17784100000006,
+                    "slack_ps": 267.17784100000006
+                  },
+                  {
+                    "node": 6,
+                    "arrival_ps": 600.1397493269816,
+                    "required_ps": 267.17784100000006,
+                    "slack_ps": -332.96190832698153
+                  }
+                ],
+                "violation_ps": 332.96190832698153
+              }
+            ],
+            "owners_um2": {
+              "external_state": 46.54965639056238,
+              "input_service": 78.60283671571307,
+              "native_state": 67.28297056356239,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 8.58075215211755,
+              "shared_physical": 8.425255099045286,
+              "operators": 72.5157713882262
+            },
+            "total_area_um2": 332.2728223092263,
+            "violation_ps": 693.175721329411,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        },
+        {
+          "target_ps": 1500,
+          "prices": [
+            {
+              "node": 14,
+              "status": "covered",
+              "operator_delay_ps": 585.8194188259586,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 655.4691658965368,
+              "comb_area_um2": 32.08825581295793,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 474.32745224405664,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 559.2701611276727,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 13,
+                    "arrival_ps": 1007.6063738965369,
+                    "required_ps": 1259.236023,
+                    "slack_ps": 251.62964910346307
+                  },
+                  {
+                    "node": 14,
+                    "arrival_ps": 831.5377698965368,
+                    "required_ps": 1259.236023,
+                    "slack_ps": 427.6982531034631
+                  }
+                ],
+                "violation_ps": 0.0
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 3,
+                    "arrival_ps": 0,
+                    "required_ps": 1267.1778410000002,
+                    "slack_ps": 1267.1778410000002
+                  },
+                  {
+                    "node": 5,
+                    "arrival_ps": 0,
+                    "required_ps": 1267.1778410000002,
+                    "slack_ps": 1267.1778410000002
+                  },
+                  {
+                    "node": 6,
+                    "arrival_ps": 647.3044631276728,
+                    "required_ps": 1267.1778410000002,
+                    "slack_ps": 619.8733778723274
+                  }
+                ],
+                "violation_ps": 0.0
+              }
+            ],
+            "owners_um2": {
+              "external_state": 46.54965639056238,
+              "input_service": 78.60283671571307,
+              "native_state": 67.28297056356239,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 8.58075215211755,
+              "shared_physical": 8.303833327249485,
+              "operators": 68.6973886779055
+            },
+            "total_area_um2": 328.33301782710976,
+            "violation_ps": 0.0,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        },
+        {
+          "target_ps": 3000,
+          "prices": [
+            {
+              "node": 14,
+              "status": "covered",
+              "operator_delay_ps": 612.4980820250146,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 682.1478290955928,
+              "comb_area_um2": 32.074806662104244,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 482.5655947931059,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 567.5083036767221,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 13,
+                    "arrival_ps": 1034.285037095593,
+                    "required_ps": 2759.236023,
+                    "slack_ps": 1724.950985904407
+                  },
+                  {
+                    "node": 14,
+                    "arrival_ps": 858.2164330955928,
+                    "required_ps": 2759.236023,
+                    "slack_ps": 1901.019589904407
+                  }
+                ],
+                "violation_ps": 0.0
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 3,
+                    "arrival_ps": 0,
+                    "required_ps": 2767.177841,
+                    "slack_ps": 2767.177841
+                  },
+                  {
+                    "node": 5,
+                    "arrival_ps": 0,
+                    "required_ps": 2767.177841,
+                    "slack_ps": 2767.177841
+                  },
+                  {
+                    "node": 6,
+                    "arrival_ps": 655.5426056767221,
+                    "required_ps": 2767.177841,
+                    "slack_ps": 2111.635235323278
+                  }
+                ],
+                "violation_ps": 0.0
+              }
+            ],
+            "owners_um2": {
+              "external_state": 46.54965639056238,
+              "input_service": 78.60283671571307,
+              "native_state": 67.28297056356239,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 8.58075215211755,
+              "shared_physical": 8.303405654108866,
+              "operators": 68.6839395270518
+            },
+            "total_area_um2": 328.3191410031155,
+            "violation_ps": 0.0,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        }
+      ],
+      "diagnostic_only": true
+    },
+    {
+      "source": "bypass",
+      "placement": "placement-1",
+      "role": "combination_validation",
+      "rows": [
+        {
+          "target_ps": 500,
+          "prices": [
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 427.1627384433654,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 512.1054473269816,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 14,
+              "status": "covered",
+              "operator_delay_ps": 528.8302643450711,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 598.4800114156493,
+              "comb_area_um2": 39.19195111371504,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 6,
+                    "arrival_ps": 1550.7569687426308,
+                    "required_ps": 259.23602299999993,
+                    "slack_ps": -1291.5209457426308
+                  },
+                  {
+                    "node": 14,
+                    "arrival_ps": 774.5486154156494,
+                    "required_ps": 259.23602299999993,
+                    "slack_ps": -515.3125924156494
+                  }
+                ],
+                "violation_ps": 1291.5209457426308
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 3,
+                    "arrival_ps": 0,
+                    "required_ps": 267.17784100000006,
+                    "slack_ps": 267.17784100000006
+                  },
+                  {
+                    "node": 5,
+                    "arrival_ps": 0,
+                    "required_ps": 267.17784100000006,
+                    "slack_ps": 267.17784100000006
+                  },
+                  {
+                    "node": 6,
+                    "arrival_ps": 0,
+                    "required_ps": 267.17784100000006,
+                    "slack_ps": 267.17784100000006
+                  }
+                ],
+                "violation_ps": 0.0
+              }
+            ],
+            "owners_um2": {
+              "external_state": 46.54965639056238,
+              "input_service": 78.60283671571307,
+              "native_state": 58.653137523237206,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 8.18395436473639,
+              "shared_physical": 8.255303265597485,
+              "operators": 75.8010839786626
+            },
+            "total_area_um2": 326.3615522385085,
+            "violation_ps": 1291.5209457426308,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        },
+        {
+          "target_ps": 1500,
+          "prices": [
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 474.32745224405664,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 559.2701611276727,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 14,
+              "status": "covered",
+              "operator_delay_ps": 584.0248939121971,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 653.6746409827753,
+              "comb_area_um2": 26.971917392309557,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 6,
+                    "arrival_ps": 1653.116312110448,
+                    "required_ps": 1259.236023,
+                    "slack_ps": -393.8802891104481
+                  },
+                  {
+                    "node": 14,
+                    "arrival_ps": 829.7432449827753,
+                    "required_ps": 1259.236023,
+                    "slack_ps": 429.4927780172246
+                  }
+                ],
+                "violation_ps": 393.8802891104481
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 3,
+                    "arrival_ps": 0,
+                    "required_ps": 1267.1778410000002,
+                    "slack_ps": 1267.1778410000002
+                  },
+                  {
+                    "node": 5,
+                    "arrival_ps": 0,
+                    "required_ps": 1267.1778410000002,
+                    "slack_ps": 1267.1778410000002
+                  },
+                  {
+                    "node": 6,
+                    "arrival_ps": 0,
+                    "required_ps": 1267.1778410000002,
+                    "slack_ps": 1267.1778410000002
+                  }
+                ],
+                "violation_ps": 0.0
+              }
+            ],
+            "owners_um2": {
+              "external_state": 46.54965639056238,
+              "input_service": 78.60283671571307,
+              "native_state": 58.653137523237206,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 8.18395436473639,
+              "shared_physical": 7.8667151489985425,
+              "operators": 63.58105025725712
+            },
+            "total_area_um2": 313.7529304005041,
+            "violation_ps": 393.8802891104481,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        },
+        {
+          "target_ps": 3000,
+          "prices": [
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 482.5655947931059,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 567.5083036767221,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 14,
+              "status": "covered",
+              "operator_delay_ps": 610.703557111253,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 680.3533041818312,
+              "comb_area_um2": 26.95846824145587,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 6,
+                    "arrival_ps": 1688.0331178585534,
+                    "required_ps": 2759.236023,
+                    "slack_ps": 1071.2029051414465
+                  },
+                  {
+                    "node": 14,
+                    "arrival_ps": 856.4219081818312,
+                    "required_ps": 2759.236023,
+                    "slack_ps": 1902.8141148181687
+                  }
+                ],
+                "violation_ps": 0.0
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 3,
+                    "arrival_ps": 0,
+                    "required_ps": 2767.177841,
+                    "slack_ps": 2767.177841
+                  },
+                  {
+                    "node": 5,
+                    "arrival_ps": 0,
+                    "required_ps": 2767.177841,
+                    "slack_ps": 2767.177841
+                  },
+                  {
+                    "node": 6,
+                    "arrival_ps": 0,
+                    "required_ps": 2767.177841,
+                    "slack_ps": 2767.177841
+                  }
+                ],
+                "violation_ps": 0.0
+              }
+            ],
+            "owners_um2": {
+              "external_state": 46.54965639056238,
+              "input_service": 78.60283671571307,
+              "native_state": 58.653137523237206,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 8.18395436473639,
+              "shared_physical": 7.866287475857925,
+              "operators": 63.56760110640343
+            },
+            "total_area_um2": 313.73905357650983,
+            "violation_ps": 0.0,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        }
+      ],
+      "diagnostic_only": true
+    },
+    {
+      "source": "cross_stage_saved_value",
+      "placement": "placement-0",
+      "role": "combination_validation",
+      "rows": [
+        {
+          "target_ps": 500,
+          "prices": [
+            {
+              "node": 12,
+              "status": "covered",
+              "operator_delay_ps": 517.9564154903674,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 587.6061625609456,
+              "comb_area_um2": 35.747994250805185,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 5,
+              "status": "covered",
+              "operator_delay_ps": 419.96259982174854,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 504.9053087053647,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 6,
+              "status": "cost_uncovered",
+              "reason": "outside trained numerical feature support rhs_width"
+            }
+          ],
+          "S_covered": false,
+          "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "cost_uncovered",
+            "uncovered_nodes": [
+              6
+            ],
+            "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support"
+          }
+        },
+        {
+          "target_ps": 1500,
+          "prices": [
+            {
+              "node": 12,
+              "status": "covered",
+              "operator_delay_ps": 573.1510450574933,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 642.8007921280715,
+              "comb_area_um2": 32.09414423454911,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 5,
+              "status": "covered",
+              "operator_delay_ps": 467.1273136224398,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 552.0700225060559,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 6,
+              "status": "cost_uncovered",
+              "reason": "outside trained numerical feature support rhs_width"
+            }
+          ],
+          "S_covered": false,
+          "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "cost_uncovered",
+            "uncovered_nodes": [
+              6
+            ],
+            "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support"
+          }
+        },
+        {
+          "target_ps": 3000,
+          "prices": [
+            {
+              "node": 12,
+              "status": "covered",
+              "operator_delay_ps": 599.8297082565495,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 669.4794553271277,
+              "comb_area_um2": 32.08069508369542,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 5,
+              "status": "covered",
+              "operator_delay_ps": 475.36545617148903,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 560.3081650551052,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 6,
+              "status": "cost_uncovered",
+              "reason": "outside trained numerical feature support rhs_width"
+            }
+          ],
+          "S_covered": false,
+          "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "cost_uncovered",
+            "uncovered_nodes": [
+              6
+            ],
+            "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support"
+          }
+        }
+      ],
+      "diagnostic_only": true
+    },
+    {
+      "source": "cross_stage_saved_value",
+      "placement": "placement-1",
+      "role": "combination_validation",
+      "rows": [
+        {
+          "target_ps": 500,
+          "prices": [
+            {
+              "node": 5,
+              "status": "covered",
+              "operator_delay_ps": 427.1627384433654,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 512.1054473269816,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 12,
+              "status": "covered",
+              "operator_delay_ps": 537.9479983025975,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 607.5977453731757,
+              "comb_area_um2": 39.818733556202574,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 6,
+              "status": "cost_uncovered",
+              "reason": "outside trained numerical feature support rhs_width"
+            }
+          ],
+          "S_covered": false,
+          "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "cost_uncovered",
+            "uncovered_nodes": [
+              6
+            ],
+            "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support"
+          }
+        },
+        {
+          "target_ps": 1500,
+          "prices": [
+            {
+              "node": 5,
+              "status": "covered",
+              "operator_delay_ps": 474.32745224405664,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 559.2701611276727,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 12,
+              "status": "covered",
+              "operator_delay_ps": 593.1426278697235,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 662.7923749403017,
+              "comb_area_um2": 28.988851981903608,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 6,
+              "status": "cost_uncovered",
+              "reason": "outside trained numerical feature support rhs_width"
+            }
+          ],
+          "S_covered": false,
+          "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "cost_uncovered",
+            "uncovered_nodes": [
+              6
+            ],
+            "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support"
+          }
+        },
+        {
+          "target_ps": 3000,
+          "prices": [
+            {
+              "node": 5,
+              "status": "covered",
+              "operator_delay_ps": 482.5655947931059,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 567.5083036767221,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 12,
+              "status": "covered",
+              "operator_delay_ps": 619.8212910687795,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 689.4710381393577,
+              "comb_area_um2": 28.97540283104992,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 6,
+              "status": "cost_uncovered",
+              "reason": "outside trained numerical feature support rhs_width"
+            }
+          ],
+          "S_covered": false,
+          "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "cost_uncovered",
+            "uncovered_nodes": [
+              6
+            ],
+            "S_reason": "shared physical baseline lacks node-area coverage: outside trained numerical feature support"
+          }
+        }
+      ],
+      "diagnostic_only": true
+    },
+    {
+      "source": "serial_heldout",
+      "placement": "placement-0",
+      "role": "locked_joint_test",
+      "rows": [
+        {
+          "target_ps": 500,
+          "prices": [
+            {
+              "node": 14,
+              "status": "covered",
+              "operator_delay_ps": 622.2940863418885,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 691.9438334124667,
+              "comb_area_um2": 77.80881643271542,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 310.1462698764231,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 395.08897876003925,
+              "comb_area_um2": 18.344216374669998,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 7,
+              "status": "covered",
+              "operator_delay_ps": 429.80631019725007,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 514.7490190808662,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 12,
+                    "arrival_ps": 1044.0810414124667,
+                    "required_ps": 259.23602299999993,
+                    "slack_ps": -784.8450184124667
+                  }
+                ],
+                "violation_ps": 784.8450184124667
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 7,
+                    "arrival_ps": 1173.9409038409055,
+                    "required_ps": 267.17784100000006,
+                    "slack_ps": -906.7630628409055
+                  }
+                ],
+                "violation_ps": 906.7630628409055
+              }
+            ],
+            "owners_um2": {
+              "external_state": 27.529439600950255,
+              "input_service": 85.96262927049517,
+              "native_state": 64.56133461216963,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 7.613557545375976,
+              "shared_physical": 9.883707310592177,
+              "operators": 132.76216567233297
+            },
+            "total_area_um2": 378.6284140119156,
+            "violation_ps": 906.7630628409055,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        },
+        {
+          "target_ps": 1500,
+          "prices": [
+            {
+              "node": 14,
+              "status": "covered",
+              "operator_delay_ps": 677.4887159090144,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 747.1384629795926,
+              "comb_area_um2": 67.19240971347035,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 357.31098367711434,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 442.2536925607305,
+              "comb_area_um2": 18.344216374669998,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 7,
+              "status": "covered",
+              "operator_delay_ps": 476.97102399794124,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 561.9137328815574,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 12,
+                    "arrival_ps": 1099.2756709795926,
+                    "required_ps": 1259.236023,
+                    "slack_ps": 159.9603520204073
+                  }
+                ],
+                "violation_ps": 0.0
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 7,
+                    "arrival_ps": 1268.270331442288,
+                    "required_ps": 1267.1778410000002,
+                    "slack_ps": -1.0924904422877262
+                  }
+                ],
+                "violation_ps": 1.0924904422877262
+              }
+            ],
+            "owners_um2": {
+              "external_state": 27.529439600950255,
+              "input_service": 85.96262927049517,
+              "native_state": 64.56133461216963,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 7.613557545375976,
+              "shared_physical": 9.546113357405826,
+              "operators": 122.14575895308792
+            },
+            "total_area_um2": 367.6744133394842,
+            "violation_ps": 1.0924904422877262,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        },
+        {
+          "target_ps": 3000,
+          "prices": [
+            {
+              "node": 14,
+              "status": "covered",
+              "operator_delay_ps": 704.1673791080706,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 773.8171261786488,
+              "comb_area_um2": 67.17896056261667,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 365.5491262261636,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 450.49183510977974,
+              "comb_area_um2": 18.344216374669998,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 7,
+              "status": "covered",
+              "operator_delay_ps": 485.2091665469905,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 570.1518754306067,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 12,
+                    "arrival_ps": 1125.9543341786489,
+                    "required_ps": 2759.236023,
+                    "slack_ps": 1633.281688821351
+                  }
+                ],
+                "violation_ps": 0.0
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 7,
+                    "arrival_ps": 1284.7466165403864,
+                    "required_ps": 2767.177841,
+                    "slack_ps": 1482.4312244596138
+                  }
+                ],
+                "violation_ps": 0.0
+              }
+            ],
+            "owners_um2": {
+              "external_state": 27.529439600950255,
+              "input_service": 85.96262927049517,
+              "native_state": 64.56133461216963,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 7.613557545375976,
+              "shared_physical": 9.545685684265209,
+              "operators": 122.13230980223423
+            },
+            "total_area_um2": 367.66053651548987,
+            "violation_ps": 0.0,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        }
+      ],
+      "diagnostic_only": true
+    },
+    {
+      "source": "serial_heldout",
+      "placement": "placement-1",
+      "role": "locked_joint_test",
+      "rows": [
+        {
+          "target_ps": 500,
+          "prices": [
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 330.7090805303237,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 415.65178941393987,
+              "comb_area_um2": 18.344216374669998,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 14,
+              "status": "covered",
+              "operator_delay_ps": 637.9185974631233,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 707.5683445337015,
+              "comb_area_um2": 77.6987566078548,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 7,
+              "status": "covered",
+              "operator_delay_ps": 429.80631019725007,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 514.7490190808662,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 13,
+                    "arrival_ps": 1651.4259459476416,
+                    "required_ps": 259.23602299999993,
+                    "slack_ps": -1392.1899229476417
+                  }
+                ],
+                "violation_ps": 1392.1899229476417
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 7,
+                    "arrival_ps": 602.7833210808662,
+                    "required_ps": 267.17784100000006,
+                    "slack_ps": -335.6054800808662
+                  }
+                ],
+                "violation_ps": 335.6054800808662
+              }
+            ],
+            "owners_um2": {
+              "external_state": 27.529439600950255,
+              "input_service": 85.96262927049517,
+              "native_state": 52.171739787978346,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 7.043160726015561,
+              "shared_physical": 9.486227453420913,
+              "operators": 132.65210584747237
+            },
+            "total_area_um2": 365.160882686332,
+            "violation_ps": 1392.1899229476417,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        },
+        {
+          "target_ps": 1500,
+          "prices": [
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 377.8737943310149,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 462.81650321463104,
+              "comb_area_um2": 18.344216374669998,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 14,
+              "status": "covered",
+              "operator_delay_ps": 693.1132270302493,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 762.7629741008275,
+              "comb_area_um2": 69.53365546314419,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 7,
+              "status": "covered",
+              "operator_delay_ps": 476.97102399794124,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 561.9137328815574,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 13,
+                    "arrival_ps": 1753.7852893154586,
+                    "required_ps": 1259.236023,
+                    "slack_ps": -494.5492663154587
+                  }
+                ],
+                "violation_ps": 494.5492663154587
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 7,
+                    "arrival_ps": 649.9480348815574,
+                    "required_ps": 1267.1778410000002,
+                    "slack_ps": 617.2298061184428
+                  }
+                ],
+                "violation_ps": 0.0
+              }
+            ],
+            "owners_um2": {
+              "external_state": 27.529439600950255,
+              "input_service": 85.96262927049517,
+              "native_state": 52.171739787978346,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 7.043160726015561,
+              "shared_physical": 9.226583221007287,
+              "operators": 124.48700470276174
+            },
+            "total_area_um2": 356.7361373092078,
+            "violation_ps": 494.5492663154587,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        },
+        {
+          "target_ps": 3000,
+          "prices": [
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 386.11193688006415,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 471.0546457636803,
+              "comb_area_um2": 18.344216374669998,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 14,
+              "status": "covered",
+              "operator_delay_ps": 719.7918902293054,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 789.4416372998836,
+              "comb_area_um2": 69.5202063122905,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 7,
+              "status": "covered",
+              "operator_delay_ps": 485.2091665469905,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 570.1518754306067,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 13,
+                    "arrival_ps": 1788.702095063564,
+                    "required_ps": 2759.236023,
+                    "slack_ps": 970.5339279364359
+                  }
+                ],
+                "violation_ps": 0.0
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 7,
+                    "arrival_ps": 658.1861774306067,
+                    "required_ps": 2767.177841,
+                    "slack_ps": 2108.9916635693935
+                  }
+                ],
+                "violation_ps": 0.0
+              }
+            ],
+            "owners_um2": {
+              "external_state": 27.529439600950255,
+              "input_service": 85.96262927049517,
+              "native_state": 52.171739787978346,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 7.043160726015561,
+              "shared_physical": 9.226155547866668,
+              "operators": 124.47355555190805
+            },
+            "total_area_um2": 356.72226048521344,
+            "violation_ps": 0.0,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        }
+      ],
+      "diagnostic_only": true
+    },
+    {
+      "source": "cross_stage_saved_value_heldout",
+      "placement": "placement-0",
+      "role": "locked_joint_test",
+      "rows": [
+        {
+          "target_ps": 500,
+          "prices": [
+            {
+              "node": 12,
+              "status": "covered",
+              "operator_delay_ps": 628.3725756469062,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 698.0223227174844,
+              "comb_area_um2": 78.22667139437377,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 5,
+              "status": "covered",
+              "operator_delay_ps": 420.8608445137148,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 505.803553397331,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 399.0492374387783,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 483.9919463223944,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 11,
+                    "arrival_ps": 1050.1595307174844,
+                    "required_ps": 259.23602299999993,
+                    "slack_ps": -790.9235077174844
+                  }
+                ],
+                "violation_ps": 790.9235077174844
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 6,
+                    "arrival_ps": 1165.8641037197253,
+                    "required_ps": 267.17784100000006,
+                    "slack_ps": -898.6862627197253
+                  }
+                ],
+                "violation_ps": 898.6862627197253
+              }
+            ],
+            "owners_um2": {
+              "external_state": 27.529439600950255,
+              "input_service": 63.23273956338314,
+              "native_state": 47.33776035157909,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 6.026366395851342,
+              "shared_physical": 9.207314877322661,
+              "operators": 151.4449371242689
+            },
+            "total_area_um2": 355.0941379133548,
+            "violation_ps": 898.6862627197253,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        },
+        {
+          "target_ps": 1500,
+          "prices": [
+            {
+              "node": 12,
+              "status": "covered",
+              "operator_delay_ps": 683.5672052140321,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 753.2169522846103,
+              "comb_area_um2": 68.53703277319973,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 5,
+              "status": "covered",
+              "operator_delay_ps": 468.025558314406,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 552.9682671980222,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 446.21395123946945,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 531.1566601230857,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 11,
+                    "arrival_ps": 1105.3541602846103,
+                    "required_ps": 1259.236023,
+                    "slack_ps": 153.88186271538962
+                  }
+                ],
+                "violation_ps": 0.0
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 6,
+                    "arrival_ps": 1260.193531321108,
+                    "required_ps": 1267.1778410000002,
+                    "slack_ps": 6.984309678892259
+                  }
+                ],
+                "violation_ps": 0.0
+              }
+            ],
+            "owners_um2": {
+              "external_state": 27.529439600950255,
+              "input_service": 63.23273956338314,
+              "native_state": 47.33776035157909,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 6.026366395851342,
+              "shared_physical": 8.89919147045097,
+              "operators": 141.75529850309485
+            },
+            "total_area_um2": 345.09637588530904,
+            "violation_ps": 0.0,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        },
+        {
+          "target_ps": 3000,
+          "prices": [
+            {
+              "node": 12,
+              "status": "covered",
+              "operator_delay_ps": 710.2458684130883,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 779.8956154836665,
+              "comb_area_um2": 68.52358362234604,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 5,
+              "status": "covered",
+              "operator_delay_ps": 476.26370086345526,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 561.2064097470713,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 454.4520937885187,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 539.3948026721348,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 11,
+                    "arrival_ps": 1132.0328234836666,
+                    "required_ps": 2759.236023,
+                    "slack_ps": 1627.2031995163334
+                  }
+                ],
+                "violation_ps": 0.0
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 6,
+                    "arrival_ps": 1276.6698164192062,
+                    "required_ps": 2767.177841,
+                    "slack_ps": 1490.508024580794
+                  }
+                ],
+                "violation_ps": 0.0
+              }
+            ],
+            "owners_um2": {
+              "external_state": 27.529439600950255,
+              "input_service": 63.23273956338314,
+              "native_state": 47.33776035157909,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 6.026366395851342,
+              "shared_physical": 8.898763797310353,
+              "operators": 141.74184935224116
+            },
+            "total_area_um2": 345.08249906131476,
+            "violation_ps": 0.0,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        }
+      ],
+      "diagnostic_only": true
+    },
+    {
+      "source": "cross_stage_saved_value_heldout",
+      "placement": "placement-1",
+      "role": "locked_joint_test",
+      "rows": [
+        {
+          "target_ps": 500,
+          "prices": [
+            {
+              "node": 5,
+              "status": "covered",
+              "operator_delay_ps": 428.4725251305924,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 513.4152340142085,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 12,
+              "status": "covered",
+              "operator_delay_ps": 649.6493390423818,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 719.29908611296,
+              "comb_area_um2": 80.98874801922193,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 399.0492374387783,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 483.9919463223944,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 5,
+                    "arrival_ps": 1672.885830127169,
+                    "required_ps": 259.23602299999993,
+                    "slack_ps": -1413.649807127169
+                  },
+                  {
+                    "node": 11,
+                    "arrival_ps": 1071.4362941129602,
+                    "required_ps": 259.23602299999993,
+                    "slack_ps": -812.2002711129603
+                  }
+                ],
+                "violation_ps": 1413.649807127169
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 6,
+                    "arrival_ps": 572.0262483223944,
+                    "required_ps": 267.17784100000006,
+                    "slack_ps": -304.84840732239434
+                  }
+                ],
+                "violation_ps": 304.84840732239434
+              }
+            ],
+            "owners_um2": {
+              "external_state": 27.529439600950255,
+              "input_service": 63.23273956338314,
+              "native_state": 47.33776035157909,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 6.026366395851342,
+              "shared_physical": 9.29514688973942,
+              "operators": 154.20701374911704
+            },
+            "total_area_um2": 357.9440465506197,
+            "violation_ps": 1413.649807127169,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        },
+        {
+          "target_ps": 1500,
+          "prices": [
+            {
+              "node": 5,
+              "status": "covered",
+              "operator_delay_ps": 475.63723893128355,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 560.5799478148997,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 12,
+              "status": "covered",
+              "operator_delay_ps": 704.8439686095079,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 774.4937156800861,
+              "comb_area_um2": 67.71163240232345,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 446.21395123946945,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 531.1566601230857,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 5,
+                    "arrival_ps": 1775.245173494986,
+                    "required_ps": 1259.236023,
+                    "slack_ps": -516.009150494986
+                  },
+                  {
+                    "node": 11,
+                    "arrival_ps": 1126.6309236800862,
+                    "required_ps": 1259.236023,
+                    "slack_ps": 132.60509931991373
+                  }
+                ],
+                "violation_ps": 516.009150494986
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 6,
+                    "arrival_ps": 619.1909621230857,
+                    "required_ps": 1267.1778410000002,
+                    "slack_ps": 647.9868788769145
+                  }
+                ],
+                "violation_ps": 0.0
+              }
+            ],
+            "owners_um2": {
+              "external_state": 27.529439600950255,
+              "input_service": 63.23273956338314,
+              "native_state": 47.33776035157909,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 6.026366395851342,
+              "shared_physical": 8.872944343571358,
+              "operators": 140.92989813221857
+            },
+            "total_area_um2": 344.24472838755315,
+            "violation_ps": 516.009150494986,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        },
+        {
+          "target_ps": 3000,
+          "prices": [
+            {
+              "node": 5,
+              "status": "covered",
+              "operator_delay_ps": 483.87538148033275,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 568.8180903639488,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 12,
+              "status": "covered",
+              "operator_delay_ps": 731.522631808564,
+              "delay_reserve_ps": 69.6497470705782,
+              "conservative_operator_delay_ps": 801.1723788791422,
+              "comb_area_um2": 67.69818325146976,
+              "full_stage_price_qualified": false
+            },
+            {
+              "node": 6,
+              "status": "covered",
+              "operator_delay_ps": 454.4520937885187,
+              "delay_reserve_ps": 84.94270888361615,
+              "conservative_operator_delay_ps": 539.3948026721348,
+              "comb_area_um2": 36.60913286494756,
+              "full_stage_price_qualified": false
+            }
+          ],
+          "S_covered": true,
+          "S_reason": "",
+          "joint_qualified": false,
+          "zero_G": {
+            "status": "diagnostic_covered",
+            "stages": [
+              {
+                "stage": 0,
+                "captures": [
+                  {
+                    "node": 5,
+                    "arrival_ps": 1810.1619792430913,
+                    "required_ps": 2759.236023,
+                    "slack_ps": 949.0740437569086
+                  },
+                  {
+                    "node": 11,
+                    "arrival_ps": 1153.3095868791424,
+                    "required_ps": 2759.236023,
+                    "slack_ps": 1605.9264361208575
+                  }
+                ],
+                "violation_ps": 0.0
+              },
+              {
+                "stage": 1,
+                "captures": [
+                  {
+                    "node": 6,
+                    "arrival_ps": 627.4291046721348,
+                    "required_ps": 2767.177841,
+                    "slack_ps": 2139.748736327865
+                  }
+                ],
+                "violation_ps": 0.0
+              }
+            ],
+            "owners_um2": {
+              "external_state": 27.529439600950255,
+              "input_service": 63.23273956338314,
+              "native_state": 47.33776035157909,
+              "root_repair": 50.31557999999941,
+              "shared_clock": 6.026366395851342,
+              "shared_physical": 8.872516670430741,
+              "operators": 140.91644898136488
+            },
+            "total_area_um2": 344.2308515635589,
+            "violation_ps": 0.0,
+            "G_area_um2": 0,
+            "G_delay_ps": 0,
+            "joint_qualified": false
+          }
+        }
+      ],
+      "diagnostic_only": true
+    }
+  ],
+  "summary": {
+    "covered": 114,
+    "cost_uncovered": 18
+  },
+  "full_D_ready": false,
+  "physical_admission_allowed": false
+}

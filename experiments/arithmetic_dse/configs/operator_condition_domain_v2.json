@@ -1,0 +1,23 @@
+{
+  "version": "operator-condition-domain-execution-v2",
+  "parent": "operator_condition_fit_v2.json; no new estimator families or error thresholds",
+  "candidates": ["legacy_narrow_load", "coupled_load_neighborhood"],
+  "selection": "validation error gates and every validation row covered; compare critical demand coverage, then serialized size, stable candidate order; test never used",
+  "intrinsic_numeric_features": ["lhs_width", "rhs_width", "result_width", "lhs_zero_count", "rhs_zero_count"],
+  "consumer_numeric_features": ["consumer_lhs_max", "consumer_rhs_max", "consumer_result_max", "consumer_lhs_active_bits", "consumer_rhs_active_bits", "consumer_lhs_zero_lsb_run", "consumer_rhs_zero_lsb_run", "consumer_lhs_zero_msb_run", "consumer_rhs_zero_msb_run", "consumer_add_overlap_bits", "consumer_add_carry_span", "mapping_shift_min", "mapping_shift_max"],
+  "consumer_numeric_bounds": "training support; Add lhs/rhs width and active-width bounds share the training maximum across both commutative operands, while joint features retain binding-side asymmetry; declared consumer widths, active widths and carry span allow the inherited one-bit padding allowance; validation must demonstrate acceptance and error; numeric bounds alone never grant joint coverage",
+  "one_bit_padding_features": ["consumer_lhs_max", "consumer_rhs_max", "consumer_result_max", "consumer_lhs_active_bits", "consumer_rhs_active_bits", "consumer_add_carry_span"],
+  "joint_features": ["lhs_width", "rhs_width", "result_width", "lhs_zero_count", "rhs_zero_count", "consumer_count", "capture_banks", "consumer_lhs_active_bits", "consumer_rhs_active_bits", "consumer_lhs_zero_lsb_run", "consumer_rhs_zero_lsb_run", "consumer_result_max", "mapping_shift_min", "mapping_shift_max", "mapped_unique_bits", "mapped_zero_bits"],
+  "joint_k": 3,
+  "joint_scale": "max(1, training feature range)",
+  "joint_radius": "maximum validation-to-training kth neighbor distance; no D-demand-derived radius",
+  "joint_anchors": "unique numerical vectors and observed requested-clock intervals from train/validation; no source IDs, measured prices or shape IDs",
+  "clock": "existing prediction-relative clock interval rule; all observed clock bounds retained; exact1000ps not used in fit or validation selection",
+  "critical_validation_subdomains": ["wide_consumer", "shifted_connection", "new_source"],
+  "subdomain_gate": "same median<=0.15 and P95<=0.35 on each operation/label with at least two held-out source groups; smaller denominators explicitly reported",
+  "demand_checks_ps": [500, 1500, 3000],
+  "demand_qualification": "all producer/local contexts in current minimum MAC32 demand at preregistered clocks must be estimable; queries only check coverage, never change parameters or fit per-view prices",
+  "independent_gate": "all independent rows and sources retained in denominator; per-op source-macro error gates plus coverage, new load and exact1000ps subsets; any acquisition failure blocks qualification",
+  "refusal_probes": ["unsupported operation", "nonzero carry", "known one", "interior zero mask", "multiple consumers", "oversized consumer", "out of clock interval", "foreign profile", "source/view identity injection"],
+  "full_D_ready": false
+}

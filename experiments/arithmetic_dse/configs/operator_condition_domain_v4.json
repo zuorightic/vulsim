@@ -1,0 +1,19 @@
+{
+  "version": "operator-condition-domain-execution-v4",
+  "parent": "operator_condition_domain_v3.json",
+  "reason": "459-point validation has zero refusals and passing errors, but source-relative inferred-clock intervals still reject 69/1/246 actual demand queries at500/1500/3000ps; compare a joint numerical (structure,load,requested T) neighborhood instead of requiring the closest structural sources to share the requested clock interval",
+  "candidates": ["legacy_narrow_load", "coupled_load_neighborhood", "joint_requested_clock"],
+  "joint_requested_clock": {
+    "coordinate": "log2_target_ps appended to the same structural/load vector",
+    "anchors": "every train/validation numerical feature+requested-clock vector; no source IDs, actual slack, delay or area prices",
+    "training_reference_unit": "measured feature/clock point; estimator and quality metrics remain grouped/equal by complete source",
+    "scale": "training-only max(1,feature range)",
+    "radius": "maximum held-out validation point distance to kth training point; no demand-derived radius",
+    "clock_bounds": "same observed global requested-T interval plus the joint feature/clock distance; former inferred-clock interval is mathematically redundant for this candidate",
+    "k": 3,
+    "qualification": "must pass unchanged error/critical-subdomain gates, all validation coverage and refusal probes before independent freeze; exact1000ps/new source test remains untouched"
+  },
+  "parent_quality_and_refusal_rules_unchanged": true,
+  "no_source_or_view_specific_prices": true,
+  "full_D_ready": false
+}

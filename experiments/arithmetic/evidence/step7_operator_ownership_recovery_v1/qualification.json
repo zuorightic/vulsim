@@ -1,0 +1,1104 @@
+{
+  "version": "operator-ownership-recovery-qualification-v1",
+  "status": "passed_saved_snapshot_qualification",
+  "stages": 16,
+  "recovered_failed_stages": 4,
+  "unchanged_valid_stages": 12,
+  "recovered_physical_cells": 5,
+  "negative_checks": [
+    {
+      "task": "failure-s68decd5321da7cf0-463",
+      "test": "actual_Liberty_arc_removed",
+      "reason": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "failure-s68decd5321da7cf0-463",
+      "test": "state_sink",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-s68decd5321da7cf0-463",
+      "test": "top_port_exposure",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-s68decd5321da7cf0-463",
+      "test": "clock_net",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-s68decd5321da7cf0-463",
+      "test": "disconnected_input",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-s68decd5321da7cf0-463",
+      "test": "missing_census_pin",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-s68decd5321da7cf0-463",
+      "test": "unknown_Liberty_master",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-s68decd5321da7cf0-463",
+      "test": "forged_owner_certificate",
+      "reason": "forged or stale logical ownership certificate"
+    },
+    {
+      "task": "failure-s98757fe1b49b8a81-491",
+      "test": "actual_Liberty_arc_removed",
+      "reason": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "failure-s98757fe1b49b8a81-491",
+      "test": "state_sink",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-s98757fe1b49b8a81-491",
+      "test": "top_port_exposure",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-s98757fe1b49b8a81-491",
+      "test": "clock_net",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-s98757fe1b49b8a81-491",
+      "test": "disconnected_input",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-s98757fe1b49b8a81-491",
+      "test": "missing_census_pin",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-s98757fe1b49b8a81-491",
+      "test": "unknown_Liberty_master",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-s98757fe1b49b8a81-491",
+      "test": "forged_owner_certificate",
+      "reason": "forged or stale logical ownership certificate"
+    },
+    {
+      "task": "failure-se5bec7ce105a27d8-873",
+      "test": "actual_Liberty_arc_removed",
+      "reason": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "failure-se5bec7ce105a27d8-873",
+      "test": "state_sink",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-se5bec7ce105a27d8-873",
+      "test": "top_port_exposure",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-se5bec7ce105a27d8-873",
+      "test": "clock_net",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-se5bec7ce105a27d8-873",
+      "test": "disconnected_input",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-se5bec7ce105a27d8-873",
+      "test": "missing_census_pin",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-se5bec7ce105a27d8-873",
+      "test": "unknown_Liberty_master",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-se5bec7ce105a27d8-873",
+      "test": "cross_operator_sink",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-se5bec7ce105a27d8-873",
+      "test": "forged_owner_certificate",
+      "reason": "forged or stale logical ownership certificate"
+    },
+    {
+      "task": "failure-s32e03528a3472a5c-500",
+      "test": "actual_Liberty_arc_removed",
+      "reason": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "failure-s32e03528a3472a5c-500",
+      "test": "state_sink",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-s32e03528a3472a5c-500",
+      "test": "top_port_exposure",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-s32e03528a3472a5c-500",
+      "test": "clock_net",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-s32e03528a3472a5c-500",
+      "test": "disconnected_input",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-s32e03528a3472a5c-500",
+      "test": "missing_census_pin",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-s32e03528a3472a5c-500",
+      "test": "unknown_Liberty_master",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-s32e03528a3472a5c-500",
+      "test": "cross_operator_sink",
+      "reason": "incomplete/ambiguous/invalid actual ownership census refused"
+    },
+    {
+      "task": "failure-s32e03528a3472a5c-500",
+      "test": "forged_owner_certificate",
+      "reason": "forged or stale logical ownership certificate"
+    },
+    {
+      "task": "control-s189e97d51e27dab2-1500-synth",
+      "test": "actual_Liberty_arc_removed",
+      "reason": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "control-s189e97d51e27dab2-1500-grt",
+      "test": "actual_Liberty_arc_removed",
+      "reason": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "control-sbe3b2347b0e2cf7c-1500-synth",
+      "test": "actual_Liberty_arc_removed",
+      "reason": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "control-sbe3b2347b0e2cf7c-1500-grt",
+      "test": "actual_Liberty_arc_removed",
+      "reason": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "control-sda2558c0fcc4c3f4-1500-synth",
+      "test": "actual_Liberty_arc_removed",
+      "reason": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "control-sda2558c0fcc4c3f4-1500-grt",
+      "test": "actual_Liberty_arc_removed",
+      "reason": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "control-s49449a495a10f701-1500-synth",
+      "test": "actual_Liberty_arc_removed",
+      "reason": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "control-s49449a495a10f701-1500-grt",
+      "test": "actual_Liberty_arc_removed",
+      "reason": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "control-s07aece14a10b6ae0-1373-synth",
+      "test": "actual_Liberty_arc_removed",
+      "reason": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "control-s07aece14a10b6ae0-1373-grt",
+      "test": "actual_Liberty_arc_removed",
+      "reason": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "control-s4f9a62d82c48c184-1500-synth",
+      "test": "actual_Liberty_arc_removed",
+      "reason": "cell step is not an actual Liberty timing arc"
+    },
+    {
+      "task": "control-s4f9a62d82c48c184-1500-grt",
+      "test": "actual_Liberty_arc_removed",
+      "reason": "cell step is not an actual Liberty timing arc"
+    }
+  ],
+  "negative_rejections": 46,
+  "checks": [
+    {
+      "task": "failure-s68decd5321da7cf0-463",
+      "role": "train",
+      "recovered": [
+        {
+          "instance": "clone454",
+          "owner": "producer"
+        }
+      ],
+      "original_valid": false,
+      "strict_label_replay": true,
+      "stored_SDC_check": {
+        "version": "serialized-sdc-contract-v5-stage-exact-clock-roundtrips",
+        "status": "passed",
+        "sdc_sha256": "998785a971598805aae9204dc1dde85bdc31722dfa3e1a43541cc9039ccbf429",
+        "platform": "asap7",
+        "time_to_ps": 1.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 463.0,
+          "io_clk": 463.0
+        },
+        "clock_transition_native": 10.0,
+        "setup_uncertainty_native": 20.0,
+        "hold_uncertainty_native": 5.0,
+        "output_load_native": 3.898,
+        "input_ports_checked": 84,
+        "output_ports_checked": 2,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05,
+        "IO_storage_model": "exact IEEE binary32 seconds or nominal; decimal write_sdc rounding only",
+        "actual_IO_delay_native_values": [
+          0.0,
+          92.6
+        ],
+        "maximum_IO_storage_error_ps": 1.4210854715202004e-14,
+        "nominal_IO_max_ps": 92.60000000000001,
+        "actual_clock_periods_native": {
+          "core_clk": 463.0,
+          "io_clk": 463.0
+        },
+        "nominal_clock_period_native": 463.0,
+        "exact_serialization_centers_native": [
+          463.0,
+          463.0
+        ],
+        "serialization_stage": "grt",
+        "clock_period_storage_policy": "pinned Unit::userToSta, Clock float seconds, Unit::asString; bounded stage-specific roundtrips and half decimal quantum"
+      },
+      "wire_RC_check": null,
+      "ORFS_area_crosscheck": {
+        "native_json_significant_digits": 6,
+        "rounding_tolerance_um2": 0.000500001,
+        "absolute_difference_um2": 0.00044000000025334884
+      },
+      "source_and_physical_artifacts_unchanged": true
+    },
+    {
+      "task": "failure-s98757fe1b49b8a81-491",
+      "role": "train",
+      "recovered": [
+        {
+          "instance": "clone514",
+          "owner": "producer"
+        }
+      ],
+      "original_valid": false,
+      "strict_label_replay": true,
+      "stored_SDC_check": {
+        "version": "serialized-sdc-contract-v5-stage-exact-clock-roundtrips",
+        "status": "passed",
+        "sdc_sha256": "17dcf247338cccfbb85889d577e92681d446cb77dafee515269609f6d087c81d",
+        "platform": "asap7",
+        "time_to_ps": 1.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 491.0,
+          "io_clk": 491.0
+        },
+        "clock_transition_native": 10.0,
+        "setup_uncertainty_native": 20.0,
+        "hold_uncertainty_native": 5.0,
+        "output_load_native": 3.898,
+        "input_ports_checked": 100,
+        "output_ports_checked": 2,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05,
+        "IO_storage_model": "exact IEEE binary32 seconds or nominal; decimal write_sdc rounding only",
+        "actual_IO_delay_native_values": [
+          0.0,
+          98.2
+        ],
+        "maximum_IO_storage_error_ps": 0.0,
+        "nominal_IO_max_ps": 98.2,
+        "actual_clock_periods_native": {
+          "core_clk": 491.0,
+          "io_clk": 491.0
+        },
+        "nominal_clock_period_native": 491.0,
+        "exact_serialization_centers_native": [
+          491.0,
+          491.0000305175781
+        ],
+        "serialization_stage": "grt",
+        "clock_period_storage_policy": "pinned Unit::userToSta, Clock float seconds, Unit::asString; bounded stage-specific roundtrips and half decimal quantum"
+      },
+      "wire_RC_check": null,
+      "ORFS_area_crosscheck": {
+        "native_json_significant_digits": 6,
+        "rounding_tolerance_um2": 0.000500001,
+        "absolute_difference_um2": 0.0004800000009197447
+      },
+      "source_and_physical_artifacts_unchanged": true
+    },
+    {
+      "task": "failure-se5bec7ce105a27d8-873",
+      "role": "validation",
+      "recovered": [
+        {
+          "instance": "clone480",
+          "owner": "consumer0"
+        },
+        {
+          "instance": "rebuffer697",
+          "owner": "consumer0"
+        }
+      ],
+      "original_valid": false,
+      "strict_label_replay": true,
+      "stored_SDC_check": {
+        "version": "serialized-sdc-contract-v5-stage-exact-clock-roundtrips",
+        "status": "passed",
+        "sdc_sha256": "02cc024bb580e906f6df3634936deaaa28c2bffc09429d126cf3e31a422571bf",
+        "platform": "asap7",
+        "time_to_ps": 1.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 873.0,
+          "io_clk": 873.0
+        },
+        "clock_transition_native": 10.0,
+        "setup_uncertainty_native": 20.0,
+        "hold_uncertainty_native": 5.0,
+        "output_load_native": 3.898,
+        "input_ports_checked": 66,
+        "output_ports_checked": 2,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05,
+        "IO_storage_model": "exact IEEE binary32 seconds or nominal; decimal write_sdc rounding only",
+        "actual_IO_delay_native_values": [
+          0.0,
+          174.6
+        ],
+        "maximum_IO_storage_error_ps": 2.842170943040401e-14,
+        "nominal_IO_max_ps": 174.60000000000002,
+        "actual_clock_periods_native": {
+          "core_clk": 873.0,
+          "io_clk": 873.0
+        },
+        "nominal_clock_period_native": 873.0,
+        "exact_serialization_centers_native": [
+          873.0,
+          873.0
+        ],
+        "serialization_stage": "grt",
+        "clock_period_storage_policy": "pinned Unit::userToSta, Clock float seconds, Unit::asString; bounded stage-specific roundtrips and half decimal quantum"
+      },
+      "wire_RC_check": null,
+      "ORFS_area_crosscheck": {
+        "native_json_significant_digits": 6,
+        "rounding_tolerance_um2": 0.000500001,
+        "absolute_difference_um2": 0.00011999999986755938
+      },
+      "source_and_physical_artifacts_unchanged": true
+    },
+    {
+      "task": "failure-s32e03528a3472a5c-500",
+      "role": "locked_test",
+      "recovered": [
+        {
+          "instance": "clone283",
+          "owner": "consumer0"
+        }
+      ],
+      "original_valid": false,
+      "strict_label_replay": true,
+      "stored_SDC_check": {
+        "version": "serialized-sdc-contract-v5-stage-exact-clock-roundtrips",
+        "status": "passed",
+        "sdc_sha256": "167d4202837ec0ae5f93957c467e28b7055fdb52417bbbde361672622ab5c1ba",
+        "platform": "asap7",
+        "time_to_ps": 1.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 500.0,
+          "io_clk": 500.0
+        },
+        "clock_transition_native": 10.0,
+        "setup_uncertainty_native": 20.0,
+        "hold_uncertainty_native": 5.0,
+        "output_load_native": 3.898,
+        "input_ports_checked": 75,
+        "output_ports_checked": 2,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05,
+        "IO_storage_model": "exact IEEE binary32 seconds or nominal; decimal write_sdc rounding only",
+        "actual_IO_delay_native_values": [
+          0.0,
+          100.0
+        ],
+        "maximum_IO_storage_error_ps": 0.0,
+        "nominal_IO_max_ps": 100.0,
+        "actual_clock_periods_native": {
+          "core_clk": 500.0,
+          "io_clk": 500.0
+        },
+        "nominal_clock_period_native": 500.0,
+        "exact_serialization_centers_native": [
+          500.0,
+          500.0
+        ],
+        "serialization_stage": "grt",
+        "clock_period_storage_policy": "pinned Unit::userToSta, Clock float seconds, Unit::asString; bounded stage-specific roundtrips and half decimal quantum"
+      },
+      "wire_RC_check": null,
+      "ORFS_area_crosscheck": {
+        "native_json_significant_digits": 6,
+        "rounding_tolerance_um2": 0.000500001,
+        "absolute_difference_um2": 0.00012000000043599357
+      },
+      "source_and_physical_artifacts_unchanged": true
+    },
+    {
+      "task": "control-s189e97d51e27dab2-1500-synth",
+      "role": "train",
+      "recovered": [],
+      "original_valid": true,
+      "strict_label_replay": true,
+      "stored_SDC_check": {
+        "version": "serialized-sdc-contract-v5-stage-exact-clock-roundtrips",
+        "status": "passed",
+        "sdc_sha256": "380cdb8121d79a5c0870da6e55d442b39d8cc9976202428a83b59df620da508a",
+        "platform": "asap7",
+        "time_to_ps": 1.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 1500.0,
+          "io_clk": 1500.0
+        },
+        "clock_transition_native": 10.0,
+        "setup_uncertainty_native": 20.0,
+        "hold_uncertainty_native": 5.0,
+        "output_load_native": 3.898,
+        "input_ports_checked": 18,
+        "output_ports_checked": 2,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05,
+        "IO_storage_model": "exact IEEE binary32 seconds or nominal; decimal write_sdc rounding only",
+        "actual_IO_delay_native_values": [
+          0.0,
+          300.0
+        ],
+        "maximum_IO_storage_error_ps": 0.0,
+        "nominal_IO_max_ps": 300.0,
+        "actual_clock_periods_native": {
+          "core_clk": 1500.0,
+          "io_clk": 1500.0
+        },
+        "nominal_clock_period_native": 1500.0,
+        "exact_serialization_centers_native": [
+          1500.0,
+          1500.0
+        ],
+        "serialization_stage": "synth",
+        "clock_period_storage_policy": "pinned Unit::userToSta, Clock float seconds, Unit::asString; bounded stage-specific roundtrips and half decimal quantum"
+      },
+      "wire_RC_check": null,
+      "ORFS_area_crosscheck": {
+        "native_json_significant_digits": 6,
+        "rounding_tolerance_um2": 5.00001e-05,
+        "absolute_difference_um2": 1.4210854715202004e-14
+      },
+      "source_and_physical_artifacts_unchanged": true
+    },
+    {
+      "task": "control-s189e97d51e27dab2-1500-grt",
+      "role": "train",
+      "recovered": [],
+      "original_valid": true,
+      "strict_label_replay": true,
+      "stored_SDC_check": {
+        "version": "serialized-sdc-contract-v5-stage-exact-clock-roundtrips",
+        "status": "passed",
+        "sdc_sha256": "28e901b6d9c6a2744cc90827c1a98cf0d1c1fd8c9122a69c6b959097f9dc287a",
+        "platform": "asap7",
+        "time_to_ps": 1.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 1500.0,
+          "io_clk": 1500.0
+        },
+        "clock_transition_native": 10.0,
+        "setup_uncertainty_native": 20.0,
+        "hold_uncertainty_native": 5.0,
+        "output_load_native": 3.898,
+        "input_ports_checked": 18,
+        "output_ports_checked": 2,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05,
+        "IO_storage_model": "exact IEEE binary32 seconds or nominal; decimal write_sdc rounding only",
+        "actual_IO_delay_native_values": [
+          0.0,
+          300.0
+        ],
+        "maximum_IO_storage_error_ps": 0.0,
+        "nominal_IO_max_ps": 300.0,
+        "actual_clock_periods_native": {
+          "core_clk": 1500.0,
+          "io_clk": 1500.0
+        },
+        "nominal_clock_period_native": 1500.0,
+        "exact_serialization_centers_native": [
+          1500.0,
+          1500.0
+        ],
+        "serialization_stage": "grt",
+        "clock_period_storage_policy": "pinned Unit::userToSta, Clock float seconds, Unit::asString; bounded stage-specific roundtrips and half decimal quantum"
+      },
+      "wire_RC_check": null,
+      "ORFS_area_crosscheck": {
+        "native_json_significant_digits": 6,
+        "rounding_tolerance_um2": 5.00001e-05,
+        "absolute_difference_um2": 3.552713678800501e-14
+      },
+      "source_and_physical_artifacts_unchanged": true
+    },
+    {
+      "task": "control-sbe3b2347b0e2cf7c-1500-synth",
+      "role": "train",
+      "recovered": [],
+      "original_valid": true,
+      "strict_label_replay": true,
+      "stored_SDC_check": {
+        "version": "serialized-sdc-contract-v5-stage-exact-clock-roundtrips",
+        "status": "passed",
+        "sdc_sha256": "c0021f13782118b9566346f614edff0b531b3ff8daaa21b05fba56fdd22874f6",
+        "platform": "asap7",
+        "time_to_ps": 1.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 1500.0,
+          "io_clk": 1500.0
+        },
+        "clock_transition_native": 10.0,
+        "setup_uncertainty_native": 20.0,
+        "hold_uncertainty_native": 5.0,
+        "output_load_native": 3.898,
+        "input_ports_checked": 26,
+        "output_ports_checked": 2,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05,
+        "IO_storage_model": "exact IEEE binary32 seconds or nominal; decimal write_sdc rounding only",
+        "actual_IO_delay_native_values": [
+          0.0,
+          300.0
+        ],
+        "maximum_IO_storage_error_ps": 0.0,
+        "nominal_IO_max_ps": 300.0,
+        "actual_clock_periods_native": {
+          "core_clk": 1500.0,
+          "io_clk": 1500.0
+        },
+        "nominal_clock_period_native": 1500.0,
+        "exact_serialization_centers_native": [
+          1500.0,
+          1500.0
+        ],
+        "serialization_stage": "synth",
+        "clock_period_storage_policy": "pinned Unit::userToSta, Clock float seconds, Unit::asString; bounded stage-specific roundtrips and half decimal quantum"
+      },
+      "wire_RC_check": null,
+      "ORFS_area_crosscheck": {
+        "native_json_significant_digits": 6,
+        "rounding_tolerance_um2": 5.00001e-05,
+        "absolute_difference_um2": 3.9999999884798854e-05
+      },
+      "source_and_physical_artifacts_unchanged": true
+    },
+    {
+      "task": "control-sbe3b2347b0e2cf7c-1500-grt",
+      "role": "train",
+      "recovered": [],
+      "original_valid": true,
+      "strict_label_replay": true,
+      "stored_SDC_check": {
+        "version": "serialized-sdc-contract-v5-stage-exact-clock-roundtrips",
+        "status": "passed",
+        "sdc_sha256": "f8003330cddc136379d40cabc03c8dde3b0544e712c46a8df332992b2b05f43e",
+        "platform": "asap7",
+        "time_to_ps": 1.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 1500.0,
+          "io_clk": 1500.0
+        },
+        "clock_transition_native": 10.0,
+        "setup_uncertainty_native": 20.0,
+        "hold_uncertainty_native": 5.0,
+        "output_load_native": 3.898,
+        "input_ports_checked": 26,
+        "output_ports_checked": 2,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05,
+        "IO_storage_model": "exact IEEE binary32 seconds or nominal; decimal write_sdc rounding only",
+        "actual_IO_delay_native_values": [
+          0.0,
+          300.0
+        ],
+        "maximum_IO_storage_error_ps": 0.0,
+        "nominal_IO_max_ps": 300.0,
+        "actual_clock_periods_native": {
+          "core_clk": 1500.0,
+          "io_clk": 1500.0
+        },
+        "nominal_clock_period_native": 1500.0,
+        "exact_serialization_centers_native": [
+          1500.0,
+          1500.0
+        ],
+        "serialization_stage": "grt",
+        "clock_period_storage_policy": "pinned Unit::userToSta, Clock float seconds, Unit::asString; bounded stage-specific roundtrips and half decimal quantum"
+      },
+      "wire_RC_check": null,
+      "ORFS_area_crosscheck": {
+        "native_json_significant_digits": 6,
+        "rounding_tolerance_um2": 5.00001e-05,
+        "absolute_difference_um2": 4.000000014059424e-05
+      },
+      "source_and_physical_artifacts_unchanged": true
+    },
+    {
+      "task": "control-sda2558c0fcc4c3f4-1500-synth",
+      "role": "train",
+      "recovered": [],
+      "original_valid": true,
+      "strict_label_replay": true,
+      "stored_SDC_check": {
+        "version": "serialized-sdc-contract-v5-stage-exact-clock-roundtrips",
+        "status": "passed",
+        "sdc_sha256": "e3de5281a278a23192479d05a37a10c7457eda89cb46adf3e56ca9abaf161a7e",
+        "platform": "asap7",
+        "time_to_ps": 1.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 1500.0,
+          "io_clk": 1500.0
+        },
+        "clock_transition_native": 10.0,
+        "setup_uncertainty_native": 20.0,
+        "hold_uncertainty_native": 5.0,
+        "output_load_native": 3.898,
+        "input_ports_checked": 122,
+        "output_ports_checked": 2,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05,
+        "IO_storage_model": "exact IEEE binary32 seconds or nominal; decimal write_sdc rounding only",
+        "actual_IO_delay_native_values": [
+          0.0,
+          300.0
+        ],
+        "maximum_IO_storage_error_ps": 0.0,
+        "nominal_IO_max_ps": 300.0,
+        "actual_clock_periods_native": {
+          "core_clk": 1500.0,
+          "io_clk": 1500.0
+        },
+        "nominal_clock_period_native": 1500.0,
+        "exact_serialization_centers_native": [
+          1500.0,
+          1500.0
+        ],
+        "serialization_stage": "synth",
+        "clock_period_storage_policy": "pinned Unit::userToSta, Clock float seconds, Unit::asString; bounded stage-specific roundtrips and half decimal quantum"
+      },
+      "wire_RC_check": null,
+      "ORFS_area_crosscheck": {
+        "native_json_significant_digits": 6,
+        "rounding_tolerance_um2": 0.000500001,
+        "absolute_difference_um2": 0.000479999994922764
+      },
+      "source_and_physical_artifacts_unchanged": true
+    },
+    {
+      "task": "control-sda2558c0fcc4c3f4-1500-grt",
+      "role": "train",
+      "recovered": [],
+      "original_valid": true,
+      "strict_label_replay": true,
+      "stored_SDC_check": {
+        "version": "serialized-sdc-contract-v5-stage-exact-clock-roundtrips",
+        "status": "passed",
+        "sdc_sha256": "a0d2610a8030d9090f1069c48850ddeb40090be9f2d3b08c5964d27e428a757f",
+        "platform": "asap7",
+        "time_to_ps": 1.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 1500.0,
+          "io_clk": 1500.0
+        },
+        "clock_transition_native": 10.0,
+        "setup_uncertainty_native": 20.0,
+        "hold_uncertainty_native": 5.0,
+        "output_load_native": 3.898,
+        "input_ports_checked": 122,
+        "output_ports_checked": 2,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05,
+        "IO_storage_model": "exact IEEE binary32 seconds or nominal; decimal write_sdc rounding only",
+        "actual_IO_delay_native_values": [
+          0.0,
+          300.0
+        ],
+        "maximum_IO_storage_error_ps": 0.0,
+        "nominal_IO_max_ps": 300.0,
+        "actual_clock_periods_native": {
+          "core_clk": 1500.0,
+          "io_clk": 1500.0
+        },
+        "nominal_clock_period_native": 1500.0,
+        "exact_serialization_centers_native": [
+          1500.0,
+          1500.0
+        ],
+        "serialization_stage": "grt",
+        "clock_period_storage_policy": "pinned Unit::userToSta, Clock float seconds, Unit::asString; bounded stage-specific roundtrips and half decimal quantum"
+      },
+      "wire_RC_check": null,
+      "ORFS_area_crosscheck": {
+        "native_json_significant_digits": 6,
+        "rounding_tolerance_um2": 0.000500001,
+        "absolute_difference_um2": 0.00022000000342359272
+      },
+      "source_and_physical_artifacts_unchanged": true
+    },
+    {
+      "task": "control-s49449a495a10f701-1500-synth",
+      "role": "train",
+      "recovered": [],
+      "original_valid": true,
+      "strict_label_replay": true,
+      "stored_SDC_check": {
+        "version": "serialized-sdc-contract-v5-stage-exact-clock-roundtrips",
+        "status": "passed",
+        "sdc_sha256": "c941154d802b082ae52061dad4c0737b348ff9bfc5fa16582f198762c6a2e234",
+        "platform": "asap7",
+        "time_to_ps": 1.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 1500.0,
+          "io_clk": 1500.0
+        },
+        "clock_transition_native": 10.0,
+        "setup_uncertainty_native": 20.0,
+        "hold_uncertainty_native": 5.0,
+        "output_load_native": 3.898,
+        "input_ports_checked": 34,
+        "output_ports_checked": 2,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05,
+        "IO_storage_model": "exact IEEE binary32 seconds or nominal; decimal write_sdc rounding only",
+        "actual_IO_delay_native_values": [
+          0.0,
+          300.0
+        ],
+        "maximum_IO_storage_error_ps": 0.0,
+        "nominal_IO_max_ps": 300.0,
+        "actual_clock_periods_native": {
+          "core_clk": 1500.0,
+          "io_clk": 1500.0
+        },
+        "nominal_clock_period_native": 1500.0,
+        "exact_serialization_centers_native": [
+          1500.0,
+          1500.0
+        ],
+        "serialization_stage": "synth",
+        "clock_period_storage_policy": "pinned Unit::userToSta, Clock float seconds, Unit::asString; bounded stage-specific roundtrips and half decimal quantum"
+      },
+      "wire_RC_check": null,
+      "ORFS_area_crosscheck": {
+        "native_json_significant_digits": 6,
+        "rounding_tolerance_um2": 5.00001e-05,
+        "absolute_difference_um2": 3.999999999848569e-05
+      },
+      "source_and_physical_artifacts_unchanged": true
+    },
+    {
+      "task": "control-s49449a495a10f701-1500-grt",
+      "role": "train",
+      "recovered": [],
+      "original_valid": true,
+      "strict_label_replay": true,
+      "stored_SDC_check": {
+        "version": "serialized-sdc-contract-v5-stage-exact-clock-roundtrips",
+        "status": "passed",
+        "sdc_sha256": "2a7c2fdccd096742f2db70307023de393cab43547d42d39b676099adc05a0387",
+        "platform": "asap7",
+        "time_to_ps": 1.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 1500.0,
+          "io_clk": 1500.0
+        },
+        "clock_transition_native": 10.0,
+        "setup_uncertainty_native": 20.0,
+        "hold_uncertainty_native": 5.0,
+        "output_load_native": 3.898,
+        "input_ports_checked": 34,
+        "output_ports_checked": 2,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05,
+        "IO_storage_model": "exact IEEE binary32 seconds or nominal; decimal write_sdc rounding only",
+        "actual_IO_delay_native_values": [
+          0.0,
+          300.0
+        ],
+        "maximum_IO_storage_error_ps": 0.0,
+        "nominal_IO_max_ps": 300.0,
+        "actual_clock_periods_native": {
+          "core_clk": 1500.0,
+          "io_clk": 1500.0
+        },
+        "nominal_clock_period_native": 1500.0,
+        "exact_serialization_centers_native": [
+          1500.0,
+          1500.0
+        ],
+        "serialization_stage": "grt",
+        "clock_period_storage_policy": "pinned Unit::userToSta, Clock float seconds, Unit::asString; bounded stage-specific roundtrips and half decimal quantum"
+      },
+      "wire_RC_check": null,
+      "ORFS_area_crosscheck": {
+        "native_json_significant_digits": 6,
+        "rounding_tolerance_um2": 5.00001e-05,
+        "absolute_difference_um2": 3.552713678800501e-14
+      },
+      "source_and_physical_artifacts_unchanged": true
+    },
+    {
+      "task": "control-s07aece14a10b6ae0-1373-synth",
+      "role": "validation",
+      "recovered": [],
+      "original_valid": true,
+      "strict_label_replay": true,
+      "stored_SDC_check": {
+        "version": "serialized-sdc-contract-v5-stage-exact-clock-roundtrips",
+        "status": "passed",
+        "sdc_sha256": "ceb043e2fe58e51d287564f1a5f1b2a48e66ae1c07b42bace9cd4f242933ed0c",
+        "platform": "asap7",
+        "time_to_ps": 1.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 1373.0,
+          "io_clk": 1373.0
+        },
+        "clock_transition_native": 10.0,
+        "setup_uncertainty_native": 20.0,
+        "hold_uncertainty_native": 5.0,
+        "output_load_native": 3.898,
+        "input_ports_checked": 138,
+        "output_ports_checked": 2,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05,
+        "IO_storage_model": "exact IEEE binary32 seconds or nominal; decimal write_sdc rounding only",
+        "actual_IO_delay_native_values": [
+          0.0,
+          274.6
+        ],
+        "maximum_IO_storage_error_ps": 0.0,
+        "nominal_IO_max_ps": 274.6,
+        "actual_clock_periods_native": {
+          "core_clk": 1373.0,
+          "io_clk": 1373.0
+        },
+        "nominal_clock_period_native": 1373.0,
+        "exact_serialization_centers_native": [
+          1373.0,
+          1373.0
+        ],
+        "serialization_stage": "synth",
+        "clock_period_storage_policy": "pinned Unit::userToSta, Clock float seconds, Unit::asString; bounded stage-specific roundtrips and half decimal quantum"
+      },
+      "wire_RC_check": null,
+      "ORFS_area_crosscheck": {
+        "native_json_significant_digits": 6,
+        "rounding_tolerance_um2": 0.000500001,
+        "absolute_difference_um2": 0.00016000000033500328
+      },
+      "source_and_physical_artifacts_unchanged": true
+    },
+    {
+      "task": "control-s07aece14a10b6ae0-1373-grt",
+      "role": "validation",
+      "recovered": [],
+      "original_valid": true,
+      "strict_label_replay": true,
+      "stored_SDC_check": {
+        "version": "serialized-sdc-contract-v5-stage-exact-clock-roundtrips",
+        "status": "passed",
+        "sdc_sha256": "bd1f45b47a297057213ffead8b08f69986be5ead63031dff2b85d4b453c04706",
+        "platform": "asap7",
+        "time_to_ps": 1.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 1373.0,
+          "io_clk": 1373.0
+        },
+        "clock_transition_native": 10.0,
+        "setup_uncertainty_native": 20.0,
+        "hold_uncertainty_native": 5.0,
+        "output_load_native": 3.898,
+        "input_ports_checked": 138,
+        "output_ports_checked": 2,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05,
+        "IO_storage_model": "exact IEEE binary32 seconds or nominal; decimal write_sdc rounding only",
+        "actual_IO_delay_native_values": [
+          0.0,
+          274.6
+        ],
+        "maximum_IO_storage_error_ps": 0.0,
+        "nominal_IO_max_ps": 274.6,
+        "actual_clock_periods_native": {
+          "core_clk": 1373.0,
+          "io_clk": 1373.0
+        },
+        "nominal_clock_period_native": 1373.0,
+        "exact_serialization_centers_native": [
+          1373.0,
+          1373.0
+        ],
+        "serialization_stage": "grt",
+        "clock_period_storage_policy": "pinned Unit::userToSta, Clock float seconds, Unit::asString; bounded stage-specific roundtrips and half decimal quantum"
+      },
+      "wire_RC_check": null,
+      "ORFS_area_crosscheck": {
+        "native_json_significant_digits": 6,
+        "rounding_tolerance_um2": 0.000500001,
+        "absolute_difference_um2": 0.00012000000208445272
+      },
+      "source_and_physical_artifacts_unchanged": true
+    },
+    {
+      "task": "control-s4f9a62d82c48c184-1500-synth",
+      "role": "train",
+      "recovered": [],
+      "original_valid": true,
+      "strict_label_replay": true,
+      "stored_SDC_check": {
+        "version": "serialized-sdc-contract-v5-stage-exact-clock-roundtrips",
+        "status": "passed",
+        "sdc_sha256": "58be0d950103e48cc0ed1c233c5a3bfe803993d78856115bc4f4648316a72cdb",
+        "platform": "asap7",
+        "time_to_ps": 1.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 1500.0,
+          "io_clk": 1500.0
+        },
+        "clock_transition_native": 10.0,
+        "setup_uncertainty_native": 20.0,
+        "hold_uncertainty_native": 5.0,
+        "output_load_native": 3.898,
+        "input_ports_checked": 117,
+        "output_ports_checked": 2,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05,
+        "IO_storage_model": "exact IEEE binary32 seconds or nominal; decimal write_sdc rounding only",
+        "actual_IO_delay_native_values": [
+          0.0,
+          300.0
+        ],
+        "maximum_IO_storage_error_ps": 0.0,
+        "nominal_IO_max_ps": 300.0,
+        "actual_clock_periods_native": {
+          "core_clk": 1500.0,
+          "io_clk": 1500.0
+        },
+        "nominal_clock_period_native": 1500.0,
+        "exact_serialization_centers_native": [
+          1500.0,
+          1500.0
+        ],
+        "serialization_stage": "synth",
+        "clock_period_storage_policy": "pinned Unit::userToSta, Clock float seconds, Unit::asString; bounded stage-specific roundtrips and half decimal quantum"
+      },
+      "wire_RC_check": null,
+      "ORFS_area_crosscheck": {
+        "native_json_significant_digits": 6,
+        "rounding_tolerance_um2": 0.000500001,
+        "absolute_difference_um2": 0.00032000000030052433
+      },
+      "source_and_physical_artifacts_unchanged": true
+    },
+    {
+      "task": "control-s4f9a62d82c48c184-1500-grt",
+      "role": "train",
+      "recovered": [],
+      "original_valid": true,
+      "strict_label_replay": true,
+      "stored_SDC_check": {
+        "version": "serialized-sdc-contract-v5-stage-exact-clock-roundtrips",
+        "status": "passed",
+        "sdc_sha256": "eaa223207d14cf84a16f5f7a30f5295d9ebdb91571ea27de4aae51032f65c20c",
+        "platform": "asap7",
+        "time_to_ps": 1.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 1500.0,
+          "io_clk": 1500.0
+        },
+        "clock_transition_native": 10.0,
+        "setup_uncertainty_native": 20.0,
+        "hold_uncertainty_native": 5.0,
+        "output_load_native": 3.898,
+        "input_ports_checked": 117,
+        "output_ports_checked": 2,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05,
+        "IO_storage_model": "exact IEEE binary32 seconds or nominal; decimal write_sdc rounding only",
+        "actual_IO_delay_native_values": [
+          0.0,
+          300.0
+        ],
+        "maximum_IO_storage_error_ps": 0.0,
+        "nominal_IO_max_ps": 300.0,
+        "actual_clock_periods_native": {
+          "core_clk": 1500.0,
+          "io_clk": 1500.0
+        },
+        "nominal_clock_period_native": 1500.0,
+        "exact_serialization_centers_native": [
+          1500.0,
+          1500.0
+        ],
+        "serialization_stage": "grt",
+        "clock_period_storage_policy": "pinned Unit::userToSta, Clock float seconds, Unit::asString; bounded stage-specific roundtrips and half decimal quantum"
+      },
+      "wire_RC_check": null,
+      "ORFS_area_crosscheck": {
+        "native_json_significant_digits": 6,
+        "rounding_tolerance_um2": 0.000500001,
+        "absolute_difference_um2": 0.0003600000015353544
+      },
+      "source_and_physical_artifacts_unchanged": true
+    }
+  ],
+  "original_failed_gate_unchanged": true,
+  "fresh_independent_qualification": false,
+  "new_synth": 0,
+  "new_grt": 0,
+  "full_D_ready": false
+}

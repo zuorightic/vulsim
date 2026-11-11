@@ -1,0 +1,60 @@
+{
+  "status": "passed_independent_continuation_state_checks",
+  "cases": [
+    {
+      "case": "complete",
+      "passed": true,
+      "collection_calls": 1,
+      "evaluation_calls": 1,
+      "error": null
+    },
+    {
+      "case": "reviewed_stop",
+      "passed": true,
+      "collection_calls": 2,
+      "evaluation_calls": 1,
+      "error": null
+    },
+    {
+      "case": "unknown_stop",
+      "passed": true,
+      "collection_calls": 1,
+      "evaluation_calls": 0,
+      "error": "unknown ownership/CEC failure"
+    },
+    {
+      "case": "exhausted",
+      "passed": true,
+      "collection_calls": 0,
+      "evaluation_calls": 0,
+      "error": "original finite independent batch envelope exhausted"
+    },
+    {
+      "case": "changed_freeze",
+      "passed": true,
+      "collection_calls": 0,
+      "evaluation_calls": 0,
+      "error": "reviewed independent stop required"
+    },
+    {
+      "case": "bounded",
+      "passed": true,
+      "collection_calls": 1,
+      "evaluation_calls": 0,
+      "error": null
+    }
+  ],
+  "new_EDA_calls": 0,
+  "physical_test_labels_read": false,
+  "guarantees": [
+    "no fitting/refreeze",
+    "original batch allowance decreases",
+    "known stop reviewed before continuation",
+    "unknown stop halts",
+    "changed freeze blocks launch",
+    "once-only terminal evaluation",
+    "acquisition failure verdict preserved",
+    "bounded completion never promoted"
+  ],
+  "full_D_ready": false
+}

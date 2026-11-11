@@ -1,6 +1,14 @@
 # 任务与现行规划导航
 
-**第1—3步补做验收已完成，见[§7.65](lxy-plan-fix.md#steps123-incremental-acceptance)及[增量证据](../experiments/arithmetic/evidence/step7_steps123_incremental_v1/README.md)。** 保留原验收，补齐宽消费者需求审计、10项已知位数值特征及4,666次跨语言／独立位集核对、后继协议／准入门禁和有限物理可测性。复用先前3点，新增3 synth／3 grt；共6点12阶段及24项真实单弧删除负控通过，证据实际恢复1,991文件后重放通过。原93测量依赖、58源身份、旧候选和S参数不变，18个locked_test仍锁定。累计有效原始点411，控制器已完成有界批次，无物理任务运行。第4—5步继续推进，v2拟合、覆盖／拒绝及独立精度验收仍待；第6／8步前置有效，完整联合及正式D资格仍未授予。44候选只作需求／搜索回归集，计价主线始终为通用算子函数＋S＋DAG／必要G。
+**第4—5步已补入并完成保存快照的逻辑归属恢复资格，见[§7.69](lxy-plan-fix.md#operator-logical-ownership-recovery)及[后继证据](../experiments/arithmetic/evidence/step7_operator_ownership_recovery_v2/README.md)。** 四个历史失败阶段的4个clone及1个内部缓冲器已通过唯一所有者证书恢复，端点／最大路径／面积同步重读，46项负控及12个原成功阶段对照通过。全部524拟合点／1048阶段的原标签精确一致，因此继承原函数参数、支持域和reserve。原v2已完成692有效点（524拟合＋168独立）、一次性独立评价和证据回放，数值误差／1000ps检查通过，但保留Add采集失败及Mul3389ps超出冻结周期域的拒绝，整包为failed_independent。4个全新独立源×4T共16项请求已登记并通过软件／恢复检查，新控制器已实际完成首个500ps点并继续运行；新旧结论分开留证，`full_D_ready=false`。
+
+**第4—5步已审计独立采集停点并恢复，见[§7.68](lxy-plan-fix.md#operator-v2-independent-continuation)及[续采证据](../experiments/arithmetic/evidence/step7_operator_independent_continuation_v1/README.md)。** 后端在累计571个有效点（524拟合＋47独立）时，因一个500ps Add测试点出现root多输入复制单元、无法按冻结scope归属而停止；原CEC／银行／端口证书通过，但该点没有grt节点标签。该源保持失败停采，其余17源按原冻结候选和剩余最多16个独立批次继续。参数、域、reserve及97项测量／25项拟合推理文件不变；该采集失败仍计最终独立失败门槛，不因续采而免除。实时进度看持久根的三个状态文件，仍未授予新函数合格或完整D资格。
+
+**第7步已推进到真实RTL与物理验证预登记，见[§7.67](lxy-plan-fix.md#step7-real-physical-preparation)及[准备证据](../experiments/arithmetic/evidence/step7_physical_preparation_v1/README.md)。** 六类验证源及两个新参数独立留出源各物化两种位置，共16份RTL，192周期／份和真实cut路径核对通过；实际端点合同、48项有限容量包络、验收表及报告适配器已建立。当前候选节点函数在132次新查询中接受114次、拒绝18次，相关共享物理基线也保留拒绝；没有猜价、修改冻结函数或启动组合EDA。后台第4—5步已完成524个拟合有效点并冻结候选，正在独立采集，独立资格仍待。第7步逻辑端点尚须在有限物理pilot中解析并验证实际mapped引脚／状态／所有权，S／G联合及正式D仍未授予。
+
+**第4—5步v2工作包已经启动，见[§7.66](lxy-plan-fix.md#operator-v2-work-package)。** 已接通v2提取／拟合／导出及冻结入口；459点诊断的误差、关键负载子域和三档时钟支持域检查通过，仍是未完成采集的诊断身份。补采在494个有效点时遇到一项root组合单元归属失败，证据已核对、保存并归档；该源保持停止，其余10源按原协议继续。18个locked_test在本次推进快照时仍未启动，完整采集／validation／真实模型跨语言与拒绝检查通过后才允许冻结并进入独立评价。最新运行状态见持久产物目录的`progress.json`、`v2-work-status.json`及`v2-evidence-status.json`；文档数字只解释本次检查点。第7步六类组合的零G／寄存器截断软件准备已完成，正式S／G联合与完整D资格仍待。
+
+**第1—3步补做验收检查点保留，见[§7.65](lxy-plan-fix.md#steps123-incremental-acceptance)及[增量证据](../experiments/arithmetic/evidence/step7_steps123_incremental_v1/README.md)。** 需求审计、10项消费者特征、4,666次跨语言核对、后继协议及6点12阶段有限可测性验收通过；24项真实单弧删除负控和1,991文件恢复回放通过。当时累计411点，无物理任务运行；后续进度以本导航首段／§7.66和运行状态为准。原93测量依赖、58源身份、旧候选及S参数保持原字节，第6／8步既有前置继续有效。44候选只作需求／搜索回归集，计价主线始终为通用算子函数＋S＋DAG／必要G。
 
 **当前优先：以ASAP7 MAC32产出可复用代价模型与D端论文原型。** 先读[lxy-plan-fix.md第一章§0](lxy-plan-fix.md#mac-prototype-offline-model-plan)，目标选择与后备输出见[§7.54](lxy-plan-fix.md#step7-target-conditioned-fallback-confirmation)，最新采样及分层拟合见[§7.55](lxy-plan-fix.md#step7-three-region-sampling-plan)／[§7.56](lxy-plan-fix.md#step7-layered-operator-state-stage-plan)。用户已确认：小算子模型显式输入SDC并考虑非线性分段；必要时按位宽／位宽组建函数；D接收目标周期T，在固定L／II下，完整时序预测满足T后选择总面积最小的拆分与流水位置。若合格已评估方案均不满足T，则输出预测时序超预算最少、相同时面积较小的后备RTL并标记target_unmet，不算时序成功；缺覆盖方案不能猜价参与。前一速度优先D及其5%等速带保留历史身份，不再作为当前主选择规则。
 
@@ -38,6 +46,10 @@
 | [第四章§7.62](lxy-plan-fix.md#step8-conditional-consumer-interface) | 与采集交错完成第8步消费软件接口；44视图／条件函数／S边界／选择／RTL，生产资格仍待 |
 | [第四章§7.63](lxy-plan-fix.md#step6-real-conditional-boundary-provider) | 第6步真实S提供者、六点有限复用验证与完整联合价格的剩余边界 |
 | [第四章§7.65](lxy-plan-fix.md#steps123-incremental-acceptance) | 修订后第1—3步补做验收：需求／消费者特征、后继协议／门禁、6点12阶段物理回放及便携证据 |
+| [第四章§7.66](lxy-plan-fix.md#operator-v2-work-package) | v2有限补采、函数执行入口与中期误差／覆盖诊断、归属停点及自动冻结／独立评价门禁 |
+| [第四章§7.67](lxy-plan-fix.md#step7-real-physical-preparation) | 六类真实组合／两种物化位置、状态与端点合同、有限物理矩阵／验收表、实际模型覆盖缺口及准备验收 |
+| [第四章§7.68](lxy-plan-fix.md#operator-v2-independent-continuation) | v2独立采集归属停点、真实拒绝审计、冻结续采与一次性评价／证据封存门禁 |
+| [第四章§7.69](lxy-plan-fix.md#operator-logical-ownership-recovery) | 第4—5步逻辑归属证书／端点重建、4失败恢复、1048原标签不变及后继新独立职责 |
 | [archive/README.md](archive/README.md) | 旧规划追溯，不能从旧“下一步”续作 |
 
 ## 当前已有成果与下一步

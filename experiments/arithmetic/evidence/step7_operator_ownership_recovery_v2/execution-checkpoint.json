@@ -1,0 +1,24 @@
+{
+  "version": "ownership-recovery-followthrough-checkpoint-v1",
+  "parent_completed_points": 692,
+  "parent_independent_points": 168,
+  "parent_independent_status": "failed_independent",
+  "parent_evidence_status": "evidence_replay_and_resource_closure_passed",
+  "parent_test_report_sha256": "c8447727528ea7f8a69881d118665f7440486ca85b7251902fdfb016d311943e",
+  "fresh_first_completed_task": "s31f15ef3e3ea74bf-T500",
+  "fresh_first_stage_status_sha256": "93ffb30710d046fef64172d217e667f080dabbff3f217fc5481339b89b9ea75a",
+  "fresh_first_archive_restore_sha256": "5086264bed09bb29ad911fca6ac5f2c47980a648b8a3fd573515b59108e07f60",
+  "fresh_progress": {
+    "phase": "running",
+    "completed": [
+      "s31f15ef3e3ea74bf-T500",
+      "s31f15ef3e3ea74bf-T1000",
+      "s31f15ef3e3ea74bf-T1500"
+    ],
+    "failures": [],
+    "full_D_ready": false,
+    "current_task": "s31f15ef3e3ea74bf-T3000"
+  },
+  "old_verdict_not_overwritten": true,
+  "full_D_ready": false
+}

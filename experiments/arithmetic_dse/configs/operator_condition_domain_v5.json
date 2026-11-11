@@ -1,0 +1,15 @@
+{
+  "version": "operator-condition-domain-execution-v5",
+  "parent": "operator_condition_domain_v4.json",
+  "reason": "the 459-point requested-clock neighborhood still excludes six structural contexts, including the critical16-bit split; compare source-group calibration so repeated T points from one structure do not substitute for distinct structural witnesses in radius calibration",
+  "candidates": ["legacy_narrow_load", "coupled_load_neighborhood", "joint_requested_clock", "joint_clock_source_radius"],
+  "joint_clock_source_radius": {
+    "features_and_query_gate": "same joint numerical structure/load/log2(T) coordinates, training scales, observed T bounds and kth-point density gate as v4",
+    "radius_calibration": "for each validation point, minimize distance over T points within each training source, then take the kth distinct-source distance; freeze the maximum across validation points",
+    "k": 3,
+    "no_demand_radius_tuning": true,
+    "quality_gate": "unchanged prediction and critical-subdomain error gates; all validation rows accepted; all preregistered refusal probes; then independent new source/connection/exactT evaluation",
+    "interpretation": "empirical support rule calibrated using independent structural groups; no new measured prices, per-view curves, or inference changes"
+  },
+  "full_D_ready": false
+}

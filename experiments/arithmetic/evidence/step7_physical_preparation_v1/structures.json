@@ -1,0 +1,357 @@
+{
+  "version": "stage7-physical-preparation-v1",
+  "rows": [
+    {
+      "id": "serial/placement-0",
+      "source": "serial",
+      "role": "combination_validation",
+      "placement": "placement-0",
+      "L": 2,
+      "II": 1,
+      "service_latency": 1,
+      "source_sha256": "d34ffd8862dbe67696fe34da04389151f316a97ede275af02f29a7479568a0a3",
+      "rtl": "sources/serial/native/placement-0-measurement.sv",
+      "rtl_sha256": "794fe73c5da5612c7d6e86384afc94c31be33fba428c5e83bda6f4e72be5837f",
+      "endpoint_contract": "sources/serial/native/placement-0-endpoints.json",
+      "endpoint_sha256": "fb46aa2c395e03e09f0cc523ae44557e66876a31bc6340ce91e99341dc1da82b",
+      "graph_sha256": "942d532d85da715b9245bfae2ca3fb11cdc1785df3e61fd66500b8fb8a57530d",
+      "layout_sha256": "6b92efc353a514f7600ee2ebc0d15de786ee220707b96190fe302e581e329fb7",
+      "arithmetic_nodes": [
+        14,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "serial/placement-1",
+      "source": "serial",
+      "role": "combination_validation",
+      "placement": "placement-1",
+      "L": 2,
+      "II": 1,
+      "service_latency": 1,
+      "source_sha256": "d34ffd8862dbe67696fe34da04389151f316a97ede275af02f29a7479568a0a3",
+      "rtl": "sources/serial/native/placement-1-measurement.sv",
+      "rtl_sha256": "47197efc27d5e00f620fb22de2404f90ee5220b66607e214129346514bcb21c9",
+      "endpoint_contract": "sources/serial/native/placement-1-endpoints.json",
+      "endpoint_sha256": "4fdc7d92167f9ad020174289b80771c51a9a5d6b4724737173204d7748591ff0",
+      "graph_sha256": "942d532d85da715b9245bfae2ca3fb11cdc1785df3e61fd66500b8fb8a57530d",
+      "layout_sha256": "7214edf6e225871f3f49b4623764e1161d469524fafa64e3788506cda5eed632",
+      "arithmetic_nodes": [
+        14,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "parallel/placement-0",
+      "source": "parallel",
+      "role": "combination_validation",
+      "placement": "placement-0",
+      "L": 2,
+      "II": 1,
+      "service_latency": 1,
+      "source_sha256": "37d92b066c14995c01935f9ab097523a0b8c2c874f33416d4e21640d08a6ad6c",
+      "rtl": "sources/parallel/native/placement-0-measurement.sv",
+      "rtl_sha256": "baf04ed24bc414ff62d8b6833c30111e0ca936d9fc52917bda728f394c0d4904",
+      "endpoint_contract": "sources/parallel/native/placement-0-endpoints.json",
+      "endpoint_sha256": "d4b5a19c19676eb1a1af437a296ee13d0d9a9b6de4beda9b0dbb7fea3c28df94",
+      "graph_sha256": "fe0c7f6af73c97fbb432355a17f3f804ff1169821ca46d87ec90fa0636da254e",
+      "layout_sha256": "8e9d27a2fca76ec85061227e2d10cb04caea9d1f3425150e79db4c8cd9df3f48",
+      "arithmetic_nodes": [
+        16,
+        17,
+        7
+      ]
+    },
+    {
+      "id": "parallel/placement-1",
+      "source": "parallel",
+      "role": "combination_validation",
+      "placement": "placement-1",
+      "L": 2,
+      "II": 1,
+      "service_latency": 1,
+      "source_sha256": "37d92b066c14995c01935f9ab097523a0b8c2c874f33416d4e21640d08a6ad6c",
+      "rtl": "sources/parallel/native/placement-1-measurement.sv",
+      "rtl_sha256": "82947d15ee59bdf430da5988875a0337f793d384b159b0d4ce9d21ecda39862c",
+      "endpoint_contract": "sources/parallel/native/placement-1-endpoints.json",
+      "endpoint_sha256": "838436fb4c14208ab401d9ef66479214e32a29e586c426e7ea72354ac9707ea7",
+      "graph_sha256": "fe0c7f6af73c97fbb432355a17f3f804ff1169821ca46d87ec90fa0636da254e",
+      "layout_sha256": "214df84ad073b14c392e4759c5e54408ad338d9a98c92b6d0c5d0fadcf95c65b",
+      "arithmetic_nodes": [
+        16,
+        17,
+        7
+      ]
+    },
+    {
+      "id": "shared/placement-0",
+      "source": "shared",
+      "role": "combination_validation",
+      "placement": "placement-0",
+      "L": 2,
+      "II": 1,
+      "service_latency": 1,
+      "source_sha256": "0c69998deef7b9a3d6f746e5f164cef2c9ca5a888d179052a996a509c7498e82",
+      "rtl": "sources/shared/native/placement-0-measurement.sv",
+      "rtl_sha256": "1a73ecf4d8965f27c5ebd4cd6c2ff46c9cef6fab8f64aafb8f7d5cfc274eff4a",
+      "endpoint_contract": "sources/shared/native/placement-0-endpoints.json",
+      "endpoint_sha256": "fef639ebbd0f413e6e04bb0676e023516dd41c4ffc9063ba16f18bbfcfc9628a",
+      "graph_sha256": "fe3a9884cad72b4ee97c55673a937eb98b581dab5f772e0b93f2f23ef5145275",
+      "layout_sha256": "446f4eae199d2751990b433b49925a208a8d47a6cf7c0291bd487df462d7ae27",
+      "arithmetic_nodes": [
+        14,
+        5
+      ]
+    },
+    {
+      "id": "shared/placement-1",
+      "source": "shared",
+      "role": "combination_validation",
+      "placement": "placement-1",
+      "L": 2,
+      "II": 1,
+      "service_latency": 1,
+      "source_sha256": "0c69998deef7b9a3d6f746e5f164cef2c9ca5a888d179052a996a509c7498e82",
+      "rtl": "sources/shared/native/placement-1-measurement.sv",
+      "rtl_sha256": "09610c86b8b3f6220eb1767266b254d5b0dbf250e974c949c78758eb11a936a6",
+      "endpoint_contract": "sources/shared/native/placement-1-endpoints.json",
+      "endpoint_sha256": "a150f56a82f5acf8e2392391807c3915a5f544e83b533c9b43a567650c1db247",
+      "graph_sha256": "fe3a9884cad72b4ee97c55673a937eb98b581dab5f772e0b93f2f23ef5145275",
+      "layout_sha256": "b5b89a7982b22a998b707c4e41764ebe9719c87f66f1aec3b08ccdd20c3391bc",
+      "arithmetic_nodes": [
+        14,
+        5
+      ]
+    },
+    {
+      "id": "wide_reduction/placement-0",
+      "source": "wide_reduction",
+      "role": "combination_validation",
+      "placement": "placement-0",
+      "L": 2,
+      "II": 1,
+      "service_latency": 1,
+      "source_sha256": "f37a4dd4deb61ff20b22c36fda20b6cdcc31ff4f67b494172573af66b79b526a",
+      "rtl": "sources/wide_reduction/native/placement-0-measurement.sv",
+      "rtl_sha256": "547fb1566cee12c0acf5b4d3e29af6bd4f5c27a432cd9d7b5581c81352991f2d",
+      "endpoint_contract": "sources/wide_reduction/native/placement-0-endpoints.json",
+      "endpoint_sha256": "e8a4a538eb6cbb35f4b974423cc8b1ae3834f30cfdb46df7188374e6c7b647c2",
+      "graph_sha256": "0dcb08abc96e2e8db17fb532197dd3dc856f2d3830a00a734030c5c88a34b15c",
+      "layout_sha256": "8f66bd588655c4c32d8cf0efe18b1714b88d58b1dd20dc2035decb4870158065",
+      "arithmetic_nodes": [
+        20,
+        21,
+        9
+      ]
+    },
+    {
+      "id": "wide_reduction/placement-1",
+      "source": "wide_reduction",
+      "role": "combination_validation",
+      "placement": "placement-1",
+      "L": 2,
+      "II": 1,
+      "service_latency": 1,
+      "source_sha256": "f37a4dd4deb61ff20b22c36fda20b6cdcc31ff4f67b494172573af66b79b526a",
+      "rtl": "sources/wide_reduction/native/placement-1-measurement.sv",
+      "rtl_sha256": "cee028b20055205a361079ae1b5a0ba2b368457c2b72776dfae26e057a902c19",
+      "endpoint_contract": "sources/wide_reduction/native/placement-1-endpoints.json",
+      "endpoint_sha256": "7e8a885b63faad2f0da80c393808e1cfc47737286ca7790d2a4876cd68a9f25e",
+      "graph_sha256": "0dcb08abc96e2e8db17fb532197dd3dc856f2d3830a00a734030c5c88a34b15c",
+      "layout_sha256": "0feb628f8aead9760e25e8cc2581676ec8d9ffd1fbf39627995c9dc27cfb19f2",
+      "arithmetic_nodes": [
+        20,
+        21,
+        9
+      ]
+    },
+    {
+      "id": "bypass/placement-0",
+      "source": "bypass",
+      "role": "combination_validation",
+      "placement": "placement-0",
+      "L": 2,
+      "II": 1,
+      "service_latency": 1,
+      "source_sha256": "4a227314bb5d8174114d527450f7420ddc018980845b7c1be88e8fa135671619",
+      "rtl": "sources/bypass/native/placement-0-measurement.sv",
+      "rtl_sha256": "a303a8c02faf15808bd50523d086cedc09b5f011cb6848bb159aa8ddb031688c",
+      "endpoint_contract": "sources/bypass/native/placement-0-endpoints.json",
+      "endpoint_sha256": "d6278ed3211bb07ff316fd231d4baa9a572d2fbccd5cee8efdaceedc807b4776",
+      "graph_sha256": "f50ec32d096d6f610a7b1e2fae17a42f70a77d0aa11ac2476a3680702272f653",
+      "layout_sha256": "9ba9f5d6c7f2e183214d848fe3b1f5c254597729b0b8cfe21f1253f96113af65",
+      "arithmetic_nodes": [
+        14,
+        6
+      ]
+    },
+    {
+      "id": "bypass/placement-1",
+      "source": "bypass",
+      "role": "combination_validation",
+      "placement": "placement-1",
+      "L": 2,
+      "II": 1,
+      "service_latency": 1,
+      "source_sha256": "4a227314bb5d8174114d527450f7420ddc018980845b7c1be88e8fa135671619",
+      "rtl": "sources/bypass/native/placement-1-measurement.sv",
+      "rtl_sha256": "fd72781fcf968f442d18c6351f2c8f474ff740d880fdced07035c919ae0bc9fb",
+      "endpoint_contract": "sources/bypass/native/placement-1-endpoints.json",
+      "endpoint_sha256": "d7d272fbbfa28671a445561742d2ad78d067d1c46323492728032ec788861c84",
+      "graph_sha256": "f50ec32d096d6f610a7b1e2fae17a42f70a77d0aa11ac2476a3680702272f653",
+      "layout_sha256": "5781be5ed475d9e7a41636c2dc7a51be2ba29abdf51f358cfb52b2c64c33a8c5",
+      "arithmetic_nodes": [
+        14,
+        6
+      ]
+    },
+    {
+      "id": "cross_stage_saved_value/placement-0",
+      "source": "cross_stage_saved_value",
+      "role": "combination_validation",
+      "placement": "placement-0",
+      "L": 2,
+      "II": 1,
+      "service_latency": 1,
+      "source_sha256": "476494705965ad8ceddd4a76c13b6ba73459d85d14c82d032cf63b1e337f8ca8",
+      "rtl": "sources/cross_stage_saved_value/native/placement-0-measurement.sv",
+      "rtl_sha256": "bc401f222e6a9e38592ec7e2489dc82eccfbb9816370efb3d8da60d59674f3dd",
+      "endpoint_contract": "sources/cross_stage_saved_value/native/placement-0-endpoints.json",
+      "endpoint_sha256": "221d2790b8b3960d400b33632465c3a82e1414b874b2e0ede69e64df16177c36",
+      "graph_sha256": "d4b97f6896e435cc0e21b780f025dec7448b1c456ca1b2ceb9aeafd9882a053d",
+      "layout_sha256": "7744c27cb1ab8f8beec98d18f4b82b8b72dafed31260bbf26c274417f1fe6d9d",
+      "arithmetic_nodes": [
+        12,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "cross_stage_saved_value/placement-1",
+      "source": "cross_stage_saved_value",
+      "role": "combination_validation",
+      "placement": "placement-1",
+      "L": 2,
+      "II": 1,
+      "service_latency": 1,
+      "source_sha256": "476494705965ad8ceddd4a76c13b6ba73459d85d14c82d032cf63b1e337f8ca8",
+      "rtl": "sources/cross_stage_saved_value/native/placement-1-measurement.sv",
+      "rtl_sha256": "b52a1032325822c60307791dfa9a30c8c4302a587ee1c1becfd9943f26763f90",
+      "endpoint_contract": "sources/cross_stage_saved_value/native/placement-1-endpoints.json",
+      "endpoint_sha256": "5ae9f94b77eed488498513674dead046a00d725ec3954bc9e0bd9097ffcdc5d2",
+      "graph_sha256": "d4b97f6896e435cc0e21b780f025dec7448b1c456ca1b2ceb9aeafd9882a053d",
+      "layout_sha256": "94390da9693dae82a01abd322fd8487e27c510b95b9dbac07b71f5ffd0bfe343",
+      "arithmetic_nodes": [
+        12,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "serial_heldout/placement-0",
+      "source": "serial_heldout",
+      "role": "locked_joint_test",
+      "placement": "placement-0",
+      "L": 2,
+      "II": 1,
+      "service_latency": 1,
+      "source_sha256": "50d63d296e2727ca5a0c296327e2c312ea8915d7cd06390a8ef3b72ce900aff0",
+      "rtl": "sources/serial_heldout/native/placement-0-measurement.sv",
+      "rtl_sha256": "765a74e4781b071f83f5e6d82903ef8fb570fe75e534a36cde3a6028bca4f70e",
+      "endpoint_contract": "sources/serial_heldout/native/placement-0-endpoints.json",
+      "endpoint_sha256": "ad744ea80df5b7d685a02d3c8da99f8be59dee39b614efa8a62dafc70d32ab53",
+      "graph_sha256": "31593f663537923fd8fe7b4acde4532d21afec988b0be948bfc42b61b12368eb",
+      "layout_sha256": "2f05c5a292a32537a61a00d88ba2a18bdd4f23c28ef65808dc2c35f7f81adcae",
+      "arithmetic_nodes": [
+        14,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "serial_heldout/placement-1",
+      "source": "serial_heldout",
+      "role": "locked_joint_test",
+      "placement": "placement-1",
+      "L": 2,
+      "II": 1,
+      "service_latency": 1,
+      "source_sha256": "50d63d296e2727ca5a0c296327e2c312ea8915d7cd06390a8ef3b72ce900aff0",
+      "rtl": "sources/serial_heldout/native/placement-1-measurement.sv",
+      "rtl_sha256": "71a592f4b020351cba1a7829b77a0e423e22c25a39107f6c6ca55931691642d9",
+      "endpoint_contract": "sources/serial_heldout/native/placement-1-endpoints.json",
+      "endpoint_sha256": "d36b477c8211dc3194a315d1b4c427c58da5d9ae3ed53be168e428ef62df7d34",
+      "graph_sha256": "31593f663537923fd8fe7b4acde4532d21afec988b0be948bfc42b61b12368eb",
+      "layout_sha256": "0d47c5bd229b346b7362a4ea2f156c604dc5546ef785dad093bd4100d2d6917f",
+      "arithmetic_nodes": [
+        14,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "cross_stage_saved_value_heldout/placement-0",
+      "source": "cross_stage_saved_value_heldout",
+      "role": "locked_joint_test",
+      "placement": "placement-0",
+      "L": 2,
+      "II": 1,
+      "service_latency": 1,
+      "source_sha256": "0c9e175a3578ab77d15167b9f1207eb9edfe1089ac6de12bc2a0a135b60ff8f8",
+      "rtl": "sources/cross_stage_saved_value_heldout/native/placement-0-measurement.sv",
+      "rtl_sha256": "be619597e5c2d0804432aa438f352bdddb2d2df65756aeb9b99d0c2254fc3fb9",
+      "endpoint_contract": "sources/cross_stage_saved_value_heldout/native/placement-0-endpoints.json",
+      "endpoint_sha256": "54598441e20d4f6b05b72b4630d80cd25fd883a2c74b5bfd2b1194de13e13092",
+      "graph_sha256": "51e8953952e30ebec36318db15ec2e298a9a9c31dc6b6e1de74d31915da2f242",
+      "layout_sha256": "2054c472a920da7523fd9de3519c722c87fe7cd7b26f7c3d258419184b9eb037",
+      "arithmetic_nodes": [
+        12,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "cross_stage_saved_value_heldout/placement-1",
+      "source": "cross_stage_saved_value_heldout",
+      "role": "locked_joint_test",
+      "placement": "placement-1",
+      "L": 2,
+      "II": 1,
+      "service_latency": 1,
+      "source_sha256": "0c9e175a3578ab77d15167b9f1207eb9edfe1089ac6de12bc2a0a135b60ff8f8",
+      "rtl": "sources/cross_stage_saved_value_heldout/native/placement-1-measurement.sv",
+      "rtl_sha256": "6c86ffdf5112e5e9b15ee41c12bc72c3e09d6d551ecb0dc174123abde86ecbad",
+      "endpoint_contract": "sources/cross_stage_saved_value_heldout/native/placement-1-endpoints.json",
+      "endpoint_sha256": "3a6a88b614535bf1d5706f6de0bcff569a85baa862ec4d040f80a9aad92d880f",
+      "graph_sha256": "51e8953952e30ebec36318db15ec2e298a9a9c31dc6b6e1de74d31915da2f242",
+      "layout_sha256": "86aa6e77af096da47792ca6a1b5af0a174d0b40bd26ffb0bd7b4b38196889671",
+      "arithmetic_nodes": [
+        12,
+        5,
+        6
+      ]
+    }
+  ],
+  "endpoint_files": [
+    "sources/serial/native/placement-0-endpoints.json",
+    "sources/serial/native/placement-1-endpoints.json",
+    "sources/parallel/native/placement-0-endpoints.json",
+    "sources/parallel/native/placement-1-endpoints.json",
+    "sources/shared/native/placement-0-endpoints.json",
+    "sources/shared/native/placement-1-endpoints.json",
+    "sources/wide_reduction/native/placement-0-endpoints.json",
+    "sources/wide_reduction/native/placement-1-endpoints.json",
+    "sources/bypass/native/placement-0-endpoints.json",
+    "sources/bypass/native/placement-1-endpoints.json",
+    "sources/cross_stage_saved_value/native/placement-0-endpoints.json",
+    "sources/cross_stage_saved_value/native/placement-1-endpoints.json",
+    "sources/serial_heldout/native/placement-0-endpoints.json",
+    "sources/serial_heldout/native/placement-1-endpoints.json",
+    "sources/cross_stage_saved_value_heldout/native/placement-0-endpoints.json",
+    "sources/cross_stage_saved_value_heldout/native/placement-1-endpoints.json"
+  ],
+  "cycles": 192,
+  "backend_calls": 0
+}

@@ -1,0 +1,97 @@
+{
+  "version": "operator-v2-frozen-test-resumption-v1",
+  "status": "passed_structural_stop_and_admission_review",
+  "node_freeze_sha256": "7e16a3537f30ff984775f5df89441261cf54e8de1e812f66ed8a1dbd1631a99f",
+  "candidate_sha256": "882d432c1bf1e3c06fcdf677977210b41af46ba171d8dd014c248edb60ab01d2",
+  "measurement_files_unchanged": 97,
+  "inference_files_unchanged": 25,
+  "reviewed_source": "s32e03528a3472a5c",
+  "reviewed_target_ps": 500,
+  "stopped_source_requeued": false,
+  "independent_allowance_total": 20,
+  "independent_batches_prior": 4,
+  "remaining_allowance": 16,
+  "first_resumed_batch": "batch-018",
+  "first_resumed_requests": [
+    {
+      "source_id": "sd6a1d962d9ab1af3",
+      "role": "locked_test",
+      "SDC_ps": 1060,
+      "ABC_ps": 1060
+    },
+    {
+      "source_id": "s47b478591b60663f",
+      "role": "locked_test",
+      "SDC_ps": 616,
+      "ABC_ps": 616
+    },
+    {
+      "source_id": "sda59593423f0b4d6",
+      "role": "locked_test",
+      "SDC_ps": 984,
+      "ABC_ps": 984
+    },
+    {
+      "source_id": "s2400ce505ebbe8de",
+      "role": "locked_test",
+      "SDC_ps": 831,
+      "ABC_ps": 831
+    },
+    {
+      "source_id": "s55a02de487f98330",
+      "role": "locked_test",
+      "SDC_ps": 500,
+      "ABC_ps": 500
+    },
+    {
+      "source_id": "sfd64856250c1faf2",
+      "role": "locked_test",
+      "SDC_ps": 767,
+      "ABC_ps": 767
+    },
+    {
+      "source_id": "sa67ad597d54fb35a",
+      "role": "locked_test",
+      "SDC_ps": 733,
+      "ABC_ps": 733
+    },
+    {
+      "source_id": "s9af81ed2e19c2b24",
+      "role": "locked_test",
+      "SDC_ps": 700,
+      "ABC_ps": 700
+    },
+    {
+      "source_id": "s72531dc85cda3808",
+      "role": "locked_test",
+      "SDC_ps": 675,
+      "ABC_ps": 675
+    },
+    {
+      "source_id": "s6d07272a9143e13e",
+      "role": "locked_test",
+      "SDC_ps": 665,
+      "ABC_ps": 665
+    },
+    {
+      "source_id": "s27bf05c2a505c5a6",
+      "role": "locked_test",
+      "SDC_ps": 1500,
+      "ABC_ps": 1500
+    },
+    {
+      "source_id": "s3468eb15798173e7",
+      "role": "locked_test",
+      "SDC_ps": 1287,
+      "ABC_ps": 1287
+    }
+  ],
+  "controller": "experiments/arithmetic_dse/operator_condition_v2_continue.py",
+  "controller_sha256": "6f9d500aa975a91c82e6d9a4b984845329795bfe7b64052b45afe34f596ac9f0",
+  "audit_producer": "regression/arithmetic_operator_test_stop.py",
+  "audit_producer_sha256": "cc31a6ee03fc98db3e47d0271a73138b004e967441bb146061e41bb8423fba50",
+  "run_log": "/home/zyrv/vulsim/build/step7-operator-v2-20261110/independent-continuation-20261111.log",
+  "independent_test_failure_not_waived": true,
+  "numerical_independent_verdict_pending": true,
+  "full_D_ready": false
+}

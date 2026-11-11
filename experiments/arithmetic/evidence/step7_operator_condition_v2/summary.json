@@ -1,0 +1,1729 @@
+{
+  "version": "operator-condition-v2-review-v1",
+  "validation_status": "passed",
+  "independent_status": "failed_independent",
+  "fitting_points": 524,
+  "independent_points": 168,
+  "validation": {
+    "add": {
+      "delay": {
+        "sources": 8,
+        "rows": 80,
+        "source_macro_median": 0.05387939005673906,
+        "source_macro_P95": 0.1122714173393668,
+        "source_macro_normalized_absolute_error": 0.06476249274804513,
+        "raw_MAE": 26.870643152403254,
+        "passed": true
+      },
+      "area": {
+        "sources": 8,
+        "rows": 80,
+        "source_macro_median": 0.10101956172185722,
+        "source_macro_P95": 0.3342276840738263,
+        "source_macro_normalized_absolute_error": 0.1548262661483025,
+        "raw_MAE": 5.110986919970672,
+        "passed": true
+      },
+      "selected_delay": "ridge-1.0",
+      "selected_area": "tree-3",
+      "source_counts": {
+        "train": 20,
+        "validation": 8
+      },
+      "validation_subdomains": {
+        "wide_consumer": {
+          "rows": 20,
+          "sources": 2,
+          "delay": {
+            "sources": 2,
+            "rows": 20,
+            "source_macro_median": 0.05387939005673906,
+            "source_macro_P95": 0.08950472186063363,
+            "source_macro_normalized_absolute_error": 0.0719430077527985,
+            "raw_MAE": 32.95686275677229,
+            "passed": true
+          },
+          "area": {
+            "sources": 2,
+            "rows": 20,
+            "source_macro_median": 0.03257983467145432,
+            "source_macro_P95": 0.10101956172185722,
+            "source_macro_normalized_absolute_error": 0.1249130816317121,
+            "raw_MAE": 5.818168281031429,
+            "passed": true
+          }
+        },
+        "shifted_connection": {
+          "rows": 29,
+          "sources": 3,
+          "delay": {
+            "sources": 3,
+            "rows": 29,
+            "source_macro_median": 0.06859243215692182,
+            "source_macro_P95": 0.08623688953606638,
+            "source_macro_normalized_absolute_error": 0.06341456293495214,
+            "raw_MAE": 23.620199405455754,
+            "passed": true
+          },
+          "area": {
+            "sources": 3,
+            "rows": 29,
+            "source_macro_median": 0.11440296581182871,
+            "source_macro_P95": 0.2851268715445336,
+            "source_macro_normalized_absolute_error": 0.16426252376026204,
+            "raw_MAE": 5.741833703829342,
+            "passed": true
+          }
+        },
+        "new_source": {
+          "rows": 20,
+          "sources": 2,
+          "delay": {
+            "sources": 2,
+            "rows": 20,
+            "source_macro_median": 0.05387939005673906,
+            "source_macro_P95": 0.08950472186063363,
+            "source_macro_normalized_absolute_error": 0.0719430077527985,
+            "raw_MAE": 32.95686275677229,
+            "passed": true
+          },
+          "area": {
+            "sources": 2,
+            "rows": 20,
+            "source_macro_median": 0.03257983467145432,
+            "source_macro_P95": 0.10101956172185722,
+            "source_macro_normalized_absolute_error": 0.1249130816317121,
+            "raw_MAE": 5.818168281031429,
+            "passed": true
+          }
+        },
+        "low_result": {
+          "rows": 9,
+          "sources": 1,
+          "delay": {
+            "sources": 1,
+            "rows": 9,
+            "source_macro_median": 0.05140842020149952,
+            "source_macro_P95": 0.05140842020149952,
+            "source_macro_normalized_absolute_error": 0.04819308243714207,
+            "raw_MAE": 22.41666771879777,
+            "passed": true
+          },
+          "area": {
+            "sources": 1,
+            "rows": 9,
+            "source_macro_median": 0.033892088258393745,
+            "source_macro_P95": 0.033892088258393745,
+            "source_macro_normalized_absolute_error": 0.10108111408321561,
+            "raw_MAE": 4.635235711684099,
+            "passed": true
+          }
+        },
+        "capture": {
+          "rows": 0,
+          "sources": 0,
+          "delay": {
+            "sources": 0,
+            "rows": 0,
+            "source_macro_median": null,
+            "source_macro_P95": null,
+            "source_macro_normalized_absolute_error": null,
+            "raw_MAE": null,
+            "passed": false
+          },
+          "area": {
+            "sources": 0,
+            "rows": 0,
+            "source_macro_median": null,
+            "source_macro_P95": null,
+            "source_macro_normalized_absolute_error": null,
+            "raw_MAE": null,
+            "passed": false
+          }
+        },
+        "unseen_training_shape": {
+          "rows": 60,
+          "sources": 6,
+          "delay": {
+            "sources": 6,
+            "rows": 60,
+            "source_macro_median": 0.05140842020149952,
+            "source_macro_P95": 0.1122714173393668,
+            "source_macro_normalized_absolute_error": 0.06236898774646068,
+            "raw_MAE": 24.841903284280246,
+            "passed": true
+          },
+          "area": {
+            "sources": 6,
+            "rows": 60,
+            "source_macro_median": 0.11440296581182871,
+            "source_macro_P95": 0.3342276840738263,
+            "source_macro_normalized_absolute_error": 0.16479732765383262,
+            "raw_MAE": 4.875259799617085,
+            "passed": true
+          }
+        },
+        "unseen_fitting_shape": {
+          "rows": 0,
+          "sources": 0,
+          "delay": {
+            "sources": 0,
+            "rows": 0,
+            "source_macro_median": null,
+            "source_macro_P95": null,
+            "source_macro_normalized_absolute_error": null,
+            "raw_MAE": null,
+            "passed": false
+          },
+          "area": {
+            "sources": 0,
+            "rows": 0,
+            "source_macro_median": null,
+            "source_macro_P95": null,
+            "source_macro_normalized_absolute_error": null,
+            "raw_MAE": null,
+            "passed": false
+          }
+        }
+      },
+      "clock_validation": {
+        "500": {
+          "rows": 2,
+          "delay": {
+            "sources": 2,
+            "rows": 2,
+            "source_macro_median": 0.009285725412576102,
+            "source_macro_P95": 0.05676448614370027,
+            "source_macro_normalized_absolute_error": 0.033025105778138185,
+            "raw_MAE": 13.226475251419629,
+            "passed": true
+          },
+          "area": {
+            "sources": 2,
+            "rows": 2,
+            "source_macro_median": 0.2604081111586344,
+            "source_macro_P95": 0.2954785458427512,
+            "source_macro_normalized_absolute_error": 0.2779433285006928,
+            "raw_MAE": 14.121977135052344,
+            "passed": false
+          }
+        },
+        "1000": {
+          "rows": 0,
+          "delay": {
+            "sources": 0,
+            "rows": 0,
+            "source_macro_median": null,
+            "source_macro_P95": null,
+            "source_macro_normalized_absolute_error": null,
+            "raw_MAE": null,
+            "passed": false
+          },
+          "area": {
+            "sources": 0,
+            "rows": 0,
+            "source_macro_median": null,
+            "source_macro_P95": null,
+            "source_macro_normalized_absolute_error": null,
+            "raw_MAE": null,
+            "passed": false
+          }
+        },
+        "1500": {
+          "rows": 2,
+          "delay": {
+            "sources": 2,
+            "rows": 2,
+            "source_macro_median": 0.03836502635030761,
+            "source_macro_P95": 0.14047788278476783,
+            "source_macro_normalized_absolute_error": 0.08942145456753772,
+            "raw_MAE": 43.61663245072839,
+            "passed": true
+          },
+          "area": {
+            "sources": 2,
+            "rows": 2,
+            "source_macro_median": 0.0023610629207314535,
+            "source_macro_P95": 0.07856349995727291,
+            "source_macro_normalized_absolute_error": 0.040462281439002185,
+            "raw_MAE": 1.6038000000000068,
+            "passed": true
+          }
+        },
+        "3000": {
+          "rows": 2,
+          "delay": {
+            "sources": 2,
+            "rows": 2,
+            "source_macro_median": 0.01933483811922169,
+            "source_macro_P95": 0.11619199858539359,
+            "source_macro_normalized_absolute_error": 0.06776341835230763,
+            "raw_MAE": 32.92934740167911,
+            "passed": true
+          },
+          "area": {
+            "sources": 2,
+            "rows": 2,
+            "source_macro_median": 0.0023610629207314535,
+            "source_macro_P95": 0.07856349995727291,
+            "source_macro_normalized_absolute_error": 0.040462281439002185,
+            "raw_MAE": 1.6038000000000068,
+            "passed": true
+          }
+        }
+      }
+    },
+    "mul": {
+      "delay": {
+        "sources": 10,
+        "rows": 92,
+        "source_macro_median": 0.02896292656137564,
+        "source_macro_P95": 0.06008438237915781,
+        "source_macro_normalized_absolute_error": 0.037967245244622125,
+        "raw_MAE": 29.44279022278344,
+        "passed": true
+      },
+      "area": {
+        "sources": 10,
+        "rows": 92,
+        "source_macro_median": 0.032263387276295255,
+        "source_macro_P95": 0.047767093075156364,
+        "source_macro_normalized_absolute_error": 0.035383122997254254,
+        "raw_MAE": 6.29079373032624,
+        "passed": true
+      },
+      "selected_delay": "ridge-1.0",
+      "selected_area": "segmented-1-0.01",
+      "source_counts": {
+        "train": 18,
+        "validation": 10
+      },
+      "validation_subdomains": {
+        "wide_consumer": {
+          "rows": 16,
+          "sources": 2,
+          "delay": {
+            "sources": 2,
+            "rows": 16,
+            "source_macro_median": 0.016018849646191928,
+            "source_macro_P95": 0.02715268731506711,
+            "source_macro_normalized_absolute_error": 0.028449454308682186,
+            "raw_MAE": 18.146401623482458,
+            "passed": true
+          },
+          "area": {
+            "sources": 2,
+            "rows": 16,
+            "source_macro_median": 0.004091165022906974,
+            "source_macro_P95": 0.012489675116270839,
+            "source_macro_normalized_absolute_error": 0.015395099384816237,
+            "raw_MAE": 1.2209543842002009,
+            "passed": true
+          }
+        },
+        "shifted_connection": {
+          "rows": 45,
+          "sources": 5,
+          "delay": {
+            "sources": 5,
+            "rows": 45,
+            "source_macro_median": 0.021502562598910667,
+            "source_macro_P95": 0.0413450176192287,
+            "source_macro_normalized_absolute_error": 0.029588665155090975,
+            "raw_MAE": 23.272428129570724,
+            "passed": true
+          },
+          "area": {
+            "sources": 5,
+            "rows": 45,
+            "source_macro_median": 0.033092709617698224,
+            "source_macro_P95": 0.047767093075156364,
+            "source_macro_normalized_absolute_error": 0.03208112497486066,
+            "raw_MAE": 6.383653405094852,
+            "passed": true
+          }
+        },
+        "new_source": {
+          "rows": 16,
+          "sources": 2,
+          "delay": {
+            "sources": 2,
+            "rows": 16,
+            "source_macro_median": 0.016018849646191928,
+            "source_macro_P95": 0.02715268731506711,
+            "source_macro_normalized_absolute_error": 0.028449454308682186,
+            "raw_MAE": 18.146401623482458,
+            "passed": true
+          },
+          "area": {
+            "sources": 2,
+            "rows": 16,
+            "source_macro_median": 0.004091165022906974,
+            "source_macro_P95": 0.012489675116270839,
+            "source_macro_normalized_absolute_error": 0.015395099384816237,
+            "raw_MAE": 1.2209543842002009,
+            "passed": true
+          }
+        },
+        "low_result": {
+          "rows": 9,
+          "sources": 1,
+          "delay": {
+            "sources": 1,
+            "rows": 9,
+            "source_macro_median": 0.046606019178498576,
+            "source_macro_P95": 0.046606019178498576,
+            "source_macro_normalized_absolute_error": 0.048080464922052035,
+            "raw_MAE": 33.986900164725284,
+            "passed": true
+          },
+          "area": {
+            "sources": 1,
+            "rows": 9,
+            "source_macro_median": 0.03079266920684747,
+            "source_macro_P95": 0.03079266920684747,
+            "source_macro_normalized_absolute_error": 0.03655799453990963,
+            "raw_MAE": 2.71867062387897,
+            "passed": true
+          }
+        },
+        "capture": {
+          "rows": 0,
+          "sources": 0,
+          "delay": {
+            "sources": 0,
+            "rows": 0,
+            "source_macro_median": null,
+            "source_macro_P95": null,
+            "source_macro_normalized_absolute_error": null,
+            "raw_MAE": null,
+            "passed": false
+          },
+          "area": {
+            "sources": 0,
+            "rows": 0,
+            "source_macro_median": null,
+            "source_macro_P95": null,
+            "source_macro_normalized_absolute_error": null,
+            "raw_MAE": null,
+            "passed": false
+          }
+        },
+        "unseen_training_shape": {
+          "rows": 18,
+          "sources": 2,
+          "delay": {
+            "sources": 2,
+            "rows": 18,
+            "source_macro_median": 0.046606019178498576,
+            "source_macro_P95": 0.04662536355112181,
+            "source_macro_normalized_absolute_error": 0.049313752159110685,
+            "raw_MAE": 34.971261269205506,
+            "passed": true
+          },
+          "area": {
+            "sources": 2,
+            "rows": 18,
+            "source_macro_median": 0.03079266920684747,
+            "source_macro_P95": 0.04483836626243919,
+            "source_macro_normalized_absolute_error": 0.03691319433819458,
+            "raw_MAE": 3.4458641686373053,
+            "passed": true
+          }
+        },
+        "unseen_fitting_shape": {
+          "rows": 0,
+          "sources": 0,
+          "delay": {
+            "sources": 0,
+            "rows": 0,
+            "source_macro_median": null,
+            "source_macro_P95": null,
+            "source_macro_normalized_absolute_error": null,
+            "raw_MAE": null,
+            "passed": false
+          },
+          "area": {
+            "sources": 0,
+            "rows": 0,
+            "source_macro_median": null,
+            "source_macro_P95": null,
+            "source_macro_normalized_absolute_error": null,
+            "raw_MAE": null,
+            "passed": false
+          }
+        }
+      },
+      "clock_validation": {
+        "500": {
+          "rows": 2,
+          "delay": {
+            "sources": 2,
+            "rows": 2,
+            "source_macro_median": 0.015768629940054624,
+            "source_macro_P95": 0.027340566562091377,
+            "source_macro_normalized_absolute_error": 0.021554598251073,
+            "raw_MAE": 12.959732658638274,
+            "passed": true
+          },
+          "area": {
+            "sources": 2,
+            "rows": 2,
+            "source_macro_median": 0.0017464015681411965,
+            "source_macro_P95": 0.03007520193185971,
+            "source_macro_normalized_absolute_error": 0.015910801750000453,
+            "raw_MAE": 0.646052053389333,
+            "passed": true
+          }
+        },
+        "1000": {
+          "rows": 0,
+          "delay": {
+            "sources": 0,
+            "rows": 0,
+            "source_macro_median": null,
+            "source_macro_P95": null,
+            "source_macro_normalized_absolute_error": null,
+            "raw_MAE": null,
+            "passed": false
+          },
+          "area": {
+            "sources": 0,
+            "rows": 0,
+            "source_macro_median": null,
+            "source_macro_P95": null,
+            "source_macro_normalized_absolute_error": null,
+            "raw_MAE": null,
+            "passed": false
+          }
+        },
+        "1500": {
+          "rows": 2,
+          "delay": {
+            "sources": 2,
+            "rows": 2,
+            "source_macro_median": 0.03088798787354345,
+            "source_macro_P95": 0.058754527655382145,
+            "source_macro_normalized_absolute_error": 0.0448212577644628,
+            "raw_MAE": 32.995110972977386,
+            "passed": true
+          },
+          "area": {
+            "sources": 2,
+            "rows": 2,
+            "source_macro_median": 0.0012917824953629137,
+            "source_macro_P95": 0.011669304237935219,
+            "source_macro_normalized_absolute_error": 0.006480543366649066,
+            "raw_MAE": 0.707838432161882,
+            "passed": true
+          }
+        },
+        "3000": {
+          "rows": 2,
+          "delay": {
+            "sources": 2,
+            "rows": 2,
+            "source_macro_median": 0.028673868218075445,
+            "source_macro_P95": 0.08284540932916833,
+            "source_macro_normalized_absolute_error": 0.05575963877362189,
+            "raw_MAE": 34.447625972977335,
+            "passed": true
+          },
+          "area": {
+            "sources": 2,
+            "rows": 2,
+            "source_macro_median": 0.0017543894813994976,
+            "source_macro_P95": 0.011783185513263477,
+            "source_macro_normalized_absolute_error": 0.006768787497331487,
+            "raw_MAE": 0.7212875830155845,
+            "passed": true
+          }
+        }
+      }
+    }
+  },
+  "support_method": "physical_load_joint_clock",
+  "demand": [
+    {
+      "target_ps": 500,
+      "contexts": 63,
+      "covered_contexts": 63,
+      "views": 44,
+      "covered_views": 44
+    },
+    {
+      "target_ps": 1500,
+      "contexts": 63,
+      "covered_contexts": 63,
+      "views": 44,
+      "covered_views": 44
+    },
+    {
+      "target_ps": 3000,
+      "contexts": 63,
+      "covered_contexts": 63,
+      "views": 44,
+      "covered_views": 44
+    }
+  ],
+  "independent_operations": {
+    "add": {
+      "status": "failed",
+      "delay": {
+        "sources": 8,
+        "rows": 67,
+        "source_macro_median": 0.04293497067166575,
+        "source_macro_P95": 0.0974039245156614,
+        "source_macro_normalized_absolute_error": 0.054522878112271925,
+        "raw_MAE": 20.604240650401874,
+        "passed": true
+      },
+      "area": {
+        "sources": 8,
+        "rows": 67,
+        "source_macro_median": 0.06657454921322152,
+        "source_macro_P95": 0.3106007355016857,
+        "source_macro_normalized_absolute_error": 0.13452986535300265,
+        "raw_MAE": 3.981333567104416,
+        "passed": true
+      },
+      "coverage": {
+        "total": 67,
+        "accepted": 67,
+        "refused": 0,
+        "refusal_reasons": {},
+        "errors_on_accepted": {
+          "add": {
+            "delay": {
+              "sources": 8,
+              "rows": 67,
+              "source_macro_median": 0.04293497067166575,
+              "source_macro_P95": 0.0974039245156614,
+              "source_macro_normalized_absolute_error": 0.054522878112271925,
+              "raw_MAE": 20.604240650401874,
+              "passed": true
+            },
+            "area": {
+              "sources": 8,
+              "rows": 67,
+              "source_macro_median": 0.06657454921322152,
+              "source_macro_P95": 0.3106007355016857,
+              "source_macro_normalized_absolute_error": 0.13452986535300265,
+              "raw_MAE": 3.981333567104416,
+              "passed": true
+            }
+          },
+          "mul": {
+            "delay": {
+              "sources": 0,
+              "rows": 0,
+              "source_macro_median": null,
+              "source_macro_P95": null,
+              "source_macro_normalized_absolute_error": null,
+              "raw_MAE": null,
+              "passed": false
+            },
+            "area": {
+              "sources": 0,
+              "rows": 0,
+              "source_macro_median": null,
+              "source_macro_P95": null,
+              "source_macro_normalized_absolute_error": null,
+              "raw_MAE": null,
+              "passed": false
+            }
+          }
+        }
+      },
+      "subdomains": {
+        "wide_consumer": {
+          "rows": 2,
+          "sources": 1,
+          "delay": {
+            "sources": 1,
+            "rows": 2,
+            "source_macro_median": 0.029359272302231402,
+            "source_macro_P95": 0.029359272302231402,
+            "source_macro_normalized_absolute_error": 0.029359272302231402,
+            "raw_MAE": 8.074362065319292,
+            "passed": true
+          },
+          "area": {
+            "sources": 1,
+            "rows": 2,
+            "source_macro_median": 0.031613932699773556,
+            "source_macro_P95": 0.031613932699773556,
+            "source_macro_normalized_absolute_error": 0.031613932699773556,
+            "raw_MAE": 0.26411354251102637,
+            "passed": true
+          }
+        },
+        "shifted_connection": {
+          "rows": 27,
+          "sources": 3,
+          "delay": {
+            "sources": 3,
+            "rows": 27,
+            "source_macro_median": 0.031052069416990468,
+            "source_macro_P95": 0.08412276773917497,
+            "source_macro_normalized_absolute_error": 0.03937620457709611,
+            "raw_MAE": 14.787271216529579,
+            "passed": true
+          },
+          "area": {
+            "sources": 3,
+            "rows": 27,
+            "source_macro_median": 0.1157682374391633,
+            "source_macro_P95": 0.2287738545695614,
+            "source_macro_normalized_absolute_error": 0.15409255971172245,
+            "raw_MAE": 5.339910801211852,
+            "passed": true
+          }
+        },
+        "new_source": {
+          "rows": 13,
+          "sources": 2,
+          "delay": {
+            "sources": 2,
+            "rows": 13,
+            "source_macro_median": 0.029359272302231402,
+            "source_macro_P95": 0.08145636454281617,
+            "source_macro_normalized_absolute_error": 0.05241924037487482,
+            "raw_MAE": 17.826037286541883,
+            "passed": true
+          },
+          "area": {
+            "sources": 2,
+            "rows": 13,
+            "source_macro_median": 0.031613932699773556,
+            "source_macro_P95": 0.031613932699773556,
+            "source_macro_normalized_absolute_error": 0.05320605416000254,
+            "raw_MAE": 0.6757609636305226,
+            "passed": true
+          }
+        },
+        "low_result": {
+          "rows": 9,
+          "sources": 1,
+          "delay": {
+            "sources": 1,
+            "rows": 9,
+            "source_macro_median": 0.05648422446888029,
+            "source_macro_P95": 0.05648422446888029,
+            "source_macro_normalized_absolute_error": 0.05956381637511031,
+            "raw_MAE": 27.20562854836158,
+            "passed": true
+          },
+          "area": {
+            "sources": 1,
+            "rows": 9,
+            "source_macro_median": 0.04997561005810251,
+            "source_macro_P95": 0.04997561005810251,
+            "source_macro_normalized_absolute_error": 0.09683076426397222,
+            "raw_MAE": 4.354698570561349,
+            "passed": true
+          }
+        },
+        "capture": {
+          "rows": 0,
+          "sources": 0,
+          "delay": {
+            "sources": 0,
+            "rows": 0,
+            "source_macro_median": null,
+            "source_macro_P95": null,
+            "source_macro_normalized_absolute_error": null,
+            "raw_MAE": null,
+            "passed": false
+          },
+          "area": {
+            "sources": 0,
+            "rows": 0,
+            "source_macro_median": null,
+            "source_macro_P95": null,
+            "source_macro_normalized_absolute_error": null,
+            "raw_MAE": null,
+            "passed": false
+          }
+        },
+        "unseen_training_shape": {
+          "rows": 54,
+          "sources": 6,
+          "delay": {
+            "sources": 6,
+            "rows": 54,
+            "source_macro_median": 0.04293497067166575,
+            "source_macro_P95": 0.0974039245156614,
+            "source_macro_normalized_absolute_error": 0.05522409069140429,
+            "raw_MAE": 21.273067386145947,
+            "passed": true
+          },
+          "area": {
+            "sources": 6,
+            "rows": 54,
+            "source_macro_median": 0.1157682374391633,
+            "source_macro_P95": 0.3106007355016857,
+            "source_macro_normalized_absolute_error": 0.16163780241733602,
+            "raw_MAE": 4.77711956423702,
+            "passed": true
+          }
+        },
+        "unseen_fitting_shape": {
+          "rows": 0,
+          "sources": 0,
+          "delay": {
+            "sources": 0,
+            "rows": 0,
+            "source_macro_median": null,
+            "source_macro_P95": null,
+            "source_macro_normalized_absolute_error": null,
+            "raw_MAE": null,
+            "passed": false
+          },
+          "area": {
+            "sources": 0,
+            "rows": 0,
+            "source_macro_median": null,
+            "source_macro_P95": null,
+            "source_macro_normalized_absolute_error": null,
+            "raw_MAE": null,
+            "passed": false
+          }
+        }
+      },
+      "clock_statistics": {
+        "500": {
+          "rows": 1,
+          "delay": {
+            "sources": 1,
+            "rows": 1,
+            "source_macro_median": 0.03739696962564528,
+            "source_macro_P95": 0.03739696962564528,
+            "source_macro_normalized_absolute_error": 0.03739696962564528,
+            "raw_MAE": 9.620719649099613,
+            "passed": true
+          },
+          "area": {
+            "sources": 1,
+            "rows": 1,
+            "source_macro_median": 0.029368171696272094,
+            "source_macro_P95": 0.029368171696272094,
+            "source_macro_normalized_absolute_error": 0.029368171696272094,
+            "raw_MAE": 0.2607664574889732,
+            "passed": true
+          }
+        },
+        "1000": {
+          "rows": 2,
+          "delay": {
+            "sources": 2,
+            "rows": 2,
+            "source_macro_median": 0.0006483129152387175,
+            "source_macro_P95": 0.06286521826032376,
+            "source_macro_normalized_absolute_error": 0.03175676558778124,
+            "raw_MAE": 8.95826892109568,
+            "passed": true
+          },
+          "area": {
+            "sources": 2,
+            "rows": 2,
+            "source_macro_median": 0.031613932699773556,
+            "source_macro_P95": 0.031613932699773556,
+            "source_macro_normalized_absolute_error": 0.031613932699773556,
+            "raw_MAE": 0.26411354251102637,
+            "passed": true
+          }
+        },
+        "1500": {
+          "rows": 1,
+          "delay": {
+            "sources": 1,
+            "rows": 1,
+            "source_macro_median": 0.11241361174504352,
+            "source_macro_P95": 0.11241361174504352,
+            "source_macro_normalized_absolute_error": 0.11241361174504352,
+            "raw_MAE": 31.73541444979088,
+            "passed": true
+          },
+          "area": {
+            "sources": 1,
+            "rows": 1,
+            "source_macro_median": 0.031613932699773556,
+            "source_macro_P95": 0.031613932699773556,
+            "source_macro_normalized_absolute_error": 0.031613932699773556,
+            "raw_MAE": 0.26411354251102637,
+            "passed": true
+          }
+        },
+        "3000": {
+          "rows": 1,
+          "delay": {
+            "sources": 1,
+            "rows": 1,
+            "source_macro_median": 0.1389547943636389,
+            "source_macro_P95": 0.1389547943636389,
+            "source_macro_normalized_absolute_error": 0.1389547943636389,
+            "raw_MAE": 39.319168998840155,
+            "passed": true
+          },
+          "area": {
+            "sources": 1,
+            "rows": 1,
+            "source_macro_median": 0.031613932699773556,
+            "source_macro_P95": 0.031613932699773556,
+            "source_macro_normalized_absolute_error": 0.031613932699773556,
+            "raw_MAE": 0.26411354251102637,
+            "passed": true
+          }
+        }
+      },
+      "exact1000ps": {
+        "rows": 2,
+        "sources": 2,
+        "delay": {
+          "sources": 2,
+          "rows": 2,
+          "source_macro_median": 0.0006483129152387175,
+          "source_macro_P95": 0.06286521826032376,
+          "source_macro_normalized_absolute_error": 0.03175676558778124,
+          "raw_MAE": 8.95826892109568,
+          "passed": true
+        },
+        "area": {
+          "sources": 2,
+          "rows": 2,
+          "source_macro_median": 0.031613932699773556,
+          "source_macro_P95": 0.031613932699773556,
+          "source_macro_normalized_absolute_error": 0.031613932699773556,
+          "raw_MAE": 0.26411354251102637,
+          "passed": true
+        }
+      },
+      "acquisition_failed": true,
+      "reserve_underpredictions": 0
+    },
+    "mul": {
+      "status": "failed",
+      "delay": {
+        "sources": 10,
+        "rows": 101,
+        "source_macro_median": 0.038789597415005955,
+        "source_macro_P95": 0.05709433665445936,
+        "source_macro_normalized_absolute_error": 0.04084046818357487,
+        "raw_MAE": 31.967305415051136,
+        "passed": true
+      },
+      "area": {
+        "sources": 10,
+        "rows": 101,
+        "source_macro_median": 0.03729189674617169,
+        "source_macro_P95": 0.29392823886838787,
+        "source_macro_normalized_absolute_error": 0.05948960351422868,
+        "raw_MAE": 6.476625530850273,
+        "passed": true
+      },
+      "coverage": {
+        "total": 101,
+        "accepted": 100,
+        "refused": 1,
+        "refusal_reasons": {
+          "outside trained numerical feature support target_period_ps": 1
+        },
+        "errors_on_accepted": {
+          "add": {
+            "delay": {
+              "sources": 0,
+              "rows": 0,
+              "source_macro_median": null,
+              "source_macro_P95": null,
+              "source_macro_normalized_absolute_error": null,
+              "raw_MAE": null,
+              "passed": false
+            },
+            "area": {
+              "sources": 0,
+              "rows": 0,
+              "source_macro_median": null,
+              "source_macro_P95": null,
+              "source_macro_normalized_absolute_error": null,
+              "raw_MAE": null,
+              "passed": false
+            }
+          },
+          "mul": {
+            "delay": {
+              "sources": 10,
+              "rows": 100,
+              "source_macro_median": 0.038789597415005955,
+              "source_macro_P95": 0.05709433665445936,
+              "source_macro_normalized_absolute_error": 0.040837034735498906,
+              "raw_MAE": 31.839483254879102,
+              "passed": true
+            },
+            "area": {
+              "sources": 10,
+              "rows": 100,
+              "source_macro_median": 0.03729189674617169,
+              "source_macro_P95": 0.29392823886838787,
+              "source_macro_normalized_absolute_error": 0.05939880282537809,
+              "raw_MAE": 6.336034572968192,
+              "passed": true
+            }
+          }
+        }
+      },
+      "subdomains": {
+        "wide_consumer": {
+          "rows": 22,
+          "sources": 2,
+          "delay": {
+            "sources": 2,
+            "rows": 22,
+            "source_macro_median": 0.038789597415005955,
+            "source_macro_P95": 0.04479104519418045,
+            "source_macro_normalized_absolute_error": 0.04186940330291017,
+            "raw_MAE": 29.294199305518944,
+            "passed": true
+          },
+          "area": {
+            "sources": 2,
+            "rows": 22,
+            "source_macro_median": 0.002607300589049487,
+            "source_macro_P95": 0.008063376333456064,
+            "source_macro_normalized_absolute_error": 0.014655970047022156,
+            "raw_MAE": 1.7625841726152387,
+            "passed": true
+          }
+        },
+        "shifted_connection": {
+          "rows": 72,
+          "sources": 7,
+          "delay": {
+            "sources": 7,
+            "rows": 72,
+            "source_macro_median": 0.04479104519418045,
+            "source_macro_P95": 0.05709433665445936,
+            "source_macro_normalized_absolute_error": 0.04329438825259669,
+            "raw_MAE": 32.69874044532827,
+            "passed": true
+          },
+          "area": {
+            "sources": 7,
+            "rows": 72,
+            "source_macro_median": 0.03912940165307506,
+            "source_macro_P95": 0.29392823886838787,
+            "source_macro_normalized_absolute_error": 0.06736983571198223,
+            "raw_MAE": 5.826381033745629,
+            "passed": true
+          }
+        },
+        "new_source": {
+          "rows": 22,
+          "sources": 2,
+          "delay": {
+            "sources": 2,
+            "rows": 22,
+            "source_macro_median": 0.038789597415005955,
+            "source_macro_P95": 0.04479104519418045,
+            "source_macro_normalized_absolute_error": 0.04186940330291017,
+            "raw_MAE": 29.294199305518944,
+            "passed": true
+          },
+          "area": {
+            "sources": 2,
+            "rows": 22,
+            "source_macro_median": 0.002607300589049487,
+            "source_macro_P95": 0.008063376333456064,
+            "source_macro_normalized_absolute_error": 0.014655970047022156,
+            "raw_MAE": 1.7625841726152387,
+            "passed": true
+          }
+        },
+        "low_result": {
+          "rows": 9,
+          "sources": 1,
+          "delay": {
+            "sources": 1,
+            "rows": 9,
+            "source_macro_median": 0.04696365686026101,
+            "source_macro_P95": 0.04696365686026101,
+            "source_macro_normalized_absolute_error": 0.05060982890657562,
+            "raw_MAE": 26.725216828548,
+            "passed": true
+          },
+          "area": {
+            "sources": 1,
+            "rows": 9,
+            "source_macro_median": 0.29392823886838787,
+            "source_macro_P95": 0.29392823886838787,
+            "source_macro_normalized_absolute_error": 0.28115843820883024,
+            "raw_MAE": 7.392865187867595,
+            "passed": false
+          }
+        },
+        "capture": {
+          "rows": 0,
+          "sources": 0,
+          "delay": {
+            "sources": 0,
+            "rows": 0,
+            "source_macro_median": null,
+            "source_macro_P95": null,
+            "source_macro_normalized_absolute_error": null,
+            "raw_MAE": null,
+            "passed": false
+          },
+          "area": {
+            "sources": 0,
+            "rows": 0,
+            "source_macro_median": null,
+            "source_macro_P95": null,
+            "source_macro_normalized_absolute_error": null,
+            "raw_MAE": null,
+            "passed": false
+          }
+        },
+        "unseen_training_shape": {
+          "rows": 18,
+          "sources": 2,
+          "delay": {
+            "sources": 2,
+            "rows": 18,
+            "source_macro_median": 0.04501053660260434,
+            "source_macro_P95": 0.04696365686026101,
+            "source_macro_normalized_absolute_error": 0.05014970316896521,
+            "raw_MAE": 30.322092184855606,
+            "passed": true
+          },
+          "area": {
+            "sources": 2,
+            "rows": 18,
+            "source_macro_median": 0.047118002419109024,
+            "source_macro_P95": 0.29392823886838787,
+            "source_macro_normalized_absolute_error": 0.17221235238451044,
+            "raw_MAE": 6.607371866715633,
+            "passed": true
+          }
+        },
+        "unseen_fitting_shape": {
+          "rows": 18,
+          "sources": 2,
+          "delay": {
+            "sources": 2,
+            "rows": 18,
+            "source_macro_median": 0.04501053660260434,
+            "source_macro_P95": 0.04696365686026101,
+            "source_macro_normalized_absolute_error": 0.05014970316896521,
+            "raw_MAE": 30.322092184855606,
+            "passed": true
+          },
+          "area": {
+            "sources": 2,
+            "rows": 18,
+            "source_macro_median": 0.047118002419109024,
+            "source_macro_P95": 0.29392823886838787,
+            "source_macro_normalized_absolute_error": 0.17221235238451044,
+            "raw_MAE": 6.607371866715633,
+            "passed": true
+          }
+        }
+      },
+      "clock_statistics": {
+        "500": {
+          "rows": 2,
+          "delay": {
+            "sources": 2,
+            "rows": 2,
+            "source_macro_median": 0.015178922082900228,
+            "source_macro_P95": 0.045971210031884084,
+            "source_macro_normalized_absolute_error": 0.030575066057392155,
+            "raw_MAE": 21.261840828728253,
+            "passed": true
+          },
+          "area": {
+            "sources": 2,
+            "rows": 2,
+            "source_macro_median": 0.010877784319148369,
+            "source_macro_P95": 0.01739586146408677,
+            "source_macro_normalized_absolute_error": 0.01413682289161757,
+            "raw_MAE": 1.371990751381098,
+            "passed": true
+          }
+        },
+        "1000": {
+          "rows": 2,
+          "delay": {
+            "sources": 2,
+            "rows": 2,
+            "source_macro_median": 0.01633402864366643,
+            "source_macro_P95": 0.019456348200821868,
+            "source_macro_normalized_absolute_error": 0.01789518842224415,
+            "raw_MAE": 11.384868054035564,
+            "passed": true
+          },
+          "area": {
+            "sources": 2,
+            "rows": 2,
+            "source_macro_median": 0.0033419429648663076,
+            "source_macro_P95": 0.09580686317016039,
+            "source_macro_normalized_absolute_error": 0.04957440306751335,
+            "raw_MAE": 6.235436472405494,
+            "passed": true
+          }
+        },
+        "1500": {
+          "rows": 2,
+          "delay": {
+            "sources": 2,
+            "rows": 2,
+            "source_macro_median": 0.04078680547830675,
+            "source_macro_P95": 0.07923309974315376,
+            "source_macro_normalized_absolute_error": 0.060009952610730256,
+            "raw_MAE": 44.66720532872819,
+            "passed": true
+          },
+          "area": {
+            "sources": 2,
+            "rows": 2,
+            "source_macro_median": 0.0003813643770044082,
+            "source_macro_P95": 0.0012394790309581353,
+            "source_macro_normalized_absolute_error": 0.0008104217039812717,
+            "raw_MAE": 0.07770352759445309,
+            "passed": true
+          }
+        },
+        "3000": {
+          "rows": 2,
+          "delay": {
+            "sources": 2,
+            "rows": 2,
+            "source_macro_median": 0.043610880356476825,
+            "source_macro_P95": 0.1079881701574912,
+            "source_macro_normalized_absolute_error": 0.07579952525698401,
+            "raw_MAE": 47.60440032872822,
+            "passed": true
+          },
+          "area": {
+            "sources": 2,
+            "rows": 2,
+            "source_macro_median": 0.000843971363040992,
+            "source_macro_P95": 0.0011239721025638274,
+            "source_macro_normalized_absolute_error": 0.0009839717328024096,
+            "raw_MAE": 0.07770352759445309,
+            "passed": true
+          }
+        }
+      },
+      "exact1000ps": {
+        "rows": 2,
+        "sources": 2,
+        "delay": {
+          "sources": 2,
+          "rows": 2,
+          "source_macro_median": 0.01633402864366643,
+          "source_macro_P95": 0.019456348200821868,
+          "source_macro_normalized_absolute_error": 0.01789518842224415,
+          "raw_MAE": 11.384868054035564,
+          "passed": true
+        },
+        "area": {
+          "sources": 2,
+          "rows": 2,
+          "source_macro_median": 0.0033419429648663076,
+          "source_macro_P95": 0.09580686317016039,
+          "source_macro_normalized_absolute_error": 0.04957440306751335,
+          "raw_MAE": 6.235436472405494,
+          "passed": true
+        }
+      },
+      "acquisition_failed": false,
+      "reserve_underpredictions": 9
+    }
+  },
+  "model_sha256": "882d432c1bf1e3c06fcdf677977210b41af46ba171d8dd014c248edb60ab01d2",
+  "published_model": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/test-v2/tested-model.json",
+  "physical_archive_restore_receipts": [
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/attempt-002-independent-stop.tar.gz",
+      "archive_sha256": "845a5b949373dd84c11d715b4463175edf8267dce829db425a2c17fbded46a0a",
+      "archive_bytes": 166870,
+      "logical_bytes": 3861912,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "22cb5d8129e3045f24e28df53138b016c1c6b5f26ba7e298d66bcc62570b3ff3",
+      "member_count": 9
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-000.tar.gz",
+      "archive_sha256": "b2ff8dc04eca0ac1c485b05a47895df0288a9d1ee54d07cb6ad7b31e7e9a5b2b",
+      "archive_bytes": 17553611,
+      "logical_bytes": 165890713,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "0cf853e459e08ed71c983555532813347f3d2ebca6edd577b423b21784478149",
+      "member_count": 1618
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-001.tar.gz",
+      "archive_sha256": "c3a7d485058ca0a2ff5ceff6c95aea31d969f333c9f58c7cc13ffdbde2104a17",
+      "archive_bytes": 27430214,
+      "logical_bytes": 290164861,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "0b11bd00106cf4491d97abf62df12caa83cd1e7e1ef445c533b4badd1b02e8b7",
+      "member_count": 1578
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-002.tar.gz",
+      "archive_sha256": "d94a6007de0f5d7162f3948f9d8ec3d2e1e452f4a2ee34a0f25e2ca0339b1386",
+      "archive_bytes": 72389877,
+      "logical_bytes": 716839281,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "ab186f1ac05bf790ac4471f2a0cc2731a3b54241b9163c9f08982fbe4187298f",
+      "member_count": 5638
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-003.tar.gz",
+      "archive_sha256": "029917a87f2139ddbb35a09d427c563991d03d2aa924da6797d7baa321c47df1",
+      "archive_bytes": 72704360,
+      "logical_bytes": 720214994,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "90402e5d0b4e2489a4b9adf50d24ca579224adda18ebffa34aa55b21435e5007",
+      "member_count": 5638
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-004.tar.gz",
+      "archive_sha256": "8c4dc665cbd81802e7c9fdcb7b0c7a75fe1dd0850db4dca9110b083e7d08c7ce",
+      "archive_bytes": 71352930,
+      "logical_bytes": 705721857,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "b42ad094f000b85481a393c1074cfff71051de534ab560bf4e913609750c7f8c",
+      "member_count": 5638
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-005.tar.gz",
+      "archive_sha256": "197c9df218c39cba479b091ca5806c570ec9b575b0d8fc389fbd2f0cb039a12e",
+      "archive_bytes": 71465675,
+      "logical_bytes": 706916139,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "3a2213de20e284c6c15a530ba874dc1993486c656e893c456ba3e4c431a6e4f0",
+      "member_count": 5638
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-006.tar.gz",
+      "archive_sha256": "84888528f8bd5a26b9039fa446df4cb9dcace6a8f0373d67b57993538fff4275",
+      "archive_bytes": 72410719,
+      "logical_bytes": 716304258,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "12295d5fc2e916aa99975c969deed1c00ccd89853ee6791fde34aebaeb4d430a",
+      "member_count": 5638
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-007.tar.gz",
+      "archive_sha256": "d5a3bf19ab69a7a3a0827aa08da2a3d13d08f56737274da477b6062f789a3475",
+      "archive_bytes": 71875189,
+      "logical_bytes": 710304403,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "4bb6edd151bc6ca476375a1578ee2141e9f8f4b33ed2131329c4d16e593ed80f",
+      "member_count": 5638
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-008.tar.gz",
+      "archive_sha256": "3a0eb867e4a9e58c6933dd6195e015e6eb805766330d94a176be5afc32878b06",
+      "archive_bytes": 72731720,
+      "logical_bytes": 719569205,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "1397ef6642a2ba89c06f4bd7cf79d66fdff4c46dfbb40db577cf9176813d0cb9",
+      "member_count": 5641
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-009.tar.gz",
+      "archive_sha256": "c6391f5a415f3e2f0189713f09926227a0abbc023db5d7ceffd8b6f06cecf599",
+      "archive_bytes": 59224535,
+      "logical_bytes": 585643015,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "5b90346ac438abdf9ef0b37329627fcc624b619516235cb9592fe4cad0d6d003",
+      "member_count": 4640
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-010.tar.gz",
+      "archive_sha256": "e5a5f89c2aa78a6f45a0428991e93ab681fd4f38b48b80295a270db8a5772bf8",
+      "archive_bytes": 59237252,
+      "logical_bytes": 585397460,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "57426f3c6c93557e86043fbf6ea399e4b9ed7e9d4d3de5f59e6097208e8b42ef",
+      "member_count": 4640
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-011.tar.gz",
+      "archive_sha256": "373f4493072e5c57f328784afe655198e2ce9ccbf6a7bd4a99946cbb3d6194f3",
+      "archive_bytes": 41641271,
+      "logical_bytes": 422121878,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "69977dce1de38134116cfa1a3a22a29fa8768ab959accf682374251a15290e6b",
+      "member_count": 2934
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-012.tar.gz",
+      "archive_sha256": "4e719af1ce329b5858420bac74e3261008652c19a17655adc345af050da6463d",
+      "archive_bytes": 22604248,
+      "logical_bytes": 243987576,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "ce0d97865d3cb91ab9fe6d40ceffa0504c82f104ed849251792412908f539ab2",
+      "member_count": 1154
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-013.tar.gz",
+      "archive_sha256": "704c93a9b6fa6e5043140cee37eadfbc20ffec8bbdefa56cfaf3be874c61910f",
+      "archive_bytes": 22712052,
+      "logical_bytes": 245256211,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "9d0b4c2891a0ed0158b8aaaa2b327b615d2d49adb49752a2d96c95af7abbf0a2",
+      "member_count": 1154
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-014.tar.gz",
+      "archive_sha256": "58daccaa4c5e9d9afa217767d0cbd78d57a75f69b7993db1a6a6cb9f1f6fc360",
+      "archive_bytes": 85552375,
+      "logical_bytes": 875754363,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "2546de087cd196a861f61689600084a2407df7027e8c16e2ddee3c92845c64e4",
+      "member_count": 5839
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-015.tar.gz",
+      "archive_sha256": "78b212b32a15498739c746ac82c8472f649836607a4340a52fea8f04ded8e4ab",
+      "archive_bytes": 69171980,
+      "logical_bytes": 685634814,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "aa0a8e41c4fa8b110ecb2bb2f9fea0d0c2030dfe5b5094efa17ac803477689fc",
+      "member_count": 5426
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-016.tar.gz",
+      "archive_sha256": "2c013081a0a06953d7d0231e7e2ebfb184c2f13a04714e9bd10b44b858f5421c",
+      "archive_bytes": 66631268,
+      "logical_bytes": 665858283,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "3dbcf3ca87880b026c8917b6170e1dafc10853ba42bedead06cc12ce31cd8395",
+      "member_count": 5099
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-017.tar.gz",
+      "archive_sha256": "cc4f85547eb0fcabcf48bafe301bde002340f7eaa147d849fa0b6bad083e5403",
+      "archive_bytes": 86032211,
+      "logical_bytes": 880311518,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "ac9eff70e7325fa6c6c97c39978809e16685f841402a8d00cedf2015eb829e7b",
+      "member_count": 5841
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-018.tar.gz",
+      "archive_sha256": "b0efc8e05eff6896e8d3e16279e426c192c712161d2f88aed70dd23da45820e1",
+      "archive_bytes": 70852745,
+      "logical_bytes": 702062170,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "fecbe33a795355dcb9d824ee1b8efd6aae1b16a7538373d26e1ac1eb6ba87c2f",
+      "member_count": 5426
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-019.tar.gz",
+      "archive_sha256": "1cf9a765803eb98075ec0b7a47bb97c38862cfc7836cc87aef605736a2592a3a",
+      "archive_bytes": 70203981,
+      "logical_bytes": 703471444,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "475695fc20d973720dde6fd04373bfb69fd29eed614c3bb6e6f507bed0e9bc33",
+      "member_count": 5222
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-020.tar.gz",
+      "archive_sha256": "f68c11799147e4b2f1d878b644490c2d18b2582ef468cc03b2158bf4f995750e",
+      "archive_bytes": 85330595,
+      "logical_bytes": 878364510,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "e1f15b73363d5848c2b2d2d17e5a5c752eee3a5bfe3c491b52fdd7282a546e9f",
+      "member_count": 5637
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-021.tar.gz",
+      "archive_sha256": "3979e36688d7b9d4b5747f166598e880100caa356ba445b8d8a2ce046eaf9e64",
+      "archive_bytes": 81385577,
+      "logical_bytes": 829724132,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "cb21708c3178016b6e3d6cd227c59b623e04baf1d20f392b1eee5036387b11e6",
+      "member_count": 5655
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-022.tar.gz",
+      "archive_sha256": "272658bfa3c6b0f56c1f3212962dd785dd54ddd05bd1d9160da1012404e3f55c",
+      "archive_bytes": 62846058,
+      "logical_bytes": 606938076,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "c468ecbdeffa32403455cc0bfec00ccc0f84c9d845f03b0f019a34148dfa3bef",
+      "member_count": 5266
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-023.tar.gz",
+      "archive_sha256": "db3fc953ffca92208b58654f8690df427444098f1886f7c97cef25f1ed668273",
+      "archive_bytes": 82553031,
+      "logical_bytes": 850487145,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "6450fd6d1fb42a461db05fb2cd7cac33e8846c422669e356b6813e1f02662c9f",
+      "member_count": 5386
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-024.tar.gz",
+      "archive_sha256": "9bf13cd292a25ed4050bf11ae92cecd602fa10b70c91b5b82af89bdd3a6aa653",
+      "archive_bytes": 82601066,
+      "logical_bytes": 842310139,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "2f208d227a832bad048649773d57bd64164a72fde4d317859ae1515d09a08f92",
+      "member_count": 5723
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-025.tar.gz",
+      "archive_sha256": "002510d2e530472232c4e7d26511db49186e87260e3482a4bdf4d7f5c1c57a80",
+      "archive_bytes": 61356591,
+      "logical_bytes": 587894834,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "80c675fd2d3bee6c84ab38ddc09e85bf3ae6261dfc0145683cb97ccf37f7e21d",
+      "member_count": 5299
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-026.tar.gz",
+      "archive_sha256": "17785744466e245e24f79e0ee1c439814721d0ff679bf69f949d79870190aab2",
+      "archive_bytes": 80197185,
+      "logical_bytes": 827554093,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "2c9a775727abe753199436368887f3e072a24cfcf7c091954078952c3f9647d5",
+      "member_count": 5229
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-027.tar.gz",
+      "archive_sha256": "ede3820534b6d733ae3210f10b58ae8549662965b45974766425433496bb38c6",
+      "archive_bytes": 39412314,
+      "logical_bytes": 405676951,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "778acee6ad41acae28c61e3348b04e5d2f08664fedb191a88d60698121dd2ac1",
+      "member_count": 2666
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-028.tar.gz",
+      "archive_sha256": "276fb8c235aed9da120eec5134824edccbfbb1950a0b05c8afda730cdda185ce",
+      "archive_bytes": 36103894,
+      "logical_bytes": 375801679,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "5b44983cd405646e2a5791f4986920ca98f120904fc1c7731351cf2f5d4246cd",
+      "member_count": 2294
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/batch-029.tar.gz",
+      "archive_sha256": "be7f746d7b93c502cd3646948e1585df27cd1249b0d7391b4164e2c04ddd346a",
+      "archive_bytes": 23167023,
+      "logical_bytes": 252917506,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "c0bf45e9a0772c394ff637de82cb38310cc0326d44d76df6199f22eac595c478",
+      "member_count": 1097
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/initial-source-freeze.tar.gz",
+      "archive_sha256": "23acec413cead3a9573a6e8d7a29358c65d723690f69a82572a637fdecc07f30",
+      "archive_bytes": 333732,
+      "logical_bytes": 1453524,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "6b57321e57850d37f18057a2116bee85cf49341d66699b0b1cccc1ed18eefe85",
+      "member_count": 134
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/steps123-incremental-source-freeze-v2.tar.gz",
+      "archive_sha256": "57c5a55219af57b9b852a8ef40111a1459d24a6fcda034e5f7bdc647f03ee170",
+      "archive_bytes": 302018,
+      "logical_bytes": 1080777,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "de8b255d84e29064097eadc25f36c86f50d3ae5ac09022df25a19a15572db43f",
+      "member_count": 100
+    },
+    {
+      "version": "operator-full-artifact-restore-v1",
+      "status": "passed",
+      "archive": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1/archives/v2-controller-attempt001-checkpoint.tar.gz",
+      "archive_sha256": "01961993b1ec5d8a94950e1e859a6610ef095243df7f9b4e5d8c9fc2154fcea2",
+      "archive_bytes": 84665,
+      "logical_bytes": 1992306,
+      "actual_restore_and_every_member_hash_checked": true,
+      "storage_class": "explicit retained local on-disk artifact directory; same-disk failure is not covered",
+      "retention": "retain until explicit user cleanup",
+      "no_raw_artifacts_deleted": true,
+      "index_sha256": "56902fd1ce820e127323337dbe3239ea75d074281bd4a404cf3adb6fb7b11e84",
+      "member_count": 6
+    }
+  ],
+  "retained_physical_root": "/home/zyrv/vulsim-artifacts/operator-conditional-wide-20261110-v1",
+  "raw_labels_replayed_at_final_extraction": true,
+  "portable_scope": "qualified scalar labels and immutable identities, feature/prediction/statistics replay; complete physical path tables, ODB and CEC artifacts retained externally",
+  "source_and_view_ids_not_predictors": true,
+  "S_G_joint_qualification": false,
+  "full_D_ready": false
+}
