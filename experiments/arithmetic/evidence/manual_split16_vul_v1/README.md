@@ -2,6 +2,8 @@
 
 用户指定的500／1000／1500ps三档均已完成，共3 synth／3 grt，0 detailed，0自动重试。源码见[Top.vul](../../manual_split16/Top.vul)与[用法及周期检查](../../manual_split16/README.md)，公共vulrtlgen生成的原始RTL为[Top.generated.sv](Top.generated.sv)。没有手写或修改生成后的RTL，也没有通过D自动重新放置寄存器。
 
+后继只读[偏差分析与通用修正路线](BIAS-ANALYSIS.md)已完成，数值见[bias-analysis.json](bias-analysis.json)，实际两级STA与ALUMACC合并证据在`stage-audit/`。第二级表观差距84%–103%，主要证据指向归约联合综合与原独立算子边界的差异；不把跨实现域差值充作原Add函数的独立测试误差。额外0物理调用／6 support，2项别名读取失败保留，见[bias-accounting.json](bias-accounting.json)；原测量归档不变，后继单列，模型参数未改。
+
 第一级保存4个16×16→32部分积、c和valid；第二级执行常量移位、平衡加法及最终加c。与此前BCD相同，L=2不含输入服务寄存器周期，II=1；独立输入写使能、held-valid、非零reset和无条件输出capture保留。原生RTL的320周期／262次valid数据检查通过，包含气泡、溢出和在途复位。
 
 每格为**最高setup频率MHz／面积um²**；完整数据见[对照表](COMPARISON.md)、[CSV](comparison.csv)和[JSON](comparison.json)。

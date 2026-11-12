@@ -1,0 +1,114 @@
+{
+  "version": "asap7-G-reduction-function-v1",
+  "feature_version": "bit-column-features-v2-balanced-levels",
+  "policy": "register-launched-reduction-v1",
+  "quality_status": "passed_independent",
+  "platform_profile_sha256": "f9d3e71d377d0fef70b66e43828186962caa04fcec31b8f78ad8760c5459f1c7",
+  "load": "single_register_capture",
+  "independent_input_bits": true,
+  "target_interval_ps": [
+    500,
+    3000
+  ],
+  "numeric_support": {
+    "one": [
+      1.0,
+      1.0
+    ],
+    "output_bits": [
+      16.0,
+      96.0
+    ],
+    "term_count": [
+      3.0,
+      17.0
+    ],
+    "active_bits": [
+      48.0,
+      1088.0
+    ],
+    "max_column_height": [
+      3.0,
+      17.0
+    ],
+    "counter_count": [
+      16.0,
+      949.0
+    ],
+    "carry_span": [
+      16.0,
+      96.0
+    ],
+    "log2_carry_span": [
+      4.087462841250339,
+      6.599912842187128
+    ],
+    "active_span": [
+      16.0,
+      96.0
+    ],
+    "clock_pressure": [
+      0.5,
+      3.0
+    ],
+    "log2_target": [
+      0.0,
+      2.584962500721156
+    ],
+    "pressure_work": [
+      16.0,
+      3039.0
+    ],
+    "compression_levels": [
+      1.0,
+      6.0
+    ]
+  },
+  "fitting_protocol_sha256": "881165c5ad5689525ae4f1ad507366ead1cf09d13263f7b59cf169c7092e643a",
+  "measurement_protocol_sha256": "2fc41da059dd9563985bbe326d15af186b677ec2cb7ade2fffe1ed00b6bfdaf6",
+  "training_dataset_sha256": "867841a4d63596f4c78caa7ac63cc7dbd5d72ac2d98926a59bc4f8395b535fc7",
+  "model_inputs": "bit-column geometry and numerical target; no graph/source/candidate/shape/exact-T IDs",
+  "internal_Add_prices_replaced": true,
+  "S_or_node_parameters_changed": false,
+  "residual_G_delay_ps": 0.0,
+  "residual_G_area_um2": 0.0,
+  "full_D_ready": false,
+  "delay_ps": {
+    "kind": "nonnegative_linear",
+    "features": [
+      "one",
+      "log2_carry_span",
+      "carry_span",
+      "compression_levels",
+      "log2_target"
+    ],
+    "coefficients": [
+      0.0,
+      52.24865081504073,
+      0.6799196156994592,
+      80.92325616653225,
+      32.12540022886656
+    ]
+  },
+  "area_um2": {
+    "kind": "nonnegative_linear",
+    "features": [
+      "one",
+      "counter_count",
+      "carry_span",
+      "pressure_work"
+    ],
+    "coefficients": [
+      0.0,
+      0.2756333371018192,
+      0.8170832778498687,
+      0.018066565227793718
+    ]
+  },
+  "qualification": {
+    "validation_sha256": "c735e36d84a5826bc15882dcbe7b78ef0e8f35bca3b58ad49a43ea4f3fbac59f",
+    "independent_sha256": "726389c66900de7ffea2995758935dd14d0577973a6e85f11adea2191b466d14",
+    "freeze_sha256": "69a3770222c10853b1c57e6c9902b48ad5b7337b8e005fec10c4771460d61da4",
+    "candidate_sha256": "5b4e345c962f04aefca8f7c435caf011b8c684ef7e3f1ee855c22c90ec0236dc"
+  }
+}

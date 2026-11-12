@@ -1,0 +1,68 @@
+{
+  "status": "completed_matched_implementation_diagnostic",
+  "rows": [
+    {
+      "variant": "individual",
+      "area_um2": 939.1123800000001,
+      "minimum_setup_period_ps": 1020.398571,
+      "Fmax_MHz": 980.0092124982014,
+      "hold_WNS_ps": 1.103215,
+      "predicted_area_um2": 907.702912234936,
+      "stages": [
+        {
+          "stage": 0,
+          "slack_ps": 1.278866,
+          "required_period_ps": 998.721134,
+          "predicted_point_ps": 989.1278731177968,
+          "predicted_guarded_ps": 1039.1278731177968
+        },
+        {
+          "stage": 1,
+          "slack_ps": -20.398571,
+          "required_period_ps": 1020.398571,
+          "predicted_point_ps": 1447.7682775403923,
+          "predicted_guarded_ps": 1497.7682775403923
+        }
+      ],
+      "FF_counts": {
+        "input": 129,
+        "native": 193,
+        "external": 65
+      }
+    },
+    {
+      "variant": "fused",
+      "area_um2": 871.3153799999999,
+      "minimum_setup_period_ps": 1001.295297,
+      "Fmax_MHz": 998.7063786238876,
+      "hold_WNS_ps": 0.261263,
+      "predicted_area_um2": 841.6910374718935,
+      "stages": [
+        {
+          "stage": 0,
+          "slack_ps": -1.295297,
+          "required_period_ps": 1001.295297,
+          "predicted_point_ps": 989.1278731177968,
+          "predicted_guarded_ps": 1039.1278731177968
+        },
+        {
+          "stage": 1,
+          "slack_ps": 280.861877,
+          "required_period_ps": 719.138123,
+          "predicted_point_ps": 707.4641939093605,
+          "predicted_guarded_ps": 757.4641939093605
+        }
+      ],
+      "FF_counts": {
+        "input": 129,
+        "native": 193,
+        "external": 65
+      }
+    }
+  ],
+  "G_model_sha256": "7e7fe2a3616956fda0945df0624e8928524519b865a122f22948066df478f41b",
+  "parameters_or_D_selection_changed": false,
+  "role": "fixed_diagnostic_after_model_freeze_not_training_test_or_reselection",
+  "full_joint_qualification": false,
+  "full_D_ready": false
+}

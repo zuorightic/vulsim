@@ -1,0 +1,232 @@
+{
+  "status": "passed",
+  "metrics": {
+    "delay": {
+      "median": 0.02951445026994775,
+      "P95": 0.0778859533710091,
+      "max": 0.10414542517119962,
+      "signed_mean": 0.0167771419602504
+    },
+    "area": {
+      "median": 0.11314502676568086,
+      "P95": 0.1472802323061087,
+      "max": 0.1667354003747678,
+      "signed_mean": -0.10271584172708591
+    }
+  },
+  "rows": [
+    {
+      "source": "validation-0",
+      "target_ps": 500,
+      "actual": {
+        "delay_ps": 444.034821,
+        "area_um2": 57.41603999999999
+      },
+      "predicted": {
+        "delay_ps": 468.96816087375464,
+        "area_um2": 52.66230271173081
+      },
+      "relative_error": {
+        "delay_ps": 0.05615176714655587,
+        "area_um2": 0.08279458646519647
+      },
+      "outside_support": []
+    },
+    {
+      "source": "validation-0",
+      "target_ps": 1500,
+      "actual": {
+        "delay_ps": 542.934753,
+        "area_um2": 49.99482000000003
+      },
+      "predicted": {
+        "delay_ps": 519.885715557167,
+        "area_um2": 49.265788448905596
+      },
+      "relative_error": {
+        "delay_ps": 0.042452683891526406,
+        "area_um2": 0.014582141731772138
+      },
+      "outside_support": []
+    },
+    {
+      "source": "validation-0",
+      "target_ps": 3000,
+      "actual": {
+        "delay_ps": 544.988403,
+        "area_um2": 49.99482000000003
+      },
+      "predicted": {
+        "delay_ps": 552.0111157860335,
+        "area_um2": 48.41665988319929
+      },
+      "relative_error": {
+        "delay_ps": 0.012885985733596601,
+        "area_um2": 0.03156647262257859
+      },
+      "outside_support": []
+    },
+    {
+      "source": "validation-1",
+      "target_ps": 500,
+      "actual": {
+        "delay_ps": 554.340576,
+        "area_um2": 106.05492000000001
+      },
+      "predicted": {
+        "delay_ps": 585.605900571398,
+        "area_um2": 88.37181045208604
+      },
+      "relative_error": {
+        "delay_ps": 0.0564009309890351,
+        "area_um2": 0.1667354003747678
+      },
+      "outside_support": []
+    },
+    {
+      "source": "validation-1",
+      "target_ps": 1500,
+      "actual": {
+        "delay_ps": 650.079468,
+        "area_um2": 90.95004000000017
+      },
+      "predicted": {
+        "delay_ps": 636.5234552548104,
+        "area_um2": 82.01237949190264
+      },
+      "relative_error": {
+        "delay_ps": 0.020852854785423872,
+        "area_um2": 0.09827000084988989
+      },
+      "outside_support": []
+    },
+    {
+      "source": "validation-1",
+      "target_ps": 3000,
+      "actual": {
+        "delay_ps": 678.491028,
+        "area_um2": 90.95004000000017
+      },
+      "predicted": {
+        "delay_ps": 668.6488554836769,
+        "area_um2": 80.42252175185679
+      },
+      "relative_error": {
+        "delay_ps": 0.014505972975552894,
+        "area_um2": 0.11575056204640878
+      },
+      "outside_support": []
+    },
+    {
+      "source": "validation-2",
+      "target_ps": 500,
+      "actual": {
+        "delay_ps": 756.559143,
+        "area_um2": 204.83442000000184
+      },
+      "predicted": {
+        "delay_ps": 776.980475146308,
+        "area_um2": 178.5037686019993
+      },
+      "relative_error": {
+        "delay_ps": 0.026992380351562328,
+        "area_um2": 0.12854602951009067
+      },
+      "outside_support": []
+    },
+    {
+      "source": "validation-2",
+      "target_ps": 1500,
+      "actual": {
+        "delay_ps": 855.298828,
+        "area_um2": 183.50388000000186
+      },
+      "predicted": {
+        "delay_ps": 827.8980298297203,
+        "area_um2": 163.21945441928582
+      },
+      "relative_error": {
+        "delay_ps": 0.032036520188333174,
+        "area_um2": 0.11053949148495294
+      },
+      "outside_support": []
+    },
+    {
+      "source": "validation-2",
+      "target_ps": 3000,
+      "actual": {
+        "delay_ps": 865.131165,
+        "area_um2": 183.50388000000186
+      },
+      "predicted": {
+        "delay_ps": 860.0234300585869,
+        "area_um2": 159.39837587360745
+      },
+      "relative_error": {
+        "delay_ps": 0.005904000627943079,
+        "area_um2": 0.13136236752266037
+      },
+      "outside_support": []
+    },
+    {
+      "source": "validation-3",
+      "target_ps": 500,
+      "actual": {
+        "delay_ps": 715.719543,
+        "area_um2": 252.05903999999916
+      },
+      "predicted": {
+        "delay_ps": 790.2584591090717,
+        "area_um2": 222.41533206220774
+      },
+      "relative_error": {
+        "delay_ps": 0.10414542517119962,
+        "area_um2": 0.11760620820340947
+      },
+      "outside_support": []
+    },
+    {
+      "source": "validation-3",
+      "target_ps": 1500,
+      "actual": {
+        "delay_ps": 826.715393,
+        "area_um2": 226.99601999999922
+      },
+      "predicted": {
+        "delay_ps": 841.1760137924841,
+        "area_um2": 202.79504222482376
+      },
+      "relative_error": {
+        "delay_ps": 0.017491655429336103,
+        "area_um2": 0.10661410616439682
+      },
+      "outside_support": []
+    },
+    {
+      "source": "validation-3",
+      "target_ps": 3000,
+      "actual": {
+        "delay_ps": 837.289917,
+        "area_um2": 226.99601999999922
+      },
+      "predicted": {
+        "delay_ps": 873.3014140213506,
+        "area_um2": 197.8899697654778
+      },
+      "relative_error": {
+        "delay_ps": 0.04300959117049859,
+        "area_um2": 0.12822273374890686
+      },
+      "outside_support": []
+    }
+  ],
+  "coverage_rejections": [],
+  "sources": 4,
+  "requests": 12,
+  "model_sha256": "5b4e345c962f04aefca8f7c435caf011b8c684ef7e3f1ee855c22c90ec0236dc",
+  "freeze_sha256": "69a3770222c10853b1c57e6c9902b48ad5b7337b8e005fec10c4771460d61da4",
+  "dataset_sha256": "742ccd6cf8148dd212c2032db2ef2a21d45fd05745a2633c0a2c7d3909782ec3",
+  "role": "validation",
+  "parameters_changed": false,
+  "old_manual_ABCD_labels_used": false
+}

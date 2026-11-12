@@ -1,0 +1,90 @@
+{
+  "version": "asap7-fused-function-D-prototype-v1",
+  "output_scope": "prototype-no-reset-timing-v1",
+  "dependencies": {
+    "operators": {
+      "path": "../asap7_function_D_prototype_v1/../asap7_conditional_operators_v1/operators.json",
+      "sha256": "513f2f7693c702c492fec380ed81b385f4691f18bd05aaac6596d27f0340f0d2"
+    },
+    "S_binding": {
+      "path": "../asap7_function_D_prototype_v1/binding.json",
+      "sha256": "76dd37094be027dd5e4c6565d63ae037be1b541a88e63e0dfe233fe571ef3542"
+    },
+    "composition": {
+      "path": "../asap7_function_D_prototype_v1/composition.json",
+      "sha256": "460222628523b1c8e78b23f85f1e4d5778fdf3c86253da5e4528c2dd09975ce3"
+    },
+    "state_model": {
+      "path": "../asap7_function_D_prototype_v1/reused-S.json",
+      "sha256": "1b61a68d80b704532ff38483a034ec2c03de921448095deb6acdcbbb00be383d"
+    },
+    "service_contract": {
+      "path": "../asap7_function_D_prototype_v1/public-service-witness.sv",
+      "sha256": "f75a888a68d95554c4bab560e43839104dde68f66a0b51e8803ba68e3c25bbd2"
+    },
+    "G_reduction": {
+      "path": "../asap7_G_reduction_v1/reduction.json",
+      "sha256": "7e7fe2a3616956fda0945df0624e8928524519b865a122f22948066df478f41b"
+    }
+  },
+  "consumer_sources": {
+    "rtlzz/src/backend/arithmetic_fused_selection.cpp": "904acad8e2fdf664c1326ed62e0c66a5be31b73e5fcebc42dfbabc065998c377",
+    "rtlzz/src/backend/arithmetic_fused_selection.hpp": "97d7de858de3dc19f918fea7a29d16ab502b5a8a0102e88aa7e392b1f119bd84",
+    "rtlzz/src/backend/arithmetic_fused_cost.cpp": "4486f4cd34809995831c0ec6db41b8d1a9fa11647f7cf7566eae1af0ba90dd96",
+    "rtlzz/src/backend/arithmetic_fused_cost.hpp": "037a44f752ccb16598bf6fc39bf4353a83b23f1b9be576e8c13637b387a49504",
+    "rtlzz/src/backend/arithmetic_factored_state.cpp": "7c8fbaa074ce2f581bab30d86c39a23d0c9eb0e5ac3b1dc6198cebd09dd267dc",
+    "rtlzz/src/backend/arithmetic_factored_state.hpp": "204b7799a97b984148c12aa1134aabdc3d305888f33f3c4c7776d6722038d83e",
+    "rtlzz/src/backend/arithmetic_reduction.cpp": "6bc357c70a0c0741ec468769968b6b1a7b0eb7795c6088b8663eb148a47b1554",
+    "rtlzz/src/backend/arithmetic_reduction.hpp": "ec1aa7516d43256aef40e09078b0f756026a22867739e5645014c243dcb0cebb",
+    "rtlzz/src/backend/arithmetic_reduction_model.cpp": "094180888c399de5e66ff65706e01db423006b7702d50312221495dff1fde8b0",
+    "rtlzz/src/backend/arithmetic_reduction_model.hpp": "a589c1888b424ff8fc43c22b743dd8a54673404441b04fd9bb6e5b038b465fc1",
+    "rtlzz/src/backend/rtlgen.cpp": "bf244fdebd1535c95a96c7d561107f430890771ded6b12bc6b1c02bc2a0ac930",
+    "rtlzz/src/backend/rtlgen.hpp": "e58dfddb66a6b2981fc5b23f6e3c564f760e9511ea72947b71c9a169dc69de3e",
+    "rtlzz/main/arithmetic_fused_d.cpp": "5ed5c28041e71202e23ebfb06cd4ef8b19f1a2d301cd2c54ec6df8b2bd4d8fcc",
+    "experiments/arithmetic_dse/reduction_function.py": "c03c2245b2f35702d570c9df525eaf449d2fc2b40b457b9baa165799a168e0b1",
+    "experiments/arithmetic_dse/reduction_function_v2.py": "f4a684f142a5159e094a77484ab862955d59c649aff7757c7c4e252c915038f2",
+    "experiments/arithmetic_dse/reduction_sampling.py": "45bd7aec108ccd68ad073486dd88792c7e44c351f722fc9332a68fdba9f4ddcc",
+    "experiments/arithmetic_dse/run_fused_d.py": "f12abc2d6e620de290badd2283f17b7111aec855d680ca7242efb7f9389b6ae3",
+    "regression/arithmetic_fused_d.py": "04e6fa2ef361ac13d37b6707da1f1fa0423eca4cc42760b3543f01ce7dff07c6",
+    "rtlzz/CMakeLists.txt": "3f9b7a7ed3e006a84e837dade214f03cdf953bb098e9f8aae9f6c0cc11f4998e"
+  },
+  "consumer_binary_sha256": "d676f1cc6b68ac0965cce0baf80f1fe8df709b5a3a14aaa59131f9eec3b17f15",
+  "numerical_T_interval_ps": [
+    500,
+    3000
+  ],
+  "actual_support": "intersection of node, S, shared numerical/semantic domains; refuse incomplete candidate coverage",
+  "candidate_policy": "mul-candidates-v1",
+  "arithmetic": "unsigned Mul/Add/AddCarry plus exact pure bit wiring",
+  "G_delay_ps": 0,
+  "G_area_um2": 0,
+  "joint_reserve_ps": 50,
+  "selection": "minimum total area among predicted feasible, else minimum worst violation and then area; stable ID tie",
+  "functional_reset_preserved": true,
+  "reset_timing_checked": false,
+  "independent_joint_qualified": false,
+  "formal_D_selection": false,
+  "full_D_ready": false,
+  "scope_authorization": "user explicitly deferred reset timing and requested D RTL output",
+  "software_acceptance": {
+    "status": "passed",
+    "targets": 5,
+    "candidates": 220,
+    "node_queries": 3440,
+    "G_queries": 30,
+    "arcs": 7905,
+    "RTL_cases_executed": 50,
+    "cycles_per_case": 256,
+    "valid_data_comparisons": 8100,
+    "negative_checks": 7,
+    "reuse_graph": "three_input_sum",
+    "reuse_T_ps": 1373
+  },
+  "parent_D_bundle_sha256": "4e7c717ae20dd7881580907d960c628b6266ce810f1138a5da0f08d0a8455f9f",
+  "reduction_policy": "register-launched-reduction-v1",
+  "G_model_independent_qualified": true,
+  "area_ownership": "unique S owners + unmerged nodes + G reduction regions + recomputed shared owners; no double charging of internal Add prices",
+  "G_residual": "zero extra residual beyond direct region substitution",
+  "effective_boundary_policy": "kept individual Mul/unmerged Add; canonical merged Add reduction region with external hierarchy",
+  "regional_quality_scope": "G component passed independent new shapes/1000,1250ps; full S/G/reset joint qualification remains separate"
+}

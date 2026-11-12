@@ -1,0 +1,164 @@
+{
+  "status": "passed",
+  "metrics": {
+    "delay": {
+      "median": 0.04191254784640752,
+      "P95": 0.11257828316204939,
+      "max": 0.12381147549301043,
+      "signed_mean": 0.04121480327981978
+    },
+    "area": {
+      "median": 0.08455357227709026,
+      "P95": 0.15672699790357902,
+      "max": 0.16037058944971366,
+      "signed_mean": -0.07828301685810313
+    }
+  },
+  "rows": [
+    {
+      "source": "locked_test-0",
+      "target_ps": 1000,
+      "actual": {
+        "delay_ps": 575.862915,
+        "area_um2": 50.09688
+      },
+      "predicted": {
+        "delay_ps": 628.6791268151051,
+        "area_um2": 50.88311416427954
+      },
+      "relative_error": {
+        "delay_ps": 0.09171664026169321,
+        "area_um2": 0.01569427406017184
+      },
+      "outside_support": []
+    },
+    {
+      "source": "locked_test-0",
+      "target_ps": 1250,
+      "actual": {
+        "delay_ps": 568.619568,
+        "area_um2": 50.09688
+      },
+      "predicted": {
+        "delay_ps": 639.0211957082781,
+        "area_um2": 50.24355775521564
+      },
+      "relative_error": {
+        "delay_ps": 0.12381147549301043,
+        "area_um2": 0.002927882040071987
+      },
+      "outside_support": []
+    },
+    {
+      "source": "locked_test-1",
+      "target_ps": 1000,
+      "actual": {
+        "delay_ps": 712.322083,
+        "area_um2": 107.14842000000044
+      },
+      "predicted": {
+        "delay_ps": 690.4503606381694,
+        "area_um2": 97.78402945590582
+      },
+      "relative_error": {
+        "delay_ps": 0.030704821433748277,
+        "area_um2": 0.08739644078834369
+      },
+      "outside_support": []
+    },
+    {
+      "source": "locked_test-1",
+      "target_ps": 1250,
+      "actual": {
+        "delay_ps": 708.29071,
+        "area_um2": 106.71102000000045
+      },
+      "predicted": {
+        "delay_ps": 700.7924295313425,
+        "area_um2": 96.53743645518806
+      },
+      "relative_error": {
+        "delay_ps": 0.010586444750429561,
+        "area_um2": 0.09533770312393551
+      },
+      "outside_support": []
+    },
+    {
+      "source": "locked_test-2",
+      "target_ps": 1000,
+      "actual": {
+        "delay_ps": 781.588989,
+        "area_um2": 194.23476000000062
+      },
+      "predicted": {
+        "delay_ps": 802.13837626643,
+        "area_um2": 180.6168588190345
+      },
+      "relative_error": {
+        "delay_ps": 0.026291807530095614,
+        "area_um2": 0.07011052594791008
+      },
+      "outside_support": []
+    },
+    {
+      "source": "locked_test-2",
+      "target_ps": 1250,
+      "actual": {
+        "delay_ps": 779.384521,
+        "area_um2": 193.88484000000062
+      },
+      "predicted": {
+        "delay_ps": 812.480445159603,
+        "area_um2": 178.0423732740739
+      },
+      "relative_error": {
+        "delay_ps": 0.042464179449110594,
+        "area_um2": 0.08171070376583685
+      },
+      "outside_support": []
+    },
+    {
+      "source": "locked_test-3",
+      "target_ps": 1000,
+      "actual": {
+        "delay_ps": 876.102112,
+        "area_um2": 284.33915999999357
+      },
+      "predicted": {
+        "delay_ps": 915.8461982154615,
+        "area_um2": 241.69956633461814
+      },
+      "relative_error": {
+        "delay_ps": 0.04536467344512176,
+        "area_um2": 0.14996032788932903
+      },
+      "outside_support": []
+    },
+    {
+      "source": "locked_test-3",
+      "target_ps": 1250,
+      "actual": {
+        "delay_ps": 889.401794,
+        "area_um2": 283.7267999999934
+      },
+      "predicted": {
+        "delay_ps": 926.1882671086345,
+        "area_um2": 238.22536584131342
+      },
+      "relative_error": {
+        "delay_ps": 0.04136091624370445,
+        "area_um2": 0.16037058944971366
+      },
+      "outside_support": []
+    }
+  ],
+  "coverage_rejections": [],
+  "sources": 4,
+  "requests": 8,
+  "model_sha256": "5b4e345c962f04aefca8f7c435caf011b8c684ef7e3f1ee855c22c90ec0236dc",
+  "freeze_sha256": "69a3770222c10853b1c57e6c9902b48ad5b7337b8e005fec10c4771460d61da4",
+  "dataset_sha256": "e98a5308b8c15165fa6798efd1ddbc62a0167cdfd0fb4ea10a6e9c6b9ee98d32",
+  "role": "locked_test",
+  "parameters_changed": false,
+  "old_manual_ABCD_labels_used": false
+}

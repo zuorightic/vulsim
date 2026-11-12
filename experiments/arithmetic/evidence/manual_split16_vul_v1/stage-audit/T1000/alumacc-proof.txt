@@ -1,0 +1,19 @@
+3.14. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module Top_sim_top:
+  creating $macc model for $186 ($add).
+  creating $macc model for $130 ($add).
+  creating $macc model for $120 ($mul).
+  creating $macc model for $122 ($mul).
+  creating $macc model for $188 ($add).
+  creating $macc model for $190 ($add).
+  creating $macc model for $124 ($mul).
+  creating $macc model for $126 ($mul).
+  merging $macc model for $130 into $190.
+  merging $macc model for $188 into $190.
+  merging $macc model for $186 into $190.
+  creating $macc cell for $124: $auto$alumacc.cc:399:replace_macc$4351
+  creating $macc cell for $122: $auto$alumacc.cc:399:replace_macc$4352
+  creating $macc cell for $120: $auto$alumacc.cc:399:replace_macc$4353
+  creating $macc cell for $190: $auto$alumacc.cc:399:replace_macc$4354
+  creating $macc cell for $126: $auto$alumacc.cc:399:replace_macc$4355
+  created 0 $alu and 5 $macc cells.

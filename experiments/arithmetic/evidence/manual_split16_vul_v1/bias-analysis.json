@@ -1,0 +1,74 @@
+{
+  "status": "read_only_stage_comparison_complete",
+  "rows": [
+    {
+      "T": 500,
+      "stages": [
+        {
+          "stage": 0,
+          "predicted_half_kept_point_ps": 953.0768135380434,
+          "actual_manual_raw_required_ps": 932.781036,
+          "apparent_difference_ps": 20.295777538043467,
+          "apparent_relative_difference_pct": 2.1758351375877893
+        },
+        {
+          "stage": 1,
+          "predicted_half_kept_point_ps": 1348.7693643930545,
+          "actual_manual_raw_required_ps": 663.398071,
+          "apparent_difference_ps": 685.3712933930545,
+          "apparent_relative_difference_pct": 103.3122228347653
+        }
+      ],
+      "predicted_half_area_um2": 974.3819486539429,
+      "actual_manual_area_um2": 944.9881200000002,
+      "apparent_area_error_pct": 3.110497162011172
+    },
+    {
+      "T": 1000,
+      "stages": [
+        {
+          "stage": 0,
+          "predicted_half_kept_point_ps": 989.1278731177968,
+          "actual_manual_raw_required_ps": 1001.284084,
+          "apparent_difference_ps": -12.156210882203254,
+          "apparent_relative_difference_pct": -1.214062130463589
+        },
+        {
+          "stage": 1,
+          "predicted_half_kept_point_ps": 1447.7682775403923,
+          "actual_manual_raw_required_ps": 786.551849,
+          "apparent_difference_ps": 661.2164285403924,
+          "apparent_relative_difference_pct": 84.06520553998374
+        }
+      ],
+      "predicted_half_area_um2": 907.702912234936,
+      "actual_manual_area_um2": 846.3690000000001,
+      "apparent_area_error_pct": 7.246710623254837
+    },
+    {
+      "T": 1500,
+      "stages": [
+        {
+          "stage": 0,
+          "predicted_half_kept_point_ps": 1008.2714431051693,
+          "actual_manual_raw_required_ps": 1100.721954,
+          "apparent_difference_ps": -92.45051089483081,
+          "apparent_relative_difference_pct": -8.399079400466903
+        },
+        {
+          "stage": 1,
+          "predicted_half_kept_point_ps": 1490.2635057951281,
+          "actual_manual_raw_required_ps": 776.421814,
+          "apparent_difference_ps": 713.8416917951281,
+          "apparent_relative_difference_pct": 91.93993251136656
+        }
+      ],
+      "predicted_half_area_um2": 906.346084288495,
+      "actual_manual_area_um2": 830.1560400000001,
+      "apparent_area_error_pct": 9.17779798223175
+    }
+  ],
+  "scope": "apparent discrepancies between kept-op half template and raw manual RTL; not same-circuit node-model errors",
+  "new_physical_calls": 0,
+  "model_parameters_changed": false
+}
