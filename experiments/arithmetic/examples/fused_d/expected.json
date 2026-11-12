@@ -1,0 +1,72 @@
+{
+  "version": "fused-D-reproduction-expectations-v1",
+  "role": "software_acceptance_only_never_online_prices",
+  "cases": [
+    {
+      "id": "mac32-T500",
+      "source_request": "mac32/request.json",
+      "target_ps": 500,
+      "L": 2,
+      "selected_view": "candidate/quarter/view7",
+      "status": "target_unmet",
+      "area_um2": 1055.5384074614929,
+      "violation_ps": 387.1853060135585,
+      "guarded_data_period_ps": 887.1853060135585
+    },
+    {
+      "id": "mac32-T1000",
+      "source_request": "mac32/request.json",
+      "target_ps": 1000,
+      "L": 2,
+      "selected_view": "candidate/quarter/view7",
+      "status": "predicted_feasible_selected",
+      "area_um2": 993.9346004958528,
+      "violation_ps": 0,
+      "guarded_data_period_ps": 919.310706242425
+    },
+    {
+      "id": "mac32-T1250",
+      "source_request": "mac32/request.json",
+      "target_ps": 1250,
+      "L": 2,
+      "selected_view": "candidate/half/view5",
+      "status": "predicted_feasible_selected",
+      "area_um2": 840.0780769599581,
+      "violation_ps": 0,
+      "guarded_data_period_ps": 1049.8992418074868
+    },
+    {
+      "id": "mac32-T1500",
+      "source_request": "mac32/request.json",
+      "target_ps": 1500,
+      "L": 2,
+      "selected_view": "candidate/original/view1",
+      "status": "predicted_feasible_selected",
+      "area_um2": 761.77179227215,
+      "violation_ps": 0,
+      "guarded_data_period_ps": 1349.669811671529
+    },
+    {
+      "id": "mac32-T3000",
+      "source_request": "mac32/request.json",
+      "target_ps": 3000,
+      "L": 2,
+      "selected_view": "candidate/original/view0",
+      "status": "predicted_feasible_selected",
+      "area_um2": 732.636788561114,
+      "violation_ps": 0,
+      "guarded_data_period_ps": 1870.7725229088678
+    },
+    {
+      "id": "sum3-T1373",
+      "source_request": "sum3/request.json",
+      "target_ps": 1373,
+      "L": 2,
+      "selected_view": "candidate/view0",
+      "status": "predicted_feasible_selected",
+      "area_um2": 262.2646748153833,
+      "violation_ps": 0,
+      "guarded_data_period_ps": 767.3385212488527
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "version": "git-reproduction-resource-closure-v1",
+  "admission_id": "git-repro-20261112-v1",
+  "software_leaves": 7,
+  "synth_calls": 0,
+  "grt_calls": 0,
+  "failed_leaves": 1,
+  "pending": 0,
+  "walltime_s": 430.7732698540203,
+  "CPU_time_s": 626.91,
+  "registered_leaf_cap": 12,
+  "later_work_reserved": {
+    "synth": 688,
+    "grt": 688,
+    "walltime_s": 86400,
+    "CPU_time_s": 172800,
+    "storage_bytes": 32212254720
+  },
+  "entries": [
+    {
+      "id": "08ac556864564cc59bdecf8bf548e8f8",
+      "task": "clean-checkout",
+      "status": "completed",
+      "exit_code": 0,
+      "walltime_s": 1.817591906990856,
+      "CPU_time_s": 1.5
+    },
+    {
+      "id": "e25f5d4f1ed34dc68f12905e57658615",
+      "task": "fresh-build-verification",
+      "status": "completed",
+      "exit_code": 0,
+      "walltime_s": 75.46148464083672,
+      "CPU_time_s": 233.99
+    },
+    {
+      "id": "cb70cb83ada04f9296026ebef7095ab9",
+      "task": "portable-evidence-replay",
+      "status": "completed",
+      "exit_code": 0,
+      "walltime_s": 6.927244894206524,
+      "CPU_time_s": 6.87
+    },
+    {
+      "id": "71f945fea1ce45d1be856c3d596d3e0e",
+      "task": "moved-checkout-and-refusals",
+      "status": "failed",
+      "exit_code": 1,
+      "walltime_s": 123.58121533226222,
+      "CPU_time_s": 3.56
+    },
+    {
+      "id": "a85cde03a7a147f89f2a92a128ae71af",
+      "task": "fresh-build-timeout-successor",
+      "status": "completed",
+      "exit_code": 0,
+      "walltime_s": 75.17352119693533,
+      "CPU_time_s": 233.22
+    },
+    {
+      "id": "69f6ab5249504d90bab1638f63d65954",
+      "task": "moved-checkout-timeout-successor",
+      "status": "completed",
+      "exit_code": 0,
+      "walltime_s": 147.34653967339545,
+      "CPU_time_s": 147.32
+    },
+    {
+      "id": "3dfea2d20a7a4280abb75da3b1befa42",
+      "task": "final-git-and-freeze-audit",
+      "status": "completed",
+      "exit_code": 0,
+      "walltime_s": 0.46567220939323306,
+      "CPU_time_s": 0.45
+    }
+  ]
+}

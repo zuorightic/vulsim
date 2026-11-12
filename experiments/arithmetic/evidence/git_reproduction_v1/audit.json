@@ -1,0 +1,279 @@
+{
+  "version": "git-reproduction-audit-v1",
+  "status": "passed",
+  "date": "2026-11-12",
+  "source_commits": {
+    "vulsim": "f9075fdc05d2124985dd143c6e5a4a9def10397b",
+    "rtlzz": "18c90bf76073de2df8e642485cddfae3818f7672"
+  },
+  "remotes": {
+    "vulsim": "https://github.com/zuorightic/vulsim.git",
+    "rtlzz": "https://github.com/zuorightic/RTLzz.git"
+  },
+  "remote_refs_confirmed": true,
+  "tracked_model_files": {
+    "experiments/arithmetic/models/asap7_G_reduction_v1/README.md": "e727643844ffe74814d9656fa5974b2f4f243931a964c6a97d5c1e0a2e00537a",
+    "experiments/arithmetic/models/asap7_G_reduction_v1/independent.json": "726389c66900de7ffea2995758935dd14d0577973a6e85f11adea2191b466d14",
+    "experiments/arithmetic/models/asap7_G_reduction_v1/reduction.json": "7e7fe2a3616956fda0945df0624e8928524519b865a122f22948066df478f41b",
+    "experiments/arithmetic/models/asap7_G_reduction_v1/train-quality.json": "5d31792e208afdb0d7473dacdbf1fa5c5f58ccb695cc0ddca8ed2268c84e1146",
+    "experiments/arithmetic/models/asap7_G_reduction_v1/validation.json": "c735e36d84a5826bc15882dcbe7b78ef0e8f35bca3b58ad49a43ea4f3fbac59f",
+    "experiments/arithmetic/models/asap7_conditional_operators_v1/README.md": "7ab931d0638dbc2537228c6e34510fe73f46b35572ed6094620c455f09ac311a",
+    "experiments/arithmetic/models/asap7_conditional_operators_v1/example-query-1000ps.json": "dbd67d86d8f4e51d739ef98005f67c55691c241ae52d9fbf8a340fb60042f182",
+    "experiments/arithmetic/models/asap7_conditional_operators_v1/operators.json": "513f2f7693c702c492fec380ed81b385f4691f18bd05aaac6596d27f0340f0d2",
+    "experiments/arithmetic/models/asap7_conditional_operators_v1/release.json": "1803bc2bb4667813a4bfa838201cf4134d1ba508df22f92810f397c056a0c5bb",
+    "experiments/arithmetic/models/asap7_function_D_prototype_v1/README.md": "b81e40bc101debe94773105df938f7a1c1febacd7cb34b9e6257ee0d7c61bc46",
+    "experiments/arithmetic/models/asap7_function_D_prototype_v1/binding.json": "76dd37094be027dd5e4c6565d63ae037be1b541a88e63e0dfe233fe571ef3542",
+    "experiments/arithmetic/models/asap7_function_D_prototype_v1/bundle.json": "4e7c717ae20dd7881580907d960c628b6266ce810f1138a5da0f08d0a8455f9f",
+    "experiments/arithmetic/models/asap7_function_D_prototype_v1/composition.json": "460222628523b1c8e78b23f85f1e4d5778fdf3c86253da5e4528c2dd09975ce3",
+    "experiments/arithmetic/models/asap7_function_D_prototype_v1/public-service-witness.sv": "f75a888a68d95554c4bab560e43839104dde68f66a0b51e8803ba68e3c25bbd2",
+    "experiments/arithmetic/models/asap7_function_D_prototype_v1/reused-S.json": "1b61a68d80b704532ff38483a034ec2c03de921448095deb6acdcbbb00be383d",
+    "experiments/arithmetic/models/asap7_fused_D_prototype_v1/README.md": "0bf0f051128a3fde1b0c958d3b0f6f3f98b4ed29b82b6cd166165462b7d57771",
+    "experiments/arithmetic/models/asap7_fused_D_prototype_v1/bundle.json": "f0806d7f78c6841da6ba8f150ed8f2a48560b8365459d161957ee15cc62b92ff"
+  },
+  "verification": {
+    "fresh_checkout": true,
+    "old_build_objects_or_binary_copied": false,
+    "binary_sha256": "d676f1cc6b68ac0965cce0baf80f1fe8df709b5a3a14aaa59131f9eec3b17f15",
+    "binary_matched_frozen_on_this_toolchain": true,
+    "numerical_checks": [
+      {
+        "id": "mac32-T500",
+        "oracle": {
+          "target_ps": 500,
+          "selected": "candidate/quarter/view7",
+          "area_um2": 1055.538407461493,
+          "violation_ps": 387.1853060135585,
+          "counts": {
+            "node_queries": 688,
+            "arcs": 1581,
+            "candidates": 44,
+            "G_queries": 6,
+            "bit_semantic_vectors": 516
+          }
+        },
+        "selection_sha256": "db5b567e63b48f2cfea8c98230304c65cd75c533ede3684beefa5fee2fc95795",
+        "rtl_sha256": "8087b255135e997adc5ed458102e57794f388ec01df4d8efc1aee966670aa52a",
+        "area_um2": 1055.5384074614929,
+        "violation_ps": 387.1853060135585,
+        "guarded_data_period_ps": 887.1853060135585
+      },
+      {
+        "id": "mac32-T1000",
+        "oracle": {
+          "target_ps": 1000,
+          "selected": "candidate/quarter/view7",
+          "area_um2": 993.9346004958527,
+          "violation_ps": 0.0,
+          "counts": {
+            "node_queries": 688,
+            "arcs": 1581,
+            "candidates": 44,
+            "G_queries": 6,
+            "bit_semantic_vectors": 516
+          }
+        },
+        "selection_sha256": "904e627e90e2f0ea7e5474a249be774410473772f2208a079659cd2ab4b6cfde",
+        "rtl_sha256": "8087b255135e997adc5ed458102e57794f388ec01df4d8efc1aee966670aa52a",
+        "area_um2": 993.9346004958528,
+        "violation_ps": 0,
+        "guarded_data_period_ps": 919.310706242425
+      },
+      {
+        "id": "mac32-T1250",
+        "oracle": {
+          "target_ps": 1250,
+          "selected": "candidate/half/view5",
+          "area_um2": 840.078076959958,
+          "violation_ps": 0.0,
+          "counts": {
+            "node_queries": 688,
+            "arcs": 1581,
+            "candidates": 44,
+            "G_queries": 6,
+            "bit_semantic_vectors": 516
+          }
+        },
+        "selection_sha256": "c5570e23ab6a9ab36cca049a7a5595be8d60bbc2d1feb9c46c16eaf0f55b27bb",
+        "rtl_sha256": "0ee0f84b1f3be806fc9a2ef676feeb75ad90f261c646d56b06085b9a65fcce1f",
+        "area_um2": 840.0780769599581,
+        "violation_ps": 0,
+        "guarded_data_period_ps": 1049.8992418074868
+      },
+      {
+        "id": "mac32-T1500",
+        "oracle": {
+          "target_ps": 1500,
+          "selected": "candidate/original/view1",
+          "area_um2": 761.7717922721499,
+          "violation_ps": 0.0,
+          "counts": {
+            "node_queries": 688,
+            "arcs": 1581,
+            "candidates": 44,
+            "G_queries": 6,
+            "bit_semantic_vectors": 516
+          }
+        },
+        "selection_sha256": "08d14a4ffffe926695f89e9734bab24b977aba657cc680efeb23e3571e891819",
+        "rtl_sha256": "0e733059d0201c9053fc0b814f06873529413be05d71c2e156c6cc956f62de15",
+        "area_um2": 761.77179227215,
+        "violation_ps": 0,
+        "guarded_data_period_ps": 1349.669811671529
+      },
+      {
+        "id": "mac32-T3000",
+        "oracle": {
+          "target_ps": 3000,
+          "selected": "candidate/original/view0",
+          "area_um2": 732.6367885611141,
+          "violation_ps": 0.0,
+          "counts": {
+            "node_queries": 688,
+            "arcs": 1581,
+            "candidates": 44,
+            "G_queries": 6,
+            "bit_semantic_vectors": 516
+          }
+        },
+        "selection_sha256": "c2c2dbc0d7a301a5bc68bf792411f71ea4928e5949f67c50ba89c7f01d33b9e8",
+        "rtl_sha256": "a95d9e67f206a660a0b0654642da66dad0007cd118c1f5184217f13a954d6e30",
+        "area_um2": 732.636788561114,
+        "violation_ps": 0,
+        "guarded_data_period_ps": 1870.7725229088678
+      },
+      {
+        "id": "sum3-T1373",
+        "oracle": {
+          "target_ps": 1373,
+          "selected": "candidate/view0",
+          "area_um2": 262.2646748153832,
+          "violation_ps": 0.0,
+          "counts": {
+            "node_queries": 8,
+            "G_queries": 2,
+            "bit_semantic_vectors": 258,
+            "arcs": 30,
+            "candidates": 4
+          }
+        },
+        "selection_sha256": "53eaebc8329f0d97bfc9138484707ac4a149d31ee2206e017addf0e6abd8c3bd",
+        "rtl_sha256": "235102b12d1d8a8d0900ae86b378f6f92267ff0fb62418d5bd6abc20a9ceaa0d",
+        "area_um2": 262.2646748153833,
+        "violation_ps": 0,
+        "guarded_data_period_ps": 767.3385212488527
+      }
+    ],
+    "rtl": {
+      "status": "passed",
+      "cases": 6,
+      "cycles_per_case": 64,
+      "valid_data_comparisons": 252,
+      "behaviors": [
+        "independent input writes",
+        "held valid",
+        "bubbles",
+        "unsigned overflow",
+        "nonzero reset",
+        "in-flight reset"
+      ],
+      "reset_timing_checked": false
+    }
+  },
+  "moved_checkout": {
+    "status": "passed",
+    "path_relocated_after_build": true,
+    "new_exact_T_ps": 1125,
+    "numerical": {
+      "target_ps": 1125,
+      "selected": "candidate/half/view5",
+      "area_um2": 840.7944171116526,
+      "violation_ps": 0.0,
+      "counts": {
+        "node_queries": 688,
+        "arcs": 1581,
+        "candidates": 44,
+        "G_queries": 6,
+        "bit_semantic_vectors": 516
+      }
+    },
+    "rtl": {
+      "status": "passed",
+      "cases": 1,
+      "cycles_per_case": 64,
+      "valid_data_comparisons": 42,
+      "behaviors": [
+        "independent input writes",
+        "held valid",
+        "bubbles",
+        "unsigned overflow",
+        "nonzero reset",
+        "in-flight reset"
+      ],
+      "reset_timing_checked": false
+    },
+    "negative": [
+      {
+        "check": "L3-full-coverage-refusal",
+        "status": "passed",
+        "views": 324,
+        "covered": 290
+      },
+      {
+        "check": "changed-binary",
+        "status": "passed"
+      },
+      {
+        "check": "changed-receipt-input",
+        "status": "passed"
+      },
+      {
+        "check": "changed-source-request",
+        "status": "passed"
+      }
+    ],
+    "no_original_binary_used": true,
+    "no_physical_tools": true
+  },
+  "portable_evidence_replay": "G_PORTABLE_REPLAY_PASS packets=60 D_targets=5 NNLS_KKT=passed no_EDA_or_compiler=True",
+  "frozen_predecessors": [
+    {
+      "manifest": "fit/freeze.json",
+      "sha256": "69a3770222c10853b1c57e6c9902b48ad5b7337b8e005fec10c4771460d61da4",
+      "files": 18,
+      "status": "passed"
+    },
+    {
+      "manifest": "delivery-freeze.json",
+      "sha256": "5983af506bd1058a6e59db2ee73effa960e996e4349f968858fb634df5b3d822",
+      "files": 31,
+      "status": "passed"
+    }
+  ],
+  "pending_patch_files": {
+    "README.md": "3aabf23f77104058f435be493eb9d91ac7827a10de5d54796a9aa8ce50c6db20",
+    "experiments/arithmetic/README.md": "997414550d2668c31617bff7a33aad99806726ca6503adbe34d213e70f41779f",
+    "experiments/arithmetic/REPRODUCE.md": "859824439d4f0f3ace27ff16d9b1f8e631734fc2fba4bf4500d6f2ade2098449",
+    "experiments/arithmetic_dse/portable_fused_d.py": "50e6f77299c81f3a524a2a3317647a2ca088a9c7b2b44231779b4bbcd137d9dd",
+    "regression/portable_fused_d.py": "fbe92727e7ddde8cfab821c84201cb1ecbe7616571729c0bddd4cb952b8b2894",
+    "experiments/arithmetic/examples/fused_d/README.md": "559dc69ddac997157d4f08e0bd8e4d2a59573e7c6ee2d3be0c0ed3b8ae2e09ec",
+    "experiments/arithmetic/examples/fused_d/expected.json": "0d584b67c399cf47e3537c91d6d24b04c018227c2fe1345c5f4f550c68b1b3e8",
+    "experiments/arithmetic/examples/fused_d/mac32/request.json": "321b4cba533d838ac6f8a81b2fc6bfeb6dd705682f88b488c503fc295fe14dfa",
+    "experiments/arithmetic/examples/fused_d/mac32/source.cpp": "6173ef1cfcd14df1ba0dd369f7dcd0e9046231c3d6a7804d06031a13b01612c8",
+    "experiments/arithmetic/examples/fused_d/sum3/request.json": "c142d98fe5cdd6d998828025e0a130a13bb1c2602499dafa650fb74251fe512d",
+    "experiments/arithmetic/examples/fused_d/sum3/source.cpp": "057b100e099bb514016fdc1ebabce2cf026a7ff49a1dd4592f2b223130e408cf"
+  },
+  "earlier_timeout_attempt": {
+    "status": "failed_preserved",
+    "reason": "120s software limit shorter than L3 enumeration",
+    "successor": "configurable --timeout-s, default 300s; fresh verification passed"
+  },
+  "external_artifacts": [
+    "MAC32-L3-ABCD-20261112-v1 restricted D driver and complete physical PPA"
+  ],
+  "physical_PPA_calls": 0,
+  "model_or_selection_parameters_changed": false,
+  "full_D_ready": false,
+  "reset_timing_checked": false,
+  "git_add_commit_push_performed": false,
+  "persistent_audit_root": "/home/zyrv/vulsim-artifacts/git-repro-20261112-v1"
+}

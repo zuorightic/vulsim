@@ -13,6 +13,8 @@
 
 算术拆分与自动流水线化研究的现行入口见 [mission 任务导航](mission/README.md)。后续实施按 [修订计划第一章](mission/lxy-plan-fix.md) 推进；旧计划及既有冻结仅用于核对相应历史版本，不能据旧“已完成”状态认定新范围已验收。
 
+当前小算子＋S／shared＋G 模型的拉取、重新编译验收与 D RTL 生成命令见[算术模型复现说明](experiments/arithmetic/REPRODUCE.md)。该研究分支请从 `zuorightic/vulsim` 连同 RTLzz 子模块拉取；下文通用开发指南中的上游地址不保证包含这些模型。
+
 ## 项目总架构
 
 ![项目总架构图](./doc/arch.png "项目总架构图")

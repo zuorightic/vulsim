@@ -1,0 +1,27 @@
+{
+  "version": "D-source-metadata-v1",
+  "source": {
+    "name": "unseen_three_input_sum",
+    "source": "source.cpp",
+    "top": "Independent_Sum_Three_Inputs",
+    "N": 1,
+    "iv": "__vul_port_iv",
+    "ov": "__vul_port_ov",
+    "reset": {
+      "__vul_port_a": [
+        "80000035"
+      ],
+      "__vul_port_b": [
+        "80000035"
+      ],
+      "__vul_port_c": [
+        "8000000000000035"
+      ],
+      "__vul_port_iv": [
+        "0"
+      ]
+    },
+    "generated_source_sha256": "057b100e099bb514016fdc1ebabce2cf026a7ff49a1dd4592f2b223130e408cf",
+    "source_label": "sum3.cpp"
+  }
+}
