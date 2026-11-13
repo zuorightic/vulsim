@@ -1,0 +1,41 @@
+{
+  "status": "settled",
+  "package_usage": {
+    "synth": 72,
+    "grt": 72,
+    "final": 0,
+    "support_calls": 670,
+    "walltime_s": 8727.570701666642,
+    "CPU_time_s": 17388.21,
+    "pending": 0
+  },
+  "global_usage": {
+    "synth": 3490,
+    "grt": 3459,
+    "final": 16,
+    "support_calls": 22114,
+    "walltime_s": 359936.9294548251,
+    "CPU_time_s": 734603.55,
+    "pending": 0
+  },
+  "active_or_unsettled_jobs": 0,
+  "package_stage_status": {
+    "(None, 'completed')": 668,
+    "('synth', 'completed')": 72,
+    "('grt', 'completed')": 72,
+    "(None, 'failed')": 2
+  },
+  "support_failures_preserved": [
+    {
+      "task": "final-model-consumption-v1",
+      "stage": null,
+      "status": "failed"
+    },
+    {
+      "task": "final-model-consumption-v2",
+      "stage": null,
+      "status": "failed"
+    }
+  ],
+  "public_D_changed": false
+}

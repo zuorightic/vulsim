@@ -18,8 +18,8 @@ import tempfile
 import uuid
 
 ROOT = Path(__file__).resolve().parents[2]
-POLICY = ROOT/'experiments/arithmetic_dse/configs/backend_policy_v9.json'
-CHECKPOINT = ROOT/'experiments/arithmetic/evidence/step7_budget_v4/checkpoint.json.gz'
+POLICY = ROOT/'experiments/arithmetic_dse/configs/backend_policy_v11.json'
+CHECKPOINT = ROOT/'experiments/arithmetic/evidence/step7_budget_v5/checkpoint.json.gz'
 LEDGER = ROOT/'experiments/arithmetic/backend_usage.json'
 SNAPSHOT = ROOT/'experiments/arithmetic/backend_usage.snapshot.json.gz'
 STAGE_LIMITS = {'synth':'max_synthesis_calls', 'grt':'max_global_route_calls',
