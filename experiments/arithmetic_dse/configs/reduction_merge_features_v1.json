@@ -1,0 +1,16 @@
+{
+  "version": "bit-column-features-v3-final-merge",
+  "status": "prospective_features_only; no_price_parameters_or_new_support",
+  "parent": "bit-column-features-v2-balanced-levels",
+  "basis": "old area formula overprices two fresh not_training sparse/low-work regions; compression counters plus overall carry span do not describe final two-row occupancy",
+  "definition": "retain original independent bit-column and numerical T validation; compress columns to at most two rows with the existing sweep; count carry-start half adders, full adders and single-bit increment columns, terminating carry chains at empty columns",
+  "added_features": ["post_merge_full_adder_columns", "post_merge_half_adder_columns", "post_merge_increment_columns", "post_merge_wire_columns", "post_merge_carry_segments", "post_merge_max_carry_span", "log2_post_merge_carry_span", "post_merge_pressure_work"],
+  "delay_candidate_basis": ["one", "log2_post_merge_carry_span", "compression_levels", "log2_target"],
+  "area_candidate_basis": ["one", "counter_count", "post_merge_full_adder_columns", "post_merge_half_adder_columns", "post_merge_increment_columns", "post_merge_pressure_work"],
+  "wire_columns": "diagnostic; pure bit transport has no intrinsic arithmetic area, while buffers/boundary loading retain explicit owners",
+  "fitting": "source-balanced nonnegative train-only regression; source roles, feature implementation, support/refusal rules and reserves frozen before independent evaluation",
+  "no_shape_source_candidate_or_exact_T_features": true,
+  "old_measurements": "reextract from retained terms into successor snapshots, preserving raw physical labels and roles",
+  "qualification_probes": "not_training permanently; diagnostics only, never coefficient fitting or independent test",
+  "original_G_model_and_consumer": "unchanged"
+}

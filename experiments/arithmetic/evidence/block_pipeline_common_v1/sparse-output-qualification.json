@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "stages": 2,
+  "rows": [
+    {
+      "source": "shifted-sparse-output",
+      "family": "G",
+      "stage": "synth",
+      "delay_ps": 287.013062,
+      "area_um2": 5.5695599999999965,
+      "outputs": 21,
+      "illegal_arc_rejected": {
+        "master": "HAxp5_ASAP7_75t_R",
+        "arc": [
+          "A",
+          "SN"
+        ]
+      },
+      "label_sha256": "d9ba9263729802096a50edd8cc12f85592ca6ae9cdccbcce566a2a022f278dc4"
+    },
+    {
+      "source": "shifted-sparse-output",
+      "family": "G",
+      "stage": "grt",
+      "delay_ps": 330.572418,
+      "area_um2": 5.234219999999998,
+      "outputs": 17,
+      "illegal_arc_rejected": {
+        "master": "HAxp5_ASAP7_75t_R",
+        "arc": [
+          "A",
+          "SN"
+        ]
+      },
+      "label_sha256": "8597c23d7f17b882c5b5b6d8c2bbc7d75555520aa218d60af8ec8ae67fd515f6"
+    }
+  ],
+  "source_role": "not_training",
+  "protocol_sha256": "5a44c1a3f130be7aba0242328d6eda80fdc8816b7deec3c7cc6a9f89562a1528",
+  "real_arc_negative_controls": 2,
+  "new_price_qualification": false,
+  "S_bank_qualification": false
+}

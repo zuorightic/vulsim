@@ -1,0 +1,1080 @@
+{
+  "status": "finite_sampling_complete_with_reported_shortfall",
+  "operator_sources": 14,
+  "all_three_regions_spread": 12,
+  "shortfall_sources": [
+    "op-5aaf77b47abbecb2",
+    "op-db19216c3735a2f8"
+  ],
+  "rows": [
+    {
+      "source": "op-251cf3de1d33ce0b",
+      "role": "train",
+      "points": 9,
+      "stop_reason": "regions_complete",
+      "regions": [
+        {
+          "region": "negative",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            316,
+            284,
+            243
+          ],
+          "ratio_span": [
+            "-4854953/9720000",
+            "-13271967/79000000"
+          ],
+          "reference_deviations": [
+            "5047/9720000",
+            "264579/17750000",
+            "1421967/79000000"
+          ]
+        },
+        {
+          "region": "transition",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            409,
+            338,
+            389
+          ],
+          "ratio_span": [
+            "-25906971/338000000",
+            "20070391/409000000"
+          ],
+          "reference_deviations": [
+            "9006971/338000000",
+            "13739/194500000",
+            "379609/409000000"
+          ]
+        },
+        {
+          "region": "positive",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            1500,
+            500,
+            3000
+          ],
+          "ratio_span": [
+            "55499981/250000000",
+            "1304171753/1500000000"
+          ],
+          "reference_deviations": [
+            "17999981/250000000",
+            "19500019/250000000",
+            "5599123/23437500"
+          ]
+        }
+      ],
+      "missing_guards": [],
+      "delay_relative_span": 0.07177390157023546,
+      "area_relative_span": 0.18575851393188883,
+      "target_span_ps": [
+        243,
+        3000
+      ]
+    },
+    {
+      "source": "op-f8cf6f152b234161",
+      "role": "train",
+      "points": 10,
+      "stop_reason": "regions_complete",
+      "regions": [
+        {
+          "region": "negative",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            392,
+            347,
+            296
+          ],
+          "ratio_span": [
+            "-75813881/148000000",
+            "-5917189/39200000"
+          ],
+          "reference_deviations": [
+            "1813881/148000000",
+            "7656091/347000000",
+            "37189/39200000"
+          ]
+        },
+        {
+          "region": "transition",
+          "effective_points": 4,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            500,
+            420,
+            483,
+            509
+          ],
+          "ratio_span": [
+            "-7809031/105000000",
+            "16692259/500000000"
+          ],
+          "reference_deviations": [
+            "2559031/105000000",
+            "272593/101800000",
+            "8307741/500000000"
+          ]
+        },
+        {
+          "region": "positive",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            1500,
+            3000,
+            569
+          ],
+          "ratio_span": [
+            "8542243/71125000",
+            "623466919/750000000"
+          ],
+          "reference_deviations": [
+            "2126507/71125000",
+            "12795257/71125000",
+            "124131073/750000000"
+          ]
+        }
+      ],
+      "missing_guards": [],
+      "delay_relative_span": 0.1554428083027931,
+      "area_relative_span": 0.21407624633430988,
+      "target_span_ps": [
+        296,
+        3000
+      ]
+    },
+    {
+      "source": "op-9964c076841bebce",
+      "role": "train",
+      "points": 13,
+      "stop_reason": "regions_complete",
+      "regions": [
+        {
+          "region": "negative",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            500,
+            720,
+            624
+          ],
+          "ratio_span": [
+            "-2998013/5000000",
+            "-91785133/720000000"
+          ],
+          "reference_deviations": [
+            "498013/5000000",
+            "5919247/624000000",
+            "16214867/720000000"
+          ]
+        },
+        {
+          "region": "transition",
+          "effective_points": 7,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            1027,
+            981,
+            825,
+            998,
+            949,
+            939,
+            789
+          ],
+          "ratio_span": [
+            "-36853577/789000000",
+            "46097569/1027000000"
+          ],
+          "reference_deviations": [
+            "2596423/789000000",
+            "2319589/939000000",
+            "5252431/1027000000"
+          ]
+        },
+        {
+          "region": "positive",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            1500,
+            3000,
+            1154
+          ],
+          "ratio_span": [
+            "181756607/1154000000",
+            "33725059/50000000"
+          ],
+          "reference_deviations": [
+            "8656607/1154000000",
+            "6170639/125000000",
+            "18829361/125000000"
+          ]
+        }
+      ],
+      "missing_guards": [],
+      "delay_relative_span": 0.1472984730058839,
+      "area_relative_span": 0.2915796798886567,
+      "target_span_ps": [
+        500,
+        3000
+      ]
+    },
+    {
+      "source": "op-f875c297d8b4c1c8",
+      "role": "train",
+      "points": 10,
+      "stop_reason": "regions_complete",
+      "regions": [
+        {
+          "region": "negative",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            457,
+            402,
+            357
+          ],
+          "ratio_span": [
+            "-17928923/35700000",
+            "-16461443/114250000"
+          ],
+          "reference_deviations": [
+            "78923/35700000",
+            "6146251/201000000",
+            "676057/114250000"
+          ]
+        },
+        {
+          "region": "transition",
+          "effective_points": 4,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            500,
+            525,
+            565,
+            659
+          ],
+          "ratio_span": [
+            "-25166037/500000000",
+            "25619951/329500000"
+          ],
+          "reference_deviations": [
+            "166037/500000000",
+            "79701/8828125",
+            "9144951/329500000"
+          ]
+        },
+        {
+          "region": "positive",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            1500,
+            3000,
+            715
+          ],
+          "ratio_span": [
+            "134017/859375",
+            "2381873291/3000000000"
+          ],
+          "reference_deviations": [
+            "20443/3437500",
+            "247591/1718750",
+            "18354599/187500000"
+          ]
+        }
+      ],
+      "missing_guards": [],
+      "delay_relative_span": 0.1767504425445233,
+      "area_relative_span": 0.2325174825174813,
+      "target_span_ps": [
+        357,
+        3000
+      ]
+    },
+    {
+      "source": "op-b54419ad8329922b",
+      "role": "train",
+      "points": 9,
+      "stop_reason": "regions_complete",
+      "regions": [
+        {
+          "region": "negative",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            303,
+            269,
+            234
+          ],
+          "ratio_span": [
+            "-28803877/58500000",
+            "-23248333/151500000"
+          ],
+          "reference_deviations": [
+            "446123/58500000",
+            "180811/26900000",
+            "523333/151500000"
+          ]
+        },
+        {
+          "region": "transition",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            416,
+            342,
+            332
+          ],
+          "ratio_span": [
+            "-19874851/332000000",
+            "2250683/41600000"
+          ],
+          "reference_deviations": [
+            "3274851/332000000",
+            "6908141/342000000",
+            "170683/41600000"
+          ]
+        },
+        {
+          "region": "positive",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            1500,
+            500,
+            3000
+          ],
+          "ratio_span": [
+            "26100109/125000000",
+            "130053833/150000000"
+          ],
+          "reference_deviations": [
+            "7350109/125000000",
+            "11399891/125000000",
+            "7374499/31250000"
+          ]
+        }
+      ],
+      "missing_guards": [],
+      "delay_relative_span": 0.18764674043035065,
+      "area_relative_span": 0.3115789473684217,
+      "target_span_ps": [
+        234,
+        3000
+      ]
+    },
+    {
+      "source": "op-305bc3ec4f5b49bf",
+      "role": "train",
+      "points": 10,
+      "stop_reason": "regions_complete",
+      "regions": [
+        {
+          "region": "negative",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            500,
+            583,
+            440
+          ],
+          "ratio_span": [
+            "-117055893/220000000",
+            "-10995781/72875000"
+          ],
+          "reference_deviations": [
+            "7055893/220000000",
+            "5219467/250000000",
+            "64531/72875000"
+          ]
+        },
+        {
+          "region": "transition",
+          "effective_points": 4,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            629,
+            671,
+            726,
+            851
+          ],
+          "ratio_span": [
+            "-20847519/314500000",
+            "60241257/851000000"
+          ],
+          "reference_deviations": [
+            "5122519/314500000",
+            "856907/242000000",
+            "17691257/851000000"
+          ]
+        },
+        {
+          "region": "positive",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            1500,
+            3000,
+            930
+          ],
+          "ratio_span": [
+            "138027527/930000000",
+            "548628479/750000000"
+          ],
+          "reference_deviations": [
+            "1472473/930000000",
+            "140972473/930000000",
+            "41838257/1500000000"
+          ]
+        }
+      ],
+      "missing_guards": [],
+      "delay_relative_span": 0.08669536478931963,
+      "area_relative_span": 0.362225097024577,
+      "target_span_ps": [
+        440,
+        3000
+      ]
+    },
+    {
+      "source": "op-0262868c4ce8b6ce",
+      "role": "train",
+      "points": 9,
+      "stop_reason": "regions_complete",
+      "regions": [
+        {
+          "region": "negative",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            305,
+            270,
+            233
+          ],
+          "ratio_span": [
+            "-22217511/46600000",
+            "-45465439/305000000"
+          ],
+          "reference_deviations": [
+            "1082489/46600000",
+            "777359/135000000",
+            "284561/305000000"
+          ]
+        },
+        {
+          "region": "transition",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            418,
+            347,
+            334
+          ],
+          "ratio_span": [
+            "-13491791/334000000",
+            "18929663/418000000"
+          ],
+          "reference_deviations": [
+            "3208209/334000000",
+            "4180933/347000000",
+            "1970337/418000000"
+          ]
+        },
+        {
+          "region": "positive",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            1500,
+            500,
+            3000
+          ],
+          "ratio_span": [
+            "51422451/250000000",
+            "2599418701/3000000000"
+          ],
+          "reference_deviations": [
+            "13922451/250000000",
+            "23577549/250000000",
+            "174635437/750000000"
+          ]
+        }
+      ],
+      "missing_guards": [],
+      "delay_relative_span": 0.21786048595599178,
+      "area_relative_span": 0.41523605150214404,
+      "target_span_ps": [
+        233,
+        3000
+      ]
+    },
+    {
+      "source": "op-68ed03602b8711e8",
+      "role": "train",
+      "points": 9,
+      "stop_reason": "regions_complete",
+      "regions": [
+        {
+          "region": "negative",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            329,
+            286,
+            247
+          ],
+          "ratio_span": [
+            "-61295151/123500000",
+            "-42971321/329000000"
+          ],
+          "reference_deviations": [
+            "454849/123500000",
+            "219237/35750000",
+            "6378679/329000000"
+          ]
+        },
+        {
+          "region": "transition",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            438,
+            363,
+            378
+          ],
+          "ratio_span": [
+            "-15343199/363000000",
+            "20665331/438000000"
+          ],
+          "reference_deviations": [
+            "2806801/363000000",
+            "2407/21000000",
+            "1234669/438000000"
+          ]
+        },
+        {
+          "region": "positive",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            1500,
+            500,
+            3000
+          ],
+          "ratio_span": [
+            "83772629/500000000",
+            "514519873/600000000"
+          ],
+          "reference_deviations": [
+            "8772629/500000000",
+            "66227371/500000000",
+            "79564331/375000000"
+          ]
+        }
+      ],
+      "missing_guards": [],
+      "delay_relative_span": 0.217380324016566,
+      "area_relative_span": 0.3112391930835721,
+      "target_span_ps": [
+        247,
+        3000
+      ]
+    },
+    {
+      "source": "op-a10cecc90efb1994",
+      "role": "validation",
+      "points": 10,
+      "stop_reason": "regions_complete",
+      "regions": [
+        {
+          "region": "negative",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            500,
+            668,
+            590
+          ],
+          "ratio_span": [
+            "-33221077/62500000",
+            "-49285019/334000000"
+          ],
+          "reference_deviations": [
+            "1971077/62500000",
+            "745961/59000000",
+            "814981/334000000"
+          ]
+        },
+        {
+          "region": "transition",
+          "effective_points": 4,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            924,
+            882,
+            764,
+            732
+          ],
+          "ratio_span": [
+            "-3899/80000",
+            "21085411/462000000"
+          ],
+          "reference_deviations": [
+            "101/80000",
+            "655831/176400000",
+            "2014589/462000000"
+          ]
+        },
+        {
+          "region": "positive",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            1500,
+            3000,
+            1037
+          ],
+          "ratio_span": [
+            "161975327/1037000000",
+            "65922287/93750000"
+          ],
+          "reference_deviations": [
+            "6425327/1037000000",
+            "57357361/500000000",
+            "42642639/500000000"
+          ]
+        }
+      ],
+      "missing_guards": [],
+      "delay_relative_span": 0.07657166467158508,
+      "area_relative_span": 0.22462203023757965,
+      "target_span_ps": [
+        500,
+        3000
+      ]
+    },
+    {
+      "source": "op-b45e0bdca688e58e",
+      "role": "validation",
+      "points": 10,
+      "stop_reason": "regions_complete",
+      "regions": [
+        {
+          "region": "negative",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            500,
+            460,
+            405
+          ],
+          "ratio_span": [
+            "-649313/1350000",
+            "-97546471/500000000"
+          ],
+          "reference_deviations": [
+            "25687/1350000",
+            "1120409/57500000",
+            "22546471/500000000"
+          ]
+        },
+        {
+          "region": "transition",
+          "effective_points": 4,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            569,
+            618,
+            649,
+            726
+          ],
+          "ratio_span": [
+            "-49358963/569000000",
+            "2079601/29040000"
+          ],
+          "reference_deviations": [
+            "20908963/569000000",
+            "197009/123600000",
+            "627601/29040000"
+          ]
+        },
+        {
+          "region": "positive",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            1500,
+            3000,
+            793
+          ],
+          "ratio_span": [
+            "31192007/198250000",
+            "2324949463/3000000000"
+          ],
+          "reference_deviations": [
+            "1454507/198250000",
+            "28282993/198250000",
+            "26788493/500000000"
+          ]
+        }
+      ],
+      "missing_guards": [],
+      "delay_relative_span": 0.12014478297652834,
+      "area_relative_span": 0.2802101576182141,
+      "target_span_ps": [
+        405,
+        3000
+      ]
+    },
+    {
+      "source": "op-871209c33522785e",
+      "role": "validation",
+      "points": 9,
+      "stop_reason": "regions_complete",
+      "regions": [
+        {
+          "region": "negative",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            308,
+            274,
+            237
+          ],
+          "ratio_span": [
+            "-116928719/237000000",
+            "-47831463/308000000"
+          ],
+          "reference_deviations": [
+            "1571281/237000000",
+            "1182361/274000000",
+            "1631463/308000000"
+          ]
+        },
+        {
+          "region": "transition",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            420,
+            348,
+            337
+          ],
+          "ratio_span": [
+            "-14156981/337000000",
+            "190689/4000000"
+          ],
+          "reference_deviations": [
+            "2693019/337000000",
+            "8837/500000",
+            "9311/4000000"
+          ]
+        },
+        {
+          "region": "positive",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            1500,
+            500,
+            3000
+          ],
+          "ratio_span": [
+            "100599503/500000000",
+            "432816691/500000000"
+          ],
+          "reference_deviations": [
+            "25599503/500000000",
+            "49400497/500000000",
+            "57755249/250000000"
+          ]
+        }
+      ],
+      "missing_guards": [],
+      "delay_relative_span": 0.19003202298995198,
+      "area_relative_span": 0.32965517241379105,
+      "target_span_ps": [
+        237,
+        3000
+      ]
+    },
+    {
+      "source": "op-5aaf77b47abbecb2",
+      "role": "validation",
+      "points": 13,
+      "stop_reason": "target_cap_reached",
+      "regions": [
+        {
+          "region": "negative",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            500,
+            586,
+            453
+          ],
+          "ratio_span": [
+            "-78561381/151000000",
+            "-48671623/293000000"
+          ],
+          "reference_deviations": [
+            "3061381/151000000",
+            "15087631/250000000",
+            "4721623/293000000"
+          ]
+        },
+        {
+          "region": "transition",
+          "effective_points": 7,
+          "missing_count": 0,
+          "spacing_and_span_met": false,
+          "targets_ps": [
+            648,
+            674,
+            719,
+            845,
+            835,
+            683,
+            691
+          ],
+          "ratio_span": [
+            "-13216789/324000000",
+            "10172863/845000000"
+          ],
+          "reference_deviations": [
+            "2983211/324000000",
+            "421219/835000000",
+            "32077137/845000000"
+          ]
+        },
+        {
+          "region": "positive",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            1500,
+            3000,
+            982
+          ],
+          "ratio_span": [
+            "36355503/245500000",
+            "1075536499/1500000000"
+          ],
+          "reference_deviations": [
+            "469497/245500000",
+            "53123993/375000000",
+            "21876007/375000000"
+          ]
+        }
+      ],
+      "missing_guards": [],
+      "delay_relative_span": 0.22872877594535324,
+      "area_relative_span": 0.3300423131170648,
+      "target_span_ps": [
+        453,
+        3000
+      ]
+    },
+    {
+      "source": "op-4bff32ef94df346b",
+      "role": "train",
+      "points": 10,
+      "stop_reason": "regions_complete",
+      "regions": [
+        {
+          "region": "negative",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            500,
+            607,
+            545
+          ],
+          "ratio_span": [
+            "-208141449/500000000",
+            "-18308577/121400000"
+          ],
+          "reference_deviations": [
+            "41858551/500000000",
+            "47071/2725000",
+            "98577/121400000"
+          ]
+        },
+        {
+          "region": "transition",
+          "effective_points": 4,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            674,
+            698,
+            753,
+            889
+          ],
+          "ratio_span": [
+            "-11889823/337000000",
+            "59459549/889000000"
+          ],
+          "reference_deviations": [
+            "4960177/337000000",
+            "2377931/753000000",
+            "15009549/889000000"
+          ]
+        },
+        {
+          "region": "positive",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            1500,
+            3000,
+            976
+          ],
+          "ratio_span": [
+            "125029823/976000000",
+            "213524707/300000000"
+          ],
+          "reference_deviations": [
+            "21370177/976000000",
+            "3360083/25000000",
+            "1639917/25000000"
+          ]
+        }
+      ],
+      "missing_guards": [],
+      "delay_relative_span": 0.15310270018647124,
+      "area_relative_span": 0.23758865248227037,
+      "target_span_ps": [
+        500,
+        3000
+      ]
+    },
+    {
+      "source": "op-db19216c3735a2f8",
+      "role": "train",
+      "points": 13,
+      "stop_reason": "target_cap_reached",
+      "regions": [
+        {
+          "region": "negative",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            500,
+            680,
+            579
+          ],
+          "ratio_span": [
+            "-247289749/500000000",
+            "-18316473/170000000"
+          ],
+          "reference_deviations": [
+            "2710251/500000000",
+            "569073/48250000",
+            "7183527/170000000"
+          ]
+        },
+        {
+          "region": "transition",
+          "effective_points": 7,
+          "missing_count": 0,
+          "spacing_and_span_met": false,
+          "targets_ps": [
+            964,
+            911,
+            783,
+            900,
+            947,
+            824,
+            868
+          ],
+          "ratio_span": [
+            "-65159/82400000",
+            "52609249/964000000"
+          ],
+          "reference_deviations": [
+            "4054841/82400000",
+            "65159/82400000",
+            "4409249/964000000"
+          ]
+        },
+        {
+          "region": "positive",
+          "effective_points": 3,
+          "missing_count": 0,
+          "spacing_and_span_met": true,
+          "targets_ps": [
+            1500,
+            3000,
+            1072
+          ],
+          "ratio_span": [
+            "83339943/536000000",
+            "2062703369/3000000000"
+          ],
+          "reference_deviations": [
+            "2939943/536000000",
+            "8971403/100000000",
+            "11028597/100000000"
+          ]
+        }
+      ],
+      "missing_guards": [],
+      "delay_relative_span": 0.1651602181699163,
+      "area_relative_span": 0.4521276595744661,
+      "target_span_ps": [
+        500,
+        3000
+      ]
+    }
+  ],
+  "measured_response_is_distinct_from_functional_slack": true
+}

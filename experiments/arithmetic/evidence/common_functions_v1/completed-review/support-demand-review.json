@@ -1,0 +1,1011 @@
+{
+  "status": "formal_support_refusal_not_implemented_for_diagnostic_candidate",
+  "qualified_new_coverage": false,
+  "online_candidate_has_domain_fields": false,
+  "training_envelope_diagnostic": {
+    "500": {
+      "node_queries": 26069,
+      "G_regions": 241,
+      "box_counts": {
+        "operator_box_outside": 23189,
+        "operator_box_inside": 2880,
+        "G_box_inside": 241
+      },
+      "missing_numeric_dimensions": {
+        "operator/add/pressure_product_terms": 560,
+        "operator/mul/same_stage_remaining_depth": 11320,
+        "operator/mul/consumer_lhs_zero_lsb_run": 1296,
+        "operator/mul/consumer_rhs_zero_lsb_run": 648,
+        "operator/mul/mapping_shift_min": 543,
+        "operator/mul/mapping_shift_max": 543,
+        "operator/add/operand_shared_input_roots": 11317,
+        "operator/add/same_stage_remaining_depth": 8308,
+        "operator/add/rhs_active_bits": 5398,
+        "operator/add/active_width_product": 5328,
+        "operator/add/add_overlap_bits": 5216,
+        "operator/add/add_carry_span": 5216,
+        "operator/add/log2_add_carry_span": 5216,
+        "operator/add/lhs_zero_bin3": 2608,
+        "operator/add/lhs_zero_count": 652,
+        "operator/add/lhs_zero_longest_run": 652,
+        "operator/add/lhs_zero_lsb_run": 652,
+        "operator/add/lhs_zero_bin2": 652,
+        "operator/add/rhs_zero_count": 326,
+        "operator/add/rhs_zero_longest_run": 326,
+        "operator/add/rhs_zero_lsb_run": 326,
+        "operator/add/declared_result_width": 1334,
+        "operator/add/lhs_zero_bin0": 163,
+        "operator/add/lhs_zero_bin1": 163,
+        "operator/add/width_product": 112,
+        "operator/add/mapped_undemanded_bits": 209,
+        "operator/add/capture_declared_bits": 148
+      },
+      "examples": {
+        "operator/add/pressure_product_terms": {
+          "value": 6240.0,
+          "training": [
+            0.0,
+            6177.0
+          ]
+        },
+        "operator/mul/same_stage_remaining_depth": {
+          "value": 8,
+          "training": [
+            1,
+            2
+          ]
+        },
+        "operator/mul/consumer_lhs_zero_lsb_run": {
+          "value": 44,
+          "training": [
+            0,
+            40
+          ]
+        },
+        "operator/mul/consumer_rhs_zero_lsb_run": {
+          "value": 52,
+          "training": [
+            0,
+            48
+          ]
+        },
+        "operator/mul/mapping_shift_min": {
+          "value": 52,
+          "training": [
+            0,
+            48
+          ]
+        },
+        "operator/mul/mapping_shift_max": {
+          "value": 52,
+          "training": [
+            0,
+            48
+          ]
+        },
+        "operator/add/operand_shared_input_roots": {
+          "value": 2,
+          "training": [
+            0,
+            0
+          ]
+        },
+        "operator/add/same_stage_remaining_depth": {
+          "value": 7,
+          "training": [
+            1,
+            2
+          ]
+        },
+        "operator/add/rhs_active_bits": {
+          "value": 8,
+          "training": [
+            12,
+            67
+          ]
+        },
+        "operator/add/active_width_product": {
+          "value": 64,
+          "training": [
+            96,
+            4096
+          ]
+        },
+        "operator/add/add_overlap_bits": {
+          "value": 4,
+          "training": [
+            8,
+            64
+          ]
+        },
+        "operator/add/add_carry_span": {
+          "value": 9,
+          "training": [
+            13,
+            64
+          ]
+        },
+        "operator/add/log2_add_carry_span": {
+          "value": 3.169925001442312,
+          "training": [
+            3.700439718141092,
+            6.0
+          ]
+        },
+        "operator/add/lhs_zero_bin3": {
+          "value": 1,
+          "training": [
+            0,
+            0
+          ]
+        },
+        "operator/add/lhs_zero_count": {
+          "value": 44,
+          "training": [
+            0,
+            40
+          ]
+        },
+        "operator/add/lhs_zero_longest_run": {
+          "value": 44,
+          "training": [
+            0,
+            40
+          ]
+        },
+        "operator/add/lhs_zero_lsb_run": {
+          "value": 44,
+          "training": [
+            0,
+            40
+          ]
+        },
+        "operator/add/lhs_zero_bin2": {
+          "value": 13,
+          "training": [
+            0,
+            12
+          ]
+        },
+        "operator/add/rhs_zero_count": {
+          "value": 52,
+          "training": [
+            0,
+            48
+          ]
+        },
+        "operator/add/rhs_zero_longest_run": {
+          "value": 52,
+          "training": [
+            0,
+            48
+          ]
+        },
+        "operator/add/rhs_zero_lsb_run": {
+          "value": 52,
+          "training": [
+            0,
+            48
+          ]
+        },
+        "operator/add/declared_result_width": {
+          "value": 65,
+          "training": [
+            13,
+            64
+          ]
+        },
+        "operator/add/lhs_zero_bin0": {
+          "value": 15,
+          "training": [
+            0,
+            14
+          ]
+        },
+        "operator/add/lhs_zero_bin1": {
+          "value": 15,
+          "training": [
+            0,
+            14
+          ]
+        },
+        "operator/add/width_product": {
+          "value": 4221,
+          "training": [
+            96,
+            4096
+          ]
+        },
+        "operator/add/mapped_undemanded_bits": {
+          "value": 4,
+          "training": [
+            0,
+            3
+          ]
+        },
+        "operator/add/capture_declared_bits": {
+          "value": 69,
+          "training": [
+            0,
+            64
+          ]
+        }
+      }
+    },
+    "1500": {
+      "node_queries": 26069,
+      "G_regions": 241,
+      "box_counts": {
+        "operator_box_inside": 3231,
+        "operator_box_outside": 22838,
+        "G_box_inside": 241
+      },
+      "missing_numeric_dimensions": {
+        "operator/mul/same_stage_remaining_depth": 11320,
+        "operator/mul/consumer_lhs_zero_lsb_run": 1296,
+        "operator/mul/consumer_rhs_zero_lsb_run": 648,
+        "operator/mul/mapping_shift_min": 543,
+        "operator/mul/mapping_shift_max": 543,
+        "operator/add/operand_shared_input_roots": 11317,
+        "operator/add/same_stage_remaining_depth": 8308,
+        "operator/add/rhs_active_bits": 5398,
+        "operator/add/active_width_product": 5328,
+        "operator/add/add_overlap_bits": 5216,
+        "operator/add/add_carry_span": 5216,
+        "operator/add/log2_add_carry_span": 5216,
+        "operator/add/lhs_zero_bin3": 2608,
+        "operator/add/lhs_zero_count": 652,
+        "operator/add/lhs_zero_longest_run": 652,
+        "operator/add/lhs_zero_lsb_run": 652,
+        "operator/add/lhs_zero_bin2": 652,
+        "operator/add/rhs_zero_count": 326,
+        "operator/add/rhs_zero_longest_run": 326,
+        "operator/add/rhs_zero_lsb_run": 326,
+        "operator/add/declared_result_width": 1334,
+        "operator/add/lhs_zero_bin0": 163,
+        "operator/add/lhs_zero_bin1": 163,
+        "operator/add/width_product": 112,
+        "operator/add/mapped_undemanded_bits": 209,
+        "operator/add/capture_declared_bits": 148
+      },
+      "examples": {
+        "operator/mul/same_stage_remaining_depth": {
+          "value": 8,
+          "training": [
+            1,
+            2
+          ]
+        },
+        "operator/mul/consumer_lhs_zero_lsb_run": {
+          "value": 44,
+          "training": [
+            0,
+            40
+          ]
+        },
+        "operator/mul/consumer_rhs_zero_lsb_run": {
+          "value": 52,
+          "training": [
+            0,
+            48
+          ]
+        },
+        "operator/mul/mapping_shift_min": {
+          "value": 52,
+          "training": [
+            0,
+            48
+          ]
+        },
+        "operator/mul/mapping_shift_max": {
+          "value": 52,
+          "training": [
+            0,
+            48
+          ]
+        },
+        "operator/add/operand_shared_input_roots": {
+          "value": 2,
+          "training": [
+            0,
+            0
+          ]
+        },
+        "operator/add/same_stage_remaining_depth": {
+          "value": 7,
+          "training": [
+            1,
+            2
+          ]
+        },
+        "operator/add/rhs_active_bits": {
+          "value": 8,
+          "training": [
+            12,
+            67
+          ]
+        },
+        "operator/add/active_width_product": {
+          "value": 64,
+          "training": [
+            96,
+            4096
+          ]
+        },
+        "operator/add/add_overlap_bits": {
+          "value": 4,
+          "training": [
+            8,
+            64
+          ]
+        },
+        "operator/add/add_carry_span": {
+          "value": 9,
+          "training": [
+            13,
+            64
+          ]
+        },
+        "operator/add/log2_add_carry_span": {
+          "value": 3.169925001442312,
+          "training": [
+            3.700439718141092,
+            6.0
+          ]
+        },
+        "operator/add/lhs_zero_bin3": {
+          "value": 1,
+          "training": [
+            0,
+            0
+          ]
+        },
+        "operator/add/lhs_zero_count": {
+          "value": 44,
+          "training": [
+            0,
+            40
+          ]
+        },
+        "operator/add/lhs_zero_longest_run": {
+          "value": 44,
+          "training": [
+            0,
+            40
+          ]
+        },
+        "operator/add/lhs_zero_lsb_run": {
+          "value": 44,
+          "training": [
+            0,
+            40
+          ]
+        },
+        "operator/add/lhs_zero_bin2": {
+          "value": 13,
+          "training": [
+            0,
+            12
+          ]
+        },
+        "operator/add/rhs_zero_count": {
+          "value": 52,
+          "training": [
+            0,
+            48
+          ]
+        },
+        "operator/add/rhs_zero_longest_run": {
+          "value": 52,
+          "training": [
+            0,
+            48
+          ]
+        },
+        "operator/add/rhs_zero_lsb_run": {
+          "value": 52,
+          "training": [
+            0,
+            48
+          ]
+        },
+        "operator/add/declared_result_width": {
+          "value": 65,
+          "training": [
+            13,
+            64
+          ]
+        },
+        "operator/add/lhs_zero_bin0": {
+          "value": 15,
+          "training": [
+            0,
+            14
+          ]
+        },
+        "operator/add/lhs_zero_bin1": {
+          "value": 15,
+          "training": [
+            0,
+            14
+          ]
+        },
+        "operator/add/width_product": {
+          "value": 4221,
+          "training": [
+            96,
+            4096
+          ]
+        },
+        "operator/add/mapped_undemanded_bits": {
+          "value": 4,
+          "training": [
+            0,
+            3
+          ]
+        },
+        "operator/add/capture_declared_bits": {
+          "value": 69,
+          "training": [
+            0,
+            64
+          ]
+        }
+      }
+    },
+    "3000": {
+      "node_queries": 26069,
+      "G_regions": 241,
+      "box_counts": {
+        "operator_box_inside": 3231,
+        "operator_box_outside": 22838,
+        "G_box_inside": 225,
+        "G_box_outside": 16
+      },
+      "missing_numeric_dimensions": {
+        "operator/mul/same_stage_remaining_depth": 11320,
+        "operator/mul/consumer_lhs_zero_lsb_run": 1296,
+        "operator/mul/consumer_rhs_zero_lsb_run": 648,
+        "operator/mul/mapping_shift_min": 543,
+        "operator/mul/mapping_shift_max": 543,
+        "operator/add/operand_shared_input_roots": 11317,
+        "operator/add/same_stage_remaining_depth": 8308,
+        "operator/add/rhs_active_bits": 5398,
+        "operator/add/active_width_product": 5328,
+        "operator/add/add_overlap_bits": 5216,
+        "operator/add/add_carry_span": 5216,
+        "operator/add/log2_add_carry_span": 5216,
+        "operator/add/pressure_add_span": 5216,
+        "operator/add/lhs_zero_bin3": 2608,
+        "operator/add/lhs_zero_count": 652,
+        "operator/add/lhs_zero_longest_run": 652,
+        "operator/add/lhs_zero_lsb_run": 652,
+        "operator/add/lhs_zero_bin2": 652,
+        "operator/add/rhs_zero_count": 326,
+        "operator/add/rhs_zero_longest_run": 326,
+        "operator/add/rhs_zero_lsb_run": 326,
+        "operator/add/declared_result_width": 1334,
+        "operator/add/lhs_zero_bin0": 163,
+        "operator/add/lhs_zero_bin1": 163,
+        "operator/add/width_product": 112,
+        "operator/add/mapped_undemanded_bits": 209,
+        "operator/add/capture_declared_bits": 148,
+        "G/pressure_work": 16
+      },
+      "examples": {
+        "operator/mul/same_stage_remaining_depth": {
+          "value": 8,
+          "training": [
+            1,
+            2
+          ]
+        },
+        "operator/mul/consumer_lhs_zero_lsb_run": {
+          "value": 44,
+          "training": [
+            0,
+            40
+          ]
+        },
+        "operator/mul/consumer_rhs_zero_lsb_run": {
+          "value": 52,
+          "training": [
+            0,
+            48
+          ]
+        },
+        "operator/mul/mapping_shift_min": {
+          "value": 52,
+          "training": [
+            0,
+            48
+          ]
+        },
+        "operator/mul/mapping_shift_max": {
+          "value": 52,
+          "training": [
+            0,
+            48
+          ]
+        },
+        "operator/add/operand_shared_input_roots": {
+          "value": 2,
+          "training": [
+            0,
+            0
+          ]
+        },
+        "operator/add/same_stage_remaining_depth": {
+          "value": 7,
+          "training": [
+            1,
+            2
+          ]
+        },
+        "operator/add/rhs_active_bits": {
+          "value": 8,
+          "training": [
+            12,
+            67
+          ]
+        },
+        "operator/add/active_width_product": {
+          "value": 64,
+          "training": [
+            96,
+            4096
+          ]
+        },
+        "operator/add/add_overlap_bits": {
+          "value": 4,
+          "training": [
+            8,
+            64
+          ]
+        },
+        "operator/add/add_carry_span": {
+          "value": 9,
+          "training": [
+            13,
+            64
+          ]
+        },
+        "operator/add/log2_add_carry_span": {
+          "value": 3.169925001442312,
+          "training": [
+            3.700439718141092,
+            6.0
+          ]
+        },
+        "operator/add/pressure_add_span": {
+          "value": 4.5,
+          "training": [
+            6.5,
+            192.0
+          ]
+        },
+        "operator/add/lhs_zero_bin3": {
+          "value": 1,
+          "training": [
+            0,
+            0
+          ]
+        },
+        "operator/add/lhs_zero_count": {
+          "value": 44,
+          "training": [
+            0,
+            40
+          ]
+        },
+        "operator/add/lhs_zero_longest_run": {
+          "value": 44,
+          "training": [
+            0,
+            40
+          ]
+        },
+        "operator/add/lhs_zero_lsb_run": {
+          "value": 44,
+          "training": [
+            0,
+            40
+          ]
+        },
+        "operator/add/lhs_zero_bin2": {
+          "value": 13,
+          "training": [
+            0,
+            12
+          ]
+        },
+        "operator/add/rhs_zero_count": {
+          "value": 52,
+          "training": [
+            0,
+            48
+          ]
+        },
+        "operator/add/rhs_zero_longest_run": {
+          "value": 52,
+          "training": [
+            0,
+            48
+          ]
+        },
+        "operator/add/rhs_zero_lsb_run": {
+          "value": 52,
+          "training": [
+            0,
+            48
+          ]
+        },
+        "operator/add/declared_result_width": {
+          "value": 65,
+          "training": [
+            13,
+            64
+          ]
+        },
+        "operator/add/lhs_zero_bin0": {
+          "value": 15,
+          "training": [
+            0,
+            14
+          ]
+        },
+        "operator/add/lhs_zero_bin1": {
+          "value": 15,
+          "training": [
+            0,
+            14
+          ]
+        },
+        "operator/add/width_product": {
+          "value": 4221,
+          "training": [
+            96,
+            4096
+          ]
+        },
+        "operator/add/mapped_undemanded_bits": {
+          "value": 4,
+          "training": [
+            0,
+            3
+          ]
+        },
+        "operator/add/capture_declared_bits": {
+          "value": 69,
+          "training": [
+            0,
+            64
+          ]
+        },
+        "G/pressure_work": {
+          "value": 8.0,
+          "training": [
+            12.0,
+            9051.0
+          ]
+        }
+      }
+    }
+  },
+  "old_production_node_status": {
+    "500": {
+      "covered": 12772,
+      "uncovered": 13297
+    },
+    "1500": {
+      "covered": 12772,
+      "uncovered": 13297
+    },
+    "3000": {
+      "covered": 12772,
+      "uncovered": 13297
+    }
+  },
+  "validation_outside_training_boxes": [
+    {
+      "source": "old/s00d5537c4126bb7d",
+      "target_ps": 1373,
+      "outside_features": [
+        "consumer_lhs_active_bits"
+      ]
+    },
+    {
+      "source": "old/s00d5537c4126bb7d",
+      "target_ps": 1224,
+      "outside_features": [
+        "consumer_lhs_active_bits"
+      ]
+    },
+    {
+      "source": "old/s00d5537c4126bb7d",
+      "target_ps": 1656,
+      "outside_features": [
+        "consumer_lhs_active_bits"
+      ]
+    },
+    {
+      "source": "old/s00d5537c4126bb7d",
+      "target_ps": 1915,
+      "outside_features": [
+        "consumer_lhs_active_bits"
+      ]
+    },
+    {
+      "source": "old/s00d5537c4126bb7d",
+      "target_ps": 1072,
+      "outside_features": [
+        "consumer_lhs_active_bits"
+      ]
+    },
+    {
+      "source": "old/s00d5537c4126bb7d",
+      "target_ps": 2376,
+      "outside_features": [
+        "consumer_lhs_active_bits"
+      ]
+    },
+    {
+      "source": "old/s00d5537c4126bb7d",
+      "target_ps": 1340,
+      "outside_features": [
+        "consumer_lhs_active_bits"
+      ]
+    },
+    {
+      "source": "old/s00d5537c4126bb7d",
+      "target_ps": 937,
+      "outside_features": [
+        "consumer_lhs_active_bits"
+      ]
+    },
+    {
+      "source": "old/s00d5537c4126bb7d",
+      "target_ps": 1628,
+      "outside_features": [
+        "consumer_lhs_active_bits"
+      ]
+    },
+    {
+      "source": "old/s00d5537c4126bb7d",
+      "target_ps": 1315,
+      "outside_features": [
+        "consumer_lhs_active_bits"
+      ]
+    },
+    {
+      "source": "old/s5f65fb41790f6c16",
+      "target_ps": 1373,
+      "outside_features": [
+        "consumer_lhs_active_bits"
+      ]
+    },
+    {
+      "source": "old/s5f65fb41790f6c16",
+      "target_ps": 1012,
+      "outside_features": [
+        "consumer_lhs_active_bits"
+      ]
+    },
+    {
+      "source": "old/s5f65fb41790f6c16",
+      "target_ps": 832,
+      "outside_features": [
+        "consumer_lhs_active_bits"
+      ]
+    },
+    {
+      "source": "old/s5f65fb41790f6c16",
+      "target_ps": 726,
+      "outside_features": [
+        "consumer_lhs_active_bits"
+      ]
+    },
+    {
+      "source": "old/s5f65fb41790f6c16",
+      "target_ps": 1126,
+      "outside_features": [
+        "consumer_lhs_active_bits"
+      ]
+    },
+    {
+      "source": "old/s5f65fb41790f6c16",
+      "target_ps": 620,
+      "outside_features": [
+        "consumer_lhs_active_bits"
+      ]
+    },
+    {
+      "source": "old/s5f65fb41790f6c16",
+      "target_ps": 795,
+      "outside_features": [
+        "consumer_lhs_active_bits"
+      ]
+    },
+    {
+      "source": "old/s5f65fb41790f6c16",
+      "target_ps": 545,
+      "outside_features": [
+        "consumer_lhs_active_bits"
+      ]
+    },
+    {
+      "source": "old/s5f65fb41790f6c16",
+      "target_ps": 1924,
+      "outside_features": [
+        "consumer_lhs_active_bits"
+      ]
+    },
+    {
+      "source": "old/s5f65fb41790f6c16",
+      "target_ps": 809,
+      "outside_features": [
+        "consumer_lhs_active_bits"
+      ]
+    },
+    {
+      "source": "old/s5f65fb41790f6c16",
+      "target_ps": 787,
+      "outside_features": [
+        "consumer_lhs_active_bits"
+      ]
+    },
+    {
+      "source": "new/G-5239d000d3539a9d",
+      "target_ps": 1500,
+      "outside_features": [
+        "compressor_depth"
+      ]
+    },
+    {
+      "source": "new/op-5aaf77b47abbecb2",
+      "target_ps": 1500,
+      "outside_features": [
+        "mapped_zero_bits",
+        "consumer_lhs_zero_msb_run"
+      ]
+    },
+    {
+      "source": "new/G-83abf372ab2c1ed6",
+      "target_ps": 1500,
+      "outside_features": [
+        "post_merge_half_adder_columns",
+        "post_merge_carry_segments"
+      ]
+    },
+    {
+      "source": "new/G-5239d000d3539a9d",
+      "target_ps": 500,
+      "outside_features": [
+        "compressor_depth"
+      ]
+    },
+    {
+      "source": "new/op-5aaf77b47abbecb2",
+      "target_ps": 500,
+      "outside_features": [
+        "mapped_zero_bits",
+        "consumer_lhs_zero_msb_run"
+      ]
+    },
+    {
+      "source": "new/G-83abf372ab2c1ed6",
+      "target_ps": 500,
+      "outside_features": [
+        "post_merge_half_adder_columns",
+        "post_merge_carry_segments"
+      ]
+    },
+    {
+      "source": "new/G-5239d000d3539a9d",
+      "target_ps": 3000,
+      "outside_features": [
+        "compressor_depth"
+      ]
+    },
+    {
+      "source": "new/op-5aaf77b47abbecb2",
+      "target_ps": 3000,
+      "outside_features": [
+        "mapped_zero_bits",
+        "consumer_lhs_zero_msb_run"
+      ]
+    },
+    {
+      "source": "new/G-83abf372ab2c1ed6",
+      "target_ps": 3000,
+      "outside_features": [
+        "post_merge_half_adder_columns",
+        "post_merge_carry_segments"
+      ]
+    },
+    {
+      "source": "new/op-5aaf77b47abbecb2",
+      "target_ps": 648,
+      "outside_features": [
+        "mapped_zero_bits",
+        "consumer_lhs_zero_msb_run"
+      ]
+    },
+    {
+      "source": "new/op-5aaf77b47abbecb2",
+      "target_ps": 674,
+      "outside_features": [
+        "mapped_zero_bits",
+        "consumer_lhs_zero_msb_run"
+      ]
+    },
+    {
+      "source": "new/op-5aaf77b47abbecb2",
+      "target_ps": 586,
+      "outside_features": [
+        "mapped_zero_bits",
+        "consumer_lhs_zero_msb_run"
+      ]
+    },
+    {
+      "source": "new/op-5aaf77b47abbecb2",
+      "target_ps": 719,
+      "outside_features": [
+        "mapped_zero_bits",
+        "consumer_lhs_zero_msb_run"
+      ]
+    },
+    {
+      "source": "new/op-5aaf77b47abbecb2",
+      "target_ps": 453,
+      "outside_features": [
+        "mapped_zero_bits",
+        "consumer_lhs_zero_msb_run"
+      ]
+    },
+    {
+      "source": "new/op-5aaf77b47abbecb2",
+      "target_ps": 845,
+      "outside_features": [
+        "mapped_zero_bits",
+        "consumer_lhs_zero_msb_run"
+      ]
+    },
+    {
+      "source": "new/op-5aaf77b47abbecb2",
+      "target_ps": 982,
+      "outside_features": [
+        "mapped_zero_bits",
+        "consumer_lhs_zero_msb_run"
+      ]
+    },
+    {
+      "source": "new/op-5aaf77b47abbecb2",
+      "target_ps": 835,
+      "outside_features": [
+        "mapped_zero_bits",
+        "consumer_lhs_zero_msb_run"
+      ]
+    },
+    {
+      "source": "new/op-5aaf77b47abbecb2",
+      "target_ps": 683,
+      "outside_features": [
+        "mapped_zero_bits",
+        "consumer_lhs_zero_msb_run"
+      ]
+    },
+    {
+      "source": "new/op-5aaf77b47abbecb2",
+      "target_ps": 691,
+      "outside_features": [
+        "mapped_zero_bits",
+        "consumer_lhs_zero_msb_run"
+      ]
+    }
+  ],
+  "pure_transport_regions": 0,
+  "box_inside_is_not_price_qualification": true,
+  "S_structural_domain_and_actual_arithmetic_scope_still_separate": true,
+  "independent_test_unlock_allowed": false
+}

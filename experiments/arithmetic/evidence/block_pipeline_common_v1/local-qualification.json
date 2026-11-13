@@ -1,0 +1,171 @@
+{
+  "status": "passed",
+  "stages": 10,
+  "rows": [
+    {
+      "source": "narrow-mul-direct",
+      "family": "operator",
+      "stage": "synth",
+      "delay_ps": 297.300964,
+      "area_um2": 6.211079999999998,
+      "outputs": 8,
+      "illegal_arc_rejected": {
+        "master": "AND2x2_ASAP7_75t_R",
+        "arc": [
+          "B",
+          "Y"
+        ]
+      },
+      "label_sha256": "46220cfde8f19464f95cc0d72f15bc71a4a8dced03a093afa1846b73cb0da3d1"
+    },
+    {
+      "source": "narrow-mul-direct",
+      "family": "operator",
+      "stage": "grt",
+      "delay_ps": 321.340118,
+      "area_um2": 6.211079999999998,
+      "outputs": 8,
+      "illegal_arc_rejected": {
+        "master": "AND2x2_ASAP7_75t_R",
+        "arc": [
+          "A",
+          "Y"
+        ]
+      },
+      "label_sha256": "6608129fbfac1d82dfc6b19e2b3c33931712f861825fd2a58bb7f6e3110f65c9"
+    },
+    {
+      "source": "narrow-mul-wide-shift",
+      "family": "operator",
+      "stage": "synth",
+      "delay_ps": 298.412781,
+      "area_um2": 6.211079999999999,
+      "outputs": 8,
+      "illegal_arc_rejected": {
+        "master": "AND2x2_ASAP7_75t_R",
+        "arc": [
+          "B",
+          "Y"
+        ]
+      },
+      "label_sha256": "77bc83b71fcbdfecd09d21dd4b907b9d0fd586ef39aa163849fd7bf7eaa5bd30"
+    },
+    {
+      "source": "narrow-mul-wide-shift",
+      "family": "operator",
+      "stage": "grt",
+      "delay_ps": 327.759399,
+      "area_um2": 6.211079999999999,
+      "outputs": 8,
+      "illegal_arc_rejected": {
+        "master": "AND2x2_ASAP7_75t_R",
+        "arc": [
+          "B",
+          "Y"
+        ]
+      },
+      "label_sha256": "91e58c755f1d31a6a26ffe2d312beefcbf883a3aef3bab56e403c6329bbbff0b"
+    },
+    {
+      "source": "narrow-add-direct",
+      "family": "operator",
+      "stage": "synth",
+      "delay_ps": 239.060547,
+      "area_um2": 8.354340000000004,
+      "outputs": 17,
+      "illegal_arc_rejected": {
+        "master": "HAxp5_ASAP7_75t_R",
+        "arc": [
+          "A",
+          "CON"
+        ]
+      },
+      "label_sha256": "42a4fc6d029efec3b4aba09fb61551694f8bf2cf3e9c4006500ad875d0333515"
+    },
+    {
+      "source": "narrow-add-direct",
+      "family": "operator",
+      "stage": "grt",
+      "delay_ps": 277.88562,
+      "area_um2": 8.354340000000004,
+      "outputs": 17,
+      "illegal_arc_rejected": {
+        "master": "HAxp5_ASAP7_75t_R",
+        "arc": [
+          "A",
+          "CON"
+        ]
+      },
+      "label_sha256": "9c14ce16c056b8af7a2e430e418e32da49278be34026a965c76d6588e1519c50"
+    },
+    {
+      "source": "sparse-binary-carry",
+      "family": "G",
+      "stage": "synth",
+      "delay_ps": 322.89679,
+      "area_um2": 22.117859999999972,
+      "outputs": 48,
+      "illegal_arc_rejected": {
+        "master": "HAxp5_ASAP7_75t_R",
+        "arc": [
+          "A",
+          "CON"
+        ]
+      },
+      "label_sha256": "faf77c86261624289d45e9609d399567b6e0eee20feaf7672a189b3960ac8a27"
+    },
+    {
+      "source": "sparse-binary-carry",
+      "family": "G",
+      "stage": "grt",
+      "delay_ps": 387.892303,
+      "area_um2": 22.04495999999997,
+      "outputs": 48,
+      "illegal_arc_rejected": {
+        "master": "HAxp5_ASAP7_75t_R",
+        "arc": [
+          "A",
+          "CON"
+        ]
+      },
+      "label_sha256": "41013da21c2e298abc76ad6cbf75df53e547c3f5bf8a251b29344de4453d5349"
+    },
+    {
+      "source": "small-compressor-work",
+      "family": "G",
+      "stage": "synth",
+      "delay_ps": 302.530548,
+      "area_um2": 10.92042,
+      "outputs": 32,
+      "illegal_arc_rejected": {
+        "master": "FAx1_ASAP7_75t_R",
+        "arc": [
+          "B",
+          "CON"
+        ]
+      },
+      "label_sha256": "678ebe59013529d8626a6377069159cff39647737ab11d739ad81473e480f5b8"
+    },
+    {
+      "source": "small-compressor-work",
+      "family": "G",
+      "stage": "grt",
+      "delay_ps": 351.965332,
+      "area_um2": 10.92042,
+      "outputs": 32,
+      "illegal_arc_rejected": {
+        "master": "FAx1_ASAP7_75t_R",
+        "arc": [
+          "B",
+          "CON"
+        ]
+      },
+      "label_sha256": "7d6a4105e63a3e26019077c48d231de2f2c97f37f6d89270c254bc881ea3de17"
+    }
+  ],
+  "source_role": "not_training",
+  "protocol_sha256": "d7afb756643c0ad2961ff097e3382abf3a52b1df60e4d1410ee9b88a0c77dfcb",
+  "real_arc_negative_controls": 10,
+  "new_price_qualification": false,
+  "S_bank_qualification": false
+}

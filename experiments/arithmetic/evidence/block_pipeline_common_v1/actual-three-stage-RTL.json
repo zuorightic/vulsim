@@ -1,0 +1,127 @@
+{
+  "status": "passed",
+  "four_bit_partial_reduction_cases": [
+    {
+      "view": "candidate/block4/view68",
+      "stage_counts": [
+        {
+          "add": 0,
+          "mul": 64,
+          "stage": 0
+        },
+        {
+          "add": 62,
+          "mul": 0,
+          "stage": 1
+        },
+        {
+          "add": 2,
+          "mul": 0,
+          "stage": 2
+        }
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/block-pipeline-20261112-v1/inventory/MAC32-L3-final/emitted/32/D.sv"
+    },
+    {
+      "view": "candidate/block4/view69",
+      "stage_counts": [
+        {
+          "add": 0,
+          "mul": 64,
+          "stage": 0
+        },
+        {
+          "add": 60,
+          "mul": 0,
+          "stage": 1
+        },
+        {
+          "add": 4,
+          "mul": 0,
+          "stage": 2
+        }
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/block-pipeline-20261112-v1/inventory/MAC32-L3-final/emitted/33/D.sv"
+    },
+    {
+      "view": "candidate/block4/view70",
+      "stage_counts": [
+        {
+          "add": 0,
+          "mul": 64,
+          "stage": 0
+        },
+        {
+          "add": 56,
+          "mul": 0,
+          "stage": 1
+        },
+        {
+          "add": 8,
+          "mul": 0,
+          "stage": 2
+        }
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/block-pipeline-20261112-v1/inventory/MAC32-L3-final/emitted/34/D.sv"
+    },
+    {
+      "view": "candidate/block4/view71",
+      "stage_counts": [
+        {
+          "add": 0,
+          "mul": 64,
+          "stage": 0
+        },
+        {
+          "add": 48,
+          "mul": 0,
+          "stage": 1
+        },
+        {
+          "add": 16,
+          "mul": 0,
+          "stage": 2
+        }
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/block-pipeline-20261112-v1/inventory/MAC32-L3-final/emitted/35/D.sv"
+    },
+    {
+      "view": "candidate/block4/view72",
+      "stage_counts": [
+        {
+          "add": 0,
+          "mul": 64,
+          "stage": 0
+        },
+        {
+          "add": 32,
+          "mul": 0,
+          "stage": 1
+        },
+        {
+          "add": 32,
+          "mul": 0,
+          "stage": 2
+        }
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/block-pipeline-20261112-v1/inventory/MAC32-L3-final/emitted/36/D.sv"
+    }
+  ],
+  "rtl": {
+    "status": "passed",
+    "cases": 40,
+    "cycles_per_case": 64,
+    "valid_data_comparisons": 1560,
+    "behaviors": [
+      "independent input writes",
+      "held valid",
+      "bubbles",
+      "unsigned overflow",
+      "nonzero reset",
+      "in-flight reset"
+    ],
+    "reset_timing_checked": false
+  },
+  "selected_by_price": false,
+  "new_price_qualification": false
+}

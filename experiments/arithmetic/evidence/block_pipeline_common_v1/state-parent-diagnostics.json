@@ -1,0 +1,116 @@
+{
+  "status": "diagnostic_only",
+  "rows": [
+    {
+      "source": "bank-d552cb563d909bd6",
+      "owners": {
+        "input_service": {
+          "parent_formula_area_um2": 100.16106242091976,
+          "observed_area_um2": 122.35536000000158,
+          "relative_error": 0.18139211538490455,
+          "features": {
+            "data_bits": 128,
+            "data_signals": 2,
+            "valid_bits": 1,
+            "enable_domains": 3,
+            "reset_one_bits": 66
+          }
+        },
+        "native_state": {
+          "parent_formula_area_um2": 1779.6247134437224,
+          "observed_area_um2": 1783.2214800001425,
+          "relative_error": 0.002017004952418933,
+          "features": {
+            "data_bits": 3072,
+            "data_signals": 192,
+            "valid_bits": 2,
+            "enable_domains": 2,
+            "reset_one_bits": 1508
+          }
+        },
+        "external_state": {
+          "parent_formula_area_um2": 7.595106514500081,
+          "observed_area_um2": 7.5378599999999985,
+          "relative_error": 0.00759453140547618,
+          "features": {
+            "data_bits": 16,
+            "data_signals": 1,
+            "valid_bits": 1,
+            "enable_domains": 0,
+            "reset_one_bits": 8
+          }
+        }
+      },
+      "required_period_by_class_ps": {
+        "native_data": 168.43444799999997,
+        "native_enable": 695.425354,
+        "native_valid": 415.613159,
+        "external_data": 144.91259799999978,
+        "external_valid": 120.53894000000001,
+        "input_data": 166.42480500000005,
+        "input_enable": 289.46240200000005,
+        "input_valid": 97.89209000000005,
+        "birth_data": 448.35766600000005
+      },
+      "birth_adapter_path_not_an_S_boundary": true,
+      "parent_price_scope_not_extended": true
+    },
+    {
+      "source": "bank-d05db1487006b0fb",
+      "owners": {
+        "input_service": {
+          "parent_formula_area_um2": 99.63901583304032,
+          "observed_area_um2": 126.68562000000169,
+          "relative_error": 0.21349387694484198,
+          "features": {
+            "data_bits": 128,
+            "data_signals": 2,
+            "valid_bits": 1,
+            "enable_domains": 3,
+            "reset_one_bits": 63
+          }
+        },
+        "native_state": {
+          "parent_formula_area_um2": 2000.530073617013,
+          "observed_area_um2": 2006.6454000001677,
+          "relative_error": 0.0030475371399223006,
+          "features": {
+            "data_bits": 3456,
+            "data_signals": 48,
+            "valid_bits": 2,
+            "enable_domains": 2,
+            "reset_one_bits": 1752
+          }
+        },
+        "external_state": {
+          "parent_formula_area_um2": 32.69767827934555,
+          "observed_area_um2": 32.65919999999994,
+          "relative_error": 0.0011781758079074554,
+          "features": {
+            "data_bits": 72,
+            "data_signals": 1,
+            "valid_bits": 1,
+            "enable_domains": 0,
+            "reset_one_bits": 41
+          }
+        }
+      },
+      "required_period_by_class_ps": {
+        "native_data": 169.98461900000004,
+        "native_enable": 893.248596,
+        "native_valid": 368.56665,
+        "external_data": 156.690063,
+        "external_valid": 129.53418000000016,
+        "input_data": 163.11035199999992,
+        "input_enable": 311.393005,
+        "input_valid": 88.14099099999996,
+        "birth_data": 469.90820299999996
+      },
+      "birth_adapter_path_not_an_S_boundary": true,
+      "parent_price_scope_not_extended": true
+    }
+  ],
+  "models_or_support_changed": false,
+  "observer_and_source_adapter_not_charged_to_S": true,
+  "used_for_fit_or_D_selection": false
+}

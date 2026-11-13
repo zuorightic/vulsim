@@ -1,0 +1,283 @@
+{
+  "version": "common-G-prefix-qualification-candidate-v1",
+  "area": {
+    "kind": "nonnegative_linear",
+    "features": [
+      "one",
+      "counter_count",
+      "final_live_xor_gates",
+      "final_live_prefix_and_gates",
+      "final_live_prefix_or_gates",
+      "counter_pressure",
+      "final_pressure_logic"
+    ],
+    "coefficients": [
+      0.0,
+      0.3081768692883764,
+      0.0,
+      0.21017262656509542,
+      0.1653532152184892,
+      0.014876674154247278,
+      0.0008094733515477596
+    ],
+    "intercept": 0.0
+  },
+  "delay": {
+    "kind": "nonnegative_linear",
+    "features": [
+      "one",
+      "log2_post_merge_carry_span",
+      "compression_levels",
+      "log2_target"
+    ],
+    "coefficients": [
+      0.0,
+      62.20801070528211,
+      82.26727995203025,
+      11.407567268360342
+    ],
+    "intercept": 0.0
+  },
+  "support": {
+    "version": "numerical-structural-support-v2-distinct-geometry",
+    "features": [
+      "counter_count",
+      "final_live_xor_gates",
+      "final_live_prefix_and_gates",
+      "final_live_prefix_or_gates",
+      "final_max_carry_span"
+    ],
+    "bounds": [
+      [
+        0.0,
+        2921.0
+      ],
+      [
+        11.0,
+        189.0
+      ],
+      [
+        12.0,
+        259.0
+      ],
+      [
+        4.0,
+        176.0
+      ],
+      [
+        6.0,
+        96.0
+      ]
+    ],
+    "scales": [
+      2921.0,
+      178.0,
+      247.0,
+      172.0,
+      90.0
+    ],
+    "anchors": [
+      [
+        0.0,
+        11.0,
+        12.0,
+        4.0,
+        8.0
+      ],
+      [
+        0.0,
+        33.0,
+        29.0,
+        22.0,
+        6.0
+      ],
+      [
+        0.0,
+        35.0,
+        45.0,
+        19.0,
+        24.0
+      ],
+      [
+        0.0,
+        79.0,
+        125.0,
+        26.0,
+        64.0
+      ],
+      [
+        0.0,
+        113.0,
+        194.0,
+        34.0,
+        96.0
+      ],
+      [
+        7.0,
+        59.0,
+        73.0,
+        50.0,
+        24.0
+      ],
+      [
+        16.0,
+        29.0,
+        29.0,
+        21.0,
+        15.0
+      ],
+      [
+        20.0,
+        36.0,
+        42.0,
+        28.0,
+        10.0
+      ],
+      [
+        31.0,
+        39.0,
+        50.0,
+        28.0,
+        24.0
+      ],
+      [
+        32.0,
+        61.0,
+        73.0,
+        51.0,
+        31.0
+      ],
+      [
+        56.0,
+        64.0,
+        72.0,
+        49.0,
+        13.0
+      ],
+      [
+        61.0,
+        81.0,
+        114.0,
+        64.0,
+        48.0
+      ],
+      [
+        64.0,
+        125.0,
+        165.0,
+        113.0,
+        63.0
+      ],
+      [
+        96.0,
+        189.0,
+        259.0,
+        176.0,
+        95.0
+      ],
+      [
+        121.0,
+        165.0,
+        244.0,
+        136.0,
+        96.0
+      ],
+      [
+        168.0,
+        118.0,
+        161.0,
+        101.0,
+        64.0
+      ],
+      [
+        220.0,
+        57.0,
+        69.0,
+        48.0,
+        29.0
+      ],
+      [
+        275.0,
+        91.0,
+        146.0,
+        59.0,
+        64.0
+      ],
+      [
+        444.0,
+        121.0,
+        161.0,
+        110.0,
+        61.0
+      ],
+      [
+        702.0,
+        64.0,
+        97.0,
+        44.0,
+        42.0
+      ],
+      [
+        949.0,
+        119.0,
+        156.0,
+        107.0,
+        60.0
+      ],
+      [
+        1184.0,
+        115.0,
+        185.0,
+        80.0,
+        77.0
+      ],
+      [
+        2921.0,
+        140.0,
+        225.0,
+        94.0,
+        95.0
+      ]
+    ],
+    "k": 2,
+    "requested_k": 2,
+    "radius": 0.8814239973670961,
+    "radius_factor": 1.05,
+    "target_interval_ps": [
+      500.0,
+      3000.0
+    ],
+    "label_values_stored": false,
+    "train_sources": 23,
+    "distinct_geometries": 23,
+    "calibration_population": "leave-one-distinct-geometry-out",
+    "query_population": "distinct-geometry",
+    "qualified_for_production": false
+  },
+  "target_interval_ps": [
+    500,
+    3000
+  ],
+  "boundary_policy": "register-launched-reduction-v1",
+  "area_feature_version": "bit-column-features-v4-live-prefix",
+  "delay_feature_version": "bit-column-features-v3-final-merge",
+  "quality_status": "frozen_for_independent",
+  "production_binding": false,
+  "inference": "shared numerical functions; no workload/source/shape/exact-T coefficients",
+  "quality": {
+    "source_median_max": 0.15,
+    "source_P95_max": 0.35,
+    "domain_false_refusal_max": 0,
+    "outside_acceptance_max": 0
+  },
+  "reserve": "none added to G node maxima; joint S/full-stage reserve remains separate",
+  "dependency_sha256": {
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/reduction_prefix_features.py": "67325b9b404e85b6685d8b770994002e441ae708e857705898e5bbc50c0b0aa3",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/reduction_merge_features.py": "e9716905ccaa734db10993f1fea13cb5365797bcd8d73990a920f2f10d2599ee",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/conditional_function_support_v2.py": "9b505aa98d06e142a5023310e1f29d7f169e022db173c5714b809cf094974df5",
+    "/home/zyrv/vulsim/rtlzz/src/backend/arithmetic_prefix_features.cpp": "fd3a7abd9f18b711fd93002f6696884158b85edc40fbb904bdd41ec2e6e0ee38",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/reduction_function_v2.py": "f4a684f142a5159e094a77484ab862955d59c649aff7757c7c4e252c915038f2",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/reduction_function.py": "c03c2245b2f35702d570c9df525eaf449d2fc2b40b457b9baa165799a168e0b1",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/reduction_sampling_v2.py": "d3127e3aac784193b0420e9fd0c1ff4ce11b9ea789f9b43f0d8c5295bb497465"
+  }
+}

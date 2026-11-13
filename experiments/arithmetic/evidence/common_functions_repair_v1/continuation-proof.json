@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "inherited_valid_points": 5,
+  "history_receipts": [
+    {
+      "source": "op-62aca83e77574436",
+      "parent_history_sha256": "4082d70660068ddd156c0c8de6dcd69ead3d67f71d4adaad1f255089391c4390",
+      "valid_points": 1,
+      "failure_history_retained_in_parent": []
+    },
+    {
+      "source": "G-f5bf5f9e3e7d766b",
+      "parent_history_sha256": "3d17bc609e4226033c7829e9a2e58180d9a8aec9390e1e958691a3c26a80b13b",
+      "valid_points": 1,
+      "failure_history_retained_in_parent": []
+    },
+    {
+      "source": "S-aa6ad846d04ce34a",
+      "parent_history_sha256": "c4f759990cd0db0f18f638d014ef2973a19df4fcc902ba50cb89d16873b20ce4",
+      "valid_points": 1,
+      "failure_history_retained_in_parent": []
+    },
+    {
+      "source": "op-d1b46ed7b867e7a4",
+      "parent_history_sha256": "3d36edaaa6325f6d077c32a3d73bc839741f9b28b4ba6f0adafacb02c08d82ac",
+      "valid_points": 1,
+      "failure_history_retained_in_parent": []
+    },
+    {
+      "source": "G-b48ff980e300bb37",
+      "parent_history_sha256": "4d4c65ede2e40fce89bcdf68936d6f2e565fa5261274113047d664a2407cc1d2",
+      "valid_points": 1,
+      "failure_history_retained_in_parent": []
+    },
+    {
+      "source": "S-142b114d7d01f2a1",
+      "parent_history_sha256": "de97793b8bb2c4a7421127c9e4601b9cd2561e181b04f98c0a413248ec1ffebc",
+      "valid_points": 0,
+      "failure_history_retained_in_parent": [
+        {
+          "SDC_ps": 1500,
+          "ABC_ps": 1500,
+          "proposal": "fixed_domain_clock_probe",
+          "reference_ratio": null,
+          "source_id": "S-142b114d7d01f2a1",
+          "role": "train",
+          "status": "failed",
+          "failure_reason": "all backend job slots occupied"
+        }
+      ]
+    }
+  ],
+  "unlaunched_failed_task": "S-142b114d7d01f2a1-T1500",
+  "failed_task_leaf_reservations": 0,
+  "paid_physical_retries": 0,
+  "roles_labels_fit_and_sampling_unchanged": true,
+  "queue_wait_is_unpaid_orchestration_only": true,
+  "parent_failure_and_cost_preserved": true
+}

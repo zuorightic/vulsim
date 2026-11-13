@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "regression": {
+    "old_radius": 0.0,
+    "new_radius": 1.05,
+    "old_verdicts": [
+      "cost_uncovered",
+      "cost_uncovered",
+      "cost_uncovered"
+    ],
+    "new_verdicts": [
+      "structurally_supported",
+      "structurally_supported",
+      "structurally_supported"
+    ]
+  },
+  "real_dataset": {
+    "add": {
+      "old_radius": 1.2091143103470088,
+      "new_radius": 1.2091143103470088,
+      "source_count": 29,
+      "distinct_geometries": 23,
+      "changes": [],
+      "prices_unchanged": true
+    },
+    "mul": {
+      "old_radius": 1.357590007409303,
+      "new_radius": 1.357590007409303,
+      "source_count": 24,
+      "distinct_geometries": 23,
+      "changes": [],
+      "prices_unchanged": true
+    },
+    "G": {
+      "old_radius": 1.0532066445045638,
+      "new_radius": 1.0532066445045638,
+      "source_count": 23,
+      "distinct_geometries": 23,
+      "changes": [],
+      "prices_unchanged": true
+    }
+  },
+  "changed_price_coefficients": false,
+  "old_support_unchanged": true,
+  "new_model_qualified": false
+}

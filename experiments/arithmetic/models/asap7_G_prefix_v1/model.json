@@ -1,0 +1,27 @@
+{
+  "version": "asap7-G-prefix-functions-v1",
+  "quality_status": "passed_independent",
+  "profile_sha256": "f9d3e71d377d0fef70b66e43828186962caa04fcec31b8f78ad8760c5459f1c7",
+  "parameters": {
+    "path": "parameters.json",
+    "sha256": "661290a5cd42e936f7dd1faaa21b5a2fea7b15d71300e53d3189e2241b40c853"
+  },
+  "evaluation": {
+    "path": "independent.json",
+    "sha256": "dd4e1f827bd38c299f778d8b0e892d2d93013256ca15a748a595364740ed54b1"
+  },
+  "feature_source_sha256": {
+    "reduction_prefix_features.py": "67325b9b404e85b6685d8b770994002e441ae708e857705898e5bbc50c0b0aa3",
+    "reduction_merge_features.py": "e9716905ccaa734db10993f1fea13cb5365797bcd8d73990a920f2f10d2599ee",
+    "reduction_function_v2.py": "f4a684f142a5159e094a77484ab862955d59c649aff7757c7c4e252c915038f2",
+    "reduction_function.py": "c03c2245b2f35702d570c9df525eaf449d2fc2b40b457b9baa165799a168e0b1",
+    "conditional_function_support_v2.py": "9b505aa98d06e142a5023310e1f29d7f169e022db173c5714b809cf094974df5",
+    "reduction_prefix_model.py": "c0d08e870168b6846077030dce403f0f9f56eec30f9df9bbdb6e4aad008f1afd"
+  },
+  "scope": "independent unsigned terms; register launch; one direct capture bank; fused region replaces internal Add prices; numerical T500..3000 intersect structural support",
+  "source_role_duties_consumed": 4,
+  "independent_requests": 8,
+  "full_D_ready": false,
+  "S_qualified": false,
+  "public_D_binding": false
+}

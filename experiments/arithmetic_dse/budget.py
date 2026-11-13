@@ -21,6 +21,7 @@ ROOT = Path(__file__).resolve().parents[2]
 POLICY = ROOT/'experiments/arithmetic_dse/configs/backend_policy_v9.json'
 CHECKPOINT = ROOT/'experiments/arithmetic/evidence/step7_budget_v4/checkpoint.json.gz'
 LEDGER = ROOT/'experiments/arithmetic/backend_usage.json'
+SNAPSHOT = ROOT/'experiments/arithmetic/backend_usage.snapshot.json.gz'
 STAGE_LIMITS = {'synth':'max_synthesis_calls', 'grt':'max_global_route_calls',
                 'final':'max_detailed_route_calls'}
 
@@ -54,9 +55,16 @@ def cpu_seconds(resource_log):
 
 
 class Ledger:
-    def __init__(self, path=LEDGER, policy=POLICY, checkpoint=CHECKPOINT):
+    def __init__(self, path=LEDGER, policy=POLICY, checkpoint=CHECKPOINT, *, snapshot=None):
         self.path, self.policy, self.checkpoint = map(Path, (path, policy, checkpoint))
+        self.snapshot = (Path(snapshot) if snapshot is not None else SNAPSHOT
+                         if (self.path, self.policy, self.checkpoint) == (LEDGER, POLICY, CHECKPOINT)
+                         else None)
         self.job_id = None
+        # Existing runners also read Ledger().path before their first job.
+        if self.snapshot is not None and not self.path.exists():
+            with self._transaction():
+                pass
 
     def _job_lock_path(self, identity):
         return self.path.parent/(self.path.stem+'.jobs')/(identity+'.lock')
@@ -144,9 +152,13 @@ class Ledger:
             else:
                 if initialized:
                     raise ValueError('live budget ledger missing after initialization; restore it from evidence')
-                checkpoint = checkpoint_data(self.checkpoint)
-                state = {'version':'physical-budget-ledger-v1', 'policy_sha256':digest(self.policy),
-                         'checkpoint_sha256':digest(self.checkpoint), 'entries':checkpoint['entries']}
+                if self.snapshot is not None:
+                    from .ledger_snapshot import load_snapshot
+                    state = load_snapshot(self.snapshot, self.policy, self.checkpoint)
+                else:
+                    checkpoint = checkpoint_data(self.checkpoint)
+                    state = {'version':'physical-budget-ledger-v1', 'policy_sha256':digest(self.policy),
+                             'checkpoint_sha256':digest(self.checkpoint), 'entries':checkpoint['entries']}
             yield state
             state['usage'] = usage(state['entries'])
             with tempfile.NamedTemporaryFile(mode='w', dir=self.path.parent, delete=False) as output:

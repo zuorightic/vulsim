@@ -1,0 +1,1306 @@
+{
+  "version": "common-functions-repair-candidate-v1",
+  "quality_status": "diagnostic_candidate",
+  "protocol_sha256": "953cf4e8353d3039657e7241a59158a10ee68d8c5e6ae6e9df554a2e86235554",
+  "dataset_sha256": "5e87ad1a01b6a869fd0d2ff97949214e2dcc16a8046323280fcfb4dd0cb16c9b",
+  "operator_features_sha256": "9062d93aeb534a6bcba1bcdf1975de59cb954097b32c567a3330967898bd2056",
+  "G_features_sha256": "e9716905ccaa734db10993f1fea13cb5365797bcd8d73990a920f2f10d2599ee",
+  "S_features_sha256": "49af7e8c4f89976bf43cdbfde0bdc692514fdd1f10ccac899d9ca71c496bfa62",
+  "operators": {
+    "mul": {
+      "delay": {
+        "kind": "linear",
+        "features": [
+          "log2_lhs",
+          "log2_rhs",
+          "log2_result",
+          "log2_add_carry_span",
+          "log2_target_ps",
+          "consumer_add",
+          "capture_banks",
+          "consumer_add_carry_span",
+          "mapping_shift_max"
+        ],
+        "coefficients": [
+          120.84645746726198,
+          -39.38418348407347,
+          119.42567169775832,
+          33.489450069258936,
+          17.40971817226531,
+          -1.0634520541896892,
+          3.358666521372261,
+          0.23964765976725952,
+          -0.4825597620438351
+        ],
+        "intercept": -445.7168123967233,
+        "ridge_alpha": 1.0
+      },
+      "area": {
+        "kind": "linear",
+        "features": [
+          "retained_product_terms",
+          "lhs_width",
+          "rhs_width",
+          "result_width",
+          "capture_banks",
+          "consumer_add_carry_span",
+          "target_pressure",
+          "pressure_product_terms"
+        ],
+        "coefficients": [
+          0.3804333571835661,
+          -0.027168818522093314,
+          -0.9801325127738292,
+          0.7664309472622687,
+          -0.20082145120325628,
+          -0.0024882500336868025,
+          -0.5858285822979268,
+          0.05033056716553811
+        ],
+        "intercept": -1.6778205599811464,
+        "ridge_alpha": 1.0
+      }
+    },
+    "add": {
+      "delay": {
+        "kind": "linear",
+        "features": [
+          "log2_live_lhs_bits",
+          "log2_live_rhs_bits",
+          "log2_add_live_carry_span",
+          "log2_target_ps",
+          "capture_banks",
+          "consumer_pin_uses",
+          "consumer_carry_below_mean",
+          "consumer_carry_above_mean"
+        ],
+        "coefficients": [
+          36.71127799506462,
+          -6.633054251214027,
+          70.41211785801113,
+          7.047846264344078,
+          9.173936691006702,
+          0.09782848979381634,
+          -0.24677354016695424,
+          -0.113105410839223
+        ],
+        "intercept": -209.65994603843086,
+        "ridge_alpha": 1.0
+      },
+      "area": {
+        "kind": "linear",
+        "features": [
+          "add_full_adder_columns",
+          "add_half_adder_columns",
+          "add_increment_columns",
+          "capture_banks",
+          "consumer_pin_uses",
+          "consumer_carry_below_mean",
+          "consumer_carry_above_mean",
+          "target_pressure",
+          "pressure_add_logic",
+          "pressure_consumer_pin_uses"
+        ],
+        "coefficients": [
+          0.8737767697191504,
+          0.0,
+          0.306338053604856,
+          -0.11060952082672929,
+          -0.0045325640227451515,
+          -0.005915558270986649,
+          0.010529658855595137,
+          -0.05119010368437289,
+          0.025238564111369835,
+          0.006311232766593181
+        ],
+        "intercept": -0.9995112288615964,
+        "ridge_alpha": 1.0
+      }
+    }
+  },
+  "G": {
+    "delay_ps": {
+      "kind": "nonnegative_linear",
+      "features": [
+        "one",
+        "log2_post_merge_carry_span",
+        "compression_levels",
+        "log2_target"
+      ],
+      "coefficients": [
+        0.0,
+        62.20801070528211,
+        82.26727995203025,
+        11.407567268360342
+      ],
+      "intercept": 0.0
+    },
+    "area_um2": {
+      "kind": "nonnegative_linear",
+      "features": [
+        "one",
+        "counter_count",
+        "post_merge_full_adder_columns",
+        "post_merge_half_adder_columns",
+        "post_merge_increment_columns",
+        "post_merge_pressure_work"
+      ],
+      "coefficients": [
+        0.0,
+        0.337796650346696,
+        0.7073816808858227,
+        0.0,
+        0.3885100113421399,
+        0.008850757362044147
+      ],
+      "intercept": 0.0
+    }
+  },
+  "S": {
+    "input_service": {
+      "parent": {
+        "kind": "nonnegative_linear",
+        "features": [
+          "data_bits",
+          "data_signals",
+          "valid_bits",
+          "enable_domains",
+          "reset_one_bits"
+        ],
+        "coefficients": [
+          0.6690720504347358,
+          0.92393724767559,
+          0.0,
+          0.39564684552490315,
+          0.17401552929314673
+        ]
+      },
+      "correction": {
+        "kind": "nonnegative_linear",
+        "features": [
+          "one",
+          "input_logical_uses",
+          "input_max_bit_load",
+          "input_log_load_sum",
+          "clock_pressure"
+        ],
+        "coefficients": [
+          0.0,
+          0.006571635568248521,
+          0.0,
+          0.0,
+          1.649003840456973
+        ]
+      }
+    },
+    "native_state": {
+      "parent": {
+        "kind": "nonnegative_linear",
+        "features": [
+          "data_bits",
+          "data_signals",
+          "valid_bits",
+          "enable_domains",
+          "reset_one_bits"
+        ],
+        "coefficients": [
+          0.5371088262665842,
+          0.036091820059842315,
+          0.0,
+          0.0,
+          0.08136390563745757
+        ]
+      },
+      "correction": null
+    },
+    "external_state": {
+      "parent": {
+        "kind": "nonnegative_linear",
+        "features": [
+          "data_bits",
+          "data_signals",
+          "valid_bits",
+          "enable_domains",
+          "reset_one_bits"
+        ],
+        "coefficients": [
+          0.4225657312852458,
+          0.002379440888032674,
+          0.48285335780648936,
+          0.0,
+          0.043602751905203234
+        ]
+      },
+      "correction": null
+    },
+    "boundaries": {
+      "native_data": {
+        "point": {
+          "kind": "linear",
+          "features": [
+            "one",
+            "log2_target",
+            "clock_pressure",
+            "control_log2_native_valid_load",
+            "control_log2_launch_load",
+            "service_enable_max_load"
+          ],
+          "coefficients": [
+            8.295808621382073e-14,
+            -1.4552726261672564,
+            -0.4566028464054653,
+            2.930178451554196,
+            1.2616412583797565,
+            0.01699534234200347
+          ],
+          "intercept": 125.59163108753894,
+          "ridge_alpha": 1.0
+        },
+        "train_leave_source_out_reserve_ps": 11.438852531968905
+      },
+      "native_enable": {
+        "point": {
+          "kind": "linear",
+          "features": [
+            "one",
+            "log2_target",
+            "clock_pressure",
+            "control_log2_native_valid_load",
+            "control_log2_launch_load",
+            "service_enable_max_load"
+          ],
+          "coefficients": [
+            5.299267594289911e-12,
+            46.52131169108752,
+            -69.73368643015972,
+            10.165839424200044,
+            52.334120760834,
+            -0.1333465846360607
+          ],
+          "intercept": 87.51096993550675,
+          "ridge_alpha": 1.0
+        },
+        "train_leave_source_out_reserve_ps": 155.92717946694916
+      },
+      "native_valid": {
+        "point": {
+          "kind": "linear",
+          "features": [
+            "one",
+            "log2_target",
+            "clock_pressure",
+            "control_log2_native_valid_load",
+            "control_log2_launch_load",
+            "service_enable_max_load"
+          ],
+          "coefficients": [
+            -1.1201936665554704e-12,
+            -34.35754344595591,
+            -57.09814572393767,
+            10.391860153107933,
+            5.944715745098377,
+            -0.8166957703805916
+          ],
+          "intercept": 406.1220698889375,
+          "ridge_alpha": 1.0
+        },
+        "train_leave_source_out_reserve_ps": 327.64071770318964
+      },
+      "external_data": {
+        "point": {
+          "kind": "linear",
+          "features": [
+            "one",
+            "log2_target",
+            "clock_pressure",
+            "control_log2_native_valid_load",
+            "control_log2_launch_load",
+            "service_enable_max_load"
+          ],
+          "coefficients": [
+            0.0,
+            0.5830968312478381,
+            3.940101394148474,
+            2.8312779091321096,
+            -2.7505650755825997,
+            0.07803472073911269
+          ],
+          "intercept": 141.909555253846,
+          "ridge_alpha": 1.0
+        },
+        "train_leave_source_out_reserve_ps": 9.756070500249479
+      },
+      "external_valid": {
+        "point": {
+          "kind": "linear",
+          "features": [
+            "one",
+            "log2_target",
+            "clock_pressure",
+            "control_log2_native_valid_load",
+            "control_log2_launch_load",
+            "service_enable_max_load"
+          ],
+          "coefficients": [
+            0.0,
+            2.353729712270678,
+            8.072735280670926,
+            4.592418652851734,
+            -10.100528052056939,
+            -0.065748545580209
+          ],
+          "intercept": 178.49767741573788,
+          "ridge_alpha": 1.0
+        },
+        "train_leave_source_out_reserve_ps": 24.301441094679703
+      },
+      "input_data": {
+        "point": {
+          "kind": "linear",
+          "features": [
+            "one",
+            "log2_target",
+            "clock_pressure",
+            "control_log2_native_valid_load",
+            "control_log2_launch_load",
+            "service_enable_max_load"
+          ],
+          "coefficients": [
+            0.0,
+            2.1315493602277678,
+            4.83203543214125,
+            -0.08694359354364581,
+            24.49952853113879,
+            -0.41049988033481477
+          ],
+          "intercept": -92.98810838854533,
+          "ridge_alpha": 1.0
+        },
+        "train_leave_source_out_reserve_ps": 37.73203501610749
+      },
+      "input_enable": {
+        "point": {
+          "kind": "linear",
+          "features": [
+            "one",
+            "log2_target",
+            "clock_pressure",
+            "control_log2_native_valid_load",
+            "control_log2_launch_load",
+            "service_enable_max_load"
+          ],
+          "coefficients": [
+            0.0,
+            3.606949300516737,
+            -26.455338599038214,
+            1.9027423122813012,
+            -7.760367571701398,
+            0.553420718150705
+          ],
+          "intercept": 301.0602720508787,
+          "ridge_alpha": 1.0
+        },
+        "train_leave_source_out_reserve_ps": 42.515268044832396
+      },
+      "input_valid": {
+        "point": {
+          "kind": "linear",
+          "features": [
+            "one",
+            "log2_target",
+            "clock_pressure",
+            "control_log2_native_valid_load",
+            "control_log2_launch_load",
+            "service_enable_max_load"
+          ],
+          "coefficients": [
+            1.2365323180703287e-13,
+            -1.0540248125097156,
+            -1.8782887665315893,
+            17.25383179524171,
+            -25.44604211000944,
+            -0.00834443153106295
+          ],
+          "intercept": 171.50718856754145,
+          "ridge_alpha": 1.0
+        },
+        "train_leave_source_out_reserve_ps": 23.656042538239575
+      }
+    }
+  },
+  "full_D_ready": false,
+  "fitting_freeze_sha256": "794b0d6ecc5c5227d42856ff77c53b610974feb12593dd370704016fbca47366",
+  "support": {
+    "add": {
+      "version": "numerical-structural-support-v1",
+      "features": [
+        "live_lhs_bits",
+        "live_rhs_bits",
+        "live_operand_overlap",
+        "add_max_live_carry_span",
+        "capture_banks",
+        "consumer_pin_uses",
+        "consumer_carry_below_mean",
+        "consumer_carry_above_mean"
+      ],
+      "bounds": [
+        [
+          8.0,
+          64.0
+        ],
+        [
+          4.0,
+          64.0
+        ],
+        [
+          4.0,
+          64.0
+        ],
+        [
+          4.0,
+          64.0
+        ],
+        [
+          0.0,
+          2.0
+        ],
+        [
+          0.0,
+          64.0
+        ],
+        [
+          0.0,
+          69.0
+        ],
+        [
+          0.0,
+          60.0
+        ]
+      ],
+      "scales": [
+        56.0,
+        60.0,
+        60.0,
+        60.0,
+        2.0,
+        64.0,
+        69.0,
+        60.0
+      ],
+      "anchors": [
+        [
+          8.0,
+          4.0,
+          4.0,
+          4.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          8.0,
+          12.0,
+          8.0,
+          12.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          8.0,
+          24.0,
+          8.0,
+          24.0,
+          0.0,
+          25.0,
+          20.0,
+          43.0
+        ],
+        [
+          8.0,
+          32.0,
+          8.0,
+          28.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          12.0,
+          8.0,
+          8.0,
+          12.0,
+          2.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          12.0,
+          12.0,
+          4.0,
+          12.0,
+          0.0,
+          21.0,
+          69.0,
+          26.0
+        ],
+        [
+          16.0,
+          16.0,
+          8.0,
+          16.0,
+          0.0,
+          57.0,
+          25.894736842105264,
+          14.385964912280702
+        ],
+        [
+          16.0,
+          16.0,
+          8.0,
+          16.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          16.0,
+          20.0,
+          16.0,
+          20.0,
+          2.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          16.0,
+          24.0,
+          16.0,
+          24.0,
+          0.0,
+          25.0,
+          67.0,
+          60.0
+        ],
+        [
+          16.0,
+          64.0,
+          16.0,
+          64.0,
+          0.0,
+          64.0,
+          47.5,
+          47.5
+        ],
+        [
+          25.0,
+          41.0,
+          25.0,
+          41.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          32.0,
+          32.0,
+          16.0,
+          32.0,
+          0.0,
+          49.0,
+          24.0,
+          39.0
+        ],
+        [
+          32.0,
+          32.0,
+          16.0,
+          32.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          33.0,
+          49.0,
+          33.0,
+          49.0,
+          0.0,
+          50.0,
+          23.94,
+          17.22
+        ],
+        [
+          33.0,
+          49.0,
+          33.0,
+          49.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          41.0,
+          57.0,
+          41.0,
+          57.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          42.0,
+          50.0,
+          42.0,
+          50.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          49.0,
+          64.0,
+          49.0,
+          64.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          51.0,
+          64.0,
+          51.0,
+          64.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          58.0,
+          64.0,
+          58.0,
+          64.0,
+          0.0,
+          64.0,
+          30.28125,
+          19.921875
+        ],
+        [
+          58.0,
+          64.0,
+          58.0,
+          64.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          64.0,
+          64.0,
+          64.0,
+          64.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "k": 2,
+      "radius": 1.2091143103470088,
+      "radius_factor": 1.05,
+      "target_interval_ps": [
+        500.0,
+        3000.0
+      ],
+      "label_values_stored": false,
+      "train_sources": 29,
+      "qualified_for_production": false
+    },
+    "mul": {
+      "version": "numerical-structural-support-v1",
+      "features": [
+        "lhs_width",
+        "rhs_width",
+        "result_width",
+        "retained_product_terms",
+        "capture_banks",
+        "consumer_pin_uses",
+        "consumer_carry_below_mean",
+        "consumer_carry_above_mean"
+      ],
+      "bounds": [
+        [
+          4.0,
+          32.0
+        ],
+        [
+          4.0,
+          32.0
+        ],
+        [
+          6.0,
+          64.0
+        ],
+        [
+          15.0,
+          1024.0
+        ],
+        [
+          0.0,
+          2.0
+        ],
+        [
+          0.0,
+          64.0
+        ],
+        [
+          0.0,
+          80.0
+        ],
+        [
+          0.0,
+          61.0
+        ]
+      ],
+      "scales": [
+        28.0,
+        28.0,
+        58.0,
+        1009.0,
+        2.0,
+        64.0,
+        80.0,
+        61.0
+      ],
+      "anchors": [
+        [
+          4.0,
+          4.0,
+          6.0,
+          15.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          4.0,
+          5.0,
+          9.0,
+          20.0,
+          0.0,
+          9.0,
+          34.0,
+          61.0
+        ],
+        [
+          4.0,
+          5.0,
+          9.0,
+          20.0,
+          0.0,
+          9.0,
+          80.0,
+          15.0
+        ],
+        [
+          4.0,
+          6.0,
+          10.0,
+          24.0,
+          2.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          5.0,
+          7.0,
+          12.0,
+          35.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          6.0,
+          8.0,
+          14.0,
+          48.0,
+          0.0,
+          14.0,
+          16.5,
+          30.5
+        ],
+        [
+          8.0,
+          8.0,
+          8.0,
+          36.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          8.0,
+          8.0,
+          16.0,
+          64.0,
+          0.0,
+          16.0,
+          1.75,
+          13.75
+        ],
+        [
+          8.0,
+          8.0,
+          16.0,
+          64.0,
+          0.0,
+          16.0,
+          5.75,
+          1.75
+        ],
+        [
+          8.0,
+          8.0,
+          16.0,
+          64.0,
+          0.0,
+          16.0,
+          13.75,
+          1.75
+        ],
+        [
+          8.0,
+          8.0,
+          16.0,
+          64.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          8.0,
+          8.0,
+          16.0,
+          64.0,
+          2.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          8.0,
+          16.0,
+          24.0,
+          128.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          16.0,
+          16.0,
+          16.0,
+          136.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          16.0,
+          16.0,
+          32.0,
+          256.0,
+          0.0,
+          32.0,
+          14.625,
+          8.625
+        ],
+        [
+          16.0,
+          16.0,
+          32.0,
+          256.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          16.0,
+          16.0,
+          32.0,
+          256.0,
+          2.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          16.0,
+          24.0,
+          40.0,
+          384.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          32.0,
+          32.0,
+          32.0,
+          528.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          32.0,
+          32.0,
+          64.0,
+          1024.0,
+          0.0,
+          64.0,
+          31.0625,
+          24.0625
+        ],
+        [
+          32.0,
+          32.0,
+          64.0,
+          1024.0,
+          0.0,
+          64.0,
+          31.5,
+          31.5
+        ],
+        [
+          32.0,
+          32.0,
+          64.0,
+          1024.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          32.0,
+          32.0,
+          64.0,
+          1024.0,
+          2.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "k": 2,
+      "radius": 1.357590007409303,
+      "radius_factor": 1.05,
+      "target_interval_ps": [
+        500.0,
+        3000.0
+      ],
+      "label_values_stored": false,
+      "train_sources": 24,
+      "qualified_for_production": false
+    },
+    "G": {
+      "version": "numerical-structural-support-v1",
+      "features": [
+        "counter_count",
+        "post_merge_full_adder_columns",
+        "post_merge_half_adder_columns",
+        "post_merge_increment_columns",
+        "post_merge_max_carry_span"
+      ],
+      "bounds": [
+        [
+          0.0,
+          2921.0
+        ],
+        [
+          3.0,
+          94.0
+        ],
+        [
+          1.0,
+          3.0
+        ],
+        [
+          0.0,
+          78.0
+        ],
+        [
+          6.0,
+          96.0
+        ]
+      ],
+      "scales": [
+        2921.0,
+        91.0,
+        2.0,
+        78.0,
+        90.0
+      ],
+      "anchors": [
+        [
+          0.0,
+          3.0,
+          1.0,
+          4.0,
+          8.0
+        ],
+        [
+          0.0,
+          11.0,
+          1.0,
+          12.0,
+          24.0
+        ],
+        [
+          0.0,
+          15.0,
+          1.0,
+          48.0,
+          64.0
+        ],
+        [
+          0.0,
+          15.0,
+          3.0,
+          0.0,
+          6.0
+        ],
+        [
+          0.0,
+          17.0,
+          1.0,
+          78.0,
+          96.0
+        ],
+        [
+          7.0,
+          28.0,
+          2.0,
+          1.0,
+          24.0
+        ],
+        [
+          16.0,
+          14.0,
+          1.0,
+          0.0,
+          15.0
+        ],
+        [
+          20.0,
+          16.0,
+          2.0,
+          2.0,
+          10.0
+        ],
+        [
+          31.0,
+          15.0,
+          1.0,
+          8.0,
+          24.0
+        ],
+        [
+          32.0,
+          30.0,
+          1.0,
+          0.0,
+          31.0
+        ],
+        [
+          56.0,
+          29.0,
+          3.0,
+          3.0,
+          13.0
+        ],
+        [
+          61.0,
+          33.0,
+          1.0,
+          14.0,
+          48.0
+        ],
+        [
+          64.0,
+          62.0,
+          1.0,
+          0.0,
+          63.0
+        ],
+        [
+          96.0,
+          94.0,
+          1.0,
+          0.0,
+          95.0
+        ],
+        [
+          121.0,
+          69.0,
+          1.0,
+          26.0,
+          96.0
+        ],
+        [
+          168.0,
+          54.0,
+          1.0,
+          9.0,
+          64.0
+        ],
+        [
+          220.0,
+          28.0,
+          1.0,
+          0.0,
+          29.0
+        ],
+        [
+          275.0,
+          27.0,
+          1.0,
+          36.0,
+          64.0
+        ],
+        [
+          444.0,
+          60.0,
+          1.0,
+          0.0,
+          61.0
+        ],
+        [
+          702.0,
+          22.0,
+          1.0,
+          19.0,
+          42.0
+        ],
+        [
+          949.0,
+          59.0,
+          1.0,
+          0.0,
+          60.0
+        ],
+        [
+          1184.0,
+          38.0,
+          1.0,
+          38.0,
+          77.0
+        ],
+        [
+          2921.0,
+          45.0,
+          1.0,
+          49.0,
+          95.0
+        ]
+      ],
+      "k": 2,
+      "radius": 1.0532066445045638,
+      "radius_factor": 1.05,
+      "target_interval_ps": [
+        500.0,
+        3000.0
+      ],
+      "label_values_stored": false,
+      "train_sources": 23,
+      "qualified_for_production": false
+    }
+  },
+  "shared": {
+    "shared_clock": {
+      "kind": "nonnegative_linear",
+      "features": [
+        "one",
+        "total_FF_bits",
+        "predicted_functional_area_um2"
+      ],
+      "coefficients": [
+        0.3108104069301162,
+        0.024408033153693706,
+        0.008234042259830227
+      ],
+      "intercept": 0.0
+    },
+    "shared_physical": {
+      "kind": "nonnegative_linear",
+      "features": [
+        "one",
+        "predicted_functional_area_um2"
+      ],
+      "coefficients": [
+        4.44454202975643,
+        0.00937596038464729
+      ],
+      "numeric_support": {
+        "one": [
+          1.0,
+          1.0
+        ],
+        "predicted_functional_area_um2": [
+          173.342538663435,
+          2365.125131471375
+        ]
+      },
+      "training_rows": 24,
+      "training_sources": 8,
+      "objective": "source-balanced train-only squared error; fixed features, no validation selection"
+    },
+    "root_repair": {
+      "kind": "nonnegative_linear",
+      "features": [
+        "one",
+        "input_data_bits",
+        "service_enable_domains",
+        "log2_reset_load",
+        "clock_pressure"
+      ],
+      "coefficients": [
+        0.0,
+        0.2370331665772479,
+        0.0,
+        0.575170958620175,
+        0.8705119868528345
+      ],
+      "intercept": 0.0
+    }
+  },
+  "new_prices_released": false,
+  "shared_features_sha256": "8aa94111171914f770d586112b8f3185c4184bc6bc29902e82e16019a07e9bd0",
+  "support_implementation_sha256": "7094fcf19d73c6185ae75d6ec91b7ed2ac7888fd315694dffa491140e281e2ad"
+}

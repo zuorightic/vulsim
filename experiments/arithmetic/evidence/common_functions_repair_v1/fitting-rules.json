@@ -1,0 +1,29 @@
+{
+  "version": "common-functions-repair-fitting-rules-v1",
+  "decision_basis": "parent failed review plus train-only residual and exclusive ownership audit; no successor validation used to select features or rules",
+  "operator_fit": "fixed shared source-balanced relative Ridge alpha=1 for Add; exact fields in protocol; no parameter sweep; Mul candidate coefficients copied unchanged",
+  "G_fit": "same source-balanced relative NNLS basis as parent, adding preregistered carry-segment variation; no per-shape correction",
+  "S_boundary_fit": "fixed common relative Ridge alpha=1 using protocol control features per semantic path class, only train; reserve maximum positive leave-one-training-source-out residual",
+  "S_area": "retain native/external coefficients and parent input-service correction; validate reuse separately",
+  "shared_fit": {
+    "shared_clock": ["one", "total_FF_bits", "predicted_functional_area_um2"],
+    "root_repair": ["one", "input_data_bits", "service_enable_domains", "log2_reset_load", "clock_pressure"],
+    "shared_physical": "reuse the frozen parent physical-area function unchanged",
+    "method": "source-balanced relative NNLS; train only; semantic functional footprint and corrected disjoint root labels"
+  },
+  "support": {
+    "continuous_target_ps": [500, 3000],
+    "k": 2,
+    "radius_factor": 1.05,
+    "bounds": "min/max structural features of train; no exact-T bins",
+    "radius": "maximum leave-one-train-source-out k-neighbor normalized distance times1.05",
+    "Add_features": ["live_lhs_bits", "live_rhs_bits", "live_operand_overlap", "add_max_live_carry_span", "capture_banks", "consumer_pin_uses", "consumer_carry_below_mean", "consumer_carry_above_mean"],
+    "Mul_features": ["lhs_width", "rhs_width", "result_width", "retained_product_terms", "capture_banks", "consumer_pin_uses", "consumer_carry_below_mean", "consumer_carry_above_mean"],
+    "G_features": ["counter_count", "post_merge_full_adder_columns", "post_merge_half_adder_columns", "post_merge_increment_columns", "post_merge_max_carry_span"],
+    "price_qualification": "structural membership never by itself grants a price; all validation residuals reported regardless of rejection"
+  },
+  "quality": {"source_median_max": 0.15, "source_P95_max": 0.35, "bound_misses_max": 0, "false_refusal_max": 0, "out_of_domain_acceptance_max": 0},
+  "tests": "old and new locked_test remain locked until candidate/features/support/reserves/implementation and dependencies freeze; no automatic unlock or publication",
+  "validation_roles": "all inherited validation retains validation role; new preregistered validation reported separately; consumed historical validation is regression evidence, not independent testing",
+  "full_D_ready": false
+}

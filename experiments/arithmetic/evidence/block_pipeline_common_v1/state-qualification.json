@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "stages": 4,
+  "rows": [
+    {
+      "source": "bank-d552cb563d909bd6",
+      "stage": "synth",
+      "owner_FF_bits": {
+        "external_state": 17,
+        "input_service": 129,
+        "native_state": 3074
+      },
+      "path_classes": 9,
+      "wrong_FF_census_rejected": true,
+      "manifest_sha256": "eba92cfe580d0cb59c60ec659bad70d2910ac21b1252b346550920746a9e7867"
+    },
+    {
+      "source": "bank-d552cb563d909bd6",
+      "stage": "grt",
+      "owner_FF_bits": {
+        "external_state": 17,
+        "input_service": 129,
+        "native_state": 3074
+      },
+      "path_classes": 9,
+      "wrong_FF_census_rejected": true,
+      "manifest_sha256": "eba92cfe580d0cb59c60ec659bad70d2910ac21b1252b346550920746a9e7867"
+    },
+    {
+      "source": "bank-d05db1487006b0fb",
+      "stage": "synth",
+      "owner_FF_bits": {
+        "external_state": 73,
+        "input_service": 129,
+        "native_state": 3458
+      },
+      "path_classes": 9,
+      "wrong_FF_census_rejected": true,
+      "manifest_sha256": "5d8b22962f2a4dafb73f9844fec8a94d0d720a8f9afcd40b2dcfdbc0c50f88fe"
+    },
+    {
+      "source": "bank-d05db1487006b0fb",
+      "stage": "grt",
+      "owner_FF_bits": {
+        "external_state": 73,
+        "input_service": 129,
+        "native_state": 3458
+      },
+      "path_classes": 9,
+      "wrong_FF_census_rejected": true,
+      "manifest_sha256": "5d8b22962f2a4dafb73f9844fec8a94d0d720a8f9afcd40b2dcfdbc0c50f88fe"
+    }
+  ],
+  "source_role": "not_training",
+  "expanded_state_price_qualification": false,
+  "actual_arithmetic_state_qualification": false,
+  "continuous_T_qualification": false
+}

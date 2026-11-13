@@ -61,7 +61,10 @@ venv.bak/
 .agents
 build
 
+# Mutable backend accounting stays local; commit the compressed snapshot.
+experiments/arithmetic/backend_usage.json
 experiments/arithmetic/backend_usage.json.lock
+experiments/arithmetic/backend_usage.jobs/
 
 
 # Local large arithmetic artifacts; publish/restore via a frozen artifact catalog.

@@ -1,0 +1,32 @@
+{
+  "status": "diagnostic_no_refit",
+  "area_features": [
+    "one",
+    "counter_count",
+    "post_merge_full_adder_columns",
+    "post_merge_half_adder_columns",
+    "post_merge_increment_columns",
+    "post_merge_pressure_work"
+  ],
+  "train_rows": 57,
+  "train_sources": 19,
+  "matrix_columns": 6,
+  "scaled_matrix_rank": 5,
+  "scaled_condition_number": null,
+  "train_half_adder_start_counts": [
+    1.0
+  ],
+  "validation_half_adder_start_counts": [
+    1.0,
+    2.0
+  ],
+  "frozen_half_adder_coefficient": 0.0,
+  "coefficient_physical_identifiability_claimed": false,
+  "model_or_protocol_changed": false,
+  "operator_response_spans": {
+    "delay_relative_span_min": 0.07177390157023546,
+    "delay_relative_span_max": 0.22872877594535324,
+    "area_relative_span_min": 0.18575851393188883,
+    "area_relative_span_max": 0.4521276595744661
+  }
+}

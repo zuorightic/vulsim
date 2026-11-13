@@ -1,0 +1,33 @@
+{
+  "version": "common-block-pipeline-extension-v1",
+  "status": "demand_and_software_successor; no_new_price_qualification",
+  "structural_policy": "block_pipeline_policy_v1.json",
+  "purpose": "shared narrow arithmetic, state-scale and sparse/dense reduction capability; MAC32 L3 is the first demand and acceptance graph",
+  "demand_graph_prices_used_as_training_labels": false,
+  "model_inputs_must_be_available_from_actual_D_queries": true,
+  "forbidden_price_features": ["source_name", "workload_id", "candidate_id", "placement_id", "exact_shape_id", "exact_T_indicator", "measured_slack", "measured_functional_area"],
+  "prospective_demand_domains": {
+    "operators": {"unsigned_mul_inputs": [4, 32], "unsigned_add_inputs": [8, 96], "result_bits": [4, 64], "consumer_bits_max": 96, "consumer_transforms": ["identity", "shift", "zero_padding", "low_result_truncation"], "support": "semantic and joint feature/T validation; ranges alone never grant prices"},
+    "S": {"internal_stages_max": 2, "input_data_bits_max": 130, "external_data_bits_max": 256, "native_data_bits_max": 4096, "parallel_words_max": 96, "variable_word_bits_max": 96, "note": "actual arithmetic-state preservation must be checked, including variable bits that optimization can prove constant"},
+    "shared": {"total_FF_bits_goal_max": 6144, "input_ports": [2, 4], "method": "verify existing exclusive-owner coefficients first; fit only stable failing terms"},
+    "G": {"output_bits": [16, 96], "live_terms": [3, 96], "max_column_height_goal_max": 64, "active_bits_goal_max": 4096, "counter_count_goal_min": 0, "compression_levels_goal_min": 0, "method": "same numerical geometry function and canonical region emission; sparse carry merge is not zero delay"}
+  },
+  "roles": {
+    "qualification": "fresh not_training local operator/reduction/state structures; cannot later become train or test",
+    "train": "fresh parameterized representative source families plus eligible predecessor train only",
+    "validation": "new widths/connections and state/geometry combinations, immutable before physical labels",
+    "locked_test": "new semantic sources with frozen parameters, support/refusal rules, reserve and implementation before unlock"
+  },
+  "new_fitting_guard_T_ps": [500, 1500, 3000],
+  "new_independent_reserved_exact_T_ps": [750, 1000, 1125, 1250],
+  "old_train_reuse": "retain original source/stage/role and physical-label identities; reextract successor features into a separate dataset snapshot",
+  "old_consumed_tests_and_final_PPA": "permanently excluded from fitting and selection of successor parameters",
+  "narrow_operator_sampling": "retain parent adaptive thirteen-target maximum; exact finite source/role/request admissions required per batch",
+  "function_quality_gates": {"delay_median_max": 0.15, "delay_P95_max": 0.35, "area_median_max": 0.15, "area_P95_max": 0.35, "in_domain_false_refusal_max": 0, "out_of_domain_acceptance_max": 0},
+  "software_reuse": ["rectangular operands", "different widths", "truncated result", "renamed application and ports", "multiple multiplication occurrences", "finite search exhaustion"],
+  "G_extra_residual": "zero first; attribute node/boundary/wire/ownership failures before adding correction",
+  "joint_reserve_ps": 50,
+  "reset_timing": "deferred per user; preserve and verify functional reset",
+  "release_gate": "frozen common functions and independent quality plus actual S/G composition and complete declared search coverage; software fixtures cannot grant physical prices",
+  "physical_execution": "separate exact finite admission required; this planning protocol authorizes no implicit full collection"
+}

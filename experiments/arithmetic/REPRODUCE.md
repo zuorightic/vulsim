@@ -21,6 +21,26 @@ sudo apt install git gcc g++ make cmake python3 \
 
 要求 CMake ≥3.20、Python ≥3.10、LLVM／Clang 18 开发包；功能检查使用 Icarus Verilog 的 `iverilog` 和 `vvp`。本条 D 路径不使用 CIRCT，也不需要 Yosys、OpenROAD 或 PDK。LLVM 软件源的配置见[项目说明](../../README.md#依赖)。
 
+## 运行账本与 Git 范围
+
+模型参数、生成 RTL 的源码及验收证据继续随 Git 提供。大型物理数据库留在本机产物目录；历史证据中的冻结索引和必要压缩报告保留，便于核验已发表的数值与标签。
+
+`backend_usage.json`、其锁文件和 `backend_usage.jobs/` 是本地运行状态，已从 Git 跟踪范围移出。仓库改为保存 `backend_usage.snapshot.json.gz` 和 `backend_usage.snapshot.meta.json`；快照无损保留累计条目、失败费用、迁移及已结算任务身份。新检出首次使用默认 `Ledger()` 时会核对快照、策略和旧检查点摘要，再恢复本地完整账本；已有本机账本继续使用，不会被快照覆盖。已经初始化却丢失的账本仍拒绝自动重建，防止丢历史或重获预算。
+
+可用以下只读命令验证提交中的快照，不启动 EDA：
+
+```bash
+python3 -B -m experiments.arithmetic_dse.ledger_snapshot verify
+```
+
+今后需要更新提交中的累计记录时，在所有任务结算后执行：
+
+```bash
+python3 -B -m experiments.arithmetic_dse.ledger_snapshot export
+```
+
+导出会拒绝活动任务和未结算预约，并使用确定性的 gzip 保存。快照只负责累计费用恢复，不给新实验放行或为模型授予资格。
+
 ## 重新编译并验收本地程序
 
 在主仓库根目录执行，构建目录必须尚不存在：

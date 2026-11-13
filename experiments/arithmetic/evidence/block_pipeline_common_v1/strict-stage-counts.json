@@ -1,0 +1,75 @@
+{
+  "status": "audited",
+  "definition": "stage0 Mul only; later stages Add only and nonempty",
+  "by_candidate": {
+    "candidate/block4": 8,
+    "candidate/block8": 6,
+    "candidate/block16": 4
+  },
+  "emitted_strict_RTL_cases": 1,
+  "examples": {
+    "candidate/block4": {
+      "view": "candidate/block4/view27",
+      "file": "views/96.json",
+      "stage_counts": [
+        {
+          "add": 0,
+          "mul": 64,
+          "stage": 0
+        },
+        {
+          "add": 63,
+          "mul": 0,
+          "stage": 1
+        },
+        {
+          "add": 1,
+          "mul": 0,
+          "stage": 2
+        }
+      ]
+    },
+    "candidate/block8": {
+      "view": "candidate/block8/view23",
+      "file": "views/273.json",
+      "stage_counts": [
+        {
+          "add": 0,
+          "mul": 16,
+          "stage": 0
+        },
+        {
+          "add": 15,
+          "mul": 0,
+          "stage": 1
+        },
+        {
+          "add": 1,
+          "mul": 0,
+          "stage": 2
+        }
+      ]
+    },
+    "candidate/block16": {
+      "view": "candidate/block16/view19",
+      "file": "views/413.json",
+      "stage_counts": [
+        {
+          "add": 0,
+          "mul": 4,
+          "stage": 0
+        },
+        {
+          "add": 3,
+          "mul": 0,
+          "stage": 1
+        },
+        {
+          "add": 1,
+          "mul": 0,
+          "stage": 2
+        }
+      ]
+    }
+  }
+}

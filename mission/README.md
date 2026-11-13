@@ -1,5 +1,21 @@
 # 任务与现行规划导航
 
+**先导恢复与固定拟合诊断已完成，见[§7.93](lxy-plan-fix.md#common-family-recovery-fit-qualification)及[完成审查](../experiments/arithmetic/evidence/common_family_continuation_v1/RESULTS.md)。** 算子147点（108 train／39 validation）、251项跨语言特征／257项同候选价格／支持核对完成，validation误拒绝0；Add／ADC、Sub／SBB、Mul的时延／面积达本轮门槛，比较面积及Mux时延未过，整包不发布。三区覆盖仍不足，不能由三个保护周期代替；未见连接／1373及1700ps的validation另列。G限定组件4独立源／8请求通过，时延源median／P95为4.13%／4.76%、面积11.22%／19.62%；S native_valid仍23.44% median、保护348.64ps，实际控制修复机制继续待解。10个旧独立源与10个宽域独立源保持锁定，公共D绑定／原49项冻结依赖未改。
+
+**Add／S／G后继与八例共同算子工作已推进，见[§7.92](lxy-plan-fix.md#common-wide-family-extension)及[证据](../experiments/arithmetic/evidence/common_family_extension_v1/README.md)。** 宽后继Query／Core支持显式内部精度、位段和carry／borrow，180项跨语言合同、1920次RTL算术及50壳×32周期通过；7个not_training源／14物理阶段及14项删弧负控合格。新增31 train／12 validation／10 locked_test注册，旧14独立源仍锁定；已启动准确54点先导，12个train及6个validation各500／1500／3000ps，分批最多12项、完成即停，不自动拟合／发布。S的27个旧数据库只读STA、351条路径／2050弧／351删弧通过；逐源后继native_valid误差20.74%、保护332.77ps及另外两类控制漏覆盖仍失败。G前缀面积候选validation median／P95为10.51%／22.13%，前轮新增域median8.12%，126项native核对通过，但独立／完整阶段仍待。公共D／价格及49项冻结文件保持，八例整图尚未测量；后台状态以产物根进度为准。
+
+**表示／支持修复与train后端归因已完成，见[§7.91](lxy-plan-fix.md#common-representation-support-attribution)及[证据](../experiments/arithmetic/evidence/common_representation_v1/README.md)。** 邻域重复结构缺陷独立复现并在v2修复，真实原表示的查询结论未变；Add规范化建立Query／显式输入置换／特征／Core发射的同一新策略，599项跨语言合同、1984次算术及4壳×64周期通过，交换输入的特征／支持变化为0，旧模型拒绝新策略。S逐控制源查询与45实际锥、505放置核对；108个train控制路径对及5个G代表的synth／grt守恒分解完成。新物理采集／系数拟合均0，14个独立源仍锁定；新接口未转授物理资格，公共D价格不改。
+
+**修复补采及完成审查已结束，仍未通过发布，见[§7.90](lxy-plan-fix.md#common-functions-repair-completed-review)及[完整结果](../experiments/arithmetic/evidence/common_functions_repair_v1/completed-review/RESULTS.md)。** 本轮100点（operator64／G18／S18）及2084项同候选数值核对通过，6个Add源三区全部合格，14个独立源仍锁定。Mul复用、Add面积、S面积和shared有进展；Add新连接在500—3000ps的延迟误差22.20%／36.39%、G前轮新增域面积19.26% median、S控制／8点保护漏覆盖仍失败。Add交换左右输入后延迟预测最多差92.65ps、支持也可能变化，后继先审计对称表示和控制源语义。24次Add拒绝中16次为T域外、8次为部署域内结构缺口；Mul两次均为T域外。当前0活动任务，完成审查0新EDA／重拟合，原价格／D绑定保持。下方§7.89启动记录按当时检查点解释。
+
+**三线修复后继已登记并启动有限补采，见[§7.89](lxy-plan-fix.md#common-functions-repair-successor)及[修复证据](../experiments/arithmetic/evidence/common_functions_repair_v1/README.md)。** 先做train残差／shared归属审计，保留Mul参数；Add新增有效位／实际进位和相对消费者负载，G补不同进位段以消除面积特征秩亏，S补逐级控制负载、shared按接口／控制责任修正。26源含20个train／validation和6个新locked_test；旧8个独立源也继续锁定。615项新特征跨语言核对、505个实际placement控制投影通过；每批最多12个准确请求，120仅为容量。当前根`/home/zyrv/vulsim-artifacts/common-functions-repair-20261112-v2`自动收尾只做固定拟合／诊断，不解锁测试或发布；首批槽冲突的5个有效点继承，失败与费用保留，0付费物理重试。上一轮204点的发布失败结论不改。
+
+**三线采集、拟合诊断和首轮审查已结束，发布验收未通过，见[§7.88](lxy-plan-fix.md#common-functions-first-review)及[完整审查](../experiments/arithmetic/evidence/common_functions_v1/completed-review/RESULTS.md)。** 去重204点（Mul/Add144、G36、S24）、556次同候选跨语言核对及204点／408阶段兼容性检查通过，8个locked_test保持锁定。计数为37个前驱＋167条v4记录，后者含1个只读恢复点，不重复加38。Mul和S输入面积改善；Add新宽负载／500ps、G面积、S valid保护及shared仍有失败，正式支持／拒绝规则尚未合格。12／14个算子源满足三区间距，另2源达13点上限但过渡区间距不足。旧S没有ABC=SDC匹配行进入本拟合，复用系数不等于合并旧时序数据。原生产参数和门禁保持；本次审查0新EDA、0重拟合。
+
+**三线后继的登记、恢复及采集历程**保留在[§7.87](lxy-plan-fix.md#common-functions-three-lines)和[证据导航](../experiments/arithmetic/evidence/common_functions_v1/README.md)。当前完整根为`/home/zyrv/vulsim-artifacts/common-functions-20261112-v4`；T以log₂(T)、1/T等数值变换进入函数，禁止的是精确T编号、one-hot和逐T专属系数。
+
+**通用分块流水先导已推进，见[§7.86](lxy-plan-fix.md#common-block-pipeline-first-package)、[接口与复现](../experiments/arithmetic/BLOCK_PIPELINE.md)和[证据](../experiments/arithmetic/evidence/block_pipeline_common_v1/README.md)。** MAC32三级新接口完整生成505放置、保留旧324并新增181个4位方案；5种真正两级内部归约RTL及矩形／截断／改名／多Mul软件验收通过。8个not_training物理资格点覆盖窄算子、稀疏G、大银行和补零／直通输出；旧公式复用偏差已量化，新G合并特征通过跨语言准备，尚无新价格发布。下一步冻结后继训练／验证／独立源与有限方案，补拟合、实际算术状态和S/G联合，再重新D选择；不按MAC32候选采专价。下方初始规划和旧交付按各自检查点解释。
+
 **当前模型的Git范围与新检出复现已核查，见[§7.85](lxy-plan-fix.md#git-model-reproduction-audit)、[复现命令](../experiments/arithmetic/REPRODUCE.md)和[验收证据](../experiments/arithmetic/evidence/git_reproduction_v1/README.md)。** 小算子／S／shared／G、D bundle及相应RTLzz提交均已在Git；新增便携入口解决原冻结二进制绑定和仓库外示例源码问题。干净clone重新编译、224候选复算、六RTL功能、移动目录后1125ps调用及四项拒绝检查通过；三级完整D仍保持324中34项拒绝，不把外部受限驱动打包为正式入口。本轮0新EDA，冻结参数／源码不改，新入口与文档尚待用户提交。
 
 **下一轮共同补齐项已合入[MAC32三级与八类案例审计](lxy-eight-workloads-audit.md#MAC32-three-stage-common-work)。** 以MAC32三级先导衔接八例：通用块宽候选及4位叶、必要窄Add负载、S／shared银行规模、G稀疏／零压缩工作量子域，以及S旧边界／时钟修正的逐项审查。文档给出已有证据、共同需求、有限后继／软件交错顺序和冻结／独立／实际D验收条件；保持函数计价、相容发射和原面积／时序规则，不按候选采价格或强制4位。此次只更新规划，未新增EDA或修改模型。

@@ -1,0 +1,81 @@
+{
+  "status": "passed",
+  "new_synth": 0,
+  "new_grt": 0,
+  "original_physical_artifacts_unchanged": true,
+  "valid_synth_scalar_unchanged": true,
+  "real_Liberty_arc_deleted_rejected": true,
+  "recovered_cells": [
+    {
+      "instance": "clone279",
+      "master": "OA211x2_ASAP7_75t_R",
+      "owner": "consumer0",
+      "island_members": [
+        "clone279"
+      ],
+      "pins": {
+        "Y": {
+          "net": "net279",
+          "drivers": [
+            "clone279/Y"
+          ],
+          "loads": [
+            "consumer0/_257_/A",
+            "consumer0/_267_/A",
+            "consumer0/_272_/A",
+            "consumer0/place163/A"
+          ]
+        },
+        "A1": {
+          "net": "consumer0/_075_",
+          "drivers": [
+            "consumer0/_216_/Y"
+          ],
+          "loads": [
+            "clone279/A1",
+            "consumer0/_222_/A1",
+            "consumer0/_307_/A1"
+          ]
+        },
+        "A2": {
+          "net": "consumer0/_070_",
+          "drivers": [
+            "consumer0/_211_/Y"
+          ],
+          "loads": [
+            "clone279/A2",
+            "consumer0/_222_/A2",
+            "consumer0/_307_/A2",
+            "consumer0/_320_/B"
+          ]
+        },
+        "B": {
+          "net": "consumer0/_078_",
+          "drivers": [
+            "consumer0/_219_/Y"
+          ],
+          "loads": [
+            "clone279/B",
+            "consumer0/_222_/B",
+            "consumer0/_307_/B"
+          ]
+        },
+        "C": {
+          "net": "consumer0/_080_",
+          "drivers": [
+            "consumer0/_221_/Y"
+          ],
+          "loads": [
+            "clone279/C",
+            "consumer0/_222_/C",
+            "consumer0/_309_/B"
+          ]
+        }
+      },
+      "liberty_function": {
+        "Y": "(A1 * B * C) + (A2 * B * C)"
+      },
+      "proof": "complete connected root combinational island has exactly one external arithmetic owner; no top/state/clock/unknown neighbour"
+    }
+  ]
+}

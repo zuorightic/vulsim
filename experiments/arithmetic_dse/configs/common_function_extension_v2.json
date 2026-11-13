@@ -1,0 +1,89 @@
+{
+  "version": "common-functions-numerical-successor-v4-qualified-owner",
+  "status": "collection_and_first_review_complete; diagnostic_candidate_not_accepted_for_release",
+  "operator_features": "../common_operator_features.py",
+  "operator_sampler": "../common_function_sampling.py",
+  "G_features": "../reduction_merge_features.py",
+  "S_features": "../common_state_features.py",
+  "measurement_flow": "ASAP7 TC, ABC=SDC, IO=0.2T, compatible retained hierarchy and exclusive ownership",
+  "source_counts": {
+    "operator": {
+      "train": 10,
+      "validation": 4,
+      "locked_test": 4
+    },
+    "G": {
+      "train": 7,
+      "validation": 5,
+      "locked_test": 2
+    },
+    "S": {
+      "train": 5,
+      "validation": 3,
+      "locked_test": 2
+    }
+  },
+  "operator_sampling": {
+    "guard_periods_ps": [
+      1500,
+      500,
+      3000
+    ],
+    "max_unique_targets_per_source": 13,
+    "region_goal": "three spaced points in each tight/transition/loose region; actual functional-path slack selects offline requests only",
+    "missing_regions": "retain valid labels and report shortfall; do not infer labels or demand full region coverage to retain a valid point"
+  },
+  "G_S_guard_periods_ps": [
+    1500,
+    500,
+    3000
+  ],
+  "new_independent_reserved_exact_T_ps": [
+    750,
+    1000,
+    1125,
+    1250
+  ],
+  "fit": {
+    "operators": "reuse old function first; fixed shared numerical relative ridge alpha=1 per operator/label using old train plus fresh train; no exact-T bins or exact-width regressors",
+    "G": "source-balanced nonnegative common vectors using compression work and final two-row merge geometry",
+    "S": "reuse native/external coefficients first; train-only logical input-load correction and numerical-period boundary functions; source-adapter paths remain separate",
+    "shared": "exclusive-owner accounting and semantic predicted functional footprint; never measured functional area at inference"
+  },
+  "old_data": "retain source roles and raw-label identity; only old train fits coefficients; old validation remains validation; original S fixed-ABC multi-clock rows cannot silently join ABC=SDC timing fitting",
+  "permanent_exclusions": [
+    "not_training qualification",
+    "consumed independent tests",
+    "final PPA"
+  ],
+  "forbidden_price_features": [
+    "workload_id",
+    "source_id",
+    "candidate_id",
+    "placement_id",
+    "shape_id",
+    "exact_T_indicator",
+    "measured_slack",
+    "mapped_cell_count"
+  ],
+  "quality": {
+    "median_max": 0.15,
+    "P95_max": 0.35,
+    "in_domain_false_refusal_max": 0,
+    "out_of_domain_acceptance_max": 0
+  },
+  "finite_execution": "exact source/role/T batches of at most12, shared Ledger, at most4 jobs each4 threads and8192MiB; zero automatic physical retries",
+  "capacity_is_not_admission": true,
+  "new_train_validation_capacity": 242,
+  "full_D_ready": false,
+  "qualified_reader": "arithmetic-logical-ownership-v2-closed-islands",
+  "identity_axes": "verify actual ABC=SDC and rendered target script, then compare all non-axis tools/libraries/flow identities",
+  "current_artifact_root": "/home/zyrv/vulsim-artifacts/common-functions-20261112-v4",
+  "completed_unique_points": 204,
+  "completed_operator_points": 144,
+  "completed_G_points": 36,
+  "completed_S_points": 24,
+  "independent_test_sources_locked": 8,
+  "formal_support_refusal_qualified": false,
+  "review_path": "../../arithmetic/evidence/common_functions_v1/completed-review/RESULTS.md"
+}

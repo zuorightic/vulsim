@@ -1,0 +1,15 @@
+{
+  "version": "mul-width-tree-cuts-v1",
+  "block_widths": [0, 4, 8, 16, 32],
+  "max_structures": 16,
+  "max_views": 4096,
+  "max_assignments": 8192,
+  "zero_width": "preserve original unsigned multiplication",
+  "positive_width": "existing exact schoolbook partial products and carry-preserving balanced reduction tree",
+  "placement": "topological scheduling-unit assignments; monotone dependencies; original legality evaluator remains authoritative",
+  "no_price_pruning": true,
+  "incomplete_budget": "report incomplete enumeration; refuse complete-D selection",
+  "source_or_candidate_price_ids": false,
+  "scope": "bounded structural grammar; structural availability grants no operator/S/shared/G model coverage",
+  "successor_of": "mul-candidates-v1 original/half/quarter; predecessor behavior unchanged"
+}

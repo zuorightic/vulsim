@@ -1,0 +1,110 @@
+{
+  "status": "diagnostic_only",
+  "rows": [
+    {
+      "source": "narrow-mul-direct",
+      "observed": {
+        "delay_ps": 321.340118,
+        "area_um2": 6.211079999999998
+      },
+      "parent_formula_diagnostic": {
+        "delay_ps": 429.74340474220696,
+        "area_um2": 7.4351708940566805
+      },
+      "relative_errors": {
+        "delay_ps": 0.33734750399950664,
+        "area_um2": 0.19708181090191765
+      },
+      "parent_production_query": {
+        "status": "cost_uncovered",
+        "reason": "outside trained numerical feature support lhs_width"
+      },
+      "extrapolation_not_authorized": true,
+      "used_for_fit_or_D_selection": false
+    },
+    {
+      "source": "narrow-mul-wide-shift",
+      "observed": {
+        "delay_ps": 327.759399,
+        "area_um2": 6.211079999999999
+      },
+      "parent_formula_diagnostic": {
+        "delay_ps": 433.3560833308337,
+        "area_um2": 3.679740320026162
+      },
+      "relative_errors": {
+        "delay_ps": 0.32217744068670856,
+        "area_um2": 0.40755225821819036
+      },
+      "parent_production_query": {
+        "status": "cost_uncovered",
+        "reason": "outside trained numerical feature support lhs_width"
+      },
+      "extrapolation_not_authorized": true,
+      "used_for_fit_or_D_selection": false
+    },
+    {
+      "source": "narrow-add-direct",
+      "observed": {
+        "delay_ps": 277.88562,
+        "area_um2": 8.354340000000004
+      },
+      "parent_formula_diagnostic": {
+        "delay_ps": 312.9480231852349,
+        "area_um2": 8.61845354251103
+      },
+      "relative_errors": {
+        "delay_ps": 0.12617566603566915,
+        "area_um2": 0.031613932699773556
+      },
+      "parent_production_query": {
+        "status": "cost_uncovered",
+        "reason": "outside trained numerical feature support lhs_width"
+      },
+      "extrapolation_not_authorized": true,
+      "used_for_fit_or_D_selection": false
+    },
+    {
+      "source": "sparse-binary-carry",
+      "observed": {
+        "delay_ps": 387.892303,
+        "area_um2": 22.04495999999997
+      },
+      "parent_formula_diagnostic": {
+        "delay_ps": 376.91471030993364,
+        "area_um2": 40.087192467727796
+      },
+      "relative_errors": {
+        "delay_ps": 0.028300620056558295,
+        "area_um2": 0.8184289047350437
+      },
+      "parent_production_query": {
+        "status": "outside_published_domain"
+      },
+      "extrapolation_not_authorized": true,
+      "used_for_fit_or_D_selection": false
+    },
+    {
+      "source": "small-compressor-work",
+      "observed": {
+        "delay_ps": 351.965332,
+        "area_um2": 10.92042
+      },
+      "parent_formula_diagnostic": {
+        "delay_ps": 417.16102546813204,
+        "area_um2": 27.899594587803648
+      },
+      "relative_errors": {
+        "delay_ps": 0.18523328163505617,
+        "area_um2": 1.5548096673757648
+      },
+      "parent_production_query": {
+        "status": "outside_published_domain"
+      },
+      "extrapolation_not_authorized": true,
+      "used_for_fit_or_D_selection": false
+    }
+  ],
+  "coefficients_or_support_changed": false,
+  "used_for_fit_or_D_selection": false
+}

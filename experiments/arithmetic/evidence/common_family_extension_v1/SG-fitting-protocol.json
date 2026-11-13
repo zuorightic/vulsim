@@ -1,0 +1,63 @@
+{
+  "version": "common-prefix-per-source-fitting-v1",
+  "basis": "mechanism evidence from train paired synth/grt; fixed basis, no validation selection sweep",
+  "G_area_features": [
+    "one",
+    "counter_count",
+    "final_live_xor_gates",
+    "final_live_prefix_and_gates",
+    "final_live_prefix_or_gates",
+    "counter_pressure",
+    "final_pressure_logic"
+  ],
+  "G_delay": "retain predecessor unchanged; this successor diagnoses area only",
+  "S_path_classes": [
+    "native_valid",
+    "native_enable",
+    "input_valid",
+    "external_valid"
+  ],
+  "S_features": [
+    "one",
+    "log2_target",
+    "clock_pressure",
+    "log2_logical_sinks",
+    "sqrt_logical_sinks",
+    "launch_has_hold",
+    "capture_has_hold",
+    "log2_capture_enable_load",
+    "pressure_logical_sinks"
+  ],
+  "G_method": "source-balanced relative NNLS; no hyperparameter sweep; rank checked before fit",
+  "S_method": "source-balanced relative Ridge alpha=1; aggregate max over actual prospective control sources; train-only maximum positive LOSO residual",
+  "S_area_shared": "reuse previous area/shared coefficients; not refitted in this package",
+  "support": "G distinct-geometry v2 using fixed numerical fields; S remains diagnostic, no new deployment support granted",
+  "G_support_features": [
+    "counter_count",
+    "final_live_xor_gates",
+    "final_live_prefix_and_gates",
+    "final_live_prefix_or_gates",
+    "final_max_carry_span"
+  ],
+  "quality": {
+    "source_median_max": 0.15,
+    "source_P95_max": 0.35,
+    "bound_misses_max": 0,
+    "false_refusal_max": 0
+  },
+  "old_validation": "consumed regression; report previous and repair domains separately, all points regardless of refusal",
+  "independent_test_locked": 14,
+  "independent_labels_read": false,
+  "input_dataset_sha256": "5e87ad1a01b6a869fd0d2ff97949214e2dcc16a8046323280fcfb4dd0cb16c9b",
+  "S_readout_strict_proof_sha256": "dda765eb9f2bd7c08d6ee73ca353c6dbddaa13c8aad6c112b7c05f8660b2cc01",
+  "implementation_sha256": {
+    "/home/zyrv/vulsim-artifacts/common-family-extension-20261113-v1/tools/SG_fit.py": "cddc54a18310e9b95b3941250df507c1aa15ab825ad407dcb68da53db23db111",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/reduction_prefix_features.py": "67325b9b404e85b6685d8b770994002e441ae708e857705898e5bbc50c0b0aa3",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/state_control_response.py": "4f46232dbd937d5ee64e75878b5643af861b02ce910ce5006e29d1070fd6b71d",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/state_control_queries.py": "b6dce13c9348b76e6716a1892f8d043d8d39c8098e8d346ddee737c82b1088ce",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/conditional_function_support_v2.py": "9b505aa98d06e142a5023310e1f29d7f169e022db173c5714b809cf094974df5",
+    "/home/zyrv/vulsim-artifacts/common-functions-20261112-v4/tools/analyze.py": "2fc6300900618c4ccb87c6c3fef09c6f6d724702183a24111a65dfb8134786f9"
+  },
+  "new_price_release": false,
+  "full_D_ready": false
+}

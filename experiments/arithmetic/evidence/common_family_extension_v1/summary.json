@@ -1,0 +1,161 @@
+{
+  "version": "common-family-extension-checkpoint-v1",
+  "status": "software_and_7_qualification_complete_G_candidate_improved_S_failed_bounded_train_validation_active",
+  "wide_software": {
+    "status": "passed",
+    "native_queries": 180,
+    "malformed_queries": 9,
+    "arithmetic_core_checks": 1920,
+    "native_evaluations": 2880,
+    "shells": 50,
+    "shell_cycles": 32,
+    "source_roles": {
+      "train": 31,
+      "validation": 12,
+      "locked_test": 10,
+      "not_training": 7
+    },
+    "new_physical_qualification": false,
+    "prices_released": false,
+    "native_binary_sha256": "584172d8eed090daa9d46302328e41f7c5f0489ced310e0a4184e1dd00fe2084"
+  },
+  "wide_physical_qualification": {
+    "points": 7,
+    "stages": 14,
+    "actual_arc_deletion_negatives": 14
+  },
+  "S_readonly": {
+    "train_points": 27,
+    "paths": 351,
+    "checked_arcs": 2050,
+    "arc_deletion_negatives": 351,
+    "new_synth": 0,
+    "new_grt": 0
+  },
+  "G_native_queries": 126,
+  "G_area": {
+    "train": {
+      "status": "passed",
+      "sources": 23,
+      "requests": 69,
+      "source_median": 0.06427065833341612,
+      "source_P95": 0.1679396420385859
+    },
+    "validation": {
+      "status": "passed",
+      "sources": 11,
+      "requests": 33,
+      "source_median": 0.10506975187715294,
+      "source_P95": 0.2212892829947026
+    },
+    "original_validation": {
+      "status": "passed",
+      "sources": 4,
+      "requests": 12,
+      "source_median": 0.12219524663911331,
+      "source_P95": 0.16741364354345895
+    },
+    "extension_validation": {
+      "status": "passed",
+      "sources": 5,
+      "requests": 15,
+      "source_median": 0.08120982173604091,
+      "source_P95": 0.2445394119292081
+    },
+    "repair_validation": {
+      "status": "passed",
+      "sources": 2,
+      "requests": 6,
+      "source_median": 0.03688612858264402,
+      "source_P95": 0.03843449451892633
+    }
+  },
+  "S_control": {
+    "native_valid": {
+      "validation_source_median": 0.20740199017792252,
+      "validation_source_P95": 0.27881826954099226,
+      "train_only_reserve_ps": 332.7689131718364,
+      "control_guard_misses": 0
+    },
+    "native_enable": {
+      "validation_source_median": 0.07905278930156204,
+      "validation_source_P95": 0.12306982516711026,
+      "train_only_reserve_ps": 187.45802704366656,
+      "control_guard_misses": 1
+    },
+    "input_valid": {
+      "validation_source_median": 0.1284326859292214,
+      "validation_source_P95": 0.233520974938698,
+      "train_only_reserve_ps": 15.181259196088135,
+      "control_guard_misses": 1
+    },
+    "external_valid": {
+      "validation_source_median": 0.035490344577097155,
+      "validation_source_P95": 0.11749019392208218,
+      "train_only_reserve_ps": 22.48226759818772,
+      "control_guard_misses": 0
+    }
+  },
+  "old_locked_tests": 14,
+  "new_locked_tests": 10,
+  "public_prices_or_D_changed": false,
+  "full_D_ready": false,
+  "published_frozen_files_verified": 49,
+  "wide_guard_schedule": {
+    "train": 36,
+    "validation": 18,
+    "periods_ps": [
+      500,
+      1500,
+      3000
+    ],
+    "physical_requests": 54,
+    "progress_at_checkpoint": {
+      "phase": "running",
+      "completed_batches": [],
+      "errors": [],
+      "active_batch": "wide-train-T1500"
+    }
+  },
+  "resource_snapshot": {
+    "usage": {
+      "synth": 15,
+      "grt": 12,
+      "final": 0,
+      "support_calls": 216,
+      "walltime_s": 2414.190439135302,
+      "CPU_time_s": 6157.76,
+      "pending": 2
+    },
+    "live_global_usage": {
+      "synth": 3255,
+      "grt": 3221,
+      "final": 16,
+      "support_calls": 19606,
+      "walltime_s": 329281.15091181616,
+      "CPU_time_s": 674517.41,
+      "pending": 2
+    },
+    "settled": false,
+    "excludes_still_running_future_charges": true
+  },
+  "implementation_sha256": {
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/wide_arithmetic.py": "32e7e515c2a9915d0b3d1551945eb284a6f70dd13316ea7b5ec965d2a90488a5",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/wide_operator_query.py": "c6b3e0aaf50b2ae61606173ac4febb84a03a0d575d1beccc85daab60a98445d5",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/wide_operator_samples.py": "5700b0a626c0e5b5e64d8a0ac8a0bef712d2fb30e5533d312503d5def605c09b",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/wide_family_sources.py": "bc73814c63d6a224c5039ad79c556024a42d0f82066733342a6d1b725b30cf5f",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/wide_family_extension_v2.py": "d2c6e4bdf2078c952f9c173adae1944cf69691f5b863d663a0c54d868e8807e9",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/reduction_prefix_features.py": "67325b9b404e85b6685d8b770994002e441ae708e857705898e5bbc50c0b0aa3",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/state_control_queries.py": "b6dce13c9348b76e6716a1892f8d043d8d39c8098e8d346ddee737c82b1088ce",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/state_control_response.py": "4f46232dbd937d5ee64e75878b5643af861b02ce910ce5006e29d1070fd6b71d",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/state_control_response_v2.py": "fd5af07c53a6f6c8aa7050c0491e67e73e16ddf938993b73509b4dbba1246380",
+    "/home/zyrv/vulsim/regression/arithmetic_wide_family.py": "5ec04acc5b078d86f5cae7559c0610a401d5b623960224e477c8c365d8ce9c51",
+    "/home/zyrv/vulsim/regression/arithmetic_prefix_control.py": "b0d9e00552744acfce894e9b9b02509bb28e98bb30cf4f3a95cbbfeb6becf05b",
+    "/home/zyrv/vulsim/rtlzz/src/backend/arithmetic_wide_query.hpp": "d9c2f729155985c63e81bfe462a81c9eea5a70630e9cf0a0e119e72e3b69f0c0",
+    "/home/zyrv/vulsim/rtlzz/src/backend/arithmetic_wide_query.cpp": "e2a4c8bd7e433ec55a54c71ea34923a79efd20463909251498701bb9a9a53610",
+    "/home/zyrv/vulsim/rtlzz/src/backend/arithmetic_prefix_features.hpp": "9dfbb2cea406d2b0e790f69e54405d6287dac37708e0adaafbbc00e1a378e505",
+    "/home/zyrv/vulsim/rtlzz/src/backend/arithmetic_prefix_features.cpp": "fd3a7abd9f18b711fd93002f6696884158b85edc40fbb904bdd41ec2e6e0ee38",
+    "/home/zyrv/vulsim/rtlzz/testv2/arithmetic_wide_query_test.cpp": "ad2aa0c556c812a5ef98cb21ab9f8c133cdf4109bd01b3e337652b89d498f31f",
+    "/home/zyrv/vulsim/rtlzz/testv2/arithmetic_prefix_feature_test.cpp": "48538329c17c04efe54f8fa132546853300cee3dc5cdc068183765f24ad9f32e"
+  }
+}

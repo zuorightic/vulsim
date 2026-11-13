@@ -1,0 +1,185 @@
+{
+  "version": "G-prefix-once-independent-evaluation-v1",
+  "status": "passed_independent",
+  "functions": {
+    "delay": {
+      "status": "passed",
+      "sources": 4,
+      "requests": 8,
+      "source_median": 0.04132189177210429,
+      "source_P95": 0.04759927232164099,
+      "point_P95": 0.06314702171982209,
+      "max": 0.06893847612660388,
+      "details": [
+        {
+          "source": "G-a408acb85adccb90",
+          "target_ps": 1000,
+          "actual": 444.659546,
+          "predicted": 431.2319831705937,
+          "relative_error": 0.030197401473095263,
+          "new_source": false
+        },
+        {
+          "source": "G-a408acb85adccb90",
+          "target_ps": 1250,
+          "actual": 458.949432,
+          "predicted": 434.90439956859643,
+          "relative_error": 0.0523914635357988,
+          "new_source": false
+        },
+        {
+          "source": "G-ad6b2752b085bd6c",
+          "target_ps": 1000,
+          "actual": 921.411194,
+          "predicted": 984.9318776003546,
+          "relative_error": 0.06893847612660388,
+          "new_source": false
+        },
+        {
+          "source": "G-ad6b2752b085bd6c",
+          "target_ps": 1250,
+          "actual": 1017.570374,
+          "predicted": 988.6042939983573,
+          "relative_error": 0.028465923086753206,
+          "new_source": false
+        },
+        {
+          "source": "G-deeb434b5d1c91c0",
+          "target_ps": 1000,
+          "actual": 405.317657,
+          "predicted": 418.9820191684016,
+          "relative_error": 0.033712723668492005,
+          "new_source": false
+        },
+        {
+          "source": "G-deeb434b5d1c91c0",
+          "target_ps": 1250,
+          "actual": 402.917145,
+          "predicted": 422.6544355664043,
+          "relative_error": 0.04898597841103109,
+          "new_source": false
+        },
+        {
+          "source": "G-34ea9916ca1938a6",
+          "target_ps": 1000,
+          "actual": 534.147217,
+          "predicted": 522.464527356012,
+          "relative_error": 0.02187166622266225,
+          "new_source": false
+        },
+        {
+          "source": "G-34ea9916ca1938a6",
+          "target_ps": 1250,
+          "actual": 525.476135,
+          "predicted": 526.1369437540147,
+          "relative_error": 0.0012575428454324345,
+          "new_source": false
+        }
+      ]
+    },
+    "area": {
+      "status": "passed",
+      "sources": 4,
+      "requests": 8,
+      "source_median": 0.11215972390866907,
+      "source_P95": 0.19621860724106716,
+      "point_P95": 0.21032591611252838,
+      "max": 0.21195871215575773,
+      "details": [
+        {
+          "source": "G-a408acb85adccb90",
+          "target_ps": 1000,
+          "actual": 34.948259999999905,
+          "predicted": 31.35396932065387,
+          "relative_error": 0.10284605526415462,
+          "new_source": false
+        },
+        {
+          "source": "G-a408acb85adccb90",
+          "target_ps": 1250,
+          "actual": 34.948259999999905,
+          "predicted": 31.26793785784293,
+          "relative_error": 0.1053077361264047,
+          "new_source": false
+        },
+        {
+          "source": "G-ad6b2752b085bd6c",
+          "target_ps": 1000,
+          "actual": 396.66347999999596,
+          "predicted": 372.62228628700194,
+          "relative_error": 0.060608538282864506,
+          "new_source": false
+        },
+        {
+          "source": "G-ad6b2752b085bd6c",
+          "target_ps": 1250,
+          "actual": 386.48663999999286,
+          "predicted": 368.24361412889687,
+          "relative_error": 0.04720221602251589,
+          "new_source": false
+        },
+        {
+          "source": "G-deeb434b5d1c91c0",
+          "target_ps": 1000,
+          "actual": 38.22875999999988,
+          "predicted": 33.721716669198074,
+          "relative_error": 0.11789666551574837,
+          "new_source": false
+        },
+        {
+          "source": "G-deeb434b5d1c91c0",
+          "target_ps": 1250,
+          "actual": 38.22875999999988,
+          "predicted": 33.54235599707839,
+          "relative_error": 0.12258843872836855,
+          "new_source": false
+        },
+        {
+          "source": "G-34ea9916ca1938a6",
+          "target_ps": 1000,
+          "actual": 50.27183999999992,
+          "predicted": 39.85081028286494,
+          "relative_error": 0.20729358060367384,
+          "new_source": false
+        },
+        {
+          "source": "G-34ea9916ca1938a6",
+          "target_ps": 1250,
+          "actual": 50.27183999999992,
+          "predicted": 39.61628553589963,
+          "relative_error": 0.21195871215575773,
+          "new_source": false
+        }
+      ]
+    }
+  },
+  "structural_refusals": [],
+  "source_count": 4,
+  "requests": 8,
+  "exact_T_ps": [
+    1000,
+    1250
+  ],
+  "native_feature_and_price_checks": 16,
+  "negative_checks": [
+    {
+      "T": 499,
+      "status": "cost_uncovered"
+    },
+    {
+      "T": 3001,
+      "status": "cost_uncovered"
+    },
+    {
+      "repeated_bit": "rejected"
+    }
+  ],
+  "node_only_false_feasible": [],
+  "model_parameters_changed": false,
+  "reserve_changed": false,
+  "independent_duties_consumed": 4,
+  "other_locked_sources_preserved": true,
+  "S_or_full_stage_qualification": false,
+  "public_D_changed": false,
+  "frozen_model_sha256": "661290a5cd42e936f7dd1faaa21b5a2fea7b15d71300e53d3189e2241b40c853"
+}

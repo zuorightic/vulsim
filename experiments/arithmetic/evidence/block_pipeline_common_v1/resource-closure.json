@@ -1,0 +1,73 @@
+{
+  "version": "common-block-pipeline-resource-closure-v1",
+  "status": "settled",
+  "work_package": "block-pipeline-20261112-v1",
+  "work_package_usage": {
+    "synth": 8,
+    "grt": 8,
+    "final": 0,
+    "support_calls": 79,
+    "walltime_s": 794.982545868028,
+    "CPU_time_s": 1475.86,
+    "pending": 0
+  },
+  "software_admission_leaves": 23,
+  "software_admission_max": 24,
+  "admission_leaf_counts": {
+    "block-pipeline-20261112-v1": 23,
+    "block-pipeline-20261112-v1-qualification": 60,
+    "block-pipeline-20261112-v1-state-qualification": 12
+  },
+  "physical_failures": 0,
+  "physical_retries": 0,
+  "software_failures": [
+    {
+      "task_id": "build-general-block-pipeline",
+      "exit_code": 1,
+      "walltime_s": 2.9241572502069175,
+      "CPU_time_s": 6.58,
+      "command_record": "/home/zyrv/vulsim-artifacts/block-pipeline-20261112-v1/support/build-general-block-pipeline/run.command.json"
+    },
+    {
+      "task_id": "replay-common-labels-and-real-arc-negatives",
+      "exit_code": 1,
+      "walltime_s": 0.16524316323921084,
+      "CPU_time_s": 0.11,
+      "command_record": "/home/zyrv/vulsim-artifacts/block-pipeline-20261112-v1/support/replay-common-labels-and-real-arc-negatives/run.command.json"
+    },
+    {
+      "task_id": "build-general-merge-feature-parity",
+      "exit_code": 2,
+      "walltime_s": 0.03305676393210888,
+      "CPU_time_s": 0.01,
+      "command_record": "/home/zyrv/vulsim-artifacts/block-pipeline-20261112-v1/support/build-general-merge-feature-parity/run.command.json"
+    }
+  ],
+  "global_usage": {
+    "synth": 2936,
+    "grt": 2905,
+    "final": 16,
+    "support_calls": 16143,
+    "walltime_s": 302766.83154693875,
+    "CPU_time_s": 627085.63,
+    "pending": 0
+  },
+  "global_remaining": {
+    "synth": 1160,
+    "grt": 1191,
+    "walltime_s": 302033.16845306125,
+    "CPU_time_s": 1792114.37,
+    "storage_bytes": 273977905152
+  },
+  "later_work_reserved": {
+    "synth": 688,
+    "grt": 688,
+    "walltime_s": 86400,
+    "CPU_time_s": 172800,
+    "storage_bytes": 32212254720
+  },
+  "later_reserve_preserved": true,
+  "pending_jobs": [],
+  "accounting": "sum of settled leaf durations, including concurrent work and failures; administrative closure does not rerun experiments",
+  "new_models_released": false
+}

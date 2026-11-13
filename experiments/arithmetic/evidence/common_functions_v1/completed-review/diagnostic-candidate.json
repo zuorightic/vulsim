@@ -1,0 +1,432 @@
+{
+  "version": "common-functions-candidate-v1",
+  "quality_status": "diagnostic_candidate",
+  "protocol_sha256": "5d55cf34cc7784fa0d2626378ef37f0149ef91b7823b0307081b3eb574d02e6f",
+  "dataset_sha256": "cec94f13873c74c42344cedd768bb0f92b6fe3fd39cfd0ede8a1e6d43fe77d46",
+  "operator_features_sha256": "8cdf4bd2742480240193043fa5d32f0e8694e93b617854fb6eeec319818c2fa1",
+  "G_features_sha256": "e9716905ccaa734db10993f1fea13cb5365797bcd8d73990a920f2f10d2599ee",
+  "S_features_sha256": "c9c0d406e60b672b63aeed14bbb2cc382d153109da0c266202ca5a57ebc992be",
+  "operators": {
+    "mul": {
+      "delay": {
+        "kind": "linear",
+        "features": [
+          "log2_lhs",
+          "log2_rhs",
+          "log2_result",
+          "log2_add_carry_span",
+          "log2_target_ps",
+          "consumer_add",
+          "capture_banks",
+          "consumer_add_carry_span",
+          "mapping_shift_max"
+        ],
+        "coefficients": [
+          120.84645746726198,
+          -39.38418348407347,
+          119.42567169775832,
+          33.489450069258936,
+          17.40971817226531,
+          -1.0634520541896892,
+          3.358666521372261,
+          0.23964765976725952,
+          -0.4825597620438351
+        ],
+        "intercept": -445.7168123967233,
+        "ridge_alpha": 1.0
+      },
+      "area": {
+        "kind": "linear",
+        "features": [
+          "retained_product_terms",
+          "lhs_width",
+          "rhs_width",
+          "result_width",
+          "capture_banks",
+          "consumer_add_carry_span",
+          "target_pressure",
+          "pressure_product_terms"
+        ],
+        "coefficients": [
+          0.3804333571835661,
+          -0.027168818522093314,
+          -0.9801325127738292,
+          0.7664309472622687,
+          -0.20082145120325628,
+          -0.0024882500336868025,
+          -0.5858285822979268,
+          0.05033056716553811
+        ],
+        "intercept": -1.6778205599811464,
+        "ridge_alpha": 1.0
+      }
+    },
+    "add": {
+      "delay": {
+        "kind": "linear",
+        "features": [
+          "log2_lhs",
+          "log2_rhs",
+          "log2_result",
+          "log2_add_carry_span",
+          "log2_target_ps",
+          "consumer_add",
+          "capture_banks",
+          "consumer_add_carry_span",
+          "mapping_shift_max"
+        ],
+        "coefficients": [
+          72.56719110127744,
+          -39.58146311070058,
+          -59.13569828030043,
+          105.8876743105908,
+          11.787801456394561,
+          -15.543085913703461,
+          -38.113843472049304,
+          -0.4549478620350371,
+          1.831864608647831
+        ],
+        "intercept": -65.1375052852676,
+        "ridge_alpha": 1.0
+      },
+      "area": {
+        "kind": "linear",
+        "features": [
+          "add_overlap_bits",
+          "add_carry_span",
+          "result_width",
+          "lhs_active_bits",
+          "rhs_active_bits",
+          "capture_banks",
+          "consumer_add_carry_span",
+          "target_pressure",
+          "pressure_add_span"
+        ],
+        "coefficients": [
+          0.5479829619888698,
+          0.23339131805215074,
+          0.002472733755050817,
+          0.010787864831731862,
+          0.07071750509179338,
+          0.25368577370297773,
+          0.011807983905334078,
+          -0.2661540854664116,
+          0.03167427988620639
+        ],
+        "intercept": -2.32990365667899,
+        "ridge_alpha": 1.0
+      }
+    }
+  },
+  "G": {
+    "delay_ps": {
+      "kind": "nonnegative_linear",
+      "features": [
+        "one",
+        "log2_post_merge_carry_span",
+        "compression_levels",
+        "log2_target"
+      ],
+      "coefficients": [
+        0.0,
+        61.62886165898813,
+        83.46132857671522,
+        14.50766580765089
+      ],
+      "intercept": 0.0
+    },
+    "area_um2": {
+      "kind": "nonnegative_linear",
+      "features": [
+        "one",
+        "counter_count",
+        "post_merge_full_adder_columns",
+        "post_merge_half_adder_columns",
+        "post_merge_increment_columns",
+        "post_merge_pressure_work"
+      ],
+      "coefficients": [
+        0.0,
+        0.3176809933439231,
+        0.8287081208836553,
+        0.0,
+        0.33236975353778225,
+        0.011287017817727415
+      ],
+      "intercept": 0.0
+    }
+  },
+  "S": {
+    "input_service": {
+      "parent": {
+        "kind": "nonnegative_linear",
+        "features": [
+          "data_bits",
+          "data_signals",
+          "valid_bits",
+          "enable_domains",
+          "reset_one_bits"
+        ],
+        "coefficients": [
+          0.6690720504347358,
+          0.92393724767559,
+          0.0,
+          0.39564684552490315,
+          0.17401552929314673
+        ]
+      },
+      "correction": {
+        "kind": "nonnegative_linear",
+        "features": [
+          "one",
+          "input_logical_uses",
+          "input_max_bit_load",
+          "input_log_load_sum",
+          "clock_pressure"
+        ],
+        "coefficients": [
+          0.0,
+          0.006571635568248521,
+          0.0,
+          0.0,
+          1.649003840456973
+        ]
+      }
+    },
+    "native_state": {
+      "parent": {
+        "kind": "nonnegative_linear",
+        "features": [
+          "data_bits",
+          "data_signals",
+          "valid_bits",
+          "enable_domains",
+          "reset_one_bits"
+        ],
+        "coefficients": [
+          0.5371088262665842,
+          0.036091820059842315,
+          0.0,
+          0.0,
+          0.08136390563745757
+        ]
+      },
+      "correction": null
+    },
+    "external_state": {
+      "parent": {
+        "kind": "nonnegative_linear",
+        "features": [
+          "data_bits",
+          "data_signals",
+          "valid_bits",
+          "enable_domains",
+          "reset_one_bits"
+        ],
+        "coefficients": [
+          0.4225657312852458,
+          0.002379440888032674,
+          0.48285335780648936,
+          0.0,
+          0.043602751905203234
+        ]
+      },
+      "correction": null
+    },
+    "boundaries": {
+      "native_data": {
+        "point": {
+          "kind": "linear",
+          "features": [
+            "one",
+            "log2_data_bits",
+            "log2_target",
+            "clock_pressure",
+            "sqrt_FF_bits",
+            "input_max_bit_load"
+          ],
+          "coefficients": [
+            -1.2901239506184596e-13,
+            3.012875545259865,
+            -0.8239514969333522,
+            -0.5716784653869799,
+            0.13650743892249928,
+            -0.08457460374880547
+          ],
+          "intercept": 133.36535306790756,
+          "ridge_alpha": 1.0
+        },
+        "train_leave_source_out_reserve_ps": 11.588379329396105
+      },
+      "native_enable": {
+        "point": {
+          "kind": "linear",
+          "features": [
+            "one",
+            "log2_data_bits",
+            "log2_target",
+            "clock_pressure",
+            "sqrt_FF_bits",
+            "input_max_bit_load"
+          ],
+          "coefficients": [
+            0.0,
+            42.609575272200324,
+            53.52629755748139,
+            -71.50409336810932,
+            1.7415392846960658,
+            -0.9990701817397957
+          ],
+          "intercept": 183.78719950770767,
+          "ridge_alpha": 1.0
+        },
+        "train_leave_source_out_reserve_ps": 182.05105075804045
+      },
+      "native_valid": {
+        "point": {
+          "kind": "linear",
+          "features": [
+            "one",
+            "log2_data_bits",
+            "log2_target",
+            "clock_pressure",
+            "sqrt_FF_bits",
+            "input_max_bit_load"
+          ],
+          "coefficients": [
+            0.0,
+            9.246986612135691,
+            -30.207189106375765,
+            -36.81261216625171,
+            0.5518980575418774,
+            -0.09880991262758451
+          ],
+          "intercept": 324.2248254495115,
+          "ridge_alpha": 1.0
+        },
+        "train_leave_source_out_reserve_ps": 149.85518776777303
+      },
+      "external_data": {
+        "point": {
+          "kind": "linear",
+          "features": [
+            "one",
+            "log2_data_bits",
+            "log2_target",
+            "clock_pressure",
+            "sqrt_FF_bits",
+            "input_max_bit_load"
+          ],
+          "coefficients": [
+            0.0,
+            -5.327051179027797,
+            -1.012993175651632,
+            2.0156677435854276,
+            0.008682265686988381,
+            -0.079413597868074
+          ],
+          "intercept": 196.66384122225043,
+          "ridge_alpha": 1.0
+        },
+        "train_leave_source_out_reserve_ps": 16.58951512398221
+      },
+      "external_valid": {
+        "point": {
+          "kind": "linear",
+          "features": [
+            "one",
+            "log2_data_bits",
+            "log2_target",
+            "clock_pressure",
+            "sqrt_FF_bits",
+            "input_max_bit_load"
+          ],
+          "coefficients": [
+            0.0,
+            -1.935750974883965,
+            1.984692456147019,
+            6.466683215108469,
+            -0.3360903584564907,
+            -0.11306091721841893
+          ],
+          "intercept": 157.35221222749513,
+          "ridge_alpha": 1.0
+        },
+        "train_leave_source_out_reserve_ps": 20.35835630313707
+      },
+      "input_data": {
+        "point": {
+          "kind": "linear",
+          "features": [
+            "one",
+            "log2_data_bits",
+            "log2_target",
+            "clock_pressure",
+            "sqrt_FF_bits",
+            "input_max_bit_load"
+          ],
+          "coefficients": [
+            0.0,
+            -9.881071720760161,
+            3.074100790362149,
+            8.087646914188602,
+            0.6210154153106408,
+            0.4858947919905646
+          ],
+          "intercept": 130.01057607811066,
+          "ridge_alpha": 1.0
+        },
+        "train_leave_source_out_reserve_ps": 46.027298333250485
+      },
+      "input_enable": {
+        "point": {
+          "kind": "linear",
+          "features": [
+            "one",
+            "log2_data_bits",
+            "log2_target",
+            "clock_pressure",
+            "sqrt_FF_bits",
+            "input_max_bit_load"
+          ],
+          "coefficients": [
+            0.0,
+            -34.88871473087225,
+            8.67844957647377,
+            -18.332966239857374,
+            0.6711367810709686,
+            -1.0342273659683903
+          ],
+          "intercept": 518.5401564921773,
+          "ridge_alpha": 1.0
+        },
+        "train_leave_source_out_reserve_ps": 284.54321299999987
+      },
+      "input_valid": {
+        "point": {
+          "kind": "linear",
+          "features": [
+            "one",
+            "log2_data_bits",
+            "log2_target",
+            "clock_pressure",
+            "sqrt_FF_bits",
+            "input_max_bit_load"
+          ],
+          "coefficients": [
+            0.0,
+            16.467393753610697,
+            -0.06282486750353983,
+            -2.3376876480047604,
+            -0.32812801336056585,
+            -0.2985335145551619
+          ],
+          "intercept": 6.3964327942204875,
+          "ridge_alpha": 1.0
+        },
+        "train_leave_source_out_reserve_ps": 20.129100365306158
+      }
+    }
+  },
+  "full_D_ready": false
+}

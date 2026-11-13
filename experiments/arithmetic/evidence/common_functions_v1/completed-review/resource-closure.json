@@ -1,0 +1,62 @@
+{
+  "version": "common-functions-settled-resource-closure-v1",
+  "status": "settled",
+  "scope": "all common-functions-20261112-v1/v2/v3/v4 admissions; no predecessor block-pipeline qualification calls",
+  "usage": {
+    "synth": 204,
+    "grt": 204,
+    "final": 0,
+    "support_calls": 2164,
+    "walltime_s": 17243.444053330924,
+    "CPU_time_s": 30259.02,
+    "pending": 0
+  },
+  "first_review_usage": {
+    "synth": 0,
+    "grt": 0,
+    "final": 0,
+    "support_calls": 4,
+    "walltime_s": 219.2784597496502,
+    "CPU_time_s": 219.81000000000003,
+    "pending": 0
+  },
+  "unique_physical_points": 204,
+  "physical_failed_commands": 0,
+  "physical_retries": 0,
+  "collection_stops_recovered": 3,
+  "charged_failed_support": [
+    {
+      "task_id": "prepare-frozen-three-family-source-protocol",
+      "admission_id": "common-functions-20261112-v1",
+      "exit_code": 1,
+      "walltime_s": 0.6168896458111703,
+      "CPU_time_s": 0.51
+    }
+  ],
+  "global_usage": {
+    "synth": 3140,
+    "grt": 3109,
+    "final": 16,
+    "support_calls": 18307,
+    "walltime_s": 320010.27560026967,
+    "CPU_time_s": 657344.65,
+    "pending": 0
+  },
+  "future_reserve": {
+    "synth": 688,
+    "grt": 688,
+    "walltime_s": 86400,
+    "CPU_time_s": 172800,
+    "storage_bytes": 32212254720
+  },
+  "global_remaining": {
+    "synth": 956,
+    "grt": 987,
+    "walltime_s": 284789.72439973033,
+    "CPU_time_s": 1761855.35,
+    "storage_bytes": 251393589248
+  },
+  "future_reserve_preserved": true,
+  "time_scope": "sum of settled leaf wall durations, including overlapping jobs and failures; not elapsed calendar time",
+  "new_test_labels_read": false
+}

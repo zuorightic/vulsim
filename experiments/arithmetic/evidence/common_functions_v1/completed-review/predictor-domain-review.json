@@ -1,0 +1,615 @@
+{
+  "status": "diagnostic_not_qualified_support",
+  "predictor_features": {
+    "mul": [
+      "capture_banks",
+      "consumer_add",
+      "consumer_add_carry_span",
+      "lhs_width",
+      "log2_add_carry_span",
+      "log2_lhs",
+      "log2_result",
+      "log2_rhs",
+      "log2_target_ps",
+      "mapping_shift_max",
+      "pressure_product_terms",
+      "result_width",
+      "retained_product_terms",
+      "rhs_width",
+      "target_pressure"
+    ],
+    "add": [
+      "add_carry_span",
+      "add_overlap_bits",
+      "capture_banks",
+      "consumer_add",
+      "consumer_add_carry_span",
+      "lhs_active_bits",
+      "log2_add_carry_span",
+      "log2_lhs",
+      "log2_result",
+      "log2_rhs",
+      "log2_target_ps",
+      "mapping_shift_max",
+      "pressure_add_span",
+      "result_width",
+      "rhs_active_bits",
+      "target_pressure"
+    ],
+    "G": [
+      "compression_levels",
+      "counter_count",
+      "log2_post_merge_carry_span",
+      "log2_target",
+      "one",
+      "post_merge_full_adder_columns",
+      "post_merge_half_adder_columns",
+      "post_merge_increment_columns",
+      "post_merge_pressure_work"
+    ]
+  },
+  "training_bounds": {
+    "mul": {
+      "capture_banks": [
+        0,
+        2
+      ],
+      "consumer_add": [
+        0,
+        1
+      ],
+      "consumer_add_carry_span": [
+        0,
+        66
+      ],
+      "lhs_width": [
+        4,
+        32
+      ],
+      "log2_add_carry_span": [
+        2.321928094887362,
+        5.044394119358453
+      ],
+      "log2_lhs": [
+        2.0,
+        5.0
+      ],
+      "log2_result": [
+        2.584962500721156,
+        6.0
+      ],
+      "log2_rhs": [
+        2.0,
+        5.0
+      ],
+      "log2_target_ps": [
+        7.924812503605781,
+        11.550746785383243
+      ],
+      "mapping_shift_max": [
+        0,
+        48
+      ],
+      "pressure_product_terms": [
+        7.5,
+        3072.0
+      ],
+      "result_width": [
+        6,
+        64
+      ],
+      "retained_product_terms": [
+        15,
+        1024
+      ],
+      "rhs_width": [
+        4,
+        32
+      ],
+      "target_pressure": [
+        0.5,
+        6.172839506172839
+      ]
+    },
+    "add": {
+      "add_carry_span": [
+        13,
+        64
+      ],
+      "add_overlap_bits": [
+        8,
+        64
+      ],
+      "capture_banks": [
+        0,
+        2
+      ],
+      "consumer_add": [
+        0,
+        1
+      ],
+      "consumer_add_carry_span": [
+        0,
+        80
+      ],
+      "lhs_active_bits": [
+        8,
+        64
+      ],
+      "log2_add_carry_span": [
+        3.700439718141092,
+        6.0
+      ],
+      "log2_lhs": [
+        3.0,
+        6.0
+      ],
+      "log2_result": [
+        3.700439718141092,
+        6.0
+      ],
+      "log2_rhs": [
+        3.584962500721156,
+        6.321928094887363
+      ],
+      "log2_target_ps": [
+        7.864186144654281,
+        11.550746785383243
+      ],
+      "mapping_shift_max": [
+        0,
+        16
+      ],
+      "pressure_add_span": [
+        6.5,
+        192.0
+      ],
+      "result_width": [
+        13,
+        64
+      ],
+      "rhs_active_bits": [
+        12,
+        67
+      ],
+      "target_pressure": [
+        0.5,
+        6.437768240343348
+      ]
+    },
+    "G": {
+      "compression_levels": [
+        0.0,
+        9.0
+      ],
+      "counter_count": [
+        0.0,
+        2921.0
+      ],
+      "log2_post_merge_carry_span": [
+        3.169925001442312,
+        6.599912842187128
+      ],
+      "log2_target": [
+        0.0,
+        2.584962500721156
+      ],
+      "one": [
+        1.0,
+        1.0
+      ],
+      "post_merge_full_adder_columns": [
+        3.0,
+        94.0
+      ],
+      "post_merge_half_adder_columns": [
+        1.0,
+        1.0
+      ],
+      "post_merge_increment_columns": [
+        0.0,
+        78.0
+      ],
+      "post_merge_pressure_work": [
+        4.0,
+        9048.0
+      ]
+    }
+  },
+  "D_demand": {
+    "500": {
+      "occurrences": {
+        "add/model_feature_envelope_inside": 6270,
+        "mul/model_feature_envelope_inside": 13858,
+        "mul/model_feature_envelope_outside": 543,
+        "add/model_feature_envelope_outside": 5398,
+        "G/model_feature_envelope_inside": 241
+      },
+      "outside_predictor_features": {
+        "mul/mapping_shift_max": 543,
+        "add/add_carry_span": 5216,
+        "add/add_overlap_bits": 5216,
+        "add/log2_add_carry_span": 5216,
+        "add/rhs_active_bits": 5398
+      },
+      "examples": {
+        "mul/mapping_shift_max": {
+          "value": 52,
+          "training": [
+            0,
+            48
+          ],
+          "producer": {
+            "capture_banks": 1,
+            "carry": "zero",
+            "lhs_one_hex": "0x0",
+            "lhs_width": 4,
+            "lhs_zero_hex": "0x0",
+            "operation": "mul",
+            "result_width": 8,
+            "rhs_one_hex": "0x0",
+            "rhs_width": 4,
+            "rhs_zero_hex": "0x0"
+          }
+        },
+        "add/add_carry_span": {
+          "value": 9,
+          "training": [
+            13,
+            64
+          ],
+          "producer": {
+            "capture_banks": 1,
+            "carry": "zero",
+            "lhs_one_hex": "0x0",
+            "lhs_width": 8,
+            "lhs_zero_hex": "0x0",
+            "operation": "add",
+            "result_width": 13,
+            "rhs_one_hex": "0x0",
+            "rhs_width": 12,
+            "rhs_zero_hex": "0xf"
+          }
+        },
+        "add/add_overlap_bits": {
+          "value": 4,
+          "training": [
+            8,
+            64
+          ],
+          "producer": {
+            "capture_banks": 1,
+            "carry": "zero",
+            "lhs_one_hex": "0x0",
+            "lhs_width": 8,
+            "lhs_zero_hex": "0x0",
+            "operation": "add",
+            "result_width": 13,
+            "rhs_one_hex": "0x0",
+            "rhs_width": 12,
+            "rhs_zero_hex": "0xf"
+          }
+        },
+        "add/log2_add_carry_span": {
+          "value": 3.169925001442312,
+          "training": [
+            3.700439718141092,
+            6.0
+          ],
+          "producer": {
+            "capture_banks": 1,
+            "carry": "zero",
+            "lhs_one_hex": "0x0",
+            "lhs_width": 8,
+            "lhs_zero_hex": "0x0",
+            "operation": "add",
+            "result_width": 13,
+            "rhs_one_hex": "0x0",
+            "rhs_width": 12,
+            "rhs_zero_hex": "0xf"
+          }
+        },
+        "add/rhs_active_bits": {
+          "value": 8,
+          "training": [
+            12,
+            67
+          ],
+          "producer": {
+            "capture_banks": 1,
+            "carry": "zero",
+            "lhs_one_hex": "0x0",
+            "lhs_width": 8,
+            "lhs_zero_hex": "0x0",
+            "operation": "add",
+            "result_width": 13,
+            "rhs_one_hex": "0x0",
+            "rhs_width": 12,
+            "rhs_zero_hex": "0xf"
+          }
+        }
+      },
+      "unique_operator_queries_with_box_deviation": 186
+    },
+    "1500": {
+      "occurrences": {
+        "add/model_feature_envelope_inside": 6270,
+        "mul/model_feature_envelope_inside": 13858,
+        "mul/model_feature_envelope_outside": 543,
+        "add/model_feature_envelope_outside": 5398,
+        "G/model_feature_envelope_inside": 241
+      },
+      "outside_predictor_features": {
+        "mul/mapping_shift_max": 543,
+        "add/add_carry_span": 5216,
+        "add/add_overlap_bits": 5216,
+        "add/log2_add_carry_span": 5216,
+        "add/rhs_active_bits": 5398
+      },
+      "examples": {
+        "mul/mapping_shift_max": {
+          "value": 52,
+          "training": [
+            0,
+            48
+          ],
+          "producer": {
+            "capture_banks": 1,
+            "carry": "zero",
+            "lhs_one_hex": "0x0",
+            "lhs_width": 4,
+            "lhs_zero_hex": "0x0",
+            "operation": "mul",
+            "result_width": 8,
+            "rhs_one_hex": "0x0",
+            "rhs_width": 4,
+            "rhs_zero_hex": "0x0"
+          }
+        },
+        "add/add_carry_span": {
+          "value": 9,
+          "training": [
+            13,
+            64
+          ],
+          "producer": {
+            "capture_banks": 1,
+            "carry": "zero",
+            "lhs_one_hex": "0x0",
+            "lhs_width": 8,
+            "lhs_zero_hex": "0x0",
+            "operation": "add",
+            "result_width": 13,
+            "rhs_one_hex": "0x0",
+            "rhs_width": 12,
+            "rhs_zero_hex": "0xf"
+          }
+        },
+        "add/add_overlap_bits": {
+          "value": 4,
+          "training": [
+            8,
+            64
+          ],
+          "producer": {
+            "capture_banks": 1,
+            "carry": "zero",
+            "lhs_one_hex": "0x0",
+            "lhs_width": 8,
+            "lhs_zero_hex": "0x0",
+            "operation": "add",
+            "result_width": 13,
+            "rhs_one_hex": "0x0",
+            "rhs_width": 12,
+            "rhs_zero_hex": "0xf"
+          }
+        },
+        "add/log2_add_carry_span": {
+          "value": 3.169925001442312,
+          "training": [
+            3.700439718141092,
+            6.0
+          ],
+          "producer": {
+            "capture_banks": 1,
+            "carry": "zero",
+            "lhs_one_hex": "0x0",
+            "lhs_width": 8,
+            "lhs_zero_hex": "0x0",
+            "operation": "add",
+            "result_width": 13,
+            "rhs_one_hex": "0x0",
+            "rhs_width": 12,
+            "rhs_zero_hex": "0xf"
+          }
+        },
+        "add/rhs_active_bits": {
+          "value": 8,
+          "training": [
+            12,
+            67
+          ],
+          "producer": {
+            "capture_banks": 1,
+            "carry": "zero",
+            "lhs_one_hex": "0x0",
+            "lhs_width": 8,
+            "lhs_zero_hex": "0x0",
+            "operation": "add",
+            "result_width": 13,
+            "rhs_one_hex": "0x0",
+            "rhs_width": 12,
+            "rhs_zero_hex": "0xf"
+          }
+        }
+      },
+      "unique_operator_queries_with_box_deviation": 186
+    },
+    "3000": {
+      "occurrences": {
+        "add/model_feature_envelope_inside": 6270,
+        "mul/model_feature_envelope_inside": 13858,
+        "mul/model_feature_envelope_outside": 543,
+        "add/model_feature_envelope_outside": 5398,
+        "G/model_feature_envelope_inside": 241
+      },
+      "outside_predictor_features": {
+        "mul/mapping_shift_max": 543,
+        "add/add_carry_span": 5216,
+        "add/add_overlap_bits": 5216,
+        "add/log2_add_carry_span": 5216,
+        "add/pressure_add_span": 5216,
+        "add/rhs_active_bits": 5398
+      },
+      "examples": {
+        "mul/mapping_shift_max": {
+          "value": 52,
+          "training": [
+            0,
+            48
+          ],
+          "producer": {
+            "capture_banks": 1,
+            "carry": "zero",
+            "lhs_one_hex": "0x0",
+            "lhs_width": 4,
+            "lhs_zero_hex": "0x0",
+            "operation": "mul",
+            "result_width": 8,
+            "rhs_one_hex": "0x0",
+            "rhs_width": 4,
+            "rhs_zero_hex": "0x0"
+          }
+        },
+        "add/add_carry_span": {
+          "value": 9,
+          "training": [
+            13,
+            64
+          ],
+          "producer": {
+            "capture_banks": 1,
+            "carry": "zero",
+            "lhs_one_hex": "0x0",
+            "lhs_width": 8,
+            "lhs_zero_hex": "0x0",
+            "operation": "add",
+            "result_width": 13,
+            "rhs_one_hex": "0x0",
+            "rhs_width": 12,
+            "rhs_zero_hex": "0xf"
+          }
+        },
+        "add/add_overlap_bits": {
+          "value": 4,
+          "training": [
+            8,
+            64
+          ],
+          "producer": {
+            "capture_banks": 1,
+            "carry": "zero",
+            "lhs_one_hex": "0x0",
+            "lhs_width": 8,
+            "lhs_zero_hex": "0x0",
+            "operation": "add",
+            "result_width": 13,
+            "rhs_one_hex": "0x0",
+            "rhs_width": 12,
+            "rhs_zero_hex": "0xf"
+          }
+        },
+        "add/log2_add_carry_span": {
+          "value": 3.169925001442312,
+          "training": [
+            3.700439718141092,
+            6.0
+          ],
+          "producer": {
+            "capture_banks": 1,
+            "carry": "zero",
+            "lhs_one_hex": "0x0",
+            "lhs_width": 8,
+            "lhs_zero_hex": "0x0",
+            "operation": "add",
+            "result_width": 13,
+            "rhs_one_hex": "0x0",
+            "rhs_width": 12,
+            "rhs_zero_hex": "0xf"
+          }
+        },
+        "add/pressure_add_span": {
+          "value": 4.5,
+          "training": [
+            6.5,
+            192.0
+          ],
+          "producer": {
+            "capture_banks": 1,
+            "carry": "zero",
+            "lhs_one_hex": "0x0",
+            "lhs_width": 8,
+            "lhs_zero_hex": "0x0",
+            "operation": "add",
+            "result_width": 13,
+            "rhs_one_hex": "0x0",
+            "rhs_width": 12,
+            "rhs_zero_hex": "0xf"
+          }
+        },
+        "add/rhs_active_bits": {
+          "value": 8,
+          "training": [
+            12,
+            67
+          ],
+          "producer": {
+            "capture_banks": 1,
+            "carry": "zero",
+            "lhs_one_hex": "0x0",
+            "lhs_width": 8,
+            "lhs_zero_hex": "0x0",
+            "operation": "add",
+            "result_width": 13,
+            "rhs_one_hex": "0x0",
+            "rhs_width": 12,
+            "rhs_zero_hex": "0xf"
+          }
+        }
+      },
+      "unique_operator_queries_with_box_deviation": 186
+    }
+  },
+  "validation_box_deviations": [
+    {
+      "source": "new/G-83abf372ab2c1ed6",
+      "target_ps": 1500,
+      "model_features": [
+        "post_merge_half_adder_columns"
+      ]
+    },
+    {
+      "source": "new/G-83abf372ab2c1ed6",
+      "target_ps": 500,
+      "model_features": [
+        "post_merge_half_adder_columns"
+      ]
+    },
+    {
+      "source": "new/G-83abf372ab2c1ed6",
+      "target_ps": 3000,
+      "model_features": [
+        "post_merge_half_adder_columns"
+      ]
+    }
+  ],
+  "excluded_metadata": [
+    "declared_result_width",
+    "operand_shared_input_roots",
+    "same_stage_remaining_depth"
+  ],
+  "note": "all-feature envelopes in the initial exploratory report include explicitly excluded trace fields; those are not acceptance requirements and must not drive per-query sampling. Only this report isolates fitted model features. Even an inside envelope does not grant a price or joint qualification.",
+  "actual_formal_support_refusal_implemented": false,
+  "parameters_changed": false,
+  "independent_test_unlocked": false
+}
