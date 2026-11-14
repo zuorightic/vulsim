@@ -1,0 +1,611 @@
+{
+  "version": "nine-workload-contracts-v1",
+  "status": "W1_semantics_and_targets_confirmed; software_search_v1; model_qualification_pending",
+  "platform": "asap7",
+  "evaluation_stage": "grt",
+  "II": 1,
+  "L_includes_output_capture": true,
+  "input_service_offset_reported_separately": true,
+  "shared_model_requirement": "one function and parameter set per operator family across widths; common S/shared/G and selector for final nine-case table",
+  "online_inputs": [
+    "typed_source_graph",
+    "unsigned_bit_semantics",
+    "numeric_widths",
+    "known_bits",
+    "result_demand",
+    "logical_stage_assignment",
+    "consumer_bit_maps",
+    "retained_state",
+    "logical_sink_load",
+    "numeric_T",
+    "frozen_process_constants"
+  ],
+  "forbidden_price_inputs": [
+    "case_id",
+    "candidate_id",
+    "exact_shape_id",
+    "exact_T_category",
+    "measured_netlist",
+    "measured_cell_count",
+    "measured_capacitance",
+    "physical_coordinates",
+    "measured_slack",
+    "candidate_PPA"
+  ],
+  "application_role": "development_and_final_evaluation; never implicitly training or independent generalization",
+  "new_model_sources": [],
+  "source_role_policy": "register exact representative sources and immutable train/validation/locked_test roles before model collection; no new model sources admitted by this file",
+  "selection": {
+    "feasible": "minimum_total_area",
+    "all_covered_infeasible": "minimum_worst_full_timing_violation_then_area",
+    "missing_prices": "cost_uncovered",
+    "automatic_L_or_T_relaxation": false
+  },
+  "quality_levels": [
+    "interface",
+    "labels",
+    "diagnostic_accuracy",
+    "independent_qualified",
+    "production_bound"
+  ],
+  "model_evidence": {
+    "operators": {
+      "provider": "operator_function_successor; shared across widths",
+      "version": "common-wide-operator-functions-v3-compare-work",
+      "level": "diagnostic",
+      "evidence": "experiments/arithmetic/evidence/common_model_repair_v1/README.md",
+      "gaps": [
+        "Add small-work area",
+        "Mux delay",
+        "sampling response",
+        "new semantic/consumer coverage",
+        "independent qualification"
+      ]
+    },
+    "S": {
+      "provider": "state_control_shared_model",
+      "version": "shared-state-control-response-v8",
+      "level": "diagnostic",
+      "evidence": "experiments/arithmetic/evidence/common_model_repair_v1/README.md",
+      "gaps": [
+        "native_valid/input_valid accuracy",
+        "per-source protection",
+        "wide/deep actual arithmetic banks",
+        "joint stages"
+      ]
+    },
+    "shared": {
+      "provider": "frozen shared functions; verify reuse first",
+      "level": "bounded_predecessor",
+      "evidence": "experiments/arithmetic/models/asap7_function_D_prototype_v1/composition.json",
+      "gaps": [
+        "expanded state/input/function-area domain",
+        "unique ownership after new rewrites"
+      ]
+    },
+    "G": {
+      "provider": "reduction_mapping_model",
+      "version": "common-positive-geometry-G-functions-v6",
+      "level": "diagnostic",
+      "evidence": "experiments/arithmetic/evidence/common_model_repair_v1/README.md",
+      "gaps": [
+        "zero-compression short-overlap",
+        "combinational launch/consumers",
+        "multiple regions and shared outputs",
+        "wire and joint qualification"
+      ]
+    }
+  },
+  "cases": [
+    {
+      "id": "mac32",
+      "algorithm": "unsigned_multiply_add",
+      "inputs": {
+        "a": 32,
+        "b": 32,
+        "c": 64
+      },
+      "result_bits": 64,
+      "semantics": "(a*b+c) modulo 2^64",
+      "semantic_status": "confirmed",
+      "formal_targets": [
+        {
+          "T_ps": 500,
+          "L": 3
+        },
+        {
+          "T_ps": 750,
+          "L": 3
+        },
+        {
+          "T_ps": 1000,
+          "L": 3
+        }
+      ],
+      "unresolved": [],
+      "requirements": [
+        "mul",
+        "add",
+        "4-bit leaves",
+        "two internal reduction stages",
+        "sparse G",
+        "large banks"
+      ],
+      "software_source": "available",
+      "search_grammar": "original and parameterized schoolbook blocks; dependency-respecting legal cuts; inherited 505-view reference",
+      "target_provenance": "user-confirmed W1/W2 finite first-round matrix before application physical evaluation",
+      "structural_search": {
+        "mul_block_widths": [
+          0,
+          4,
+          8,
+          16
+        ],
+        "add_sub_limb_widths": [
+          0
+        ],
+        "homogeneous_mul_choice": true,
+        "max_structures": 16,
+        "beam_width": 8,
+        "max_extensions_per_structure": 100000,
+        "placement_policy": "bounded-topological-schedules-v1",
+        "coverage_policy": "retain beam discard/budget/failures; no global optimum or full-D qualification",
+        "status": "software proposal; physical/model coverage not granted"
+      }
+    },
+    {
+      "id": "add512",
+      "algorithm": "unsigned_add",
+      "inputs": {
+        "a": 512,
+        "b": 512
+      },
+      "result_bits": 513,
+      "semantics": "full unsigned a+b; 513-bit result; 512-bit modulo variant is software regression only",
+      "semantic_status": "confirmed",
+      "decision_provenance": "user confirmed full 513-bit first experiment in W1/W2 session",
+      "formal_targets": [
+        {
+          "T_ps": 750,
+          "L": 4
+        },
+        {
+          "T_ps": 1250,
+          "L": 4
+        }
+      ],
+      "unresolved": [],
+      "requirements": [
+        "add/adc",
+        "carry-preserving internal split",
+        "1024 input bits",
+        "wide state and capture"
+      ],
+      "software_source": "available",
+      "search_grammar": "original and declared limb widths; carry dependency retained",
+      "target_provenance": "user-confirmed W1/W2 finite first-round matrix before application physical evaluation",
+      "structural_search": {
+        "mul_block_widths": [
+          0
+        ],
+        "add_sub_limb_widths": [
+          0,
+          32,
+          64,
+          128
+        ],
+        "homogeneous_mul_choice": true,
+        "max_structures": 16,
+        "beam_width": 8,
+        "max_extensions_per_structure": 100000,
+        "placement_policy": "bounded-topological-schedules-v1",
+        "coverage_policy": "retain beam discard/budget/failures; no global optimum or full-D qualification",
+        "status": "software proposal; physical/model coverage not granted"
+      }
+    },
+    {
+      "id": "mul128",
+      "algorithm": "unsigned_multiply",
+      "inputs": {
+        "a": 128,
+        "b": 128
+      },
+      "result_bits": 256,
+      "semantics": "full unsigned product",
+      "semantic_status": "confirmed_by_current_plan",
+      "formal_targets": [
+        {
+          "T_ps": 1000,
+          "L": 4
+        },
+        {
+          "T_ps": 2000,
+          "L": 4
+        }
+      ],
+      "unresolved": [],
+      "requirements": [
+        "mul",
+        "rectangular tail blocks",
+        "256-bit G",
+        "wide state"
+      ],
+      "software_source": "available",
+      "search_grammar": "original plus declared block widths and reduction cuts; original also requires qualified price",
+      "target_provenance": "user-confirmed W1/W2 finite first-round matrix before application physical evaluation",
+      "structural_search": {
+        "mul_block_widths": [
+          0,
+          8,
+          16,
+          32,
+          64
+        ],
+        "add_sub_limb_widths": [
+          0
+        ],
+        "homogeneous_mul_choice": true,
+        "max_structures": 16,
+        "beam_width": 8,
+        "max_extensions_per_structure": 100000,
+        "placement_policy": "bounded-topological-schedules-v1",
+        "coverage_policy": "retain beam discard/budget/failures; no global optimum or full-D qualification",
+        "status": "software proposal; physical/model coverage not granted"
+      }
+    },
+    {
+      "id": "dot16",
+      "algorithm": "16-lane 64x64 dot product",
+      "inputs": {
+        "a_lanes": [
+          16,
+          64
+        ],
+        "b_lanes": [
+          16,
+          64
+        ]
+      },
+      "result_bits": 132,
+      "semantics": "sum of 16 unsigned 64x64 products, full 132-bit result; no additional accumulator and no cross-transaction feedback",
+      "semantic_status": "confirmed",
+      "decision_provenance": "user confirmed pure full-precision dot product in W1/W2 session",
+      "formal_targets": [
+        {
+          "T_ps": 1000,
+          "L": 8
+        },
+        {
+          "T_ps": 2000,
+          "L": 8
+        }
+      ],
+      "unresolved": [],
+      "requirements": [
+        "16 mul",
+        "132-bit sum",
+        "2048 data input bits",
+        "wide multi-region G",
+        "large parallel banks",
+        "finite graph search"
+      ],
+      "software_source": "available",
+      "search_grammar": "declared homogeneous block choices and bounded legal schedule search",
+      "target_provenance": "user-confirmed W1/W2 finite first-round matrix before application physical evaluation",
+      "structural_search": {
+        "mul_block_widths": [
+          0,
+          16,
+          32
+        ],
+        "add_sub_limb_widths": [
+          0,
+          32,
+          64
+        ],
+        "homogeneous_mul_choice": true,
+        "max_structures": 16,
+        "beam_width": 8,
+        "max_extensions_per_structure": 100000,
+        "placement_policy": "bounded-topological-schedules-v1",
+        "coverage_policy": "retain beam discard/budget/failures; no global optimum or full-D qualification",
+        "status": "software proposal; physical/model coverage not granted"
+      }
+    },
+    {
+      "id": "horner64",
+      "algorithm": "Horner polynomial",
+      "inputs": {
+        "x": 64,
+        "coefficients": [
+          5,
+          64
+        ]
+      },
+      "result_bits": 64,
+      "semantics": "degree-four Horner: ((((c4*x+c3)*x+c2)*x+c1)*x+c0); each multiplication/addition modulo 2^64; x and all five coefficients dynamic",
+      "semantic_status": "confirmed",
+      "formal_targets": [
+        {
+          "T_ps": 750,
+          "L": 8
+        },
+        {
+          "T_ps": 1500,
+          "L": 8
+        }
+      ],
+      "unresolved": [],
+      "requirements": [
+        "serial mul/add",
+        "rectangular growing demand if full precision",
+        "broadcast x",
+        "deep state and shared"
+      ],
+      "software_source": "available",
+      "search_grammar": "explicit unpipelined algorithm DAG followed by common splitting",
+      "decision_provenance": "user confirmed explicitly in W1/W2 session",
+      "target_provenance": "user-confirmed W1/W2 finite first-round matrix before application physical evaluation",
+      "structural_search": {
+        "mul_block_widths": [
+          0,
+          16,
+          32
+        ],
+        "add_sub_limb_widths": [
+          0,
+          16,
+          32
+        ],
+        "homogeneous_mul_choice": true,
+        "max_structures": 16,
+        "beam_width": 8,
+        "max_extensions_per_structure": 100000,
+        "placement_policy": "bounded-topological-schedules-v1",
+        "coverage_policy": "retain beam discard/budget/failures; no global optimum or full-D qualification",
+        "status": "software proposal; physical/model coverage not granted"
+      }
+    },
+    {
+      "id": "barrett64",
+      "algorithm": "Barrett modular multiply",
+      "inputs": {
+        "a": 64,
+        "b": 64,
+        "modulus": 64,
+        "mu": 65
+      },
+      "result_bits": 64,
+      "semantics": "2^63<m<2^64; a,b in [0,m); dynamic mu=floor(2^128/m); x=a*b; q=floor(x*mu/2^128); r=x-q*m; one conditional subtract; canonical a*b mod m",
+      "semantic_status": "confirmed",
+      "formal_targets": [
+        {
+          "T_ps": 1000,
+          "L": 8
+        },
+        {
+          "T_ps": 2000,
+          "L": 8
+        }
+      ],
+      "unresolved": [],
+      "requirements": [
+        "high product demand",
+        "sub/sbb",
+        "compare",
+        "functional mux",
+        "constants and consumer boundaries"
+      ],
+      "software_source": "available",
+      "search_grammar": "explicit Barrett DAG; declared exact arithmetic rewrites",
+      "parameters": {
+        "modulus_protocol": "dynamic",
+        "mu_protocol": "dynamic_consistent_input",
+        "corrections": 1
+      },
+      "decision_provenance": "user confirmed explicitly in W1/W2 session",
+      "target_provenance": "user-confirmed W1/W2 finite first-round matrix before application physical evaluation",
+      "structural_search": {
+        "mul_block_widths": [
+          0,
+          16,
+          32
+        ],
+        "add_sub_limb_widths": [
+          0,
+          32,
+          64
+        ],
+        "homogeneous_mul_choice": true,
+        "max_structures": 16,
+        "beam_width": 8,
+        "max_extensions_per_structure": 100000,
+        "placement_policy": "bounded-topological-schedules-v1",
+        "coverage_policy": "retain beam discard/budget/failures; no global optimum or full-D qualification",
+        "status": "software proposal; physical/model coverage not granted"
+      }
+    },
+    {
+      "id": "karatsuba256",
+      "algorithm": "Karatsuba multiply-add",
+      "inputs": {
+        "a": 256,
+        "b": 256,
+        "c": 512
+      },
+      "result_bits": 513,
+      "semantics": "full unsigned a*b+c in 513 bits; explicit Karatsuba recursion to widths <=64; intermediate sums grow; leaf block choice delegated to common splitting",
+      "semantic_status": "confirmed",
+      "formal_targets": [
+        {
+          "T_ps": 1000,
+          "L": 8
+        },
+        {
+          "T_ps": 2000,
+          "L": 8
+        }
+      ],
+      "unresolved": [],
+      "requirements": [
+        "recursive algorithm DAG",
+        "leaf mul",
+        "129-bit intermediate sums",
+        "add/sub",
+        "512/513-bit reassembly",
+        "shared subexpressions"
+      ],
+      "software_source": "available",
+      "search_grammar": "explicit parameterized recursion with predeclared base-case options; no algorithm invention",
+      "parameters": {
+        "base_case_max_bits": 64,
+        "algorithm": "sum-form Karatsuba; exact widening"
+      },
+      "decision_provenance": "user confirmed explicitly in W1/W2 session",
+      "target_provenance": "user-confirmed W1/W2 finite first-round matrix before application physical evaluation",
+      "structural_search": {
+        "mul_block_widths": [
+          0,
+          16,
+          32
+        ],
+        "add_sub_limb_widths": [
+          0,
+          32,
+          64
+        ],
+        "homogeneous_mul_choice": true,
+        "max_structures": 16,
+        "beam_width": 8,
+        "max_extensions_per_structure": 100000,
+        "placement_policy": "bounded-topological-schedules-v1",
+        "coverage_policy": "retain beam discard/budget/failures; no global optimum or full-D qualification",
+        "status": "software proposal; physical/model coverage not granted"
+      }
+    },
+    {
+      "id": "montgomery256",
+      "algorithm": "unrolled Montgomery modular multiply",
+      "inputs": {
+        "a": 256,
+        "b": 256,
+        "modulus": 256,
+        "nprime": 32
+      },
+      "result_bits": 256,
+      "semantics": "1<m<2^256 odd; a,b<m; dynamic nprime=-inverse(m) modulo 2^32; 8 fully unrolled operand-scanning rounds; final conditional subtraction; canonical a*b*inverse(2^256) modulo m",
+      "semantic_status": "confirmed",
+      "formal_targets": [
+        {
+          "T_ps": 1500,
+          "L": 32
+        },
+        {
+          "T_ps": 3000,
+          "L": 32
+        }
+      ],
+      "unresolved": [],
+      "requirements": [
+        "limb mul/add/adc/sub/sbb",
+        "deep unrolled state",
+        "compare/mux",
+        "constant handling",
+        "bounded search"
+      ],
+      "software_source": "available",
+      "search_grammar": "explicit unrolled algorithm, II=1; no time-multiplexed resource reuse",
+      "parameters": {
+        "limb_bits": 32,
+        "limbs": 8,
+        "modulus_protocol": "dynamic",
+        "inverse_protocol": "dynamic_consistent_input",
+        "unrolled": true
+      },
+      "decision_provenance": "user confirmed explicitly in W1/W2 session",
+      "target_provenance": "user-confirmed W1/W2 finite first-round matrix before application physical evaluation",
+      "structural_search": {
+        "mul_block_widths": [
+          0,
+          16
+        ],
+        "add_sub_limb_widths": [
+          0,
+          32,
+          64
+        ],
+        "homogeneous_mul_choice": true,
+        "max_structures": 16,
+        "beam_width": 8,
+        "max_extensions_per_structure": 200000,
+        "placement_policy": "bounded-topological-schedules-v1",
+        "coverage_policy": "retain beam discard/budget/failures; no global optimum or full-D qualification",
+        "status": "software proposal; physical/model coverage not granted",
+        "budget_provenance": "finite software successor after two 100000-extension stops; original failures retained; no EDA"
+      }
+    },
+    {
+      "id": "ntt8x64",
+      "algorithm": "8-point NTT butterfly network",
+      "inputs": {
+        "data": [
+          8,
+          64
+        ]
+      },
+      "result_bits": [
+        8,
+        64
+      ],
+      "semantics": "forward unscaled 8-point NTT; natural input/output order; each x_i in [0,p); canonical reduction after every butterfly; fixed p/omega/twiddles; Barrett modular multiplication",
+      "semantic_status": "confirmed",
+      "formal_targets": [
+        {
+          "T_ps": 1000,
+          "L": 16
+        },
+        {
+          "T_ps": 2000,
+          "L": 16
+        }
+      ],
+      "unresolved": [],
+      "requirements": [
+        "reused modular multiply",
+        "modular add/sub",
+        "12 butterflies in 3 layers",
+        "multiple outputs",
+        "fanout and permutations",
+        "wide I/O and wire"
+      ],
+      "software_source": "available",
+      "search_grammar": "explicit unpipelined butterfly DAG followed by common splitting; shared logic retained",
+      "parameters": {
+        "modulus": 18446744069414584321,
+        "omega": 18446744069397807105,
+        "parameter_protocol": "explicit_compile_time_constants"
+      },
+      "decision_provenance": "user confirmed explicitly in W1/W2 session",
+      "target_provenance": "user-confirmed W1/W2 finite first-round matrix before application physical evaluation",
+      "structural_search": {
+        "mul_block_widths": [
+          0,
+          16,
+          32
+        ],
+        "add_sub_limb_widths": [
+          0,
+          32,
+          64
+        ],
+        "homogeneous_mul_choice": true,
+        "max_structures": 16,
+        "beam_width": 8,
+        "max_extensions_per_structure": 100000,
+        "placement_policy": "bounded-topological-schedules-v1",
+        "coverage_policy": "retain beam discard/budget/failures; no global optimum or full-D qualification",
+        "status": "software proposal; physical/model coverage not granted"
+      }
+    }
+  ]
+}

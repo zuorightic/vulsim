@@ -1,0 +1,201 @@
+{
+  "version": "nine-workload-source-bindings-v1",
+  "contract_sha256": "f6d3ecbe631c208c5efd67868d6a8da12250a5db9f7eb3f66ab2e749559d72ff",
+  "status": "mathematical_semantics_and_T_L_confirmed; final_model_and_ABCD_RTL_freeze_pending",
+  "source_role": "application_development; not_training_or_independent",
+  "cases": [
+    {
+      "id": "mac32",
+      "directory": "mac32",
+      "semantic_status": "confirmed",
+      "semantics": "(a*b+c) modulo 2^64",
+      "formal_targets": [
+        {
+          "T_ps": 500,
+          "L": 3
+        },
+        {
+          "T_ps": 750,
+          "L": 3
+        },
+        {
+          "T_ps": 1000,
+          "L": 3
+        }
+      ],
+      "files": {
+        "source.cpp": "ec441e3f7245e7a7e06b33ca2093dcaf1510decfb0b7fec95d7fabd5ed31050e",
+        "request.json": "62d3b16ac73d8c3c9bcf9ba69c5c04b8900e97553f8cfd1dac2bc16c9a64f2f9",
+        "semantics.json": "798ef39354d567e539123add4ea64642abdccfd2d501e59485773a3fc2067aa6"
+      }
+    },
+    {
+      "id": "add512",
+      "directory": "add512",
+      "semantic_status": "confirmed",
+      "semantics": "full unsigned a+b; 513-bit result; 512-bit modulo variant is software regression only",
+      "formal_targets": [
+        {
+          "T_ps": 750,
+          "L": 4
+        },
+        {
+          "T_ps": 1250,
+          "L": 4
+        }
+      ],
+      "files": {
+        "source.cpp": "cf58cc245c9dd48cd025a77d0057d4d243fd69a1413caae1d296fd9d30e7c4be",
+        "request.json": "d1e8f61e184be3da9e493ff9e8ba63f8da501c07fb21a0f40f0b41d2651806ab",
+        "semantics.json": "5ece4d1ec153b3f66adbf7b224bfe9e06ae3687669cca8b393cf25660e0c8001"
+      }
+    },
+    {
+      "id": "mul128",
+      "directory": "mul128",
+      "semantic_status": "confirmed_by_current_plan",
+      "semantics": "full unsigned product",
+      "formal_targets": [
+        {
+          "T_ps": 1000,
+          "L": 4
+        },
+        {
+          "T_ps": 2000,
+          "L": 4
+        }
+      ],
+      "files": {
+        "source.cpp": "55f5cb701be1d4f5cf2f7cf1bc7a5408cbbaa7626cb662e7b2dd5a3525f2f12c",
+        "request.json": "8fea4253484de9bc04b45697be9f2dccee6955cc205d24e87ca5bf0a8a3a6ac6",
+        "semantics.json": "64e6730d637c0987987e2cb2d9b3a3be96b3b76b4fd3eba812149e611312f415"
+      }
+    },
+    {
+      "id": "dot16",
+      "directory": "dot16",
+      "semantic_status": "confirmed",
+      "semantics": "sum of 16 unsigned 64x64 products, full 132-bit result; no additional accumulator and no cross-transaction feedback",
+      "formal_targets": [
+        {
+          "T_ps": 1000,
+          "L": 8
+        },
+        {
+          "T_ps": 2000,
+          "L": 8
+        }
+      ],
+      "files": {
+        "source.cpp": "4763648600faee79a95eb6ee8b0d5bf48367f1322ae1e876864ae001d207c7b0",
+        "request.json": "992dbb7511110e25cc7facf924c791efab6c5d6cea57e9a63824e260c65befa6",
+        "semantics.json": "006b5d764f7c735bc5ce0321f4a8d09a8ecffc9be7966fd8dfda7931a1ea8943"
+      }
+    },
+    {
+      "id": "horner64",
+      "directory": "horner64",
+      "semantic_status": "confirmed",
+      "semantics": "degree-four Horner: ((((c4*x+c3)*x+c2)*x+c1)*x+c0); each multiplication/addition modulo 2^64; x and all five coefficients dynamic",
+      "formal_targets": [
+        {
+          "T_ps": 750,
+          "L": 8
+        },
+        {
+          "T_ps": 1500,
+          "L": 8
+        }
+      ],
+      "files": {
+        "source.cpp": "0c6c07e5d71d3cdac231c8bd1298af8809f6654e8a441533e5326e18fba1345b",
+        "request.json": "ab2068c0a318298027c717d00a28ac2ec783cc034d56e0a8cf8730afc51a5188",
+        "semantics.json": "81cdf5db94de9a8c6be33c818c0164b6db15ff74ab05b35197e01fc83faf2a24"
+      }
+    },
+    {
+      "id": "barrett64",
+      "directory": "barrett64",
+      "semantic_status": "confirmed",
+      "semantics": "2^63<m<2^64; a,b in [0,m); dynamic mu=floor(2^128/m); x=a*b; q=floor(x*mu/2^128); r=x-q*m; one conditional subtract; canonical a*b mod m",
+      "formal_targets": [
+        {
+          "T_ps": 1000,
+          "L": 8
+        },
+        {
+          "T_ps": 2000,
+          "L": 8
+        }
+      ],
+      "files": {
+        "source.cpp": "299e30841be9ed65c40bd48b382851273a00dd4926b945b3f2c661fc21b8e43d",
+        "request.json": "9ce63178c3ae28505eaee7c305d0aa54b0a526dbeebc931795afa571d642e976",
+        "semantics.json": "c551fe15622826119b4878efb7105c8b62ca3d08bb392bfc4d44f4ddaf224b96"
+      }
+    },
+    {
+      "id": "karatsuba256",
+      "directory": "karatsuba256",
+      "semantic_status": "confirmed",
+      "semantics": "full unsigned a*b+c in 513 bits; explicit Karatsuba recursion to widths <=64; intermediate sums grow; leaf block choice delegated to common splitting",
+      "formal_targets": [
+        {
+          "T_ps": 1000,
+          "L": 8
+        },
+        {
+          "T_ps": 2000,
+          "L": 8
+        }
+      ],
+      "files": {
+        "source.cpp": "ea52a1c532a67d4433352da102c5e3c5428b101fb7492f6d7a4808d7b1dca7c9",
+        "request.json": "3f6726bfed21a1cbd612be6467512f1c311f73c69935322f6fb1bbf203d38e34",
+        "semantics.json": "ba32dd31e02e80a05ad480e95c705afba0432d0f5cc60590ea4c41430020b26e"
+      }
+    },
+    {
+      "id": "montgomery256",
+      "directory": "montgomery256",
+      "semantic_status": "confirmed",
+      "semantics": "1<m<2^256 odd; a,b<m; dynamic nprime=-inverse(m) modulo 2^32; 8 fully unrolled operand-scanning rounds; final conditional subtraction; canonical a*b*inverse(2^256) modulo m",
+      "formal_targets": [
+        {
+          "T_ps": 1500,
+          "L": 32
+        },
+        {
+          "T_ps": 3000,
+          "L": 32
+        }
+      ],
+      "files": {
+        "source.cpp": "0a5d09b47b5a6a7d3439eeb86d4dc9fe4a0f980497b348e2807513064f50a60e",
+        "request.json": "d8de720c00f0b731e9f7e327c45120a14c9659ff2fb73f68c619a3b56efd10be",
+        "semantics.json": "6ad6ee49f9cd6af87c8b1055191cfe83826199ab15017b04c6965ac45f705cb6"
+      }
+    },
+    {
+      "id": "ntt8x64",
+      "directory": "ntt8x64",
+      "semantic_status": "confirmed",
+      "semantics": "forward unscaled 8-point NTT; natural input/output order; each x_i in [0,p); canonical reduction after every butterfly; fixed p/omega/twiddles; Barrett modular multiplication",
+      "formal_targets": [
+        {
+          "T_ps": 1000,
+          "L": 16
+        },
+        {
+          "T_ps": 2000,
+          "L": 16
+        }
+      ],
+      "files": {
+        "source.cpp": "b348b502f76cf9ec96147812d133f1117b0eaa9e2ccfc267934a4b15856e24f2",
+        "request.json": "8e2baf16cca0d1d12d22823dd8c61a92bebf3c4452df10e80e364db6096b5f9e",
+        "semantics.json": "a6243d1fa7b5d1ed5dcfea3470432482553ce39f71aa0beccc1cabe5d19b829e"
+      }
+    }
+  ]
+}

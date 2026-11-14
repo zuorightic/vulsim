@@ -1,0 +1,1537 @@
+{
+  "version": "W1W2-software-acceptance-v1",
+  "status": "passed",
+  "binary_sha256": "2e6256d792c4fa281f7bafe49b68201fd4a794fcad0ea430bd581727b6ee1d41",
+  "contracts": {
+    "version": "nine-workload-readiness-v1",
+    "cases": [
+      {
+        "id": "mac32",
+        "semantics": "confirmed",
+        "formal_targets": [
+          {
+            "T_ps": 500,
+            "L": 3
+          },
+          {
+            "T_ps": 750,
+            "L": 3
+          },
+          {
+            "T_ps": 1000,
+            "L": 3
+          }
+        ],
+        "ready_for_application_freeze": true,
+        "unresolved": [],
+        "requirements": [
+          "mul",
+          "add",
+          "4-bit leaves",
+          "two internal reduction stages",
+          "sparse G",
+          "large banks"
+        ],
+        "software_source": "available"
+      },
+      {
+        "id": "add512",
+        "semantics": "confirmed",
+        "formal_targets": [
+          {
+            "T_ps": 750,
+            "L": 4
+          },
+          {
+            "T_ps": 1250,
+            "L": 4
+          }
+        ],
+        "ready_for_application_freeze": true,
+        "unresolved": [],
+        "requirements": [
+          "add/adc",
+          "carry-preserving internal split",
+          "1024 input bits",
+          "wide state and capture"
+        ],
+        "software_source": "available"
+      },
+      {
+        "id": "mul128",
+        "semantics": "confirmed_by_current_plan",
+        "formal_targets": [
+          {
+            "T_ps": 1000,
+            "L": 4
+          },
+          {
+            "T_ps": 2000,
+            "L": 4
+          }
+        ],
+        "ready_for_application_freeze": true,
+        "unresolved": [],
+        "requirements": [
+          "mul",
+          "rectangular tail blocks",
+          "256-bit G",
+          "wide state"
+        ],
+        "software_source": "available"
+      },
+      {
+        "id": "dot16",
+        "semantics": "confirmed",
+        "formal_targets": [
+          {
+            "T_ps": 1000,
+            "L": 8
+          },
+          {
+            "T_ps": 2000,
+            "L": 8
+          }
+        ],
+        "ready_for_application_freeze": true,
+        "unresolved": [],
+        "requirements": [
+          "16 mul",
+          "132-bit sum",
+          "2048 data input bits",
+          "wide multi-region G",
+          "large parallel banks",
+          "finite graph search"
+        ],
+        "software_source": "available"
+      },
+      {
+        "id": "horner64",
+        "semantics": "confirmed",
+        "formal_targets": [
+          {
+            "T_ps": 750,
+            "L": 8
+          },
+          {
+            "T_ps": 1500,
+            "L": 8
+          }
+        ],
+        "ready_for_application_freeze": true,
+        "unresolved": [],
+        "requirements": [
+          "serial mul/add",
+          "rectangular growing demand if full precision",
+          "broadcast x",
+          "deep state and shared"
+        ],
+        "software_source": "available"
+      },
+      {
+        "id": "barrett64",
+        "semantics": "confirmed",
+        "formal_targets": [
+          {
+            "T_ps": 1000,
+            "L": 8
+          },
+          {
+            "T_ps": 2000,
+            "L": 8
+          }
+        ],
+        "ready_for_application_freeze": true,
+        "unresolved": [],
+        "requirements": [
+          "high product demand",
+          "sub/sbb",
+          "compare",
+          "functional mux",
+          "constants and consumer boundaries"
+        ],
+        "software_source": "available"
+      },
+      {
+        "id": "karatsuba256",
+        "semantics": "confirmed",
+        "formal_targets": [
+          {
+            "T_ps": 1000,
+            "L": 8
+          },
+          {
+            "T_ps": 2000,
+            "L": 8
+          }
+        ],
+        "ready_for_application_freeze": true,
+        "unresolved": [],
+        "requirements": [
+          "recursive algorithm DAG",
+          "leaf mul",
+          "129-bit intermediate sums",
+          "add/sub",
+          "512/513-bit reassembly",
+          "shared subexpressions"
+        ],
+        "software_source": "available"
+      },
+      {
+        "id": "montgomery256",
+        "semantics": "confirmed",
+        "formal_targets": [
+          {
+            "T_ps": 1500,
+            "L": 32
+          },
+          {
+            "T_ps": 3000,
+            "L": 32
+          }
+        ],
+        "ready_for_application_freeze": true,
+        "unresolved": [],
+        "requirements": [
+          "limb mul/add/adc/sub/sbb",
+          "deep unrolled state",
+          "compare/mux",
+          "constant handling",
+          "bounded search"
+        ],
+        "software_source": "available"
+      },
+      {
+        "id": "ntt8x64",
+        "semantics": "confirmed",
+        "formal_targets": [
+          {
+            "T_ps": 1000,
+            "L": 16
+          },
+          {
+            "T_ps": 2000,
+            "L": 16
+          }
+        ],
+        "ready_for_application_freeze": true,
+        "unresolved": [],
+        "requirements": [
+          "reused modular multiply",
+          "modular add/sub",
+          "12 butterflies in 3 layers",
+          "multiple outputs",
+          "fanout and permutations",
+          "wide I/O and wire"
+        ],
+        "software_source": "available"
+      }
+    ],
+    "full_D_ready": false,
+    "new_model_sources_admitted": 0,
+    "new_EDA_calls": 0
+  },
+  "cases": [
+    {
+      "case": "add513-L1-original",
+      "L": 1,
+      "limb": 0,
+      "mul_block": 0,
+      "search": {
+        "beam_discarded": 0,
+        "beam_width": 8,
+        "budget_exhausted": false,
+        "exhaustive_within_wiring_grammar": true,
+        "explored_extensions": 6,
+        "global_optimum_claimed": false,
+        "invalid_leaves": 0,
+        "max_extensions": 100000,
+        "physical_price_pruning": false,
+        "price_qualification_granted": false,
+        "ranking": "sum of squared arithmetic scheduling-unit counts per stage; stable stage-vector tie",
+        "returned_placements": 1,
+        "version": "bounded-topological-schedules-v1",
+        "wiring_grammar": "earliest dependency stage; output ports fixed at last stage"
+      },
+      "native_state_projection_checked": true,
+      "price_qualification_granted": false,
+      "functional": [
+        {
+          "view": "0",
+          "cycles": 96,
+          "result_checks": 70
+        }
+      ],
+      "query_rows": 1,
+      "native_wide_query_checks": 1,
+      "G_regions": 0,
+      "G_integer_replacement_checks": 0,
+      "interface_gaps": 0
+    },
+    {
+      "case": "add512-wrap",
+      "L": 3,
+      "limb": 64,
+      "mul_block": 0,
+      "search": {
+        "beam_discarded": 12,
+        "beam_width": 8,
+        "budget_exhausted": false,
+        "exhaustive_within_wiring_grammar": false,
+        "explored_extensions": 303,
+        "global_optimum_claimed": false,
+        "invalid_leaves": 0,
+        "max_extensions": 100000,
+        "physical_price_pruning": false,
+        "price_qualification_granted": false,
+        "ranking": "sum of squared arithmetic scheduling-unit counts per stage; stable stage-vector tie",
+        "returned_placements": 8,
+        "version": "bounded-topological-schedules-v1",
+        "wiring_grammar": "earliest dependency stage; output ports fixed at last stage"
+      },
+      "native_state_projection_checked": true,
+      "price_qualification_granted": false,
+      "functional": [
+        {
+          "view": "0",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "1",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "2",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "3",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "4",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "5",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "6",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "7",
+          "cycles": 96,
+          "result_checks": 66
+        }
+      ],
+      "query_rows": 64,
+      "native_wide_query_checks": 24,
+      "G_regions": 0,
+      "G_integer_replacement_checks": 0,
+      "interface_gaps": 40
+    },
+    {
+      "case": "add513-full",
+      "L": 4,
+      "limb": 64,
+      "mul_block": 0,
+      "search": {
+        "beam_discarded": 24,
+        "beam_width": 8,
+        "budget_exhausted": false,
+        "exhaustive_within_wiring_grammar": false,
+        "explored_extensions": 372,
+        "global_optimum_claimed": false,
+        "invalid_leaves": 0,
+        "max_extensions": 100000,
+        "physical_price_pruning": false,
+        "price_qualification_granted": false,
+        "ranking": "sum of squared arithmetic scheduling-unit counts per stage; stable stage-vector tie",
+        "returned_placements": 8,
+        "version": "bounded-topological-schedules-v1",
+        "wiring_grammar": "earliest dependency stage; output ports fixed at last stage"
+      },
+      "native_state_projection_checked": true,
+      "price_qualification_granted": false,
+      "functional": [
+        {
+          "view": "0",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "1",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "2",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "3",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "4",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "5",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "6",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "7",
+          "cycles": 96,
+          "result_checks": 64
+        }
+      ],
+      "query_rows": 72,
+      "native_wide_query_checks": 32,
+      "G_regions": 0,
+      "G_integer_replacement_checks": 0,
+      "interface_gaps": 40
+    },
+    {
+      "case": "add129-tail",
+      "L": 4,
+      "limb": 17,
+      "mul_block": 0,
+      "search": {
+        "beam_discarded": 24,
+        "beam_width": 8,
+        "budget_exhausted": false,
+        "exhaustive_within_wiring_grammar": false,
+        "explored_extensions": 341,
+        "global_optimum_claimed": false,
+        "invalid_leaves": 0,
+        "max_extensions": 100000,
+        "physical_price_pruning": false,
+        "price_qualification_granted": false,
+        "ranking": "sum of squared arithmetic scheduling-unit counts per stage; stable stage-vector tie",
+        "returned_placements": 8,
+        "version": "bounded-topological-schedules-v1",
+        "wiring_grammar": "earliest dependency stage; output ports fixed at last stage"
+      },
+      "native_state_projection_checked": true,
+      "price_qualification_granted": false,
+      "functional": [
+        {
+          "view": "0",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "1",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "2",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "3",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "4",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "5",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "6",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "7",
+          "cycles": 96,
+          "result_checks": 64
+        }
+      ],
+      "query_rows": 64,
+      "native_wide_query_checks": 32,
+      "G_regions": 0,
+      "G_integer_replacement_checks": 0,
+      "interface_gaps": 32
+    },
+    {
+      "case": "add65-overflow",
+      "L": 4,
+      "limb": 13,
+      "mul_block": 0,
+      "search": {
+        "beam_discarded": 20,
+        "beam_width": 8,
+        "budget_exhausted": false,
+        "exhaustive_within_wiring_grammar": false,
+        "explored_extensions": 206,
+        "global_optimum_claimed": false,
+        "invalid_leaves": 0,
+        "max_extensions": 100000,
+        "physical_price_pruning": false,
+        "price_qualification_granted": false,
+        "ranking": "sum of squared arithmetic scheduling-unit counts per stage; stable stage-vector tie",
+        "returned_placements": 8,
+        "version": "bounded-topological-schedules-v1",
+        "wiring_grammar": "earliest dependency stage; output ports fixed at last stage"
+      },
+      "native_state_projection_checked": true,
+      "price_qualification_granted": false,
+      "functional": [
+        {
+          "view": "0",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "1",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "2",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "3",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "4",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "5",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "6",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "7",
+          "cycles": 96,
+          "result_checks": 64
+        }
+      ],
+      "query_rows": 40,
+      "native_wide_query_checks": 28,
+      "G_regions": 0,
+      "G_integer_replacement_checks": 0,
+      "interface_gaps": 12
+    },
+    {
+      "case": "sub513-extend",
+      "L": 3,
+      "limb": 64,
+      "mul_block": 0,
+      "search": {
+        "beam_discarded": 125,
+        "beam_width": 8,
+        "budget_exhausted": false,
+        "exhaustive_within_wiring_grammar": false,
+        "explored_extensions": 550,
+        "global_optimum_claimed": false,
+        "invalid_leaves": 0,
+        "max_extensions": 100000,
+        "physical_price_pruning": false,
+        "price_qualification_granted": false,
+        "ranking": "sum of squared arithmetic scheduling-unit counts per stage; stable stage-vector tie",
+        "returned_placements": 8,
+        "version": "bounded-topological-schedules-v1",
+        "wiring_grammar": "earliest dependency stage; output ports fixed at last stage"
+      },
+      "native_state_projection_checked": true,
+      "price_qualification_granted": false,
+      "functional": [
+        {
+          "view": "0",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "1",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "2",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "3",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "4",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "5",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "6",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "7",
+          "cycles": 96,
+          "result_checks": 66
+        }
+      ],
+      "query_rows": 72,
+      "native_wide_query_checks": 24,
+      "G_regions": 0,
+      "G_integer_replacement_checks": 0,
+      "interface_gaps": 48
+    },
+    {
+      "case": "sub512-wrap",
+      "L": 4,
+      "limb": 63,
+      "mul_block": 0,
+      "search": {
+        "beam_discarded": 197,
+        "beam_width": 8,
+        "budget_exhausted": false,
+        "exhaustive_within_wiring_grammar": false,
+        "explored_extensions": 631,
+        "global_optimum_claimed": false,
+        "invalid_leaves": 0,
+        "max_extensions": 100000,
+        "physical_price_pruning": false,
+        "price_qualification_granted": false,
+        "ranking": "sum of squared arithmetic scheduling-unit counts per stage; stable stage-vector tie",
+        "returned_placements": 8,
+        "version": "bounded-topological-schedules-v1",
+        "wiring_grammar": "earliest dependency stage; output ports fixed at last stage"
+      },
+      "native_state_projection_checked": true,
+      "price_qualification_granted": false,
+      "functional": [
+        {
+          "view": "0",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "1",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "2",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "3",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "4",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "5",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "6",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "7",
+          "cycles": 96,
+          "result_checks": 64
+        }
+      ],
+      "query_rows": 72,
+      "native_wide_query_checks": 24,
+      "G_regions": 0,
+      "G_integer_replacement_checks": 0,
+      "interface_gaps": 48
+    },
+    {
+      "case": "sub131-tail",
+      "L": 3,
+      "limb": 19,
+      "mul_block": 0,
+      "search": {
+        "beam_discarded": 93,
+        "beam_width": 8,
+        "budget_exhausted": false,
+        "exhaustive_within_wiring_grammar": false,
+        "explored_extensions": 423,
+        "global_optimum_claimed": false,
+        "invalid_leaves": 0,
+        "max_extensions": 100000,
+        "physical_price_pruning": false,
+        "price_qualification_granted": false,
+        "ranking": "sum of squared arithmetic scheduling-unit counts per stage; stable stage-vector tie",
+        "returned_placements": 8,
+        "version": "bounded-topological-schedules-v1",
+        "wiring_grammar": "earliest dependency stage; output ports fixed at last stage"
+      },
+      "native_state_projection_checked": true,
+      "price_qualification_granted": false,
+      "functional": [
+        {
+          "view": "0",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "1",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "2",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "3",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "4",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "5",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "6",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "7",
+          "cycles": 96,
+          "result_checks": 66
+        }
+      ],
+      "query_rows": 56,
+      "native_wide_query_checks": 22,
+      "G_regions": 0,
+      "G_integer_replacement_checks": 0,
+      "interface_gaps": 34
+    },
+    {
+      "case": "adc129",
+      "L": 3,
+      "limb": 17,
+      "mul_block": 0,
+      "search": {
+        "beam_discarded": 12,
+        "beam_width": 8,
+        "budget_exhausted": false,
+        "exhaustive_within_wiring_grammar": false,
+        "explored_extensions": 652,
+        "global_optimum_claimed": false,
+        "invalid_leaves": 0,
+        "max_extensions": 100000,
+        "physical_price_pruning": false,
+        "price_qualification_granted": false,
+        "ranking": "sum of squared arithmetic scheduling-unit counts per stage; stable stage-vector tie",
+        "returned_placements": 8,
+        "version": "bounded-topological-schedules-v1",
+        "wiring_grammar": "earliest dependency stage; output ports fixed at last stage"
+      },
+      "native_state_projection_checked": true,
+      "price_qualification_granted": false,
+      "functional": [
+        {
+          "view": "0",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "1",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "2",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "3",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "4",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "5",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "6",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "7",
+          "cycles": 96,
+          "result_checks": 66
+        }
+      ],
+      "query_rows": 128,
+      "native_wide_query_checks": 32,
+      "G_regions": 0,
+      "G_integer_replacement_checks": 0,
+      "interface_gaps": 96
+    },
+    {
+      "case": "sbb129",
+      "L": 4,
+      "limb": 17,
+      "mul_block": 0,
+      "search": {
+        "beam_discarded": 365,
+        "beam_width": 8,
+        "budget_exhausted": false,
+        "exhaustive_within_wiring_grammar": false,
+        "explored_extensions": 1148,
+        "global_optimum_claimed": false,
+        "invalid_leaves": 0,
+        "max_extensions": 100000,
+        "physical_price_pruning": false,
+        "price_qualification_granted": false,
+        "ranking": "sum of squared arithmetic scheduling-unit counts per stage; stable stage-vector tie",
+        "returned_placements": 8,
+        "version": "bounded-topological-schedules-v1",
+        "wiring_grammar": "earliest dependency stage; output ports fixed at last stage"
+      },
+      "native_state_projection_checked": true,
+      "price_qualification_granted": false,
+      "functional": [
+        {
+          "view": "0",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "1",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "2",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "3",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "4",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "5",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "6",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "7",
+          "cycles": 96,
+          "result_checks": 64
+        }
+      ],
+      "query_rows": 128,
+      "native_wide_query_checks": 32,
+      "G_regions": 0,
+      "G_integer_replacement_checks": 0,
+      "interface_gaps": 96
+    },
+    {
+      "case": "mul128-original",
+      "L": 4,
+      "limb": 0,
+      "mul_block": 0,
+      "search": {
+        "beam_discarded": 0,
+        "beam_width": 8,
+        "budget_exhausted": false,
+        "exhaustive_within_wiring_grammar": true,
+        "explored_extensions": 20,
+        "global_optimum_claimed": false,
+        "invalid_leaves": 0,
+        "max_extensions": 100000,
+        "physical_price_pruning": false,
+        "price_qualification_granted": false,
+        "ranking": "sum of squared arithmetic scheduling-unit counts per stage; stable stage-vector tie",
+        "returned_placements": 4,
+        "version": "bounded-topological-schedules-v1",
+        "wiring_grammar": "earliest dependency stage; output ports fixed at last stage"
+      },
+      "native_state_projection_checked": true,
+      "price_qualification_granted": false,
+      "functional": [
+        {
+          "view": "0",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "1",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "2",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "3",
+          "cycles": 96,
+          "result_checks": 64
+        }
+      ],
+      "query_rows": 4,
+      "native_wide_query_checks": 4,
+      "G_regions": 0,
+      "G_integer_replacement_checks": 0,
+      "interface_gaps": 0
+    },
+    {
+      "case": "mul128-block32",
+      "L": 4,
+      "limb": 0,
+      "mul_block": 32,
+      "search": {
+        "beam_discarded": 20,
+        "beam_width": 8,
+        "budget_exhausted": false,
+        "exhaustive_within_wiring_grammar": false,
+        "explored_extensions": 88,
+        "global_optimum_claimed": false,
+        "invalid_leaves": 0,
+        "max_extensions": 100000,
+        "physical_price_pruning": false,
+        "price_qualification_granted": false,
+        "ranking": "sum of squared arithmetic scheduling-unit counts per stage; stable stage-vector tie",
+        "returned_placements": 8,
+        "version": "bounded-topological-schedules-v1",
+        "wiring_grammar": "earliest dependency stage; output ports fixed at last stage"
+      },
+      "native_state_projection_checked": true,
+      "price_qualification_granted": false,
+      "functional": [
+        {
+          "view": "0",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "1",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "2",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "3",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "4",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "5",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "6",
+          "cycles": 96,
+          "result_checks": 64
+        },
+        {
+          "view": "7",
+          "cycles": 96,
+          "result_checks": 64
+        }
+      ],
+      "query_rows": 248,
+      "native_wide_query_checks": 248,
+      "G_regions": 0,
+      "G_integer_replacement_checks": 0,
+      "interface_gaps": 0
+    },
+    {
+      "case": "mac32-block4",
+      "L": 3,
+      "limb": 16,
+      "mul_block": 4,
+      "search": {
+        "beam_discarded": 12,
+        "beam_width": 8,
+        "budget_exhausted": false,
+        "exhaustive_within_wiring_grammar": false,
+        "explored_extensions": 262,
+        "global_optimum_claimed": false,
+        "invalid_leaves": 0,
+        "max_extensions": 100000,
+        "physical_price_pruning": false,
+        "price_qualification_granted": false,
+        "ranking": "sum of squared arithmetic scheduling-unit counts per stage; stable stage-vector tie",
+        "returned_placements": 8,
+        "version": "bounded-topological-schedules-v1",
+        "wiring_grammar": "earliest dependency stage; output ports fixed at last stage"
+      },
+      "native_state_projection_checked": true,
+      "price_qualification_granted": false,
+      "functional": [
+        {
+          "view": "0",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "1",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "2",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "3",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "4",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "5",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "6",
+          "cycles": 96,
+          "result_checks": 66
+        },
+        {
+          "view": "7",
+          "cycles": 96,
+          "result_checks": 66
+        }
+      ],
+      "query_rows": 1048,
+      "native_wide_query_checks": 1017,
+      "G_regions": 0,
+      "G_integer_replacement_checks": 0,
+      "interface_gaps": 31
+    },
+    {
+      "case": "dot16-block32",
+      "L": 8,
+      "limb": 0,
+      "mul_block": 32,
+      "search": {
+        "beam_discarded": 1671,
+        "beam_width": 8,
+        "budget_exhausted": false,
+        "exhaustive_within_wiring_grammar": false,
+        "explored_extensions": 2537,
+        "global_optimum_claimed": false,
+        "invalid_leaves": 0,
+        "max_extensions": 100000,
+        "physical_price_pruning": false,
+        "price_qualification_granted": false,
+        "ranking": "sum of squared arithmetic scheduling-unit counts per stage; stable stage-vector tie",
+        "returned_placements": 8,
+        "version": "bounded-topological-schedules-v1",
+        "wiring_grammar": "earliest dependency stage; output ports fixed at last stage"
+      },
+      "native_state_projection_checked": true,
+      "price_qualification_granted": false,
+      "functional": [
+        {
+          "view": "0",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "1",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "2",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "3",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "4",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "5",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "6",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "7",
+          "cycles": 96,
+          "result_checks": 59
+        }
+      ],
+      "query_rows": 1016,
+      "native_wide_query_checks": 1016,
+      "G_regions": 16,
+      "G_integer_replacement_checks": 128,
+      "interface_gaps": 0
+    },
+    {
+      "case": "horner64",
+      "L": 8,
+      "limb": 0,
+      "mul_block": 16,
+      "search": {
+        "beam_discarded": 118,
+        "beam_width": 8,
+        "budget_exhausted": false,
+        "exhaustive_within_wiring_grammar": false,
+        "explored_extensions": 390,
+        "global_optimum_claimed": false,
+        "invalid_leaves": 0,
+        "max_extensions": 100000,
+        "physical_price_pruning": false,
+        "price_qualification_granted": false,
+        "ranking": "sum of squared arithmetic scheduling-unit counts per stage; stable stage-vector tie",
+        "returned_placements": 8,
+        "version": "bounded-topological-schedules-v1",
+        "wiring_grammar": "earliest dependency stage; output ports fixed at last stage"
+      },
+      "native_state_projection_checked": true,
+      "price_qualification_granted": false,
+      "functional": [
+        {
+          "view": "0",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "1",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "2",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "3",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "4",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "5",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "6",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "7",
+          "cycles": 96,
+          "result_checks": 59
+        }
+      ],
+      "query_rows": 832,
+      "native_wide_query_checks": 812,
+      "G_regions": 0,
+      "G_integer_replacement_checks": 0,
+      "interface_gaps": 20
+    },
+    {
+      "case": "barrett64",
+      "L": 8,
+      "limb": 0,
+      "mul_block": 32,
+      "search": {
+        "beam_discarded": 162,
+        "beam_width": 8,
+        "budget_exhausted": false,
+        "exhaustive_within_wiring_grammar": false,
+        "explored_extensions": 480,
+        "global_optimum_claimed": false,
+        "invalid_leaves": 0,
+        "max_extensions": 100000,
+        "physical_price_pruning": false,
+        "price_qualification_granted": false,
+        "ranking": "sum of squared arithmetic scheduling-unit counts per stage; stable stage-vector tie",
+        "returned_placements": 8,
+        "version": "bounded-topological-schedules-v1",
+        "wiring_grammar": "earliest dependency stage; output ports fixed at last stage"
+      },
+      "native_state_projection_checked": true,
+      "price_qualification_granted": false,
+      "functional": [
+        {
+          "view": "0",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "1",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "2",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "3",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "4",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "5",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "6",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "7",
+          "cycles": 96,
+          "result_checks": 59
+        }
+      ],
+      "query_rows": 360,
+      "native_wide_query_checks": 330,
+      "G_regions": 0,
+      "G_integer_replacement_checks": 0,
+      "interface_gaps": 30
+    },
+    {
+      "case": "karatsuba256",
+      "L": 8,
+      "limb": 64,
+      "mul_block": 0,
+      "search": {
+        "beam_discarded": 3445,
+        "beam_width": 8,
+        "budget_exhausted": false,
+        "exhaustive_within_wiring_grammar": false,
+        "explored_extensions": 12101,
+        "global_optimum_claimed": false,
+        "invalid_leaves": 0,
+        "max_extensions": 100000,
+        "physical_price_pruning": false,
+        "price_qualification_granted": false,
+        "ranking": "sum of squared arithmetic scheduling-unit counts per stage; stable stage-vector tie",
+        "returned_placements": 8,
+        "version": "bounded-topological-schedules-v1",
+        "wiring_grammar": "earliest dependency stage; output ports fixed at last stage"
+      },
+      "native_state_projection_checked": true,
+      "price_qualification_granted": false,
+      "functional": [
+        {
+          "view": "0",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "1",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "2",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "3",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "4",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "5",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "6",
+          "cycles": 96,
+          "result_checks": 59
+        },
+        {
+          "view": "7",
+          "cycles": 96,
+          "result_checks": 59
+        }
+      ],
+      "query_rows": 1296,
+      "native_wide_query_checks": 415,
+      "G_regions": 0,
+      "G_integer_replacement_checks": 0,
+      "interface_gaps": 881
+    },
+    {
+      "case": "montgomery256",
+      "L": 32,
+      "limb": 0,
+      "mul_block": 0,
+      "search": {
+        "beam_discarded": 29368,
+        "beam_width": 8,
+        "budget_exhausted": false,
+        "exhaustive_within_wiring_grammar": false,
+        "explored_extensions": 39680,
+        "global_optimum_claimed": false,
+        "invalid_leaves": 0,
+        "max_extensions": 100000,
+        "physical_price_pruning": false,
+        "price_qualification_granted": false,
+        "ranking": "sum of squared arithmetic scheduling-unit counts per stage; stable stage-vector tie",
+        "returned_placements": 8,
+        "version": "bounded-topological-schedules-v1",
+        "wiring_grammar": "earliest dependency stage; output ports fixed at last stage"
+      },
+      "native_state_projection_checked": true,
+      "price_qualification_granted": false,
+      "functional": [
+        {
+          "view": "0",
+          "cycles": 96,
+          "result_checks": 23
+        },
+        {
+          "view": "1",
+          "cycles": 96,
+          "result_checks": 23
+        },
+        {
+          "view": "2",
+          "cycles": 96,
+          "result_checks": 23
+        },
+        {
+          "view": "3",
+          "cycles": 96,
+          "result_checks": 23
+        },
+        {
+          "view": "4",
+          "cycles": 96,
+          "result_checks": 23
+        },
+        {
+          "view": "5",
+          "cycles": 96,
+          "result_checks": 23
+        },
+        {
+          "view": "6",
+          "cycles": 96,
+          "result_checks": 23
+        },
+        {
+          "view": "7",
+          "cycles": 96,
+          "result_checks": 23
+        }
+      ],
+      "query_rows": 2128,
+      "native_wide_query_checks": 1392,
+      "G_regions": 168,
+      "G_integer_replacement_checks": 1344,
+      "interface_gaps": 736
+    },
+    {
+      "case": "ntt8x64",
+      "L": 16,
+      "limb": 0,
+      "mul_block": 0,
+      "search": {
+        "beam_discarded": 2935,
+        "beam_width": 8,
+        "budget_exhausted": false,
+        "exhaustive_within_wiring_grammar": false,
+        "explored_extensions": 5362,
+        "global_optimum_claimed": false,
+        "invalid_leaves": 0,
+        "max_extensions": 100000,
+        "physical_price_pruning": false,
+        "price_qualification_granted": false,
+        "ranking": "sum of squared arithmetic scheduling-unit counts per stage; stable stage-vector tie",
+        "returned_placements": 8,
+        "version": "bounded-topological-schedules-v1",
+        "wiring_grammar": "earliest dependency stage; output ports fixed at last stage"
+      },
+      "native_state_projection_checked": true,
+      "price_qualification_granted": false,
+      "functional": [
+        {
+          "view": "0",
+          "cycles": 96,
+          "result_checks": 384
+        },
+        {
+          "view": "1",
+          "cycles": 96,
+          "result_checks": 384
+        },
+        {
+          "view": "2",
+          "cycles": 96,
+          "result_checks": 384
+        },
+        {
+          "view": "3",
+          "cycles": 96,
+          "result_checks": 384
+        },
+        {
+          "view": "4",
+          "cycles": 96,
+          "result_checks": 384
+        },
+        {
+          "view": "5",
+          "cycles": 96,
+          "result_checks": 384
+        },
+        {
+          "view": "6",
+          "cycles": 96,
+          "result_checks": 384
+        },
+        {
+          "view": "7",
+          "cycles": 96,
+          "result_checks": 384
+        }
+      ],
+      "query_rows": 1144,
+      "native_wide_query_checks": 659,
+      "G_regions": 0,
+      "G_integer_replacement_checks": 0,
+      "interface_gaps": 485
+    }
+  ],
+  "budget_stop_checked": true,
+  "backend_startup_sentinels": "yosys/abc/yosys-abc/openroad/opensta/sta; fail immediately",
+  "backend_startup_attempts": 0,
+  "new_EDA_calls": 0,
+  "independent_labels_read": false,
+  "formal_application_targets_modified": false,
+  "full_D_ready": false
+}

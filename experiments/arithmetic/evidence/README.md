@@ -4,6 +4,7 @@
 
 | 目录 | 适用版本 |
 | --- | --- |
+| [workloads_software_v1](workloads_software_v1/README.md) | W1/W2九例首轮合同、64声明结构／502实际放置／48192周期；19组针对性诊断、6144真实Query跨语言特征及1472项G整数检查；全图／状态／RTL／测试便携回放，原预算失败保留，0新EDA，生产相容边界与模型资格仍待 |
 | [manual_split16_vul_v1](manual_split16_vul_v1/README.md) | 用户手写两级VUL原始RTL：4个16×16部分积后寄存，第二级移位加法；500／1000／1500ps三档频率和面积对照，3 synth／3 grt，原始恢复通过；raw联合综合与此前保算子层次的差异单列 |
 | [step9_MAC32_ABCD_v2](step9_MAC32_ABCD_v2/README.md) | 五目标21条A／B／C／D及同策略成本对照，19 synth／19 grt；面积＋固定实现完整setup最小周期／Fmax，17组阈值检查、实际原始恢复和隔离回放通过；hold独立，C全节点细查未完成，模型／选择不回灌 |
 | [step8_function_D_output_v1](step8_function_D_output_v1/README.md) | 用户暂缓reset时序后的D原型：五档T／44候选真实函数选择与完整RTL，3440节点／8055位连接复算、周期与缺覆盖拒绝、公共入口及隔离回放通过；0物理PPA，完整联合仍待 |

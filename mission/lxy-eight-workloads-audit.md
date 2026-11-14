@@ -1,5 +1,7 @@
 # MAC32三级拆分与八类扩展案例：现有函数、D能力及共同补齐项
 
+**2026-11-14 W1/W2软件与实际需求后继：** 九例首轮数学语义及有限T／L已逐项确认，[合同／未分级源码／公共入口](../experiments/arithmetic/WORKLOADS.md)与[§7.100](lxy-plan-fix.md#nine-workload-W1W2-software)已交付。64个声明结构全部导出、502个实际放置通过48192周期功能／事务检查；实际Query、S规模与G几何汇总见[requirements.json](../experiments/arithmetic/evidence/workloads_software_v1/requirements.json)，全图／状态／RTL／测试及便携回放见[证据说明](../experiments/arithmetic/evidence/workloads_software_v1/README.md)。旧宽ABI可表达102723／151892条算子需求，其余多消费者、carry／selector及需求映射等缺口保留完整连接；接口表达不授予价格资格。Montgomery两个100000扩展触限保留，200000有限后继六组均通过。W1本轮登记已交付，W2生产提供者及算子／G相容发射边界仍待；原公共D、模型失败和20独立源锁定保持。下文是各日期检查点，不以历史待确认项覆盖本次确认。
+
 **现行目标与排程：** 本文件作为[九案例通用模型扩展计划](lxy-plan-fix.md#general-model-expansion-plan)的需求附件，执行统一采用[W1—W8](lxy-plan-fix.md#general-model-work-packages)。MAC32与八例共享函数、拆分／搜索及ABCD链路；原十步已[归档](archive/lxy-ten-step-stage-20261113.md)。以下按日期保留已有诊断和原生产绑定范围，后继软件／候选有进展不自动改变发布资格；历史建议顺序不另成排程。
 
 **2026-11-13共同函数修复结算：** 72个物理点及同算子共享参数后继完成，详见[§7.96](lxy-plan-fix.md#common-narrow-wide-model-repair)与[结果](../experiments/arithmetic/evidence/common_model_repair_v1/README.md)。窄／宽Mul使用一套参数，不能再按窄／宽独立路由；有限验证精度保留。Add最后留出时延5.41%通过、面积15.88%失败；G宽域改善但零压缩短重叠train仍失败；S新银行native_valid／input_valid仍31.17%／32.24%，保护也未全覆盖。1427次同参数核对、162次G特征及505实际placement消费通过不转授价格资格。MAC32三级与八例继续共用算子／S／G接口和train归因，原公共D不改、20独立算子源仍锁定；本段为最新状态，下方启动记录按各自检查点解释。

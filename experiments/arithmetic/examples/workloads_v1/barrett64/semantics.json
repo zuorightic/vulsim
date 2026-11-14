@@ -1,0 +1,14 @@
+{
+  "operation": "barrett64",
+  "result_bits": 64,
+  "carry": false,
+  "constraints": "2^63<m<2^64; a,b<m; mu=floor(2^128/m)",
+  "inputs": {
+    "a": 64,
+    "b": 64,
+    "modulus": 64,
+    "mu": 65
+  },
+  "source_role": "software_diagnostic_not_training_or_independent",
+  "formal_application_semantics_frozen": false
+}

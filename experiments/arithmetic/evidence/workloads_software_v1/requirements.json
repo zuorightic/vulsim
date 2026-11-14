@@ -1,0 +1,486 @@
+{
+  "version": "nine-workload-observed-requirements-v1",
+  "cases": [
+    {
+      "id": "mac32",
+      "targets": [
+        {
+          "T_ps": 500,
+          "L": 3
+        },
+        {
+          "T_ps": 750,
+          "L": 3
+        },
+        {
+          "T_ps": 1000,
+          "L": 3
+        }
+      ],
+      "counts": {
+        "structures": 4,
+        "software_exported": 4,
+        "cycles": 2880,
+        "placements": 30,
+        "functional_logic_needing_price": 0,
+        "operator_queries": 1356,
+        "represented_predecessor_ABI": 1356
+      },
+      "maximum_observed_software_scale": {
+        "input_service_data_bits": 128,
+        "native_data_bits": 2080,
+        "native_words": 82,
+        "max_word_bits": 69,
+        "max_parallel_words": 65,
+        "external_data_bits": 64,
+        "G_output_bits": 0,
+        "G_terms": 0
+      },
+      "predecessor_ABI_gaps": {},
+      "price_qualification_granted": false
+    },
+    {
+      "id": "add512",
+      "targets": [
+        {
+          "T_ps": 750,
+          "L": 4
+        },
+        {
+          "T_ps": 1250,
+          "L": 4
+        }
+      ],
+      "counts": {
+        "structures": 4,
+        "software_exported": 4,
+        "cycles": 2688,
+        "placements": 28,
+        "functional_logic_needing_price": 0,
+        "operator_queries": 252,
+        "represented_predecessor_ABI": 96
+      },
+      "maximum_observed_software_scale": {
+        "input_service_data_bits": 1024,
+        "native_data_bits": 3072,
+        "native_words": 93,
+        "max_word_bits": 513,
+        "max_parallel_words": 32,
+        "external_data_bits": 513,
+        "G_output_bits": 0,
+        "G_terms": 0
+      },
+      "predecessor_ABI_gaps": {
+        "producer feeds arithmetic carry/selector pins outside current wide binding ABI": 156
+      },
+      "price_qualification_granted": false
+    },
+    {
+      "id": "mul128",
+      "targets": [
+        {
+          "T_ps": 1000,
+          "L": 4
+        },
+        {
+          "T_ps": 2000,
+          "L": 4
+        }
+      ],
+      "counts": {
+        "structures": 5,
+        "software_exported": 5,
+        "cycles": 3456,
+        "placements": 36,
+        "functional_logic_needing_price": 0,
+        "operator_queries": 5412,
+        "represented_predecessor_ABI": 5412
+      },
+      "maximum_observed_software_scale": {
+        "input_service_data_bits": 256,
+        "native_data_bits": 32992,
+        "native_words": 448,
+        "max_word_bits": 262,
+        "max_parallel_words": 256,
+        "external_data_bits": 256,
+        "G_output_bits": 0,
+        "G_terms": 0
+      },
+      "predecessor_ABI_gaps": {},
+      "price_qualification_granted": false
+    },
+    {
+      "id": "dot16",
+      "targets": [
+        {
+          "T_ps": 1000,
+          "L": 8
+        },
+        {
+          "T_ps": 2000,
+          "L": 8
+        }
+      ],
+      "counts": {
+        "structures": 9,
+        "software_exported": 9,
+        "cycles": 6912,
+        "placements": 72,
+        "functional_logic_needing_price": 0,
+        "operator_queries": 18216,
+        "represented_predecessor_ABI": 15971,
+        "proposed_G_regions": 32,
+        "represented_G_geometry": 32
+      },
+      "maximum_observed_software_scale": {
+        "input_service_data_bits": 2048,
+        "native_data_bits": 33757,
+        "native_words": 595,
+        "max_word_bits": 132,
+        "max_parallel_words": 172,
+        "external_data_bits": 132,
+        "G_output_bits": 132,
+        "G_terms": 13
+      },
+      "predecessor_ABI_gaps": {
+        "first wide scope has at most one real consumer": 305,
+        "producer feeds arithmetic carry/selector pins outside current wide binding ABI": 1940
+      },
+      "price_qualification_granted": false
+    },
+    {
+      "id": "horner64",
+      "targets": [
+        {
+          "T_ps": 750,
+          "L": 8
+        },
+        {
+          "T_ps": 1500,
+          "L": 8
+        }
+      ],
+      "counts": {
+        "structures": 9,
+        "software_exported": 9,
+        "cycles": 6912,
+        "placements": 72,
+        "functional_logic_needing_price": 0,
+        "operator_queries": 3744,
+        "represented_predecessor_ABI": 3298
+      },
+      "maximum_observed_software_scale": {
+        "input_service_data_bits": 384,
+        "native_data_bits": 5278,
+        "native_words": 168,
+        "max_word_bits": 131,
+        "max_parallel_words": 33,
+        "external_data_bits": 64,
+        "G_output_bits": 0,
+        "G_terms": 0
+      },
+      "predecessor_ABI_gaps": {
+        "first wide scope has at most one real consumer": 271,
+        "producer feeds arithmetic carry/selector pins outside current wide binding ABI": 285
+      },
+      "price_qualification_granted": false
+    },
+    {
+      "id": "barrett64",
+      "targets": [
+        {
+          "T_ps": 1000,
+          "L": 8
+        },
+        {
+          "T_ps": 2000,
+          "L": 8
+        }
+      ],
+      "counts": {
+        "structures": 9,
+        "software_exported": 9,
+        "cycles": 6912,
+        "placements": 72,
+        "functional_logic_needing_price": 264,
+        "operator_queries": 5088,
+        "represented_predecessor_ABI": 4723
+      },
+      "maximum_observed_software_scale": {
+        "input_service_data_bits": 257,
+        "native_data_bits": 6111,
+        "native_words": 126,
+        "max_word_bits": 196,
+        "max_parallel_words": 45,
+        "external_data_bits": 64,
+        "G_output_bits": 0,
+        "G_terms": 0
+      },
+      "predecessor_ABI_gaps": {
+        "mapped wide producer bit outside demand": 20,
+        "producer feeds arithmetic carry/selector pins outside current wide binding ABI": 221,
+        "unobserved wide producer": 101,
+        "first wide scope has at most one real consumer": 220
+      },
+      "price_qualification_granted": false
+    },
+    {
+      "id": "karatsuba256",
+      "targets": [
+        {
+          "T_ps": 1000,
+          "L": 8
+        },
+        {
+          "T_ps": 2000,
+          "L": 8
+        }
+      ],
+      "counts": {
+        "structures": 9,
+        "software_exported": 9,
+        "cycles": 6912,
+        "placements": 72,
+        "functional_logic_needing_price": 3456,
+        "operator_queries": 21504,
+        "represented_predecessor_ABI": 12904,
+        "proposed_G_regions": 160,
+        "represented_G_geometry": 160
+      },
+      "maximum_observed_software_scale": {
+        "input_service_data_bits": 1024,
+        "native_data_bits": 21261,
+        "native_words": 406,
+        "max_word_bits": 513,
+        "max_parallel_words": 82,
+        "external_data_bits": 513,
+        "G_output_bits": 512,
+        "G_terms": 3
+      },
+      "predecessor_ABI_gaps": {
+        "unobserved wide producer": 1997,
+        "first wide scope has at most one real consumer": 984,
+        "producer feeds arithmetic carry/selector pins outside current wide binding ABI": 7175
+      },
+      "price_qualification_granted": false
+    },
+    {
+      "id": "montgomery256",
+      "targets": [
+        {
+          "T_ps": 1500,
+          "L": 32
+        },
+        {
+          "T_ps": 3000,
+          "L": 32
+        }
+      ],
+      "counts": {
+        "structures": 6,
+        "software_exported": 6,
+        "cycles": 4608,
+        "placements": 48,
+        "functional_logic_needing_price": 6720,
+        "operator_queries": 58928,
+        "represented_predecessor_ABI": 29728,
+        "proposed_G_regions": 296,
+        "represented_G_geometry": 296
+      },
+      "maximum_observed_software_scale": {
+        "input_service_data_bits": 800,
+        "native_data_bits": 229536,
+        "native_words": 6896,
+        "max_word_bits": 290,
+        "max_parallel_words": 397,
+        "external_data_bits": 256,
+        "G_output_bits": 290,
+        "G_terms": 9
+      },
+      "predecessor_ABI_gaps": {
+        "first wide scope has at most one real consumer": 768,
+        "unobserved wide producer": 5272,
+        "producer feeds arithmetic carry/selector pins outside current wide binding ABI": 25112,
+        "mapped wide producer bit outside demand": 16
+      },
+      "price_qualification_granted": false
+    },
+    {
+      "id": "ntt8x64",
+      "targets": [
+        {
+          "T_ps": 1000,
+          "L": 16
+        },
+        {
+          "T_ps": 2000,
+          "L": 16
+        }
+      ],
+      "counts": {
+        "structures": 9,
+        "software_exported": 9,
+        "cycles": 6912,
+        "placements": 72,
+        "functional_logic_needing_price": 1824,
+        "operator_queries": 37392,
+        "represented_predecessor_ABI": 29235
+      },
+      "maximum_observed_software_scale": {
+        "input_service_data_bits": 512,
+        "native_data_bits": 17958,
+        "native_words": 515,
+        "max_word_bits": 195,
+        "max_parallel_words": 51,
+        "external_data_bits": 512,
+        "G_output_bits": 0,
+        "G_terms": 0
+      },
+      "predecessor_ABI_gaps": {
+        "first wide scope has at most one real consumer": 4053,
+        "producer feeds arithmetic carry/selector pins outside current wide binding ABI": 4864,
+        "unobserved wide producer": 1579,
+        "mapped wide producer bit outside demand": 546
+      },
+      "price_qualification_granted": false
+    }
+  ],
+  "operator_families": {
+    "add": {
+      "provider": "operator_function_successor",
+      "queries": 96274,
+      "numeric_ranges": {
+        "lhs_width": [
+          1,
+          512
+        ],
+        "rhs_width": [
+          1,
+          512
+        ],
+        "arithmetic_width": [
+          1,
+          513
+        ],
+        "value_width": [
+          1,
+          513
+        ],
+        "result_width": [
+          1,
+          513
+        ]
+      }
+    },
+    "mul": {
+      "provider": "operator_function_successor",
+      "queries": 49650,
+      "numeric_ranges": {
+        "lhs_width": [
+          1,
+          128
+        ],
+        "rhs_width": [
+          1,
+          128
+        ],
+        "arithmetic_width": [
+          2,
+          256
+        ],
+        "value_width": [
+          2,
+          256
+        ],
+        "result_width": [
+          2,
+          256
+        ]
+      }
+    },
+    "sub": {
+      "provider": "operator_function_successor",
+      "queries": 1552,
+      "numeric_ranges": {
+        "lhs_width": [
+          65,
+          290
+        ],
+        "rhs_width": [
+          64,
+          256
+        ],
+        "arithmetic_width": [
+          65,
+          290
+        ],
+        "value_width": [
+          64,
+          258
+        ],
+        "result_width": [
+          64,
+          258
+        ]
+      }
+    },
+    "compare": {
+      "provider": "operator_function_successor",
+      "queries": 2208,
+      "numeric_ranges": {
+        "lhs_width": [
+          65,
+          290
+        ],
+        "rhs_width": [
+          64,
+          256
+        ],
+        "arithmetic_width": [
+          65,
+          290
+        ],
+        "value_width": [
+          1,
+          1
+        ],
+        "result_width": [
+          1,
+          1
+        ]
+      }
+    },
+    "mux": {
+      "provider": "operator_function_successor",
+      "queries": 2208,
+      "numeric_ranges": {
+        "lhs_width": [
+          65,
+          290
+        ],
+        "rhs_width": [
+          65,
+          290
+        ],
+        "arithmetic_width": [
+          65,
+          290
+        ],
+        "value_width": [
+          64,
+          256
+        ],
+        "result_width": [
+          64,
+          256
+        ]
+      }
+    }
+  },
+  "one_provider_per_family_across_widths": true,
+  "numeric_ranges_are_audit_only_not_support_or_shape_whitelist": true,
+  "new_model_sources_admitted": 0,
+  "independent_labels_read": false,
+  "new_EDA_calls": 0,
+  "full_D_ready": false
+}

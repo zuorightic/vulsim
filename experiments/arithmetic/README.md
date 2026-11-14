@@ -1,5 +1,7 @@
 # 算术实验：现行契约、验证和实施边界
 
+**2026-11-14现行W1/W2入口：** [九案例合同与软件说明](WORKLOADS.md)、[机器合同](../arithmetic_dse/configs/general_workloads_v1.json)及[软件证据／便携回放](evidence/workloads_software_v1/README.md)已交付。九例首轮语义与有限T／L已确认；64结构／502实际放置全部通过，包含公共源码编译、通用乘法／加减拆分、有限搜索和状态／RTL物化。当前为未提交的软件增量，生产宽提供者／模型相容发射边界与价格资格仍待，`full_D_ready=false`。以下已提交模型和历史实测按其版本解释；当前执行以[九案例W1—W8计划](../../mission/lxy-plan-fix.md#general-model-expansion-plan)为准。
+
 **当前模型的 Git 与复现入口：** 小算子、S／shared、G 参数、D bundle 和相应 RTLzz 子模块实现均已提交；从新检出构建并生成 D RTL 请按[复现说明](REPRODUCE.md)使用便携入口。它保留原冻结二进制入口，另以实际数值复算与 RTL 功能验收绑定本地重编译程序。最新三级受限 D 驱动／完整物理产物在仓库外，公共入口仍保持完整覆盖要求；以下记录按各自版本解释。
 
 **A／B／C／D整设计实测及最小周期已交付：** [§7.79](../../mission/lxy-plan-fix.md#step9-MAC32-ABCD-measurement)和[证据v2](evidence/step9_MAC32_ABCD_v2/README.md)完成五目标21方法、19 synth／19 grt。17个固定物理实现的完整setup最小周期经三类边界和阈值上下0.1ps STA核验；D@1500ps为761.134um²／1360.668ps，3000ps改变寄存器位置后为722.016um²／1735.386ps。前四档D与B同RTL，C静态quarter在本例未优于B／D；同策略静态成本1500ps对照为781.473um²／1501.371ps，临界复测一致。完整setup含reset，3负hold及全部不足5ps保留；C逐节点细查因长报告超时未完成，不阻断整设计PPA／周期交付，完整联合模型资格仍待。85,576成员实际恢复、424成员隔离回放和37项冻结D文件通过，最终PPA未调参／改选。

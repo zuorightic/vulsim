@@ -9,7 +9,7 @@
 | 文件／章节 | 用途与边界 |
 | --- | --- |
 | [原始任务lxy.md](lxy.md) | 原研究问题与ABCD归因要求；原文保持 |
-| [现行计划：目标与九案例合同](lxy-plan-fix.md#general-model-expansion-plan) | MAC32＋512位Add、128位Mul、16lane点积、Horner、Barrett、Karatsuba、Montgomery、8点NTT；未定语义和T／L逐例冻结 |
+| [现行计划：目标与九案例合同](lxy-plan-fix.md#general-model-expansion-plan) | MAC32＋512位Add、128位Mul、16lane点积、Horner、Barrett、Karatsuba、Montgomery、8点NTT；首轮语义和有限T／L已逐项确认 |
 | [模型、选择及数据合同](lxy-plan-fix.md#general-model-fixed-contract) | 同算子同模型、S／shared／G唯一归属、D排序、拒绝、数据与质量门槛 |
 | [W1—W8唯一排程](lxy-plan-fix.md#general-model-work-packages) | 需求、宽软件／拆分、算子、S、G、独立／联合、MAC32闭环、八例／复用；软件与模型工作交错 |
 | [ABCD与同策略代价归因](lxy-plan-fix.md#general-model-experiment-protocol) | 公平比较、冻结后测量、完整setup Tmin／频率、hold、覆盖和费用；最终PPA不反馈重选 |
@@ -25,9 +25,11 @@
 
 [§7.96及本轮证据](../experiments/arithmetic/evidence/common_model_repair_v1/README.md)记录72个物理点完成、0物理重跑，1427次真实参数价格／162次G特征及505实际placement消费检查通过。窄／宽Mul已使用一套共享参数并保持有限验证精度；Add最后留出时延5.41%通过而面积15.88%失败；G宽域改善，零压缩短重叠train仍时延30.37%／面积21.80%；S新银行native_valid／input_valid仍31.17%／32.24%，保护也有漏点。**当前新价格未发布，公共D和原49项冻结依赖不改，20个其余算子独立源继续锁定。**
 
-已存在的公共接口、标签与恢复读取、真实S提供者、DAG／G区域、4位叶和两级内部归约、505放置、RTL／周期验证及历史MAC32 ABCD直接复用。下一包同时推进W1需求／语义登记、W2宽生产接口／加减拆分／有限搜索，以及W3—W5的train数值条件与源码机制归因。正式价格、独立及完整阶段按W6冻结依赖；首个集成里程碑是MAC32三级L=3、500／750／1000ps的新D与ABCD，然后按共同能力逐例完成八个扩展实验。
+**2026-11-14 W1/W2软件交付：** 九例数学语义及首轮有限T／L已由用户逐项确认，[机器合同与未分级源码](../experiments/arithmetic/WORKLOADS.md)已登记。公共前端→通用乘法块展开／保进位加减拆分→有限beam→状态物化→诊断RTL贯通九例，64声明结构／502实际放置／48192周期全部通过；19组针对性诊断另完成6144次真实宽Query跨语言核对与1472次G整数替换检查。实际共同需求、原预算失败、完整压缩图／状态／RTL及无EDA回放见[证据](../experiments/arithmetic/evidence/workloads_software_v1/README.md)与[§7.100](lxy-plan-fix.md#nine-workload-W1W2-software)。Montgomery两个100000扩展触限保留，200000有限后继六组全部通过。
 
-本轮可作为“实现与诊断”阶段提交：冻结源码／紧凑证据的隔离回放通过，提交范围未发现≥10MiB单文件。RTLzz新增C++须先在子模块提交并保证对应提交可获取，再更新主仓库引用。提交不能把诊断候选改为已发布模型，见[§7.97核查](lxy-plan-fix.md#source-guided-common-model-repair)。
+已有公共接口、标签、真实S提供者、G区域、旧505放置和历史MAC32 ABCD继续复用。W1本轮合同／需求登记已交付；W2剩余是相容的生产宽提供者／算子和G发射边界，不把诊断RTL写成已按模型层次生成。随后结合实际需求推进W3—W5的train数值条件与源码机制归因，正式价格、独立及完整阶段按W6冻结依赖；首个集成里程碑仍是MAC32三级L=3、500／750／1000ps的新D与ABCD，然后按共同能力逐例完成八个扩展实验。
+
+本轮改动仍未提交，包含主仓库和RTLzz子模块新增C++。若提交，须先在子模块提交并保证对应提交可获取，再更新主仓库引用。提交不能把诊断候选改为已发布模型，原模型修复核查见[§7.97](lxy-plan-fix.md#source-guided-common-model-repair)。
 
 ## 历史与证据阅读
 

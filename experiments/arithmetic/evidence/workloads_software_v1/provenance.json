@@ -1,0 +1,80 @@
+{
+  "raw_artifact_root": "/home/zyrv/vulsim-artifacts/W1W2-software-20261113-v1",
+  "case_receipts": [
+    {
+      "case": "mac32",
+      "origin": "/home/zyrv/vulsim-artifacts/W1W2-software-20261113-v1/inventories-final/mac32",
+      "inventory_sha256": "fc2a18388f3d5838763b912d04b435d08d0872c5083c30821a04656a252a0698",
+      "embedded_contract_sha256": "eaa84c0d08b6664b87c7f2c8a19a6ac72999354dce3881d9f932dc8ae3bffd44",
+      "inheritance": "embedded per-case config and source byte-equal; retain original global config hash"
+    },
+    {
+      "case": "add512",
+      "origin": "/home/zyrv/vulsim-artifacts/W1W2-software-20261113-v1/inventories-final/add512",
+      "inventory_sha256": "78cf93d4b666535bf6930daffbd1e0868470b796b259db9a75d1e6ea87fa59d8",
+      "embedded_contract_sha256": "eaa84c0d08b6664b87c7f2c8a19a6ac72999354dce3881d9f932dc8ae3bffd44",
+      "inheritance": "embedded per-case config and source byte-equal; retain original global config hash"
+    },
+    {
+      "case": "mul128",
+      "origin": "/home/zyrv/vulsim-artifacts/W1W2-software-20261113-v1/inventories-final/mul128",
+      "inventory_sha256": "f79ed8e7e862fdcc05efc1549b93008c36f5a852be0e5c31ca61ac74f3c40dc5",
+      "embedded_contract_sha256": "eaa84c0d08b6664b87c7f2c8a19a6ac72999354dce3881d9f932dc8ae3bffd44",
+      "inheritance": "embedded per-case config and source byte-equal; retain original global config hash"
+    },
+    {
+      "case": "dot16",
+      "origin": "/home/zyrv/vulsim-artifacts/W1W2-software-20261113-v1/inventories-final/dot16",
+      "inventory_sha256": "abe03b7ab0561155a8b972534ccb82033156cffa650b7d464181f3514b737c80",
+      "embedded_contract_sha256": "eaa84c0d08b6664b87c7f2c8a19a6ac72999354dce3881d9f932dc8ae3bffd44",
+      "inheritance": "embedded per-case config and source byte-equal; retain original global config hash"
+    },
+    {
+      "case": "horner64",
+      "origin": "/home/zyrv/vulsim-artifacts/W1W2-software-20261113-v1/inventories-final/horner64",
+      "inventory_sha256": "a50f47fd78ed0e1ac82c7b3bf82d28a7327b7ddf1311cb380cc1238aa05ec88d",
+      "embedded_contract_sha256": "eaa84c0d08b6664b87c7f2c8a19a6ac72999354dce3881d9f932dc8ae3bffd44",
+      "inheritance": "embedded per-case config and source byte-equal; retain original global config hash"
+    },
+    {
+      "case": "barrett64",
+      "origin": "/home/zyrv/vulsim-artifacts/W1W2-software-20261113-v1/inventories-final/barrett64",
+      "inventory_sha256": "7f6d4a101ab534859e8dda4d953ef3e40c8da7131c906d1f0285f872b9b0a16f",
+      "embedded_contract_sha256": "eaa84c0d08b6664b87c7f2c8a19a6ac72999354dce3881d9f932dc8ae3bffd44",
+      "inheritance": "embedded per-case config and source byte-equal; retain original global config hash"
+    },
+    {
+      "case": "karatsuba256",
+      "origin": "/home/zyrv/vulsim-artifacts/W1W2-software-20261113-v1/inventories-final/karatsuba256",
+      "inventory_sha256": "62c08064e2c4d304dba119509647b47539a5f0801ee99acd782cf5e5ad3c11d3",
+      "embedded_contract_sha256": "eaa84c0d08b6664b87c7f2c8a19a6ac72999354dce3881d9f932dc8ae3bffd44",
+      "inheritance": "embedded per-case config and source byte-equal; retain original global config hash"
+    },
+    {
+      "case": "montgomery256",
+      "origin": "/home/zyrv/vulsim-artifacts/W1W2-software-20261113-v1/inventories-successor/montgomery256",
+      "inventory_sha256": "e1bc78730787df0719cf6649ffc3e024b476658e1350ff094c39840715598043",
+      "embedded_contract_sha256": "f6d3ecbe631c208c5efd67868d6a8da12250a5db9f7eb3f66ab2e749559d72ff",
+      "inheritance": "embedded per-case config and source byte-equal; retain original global config hash"
+    },
+    {
+      "case": "ntt8x64",
+      "origin": "/home/zyrv/vulsim-artifacts/W1W2-software-20261113-v1/inventories-final/ntt8x64",
+      "inventory_sha256": "df2799bffe4bb13b0d81dd30542d6f569d9815dda4964ee35bf9c1598d39eb1b",
+      "embedded_contract_sha256": "eaa84c0d08b6664b87c7f2c8a19a6ac72999354dce3881d9f932dc8ae3bffd44",
+      "inheritance": "embedded per-case config and source byte-equal; retain original global config hash"
+    }
+  ],
+  "original_config_hashes": [
+    "eaa84c0d08b6664b87c7f2c8a19a6ac72999354dce3881d9f932dc8ae3bffd44",
+    "f6d3ecbe631c208c5efd67868d6a8da12250a5db9f7eb3f66ab2e749559d72ff"
+  ],
+  "successor": "Only Montgomery max_extensions 100000 -> 200000; mathematical source, T/L and prices unchanged",
+  "excluded": "Icarus sim.out executables and local PATH sentinels; source/RTL/state/tb/logs/graph/demand retained",
+  "prior_attempts": "validation-v1..v4 and earlier local inventories retained in raw root; validation-v5 is final",
+  "new_EDA_calls": 0,
+  "independent_labels_read": false,
+  "new_model_sources_admitted": 0,
+  "full_D_ready": false,
+  "packaging_replay_failure": "First --reextract reached the final inheritance check, which omitted the new budget_provenance audit note. Verifier fixed; original receipts unchanged. Failure preserved at raw root/portable-replay-v1-failure.txt. Final --reextract and restored 643-bench simulation passed."
+}
