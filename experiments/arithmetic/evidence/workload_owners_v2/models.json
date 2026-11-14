@@ -1,0 +1,1516 @@
+{
+  "operators": {
+    "version": "common-wide-operator-functions-v3-compare-work",
+    "feature_version": "wide-function-features-v3-disjoint-compare-work",
+    "quality_status": "diagnostic_candidate",
+    "profile_sha256": "f9d3e71d377d0fef70b66e43828186962caa04fcec31b8f78ad8760c5459f1c7",
+    "functions": {
+      "add": {
+        "delay_ps": {
+          "kind": "linear",
+          "features": [
+            "one",
+            "alu_depth",
+            "log2_alu_work",
+            "control_dynamic",
+            "control_one",
+            "capture_banks",
+            "consumer_conditioning_proxy",
+            "clock_pressure",
+            "log2_target",
+            "log2_operand_live_min"
+          ],
+          "coefficients": [
+            0.0,
+            6.103348908495125,
+            34.634226433702715,
+            -34.39300548543005,
+            -65.20350016481707,
+            27.799039710131304,
+            8.160642572471216,
+            -16.168046721711107,
+            -3.292385657516027,
+            22.097228800192678
+          ],
+          "intercept": -90.4909417835454,
+          "ridge_alpha": 1.0
+        },
+        "area_um2": {
+          "kind": "nonnegative_linear",
+          "features": [
+            "one",
+            "alu_xor",
+            "alu_and",
+            "alu_or",
+            "alu_not",
+            "control_dynamic",
+            "pressure_alu_work",
+            "capture_banks",
+            "consumer_load_work"
+          ],
+          "coefficients": [
+            0.0,
+            0.0,
+            0.11981822876163889,
+            0.2563000607374945,
+            5.8617057040425005,
+            0.0,
+            0.006760944494047805,
+            0.0,
+            0.016514768338037757
+          ],
+          "intercept": 0.0
+        },
+        "delay_reserve_ps": 273.97919600353714
+      },
+      "sub": {
+        "delay_ps": {
+          "kind": "linear",
+          "features": [
+            "one",
+            "alu_depth",
+            "log2_alu_work",
+            "control_dynamic",
+            "control_one",
+            "clock_pressure",
+            "log2_target"
+          ],
+          "coefficients": [
+            0.0,
+            8.854012793237414,
+            42.504238468477965,
+            37.42481709612828,
+            -17.793617084422166,
+            -27.2850995473325,
+            7.124274424235732
+          ],
+          "intercept": -91.61350163884407,
+          "ridge_alpha": 1.0
+        },
+        "area_um2": {
+          "kind": "nonnegative_linear",
+          "features": [
+            "one",
+            "alu_xor",
+            "alu_and",
+            "alu_or",
+            "alu_not",
+            "control_dynamic",
+            "pressure_alu_work"
+          ],
+          "coefficients": [
+            0.0,
+            0.30138991268035625,
+            0.0,
+            0.15554069187713515,
+            0.0,
+            54.687318567226534,
+            0.006043779331317442
+          ],
+          "intercept": 0.0
+        },
+        "delay_reserve_ps": 75.18914811691639
+      },
+      "mul": {
+        "delay_ps": {
+          "kind": "linear",
+          "features": [
+            "one",
+            "log2_operand_live_min",
+            "log2_demand_hi",
+            "result_high_fraction",
+            "capture_banks",
+            "consumer_conditioning_proxy",
+            "clock_pressure",
+            "log2_target"
+          ],
+          "coefficients": [
+            1.882867496490488e-12,
+            131.94450698300835,
+            123.56509240157001,
+            132.6362721584781,
+            -14.582866832325138,
+            -6.931914363416447,
+            -6.543507430281284,
+            7.1609898119046775
+          ],
+          "intercept": -338.87646776478005,
+          "ridge_alpha": 1.0
+        },
+        "area_um2": {
+          "kind": "nonnegative_linear",
+          "features": [
+            "one",
+            "retained_product_terms",
+            "value_width",
+            "pressure_product_terms",
+            "capture_banks",
+            "consumer_load_work"
+          ],
+          "coefficients": [
+            0.0,
+            0.40816887812723424,
+            0.0,
+            0.01586946425532119,
+            0.0,
+            0.0
+          ],
+          "intercept": 0.0
+        },
+        "delay_reserve_ps": 247.28174756997464
+      },
+      "compare": {
+        "delay_ps": {
+          "kind": "linear",
+          "features": [
+            "one",
+            "log2_live_input_sum",
+            "predicate_eq",
+            "predicate_le",
+            "clock_pressure",
+            "log2_target"
+          ],
+          "coefficients": [
+            -3.918322740115596e-13,
+            42.204484912257904,
+            -129.35932946870778,
+            4.6985721271471945,
+            -3.665257492252701,
+            -0.14061711436491844
+          ],
+          "intercept": 10.900784315655443,
+          "ridge_alpha": 1.0
+        },
+        "area_um2": {
+          "kind": "nonnegative_linear",
+          "features": [
+            "one",
+            "compare_order_work",
+            "compare_eq_work",
+            "compare_le_work",
+            "pressure_width"
+          ],
+          "coefficients": [
+            0.046930534108870416,
+            0.3074116499076434,
+            0.19153108484448103,
+            0.00383512025834489,
+            1.876214053712853e-05
+          ],
+          "intercept": 0.0
+        },
+        "delay_reserve_ps": 102.67664224901483
+      },
+      "mux": {
+        "delay_ps": {
+          "kind": "linear",
+          "features": [
+            "one",
+            "log2_value_width",
+            "log2_live_input_sum",
+            "capture_banks",
+            "clock_pressure",
+            "log2_target"
+          ],
+          "coefficients": [
+            0.0,
+            5.199278557814218,
+            14.8065583455101,
+            0.5470762205612988,
+            -29.991218414362464,
+            15.391914220477217
+          ],
+          "intercept": 119.95594434766694,
+          "ridge_alpha": 1.0
+        },
+        "area_um2": {
+          "kind": "nonnegative_linear",
+          "features": [
+            "one",
+            "alu_and",
+            "alu_or",
+            "pressure_alu_work"
+          ],
+          "coefficients": [
+            0.0,
+            0.08749558176612764,
+            0.0017900574176496929,
+            0.00018701354857657802
+          ],
+          "intercept": 0.0
+        },
+        "delay_reserve_ps": 80.90612081718882
+      }
+    },
+    "support": {
+      "add": {
+        "version": "numerical-structural-support-v2-distinct-geometry",
+        "features": [
+          "operand_live_min",
+          "operand_live_max",
+          "arithmetic_width",
+          "result_lo",
+          "value_width",
+          "status_carry",
+          "control_dynamic",
+          "control_one",
+          "capture_banks",
+          "consumer_arithmetic_width",
+          "consumer_operand_pin_uses",
+          "consumer_mapping_position_mean",
+          "alu_work",
+          "alu_depth"
+        ],
+        "bounds": [
+          [
+            4.0,
+            512.0
+          ],
+          [
+            8.0,
+            512.0
+          ],
+          [
+            8.0,
+            513.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            8.0,
+            513.0
+          ],
+          [
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            2.0
+          ],
+          [
+            0.0,
+            640.0
+          ],
+          [
+            0.0,
+            513.0
+          ],
+          [
+            0.0,
+            0.5789473684210527
+          ],
+          [
+            40.0,
+            4063.0
+          ],
+          [
+            9.0,
+            34.0
+          ]
+        ],
+        "scales": [
+          508.0,
+          504.0,
+          505.0,
+          1.0,
+          505.0,
+          1.0,
+          1.0,
+          1.0,
+          2.0,
+          640.0,
+          513.0,
+          1.0,
+          4023.0,
+          25.0
+        ],
+        "anchors": [
+          [
+            4.0,
+            16.0,
+            17.0,
+            0.0,
+            17.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            48.0,
+            17.0,
+            0.5744680851063829,
+            54.0,
+            10.0
+          ],
+          [
+            4.0,
+            20.0,
+            21.0,
+            0.0,
+            21.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            42.0,
+            9.0
+          ],
+          [
+            6.0,
+            10.0,
+            11.0,
+            0.0,
+            11.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            46.0,
+            9.0
+          ],
+          [
+            8.0,
+            8.0,
+            8.0,
+            0.0,
+            8.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            64.0,
+            8.0,
+            0.5158730158730158,
+            40.0,
+            10.0
+          ],
+          [
+            8.0,
+            8.0,
+            9.0,
+            0.0,
+            9.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            49.0,
+            10.0
+          ],
+          [
+            8.0,
+            20.0,
+            25.0,
+            0.0,
+            25.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            96.0,
+            25.0,
+            0.5789473684210527,
+            66.0,
+            10.0
+          ],
+          [
+            9.0,
+            13.0,
+            14.0,
+            0.0,
+            14.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            69.0,
+            11.0
+          ],
+          [
+            32.0,
+            32.0,
+            33.0,
+            0.0,
+            33.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            235.0,
+            18.0
+          ],
+          [
+            48.0,
+            64.0,
+            65.0,
+            0.0,
+            65.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            410.0,
+            20.0
+          ],
+          [
+            64.0,
+            64.0,
+            64.0,
+            0.0,
+            64.0,
+            1.0,
+            1.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            491.0,
+            24.0
+          ],
+          [
+            96.0,
+            128.0,
+            129.0,
+            0.0,
+            129.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            839.0,
+            24.0
+          ],
+          [
+            96.0,
+            128.0,
+            129.0,
+            0.0,
+            129.0,
+            0.0,
+            0.0,
+            0.0,
+            2.0,
+            0.0,
+            0.0,
+            0.0,
+            839.0,
+            24.0
+          ],
+          [
+            128.0,
+            128.0,
+            128.0,
+            0.0,
+            128.0,
+            1.0,
+            0.0,
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            999.0,
+            27.0
+          ],
+          [
+            128.0,
+            128.0,
+            128.0,
+            0.0,
+            128.0,
+            1.0,
+            0.0,
+            1.0,
+            2.0,
+            0.0,
+            0.0,
+            0.0,
+            999.0,
+            27.0
+          ],
+          [
+            192.0,
+            256.0,
+            257.0,
+            0.0,
+            257.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1700.0,
+            28.0
+          ],
+          [
+            256.0,
+            256.0,
+            257.0,
+            0.0,
+            257.0,
+            0.0,
+            1.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            2021.0,
+            32.0
+          ],
+          [
+            320.0,
+            384.0,
+            385.0,
+            0.0,
+            385.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            2721.0,
+            30.0
+          ],
+          [
+            512.0,
+            512.0,
+            513.0,
+            0.0,
+            513.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            640.0,
+            513.0,
+            0.45852895148669776,
+            4063.0,
+            34.0
+          ]
+        ],
+        "k": 2,
+        "requested_k": 2,
+        "radius": 2.108282113352986,
+        "radius_factor": 1.05,
+        "target_interval_ps": [
+          500.0,
+          3000.0
+        ],
+        "label_values_stored": false,
+        "train_sources": 18,
+        "distinct_geometries": 18,
+        "calibration_population": "leave-one-distinct-geometry-out",
+        "query_population": "distinct-geometry",
+        "qualified_for_production": false
+      },
+      "sub": {
+        "version": "numerical-structural-support-v2-distinct-geometry",
+        "features": [
+          "operand_live_min",
+          "operand_live_max",
+          "arithmetic_width",
+          "result_lo",
+          "value_width",
+          "status_borrow",
+          "control_dynamic",
+          "control_one",
+          "capture_banks",
+          "alu_work",
+          "alu_depth"
+        ],
+        "bounds": [
+          [
+            32.0,
+            256.0
+          ],
+          [
+            32.0,
+            256.0
+          ],
+          [
+            32.0,
+            256.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            32.0,
+            256.0
+          ],
+          [
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0
+          ],
+          [
+            270.0,
+            2254.0
+          ],
+          [
+            20.0,
+            33.0
+          ]
+        ],
+        "scales": [
+          224.0,
+          224.0,
+          224.0,
+          1.0,
+          224.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1984.0,
+          13.0
+        ],
+        "anchors": [
+          [
+            32.0,
+            32.0,
+            32.0,
+            0.0,
+            32.0,
+            1.0,
+            0.0,
+            0.0,
+            1.0,
+            270.0,
+            20.0
+          ],
+          [
+            64.0,
+            64.0,
+            64.0,
+            0.0,
+            64.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            536.0,
+            24.0
+          ],
+          [
+            64.0,
+            80.0,
+            80.0,
+            0.0,
+            80.0,
+            1.0,
+            0.0,
+            0.0,
+            1.0,
+            618.0,
+            24.0
+          ],
+          [
+            128.0,
+            128.0,
+            128.0,
+            0.0,
+            128.0,
+            1.0,
+            1.0,
+            0.0,
+            1.0,
+            1130.0,
+            29.0
+          ],
+          [
+            256.0,
+            256.0,
+            256.0,
+            0.0,
+            128.0,
+            1.0,
+            0.0,
+            1.0,
+            1.0,
+            1893.0,
+            27.0
+          ],
+          [
+            256.0,
+            256.0,
+            256.0,
+            0.0,
+            256.0,
+            0.0,
+            1.0,
+            0.0,
+            1.0,
+            2254.0,
+            33.0
+          ]
+        ],
+        "k": 2,
+        "requested_k": 2,
+        "radius": 1.984654499688699,
+        "radius_factor": 1.05,
+        "target_interval_ps": [
+          500.0,
+          3000.0
+        ],
+        "label_values_stored": false,
+        "train_sources": 6,
+        "distinct_geometries": 6,
+        "calibration_population": "leave-one-distinct-geometry-out",
+        "query_population": "distinct-geometry",
+        "qualified_for_production": false
+      },
+      "mul": {
+        "version": "numerical-structural-support-v2-distinct-geometry",
+        "features": [
+          "operand_live_min",
+          "operand_live_max",
+          "value_width",
+          "result_lo",
+          "retained_product_terms",
+          "capture_banks",
+          "consumer_arithmetic_width",
+          "consumer_operand_pin_uses",
+          "consumer_mapping_position_mean"
+        ],
+        "bounds": [
+          [
+            4.0,
+            128.0
+          ],
+          [
+            4.0,
+            128.0
+          ],
+          [
+            8.0,
+            256.0
+          ],
+          [
+            0.0,
+            96.0
+          ],
+          [
+            16.0,
+            16384.0
+          ],
+          [
+            0.0,
+            2.0
+          ],
+          [
+            0.0,
+            256.0
+          ],
+          [
+            0.0,
+            96.0
+          ],
+          [
+            0.0,
+            0.669811320754717
+          ]
+        ],
+        "scales": [
+          124.0,
+          124.0,
+          248.0,
+          96.0,
+          16368.0,
+          2.0,
+          256.0,
+          96.0,
+          1.0
+        ],
+        "anchors": [
+          [
+            4.0,
+            4.0,
+            8.0,
+            0.0,
+            16.0,
+            0.0,
+            48.0,
+            8.0,
+            0.18085106382978722
+          ],
+          [
+            4.0,
+            4.0,
+            8.0,
+            0.0,
+            16.0,
+            2.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            8.0,
+            8.0,
+            16.0,
+            0.0,
+            64.0,
+            0.0,
+            64.0,
+            16.0,
+            0.2619047619047619
+          ],
+          [
+            16.0,
+            16.0,
+            32.0,
+            0.0,
+            256.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            32.0,
+            64.0,
+            96.0,
+            0.0,
+            2048.0,
+            0.0,
+            256.0,
+            96.0,
+            0.4725490196078432
+          ],
+          [
+            32.0,
+            64.0,
+            96.0,
+            0.0,
+            2048.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            48.0,
+            48.0,
+            48.0,
+            0.0,
+            1176.0,
+            0.0,
+            160.0,
+            48.0,
+            0.669811320754717
+          ],
+          [
+            64.0,
+            64.0,
+            128.0,
+            0.0,
+            4096.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            96.0,
+            96.0,
+            96.0,
+            96.0,
+            9216.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            128.0,
+            128.0,
+            256.0,
+            0.0,
+            16384.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "k": 2,
+        "requested_k": 2,
+        "radius": 1.3855259545659784,
+        "radius_factor": 1.05,
+        "target_interval_ps": [
+          500.0,
+          3000.0
+        ],
+        "label_values_stored": false,
+        "train_sources": 10,
+        "distinct_geometries": 10,
+        "calibration_population": "leave-one-distinct-geometry-out",
+        "query_population": "distinct-geometry",
+        "qualified_for_production": false
+      },
+      "compare": {
+        "version": "numerical-structural-support-v2-distinct-geometry",
+        "features": [
+          "operand_live_min",
+          "operand_live_max",
+          "arithmetic_width",
+          "capture_banks"
+        ],
+        "bounds": [
+          [
+            64.0,
+            256.0
+          ],
+          [
+            64.0,
+            256.0
+          ],
+          [
+            64.0,
+            256.0
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ],
+        "scales": [
+          192.0,
+          192.0,
+          192.0,
+          1.0
+        ],
+        "anchors": [
+          [
+            64.0,
+            64.0,
+            64.0,
+            1.0
+          ],
+          [
+            128.0,
+            128.0,
+            128.0,
+            1.0
+          ],
+          [
+            256.0,
+            256.0,
+            256.0,
+            1.0
+          ]
+        ],
+        "k": 2,
+        "requested_k": 2,
+        "radius": 1.818653347947321,
+        "radius_factor": 1.05,
+        "target_interval_ps": [
+          500.0,
+          3000.0
+        ],
+        "label_values_stored": false,
+        "train_sources": 6,
+        "distinct_geometries": 3,
+        "calibration_population": "leave-one-distinct-geometry-out",
+        "query_population": "distinct-geometry",
+        "qualified_for_production": false
+      },
+      "mux": {
+        "version": "numerical-structural-support-v2-distinct-geometry",
+        "features": [
+          "operand_live_min",
+          "operand_live_max",
+          "value_width",
+          "capture_banks"
+        ],
+        "bounds": [
+          [
+            64.0,
+            256.0
+          ],
+          [
+            64.0,
+            256.0
+          ],
+          [
+            64.0,
+            256.0
+          ],
+          [
+            1.0,
+            2.0
+          ]
+        ],
+        "scales": [
+          192.0,
+          192.0,
+          192.0,
+          1.0
+        ],
+        "anchors": [
+          [
+            64.0,
+            64.0,
+            64.0,
+            1.0
+          ],
+          [
+            64.0,
+            64.0,
+            64.0,
+            2.0
+          ],
+          [
+            65.0,
+            97.0,
+            97.0,
+            1.0
+          ],
+          [
+            128.0,
+            128.0,
+            128.0,
+            1.0
+          ],
+          [
+            129.0,
+            193.0,
+            193.0,
+            1.0
+          ],
+          [
+            256.0,
+            256.0,
+            256.0,
+            1.0
+          ],
+          [
+            256.0,
+            256.0,
+            256.0,
+            2.0
+          ]
+        ],
+        "k": 2,
+        "requested_k": 2,
+        "radius": 1.349917486989367,
+        "radius_factor": 1.05,
+        "target_interval_ps": [
+          500.0,
+          3000.0
+        ],
+        "label_values_stored": false,
+        "train_sources": 7,
+        "distinct_geometries": 7,
+        "calibration_population": "leave-one-distinct-geometry-out",
+        "query_population": "distinct-geometry",
+        "qualified_for_production": false
+      }
+    },
+    "full_D_ready": false,
+    "protocol_sha256": "6d0e3ad8448d26514500911f2729076e1cbc008d1f05454108a23b0116a165ad",
+    "target_interval_ps": [
+      500,
+      3000
+    ],
+    "successor_protocol_sha256": "803af2f2186cd2773f33053a25995d4a19d23b19ba718de058d52dfe1ac8a8fb",
+    "successor_Mux_protocol_sha256": "1b06fd4fb030b00f723f6433435f31bb08bc0d4af86959321206f00636f97606"
+  },
+  "G": {
+    "version": "common-positive-geometry-G-functions-v6",
+    "feature_version": "common-positive-geometry-G-features-v6",
+    "quality_status": "diagnostic_candidate",
+    "target_interval_ps": [
+      500,
+      3000
+    ],
+    "full_D_ready": false,
+    "area": {
+      "kind": "positive_log_linear",
+      "features": [
+        "one",
+        "log2_output_scale",
+        "half_fraction",
+        "unpaired_fraction",
+        "compressed_half_fraction",
+        "log2_target",
+        "clock_pressure",
+        "raw_and_fraction"
+      ],
+      "coefficients": [
+        -1.1816183143122494e-18,
+        0.049424242455928025,
+        -0.003945423112247254,
+        0.18361387351663128,
+        0.1414806568207261,
+        -0.009971193976480422,
+        0.02574489741108617,
+        -0.8612264208631947
+      ],
+      "intercept": 0.3555408461973235,
+      "ridge_alpha": 10.0
+    },
+    "delay": {
+      "kind": "positive_log_linear",
+      "features": [
+        "one",
+        "log2_output_scale",
+        "log2_logic_depth",
+        "half_fraction",
+        "increment_fraction",
+        "log2_target",
+        "clock_pressure",
+        "log2_raw_and_inputs"
+      ],
+      "coefficients": [
+        1.189246516931967e-13,
+        0.021892217195410506,
+        0.6222945804077347,
+        -0.27828393804312473,
+        0.2516994694497812,
+        -0.00016561099032762354,
+        -0.05361738605387146,
+        0.03310569790603108
+      ],
+      "intercept": 3.4638085569230572,
+      "ridge_alpha": 1.0
+    },
+    "delay_reserve_ps": 207.08312877616027,
+    "support": {
+      "version": "numerical-structural-support-v2-distinct-geometry",
+      "features": [
+        "word_full_adder_cuts",
+        "word_half_adder_cuts",
+        "word_unpaired_xor",
+        "word_unpaired_and",
+        "word_unpaired_or",
+        "word_logic_depth"
+      ],
+      "bounds": [
+        [
+          2.0,
+          2910.0
+        ],
+        [
+          4.0,
+          678.0
+        ],
+        [
+          3.0,
+          255.0
+        ],
+        [
+          8.0,
+          1206.0
+        ],
+        [
+          2.0,
+          691.0
+        ],
+        [
+          8.0,
+          50.0
+        ]
+      ],
+      "scales": [
+        2908.0,
+        674.0,
+        252.0,
+        1198.0,
+        689.0,
+        42.0
+      ],
+      "anchors": [
+        [
+          2.0,
+          4.0,
+          3.0,
+          8.0,
+          2.0,
+          8.0
+        ],
+        [
+          2.0,
+          23.0,
+          24.0,
+          70.0,
+          6.0,
+          12.0
+        ],
+        [
+          6.0,
+          12.0,
+          11.0,
+          33.0,
+          13.0,
+          14.0
+        ],
+        [
+          8.0,
+          32.0,
+          31.0,
+          93.0,
+          18.0,
+          16.0
+        ],
+        [
+          9.0,
+          9.0,
+          6.0,
+          20.0,
+          13.0,
+          8.0
+        ],
+        [
+          10.0,
+          46.0,
+          47.0,
+          146.0,
+          24.0,
+          19.0
+        ],
+        [
+          22.0,
+          7.0,
+          10.0,
+          22.0,
+          14.0,
+          16.0
+        ],
+        [
+          22.0,
+          38.0,
+          14.0,
+          58.0,
+          34.0,
+          16.0
+        ],
+        [
+          30.0,
+          8.0,
+          8.0,
+          32.0,
+          18.0,
+          14.0
+        ],
+        [
+          35.0,
+          31.0,
+          13.0,
+          37.0,
+          23.0,
+          21.0
+        ],
+        [
+          46.0,
+          15.0,
+          18.0,
+          58.0,
+          36.0,
+          20.0
+        ],
+        [
+          69.0,
+          65.0,
+          14.0,
+          52.0,
+          32.0,
+          20.0
+        ],
+        [
+          71.0,
+          67.0,
+          25.0,
+          93.0,
+          57.0,
+          25.0
+        ],
+        [
+          94.0,
+          31.0,
+          34.0,
+          134.0,
+          82.0,
+          24.0
+        ],
+        [
+          106.0,
+          125.0,
+          63.0,
+          282.0,
+          161.0,
+          25.0
+        ],
+        [
+          142.0,
+          47.0,
+          50.0,
+          212.0,
+          129.0,
+          26.0
+        ],
+        [
+          143.0,
+          139.0,
+          49.0,
+          209.0,
+          127.0,
+          29.0
+        ],
+        [
+          190.0,
+          56.0,
+          34.0,
+          131.0,
+          80.0,
+          30.0
+        ],
+        [
+          227.0,
+          17.0,
+          29.0,
+          55.0,
+          34.0,
+          29.0
+        ],
+        [
+          270.0,
+          122.0,
+          34.0,
+          126.0,
+          77.0,
+          33.0
+        ],
+        [
+          278.0,
+          678.0,
+          255.0,
+          1206.0,
+          691.0,
+          34.0
+        ],
+        [
+          467.0,
+          33.0,
+          45.0,
+          131.0,
+          80.0,
+          33.0
+        ],
+        [
+          703.0,
+          149.0,
+          19.0,
+          85.0,
+          52.0,
+          40.0
+        ],
+        [
+          963.0,
+          39.0,
+          61.0,
+          131.0,
+          80.0,
+          39.0
+        ],
+        [
+          1184.0,
+          294.0,
+          36.0,
+          166.0,
+          101.0,
+          44.0
+        ],
+        [
+          1907.0,
+          129.0,
+          141.0,
+          603.0,
+          364.0,
+          41.0
+        ],
+        [
+          2910.0,
+          274.0,
+          66.0,
+          201.0,
+          122.0,
+          50.0
+        ]
+      ],
+      "k": 2,
+      "requested_k": 2,
+      "radius": 1.6567694915757845,
+      "radius_factor": 1.05,
+      "target_interval_ps": [
+        500.0,
+        3000.0
+      ],
+      "label_values_stored": false,
+      "train_sources": 27,
+      "distinct_geometries": 27,
+      "calibration_population": "leave-one-distinct-geometry-out",
+      "query_population": "distinct-geometry",
+      "qualified_for_production": false
+    },
+    "reference_area_weights": {
+      "word_full_adder_cuts": 0.20412,
+      "word_half_adder_cuts": 0.13122,
+      "word_unpaired_xor": 0.16038,
+      "word_unpaired_and": 0.08748,
+      "word_unpaired_or": 0.08748
+    }
+  },
+  "version": "workload-model-bindings-v2",
+  "profile_sha256": "f9d3e71d377d0fef70b66e43828186962caa04fcec31b8f78ad8760c5459f1c7"
+}

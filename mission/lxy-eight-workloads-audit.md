@@ -1,5 +1,7 @@
 # MAC32三级拆分与八类扩展案例：现有函数、D能力及共同补齐项
 
+**2026-11-14 W2公共所有者后继：** [§7.101](lxy-plan-fix.md#workload-common-owners-W2)与[证据](../experiments/arithmetic/evidence/workload_owners_v2/README.md)已把宽Query v2、唯一算子／G归属、真实状态launch别名、公共provider和相同所有者RTL接通，64结构／502放置在新路径通过48192周期。121733个算子／5625个G／12264个功能所有者已实际提取；carry／selector、多消费者和不相容旧ABI均完整保留，5593个G因保守共享输入根检查而拒绝价格。这里是软件及边界表达进展；S/shared、相关根／新消费者和完整阶段仍待W3—W6资格，完整阶段cost_uncovered、full_D_ready=false。下方W1/W2段落保留为前一检查点，不再代表软件提供者尚未开发。
+
 **2026-11-14 W1/W2软件与实际需求后继：** 九例首轮数学语义及有限T／L已逐项确认，[合同／未分级源码／公共入口](../experiments/arithmetic/WORKLOADS.md)与[§7.100](lxy-plan-fix.md#nine-workload-W1W2-software)已交付。64个声明结构全部导出、502个实际放置通过48192周期功能／事务检查；实际Query、S规模与G几何汇总见[requirements.json](../experiments/arithmetic/evidence/workloads_software_v1/requirements.json)，全图／状态／RTL／测试及便携回放见[证据说明](../experiments/arithmetic/evidence/workloads_software_v1/README.md)。旧宽ABI可表达102723／151892条算子需求，其余多消费者、carry／selector及需求映射等缺口保留完整连接；接口表达不授予价格资格。Montgomery两个100000扩展触限保留，200000有限后继六组均通过。W1本轮登记已交付，W2生产提供者及算子／G相容发射边界仍待；原公共D、模型失败和20独立源锁定保持。下文是各日期检查点，不以历史待确认项覆盖本次确认。
 
 **现行目标与排程：** 本文件作为[九案例通用模型扩展计划](lxy-plan-fix.md#general-model-expansion-plan)的需求附件，执行统一采用[W1—W8](lxy-plan-fix.md#general-model-work-packages)。MAC32与八例共享函数、拆分／搜索及ABCD链路；原十步已[归档](archive/lxy-ten-step-stage-20261113.md)。以下按日期保留已有诊断和原生产绑定范围，后继软件／候选有进展不自动改变发布资格；历史建议顺序不另成排程。

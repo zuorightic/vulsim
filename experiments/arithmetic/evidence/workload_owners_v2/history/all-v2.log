@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_owned.py", line 219, in <module>
+    reports=[inventory(out/c,args.binary.resolve(),c,models,verify_rtl=not args.no_simulate,reuse_rtl_from=args.reuse_rtl_from) for c in cases]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_owned.py", line 168, in inventory
+    run([binary,REPO,out/'source/request.json',target['L'],limb,policy['beam_width'],policy['max_extensions_per_structure'],root,block,target['T_ps'],'owned',models_path],out/f'structure-{number}.log',env,timeout)
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_software_validation.py", line 26, in run
+    raise RuntimeError(f'command failed ({result.returncode}); see {log}')
+RuntimeError: command failed (-11); see /home/zyrv/vulsim-artifacts/W2-boundaries-20261114-v1/all-v2/mac32/structure-0.log

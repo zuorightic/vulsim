@@ -35,6 +35,8 @@
 
 ## 回放
 
+W2后继已更新三份本包冻结的C++源码。下面的原始命令适用于本包源码快照；当前工作树请运行 `python3 -B -m experiments.arithmetic_dse.workload_owned_evidence --predecessor`，它按原摘要恢复旧源码后核查本包，同时核查[所有者后继](../workload_owners_v2/README.md)。原manifest和所有收据保持不变，不用当前源码冒充旧版本。
+
 在主仓库根目录执行；默认仅用 Python 标准库与现有算术特征实现，不运行 EDA、编译器或仿真器：
 
 ```bash

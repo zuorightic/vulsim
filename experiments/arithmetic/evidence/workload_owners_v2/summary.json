@@ -1,0 +1,183 @@
+[
+  {
+    "case": "mac32",
+    "counts": {
+      "operators": 852,
+      "exact_v1_projections": 524,
+      "carry_pin_uses": 0,
+      "selector_pin_uses": 0,
+      "multiple_consumers": 0,
+      "scalar_integer_checks": 3408,
+      "public_covered": 0,
+      "public_uncovered": 995,
+      "diagnostic_covered": 20,
+      "diagnostic_uncovered": 975,
+      "correlated_G_regions": 143,
+      "G_regions": 143,
+      "G_integer_checks": 572
+    },
+    "structures": 4,
+    "placements": 30
+  },
+  {
+    "case": "add512",
+    "counts": {
+      "operators": 252,
+      "exact_v1_projections": 96,
+      "carry_pin_uses": 156,
+      "selector_pin_uses": 0,
+      "multiple_consumers": 0,
+      "scalar_integer_checks": 1008,
+      "public_covered": 0,
+      "public_uncovered": 252,
+      "diagnostic_covered": 4,
+      "diagnostic_uncovered": 248
+    },
+    "structures": 4,
+    "placements": 28
+  },
+  {
+    "case": "mul128",
+    "counts": {
+      "operators": 4261,
+      "exact_v1_projections": 4261,
+      "carry_pin_uses": 0,
+      "selector_pin_uses": 0,
+      "multiple_consumers": 0,
+      "scalar_integer_checks": 17044,
+      "public_covered": 0,
+      "public_uncovered": 4546,
+      "diagnostic_covered": 21,
+      "diagnostic_uncovered": 4525,
+      "correlated_G_regions": 285,
+      "G_regions": 285,
+      "G_integer_checks": 1140
+    },
+    "structures": 5,
+    "placements": 36
+  },
+  {
+    "case": "dot16",
+    "counts": {
+      "correlated_G_regions": 658,
+      "G_regions": 690,
+      "operators": 15606,
+      "exact_v1_projections": 13438,
+      "carry_pin_uses": 1940,
+      "selector_pin_uses": 0,
+      "multiple_consumers": 1601,
+      "scalar_integer_checks": 62424,
+      "G_integer_checks": 2760,
+      "public_covered": 0,
+      "public_uncovered": 16296,
+      "diagnostic_covered": 877,
+      "diagnostic_uncovered": 15419
+    },
+    "structures": 9,
+    "placements": 72
+  },
+  {
+    "case": "horner64",
+    "counts": {
+      "operators": 2509,
+      "exact_v1_projections": 1443,
+      "carry_pin_uses": 285,
+      "selector_pin_uses": 0,
+      "multiple_consumers": 220,
+      "scalar_integer_checks": 10036,
+      "public_covered": 0,
+      "public_uncovered": 2654,
+      "diagnostic_covered": 97,
+      "diagnostic_uncovered": 2557,
+      "correlated_G_regions": 145,
+      "G_regions": 145,
+      "G_integer_checks": 580
+    },
+    "structures": 9,
+    "placements": 72
+  },
+  {
+    "case": "barrett64",
+    "counts": {
+      "operators": 3332,
+      "exact_v1_projections": 2705,
+      "carry_pin_uses": 152,
+      "selector_pin_uses": 69,
+      "multiple_consumers": 226,
+      "scalar_integer_checks": 13328,
+      "public_covered": 0,
+      "public_uncovered": 3728,
+      "diagnostic_covered": 117,
+      "diagnostic_uncovered": 3611,
+      "functional_owners": 264,
+      "correlated_G_regions": 132,
+      "G_regions": 132,
+      "G_integer_checks": 528
+    },
+    "structures": 9,
+    "placements": 72
+  },
+  {
+    "case": "karatsuba256",
+    "counts": {
+      "correlated_G_regions": 1046,
+      "G_regions": 1046,
+      "operators": 16995,
+      "exact_v1_projections": 4601,
+      "carry_pin_uses": 7175,
+      "selector_pin_uses": 0,
+      "multiple_consumers": 6578,
+      "functional_owners": 3456,
+      "scalar_integer_checks": 67980,
+      "G_integer_checks": 4184,
+      "public_covered": 0,
+      "public_uncovered": 21497,
+      "diagnostic_covered": 118,
+      "diagnostic_uncovered": 21379
+    },
+    "structures": 9,
+    "placements": 72
+  },
+  {
+    "case": "montgomery256",
+    "counts": {
+      "correlated_G_regions": 2360,
+      "G_regions": 2360,
+      "operators": 51198,
+      "exact_v1_projections": 16822,
+      "carry_pin_uses": 25064,
+      "selector_pin_uses": 48,
+      "multiple_consumers": 21448,
+      "functional_owners": 6720,
+      "scalar_integer_checks": 204792,
+      "G_integer_checks": 9440,
+      "public_covered": 0,
+      "public_uncovered": 60278,
+      "diagnostic_covered": 1272,
+      "diagnostic_uncovered": 59006
+    },
+    "structures": 6,
+    "placements": 48
+  },
+  {
+    "case": "ntt8x64",
+    "counts": {
+      "operators": 26728,
+      "exact_v1_projections": 8637,
+      "carry_pin_uses": 3525,
+      "selector_pin_uses": 1339,
+      "multiple_consumers": 5232,
+      "scalar_integer_checks": 106912,
+      "public_covered": 0,
+      "public_uncovered": 29376,
+      "diagnostic_covered": 168,
+      "diagnostic_uncovered": 29208,
+      "functional_owners": 1824,
+      "correlated_G_regions": 824,
+      "G_regions": 824,
+      "G_integer_checks": 3296
+    },
+    "structures": 9,
+    "placements": 72
+  }
+]

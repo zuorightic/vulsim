@@ -1,0 +1,17 @@
+[  2%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/beir.cpp.o
+[  2%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/beopt.cpp.o
+[  2%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_workload_plan.cpp.o
+[  2%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_workload_provider.cpp.o
+/home/zyrv/vulsim/rtlzz/src/backend/arithmetic_workload_plan.cpp: In function ‘pred::beir::arithmetic::WorkloadPlan pred::beir::arithmetic::workloadPlan(const pred::pipeline::Program&, double, const std::string&)’:
+/home/zyrv/vulsim/rtlzz/src/backend/arithmetic_workload_plan.cpp:161:17: error: inconsistent deduction for ‘auto’: ‘std::__cxx11::basic_string<char>’ and then ‘const char*’
+  161 |                 auto name=op(d),role=name=="adc"&&k==2?"carry":name=="mux"&&k==0?"selector":"data";
+      |                 ^~~~
+/home/zyrv/vulsim/rtlzz/src/backend/arithmetic_workload_plan.cpp:211:167: error: ‘using pred::beir::arithmetic::{anonymous}::A = class llvm::json::Array’ {aka ‘class llvm::json::Array’} has no member named ‘resize’; did you mean ‘size’?
+  211 |             A mapping(c.mapping);int limit=c.role=="data"&&specs.count(c.sink)?integer(specs.at(c.sink),pin==0?"lhs_width":"rhs_width",1):int(mapping.size());mapping.resize(limit);
+      |                                                                                                                                                                       ^~~~~~
+      |                                                                                                                                                                       size
+gmake[3]: *** [CMakeFiles/predicate-expand-objects.dir/build.make:678: CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_workload_plan.cpp.o] Error 1
+gmake[3]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/Makefile2:408: CMakeFiles/predicate-expand-objects.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:519: CMakeFiles/rtlzz-workload.dir/rule] Error 2
+gmake: *** [Makefile:242: rtlzz-workload] Error 2

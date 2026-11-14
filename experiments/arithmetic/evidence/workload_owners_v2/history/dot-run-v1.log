@@ -1,0 +1,16 @@
+{"case": "dot16", "structure": 0, "placements": 8, "status": "passed"}
+{"case": "dot16", "structure": 1, "placements": 8, "status": "passed"}
+{"case": "dot16", "structure": 2, "placements": 8, "status": "passed"}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_owned.py", line 193, in <module>
+    reports=[inventory(out/c,args.binary.resolve(),c,models,verify_rtl=not args.no_simulate) for c in cases]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_owned.py", line 164, in inventory
+    counts.update(verify_plan(root,view,graph,models));dest=root/view['directory']
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_owned.py", line 90, in verify_plan
+    if expected!=p:raise ValueError(f'compiler spec differs from independent graph extraction at {n}')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: compiler spec differs from independent graph extraction at 211

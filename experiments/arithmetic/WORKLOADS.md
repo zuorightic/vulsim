@@ -4,6 +4,8 @@
 
 本轮 64 个声明结构／502 个实际放置全部导出并通过 48192 周期仿真；实际需求汇总、19 组针对性诊断、原预算触限与完整图／状态／RTL回放见[软件证据](evidence/workloads_software_v1/README.md)。可直接运行 `python3 -B -m experiments.arithmetic_dse.workload_evidence --reextract` 重提取全部正式T需求，不依赖原始本机产物根。
 
+W2后继已增加公共所有者模式：真实Query v2／算子和G独占归属／公共provider／对应RTL共享同一计划，九例64结构／502放置在新模式通过48192周期；见[后继证据](evidence/workload_owners_v2/README.md)。历史v1包严格绑定旧源码，当前可用 `python3 -B -m experiments.arithmetic_dse.workload_owned_evidence --predecessor` 恢复冻结源码字节后同时核查两代证据，旧清单不改写。
+
 新入口仍是软件与需求交付。原公共 D、49 项生产冻结依赖、模型质量和独立数据职责保持原身份；新代码没有给诊断价格授予发布资格。
 
 ## 已确认的首轮合同
@@ -60,7 +62,8 @@ Mul 规范化处理 BEOPT 把“截断再补零”表达为宽掩码的情况：
 ```bash
 cmake -S rtlzz -B build/workloads-v1 -DCMAKE_BUILD_TYPE=Release
 cmake --build build/workloads-v1 \
-  --target rtlzz-workload arithmetic-wide-query-test arithmetic-limb-split-test -j4
+  --target rtlzz-workload arithmetic-wide-query-test arithmetic-limb-split-test \
+    arithmetic-workload-owner-test -j4
 
 python3 -B -m experiments.arithmetic_dse.workload_inventory \
   --case dot16 --binary build/workloads-v1/rtlzz-workload \
@@ -81,7 +84,7 @@ build/workloads-v1/rtlzz-workload \
   4 64 8 100000 build/add512-direct 0 750
 ```
 
-参数依次为仓库、源码请求、L、加减 limb 宽、beam、扩展上限、新输出目录、Mul 块宽、数值 T。块宽／limb 宽 0 表示保留原始结构。
+参数依次为仓库、源码请求、L、加减 limb 宽、beam、扩展上限、新输出目录、Mul 块宽、数值 T，后面可接 `native|owned` 及模型绑定 JSON。块宽／limb 宽 0 表示保留原始结构；默认 native 保留前驱诊断输出。
 
 ## 需求、模型和下一边界
 
@@ -96,7 +99,21 @@ G 仅提出同级可证明等价且成员独占的加法区域。共享内部结
 | shared | 独占共享计费函数 | 实际总 FF、根端口和功能规模；优先验证原参数复用 |
 | G | 公共 word/prefix 几何与已有函数 | 宽／多区域候选、非零 carry 和常量／共享边界；零压缩失败与完整阶段资格仍待 |
 
-原生诊断 RTL 尚未取得与宽算子／G 采样层次一致的发射合同。Query 中的宽模型合同是待验证的拟用接口，不能据此把本轮 RTL 当作已按该层次综合的实现。当前不运行模型选择，不授予完整价格覆盖，不替换公共 D。
+native保留前驱原生诊断RTL。owned按实际图／放置／状态发现所有者，算子调用与宽采样共用的标量Core发射函数，G用独占的求和表达式模块替换成员Add。计划、提供者和发射器互相检查图／layout／profile／数值T身份；G从真实保存的slice／concat别名解析launch，不假定原始算子必有完整寄存器链。采样源码形式相容的软件检查已完成，完整物理边界资格仍待；服务输入和输出capture保持现有语义，尚未取得新的S/shared联合资格。
+
+```bash
+python3 -B -m experiments.arithmetic_dse.workload_owned \
+  --all --binary build/workloads-v1/rtlzz-workload \
+  --out build/nine-workloads-owned
+
+python3 -B -m experiments.arithmetic_dse.workload_owned_evidence --predecessor
+# 安装Icarus后，可从证据重新编译／仿真502份工作负载及1份边界测试
+python3 -B -m experiments.arithmetic_dse.workload_owned_evidence --simulate
+```
+
+owned逐放置生成 `owners.json`、`costs-public.json`、`costs-diagnostic.json`、状态及RTL。默认只读取已冻结参数对象，不读独立标签、不拟合；同一算子跨位宽使用同一函数。只有完整可表示的观察才投影到v1价格接口；多个消费者、carry／selector、G消费者等不能删边投影。G的组合launch、多capture／消费者和相关输入根保留实际语义并显式拒绝不相容价格，功能非wire逻辑单列缺价。
+
+本轮所有者验证使用每例首个已登记T，共64结构；前驱132份正式T需求仍保留。121733个算子中52527条可作精确v1投影；139622个唯一所有者中2694项取得当前参数的诊断估计、公共覆盖为0。完整阶段明确 `cost_uncovered`，S/shared／阶段预算接口不继承静态默认值。当前不运行模型选择，不授予完整价格覆盖，不替换公共D；这些分母不能写成正式T全矩阵或物理精度通过。
 
 下一步需按 W2/W6 贯通相容的生产提供者和发射边界，保留本轮提取的实际连接；W3—W5 按共同因素修复和扩域，冻结后独立与完整阶段验收。新模型接入时使用同一声明结构／搜索范围比较 C/D，并完成同策略成本替换归因。
 

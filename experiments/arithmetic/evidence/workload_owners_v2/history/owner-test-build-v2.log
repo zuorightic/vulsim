@@ -1,0 +1,12 @@
+[  3%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_workload_plan.cpp.o
+[  3%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_workload_provider.cpp.o
+[ 96%] Built target predicate-expand-objects
+[100%] Building CXX object CMakeFiles/arithmetic-workload-owner-test.dir/testv2/arithmetic_workload_owner_test.cpp.o
+/home/zyrv/vulsim/rtlzz/testv2/arithmetic_workload_owner_test.cpp: In function ‘pred::beir::Operand {anonymous}::literal(int, uint64_t)’:
+/home/zyrv/vulsim/rtlzz/testv2/arithmetic_workload_owner_test.cpp:19:116: error: ‘struct pred::beir::Operand::Constant’ has no member named ‘type’
+   19 | Operand literal(int width,std::uint64_t value){Operand a;a.kind=OperandKind::Literal;a.type.width=width;a.constant.type=a.type;a.constant.limbs={value};return a;}
+      |                                                                                                                    ^~~~
+gmake[3]: *** [CMakeFiles/arithmetic-workload-owner-test.dir/build.make:76: CMakeFiles/arithmetic-workload-owner-test.dir/testv2/arithmetic_workload_owner_test.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:1684: CMakeFiles/arithmetic-workload-owner-test.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:1691: CMakeFiles/arithmetic-workload-owner-test.dir/rule] Error 2
+gmake: *** [Makefile:827: arithmetic-workload-owner-test] Error 2

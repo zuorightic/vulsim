@@ -215,7 +215,7 @@ Add先用train审计小工作量面积、存活位／短重叠、carry工作量�
 | W7 | 旧MAC32 ABCD已测；新三级选择缺合格价格 | 新模型下三档D与公平ABCD／归因表 |
 | W8 | 八例共享算子准备已开展，正式八整图ABCD未完成 | 依赖就绪逐例冻结、测量和交付 |
 
-W1本轮合同／需求与W2有限软件包已交付，见[§7.100](#nine-workload-W1W2-software)。下一步补W2相容生产边界与提供者，结合真实需求推进W3／W4／W5的train源码归因与固定后继。正式残差和W6按依赖冻结，但W6代表结构／读取脚本可提前准备。第一项集成里程碑是**可独立验收的共同函数＋MAC32三级新D／阶段性ABCD闭环**；第二项是宽Add／Mul及至少一个宽多节点案例复用；最终是九案例ABCD、代价归因与独立复用。并行指任务交错，不自动授权额外代理或突破全局资源限制。
+W1本轮合同／需求与W2有限软件包见[§7.100](#nine-workload-W1W2-software)，公共宽Query／唯一所有者／提供者及算子和G发射后继已完成本轮软件验收，见[§7.101](#workload-common-owners-W2)。完整阶段保持cost_uncovered；下一步结合真实需求推进W3／W4／W5的train源码归因与固定后继。正式残差和W6按依赖冻结，但W6代表结构／读取脚本可提前准备。第一项集成里程碑是**可独立验收的共同函数＋MAC32三级新D／阶段性ABCD闭环**；第二项是宽Add／Mul及至少一个宽多节点案例复用；最终是九案例ABCD、代价归因与独立复用。并行指任务交错，不自动授权额外代理或突破全局资源限制。
 
 <a id="general-model-resources-and-delivery"></a>
 
@@ -5758,3 +5758,24 @@ OpenROAD的`rsz/RepairDesign.cc`中，gain buffering按required time排序sink�
 **实际恢复回放。** 压缩包3773成员身份全部通过，从64个实际图／状态重新提取132份正式T需求并复算19组Query／G，结果见[replay.json](../experiments/arithmetic/evidence/workloads_software_v1/replay.json)。另从压缩内容重新编译、仿真502＋141共643份测试，全部通过，见[simulation-replay.json](../experiments/arithmetic/evidence/workloads_software_v1/simulation-replay.json)。首次回放在最后的继承检查中遗漏新增budget_provenance说明字段，失败保留，修正核对后通过；原始数学源、目标和收据未改。上述复跑不增加不同候选分母，也不产生综合／物理标签。
 
 **证据和剩余边界。** [便携软件包](../experiments/arithmetic/evidence/workloads_software_v1/README.md)保存全部64结构和19诊断的实际图／placement／状态／RTL／测试／日志／需求及原预算失败，约45MiB压缩、最大单包约3.1MiB；完整本机产物根为`/home/zyrv/vulsim-artifacts/W1W2-software-20261113-v1`，早期调试失败保留。公共回放可验证全部成员和源身份、重建事务bench、重提取正式T需求、复算W1汇总和真实特征／G整数等价；不依赖本机绝对路径，另可用Icarus重跑全部测试。W1本轮合同／需求登记已交付；W2生产提供者和与宽算子／G一致的发射边界仍待，原生RTL明确为诊断实现，未宣称完整模型选择。0新EDA、0拟合、0新模型源准入、独立标签未读；原公共D／49冻结依赖、20独立源锁定及Add／S／G旧失败保留，`full_D_ready=false`。后继按W2相容生产边界及W3—W6共享模型／联合资格推进，最后在同一冻结包下选择九例ABCD。主仓库及RTLzz改动未提交／推送。
+
+
+<a id="workload-common-owners-W2"></a>
+
+### 7.101 W2公共宽Query／唯一所有者／提供者与相容RTL软件后继（2026-11-14）
+
+**软件范围。** 用户继续授权推进W2。本轮继承§7.100的九例数学合同、有限T/L、64结构及搜索预算，新增`unsigned-workload-owners-v2`。实际组合图／级放置／校验后的状态共同导出`WorkloadPlan`；`WorkloadCostProvider`和RTL发射器均重建并核对该计划，绑定graph、layout、profile及数值T。CLI保留native前驱模式，新增owned模式和可选真实模型绑定；不按案例选择价格函数，不切换原公共D。
+
+**Query与边界。** v2完整表达多个消费者、data／carry／selector引脚、实际capture及静态位映射。只有全部观察可由v1原样表达时才投影到旧接口，不删消费者或把G消费者伪装为原Add。BEIR Mux的selector／true／false顺序显式转换到共享标量Core的`cin ? rhs : lhs`，连同掩码一起置换。算子复用宽采样的同一标量Core发射函数；旧6144条Query的特征及Core RTL与保留输出完全一致。
+
+**G归属与发射。** 从实际同级图按依赖逆序发现可证明安全的多Add区域，成员独占；拒绝共享／被观察内部值、非零carry、常量1、重复原子，以及不能证明安全的“窄结果回绕后再增宽”。已被G拥有的内部Add不再单独发射或叠加面积。G使用相同求和源码形式的保留模块，输入位通过物化状态中实际保存的slice／concat别名解析；组合launch、真实capture／消费者及共享输入根均保留在Query。软件可发射不转授物理价格，相关根和现模型不相容的边界显式缺价。
+
+**九例实际验证。** 新所有者路径重新生成并仿真64结构／502放置，每份96周期，共48192周期通过；逐例分母与§7.100相同。本轮使用每例首个登记T验证所有者与真实模型消费，未声称重新完成正式T全矩阵；前驱132份正式T需求保持。末次加固provider的图／级／capture身份与相关根拒绝后，重新生成全部64／502，逐项核对graph、placement、RTL、state、bench字节相同才继承仿真收据，明确记录继承父项及摘要，不把继承算作第二次仿真。
+
+**实际分母。** 121733个独立算子、5625个G区域、12264个功能非wire所有者，共139622个唯一价格请求；52527条算子Query可精确投影v1。观察35305个多消费者算子、38297个carry和1456个selector引脚使用。独立整数求值检查486932次算子语义、22500次实际G替换；此外从原始图／位映射重建全部consumer／capture，核对所有者无遗漏和无重复。5593个G在保守共享输入根检查下拒绝价格，该检查可能连同不相关的不同输入位段一起拒绝，不能把拒绝率当物理误差或训练结果。当前冻结参数仅对2694个组件给出诊断估计，公共覆盖0，所有完整阶段保持`cost_uncovered`。
+
+**负例与旧域。** C++合同检查覆盖515位G、共享内部值保留、伪造／陈旧plan、graph／placement／stage／capture、错误profile、selector投影以及静态state／budget／stage回退拒绝。L=1小图的同一比较结果驱动一个carry及两个selector，4096组RTL向量检查真假支路不同常量掩码；窄回绕后增宽不被融合。最后常规CMake构建成功；新宽Query测试二进制对19组6144条原输入逐项复跑，特征及生成Core RTL均与原收据一致。原MAC32 505枚举及先前模型失败保留，不增加新的独立资格。
+
+**提供者限制与下一包。** 同算子全位宽共用既有算子函数，G共用既有函数；新消费者、相关根、功能逻辑及S/shared缺资格时不填零价或静态价。`stateCost`、`stateArea`、`dataBudget`、`stageDelay`和`stageArea`不继承静态默认，完整阶段及D选择资格均未授予。服务输入与输出capture保持既有协议，尚未按新S层次取得物理联合资格。W2公共软件链路完成本轮验收；W3修算子函数与新边界、W4修S/shared、W5修G与相关根／连接，W6冻结独立与完整阶段后再推进W7模型选择。
+
+**证据与可复现性。** [后继证据包](../experiments/arithmetic/evidence/workload_owners_v2/README.md)保存全部实际图／状态／所有者／价格／RTL／bench／收据、19组最终C++回归输出、L=1合同与RTL测试、模型参数对象和原始失败日志。原始产物根为`/home/zyrv/vulsim-artifacts/W2-boundaries-20261114-v1`，有效末次导出为all-v3，初次完整仿真为all-v1；all-v2因旧main对象与扩大的provider类ABI不匹配而崩溃，原目录／日志保留，常规完整重建已消除该构建问题。原W1构建目录的可执行文件已在开发中更新，旧v1收据及摘要未改；三份已变更的冻结源码保留为显式恢复包，前驱回放在隔离源码目录验证原manifest，不用当前源码冒充旧实现。压缩证据约75MiB、单档均小于10MiB；实际无EDA便携回放重新校验4819个后继成员及3773个前驱成员，全部所有者／观察／参数价格与整数检查通过，见[replay.json](../experiments/arithmetic/evidence/workload_owners_v2/replay.json)。该次未重启仿真器，另可用Icarus从归档重新仿真。0新EDA、0拟合、0新模型源准入、独立标签未读，原公共D及20个独立源锁定保持，`full_D_ready=false`。主仓库与RTLzz改动未提交／推送。

@@ -1,0 +1,88 @@
+-- GLOB mismatch!
+-- Predicate expand build commit: 383c8ef
+-- Could NOT find LibEdit (missing: LibEdit_INCLUDE_DIRS LibEdit_LIBRARIES) 
+-- Could NOT find zstd (missing: zstd_LIBRARY zstd_INCLUDE_DIR) 
+-- Could NOT find CURL (missing: CURL_LIBRARY CURL_INCLUDE_DIR) 
+-- Could NOT find LibEdit (missing: LibEdit_INCLUDE_DIRS LibEdit_LIBRARIES) 
+-- Could NOT find zstd (missing: zstd_LIBRARY zstd_INCLUDE_DIR) 
+-- Could NOT find CURL (missing: CURL_LIBRARY CURL_INCLUDE_DIR) 
+-- Found LLVM 18.1.3: /usr/lib/llvm-18/lib/cmake/llvm
+-- Found Clang package: /usr/lib/llvm-18/lib/cmake/clang
+-- Configuring done (0.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/zyrv/vulsim-artifacts/W1W2-software-20261113-v1/build
+[  0%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_add_normalization.cpp.o
+[  2%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_bounded_search.cpp.o
+[  2%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_block_pipeline.cpp.o
+[  5%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/arithmetic_request.cpp.o
+[  5%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_candidates.cpp.o
+[  5%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_common_features.cpp.o
+[  8%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_composite.cpp.o
+[  8%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_condition.cpp.o
+[ 11%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_condition_provider.cpp.o
+[ 11%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_condition_selection.cpp.o
+[ 11%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_control_response_v4.cpp.o
+[ 14%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_control_successor.cpp.o
+[ 14%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_core.cpp.o
+[ 14%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_factored_state.cpp.o
+[ 17%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_factored_timing.cpp.o
+[ 17%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_function_selection.cpp.o
+[ 17%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_fused_cost.cpp.o
+[ 20%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_fused_selection.cpp.o
+[ 20%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_interval_features.cpp.o
+[ 20%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_limb_split.cpp.o
+[ 23%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_model.cpp.o
+[ 23%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_mul_precision.cpp.o
+[ 26%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_operator_query.cpp.o
+[ 26%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_operator_successor.cpp.o
+[ 26%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_owned_timing.cpp.o
+[ 29%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_prefix_features.cpp.o
+[ 29%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_primitives.cpp.o
+[ 29%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_reduction.cpp.o
+[ 32%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_reduction_merge.cpp.o
+[ 32%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_reduction_model.cpp.o
+[ 32%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_regions.cpp.o
+[ 35%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_reset_function_v2.cpp.o
+[ 35%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_selection.cpp.o
+[ 35%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_shared_function.cpp.o
+[ 38%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_shared_function_v2.cpp.o
+[ 38%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_stage.cpp.o
+[ 38%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_state.cpp.o
+[ 41%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_state_boundary.cpp.o
+[ 41%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_wide_alu.cpp.o
+[ 44%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_wide_function.cpp.o
+[ 44%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_wide_query.cpp.o
+[ 44%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_wide_reduction.cpp.o
+[ 47%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_word_reduction.cpp.o
+[ 47%] Building CXX object CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_workload_plan.cpp.o
+/home/zyrv/vulsim/rtlzz/src/backend/arithmetic_workload_plan.cpp:134:49: error: unterminated comment
+  134 |         {"target_ps",*t},{"clock_pressure",1500./*t},{"consumer_count",arr(local,"consumers").size()},
+      |                                                 ^
+/home/zyrv/vulsim/rtlzz/src/backend/arithmetic_workload_plan.cpp: In function ‘std::map<std::__cxx11::basic_string<char>, double> pred::beir::arithmetic::workloadQueryFeatures(const {anonymous}::O&)’:
+/home/zyrv/vulsim/rtlzz/src/backend/arithmetic_workload_plan.cpp:134:49: error: expected ‘}’ at end of input
+  134 |         {"target_ps",*t},{"clock_pressure",1500./*t},{"consumer_count",arr(local,"consumers").size()},
+      |                          ~                      ^
+/home/zyrv/vulsim/rtlzz/src/backend/arithmetic_workload_plan.cpp:134:49: error: expected ‘}’ at end of input
+/home/zyrv/vulsim/rtlzz/src/backend/arithmetic_workload_plan.cpp:132:35: note: to match this ‘{’
+  132 |     std::map<std::string,double> f{{"lhs_width",integer(p,"lhs_width",1)},{"rhs_width",integer(p,"rhs_width",1)},
+      |                                   ^
+/home/zyrv/vulsim/rtlzz/src/backend/arithmetic_workload_plan.cpp:134:49: error: expected ‘,’ or ‘;’ at end of input
+  134 |         {"target_ps",*t},{"clock_pressure",1500./*t},{"consumer_count",arr(local,"consumers").size()},
+      |                                                 ^
+/home/zyrv/vulsim/rtlzz/src/backend/arithmetic_workload_plan.cpp:134:49: error: expected ‘}’ at end of input
+/home/zyrv/vulsim/rtlzz/src/backend/arithmetic_workload_plan.cpp:127:63: note: to match this ‘{’
+  127 | std::map<std::string,double> workloadQueryFeatures(const O& q){
+      |                                                               ^
+/home/zyrv/vulsim/rtlzz/src/backend/arithmetic_workload_plan.cpp:134:49: warning: no return statement in function returning non-void [-Wreturn-type]
+  134 |         {"target_ps",*t},{"clock_pressure",1500./*t},{"consumer_count",arr(local,"consumers").size()},
+      |                                                 ^
+/home/zyrv/vulsim/rtlzz/src/backend/arithmetic_workload_plan.cpp: At global scope:
+/home/zyrv/vulsim/rtlzz/src/backend/arithmetic_workload_plan.cpp:134:49: error: expected ‘}’ at end of input
+/home/zyrv/vulsim/rtlzz/src/backend/arithmetic_workload_plan.cpp:12:34: note: to match this ‘{’
+   12 | namespace pred::beir::arithmetic {
+      |                                  ^
+gmake[3]: *** [CMakeFiles/predicate-expand-objects.dir/build.make:678: CMakeFiles/predicate-expand-objects.dir/src/backend/arithmetic_workload_plan.cpp.o] Error 1
+gmake[3]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/Makefile2:408: CMakeFiles/predicate-expand-objects.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:519: CMakeFiles/rtlzz-workload.dir/rule] Error 2
+gmake: *** [Makefile:242: rtlzz-workload] Error 2
