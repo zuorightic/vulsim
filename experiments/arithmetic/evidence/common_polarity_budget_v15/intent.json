@@ -1,0 +1,41 @@
+{
+  "version": "v15-dual-phase-and-per-load-budget-intent",
+  "at": "2026-11-14T16:13:39.700082+00:00",
+  "hypothesis_area": "ABC Nf explicitly tracks both polarities; v14 does not reference negative-phase signals shared by downstream matches. Test phase-only change at identical cuts/library/passes.",
+  "hypothesis_S": "With fixed sequential sinks and normalized D expressions, physical per-load remaining budgets and branch geometry may explain renderer sensitivity. Measure these offline; test no prospective qualification claim.",
+  "area_scope": "Inherited Add53/18 groups and G81/27 groups; every T held out together; v13 repeats/variants excluded from fit.",
+  "trials": 2,
+  "forms": [
+    "direct"
+  ],
+  "alpha": 1.0,
+  "feature_lists": "Identical to v14 direct; replace only cut reference and its counts; no added phase indicator or fitted feature.",
+  "selection": "One fixed direct form per family; no fallback or sweep.",
+  "gates": {
+    "median_max": 0.15,
+    "P95_max": 0.35,
+    "components": [
+      "grt",
+      "synth",
+      "ratio"
+    ],
+    "critical_G_zero_compression_separate": true
+  },
+  "advancement": "No new price in this protocol; report whether both grt median/P95 improve v10 and whether critical/composition domains qualify. No regression/independent reads.",
+  "support_scope": "Four read-only grt checkpoint queries: two S train parents times repeat/variant; per-load timing budgets, input capacitance and instance coordinates. No resynthesis/place/route or production emitter changes.",
+  "bounds": {
+    "synth": 0,
+    "grt": 0,
+    "final": 0,
+    "support": 4,
+    "timeout_s": 120,
+    "threads": 4,
+    "memory_MiB": 8192,
+    "parallel_jobs": 1
+  },
+  "stop": "Preserve every first failure; stop support batch on failure, no automatic retry; insufficient evidence remains a gap.",
+  "source_sha256": {
+    "experiments/arithmetic_dse/phase_cut_cover_v15.py": "dd8b738f73eb4f92f27b7ea7842db52f51013008c9ede89100f9d18a2f8b7c1f",
+    "regression/test_phase_cut_cover_v15.py": "bb85c0f779e02d5a8127556eff333ac3f54c5b4d6df0d9a7b2c1032e14a1d7ff"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "reason": "Review added explicit phase-range and topological validation so a forged self-referential wire cannot pass the witness verifier.",
+  "original_source_sha256": "dd8b738f73eb4f92f27b7ea7842db52f51013008c9ede89100f9d18a2f8b7c1f",
+  "current_source_sha256": "ba396822c486b681d096dfd3e8031f4bcac2fe194122f506298e97cd066e8045",
+  "changed_functions": [
+    "verify"
+  ],
+  "numerical_cover_and_cut_enumeration_AST_unchanged": true,
+  "original_area_protocol_not_rewritten": true,
+  "area_inputs_and_candidate_not_rewritten": true,
+  "validation_or_independent_reads": false,
+  "paid_calls": 0,
+  "replay_must_recompute_all_mappings": true,
+  "test_expansion": {
+    "old_sha256": "bb85c0f779e02d5a8127556eff333ac3f54c5b4d6df0d9a7b2c1032e14a1d7ff",
+    "current_sha256": "087cf812245769f0bf225bde42f485634f56151f68a09c3b5f0be7e138780a50",
+    "scope": "Add forged self-cycle and out-of-range phase negatives after review; no numerical code change."
+  }
+}

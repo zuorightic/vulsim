@@ -1,0 +1,114 @@
+{
+  "version": "W345-semantic-reset-delivery-checks-v9",
+  "status": "passed",
+  "model_sha256": "d22f6ece4e340002c2de819eff9deb432b0d8bfc10c3567dd6333e89ae64fa41",
+  "frozen": {
+    "freeze.json": {
+      "sha256": "2deecacba65df028d5f124c232f0ddbc46be87037003accbd6278767e23fadeb",
+      "verified_dependencies": 5
+    },
+    "execution-freeze.json": {
+      "sha256": "050d51a3d4e5d7526cf555260c0092e85dc283047a9fdbef605bf0f5149b28a4",
+      "verified_dependencies": 757
+    }
+  },
+  "evidence_identity_sha256": "3c442b0e52be7dfd7c01dd5db9498b81f5fc65af5574a47cb66a8f0d50f7e962",
+  "evidence_files_verified": 37,
+  "source_files_verified": 699,
+  "archive_files_verified": 724,
+  "tests": {
+    "passed": 35,
+    "log_sha256": "13d7acf5a064fe054f13e440d442efddb97baa0d632255977114a24c468153fc"
+  },
+  "replays": {
+    "replay.json": {
+      "sha256": "d7c763f5dfb738c7087a5441425244824d2424d866d9226b1bf1fadee4093c6a",
+      "status": "passed",
+      "price_queries": 477,
+      "feature_queries": 477,
+      "priced": 471,
+      "rejections": 32,
+      "context_feature_checks": 756,
+      "new_train_sources": 2,
+      "new_train_rows": 36,
+      "inherited_strict_paths": 156,
+      "missing_arc_negatives": 156,
+      "source_files": 699,
+      "native_replayed": false,
+      "new_EDA_calls": 0,
+      "online_physical_calls": 0,
+      "online_file_reads": 0,
+      "independent_labels_read": false,
+      "public_D_changed": false,
+      "full_D_ready": false
+    },
+    "native-replay.json": {
+      "sha256": "05413d1f377f93672b356eb73017355c21013a45962f0736c546b4fa14ba5b61",
+      "status": "passed",
+      "price_queries": 477,
+      "feature_queries": 477,
+      "priced": 471,
+      "rejections": 32,
+      "context_feature_checks": 756,
+      "new_train_sources": 2,
+      "new_train_rows": 36,
+      "inherited_strict_paths": 156,
+      "missing_arc_negatives": 156,
+      "source_files": 699,
+      "native_replayed": true,
+      "new_EDA_calls": 0,
+      "online_physical_calls": 0,
+      "online_file_reads": 0,
+      "independent_labels_read": false,
+      "public_D_changed": false,
+      "full_D_ready": false
+    }
+  },
+  "predecessor_v8_replay": "passed",
+  "git_diff_check": {
+    "/home/zyrv/vulsim": "passed",
+    "/home/zyrv/vulsim/rtlzz": "passed"
+  },
+  "new_source_whitespace_files": 8,
+  "markdown_local_links_checked": 16,
+  "docs_sha256": {
+    "mission/README.md": "54bf1bfa4c78387406c65bbdc6c3ee2601743e240eabddc4e153fa074812fd77",
+    "mission/lxy-plan-fix.md": "31702ae0114c27a9a7215d648a79537a7efdb80b74b66f16e1f82631d75256a5",
+    "mission/lxy-S-control-mechanism-plan.md": "3d7bcf51d077ba3d93e175479b53ad4e2fbda3ea7066e6d6a210a1399110e30b",
+    "experiments/arithmetic/evidence/common_semantic_reset_v9/README.md": "776ea5c552303fa6a280fa43d8fc5b38875d9e5be9077703ffcdd2479770bc64"
+  },
+  "evidence_files_excluding_checks": 41,
+  "evidence_bytes_excluding_checks": 20014713,
+  "largest_evidence_file_bytes": 9453672,
+  "individual_file_limit_bytes": 10485760,
+  "ledger_increment": {
+    "synth": 0,
+    "grt": 0,
+    "final": 0,
+    "support_calls": 0,
+    "walltime_s": 0.0,
+    "CPU_time_s": 0.0,
+    "pending": 0
+  },
+  "ledger_cumulative": {
+    "synth": 3538,
+    "grt": 3507,
+    "final": 16,
+    "support_calls": 22486,
+    "walltime_s": 364379.1543315831,
+    "CPU_time_s": 743575.33,
+    "pending": 0
+  },
+  "ledger_sha256": "4c74e6fa8b0d55f05c5ec96ffd200686f824f020dc31287cdb5372aa49f80af6",
+  "public_D_changed": false,
+  "independent_labels_read": false,
+  "locked_independent_operator_sources": 20,
+  "new_validation_sources": 0,
+  "validation_tuning": false,
+  "actual_arithmetic_S_qualified": false,
+  "shared_qualified_by_v9": false,
+  "W345_complete": false,
+  "full_D_ready": false,
+  "commits_created": 0,
+  "pushed": false
+}

@@ -1,0 +1,25 @@
+{
+  "comparisons": [
+    {
+      "source": "S-aac8767d3e7162b7",
+      "valid_R_delta_ps": -125.11078300000003,
+      "max_data_R_delta_ps": 1.4070409999999924,
+      "valid_endpoint_budget_delta_ps": 9.029071999999985,
+      "total_first_branch_cap_delta_fF": -18.774051000000043,
+      "median_branch_origin_distance_delta_dbu": 3186.0,
+      "median_branch_budget_delta_ps": 6.7285680000000525
+    },
+    {
+      "source": "S-d0fb525b1fcecb5c",
+      "valid_R_delta_ps": 73.84590099999997,
+      "max_data_R_delta_ps": -1.1395330000000286,
+      "valid_endpoint_budget_delta_ps": 3.428496999999936,
+      "total_first_branch_cap_delta_fF": -47.562905,
+      "median_branch_origin_distance_delta_dbu": -1350.0,
+      "median_branch_budget_delta_ps": -11.266141000000005
+    }
+  ],
+  "scope": "Two related train parents, one complete family; no new prospective model fit or held-out accuracy claim.",
+  "finding": "Total first-branch pin cap decreases in both contrasts while valid R changes in opposite directions. Endpoint/branch budgets and instance-origin distances are measured mechanism evidence, not prospective features.",
+  "caution": "Conditioned final paths are not Rebuffer internal decision-time or unrestricted budgets, and cannot establish which repair step caused the difference."
+}

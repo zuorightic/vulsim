@@ -1,0 +1,6 @@
+{
+  "error": "Packager reused plain JSON helper on inherited gzip archive; subsequent shell command tried replay before identity existed.",
+  "fix": "Decode gzip explicitly and sequence packaging before replay. No experiment inputs, fitted parameters, labels or backend calls changed.",
+  "failed_replay_log": "replay-before-package.log",
+  "new_paid_calls": 0
+}

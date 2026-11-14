@@ -1,0 +1,8 @@
+[
+  {
+    "stage": "software_fixture",
+    "failure": "Expected a phase win with no native XNOR in synthetic library; output INV erased NAND saving.",
+    "fix": "Add equal-area native XNOR to test fixture so it represents the intended legal polarity absorption; mapper source unchanged.",
+    "new_EDA_calls": 0
+  }
+]

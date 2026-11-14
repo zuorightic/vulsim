@@ -131,7 +131,7 @@ Add先用train审计小工作量面积、存活位／短重叠、carry工作量�
 
 直接复用真实ConditionalBoundaryProvider、状态投影、三所有者面积及共享链。先修train拟合中恒定／近恒定列的归一化、可辨识性与参数导出；稳定求和的数值恢复不替代物理精度。按控制源分别检查数据使能、valid传播、自身保持、服务输入与外部捕获，消费者取银行最大值及各分支都报告，不能只给廉价／昂贵路径的混合平均。
 
-结合匹配OpenROAD版本的RepairDesign、Resizer、timing-driven placement与RepairTargetCollector，沿保存train检查点分别归因控制逻辑、wire和H。研究仅由图／状态可计算的sink负载代理、reset、字／银行分布、预测功能面积尺度及预测时序压力；实际电容、树深、单元和slack只作离线解释。若引入基础预测作为上下文，先冻结该基础版本和显式计算顺序，避免S／G循环依赖；代理误差另验。保持当前发射和标签语义，不手工抬reserve，不向G转嫁。
+结合匹配OpenROAD版本的RepairDesign、Resizer、timing-driven placement与RepairTargetCollector，沿保存train检查点分别归因控制逻辑、wire和H。研究仅由图／状态可计算的sink负载代理、reset、字／银行分布、预测功能面积尺度及预测时序压力；实际电容、树深、单元和slack只作离线解释。若引入基础预测作为上下文，先冻结该基础版本和显式计算顺序，避免S／G循环依赖；代理误差另验。依§7.110，下游训练行的上游上下文须同时排除外层组和该行自身完整组，最终下游训练用排除自身组的预测，部署使用冻结all-train上游函数；整个parent／reset／contrast家族和全部T同时隔离。没有外层标签泄漏不代表训练上下文无偏乐观。保持当前发射和标签语义，不手工抬reserve，不向G转嫁。
 
 对宽字、多并行字、深流水、跨级保存、广播和多端口S／shared先验证已有面积系数与clock／physical／repair函数复用；确有稳定失败才拟合最小后继。银行验证、实际算术状态保留及完整阶段分别验收，原FF面积合格不自动授予控制电气资格。
 
@@ -208,14 +208,14 @@ Add先用train审计小工作量面积、存活位／短重叠、carry工作量�
 | --- | --- | --- |
 | W1 | 首轮九例语义与有限T／L逐项确认；未分级源／64结构真实需求已登记，见§7.100 | 本轮合同与需求包已交付；后继语义／结构变体另登记，资格不由数值范围授予 |
 | W2 | 九例公共软件链路及所有者／提供者／相容RTL已完成本轮软件验收，见§7.101 | 64结构／502放置及宽Query／唯一所有者回放通过；正式价格与完整阶段资格转W3—W6 |
-| W3 | §7.107 Add内部扇出形式入选，LOSO8.28%／13.48%；非train等价回归8.35%／24.08%，11+7改善12.54%，17+9退至29.52%、带消费者47+63退至19.63%；Mux仍失败 | 保留局部改善和退化，修旧域／连接，独立资格待W6 |
-| W4 | §7.107 valid银行LOSO17.94%／raw路径P9536.56%，因素回归31.43%且新增保护漏点；6点train证实完整当前Query遗漏reset位置／相容invert，局部valid共同预测下界25.41%；train支持57/57、留出33/57 | 先补语义投影／数值描述并与父源成对训练，再推进宽深／shared资格；不以局部下界宣称全局median不可能 |
-| W5 | §7.107 G根／内部扇出及串联／融合形式未胜出，参数同v7／v6；G48时延16.35%、旧G56面积32.93%、train64位面积19.33%失败保持 | 保留负结果，继续边界／工作量、组合／多消费者及W6 |
+| W3 | §7.114按极性共享、固定direct的Add grt 8.46%／17.57%，全局train门槛通过但未优于v10；价格／旧回归不推进，旧17+9及带消费者失败保持，Mux不变 | 查实际ABC整体重写／平衡与时序映射；单独极性共享未解决差距，独立资格待W6 |
+| W4 | §7.114四份grt各641路径逐段核验；最差数据R变−1.14／+1.41ps、valid变+73.85／−125.11ps，总首分支引脚电容均降。6 support含2失败保留，0新S拟合 | 建立发射前逐分支预算／共享代理并单验误差；本轮实测描述只作离线机制，实际算术S／shared待验 |
+| W5 | §7.114极性cut的G grt 5.25%／18.70%，全局门槛通过但未优于v10；零压缩grt15.27%／32.12%、synth16.29%／63.76%仍失败。时延与旧回归保持v10 | 查整体重写／平衡／时序映射，继续组合／多消费者及W6；不扩失败网格或用汇总掩盖关键域 |
 | W6 | 独立与组合基础流程已有 | 新组件及实际算术／完整阶段联合资格 |
 | W7 | 旧MAC32 ABCD已测；新三级选择缺合格价格 | 新模型下三档D与公平ABCD／归因表 |
 | W8 | 八例共享算子准备已开展，正式八整图ABCD未完成 | 依赖就绪逐例冻结、测量和交付 |
 
-W1本轮合同／需求与W2有限软件包见[§7.100](#nine-workload-W1W2-software)，公共宽Query／唯一所有者／提供者及算子和G发射后继已完成本轮软件验收，见[§7.101](#workload-common-owners-W2)。完整阶段保持cost_uncovered；W3／W4／W5最新[§7.107](#W345-semantic-fanout-successor)完成语义扇出有限train拟合、冻结回归与单独6点train接口对照，确认当前S投影遗漏信息造成局部标签别名。Add有局部改善及退化，S银行／尾部与31.43%回归、留出支持拒绝和Mux／G旧域失败均保留。§7.102—§7.106为前驱历史，v6 OpenROAD源码审计继承，旧验证均已消费。正式残差和W6按依赖冻结，但W6代表结构／读取脚本可提前准备。第一项集成里程碑是**可独立验收的共同函数＋MAC32三级新D／阶段性ABCD闭环**；第二项是宽Add／Mul及至少一个宽多节点案例复用；最终是九案例ABCD、代价归因与独立复用。并行指任务交错，不自动授权额外代理或突破全局资源限制。
+W1本轮合同／需求与W2有限软件包见[§7.100](#nine-workload-W1W2-software)，公共宽Query／唯一所有者／提供者及算子和G发射后继已完成本轮软件验收，见[§7.101](#workload-common-owners-W2)。完整阶段保持cost_uncovered；W3／W4／W5最新[§7.114](#W345-polarity-control-budget)完成正／反相共享cut、两项固定train对照及四份保存grt的逐分支预算核查。面积全局train门槛通过，但未优于v10，零压缩关键域仍失败；未推进价格或消费旧回归。S最差数据R近似不变而valid R大幅变化，总分支引脚电容均下降，不能只用总负载解释。新增6 support包含2次已结算脚本失败，0新综合／布局优化；实际预算／坐标／电容只作离线证据，后继核验发射前逐分支代理。§7.110的hold适用范围、嵌套训练隔离和完整家族排除保持，20独立源未读，实际算术S／shared及组合待验。正式残差和W6按依赖冻结，但W6代表结构／读取脚本可提前准备。第一项集成里程碑是**可独立验收的共同函数＋MAC32三级新D／阶段性ABCD闭环**；第二项是宽Add／Mul及至少一个宽多节点案例复用；最终是九案例ABCD、代价归因与独立复用。并行指任务交错，不自动授权额外代理或突破全局资源限制。
 
 <a id="general-model-resources-and-delivery"></a>
 
@@ -5927,3 +5927,219 @@ v7的14份enable基础上下文及训练摘要完全复用，0次新上游拟合
 **验证、费用与后继责任。** 471特征／471真实价格请求跨语言一致，468返回诊断价格、3条旧S支持拒绝，22项合同／资格拒绝和缺上下文安全报错通过。新增6项与前驱21项共27项测试通过，Python／native回放禁止数值推理读文件／启动子进程。新增156严格路径／744组合弧／156删除真实Liberty弧负例，逐条绑定manifest和raw points；继承312路径／1457弧／312负例并绑定v6原始证据身份，不需ODB回放。6对旧新manifest的工具、Liberty、流程、mapping_context、SDC、T、线程及内存相同，补核收据单列。一次前置未完成的拒绝核对失败，以及补核初版误读metrics的ABC字段失败均保留；按实际manifest字段核对通过，无物理或评价重做。691源码身份、单档≤10MiB；测量后的delivery-freeze只补证据／回放工具，不改原freeze。
 
 本轮6 synth／6 grt／24 support、0 final，0物理失败／重跑；叶wall／CPU增量716.5905742919895／1607.18s。累计Ledger synth3538／grt3507／final16／support22486、wall364379.1543315831s／CPU743575.33s、pending=0，policy v11／budget v5及4任务／4线程／8192MiB保持。未提交／推送。后继先补S reset分布／相容极性的语义投影与通用数值描述，按父源成对训练并登记新验证；保留v8回归退化及Add／Mux／G旧域失败。宽深实际算术S／shared、相关根／多消费者、W6独立／完整联合仍待；W7／W8正式ABCD继续按冻结资格推进。
+
+
+<a id="W345-semantic-reset-successor"></a>
+
+### 7.108 W3／W4／W5显式reset语义、逻辑切面与共同覆盖回归 v9（2026-11-14）
+
+**交付与职责。** 接续§7.107，冻结`W345-semantic-reset-functions-v9`，完成显式S语义接口、69项有限train选择、14次固定上游拟合、Python／C++消费及冻结回归。[证据、19银行逐源表及对照预测](../experiments/arithmetic/evidence/common_semantic_reset_v9/README.md)；原始根`/home/zyrv/vulsim-artifacts/W345-semantic-reset-20261114-v9`。candidate／runtime SHA均为`d22f6ece4e340002c2de819eff9deb432b0d8bfc10c3567dd6333e89ae64fa41`，特征版本`semantic-reset-cone-features-v9`。0新EDA、0新验证源，v8六机制点现在明确作为train，与父源及原reset pair共同留出；旧验证只作已消费回归。20独立算子源未读、公共D不变，W3—W5未整体关闭。
+
+**W4语义表示与边界。** 旧state_structure投影外增加`retained-affine-state-semantics-v1`：逐输入word reset位列表及逐保留word reset／invert位列表、出生／终止级与external标记。逐bit验证一或两个不同输入根的XOR与invert产生保留reset，严格核对输入reset计数、级word尺寸／计数、外部宽度和生命周期与旧投影一致。未知／缺语义、位类型／宽度错误及逻辑不一致均拒绝，不由popcount猜掩码。适用范围是**显式仿射保留银行适配器**，不能称任意实际算术状态reset已经证明，实际算术S／shared物理资格仍待。
+
+价格特征为负载加权reset比例、逐word reset／invert转换率、相反极性输入对与共享比例、source／capture转换及native／数值T交互；不把原始掩码或源身份当价格分档。标签、发射器与R／H合同保持：寄存器R=T−slack，端口R=0.8T−slack。W3／W5另计算live逻辑图的位列跨度、最大切面跨边数、局部门比例和G串联／融合差，排除常量、死节点和全局cin伪列；它们不是物理坐标、电容或实际buffer树。
+
+**训练隔离与有限协议。** Add53点、Mux15点、G81点沿用前驱；S合并v8六实现后为19银行／63实现／378路径，enable／valid各126、input／external各63。两个新增源与父源及其原reset pair形成三成员组，13 outer fold将整组全部T共同排除。单向顺序仍为语义状态→共享enable函数→预计压力／松弛代理→valid函数；固定上游算法linear／alpha1／joint_bank_path，旧31特征加4个reset描述，13 fold及all-train共14次拟合。756条实际训练／LOSO特征、训练行摘要、来源排除及最终上下文等于enable价格函数均重新核验，没有留出标签进入上游或S／G循环。
+
+有限选择69项：Add6、Mux3、G面积6／时延6，valid24、input12、external12；14份固定上游另计。train数值支持按原k=2／radius factor=1.05重推，旧坐标加3项reset描述，不用标签拓域。训练63/63实现有诊断价格，留出完整实现仅33/63，enable／valid各84/126、input36/63、external33/63路径接受；全部源精度照报，不能删拒绝行改善指标。
+
+**W4数值失败。** valid选中polarity_runs／positive_log_linear／path／alpha1，银行LOSO18.23%／28.43%，最大单源35.62%；raw126路径9.63%／38.36%，max88.13%，银行median与raw尾部仍失败。逐路径先源聚合13.16%／17.89%、服务8.41%／29.37%、native16.06%／24.21%，全零4银行15.02%／25.99%、混合15银行12.79%／15.23%另列。enable银行8.57%／13.90%、raw P9521.95%；input银行11.66%／31.76%而raw P9535.34%仍失败；external银行4.92%／9.30%、raw P9513.90%。v8为17银行且旧fold不同，不能直接以两版train数值声称改善。
+
+reserve仍沿原非负数值T LP校准，四类LOSO路径漏点均0；enable／valid excess median／P95为229.17／388.34ps、282.49／390.40ps，input39.67／64.33ps、external22.85／35.74ps。没有手工抬reserve，过大保守量及精度失败同时保留。
+
+**冻结回归及覆盖下降。** 数值／特征先冻结，消费者、二进制和评价实现再冻结，随后一次评价旧回归；没有据结果重选模型、改域或追加拟合。因素6/6覆盖不变：valid31.43%／36.06%→24.63%／25.38%仍失败，enable6.86%／7.89%→7.22%／8.15%略退，input10.38%／14.21%→9.38%／11.58%，external7.99%／9.73%→10.28%／13.12%退化。因素四类银行／路径保护漏点均0，不授予完整阶段保护。
+
+旧银行覆盖12/15→9/15：`new/S-71210069d9a20502`三个T仍因source_reset_one_fraction拒绝，`repair/S-412d31fc43b165cb`三个T新增因reset_capture_transition_fraction拒绝。严格比较**共同9点**：valid11.33%／24.02%→13.32%／23.15%，input10.98%／20.83%→14.88%／28.38%，median均退化；enable7.49%／7.90%→7.49%／7.92%，external8.55%／13.10%→10.59%／11.92%。不能用v8旧12点17.96%对比v9的9点13.32%称改善。全部旧15点域外原始诊断valid仍20.55%，旧external银行max仍1保护漏点；旧聚合标签逐路径漏点为null。
+
+**接口修复不等于解释物理。** v8碰撞的两组完整Query及相关入选数值特征在v9已不同，但biased20×32 valid在T500的实测银行差+178.288639ps仅预测+1.522176ps；input_valid在T1500实测+37.389038ps，预测−0.943609ps，方向也错。uniform16×64 valid在T1500实测−37.271485ps，预测−6.629080ps。局部对照不再受旧“相同Query”前提约束，却仍显示当前数值描述不足。旧25.41%下界保持v8局部职责，本来也不证明全局median不可能；禁止把实测差值或源hash加回线上。
+
+**W3／W5结果。** Add选中cone_cut／alpha1，18源LOSO面积8.44%／12.64%；非train等价32点冻结回归8.35%／24.08%→8.65%／23.70%，median稍退、P95稍降。17+9为29.52%→30.06%退化，47+63带消费者19.63%→18.50%改善仍失败，11+7为12.54%→11.90%。Add delay不变。Mux仍legal_load_T／alpha10，G面积ks_geometry／alpha0.1、时延carry_topology_context／alpha1，参数与v8完全相同，新增切面形式落选。Mux96位27.56%、旧两源17.49%／26.56%，G48稀疏时延16.35%、G56面积32.93%、train64位面积19.33%失败保持，G97时延13.51%沿用。没有逐源取价或负G校正。
+
+**核验与证据。** 361条训练／数值请求加116条回归，共477特征／477价格请求跨语言一致，471返回诊断价格、6旧S支持拒绝。32项跨语言合同／资格拒绝包括11项新增语义损坏，未宣称移植v8单独depth见证；缺上下文CLI安全报错通过。新增8项加前驱27项共35测试、前驱v8回放、本版Python／显式native便携回放通过，数值推理禁止读文件／子进程。v8六实现的36个grt控制标签逐一绑定原manifest及路径R；继承156真实路径／156删Liberty弧负例并重验原始身份，前驱物理证据不变。699仓库源码身份、每档≤10MiB，源码／临时工具／失败日志可便携恢复。
+
+登记脚本准备阶段曾误以为external存在functions.R，登记前按其实际cell／wire／H分量合并特征；一次fit早于协议生成而缺文件，首轮日志保留，随后只完成一次数值拟合。没有物理、评价重做或回归选模。交付检查／回放收据只补记最终证据，不改原数值及执行freeze。
+
+**费用与后继。** 本轮synth／grt／final／support均0新增、0物理失败／自动重跑；v8六点不重复收费。累计Ledger仍synth3538／grt3507／final16／support22486，叶wall364379.1543315831s／CPU743575.33s、pending=0，policy v11／budget v5及4任务／4线程8192MiB保持。未提交／推送。后继应结合已保留逻辑和匹配OpenROAD重缓冲／预算源码，研究reset／相容invert如何改变分支共享及电气负载，再登记可发射前计算的描述和有限训练；不能以接口补齐或总体比例宣称S修复。Add／Mux旧域、G组合／稀疏边界、宽深实际算术S／shared及W6独立／完整联合仍待，W7／W8正式D与九例ABCD继续按资格推进。
+
+
+<a id="W345-transition-incidence-successor"></a>
+
+### 7.109 W3／W4／W5逻辑路径负载、联合关联与hold机制 v10（2026-11-14）
+
+**交付与职责。** 接续§7.108，冻结`W345-transition-incidence-functions-v10`，完成45项有限train比较、Python／C++消费、一次已消费回归及便携核验。[证据包与19银行／16个G源逐源表](../experiments/arithmetic/evidence/common_transition_incidence_v10/README.md)，产物根`/home/zyrv/vulsim-artifacts/W345-transition-incidence-20261114-v10`。candidate／runtime SHA均为`a1466f0272b55bd20358ea9e3beb84844db8fe8fefe4152e0478224d8f13243d`；协议SHA为`913caf00536cce547997f22a954d0a4df153c74e720cd96f9804aa605d2a1d31`。0新EDA、0新train标签／验证源，20个其余算子独立源未读，公共D不变，W3—W5未整体关闭。
+
+**W3／W5逻辑路径工作量。** live Boolean图中，每门按`1+log2(1+logical_uses)`计负载工作量，沿输入路径累计最大值；观察输出计入uses，常量／死节点排除。导出路径工作量、工作量／深度、内部峰值uses和共享比例，G同时保留fused／serial和差值及数值T压力交互。它是发射前逻辑代理，不是物理电容、缓冲树、坐标或STA。
+
+Add6、Mux3、G面积6／时延6项有限比较中，Add／Mux及G面积参数完全保持v9。Add非train等价32点面积8.65%／23.70%、17+9为30.06%、带消费者47+63为18.50%仍失败，11+7为11.90%。Mux96位27.56%、旧两源17.49%／26.56%保持。G时延选中path_load／alpha10：27源train LOSO由4.56%／15.81%变为6.47%／15.06%，最大单源20.62%→18.52%，median变差。冻结G48点／16源回归4.63%／14.22%→6.73%／13.22%，median退化、尾部改善；48位稀疏源16.35%→4.26%、97位13.51%→9.20%、56位10.60%→7.80%改善，但另源3.73%→14.91%、4.37%→12.66%退化。G56面积32.93%、train64面积19.33%保持，不能凭总体通过宣称组合边界合格。
+
+**W4联合关联与隔离。** 继承v9显式仿射银行语义和严格校验，新增输入根reset、保留结果reset及相容invert的联合逻辑关联：根内两相位集中／分裂、偏斜、结果reset分裂、reset交叉及degree平方加权不平衡／one-reset比例。不以根身份或原始掩码路由，根重命名及操作数交换不变；逻辑相位不等于物理rise／fall电容。19银行／63实现／378路径、13个完整parent／reset／contrast fold及14份enable上下文完全继承，0上游重拟合。756条上下文特征／训练摘要和最终enable函数身份重新核对，无留出标签泄漏或循环。
+
+S矩阵为valid12项、input／external各6项，link固定继承v9；与W3／W5合计45项。valid选signed_incidence／positive_log_linear／path／alpha1，input同形式／link／path、alpha0.1；enable／external不变。valid银行LOSO18.50%／26.09%、raw路径P9538.71%仍失败，v9同行18.23%、raw P9538.36%；服务8.94%／26.99%、native17.77%／24.28%。input银行11.66%／31.76%→12.77%／23.74%，median退但尾部改善，raw P9535.34%→31.13%。valid最大单源银行30.74%、逐路径源24.46%，全零／混合子集另列。四类LOSO保护漏点0，但valid excess288.88／392.75ps、enable229.17／388.34ps，保守性明显；未手工抬reserve。
+
+支持域完全继承v9，train63/63、outer-fold完整33/63，因素6/6及旧9/15不变，无新增／丢失覆盖。旧两个拒绝银行仍为`new/S-71210069d9a20502`的source_reset_one_fraction及`repair/S-412d31fc43b165cb`的reset_capture_transition_fraction，各三个T。冻结后同覆盖因素valid24.63%／25.38%→26.10%／27.27%、旧共同9点13.32%／23.15%→16.48%／21.91%，median均退化；input因素9.38%／11.58%→8.60%／10.49%、旧共同9点14.88%／28.38%→7.93%／12.74%改善。enable／external不变。因素四类银行／路径保护漏点0，旧external银行max仍1漏点，旧聚合逐路径保持null。没有按回归改参数、支持、reserve或换回旧版。
+
+**对照及匹配源码。** biased valid T500实测银行差+178.288639ps，v9预测+1.522176ps，v10预测−0.160597ps，仍未解释；biased input T1500实测+37.389038ps，v9预测−0.943609ps，v10预测+11.283035ps，方向改善但幅度不足。不按源补差，实际算术S／shared不由本仿射适配器取得资格。R／H及RTL发射不变，寄存器R=T−slack、端口R=0.8T−slack。
+
+匹配OpenROAD revision `84e3ff1eb2c36302cef42e4f70a69efe4cfbb126`及二进制SHA `c24e4e3a75e223e51e203440992a0364fb8c83a239162238d0772b87a1193f75`，保存Rebuffer／Resizer完整原文及12条train路径。biased valid T500旧cell／wire122.78／17.07ps，新235.56／78.64ps；组合单元3→4，负载序列2／2／64／1→2／2／65／128／1。delay差174.36ps与H差3.93ps构成R差178.29ps，当前逻辑特征没有预测出变化。
+
+**冻结后的hold解释审计不参与本版拟合或选模。** 对照RepairHold的延迟／面积选buffer、违例循环、min／max slack检查及`insertBufferBeforeLoads(...,"hold")`，两个biased input T1500见证的synth均0个hold命名单元，grt有5／7个，总组合单元9／11。hold cell延迟合计94.027284／134.417388ps，全部cell167.893616／207.750060ps、wire3.465667／3.694062ps，逐段wire均仅一个load；说明只看高扇出会遗漏该延迟链。保存flow日志旧171违例端点／646 hold buffers及后续9／9，新187／657及后续6／6。该观察不证明所有S残差来自hold，也不把每个实例唯一归因到某次调用；实际hold数量／slack／树不进入线上。
+
+**核验与可复现。** 477条特征／477次价格请求跨语言一致，其中471有诊断价格、6旧S支持拒绝；32项合同／资格拒绝与缺上下文CLI正常报错通过。37项新旧测试和另6项flow_structure共43项通过，前驱v9及本包Python／native回放通过，推理禁用文件读取／子进程。继承156真实路径／156删Liberty弧负例及36个原grt训练标签身份重新核验。12条本轮解释路径另封装连线／负载／53弧、12删弧负例及cell＋wire守恒证明，可脱离ODB回验；与历史实现重叠，不称新增物理点。707份仓库源码身份、匹配OpenROAD原文、临时工具、失败日志及冻结收据归档，单文件≤10MiB。
+
+初次机制脚本未处理顶层port无斜杠而失败，执行冻结前修正显式port分支并通过，原日志保留；没有物理重试或回归重做。交付收据只补记检查，不改数值／执行freeze。未提交／推送。
+
+**资源与后继。** synth／grt／final／support增量均0，0物理失败／自动重跑；v8六点费用不重复计收。Ledger仍synth3538／grt3507／final16／support22486，叶wall364379.1543315831s／CPU743575.33s、pending=0，policy v11／budget v5及4物理任务／每任务4线程8192MiB保持。下一后继研究最短逻辑路径、capture共享／hold负担及clock／setup竞争的发射前描述，先登记有限假设，必要时另立train对照。Add／Mux旧域、G面积／组合边界、宽深实际算术S／shared及W6独立／完整联合仍待，W7／W8正式D与九例ABCD继续依资格推进。
+
+
+<a id="W345-repair-burden-nested-audit"></a>
+
+### 7.110 W3／W4／W5全train机制归因、嵌套上下文与失败门槛 v11（2026-11-14）
+
+**本轮交付。** 接续§7.109，完成全train保存路径审计、149个基础／G物理变化归因、公共嵌套上下文模块及一次预登记的12项train对照；选中候选未过门槛，已封存拒绝。[证据包、完整trial表和逐源结果](../experiments/arithmetic/evidence/common_repair_burden_v11/README.md)，产物根`/home/zyrv/vulsim-artifacts/W345-repair-burden-20261114-v11`。这是审计与被拒绝实验，不是新价格发布：v10的candidate／runtime SHA仍为`a1466f0272b55bd20358ea9e3beb84844db8fe8fefe4152e0478224d8f13243d`。v11协议SHA `868976d983800f7a4b446bf8c802f4df9c0d40795d5adc77bdfc2e14f619cdaf`，被拒绝候选SHA `72e65ffd0fb9c4bf30a49910eb7c3a172c610ff819f291952420e0dc487d32c8`。0新EDA／support／标签／验证源，20独立源未读，公共D不变。
+
+**纠正hold线索的范围。** 19银行／63实现共保存648条控制路径：378 grt完整，270 synth可恢复；108条旧逐源synth路径缺失，不用聚合银行最大路径替代。每条保留原points／expanded report与SHA，沿真实nets和Liberty弧复核cell、wire及R／H。grt的native_valid和native_enable各126条、external_valid63条都没有hold命名单元；input_valid63条全部包含。命名规则为`(^|/)hold\d+$`，只是匹配实现的观察，不证明所有buffer的命令来源，也不证明库中没有别种hold修复。input中该命名单元占组合delay的median／P95为63.45%／76.53%，最大80.43%；不能将此结论外推为native_valid误差的主因。
+
+grt native_valid的wire median／P95为7.15／70.10ps，H median109.42ps；native_enable wire91.33／151.03ps、H107.85ps。native_valid仍有−326.7ps的v10低估见证且无hold命名单元。126个对应实际valid／enable R比值均≤1（约0.168…0.984），只是本train的观察；没有据此增加硬性valid≤enable约束或负修正。寄存器R=d+H=T−slack、端口R=0.8T−slack保持，不从R中扣掉实测hold成本。
+
+**W3／W5面积归因。** 53 Add点／18源、15 Mux点／5源、81 G点／27源全部绑定原始synth／grt标签文本和SHA。面积变化定义为`(grt−synth)/grt`，Add median−1.94%、范围−14.23%…+24.65%；Mux median−7.46%、范围−8.29%…−5.37%；G median−0.26%、范围−46.19%…+23.60%。这些变化包含重映射／优化／尺寸和缓冲的综合作用，不能一律解释为正的repair面积。对应grt最大路径仅Add21/53、Mux11/15、G37/81保有分解，共69条；其余没有宣称路径已验，全149点只宣称物理标签已核。69条保存最大路径都没有hold命名单元。未拟合新的Add／Mux／G候选，v10参数、逐源失败及覆盖保持。
+
+**上下文方法补正。** 旧v7—v10外层fold的enable拟合排除了整个外层parent／reset／contrast组和全部T，外层留出标签没有进入上下文；但下游训练行使用的上游函数仍见过该行所属组，形成样本内训练预测与样本外留出预测的分布差异。不能把原外层无泄漏改写为泄漏，也不能忽略这种偏乐观风险。本轮新增`nested_control_contexts.py`：外层组o中的下游训练行属于r时，上游拟合同时排除o和r；测试行排除o；最终下游训练排除r；部署仍用冻结all-train enable。整家族／全部T一起排除，13 fold复用14份固定single／all上下文，固定算法新增78个无序双组排除函数，共92份，1764条上游路由／训练lineage核对。它是离线训练设施，不是线上按源取价。
+
+**有限实验与停止规则。** 在协议冻结后一次运行2种上下文方法×2种响应形式×3个alpha，共12项。旧single-exclusion仅为诊断消融，不可入选；nested-double-exclusion为可选方法。形式为原v10直接R和共享预测enable R作reference的正比形式，link固定positive_log_linear、path目标、alpha为0.1／1／10；上游算法固定v9 linear／alpha1／joint_bank_path，不再选择。选择仍用源等权bank／path／service／native／zero／mixed的minimax log-MSE，不能按后见的raw P95另选第二候选。
+
+预登记闸门为银行源聚合median≤15%、原始路径P95≤35%、最坏银行源误差不超过v10的30.73945%；任一失败就封存，不移植新C++价格、不消费旧回归。选中nested direct R／alpha1：银行median18.4680%、P9526.2183%、最大源30.3728%；raw126路径median9.8852%、P9539.2594%、max81.4581%。前两闸失败，第三通过。v10同行银行18.4954%、raw P9538.7097%；嵌套修正几乎未改变银行误差，路径尾部略差，不能称解决了模型问题。ratio／alpha10的银行18.1795%也未达标，raw P9548.3551%，且不按原选择目标入选。全部12项及19银行逐源结果保留，没有失败后换候选或扩大试验。
+
+**验收与失败日志。** 7项新增测试验证外层标签／自身组标签变更不影响对应上下文、pair对称、家族／全部T隔离、final训练与deployment差异、lineage篡改和非法角色／重复源。便携回放重建63个语义银行，核648条真实路径／648条删除真实Liberty弧负例、149个train物理点、92上下文／1764上游路由、3528下游上下文、12 trial的1512条路径统计及126条冻结候选数值推理；推理禁用读文件和子进程。v10的43项测试、477特征／价格及native回放收据仅按707份未变源码身份继承，不称本轮新跑。加3份新源共710份身份；源码／外置工具／协议／失败日志和compact数值证据归档，单文件≤10MiB，异机回放不读绝对产物路径。
+
+路径审计初次未解析旧逐源标签的外置位置、算子审计初次未解析恢复标签的synth兄弟文件，修正只读解析后通过；不补造缺失路径。便携回放首轮在汇总收据时出现重复字段，修正报告代码后重跑，原失败保留；数值拟合、协议、上下文和候选freeze均未更改。原始1.2GiB开发预测文件保留仓库外，归档版去除逐行重复spec／structure／directory，保留全部12项LOSO及上下文特征、原文件SHA，未更改数值结果。
+
+**费用与后继。** Ledger增量synth／grt／final／support／wall／CPU均0、pending=0；累计3538／3507／16／22486，wall364379.1543315831s／CPU743575.33s，policy v11／budget v5保持。未提交／推送。下一轮先用train证据登记可证伪的共享缓冲／分支负载／setup预算假设和停止条件，native_valid与input_valid分别处理；不继续堆失败形式、不反复消费旧回归。W3区分映射面积与物理变化，W5修面积／组合边界；实际宽深算术S／shared、W6完整阶段和W7／W8正式D／ABCD仍待，不因本审计缩域改判完成。
+
+
+<a id="W345-local-sharing-factorized-area"></a>
+
+### 7.111 W3／W4／W5局部银行共享、映射／物理面积拆分与有限train对照 v12（2026-11-14）
+
+**交付与冻结。** 接续§7.110，完成两个机制假设的公共Python实现和18项预登记train比较，三个选中候选均未通过本轮推进门槛，封存拒绝。[全trial／逐源结果及便携证据](../experiments/arithmetic/evidence/common_local_sharing_v12/README.md)，产物根`/home/zyrv/vulsim-artifacts/W345-local-sharing-20261114-v12`。协议SHA `3c39a4c591ad4e2d225d240b82cecddd6e749cbbc615408e8b1cacb760b42997`，候选SHA `cbb6a17eed1dec579b36b16e7aeab851a9f68d4d6f1bb6d7852e2fc1f377b11c`。v10仍为最近诊断价，v11拒绝实验未动；无次选、新C++价格、已消费回归或新独立解锁。
+
+**W4局部描述。** 新`local_bank_features_v12.py`按每个实际capture stage计算出生／保持比例、出生仿射数据表达式等价类、原始与reset归一化后的别名比例、最大重复用途、局部根极性集中度／分裂及reset交叉。根身份和掩码只用于验证及计数，不进入价格键，根重命名和word重排不变；kept保持FF各自独立，不能因reset或数据相同就合并。它仍是仿射适配器，不扩授实际算术S／shared资格。
+
+沿匹配OpenROAD `Rebuffer.cc`的`fullyRebuffer`再次核对逐负载slack注记、timing tree及每driver目标下的面积回收，源码SHA与v6匹配产物一致，保存完整原文；这些支持局部co-load假设，不证明某个误差的单独因果。线上未读实际电容、slack、树或物理面积。§7.110的hold命名观察仍仅支持input_valid方向，不外推为native_valid主因。
+
+**W3／W5面积拆分。** 新`factorized_area_v12.py`将预测synth面积与预测grt/synth正比值相乘。映射函数以共享逻辑工作量为reference拟合原synth标签，物理函数直接拟合原grt/synth标签，输入只含语义特征与数值T；不将真实或样本内拟合的上游面积作下游特征。比例小于1对应实际面积回收，不是给G时延／区域残差添加负偏移。53 Add点／18源、81 G点／27源均保持train职责和全部T共同留出。
+
+**有限协议。** S保持19银行／63实现／126条valid路径，完全继承v11的92份嵌套上下文，0上游重拟合。S、Add、G各两个形式×alpha0.1／1／10，共18项，一次拟合并冻结。S仍按bank／path／service／native／zero／mixed的源等权minimax log-MSE选择；面积按grt面积、synth映射和物理比值三部分源等权minimax选择。各组件只选一次，不按观察后的单项误差换第二候选。
+
+面积本轮推进条件为median≤15%、P95≤35%并且每源平均APE≤15%，最后一项是额外的有限候选推进条件，不改写项目总体median／P95合同。S要求银行median≤15%、raw路径P95≤35%，且最大银行源误差不超过v11的30.3728%。没有在看结果后调整门槛。
+
+**结果及反例。** Add选compact_mapping／alpha10，grt面积median7.8348%、P9514.1457%、最大源15.1463%；v10同行8.4388%／12.6404%／14.2904%，median改善、尾部及最坏源退化，超过本轮逐源门槛而拒绝。其映射median5.1284%、最大24.2032%，物理比值median5.3119%、最大15.0988%，分量仍有明显误差。Mux及Add时延没有重新拟合。
+
+G选compact_mapping／alpha1，grt面积5.0716%／16.5525%、最大源19.6244%；v10同行3.7638%／13.9824%／19.3324%，整体退化。映射median3.0455%、最大36.3373%，物理比值median3.6389%、最大48.0827%，产品误差可抵消，不能据乘积较小就称两部分已准确。三源超过本轮15%推进门槛，候选拒绝；G时延参数不变。旧Add／Mux／G回归逐源失败及覆盖未重评，不能用新train数值覆盖。
+
+S选local_compact／alpha1，银行median16.9584%、P9530.1663%、最大源38.8918%；raw126路径median10.0232%、P9536.7364%、max82.4524%。相对v11的银行18.4680%、raw P9539.2594%有改善，最大银行30.3728%→38.8918%退化，三闸均失败。全零4银行源聚合16.30%、mixed15银行12.90%，服务8.03%、native16.47%分别保留，不能代替银行和raw尾部。biased valid T500实际银行差178.288639ps，仅预测0.496400ps；uniform T1500实际−37.271485ps，仅预测−0.009797ps，局部矩仍未解释对照。没有手工reserve、支持修改、标签调整或向G转嫁。
+
+**复核与收据边界。** 6项新增测试覆盖reset归一化与原始极性区别、kept FF独立、后级出生局部性、根重命名／word重排、矛盾语义拒绝及无实测值／I/O的面积消费。便携回放重建134面积Query／63语义银行，核1764嵌套下游上下文、18项1560条trial统计与选择／门槛、134面积推理、126最终训练上下文推理及126真正部署上下文推理；禁用数值推理文件读取／子进程。714份仓库源及完整原文核对、单文件≤10MiB，不依赖绝对产物路径。
+
+冻结fitter中`S.runtime_train`字段实际用了最终训练的out-of-group上下文，不能称部署值；没有修改冻结文件或参数，另在deployment-cases生成all-train enable上下文的126条真正部署见证，分别验证、计数。补核OpenROAD原收据初版误把files字典按列表遍历，修正只读解析后通过，原失败日志保留，无数值／物理重做。v11的648路径／删弧证据及7项测试、v10的43项测试和native收据只按未变710份前驱源码身份继承，不称本轮重跑。
+
+**费用与后继。** 新synth／grt／final／support／标签／验证源均0，20独立源未读；Ledger叶阶段wall／CPU增量0，累计3538／3507／16／22486，wall364379.1543315831s／CPU743575.33s、pending=0，policy v11／budget v5保持。未提交／推送，公共D不变。当前证据不支持这些局部矩或简单两段面积足够修复问题。后继先查有效映射共享／缓冲分支的不连续及可预测范围，必要时登记少量train对照检验实现敏感性；不继续扩失败alpha网格或用旧回归换候选。实际宽深算术S／shared、G组合／多消费者、W6及正式D／ABCD继续待验。
+
+<a id="W345-implementation-sensitivity-controls"></a>
+
+### 7.112 W3／W4／W5：固定实现复测与等价RTL表达对照v13（2026-11-14）
+
+**交付与范围。** [便携证据](../experiments/arithmetic/evidence/common_implementation_sensitivity_v13/README.md)及外部`/home/zyrv/vulsim-artifacts/W345-implementation-sensitivity-20261114-v13`完成四个已有train父源的8点有限物理对照，0物理失败／重跑、0拟合。先原样repeat，后等价表达variant：两份S在T500反转模块内独立单目标nonblocking时序语句次序；稀疏G64在T1500交换同一加法的前两个项；6＋10→11位Add在T500交换已扩展的两个加数。所有声明／数学语义／reset／invert／端点／状态命名／属性保留，生产发射器未改。语句重排证书与精确表达证书实现见`rtl_sensitivity_v13.py`，portable回放见`implementation_sensitivity_replay_v13.py`。
+
+**准入、失败与修正。** 精确源字节／角色／T／stage、max4任务×4线程／8192MiB、synth300s／grt1200s、support80上限、wall21600s／CPU86400s／8GiB存储及5—120分钟预估在调用工具前登记。4份repeat全部完成身份／约束／CEC／状态／路径与容量核对后，才开放4份variant；费用和失败保留，无自动重试。首次准备错用v11候选文件名，在protocol／admission生成前停止，改为实际`nested-candidate.json`并核对部分源字节，0工具调用。
+
+首版RTL等价脚本保留`keep_hierarchy`，未展开子模块，故意破坏native.valid_1的负例也通过；软件门禁拒绝本次证明，0物理调用。保留2次support及完整错误负例日志，另登记preflight-v2，只在证明副本删除模块／实例的层次保留属性、断言无剩余子模块，再运行equiv_make／equiv_simple／equiv_induct。4份正例证明、4份负例拒绝后才开始物理；4次预期负例非零退出和首版语义门禁失败单列，不能算作0失败的证明过程。
+
+**复测结果。** 4源原样repeat在synth／grt面积及记录时序上全部相同，归一化映射网表也相同；S全部13类／逐源路径R逐项相同。固定流程／发射下旧标签在这些点可复现，不从单次repeat推导全域确定噪声界。Add／G的variant与repeat也全部相同；Add grt本体面积5.554980um²、delay246.421432ps，G为28.547640um²／433.330109ps。操作数交换这一因素没有解释其旧面积误差，§7.111失败和所有旧回归职责保持，未拟合Mux或其它价格。
+
+**S实现敏感性。** 下表为bank逐源valid的最大`R=d+H=T−slack`，本次恰与aggregate native_valid相同，不冒充整级Tmin／频率。
+
+| T500 train银行 | 原始／repeat R（ps） | 重排R（ps） | ΔR（ps） | Δcell／Δwire／ΔH（ps） |
+| --- | ---: | ---: | ---: | --- |
+| S-d0fb525b1fcecb5c | 261.670334 | 335.516235 | +73.845901（28.22%） | +66.644989／+10.629409／−3.428497 |
+| S-aac8767d3e7162b7 | 439.958973 | 314.848190 | −125.110783（−28.44%） | −57.377349／−58.704362／−9.029072 |
+
+原reset对照差从+178.288639ps反转为−20.668045ps；variant的synth valid R均185.645233ps，较大的差别产生于后续实现。grt总面积只分别增加1.458000um²（0.10345%）、0.014580um²（0.00103%）。这些路径端点完全相同、无hold命名单元，主要变化来自不同buffer链、单元及wire延迟；保存负载pin／master、实际Liberty弧及repair日志摘录。第一源INVx8→BUFx4f→AND2变成INVx8→BUFx3→BUFx6f→AND2；第二源中间BUFx3／BUFx6f变成两个BUFx3。hash变化不单独证明逻辑拓扑变化，buffer命名也不作为某次修复命令的完整因果归属。
+
+52项S class／逐源路径比较包含aggregate重叠项，不算独立函数。repeat绝对相对变化median／P95／max为0；variant为0.3596%／28.2210%／28.4369%，逐项结果完整保留。native_enable仍约500ps，两源变化−1.139533／+1.407041ps；input_valid变化−1.015900／+21.116700ps。valid变化不直接等于完整阶段频率变化，input hold／clock职责继续单列。匹配OpenROAD fullyRebuffer的逐load预算／面积回收提供机制依据，尚不能据此建立单一因果模型。变体不进入生产支持，也不以最优变体替换原标签；固定发射的可复现结果不支持“物理标签不可学习”的结论。
+
+**隔离与验收。** 所有新对照均为既有train机制证据，0新增独立函数／validation／test源、0选模／旧回归。`fold-bindings`另明确实际继承fold：两个S同属`3e314bd1…578ad7`的完整reset／contrast家族；协议parent_group为源身份，今后不能误作独立LOSO fold。全部T与parent family一起排除，repeat不复制为独立样本。6项新增重写证书测试通过；portable核4源证书、4正／4负、12份物理CEC（8新＋4继承）、16组stage比较／104项S路径比较、156保存路径／156删真实Liberty弧负例，cell＋wire、R／H及nets守恒。411仓库源身份／453文本源和工具记录归档，v10／v11／v12冻结依赖未变。
+
+**费用与后继。** Ledger本轮增量8 synth／8 grt／0 final／66 support，wall586.824249273981s／CPU1103.2100000000792s、pending0。support含首版2、修正版8、物理采集56；4次预期负例非零退出均收费。累计3546／3515／16／22552，wall364965.9785808571s／CPU744678.54s；policy v11／budget v5不变。0价格拟合／新C++价格、20独立源未读、公共D及生产发射／reserve／标签未变，未提交／推送。
+
+共享压缩Ledger快照及元数据同步到29629条完整累计记录，保留checkpoint前缀及此前未导出的历史；便携证据保存导出收据，克隆不退回旧用量。
+
+后继先审计可预测lowering／共享连接和不同缓冲分支预算，区分语义结构、内部命名变化与真实逻辑／物理工作量。不能仅按reset比例、面积尺度或扩alpha解释本组；不抬reserve、不向G转嫁。Add／G简单交换未解释的面积误差继续按映射／共享归因，实际宽深算术S／shared、G组合／多消费者、W6及正式D／ABCD继续待验。
+
+
+<a id="W345-shared-cut-control-connectivity"></a>
+
+## 7.113 W3／W4／W5：共享DAG cut覆盖与S缓冲无关连接核查（2026-11-14，v14）
+
+**本轮交付及决定。** 新增固定四输入、每节点16 cuts、3次area-flow的纯软件覆盖器，使用实际ASAP7 dont-use过滤后的76个单输出Liberty门及精确truth／pin permutation；允许内部信号作为独立根保留，同时被另一cut吞并，按实际选中根唯一计面积。由此修补v5只吞并单用户内部信号的表达限制。它是prospective逻辑工作量代理，不是ABC复刻、时序映射器或布局工具。4项预登记train面积对照完成并冻结；Add／G全局门槛通过，但相对v10没有改善，关键零压缩G仍失败，决定不推进价格、不读旧回归或独立源。S的8份保存连接核查进一步确认相同sink和缓冲无关表达式可以对应不同物理缓冲树；0新S拟合。
+
+产物根`/home/zyrv/vulsim-artifacts/W345-cut-cover-20261114-v14`，便携证据为[common_cut_cover_v14](../experiments/arithmetic/evidence/common_cut_cover_v14/README.md)。通用实现为[prospective_cut_cover_v14.py](../experiments/arithmetic_dse/prospective_cut_cover_v14.py)、[cut_area_model_v14.py](../experiments/arithmetic_dse/cut_area_model_v14.py)及只读机制模块[mapped_logic_fingerprint_v14.py](../experiments/arithmetic_dse/mapped_logic_fingerprint_v14.py)。在线工作只接收语义图和冻结库常量；不读映射网表、真实电容／slack／坐标或候选实测价格。后者的哈希／连接只用于离线核查，不能进入模型。
+
+**匹配源码与有限协议。** 实际保存的ABC脚本使用`&nf -D T`、`&syn2`和`&if -g -K 6`等步骤；匹配`giaNf.c`中的cut area flow、引用计数及area recovery，仅借鉴cut／共享责任。新覆盖器固定K=4／16 cuts／3 passes，没有实现ABC重写、6输入优化、rise／fall约束、pin电容或sizing。OpenROAD的`fullyRebuffer`按每load预算构树并回收面积，作为S分支机制依据；源码保持只读，不能据摘录将某一差值完全归因到某条命令。
+
+复用Add53点／18完整源组、G81点／27完整源组，所有T按既有group共同留出。45个不同prospective图均完成局部精确cut证明，提取耗时合计17.25s、最大单图2.18s，最大16474个原始Boolean门。临时prepare首版误用S专用reference_connections文件名，库准备失败；另一软件断言误将显式INV和AO21＋INV的等价表示限定为一种。两项均在拟合前修正并保留，0工具收费。正式协议SHA256 `d3d999c2b903a495842a21b32ddd73df70b45f39884923938066da868868bdd2`；每族仅direct和factorized两种形式，alpha固定1，不扩网格。direct分别拟合synth/reference和grt/reference；factorized拟合synth/reference与grt/synth。按grt、synth、ratio三分量的源等权log-MSE最大值选一次，三分量各自median≤15%、P95≤35%作全局train闸；逐源和关键域另报，不恢复v12的已拒绝候选，也不事后改判其15%最大源闸。
+
+| 选中direct的量 | Add median／P95／最大源 | G median／P95／最大源 |
+| --- | --- | --- |
+| grt面积 | 8.6190%／16.9243%／19.8169% | 4.0186%／16.4002%／23.0936% |
+| synth映射面积 | 4.7992%／25.8902%／31.5242% | 5.3035%／33.1197%／52.5358% |
+| grt/synth比例 | 5.2552%／17.9008%／22.0727% | 3.6764%／16.2568%／37.5897% |
+
+两族全局闸通过不等于推进资格。v10对应grt为Add8.4388%／12.6404%、G3.7638%／13.9824%，本版median和P95均退化。零压缩G六源18点另有grt15.2345%／21.5324%、synth15.2820%／48.9784%，关键域仍超门槛；synth最大源52.5358%，不得由grt或ratio抵消掩盖。64位稀疏G在T1500的未校准exclusive cover47.92446um²变为cut reference45.18342um²，而实际synth28.98504um²、grt28.54764um²，差距仍显著；6+10位Add参考5.90490→5.86116um²，实际synth5.70078um²、grt5.55498um²。参考值不是拟合价格。新候选SHA256 `0a8e402ad1f8c81d8a4d4ac3a125b09f6e30b2c7813fa168a6f717dba08efbe4`，仅作封存train候选，无C++／公开价格版本。
+
+**S共享连接的直接核查。** 继承v13的两父源各repeat／variant、synth和grt共8份连接。从`native/valid_1…/QN`沿真实net和Liberty弧，到640个数据D和1个valid D，逐sink归一化Boolean表达式。仅消去wire buffer、双反相并允许基本交换；不声称一般Boolean等价或图同构。每组在两个stage的641个sink集合及全部逐sink表达式相同。组合前向cone统计含observer分支，仅用于比较，不是S面积所有权或线上负载。
+
+| T500的S源 | repeat→variant grt缓冲／反相器数 | 相同逻辑连接下的valid R |
+| --- | --- | --- |
+| d0fb525b | 21→15 | 261.670334→335.516235ps |
+| aac8767d | 15→19 | 439.958973→314.848190ps |
+
+两源每份cone均1604个非buffer／inverter单元，synth buffer／inverter均142；实际路径的缓冲级联和分支负载已由v13给出。这里排除的是“该重排仅靠缺失sink数量或归一化D表达式变化来解释”的假设，不能推出固定发射标签不可学习；原样repeat仍可复现。S后继需对发射前的分支预算／布局代理提出可证伪假设，并单验其误差，不再只加reset比例或通用面积尺度。
+
+**验证、成本与边界。** 9项新增测试包括随机重汇合多输出DAG穷举、进位／稀疏尾部、pin置换、输出反相、共享cut克隆及破坏truth／面积／边界／连接负例。便携回放重新生成45个图，核88856个选中cut与45个truth变异负例；134条真实Query特征、134次选中候选推理、完整源组有限trial及8份S连接／8个破坏valid传播负例均在禁止文件读取和子进程的计算区执行。源／工具、库常量、协议、分量误差和失败记录可在没有外部原始产物／OpenROAD目录时回放。
+
+本轮0新synth／grt／final／support、0新标签／验证／独立源，Ledger完全不变，既有历史和待提交工作保留。v10／v11／v12冻结依赖复核未变，v13对照不入本轮拟合且继续按完整parent家族绑定。v10仍为最近诊断价格；S支持／reserve、G时延、Mux、生产发射器、20独立源锁及公共D保持。W3—W5尚未全部验收，宽深实际算术S／shared、组合／多消费者及W6联合仍待；下一步优先检验实际ABC重写／平衡与prospective图的差异，以及S分支预算／布局代理，不扩cut或alpha网格追本轮结果。
+
+<a id="W345-polarity-control-budget"></a>
+
+## 7.114 W3／W4／W5：正反相共享覆盖与逐分支时序预算v15（2026-11-15）
+
+**交付与决定。** 用户续授W3／W4／W5并允许缺点时补后端，本轮完成纯软件的双极性cut覆盖、两项固定train面积对照，以及四份已有grt的逐端点／分支预算核查。证据见[common_polarity_budget_v15](../experiments/arithmetic/evidence/common_polarity_budget_v15/README.md)，外部根`/home/zyrv/vulsim-artifacts/W345-polarity-budget-20261115-v15`。面积全局train门槛通过，但未优于v10，零压缩G仍失败，**不推进价格**。S只增加离线机制证据，无新拟合；v10仍为最近诊断价，S支持／reserve、G时延、Mux、生产发射器及公共D不变。
+
+**W3／W5有限极性假设。** 实际ABC `giaNf.c`对同一信号的两个极性分别维护match与引用，v14未有此表达。[phase_cut_cover_v15.py](../experiments/arithmetic_dse/phase_cut_cover_v15.py)以`(语义节点, 极性)`计引用，允许下游合法门吸收输入反相；保持v14的76门、K4、16 cuts、3 passes，不扩大cut或alpha网格。它仍不含ABC整体重写／平衡、时序及sizing。Add53点／18组、G81点／27组，所有T沿完整group共同排除，v13 repeat／variant不入拟合。每族仅一个固定direct／alpha1候选，特征列表沿v14 direct，只替换reference及计数，共两项trial，无次选。三个分量各自检查源聚合median≤15%、P95≤35%，关键域另报。
+
+| 量 | Add median／P95／最大源 | G median／P95／最大源 |
+| --- | --- | --- |
+| grt面积 | 8.4586%／17.5696%／23.6357% | 5.2494%／18.6971%／36.2809% |
+| synth面积 | 5.2659%／26.7958%／30.7160% | 7.3658%／33.9961%／71.7398% |
+| grt/synth | 5.4731%／17.2134%／21.3171% | 4.2961%／17.4335%／42.7296% |
+
+v10 grt对应Add8.4388%／12.6404%、G3.7638%／13.9824%，本轮未改善。零压缩G六源18点grt15.2705%／32.1250%、synth16.2918%／63.7561%、ratio7.3806%／37.2090%，关键域仍超门槛。稀疏G64未校准reference45.18342→45.35838um²，实际synth28.98504um²；单独补极性共享不足以解释主要差距，不能由全局G成绩或分量相消取得资格。45个图提取合计24.16秒、单图最大3.00秒，没有新验证或独立标签进入。
+
+**W4预算定义与直接观测。** 另登记四个只读grt查询，复用v13两S父源repeat／variant。确切ODB／SDC／Liberty／RC／二进制／脚本在准入中绑定，重算已有全局布线寄生，未做综合、优化、布局或布线。每份640个数据D＋1个valid D完整保留，取得以native valid为起点的逐端点最差setup路径；真实net及Liberty弧逐段核验，valid与最差数据R复现旧标签。
+
+首分支指沿选中路径经过缓冲／反相器后第一个非缓冲输入；预算为端点required减选中尾部时延再减root arrival，多端点共享时取最紧值。这是最终检查点、限定root的条件预算，不是Rebuffer优化当时或不限定root的vertexWorstSlackPath。几何仅为实例原点Manhattan距离，不声称引脚位置或线长。[control_branch_budget_v15.py](../experiments/arithmetic_dse/control_branch_budget_v15.py)仅作离线审计，其实测坐标、电容、预算和sink身份禁止成为在线价格特征。
+
+| 源／实现 | valid R（ps） | 最差数据R（ps） | 首分支引脚电容和（fF） | 分支预算median（ps） |
+| --- | ---:| ---:| ---:| ---:|
+| d0fb525b repeat | 261.670334 | 499.275524 | 475.959190 | 311.809246 |
+| d0fb525b variant | 335.516235 | 498.135991 | 428.396285 | 300.543105 |
+| aac8767d repeat | 439.958973 | 497.183309 | 482.533309 | 304.864037 |
+| aac8767d variant | 314.848190 | 498.590350 | 463.759258 | 311.592605 |
+
+最差数据R变化−1.14／+1.41ps，valid R却变化+73.85／−125.11ps，两组首分支总引脚电容都下降；valid本支输入电容四份均0.483326fF，端点预算只增加3.43／9.03ps。此局部对照不能只用总负载或valid单负载解释，需保留逐分支预算与共享关系。最终检查点不能确证某一修复命令的因果。两父源及所有实现仍属同一fold `3e314bd1f03716b05deb2b14a57de05498161b5f3e28c082490245d811578ad7`，未将四份实现当四个独立源或增加S拟合。
+
+**软件／只读失败与恢复。** 首个support pilot因`report_units`不接受Tcl重定向参数失败并停批；新登记恢复批次改用tee，第二pilot在STA规范名与ODB保留转义括号的实例名关联处失败并停批。最终独立登记v3，逐实例导出几何、Python规范化后关联，四份全部完成，ODB／SDC哈希前后不变。两个失败及未执行任务、准入和费用全部保留，无自动重试。软件合成库首版缺原生XNOR导致收益断言失败，补齐测试库门后通过；数值冻结后仅加固witness的相位范围／拓扑校验，拒绝伪造自引用wire，cover／枚举／phase_truth的AST未改。原协议、输入和候选未重写，回放重算所有映射。
+
+**验证、费用和后继。** 7项新增测试覆盖随机重汇合图穷举、极性共享、进位／稀疏尾部及相位／自引用／面积／连线／Liberty弧／时序／几何负例。纯函数便携回放重建45图、核134特征／推理、两项固定trial的45完整组留出拟合，以及四份S的2564路径和破坏负例；计算区禁止读文件和子进程，可脱离外部产物及OpenROAD。完整数量及身份见便携checks／replay。
+
+本轮新增6 support（4成功、2失败），synth／grt／final均0，wall11.108697s／CPU12.14s，pending=0；累计3546／3515／16／22558，wall364977.087278s／CPU744690.68s，共享Ledger／快照完整续记。0新独立源、旧已消费验证未读、20算子独立源未解锁，未提交／推送。后继算术侧继续整体重写／重平衡／时序驱动映射机制；S先登记发射前逐分支预算／共享代理并单验误差，不能拿实测描述直接拟合线上函数。W3—W5未整体关闭，宽深实际算术S／shared、G组合／多消费者与W6联合仍待。

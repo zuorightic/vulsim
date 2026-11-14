@@ -1,0 +1,15 @@
+{
+  "reason": "ODB retains escaped brackets in instance names; canonical STA instance lookup failed after timing was computed. Export geometry by iterating all ODB instances, and join canonical names in Python.",
+  "predecessor_admissions": [
+    "support-admission.json",
+    "support-recovery-admission.json"
+  ],
+  "failed_calls_preserved": 2,
+  "no_automatic_retry": true,
+  "new_support_max": 4,
+  "new_synth": 0,
+  "new_grt": 0,
+  "stop_on_first_failure": true,
+  "unchanged_semantic_sinks": true,
+  "no_measurement_label_or_fit_changes": true
+}

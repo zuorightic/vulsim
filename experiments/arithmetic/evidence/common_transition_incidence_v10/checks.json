@@ -1,0 +1,141 @@
+{
+  "version": "W345-transition-incidence-delivery-checks-v10",
+  "status": "passed",
+  "model_sha256": "a1466f0272b55bd20358ea9e3beb84844db8fe8fefe4152e0478224d8f13243d",
+  "frozen": {
+    "freeze.json": {
+      "sha256": "2d7ab146a9ad6da9cd9c0bad2d5ffcdb597b90f337503c155b6388bbdc4523a2",
+      "verified_dependencies": 5
+    },
+    "execution-freeze.json": {
+      "sha256": "8a802840dc947f250ddadc00272d868dc966c0f757df29818510ea18a4b15967",
+      "verified_dependencies": 781
+    }
+  },
+  "evidence_identity_sha256": "e59b9ac01a55cc9b7331ff59ec2c4dc55987e892cc1af9c3ef0cb089ef3bbb80",
+  "evidence_files_verified": 42,
+  "source_files_verified": 707,
+  "archive_files_verified": 748,
+  "tests": {
+    "passed": 43,
+    "groups": [
+      {
+        "log": "tests.log",
+        "passed": 37,
+        "sha256": "4bdcb03354e30de6224413bd79caf4b96250444ce67d992a06703b64d02f93c3"
+      },
+      {
+        "log": "tests-flow.log",
+        "passed": 6,
+        "sha256": "9431c1aa316e435811d865a24cfbb10c032d82e4dd69a70f245ffab3b80737c5"
+      }
+    ]
+  },
+  "portable_mechanism_paths": {
+    "status": "passed",
+    "saved_train_paths": 12,
+    "checked_arcs": 53,
+    "missing_arc_negatives": 12,
+    "load_histograms_checked": true,
+    "path_delay_conserved": true,
+    "new_EDA_calls": 0,
+    "new_support_calls": 0,
+    "independent_labels_read": false,
+    "fitting_or_qualification": false
+  },
+  "replays": {
+    "replay.json": {
+      "sha256": "eacef7133bd14fdcbbb82ac16886ca96c0b66a046171aaa0b46d9ad05f86d585",
+      "status": "passed",
+      "price_queries": 477,
+      "feature_queries": 477,
+      "priced": 471,
+      "rejections": 32,
+      "context_feature_checks": 756,
+      "new_train_sources": 0,
+      "new_train_rows": 0,
+      "inherited_contrast_train_sources": 2,
+      "inherited_contrast_train_rows": 36,
+      "inherited_strict_paths": 156,
+      "missing_arc_negatives": 156,
+      "source_files": 707,
+      "native_replayed": false,
+      "new_EDA_calls": 0,
+      "online_physical_calls": 0,
+      "online_file_reads": 0,
+      "independent_labels_read": false,
+      "public_D_changed": false,
+      "full_D_ready": false
+    },
+    "native-replay.json": {
+      "sha256": "ade9f27ace1b26e96806dd374dd028803035239c62cb71f712b855594e59aa75",
+      "status": "passed",
+      "price_queries": 477,
+      "feature_queries": 477,
+      "priced": 471,
+      "rejections": 32,
+      "context_feature_checks": 756,
+      "new_train_sources": 0,
+      "new_train_rows": 0,
+      "inherited_contrast_train_sources": 2,
+      "inherited_contrast_train_rows": 36,
+      "inherited_strict_paths": 156,
+      "missing_arc_negatives": 156,
+      "source_files": 707,
+      "native_replayed": true,
+      "new_EDA_calls": 0,
+      "online_physical_calls": 0,
+      "online_file_reads": 0,
+      "independent_labels_read": false,
+      "public_D_changed": false,
+      "full_D_ready": false
+    }
+  },
+  "predecessor_v9_replay": "passed",
+  "git_diff_check": {
+    "/home/zyrv/vulsim": "passed",
+    "/home/zyrv/vulsim/rtlzz": "passed"
+  },
+  "new_source_whitespace_files": 8,
+  "markdown_local_links_checked": 21,
+  "docs_sha256": {
+    "mission/README.md": "33a931fdc2c324fae1037a3c350630292ce6ce2de45dd85741f97381692272d3",
+    "mission/lxy-plan-fix.md": "888c6a5e5dacbc0d86bcd258cd877d50633bc31fcd6af4e6c7e4045657e816ca",
+    "mission/lxy-S-control-mechanism-plan.md": "c418ef83c7897378a83a7dfc424b6b7bda71a303a953f1643a41218301a9e2b5",
+    "experiments/arithmetic/evidence/common_transition_incidence_v10/README.md": "cd456a281284879e5fb5242a7d58bd9e0d2be3bcf9f406df530cb9307f0e7c38"
+  },
+  "evidence_files_excluding_checks": 46,
+  "evidence_bytes_excluding_checks": 20426331,
+  "largest_evidence_file_bytes": 9680850,
+  "individual_file_limit_bytes": 10485760,
+  "ledger_increment": {
+    "synth": 0,
+    "grt": 0,
+    "final": 0,
+    "support_calls": 0,
+    "walltime_s": 0.0,
+    "CPU_time_s": 0.0,
+    "pending": 0
+  },
+  "ledger_cumulative": {
+    "synth": 3538,
+    "grt": 3507,
+    "final": 16,
+    "support_calls": 22486,
+    "walltime_s": 364379.1543315831,
+    "CPU_time_s": 743575.33,
+    "pending": 0
+  },
+  "ledger_sha256": "4c74e6fa8b0d55f05c5ec96ffd200686f824f020dc31287cdb5372aa49f80af6",
+  "public_D_changed": false,
+  "independent_labels_read": false,
+  "locked_independent_operator_sources": 20,
+  "new_validation_sources": 0,
+  "validation_tuning": false,
+  "actual_arithmetic_S_qualified": false,
+  "shared_qualified_by_v10": false,
+  "W345_complete": false,
+  "full_D_ready": false,
+  "commits_created": 0,
+  "pushed": false
+}

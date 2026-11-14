@@ -1,0 +1,71 @@
+{
+  "version": "v15-fixed-trials-post-freeze-decision",
+  "area_candidate_frozen_before_S_support_results": true,
+  "results": {
+    "Add": {
+      "global_train_gates_passed": true,
+      "grt_both_median_and_P95_improve_v10": false
+    },
+    "G": {
+      "global_train_gates_passed": true,
+      "grt_both_median_and_P95_improve_v10": false
+    }
+  },
+  "critical_zero_compression_G": {
+    "grt": {
+      "points": 18,
+      "sources": 6,
+      "median": 0.15270490823899846,
+      "P95": 0.3212497471824156,
+      "max": 0.3628093588088108,
+      "score": 0.03758747725648099,
+      "source_mean_errors": {
+        "0ceb763832521a0b77515b68bfd451a796b151ecac327acc679630870437c88b": 0.13816228176227985,
+        "4d624e640e05dfbf1bbfe452463baeddeada8e022d4a495c4b4018f32c55e324": 0.10095721528636241,
+        "4eab470e164ce4a199b8ca3bd21d08245c1c10731f82ebc180bc2116283e522f": 0.1645703550858697,
+        "a4736d1f1d9438c71f527e5d7f8a9f6a3f63a536275cf2ff65822ab358d3d1b3": 0.1965709123032299,
+        "c9bad07c2b1f226b08a376fca3d541ed20cf53e7be7b6c7425457c3bae2a427a": 0.1408394613921272,
+        "f5bf5f9e3e7d766b65854fdc0c8adff7dada264f069380e2d5ce046438aa3975": 0.3628093588088108
+      }
+    },
+    "synth": {
+      "points": 18,
+      "sources": 6,
+      "median": 0.1629175982263507,
+      "P95": 0.6375610172747124,
+      "max": 0.7173976908472678,
+      "score": 0.10241152251843925,
+      "source_mean_errors": {
+        "0ceb763832521a0b77515b68bfd451a796b151ecac327acc679630870437c88b": 0.1082286608305949,
+        "4d624e640e05dfbf1bbfe452463baeddeada8e022d4a495c4b4018f32c55e324": 0.05066341290960574,
+        "4eab470e164ce4a199b8ca3bd21d08245c1c10731f82ebc180bc2116283e522f": 0.20441688447291786,
+        "a4736d1f1d9438c71f527e5d7f8a9f6a3f63a536275cf2ff65822ab358d3d1b3": 0.12141831197978355,
+        "c9bad07c2b1f226b08a376fca3d541ed20cf53e7be7b6c7425457c3bae2a427a": 0.39805099655704596,
+        "f5bf5f9e3e7d766b65854fdc0c8adff7dada264f069380e2d5ce046438aa3975": 0.7173976908472678
+      }
+    },
+    "ratio": {
+      "points": 18,
+      "sources": 6,
+      "median": 0.07380635280564117,
+      "P95": 0.37208955998625587,
+      "max": 0.42729632945415325,
+      "score": 0.03364606505430176,
+      "source_mean_errors": {
+        "0ceb763832521a0b77515b68bfd451a796b151ecac327acc679630870437c88b": 0.03016370516365659,
+        "4d624e640e05dfbf1bbfe452463baeddeada8e022d4a495c4b4018f32c55e324": 0.06207316370917585,
+        "4eab470e164ce4a199b8ca3bd21d08245c1c10731f82ebc180bc2116283e522f": 0.03912489570844883,
+        "a4736d1f1d9438c71f527e5d7f8a9f6a3f63a536275cf2ff65822ab358d3d1b3": 0.08553954190210648,
+        "c9bad07c2b1f226b08a376fca3d541ed20cf53e7be7b6c7425457c3bae2a427a": 0.42729632945415325,
+        "f5bf5f9e3e7d766b65854fdc0c8adff7dada264f069380e2d5ce046438aa3975": 0.20646925158256366
+      }
+    }
+  },
+  "price_advanced": false,
+  "reason": "Both global gates pass, but grt accuracy does not improve v10 and critical zero-compression synth error remains. Phase-only treatment is insufficient; no new form or parameter sweep after results.",
+  "S_fit": false,
+  "S_reason": "Four grt checkpoint controls are two related train parents in one complete exclusion family. Measured budget/cap/origin descriptors are offline evidence, not prospective fit inputs or independent validation.",
+  "validation_labels_read": false,
+  "independent_labels_read": false,
+  "public_D_changed": false
+}

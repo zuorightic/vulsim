@@ -1,0 +1,94 @@
+{
+  "version": "W345-local-sharing-delivery-checks-v12",
+  "status": "passed",
+  "frozen": {
+    "/home/zyrv/vulsim-artifacts/W345-local-sharing-20261114-v12/protocol.json": "3c39a4c591ad4e2d225d240b82cecddd6e749cbbc615408e8b1cacb760b42997",
+    "/home/zyrv/vulsim-artifacts/W345-local-sharing-20261114-v12/freeze.json": "cb2c44ab7bc4768e3eb8224e58277bf577d1d054e4dbff2b4656f1f0e0feed7c",
+    "/home/zyrv/vulsim-artifacts/W345-repair-burden-20261114-v11/nested-protocol.json": "868976d983800f7a4b446bf8c802f4df9c0d40795d5adc77bdfc2e14f619cdaf",
+    "/home/zyrv/vulsim-artifacts/W345-repair-burden-20261114-v11/nested-freeze.json": "a793747fd3f09da10b09de01012c69726ef39061e3ecbf50cba46bac11c7fa25",
+    "/home/zyrv/vulsim-artifacts/W345-transition-incidence-20261114-v10/freeze.json": "2d7ab146a9ad6da9cd9c0bad2d5ffcdb597b90f337503c155b6388bbdc4523a2",
+    "/home/zyrv/vulsim-artifacts/W345-transition-incidence-20261114-v10/execution-freeze.json": "8a802840dc947f250ddadc00272d868dc966c0f757df29818510ea18a4b15967"
+  },
+  "candidate_sha256": "cbb6a17eed1dec579b36b16e7aeab851a9f68d4d6f1bb6d7852e2fc1f377b11c",
+  "protocol_sha256": "3c39a4c591ad4e2d225d240b82cecddd6e749cbbc615408e8b1cacb760b42997",
+  "evidence_identity_sha256": "2623026efb1d29b41cd308f201af567cafa1afd2ede6539b67563303fb7b07b6",
+  "source_files_verified": 714,
+  "archive_files_verified": 771,
+  "evidence_files_verified": 20,
+  "new_tests": {
+    "passed": 6,
+    "sha256": "c6b9b1f09add0403cc07e90bfdf272129b1ddfa2f8f7675ea8218862f2516371"
+  },
+  "inherited_tests": {
+    "v11_new": 7,
+    "v10_inherited": 43,
+    "rerun_in_v12": false
+  },
+  "replay": {
+    "status": "passed",
+    "area_train_points": 134,
+    "semantic_banks": 63,
+    "inherited_context_functions": 92,
+    "new_context_fits": 0,
+    "downstream_context_checks": 1764,
+    "finite_trials": 18,
+    "trial_path_statistics_recomputed": 1560,
+    "area_runtime_predictions": 134,
+    "final_fit_context_predictions": 126,
+    "deployment_context_predictions": 126,
+    "all_candidates_rejected": true,
+    "new_native_price_version": false,
+    "consumed_regression_run": false,
+    "source_files": 714,
+    "new_EDA_calls": 0,
+    "new_support_calls": 0,
+    "online_file_reads": 0,
+    "online_physical_calls": 0,
+    "independent_labels_read": false,
+    "public_D_changed": false
+  },
+  "git_diff_check": {
+    "/home/zyrv/vulsim": "passed",
+    "/home/zyrv/vulsim/rtlzz": "passed"
+  },
+  "markdown_local_links_checked": 32,
+  "docs_sha256": {
+    "mission/README.md": "46987adca609ba1ade9680b3bee031c9ea02bdd2af8d57a48dc2b22e78e238cf",
+    "mission/lxy-plan-fix.md": "16bce3766e44c7ee020651a354a82ee6364067df348f458ba0e2cd0a5c70e31b",
+    "mission/lxy-S-control-mechanism-plan.md": "42669c9fcef5cb330806a7bfbf3e66a87253ec22018f19c7ceaed08b88feb3e3",
+    "experiments/arithmetic/evidence/common_local_sharing_v12/README.md": "fd7a29740a5f1900510c480899348b2946254a7e43d6ceb3528b563d06155c27"
+  },
+  "evidence_files_excluding_checks": 23,
+  "evidence_bytes_excluding_checks": 4701310,
+  "largest_file_bytes": 1702973,
+  "ledger_increment": {
+    "synth": 0,
+    "grt": 0,
+    "final": 0,
+    "support_calls": 0,
+    "walltime_s": 0.0,
+    "CPU_time_s": 0.0,
+    "pending": 0
+  },
+  "ledger_cumulative": {
+    "synth": 3538,
+    "grt": 3507,
+    "final": 16,
+    "support_calls": 22486,
+    "walltime_s": 364379.1543315831,
+    "CPU_time_s": 743575.33,
+    "pending": 0
+  },
+  "ledger_sha256": "4c74e6fa8b0d55f05c5ec96ffd200686f824f020dc31287cdb5372aa49f80af6",
+  "locked_independent_operator_sources": 20,
+  "independent_labels_read": false,
+  "public_D_changed": false,
+  "all_candidates_rejected": true,
+  "consumed_regression_run": false,
+  "actual_arithmetic_S_qualified": false,
+  "shared_qualified": false,
+  "W345_complete": false,
+  "full_D_ready": false,
+  "commits_created": 0,
+  "pushed": false
+}

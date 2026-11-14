@@ -1,0 +1,112 @@
+{
+  "version": "W345-repair-burden-delivery-checks-v11",
+  "status": "passed",
+  "frozen": {
+    "/home/zyrv/vulsim-artifacts/W345-transition-incidence-20261114-v10/freeze.json": {
+      "sha256": "2d7ab146a9ad6da9cd9c0bad2d5ffcdb597b90f337503c155b6388bbdc4523a2",
+      "verified_dependencies": 5
+    },
+    "/home/zyrv/vulsim-artifacts/W345-transition-incidence-20261114-v10/execution-freeze.json": {
+      "sha256": "8a802840dc947f250ddadc00272d868dc966c0f757df29818510ea18a4b15967",
+      "verified_dependencies": 781
+    },
+    "/home/zyrv/vulsim-artifacts/W345-repair-burden-20261114-v11/nested-freeze.json": {
+      "sha256": "a793747fd3f09da10b09de01012c69726ef39061e3ecbf50cba46bac11c7fa25",
+      "verified_dependencies": 5
+    }
+  },
+  "rejected_candidate_sha256": "72e65ffd0fb9c4bf30a49910eb7c3a172c610ff819f291952420e0dc487d32c8",
+  "evidence_identity_sha256": "73edb259edc68362f5b7b4ce51635b4e62e7e431347dade865d5749a4bb94b71",
+  "evidence_files_verified": 23,
+  "source_files_verified": 710,
+  "archive_files_verified": 761,
+  "new_tests": {
+    "passed": 7,
+    "log": "nested-tests.log",
+    "sha256": "e586fc0f3bb2a05f4c80f07d1b4c6171e830592f6c7aaf70d4af3b0aa3ebd072"
+  },
+  "inherited_tests": {
+    "passed": 43,
+    "scope": "immutable v10 sources; inherited receipt, not rerun",
+    "evidence_identity_sha256": "e59b9ac01a55cc9b7331ff59ec2c4dc55987e892cc1af9c3ef0cb089ef3bbb80"
+  },
+  "portable_replay": {
+    "sha256": "4982da4173b5f051a3bfc42ffdd9bb9358922d744017a8f1daf009d25cf4ee80",
+    "status": "passed",
+    "strict_train_paths": 648,
+    "missing_synth_source_paths": 108,
+    "missing_actual_arc_negatives": 648,
+    "operator_train_points": 149,
+    "context_functions": 92,
+    "routing_checks": 1764,
+    "pair_context_fits": 78,
+    "complete_groups": 13,
+    "upstream_observations": 126,
+    "validation_labels_read": false,
+    "downstream_context_checks": 3528,
+    "runtime_candidate_predictions": 126,
+    "finite_trials": 12,
+    "trial_path_statistics_recomputed": 1512,
+    "semantic_banks_rebuilt": 63,
+    "candidate_rejected": true,
+    "consumed_regression_run": false,
+    "new_native_price_version": false,
+    "source_files": 710,
+    "new_EDA_calls": 0,
+    "new_support_calls": 0,
+    "online_file_reads": 0,
+    "online_physical_calls": 0,
+    "independent_labels_read": false,
+    "public_D_changed": false
+  },
+  "git_diff_check": {
+    "/home/zyrv/vulsim": "passed",
+    "/home/zyrv/vulsim/rtlzz": "passed"
+  },
+  "new_source_whitespace_files": 3,
+  "markdown_local_links_checked": 26,
+  "docs_sha256": {
+    "mission/README.md": "65e4b110092359403ddeddeb35690c8c9613d433f6b3a14fa9d7b2fb241f6615",
+    "mission/lxy-plan-fix.md": "db0805ba87a5ce7a8be3d95aabdbdc424c3aaf680fcb840d24a85f23f70cb0b8",
+    "mission/lxy-S-control-mechanism-plan.md": "a1f9362de7040d1734d20105c5b72a582577689839a4d0a05a50afa2a862697a",
+    "experiments/arithmetic/evidence/common_repair_burden_v11/README.md": "4dad14b005456bfa54dce9767f969dce602171fb7730422d73ee47ddfac43e04"
+  },
+  "evidence_files_excluding_checks": 26,
+  "evidence_bytes_excluding_checks": 5791830,
+  "largest_evidence_file_bytes": 1859905,
+  "individual_file_limit_bytes": 10485760,
+  "ledger_increment": {
+    "synth": 0,
+    "grt": 0,
+    "final": 0,
+    "support_calls": 0,
+    "walltime_s": 0.0,
+    "CPU_time_s": 0.0,
+    "pending": 0
+  },
+  "ledger_cumulative": {
+    "synth": 3538,
+    "grt": 3507,
+    "final": 16,
+    "support_calls": 22486,
+    "walltime_s": 364379.1543315831,
+    "CPU_time_s": 743575.33,
+    "pending": 0
+  },
+  "ledger_sha256": "4c74e6fa8b0d55f05c5ec96ffd200686f824f020dc31287cdb5372aa49f80af6",
+  "train_gates_passed": false,
+  "candidate_rejected": true,
+  "consumed_regression_run": false,
+  "new_native_price_version": false,
+  "public_D_changed": false,
+  "independent_labels_read": false,
+  "locked_independent_operator_sources": 20,
+  "new_labels": 0,
+  "new_validation_sources": 0,
+  "actual_arithmetic_S_qualified": false,
+  "shared_qualified_by_v11": false,
+  "W345_complete": false,
+  "full_D_ready": false,
+  "commits_created": 0,
+  "pushed": false
+}

@@ -1,0 +1,42 @@
+{
+  "version": "W345-implementation-sensitivity-v13",
+  "status": "train_mechanism_complete",
+  "protocol_sha256": "b251d31c6c4368eb69ed4c9496563498d3af9b99cfeec2b2666cb71280c98811",
+  "admission_sha256": "1a8597bb9510dba97ac61c76e24c2628217b651bfe34303912e7fddf72edb575",
+  "unchanged_frozen_dependencies": {
+    "/home/zyrv/vulsim-artifacts/W345-local-sharing-20261114-v12/protocol.json": "3c39a4c591ad4e2d225d240b82cecddd6e749cbbc615408e8b1cacb760b42997",
+    "/home/zyrv/vulsim-artifacts/W345-local-sharing-20261114-v12/freeze.json": "cb2c44ab7bc4768e3eb8224e58277bf577d1d054e4dbff2b4656f1f0e0feed7c",
+    "/home/zyrv/vulsim-artifacts/W345-repair-burden-20261114-v11/nested-protocol.json": "868976d983800f7a4b446bf8c802f4df9c0d40795d5adc77bdfc2e14f619cdaf",
+    "/home/zyrv/vulsim-artifacts/W345-repair-burden-20261114-v11/nested-freeze.json": "a793747fd3f09da10b09de01012c69726ef39061e3ecbf50cba46bac11c7fa25",
+    "/home/zyrv/vulsim-artifacts/W345-transition-incidence-20261114-v10/freeze.json": "2d7ab146a9ad6da9cd9c0bad2d5ffcdb597b90f337503c155b6388bbdc4523a2",
+    "/home/zyrv/vulsim-artifacts/W345-transition-incidence-20261114-v10/execution-freeze.json": "8a802840dc947f250ddadc00272d868dc966c0f757df29818510ea18a4b15967"
+  },
+  "physical_points": 8,
+  "existing_parent_sources": 4,
+  "new_independent_sources": 0,
+  "new_validation_sources": 0,
+  "new_model_fits": 0,
+  "production_emitter_changed": false,
+  "new_price_version": false,
+  "public_D_changed": false,
+  "positive_RTL_equivalence": 4,
+  "negative_RTL_controls": 4,
+  "retained_failed_preflights": 1,
+  "physical_failures": 0,
+  "physical_retries": 0,
+  "strict_saved_S_paths": 156,
+  "strict_path_delete_arc_negatives": 156,
+  "increment_usage": {
+    "synth": 8,
+    "grt": 8,
+    "final": 0,
+    "support_calls": 66,
+    "walltime_s": 586.824249273981,
+    "CPU_time_s": 1103.2100000000792,
+    "pending": 0
+  },
+  "independent_sources_locked": 20,
+  "independent_labels_read": false,
+  "findings": "Exact repeats equal; S process order changes valid R by +73.845901/-125.110783ps and reverses paired reset contrast. Add/G commutation equal in this study.",
+  "full_D_ready": false
+}
