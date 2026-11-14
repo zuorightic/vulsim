@@ -57,3 +57,71 @@
 后继由逐路径平均改为消费者实际银行最大值损失，保留逐源辅助和整银行LOSO；控制类型、逻辑sink、输入分布、reset及数值T可在发射前计算。冻结的线性／正值函数选择和数值T非负LP保护只用train，未把mapped树或精确T编号送入Query。最后新银行的native_valid／input_valid误差median为31.17%／32.24%，native_enable／external_valid为7.14%／5.74%；逐源保护漏点3／0／1／1（依次native_valid／input_valid／native_enable／external_valid）。旧银行回归native_valid仍23.12%，external_valid另有1个最大值保护漏点。因此仍不合格，不能靠保护函数降低500ps预留宣布修复。
 
 新增505实际placement的根连接／保留reset投影与两服务上下文、最终真实参数的Python／C++一致性已通过；恒定特征的巨大抵消系数触发两次浮点核对失败，稳定求和修复后通过，旧失败保存。后续优先处理train恒定／近恒定列的导出条件，再用保存的placement检查点区分控制组合树、wire与H的残差，不更改标签语义、不抬reserve、不向G转嫁。新候选需要新的验证职责；本轮2个银行已经消费，不能继续反复选模。独立和实际算术S／完整联合资格保持待验。完整结果与无EDA回放见[共同修复证据](../experiments/arithmetic/evidence/common_model_repair_v1/README.md)。
+
+## W4稳定拟合与cell／wire／H后继（2026-11-14，§7.102）
+
+本轮用户授权W3／W4／W5后，新增共同函数诊断，原只读机制包身份不改。train每fold按相对跨度1e-10剔除恒定／近恒定列，保留center／scale与归一化参数，正则化共线列；C++同参数核对通过。输入valid原约10⁹级抵消已消除，最大归一化系数约19.25ps。参数／特征／支持／reserve冻结后才消费旧validation回归，没有用其选模或提高保护。
+
+银行LOSO中native_valid仍20.30%失败；已消费2因素银行回归native_valid21.55%、input_valid10.33%，native_enable／external_valid6.38%／7.20%。后两类逐源保护各有1个漏点；native_valid虽本次这些银行未漏保护，过大预留和点误差仍在。旧5银行input_valid18.07%失败，新诊断支持还因reset比例拒绝一个银行的3个实现，覆盖12/15；没有重新宣称旧域全覆盖。旧聚合银行没有逐源标签，逐源漏点不可测，不能把空集合记作0；原报告和仅报告修正都封存。
+
+270条grt控制路径已按同实例cell弧与跨实例wire分解并守恒，162条保留相容synth逐源路径，其余缺失不造零。input_valid的synth→grt cell／H变化中位数为+147.43／−131.79ps；native_enable的cell／wire／H为+207.75／+98.83／+26.24ps，各中位数不可相加。这进一步说明数值稳定、完整R点误差和物理机制是不同问题。旧标签H对端口已经扣除0.2T输入延迟：寄存器R=d+H=T−slack，端口R=T−0.2T−slack；本轮未改变发射或标签。
+
+匹配RepairDesign的驱动／下游电容／wire RC修复与RepairTargetCollector的slack筛选只用于离线解释，mapped树、实际电容、坐标或slack没有进入在线特征。宽／深实际算术S、shared物理复用及完整阶段仍未取得资格；新S不发布。12个新增物理点均属W3 Add批次，有效新验证9点、交换等价复测3点，职责纠正及原费用完整保留；W4本轮只复用既有train检查点。详细数据与无EDA回放见[本轮证据](../experiments/arithmetic/evidence/common_centered_v1/README.md)及[§7.102](lxy-plan-fix.md#W345-centered-mechanism-successor)。
+
+
+## W4路径分量、reset极性与word后继（2026-11-14，§7.103）
+
+本次继续复用13个train银行／45实现／270路径，对同一见证分别试R、delay+H、cell+wire+H，并加入来源／capture银行、逻辑reset-zero／reset-one sink、word分布和数值T。真实映射树、电容、坐标与slack仍只用于离线解释。逐源路径相加后再取银行最大值，未改变标签、发射或原LP保护算法。
+
+v2／v3／v4有限train协议和所有失败均保留，native_valid银行median为20.77%、19.33%、19.57%；最终v4银行19.57%／29.87%、逐路径14.55%／43.71%，仍未达标。其余银行LOSO native_enable9.92%／13.70%、input_valid9.11%／27.06%、external_valid6.25%／13.65%，不抵消valid失败。已消费因素银行native_valid回归30.10%／30.55%；保护漏点与旧银行拒绝逐类保存，旧聚合银行逐路径漏点不可测。
+
+没有为失败S新增fresh物理验证，也没有从已消费回归挑回较好的旧参数。宽／深实际算术S、shared和完整阶段仍待；本轮18点新增物理均属另登记的W3／W5验证，不改写原只读包0新优化身份。完整协议、各版参数、路径分解、逐域回归、消费及回放见[§7.103](lxy-plan-fix.md#W345-flow-structure-successor)与[证据](../experiments/arithmetic/evidence/common_flow_structure_v2/README.md)。
+
+## W4服务／native及reset分支后继（2026-11-14，§7.104）
+
+v5继续复用13个train银行／45实现／270路径，不改变R／H、发射或reset功能合同。对native_valid90条路径预登记36项有限候选，加入可从实际状态计算的服务／native来源、reset是否含1、负载与数值T交互，按银行max／逐路径／两分支的源等权损失minimax选定；另外三类S参数与reserve不变。新增input_valid的service capture上下文字段供审计，旧字段保留；该字段没有在本轮重新拟合input_valid中使用。
+
+银行LOSO18.93%／27.18%、native分支16.68%／26.06%仍失败；服务分支7.10%／26.39%，全零reset两银行26.74%／28.35%、混合reset十一银行17.29%／26.09%。逐路径先源聚合13.36%／20.85%，直接按90路径的P95仍39.35%，不能用源聚合掩盖尾部。新LP保护只是原规则的train残差校准，漏点／保守量另列，未手工抬reserve。
+
+冻结后已消费因素银行native_valid21.89%／27.16%，较v4改善而仍失败；旧银行覆盖12/15，其native_valid17.86%／23.12%，median较v4退化。因素银行四类逐路径保护漏点native_valid／native_enable／input_valid／external_valid为0／0／0／1，旧聚合银行逐路径漏点仍不可测。全零与混合reset的分支主导变化是现有train事实，尚不能凭2个全零银行认定通用电气因果或充分辨识。
+
+本包0新物理调用，旧validation及v4数据均为回归，未用于v5选择，独立职责继续锁定。准备回归时读取v4已消费归因报告早于二进制冻结的边界单独记载，未宣称fresh或新的盲测。真实Python／C++消费、按源／路径双口径和禁止推理读文件／启动子进程的回放见[§7.104](lxy-plan-fix.md#W345-legal-cover-branch-successor)与[证据包](../experiments/arithmetic/evidence/common_branch_load_v5/README.md)。宽／深实际算术S、shared与完整联合保持待验。
+
+## W4 OpenROAD实际重缓冲与成对reset训练（2026-11-14，§7.105）
+
+按用户建议读取匹配OpenROAD源码，确认placement的`findResizeSlacks`传`initial_sizing=false`并在placement寄生分支执行`fullyRebuffer`；早期gain buffering存在不代表此调用执行它。每sink的required／根arrival预算、正slack四分之一与临界时延1%面积回收，以及GPL相对slack权重，均只用于建立可检验的prospective假设，真实slack／树深／电容不进入推理。
+
+另立12点S train批次，复用四旧银行的几何及biased／uniform根连接，生成相反reset和一致invert版本。软件11264状态比较通过，两点先导后有限采集12/12完成，0失败／重跑。新旧pair全部T同时留出，17银行／57实现／342路径，native_valid114路径、13 fold。新增reset-polarity和competing-state形式未胜出，保留原分支形式和重新拟合参数；其余三类函数／reserve不变。全部36候选和失败保留。
+
+native_valid银行成对LOSO17.54%／29.19%、native分支17.05%／23.97%、原始逐路径P95 38.14%仍失败。全零4银行逐路径源聚合17.51%／30.42%；混合13银行12.86%／15.52%，不能代替银行或尾部验收。新全零银行3T还被旧支持域拒绝，价格消费54/57，未扩大支持。不同训练集和留出分组不能直接宣称较v5改善。
+
+1024 enabled-bit、uniform连接、T=1500ps的pair，stage0全零delay／H为433.70／102.40ps，混合77.46／89.86ps，valid分支门深5→2；stage1则71.39／168.10ps变285.69／178.31ps，门深2→3。完整锥与标签存档；它是reset／一致极性的train观察，不证明某条OpenROAD例程的单独因果，也不能按源或T取价。
+
+冻结后已消费因素银行native_valid24.54%／27.72%，较v5同行21.89%／27.16%退化；旧银行覆盖12/15，17.58%／24.20%仍失败。paired LOSO的LP保护无漏点，但excess median／P95为272.90／379.78ps，保守性保留；因素四类逐路径漏点0／0／0／1，旧external_valid银行max另1漏点，旧聚合逐路径仍不可测。没有根据回归换模、手工抬reserve、改标签或向G转嫁。
+
+本轮新增物理12 synth／12 grt／48 support，区别于旧只读包；新独立验证源0，20算子独立源未读，公共D不变。312严格路径／312删除Liberty弧负例可脱离ODB回放，471特征／价格跨语言核对与推理禁止I/O／子进程检查通过。完整证据见[§7.105](lxy-plan-fix.md#W345-rebuffer-context-successor)与[便携包](../experiments/arithmetic/evidence/common_rebuffer_context_v6/README.md)。后继优先处理控制分支／局部负载可预测性及支持边界，宽深实际算术S、shared和W6完整联合仍待。
+
+
+## W4单向enable压力、成对上游隔离与支持后继（2026-11-14，§7.106）
+
+v7只复用17个train银行／57实现／342路径，0新物理。计算顺序固定为语义状态→共享enable函数→预计压力／松弛代理→valid函数；enable上下文与输出价格必须同一函数，Python／C++均拒绝漂移。13个外层fold先排除整个reset pair及全部T，再拟合上游enable，训练／留出valid特征均由该fold函数生成。14次固定基础拟合与36项valid候选分开计数，训练摘要和228条上下文特征重新核对，留出标签没有进入上游拟合。
+
+松弛代理参考v6保留的OpenROAD回收公式，但不是实际target slack，也没有使用实际电容、slack、mapped树或精确T路由。enable成对LOSO银行7.83%／13.95%、最大单源14.67%；valid银行17.97%／29.24%，比v6同行17.54%／29.19%在median上退化；原始114路径P9536.12%比38.14%略降仍失败。服务6.61%／31.17%、native17.62%／24.39%，不能靠逐路径源聚合12.65%／17.87%遮盖银行失败。全零4银行15.25%／25.39%、混合13银行11.80%／14.54%均按逐路径源聚合单列。
+
+S按全部train数值几何重新推导支持并直接消费本版域，不先消费旧价格；57/57训练实现可诊断，但跨银行留出完整实现仅33/57接受，仍缺未知几何资格。depth是明确数值坐标；一个其余坐标都在范围内的三级软件见证被depth独立拒绝。四类控制路径必须完整，缺失类或上下文被拒绝。支持锚点无价格标签，域推导没有使用回归结果。
+
+冻结后的同覆盖回归valid因素23.61%／24.82%，v6同行24.54%／27.72%，仍失败；旧银行12/15为17.65%／24.30%，较17.58%／24.20%略退。enable因素6.86%／7.89%、旧7.72%／13.66%也较v6略退，训练LOSO通过不代表旧域全面改善。valid／enable新reserve沿原LP校准，paired LOSO逐路径漏点0，但excess median／P95为281.47／386.31ps、155.40／327.63ps；没有手工抬reserve。因素external_valid逐路径1漏点、旧external_valid银行max1漏点仍在；旧聚合逐路径漏点为null。
+
+本次交付可回放的单向上下文和隔离合同，没有完成valid物理模型修复。单个enable压力尚不足以解释服务／native主导变化，下一步应研究局部负载及不同sink分支预算的prospective表示，保留本轮负结果。宽深实际算术S、shared及W6联合资格继续待验，20个算子独立源未读取，公共D不变。见[§7.106](lxy-plan-fix.md#W345-load-pressure-successor)及[便携证据](../experiments/arithmetic/evidence/common_load_pressure_v7/README.md)。
+
+## W4语义扇出与完整Query信息对照（2026-11-14，§7.107）
+
+v8在逐bit输入连接上增加根负载集中度、有效驱动数、共享对比例及native／reset／数值T交互，完全复用v7的14份enable上下文及13 fold成对隔离。36项valid有限train比较选中root_pair_reset／linear／path／alpha0.1；银行LOSO17.94%／23.13%，raw路径P9536.56%，native16.48%仍失败。冻结后同行因素银行回归23.61%→31.43%，新增1个保护漏点；旧12/15为17.96%，较v7的17.65%也退化。没有据回归改模、改域或抬reserve，公共D不变。
+
+代码核对发现当前S投影仅保留reset popcount，没有保留位分布和相容invert。另登记准确6点train对照，以两个已有mixed银行生成掩码旋转版本，保持逐root／word popcount、根连接、stage words、服务语义、T和发射器。5632状态比较、7项负例先通过；两个先导后6点全部完成，0失败／重跑。新旧语义身份不同，但在500／1500／3000ps的完整当前Query、所有v8特征及预测逐项相同。新标签不进入冻结v8，未来须与父源及既有reset pair合并outer fold。
+
+biased20×32银行的native valid在T500、source_valid_1上，R从261.67变为439.96ps；任何共同预测的最小max相对误差为25.41%。input_valid在T1500为96.70→134.09ps，下界16.20%。因此仅调当前Query上的系数不能同时把这两份RTL的相应测点压到15%。uniform16×64对照的valid最差路径／银行下界7.12%／4.42%，差异较小的结果也保留。
+
+下界为`(b−a)/(b+a)`，只适用于同Query两标签的点上max误差；不能称全局源聚合median门槛已被证明不可能。允许每T独立预测的pair平均APE松弛下界另报，biased valid银行为10.01%。reset位置与一致invert同时改变，不能称位置单因素因果或某条OpenROAD命令的单独因果。寄存器及端口R／H合同保持，逐条保存delay／H／R及新旧差值，不把它们变成线上查价。
+
+新增6 synth／6 grt／24 support与旧只读机制包分别结算；156条真实路径／744弧／156删Liberty弧负例和原始身份可便携回放，v6的312条严格路径及匹配OpenROAD源码审计按原身份继承。下一后继先补语义投影对reset分布／相容极性的表达，再设计共用数值描述及成对训练；继续保留当前回归失败、跨银行支持33/57与宽深／shared／W6联合待验。完整记录见[§7.107](lxy-plan-fix.md#W345-semantic-fanout-successor)及[便携证据](../experiments/arithmetic/evidence/common_semantic_fanout_v8/README.md)。

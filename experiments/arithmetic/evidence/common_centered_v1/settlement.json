@@ -1,0 +1,60 @@
+{
+  "admission_ids": [
+    "W345-model-repair-20261114-v1-Add-fresh-validation9",
+    "replacement-Add-replacement-validation3"
+  ],
+  "calls": {
+    "support": 120,
+    "synth": 12,
+    "grt": 12
+  },
+  "increment_usage": {
+    "synth": 12,
+    "grt": 12,
+    "final": 0,
+    "support_calls": 120,
+    "walltime_s": 791.5369563819968,
+    "CPU_time_s": 1277.6299999999999,
+    "pending": 0
+  },
+  "per_admission_usage": {
+    "W345-model-repair-20261114-v1-Add-fresh-validation9": {
+      "synth": 9,
+      "grt": 9,
+      "final": 0,
+      "support_calls": 90,
+      "walltime_s": 682.2357581669985,
+      "CPU_time_s": 1155.29,
+      "pending": 0
+    },
+    "replacement-Add-replacement-validation3": {
+      "synth": 3,
+      "grt": 3,
+      "final": 0,
+      "support_calls": 30,
+      "walltime_s": 109.3011982149983,
+      "CPU_time_s": 122.34,
+      "pending": 0
+    }
+  },
+  "recorded_cumulative_ledger": {
+    "synth": 3502,
+    "grt": 3471,
+    "final": 16,
+    "support_calls": 22234,
+    "walltime_s": 360728.4664112071,
+    "CPU_time_s": 735881.18,
+    "pending": 0
+  },
+  "automatic_retries": 0,
+  "physical_points": 12,
+  "fresh_validation_points": 9,
+  "exchange_equivalent_replication_points": 3,
+  "global_resources": {
+    "jobs": 4,
+    "threads": 4,
+    "memory_MiB": 8192
+  },
+  "policy": "backend_policy_v11; budgetv5",
+  "independent_labels_read": false
+}

@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "native_and_python_replay": {
+    "status": "passed",
+    "price_queries": 471,
+    "feature_queries": 471,
+    "rejections": 22,
+    "priced": 468,
+    "context_feature_checks": 228,
+    "native_replayed": true,
+    "evidence_files": 37,
+    "source_files": 680,
+    "strict_paths_inherited": 312,
+    "missing_arc_negatives": 312,
+    "new_EDA_calls": 0,
+    "online_physical_calls": 0,
+    "online_file_reads": 0,
+    "fresh_validation": false,
+    "independent_labels_read": false,
+    "public_D_changed": false,
+    "full_D_ready": false
+  },
+  "unit_tests": {
+    "count": 21,
+    "new_tests": 6,
+    "retained_tests": 15,
+    "output": ".....................\n----------------------------------------------------------------------\nRan 21 tests in 1.306s\n\nOK\n",
+    "output_sha256": "ec1e8707098470d6e1a70563bbe51c9b905d0aae3937d0f2b078e2b8d20b7b98"
+  },
+  "evidence_identity_sha256": "54a27c5e9d7a24d890087dc66101a0f46d707479c1e2a4b4c22fa9ef574bd177",
+  "readme_sha256": "0b8f3e0abe3fb050808a0eb7003930a91c1b5b56a6b46bfced141e50dd20b138",
+  "numerical_and_execution_freezes_unchanged": true,
+  "tracked_diff_check": {
+    "main": "passed",
+    "rtlzz": "passed"
+  },
+  "new_source_whitespace_files": 8,
+  "edited_navigation_links": "passed",
+  "independent_labels_read": false,
+  "new_EDA_calls": 0,
+  "public_D_changed": false,
+  "git_commit_or_push": false
+}

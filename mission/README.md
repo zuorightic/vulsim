@@ -29,9 +29,21 @@
 
 **2026-11-14 W2公共所有者／提供者／RTL后继：** [§7.101](lxy-plan-fix.md#workload-common-owners-W2)与[可回放证据](../experiments/arithmetic/evidence/workload_owners_v2/README.md)接通实际图／级放置／状态→宽Query v2→唯一算子／G所有者→公共provider→相同所有者RTL。九例64结构／502放置在新路径完成48192周期仿真；加固后的提供者重新导出并逐项核对RTL／状态／bench完全相同后继承收据。486932次算子整数求值、22500次G替换、6144条历史Query／Core回归和4096组L=1多角色向量通过。121733个算子、5625个G及12264个功能所有者均保留实际边界；多消费者／carry／selector不能被删去以迁就旧模型。
 
-W1本轮登记及W2公共软件链路已完成本轮验收，模型物理资格继续按W3—W6推进。当前完整阶段明确cost_uncovered；S/shared、相关根G、新消费者及功能逻辑不回退静态价格，未按诊断价选择D。已有公共接口、标签、真实S提供者、旧505放置和历史MAC32 ABCD继续复用。下一项结合实际需求推进W3—W5的train数值条件与源码机制归因，正式价格、独立及完整阶段按W6冻结依赖；首个集成里程碑仍是MAC32三级L=3、500／750／1000ps的新D与ABCD，然后按共同能力逐例完成八个扩展实验。
+W1本轮登记及W2公共软件链路已完成本轮验收，模型物理资格继续按W3—W6推进。当前完整阶段明确cost_uncovered；S/shared、相关根G、新消费者及功能逻辑不回退静态价格，未按诊断价选择D。已有公共接口、标签、真实S提供者、旧505放置和历史MAC32 ABCD继续复用。W3—W5本轮结果与尚未解决的失败见下段，正式价格、独立及完整阶段按W6冻结依赖；首个集成里程碑仍是MAC32三级L=3、500／750／1000ps的新D与ABCD，然后按共同能力逐例完成八个扩展实验。
 
-本轮改动仍未提交，包含主仓库和RTLzz子模块新增C++。若提交，须先在子模块提交并保证对应提交可获取，再更新主仓库引用。提交不能把诊断候选改为已发布模型，原模型修复核查见[§7.97](lxy-plan-fix.md#source-guided-common-model-repair)。
+**2026-11-14 W3／W4／W5后继：** [§7.102](lxy-plan-fix.md#W345-centered-mechanism-successor)与[可回放证据](../experiments/arithmetic/evidence/common_centered_v1/README.md)已完成train恒定／近恒定列修复、保留中心尺度的Python／C++消费、149个算子／G点及270条S路径机制归因。12个Add物理点全完成、0失败／重跑，其中有效新验证9点、交换等价复测3点：原13+9漏去重，与train的9+13等价，已撤销新验证职责，参数不变补测19+7。有效新验证面积7.03%／8.87%、时延5.81%／8.80%通过；旧11+7面积17.71%回归失败，不能由汇总掩盖。S已消费因素银行native_valid仍21.55%，input_valid10.33%改善但旧银行仍18.07%，保护有漏点。实际流程加载Kogge–Stone，73位G又保留两个串联ALU，旧Brent–Kung／统一压缩代理遗漏这些实现差异，G失败保持。343次特征／435次价格和15项拒绝通过，新旧证据回放通过，独立标签未读、公共D未切换。
+
+**2026-11-14 W3／W4／W5结构后继：** [§7.103](lxy-plan-fix.md#W345-flow-structure-successor)与[新证据包](../experiments/arithmetic/evidence/common_flow_structure_v2/README.md)完成实际Kogge–Stone、G缩宽边界与S分解／极性／word有限试验、真实Python／C++消费及6源18点冻结验证。新Add面积23.79%、新Mux时延median／P95为8.48%／9.46%；新G面积4.26%／8.40%，时延4.82%／16.21%，**新Add面积23.79%、G97时延17.48%、旧Mux时延19.04%及56位G面积32.93%仍失败**，每源另列。6个零压缩train源时延LOSO改善到4.75%／7.30%、73位源4.46%，但64位面积19.33%LOSO仍保留；S native_valid银行LOSO19.57%、逐路径P95 43.71%、因素回归30.10%仍失败。18点全完成、0失败／重跑，源码／证据／费用及无EDA回放已归档，独立标签未读、公共D未切换。
+
+**2026-11-14 W3／W4／W5合法门／分支v5：** [§7.104](lxy-plan-fix.md#W345-legal-cover-branch-successor)与[便携证据](../experiments/arithmetic/evidence/common_branch_load_v5/README.md)核实实际dont-use规则禁用旧参考HAxp5，新增合法单输出门覆盖、Add／Mux数值T响应和服务／native／reset分支。Add非train等价已消费32点面积9.11%／19.40%，但17+9为22.45%、11+7为15.59%、旧带消费者47+63为16.90%；旧Mux两源时延17.49%／26.56%仍失败，96位源27.56%。G合法覆盖候选未胜出，v4参数及G97／G56／train64位失败保持。S native_valid银行LOSO18.93%／27.18%、raw逐路径P95 39.35%、因素回归21.89%仍失败，全零银行26.74%。459条特征／459条实际价格、15项拒绝及无文件读取／无子进程推理回放完成；0新EDA、20独立源未读、公共D未切换。
+
+**2026-11-14 W3／W4／W5重缓冲／成对因素v6：** [§7.105](lxy-plan-fix.md#W345-rebuffer-context-successor)与[便携证据](../experiments/arithmetic/evidence/common_rebuffer_context_v6/README.md)核对OpenROAD实际placement关闭initial sizing并执行fullyRebuffer，保存逐负载时序预算／面积回收源码与train证据。新增4个reset／极性配对train银行、12点全完成，0失败／重跑；17银行／57实现的成对LOSO native_valid银行17.54%、raw逐路径P95 38.14%仍失败，已消费因素回归24.54%较v5退化，另新银行3T被旧支持域拒绝。66项有限比较中Add／Mux／G面积保留原参数；G时延97位源17.48%→13.51%，但48位稀疏源12.76%→16.35%。471特征／471价格请求跨语言一致，其中465提供诊断价格；312真实路径及312删除Liberty弧负例、推理无文件／无子进程回放通过。20独立源未读，公共D未切换。
+
+**2026-11-14 W3／W4／W5单向负载压力v7：** [§7.106](lxy-plan-fix.md#W345-load-pressure-successor)与[便携证据](../experiments/arithmetic/evidence/common_load_pressure_v7/README.md)接通语义结构→共享enable函数→预计压力／松弛代理→valid函数，13 fold逐次排除整个reset pair再拟合上游，228条上下文特征及训练摘要核对通过。enable成对LOSO银行7.83%／13.95%；valid银行17.97%、原始逐路径P95 36.12%仍失败。因素回归24.54%→23.61%，旧银行17.58%→17.65%，enable旧回归略退。S重新按train数值几何推导支持，训练57/57覆盖，但留出完整实现仅33/57，不授予未知银行资格。Add／Mux／G新静态形式未胜出，参数与v6相同；471特征／价格跨语言一致，其中468提供诊断价格，22项拒绝及缺上下文安全报错通过，21项新旧测试和无I/O回放通过。0新EDA，20独立源未读，公共D未切换。
+
+**2026-11-14 W3／W4／W5语义扇出与S接口对照v8：** [§7.107](lxy-plan-fix.md#W345-semantic-fanout-successor)与[便携证据](../experiments/arithmetic/evidence/common_semantic_fanout_v8/README.md)完成逻辑根／内部扇出矩、66项train选择及冻结回归。Add面积LOSO8.28%／13.48%，11+7回归改善至12.54%，但17+9退至29.52%、47+63带消费者退至19.63%；Mux／G参数未变。S valid银行17.94%、raw路径P9536.56%仍失败，因素回归23.61%→31.43%，新增1个保护漏点。单独登记的6点train对照全部完成、0失败／重跑：只重排reset位及相容invert，完整当前Query／特征／预测相同，而biased valid在500ps的R为261.67→439.96ps，任何共同预测至少一侧APE≥25.41%；input_valid另16.20%。结论限该局部对照，不推成全局median不可能。新源不入v8拟合，未来与父源成对留出。471特征／价格、22项拒绝、27项测试和Python／native回放通过；新增156真实路径／156删弧负例，6 synth／6 grt／24 support结清。20独立源未读、公共D不变。
+
+下一步以§7.107逐源失败和接口信息缺失对照为准，补充S对reset分布／相容极性的语义表示，再登记通用数值描述及成对训练；同时保留Add／Mux旧域、G稀疏边界和S回归退化，继续宽深／shared与W6实际算术／完整阶段资格。W7／W8正式ABCD继续按冻结依赖。当前新增实现／证据尚未提交，包含主仓库和RTLzz新C++；若提交，须先在子模块提交并保证可获取，再更新主仓库引用。提交不把诊断候选改为已发布模型。
 
 ## 历史与证据阅读
 
