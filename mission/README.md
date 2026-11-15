@@ -1,8 +1,12 @@
 # 任务导航与阅读边界
 
-**当前执行：[通用模型扩展、自动拆分与九案例ABCD计划](lxy-plan-fix.md#general-model-expansion-plan)，工作包为W1—W8。** 用户已将目标从MAC32原型十步，推进到扩展／纠正可复用代价模型，使MAC32及八个扩展案例都能自动拆分、选择流水位置、生成RTL并统一跑ABCD后端对比。原十步和配套原型规范已[归档](archive/lxy-ten-step-stage-20261113.md)，尚未通过的子域和联合资格迁入新计划，未改判完成。
+**2026-11-15当前后端已按用户要求停止并归档。** 五个队列及其工具后代已清理，账本pending／活动任务均为0；67个物理任务中30个完成完整测量、9个工具失败、4个用户中止、24个未启动。已有频率／面积／时序及费用见[停止归档包](../experiments/arithmetic/evidence/workload_diagnostic_stopped_v1/README.md)，过程见[§7.120](lxy-plan-fix.md#W678-user-stop-results-archive)。大数据库／网表等已按清单删除约65.58GiB，报告和约束保存在已验证压缩档；原未完成队列不得自动恢复。下方历史进度按各检查点解释，局部预算修订仍是后继待实现工作。
+
+**现行规划：[通用模型扩展、自动拆分与九案例ABCD计划](lxy-plan-fix.md#general-model-expansion-plan)，工作包为W1—W8；当前后端处于上述用户停止状态。** 用户已将目标从MAC32原型十步，推进到扩展／纠正可复用代价模型，使MAC32及八个扩展案例都能自动拆分、选择流水位置、生成RTL并统一跑ABCD后端对比。原十步和配套原型规范已[归档](archive/lxy-ten-step-stage-20261113.md)，尚未通过的子域和联合资格迁入新计划，未改判完成。
 
 主线保持：**基础算子共享函数→S状态／边界与shared→G区域／DAG组合→候选总时序／面积→自动拆分及寄存器位置→RTL→冻结后的后端评价。** 同算子的不同位宽共用参数，T是数值输入；D选择中不调用Yosys／ABC／OpenROAD／OpenSTA，不读候选实测价格，不按案例／精确形状／精确T查价。离线可结合匹配源码和物理产物研究机制，再用发射前可计算特征拟合与验证。
+
+**2026-11-15时序预算规划修订：** [全局时钟／局部预算合同](lxy-plan-fix.md#general-model-local-timing-budget)区分`T_clk`、`T_flow`、`b_v`与`T_char`。本项由W2主责预算传播／分配及有界搜索软件，W3—W5核验对应算子／S／G模型响应，W6做完整路径与排序联合验收；后继周期可实现性与容量区间归W1／W8。最近新增交付先做纯软件预算诊断，不将旧模型的T直接改为局部预算。当前诊断模型／在途矩阵保留冻结身份，修正使用后继版本；本轮仅修订规划，新增机制尚未实现。
 
 ## 现行入口
 
@@ -11,6 +15,7 @@
 | [原始任务lxy.md](lxy.md) | 原研究问题与ABCD归因要求；原文保持 |
 | [现行计划：目标与九案例合同](lxy-plan-fix.md#general-model-expansion-plan) | MAC32＋512位Add、128位Mul、16lane点积、Horner、Barrett、Karatsuba、Montgomery、8点NTT；首轮语义和有限T／L已逐项确认 |
 | [模型、选择及数据合同](lxy-plan-fix.md#general-model-fixed-contract) | 同算子同模型、S／shared／G唯一归属、D排序、拒绝、数据与质量门槛 |
+| [全局时钟、局部预算与模型语义](lxy-plan-fix.md#general-model-local-timing-budget) | W2软件主责、W3—W5模型责任、W6联合验收；预算与实际后端约束相容，原矩阵与后继目标分开 |
 | [W1—W8唯一排程](lxy-plan-fix.md#general-model-work-packages) | 需求、宽软件／拆分、算子、S、G、独立／联合、MAC32闭环、八例／复用；软件与模型工作交错 |
 | [ABCD与同策略代价归因](lxy-plan-fix.md#general-model-experiment-protocol) | 公平比较、冻结后测量、完整setup Tmin／频率、hold、覆盖和费用；最终PPA不反馈重选 |
 | [起点状态与里程碑](lxy-plan-fix.md#general-model-status-and-milestones) | 当前失败、最近可验收交付及并行顺序；不从历史“下一步”续作 |
@@ -57,7 +62,17 @@ W1本轮登记及W2公共软件链路已完成本轮验收，模型物理资格�
 
 **2026-11-15 W3／W4／W5极性覆盖与分支预算v15：** [§7.114](lxy-plan-fix.md#W345-polarity-control-budget)及[便携证据](../experiments/arithmetic/evidence/common_polarity_budget_v15/README.md)新增按正／反相信号引用的共享cut代理，保持76门／K4／16 cuts／3 passes不变；134个train点只有两项固定direct／alpha1对照。Add grt 8.46%／17.57%、G5.25%／18.70%，全局训练门槛通过但均未优于v10；零压缩G synth16.29%／63.76%仍失败，不推进价格。四份保存grt检查点各提取641条S端点路径：最差数据R只变−1.14／+1.41ps，valid R却变+73.85／−125.11ps，两组首分支总引脚电容均下降；总负载不足以解释该对照，逐分支预算／共享关系需发射前代理。7项新增测试及纯函数回放通过；新增6 support（4成功、2脚本失败完整保留），0 synth／grt／final，S无新拟合、旧验证／20独立源未读、公共D不变。
 
-下一步以§7.114为准：算术侧继续检查实际ABC整体重写／平衡和时序驱动映射，尤其零压缩G；局部cut的正／反相共享已单独检验，不能靠继续扩cut／alpha网格追结果。S侧先提出发射前可计算的逐分支预算／共享描述，并核验其代理误差，本轮实测坐标／电容／预算不进入价格。input_valid仍另查hold／clock。宽深实际算术S／shared、G组合／多消费者与W6完整阶段仍待；v10保持最近诊断价格版，v11／v12拒绝、v13机制及v14／v15未推进状态分别保留。W7／W8正式ABCD继续按冻结依赖。当前新增实现／证据尚未提交，包含主仓库和RTLzz新C++；若提交，须先在子模块提交并保证可获取，再更新主仓库引用。提交不把诊断候选改为已发布模型。
+**2026-11-15 v10接入W6／W7／W8试跑：** 按用户要求，[§7.115](lxy-plan-fix.md#W678-v10-integration-trial)及[便携证据](../experiments/arithmetic/evidence/workload_transition_v10_v1/README.md)已将冻结v10接入真实所有者／状态／RTL，完成九例全部19组T/L、132结构请求／1034视图。组件有价5408/280239，完整阶段0/10766；25视图的算术组件齐价但仍缺S/shared。MAC32三档／90视图保留4位叶→两级归约和粗结构竞争。22组／2112周期新仿真通过，其余1012组／97152周期严格核对功能产物后继承；22项测试及2795个不同诊断查询的便携数值回放通过。完整缺价返回selected=null／target_met=null，未选新D或产生ABCD物理成绩。参数／支持／reserve未改，0新EDA／拟合／独立源读取；首次JSON整数／浮点指纹回放失败和修复均保留。
+
+**2026-11-15 九例ABC与测量入口：** 用户要求继续直至九例ABCD后端对比，本轮[§7.116](lxy-plan-fix.md#W678-nine-ABC-backend-preparation)及[便携证据](../experiments/arithmetic/evidence/workload_ABC_v1/README.md)完成九例A新增864周期仿真、19组目标的B/C实际静态选择，57条ABC记录／26份不同RTL封存。新静态表按原power-of-two规则通用扩Mul桶至4096位；Add512的C实际与B相同。共同后端入口已实现完整矩阵／选择冻结／有限Ledger准入和固定grt完整setup Tmin读取，60项测试、26份实际端口预检及便携回放通过；尚无新D或物理成绩。是否允许未独立合格的新增S/shared与v2诊断估计参与本次D选择，已使用grilling提出一个研究选择，仍待用户答复；可独立工作已推进完成。
+
+**2026-11-15用户确认“先完成诊断版”。** [§7.117](lxy-plan-fix.md#W678-nine-diagnostic-ABCD)续接真实算术S/shared、完整数据／控制路径、v2 carry/selector／G消费者及功能逻辑，统一模型身份为`workload-v10-complete-diagnostic-v1`，明确未取得W6独立资格。19目标的全部1034视图已完整定价，19个D与MAC32／Dot16两组同策略成本归因已选择；13份不同选中RTL完成1248周期新仿真。78条ABCD／归因方法记录及全部选择、预测、RTL在本轮PPA前共同冻结，按RTL/T去重为67个物理任务，正在统一Ledger内推进。原v10包和正式公共D不变，最终应用PPA不回流重选。
+
+本轮新S控制函数只拟合既有378条train路径，未用应用成绩；旧S文件曾整份读取，实际仅复制面积参数，不把它写成从未读取任何历史独立摘要。20个其余算子独立源继续锁定。W3—W5旧精度失败和正式W6资格分别保留；已发现的测量接口缺陷、工具超时及有界容量后继均追加记录。此前v15已提交为be1ccf5；新增实现／证据尚未提交，包含主仓库和RTLzz C++改动。若提交，须先在子模块提交并保证可获取，再更新主仓库引用；提交不改变诊断资格。
+
+**诊断版物理续接：** NTT的完整状态切面ABC等价及顶层输出／D／CLK三个破坏负例通过，CTS重放的前后网表与证明输入逐字节相同后接受；T1000 D已完成grt、完整Tmin及原始报告回放。MAC32三档ABCD及同策略归因、Add512两档均已测完，其余矩阵仍在执行。Montgomery T1500 D的8GiB容量后继在全局放置触发内存上限（采样峰值8405.54MiB），用户已明确确认**只对该实现**先做16GiB／7200秒grt后继，从已完成floorplan继续；`montgomery-memory16-v1`记录准确清单、授权和来源。该单点例外不扩大其余任务的内存许可，正式W6资格保持未通过。
+
+**2026-11-15 Montgomery八小时单点后继已授权并入队：** 16GiB先导在CTS修复达到7200秒上限，采样峰值10580.55MiB，清理后无活后代，保留完整placement。用户随后明确确认“启用同点16GiB／8小时有限后继”，[§7.118](lxy-plan-fix.md#W678-Montgomery-eight-hour-successor)登记`montgomery-memory16-long-v1`：同一T1500／L32的D、16384MiB／4线程、一次28800秒grt及至多两项120秒support，从已核验的placement续跑，正在等待共享四任务槽位。批准范围仍只有该实现。最新只读比较已有27／67个物理任务完成完整时钟读取，Mul128 T2000档ABCD已齐全；Dot16 T1000 C的8GiB内存失败单列保留，完整诊断版尚未封包。
 
 ## 历史与证据阅读
 

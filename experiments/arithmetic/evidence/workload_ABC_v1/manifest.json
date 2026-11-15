@@ -1,0 +1,64 @@
+{
+  "version": "nine-workload-ABC-evidence-v1",
+  "original_root": "/home/zyrv/vulsim-artifacts/W678-nine-ABCD-20261115-v2",
+  "chunks": [
+    {
+      "file": "payload-00.bin",
+      "bytes": 524288,
+      "sha256": "14253d6767f6d55fccc9050cb9caa493fc2aa5485b6094f5e54cdff33145d1c4"
+    },
+    {
+      "file": "payload-01.bin",
+      "bytes": 524288,
+      "sha256": "f7acf6e26283751eac5affe4252ca59a65e447c51d4766bd796af23b7ca32c53"
+    },
+    {
+      "file": "payload-02.bin",
+      "bytes": 524288,
+      "sha256": "27de2c655f4ec371585459005d827395ae6f2dae0c5f2339b8c0d26d9c366649"
+    },
+    {
+      "file": "payload-03.bin",
+      "bytes": 524288,
+      "sha256": "3044d8909ec8ac82dcbd28887a7d6a193996d48e36903510b8ca998fd3769d29"
+    },
+    {
+      "file": "payload-04.bin",
+      "bytes": 524288,
+      "sha256": "6401719424839fa5e06756eb97932b114f2921ad8c198fc1ea30f44925cd0229"
+    },
+    {
+      "file": "payload-05.bin",
+      "bytes": 524288,
+      "sha256": "54aba43e2e1ca8b198a6f6e3538e6f23dcf0f651dd5a415c2f24704fa59dc1c5"
+    },
+    {
+      "file": "payload-06.bin",
+      "bytes": 524288,
+      "sha256": "2890de545d692c04bf38115d5c3bf61708d3a3ac9ba1d4437a1190fcb21651de"
+    },
+    {
+      "file": "payload-07.bin",
+      "bytes": 524288,
+      "sha256": "66823314b44546928bd741c06b39611d6265024bf30730589ad45017b3c1ab53"
+    },
+    {
+      "file": "payload-08.bin",
+      "bytes": 303712,
+      "sha256": "b5c71ffcf5a661a10ee47036c0cc74e9a400679546fc7e184bb404729abb352c"
+    }
+  ],
+  "payload_sha256": "d5a434a23ddf451b0b6873bdcd796168ec2868ca125045e9b63166db44526bff",
+  "source_sha256": {
+    "experiments/arithmetic_dse/workload_abcd.py": "d090f41a42ce6b7b3008842c4fc0077a410f6fd618c7cb113c6e9d12c80b0459",
+    "experiments/arithmetic_dse/workload_backend.py": "71932971922dda0a265c29548862edd16929e86c3d173eaa61f63eeb35ba0881",
+    "experiments/arithmetic_dse/backend.py": "06214626295cdeb0bfe110fd2382f62ce032ae386416cccbdc0661d638fa169d",
+    "experiments/arithmetic_dse/platform_probe.py": "0de2c9605b810ba9e4dc6a41999c9bc263b41fe33492285f61b3c6a5cd2f55be",
+    "regression/test_workload_abcd.py": "cf89b043cf8be9898a0cda02d616a2a137d320df9776293559442a7ed97b27eb",
+    "experiments/arithmetic_dse/reference_assets/workload_minimum_period_v1.tcl": "1ab1d300293f11ff1941922790266c6df9d1d6de19b587eeaf3bda1b1a17b743"
+  },
+  "source_package_sha256": "d2282bb00279e97cdb86efb980bb03b39cc511dd13f45812b7854d544b070f05",
+  "replay_sha256": "237fa6a1da9b2475f765d6a67d75e8ba12eeb9b12d58318b64d39e452d001709",
+  "new_EDA_calls": 0,
+  "D_selected": false
+}

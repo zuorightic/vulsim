@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_v10_replay.py", line 275, in <module>
+    print(json.dumps(replay(args.evidence), indent=2))
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_v10_replay.py", line 198, in replay
+    raise ValueError('actual new export/portable reconstruction differs')
+ValueError: actual new export/portable reconstruction differs

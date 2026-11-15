@@ -6,6 +6,8 @@
 
 W2后继已增加公共所有者模式：真实Query v2／算子和G独占归属／公共provider／对应RTL共享同一计划，九例64结构／502放置在新模式通过48192周期；见[后继证据](evidence/workload_owners_v2/README.md)。历史v1包严格绑定旧源码，当前可用 `python3 -B -m experiments.arithmetic_dse.workload_owned_evidence --predecessor` 恢复冻结源码字节后同时核查两代证据，旧清单不改写。
 
+用户指定的[v10接入W6／W7／W8试跑](evidence/workload_transition_v10_v1/README.md)已覆盖全部19组正式T/L、132结构请求／1034视图；22组新仿真和1012组严格功能继承通过。C++提供者已消费同一冻结v10及其依赖，组件有价5408/280239、完整阶段0/10766，尚无新D赢家或正式ABCD结果。便携回放命令为 `python3 -B -m experiments.arithmetic_dse.workload_v10_replay`；重新跑软件可先以该模块的 `--restore-parent` 恢复W2父目录，再运行 `workload_v10`，详细命令和实际缺口见证据。
+
 新入口仍是软件与需求交付。原公共 D、49 项生产冻结依赖、模型质量和独立数据职责保持原身份；新代码没有给诊断价格授予发布资格。
 
 ## 已确认的首轮合同
@@ -124,3 +126,7 @@ build/workloads-v1/testv2/arithmetic-limb-split-test
 python3 -B -m experiments.arithmetic_dse.workload_software_validation \
   --binary build/workloads-v1/rtlzz-workload --out build/workloads-software-check
 ```
+
+九例A及19目标B/C已由[公共基线入口](../arithmetic_dse/workload_abcd.py)生成／选择并封存，见[便携证据](evidence/workload_ABC_v1/README.md)。新静态表通用扩Mul桶至4096位。用户随后确认先完成诊断版；[共同诊断提供者](../arithmetic_dse/workload_diagnostic.py)已接通真实S/shared、完整v2边界及功能逻辑，19目标／1034视图均完整计价，全部D及MAC32／Dot16两组同策略归因已冻结并通过选中RTL仿真。新身份`workload-v10-complete-diagnostic-v1`没有W6独立资格，原v10及正式公共D保持。
+
+[后端原准入](../arithmetic_dse/workload_backend.py)封存78条方法／67个不同RTL/T物理任务；[单租约后继](../arithmetic_dse/workload_backend_finish.py)修正固定Tmin读取与任务租约的衔接，[有限容量后继](../arithmetic_dse/workload_capacity.py)保留超时并优先复用成功综合检查点。实际结果由[汇总入口](../arithmetic_dse/workload_results.py)输出ABCD、完整setup Tmin、hold、失败与D/C及同策略归因；最终PPA不回流选模或重选。执行及边界见[§7.117](../../mission/lxy-plan-fix.md#W678-nine-diagnostic-ABCD)。2026-11-15用户要求停止后端，当前30/67完整结果、9工具失败、4中止及24未启动已[归档](evidence/workload_diagnostic_stopped_v1/README.md)，大物理产物按清单清理，原队列不得自动恢复；停止后的表以归档包为准。

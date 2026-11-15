@@ -1,0 +1,939 @@
+{
+  "version": "W678-v10-integration-trial-v1",
+  "model_sha256": "a1466f0272b55bd20358ea9e3beb84844db8fe8fefe4152e0478224d8f13243d",
+  "targets": 19,
+  "cases": 9,
+  "counts": {
+    "operators": 244318,
+    "exact_v1_projections": 105578,
+    "scalar_integer_checks": 977272,
+    "public_uncovered": 280239,
+    "diagnostic_covered": 5408,
+    "diagnostic_uncovered": 274831,
+    "fresh_simulations": 22,
+    "fresh_cycles": 2112,
+    "result_checks": 105620,
+    "stage_requests": 10766,
+    "inherited_simulations": 1012,
+    "inherited_cycles": 97152,
+    "correlated_G_regions": 11329,
+    "G_regions": 11393,
+    "G_integer_checks": 45572,
+    "carry_pin_uses": 76594,
+    "multiple_consumers": 70610,
+    "selector_pin_uses": 2912,
+    "functional_owners": 24528
+  },
+  "results": [
+    {
+      "case": "mac32",
+      "target": {
+        "T_ps": 500,
+        "L": 3
+      },
+      "counts": {
+        "operators": 852,
+        "exact_v1_projections": 524,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 3408,
+        "public_covered": 0,
+        "public_uncovered": 995,
+        "diagnostic_covered": 20,
+        "diagnostic_uncovered": 975,
+        "fresh_simulations": 2,
+        "fresh_cycles": 192,
+        "result_checks": 1980,
+        "stage_requests": 90,
+        "inherited_simulations": 28,
+        "inherited_cycles": 2688,
+        "correlated_G_regions": 143,
+        "G_regions": 143,
+        "G_integer_checks": 572
+      },
+      "selection": {
+        "status": "cost_uncovered",
+        "selected": null,
+        "target_met": null,
+        "requested_candidates": 30,
+        "complete_candidates": 0,
+        "reason": "no complete arithmetic S/shared/data/control timing and total area",
+        "incomplete_candidates_competed": false,
+        "static_fallback": false
+      },
+      "component_rejection_reasons": {
+        "unqualified remaining-stage context": 259,
+        "new context requires qualified successor: missing wide object": 328,
+        "correlated G sources require boundary qualification": 143,
+        "correlated operator operands require qualification": 161,
+        "unqualified capture bit demand": 84
+      }
+    },
+    {
+      "case": "mac32",
+      "target": {
+        "T_ps": 750,
+        "L": 3
+      },
+      "counts": {
+        "operators": 852,
+        "exact_v1_projections": 524,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 3408,
+        "public_covered": 0,
+        "public_uncovered": 995,
+        "diagnostic_covered": 20,
+        "diagnostic_uncovered": 975,
+        "fresh_simulations": 2,
+        "fresh_cycles": 192,
+        "result_checks": 1980,
+        "stage_requests": 90,
+        "inherited_simulations": 28,
+        "inherited_cycles": 2688,
+        "correlated_G_regions": 143,
+        "G_regions": 143,
+        "G_integer_checks": 572
+      },
+      "selection": {
+        "status": "cost_uncovered",
+        "selected": null,
+        "target_met": null,
+        "requested_candidates": 30,
+        "complete_candidates": 0,
+        "reason": "no complete arithmetic S/shared/data/control timing and total area",
+        "incomplete_candidates_competed": false,
+        "static_fallback": false
+      },
+      "component_rejection_reasons": {
+        "unqualified remaining-stage context": 259,
+        "new context requires qualified successor: missing wide object": 328,
+        "correlated G sources require boundary qualification": 143,
+        "correlated operator operands require qualification": 161,
+        "unqualified capture bit demand": 84
+      }
+    },
+    {
+      "case": "mac32",
+      "target": {
+        "T_ps": 1000,
+        "L": 3
+      },
+      "counts": {
+        "operators": 852,
+        "exact_v1_projections": 524,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 3408,
+        "public_covered": 0,
+        "public_uncovered": 995,
+        "diagnostic_covered": 20,
+        "diagnostic_uncovered": 975,
+        "fresh_simulations": 2,
+        "fresh_cycles": 192,
+        "result_checks": 1980,
+        "stage_requests": 90,
+        "inherited_simulations": 28,
+        "inherited_cycles": 2688,
+        "correlated_G_regions": 143,
+        "G_regions": 143,
+        "G_integer_checks": 572
+      },
+      "selection": {
+        "status": "cost_uncovered",
+        "selected": null,
+        "target_met": null,
+        "requested_candidates": 30,
+        "complete_candidates": 0,
+        "reason": "no complete arithmetic S/shared/data/control timing and total area",
+        "incomplete_candidates_competed": false,
+        "static_fallback": false
+      },
+      "component_rejection_reasons": {
+        "unqualified remaining-stage context": 259,
+        "new context requires qualified successor: missing wide object": 328,
+        "correlated G sources require boundary qualification": 143,
+        "correlated operator operands require qualification": 161,
+        "unqualified capture bit demand": 84
+      }
+    },
+    {
+      "case": "add512",
+      "target": {
+        "T_ps": 750,
+        "L": 4
+      },
+      "counts": {
+        "operators": 252,
+        "exact_v1_projections": 96,
+        "carry_pin_uses": 156,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 1008,
+        "public_covered": 0,
+        "public_uncovered": 252,
+        "diagnostic_covered": 4,
+        "diagnostic_uncovered": 248,
+        "fresh_simulations": 1,
+        "fresh_cycles": 96,
+        "result_checks": 1792,
+        "stage_requests": 112,
+        "inherited_simulations": 27,
+        "inherited_cycles": 2592
+      },
+      "selection": {
+        "status": "cost_uncovered",
+        "selected": null,
+        "target_met": null,
+        "requested_candidates": 28,
+        "complete_candidates": 0,
+        "reason": "no complete arithmetic S/shared/data/control timing and total area",
+        "incomplete_candidates_competed": false,
+        "static_fallback": false
+      },
+      "component_rejection_reasons": {
+        "new context requires qualified successor: v1 cannot represent carry/selector observation": 156,
+        "unqualified capture bit demand": 92
+      }
+    },
+    {
+      "case": "add512",
+      "target": {
+        "T_ps": 1250,
+        "L": 4
+      },
+      "counts": {
+        "operators": 252,
+        "exact_v1_projections": 96,
+        "carry_pin_uses": 156,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 1008,
+        "public_covered": 0,
+        "public_uncovered": 252,
+        "diagnostic_covered": 4,
+        "diagnostic_uncovered": 248,
+        "fresh_simulations": 1,
+        "fresh_cycles": 96,
+        "result_checks": 1792,
+        "stage_requests": 112,
+        "inherited_simulations": 27,
+        "inherited_cycles": 2592
+      },
+      "selection": {
+        "status": "cost_uncovered",
+        "selected": null,
+        "target_met": null,
+        "requested_candidates": 28,
+        "complete_candidates": 0,
+        "reason": "no complete arithmetic S/shared/data/control timing and total area",
+        "incomplete_candidates_competed": false,
+        "static_fallback": false
+      },
+      "component_rejection_reasons": {
+        "new context requires qualified successor: v1 cannot represent carry/selector observation": 156,
+        "unqualified capture bit demand": 92
+      }
+    },
+    {
+      "case": "mul128",
+      "target": {
+        "T_ps": 1000,
+        "L": 4
+      },
+      "counts": {
+        "operators": 4261,
+        "exact_v1_projections": 4261,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 17044,
+        "public_covered": 0,
+        "public_uncovered": 4546,
+        "diagnostic_covered": 21,
+        "diagnostic_uncovered": 4525,
+        "fresh_simulations": 1,
+        "fresh_cycles": 96,
+        "result_checks": 2304,
+        "stage_requests": 144,
+        "inherited_simulations": 35,
+        "inherited_cycles": 3360,
+        "correlated_G_regions": 285,
+        "G_regions": 285,
+        "G_integer_checks": 1140
+      },
+      "selection": {
+        "status": "cost_uncovered",
+        "selected": null,
+        "target_met": null,
+        "requested_candidates": 36,
+        "complete_candidates": 0,
+        "reason": "no complete arithmetic S/shared/data/control timing and total area",
+        "incomplete_candidates_competed": false,
+        "static_fallback": false
+      },
+      "component_rejection_reasons": {
+        "unqualified remaining-stage context": 1356,
+        "correlated operator operands require qualification": 1537,
+        "correlated G sources require boundary qualification": 285,
+        "unqualified capture bit demand": 1347
+      }
+    },
+    {
+      "case": "mul128",
+      "target": {
+        "T_ps": 2000,
+        "L": 4
+      },
+      "counts": {
+        "operators": 4261,
+        "exact_v1_projections": 4261,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 17044,
+        "public_covered": 0,
+        "public_uncovered": 4546,
+        "diagnostic_covered": 21,
+        "diagnostic_uncovered": 4525,
+        "fresh_simulations": 1,
+        "fresh_cycles": 96,
+        "result_checks": 2304,
+        "stage_requests": 144,
+        "inherited_simulations": 35,
+        "inherited_cycles": 3360,
+        "correlated_G_regions": 285,
+        "G_regions": 285,
+        "G_integer_checks": 1140
+      },
+      "selection": {
+        "status": "cost_uncovered",
+        "selected": null,
+        "target_met": null,
+        "requested_candidates": 36,
+        "complete_candidates": 0,
+        "reason": "no complete arithmetic S/shared/data/control timing and total area",
+        "incomplete_candidates_competed": false,
+        "static_fallback": false
+      },
+      "component_rejection_reasons": {
+        "unqualified remaining-stage context": 1356,
+        "correlated operator operands require qualification": 1537,
+        "correlated G sources require boundary qualification": 285,
+        "unqualified capture bit demand": 1347
+      }
+    },
+    {
+      "case": "dot16",
+      "target": {
+        "T_ps": 1000,
+        "L": 8
+      },
+      "counts": {
+        "correlated_G_regions": 658,
+        "G_regions": 690,
+        "operators": 15606,
+        "exact_v1_projections": 13438,
+        "carry_pin_uses": 1940,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 1601,
+        "scalar_integer_checks": 62424,
+        "G_integer_checks": 2760,
+        "public_covered": 0,
+        "public_uncovered": 16296,
+        "diagnostic_covered": 877,
+        "diagnostic_uncovered": 15419,
+        "fresh_simulations": 1,
+        "fresh_cycles": 96,
+        "result_checks": 4248,
+        "stage_requests": 576,
+        "inherited_simulations": 71,
+        "inherited_cycles": 6816
+      },
+      "selection": {
+        "status": "cost_uncovered",
+        "selected": null,
+        "target_met": null,
+        "requested_candidates": 72,
+        "complete_candidates": 0,
+        "reason": "no complete arithmetic S/shared/data/control timing and total area",
+        "incomplete_candidates_competed": false,
+        "static_fallback": false
+      },
+      "component_rejection_reasons": {
+        "unqualified remaining-stage context": 1859,
+        "new context requires qualified successor: missing wide object": 41,
+        "unqualified reduction boundary": 32,
+        "unqualified capture bit demand": 6319,
+        "new context requires qualified successor: wide consumer bound": 187,
+        "new context requires qualified successor: v1 cannot represent carry/selector observation": 1940,
+        "correlated operator operands require qualification": 4383,
+        "correlated G sources require boundary qualification": 658
+      }
+    },
+    {
+      "case": "dot16",
+      "target": {
+        "T_ps": 2000,
+        "L": 8
+      },
+      "counts": {
+        "correlated_G_regions": 658,
+        "G_regions": 690,
+        "operators": 15606,
+        "exact_v1_projections": 13438,
+        "carry_pin_uses": 1940,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 1601,
+        "scalar_integer_checks": 62424,
+        "G_integer_checks": 2760,
+        "public_covered": 0,
+        "public_uncovered": 16296,
+        "diagnostic_covered": 877,
+        "diagnostic_uncovered": 15419,
+        "fresh_simulations": 1,
+        "fresh_cycles": 96,
+        "result_checks": 4248,
+        "stage_requests": 576,
+        "inherited_simulations": 71,
+        "inherited_cycles": 6816
+      },
+      "selection": {
+        "status": "cost_uncovered",
+        "selected": null,
+        "target_met": null,
+        "requested_candidates": 72,
+        "complete_candidates": 0,
+        "reason": "no complete arithmetic S/shared/data/control timing and total area",
+        "incomplete_candidates_competed": false,
+        "static_fallback": false
+      },
+      "component_rejection_reasons": {
+        "unqualified remaining-stage context": 1859,
+        "new context requires qualified successor: missing wide object": 41,
+        "unqualified reduction boundary": 32,
+        "unqualified capture bit demand": 6319,
+        "new context requires qualified successor: wide consumer bound": 187,
+        "new context requires qualified successor: v1 cannot represent carry/selector observation": 1940,
+        "correlated operator operands require qualification": 4383,
+        "correlated G sources require boundary qualification": 658
+      }
+    },
+    {
+      "case": "horner64",
+      "target": {
+        "T_ps": 750,
+        "L": 8
+      },
+      "counts": {
+        "operators": 2509,
+        "exact_v1_projections": 1443,
+        "carry_pin_uses": 285,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 220,
+        "scalar_integer_checks": 10036,
+        "public_covered": 0,
+        "public_uncovered": 2654,
+        "diagnostic_covered": 97,
+        "diagnostic_uncovered": 2557,
+        "fresh_simulations": 1,
+        "fresh_cycles": 96,
+        "result_checks": 4248,
+        "stage_requests": 576,
+        "inherited_simulations": 71,
+        "inherited_cycles": 6816,
+        "correlated_G_regions": 145,
+        "G_regions": 145,
+        "G_integer_checks": 580
+      },
+      "selection": {
+        "status": "cost_uncovered",
+        "selected": null,
+        "target_met": null,
+        "requested_candidates": 72,
+        "complete_candidates": 0,
+        "reason": "no complete arithmetic S/shared/data/control timing and total area",
+        "incomplete_candidates_competed": false,
+        "static_fallback": false
+      },
+      "component_rejection_reasons": {
+        "correlated operator operands require qualified composition": 265,
+        "unqualified remaining-stage context": 84,
+        "unqualified capture bit demand": 472,
+        "new context requires qualified successor: wide consumer bound": 59,
+        "new context requires qualified successor: v1 cannot represent carry/selector observation": 285,
+        "correlated operator operands require qualification": 525,
+        "new context requires qualified successor: missing wide object": 722,
+        "correlated G sources require boundary qualification": 145
+      }
+    },
+    {
+      "case": "horner64",
+      "target": {
+        "T_ps": 1500,
+        "L": 8
+      },
+      "counts": {
+        "operators": 2509,
+        "exact_v1_projections": 1443,
+        "carry_pin_uses": 285,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 220,
+        "scalar_integer_checks": 10036,
+        "public_covered": 0,
+        "public_uncovered": 2654,
+        "diagnostic_covered": 97,
+        "diagnostic_uncovered": 2557,
+        "fresh_simulations": 1,
+        "fresh_cycles": 96,
+        "result_checks": 4248,
+        "stage_requests": 576,
+        "inherited_simulations": 71,
+        "inherited_cycles": 6816,
+        "correlated_G_regions": 145,
+        "G_regions": 145,
+        "G_integer_checks": 580
+      },
+      "selection": {
+        "status": "cost_uncovered",
+        "selected": null,
+        "target_met": null,
+        "requested_candidates": 72,
+        "complete_candidates": 0,
+        "reason": "no complete arithmetic S/shared/data/control timing and total area",
+        "incomplete_candidates_competed": false,
+        "static_fallback": false
+      },
+      "component_rejection_reasons": {
+        "correlated operator operands require qualified composition": 265,
+        "unqualified remaining-stage context": 84,
+        "unqualified capture bit demand": 472,
+        "new context requires qualified successor: wide consumer bound": 59,
+        "new context requires qualified successor: v1 cannot represent carry/selector observation": 285,
+        "correlated operator operands require qualification": 525,
+        "new context requires qualified successor: missing wide object": 722,
+        "correlated G sources require boundary qualification": 145
+      }
+    },
+    {
+      "case": "barrett64",
+      "target": {
+        "T_ps": 1000,
+        "L": 8
+      },
+      "counts": {
+        "operators": 3332,
+        "exact_v1_projections": 2705,
+        "carry_pin_uses": 152,
+        "selector_pin_uses": 69,
+        "multiple_consumers": 226,
+        "scalar_integer_checks": 13328,
+        "public_covered": 0,
+        "public_uncovered": 3728,
+        "diagnostic_covered": 117,
+        "diagnostic_uncovered": 3611,
+        "fresh_simulations": 1,
+        "fresh_cycles": 96,
+        "result_checks": 4248,
+        "stage_requests": 576,
+        "inherited_simulations": 71,
+        "inherited_cycles": 6816,
+        "functional_owners": 264,
+        "correlated_G_regions": 132,
+        "G_regions": 132,
+        "G_integer_checks": 528
+      },
+      "selection": {
+        "status": "cost_uncovered",
+        "selected": null,
+        "target_met": null,
+        "requested_candidates": 72,
+        "complete_candidates": 0,
+        "reason": "no complete arithmetic S/shared/data/control timing and total area",
+        "incomplete_candidates_competed": false,
+        "static_fallback": false
+      },
+      "component_rejection_reasons": {
+        "correlated operator operands require qualified composition": 35,
+        "correlated operator operands require qualification": 586,
+        "unqualified capture bit demand": 1964,
+        "unqualified remaining-stage context": 3,
+        "new context requires qualified successor: v1 cannot represent carry/selector observation": 221,
+        "new context requires qualified successor: wide consumer bound": 74,
+        "functional non-wire logic needs an explicitly qualified provider": 264,
+        "new context requires qualified successor: missing wide object": 332,
+        "correlated G sources require boundary qualification": 132
+      }
+    },
+    {
+      "case": "barrett64",
+      "target": {
+        "T_ps": 2000,
+        "L": 8
+      },
+      "counts": {
+        "operators": 3332,
+        "exact_v1_projections": 2705,
+        "carry_pin_uses": 152,
+        "selector_pin_uses": 69,
+        "multiple_consumers": 226,
+        "scalar_integer_checks": 13328,
+        "public_covered": 0,
+        "public_uncovered": 3728,
+        "diagnostic_covered": 117,
+        "diagnostic_uncovered": 3611,
+        "fresh_simulations": 1,
+        "fresh_cycles": 96,
+        "result_checks": 4248,
+        "stage_requests": 576,
+        "inherited_simulations": 71,
+        "inherited_cycles": 6816,
+        "functional_owners": 264,
+        "correlated_G_regions": 132,
+        "G_regions": 132,
+        "G_integer_checks": 528
+      },
+      "selection": {
+        "status": "cost_uncovered",
+        "selected": null,
+        "target_met": null,
+        "requested_candidates": 72,
+        "complete_candidates": 0,
+        "reason": "no complete arithmetic S/shared/data/control timing and total area",
+        "incomplete_candidates_competed": false,
+        "static_fallback": false
+      },
+      "component_rejection_reasons": {
+        "correlated operator operands require qualified composition": 35,
+        "correlated operator operands require qualification": 586,
+        "unqualified capture bit demand": 1964,
+        "unqualified remaining-stage context": 3,
+        "new context requires qualified successor: v1 cannot represent carry/selector observation": 221,
+        "new context requires qualified successor: wide consumer bound": 74,
+        "functional non-wire logic needs an explicitly qualified provider": 264,
+        "new context requires qualified successor: missing wide object": 332,
+        "correlated G sources require boundary qualification": 132
+      }
+    },
+    {
+      "case": "karatsuba256",
+      "target": {
+        "T_ps": 1000,
+        "L": 8
+      },
+      "counts": {
+        "correlated_G_regions": 1046,
+        "G_regions": 1046,
+        "operators": 16995,
+        "exact_v1_projections": 4601,
+        "carry_pin_uses": 7175,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 6578,
+        "functional_owners": 3456,
+        "scalar_integer_checks": 67980,
+        "G_integer_checks": 4184,
+        "public_covered": 0,
+        "public_uncovered": 21497,
+        "diagnostic_covered": 118,
+        "diagnostic_uncovered": 21379,
+        "fresh_simulations": 1,
+        "fresh_cycles": 96,
+        "result_checks": 4248,
+        "stage_requests": 576,
+        "inherited_simulations": 71,
+        "inherited_cycles": 6816
+      },
+      "selection": {
+        "status": "cost_uncovered",
+        "selected": null,
+        "target_met": null,
+        "requested_candidates": 72,
+        "complete_candidates": 0,
+        "reason": "no complete arithmetic S/shared/data/control timing and total area",
+        "incomplete_candidates_competed": false,
+        "static_fallback": false
+      },
+      "component_rejection_reasons": {
+        "correlated operator operands require qualification": 1520,
+        "correlated operator operands require qualified composition": 202,
+        "new context requires qualified successor: missing wide object": 4361,
+        "new context requires qualified successor: wide consumer bound": 858,
+        "unqualified capture bit demand": 1188,
+        "unqualified remaining-stage context": 1506,
+        "correlated G sources require boundary qualification": 1046,
+        "functional non-wire logic needs an explicitly qualified provider": 3456,
+        "new context requires qualified successor: v1 cannot represent carry/selector observation": 7175,
+        "outside structural range operand_live_min": 55,
+        "known-one operands need a qualified successor": 12
+      }
+    },
+    {
+      "case": "karatsuba256",
+      "target": {
+        "T_ps": 2000,
+        "L": 8
+      },
+      "counts": {
+        "correlated_G_regions": 1046,
+        "G_regions": 1046,
+        "operators": 16995,
+        "exact_v1_projections": 4601,
+        "carry_pin_uses": 7175,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 6578,
+        "functional_owners": 3456,
+        "scalar_integer_checks": 67980,
+        "G_integer_checks": 4184,
+        "public_covered": 0,
+        "public_uncovered": 21497,
+        "diagnostic_covered": 118,
+        "diagnostic_uncovered": 21379,
+        "fresh_simulations": 1,
+        "fresh_cycles": 96,
+        "result_checks": 4248,
+        "stage_requests": 576,
+        "inherited_simulations": 71,
+        "inherited_cycles": 6816
+      },
+      "selection": {
+        "status": "cost_uncovered",
+        "selected": null,
+        "target_met": null,
+        "requested_candidates": 72,
+        "complete_candidates": 0,
+        "reason": "no complete arithmetic S/shared/data/control timing and total area",
+        "incomplete_candidates_competed": false,
+        "static_fallback": false
+      },
+      "component_rejection_reasons": {
+        "correlated operator operands require qualification": 1520,
+        "correlated operator operands require qualified composition": 202,
+        "new context requires qualified successor: missing wide object": 4361,
+        "new context requires qualified successor: wide consumer bound": 858,
+        "unqualified capture bit demand": 1188,
+        "unqualified remaining-stage context": 1506,
+        "correlated G sources require boundary qualification": 1046,
+        "functional non-wire logic needs an explicitly qualified provider": 3456,
+        "new context requires qualified successor: v1 cannot represent carry/selector observation": 7175,
+        "outside structural range operand_live_min": 55,
+        "known-one operands need a qualified successor": 12
+      }
+    },
+    {
+      "case": "montgomery256",
+      "target": {
+        "T_ps": 1500,
+        "L": 32
+      },
+      "counts": {
+        "correlated_G_regions": 2360,
+        "G_regions": 2360,
+        "operators": 51198,
+        "exact_v1_projections": 16822,
+        "carry_pin_uses": 25064,
+        "selector_pin_uses": 48,
+        "multiple_consumers": 21448,
+        "functional_owners": 6720,
+        "scalar_integer_checks": 204792,
+        "G_integer_checks": 9440,
+        "public_covered": 0,
+        "public_uncovered": 60278,
+        "diagnostic_covered": 1272,
+        "diagnostic_uncovered": 59006,
+        "fresh_simulations": 1,
+        "fresh_cycles": 96,
+        "result_checks": 1104,
+        "stage_requests": 1536,
+        "inherited_simulations": 47,
+        "inherited_cycles": 4512
+      },
+      "selection": {
+        "status": "cost_uncovered",
+        "selected": null,
+        "target_met": null,
+        "requested_candidates": 48,
+        "complete_candidates": 0,
+        "reason": "no complete arithmetic S/shared/data/control timing and total area",
+        "incomplete_candidates_competed": false,
+        "static_fallback": false
+      },
+      "component_rejection_reasons": {
+        "correlated operator operands require qualification": 9350,
+        "new context requires qualified successor: wide consumer bound": 288,
+        "new context requires qualified successor: v1 cannot represent carry/selector observation": 25112,
+        "correlated operator operands require qualified composition": 16,
+        "unqualified capture bit demand": 5320,
+        "new context requires qualified successor: missing wide object": 8976,
+        "correlated G sources require boundary qualification": 2360,
+        "functional non-wire logic needs an explicitly qualified provider": 6720,
+        "unqualified remaining-stage context": 864
+      }
+    },
+    {
+      "case": "montgomery256",
+      "target": {
+        "T_ps": 3000,
+        "L": 32
+      },
+      "counts": {
+        "correlated_G_regions": 2360,
+        "G_regions": 2360,
+        "operators": 51198,
+        "exact_v1_projections": 16822,
+        "carry_pin_uses": 25064,
+        "selector_pin_uses": 48,
+        "multiple_consumers": 21448,
+        "functional_owners": 6720,
+        "scalar_integer_checks": 204792,
+        "G_integer_checks": 9440,
+        "public_covered": 0,
+        "public_uncovered": 60278,
+        "diagnostic_covered": 1272,
+        "diagnostic_uncovered": 59006,
+        "fresh_simulations": 1,
+        "fresh_cycles": 96,
+        "result_checks": 1104,
+        "stage_requests": 1536,
+        "inherited_simulations": 47,
+        "inherited_cycles": 4512
+      },
+      "selection": {
+        "status": "cost_uncovered",
+        "selected": null,
+        "target_met": null,
+        "requested_candidates": 48,
+        "complete_candidates": 0,
+        "reason": "no complete arithmetic S/shared/data/control timing and total area",
+        "incomplete_candidates_competed": false,
+        "static_fallback": false
+      },
+      "component_rejection_reasons": {
+        "correlated operator operands require qualification": 9350,
+        "new context requires qualified successor: wide consumer bound": 288,
+        "new context requires qualified successor: v1 cannot represent carry/selector observation": 25112,
+        "correlated operator operands require qualified composition": 16,
+        "unqualified capture bit demand": 5320,
+        "new context requires qualified successor: missing wide object": 8976,
+        "correlated G sources require boundary qualification": 2360,
+        "functional non-wire logic needs an explicitly qualified provider": 6720,
+        "unqualified remaining-stage context": 864
+      }
+    },
+    {
+      "case": "ntt8x64",
+      "target": {
+        "T_ps": 1000,
+        "L": 16
+      },
+      "counts": {
+        "operators": 26728,
+        "exact_v1_projections": 8637,
+        "carry_pin_uses": 3525,
+        "selector_pin_uses": 1339,
+        "multiple_consumers": 5232,
+        "scalar_integer_checks": 106912,
+        "public_covered": 0,
+        "public_uncovered": 29376,
+        "diagnostic_covered": 168,
+        "diagnostic_uncovered": 29208,
+        "fresh_simulations": 1,
+        "fresh_cycles": 96,
+        "result_checks": 27648,
+        "stage_requests": 1152,
+        "inherited_simulations": 71,
+        "inherited_cycles": 6816,
+        "functional_owners": 1824,
+        "correlated_G_regions": 824,
+        "G_regions": 824,
+        "G_integer_checks": 3296
+      },
+      "selection": {
+        "status": "cost_uncovered",
+        "selected": null,
+        "target_met": null,
+        "requested_candidates": 72,
+        "complete_candidates": 0,
+        "reason": "no complete arithmetic S/shared/data/control timing and total area",
+        "incomplete_candidates_competed": false,
+        "static_fallback": false
+      },
+      "component_rejection_reasons": {
+        "known-one operands need a qualified successor": 2455,
+        "correlated operator operands require qualification": 1527,
+        "unqualified remaining-stage context": 2459,
+        "new context requires qualified successor: wide consumer bound": 2307,
+        "new context requires qualified successor: v1 cannot represent carry/selector observation": 4864,
+        "correlated operator operands require qualified composition": 9,
+        "exact alias lowering required before arithmetic pricing": 558,
+        "new context requires qualified successor: missing wide object": 10920,
+        "unqualified capture bit demand": 1044,
+        "constant/wire lowering required before arithmetic pricing": 414,
+        "functional non-wire logic needs an explicitly qualified provider": 1824,
+        "outside structural range operand_live_min": 3,
+        "correlated G sources require boundary qualification": 824
+      }
+    },
+    {
+      "case": "ntt8x64",
+      "target": {
+        "T_ps": 2000,
+        "L": 16
+      },
+      "counts": {
+        "operators": 26728,
+        "exact_v1_projections": 8637,
+        "carry_pin_uses": 3525,
+        "selector_pin_uses": 1339,
+        "multiple_consumers": 5232,
+        "scalar_integer_checks": 106912,
+        "public_covered": 0,
+        "public_uncovered": 29376,
+        "diagnostic_covered": 168,
+        "diagnostic_uncovered": 29208,
+        "fresh_simulations": 1,
+        "fresh_cycles": 96,
+        "result_checks": 27648,
+        "stage_requests": 1152,
+        "inherited_simulations": 71,
+        "inherited_cycles": 6816,
+        "functional_owners": 1824,
+        "correlated_G_regions": 824,
+        "G_regions": 824,
+        "G_integer_checks": 3296
+      },
+      "selection": {
+        "status": "cost_uncovered",
+        "selected": null,
+        "target_met": null,
+        "requested_candidates": 72,
+        "complete_candidates": 0,
+        "reason": "no complete arithmetic S/shared/data/control timing and total area",
+        "incomplete_candidates_competed": false,
+        "static_fallback": false
+      },
+      "component_rejection_reasons": {
+        "known-one operands need a qualified successor": 2455,
+        "correlated operator operands require qualification": 1527,
+        "unqualified remaining-stage context": 2459,
+        "new context requires qualified successor: wide consumer bound": 2307,
+        "new context requires qualified successor: v1 cannot represent carry/selector observation": 4864,
+        "correlated operator operands require qualified composition": 9,
+        "exact alias lowering required before arithmetic pricing": 558,
+        "new context requires qualified successor: missing wide object": 10920,
+        "unqualified capture bit demand": 1044,
+        "constant/wire lowering required before arithmetic pricing": 414,
+        "functional non-wire logic needs an explicitly qualified provider": 1824,
+        "outside structural range operand_live_min": 3,
+        "correlated G sources require boundary qualification": 824
+      }
+    }
+  ],
+  "unique_price_queries": 5590,
+  "candidate_PPA_calls": 0,
+  "model_fitting": false,
+  "independent_labels_read": false,
+  "full_D_ready": false
+}

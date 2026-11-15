@@ -81,6 +81,9 @@ def revise_admission(parent_path,destination,revision_id,replacements,reason,*,a
 def verify_admission(args,p,rtl,ledger):
     path=args.admission.resolve()
     frozen=json.loads(path.read_text())
+    if frozen.get('purpose')=='arithmetic_workload_final_comparison':
+        from .workload_backend import verify_admission as verify_workload
+        return verify_workload(args,p,rtl,ledger)
     if frozen.get('purpose')=='arithmetic_m2_model_collection':
         from .model_m2_collection import verify_admission as verify_m2
         return verify_m2(args,p,rtl,ledger)

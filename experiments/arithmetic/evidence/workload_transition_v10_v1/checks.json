@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "unittest_count": 22,
+  "new_integration_tests": 14,
+  "inherited_v10_feature_tests": 8,
+  "owner_contract": "passed actual C++ owner test",
+  "all_target_export_exit_code": 0,
+  "build": "106/106 build steps; three requested targets; Release LLVM18 -j2",
+  "portable_replay": {
+    "status": "passed",
+    "targets": 19,
+    "counts": {
+      "views": 1034,
+      "owners": 280239,
+      "diagnostic_covered": 5408,
+      "diagnostic_uncovered": 274831,
+      "stages": 10766,
+      "fresh_simulations": 22,
+      "inherited_simulations": 1012
+    },
+    "unique_queries": 2795,
+    "external_artifacts_read": false,
+    "independent_labels_read": false,
+    "online_files_or_processes": false,
+    "new_EDA_calls": 0,
+    "full_D_ready": false,
+    "external_artifact_guard": true,
+    "external_artifact_attempts": 0
+  },
+  "restore_W2_parent": {
+    "status": "restored_verified_W2_parent",
+    "directory": "build/workload-v10-20261115/portable-parent",
+    "cases": 9
+  },
+  "numerical_model_changed": false,
+  "support_changed": false,
+  "selection_from_partial_cost": false,
+  "initial_execution_corrections": [
+    "nested CMake project did not expose rtlzz-workload target; standalone configuration used",
+    "wide-query auxiliary tool invoked without its required input/output; usage result excluded from passing tests",
+    "first portable replay failed on equivalent JSON integer-valued double encodings; preserved and fixed without re-exporting candidates"
+  ],
+  "ledger_unchanged": {
+    "synth": 3546,
+    "grt": 3515,
+    "final": 16,
+    "support_calls": 22558,
+    "walltime_s": 364977.0872782131,
+    "CPU_time_s": 744690.68,
+    "pending": 0
+  },
+  "candidate_PPA_calls": 0,
+  "independent_labels_read": false,
+  "full_D_ready": false,
+  "delivery_checks": {
+    "implementation_source_snapshot_files": 5,
+    "source_snapshot_matches_current": true,
+    "data_manifest_verified": true,
+    "local_links_verified": true,
+    "max_file_bytes_below_10MiB": true,
+    "git_diff_check": "passed main and rtlzz"
+  }
+}

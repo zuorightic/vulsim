@@ -193,6 +193,11 @@ def _evaluate(args, ledger):
         interval_clock=(args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_interval_clock_diagnosis_only')
         target_load=(args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_interval_target_load_collection')
         m2_collection=(args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_m2_model_collection')
+        workload_comparison=(args.admission and json.loads(args.admission.read_text()).get('purpose')=='arithmetic_workload_final_comparison')
+        if workload_comparison:
+            source_paths += [Path(__file__).with_name(n) for n in
+                             ('workload_backend.py','model_fast_sdc.py','sdc_storage_v5.py')]
+            manifest['sdc_contract_version']='workload-scalar-stage-exact-sdc-v1'
         if m2_collection:
             from .model_m2_collection import sources
             source_paths += sources()
@@ -223,7 +228,11 @@ def _evaluate(args, ledger):
         shutil.copy2(rtl, out/'input.sv')
         # Validate the exact selected interface before spending synthesis time.
         # Hierarchical children must not alter the top's SDC port coverage.
-        selected_ports=rtl_ports((out/'input.sv').read_text(),args.top)
+        if workload_comparison:
+            from .model_fast_sdc import rtl_ports as workload_ports
+            selected_ports=workload_ports((out/'input.sv').read_text(),args.top)
+        else:
+            selected_ports=rtl_ports((out/'input.sv').read_text(),args.top)
         manifest['rtl_interface']=selected_ports
         # Yosys sources a named custom script verbatim: its -D switch does not
         # reach commands in ORFS abc_speed.script. Render explicit constraints
@@ -425,8 +434,13 @@ def _evaluate(args, ledger):
                 raise ValueError(f'missing {stage} database: {results/db}')
             if stage == 'final' and not (results/'6_final.spef').exists():
                 raise ValueError('missing extracted SPEF; detailed-route metrics unavailable')
-            manifest['sdc_contracts'][stage]=verify_sdc((results/sdc).read_text(),p,args.period_ps,
-                selected_ports,io_delay_max_ps=args.io_delay_max_ps)
+            if workload_comparison:
+                from .sdc_storage_v5 import verify_sdc as workload_sdc
+                manifest['sdc_contracts'][stage]=workload_sdc((results/sdc).read_text(),p,args.period_ps,
+                    selected_ports,io_delay_max_ps=args.io_delay_max_ps,serialization_stage=stage)
+            else:
+                manifest['sdc_contracts'][stage]=verify_sdc((results/sdc).read_text(),p,args.period_ps,
+                    selected_ports,io_delay_max_ps=args.io_delay_max_ps)
             write_json(out/'manifest.json',manifest)
             run(['run', f'RUN_SCRIPT={ASSETS}/snapshot.tcl', f'RUN_LOG_NAME_STEM=vulsim_{stage}',
                  f'VULSIM_EVAL_STAGE={stage}', f'VULSIM_EVAL_DB={db}', f'VULSIM_EVAL_SDC={sdc}'],

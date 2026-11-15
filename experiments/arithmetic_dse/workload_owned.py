@@ -69,7 +69,7 @@ def features(q):
     return f
 
 
-def verify_plan(root, view, graph, models):
+def verify_plan(root, view, graph, models, *, predictor=None):
     dest=root/view['directory'];plan=read(dest/'owners.json');stages=view['placement']
     state=read(dest/'state.json');counts=Counter()
     if plan['graph_sha256'] != state['graph_sha256'] or plan['layout_sha256'] != state['layout_sha256']:
@@ -133,7 +133,9 @@ def verify_plan(root, view, graph, models):
             raise ValueError('unqualified complete stage accepted')
         for owner in report['owners']:
             n=owner['node'];actual=owner['result']
-            if owner['owner']=='operator':
+            if predictor is not None:
+                expected=predictor(owner,operators,regions,diagnostic)
+            elif owner['owner']=='operator':
                 q=operators[n]['predecessor_projection']
                 expected=operator.predict(models['operators'],q,diagnostic=diagnostic) if q is not None else None
             elif owner['owner']=='G':

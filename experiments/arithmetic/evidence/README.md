@@ -4,6 +4,8 @@
 
 | 目录 | 适用版本 |
 | --- | --- |
+| [workload_diagnostic_stopped_v1](workload_diagnostic_stopped_v1/README.md) | 用户停止九例诊断后端后的部分结果：30/67物理任务完整测量、36/78方法记录完成；9工具失败、4用户中止、24未启动；原始面积／时序／完整Tmin回放与清理前DB身份核验通过，账本结清，约65.58GiB大产物已清理，未W6合格 |
+| [workload_transition_v10_v1](workload_transition_v10_v1/README.md) | 用户指定v10接入W6／W7／W8的诊断试跑：九例全部19组T/L、132结构请求／1034视图；5408/280239组件有价、完整阶段0/10766，未选新D；22组新仿真及1012组有据继承、22测试和2795不同诊断查询回放通过；0新EDA／拟合／独立解锁 |
 | [workloads_software_v1](workloads_software_v1/README.md) | W1/W2九例首轮合同、64声明结构／502实际放置／48192周期；19组针对性诊断、6144真实Query跨语言特征及1472项G整数检查；全图／状态／RTL／测试便携回放，原预算失败保留，0新EDA，生产相容边界与模型资格仍待 |
 | [manual_split16_vul_v1](manual_split16_vul_v1/README.md) | 用户手写两级VUL原始RTL：4个16×16部分积后寄存，第二级移位加法；500／1000／1500ps三档频率和面积对照，3 synth／3 grt，原始恢复通过；raw联合综合与此前保算子层次的差异单列 |
 | [step9_MAC32_ABCD_v2](step9_MAC32_ABCD_v2/README.md) | 五目标21条A／B／C／D及同策略成本对照，19 synth／19 grt；面积＋固定实现完整setup最小周期／Fmax，17组阈值检查、实际原始恢复和隔离回放通过；hold独立，C全节点细查未完成，模型／选择不回灌 |
@@ -33,6 +35,8 @@
 | [step5](step5/README.md)、[step5_placement](step5_placement/README.md) | **旧计划**split16及位置补验；不代表现行参数化步骤五完成 |
 
 已有冻结文件按原路径保留。旧目录新增的README只是导航，不重写当时索引或升级验收范围。后续新包使用[分层存储规则](../../arithmetic_dse/evidence_storage.md)：优先增量快照、按内容引用和压缩；索引与hash不能替代需要重算的实际内容。
+
+[workload_ABC_v1](workload_ABC_v1/README.md)保留九例A与19目标B/C静态选择、57方法记录／26份RTL封存和共同后端入口准备的历史阶段；9组新A／864周期、60测试和便携回放通过。用户随后确认“先完成诊断版”，[§7.117](../../../mission/lxy-plan-fix.md#W678-nine-diagnostic-ABCD)完成共同诊断模型、1034视图完整计价及78条ABCD／归因方法冻结，曾启动67个不同物理任务的有限矩阵。现已按用户要求停止并转入[部分结果归档](workload_diagnostic_stopped_v1/README.md)；新模型明确未W6独立合格，旧ABC包不改写为ABCD成绩。
 
 [step5_metric_scope_v1](step5_metric_scope_v1/README.md)是后加的时序口径澄清：解释整体setup与core_clk同钟最小周期，继承v2原报告和容量结论，无新增物理／STA。其后继冻结为`mul_templates_freeze_v3.json`。
 

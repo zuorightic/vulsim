@@ -1,0 +1,121 @@
+{
+  "version": "stopped-diagnostic-result-archive-v1",
+  "original_root": "/home/zyrv/vulsim-artifacts/W678-nine-ABCD-20261115-v2",
+  "status": "stopped_by_user",
+  "qualification": "diagnostic_only_not_W6_qualified",
+  "chunks": [
+    {
+      "file": "payload-000.part",
+      "bytes": 524288,
+      "sha256": "e75216c67f76915f87e52d9657cf16b46bc7cd6a2976834d6be74430178c4223"
+    },
+    {
+      "file": "payload-001.part",
+      "bytes": 524288,
+      "sha256": "e19d99713a694c142eb7064edd31f3c0b097b3ffea5ab3702a13c79f713a5a19"
+    },
+    {
+      "file": "payload-002.part",
+      "bytes": 524288,
+      "sha256": "ff3ed5ba0cbda3e279f4dee079e7031fbe8fccbb957835af2faa48862bf71bbc"
+    },
+    {
+      "file": "payload-003.part",
+      "bytes": 524288,
+      "sha256": "54f0bd8df8d7fe3eac6b6d358d391e7b9cfa5254028466ad44c11639faaf8c6d"
+    },
+    {
+      "file": "payload-004.part",
+      "bytes": 524288,
+      "sha256": "8577b301ae271d2e506ceef2ec6378123cab702290e81f9c43b8a0f3636223d5"
+    },
+    {
+      "file": "payload-005.part",
+      "bytes": 524288,
+      "sha256": "86ad12e9287834fdfd8b98a0352dbb0678644656c7c0426c4849f49e3cf75435"
+    },
+    {
+      "file": "payload-006.part",
+      "bytes": 334454,
+      "sha256": "dca03f0e4d534a3a88204c37defcd95b0477564b7af484502563abb659c74b0f"
+    }
+  ],
+  "payload_sha256": "c010930b3cb94c843fd455bc0c9bd01cdbc6ad4219c8495faa271402b3c889d8",
+  "files": [
+    {
+      "file": "comparison.csv",
+      "bytes": 17785,
+      "sha256": "e125bcaa0d81a926f9f2a3f8038bcfcad6818e91e6746baac7b5df1e94e5022d"
+    },
+    {
+      "file": "comparison.md",
+      "bytes": 15447,
+      "sha256": "60f782afc15d72cc5ba72c456ba7dccd821f708026115510d403693d055b975d"
+    },
+    {
+      "file": "summary.json",
+      "bytes": 615,
+      "sha256": "ce5c83de7db3ee758d326f1729daf217b82e347896f1c9a12ed19b22b8cd3c4a"
+    },
+    {
+      "file": "process-stop.json",
+      "bytes": 36244,
+      "sha256": "43d3c7007f56de410267966acb95efcd436686e226be4fd6cfb9d4c268979016"
+    },
+    {
+      "file": "ledger-reconciliation.json",
+      "bytes": 12918,
+      "sha256": "ba29221a92eaf7f95100a82528cb725d2058381d8cc822304fb793a645fae0f6"
+    },
+    {
+      "file": "raw-result-verification.json",
+      "bytes": 18975,
+      "sha256": "96a3e0063a54e30b6024e5603fd8cbba35c021e29e27bdf2092eea0212636bbc"
+    },
+    {
+      "file": "retention-catalogue.json.gz",
+      "bytes": 571167,
+      "sha256": "e0c06569e51203bf481b7e65d0377ce5cc67572919de28641248002d1954a0da"
+    },
+    {
+      "file": "archive-verification.json",
+      "bytes": 492,
+      "sha256": "f6553ee3116b488df066bd2e7181d703635a60877df8ca0be624d6718e487a0c"
+    },
+    {
+      "file": "cleanup-receipt.json",
+      "bytes": 366420,
+      "sha256": "6a19a2930c72d5a087535f721473d3c169bf94f1bdf08995d4ac3f7faa88e5cf"
+    },
+    {
+      "file": "README.md",
+      "bytes": 4315,
+      "sha256": "12114f2b24e2322fd8ec20af2c26c6fadc72ccd366695b76667b30801127fa31"
+    },
+    {
+      "file": "isolated-replay.log",
+      "bytes": 538,
+      "sha256": "9c37c21d1b8f74d3db47f8c134632f05d4adf3593af1b581bdb63d0005c50b3b"
+    },
+    {
+      "file": "global-ledger-snapshot.meta.json",
+      "bytes": 705,
+      "sha256": "0aff4ed4afec9a3d8a9aea8b2456ab5595daa6eb86aa626eb0d2c3347915b400"
+    }
+  ],
+  "replay_sha256": "df291c714f61bb7f00780f44287d5816d7a2a390c57846d1a456cf5c0825b792",
+  "physical_tasks": 67,
+  "completed_physical_tasks": 30,
+  "raw_physical_databases_included": false,
+  "scope": "Self-contained replay of saved measurements; full retained text archive stays in original stop-archive-v1; omitted ODB/netlist bodies cannot be restored from hashes.",
+  "retained_text_archive": {
+    "path": "/home/zyrv/vulsim-artifacts/W678-nine-ABCD-20261115-v2/stop-archive-v1/retained-evidence.tar.gz",
+    "sha256": "c4737078a1a4dd41528e92d92a9bb7e6d060102f1d35a9e13c72fa22a89160e7",
+    "bytes": 439917199
+  },
+  "cleanup": {
+    "deleted_files": 4297,
+    "deleted_logical_bytes": 70417561779,
+    "physical_bodies_restorable": false
+  }
+}
