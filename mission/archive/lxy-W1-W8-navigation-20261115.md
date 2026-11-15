@@ -1,0 +1,99 @@
+# W1—W8阶段归档（2026-11-15）
+
+**状态：已归档，不作为后续执行指令。** 用户要求恢复到`672df3e`／RTLzz `28a4f1d`的v10 test基线。本文保留原规划、进展、失败和验收记录；其中“现行／下一步／必须”只解释形成时的阶段。模型未达精度结论不因归档改变。当前入口见[mission导航](../README.md)，恢复清单见[v10-restore-20261115.json](v10-restore-20261115.json)。
+
+原路径：`mission/README.md`。归档调整了相对链接；原始字节、后v10代码及证据保存在恢复前备份，身份见清单。已撤下的预算后继链接指向该本机备份。
+
+---
+
+# 任务导航与阅读边界
+
+**2026-11-15旧九例后端矩阵已按用户要求停止并归档。** 五个队列及其工具后代已清理，账本pending／活动任务均为0；67个物理任务中30个完成完整测量、9个工具失败、4个用户中止、24个未启动。已有频率／面积／时序及费用见[停止归档包](../../experiments/arithmetic/evidence/workload_diagnostic_stopped_v1/README.md)，过程见[§7.120](lxy-W1-W8-stage-20261115.md#W678-user-stop-results-archive)。大数据库／网表等已按清单删除约65.58GiB，报告和约束保存在已验证压缩档；原未完成队列不得自动恢复。下方历史进度按各检查点解释；[§7.121](lxy-W1-W8-stage-20261115.md#W2-local-budget-software-v1)已交付预算分配与诊断，用户随后改选本轮接通真实局部映射，见下方新决定；模型预算响应校准及预算引导放置仍待后继。
+
+**现行规划：[通用模型扩展、自动拆分与九案例ABCD计划](lxy-W1-W8-stage-20261115.md#general-model-expansion-plan)，工作包为W1—W8；旧矩阵处于上述用户停止状态，新增局部映射仅执行另立的有限机制试验。** 用户已将目标从MAC32原型十步，推进到扩展／纠正可复用代价模型，使MAC32及八个扩展案例都能自动拆分、选择流水位置、生成RTL并统一跑ABCD后端对比。原十步和配套原型规范已[归档](lxy-ten-step-stage-20261113.md)，尚未通过的子域和联合资格迁入新计划，未改判完成。
+
+主线保持：**基础算子共享函数→S状态／边界与shared→G区域／DAG组合→候选总时序／面积→自动拆分及寄存器位置→RTL→冻结后的后端评价。** 同算子的不同位宽共用参数，T是数值输入；D选择中不调用Yosys／ABC／OpenROAD／OpenSTA，不读候选实测价格，不按案例／精确形状／精确T查价。离线可结合匹配源码和物理产物研究机制，再用发射前可计算特征拟合与验证。
+
+**2026-11-15最新预算决定：** 用户改选“本轮就把各算子预算落实为后端约束或明确的实现选择”，取代前次先诊断的实施顺序。[现行合同§2.5](lxy-W1-W8-stage-20261115.md#general-model-local-timing-budget)已修订：保留全局`T_clk`／SDC，每个算子及唯一G模块使用各自`b_v`作为实际ABC目标，保存模块绑定、脚本及工具消费证据；允许预测过慢时分配正预算请求快速实现。[软件v1](/home/zyrv/vulsim-artifacts/restore-v10-20261115T135600Z/working-tree/main/experiments/arithmetic/LOCAL_TIMING_BUDGET.md)的1034候选Python／C++诊断仍为历史成果。[§7.122](lxy-W1-W8-stage-20261115.md#W2-local-budget-real-mapping-v1)已完成有限机制试验：两组各21所有者／168命令及96周期门级功能通过；16所有者单元组成变化，紧预算未改善完整综合setup。下一依赖为相容响应校准、预算引导放置及W6；旧失败与停止矩阵保留。
+
+**D端预测追加要求已完成本轮软件验收：** 用户明确要求小算子模型使用分配给它的局部预算。[§7.123](lxy-W1-W8-stage-20261115.md#D-local-budget-response-v2)及[新响应合同](/home/zyrv/vulsim-artifacts/restore-v10-20261115T135600Z/working-tree/main/experiments/arithmetic/D_BUDGET_RESPONSE.md)已接通算子／唯一G的有效局部预算代入、完整DAG及S／shared重算、最多8轮反馈与所选轮预算—预测—ABC一致性。九例19目标／1034候选全部重新评分，6283轮／1872596次局部调用；603候选达到有效目标固定点，431触限，8目标改变诊断选择。14目标生成匹配清单，另5目标保留功能逻辑映射缺口；6目标预测可行、13未满足。旧参数在新诊断身份下使用，极小预算已有异常面积外推，模型精度、C++后继、预算引导新放置和正式W6仍待验；旧全局T预测只作初始化参考。[便携证据](/home/zyrv/vulsim-artifacts/restore-v10-20261115T135600Z/working-tree/main/experiments/arithmetic/evidence/D_local_budget_response_v1/README.md)保留全部初始输入并提供离线回放，0新EDA／拟合，旧队列保持停止。
+
+**最新局部预算采集已完成：** 按用户要求暂缓模型范围工作，从第2项补采实际响应。MAC32三档90候选提取188份需求，12代表源／44物理点全部完成，0物理失败／重跑；全局T与局部ABC预算独立变化，局部仅250／500／750ps。6组综合单元组成变化、5组grt单元组成变化，响应有平台期且不保证单调；固定局部预算的4组全局时钟对照均有内部时延变化。44点覆盖完整，37点完整setup非负、2点hold为负，违约标签保留。[采集说明及数值表](/home/zyrv/vulsim-artifacts/restore-v10-20261115T135600Z/working-tree/main/experiments/arithmetic/LOCAL_BUDGET_SAMPLING.md)、[便携证据](/home/zyrv/vulsim-artifacts/restore-v10-20261115T135600Z/working-tree/main/experiments/arithmetic/evidence/local_budget_samples_v1/README.md)和[§7.124](lxy-W1-W8-stage-20261115.md#local-budget-response-sampling-v1)记录全部输入、原始标签、功能、失败前驱及费用；隔离回放通过44测量／88阶段标签／352条ABC命令／440原始资源收据。本轮0拟合／独立解锁，旧九例矩阵保持停止。下一依赖是按源分组校准共享Mul／Add／G局部响应，保留b_v输入并检验显式全局时钟上下文，然后再接D反馈及预算引导放置。
+
+## 现行入口
+
+| 文件／章节 | 用途与边界 |
+| --- | --- |
+| [原始任务lxy.md](../lxy.md) | 原研究问题与ABCD归因要求；原文保持 |
+| [现行计划：目标与九案例合同](lxy-W1-W8-stage-20261115.md#general-model-expansion-plan) | MAC32＋512位Add、128位Mul、16lane点积、Horner、Barrett、Karatsuba、Montgomery、8点NTT；首轮语义和有限T／L已逐项确认 |
+| [模型、选择及数据合同](lxy-W1-W8-stage-20261115.md#general-model-fixed-contract) | 同算子同模型、S／shared／G唯一归属、D排序、拒绝、数据与质量门槛 |
+| [全局时钟、局部预算与模型语义](lxy-W1-W8-stage-20261115.md#general-model-local-timing-budget) | W2软件主责、W3—W5模型责任、W6联合验收；预算与实际后端约束相容，原矩阵与后继目标分开 |
+| [W2局部预算软件与回放](/home/zyrv/vulsim-artifacts/restore-v10-20261115T135600Z/working-tree/main/experiments/arithmetic/LOCAL_TIMING_BUDGET.md) | 已实现的传播、联合分配、冲突／选择诊断；公共Python／C++接口及完整九例便携证据 |
+| [D端局部预算预测与反馈](/home/zyrv/vulsim-artifacts/restore-v10-20261115T135600Z/working-tree/main/experiments/arithmetic/D_BUDGET_RESPONSE.md) | 小算子／G实际代入局部预算、完整时序与面积、有限反馈、所选轮实现绑定及软件证据 |
+| [实际局部预算采集与数据](/home/zyrv/vulsim-artifacts/restore-v10-20261115T135600Z/working-tree/main/experiments/arithmetic/LOCAL_BUDGET_SAMPLING.md) | MAC32真实需求、12源／44物理点、局部预算与全局时钟独立对照、内部标签及可回放原文 |
+| [W2真实局部映射及机制证据](/home/zyrv/vulsim-artifacts/restore-v10-20261115T135600Z/working-tree/main/experiments/arithmetic/LOCAL_MAPPING.md) | 正预算请求、逐算子／G实际ABC目标、工具消费与映射功能；固定RTL／全局T的两组有限对照 |
+| [W1—W8唯一排程](lxy-W1-W8-stage-20261115.md#general-model-work-packages) | 需求、宽软件／拆分、算子、S、G、独立／联合、MAC32闭环、八例／复用；软件与模型工作交错 |
+| [ABCD与同策略代价归因](lxy-W1-W8-stage-20261115.md#general-model-experiment-protocol) | 公平比较、冻结后测量、完整setup Tmin／频率、hold、覆盖和费用；最终PPA不反馈重选 |
+| [起点状态与里程碑](lxy-W1-W8-stage-20261115.md#general-model-status-and-milestones) | 当前失败、最近可验收交付及并行顺序；不从历史“下一步”续作 |
+| [资源／Git／变更](lxy-W1-W8-stage-20261115.md#general-model-resources-and-delivery) | 延续共享Ledger与现行并发，准确有限批次，临时工具外置，配套RTLzz子模块 |
+| [共同需求细目](lxy-eight-workloads-audit-20261115.md) | 九案例共同特征、逐例缺口、生产绑定快照与后继证据；作为需求附件，不另排一套步骤 |
+| [S机制记录](lxy-S-control-mechanism-plan-20261115.md) | 旧只读归因及S因素后继的实际证据；后续按W4，不把旧0新EDA范围扩大解释 |
+| [归档导航](README.md) | 原十步与更早规划，只作追溯 |
+
+**版本与顺序：** [共同模型先审计／开发，应用滚动接入，最终统一冻结](lxy-W1-W8-stage-20261115.md#general-model-shared-version-rollout)。阶段试跑可先交付；最终九例主表须在同一冻结模型包／选择器下重新选择，不为每例维护专用S／G。共同版本扩域要回归已有声明域，旧验证／测试不能反复用于选模。
+
+## 当前起点与下一交付
+
+[§7.96及本轮证据](../../experiments/arithmetic/evidence/common_model_repair_v1/README.md)记录72个物理点完成、0物理重跑，1427次真实参数价格／162次G特征及505实际placement消费检查通过。窄／宽Mul已使用一套共享参数并保持有限验证精度；Add最后留出时延5.41%通过而面积15.88%失败；G宽域改善，零压缩短重叠train仍时延30.37%／面积21.80%；S新银行native_valid／input_valid仍31.17%／32.24%，保护也有漏点。**当前新价格未发布，公共D和原49项冻结依赖不改，20个其余算子独立源继续锁定。**
+
+**2026-11-14 W1/W2软件交付：** 九例数学语义及首轮有限T／L已由用户逐项确认，[机器合同与未分级源码](../../experiments/arithmetic/WORKLOADS.md)已登记。公共前端→通用乘法块展开／保进位加减拆分→有限beam→状态物化→诊断RTL贯通九例，64声明结构／502实际放置／48192周期全部通过；19组针对性诊断另完成6144次真实宽Query跨语言核对与1472次G整数替换检查。实际共同需求、原预算失败、完整压缩图／状态／RTL及无EDA回放见[证据](../../experiments/arithmetic/evidence/workloads_software_v1/README.md)与[§7.100](lxy-W1-W8-stage-20261115.md#nine-workload-W1W2-software)。Montgomery两个100000扩展触限保留，200000有限后继六组全部通过。
+
+**2026-11-14 W2公共所有者／提供者／RTL后继：** [§7.101](lxy-W1-W8-stage-20261115.md#workload-common-owners-W2)与[可回放证据](../../experiments/arithmetic/evidence/workload_owners_v2/README.md)接通实际图／级放置／状态→宽Query v2→唯一算子／G所有者→公共provider→相同所有者RTL。九例64结构／502放置在新路径完成48192周期仿真；加固后的提供者重新导出并逐项核对RTL／状态／bench完全相同后继承收据。486932次算子整数求值、22500次G替换、6144条历史Query／Core回归和4096组L=1多角色向量通过。121733个算子、5625个G及12264个功能所有者均保留实际边界；多消费者／carry／selector不能被删去以迁就旧模型。
+
+W1本轮登记及W2公共软件链路已完成本轮验收，模型物理资格继续按W3—W6推进。当前完整阶段明确cost_uncovered；S/shared、相关根G、新消费者及功能逻辑不回退静态价格，未按诊断价选择D。已有公共接口、标签、真实S提供者、旧505放置和历史MAC32 ABCD继续复用。W3—W5本轮结果与尚未解决的失败见下段，正式价格、独立及完整阶段按W6冻结依赖；首个集成里程碑仍是MAC32三级L=3、500／750／1000ps的新D与ABCD，然后按共同能力逐例完成八个扩展实验。
+
+**2026-11-14 W3／W4／W5后继：** [§7.102](lxy-W1-W8-stage-20261115.md#W345-centered-mechanism-successor)与[可回放证据](../../experiments/arithmetic/evidence/common_centered_v1/README.md)已完成train恒定／近恒定列修复、保留中心尺度的Python／C++消费、149个算子／G点及270条S路径机制归因。12个Add物理点全完成、0失败／重跑，其中有效新验证9点、交换等价复测3点：原13+9漏去重，与train的9+13等价，已撤销新验证职责，参数不变补测19+7。有效新验证面积7.03%／8.87%、时延5.81%／8.80%通过；旧11+7面积17.71%回归失败，不能由汇总掩盖。S已消费因素银行native_valid仍21.55%，input_valid10.33%改善但旧银行仍18.07%，保护有漏点。实际流程加载Kogge–Stone，73位G又保留两个串联ALU，旧Brent–Kung／统一压缩代理遗漏这些实现差异，G失败保持。343次特征／435次价格和15项拒绝通过，新旧证据回放通过，独立标签未读、公共D未切换。
+
+**2026-11-14 W3／W4／W5结构后继：** [§7.103](lxy-W1-W8-stage-20261115.md#W345-flow-structure-successor)与[新证据包](../../experiments/arithmetic/evidence/common_flow_structure_v2/README.md)完成实际Kogge–Stone、G缩宽边界与S分解／极性／word有限试验、真实Python／C++消费及6源18点冻结验证。新Add面积23.79%、新Mux时延median／P95为8.48%／9.46%；新G面积4.26%／8.40%，时延4.82%／16.21%，**新Add面积23.79%、G97时延17.48%、旧Mux时延19.04%及56位G面积32.93%仍失败**，每源另列。6个零压缩train源时延LOSO改善到4.75%／7.30%、73位源4.46%，但64位面积19.33%LOSO仍保留；S native_valid银行LOSO19.57%、逐路径P95 43.71%、因素回归30.10%仍失败。18点全完成、0失败／重跑，源码／证据／费用及无EDA回放已归档，独立标签未读、公共D未切换。
+
+**2026-11-14 W3／W4／W5合法门／分支v5：** [§7.104](lxy-W1-W8-stage-20261115.md#W345-legal-cover-branch-successor)与[便携证据](../../experiments/arithmetic/evidence/common_branch_load_v5/README.md)核实实际dont-use规则禁用旧参考HAxp5，新增合法单输出门覆盖、Add／Mux数值T响应和服务／native／reset分支。Add非train等价已消费32点面积9.11%／19.40%，但17+9为22.45%、11+7为15.59%、旧带消费者47+63为16.90%；旧Mux两源时延17.49%／26.56%仍失败，96位源27.56%。G合法覆盖候选未胜出，v4参数及G97／G56／train64位失败保持。S native_valid银行LOSO18.93%／27.18%、raw逐路径P95 39.35%、因素回归21.89%仍失败，全零银行26.74%。459条特征／459条实际价格、15项拒绝及无文件读取／无子进程推理回放完成；0新EDA、20独立源未读、公共D未切换。
+
+**2026-11-14 W3／W4／W5重缓冲／成对因素v6：** [§7.105](lxy-W1-W8-stage-20261115.md#W345-rebuffer-context-successor)与[便携证据](../../experiments/arithmetic/evidence/common_rebuffer_context_v6/README.md)核对OpenROAD实际placement关闭initial sizing并执行fullyRebuffer，保存逐负载时序预算／面积回收源码与train证据。新增4个reset／极性配对train银行、12点全完成，0失败／重跑；17银行／57实现的成对LOSO native_valid银行17.54%、raw逐路径P95 38.14%仍失败，已消费因素回归24.54%较v5退化，另新银行3T被旧支持域拒绝。66项有限比较中Add／Mux／G面积保留原参数；G时延97位源17.48%→13.51%，但48位稀疏源12.76%→16.35%。471特征／471价格请求跨语言一致，其中465提供诊断价格；312真实路径及312删除Liberty弧负例、推理无文件／无子进程回放通过。20独立源未读，公共D未切换。
+
+**2026-11-14 W3／W4／W5单向负载压力v7：** [§7.106](lxy-W1-W8-stage-20261115.md#W345-load-pressure-successor)与[便携证据](../../experiments/arithmetic/evidence/common_load_pressure_v7/README.md)接通语义结构→共享enable函数→预计压力／松弛代理→valid函数，13 fold逐次排除整个reset pair再拟合上游，228条上下文特征及训练摘要核对通过。enable成对LOSO银行7.83%／13.95%；valid银行17.97%、原始逐路径P95 36.12%仍失败。因素回归24.54%→23.61%，旧银行17.58%→17.65%，enable旧回归略退。S重新按train数值几何推导支持，训练57/57覆盖，但留出完整实现仅33/57，不授予未知银行资格。Add／Mux／G新静态形式未胜出，参数与v6相同；471特征／价格跨语言一致，其中468提供诊断价格，22项拒绝及缺上下文安全报错通过，21项新旧测试和无I/O回放通过。0新EDA，20独立源未读，公共D未切换。
+
+**2026-11-14 W3／W4／W5语义扇出与S接口对照v8：** [§7.107](lxy-W1-W8-stage-20261115.md#W345-semantic-fanout-successor)与[便携证据](../../experiments/arithmetic/evidence/common_semantic_fanout_v8/README.md)完成逻辑根／内部扇出矩、66项train选择及冻结回归。Add面积LOSO8.28%／13.48%，11+7回归改善至12.54%，但17+9退至29.52%、47+63带消费者退至19.63%；Mux／G参数未变。S valid银行17.94%、raw路径P9536.56%仍失败，因素回归23.61%→31.43%，新增1个保护漏点。单独登记的6点train对照全部完成、0失败／重跑：只重排reset位及相容invert，完整当前Query／特征／预测相同，而biased valid在500ps的R为261.67→439.96ps，任何共同预测至少一侧APE≥25.41%；input_valid另16.20%。结论限该局部对照，不推成全局median不可能。新源不入v8拟合，未来与父源成对留出。471特征／价格、22项拒绝、27项测试和Python／native回放通过；新增156真实路径／156删弧负例，6 synth／6 grt／24 support结清。20独立源未读、公共D不变。
+
+**2026-11-14 W3／W4／W5显式reset语义及逻辑切面v9：** [§7.108](lxy-W1-W8-stage-20261115.md#W345-semantic-reset-successor)与[便携证据](../../experiments/arithmetic/evidence/common_semantic_reset_v9/README.md)补齐逐bit reset／invert、根一致性及生命周期校验，接通Python／C++；范围为显式仿射保留银行适配器，实际算术S／shared未由此取得资格。v8六点现在进入train，与父源及原reset pair共同留出；19银行／63实现、13 fold、14份固定enable上下文及756条特征／训练摘要核对通过。69项有限选择后，valid银行LOSO18.23%、raw路径P9538.36%，仍失败；input raw P9535.34%也超标。冻结因素valid回归31.43%→24.63%仍失败，旧支持12/15→9/15，共同9点valid11.33%→13.32%、input10.98%→14.88%均退化。接口能区分旧碰撞，但178.29ps实测差只预测1.52ps，数值描述仍不足。Add切面形式入选，LOSO8.44%／12.64%；非train等价回归8.65%／23.70%，17+9退至30.06%，带消费者47+63改善至18.50%仍失败。Mux／G参数不变。477特征／价格请求、32项拒绝、35测试及Python／native回放通过，471返回诊断价格、6旧S支持拒绝；0新EDA、20独立源未读、公共D不变。
+
+**2026-11-14 W3／W4／W5逻辑路径负载／联合关联v10：** [§7.109](lxy-W1-W8-stage-20261115.md#W345-transition-incidence-successor)与[便携证据](../../experiments/arithmetic/evidence/common_transition_incidence_v10/README.md)增加live路径逻辑负载及reset／invert／根联合关联，45项train比较后冻结消费；14份enable上下文及S支持完全继承，0上游重拟合。G48稀疏时延16.35%→4.26%、G97为13.51%→9.20%，但G全回归median4.63%→6.73%退化，P9514.22%→13.22%改善；G56面积32.93%保持。input旧共同9点14.88%→7.93%改善，valid13.32%→16.48%、因素24.63%→26.10%退化；valid银行LOSO18.50%、raw路径P9538.71%仍失败，178.29ps对照差只预测−0.16ps。Add／Mux参数和逐源失败不变，支持仍train63/63、留出33/63、旧9/15。匹配OpenROAD及12条保存路径另显示input_valid的hold修复延迟链差异；5／7个hold命名单元合计94.03／134.42ps，作为冻结后解释，不进入本版选模。477特征／价格、32项拒绝、43项分组测试、Python／native回放及12路径／53弧补充证明通过；0新EDA、20独立源未读、公共D不变。
+
+**2026-11-14 W3／W4／W5全train归因与嵌套上下文审计v11：** [§7.110](lxy-W1-W8-stage-20261115.md#W345-repair-burden-nested-audit)及[便携证据](../../experiments/arithmetic/evidence/common_repair_burden_v11/README.md)复核648条保存路径（378 grt、270 synth），108条旧逐源synth路径缺失明确保留。grt的native_valid／native_enable分别126条均无hold命名单元，input_valid的63条全部有；上轮hold线索限于input_valid，不能外推为native_valid主因。149个Add／Mux／G train点的面积增长有正有负，不能统一加repair面积。旧上下文没有外层标签泄漏，但下游训练行使用了上游对其组的样本内预测；新增公共嵌套隔离模块，复用14份上下文并固定拟合78份双组排除上下文。12项预登记train对照选中direct R／alpha1，银行median18.47%、raw路径P9539.26%，仍未通过15%／35%门槛，按规则封存拒绝，不生成新C++价格版、不消费旧回归。7项新增隔离测试及648路径／648删弧负例、3528上下文／1512逐trial统计／126推理核对通过；v10的43项测试与native收据按未改源码身份继承，未称本轮重跑。0新EDA／标签／验证源，20独立源未读，公共D不变。
+
+**2026-11-14 W3／W4／W5局部共享与面积拆分v12：** [§7.111](lxy-W1-W8-stage-20261115.md#W345-local-sharing-factorized-area)和[便携证据](../../experiments/arithmetic/evidence/common_local_sharing_v12/README.md)完成捕获银行局部仿射共享描述、预测synth面积×预测grt/synth比例的纯数值消费及18项预登记train对照。Add选中方案面积median7.83%、P9514.15%，但最坏源15.15%超过本轮15%推进门槛；G面积5.07%／16.55%、最坏19.62%，且映射／比例误差有抵消；S银行16.96%、raw P9536.74%较v11改善，最坏银行却30.37%→38.89%退化，178.29ps对照差仅预测0.50ps。三候选均封存拒绝，无次选／新C++价格／旧回归。6项新测试及134面积Query／63银行、1764上下文、1560条trial统计、134面积推理／126最终训练上下文／126部署上下文回放通过；0上游重拟合、0新EDA／标签／验证源，20独立源未读，公共D不变。
+
+**2026-11-14 W3／W4／W5实现敏感性对照v13：** [§7.112](lxy-W1-W8-stage-20261115.md#W345-implementation-sensitivity-controls)与[便携证据](../../experiments/arithmetic/evidence/common_implementation_sensitivity_v13/README.md)完成四个已有train父源的8点对照，0物理失败／重跑。四源原样复测的面积／记录时序／归一化映射网表完全相同；S独立时序语句重排使两源valid R分别变化+73.85ps／−125.11ps，reset对照差从+178.29ps反转为−20.67ps，端点相同且没有hold命名单元，cell／wire变化为主。Add／G操作数交换均相同，本因素没有解释旧面积误差。保留首版keep_hierarchy导致负例漏检的证明失败，在修正版完整展开、4正／4负通过后才运行物理。6项新增测试、156路径／156删弧负例与便携回放通过；8 synth／8 grt／66 support结清。0拟合／新独立源，生产发射器／价格／旧回归不变。
+
+**2026-11-14 W3／W4／W5共享cut与逻辑连接v14：** [§7.113](lxy-W1-W8-stage-20261115.md#W345-shared-cut-control-connectivity)及[便携证据](../../experiments/arithmetic/evidence/common_cut_cover_v14/README.md)新增纯软件四输入共享DAG cut覆盖器，使用真实dont-use过滤后的76个单输出Liberty门，固定16 cuts／3次area-flow，不调用ABC。45个prospective图／134个train点、4项固定alpha1面积对照完成。选中direct后，Add grt面积LOSO8.62%／16.92%、G4.02%／16.40%，全局门槛通过，但均较v10的8.44%／12.64%、3.76%／13.98%退化；G零压缩子域15.23%／21.53%，synth映射15.28%／48.98%仍失败，未推进价格或消费旧回归。S两组repeat／variant的8份保存连接中，641个sink及逐sink缓冲无关表达式全部相同，grt缓冲／反相器数量不同，确认不能只用缺失的逻辑sink计数解释旧valid差。9项新增测试及纯函数回放见证已归档；0新EDA／标签／验证源、20独立源未读、公共D不变。
+
+**2026-11-15 W3／W4／W5极性覆盖与分支预算v15：** [§7.114](lxy-W1-W8-stage-20261115.md#W345-polarity-control-budget)及[便携证据](../../experiments/arithmetic/evidence/common_polarity_budget_v15/README.md)新增按正／反相信号引用的共享cut代理，保持76门／K4／16 cuts／3 passes不变；134个train点只有两项固定direct／alpha1对照。Add grt 8.46%／17.57%、G5.25%／18.70%，全局训练门槛通过但均未优于v10；零压缩G synth16.29%／63.76%仍失败，不推进价格。四份保存grt检查点各提取641条S端点路径：最差数据R只变−1.14／+1.41ps，valid R却变+73.85／−125.11ps，两组首分支总引脚电容均下降；总负载不足以解释该对照，逐分支预算／共享关系需发射前代理。7项新增测试及纯函数回放通过；新增6 support（4成功、2脚本失败完整保留），0 synth／grt／final，S无新拟合、旧验证／20独立源未读、公共D不变。
+
+**2026-11-15 v10接入W6／W7／W8试跑：** 按用户要求，[§7.115](lxy-W1-W8-stage-20261115.md#W678-v10-integration-trial)及[便携证据](../../experiments/arithmetic/evidence/workload_transition_v10_v1/README.md)已将冻结v10接入真实所有者／状态／RTL，完成九例全部19组T/L、132结构请求／1034视图。组件有价5408/280239，完整阶段0/10766；25视图的算术组件齐价但仍缺S/shared。MAC32三档／90视图保留4位叶→两级归约和粗结构竞争。22组／2112周期新仿真通过，其余1012组／97152周期严格核对功能产物后继承；22项测试及2795个不同诊断查询的便携数值回放通过。完整缺价返回selected=null／target_met=null，未选新D或产生ABCD物理成绩。参数／支持／reserve未改，0新EDA／拟合／独立源读取；首次JSON整数／浮点指纹回放失败和修复均保留。
+
+**2026-11-15 九例ABC与测量入口：** 用户要求继续直至九例ABCD后端对比，本轮[§7.116](lxy-W1-W8-stage-20261115.md#W678-nine-ABC-backend-preparation)及[便携证据](../../experiments/arithmetic/evidence/workload_ABC_v1/README.md)完成九例A新增864周期仿真、19组目标的B/C实际静态选择，57条ABC记录／26份不同RTL封存。新静态表按原power-of-two规则通用扩Mul桶至4096位；Add512的C实际与B相同。共同后端入口已实现完整矩阵／选择冻结／有限Ledger准入和固定grt完整setup Tmin读取，60项测试、26份实际端口预检及便携回放通过；尚无新D或物理成绩。是否允许未独立合格的新增S/shared与v2诊断估计参与本次D选择，已使用grilling提出一个研究选择，仍待用户答复；可独立工作已推进完成。
+
+**2026-11-15用户确认“先完成诊断版”。** [§7.117](lxy-W1-W8-stage-20261115.md#W678-nine-diagnostic-ABCD)续接真实算术S/shared、完整数据／控制路径、v2 carry/selector／G消费者及功能逻辑，统一模型身份为`workload-v10-complete-diagnostic-v1`，明确未取得W6独立资格。19目标的全部1034视图已完整定价，19个D与MAC32／Dot16两组同策略成本归因已选择；13份不同选中RTL完成1248周期新仿真。78条ABCD／归因方法记录及全部选择、预测、RTL在本轮PPA前共同冻结，按RTL/T去重为67个物理任务，正在统一Ledger内推进。原v10包和正式公共D不变，最终应用PPA不回流重选。
+
+本轮新S控制函数只拟合既有378条train路径，未用应用成绩；旧S文件曾整份读取，实际仅复制面积参数，不把它写成从未读取任何历史独立摘要。20个其余算子独立源继续锁定。W3—W5旧精度失败和正式W6资格分别保留；已发现的测量接口缺陷、工具超时及有界容量后继均追加记录。此前v15已提交为be1ccf5；新增实现／证据尚未提交，包含主仓库和RTLzz C++改动。若提交，须先在子模块提交并保证可获取，再更新主仓库引用；提交不改变诊断资格。
+
+**诊断版物理续接：** NTT的完整状态切面ABC等价及顶层输出／D／CLK三个破坏负例通过，CTS重放的前后网表与证明输入逐字节相同后接受；T1000 D已完成grt、完整Tmin及原始报告回放。MAC32三档ABCD及同策略归因、Add512两档均已测完，其余矩阵仍在执行。Montgomery T1500 D的8GiB容量后继在全局放置触发内存上限（采样峰值8405.54MiB），用户已明确确认**只对该实现**先做16GiB／7200秒grt后继，从已完成floorplan继续；`montgomery-memory16-v1`记录准确清单、授权和来源。该单点例外不扩大其余任务的内存许可，正式W6资格保持未通过。
+
+**2026-11-15 Montgomery八小时单点后继已授权并入队：** 16GiB先导在CTS修复达到7200秒上限，采样峰值10580.55MiB，清理后无活后代，保留完整placement。用户随后明确确认“启用同点16GiB／8小时有限后继”，[§7.118](lxy-W1-W8-stage-20261115.md#W678-Montgomery-eight-hour-successor)登记`montgomery-memory16-long-v1`：同一T1500／L32的D、16384MiB／4线程、一次28800秒grt及至多两项120秒support，从已核验的placement续跑，正在等待共享四任务槽位。批准范围仍只有该实现。最新只读比较已有27／67个物理任务完成完整时钟读取，Mul128 T2000档ABCD已齐全；Dot16 T1000 C的8GiB内存失败单列保留，完整诊断版尚未封包。
+
+## 历史与证据阅读
+
+`lxy-plan-fix.md`第一章是唯一现行计划；第二、三章保留更早规划／修订，第四章保留实施／验收并继续追加。原十步第一章已迁入[阶段归档](lxy-ten-step-stage-20261113.md)，原28个显式锚点保留归档跳转，模型和证据链接仍可追溯。历史文字中的“现行／唯一／下一步”、第几步、44视图、L=2、按位宽分组及旧额度只解释当时版本，不能覆盖W1—W8或同算子共享函数要求。
+
+本次阶段切换不改机器协议、参数、数据角色、freeze及已有物理结论。原四平台／五档整数／除法浮点／43例／688条等范围保留历史身份，不作为本轮九例前置。旧已消费测试和最终PPA不回流拟合，软件、组件模型、完整阶段及应用物理效果分别验收。
+
+原十步的主要证据仍从实施记录访问：第1—3步增量验收[§7.65](lxy-W1-W8-stage-20261115.md#steps123-incremental-acceptance)、节点限定发布[§7.70](lxy-W1-W8-stage-20261115.md#step5-bounded-operator-release)、G融合与新D[§7.81](lxy-W1-W8-stage-20261115.md#G-reduction-fusion-successor)、三级MAC32实测[§7.83](lxy-W1-W8-stage-20261115.md#MAC32-L3-ABCD-background)、通用块流水[§7.86](lxy-W1-W8-stage-20261115.md#common-block-pipeline-first-package)、共享模型修复[§7.96](lxy-W1-W8-stage-20261115.md#common-narrow-wide-model-repair)。本次归档及新排程见[§7.98](lxy-W1-W8-stage-20261115.md#general-model-plan-migration)。

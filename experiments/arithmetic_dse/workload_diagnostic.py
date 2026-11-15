@@ -336,22 +336,45 @@ def state_price(bundle,projection,comb_area):
                 reserve_ps=reserve,extrapolation=True,qualified=False,projection=projection)
 
 
-def evaluate(graph,view,state,owners,prices,*,static_cal=False):
+def evaluate(graph,view,state,owners,prices,*,static_cal=False,owner_queries=None):
     bundle=prices.bundle;L=state['internal_stages']+1;placement=view['placement'];target=owners['target_ps']
     if owners['graph_sha256'] != state['graph_sha256'] or owners['layout_sha256'] != state['layout_sha256']:
         raise ValueError('actual graph/state/owner identity differs')
+    # A local request describes an equivalent characterization shell. The
+    # outer target, state, placement, captures and all query semantics stay
+    # unchanged. Keys are OWNER IDs: equal-shape instances may get different T.
+    actual_queries={r['node']:r['query'] for r in owners['operators']}
+    actual_queries.update({g['root']:g['query'] for g in owners['G_regions']})
+    if owner_queries is not None:
+        if state['features']['sdc_period_ps']!=target:
+            raise ValueError('global state/owner target differs')
+        if static_cal or set(owner_queries)!=set(actual_queries):
+            raise ValueError('equivalent requests require exact dynamic owner coverage')
+        for i,q in owner_queries.items():
+            original=actual_queries[i]
+            if 'flow_context' in q:
+                flow=q['flow_context'];t=flow['target_period_ps']
+                restored=dict(q,flow_context=dict(flow,
+                    target_period_ps=original['flow_context']['target_period_ps'],
+                    abc_target_ps=original['flow_context']['abc_target_ps']))
+                consistent=flow['abc_target_ps']==t
+            else:
+                t=q['target_ps'];restored=dict(q,target_ps=original['target_ps']);consistent=True
+            if not consistent or not math.isfinite(t) or t<=0 or restored!=original:
+                raise ValueError('equivalent request changed non-T semantics')
+        actual_queries=owner_queries
     delay={};area={};records=[];regions={g['root']:g for g in owners['G_regions']};members=set()
     bridge=bundle['static_bridge']['alpha']
     for region in regions.values():
         if members & set(region['members']):raise ValueError('duplicate G member ownership')
         members.update(region['members'])
     for row in owners['operators']:
-        i=row['node'];p=prices.operator_price(row['query'])
+        i=row['node'];p=prices.operator_price(actual_queries[i])
         if static_cal and p['delay_ps']+p['area_um2']>0:
             weight=static_node(graph,graph.nodes[i]);p=dict(p,delay_ps=weight*bridge['operator_delay_ps'],area_um2=weight*bridge['comb_area_um2'])
         delay[i]=p['delay_ps'];area[i]=p['area_um2'];records.append(dict(node=i,kind='operator',**p))
     for i,g in regions.items():
-        p=prices.reduction_price(g['query'])
+        p=prices.reduction_price(actual_queries[i])
         if static_cal:
             group=set(g['members']);cache={}
             def local(n):
