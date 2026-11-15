@@ -1,0 +1,400 @@
+{
+  "PPA_calls": 0,
+  "control_reset_one_bits": 0,
+  "enable_policy": "per-stage previous valid; stage0 is the external valid input",
+  "external_outputs_included": true,
+  "feature_schema": "arithmetic-state-bank-features-v1",
+  "features": {
+    "data_bits": 512,
+    "data_signals": 20,
+    "enable_domains": 3,
+    "max_declared_width": 64,
+    "min_variable_width": 16,
+    "reset_one_bits": 0,
+    "sdc_period_ps": 500,
+    "state_bits": 515,
+    "state_signals": 23,
+    "valid_bits": 3,
+    "valid_signals": 3
+  },
+  "graph_sha256": "0493930ee69c1766becfec73f309c6f2528fd8dd2e9f16903e74da10e69af1f4",
+  "input_variable_bits": 129,
+  "internal_stages": 2,
+  "layout_sha256": "4b5020ca9f2521c1f6cac3a6774023066d7c2e5b3ddae0512c61149c95df9d5b",
+  "materialized_checked": true,
+  "needs_native_protocol_qualification": true,
+  "qualified_price": false,
+  "slots": [
+    {
+      "declared_width": 64,
+      "enable_stage": 0,
+      "external_capture": false,
+      "name": "rtlzz_pipe_2_s1",
+      "origin": 2,
+      "reset_hex": [
+        "0"
+      ],
+      "stage": 1,
+      "valid": false,
+      "variable_bits": 64,
+      "variable_mask_hex": [
+        "ffffffffffffffff"
+      ]
+    },
+    {
+      "declared_width": 64,
+      "enable_stage": 1,
+      "external_capture": false,
+      "name": "rtlzz_pipe_2_s2",
+      "origin": 2,
+      "reset_hex": [
+        "0"
+      ],
+      "stage": 2,
+      "valid": false,
+      "variable_bits": 64,
+      "variable_mask_hex": [
+        "ffffffffffffffff"
+      ]
+    },
+    {
+      "declared_width": 64,
+      "enable_stage": 1,
+      "external_capture": false,
+      "name": "rtlzz_pipe_4_s2",
+      "origin": 4,
+      "reset_hex": [
+        "0"
+      ],
+      "stage": 2,
+      "valid": false,
+      "variable_bits": 64,
+      "variable_mask_hex": [
+        "ffffffffffffffff"
+      ]
+    },
+    {
+      "declared_width": 16,
+      "enable_stage": 0,
+      "external_capture": false,
+      "name": "rtlzz_pipe_15_s1",
+      "origin": 15,
+      "reset_hex": [
+        "0"
+      ],
+      "stage": 1,
+      "valid": false,
+      "variable_bits": 16,
+      "variable_mask_hex": [
+        "ffff"
+      ]
+    },
+    {
+      "declared_width": 24,
+      "enable_stage": 0,
+      "external_capture": false,
+      "name": "rtlzz_pipe_19_s1",
+      "origin": 19,
+      "reset_hex": [
+        "0"
+      ],
+      "stage": 1,
+      "valid": false,
+      "variable_bits": 16,
+      "variable_mask_hex": [
+        "ffff00"
+      ]
+    },
+    {
+      "declared_width": 32,
+      "enable_stage": 0,
+      "external_capture": false,
+      "name": "rtlzz_pipe_23_s1",
+      "origin": 23,
+      "reset_hex": [
+        "0"
+      ],
+      "stage": 1,
+      "valid": false,
+      "variable_bits": 16,
+      "variable_mask_hex": [
+        "ffff0000"
+      ]
+    },
+    {
+      "declared_width": 40,
+      "enable_stage": 0,
+      "external_capture": false,
+      "name": "rtlzz_pipe_27_s1",
+      "origin": 27,
+      "reset_hex": [
+        "0"
+      ],
+      "stage": 1,
+      "valid": false,
+      "variable_bits": 16,
+      "variable_mask_hex": [
+        "ffff000000"
+      ]
+    },
+    {
+      "declared_width": 24,
+      "enable_stage": 0,
+      "external_capture": false,
+      "name": "rtlzz_pipe_31_s1",
+      "origin": 31,
+      "reset_hex": [
+        "0"
+      ],
+      "stage": 1,
+      "valid": false,
+      "variable_bits": 16,
+      "variable_mask_hex": [
+        "ffff00"
+      ]
+    },
+    {
+      "declared_width": 32,
+      "enable_stage": 0,
+      "external_capture": false,
+      "name": "rtlzz_pipe_35_s1",
+      "origin": 35,
+      "reset_hex": [
+        "0"
+      ],
+      "stage": 1,
+      "valid": false,
+      "variable_bits": 16,
+      "variable_mask_hex": [
+        "ffff0000"
+      ]
+    },
+    {
+      "declared_width": 40,
+      "enable_stage": 0,
+      "external_capture": false,
+      "name": "rtlzz_pipe_39_s1",
+      "origin": 39,
+      "reset_hex": [
+        "0"
+      ],
+      "stage": 1,
+      "valid": false,
+      "variable_bits": 16,
+      "variable_mask_hex": [
+        "ffff000000"
+      ]
+    },
+    {
+      "declared_width": 48,
+      "enable_stage": 0,
+      "external_capture": false,
+      "name": "rtlzz_pipe_43_s1",
+      "origin": 43,
+      "reset_hex": [
+        "0"
+      ],
+      "stage": 1,
+      "valid": false,
+      "variable_bits": 16,
+      "variable_mask_hex": [
+        "ffff00000000"
+      ]
+    },
+    {
+      "declared_width": 32,
+      "enable_stage": 0,
+      "external_capture": false,
+      "name": "rtlzz_pipe_47_s1",
+      "origin": 47,
+      "reset_hex": [
+        "0"
+      ],
+      "stage": 1,
+      "valid": false,
+      "variable_bits": 16,
+      "variable_mask_hex": [
+        "ffff0000"
+      ]
+    },
+    {
+      "declared_width": 40,
+      "enable_stage": 0,
+      "external_capture": false,
+      "name": "rtlzz_pipe_51_s1",
+      "origin": 51,
+      "reset_hex": [
+        "0"
+      ],
+      "stage": 1,
+      "valid": false,
+      "variable_bits": 16,
+      "variable_mask_hex": [
+        "ffff000000"
+      ]
+    },
+    {
+      "declared_width": 48,
+      "enable_stage": 0,
+      "external_capture": false,
+      "name": "rtlzz_pipe_55_s1",
+      "origin": 55,
+      "reset_hex": [
+        "0"
+      ],
+      "stage": 1,
+      "valid": false,
+      "variable_bits": 16,
+      "variable_mask_hex": [
+        "ffff00000000"
+      ]
+    },
+    {
+      "declared_width": 56,
+      "enable_stage": 0,
+      "external_capture": false,
+      "name": "rtlzz_pipe_59_s1",
+      "origin": 59,
+      "reset_hex": [
+        "0"
+      ],
+      "stage": 1,
+      "valid": false,
+      "variable_bits": 16,
+      "variable_mask_hex": [
+        "ffff0000000000"
+      ]
+    },
+    {
+      "declared_width": 40,
+      "enable_stage": 0,
+      "external_capture": false,
+      "name": "rtlzz_pipe_63_s1",
+      "origin": 63,
+      "reset_hex": [
+        "0"
+      ],
+      "stage": 1,
+      "valid": false,
+      "variable_bits": 16,
+      "variable_mask_hex": [
+        "ffff000000"
+      ]
+    },
+    {
+      "declared_width": 48,
+      "enable_stage": 0,
+      "external_capture": false,
+      "name": "rtlzz_pipe_67_s1",
+      "origin": 67,
+      "reset_hex": [
+        "0"
+      ],
+      "stage": 1,
+      "valid": false,
+      "variable_bits": 16,
+      "variable_mask_hex": [
+        "ffff00000000"
+      ]
+    },
+    {
+      "declared_width": 56,
+      "enable_stage": 0,
+      "external_capture": false,
+      "name": "rtlzz_pipe_71_s1",
+      "origin": 71,
+      "reset_hex": [
+        "0"
+      ],
+      "stage": 1,
+      "valid": false,
+      "variable_bits": 16,
+      "variable_mask_hex": [
+        "ffff0000000000"
+      ]
+    },
+    {
+      "declared_width": 64,
+      "enable_stage": 0,
+      "external_capture": false,
+      "name": "rtlzz_pipe_75_s1",
+      "origin": 75,
+      "reset_hex": [
+        "0"
+      ],
+      "stage": 1,
+      "valid": false,
+      "variable_bits": 16,
+      "variable_mask_hex": [
+        "ffff000000000000"
+      ]
+    },
+    {
+      "declared_width": 1,
+      "enable_stage": -1,
+      "external_capture": false,
+      "name": "rtlzz_valid_s1",
+      "origin": 3,
+      "reset_hex": [
+        "0"
+      ],
+      "stage": 1,
+      "valid": true,
+      "variable_bits": 1,
+      "variable_mask_hex": [
+        "1"
+      ]
+    },
+    {
+      "declared_width": 1,
+      "enable_stage": -1,
+      "external_capture": false,
+      "name": "rtlzz_valid_s2",
+      "origin": 3,
+      "reset_hex": [
+        "0"
+      ],
+      "stage": 2,
+      "valid": true,
+      "variable_bits": 1,
+      "variable_mask_hex": [
+        "1"
+      ]
+    },
+    {
+      "declared_width": 64,
+      "enable_stage": 2,
+      "external_capture": true,
+      "name": "y",
+      "origin": 6,
+      "reset_hex": [
+        "0"
+      ],
+      "stage": 3,
+      "valid": false,
+      "variable_bits": 64,
+      "variable_mask_hex": [
+        "ffffffffffffffff"
+      ]
+    },
+    {
+      "declared_width": 1,
+      "enable_stage": -1,
+      "external_capture": true,
+      "name": "ov",
+      "origin": 3,
+      "reset_hex": [
+        "0"
+      ],
+      "stage": 3,
+      "valid": true,
+      "variable_bits": 1,
+      "variable_mask_hex": [
+        "1"
+      ]
+    }
+  ],
+  "state_scope": "core internal plus explicit external output captures; excludes input/service wrapper state",
+  "valid_input_rtl_name": "iv",
+  "version": "native-state-query-v1"
+}

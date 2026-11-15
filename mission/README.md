@@ -1,6 +1,6 @@
 # 任务导航与阅读边界
 
-**现行规划统一放在[lxy-plan-fix.md第一章](lxy-plan-fix.md#local-request-plan)，W1—W8历史规划正文放在同文件[第二章](lxy-plan-fix.md#W1-W8-archive)。** 第一章从v10出发，先按候选结构和流水位置联合分配算子／唯一G的本体预算，再换算成与采样外壳含义一致的等效训练T，复用共享模型预测并比较完整时序和总面积。第1～3步已完成MAC32固定候选的软件验收，见[实现与证据](../experiments/arithmetic/evidence/workload_equivalent_mac32_v1/README.md)；第4步模型复用验证、新拆分／寄存器位置及九例19组目标的完整A／B／C／D后端对比继续待办。
+**现行规划统一放在[lxy-plan-fix.md第一章](lxy-plan-fix.md#local-request-plan)，W1—W8历史规划正文放在同文件[第二章](lxy-plan-fix.md#W1-W8-archive)。** 第一章从v10出发，先按候选结构和流水位置联合分配算子／唯一G的本体预算，再换算成与采样外壳含义一致的等效训练T，复用共享模型预测并比较完整时序和总面积。第1～3步已完成[MAC32固定候选软件验收](../experiments/arithmetic/evidence/workload_equivalent_mac32_v1/README.md)，第4～5步已完成[模型复用回归、新拆分／寄存器位置搜索及RTL验证](../experiments/arithmetic/evidence/workload_equivalent_steps45_v1/README.md)。模型完整精度资格仍有缺口，当前为诊断身份；下一步为MAC32本轮ABCD物理比较，最终仍须完成九例19组目标的统一A／B／C／D后端对比。
 
 代码从2026-11-15恢复后的v10 test基线出发：主仓库`672df3e`、RTLzz `28a4f1d`，对应用户引用的MAC32／Add512／Mul128后端结果。当前新增独立的软件预算／等效T入口，保留v10默认入口作对照；此前撤下的局部预算、逐模块ABC及采样代码仍在恢复前备份中，没有恢复。原W1—W8及第三至五章中的“下一步／必须／唯一排程”只用于追溯，不自动续跑；模型未达精度、关键源退化和独立／组合资格未通过的事实继续保留。
 
@@ -11,6 +11,7 @@
 | [原始任务](lxy.md) | 复杂算术拆分、自动流水线与ABCD研究目标，原文保留 |
 | [第一章：本体预算与等效训练T规划](lxy-plan-fix.md#local-request-plan) | 唯一现行规划；全局T、本体预算、采样边界换算、真实模型消费、联合分配／选择及八步实施 |
 | [第1～3步：MAC32软件验收](../experiments/arithmetic/evidence/workload_equivalent_mac32_v1/README.md) | 177条采样合同、90个候选／837次完整评分、实际等效T查询、逐目标身份及完整回放；精度与后端评价另验 |
+| [第4～5步：模型回归与新候选](../experiments/arithmetic/evidence/workload_equivalent_steps45_v1/README.md) | 279条组件／6个旧组合回归、175个完整候选、72份RTL新仿真、同额度控制及最终共同池选择；S／shared和嵌入资格失败保留 |
 | [九例ABCD最终评价（第一章§1.9）](lxy-plan-fix.md#local-request-evaluation) | 九例19组正式T／L、A／B／C／D定义、76条方法记录、冻结对照及完成标准 |
 | [第二章：W1—W8历史规划正文](lxy-plan-fix.md#W1-W8-archive) | 原工作包、合同、阶段缺口及局部预算后继，已归档 |
 | [模型精度与保留问题（第一章§1.8）](lxy-plan-fix.md#v10-model-status) | Add／Mux／G／S的具体失败、支持缺口，以及完整诊断版预测误差 |
@@ -25,6 +26,6 @@
 
 ## 后端与账本状态
 
-原九例物理队列保持用户停止状态：67任务中30完成、9工具失败、4用户中止、24未启动。已有报告与停止／清理记录见[结果归档](../experiments/arithmetic/evidence/workload_diagnostic_stopped_v1/README.md)；先前按用户要求删除的大数据库不在本次恢复中重建。恢复后没有启动EDA或拟合。
+原九例物理队列保持用户停止状态：67任务中30完成、9工具失败、4用户中止、24未启动。已有报告与停止／清理记录见[结果归档](../experiments/arithmetic/evidence/workload_diagnostic_stopped_v1/README.md)；先前按用户要求删除的大数据库不在本次恢复中重建。恢复后及本轮第1～5步均未启动EDA或响应拟合。
 
-真实实验历史和最新结清账本保留，不能随代码恢复而回退费用。恢复前所有修改和未跟踪文件已逐文件保存并核对SHA256，主仓库和RTLzz提交均未移动。当前第1～3步只进行既有train-only采样收据审计、软件预测与回放，未启动EDA、重新拟合算子响应或原队列，未提交或推送，mission主目录不新增规划文件。
+真实实验历史和最新结清账本保留，不能随代码恢复而回退费用。恢复前所有修改和未跟踪文件已逐文件保存并核对SHA256，主仓库和RTLzz提交均未移动。第1～5步只进行既有数据职责内的采样审计、回归、软件预测、有限候选生成和RTL功能仿真；第4～5步新增原生显式放置接口和独立验证／搜索入口。65项相关回归全部通过，完整便携回放另有收据；模型资格及九例物理比较未完成。未提交或推送，mission主目录不新增规划文件。
