@@ -1,0 +1,3968 @@
+{
+  "version": "progress-D-review-20261116-v2",
+  "at": "2026-11-16T13:40:17.911183+00:00",
+  "new_EDA_calls": 0,
+  "new_model_fits": 0,
+  "live_queue_modified": false,
+  "frozen_sources_unchanged": true,
+  "source_sha256": {
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_latency_matrix.py": "9d0203ec9903668da1b11b5b6f741f4205b3381bbf8fd5917479a5499c00a967",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_selection.py": "300f29625d0553c808a33f7a88a38fa531e3ec0c277587611413cecd98dee5ab",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_software.py": "0d7532c2122b4fa64f1b1de21f16076fad3ede5cc828b51f74121737620a8abc",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_equivalent.py": "c4677f271eaba0a6ead99b1e64b97c26e7576a70577d2963a3acbb59d68f3b7b",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_tight_equivalent.py": "e0d9efc1451446e78aac5c23a36bc8165fd0538c291b82cdafd420d7cec315b7",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_diagnostic.py": "5b6017b73c7aa239a7a6e123cbd558255b8749129c6869b03a1fe24aae8356ca",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_adapter.py": "c39c0395cbf301e6e758ef1cc438ccee64e6bfd18b609ff1821ec53eb302ee43",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_prices.py": "f741791587cb4a8b98edefde010f232e41835d2cc5fc848b8f4b031db394feb1",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/backend.py": "06214626295cdeb0bfe110fd2382f62ce032ae386416cccbdc0661d638fa169d",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_nine_runtime.py": "3be8d3d1fa9cea3d08ee3605a5d46168dc490876b6e34a437093a6984296c7f1",
+    "/home/zyrv/vulsim/experiments/arithmetic/evidence/workload_equivalent_mac32_v1/diagnostic-model.json": "de067c6983fe92eb7b5771b014f7881483bc2be06a5f70eddd3bc521208bc575",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_reference_A.py": "7b7ce1bf6c58ad8b5b730cb548677365d66f01a0856ee4ddcdf8d14e6f5c2902",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_montgomery_reference_retest.py": "39a2b9d88d9e7171cb44514f27e949a6685b88b39e79d69c0d27eb13c16fcf17",
+    "/home/zyrv/vulsim/rtlzz/src/backend/arithmetic_state.cpp": "8316ee248a8351aeaa653015e1379c39280923207747ba67b0e5d0bbc68d0190",
+    "/home/zyrv/vulsim/rtlzz/src/backend/mul_split.cpp": "1a958dd5604af2c8aedb8903f5ad0843489c1a33517f45811439cbfcbad21f35",
+    "/home/zyrv/vulsim/rtlzz/src/backend/beir.cpp": "7279a0827803e16cc420d16aebc3207bae08545918e84fdab2ae96beaa37f1e6"
+  },
+  "stats": {
+    "BCD_statuses": {
+      "running": 7,
+      "not_started": 20,
+      "measured_grt": 50,
+      "failed": 16,
+      "awaiting_A_reference": 12,
+      "software_pending": 6
+    },
+    "A_measured": 8,
+    "BCD_measured": 50,
+    "independent_measured_BCD_runs": 41,
+    "setup_met_by_method": {
+      "B": 4,
+      "C": 2,
+      "D": 6
+    },
+    "setup_and_hold_met_by_method": {
+      "B": 4,
+      "C": 2,
+      "D": 6
+    },
+    "hold_violations": [
+      {
+        "case": "mac32",
+        "L": 3,
+        "T_ps": 500,
+        "method": "C",
+        "hold_WNS_ps": -0.158318
+      },
+      {
+        "case": "mac32",
+        "L": 3,
+        "T_ps": 1000,
+        "method": "D",
+        "hold_WNS_ps": -0.254512
+      },
+      {
+        "case": "add512",
+        "L": 4,
+        "T_ps": 400,
+        "method": "D",
+        "hold_WNS_ps": -0.140096
+      },
+      {
+        "case": "barrett64",
+        "L": 8,
+        "T_ps": 900,
+        "method": "C",
+        "hold_WNS_ps": -0.71565
+      }
+    ],
+    "selected_D": 31,
+    "local_pool_checks": 28,
+    "local_pool_candidates": 864,
+    "functional_receipts_valid": 31,
+    "prediction_receipts_match": 31,
+    "dynamic_queries": 6913,
+    "equivalent_T_equal_global": 8,
+    "D_with_unmet_local_request": 20
+  },
+  "selected_D": [
+    {
+      "case": "add512",
+      "L": 2,
+      "T_ps": 700,
+      "grammar": [
+        0,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/add512/L2/software/selected/add512/T700-L2/D/workload.sv",
+      "rtl_sha256": "be37505847a5d0ff6e64b95c6236dc1c5264a3d5fcd4ac6275c0bf6dcbf9879f",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/add512/L2/software/add512/final-selections.json",
+      "selection_sha256": "bce331904aa747e0ed1cb799fa8c25053e7d864dfaf2e33977c4b9c6e7fd9cc4",
+      "trace_sha256": "cfea77918bfd16a79d73e049c89c9e0b120fa84f7fe8c8477d266277b04c51a7",
+      "prediction": {
+        "critical_required_ps": 979.3151768791881,
+        "total_area_um2": 2397.6631012073653,
+        "target_met": false,
+        "violation_ps": 279.31517687918813
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 697.892721879188,
+          "required_ps": 979.3151768791881,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 0.0,
+          "required_ps": 205.31683299999986,
+          "stage": 1
+        }
+      ],
+      "stage_data_bits": [
+        513,
+        513
+      ],
+      "empty_priced_stages": [
+        1
+      ],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 1,
+      "dynamic_queries": 1,
+      "equivalent_T_range_ps": [
+        389.45285131824596,
+        389.45285131824596
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "add512",
+      "L": 2,
+      "T_ps": 800,
+      "grammar": [
+        0,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/add512/L2/software/selected/add512/T800-L2/D/workload.sv",
+      "rtl_sha256": "be37505847a5d0ff6e64b95c6236dc1c5264a3d5fcd4ac6275c0bf6dcbf9879f",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/add512/L2/software/add512/final-selections.json",
+      "selection_sha256": "bce331904aa747e0ed1cb799fa8c25053e7d864dfaf2e33977c4b9c6e7fd9cc4",
+      "trace_sha256": "97dda28954fa51236d0813041d02182466ba16861500e644c8b7d9380d083538",
+      "prediction": {
+        "critical_required_ps": 987.700895973993,
+        "total_area_um2": 2322.5087347269055,
+        "target_met": false,
+        "violation_ps": 187.70089597399306
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 706.2784409739929,
+          "required_ps": 987.700895973993,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 0.0,
+          "required_ps": 205.31683299999986,
+          "stage": 1
+        }
+      ],
+      "stage_data_bits": [
+        513,
+        513
+      ],
+      "empty_priced_stages": [
+        1
+      ],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 1,
+      "dynamic_queries": 1,
+      "equivalent_T_range_ps": [
+        456.4450388115473,
+        456.4450388115473
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "add512",
+      "L": 4,
+      "T_ps": 350,
+      "grammar": [
+        0,
+        128
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T350-L4/D/workload.sv",
+      "rtl_sha256": "7c21841924530588e0082f59d89df53a290679507fa73643d1e1bacad2571a68",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/add512/final-selections.json",
+      "selection_sha256": "82b90b014d2ad5d907476fb41967baeff6b21e53228ff443bd43c947380f70d7",
+      "trace_sha256": "fe6db29322bedff5b20135438567b537c8d89fb554f54628f453d723d402592c",
+      "prediction": {
+        "critical_required_ps": 754.2812092577838,
+        "total_area_um2": 3502.048364814861,
+        "target_met": false,
+        "violation_ps": 404.28120925778376
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 472.8587542577837,
+          "required_ps": 754.2812092577838,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 512.0042173986319,
+          "required_ps": 709.7689878986323,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 512.0042173986319,
+          "required_ps": 709.7689878986323,
+          "stage": 2
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 489.74200056300606,
+          "required_ps": 695.0588335630059,
+          "stage": 3
+        }
+      ],
+      "stage_data_bits": [
+        897,
+        769,
+        641,
+        513
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 4,
+      "dynamic_queries": 5,
+      "equivalent_T_range_ps": [
+        154.98019509169376,
+        350
+      ],
+      "equivalent_T_equal_global_count": 1
+    },
+    {
+      "case": "add512",
+      "L": 4,
+      "T_ps": 400,
+      "grammar": [
+        0,
+        128
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T400-L4/D/workload.sv",
+      "rtl_sha256": "7c21841924530588e0082f59d89df53a290679507fa73643d1e1bacad2571a68",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/add512/final-selections.json",
+      "selection_sha256": "82b90b014d2ad5d907476fb41967baeff6b21e53228ff443bd43c947380f70d7",
+      "trace_sha256": "fbcae449590f0fb4b56e46e63faed188a21c6446878c32211e3af802e2a95386",
+      "prediction": {
+        "critical_required_ps": 781.1623519325294,
+        "total_area_um2": 3385.549759583845,
+        "target_met": false,
+        "violation_ps": 381.1623519325294
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 499.7398969325293,
+          "required_ps": 781.1623519325294,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 526.082580889991,
+          "required_ps": 723.8473513899914,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 526.082580889991,
+          "required_ps": 723.8473513899914,
+          "stage": 2
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 504.6244980814088,
+          "required_ps": 709.9413310814086,
+          "stage": 3
+        }
+      ],
+      "stage_data_bits": [
+        897,
+        769,
+        641,
+        513
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 4,
+      "dynamic_queries": 5,
+      "equivalent_T_range_ps": [
+        188.4762888383445,
+        400
+      ],
+      "equivalent_T_equal_global_count": 1
+    },
+    {
+      "case": "barrett64",
+      "L": 4,
+      "T_ps": 1800,
+      "grammar": [
+        0,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/barrett64/L4/software/selected/barrett64/T1800-L4/D/workload.sv",
+      "rtl_sha256": "876198aa88c9a01020eaf4c05ab88e04488da53b5bcb79da13eb1cff40e8a44a",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/barrett64/L4/software/barrett64/final-selections.json",
+      "selection_sha256": "a2483e05d7c49b2a3c9543f7760f8453c355ed68da699394effe7c5f5b456bae",
+      "trace_sha256": "3b1bab7998098b2d4bf0c44f93a74bac5602407e6a6996840e212145f777257e",
+      "prediction": {
+        "critical_required_ps": 1588.1146298823212,
+        "total_area_um2": 8273.50838421266,
+        "target_met": true,
+        "violation_ps": 0.0
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 1299.322906260264,
+          "required_ps": 1580.7453612602642,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1390.3498593823208,
+          "required_ps": 1588.1146298823212,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1316.0792043588933,
+          "required_ps": 1513.8439748588937,
+          "stage": 2
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 1208.6737993267616,
+          "required_ps": 1413.9906323267614,
+          "stage": 3
+        }
+      ],
+      "stage_data_bits": [
+        449,
+        321,
+        321,
+        64
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 0,
+      "dynamic_queries": 7,
+      "equivalent_T_range_ps": [
+        343.67327507497487,
+        1735.4726054999996
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "barrett64",
+      "L": 4,
+      "T_ps": 2150,
+      "grammar": [
+        0,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/barrett64/L4/software/selected/barrett64/T2150-L4/D/workload.sv",
+      "rtl_sha256": "876198aa88c9a01020eaf4c05ab88e04488da53b5bcb79da13eb1cff40e8a44a",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/barrett64/L4/software/barrett64/final-selections.json",
+      "selection_sha256": "a2483e05d7c49b2a3c9543f7760f8453c355ed68da699394effe7c5f5b456bae",
+      "trace_sha256": "d86eca2005d121bd33bcc4f3ffe7f3d6b0bcf378a5a87597717c5ab71a8dcac0",
+      "prediction": {
+        "critical_required_ps": 1590.9617979063355,
+        "total_area_um2": 8232.185591238289,
+        "target_met": true,
+        "violation_ps": 0.0
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 1302.347263526233,
+          "required_ps": 1583.7697185262332,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1393.197027406335,
+          "required_ps": 1590.9617979063355,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1318.9263723829076,
+          "required_ps": 1516.691142882908,
+          "stage": 2
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 1229.0417152355199,
+          "required_ps": 1434.3585482355197,
+          "stage": 3
+        }
+      ],
+      "stage_data_bits": [
+        449,
+        321,
+        321,
+        64
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 0,
+      "dynamic_queries": 7,
+      "equivalent_T_range_ps": [
+        392.2640983687594,
+        2085.4726054999996
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "barrett64",
+      "L": 8,
+      "T_ps": 900,
+      "grammar": [
+        32,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/barrett64/T900-L8/D/workload.sv",
+      "rtl_sha256": "18a83492966603a3d9d13da0522bdba7ff5efe07070ae9de89dd3b44d4eaa752",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/barrett64/final-selections.json",
+      "selection_sha256": "535573957dc05290f18880a98d1d0f0c1abad88eb3a605dc77d5c1844c809b28",
+      "trace_sha256": "8bf9ae682a66feca54c7c5db9598534d5f008afe4a41f2bce9904dcadce953de",
+      "prediction": {
+        "critical_required_ps": 1328.856109230515,
+        "total_area_um2": 10214.96494751932,
+        "target_met": false,
+        "violation_ps": 428.8561092305149
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 1047.4336542305148,
+          "required_ps": 1328.856109230515,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 548.9861109079907,
+          "required_ps": 746.7508814079911,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1049.8309318610218,
+          "required_ps": 1247.5957023610222,
+          "stage": 2
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 702.613395500286,
+          "required_ps": 900.3781660002863,
+          "stage": 3
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1049.8309318610218,
+          "required_ps": 1247.5957023610222,
+          "stage": 4
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1022.0554008456504,
+          "required_ps": 1219.8201713456508,
+          "stage": 5
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 633.3899672739228,
+          "required_ps": 831.1547377739232,
+          "stage": 6
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 0.0,
+          "required_ps": 205.31683299999986,
+          "stage": 7
+        }
+      ],
+      "stage_data_bits": [
+        449,
+        449,
+        900,
+        321,
+        514,
+        193,
+        64,
+        64
+      ],
+      "empty_priced_stages": [
+        7
+      ],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 19,
+      "dynamic_queries": 29,
+      "equivalent_T_range_ps": [
+        342.5127739522427,
+        853.4479359521745
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "barrett64",
+      "L": 8,
+      "T_ps": 1100,
+      "grammar": [
+        32,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/barrett64/T1100-L8/D/workload.sv",
+      "rtl_sha256": "18a83492966603a3d9d13da0522bdba7ff5efe07070ae9de89dd3b44d4eaa752",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/barrett64/final-selections.json",
+      "selection_sha256": "535573957dc05290f18880a98d1d0f0c1abad88eb3a605dc77d5c1844c809b28",
+      "trace_sha256": "9cd67bd51b29346d5a7ba4875f55099e335c72ed945a9aa8905d07cfd3e13e10",
+      "prediction": {
+        "critical_required_ps": 1334.0362883470405,
+        "total_area_um2": 10101.379301127547,
+        "target_met": false,
+        "violation_ps": 234.03628834704045
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 1052.6138333470403,
+          "required_ps": 1334.0362883470405,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 558.9489109023106,
+          "required_ps": 756.713681402311,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1054.3172916372587,
+          "required_ps": 1252.082062137259,
+          "stage": 2
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 715.5781267695404,
+          "required_ps": 913.3428972695408,
+          "stage": 3
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1054.3172916372587,
+          "required_ps": 1252.082062137259,
+          "stage": 4
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1053.1952673634091,
+          "required_ps": 1250.9600378634095,
+          "stage": 5
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 653.3837359311186,
+          "required_ps": 851.148506431119,
+          "stage": 6
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 0.0,
+          "required_ps": 205.31683299999986,
+          "stage": 7
+        }
+      ],
+      "stage_data_bits": [
+        449,
+        449,
+        900,
+        321,
+        514,
+        193,
+        64,
+        64
+      ],
+      "empty_priced_stages": [
+        7
+      ],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 18,
+      "dynamic_queries": 29,
+      "equivalent_T_range_ps": [
+        404.3417559351751,
+        1035.4726055097763
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "dot16",
+      "L": 4,
+      "T_ps": 850,
+      "grammar": [
+        8,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/selected/dot16/T850-L4/D/workload.sv",
+      "rtl_sha256": "13041929dd25f13910d1d62bc604e2765ed8ecada43c0465cf3e10fc23d1489f",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/dot16/final-selections.json",
+      "selection_sha256": "d721c8080b2e5ce6236eea21d6edae1ac543857c01e31a1a5e5ef3ae241b64b8",
+      "trace_sha256": "c2ab3bcb56efc0aedaabace67e7dfdd660ae8e03c997771d986505714d26a56c",
+      "prediction": {
+        "critical_required_ps": 1198.8804743168835,
+        "total_area_um2": 50739.37448958474,
+        "target_met": false,
+        "violation_ps": 348.88047431688346
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 559.3799277174252,
+          "required_ps": 848.9045420216763,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1001.1157038168831,
+          "required_ps": 1198.8804743168835,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 649.701016803137,
+          "required_ps": 847.4657873031374,
+          "stage": 2
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 636.0694736792576,
+          "required_ps": 841.3863066792575,
+          "stage": 3
+        }
+      ],
+      "stage_data_bits": [
+        16384,
+        2048,
+        520,
+        132
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 16,
+      "dynamic_queries": 1045,
+      "equivalent_T_range_ps": [
+        701.8149210431413,
+        767.2992105347744
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "dot16",
+      "L": 4,
+      "T_ps": 1050,
+      "grammar": [
+        8,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/selected/dot16/T1050-L4/D/workload.sv",
+      "rtl_sha256": "13041929dd25f13910d1d62bc604e2765ed8ecada43c0465cf3e10fc23d1489f",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/dot16/final-selections.json",
+      "selection_sha256": "d721c8080b2e5ce6236eea21d6edae1ac543857c01e31a1a5e5ef3ae241b64b8",
+      "trace_sha256": "54a3cb0f986e1fbf7f774691ea044bba054a955487b6e78ad5dc63407d6fac85",
+      "prediction": {
+        "critical_required_ps": 1219.6441709065011,
+        "total_area_um2": 50100.847162333026,
+        "target_met": false,
+        "violation_ps": 169.64417090650113
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 565.0719928375737,
+          "required_ps": 881.3641924039079,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1021.8794004065006,
+          "required_ps": 1219.6441709065011,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 662.8800130457926,
+          "required_ps": 860.644783545793,
+          "stage": 2
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 649.2082300135019,
+          "required_ps": 854.5250630135017,
+          "stage": 3
+        }
+      ],
+      "stage_data_bits": [
+        16384,
+        2048,
+        520,
+        132
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 16,
+      "dynamic_queries": 1045,
+      "equivalent_T_range_ps": [
+        901.81492102314,
+        967.2992105147753
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "dot16",
+      "L": 5,
+      "T_ps": 700,
+      "grammar": [
+        16,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/selected/dot16/T700-L5/D/workload.sv",
+      "rtl_sha256": "4c2ee7748c79e869068a149f332de33903b35c397ba374ef94633bc57dfb3afc",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/dot16/final-selections.json",
+      "selection_sha256": "ff669f8df6194614364661c973e036c17165a81b3c84058b8377d23d1a7265f7",
+      "trace_sha256": "6395b09bc89966b94e3cabeece9009b4a9cd3e2502738ddd1bc618f07dbd9d3b",
+      "prediction": {
+        "critical_required_ps": 1073.8238776715077,
+        "total_area_um2": 47109.705955406294,
+        "target_met": false,
+        "violation_ps": 373.8238776715077
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 792.4014226715076,
+          "required_ps": 1073.8238776715077,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 573.2503471843976,
+          "required_ps": 771.015117684398,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 527.006915179973,
+          "required_ps": 724.7716856799734,
+          "stage": 2
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 772.7136652386647,
+          "required_ps": 970.4784357386651,
+          "stage": 3
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 556.5408034311448,
+          "required_ps": 761.8576364311447,
+          "stage": 4
+        }
+      ],
+      "stage_data_bits": [
+        8192,
+        3680,
+        2048,
+        262,
+        132
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 307,
+      "dynamic_queries": 307,
+      "equivalent_T_range_ps": [
+        551.8149210581396,
+        617.2992105497749
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "dot16",
+      "L": 5,
+      "T_ps": 850,
+      "grammar": [
+        16,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/selected/dot16/T850-L5/D/workload.sv",
+      "rtl_sha256": "4c2ee7748c79e869068a149f332de33903b35c397ba374ef94633bc57dfb3afc",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/dot16/final-selections.json",
+      "selection_sha256": "ff669f8df6194614364661c973e036c17165a81b3c84058b8377d23d1a7265f7",
+      "trace_sha256": "527712aa8ef866d89d735aa68bf57df6acfee3e6fe22907a707a8cd2973319a9",
+      "prediction": {
+        "critical_required_ps": 1080.1097624305314,
+        "total_area_um2": 46289.66125713961,
+        "target_met": false,
+        "violation_ps": 230.10976243053142
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 798.6873074305313,
+          "required_ps": 1080.1097624305314,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 586.1467603339872,
+          "required_ps": 783.9115308339876,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 533.7819755133639,
+          "required_ps": 746.8929124146205,
+          "stage": 2
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 790.4975306168875,
+          "required_ps": 988.2623011168879,
+          "stage": 3
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 563.4812681148538,
+          "required_ps": 768.7981011148537,
+          "stage": 4
+        }
+      ],
+      "stage_data_bits": [
+        8192,
+        3680,
+        2048,
+        262,
+        132
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 258,
+      "dynamic_queries": 307,
+      "equivalent_T_range_ps": [
+        701.8149210431405,
+        767.2992105347757
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "horner64",
+      "L": 4,
+      "T_ps": 1900,
+      "grammar": [
+        32,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/horner64/L4/software/selected/horner64/T1900-L4/D/workload.sv",
+      "rtl_sha256": "6ed012ed51dbf1e86f5d406d6cd723d5f894c1ecf3206ab3de5642c64bb21b6e",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/horner64/L4/software/horner64/final-selections.json",
+      "selection_sha256": "7e7a14a5382da1aa2636b4d10b74242d4996fae608a6e3d1161c9785ce7a1c2a",
+      "trace_sha256": "f1cd7f206752ee7c3240b37649d56dc8c3fd8dacb8c56d50c099c86f0008f2d5",
+      "prediction": {
+        "critical_required_ps": 1813.1508059080552,
+        "total_area_um2": 4778.785687529891,
+        "target_met": true,
+        "violation_ps": 0.0
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 1531.728350908055,
+          "required_ps": 1813.1508059080552,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1534.3240892487802,
+          "required_ps": 1732.0888597487806,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1534.3240892487802,
+          "required_ps": 1732.0888597487806,
+          "stage": 2
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 1534.0965893641724,
+          "required_ps": 1739.4134223641722,
+          "stage": 3
+        }
+      ],
+      "stage_data_bits": [
+        320,
+        256,
+        192,
+        64
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 0,
+      "dynamic_queries": 16,
+      "equivalent_T_range_ps": [
+        643.925286699161,
+        1791.447098129097
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "horner64",
+      "L": 4,
+      "T_ps": 2250,
+      "grammar": [
+        0,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/horner64/L4/software/selected/horner64/T2250-L4/D/workload.sv",
+      "rtl_sha256": "7dfa023a85cdfebe1710b021116cce56c1dae5f2bdad42728f9071f84c4ae234",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/horner64/L4/software/horner64/final-selections.json",
+      "selection_sha256": "7e7a14a5382da1aa2636b4d10b74242d4996fae608a6e3d1161c9785ce7a1c2a",
+      "trace_sha256": "5c7940caa488f41c29054e3377fd1eb1ac761d8de0e994db18c57151ad46609a",
+      "prediction": {
+        "critical_required_ps": 1947.6924187944348,
+        "total_area_um2": 4651.727779539642,
+        "target_met": true,
+        "violation_ps": 0.0
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 1666.2699637944347,
+          "required_ps": 1947.6924187944348,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1667.6586524477877,
+          "required_ps": 1865.4234229477881,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1665.4340268490932,
+          "required_ps": 1863.1987973490936,
+          "stage": 2
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 1667.5369218689916,
+          "required_ps": 1872.8537548689915,
+          "stage": 3
+        }
+      ],
+      "stage_data_bits": [
+        320,
+        256,
+        192,
+        64
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 0,
+      "dynamic_queries": 8,
+      "equivalent_T_range_ps": [
+        711.2250804960157,
+        2077.0386955049944
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "horner64",
+      "L": 8,
+      "T_ps": 950,
+      "grammar": [
+        16,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/horner64/T950-L8/D/workload.sv",
+      "rtl_sha256": "4f83e78449a4ac88b6c831e60335f7d6554244fe5d5aedf12a023a8b41634f71",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/horner64/final-selections.json",
+      "selection_sha256": "6360ea33c28593c2cb978aa6af5578c8cf9063ebd20c383b6cc4ffd707632d25",
+      "trace_sha256": "35ed8be4883d55b44adbee7563cb8eb4a97cede00d6d9b25aa2e47eb3a8c46ed",
+      "prediction": {
+        "critical_required_ps": 1083.2301872698295,
+        "total_area_um2": 6825.144210033748,
+        "target_met": false,
+        "violation_ps": 133.23018726982946
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 801.8077322698294,
+          "required_ps": 1083.2301872698295,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 648.5999249715493,
+          "required_ps": 846.3646954715497,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 803.9895654797947,
+          "required_ps": 1001.7543359797951,
+          "stage": 2
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 648.5999249715493,
+          "required_ps": 846.3646954715497,
+          "stage": 3
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 803.9895654797947,
+          "required_ps": 1001.7543359797951,
+          "stage": 4
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 648.5999249715493,
+          "required_ps": 846.3646954715497,
+          "stage": 5
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 803.9895654797947,
+          "required_ps": 1001.7543359797951,
+          "stage": 6
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 648.1097160722722,
+          "required_ps": 853.4265490722721,
+          "stage": 7
+        }
+      ],
+      "stage_data_bits": [
+        832,
+        320,
+        768,
+        256,
+        704,
+        192,
+        576,
+        64
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 28,
+      "dynamic_queries": 44,
+      "equivalent_T_range_ps": [
+        801.8149209901852,
+        885.4726055247739
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "horner64",
+      "L": 8,
+      "T_ps": 1150,
+      "grammar": [
+        16,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/horner64/T1150-L8/D/workload.sv",
+      "rtl_sha256": "4f83e78449a4ac88b6c831e60335f7d6554244fe5d5aedf12a023a8b41634f71",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/horner64/final-selections.json",
+      "selection_sha256": "6360ea33c28593c2cb978aa6af5578c8cf9063ebd20c383b6cc4ffd707632d25",
+      "trace_sha256": "d177bb8a8c13c0bc4b5b11b3bd293e5519fb81734eeb4d7c1f60aa7dab14cdc2",
+      "prediction": {
+        "critical_required_ps": 1087.9746587698367,
+        "total_area_um2": 6773.774835594491,
+        "target_met": true,
+        "violation_ps": 0.0
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 806.5522037698365,
+          "required_ps": 1087.9746587698367,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 659.4399191963951,
+          "required_ps": 857.2046896963955,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 808.1358772035128,
+          "required_ps": 1005.9006477035132,
+          "stage": 2
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 659.4399191963951,
+          "required_ps": 857.2046896963955,
+          "stage": 3
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 808.1358772035128,
+          "required_ps": 1005.9006477035132,
+          "stage": 4
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 659.4399191963951,
+          "required_ps": 857.2046896963955,
+          "stage": 5
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 808.1358772035128,
+          "required_ps": 1005.9006477035132,
+          "stage": 6
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 659.0925753820575,
+          "required_ps": 864.4094083820573,
+          "stage": 7
+        }
+      ],
+      "stage_data_bits": [
+        832,
+        320,
+        768,
+        256,
+        704,
+        192,
+        576,
+        64
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 0,
+      "dynamic_queries": 44,
+      "equivalent_T_range_ps": [
+        1001.8149209873086,
+        1085.472605504774
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "karatsuba256",
+      "L": 4,
+      "T_ps": 2300,
+      "grammar": [
+        0,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/karatsuba256/L4/software/selected/karatsuba256/T2300-L4/D/workload.sv",
+      "rtl_sha256": "8f7d78972cbbf42b9c41e26cda6ac83109a80a96c2297fd4393840a60af1943e",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/karatsuba256/L4/software/karatsuba256/final-selections.json",
+      "selection_sha256": "0cdd770346c70680b1bae328f2571f801dbc977a6cd9e25727a87c06cb1d5dea",
+      "trace_sha256": "ddacda0e88fe958909ae168550e274897368dff352e752fbe74112c94b905919",
+      "prediction": {
+        "critical_required_ps": 2714.368016493901,
+        "total_area_um2": 27223.286693396538,
+        "target_met": false,
+        "violation_ps": 414.368016493901
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 2134.331075616731,
+          "required_ps": 2415.753530616731,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 2516.6032459939006,
+          "required_ps": 2714.368016493901,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 2348.932422981806,
+          "required_ps": 2546.6971934818066,
+          "stage": 2
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 2088.5883692650705,
+          "required_ps": 2293.9052022650703,
+          "stage": 3
+        }
+      ],
+      "stage_data_bits": [
+        3304,
+        2188,
+        1538,
+        513
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 42,
+      "dynamic_queries": 65,
+      "equivalent_T_range_ps": [
+        472.3143873841543,
+        1978.3805490077848
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "karatsuba256",
+      "L": 4,
+      "T_ps": 2750,
+      "grammar": [
+        0,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/karatsuba256/L4/software/selected/karatsuba256/T2750-L4/D/workload.sv",
+      "rtl_sha256": "8f7d78972cbbf42b9c41e26cda6ac83109a80a96c2297fd4393840a60af1943e",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/karatsuba256/L4/software/karatsuba256/final-selections.json",
+      "selection_sha256": "0cdd770346c70680b1bae328f2571f801dbc977a6cd9e25727a87c06cb1d5dea",
+      "trace_sha256": "0d078411047df51dcee4ab26c519f25b8040c9a799e42279570ff86e24347564",
+      "prediction": {
+        "critical_required_ps": 2749.4984544976437,
+        "total_area_um2": 26984.845500102547,
+        "target_met": true,
+        "violation_ps": 0.0
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 2138.648843686345,
+          "required_ps": 2420.0712986863455,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 2551.7336839976433,
+          "required_ps": 2749.4984544976437,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 2377.5612219014383,
+          "required_ps": 2575.3259924014387,
+          "stage": 2
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 2103.8673582924753,
+          "required_ps": 2309.184191292475,
+          "stage": 3
+        }
+      ],
+      "stage_data_bits": [
+        3304,
+        2188,
+        1538,
+        513
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 6,
+      "dynamic_queries": 65,
+      "equivalent_T_range_ps": [
+        552.693131033817,
+        2200.7314658367072
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "karatsuba256",
+      "L": 8,
+      "T_ps": 1150,
+      "grammar": [
+        0,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/karatsuba256/T1150-L8/D/workload.sv",
+      "rtl_sha256": "b5e7a118e6c322fc7513b881e24ad0df50ec3e843593f415d5f9c80767f6f1de",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/karatsuba256/final-selections.json",
+      "selection_sha256": "6f1e3ea98d8b1cdbc5aff2998299037e94b7ab01643945711ab3ba2b5adff0e3",
+      "trace_sha256": "8ee0eac34d567493338d3b7340fd4bc29a0e0b3a2bbfd771fb6c1ee46e2607db",
+      "prediction": {
+        "critical_required_ps": 1623.1617474577342,
+        "total_area_um2": 32681.153895100746,
+        "target_met": false,
+        "violation_ps": 473.16174745773424
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 1290.3013376940632,
+          "required_ps": 1571.7237926940634,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1264.6267895071119,
+          "required_ps": 1462.3915600071123,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1425.3969769577338,
+          "required_ps": 1623.1617474577342,
+          "stage": 2
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1420.1099753365613,
+          "required_ps": 1617.8747458365617,
+          "stage": 3
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1358.6256886566616,
+          "required_ps": 1556.390459156662,
+          "stage": 4
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1254.2359928034884,
+          "required_ps": 1452.0007633034888,
+          "stage": 5
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1310.8709470569647,
+          "required_ps": 1508.6357175569651,
+          "stage": 6
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 732.4214733761323,
+          "required_ps": 937.7383063761322,
+          "stage": 7
+        }
+      ],
+      "stage_data_bits": [
+        2778,
+        3502,
+        2774,
+        2184,
+        2052,
+        1538,
+        1024,
+        513
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 49,
+      "dynamic_queries": 63,
+      "equivalent_T_range_ps": [
+        355.0399431776035,
+        1301.2533947296693
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "karatsuba256",
+      "L": 8,
+      "T_ps": 1400,
+      "grammar": [
+        0,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/karatsuba256/T1400-L8/D/workload.sv",
+      "rtl_sha256": "b5e7a118e6c322fc7513b881e24ad0df50ec3e843593f415d5f9c80767f6f1de",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/karatsuba256/final-selections.json",
+      "selection_sha256": "6f1e3ea98d8b1cdbc5aff2998299037e94b7ab01643945711ab3ba2b5adff0e3",
+      "trace_sha256": "dd98b604b787e970880faea0e09ff5bbdadd2a5f87140f8f93770cf52f1f3075",
+      "prediction": {
+        "critical_required_ps": 1660.6213844301978,
+        "total_area_um2": 32301.567426172114,
+        "target_met": false,
+        "violation_ps": 260.62138443019785
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 1294.5595725413687,
+          "required_ps": 1575.9820275413688,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1268.4609333360527,
+          "required_ps": 1466.225703836053,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1462.8566139301975,
+          "required_ps": 1660.6213844301978,
+          "stage": 2
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1452.5326119397832,
+          "required_ps": 1650.2973824397836,
+          "stage": 3
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1366.6247095071658,
+          "required_ps": 1564.3894800071662,
+          "stage": 4
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1270.7356363824144,
+          "required_ps": 1468.5004068824148,
+          "stage": 5
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 1332.019633151046,
+          "required_ps": 1529.7844036510464,
+          "stage": 6
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 735.8236907678212,
+          "required_ps": 941.140523767821,
+          "stage": 7
+        }
+      ],
+      "stage_data_bits": [
+        2778,
+        3502,
+        2774,
+        2184,
+        2052,
+        1538,
+        1024,
+        513
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 35,
+      "dynamic_queries": 63,
+      "equivalent_T_range_ps": [
+        434.7703759231514,
+        1463.576822411164
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "mac32",
+      "L": 2,
+      "T_ps": 950,
+      "grammar": [
+        8,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/mac32/L2/software/selected/mac32/T950-L2/D/workload.sv",
+      "rtl_sha256": "1ae18b2a62069e3c67d930944fcd26065b4228befb601e337a6d0b7cecd66603",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/mac32/L2/software/mac32/final-selections.json",
+      "selection_sha256": "8d73f8d1a9f1107d8de9777a91bf96857da3671df46fb6052b52c81ed2b6896d",
+      "trace_sha256": "a6117ac7b92f3890305ca3ab80cdfc9c355bed201f58d80f7f62001de7574be5",
+      "prediction": {
+        "critical_required_ps": 911.196729793381,
+        "total_area_um2": 941.9924388335605,
+        "target_met": true,
+        "violation_ps": 0.0
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 562.5003525567232,
+          "required_ps": 843.9228075567233,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 705.8798967933811,
+          "required_ps": 911.196729793381,
+          "stage": 1
+        }
+      ],
+      "stage_data_bits": [
+        320,
+        64
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 0,
+      "dynamic_queries": 17,
+      "equivalent_T_range_ps": [
+        801.8149210331387,
+        859.7471480255313
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "mac32",
+      "L": 2,
+      "T_ps": 1100,
+      "grammar": [
+        16,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/mac32/L2/software/selected/mac32/T1100-L2/D/workload.sv",
+      "rtl_sha256": "dce41e76e0194faaac2feec216cedfbb90eddea9d3b39d1d5afc30da3ce39a64",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/mac32/L2/software/mac32/final-selections.json",
+      "selection_sha256": "8d73f8d1a9f1107d8de9777a91bf96857da3671df46fb6052b52c81ed2b6896d",
+      "trace_sha256": "9da5cd6149d30b25ab425970b3d6b61d70d159643ba19205c1cdd20d59a28f3e",
+      "prediction": {
+        "critical_required_ps": 1086.9310528158069,
+        "total_area_um2": 810.3328209505721,
+        "target_met": true,
+        "violation_ps": 0.0
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 805.5085978158068,
+          "required_ps": 1086.9310528158069,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 516.3861576364171,
+          "required_ps": 721.702990636417,
+          "stage": 1
+        }
+      ],
+      "stage_data_bits": [
+        192,
+        64
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 0,
+      "dynamic_queries": 5,
+      "equivalent_T_range_ps": [
+        951.8149210181393,
+        1009.7471480105291
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "mac32",
+      "L": 3,
+      "T_ps": 500,
+      "grammar": [
+        4,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mac32/T500-L3/D/workload.sv",
+      "rtl_sha256": "a603cc65f248c0409d680555c3690cf9fc0f98e95de5a48fa1530482f7a85793",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/mac32/final-selections.json",
+      "selection_sha256": "d5fb01c7a439511323a9284ee6b3033df04d40f5b91958245a856486194c92c9",
+      "trace_sha256": "491a014f44cd6f939468845e58b387fa7da8cb6baea3568a58696f7578f7117c",
+      "prediction": {
+        "critical_required_ps": 733.7405933428988,
+        "total_area_um2": 1513.8718545088202,
+        "target_met": false,
+        "violation_ps": 233.74059334289882
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 313.06804543949215,
+          "required_ps": 594.4905004394923,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 526.2660130892208,
+          "required_ps": 724.0307835892212,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 528.423760342899,
+          "required_ps": 733.7405933428988,
+          "stage": 2
+        }
+      ],
+      "stage_data_bits": [
+        576,
+        288,
+        64
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 69,
+      "dynamic_queries": 69,
+      "equivalent_T_range_ps": [
+        312.4786808148288,
+        417.29921056977446
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "mac32",
+      "L": 3,
+      "T_ps": 750,
+      "grammar": [
+        4,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mac32/T750-L3/D/workload.sv",
+      "rtl_sha256": "a603cc65f248c0409d680555c3690cf9fc0f98e95de5a48fa1530482f7a85793",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/mac32/final-selections.json",
+      "selection_sha256": "d5fb01c7a439511323a9284ee6b3033df04d40f5b91958245a856486194c92c9",
+      "trace_sha256": "5f7332c5df962a337bf55bddcd62aa536822d71f7d8766534a04413ea932076d",
+      "prediction": {
+        "critical_required_ps": 773.1097730081631,
+        "total_area_um2": 1456.568419894968,
+        "target_met": false,
+        "violation_ps": 23.109773008163074
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 330.20375398398846,
+          "required_ps": 611.6262089839886,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 558.5413335652964,
+          "required_ps": 756.3061040652968,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 567.7929400081632,
+          "required_ps": 773.1097730081631,
+          "stage": 2
+        }
+      ],
+      "stage_data_bits": [
+        576,
+        288,
+        64
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 5,
+      "dynamic_queries": 69,
+      "equivalent_T_range_ps": [
+        479.9591495480803,
+        667.2992105447761
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "mac32",
+      "L": 3,
+      "T_ps": 1000,
+      "grammar": [
+        12,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mac32/T1000-L3/D/workload.sv",
+      "rtl_sha256": "9b41cfd87866aa472b2e3191052ddfddc6728cf089c09f0ebb2bb513b8715bf7",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/mac32/final-selections.json",
+      "selection_sha256": "d5fb01c7a439511323a9284ee6b3033df04d40f5b91958245a856486194c92c9",
+      "trace_sha256": "2fa523b76dbd118139ad7a5aae8c0206933153e8ccd9e8a0388ae3b77dabdbcc",
+      "prediction": {
+        "critical_required_ps": 984.0155932178709,
+        "total_area_um2": 981.625977143475,
+        "target_met": true,
+        "violation_ps": 0.0
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 702.5931382178708,
+          "required_ps": 984.0155932178709,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 595.8766247618607,
+          "required_ps": 793.6413952618611,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 482.5496049454031,
+          "required_ps": 687.8664379454029,
+          "stage": 2
+        }
+      ],
+      "stage_data_bits": [
+        256,
+        128,
+        64
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 0,
+      "dynamic_queries": 11,
+      "equivalent_T_range_ps": [
+        851.8149209858769,
+        917.2992105197736
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "mul128",
+      "L": 2,
+      "T_ps": 1200,
+      "grammar": [
+        16,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/mul128/L2/software/selected/mul128/T1200-L2/D/workload.sv",
+      "rtl_sha256": "797e2a4ef532ddac9815b68209df3ef2c9fbc114d4fc852935301c3cab530366",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/mul128/L2/software/mul128/final-selections.json",
+      "selection_sha256": "7b0cf623dd02dd6b4ab420b0340ef7c308d6fb1a19e3ecc9796fb3850f57ad89",
+      "trace_sha256": "5c164200efb7b736b2f90c9537ff21857bb5863a8a4f00da53dec1e87f48d4b4",
+      "prediction": {
+        "critical_required_ps": 1280.2456626414978,
+        "total_area_um2": 9653.06522581862,
+        "target_met": false,
+        "violation_ps": 80.2456626414978
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 807.5211113532343,
+          "required_ps": 1088.9435663532345,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 1074.928829641498,
+          "required_ps": 1280.2456626414978,
+          "stage": 1
+        }
+      ],
+      "stage_data_bits": [
+        2048,
+        256
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 1,
+      "dynamic_queries": 65,
+      "equivalent_T_range_ps": [
+        781.4239932679336,
+        1051.8149210081388
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "mul128",
+      "L": 2,
+      "T_ps": 1450,
+      "grammar": [
+        32,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/mul128/L2/software/selected/mul128/T1450-L2/D/workload.sv",
+      "rtl_sha256": "4cb62746f4c530da8ab09b2bc7c3d1346986e3719decf4fef905d85562f7dfa2",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/mul128/L2/software/mul128/final-selections.json",
+      "selection_sha256": "7b0cf623dd02dd6b4ab420b0340ef7c308d6fb1a19e3ecc9796fb3850f57ad89",
+      "trace_sha256": "cc37f79701402b27df1434aae2161a644f98a04333fe0751a1732e8389fa5193",
+      "prediction": {
+        "critical_required_ps": 1340.0438968518008,
+        "total_area_um2": 8550.996995451886,
+        "target_met": true,
+        "violation_ps": 0.0
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 1058.6214418518007,
+          "required_ps": 1340.0438968518008,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 855.3801091959712,
+          "required_ps": 1060.6969421959711,
+          "stage": 1
+        }
+      ],
+      "stage_data_bits": [
+        1024,
+        256
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 0,
+      "dynamic_queries": 17,
+      "equivalent_T_range_ps": [
+        1301.814921,
+        1359.7471480000002
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "mul128",
+      "L": 4,
+      "T_ps": 600,
+      "grammar": [
+        4,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T600-L4/D/workload.sv",
+      "rtl_sha256": "78374d7545b6be3e333da7bbabbe25b76ee9b45b9a61343c8b12c00598720aa1",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/mul128/final-selections.json",
+      "selection_sha256": "456811297651cc217d8a28311a9a6599d0f6ba1311dc4cb14d621b7785f7e9e3",
+      "trace_sha256": "c53b50dc3b0bf317ac775dcd5abca843386958331694233fe5f9cae0e7a950b5",
+      "prediction": {
+        "critical_required_ps": 1010.7761232087912,
+        "total_area_um2": 93648.03112698074,
+        "target_met": false,
+        "violation_ps": 410.7761232087912
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 443.74416875831776,
+          "required_ps": 893.2539994638328,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 813.0113527087908,
+          "required_ps": 1010.7761232087912,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 793.406871368508,
+          "required_ps": 991.1716418685083,
+          "stage": 2
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 803.4142741448379,
+          "required_ps": 1008.7311071448378,
+          "stage": 3
+        }
+      ],
+      "stage_data_bits": [
+        69120,
+        10624,
+        1656,
+        256
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 1609,
+      "dynamic_queries": 1609,
+      "equivalent_T_range_ps": [
+        176.9824181598321,
+        564.7867750990456
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "mul128",
+      "L": 4,
+      "T_ps": 750,
+      "grammar": [
+        4,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T750-L4/D/workload.sv",
+      "rtl_sha256": "78374d7545b6be3e333da7bbabbe25b76ee9b45b9a61343c8b12c00598720aa1",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/mul128/final-selections.json",
+      "selection_sha256": "456811297651cc217d8a28311a9a6599d0f6ba1311dc4cb14d621b7785f7e9e3",
+      "trace_sha256": "bfcc1efc2cd24344940244045df9477a3a08a2e2a85f3069ac16131646af7464",
+      "prediction": {
+        "critical_required_ps": 1035.8874509976672,
+        "total_area_um2": 92341.43842570172,
+        "target_met": false,
+        "violation_ps": 285.8874509976672
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 489.31566652602606,
+          "required_ps": 937.6863458239286,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 838.1226804976667,
+          "required_ps": 1035.8874509976672,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 817.9126792523707,
+          "required_ps": 1015.6774497523711,
+          "stage": 2
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 828.8353154360608,
+          "required_ps": 1034.1521484360605,
+          "stage": 3
+        }
+      ],
+      "stage_data_bits": [
+        69120,
+        10624,
+        1656,
+        256
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 1097,
+      "dynamic_queries": 1609,
+      "equivalent_T_range_ps": [
+        272.7287151370545,
+        667.2992105447745
+      ],
+      "equivalent_T_equal_global_count": 0
+    },
+    {
+      "case": "ntt8x64",
+      "L": 16,
+      "T_ps": 800,
+      "grammar": [
+        0,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/parallel-software/ntt8x64/selected/ntt8x64/T800-L16/D/workload.sv",
+      "rtl_sha256": "a6689a6712c659175b709e532f4823667d3f05103cbe212ccf536a0be05c934e",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/ntt8x64/final-selections.json",
+      "selection_sha256": "4c9ce252fab1f6a1eb315c6d41ce2503ff22e61dd274e8f857f003fcb9f6269e",
+      "trace_sha256": "4bf08be12eb71080dc87fc389ffaac79e3745c5f432beb55c7b9ab8428cbba95",
+      "prediction": {
+        "critical_required_ps": 774.0306874810161,
+        "total_area_um2": 28659.995524493395,
+        "target_met": true,
+        "violation_ps": 0.0
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 474.34956099916434,
+          "required_ps": 755.7720159991645,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 536.8851881787584,
+          "required_ps": 734.6499586787588,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 538.0632657174936,
+          "required_ps": 735.828036217494,
+          "stage": 2
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 576.2659169810157,
+          "required_ps": 774.0306874810161,
+          "stage": 3
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 538.0632657174936,
+          "required_ps": 735.828036217494,
+          "stage": 4
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 576.2659169810157,
+          "required_ps": 774.0306874810161,
+          "stage": 5
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 536.8851881787584,
+          "required_ps": 734.6499586787588,
+          "stage": 6
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 512.5559473389915,
+          "required_ps": 710.3207178389919,
+          "stage": 7
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 536.8851881787584,
+          "required_ps": 734.6499586787588,
+          "stage": 8
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 488.94206122474003,
+          "required_ps": 697.9262063727157,
+          "stage": 9
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 576.2659169810157,
+          "required_ps": 774.0306874810161,
+          "stage": 10
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 504.9015120869568,
+          "required_ps": 702.6662825869572,
+          "stage": 11
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 534.0120466488866,
+          "required_ps": 731.776817148887,
+          "stage": 12
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 536.8851881787584,
+          "required_ps": 734.6499586787588,
+          "stage": 13
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 478.3001045273695,
+          "required_ps": 676.0648750273699,
+          "stage": 14
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 534.2457865653848,
+          "required_ps": 739.5626195653847,
+          "stage": 15
+        }
+      ],
+      "stage_data_bits": [
+        776,
+        516,
+        968,
+        872,
+        1226,
+        952,
+        885,
+        646,
+        577,
+        1028,
+        900,
+        1028,
+        772,
+        642,
+        516,
+        512
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 0,
+      "dynamic_queries": 143,
+      "equivalent_T_range_ps": [
+        328.9370117024775,
+        800
+      ],
+      "equivalent_T_equal_global_count": 3
+    },
+    {
+      "case": "ntt8x64",
+      "L": 16,
+      "T_ps": 950,
+      "grammar": [
+        0,
+        0
+      ],
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/parallel-software/ntt8x64/selected/ntt8x64/T950-L16/D/workload.sv",
+      "rtl_sha256": "a6689a6712c659175b709e532f4823667d3f05103cbe212ccf536a0be05c934e",
+      "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/ntt8x64/final-selections.json",
+      "selection_sha256": "4c9ce252fab1f6a1eb315c6d41ce2503ff22e61dd274e8f857f003fcb9f6269e",
+      "trace_sha256": "317e69d515d4d6dc91ed06fd7e2e480a72d65a50d49f1e12464d7edd03123969",
+      "prediction": {
+        "critical_required_ps": 778.20897369992,
+        "total_area_um2": 28389.93581674661,
+        "target_met": true,
+        "violation_ps": 0.0
+      },
+      "stages": [
+        {
+          "boundary_ps": 231.42245500000013,
+          "comb_delay_ps": 480.7854862214291,
+          "required_ps": 762.2079412214292,
+          "stage": 0
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 554.8067538059909,
+          "required_ps": 752.5715243059913,
+          "stage": 1
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 556.0575393596596,
+          "required_ps": 753.82230985966,
+          "stage": 2
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 580.4442031999195,
+          "required_ps": 778.2089736999199,
+          "stage": 3
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 556.0575393596596,
+          "required_ps": 753.82230985966,
+          "stage": 4
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 580.4442031999196,
+          "required_ps": 778.20897369992,
+          "stage": 5
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 554.8067538059909,
+          "required_ps": 752.5715243059913,
+          "stage": 6
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 524.3819524585696,
+          "required_ps": 722.14672295857,
+          "stage": 7
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 554.8067538059909,
+          "required_ps": 752.5715243059913,
+          "stage": 8
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 493.1203474436438,
+          "required_ps": 721.6373473414434,
+          "stage": 9
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 580.4442031999196,
+          "required_ps": 778.20897369992,
+          "stage": 10
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 509.0797983058606,
+          "required_ps": 722.0505399126213,
+          "stage": 11
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 545.8380517684647,
+          "required_ps": 743.602822268465,
+          "stage": 12
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 554.8067538059909,
+          "required_ps": 752.5715243059913,
+          "stage": 13
+        },
+        {
+          "boundary_ps": 147.7647705000004,
+          "comb_delay_ps": 483.32948388862405,
+          "required_ps": 690.2126966117578,
+          "stage": 14
+        },
+        {
+          "boundary_ps": 155.31683299999986,
+          "comb_delay_ps": 552.3364306508072,
+          "required_ps": 757.653263650807,
+          "stage": 15
+        }
+      ],
+      "stage_data_bits": [
+        776,
+        516,
+        968,
+        872,
+        1226,
+        952,
+        885,
+        646,
+        577,
+        1028,
+        900,
+        1028,
+        772,
+        642,
+        516,
+        512
+      ],
+      "empty_priced_stages": [],
+      "functional_receipt_valid": true,
+      "prediction_matches_receipt": true,
+      "local_requests_unmet": 0,
+      "dynamic_queries": 143,
+      "equivalent_T_range_ps": [
+        384.9076531060172,
+        950
+      ],
+      "equivalent_T_equal_global_count": 3
+    }
+  ],
+  "pool_checks": [
+    {
+      "case": "add512",
+      "L": 2,
+      "T_ps": 700,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/add512/L2/software/add512/scores-T700/pool-summary.json.gz",
+      "pool_sha256": "bc3bd6269524639b15a117ea87e76cff32631a91757f2410040187c710a34486",
+      "pool_matches_frozen_hash": true,
+      "candidates": 17,
+      "complete": 17,
+      "feasible": 0,
+      "selected_id": "7e75070106f50ede577d31a39b8aaae84a0a686f680915dc4b2020bb43138c71",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "7e75070106f50ede577d31a39b8aaae84a0a686f680915dc4b2020bb43138c71",
+            "origin": "new_depth_native_beam",
+            "prediction": {
+              "critical_required_ps": 979.3151768791881,
+              "total_area_um2": 2397.6631012073653,
+              "target_met": false,
+              "violation_ps": 279.31517687918813
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "7e75070106f50ede577d31a39b8aaae84a0a686f680915dc4b2020bb43138c71",
+            "origin": "new_depth_native_beam",
+            "prediction": {
+              "critical_required_ps": 979.3151768791881,
+              "total_area_um2": 2397.6631012073653,
+              "target_met": false,
+              "violation_ps": 279.31517687918813
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "add512",
+      "L": 2,
+      "T_ps": 800,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/add512/L2/software/add512/scores-T800/pool-summary.json.gz",
+      "pool_sha256": "e280207cbdadbe524dd0937feec1320a50b930c180e0696d1efb63ce096e1c1a",
+      "pool_matches_frozen_hash": true,
+      "candidates": 17,
+      "complete": 17,
+      "feasible": 0,
+      "selected_id": "904654f336c50e2c000676dc6287e1a5e3db89c842a24ec8c0df14adca92d8c3",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "904654f336c50e2c000676dc6287e1a5e3db89c842a24ec8c0df14adca92d8c3",
+            "origin": "new_depth_native_beam",
+            "prediction": {
+              "critical_required_ps": 987.700895973993,
+              "total_area_um2": 2322.5087347269055,
+              "target_met": false,
+              "violation_ps": 187.70089597399306
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "904654f336c50e2c000676dc6287e1a5e3db89c842a24ec8c0df14adca92d8c3",
+            "origin": "new_depth_native_beam",
+            "prediction": {
+              "critical_required_ps": 987.700895973993,
+              "total_area_um2": 2322.5087347269055,
+              "target_met": false,
+              "violation_ps": 187.70089597399306
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "add512",
+      "L": 4,
+      "T_ps": 350,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/add512/scores-T350/pool-summary.json.gz",
+      "pool_sha256": "2f3d37e1d1aade725fe65218c24ab5a3b8321e2939ff38360ba873cb6175bded",
+      "pool_matches_frozen_hash": true,
+      "candidates": 15,
+      "complete": 15,
+      "feasible": 0,
+      "selected_id": "d8afc90c5ead93255bb0a83c1e02fd50cceaf8afaed934dc83b85aa3a4b7cbd0",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "87fa78af0bffd79b5990b4765239ab58f0c76a243faa0a48e5d12ee2a6259b83",
+            "origin": "archived_beam",
+            "prediction": {
+              "critical_required_ps": 889.4791551277068,
+              "total_area_um2": 4380.001744324627,
+              "target_met": false,
+              "violation_ps": 539.4791551277068
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "87fa78af0bffd79b5990b4765239ab58f0c76a243faa0a48e5d12ee2a6259b83",
+            "origin": "archived_beam",
+            "prediction": {
+              "critical_required_ps": 889.4791551277068,
+              "total_area_um2": 4380.001744324627,
+              "target_met": false,
+              "violation_ps": 539.4791551277068
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "add512",
+      "L": 4,
+      "T_ps": 400,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/add512/scores-T400/pool-summary.json.gz",
+      "pool_sha256": "e0211e48c33d63adfd1e670ef39728134b51bf0f2516a0b1e92afda3965dddb0",
+      "pool_matches_frozen_hash": true,
+      "candidates": 15,
+      "complete": 15,
+      "feasible": 0,
+      "selected_id": "11d673a6ad3d7c69ef07a761de5959e25ff3fab54c917f7a28d8814a87229e5a",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "edec8c01307d040a00f83841bbdde13246865da81e8a059a54562d79a5d69591",
+            "origin": "archived_beam",
+            "prediction": {
+              "critical_required_ps": 916.3602978024527,
+              "total_area_um2": 3838.5721371214304,
+              "target_met": false,
+              "violation_ps": 516.3602978024527
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "edec8c01307d040a00f83841bbdde13246865da81e8a059a54562d79a5d69591",
+            "origin": "archived_beam",
+            "prediction": {
+              "critical_required_ps": 916.3602978024527,
+              "total_area_um2": 3838.5721371214304,
+              "target_met": false,
+              "violation_ps": 516.3602978024527
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "barrett64",
+      "L": 4,
+      "T_ps": 1800,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/barrett64/L4/software/barrett64/scores-T1800/pool-summary.json.gz",
+      "pool_sha256": "61cac641153188a7bdd2dc194fb3f67f3cfd22dbdf90efde6c0d5797c87a6c37",
+      "pool_matches_frozen_hash": true,
+      "candidates": 44,
+      "complete": 44,
+      "feasible": 3,
+      "selected_id": "6d597f7f00ebd72364f945d2760017fa1b2e0e25ea337f1da3ad3bb89f00c1f2",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "6d597f7f00ebd72364f945d2760017fa1b2e0e25ea337f1da3ad3bb89f00c1f2",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 1588.1146298823212,
+              "total_area_um2": 8273.50838421266,
+              "target_met": true,
+              "violation_ps": 0.0
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "1b1ca4e2332fe9b26dcdad92c3a0651d6ca08487ba14cd42d7ef287b12536a81",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 2462.813618289394,
+              "total_area_um2": 13981.393659617144,
+              "target_met": false,
+              "violation_ps": 662.8136182893941
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "barrett64",
+      "L": 4,
+      "T_ps": 2150,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/barrett64/L4/software/barrett64/scores-T2150/pool-summary.json.gz",
+      "pool_sha256": "305297fa22559bde941e672b6a743c984582f0bf7f052479f6643669019327bc",
+      "pool_matches_frozen_hash": true,
+      "candidates": 44,
+      "complete": 44,
+      "feasible": 8,
+      "selected_id": "56a8c5455181b29203a27d0332fbcdb46de6ec42ada8010f8c74e5fbbd478697",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "56a8c5455181b29203a27d0332fbcdb46de6ec42ada8010f8c74e5fbbd478697",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 1590.9617979063355,
+              "total_area_um2": 8232.185591238289,
+              "target_met": true,
+              "violation_ps": 0.0
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "b76e9fdd3bff5fea162efff21845f6c960c9d6c7466f7ef097944b595f7313f9",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 2500.1019343688495,
+              "total_area_um2": 13905.406905401018,
+              "target_met": false,
+              "violation_ps": 350.10193436884947
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "barrett64",
+      "L": 8,
+      "T_ps": 900,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/barrett64/scores-T900/pool-summary.json.gz",
+      "pool_sha256": "9abb4845a97137c70c9fdf4aa9375c1b266b6659710b55524a62cf544dc0fab7",
+      "pool_matches_frozen_hash": true,
+      "candidates": 46,
+      "complete": 46,
+      "feasible": 0,
+      "selected_id": "60cddabd548d5a1ad4e2d40abd7851cfcd5ee767b63488be78fe2e408f381dc3",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "48836f906508e5c06a15e4d8635e26bc5e2b5d1ede5af538333f7cd2b1b9229b",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 1574.4697066396595,
+              "total_area_um2": 8697.553384750625,
+              "target_met": false,
+              "violation_ps": 674.4697066396595
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "6fb347b0538aefba9e8dfe8da04c11bee7ef96ab61b81389721fafc62c534f29",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 1864.9100367767155,
+              "total_area_um2": 24083.51529877413,
+              "target_met": false,
+              "violation_ps": 964.9100367767155
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "barrett64",
+      "L": 8,
+      "T_ps": 1100,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/barrett64/scores-T1100/pool-summary.json.gz",
+      "pool_sha256": "0af339682d69a593dd8222854974eb9badcc75941fdb20a0906f088b882a5186",
+      "pool_matches_frozen_hash": true,
+      "candidates": 46,
+      "complete": 46,
+      "feasible": 0,
+      "selected_id": "72a148f9389fe5034eec40e24457174d3a23bb06b0fdf56aefeca347eabf64e6",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "aae83671f7e231aa94d9864350f17d257e059d2cbf54e0f479b2bf0447279975",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 1578.9560664158962,
+              "total_area_um2": 8597.624722048293,
+              "target_met": false,
+              "violation_ps": 478.9560664158962
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "96318d33d94ef0ee53aa97a455a8a9b2aaf6646ed5834856d6456aa346bc8249",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 1888.7121492283013,
+              "total_area_um2": 23904.33228078374,
+              "target_met": false,
+              "violation_ps": 788.7121492283013
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "dot16",
+      "L": 4,
+      "T_ps": 850,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/dot16/scores-T850/pool-summary.json.gz",
+      "pool_sha256": "d91741c0686909d4d1ec35ba67294e89a9b463ea1cfc403fc146ff7df951b73b",
+      "pool_matches_frozen_hash": true,
+      "candidates": 35,
+      "complete": 35,
+      "feasible": 0,
+      "selected_id": "70a32d79b1da698f20d40178f529421e6a94deba3afd4b3abbf3f940060594df",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "65f5fba5dff3b91f1c7d93f0a4480d1ebb6baecb34b4be6ae761366f504932d7",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 2087.2592854618424,
+              "total_area_um2": 34347.46696164409,
+              "target_met": false,
+              "violation_ps": 1237.2592854618424
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "6e15693dcca45fea2844e48c0b94f97d4634ea809f21f5b49c7d1ca7baa73ac9",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 1369.348395491997,
+              "total_area_um2": 56892.55671460306,
+              "target_met": false,
+              "violation_ps": 519.348395491997
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "dot16",
+      "L": 4,
+      "T_ps": 1050,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/dot16/scores-T1050/pool-summary.json.gz",
+      "pool_sha256": "e098499c9b2477f4dea8e7b1a320971967f6cb0b2da72ae51c30856a4f2ac40c",
+      "pool_matches_frozen_hash": true,
+      "candidates": 35,
+      "complete": 35,
+      "feasible": 0,
+      "selected_id": "b7de20ccffdbee228e7ed7ac82ff62817b3fcb38c22df81f917e6c25d7a83a62",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "1c746f0cf43b8789c7a05969d1f5a849e524f0911198c9eb74485ff1cda30304",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 2105.1162060373463,
+              "total_area_um2": 33969.20690287277,
+              "target_met": false,
+              "violation_ps": 1055.1162060373463
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "27dac62d1b1f5b0b4990729ab70ba45337fa5804fef2ce12739c32a42484db40",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 1402.4344666276556,
+              "total_area_um2": 56121.97043668913,
+              "target_met": false,
+              "violation_ps": 352.43446662765564
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "dot16",
+      "L": 5,
+      "T_ps": 700,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/dot16/scores-T700/pool-summary.json.gz",
+      "pool_sha256": "525b5f723b818981b36400212faf9c1e52a781a260f0bad6f9c89ba6d2d1ad25",
+      "pool_matches_frozen_hash": true,
+      "candidates": 30,
+      "complete": 30,
+      "feasible": 0,
+      "selected_id": "d8aca609be4174626b10c2b3be9c9686c53dfed0a614a81abee0c4210c645f31",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "3b0f547b7e3091c1d27ed6c9d46579af0aeef296ce257e985dd5a6f3b004f7da",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 1572.1558784280596,
+              "total_area_um2": 36611.88788550871,
+              "target_met": false,
+              "violation_ps": 872.1558784280596
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "d0db134cc82d9dc2add6826777bfe4e23b023deeeaa6733fd1b0bf9361da6ccf",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 2067.984510968994,
+              "total_area_um2": 78754.71389410246,
+              "target_met": false,
+              "violation_ps": 1367.984510968994
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "dot16",
+      "L": 5,
+      "T_ps": 850,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/dot16/scores-T850/pool-summary.json.gz",
+      "pool_sha256": "822d27a59eae9ecf24b30673a36a94d8209336aa2ec31c1ba6dd90d27b77b02e",
+      "pool_matches_frozen_hash": true,
+      "candidates": 30,
+      "complete": 30,
+      "feasible": 0,
+      "selected_id": "20dabef404d18cdde346f9a4314b5a310de230b634080292714092df26ef86f8",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "5bb9760f6f8ff24f26227b555c422adb01160872721053a9e5884e965c8acebd",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 1578.4417631870833,
+              "total_area_um2": 35888.72565844647,
+              "target_met": false,
+              "violation_ps": 728.4417631870833
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "41edea2d881d331a792dc16e17b88ea728e8ca6ac1e3a4788d44683284bcbff6",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 2087.7558011095844,
+              "total_area_um2": 77834.26484206934,
+              "target_met": false,
+              "violation_ps": 1237.7558011095844
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "horner64",
+      "L": 4,
+      "T_ps": 1900,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/horner64/L4/software/horner64/scores-T1900/pool-summary.json.gz",
+      "pool_sha256": "76364cf51335708102e20dbfda0f072a5a50ecd6fb8757eefdd0a2c96062f2ed",
+      "pool_matches_frozen_hash": true,
+      "candidates": 16,
+      "complete": 16,
+      "feasible": 4,
+      "selected_id": "a6aec5c0a30707c3638241fbb29f56c4be2a5a0cf94ebcba77a224aaf5044bdc",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "9be1196a7525c040a3e73eb55147f4ad0a4b29629d6766e0ec32f941c4de06a2",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 1925.457920749187,
+              "total_area_um2": 4675.9010704238635,
+              "target_met": false,
+              "violation_ps": 25.457920749186997
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "68d8dca8f0e7c023a29fd79be40dfd5e60e3cba7157cfed55ff66e668fab90eb",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 1708.7080860559856,
+              "total_area_um2": 5304.421478597277,
+              "target_met": true,
+              "violation_ps": 0.0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "horner64",
+      "L": 4,
+      "T_ps": 2250,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/horner64/L4/software/horner64/scores-T2250/pool-summary.json.gz",
+      "pool_sha256": "9482efcc240987cf3ca2b3a0a11ee0e151b9ab8bf58a6edae5928250b8dad707",
+      "pool_matches_frozen_hash": true,
+      "candidates": 16,
+      "complete": 16,
+      "feasible": 5,
+      "selected_id": "5322ae98847ccaacc435e981ef95fa0d80739572655bb08c8c9a34209b6d712d",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "5322ae98847ccaacc435e981ef95fa0d80739572655bb08c8c9a34209b6d712d",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 1947.6924187944348,
+              "total_area_um2": 4651.727779539642,
+              "target_met": true,
+              "violation_ps": 0.0
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "ae679fe1247696c92c3ad94a45487008a484c3b2b7633bf383499b2b5f55fa4a",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 1720.7942423058005,
+              "total_area_um2": 5289.081239415886,
+              "target_met": true,
+              "violation_ps": 0.0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "horner64",
+      "L": 8,
+      "T_ps": 950,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/horner64/scores-T950/pool-summary.json.gz",
+      "pool_sha256": "c9891e848c3033726caeb1063e862ce2eed2cbb58b0b214f2b1dc2255136f5c7",
+      "pool_matches_frozen_hash": true,
+      "candidates": 42,
+      "complete": 42,
+      "feasible": 0,
+      "selected_id": "3f740ab680c6ee48f450b9afea91ca223c187f13324001476ad1a3c5ca31bdc9",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "645ff14dac81a4ba0d207065106955733b40c5c5f82d12bcc59f12a90d555a9a",
+            "origin": "archived_beam",
+            "prediction": {
+              "critical_required_ps": 1451.399502057018,
+              "total_area_um2": 5464.775942625858,
+              "target_met": false,
+              "violation_ps": 501.399502057018
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "e9831aa77cb4d2f28490dc0ebbffc096e312a80fdc8c7330a95bcc9290d4f8de",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 1499.1292567965859,
+              "total_area_um2": 12597.378609027299,
+              "target_met": false,
+              "violation_ps": 549.1292567965859
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "horner64",
+      "L": 8,
+      "T_ps": 1150,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/horner64/scores-T1150/pool-summary.json.gz",
+      "pool_sha256": "3aa44a02f6d5eee517696562d323b76f9af841a9929ed811bfcd2415b5d7a025",
+      "pool_matches_frozen_hash": true,
+      "candidates": 42,
+      "complete": 42,
+      "feasible": 1,
+      "selected_id": "6bd79f6049775209b3bbcb256b884f3b823a515cfe74a2c8ccff028384f9b7f7",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "4c5ec88ab186675e356c63a10b4b755ab69fe714aa686c0c9ac21bcaee543dce",
+            "origin": "archived_beam",
+            "prediction": {
+              "critical_required_ps": 1456.7073675736353,
+              "total_area_um2": 5410.937203377021,
+              "target_met": false,
+              "violation_ps": 306.70736757363534
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "ba26fc0eaaa2b2d0dd95b2a0a57eff7967ce87de3f74d46c7dcf7026b0dd793f",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 1515.103979473588,
+              "total_area_um2": 12442.32762995391,
+              "target_met": false,
+              "violation_ps": 365.10397947358797
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "karatsuba256",
+      "L": 4,
+      "T_ps": 2300,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/karatsuba256/L4/software/karatsuba256/scores-T2300/pool-summary.json.gz",
+      "pool_sha256": "c167b0ae6a6ef049faddaaec2b647f454e0d69c8585852a48a5531aad8141ed2",
+      "pool_matches_frozen_hash": true,
+      "candidates": 48,
+      "complete": 48,
+      "feasible": 0,
+      "selected_id": "8014e7381a5099ee262afd060f57272a54b6c4c3ac2e2a54742dd45051120e6a",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "2a3d2d12e31444354f2021cf156976d69fc0b864ccbcb34c34375290d74efcd1",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 5623.062852896461,
+              "total_area_um2": 26825.24781599724,
+              "target_met": false,
+              "violation_ps": 3323.0628528964608
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "31776eaef9e297f01f8107ec574165253d6e1bc364abd765723361a9ae8be7d8",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 4238.276183801092,
+              "total_area_um2": 37576.90589445172,
+              "target_met": false,
+              "violation_ps": 1938.276183801092
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "karatsuba256",
+      "L": 4,
+      "T_ps": 2750,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/karatsuba256/L4/software/karatsuba256/scores-T2750/pool-summary.json.gz",
+      "pool_sha256": "b902a047a9f40cbfe15b0f7f5084c8d09a4d85f643fded58190714a0013c54a9",
+      "pool_matches_frozen_hash": true,
+      "candidates": 48,
+      "complete": 48,
+      "feasible": 1,
+      "selected_id": "99a0af32053a260c0c0993af3c9ffec3b2a8c56ad421b437c96867647610ac9c",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "ffa149fb04a43e05fdc5560d86e2ae209b363507b6597942940f74269e291d3e",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 5722.867413020254,
+              "total_area_um2": 26558.69745316816,
+              "target_met": false,
+              "violation_ps": 2972.8674130202544
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "847ac157516e68c72c80bdb5ff0896cbc48adfb551f2181987d06d164f361b96",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 4305.346791710048,
+              "total_area_um2": 37341.88126774112,
+              "target_met": false,
+              "violation_ps": 1555.346791710048
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "karatsuba256",
+      "L": 8,
+      "T_ps": 1150,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/karatsuba256/scores-T1150/pool-summary.json.gz",
+      "pool_sha256": "eb022cd230d8d2bed8086c6246c339ef8c1a72081d82d81753b5265d46406415",
+      "pool_matches_frozen_hash": true,
+      "candidates": 47,
+      "complete": 47,
+      "feasible": 0,
+      "selected_id": "fe6ed4ad1b13867e9307ae4a09e5c0e6d171daca8e98973b2818b2ca99738e3e",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "93cc572ce61d17039a5701c837b4c66e1884969ea0587713662ff7150db269b0",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 5186.048740786664,
+              "total_area_um2": 29561.596767347655,
+              "target_met": false,
+              "violation_ps": 4036.048740786664
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "5ec733a6c63eaf96178b3881e47424aedb3d3f985b426565812a15bc6bbccfe9",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 2484.367448303534,
+              "total_area_um2": 41717.86631528637,
+              "target_met": false,
+              "violation_ps": 1334.3674483035338
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "karatsuba256",
+      "L": 8,
+      "T_ps": 1400,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/karatsuba256/scores-T1400/pool-summary.json.gz",
+      "pool_sha256": "41f941b9632feb622b9c202bdd40997c6e1ba4e5f291e9748d1f151339e260b2",
+      "pool_matches_frozen_hash": true,
+      "candidates": 47,
+      "complete": 47,
+      "feasible": 0,
+      "selected_id": "03e61d5857907b5242938e71252823a1671b894256fdd05e7b54ac54d4589da8",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "6d6ed782ba00e4140ff3caaae386dd76a503325194924e47d423efe4d5396444",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 5308.562893655906,
+              "total_area_um2": 29021.616930640746,
+              "target_met": false,
+              "violation_ps": 3908.562893655906
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "44ec39c235a4999bcb378ef6a9d95f56515047d171e3ece25402c3bd398e5fd5",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 2529.1727843430936,
+              "total_area_um2": 41203.88874956114,
+              "target_met": false,
+              "violation_ps": 1129.1727843430936
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "mac32",
+      "L": 2,
+      "T_ps": 950,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/mac32/L2/software/mac32/scores-T950/pool-summary.json.gz",
+      "pool_sha256": "3d396277a541c69caf140214d6fcc2b185aaf6e4a5ec9310b9a6f2670df725cb",
+      "pool_matches_frozen_hash": true,
+      "candidates": 13,
+      "complete": 13,
+      "feasible": 1,
+      "selected_id": "495dac5dfb07ee94d1c62929c0bda63e21beb2c3670096e4d1a8bc1465dcf9ac",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "8e91735b4858219bc3bc4ebe6ffbd0f87f3c7a1b34c020f8c66f16ac8fc88801",
+            "origin": "new_depth_native_beam",
+            "prediction": {
+              "critical_required_ps": 1322.361245203378,
+              "total_area_um2": 762.0540814959213,
+              "target_met": false,
+              "violation_ps": 372.3612452033781
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "495dac5dfb07ee94d1c62929c0bda63e21beb2c3670096e4d1a8bc1465dcf9ac",
+            "origin": "new_depth_native_beam",
+            "prediction": {
+              "critical_required_ps": 911.196729793381,
+              "total_area_um2": 941.9924388335605,
+              "target_met": true,
+              "violation_ps": 0.0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "mac32",
+      "L": 2,
+      "T_ps": 1100,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/mac32/L2/software/mac32/scores-T1100/pool-summary.json.gz",
+      "pool_sha256": "e5763eedd04eb82aaa7ca61f23ed2ce6904cdcfa676eada144ceb404fe84c93a",
+      "pool_matches_frozen_hash": true,
+      "candidates": 13,
+      "complete": 13,
+      "feasible": 5,
+      "selected_id": "7992797a9ac1761dd24edbc4d5573d0989f06cf32d7f7b93f7c0521d56340d1c",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "f709331d05d56a7d1e20f72ecf0391655eccaff63463a4a1ff92f19d7ff57b0c",
+            "origin": "new_depth_native_beam",
+            "prediction": {
+              "critical_required_ps": 1326.499008489797,
+              "total_area_um2": 754.3404779183355,
+              "target_met": false,
+              "violation_ps": 226.499008489797
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "19fe24c98389db5532b69d8600c5430d8d1300f23c1f5e88b09e67de325f5b47",
+            "origin": "new_depth_native_beam",
+            "prediction": {
+              "critical_required_ps": 920.5790091239962,
+              "total_area_um2": 935.4260431934063,
+              "target_met": true,
+              "violation_ps": 0.0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "mac32",
+      "L": 3,
+      "T_ps": 500,
+      "status": "Inherited MAC32 L3 step45 selection; prior common-pool audit retained"
+    },
+    {
+      "case": "mac32",
+      "L": 3,
+      "T_ps": 750,
+      "status": "Inherited MAC32 L3 step45 selection; prior common-pool audit retained"
+    },
+    {
+      "case": "mac32",
+      "L": 3,
+      "T_ps": 1000,
+      "status": "Inherited MAC32 L3 step45 selection; prior common-pool audit retained"
+    },
+    {
+      "case": "mul128",
+      "L": 2,
+      "T_ps": 1200,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/mul128/L2/software/mul128/scores-T1200/pool-summary.json.gz",
+      "pool_sha256": "a209218b46922b194dcafe9bbb13a6d02a8ee7ef585d5f24885c7cec6e91ee73",
+      "pool_matches_frozen_hash": true,
+      "candidates": 16,
+      "complete": 16,
+      "feasible": 0,
+      "selected_id": "72d32f45109bf25679ea2579d282028973bad075348aad284b4104ad3ec35c42",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "5858b1d0e67449af1285cae2a7d1fd3b7a0ab4703c70016a1ed9d0d8d2ed67e1",
+            "origin": "new_depth_native_beam",
+            "prediction": {
+              "critical_required_ps": 1833.330292741308,
+              "total_area_um2": 7834.835507048463,
+              "target_met": false,
+              "violation_ps": 633.3302927413081
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "b6d42e5eae0513ab5a201680c9a11a53bc3db3aacdfea84a45d17b3ad19de21f",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 1624.6309745991489,
+              "total_area_um2": 17966.667950020375,
+              "target_met": false,
+              "violation_ps": 424.6309745991489
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "mul128",
+      "L": 2,
+      "T_ps": 1450,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/mul128/L2/software/mul128/scores-T1450/pool-summary.json.gz",
+      "pool_sha256": "8628d4cb39a10dffb5742f293f2efc0dbf8526203d58decc0e96ea3632836154",
+      "pool_matches_frozen_hash": true,
+      "candidates": 16,
+      "complete": 16,
+      "feasible": 2,
+      "selected_id": "74f9d7d8ea5e1405345bf09e25df53fd7cf2c6325d3b644cec746694b9d608e7",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "73efddac2b5ad4e5c0df75d0aabd949de77ae86aa0b1b2d66a2e8732d8063d0a",
+            "origin": "new_depth_native_beam",
+            "prediction": {
+              "critical_required_ps": 1837.8131161677695,
+              "total_area_um2": 7737.828165560435,
+              "target_met": false,
+              "violation_ps": 387.8131161677695
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "3c62dcdd86a0d112777fc61ae5014dadf53ca0cd928ac7f54db996e30318ef5f",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 1644.9242624481647,
+              "total_area_um2": 17873.587114616643,
+              "target_met": false,
+              "violation_ps": 194.92426244816465
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "mul128",
+      "L": 4,
+      "T_ps": 600,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/mul128/scores-T600/pool-summary.json.gz",
+      "pool_sha256": "23ad327f2b098e3a1cdd611d82e19d9d9272ca0066748d292619c62514d28490",
+      "pool_matches_frozen_hash": true,
+      "candidates": 15,
+      "complete": 15,
+      "feasible": 0,
+      "selected_id": "648fbe8f395c49c35e5d446f5314080157ab6fb0fd53f33f8ab2948efb172cc2",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "22ba25879401db2e2b504c256371bbcd93d5481c72529fd2e4f3df1c5f123f57",
+            "origin": "archived_beam",
+            "prediction": {
+              "critical_required_ps": 1810.1740060349955,
+              "total_area_um2": 8760.31600729436,
+              "target_met": false,
+              "violation_ps": 1210.1740060349955
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "648fbe8f395c49c35e5d446f5314080157ab6fb0fd53f33f8ab2948efb172cc2",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 1010.7761232087912,
+              "total_area_um2": 93648.03112698074,
+              "target_met": false,
+              "violation_ps": 410.7761232087912
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "mul128",
+      "L": 4,
+      "T_ps": 750,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/mul128/scores-T750/pool-summary.json.gz",
+      "pool_sha256": "f5388b954e9b441bff8ec263127da7d7f2463dde66efec7eaa6f20a17d158f84",
+      "pool_matches_frozen_hash": true,
+      "candidates": 15,
+      "complete": 15,
+      "feasible": 0,
+      "selected_id": "4e347ff44c1eff6fa9b4b6b95439a47170affd837e8f9149793cba0e94db2f73",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "00e991a5e437647b41e47d188c85b095075e26e75d85fc857352cd49d594d1ce",
+            "origin": "archived_beam",
+            "prediction": {
+              "critical_required_ps": 1819.1667730235868,
+              "total_area_um2": 8502.88419480991,
+              "target_met": false,
+              "violation_ps": 1069.1667730235868
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "4e347ff44c1eff6fa9b4b6b95439a47170affd837e8f9149793cba0e94db2f73",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 1035.8874509976672,
+              "total_area_um2": 92341.43842570172,
+              "target_met": false,
+              "violation_ps": 285.8874509976672
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "ntt8x64",
+      "L": 16,
+      "T_ps": 800,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/ntt8x64/scores-T800/pool-summary.json.gz",
+      "pool_sha256": "2d51101a76e6f602fd422f224066bdb9287eb0755029b1b23cecabf9d80af114",
+      "pool_matches_frozen_hash": true,
+      "candidates": 48,
+      "complete": 48,
+      "feasible": 1,
+      "selected_id": "2c95979980320a16182b31df785e67d96216831102000dd69f95b0718cd20b3a",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "b71863c5f95811ddf5248f3b4dd30554c4ff771e71493d99f46fff0816ea6d0e",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 3348.5356814924417,
+              "total_area_um2": 28439.311625063736,
+              "target_met": false,
+              "violation_ps": 2548.5356814924417
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "8054c65a5a5bc3972d806375072a8687d3b6a93fe63c65456c30eb56b9a0d2df",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 2241.1818267707404,
+              "total_area_um2": 69796.07297885066,
+              "target_met": false,
+              "violation_ps": 1441.1818267707404
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "ntt8x64",
+      "L": 16,
+      "T_ps": 950,
+      "pool_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/ntt8x64/scores-T950/pool-summary.json.gz",
+      "pool_sha256": "d2e5e7596750c3a48a99cb7f7282269f6bf76c57515f19b745d2b2a279552d92",
+      "pool_matches_frozen_hash": true,
+      "candidates": 48,
+      "complete": 48,
+      "feasible": 1,
+      "selected_id": "3f712e1bcc469e45b48ab4e12a16b6142a150cd5cac9d302a6be677487d1d60f",
+      "score_order_correct": true,
+      "selected_RTL_matches": true,
+      "baseline_same_RTL_candidates": {
+        "B": [
+          {
+            "id": "31922cfe24f5abe77ddb938e6fd8b675acd98419dcbc5605537489d6b93df85e",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 3383.7606851904093,
+              "total_area_um2": 28170.42212826062,
+              "target_met": false,
+              "violation_ps": 2433.7606851904093
+            }
+          }
+        ],
+        "C": [
+          {
+            "id": "ecb00a584b5f66b9e26fcba378c37ff13098a941419a03eeba1770b838caf75f",
+            "origin": "balanced_static",
+            "prediction": {
+              "critical_required_ps": 2263.37038221653,
+              "total_area_um2": 69279.32106296334,
+              "target_met": false,
+              "violation_ps": 1313.3703822165298
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "active_physical_tasks": [
+    {
+      "id": "6f9623cb81cb4c01a1c3f502b49bac6f",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-karatsuba256-L8",
+      "task_id": "karatsuba256-L8-T1150-f3011704032a",
+      "owner_pid_in_namespace": 1193062,
+      "started_at": "2026-11-16T11:50:03.633997+00:00",
+      "manifest_status": "running",
+      "latest_leaf": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1150-f3011704032a/logs/asap7/arithmetic_probe/base/5_1_grt.tmp.log",
+      "latest_leaf_mtime": "2026-11-16T13:40:16.648718+00:00",
+      "leaf_tail": [
+        "    2128* |      12 |     153 |      399 |      1 |   632 |    +0.1% | -675.394 | -1128586.2 |  -538766.7 |   2282 | core.rtlzz_pipe_147_s5\\[251\\]$_SDFFE_PN0P_/D",
+        "    2130* |      12 |     154 |      399 |      1 |   632 |    +0.1% | -675.394 | -1128586.2 |  -538762.6 |   2282 | core.rtlzz_pipe_147_s5\\[251\\]$_SDFFE_PN0P_/D",
+        "    2140* |      12 |     157 |      401 |      1 |   637 |    +0.1% | -675.394 | -1128586.2 |  -538915.7 |   2282 | core.rtlzz_pipe_147_s5\\[251\\]$_SDFFE_PN0P_/D",
+        "    2150* |      12 |     160 |      402 |      1 |   643 |    +0.1% | -675.394 | -1128586.2 |  -538932.9 |   2282 | core.rtlzz_pipe_147_s5\\[251\\]$_SDFFE_PN0P_/D",
+        "    2160* |      13 |     164 |      403 |      1 |   647 |    +0.1% | -675.394 | -1128586.2 |  -538906.0 |   2282 | core.rtlzz_pipe_147_s5\\[251\\]$_SDFFE_PN0P_/D",
+        "    2160* |      13 |     164 |      403 |      1 |   647 |    +0.1% | -675.394 | -1128586.2 |  -538906.0 |   2282 | core.rtlzz_pipe_147_s5\\[251\\]$_SDFFE_PN0P_/D",
+        "    2162* |      13 |     164 |      403 |      1 |   647 |    +0.1% | -675.394 | -1128586.2 |  -538906.0 |   2282 | core.rtlzz_pipe_147_s5\\[251\\]$_SDFFE_PN0P_/D",
+        "    2170* |      13 |     164 |      403 |      1 |   654 |    +0.1% | -675.394 | -1128586.2 |  -538888.9 |   2282 | core.rtlzz_pipe_147_s5\\[251\\]$_SDFFE_PN0P_/D",
+        "    2172* |      13 |     164 |      403 |      1 |   651 |    +0.1% | -675.394 | -1128586.2 |  -538889.6 |   2282 | core.rtlzz_pipe_147_s5\\[251\\]$_SDFFE_PN0P_/D",
+        "    2180* |      13 |     169 |      403 |      1 |   653 |    +0.1% | -675.394 | -1128586.2 |  -538716.1 |   2282 | core.rtlzz_pipe_147_s5\\[251\\]$_SDFFE_PN0P_/D"
+      ],
+      "completed_commands": [
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1150-f3011704032a/environment.log",
+          "walltime_s": 0.2271172030013986,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 3776
+        },
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1150-f3011704032a/synth.log",
+          "walltime_s": 410.9038793380023,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 2195052
+        },
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1150-f3011704032a/synth-snapshot.log",
+          "walltime_s": 16.17527346900897,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 1397216
+        }
+      ]
+    },
+    {
+      "id": "8bae30ec1a0245e4a2c208ab75842dc5",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-karatsuba256-L8",
+      "task_id": "karatsuba256-L8-T1150-b5e7a118e6c3",
+      "owner_pid_in_namespace": 1193063,
+      "started_at": "2026-11-16T11:50:04.844766+00:00",
+      "manifest_status": "running",
+      "latest_leaf": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1150-b5e7a118e6c3/logs/asap7/arithmetic_probe/base/5_1_grt.tmp.log",
+      "latest_leaf_mtime": "2026-11-16T13:39:50.593589+00:00",
+      "leaf_tail": [
+        "       80 |       1 |     626 |            0 |    +0.2% | -243.066 | -217206.578 | l_c[464]$_SDFFE_PN0P_/D",
+        "       90 |       1 |     706 |            0 |    +0.2% | -242.974 | -215877.406 | l_c[328]$_SDFFE_PN0P_/D",
+        "      100 |       1 |     786 |            0 |    +0.2% | -242.800 | -214556.141 | l_c[364]$_SDFFE_PN0P_/D",
+        "      110 |       1 |     866 |            0 |    +0.2% | -242.570 | -213220.672 | l_c[175]$_SDFFE_PN0P_/D",
+        "      120 |       1 |     946 |            0 |    +0.2% | -242.472 | -211889.297 | l_c[485]$_SDFFE_PN0P_/D",
+        "      130 |       1 |    1026 |            0 |    +0.3% | -242.304 | -210574.219 | l_c[81]$_SDFFE_PN0P_/D",
+        "      140 |       1 |    1106 |            0 |    +0.3% | -242.126 | -209262.359 | l_c[193]$_SDFFE_PN0P_/D",
+        "      150 |       1 |    1186 |            0 |    +0.3% | -241.963 | -207924.172 | l_c[351]$_SDFFE_PN0P_/D",
+        "      160 |       1 |    1266 |            0 |    +0.3% | -241.748 | -206590.266 | l_c[347]$_SDFFE_PN0P_/D",
+        "      170 |       1 |    1346 |            0 |    +0.3% | -241.623 | -205259.906 | l_c[158]$_SDFFE_PN0P_/D"
+      ],
+      "completed_commands": [
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1150-b5e7a118e6c3/environment.log",
+          "walltime_s": 0.32325204100925475,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 3968
+        },
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1150-b5e7a118e6c3/synth.log",
+          "walltime_s": 285.3599134149845,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 1927292
+        },
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1150-b5e7a118e6c3/synth-snapshot.log",
+          "walltime_s": 13.980910062004114,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 1103740
+        }
+      ]
+    },
+    {
+      "id": "97fb5ad0615b4adb80f4850a5b21ad11",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-karatsuba256-L8",
+      "task_id": "karatsuba256-L8-T1150-f0eca851430c",
+      "owner_pid_in_namespace": 1204489,
+      "started_at": "2026-11-16T12:06:19.939915+00:00",
+      "manifest_status": "running",
+      "latest_leaf": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1150-f0eca851430c/logs/asap7/arithmetic_probe/base/5_1_grt.tmp.log",
+      "latest_leaf_mtime": "2026-11-16T13:40:21.300741+00:00",
+      "leaf_tail": [
+        "    1140* |      13 |      37 |      147 |      0 |   391 |    +0.0% | -2041.767 | -4201669.5 | -2443039.8 |   4135 | core.rtlzz_pipe_152_s3\\[385\\]$_SDFFE_PN0P_/D",
+        "    1142* |      13 |      37 |      147 |      0 |   391 |    +0.0% | -2041.767 | -4201669.5 | -2443039.8 |   4135 | core.rtlzz_pipe_152_s3\\[385\\]$_SDFFE_PN0P_/D",
+        "    1150* |      13 |      39 |      149 |      0 |   394 |    +0.0% | -2041.767 | -4201669.5 | -2443275.2 |   4135 | core.rtlzz_pipe_152_s3\\[385\\]$_SDFFE_PN0P_/D",
+        "    1150* |      13 |      37 |      147 |      0 |   391 |    +0.0% | -2041.767 | -4201669.5 | -2443039.8 |   4135 | core.rtlzz_pipe_152_s3\\[385\\]$_SDFFE_PN0P_/D",
+        "    1155* |      13 |      37 |      147 |      0 |   391 |    +0.0% | -2041.767 | -4201669.5 | -2443039.8 |   4135 | core.rtlzz_pipe_152_s3\\[385\\]$_SDFFE_PN0P_/D",
+        "    1158* |      13 |      37 |      147 |      0 |   393 |    +0.0% | -2041.767 | -4201669.5 | -2443040.2 |   4135 | core.rtlzz_pipe_152_s3\\[385\\]$_SDFFE_PN0P_/D",
+        "    1160* |      13 |      37 |      148 |      0 |   393 |    +0.0% | -2041.767 | -4201624.5 | -2443076.0 |   4135 | core.rtlzz_pipe_152_s3\\[385\\]$_SDFFE_PN0P_/D",
+        "    1162* |      13 |      37 |      148 |      0 |   394 |    +0.0% | -2041.767 | -4201622.0 | -2443075.2 |   4135 | core.rtlzz_pipe_152_s3\\[385\\]$_SDFFE_PN0P_/D",
+        "    1170* |      13 |      38 |      149 |      0 |   399 |    +0.0% | -2049.413 | -4202297.0 | -2443486.5 |   4135 | core.rtlzz_pipe_152_s3\\[385\\]$_SDFFE_PN0P_/D",
+        "    1180* |      13 |      38 |      152 |      0 |   406 |    +0.0% | -2046.414 | -4201875.5 | -2443369.0 |   4135 | core.rtlzz_pipe_152_s3\\[385\\]$_SDFFE_PN0P_/D"
+      ],
+      "completed_commands": [
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1150-f0eca851430c/environment.log",
+          "walltime_s": 0.3555381309997756,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 3968
+        },
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1150-f0eca851430c/synth.log",
+          "walltime_s": 347.9872189380112,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 2028116
+        },
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1150-f0eca851430c/synth-snapshot.log",
+          "walltime_s": 13.766180522012291,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 1209200
+        }
+      ]
+    },
+    {
+      "id": "53e63866bd2541e9ad894ad4b1fa869e",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-karatsuba256-L8",
+      "task_id": "karatsuba256-L8-T1400-f3011704032a",
+      "owner_pid_in_namespace": 1207813,
+      "started_at": "2026-11-16T12:11:38.994949+00:00",
+      "manifest_status": "running",
+      "latest_leaf": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1400-f3011704032a/logs/asap7/arithmetic_probe/base/5_1_grt.tmp.log",
+      "latest_leaf_mtime": "2026-11-16T13:37:34.435915+00:00",
+      "leaf_tail": [
+        "---------------------------------------------------------------",
+        "M1         Vertical            0             0          0.00%",
+        "M2         Horizontal    3935192       2799459          28.86%",
+        "M3         Vertical      4577398       3405422          25.60%",
+        "M4         Horizontal    3515921       2615559          25.61%",
+        "M5         Vertical      3391481       2517635          25.77%",
+        "M6         Horizontal    2357194       1597469          32.23%",
+        "M7         Vertical      2672095       1800177          32.63%",
+        "---------------------------------------------------------------",
+        ""
+      ],
+      "completed_commands": [
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1400-f3011704032a/environment.log",
+          "walltime_s": 0.2863675200205762,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 3832
+        },
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1400-f3011704032a/synth.log",
+          "walltime_s": 393.7368074020196,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 2187312
+        },
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1400-f3011704032a/synth-snapshot.log",
+          "walltime_s": 15.755674724001437,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 1397340
+        }
+      ]
+    },
+    {
+      "id": "0ce268924e85466d95587d71f239c4b0",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-karatsuba256-L8",
+      "task_id": "karatsuba256-L8-T1400-d82729a2bd2b",
+      "owner_pid_in_namespace": 1207812,
+      "started_at": "2026-11-16T12:11:40.318261+00:00",
+      "manifest_status": "running",
+      "latest_leaf": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1400-d82729a2bd2b/logs/asap7/arithmetic_probe/base/5_1_grt.tmp.log",
+      "latest_leaf_mtime": "2026-11-16T13:39:34.122507+00:00",
+      "leaf_tail": [
+        "---------------------------------",
+        "total displacement       4680.2 u",
+        "average displacement        0.0 u",
+        "max displacement           21.3 u",
+        "original HPWL          885554.0 u",
+        "legalized HPWL         888224.5 u",
+        "delta HPWL                    0 %",
+        "",
+        "Took 232 seconds: detailed_placement",
+        "global_route -end_incremental -resistance_aware -congestion_report_file /home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1400-d82729a2bd2b/reports/asap7/arithmetic_probe/base/congestion_post_repair_design.rpt"
+      ],
+      "completed_commands": [
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1400-d82729a2bd2b/environment.log",
+          "walltime_s": 0.40839403300196864,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 3776
+        },
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1400-d82729a2bd2b/synth.log",
+          "walltime_s": 273.51863619399955,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 1884640
+        },
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1400-d82729a2bd2b/synth-snapshot.log",
+          "walltime_s": 12.377580035012215,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 1016700
+        }
+      ]
+    },
+    {
+      "id": "4905ed44143547909d25328f3529bcc8",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-montgomery-A-retest-v1",
+      "task_id": "montgomery256-A-reference-T27000",
+      "owner_pid_in_namespace": 1218553,
+      "started_at": "2026-11-16T12:35:46.417992+00:00",
+      "manifest_status": "running",
+      "latest_leaf": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/reference-successors/matrix-montgomery-A-retest-v1/runs/montgomery256-A-reference-T27000/logs/asap7/arithmetic_probe/base/4_1_cts.tmp.log",
+      "latest_leaf_mtime": "2026-11-16T13:40:17.223721+00:00",
+      "leaf_tail": [
+        "        3 |      19032 |      3748 |     13685",
+        "        4 |      15214 |      3268 |     11221",
+        "        5 |      12818 |      2890 |      9408",
+        "        6 |      10909 |      2651 |      8042",
+        "        7 |       9476 |      2354 |      6924",
+        "        8 |       8325 |      2147 |      6055",
+        "        9 |       7267 |      1939 |      5283",
+        "       10 |       6477 |      1773 |      4662",
+        "       20 |       2125 |       659 |      1466",
+        "       30 |        989 |       331 |       658"
+      ],
+      "completed_commands": [
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/reference-successors/matrix-montgomery-A-retest-v1/runs/montgomery256-A-reference-T27000/environment.log",
+          "walltime_s": 0.3114381420018617,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 3968
+        },
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/reference-successors/matrix-montgomery-A-retest-v1/runs/montgomery256-A-reference-T27000/synth.log",
+          "walltime_s": 761.7759023550025,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 6265356
+        },
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/reference-successors/matrix-montgomery-A-retest-v1/runs/montgomery256-A-reference-T27000/synth-snapshot.log",
+          "walltime_s": 33.998293139011366,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 2627996
+        }
+      ]
+    },
+    {
+      "id": "ce78a9b181e448ada31f529abd26aa06",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-karatsuba256-L8",
+      "task_id": "karatsuba256-L8-T1400-f0eca851430c",
+      "owner_pid_in_namespace": 1223575,
+      "started_at": "2026-11-16T12:40:38.192130+00:00",
+      "manifest_status": "running",
+      "latest_leaf": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1400-f0eca851430c/logs/asap7/arithmetic_probe/base/5_1_grt.tmp.log",
+      "latest_leaf_mtime": "2026-11-16T13:37:38.797936+00:00",
+      "leaf_tail": [
+        "[INFO DRT-0082]   Complete 10000 groups.",
+        "[INFO DRT-0082]   Complete 20000 groups.",
+        "[INFO DRT-0082]   Complete 30000 groups.",
+        "[INFO DRT-0082]   Complete 40000 groups.",
+        "[INFO DRT-0082]   Complete 50000 groups.",
+        "[INFO DRT-0082]   Complete 60000 groups.",
+        "[INFO DRT-0082]   Complete 70000 groups.",
+        "[INFO DRT-0082]   Complete 80000 groups.",
+        "[INFO DRT-0082]   Complete 90000 groups.",
+        "[INFO DRT-0082]   Complete 100000 groups."
+      ],
+      "completed_commands": [
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1400-f0eca851430c/environment.log",
+          "walltime_s": 0.31874115200480446,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 3904
+        },
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1400-f0eca851430c/synth.log",
+          "walltime_s": 362.3188438549987,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 2031020
+        },
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1400-f0eca851430c/synth-snapshot.log",
+          "walltime_s": 13.814057501993375,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 1209716
+        }
+      ]
+    },
+    {
+      "id": "b127046d63224943975734e4193f59c1",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-mac32-L2",
+      "task_id": "mac32-L2-T950-c218c9843815",
+      "owner_pid_in_namespace": 1237230,
+      "started_at": "2026-11-16T13:39:33.127431+00:00",
+      "manifest_status": "running",
+      "latest_leaf": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mac32-L2/runs/mac32-L2-T950-c218c9843815/logs/asap7/arithmetic_probe/base/2_1_floorplan.tmp.log",
+      "latest_leaf_mtime": "2026-11-16T13:40:21.475742+00:00",
+      "leaf_tail": [
+        "     770* |       0 |     142 |        0 |      0 |    63 |    +0.3% | -138.523 |    -8301.0 |    -2202.0 |     38 | core.rtlzz_pipe_4_s1\\[50\\]$_SDFFE_PN0P_/D",
+        "     780* |       0 |     152 |        0 |      0 |    63 |    +0.4% | -138.523 |    -8288.2 |    -2178.4 |     38 | core.rtlzz_pipe_4_s1\\[50\\]$_SDFFE_PN0P_/D",
+        "     790* |       0 |     162 |        0 |      0 |    63 |    +0.4% | -138.523 |    -8259.2 |    -2173.4 |     38 | core.rtlzz_pipe_4_s1\\[50\\]$_SDFFE_PN0P_/D",
+        "     790* |       0 |     112 |        0 |      0 |    63 |    +0.3% | -138.176 |    -8381.5 |    -2237.0 |     38 | core.rtlzz_pipe_4_s1\\[50\\]$_SDFFE_PN0P_/D",
+        "     800* |       0 |     121 |        0 |      0 |    63 |    +0.3% | -143.951 |    -8546.4 |    -2295.9 |     38 | core.rtlzz_pipe_4_s1\\[50\\]$_SDFFE_PN0P_/D",
+        "     810* |       0 |     131 |        0 |      0 |    63 |    +0.4% | -143.205 |    -8523.8 |    -2298.9 |     38 | core.rtlzz_pipe_4_s1\\[50\\]$_SDFFE_PN0P_/D",
+        "     820* |       0 |     141 |        0 |      0 |    63 |    +0.5% | -142.184 |    -8498.0 |    -2294.6 |     38 | core.rtlzz_pipe_4_s1\\[50\\]$_SDFFE_PN0P_/D",
+        "     823* |       0 |     112 |        0 |      0 |    63 |    +0.3% | -138.176 |    -8381.5 |    -2237.0 |     38 | core.rtlzz_pipe_4_s1\\[50\\]$_SDFFE_PN0P_/D",
+        "     830* |       0 |     118 |        0 |      0 |    63 |    +0.3% | -138.342 |    -8375.8 |    -2234.5 |     38 | core.rtlzz_pipe_4_s1\\[50\\]$_SDFFE_PN0P_/D",
+        "     840* |       0 |     128 |        0 |      0 |    63 |    +0.4% | -138.759 |    -8373.7 |    -2201.3 |     38 | core.rtlzz_pipe_4_s1\\[50\\]$_SDFFE_PN0P_/D"
+      ],
+      "completed_commands": [
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mac32-L2/runs/mac32-L2-T950-c218c9843815/environment.log",
+          "walltime_s": 0.29950724402442575,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 3772
+        },
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mac32-L2/runs/mac32-L2-T950-c218c9843815/synth.log",
+          "walltime_s": 9.029977469996084,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 224880
+        },
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mac32-L2/runs/mac32-L2-T950-c218c9843815/synth-snapshot.log",
+          "walltime_s": 1.9557738179864828,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 235652
+        }
+      ]
+    },
+    {
+      "id": "19d530d7c7ee45269029c055ba7c09bf",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-mac32-L2",
+      "task_id": "mac32-L2-T950-1ae18b2a6206",
+      "owner_pid_in_namespace": 1237373,
+      "started_at": "2026-11-16T13:39:43.056010+00:00",
+      "manifest_status": "running",
+      "latest_leaf": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mac32-L2/runs/mac32-L2-T950-1ae18b2a6206/logs/asap7/arithmetic_probe/base/2_4_floorplan_pdn.tmp.log",
+      "latest_leaf_mtime": "2026-11-16T13:40:21.623743+00:00",
+      "leaf_tail": [
+        "Features included (+) or not (-): +GPU +GUI +Python",
+        "This program is licensed under the BSD-3 license. See the LICENSE file for details.",
+        "Components of this program may be licensed under more restrictive licenses which must be honored.",
+        "[INFO ORD-0030] Using 2 thread(s).",
+        "source /home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/liberty_suppressions.tcl",
+        "read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib.gz",
+        "read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib.gz",
+        "read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib.gz",
+        "read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib",
+        "read_liberty /home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz"
+      ],
+      "completed_commands": [
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mac32-L2/runs/mac32-L2-T950-1ae18b2a6206/environment.log",
+          "walltime_s": 0.29091099998913705,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 3900
+        },
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mac32-L2/runs/mac32-L2-T950-1ae18b2a6206/synth.log",
+          "walltime_s": 10.189369769010227,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 224448
+        },
+        {
+          "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mac32-L2/runs/mac32-L2-T950-1ae18b2a6206/synth-snapshot.log",
+          "walltime_s": 2.2280716560198925,
+          "exit_code": 0,
+          "sampled_process_tree_peak_rss_KiB": 232104
+        }
+      ]
+    }
+  ],
+  "backend_failures": [
+    {
+      "case": "dot16",
+      "L": 4,
+      "T_ps": 850,
+      "method": "B",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T850-5d322a4d43a9",
+      "error_lines": []
+    },
+    {
+      "case": "dot16",
+      "L": 4,
+      "T_ps": 850,
+      "method": "C",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T850-8327002228a5",
+      "error_lines": []
+    },
+    {
+      "case": "dot16",
+      "L": 4,
+      "T_ps": 850,
+      "method": "D",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T850-13041929dd25",
+      "error_lines": []
+    },
+    {
+      "case": "dot16",
+      "L": 4,
+      "T_ps": 1050,
+      "method": "B",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T1050-5d322a4d43a9",
+      "error_lines": []
+    },
+    {
+      "case": "dot16",
+      "L": 4,
+      "T_ps": 1050,
+      "method": "C",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T1050-8327002228a5",
+      "error_lines": []
+    },
+    {
+      "case": "dot16",
+      "L": 4,
+      "T_ps": 1050,
+      "method": "D",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T1050-13041929dd25",
+      "error_lines": []
+    },
+    {
+      "case": "dot16",
+      "L": 5,
+      "T_ps": 700,
+      "method": "B",
+      "reason": "grt: tool_nonzero_exit",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T700-8bbe5fa52f58",
+      "error_lines": [
+        "[ERROR DPL-0033] detailed placement checks failed during check placement."
+      ]
+    },
+    {
+      "case": "dot16",
+      "L": 5,
+      "T_ps": 700,
+      "method": "C",
+      "reason": "grt: memory_limit",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T700-b6a28e166624",
+      "error_lines": []
+    },
+    {
+      "case": "dot16",
+      "L": 5,
+      "T_ps": 700,
+      "method": "D",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T700-4c2ee7748c79",
+      "error_lines": []
+    },
+    {
+      "case": "dot16",
+      "L": 5,
+      "T_ps": 850,
+      "method": "B",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T850-8bbe5fa52f58",
+      "error_lines": []
+    },
+    {
+      "case": "dot16",
+      "L": 5,
+      "T_ps": 850,
+      "method": "C",
+      "reason": "grt: memory_limit",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T850-b6a28e166624",
+      "error_lines": []
+    },
+    {
+      "case": "dot16",
+      "L": 5,
+      "T_ps": 850,
+      "method": "D",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T850-4c2ee7748c79",
+      "error_lines": []
+    },
+    {
+      "case": "barrett64",
+      "L": 4,
+      "T_ps": 2150,
+      "method": "C",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L4/runs/barrett64-L4-T2150-83a434da7745",
+      "error_lines": []
+    },
+    {
+      "case": "karatsuba256",
+      "L": 4,
+      "T_ps": 2300,
+      "method": "C",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4/runs/karatsuba256-L4-T2300-1de0ecb23206",
+      "error_lines": []
+    },
+    {
+      "case": "karatsuba256",
+      "L": 4,
+      "T_ps": 2750,
+      "method": "B",
+      "reason": "grt: tool_nonzero_exit",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4/runs/karatsuba256-L4-T2750-afb74d898573",
+      "error_lines": []
+    },
+    {
+      "case": "karatsuba256",
+      "L": 4,
+      "T_ps": 2750,
+      "method": "C",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4/runs/karatsuba256-L4-T2750-1de0ecb23206",
+      "error_lines": []
+    }
+  ],
+  "ntt_L8_software": {
+    "controller_log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1-controller.log",
+    "exit_records": [
+      "MATRIX_SOFTWARE_DONE ('ntt8x64', 8) -11"
+    ],
+    "state": "software_failed_without_ready_receipt",
+    "published_placeholder": "software_pending",
+    "current_software_workers": [],
+    "software_log_tail": [
+      "NEW_DEPTH_SCORE ntt8x64 L8 T1550 42/48",
+      "NEW_DEPTH_SCORE ntt8x64 L8 T1550 43/48",
+      "NEW_DEPTH_SCORE ntt8x64 L8 T1550 44/48",
+      "NEW_DEPTH_SCORE ntt8x64 L8 T1550 45/48",
+      "NEW_DEPTH_SCORE ntt8x64 L8 T1550 46/48",
+      "NEW_DEPTH_SCORE ntt8x64 L8 T1550 47/48"
+    ]
+  },
+  "qualification": "diagnostic_only; analysis is not model refit, D reselection or final model qualification"
+}

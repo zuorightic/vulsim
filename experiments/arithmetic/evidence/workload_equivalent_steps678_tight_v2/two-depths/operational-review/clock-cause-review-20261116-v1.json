@@ -1,0 +1,165 @@
+{
+  "checked_at": "2026-11-16T06:48:59.864312+00:00",
+  "montgomery": {
+    "target_ps": 36000,
+    "threads": 2,
+    "memory_limit_MiB": 16384,
+    "failure_reason": "grt: timeout",
+    "synth_setup_WNS_ps": 15503.520508,
+    "CTS_setup_WNS_ps": 12203.6,
+    "CTS_setup_TNS_ps": 0,
+    "CTS_setup_buffers": 0,
+    "CTS_hold_buffers": 21313,
+    "CTS_instances": 751317,
+    "completed_floorplan_through_CTS_walltime_s": 3420.71,
+    "remaining_unfinished_grt_stage_walltime_estimate_s": 3779.3485500769957,
+    "timing_repair_runtime_s": 99,
+    "hold_repair_runtime_s": 59.8,
+    "peak_RSS_KiB": 7722656,
+    "memory_limit_exceeded": false,
+    "CPU_limit_exceeded": false,
+    "evidence_conclusion": "No setup violations before global route; timeout while processing a very large pin-access problem. No evidence that a tight setup period caused the timeout."
+  },
+  "measured_main": 45,
+  "measured_by_method": {
+    "A": 11,
+    "B": 13,
+    "C": 11,
+    "D": 10
+  },
+  "measured_D": [
+    {
+      "case": "add512",
+      "L": 2,
+      "target_ps": 700,
+      "Tmin_ps": 876.179123,
+      "over_target_percent": 25.168446142857135,
+      "grammar": [
+        0,
+        0
+      ],
+      "predicted_period_ps": 979.3151768791881
+    },
+    {
+      "case": "add512",
+      "L": 2,
+      "target_ps": 800,
+      "Tmin_ps": 887.152786,
+      "over_target_percent": 10.894098250000006,
+      "grammar": [
+        0,
+        0
+      ],
+      "predicted_period_ps": 987.700895973993
+    },
+    {
+      "case": "add512",
+      "L": 4,
+      "target_ps": 350,
+      "Tmin_ps": 660.684143,
+      "over_target_percent": 88.766898,
+      "grammar": [
+        0,
+        128
+      ],
+      "predicted_period_ps": 754.2812092577838
+    },
+    {
+      "case": "add512",
+      "L": 4,
+      "target_ps": 400,
+      "Tmin_ps": 658.909332,
+      "over_target_percent": 64.727333,
+      "grammar": [
+        0,
+        128
+      ],
+      "predicted_period_ps": 781.1623519325294
+    },
+    {
+      "case": "barrett64",
+      "L": 8,
+      "target_ps": 900,
+      "Tmin_ps": 1487.0433349999998,
+      "over_target_percent": 65.22703722222221,
+      "grammar": [
+        32,
+        0
+      ],
+      "predicted_period_ps": 1328.856109230515
+    },
+    {
+      "case": "barrett64",
+      "L": 8,
+      "target_ps": 1100,
+      "Tmin_ps": 1488.66098,
+      "over_target_percent": 35.33281636363637,
+      "grammar": [
+        32,
+        0
+      ],
+      "predicted_period_ps": 1334.0362883470405
+    },
+    {
+      "case": "horner64",
+      "L": 8,
+      "target_ps": 950,
+      "Tmin_ps": 993.286819,
+      "over_target_percent": 4.556507263157905,
+      "grammar": [
+        16,
+        0
+      ],
+      "predicted_period_ps": 1083.2301872698295
+    },
+    {
+      "case": "mac32",
+      "L": 3,
+      "target_ps": 500,
+      "Tmin_ps": 679.986298,
+      "over_target_percent": 35.9972596,
+      "grammar": [
+        4,
+        0
+      ],
+      "predicted_period_ps": 733.7405933428988
+    },
+    {
+      "case": "mac32",
+      "L": 3,
+      "target_ps": 750,
+      "Tmin_ps": 752.738254,
+      "over_target_percent": 0.36510053333334014,
+      "grammar": [
+        4,
+        0
+      ],
+      "predicted_period_ps": 773.1097730081631
+    },
+    {
+      "case": "mac32",
+      "L": 3,
+      "target_ps": 1000,
+      "Tmin_ps": 1000.593858,
+      "over_target_percent": 0.059385800000000266,
+      "grammar": [
+        12,
+        0
+      ],
+      "predicted_period_ps": 984.0155932178709
+    }
+  ],
+  "D_case_count": 4,
+  "inputs_sha256": {
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/montgomery-A-reference-9x2/runs/montgomery256-A-reference-9x2-capacity/manifest.json": "7bff68a95ae17c853ff70c4df6f566693e42c5be9cc7b031b07d31a6bec881bf",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/montgomery-A-reference-9x2/runs/montgomery256-A-reference-9x2-capacity/grt.command.json": "465cc3e8f63f82d507ad98fc39c390086822601193d7483b5f8641464bd8652d",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/montgomery-A-reference-9x2/runs/montgomery256-A-reference-9x2-capacity/logs/asap7/arithmetic_probe/base/3_3_place_gp.json": "db21a77d890d3f8c6056d71e14f9d1efdba2dff2a9d2969891982ddb64e3441a",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/montgomery-A-reference-9x2/runs/montgomery256-A-reference-9x2-capacity/logs/asap7/arithmetic_probe/base/4_1_cts.json": "eb80cd0c3fdc7164604b4f5b8a71b1801287567e7c78c83aa22ea0c2eeccb4cc",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/montgomery-A-reference-9x2/runs/montgomery256-A-reference-9x2-capacity/logs/asap7/arithmetic_probe/base/4_1_cts.log": "1b17bf049dd80d2815334f5bea5c633e73b84f5d1b1cd80876fe2dd55836434e",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/montgomery-A-reference-9x2/runs/montgomery256-A-reference-9x2-capacity/logs/asap7/arithmetic_probe/base/5_1_grt.log": "23b2228073c5c0bca9b63469a43625789f5eedd156e7d8b209c9ebb072a3278d",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/montgomery-A-reference-9x2/runs/montgomery256-A-reference-9x2-capacity/logs/asap7/arithmetic_probe/base/4_rsz_lec_check.proof.json": "e986a4c785e09babc2986adac62553df2c2146cf883871bb22057b0033fb8c56"
+  },
+  "new_targets_frozen": false,
+  "new_EDA_calls": 0,
+  "model_refitted": false
+}

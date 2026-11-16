@@ -1,0 +1,86 @@
+{
+  "status": "prephysical_reference_request_revision",
+  "original_frozen_protocol": {
+    "version": "nine-case-A-over-L-tight-targets-v2",
+    "clock_basis": "unsplit_A",
+    "user_confirmed_factors": [
+      1.25,
+      1.5
+    ],
+    "quantum_ps": 50,
+    "reference_A": {
+      "L": 1,
+      "requested_period_ps": 1000,
+      "scope": "fixed grt full RR/IR/RO Tmin; IOmax=0.2T",
+      "note": "aggressive common mapping request; measured reference implementation, not a proof of global mapping optimum"
+    },
+    "final_clock_rule": "ceil(factor * measured_reference_A_Tmin / declared_L / 50) * 50 ps",
+    "rounded_collision_rule": "second target at least first+50ps to retain two distinct groups",
+    "MAC32": {
+      "targets_ps": [
+        500,
+        750,
+        1000
+      ],
+      "L": 3,
+      "unchanged_by_user": true
+    },
+    "no_C_based_clock_relaxation": true,
+    "unreachable_target": "retain closest complete prediction; do not change final T",
+    "finite_grammar_extensions": {
+      "add512_limbs": [
+        8,
+        16
+      ],
+      "mul128_blocks": [
+        4
+      ],
+      "horner64_blocks": [
+        4,
+        8
+      ],
+      "dot16_blocks": [
+        8
+      ],
+      "barrett64_blocks": [
+        8
+      ],
+      "karatsuba256_blocks": [
+        8
+      ],
+      "montgomery256_blocks": [
+        8
+      ],
+      "ntt8x64_blocks": [
+        8
+      ]
+    },
+    "models": "original frozen responses and common diagnostic shell; no refit",
+    "maximum_structures_per_case": 16,
+    "case_specific_model_prices": false,
+    "application_PPA_for_D_selection": false,
+    "original_independent_sources_locked": true,
+    "superseded_C_based_experiment": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-v1",
+    "source_sha256": "32bcc41c634dfbaae732522b57718c2d4ea8017827f707d0c9009c146ef03810",
+    "native_compiler_sha256": "a44b9b6d8f664894bac1c6c5ad9d872d9cdb3be865bf922d0641e64a74bd12c1"
+  },
+  "withdrawal": {
+    "status": "withdrawn_before_any_leaf",
+    "no_physical_commands_started": true,
+    "ledger_entries": 0,
+    "reason": "prelaunch controller interruption; reference A request replaced by one uniform software-scaled rule",
+    "successor": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A",
+    "old_clock_factors_unchanged": [
+      1.25,
+      1.5
+    ]
+  },
+  "current_protocol_sha256": "e6dc7fa90796b7079706f2e6677411516d1ee2248c5a152b3739b83fb05a0adc",
+  "reference_rule_uniform": true,
+  "final_clock_factors_unchanged": [
+    1.25,
+    1.5
+  ],
+  "old_attempt_had_no_physical_leaf": true,
+  "no_ledger_reset": true
+}

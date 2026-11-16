@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "tests": 74,
+  "skipped": 0,
+  "command": "VULSIM_WORKLOAD_V10_BINARY=/home/zyrv/vulsim/build/workload-v10-20261115/rtlzz-workload python3 -m unittest regression.test_workload_guided_search regression.test_workload_equivalent regression.test_workload_diagnostic regression.test_workload_v10 regression.test_workload_abcd regression.test_workload_final",
+  "walltime_s": 10.909,
+  "followup": {
+    "command": "python3 -m unittest regression.test_workload_final",
+    "tests": 9,
+    "status": "passed",
+    "walltime_s": 4.401
+  },
+  "native_compiler_sha256": "a44b9b6d8f664894bac1c6c5ad9d872d9cdb3be865bf922d0641e64a74bd12c1",
+  "response_model_sha256": "de067c6983fe92eb7b5771b014f7881483bc2be06a5f70eddd3bc521208bc575",
+  "independent_sources_unlocked": false,
+  "precision_qualified": false
+}

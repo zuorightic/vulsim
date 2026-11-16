@@ -1,0 +1,133 @@
+{
+  "at": "2026-11-16T16:04:12.963191+00:00",
+  "deleted_files": 9090,
+  "freed_allocated_bytes": 78302650368,
+  "by_root": {
+    "/home/zyrv/vulsim/build/step7-MAC-first-20261107": 49414754304,
+    "/home/zyrv/vulsim/build/step7-I-exact-20261106": 10621124608,
+    "/home/zyrv/vulsim/build/step7-general-state-20261106": 9338515456,
+    "/home/zyrv/vulsim/build/step7-general-control-20261106": 8928256000
+  },
+  "retained_checked_before": 452806,
+  "retained_checked_after": 452806,
+  "free_after": 147557134336,
+  "final_DBs_reports_logs_models_and_RTL_untouched": true,
+  "live_before": {
+    "reserved_outputs": [
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-ntt8x64-L16/runs/ntt8x64-L16-T800-4b0b80f5dba8/grt",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mul128-L4/runs/mul128-L4-T600-78374d7545b6/grt",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-ntt8x64-L16/runs/ntt8x64-L16-T800-ada50437924b/grt",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-ntt8x64-L16/runs/ntt8x64-L16-T800-46150504ec13/grt",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mul128-L4/runs/mul128-L4-T750-78374d7545b6/grt",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-ntt8x64-L16/runs/ntt8x64-L16-T950-4b0b80f5dba8/grt",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-ntt8x64-L16/runs/ntt8x64-L16-T950-a6689a6712c6/grt",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-ntt8x64-L16/runs/ntt8x64-L16-T950-3cd51401634b/grt",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/dot16-L4-resource-T850-5d322a4d43a9/synth"
+    ],
+    "freeze_manifests": [
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/montgomery-A-reference-9x2/freeze.json",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/freeze.json",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4/freeze.json",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-add512-L2/freeze.json",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/freeze.json",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-ntt8x64-L16/freeze.json",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/freeze.json",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mul128-L2/freeze.json",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L4/freeze.json",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mul128-L4/freeze.json",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8/freeze.json",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-horner64-L8/freeze.json",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-horner64-L4/freeze.json",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mac32-L2/freeze.json",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-relaxation-v2/freeze.json",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-relaxation-v1/freeze.json",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/freeze.json",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/reference-successors/matrix-montgomery-A-retest-v1/freeze.json"
+    ],
+    "active_jobs": [
+      {
+        "id": "d9ca943d77844771813bcc0caef26293",
+        "status": "active",
+        "target_platform": "asap7",
+        "admission_id": "matrix-mul128-L4",
+        "task_id": "mul128-L4-T600-78374d7545b6",
+        "owner_pid_in_namespace": 1276159,
+        "started_at": "2026-11-16T14:32:30.983163+00:00"
+      },
+      {
+        "id": "71694e5fc95141c1b15c23bcc7f254ee",
+        "status": "active",
+        "target_platform": "asap7",
+        "admission_id": "matrix-mul128-L4",
+        "task_id": "mul128-L4-T750-78374d7545b6",
+        "owner_pid_in_namespace": 1280350,
+        "started_at": "2026-11-16T14:42:23.506965+00:00"
+      },
+      {
+        "id": "eb1fac2ca03f4cecb397bed5b1089fdb",
+        "status": "active",
+        "target_platform": "asap7",
+        "admission_id": "matrix-ntt8x64-L16",
+        "task_id": "ntt8x64-L16-T800-4b0b80f5dba8",
+        "owner_pid_in_namespace": 1283814,
+        "started_at": "2026-11-16T14:45:28.277320+00:00"
+      },
+      {
+        "id": "29cd48fae5b5408297e7cb8e87e884eb",
+        "status": "active",
+        "target_platform": "asap7",
+        "admission_id": "matrix-ntt8x64-L16",
+        "task_id": "ntt8x64-L16-T800-ada50437924b",
+        "owner_pid_in_namespace": 1285358,
+        "started_at": "2026-11-16T14:47:24.133845+00:00"
+      },
+      {
+        "id": "15593ddc71b24695b3335f3b693802b4",
+        "status": "active",
+        "target_platform": "asap7",
+        "admission_id": "matrix-ntt8x64-L16",
+        "task_id": "ntt8x64-L16-T800-46150504ec13",
+        "owner_pid_in_namespace": 1292665,
+        "started_at": "2026-11-16T14:54:11.109683+00:00"
+      },
+      {
+        "id": "081da19c338c4772b5e0607e9c16f276",
+        "status": "active",
+        "target_platform": "asap7",
+        "admission_id": "matrix-ntt8x64-L16",
+        "task_id": "ntt8x64-L16-T950-4b0b80f5dba8",
+        "owner_pid_in_namespace": 1306555,
+        "started_at": "2026-11-16T15:18:57.417947+00:00"
+      },
+      {
+        "id": "63594f46e438455bbe0ace95d7fc87b0",
+        "status": "active",
+        "target_platform": "asap7",
+        "admission_id": "matrix-ntt8x64-L16",
+        "task_id": "ntt8x64-L16-T950-a6689a6712c6",
+        "owner_pid_in_namespace": 1314987,
+        "started_at": "2026-11-16T15:39:06.700263+00:00"
+      },
+      {
+        "id": "51f3128649c244dfb9d2e8c5e65fbf7a",
+        "status": "active",
+        "target_platform": "asap7",
+        "admission_id": "matrix-ntt8x64-L16",
+        "task_id": "ntt8x64-L16-T950-3cd51401634b",
+        "owner_pid_in_namespace": 1319227,
+        "started_at": "2026-11-16T15:47:27.133463+00:00"
+      },
+      {
+        "id": "923dfd0b69a24da0850a9206a9132fe8",
+        "status": "active",
+        "target_platform": "asap7",
+        "admission_id": "matrix-failure-resource-only-v1",
+        "task_id": "dot16-L4-resource-T850-5d322a4d43a9",
+        "owner_pid_in_namespace": 1324323,
+        "started_at": "2026-11-16T15:58:39.843524+00:00"
+      }
+    ]
+  },
+  "recovery": "Deleted generated CEC cache bytes are not archived; retained netlists and logs remain.",
+  "source_sha256": "32f5a78aca41886ed7005126f3e811723b18710427fc1e13d659b9321d08ab9b"
+}

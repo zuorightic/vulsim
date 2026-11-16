@@ -1,0 +1,30 @@
+{
+  "command": [
+    "/home/zyrv/OpenROAD-flow-scripts/tools/install/yosys/bin/yosys",
+    "-s",
+    "/home/zyrv/vulsim-artifacts/montgomery-cts-LEC-diagnostic-v4/equivalence.ys"
+  ],
+  "exit_code": -15,
+  "process_exit_code": -15,
+  "timed_out": false,
+  "CPU_limit_s": 1200,
+  "CPU_limit_exceeded": false,
+  "sampled_process_tree_CPU_s": 49.47,
+  "cancelled_signal": null,
+  "walltime_s": 49.366797595022945,
+  "unexpected_live_descendants": false,
+  "memory_limit_exceeded": true,
+  "memory_limit_MiB": 8192,
+  "sampled_process_tree_peak_rss_KiB": 8628484,
+  "sampled_process_tree_peak_threads": 2,
+  "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+  "resource_sampling_interval_s": 0.5,
+  "cleanup": {
+    "term_sent": 2,
+    "kill_sent": 0,
+    "remaining_live_pids": []
+  },
+  "log": "/home/zyrv/vulsim-artifacts/montgomery-cts-LEC-diagnostic-v4/yosys.log",
+  "gnu_time": "/home/zyrv/vulsim-artifacts/montgomery-cts-LEC-diagnostic-v4/yosys.resources.txt",
+  "budget_reservation_id": "ae5f232caf8c47fab145f108ea5d4b07"
+}

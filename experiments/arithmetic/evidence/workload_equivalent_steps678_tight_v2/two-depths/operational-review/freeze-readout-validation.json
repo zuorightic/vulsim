@@ -1,0 +1,72 @@
+{
+  "checked_at": "2026-11-16T06:23:01.327981+00:00",
+  "admissions": [
+    {
+      "admission": "matrix-add512-L2",
+      "tasks": 4,
+      "source_and_input_hashes": "passed"
+    },
+    {
+      "admission": "matrix-barrett64-L8",
+      "tasks": 10,
+      "source_and_input_hashes": "passed"
+    },
+    {
+      "admission": "matrix-dot16-L4",
+      "tasks": 10,
+      "source_and_input_hashes": "passed"
+    },
+    {
+      "admission": "matrix-dot16-L5",
+      "tasks": 9,
+      "source_and_input_hashes": "passed"
+    },
+    {
+      "admission": "matrix-horner64-L4",
+      "tasks": 8,
+      "source_and_input_hashes": "passed"
+    },
+    {
+      "admission": "matrix-horner64-L8",
+      "tasks": 7,
+      "source_and_input_hashes": "passed"
+    },
+    {
+      "admission": "matrix-karatsuba256-L8",
+      "tasks": 10,
+      "source_and_input_hashes": "passed"
+    },
+    {
+      "admission": "matrix-mac32-L2",
+      "tasks": 9,
+      "source_and_input_hashes": "passed"
+    },
+    {
+      "admission": "matrix-mul128-L2",
+      "tasks": 10,
+      "source_and_input_hashes": "passed"
+    },
+    {
+      "admission": "matrix-mul128-L4",
+      "tasks": 2,
+      "source_and_input_hashes": "passed"
+    },
+    {
+      "admission": "matrix-ntt8x64-L16",
+      "tasks": 10,
+      "source_and_input_hashes": "passed"
+    },
+    {
+      "admission": "montgomery-A-reference-9x2",
+      "tasks": 1,
+      "source_and_input_hashes": "passed"
+    }
+  ],
+  "readout_records_checked": 57,
+  "readout_failures": [],
+  "status": "passed",
+  "EDA_calls": 0,
+  "runtime_source_sha256": "3be8d3d1fa9cea3d08ee3605a5d46168dc490876b6e34a437093a6984296c7f1",
+  "controller_source_sha256": "bd87f76c01982cb5402e03a2152cb6b61bab426e4c4240224b44d99d383cde26",
+  "note": "After old-checkpoint deletion; main and attribution records may share physical tasks. Area/full-WNS/hold/coverage/targets/brackets/thread controls checked."
+}

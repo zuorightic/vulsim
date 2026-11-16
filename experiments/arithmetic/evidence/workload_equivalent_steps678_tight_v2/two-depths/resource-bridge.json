@@ -1,0 +1,30 @@
+{
+  "status": "active_handoff_authorized",
+  "parallel_jobs": 9,
+  "new_threads_per_tool": 2,
+  "user_instruction": "可否不等待最后一个旧 Karatsuba 任务结束，开始9并行实验呢",
+  "authorized_at": "2026-11-16T03:16:31.836270+00:00",
+  "predecessor_job_ids": [
+    "b666eaff657c4a94922a720f563b9a94"
+  ],
+  "predecessor_jobs": [
+    {
+      "id": "b666eaff657c4a94922a720f563b9a94",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "final-karatsuba256",
+      "task_id": "karatsuba256-T1150-c1a64d59e07d",
+      "owner_pid_in_namespace": 7,
+      "started_at": "2026-11-16T01:28:33.300425+00:00"
+    }
+  ],
+  "old_policy_sha256": "59097fbac13be8fb59fd7e7380e5cf39226857f012a6a8c3285e5f1f7744530c",
+  "old_checkpoint_sha256": "18ad798ae7fdd82fc7f060d1a96563ae27b1b2935d47e6be8adb1842bf1c765c",
+  "new_policy_sha256": "8bf5a05cd879d54149374f4caa0da26b200a37ac6a9a220447c9752c9ec45109",
+  "runtime_source_sha256": "3be8d3d1fa9cea3d08ee3605a5d46168dc490876b6e34a437093a6984296c7f1",
+  "ledger": "/home/zyrv/vulsim/experiments/arithmetic/backend_usage.json",
+  "root": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1",
+  "usage_reset": false,
+  "rule": "same locked ledger and job leases; old leaf occupies one of nine slots; new leaves use v12 limits",
+  "final_migration": "only after all old and new leaves settle; retain complete history"
+}

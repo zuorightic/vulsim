@@ -1,0 +1,47 @@
+{
+  "status": "ready",
+  "source_sha256": "bd87f76c01982cb5402e03a2152cb6b61bab426e4c4240224b44d99d383cde26",
+  "runtime_sha256": "3be8d3d1fa9cea3d08ee3605a5d46168dc490876b6e34a437093a6984296c7f1",
+  "user_instruction": "可否不等待最后一个旧 Karatsuba 任务结束，开始9并行实验呢",
+  "old_controller_pid": 889409,
+  "previous_progress": {
+    "status": "draining_previous_wave",
+    "software_pass": [],
+    "software_errors": [
+      {
+        "case": "mac32",
+        "L": 2,
+        "exit_code": 1,
+        "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/software-logs/mac32-L2.log"
+      },
+      {
+        "case": "add512",
+        "L": 2,
+        "exit_code": 1,
+        "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/software-logs/add512-L2.log"
+      }
+    ],
+    "physical_pass": [],
+    "physical_errors": [],
+    "software_active": [
+      {
+        "case": "mul128",
+        "L": 2,
+        "pid": 7
+      },
+      {
+        "case": "dot16",
+        "L": 4,
+        "pid": 8
+      }
+    ],
+    "physical_active": []
+  },
+  "old_controller_terminated": true,
+  "software_children_confirmed_not_running": true,
+  "old_EDA_children_signalled": false,
+  "physical_admissions": 0,
+  "EDA_calls": 0,
+  "at_epoch": 1794798982.4930074,
+  "authorization": "share nine kernel-locked slots immediately: one old leaf plus eight two-thread leaves, then nine two-thread leaves"
+}

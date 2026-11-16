@@ -1,0 +1,227 @@
+[
+  {
+    "case": "add512",
+    "probe_T_ps": 1100,
+    "result": {
+      "task": "add512-clock-probe",
+      "target_ps": 1100,
+      "classes": {
+        "register_to_register": {
+          "slack_ps": 6.4867,
+          "required_period_ps": 1093.5133
+        },
+        "input_to_register": {
+          "slack_ps": 515.087463,
+          "required_period_ps": 456.1406712500001
+        },
+        "register_to_output": {
+          "slack_ps": 579.942749,
+          "required_period_ps": 375.07156375
+        },
+        "full_setup_threshold": {
+          "slack_ps": 6.4867,
+          "required_period_ps": 1093.5133
+        },
+        "threshold_check_-0.1": {
+          "slack_ps": -0.100031,
+          "required_period_ps": 1093.4133000000002
+        },
+        "threshold_check_0.1": {
+          "slack_ps": 0.100031,
+          "required_period_ps": 1093.6133
+        }
+      },
+      "fixed_inputs": {
+        "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-v1/calibration-add512/runs/add512-clock-probe/results/asap7/arithmetic_probe/base/5_1_grt.odb": "90aac8381025a65883294d7dbac22a45e92941359904a8e11268537fcbd3b8ee",
+        "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-v1/calibration-add512/runs/add512-clock-probe/results/asap7/arithmetic_probe/base/5_1_grt.sdc": "2099014da9ddf88009d3790f5ffba654220d1da89fc53d198255da7168108746"
+      },
+      "full_setup_minimum_period_ps": 1093.5133,
+      "maximum_frequency_MHz": 914.4836189921054,
+      "area_um2": 3072.5600399999994,
+      "hold_WNS_ps": 0.075023,
+      "hold_review_required": true,
+      "scope": "fixed grt full RR/IR/RO, IOmax=0.2T; hold separate"
+    },
+    "readout_sha256": "3324d67ff1a374ec94caac9306f273a275fa605e9822a6c9fb825e71af9c1a6f"
+  },
+  {
+    "case": "mul128",
+    "probe_T_ps": 1900,
+    "result": {
+      "task": "mul128-clock-probe",
+      "target_ps": 1900,
+      "classes": {
+        "register_to_register": {
+          "slack_ps": 2.611245,
+          "required_period_ps": 1897.388755
+        },
+        "input_to_register": {
+          "slack_ps": 833.032288,
+          "required_period_ps": 858.70964
+        },
+        "register_to_output": {
+          "slack_ps": 1113.641724,
+          "required_period_ps": 507.9478449999999
+        },
+        "full_setup_threshold": {
+          "slack_ps": 2.611245,
+          "required_period_ps": 1897.388755
+        },
+        "threshold_check_-0.1": {
+          "slack_ps": -0.09992,
+          "required_period_ps": 1897.288755
+        },
+        "threshold_check_0.1": {
+          "slack_ps": 0.100142,
+          "required_period_ps": 1897.4887549999999
+        }
+      },
+      "fixed_inputs": {
+        "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-v1/calibration-first-five/runs/mul128-clock-probe/results/asap7/arithmetic_probe/base/5_1_grt.odb": "5140413627057f013eb5e62f11dd47a0aa0907b7e9ba09e001f85870e0f7d27a",
+        "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-v1/calibration-first-five/runs/mul128-clock-probe/results/asap7/arithmetic_probe/base/5_1_grt.sdc": "448490a0ac6a5e1efc43cc542c40ef866075b377a34033753c6b79b286e92b57"
+      },
+      "full_setup_minimum_period_ps": 1897.388755,
+      "maximum_frequency_MHz": 527.0401215169002,
+      "area_um2": 16123.963679999995,
+      "hold_WNS_ps": 1.186162,
+      "hold_review_required": true,
+      "scope": "fixed grt full RR/IR/RO, IOmax=0.2T; hold separate"
+    },
+    "readout_sha256": "d7e51691643174af510a1b86957242c56fa8c6cf781d3af5c145ba911d22d32f"
+  },
+  {
+    "case": "dot16",
+    "probe_T_ps": 2000,
+    "result": {
+      "task": "dot16-clock-probe",
+      "target_ps": 2000,
+      "classes": {
+        "register_to_register": {
+          "slack_ps": -109.402267,
+          "required_period_ps": 2109.402267
+        },
+        "input_to_register": {
+          "slack_ps": 682.518066,
+          "required_period_ps": 1146.8524175000002
+        },
+        "register_to_output": {
+          "slack_ps": 988.115906,
+          "required_period_ps": 764.8551175
+        },
+        "full_setup_threshold": {
+          "slack_ps": -109.402267,
+          "required_period_ps": 2109.402267
+        },
+        "threshold_check_-0.1": {
+          "slack_ps": -0.09992,
+          "required_period_ps": 2109.302267
+        },
+        "threshold_check_0.1": {
+          "slack_ps": 0.100142,
+          "required_period_ps": 2109.502267
+        }
+      },
+      "fixed_inputs": {
+        "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-v1/calibration-first-five/runs/dot16-clock-probe/results/asap7/arithmetic_probe/base/5_1_grt.odb": "2625a49e69c925055c45f73638dd62c27678863018749c323fdfdb812d3a00d9",
+        "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-v1/calibration-first-five/runs/dot16-clock-probe/results/asap7/arithmetic_probe/base/5_1_grt.sdc": "7fb29260540e659869ad8e03121a9dd770678e704b28c47b4518ac7e05e4117c"
+      },
+      "full_setup_minimum_period_ps": 2109.402267,
+      "maximum_frequency_MHz": 474.0679459978982,
+      "area_um2": 46167.16175999999,
+      "hold_WNS_ps": -0.441536,
+      "hold_review_required": true,
+      "scope": "fixed grt full RR/IR/RO, IOmax=0.2T; hold separate"
+    },
+    "readout_sha256": "9dc1e0a0f3b57f2ad04f98b334e1da7c84ec1e9697c15dd7db2431b82affa4df"
+  },
+  {
+    "case": "horner64",
+    "probe_T_ps": 1100,
+    "result": {
+      "task": "horner64-clock-probe",
+      "target_ps": 1100,
+      "classes": {
+        "register_to_register": {
+          "slack_ps": 1.818323,
+          "required_period_ps": 1098.181677
+        },
+        "input_to_register": {
+          "slack_ps": 532.518433,
+          "required_period_ps": 434.3519587500001
+        },
+        "register_to_output": {
+          "slack_ps": 573.938904,
+          "required_period_ps": 382.5763700000001
+        },
+        "full_setup_threshold": {
+          "slack_ps": 1.818323,
+          "required_period_ps": 1098.181677
+        },
+        "threshold_check_-0.1": {
+          "slack_ps": -0.100031,
+          "required_period_ps": 1098.0816770000001
+        },
+        "threshold_check_0.1": {
+          "slack_ps": 0.100031,
+          "required_period_ps": 1098.281677
+        }
+      },
+      "fixed_inputs": {
+        "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-v1/calibration-first-five/runs/horner64-clock-probe/results/asap7/arithmetic_probe/base/5_1_grt.odb": "f9c4ae0eaaa1ac5dd9469b4b94836b8cb068adf2d3f4f237027a4ac07703267d",
+        "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-v1/calibration-first-five/runs/horner64-clock-probe/results/asap7/arithmetic_probe/base/5_1_grt.sdc": "c837169575fcd0568f43f8400f397c0cc15bc8b49af68d26b53fdd194b2add4d"
+      },
+      "full_setup_minimum_period_ps": 1098.181677,
+      "maximum_frequency_MHz": 910.5961435559445,
+      "area_um2": 6499.822319999999,
+      "hold_WNS_ps": 1.989853,
+      "hold_review_required": true,
+      "scope": "fixed grt full RR/IR/RO, IOmax=0.2T; hold separate"
+    },
+    "readout_sha256": "dbd6e83d290cebbfc30e141f394c253158f928bc8d27fcc54dbcbff9b322e7fd"
+  },
+  {
+    "case": "barrett64",
+    "probe_T_ps": 2300,
+    "result": {
+      "task": "barrett64-clock-probe",
+      "target_ps": 2300,
+      "classes": {
+        "register_to_register": {
+          "slack_ps": 0.100586,
+          "required_period_ps": 2299.899414
+        },
+        "input_to_register": {
+          "slack_ps": 1251.382446,
+          "required_period_ps": 735.7719425
+        },
+        "register_to_output": {
+          "slack_ps": 1480.281006,
+          "required_period_ps": 449.64874250000025
+        },
+        "full_setup_threshold": {
+          "slack_ps": 0.100586,
+          "required_period_ps": 2299.899414
+        },
+        "threshold_check_-0.1": {
+          "slack_ps": -0.09992,
+          "required_period_ps": 2299.799414
+        },
+        "threshold_check_0.1": {
+          "slack_ps": 0.09992,
+          "required_period_ps": 2299.999414
+        }
+      },
+      "fixed_inputs": {
+        "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-v1/calibration-first-five/runs/barrett64-clock-probe/results/asap7/arithmetic_probe/base/5_1_grt.odb": "1ab790ada72efa0fd6c5aff3ec2cafa5f8a25cd768ba443564acfae8b873be84",
+        "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-v1/calibration-first-five/runs/barrett64-clock-probe/results/asap7/arithmetic_probe/base/5_1_grt.sdc": "65aa2a87643b0c221e2466fd1f76f725ed77b66e4004afbe67c9530e691c8942"
+      },
+      "full_setup_minimum_period_ps": 2299.899414,
+      "maximum_frequency_MHz": 434.80162389397435,
+      "area_um2": 11347.074540000007,
+      "hold_WNS_ps": 15.671991,
+      "hold_review_required": false,
+      "scope": "fixed grt full RR/IR/RO, IOmax=0.2T; hold separate"
+    },
+    "readout_sha256": "02c564329541d7fc7b000697d011afe7dd920a8d90664f3ae49bd94308ab106e"
+  }
+]

@@ -1,0 +1,75 @@
+{
+  "at": "2026-11-16T11:52:30.042367+00:00",
+  "status": "applied_and_verified",
+  "handoff_at": "2026-11-16T11:49:49.867946+00:00",
+  "successor_ready_at": "2026-11-16T11:49:52.006092+00:00",
+  "source_sha256": "7b7ce1bf6c58ad8b5b730cb548677365d66f01a0856ee4ddcdf8d14e6f5c2902",
+  "protected_frozen_files_unchanged": true,
+  "old_admissions_unchanged": true,
+  "excluded_unique_repeated_A": 22,
+  "excluded_A_run_statuses": {
+    "completed": 5,
+    "failed": 10,
+    "not_started": 7
+  },
+  "cancelled_A": [
+    {
+      "task_id": "karatsuba256-L4-T2300-c1a64d59e07d",
+      "job_id": "ae9ae67613da4951a0b23638f3a351ee",
+      "claim": "released",
+      "manifest_status": "failed",
+      "command_sha256": "25b5e7150da0cff6c2af20f1aeb53646e70f58f22658b8b792ed3da528dd1708",
+      "cancelled_signal": 15,
+      "remaining_live_pids": []
+    },
+    {
+      "task_id": "karatsuba256-L4-T2750-c1a64d59e07d",
+      "job_id": "e7fe1060f83d432cb6726e260a4ab8d9",
+      "claim": "released",
+      "manifest_status": "failed",
+      "command_sha256": "dc4ff8fc33ccfdc4dc22fc68f69caefd44bcefa489ae139439e111c3f02e99d2",
+      "cancelled_signal": 15,
+      "remaining_live_pids": []
+    },
+    {
+      "task_id": "karatsuba256-L8-T1150-c1a64d59e07d",
+      "job_id": "13fffec0e6da40f5b0df96135661820d",
+      "claim": "released",
+      "manifest_status": "failed",
+      "command_sha256": "af10ef114a0b04b2e5b3a439f4b372da13f8ef7e8dfcc4e0def6d111e09242e6",
+      "cancelled_signal": 15,
+      "remaining_live_pids": []
+    }
+  ],
+  "BCD_workers_signalled": false,
+  "active_A_tasks": [],
+  "active_physical_jobs": 9,
+  "A_reference_measured": 8,
+  "BCD_measured": 46,
+  "BCD_statuses": {
+    "not_started": 25,
+    "measured_grt": 46,
+    "failed": 14,
+    "running": 8,
+    "awaiting_A_reference": 12,
+    "software_pending": 6
+  },
+  "new_dispatches": 3,
+  "new_dispatches_all_BCD_or_ablation": true,
+  "parallel_jobs": 9,
+  "threads_per_tool": 2,
+  "original_NTT_L8_software_failure": [
+    {
+      "case": "ntt8x64",
+      "L": 8,
+      "exit_code": -11,
+      "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/software-logs/ntt8x64-L8.log"
+    }
+  ],
+  "NTT_failure_before_handoff": true,
+  "NTT_auto_retry": false,
+  "tests_passed": 21,
+  "automatic_retries": 0,
+  "model_refitted": false,
+  "D_reselected": false
+}

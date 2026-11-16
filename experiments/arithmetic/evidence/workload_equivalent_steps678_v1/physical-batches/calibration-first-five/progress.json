@@ -1,0 +1,16 @@
+{
+  "status": "batch_settled",
+  "completed": [
+    "horner64-clock-probe",
+    "mul128-clock-probe",
+    "barrett64-clock-probe",
+    "dot16-clock-probe"
+  ],
+  "errors": [
+    {
+      "task": "karatsuba256-clock-probe",
+      "reason": "grt: tool_nonzero_exit"
+    }
+  ],
+  "active": []
+}

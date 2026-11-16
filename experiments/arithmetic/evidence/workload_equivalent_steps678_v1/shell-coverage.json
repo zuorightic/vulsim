@@ -1,0 +1,105 @@
+{
+  "rows": [
+    {
+      "case": "add512",
+      "candidates": 33,
+      "owners": 301,
+      "functional_consumers": 0,
+      "family_add": 33,
+      "family_adc": 268
+    },
+    {
+      "case": "barrett64",
+      "candidates": 95,
+      "owners": 4377,
+      "functional_consumers": 40,
+      "family_sub": 62,
+      "family_ult": 95,
+      "family_mux": 95,
+      "family_mul": 3102,
+      "family_adc": 352,
+      "family_add": 470,
+      "family_G": 201
+    },
+    {
+      "case": "dot16",
+      "candidates": 96,
+      "owners": 20056,
+      "functional_consumers": 0,
+      "family_add": 5766,
+      "family_mul": 10320,
+      "family_G": 1090,
+      "family_adc": 2880
+    },
+    {
+      "case": "horner64",
+      "candidates": 94,
+      "owners": 3402,
+      "functional_consumers": 0,
+      "family_add": 953,
+      "family_mul": 1720,
+      "family_adc": 508,
+      "family_G": 221
+    },
+    {
+      "case": "karatsuba256",
+      "candidates": 97,
+      "owners": 24277,
+      "functional_consumers": 4507,
+      "family_add": 3678,
+      "family_sub": 512,
+      "family_mul": 7871,
+      "family_G": 1306,
+      "family_adc": 10910
+    },
+    {
+      "case": "mac32",
+      "candidates": 37,
+      "owners": 1154,
+      "functional_consumers": 0,
+      "family_add": 218,
+      "family_mul": 784,
+      "family_G": 152
+    },
+    {
+      "case": "montgomery256",
+      "candidates": 65,
+      "owners": 72154,
+      "functional_consumers": 5428,
+      "family_add": 10069,
+      "family_ult": 65,
+      "family_sub": 21,
+      "family_mux": 65,
+      "family_mul": 21896,
+      "family_G": 3452,
+      "family_adc": 36586
+    },
+    {
+      "case": "mul128",
+      "candidates": 46,
+      "owners": 5424,
+      "functional_consumers": 0,
+      "family_mul": 3421,
+      "family_add": 1673,
+      "family_G": 330
+    },
+    {
+      "case": "ntt8x64",
+      "candidates": 96,
+      "owners": 36422,
+      "functional_consumers": 1064,
+      "family_add": 2995,
+      "family_ult": 2784,
+      "family_sub": 1472,
+      "family_mux": 2784,
+      "family_mul": 15525,
+      "family_adc": 9632,
+      "family_G": 1230
+    }
+  ],
+  "EDA_calls": 0,
+  "qualification": false,
+  "unpriced_consumers": 0,
+  "functional_operand_maps_checked": true,
+  "functional_operand_width_checked": true
+}

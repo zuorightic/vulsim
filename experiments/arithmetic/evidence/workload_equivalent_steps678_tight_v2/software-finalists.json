@@ -1,0 +1,502 @@
+{
+  "rows": [
+    {
+      "case": "add512",
+      "target_ps": 350,
+      "L": 4,
+      "grammar": [
+        0,
+        128
+      ],
+      "predicted_period_ps": 754.2812092577838,
+      "predicted_area_um2": 3502.048364814861,
+      "predicted_setup_met": false,
+      "candidates": 15,
+      "complete_candidates": 15,
+      "budget_range_ps": [
+        45.94159759169382,
+        152.23522958477508
+      ],
+      "equivalent_T_range_ps": [
+        154.98019509169376,
+        261.273827084775
+      ],
+      "allocation_envelope_ps": null,
+      "budgeted_owners": 4,
+      "queries_outside_budget_variables": 1,
+      "same_RTL_as_C": false,
+      "same_RTL_as_static_control": false,
+      "rtl_sha256": "7c21841924530588e0082f59d89df53a290679507fa73643d1e1bacad2571a68",
+      "functional_status": "passed"
+    },
+    {
+      "case": "add512",
+      "target_ps": 400,
+      "L": 4,
+      "grammar": [
+        0,
+        128
+      ],
+      "predicted_period_ps": 781.1623519325294,
+      "predicted_area_um2": 3385.549759583845,
+      "predicted_setup_met": false,
+      "candidates": 15,
+      "complete_candidates": 15,
+      "budget_range_ps": [
+        79.43769133834454,
+        202.23522957977545
+      ],
+      "equivalent_T_range_ps": [
+        188.4762888383445,
+        311.2738270797754
+      ],
+      "allocation_envelope_ps": null,
+      "budgeted_owners": 4,
+      "queries_outside_budget_variables": 1,
+      "same_RTL_as_C": false,
+      "same_RTL_as_static_control": false,
+      "rtl_sha256": "7c21841924530588e0082f59d89df53a290679507fa73643d1e1bacad2571a68",
+      "functional_status": "passed"
+    },
+    {
+      "case": "barrett64",
+      "target_ps": 900,
+      "L": 8,
+      "grammar": [
+        32,
+        0
+      ],
+      "predicted_period_ps": 1328.856109230515,
+      "predicted_area_um2": 10214.96494751932,
+      "predicted_setup_met": false,
+      "candidates": 46,
+      "complete_candidates": 46,
+      "budget_range_ps": [
+        188.04138395224268,
+        702.2352295297751
+      ],
+      "equivalent_T_range_ps": [
+        342.5127739522427,
+        853.4479359521745
+      ],
+      "allocation_envelope_ps": null,
+      "budgeted_owners": 29,
+      "queries_outside_budget_variables": 0,
+      "same_RTL_as_C": false,
+      "same_RTL_as_static_control": false,
+      "rtl_sha256": "18a83492966603a3d9d13da0522bdba7ff5efe07070ae9de89dd3b44d4eaa752",
+      "functional_status": "passed"
+    },
+    {
+      "case": "barrett64",
+      "target_ps": 1100,
+      "L": 8,
+      "grammar": [
+        32,
+        0
+      ],
+      "predicted_period_ps": 1334.0362883470405,
+      "predicted_area_um2": 10101.379301127547,
+      "predicted_setup_met": false,
+      "candidates": 46,
+      "complete_candidates": 46,
+      "budget_range_ps": [
+        249.8703659351751,
+        902.2352295097762
+      ],
+      "equivalent_T_range_ps": [
+        404.3417559351751,
+        1035.4726055097763
+      ],
+      "allocation_envelope_ps": null,
+      "budgeted_owners": 29,
+      "queries_outside_budget_variables": 0,
+      "same_RTL_as_C": false,
+      "same_RTL_as_static_control": false,
+      "rtl_sha256": "18a83492966603a3d9d13da0522bdba7ff5efe07070ae9de89dd3b44d4eaa752",
+      "functional_status": "passed"
+    },
+    {
+      "case": "dot16",
+      "target_ps": 450,
+      "L": 8,
+      "grammar": [
+        8,
+        0
+      ],
+      "predicted_period_ps": 1105.57028805692,
+      "predicted_area_um2": 55027.63880019421,
+      "predicted_setup_met": false,
+      "candidates": 42,
+      "complete_candidates": 42,
+      "budget_range_ps": [
+        168.57754508314127,
+        252.2352295747757
+      ],
+      "equivalent_T_range_ps": [
+        301.8149210831413,
+        367.29921057477577
+      ],
+      "allocation_envelope_ps": null,
+      "budgeted_owners": 1045,
+      "queries_outside_budget_variables": 0,
+      "same_RTL_as_C": false,
+      "same_RTL_as_static_control": false,
+      "rtl_sha256": "43c8602dd4117fbe97cd1bf7951cbaf5e71a49e27641d612e614368d6f00818e",
+      "functional_status": "passed"
+    },
+    {
+      "case": "dot16",
+      "target_ps": 550,
+      "L": 8,
+      "grammar": [
+        8,
+        0
+      ],
+      "predicted_period_ps": 1141.5343213841873,
+      "predicted_area_um2": 53281.53334412619,
+      "predicted_setup_met": false,
+      "candidates": 42,
+      "complete_candidates": 42,
+      "budget_range_ps": [
+        268.57754507314127,
+        352.23522956477586
+      ],
+      "equivalent_T_range_ps": [
+        401.8149210731413,
+        467.29921056477593
+      ],
+      "allocation_envelope_ps": null,
+      "budgeted_owners": 1045,
+      "queries_outside_budget_variables": 0,
+      "same_RTL_as_C": false,
+      "same_RTL_as_static_control": false,
+      "rtl_sha256": "43c8602dd4117fbe97cd1bf7951cbaf5e71a49e27641d612e614368d6f00818e",
+      "functional_status": "passed"
+    },
+    {
+      "case": "horner64",
+      "target_ps": 950,
+      "L": 8,
+      "grammar": [
+        16,
+        0
+      ],
+      "predicted_period_ps": 1083.2301872698295,
+      "predicted_area_um2": 6825.144210033748,
+      "predicted_setup_met": false,
+      "candidates": 42,
+      "complete_candidates": 42,
+      "budget_range_ps": [
+        668.5775449901852,
+        752.2352295247739
+      ],
+      "equivalent_T_range_ps": [
+        801.8149209901852,
+        885.4726055247739
+      ],
+      "allocation_envelope_ps": null,
+      "budgeted_owners": 44,
+      "queries_outside_budget_variables": 0,
+      "same_RTL_as_C": false,
+      "same_RTL_as_static_control": false,
+      "rtl_sha256": "4f83e78449a4ac88b6c831e60335f7d6554244fe5d5aedf12a023a8b41634f71",
+      "functional_status": "passed"
+    },
+    {
+      "case": "horner64",
+      "target_ps": 1150,
+      "L": 8,
+      "grammar": [
+        16,
+        0
+      ],
+      "predicted_period_ps": 1087.9746587698367,
+      "predicted_area_um2": 6773.774835594491,
+      "predicted_setup_met": true,
+      "candidates": 42,
+      "complete_candidates": 42,
+      "budget_range_ps": [
+        868.5775449873086,
+        952.235229504774
+      ],
+      "equivalent_T_range_ps": [
+        1001.8149209873086,
+        1085.472605504774
+      ],
+      "allocation_envelope_ps": null,
+      "budgeted_owners": 44,
+      "queries_outside_budget_variables": 0,
+      "same_RTL_as_C": false,
+      "same_RTL_as_static_control": false,
+      "rtl_sha256": "4f83e78449a4ac88b6c831e60335f7d6554244fe5d5aedf12a023a8b41634f71",
+      "functional_status": "passed"
+    },
+    {
+      "case": "karatsuba256",
+      "target_ps": 1150,
+      "L": 8,
+      "grammar": [
+        0,
+        0
+      ],
+      "predicted_period_ps": 1623.1617474577342,
+      "predicted_area_um2": 32681.153895100746,
+      "predicted_setup_met": false,
+      "candidates": 47,
+      "complete_candidates": 47,
+      "budget_range_ps": [
+        246.00134567760352,
+        952.2352295047759
+      ],
+      "equivalent_T_range_ps": [
+        355.0399431776035,
+        1301.2533947296693
+      ],
+      "allocation_envelope_ps": null,
+      "budgeted_owners": 63,
+      "queries_outside_budget_variables": 0,
+      "same_RTL_as_C": false,
+      "same_RTL_as_static_control": false,
+      "rtl_sha256": "b5e7a118e6c322fc7513b881e24ad0df50ec3e843593f415d5f9c80767f6f1de",
+      "functional_status": "passed"
+    },
+    {
+      "case": "karatsuba256",
+      "target_ps": 1400,
+      "L": 8,
+      "grammar": [
+        0,
+        0
+      ],
+      "predicted_period_ps": 1660.6213844301978,
+      "predicted_area_um2": 32301.567426172114,
+      "predicted_setup_met": false,
+      "candidates": 47,
+      "complete_candidates": 47,
+      "budget_range_ps": [
+        325.73177842315147,
+        1202.2352294999996
+      ],
+      "equivalent_T_range_ps": [
+        434.7703759231514,
+        1463.576822411164
+      ],
+      "allocation_envelope_ps": null,
+      "budgeted_owners": 63,
+      "queries_outside_budget_variables": 0,
+      "same_RTL_as_C": false,
+      "same_RTL_as_static_control": false,
+      "rtl_sha256": "b5e7a118e6c322fc7513b881e24ad0df50ec3e843593f415d5f9c80767f6f1de",
+      "functional_status": "passed"
+    },
+    {
+      "case": "mac32",
+      "target_ps": 500,
+      "L": 3,
+      "grammar": [
+        4,
+        0
+      ],
+      "predicted_period_ps": 733.7405933428988,
+      "predicted_area_um2": 1513.8718545088202,
+      "predicted_setup_met": false,
+      "candidates": 61,
+      "complete_candidates": 61,
+      "budget_range_ps": [
+        197.41469981482874,
+        302.2352295697744
+      ],
+      "equivalent_T_range_ps": [
+        312.4786808148288,
+        417.29921056977446
+      ],
+      "allocation_envelope_ps": null,
+      "budgeted_owners": 69,
+      "queries_outside_budget_variables": 0,
+      "same_RTL_as_C": false,
+      "same_RTL_as_static_control": false,
+      "rtl_sha256": "a603cc65f248c0409d680555c3690cf9fc0f98e95de5a48fa1530482f7a85793",
+      "functional_status": "passed"
+    },
+    {
+      "case": "mac32",
+      "target_ps": 750,
+      "L": 3,
+      "grammar": [
+        4,
+        0
+      ],
+      "predicted_period_ps": 773.1097730081631,
+      "predicted_area_um2": 1456.568419894968,
+      "predicted_setup_met": false,
+      "candidates": 53,
+      "complete_candidates": 53,
+      "budget_range_ps": [
+        364.8951685480802,
+        552.235229544776
+      ],
+      "equivalent_T_range_ps": [
+        479.9591495480803,
+        667.2992105447761
+      ],
+      "allocation_envelope_ps": null,
+      "budgeted_owners": 69,
+      "queries_outside_budget_variables": 0,
+      "same_RTL_as_C": false,
+      "same_RTL_as_static_control": false,
+      "rtl_sha256": "a603cc65f248c0409d680555c3690cf9fc0f98e95de5a48fa1530482f7a85793",
+      "functional_status": "passed"
+    },
+    {
+      "case": "mac32",
+      "target_ps": 1000,
+      "L": 3,
+      "grammar": [
+        12,
+        0
+      ],
+      "predicted_period_ps": 984.0155932178709,
+      "predicted_area_um2": 981.625977143475,
+      "predicted_setup_met": true,
+      "candidates": 61,
+      "complete_candidates": 61,
+      "budget_range_ps": [
+        718.5775449858769,
+        802.2352295197736
+      ],
+      "equivalent_T_range_ps": [
+        851.8149209858769,
+        917.2992105197736
+      ],
+      "allocation_envelope_ps": null,
+      "budgeted_owners": 11,
+      "queries_outside_budget_variables": 0,
+      "same_RTL_as_C": false,
+      "same_RTL_as_static_control": false,
+      "rtl_sha256": "9b41cfd87866aa472b2e3191052ddfddc6728cf089c09f0ebb2bb513b8715bf7",
+      "functional_status": "passed"
+    },
+    {
+      "case": "mul128",
+      "target_ps": 600,
+      "L": 4,
+      "grammar": [
+        4,
+        0
+      ],
+      "predicted_period_ps": 1010.7761232087912,
+      "predicted_area_um2": 93648.03112698074,
+      "predicted_setup_met": false,
+      "candidates": 15,
+      "complete_candidates": 15,
+      "budget_range_ps": [
+        67.94382065983214,
+        402.2352295597752
+      ],
+      "equivalent_T_range_ps": [
+        176.9824181598321,
+        564.7867750990456
+      ],
+      "allocation_envelope_ps": null,
+      "budgeted_owners": 1609,
+      "queries_outside_budget_variables": 0,
+      "same_RTL_as_C": true,
+      "same_RTL_as_static_control": false,
+      "rtl_sha256": "78374d7545b6be3e333da7bbabbe25b76ee9b45b9a61343c8b12c00598720aa1",
+      "functional_status": "passed"
+    },
+    {
+      "case": "mul128",
+      "target_ps": 750,
+      "L": 4,
+      "grammar": [
+        4,
+        0
+      ],
+      "predicted_period_ps": 1035.8874509976672,
+      "predicted_area_um2": 92341.43842570172,
+      "predicted_setup_met": false,
+      "candidates": 15,
+      "complete_candidates": 15,
+      "budget_range_ps": [
+        163.69011763705456,
+        552.2352295447745
+      ],
+      "equivalent_T_range_ps": [
+        272.7287151370545,
+        667.2992105447745
+      ],
+      "allocation_envelope_ps": null,
+      "budgeted_owners": 1609,
+      "queries_outside_budget_variables": 0,
+      "same_RTL_as_C": true,
+      "same_RTL_as_static_control": false,
+      "rtl_sha256": "78374d7545b6be3e333da7bbabbe25b76ee9b45b9a61343c8b12c00598720aa1",
+      "functional_status": "passed"
+    },
+    {
+      "case": "ntt8x64",
+      "target_ps": 800,
+      "L": 16,
+      "grammar": [
+        0,
+        0
+      ],
+      "predicted_period_ps": 774.0306874810161,
+      "predicted_area_um2": 28659.995524493395,
+      "predicted_setup_met": true,
+      "candidates": 48,
+      "complete_candidates": 48,
+      "budget_range_ps": [
+        174.4656217024775,
+        602.2352295397757
+      ],
+      "equivalent_T_range_ps": [
+        328.9370117024775,
+        761.1812886034427
+      ],
+      "allocation_envelope_ps": null,
+      "budgeted_owners": 140,
+      "queries_outside_budget_variables": 3,
+      "same_RTL_as_C": false,
+      "same_RTL_as_static_control": false,
+      "rtl_sha256": "a6689a6712c659175b709e532f4823667d3f05103cbe212ccf536a0be05c934e",
+      "functional_status": "passed"
+    },
+    {
+      "case": "ntt8x64",
+      "target_ps": 950,
+      "L": 16,
+      "grammar": [
+        0,
+        0
+      ],
+      "predicted_period_ps": 778.20897369992,
+      "predicted_area_um2": 28389.93581674661,
+      "predicted_setup_met": true,
+      "candidates": 48,
+      "complete_candidates": 48,
+      "budget_range_ps": [
+        230.43626310601724,
+        752.2352295247762
+      ],
+      "equivalent_T_range_ps": [
+        384.9076531060172,
+        885.4726055247762
+      ],
+      "allocation_envelope_ps": null,
+      "budgeted_owners": 140,
+      "queries_outside_budget_variables": 3,
+      "same_RTL_as_C": false,
+      "same_RTL_as_static_control": false,
+      "rtl_sha256": "a6689a6712c659175b709e532f4823667d3f05103cbe212ccf536a0be05c934e",
+      "functional_status": "passed"
+    }
+  ],
+  "selected_groups": 17,
+  "required_groups": 19,
+  "physical_results_used": false,
+  "precision_qualified": false,
+  "scope": "software predictions only"
+}

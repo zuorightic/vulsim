@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "test_command": "python3 -m unittest regression.test_workload_two_depths regression.test_workload_dot16_latency regression.test_workload_final regression.test_workload_tight_continue regression.test_workload_storage",
+  "tests": 30,
+  "walltime_s": 4.515,
+  "source_sha256": {
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_two_depths_run.py": "c0cdeb81a7b93f8f1083e0ed2251d263eb3c6f27adbfb2ad7677c631625c70ba",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_nine_runtime.py": "964a83ba883384b6ee443994d40225a5d8afd36bf1e1c4ce451695a5c1fba612",
+    "regression/test_workload_two_depths.py": "f4db59cfcb1e6919e4150900ff6385305d038d64a7b2b61e5b789efb91a6fe13"
+  },
+  "meaningful_checks": [
+    "nine slots and tenth rejected",
+    "two threads enforced",
+    "history and claims preserved",
+    "active old jobs prevent migration",
+    "partial live JSON stays pending",
+    "readout requires final acceptance after ledger release",
+    "invalid setup bracket rejected",
+    "readout failure retained"
+  ],
+  "EDA_calls": 0
+}

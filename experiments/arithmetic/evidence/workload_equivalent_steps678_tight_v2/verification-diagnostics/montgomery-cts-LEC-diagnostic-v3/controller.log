@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_lec.py", line 78, in <module>
+    print(run(a.physical_directory,a.output))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_lec.py", line 59, in run
+    with ledger.job({k:context[k] for k in ('admission_id','task_id','target_platform')}):
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/budget.py", line 112, in job
+    raise BudgetExceeded('all backend job slots occupied')
+experiments.arithmetic_dse.budget.BudgetExceeded: all backend job slots occupied

@@ -1,0 +1,19 @@
+{
+  "status": "batch_settled",
+  "completed": [
+    "add512-A-reference",
+    "horner64-A-reference",
+    "mul128-A-reference",
+    "barrett64-A-reference",
+    "karatsuba256-A-reference",
+    "dot16-A-reference",
+    "ntt8x64-A-reference"
+  ],
+  "errors": [
+    {
+      "task": "montgomery256-A-reference",
+      "reason": "grt: timeout"
+    }
+  ],
+  "active": []
+}

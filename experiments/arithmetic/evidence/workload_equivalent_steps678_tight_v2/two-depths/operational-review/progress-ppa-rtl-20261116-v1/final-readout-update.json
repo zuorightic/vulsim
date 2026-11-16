@@ -1,0 +1,64 @@
+{
+  "snapshot": "2026-11-16 18:18:39 +08:00",
+  "base_snapshot": "2026-11-16 18:07:23 +08:00",
+  "main_measured": 56,
+  "statuses": {
+    "measured_grt": 56,
+    "failed": 17,
+    "running": 6,
+    "awaiting_readout_verification": 1,
+    "not_started": 44
+  },
+  "new_measured_main_records": [
+    {
+      "case": "horner64",
+      "comparison_L": 4,
+      "T_ps": 1900,
+      "method": "A",
+      "L": 1,
+      "grammar": [
+        0,
+        0
+      ],
+      "rtl_sha256": "6c415b9cf3b26a4cd234814aabda10bdb64cdf93a156f29633327d43f3c0dc1f",
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 6974.232310852426,
+        "violation_ps": 5074.232310852426,
+        "total_area_um2": 4188.760511150491,
+        "comb_area_um2": 3750.8514275412695,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 6768.915477852426,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 6974.232310852426
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 8,
+        "G_members_not_billed_separately": 0
+      },
+      "measurement": {
+        "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-horner64-L4/runs/horner64-L4-T1900-6c415b9cf3b2",
+        "inherited": false,
+        "threads": 2,
+        "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-horner64-L4",
+        "task_id": "horner64-L4-T1900-6c415b9cf3b2"
+      },
+      "status": "measured_grt",
+      "failure_reason": null,
+      "Tmin_ps": 5140.954834,
+      "area_um2": 4409.8230600000015,
+      "frequency_MHz": 194.51639477290144,
+      "setup_met": false,
+      "hold_WNS_ps": 5.483294,
+      "hold_met": true,
+      "measured_threads": 2,
+      "period_error": 0.35660252541569526,
+      "area_error": -0.050129573418646545,
+      "clock_readout_sha256": "cc6574abfaa1fe2503073969ca1c6b9ab1bc34611e51e142fcfd4c5d23a16de2"
+    }
+  ]
+}

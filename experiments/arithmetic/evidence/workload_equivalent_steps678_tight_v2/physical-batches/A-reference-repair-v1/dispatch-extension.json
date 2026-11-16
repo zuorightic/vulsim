@@ -1,0 +1,29 @@
+{
+  "version": "tight-continuation-dispatch-v1",
+  "automatic_retries": 0,
+  "physical_transformations_changed": false,
+  "wrapper": "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_tight_continue.py",
+  "original_model_and_selector_unchanged": true,
+  "verification_override": {
+    "environment": {
+      "KEPLER_FORMAL_EXE": "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_kepler_proxy.py"
+    },
+    "protocol": "buffer-size-repair-proof-v1",
+    "timeout_s": 300,
+    "sufficient_condition_only": true,
+    "fallback_on_failure": false,
+    "predecessor_manifest": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/montgomery256-A-reference/manifest.json",
+    "predecessor_manifest_sha256": "e63912bcafded9025f7200533e71b338c6457374cd90a0ecbdc2ae9625083819",
+    "predecessor_proof": "/home/zyrv/vulsim-artifacts/montgomery-cts-buffer-proof-v2/result.json",
+    "predecessor_proof_sha256": "c0adf3a6592be6d220b7ea38b45696d2dbc2044794d11ae43439652683f0a2c7",
+    "netlists_modified": false,
+    "unsupported_changes_fail_closed": true
+  },
+  "sources": {
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_tight_continue.py": "8266b1af418fbaaed3f7203228f24df52917d6d6e10025fa728ee63a93c23734",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_kepler_proxy.py": "96e4c7be312e635c738d9abef04cc0b16a9455e9cf845ae3a0724ecb9777fd9a",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_buffer_equivalence.py": "6fd5cba2075e13a9a8df358c85669c24de24e376bcefb1be4a8d4b80935290bd",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/montgomery256-A-reference/manifest.json": "e63912bcafded9025f7200533e71b338c6457374cd90a0ecbdc2ae9625083819",
+    "/home/zyrv/vulsim-artifacts/montgomery-cts-buffer-proof-v2/result.json": "c0adf3a6592be6d220b7ea38b45696d2dbc2044794d11ae43439652683f0a2c7"
+  }
+}

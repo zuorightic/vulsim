@@ -1,0 +1,39 @@
+{
+  "id": "montgomery-cts-buffer-proof-v2",
+  "role": "verification_diagnostic",
+  "support_calls": 1,
+  "automatic_retries": 0,
+  "files": {
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/montgomery256-A-reference/results/asap7/arithmetic_probe/base/4_before_rsz_lec.v": "e3c4c33802b66f0e2b72fd9751bf7395098ee37af62674895b8c18d87904f53c",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/montgomery256-A-reference/results/asap7/arithmetic_probe/base/4_after_rsz_lec.v": "4f8fe025b10f0873f5bd62a192631d2f701cb087014bca309ba1a671897793a9",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/montgomery256-A-reference/objects/asap7/arithmetic_probe/base/4_rsz_lec_test.yml": "74cbd5feb21e8eb83e8a679be7872f681ab188019171a671e9d2df436c83adee",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_buffer_equivalence.py": "6fd5cba2075e13a9a8df358c85669c24de24e376bcefb1be4a8d4b80935290bd",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_repair_proof.py": "139bc00e61650862f3a7592fd8a3f28aca55003866fd7a6c6be4bc9047805bf6",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib.gz": "fe9f1c18e88ab129d63ad82adc256f3a85c7e38e47dabbe0a96749b41087dea1",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib.gz": "8d6db2c2f83c3c162be54a5e102b2d379fcaaaef2db5f0b1d4152c395d01fea1",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib.gz": "bbe6d904d58c7367de1ed7639e4eae386c65fa0a5af26ae62dc5e4e2ec52b08b",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib": "57a0b403485b99ebd676942af4673ac086b86c7c75fbdc3e5c0038501dd22ba3",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz": "073ac4b6b08f272b6953b0ad54d1d9743767a7d15a0e2964ed86cf44c3dbe00e"
+  },
+  "command": [
+    "/usr/bin/python3",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_buffer_equivalence.py",
+    "--before",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/montgomery256-A-reference/results/asap7/arithmetic_probe/base/4_before_rsz_lec.v",
+    "--after",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/montgomery256-A-reference/results/asap7/arithmetic_probe/base/4_after_rsz_lec.v",
+    "--liberty",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib.gz",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib.gz",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib.gz",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib",
+    "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz",
+    "--output",
+    "/home/zyrv/vulsim-artifacts/montgomery-cts-buffer-proof-v2/proof.json"
+  ],
+  "timeout_s": 300,
+  "memory_limit_MiB": 8192,
+  "threads": 4,
+  "original_physical_check_replaced": false,
+  "application_PPA_for_selection": false
+}

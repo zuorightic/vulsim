@@ -1,0 +1,118 @@
+{
+  "version": "montgomery-original-A-physical-clock-retest-v1",
+  "id": "matrix-montgomery-A-retest-v1",
+  "role": "clock_calibration",
+  "tasks": [
+    {
+      "id": "montgomery256-A-reference-T27000",
+      "case": "montgomery256",
+      "method": "A",
+      "L": 1,
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/montgomery256/unsplit-A-reference-b0-w0-T36000-L1/0/workload.sv",
+      "period_ps": 27000,
+      "software_reference_period_ps": 32716.39977046511,
+      "software_reference_request_ps": 1000,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/montgomery256/unsplit-A-reference-b0-w0-T36000-L1/0/functional-receipt.json",
+      "large": true,
+      "rtl_sha256": "a8fc40067367a9db52597b2a068dad6687cef625133bc9ffa13da35022de6c59",
+      "abc_target_ps": 27000,
+      "threads": 2,
+      "memory_limit_MiB": 16384,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 21600,
+      "support_timeout_s": 300,
+      "predecessor_batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/montgomery-A-reference-9x2",
+      "predecessor_task": "montgomery256-A-reference-9x2-capacity",
+      "verification_protocol": "buffer-size-repair-proof-v1",
+      "physical_transformations_changed": false,
+      "capacity_memory_MiB": 16384,
+      "memory_failure_manifest": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference-repair-v1/runs/montgomery256-A-reference-repair-v1/manifest.json",
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference-repair-v1/freeze.json",
+      "verification_override": {
+        "proxy": "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_kepler_proxy.py",
+        "proxy_sha256": "96e4c7be312e635c738d9abef04cc0b16a9455e9cf845ae3a0724ecb9777fd9a",
+        "prover": "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_buffer_equivalence.py",
+        "prover_sha256": "6fd5cba2075e13a9a8df358c85669c24de24e376bcefb1be4a8d4b80935290bd",
+        "sufficient_condition_only": true
+      },
+      "clock_basis": "max retained synth/place/CTS period * 1.10, rounded up to 1000ps"
+    }
+  ],
+  "source_sha256": "39a2b9d88d9e7171cb44514f27e949a6685b88b39e79d69c0d27eb13c16fcf17",
+  "runtime_source_sha256": "3be8d3d1fa9cea3d08ee3605a5d46168dc490876b6e34a437093a6984296c7f1",
+  "policy_sha256": "8bf5a05cd879d54149374f4caa0da26b200a37ac6a9a220447c9752c9ec45109",
+  "freeze_sha256": "5b4f3703cbfaf40eb45d3632f367e48b2dc0c03721420a31e5833974178b881b",
+  "user_instruction": "请给Montgomery256重新测试A的后端，参考之前的中间数据来设置时序",
+  "created_at": "2026-11-16T12:04:06.660962+00:00",
+  "clock_basis": {
+    "stages": [
+      {
+        "stage": "vulsim_synth_period.rpt",
+        "period_min_ps": 20496.48,
+        "setup_WNS_ps": null,
+        "path": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/montgomery-A-reference-9x2/runs/montgomery256-A-reference-9x2-capacity/reports/asap7/arithmetic_probe/base/vulsim_synth_period.rpt",
+        "sha256": "a1bc8b62a8a62e91cc46962ccccd11ca5b55f901f0046ea318f5b81a3a347b8a"
+      },
+      {
+        "stage": "3_global_place.rpt",
+        "period_min_ps": 24030.65,
+        "setup_WNS_ps": 11969.34,
+        "path": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/montgomery-A-reference-9x2/runs/montgomery256-A-reference-9x2-capacity/reports/asap7/arithmetic_probe/base/3_global_place.rpt",
+        "sha256": "bbbaadf4ab1277611ec2ddd3f70f9e781ce66698e00a5ead9720259df7ef4563"
+      },
+      {
+        "stage": "3_resizer.rpt",
+        "period_min_ps": 24030.65,
+        "setup_WNS_ps": 11969.34,
+        "path": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/montgomery-A-reference-9x2/runs/montgomery256-A-reference-9x2-capacity/reports/asap7/arithmetic_probe/base/3_resizer.rpt",
+        "sha256": "1987cf16511b3ce58e5aeeb60ddecb1aaae63e221a93e77a4c96fd99610fb23d"
+      },
+      {
+        "stage": "3_detailed_place.rpt",
+        "period_min_ps": 23703.61,
+        "setup_WNS_ps": 12296.39,
+        "path": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/montgomery-A-reference-9x2/runs/montgomery256-A-reference-9x2-capacity/reports/asap7/arithmetic_probe/base/3_detailed_place.rpt",
+        "sha256": "dccacd0086527334fd2839448132d1311b906b47a6a6962ba7cc132035c952e5"
+      },
+      {
+        "stage": "4_cts_final.rpt",
+        "period_min_ps": 23796.44,
+        "setup_WNS_ps": 12203.56,
+        "path": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/montgomery-A-reference-9x2/runs/montgomery256-A-reference-9x2-capacity/reports/asap7/arithmetic_probe/base/4_cts_final.rpt",
+        "sha256": "0044d9c95a8383e072e6b83051db9d5cd2cf97710786e5d53b4bd9df1c21ad49"
+      }
+    ],
+    "maximum_intermediate_period_ps": 24030.65,
+    "margin_factor": 1.1,
+    "quantum_ps": 1000,
+    "request_ps": 27000,
+    "definition": "Intermediate core-clock periods choose a new mapping request only; not a complete grt Tmin label"
+  },
+  "parallel_jobs": 9,
+  "threads_per_tool": 2,
+  "memory_limit_MiB": 16384,
+  "grt_timeout_s": 21600,
+  "automatic_retries": 0,
+  "call_caps": {
+    "synth": 1,
+    "grt": 1,
+    "support": 4
+  },
+  "worst_case_leaf_walltime_s": 26460,
+  "CPU_envelope_s": 52920,
+  "starting_usage": {
+    "synth": 3760,
+    "grt": 3732,
+    "final": 16,
+    "support_calls": 23464,
+    "walltime_s": 875721.1005032221,
+    "CPU_time_s": 2068751.5999999999,
+    "pending": 9
+  },
+  "storage_reserve_GiB": 12,
+  "old_failures_retained": true,
+  "cold_synth_and_physical_run": true,
+  "qualification": "diagnostic_only",
+  "reason_for_longer_limit": "Prior 7200s grt reached 300000 pin-access groups after CTS; setup repair was not its bottleneck"
+}

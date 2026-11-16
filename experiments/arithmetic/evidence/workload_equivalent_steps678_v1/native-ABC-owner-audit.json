@@ -1,0 +1,489 @@
+{
+  "status": "passed",
+  "implementations": 27,
+  "rows": [
+    {
+      "case": "mac32",
+      "method": "A",
+      "checks": {
+        "operators": 2,
+        "exact_v1_projections": 2,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 8,
+        "public_covered": 0,
+        "public_uncovered": 2,
+        "diagnostic_covered": 1,
+        "diagnostic_uncovered": 1
+      }
+    },
+    {
+      "case": "mac32",
+      "method": "B",
+      "checks": {
+        "operators": 2,
+        "exact_v1_projections": 2,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 8,
+        "public_covered": 0,
+        "public_uncovered": 2,
+        "diagnostic_covered": 2,
+        "diagnostic_uncovered": 0
+      }
+    },
+    {
+      "case": "mac32",
+      "method": "C",
+      "checks": {
+        "correlated_G_regions": 5,
+        "G_regions": 5,
+        "operators": 96,
+        "exact_v1_projections": 96,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 384,
+        "G_integer_checks": 20,
+        "public_covered": 0,
+        "public_uncovered": 101,
+        "diagnostic_covered": 0,
+        "diagnostic_uncovered": 101
+      }
+    },
+    {
+      "case": "add512",
+      "method": "A",
+      "checks": {
+        "operators": 1,
+        "exact_v1_projections": 1,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 4,
+        "public_covered": 0,
+        "public_uncovered": 1,
+        "diagnostic_covered": 1,
+        "diagnostic_uncovered": 0
+      }
+    },
+    {
+      "case": "add512",
+      "method": "B",
+      "checks": {
+        "operators": 1,
+        "exact_v1_projections": 1,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 4,
+        "public_covered": 0,
+        "public_uncovered": 1,
+        "diagnostic_covered": 1,
+        "diagnostic_uncovered": 0
+      }
+    },
+    {
+      "case": "add512",
+      "method": "C",
+      "checks": {
+        "operators": 1,
+        "exact_v1_projections": 1,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 4,
+        "public_covered": 0,
+        "public_uncovered": 1,
+        "diagnostic_covered": 1,
+        "diagnostic_uncovered": 0
+      }
+    },
+    {
+      "case": "mul128",
+      "method": "A",
+      "checks": {
+        "operators": 1,
+        "exact_v1_projections": 1,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 4,
+        "public_covered": 0,
+        "public_uncovered": 1,
+        "diagnostic_covered": 1,
+        "diagnostic_uncovered": 0
+      }
+    },
+    {
+      "case": "mul128",
+      "method": "B",
+      "checks": {
+        "operators": 1,
+        "exact_v1_projections": 1,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 4,
+        "public_covered": 0,
+        "public_uncovered": 1,
+        "diagnostic_covered": 1,
+        "diagnostic_uncovered": 0
+      }
+    },
+    {
+      "case": "mul128",
+      "method": "C",
+      "checks": {
+        "correlated_G_regions": 17,
+        "G_regions": 17,
+        "operators": 256,
+        "exact_v1_projections": 256,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 1024,
+        "G_integer_checks": 68,
+        "public_covered": 0,
+        "public_uncovered": 273,
+        "diagnostic_covered": 1,
+        "diagnostic_uncovered": 272
+      }
+    },
+    {
+      "case": "dot16",
+      "method": "A",
+      "checks": {
+        "correlated_G_regions": 0,
+        "G_regions": 1,
+        "operators": 16,
+        "exact_v1_projections": 0,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 64,
+        "G_integer_checks": 4,
+        "public_covered": 0,
+        "public_uncovered": 17,
+        "diagnostic_covered": 0,
+        "diagnostic_uncovered": 17
+      }
+    },
+    {
+      "case": "dot16",
+      "method": "B",
+      "checks": {
+        "correlated_G_regions": 0,
+        "G_regions": 1,
+        "operators": 16,
+        "exact_v1_projections": 16,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 64,
+        "G_integer_checks": 4,
+        "public_covered": 0,
+        "public_uncovered": 17,
+        "diagnostic_covered": 17,
+        "diagnostic_uncovered": 0
+      }
+    },
+    {
+      "case": "dot16",
+      "method": "C",
+      "checks": {
+        "correlated_G_regions": 16,
+        "G_regions": 17,
+        "operators": 256,
+        "exact_v1_projections": 256,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 1024,
+        "G_integer_checks": 68,
+        "public_covered": 0,
+        "public_uncovered": 273,
+        "diagnostic_covered": 16,
+        "diagnostic_uncovered": 257
+      }
+    },
+    {
+      "case": "horner64",
+      "method": "A",
+      "checks": {
+        "operators": 8,
+        "exact_v1_projections": 8,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 32,
+        "public_covered": 0,
+        "public_uncovered": 8,
+        "diagnostic_covered": 1,
+        "diagnostic_uncovered": 7
+      }
+    },
+    {
+      "case": "horner64",
+      "method": "B",
+      "checks": {
+        "operators": 8,
+        "exact_v1_projections": 8,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 32,
+        "public_covered": 0,
+        "public_uncovered": 8,
+        "diagnostic_covered": 5,
+        "diagnostic_uncovered": 3
+      }
+    },
+    {
+      "case": "horner64",
+      "method": "C",
+      "checks": {
+        "correlated_G_regions": 4,
+        "G_regions": 4,
+        "operators": 40,
+        "exact_v1_projections": 40,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 160,
+        "G_integer_checks": 16,
+        "public_covered": 0,
+        "public_uncovered": 44,
+        "diagnostic_covered": 1,
+        "diagnostic_uncovered": 43
+      }
+    },
+    {
+      "case": "barrett64",
+      "method": "A",
+      "checks": {
+        "operators": 7,
+        "exact_v1_projections": 4,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 1,
+        "multiple_consumers": 2,
+        "scalar_integer_checks": 28,
+        "public_covered": 0,
+        "public_uncovered": 7,
+        "diagnostic_covered": 0,
+        "diagnostic_uncovered": 7
+      }
+    },
+    {
+      "case": "barrett64",
+      "method": "B",
+      "checks": {
+        "operators": 7,
+        "exact_v1_projections": 5,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 1,
+        "multiple_consumers": 1,
+        "scalar_integer_checks": 28,
+        "public_covered": 0,
+        "public_uncovered": 7,
+        "diagnostic_covered": 1,
+        "diagnostic_uncovered": 6
+      }
+    },
+    {
+      "case": "barrett64",
+      "method": "C",
+      "checks": {
+        "correlated_G_regions": 3,
+        "G_regions": 3,
+        "operators": 80,
+        "exact_v1_projections": 78,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 1,
+        "multiple_consumers": 1,
+        "scalar_integer_checks": 320,
+        "G_integer_checks": 12,
+        "public_covered": 0,
+        "public_uncovered": 83,
+        "diagnostic_covered": 3,
+        "diagnostic_uncovered": 80
+      }
+    },
+    {
+      "case": "karatsuba256",
+      "method": "A",
+      "checks": {
+        "correlated_G_regions": 8,
+        "G_regions": 8,
+        "operators": 50,
+        "exact_v1_projections": 21,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 21,
+        "functional_owners": 16,
+        "scalar_integer_checks": 200,
+        "G_integer_checks": 32,
+        "public_covered": 0,
+        "public_uncovered": 74,
+        "diagnostic_covered": 1,
+        "diagnostic_uncovered": 73
+      }
+    },
+    {
+      "case": "karatsuba256",
+      "method": "B",
+      "checks": {
+        "correlated_G_regions": 6,
+        "G_regions": 6,
+        "operators": 54,
+        "exact_v1_projections": 31,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 8,
+        "functional_owners": 16,
+        "scalar_integer_checks": 216,
+        "G_integer_checks": 24,
+        "public_covered": 0,
+        "public_uncovered": 76,
+        "diagnostic_covered": 5,
+        "diagnostic_uncovered": 71
+      }
+    },
+    {
+      "case": "karatsuba256",
+      "method": "C",
+      "checks": {
+        "correlated_G_regions": 22,
+        "G_regions": 22,
+        "operators": 212,
+        "exact_v1_projections": 200,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 4,
+        "functional_owners": 16,
+        "scalar_integer_checks": 848,
+        "G_integer_checks": 88,
+        "public_covered": 0,
+        "public_uncovered": 250,
+        "diagnostic_covered": 18,
+        "diagnostic_uncovered": 232
+      }
+    },
+    {
+      "case": "montgomery256",
+      "method": "A",
+      "checks": {
+        "correlated_G_regions": 16,
+        "G_regions": 16,
+        "operators": 139,
+        "exact_v1_projections": 2,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 1,
+        "multiple_consumers": 8,
+        "functional_owners": 136,
+        "scalar_integer_checks": 556,
+        "G_integer_checks": 64,
+        "public_covered": 0,
+        "public_uncovered": 291,
+        "diagnostic_covered": 0,
+        "diagnostic_uncovered": 291
+      }
+    },
+    {
+      "case": "montgomery256",
+      "method": "B",
+      "checks": {
+        "correlated_G_regions": 16,
+        "G_regions": 16,
+        "operators": 146,
+        "exact_v1_projections": 17,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 1,
+        "multiple_consumers": 0,
+        "functional_owners": 136,
+        "scalar_integer_checks": 584,
+        "G_integer_checks": 64,
+        "public_covered": 0,
+        "public_uncovered": 298,
+        "diagnostic_covered": 0,
+        "diagnostic_uncovered": 298
+      }
+    },
+    {
+      "case": "montgomery256",
+      "method": "C",
+      "checks": {
+        "correlated_G_regions": 80,
+        "G_regions": 80,
+        "operators": 770,
+        "exact_v1_projections": 697,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 1,
+        "multiple_consumers": 8,
+        "functional_owners": 136,
+        "scalar_integer_checks": 3080,
+        "G_integer_checks": 320,
+        "public_covered": 0,
+        "public_uncovered": 986,
+        "diagnostic_covered": 8,
+        "diagnostic_uncovered": 978
+      }
+    },
+    {
+      "case": "ntt8x64",
+      "method": "A",
+      "checks": {
+        "operators": 143,
+        "exact_v1_projections": 64,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 29,
+        "multiple_consumers": 50,
+        "scalar_integer_checks": 572,
+        "public_covered": 0,
+        "public_uncovered": 143,
+        "diagnostic_covered": 0,
+        "diagnostic_uncovered": 143
+      }
+    },
+    {
+      "case": "ntt8x64",
+      "method": "B",
+      "checks": {
+        "operators": 143,
+        "exact_v1_projections": 74,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 29,
+        "multiple_consumers": 40,
+        "scalar_integer_checks": 572,
+        "public_covered": 0,
+        "public_uncovered": 143,
+        "diagnostic_covered": 0,
+        "diagnostic_uncovered": 143
+      }
+    },
+    {
+      "case": "ntt8x64",
+      "method": "C",
+      "checks": {
+        "correlated_G_regions": 15,
+        "G_regions": 15,
+        "operators": 508,
+        "exact_v1_projections": 446,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 28,
+        "multiple_consumers": 34,
+        "scalar_integer_checks": 2032,
+        "G_integer_checks": 60,
+        "public_covered": 0,
+        "public_uncovered": 523,
+        "diagnostic_covered": 0,
+        "diagnostic_uncovered": 523
+      }
+    }
+  ],
+  "EDA_calls": 0,
+  "qualified": false,
+  "note": "legacy archive cost reports retain predecessor model; fresh current-binding reports checked; archived prices not used for final selection"
+}

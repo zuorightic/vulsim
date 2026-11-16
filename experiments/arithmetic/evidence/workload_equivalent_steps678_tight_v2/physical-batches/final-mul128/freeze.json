@@ -1,0 +1,198 @@
+{
+  "version": "equivalent-period-nine-case-physical-v1",
+  "files": {
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T600-L1/A/workload.sv": "6d72e638cd85592c68cfde92e58c0508ba2aef8cb4f52869c8ad8f7a7784f44f",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T600-L1/A/functional-receipt.json": "534d12d7b48a293aee07335bece5af7872e46e05231272fc82abb0fd9758a770",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T600-L4/B/workload.sv": "e18af3cbdef4e1c0a1ed5a9d9e3d3b914a099ebe87425b0159c3ad0f558af47f",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T600-L4/B/functional-receipt.json": "d85aca525ee131cb8e7886b1a1f2ccd27c162f4dd6e10166b11eaf772d19a67d",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T600-L4/C/workload.sv": "78374d7545b6be3e333da7bbabbe25b76ee9b45b9a61343c8b12c00598720aa1",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T600-L4/C/functional-receipt.json": "88ba08ce51df55828bca4f76ea03704e32dfa53e5fdd258d9ef458c01564d8b2",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T600-L4/same_policy_static/workload.sv": "334ab0c9575839205454f701a9ed298e505e81074c06ee9a6d51253b49409aae",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T600-L4/same_policy_static/functional-receipt.json": "d81f7f8b930eb64edf6cd70fc60ee21f8ce5b56ca322b902f0ede424b322e5df",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T750-L1/A/workload.sv": "6d72e638cd85592c68cfde92e58c0508ba2aef8cb4f52869c8ad8f7a7784f44f",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T750-L1/A/functional-receipt.json": "d11d2f95b8db7122c5e307789cace6dfdfc062b4e4c28d8450fb19aeb3c5766c",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T750-L4/B/workload.sv": "e18af3cbdef4e1c0a1ed5a9d9e3d3b914a099ebe87425b0159c3ad0f558af47f",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T750-L4/B/functional-receipt.json": "cf5e9aefbcd894790475b0524ccd0c1e180d0285810acabad7c85b7930c9ceca",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T750-L4/C/workload.sv": "78374d7545b6be3e333da7bbabbe25b76ee9b45b9a61343c8b12c00598720aa1",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T750-L4/C/functional-receipt.json": "72ed5d752a3bf58049de23ce2ce796517640d6171ba7a2a9fdc760e7bb8403f4",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T750-L4/same_policy_static/workload.sv": "334ab0c9575839205454f701a9ed298e505e81074c06ee9a6d51253b49409aae",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T750-L4/same_policy_static/functional-receipt.json": "2c32552f79c013c18fdc30813623af3165eb06d70c9b3aeaca742c60c1ad5906",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_tight_continue.py": "8266b1af418fbaaed3f7203228f24df52917d6d6e10025fa728ee63a93c23734",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-mul128/dispatch-extension.json": "bacc34ebb8df12e8c9f49bc22863260c6b193fbc660028c978a797bb0ec1e8f7"
+  },
+  "application_PPA_for_selection": false,
+  "role": "final_evaluation",
+  "selection_frozen_before_measurement": true,
+  "tasks": [
+    {
+      "id": "mul128-T600-6d72e638cd85",
+      "case": "mul128",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T600-L1/A/workload.sv",
+      "period_ps": 600,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T600-L1/A/functional-receipt.json",
+      "large": true,
+      "shared_methods": [
+        "A"
+      ],
+      "complete_selection_freeze": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-mul128-selection-freeze.json",
+      "complete_selection_freeze_sha256": "0252cf54347c130b75587a10604f6c99896778048507f86c43d9c4c79285528d",
+      "rtl_sha256": "6d72e638cd85592c68cfde92e58c0508ba2aef8cb4f52869c8ad8f7a7784f44f",
+      "abc_target_ps": 600,
+      "threads": 4,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 7200,
+      "support_timeout_s": 300
+    },
+    {
+      "id": "mul128-T600-e18af3cbdef4",
+      "case": "mul128",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T600-L4/B/workload.sv",
+      "period_ps": 600,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T600-L4/B/functional-receipt.json",
+      "large": true,
+      "shared_methods": [
+        "B"
+      ],
+      "complete_selection_freeze": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-mul128-selection-freeze.json",
+      "complete_selection_freeze_sha256": "0252cf54347c130b75587a10604f6c99896778048507f86c43d9c4c79285528d",
+      "rtl_sha256": "e18af3cbdef4e1c0a1ed5a9d9e3d3b914a099ebe87425b0159c3ad0f558af47f",
+      "abc_target_ps": 600,
+      "threads": 4,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 7200,
+      "support_timeout_s": 300
+    },
+    {
+      "id": "mul128-T600-78374d7545b6",
+      "case": "mul128",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T600-L4/C/workload.sv",
+      "period_ps": 600,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T600-L4/C/functional-receipt.json",
+      "large": true,
+      "shared_methods": [
+        "C",
+        "D"
+      ],
+      "complete_selection_freeze": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-mul128-selection-freeze.json",
+      "complete_selection_freeze_sha256": "0252cf54347c130b75587a10604f6c99896778048507f86c43d9c4c79285528d",
+      "rtl_sha256": "78374d7545b6be3e333da7bbabbe25b76ee9b45b9a61343c8b12c00598720aa1",
+      "abc_target_ps": 600,
+      "threads": 4,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 7200,
+      "support_timeout_s": 300
+    },
+    {
+      "id": "mul128-T600-334ab0c95758",
+      "case": "mul128",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T600-L4/same_policy_static/workload.sv",
+      "period_ps": 600,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T600-L4/same_policy_static/functional-receipt.json",
+      "large": true,
+      "shared_methods": [
+        "same_policy_static"
+      ],
+      "complete_selection_freeze": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-mul128-selection-freeze.json",
+      "complete_selection_freeze_sha256": "0252cf54347c130b75587a10604f6c99896778048507f86c43d9c4c79285528d",
+      "rtl_sha256": "334ab0c9575839205454f701a9ed298e505e81074c06ee9a6d51253b49409aae",
+      "abc_target_ps": 600,
+      "threads": 4,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 7200,
+      "support_timeout_s": 300
+    },
+    {
+      "id": "mul128-T750-6d72e638cd85",
+      "case": "mul128",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T750-L1/A/workload.sv",
+      "period_ps": 750,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T750-L1/A/functional-receipt.json",
+      "large": true,
+      "shared_methods": [
+        "A"
+      ],
+      "complete_selection_freeze": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-mul128-selection-freeze.json",
+      "complete_selection_freeze_sha256": "0252cf54347c130b75587a10604f6c99896778048507f86c43d9c4c79285528d",
+      "rtl_sha256": "6d72e638cd85592c68cfde92e58c0508ba2aef8cb4f52869c8ad8f7a7784f44f",
+      "abc_target_ps": 750,
+      "threads": 4,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 7200,
+      "support_timeout_s": 300
+    },
+    {
+      "id": "mul128-T750-e18af3cbdef4",
+      "case": "mul128",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T750-L4/B/workload.sv",
+      "period_ps": 750,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T750-L4/B/functional-receipt.json",
+      "large": true,
+      "shared_methods": [
+        "B"
+      ],
+      "complete_selection_freeze": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-mul128-selection-freeze.json",
+      "complete_selection_freeze_sha256": "0252cf54347c130b75587a10604f6c99896778048507f86c43d9c4c79285528d",
+      "rtl_sha256": "e18af3cbdef4e1c0a1ed5a9d9e3d3b914a099ebe87425b0159c3ad0f558af47f",
+      "abc_target_ps": 750,
+      "threads": 4,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 7200,
+      "support_timeout_s": 300
+    },
+    {
+      "id": "mul128-T750-78374d7545b6",
+      "case": "mul128",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T750-L4/C/workload.sv",
+      "period_ps": 750,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T750-L4/C/functional-receipt.json",
+      "large": true,
+      "shared_methods": [
+        "C",
+        "D"
+      ],
+      "complete_selection_freeze": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-mul128-selection-freeze.json",
+      "complete_selection_freeze_sha256": "0252cf54347c130b75587a10604f6c99896778048507f86c43d9c4c79285528d",
+      "rtl_sha256": "78374d7545b6be3e333da7bbabbe25b76ee9b45b9a61343c8b12c00598720aa1",
+      "abc_target_ps": 750,
+      "threads": 4,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 7200,
+      "support_timeout_s": 300
+    },
+    {
+      "id": "mul128-T750-334ab0c95758",
+      "case": "mul128",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T750-L4/same_policy_static/workload.sv",
+      "period_ps": 750,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T750-L4/same_policy_static/functional-receipt.json",
+      "large": true,
+      "shared_methods": [
+        "same_policy_static"
+      ],
+      "complete_selection_freeze": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-mul128-selection-freeze.json",
+      "complete_selection_freeze_sha256": "0252cf54347c130b75587a10604f6c99896778048507f86c43d9c4c79285528d",
+      "rtl_sha256": "334ab0c9575839205454f701a9ed298e505e81074c06ee9a6d51253b49409aae",
+      "abc_target_ps": 750,
+      "threads": 4,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 7200,
+      "support_timeout_s": 300
+    }
+  ]
+}

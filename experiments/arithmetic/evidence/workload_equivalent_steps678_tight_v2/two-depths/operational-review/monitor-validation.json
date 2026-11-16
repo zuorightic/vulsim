@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "tests": 14,
+  "walltime_s": 0.155,
+  "command": "python3 -m unittest regression.test_workload_two_depths_monitor regression.test_workload_two_depths",
+  "source_sha256": "595ccad2734adad5272e2aaf972033bd209ee56f025aeaa338ce10893b8ef379",
+  "test_source_sha256": "c06c3e7c137711dfd23d7919ec410fb599198fcf07421a5e8f4e0f6f57a5b3c2",
+  "checks": [
+    "long normal stages never signalled",
+    "recent abort not signalled",
+    "terminal crash required",
+    "exact wrapper argv and PID starttime required",
+    "only wrapper receives SIGTERM",
+    "same reservation signalled at most once"
+  ],
+  "EDA_calls": 0
+}

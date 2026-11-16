@@ -1,0 +1,105 @@
+{
+  "at": "2026-11-16T15:51:19.846037+00:00",
+  "reason": "User rejects changed-clock backend evaluation without regenerating D. Replace with original-T time/memory-only successors.",
+  "scope": "matrix-failure-relaxation-v2 only",
+  "controller": {
+    "pid": 1298184,
+    "start": "21644561",
+    "state": "S",
+    "argv": [
+      "/usr/bin/python3",
+      "-u",
+      "-m",
+      "experiments.arithmetic_dse.workload_failure_relaxation",
+      "run",
+      "--root",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1"
+    ],
+    "cwd": "/home/zyrv/vulsim"
+  },
+  "wrappers": [
+    {
+      "pid": 1306556,
+      "start": "21755807",
+      "state": "S",
+      "argv": [
+        "/usr/bin/python3",
+        "-u",
+        "-m",
+        "experiments.arithmetic_dse.workload_failure_relaxation",
+        "task",
+        "--root",
+        "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1",
+        "--task-id",
+        "barrett64-L4-relaxed-T2800-83a434da7745"
+      ],
+      "cwd": "/home/zyrv/vulsim"
+    },
+    {
+      "pid": 1314986,
+      "start": "21876515",
+      "state": "S",
+      "argv": [
+        "/usr/bin/python3",
+        "-u",
+        "-m",
+        "experiments.arithmetic_dse.workload_failure_relaxation",
+        "task",
+        "--root",
+        "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1",
+        "--task-id",
+        "barrett64-L4-relaxed-T2800-c3eba59eb78f"
+      ],
+      "cwd": "/home/zyrv/vulsim"
+    }
+  ],
+  "source_sha256": "b755da5aa87c0e82c3878262434b1739de699b39490aadaf729a5e898f724107",
+  "admission_sha256": "d2857104e653b043f4bf78993c92cf5ffbd5e01502ced7f84609bbcb4c697edc",
+  "attempts": {
+    "barrett64-L4-relaxed-T2800-876198aa88c9": {
+      "started_at": "2026-11-16T15:16:42.693113+00:00",
+      "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-relaxation-v2/dispatch-logs/barrett64-L4-relaxed-T2800-876198aa88c9.log",
+      "pid": 1304596,
+      "exit_code": 0,
+      "finished_at": "2026-11-16T15:39:05.076015+00:00"
+    },
+    "barrett64-L4-relaxed-T2800-83a434da7745": {
+      "started_at": "2026-11-16T15:18:58.492342+00:00",
+      "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-relaxation-v2/dispatch-logs/barrett64-L4-relaxed-T2800-83a434da7745.log",
+      "pid": 1306556
+    },
+    "barrett64-L4-relaxed-T2800-c3eba59eb78f": {
+      "started_at": "2026-11-16T15:39:05.571716+00:00",
+      "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-relaxation-v2/dispatch-logs/barrett64-L4-relaxed-T2800-c3eba59eb78f.log",
+      "pid": 1314986
+    }
+  },
+  "status": "withdrawn",
+  "original_matrix_untouched": true,
+  "completed_measurements_and_costs_retained": true,
+  "job_claims": [
+    {
+      "id": "149714c921c64ca1bc2d4ea04ccfe32b",
+      "status": "released",
+      "target_platform": "asap7",
+      "admission_id": "matrix-failure-relaxation-v2",
+      "task_id": "barrett64-L4-relaxed-T2800-876198aa88c9",
+      "owner_pid_in_namespace": 1304596,
+      "started_at": "2026-11-16T15:16:44.963131+00:00",
+      "finished_at": "2026-11-16T15:38:59.613018+00:00"
+    },
+    {
+      "id": "422197f7e36440b283fec5ec267d2060",
+      "status": "released",
+      "target_platform": "asap7",
+      "admission_id": "matrix-failure-relaxation-v2",
+      "task_id": "barrett64-L4-relaxed-T2800-83a434da7745",
+      "owner_pid_in_namespace": 1306556,
+      "started_at": "2026-11-16T15:32:49.473868+00:00",
+      "finished_at": "2026-11-16T15:47:13.273151+00:00"
+    }
+  ],
+  "remaining_live_wrappers": [],
+  "original_sources_unchanged": true,
+  "valid_for_new_target_D_comparison": false
+}

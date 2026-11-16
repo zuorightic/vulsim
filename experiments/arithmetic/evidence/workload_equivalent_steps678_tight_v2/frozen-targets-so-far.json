@@ -1,0 +1,180 @@
+[
+  {
+    "case": "add512",
+    "L": 4,
+    "targets_ps": [
+      350,
+      400
+    ],
+    "raw_target_ps": [
+      331.15150093750003,
+      397.38180112500004
+    ],
+    "A_reference_Tmin_ps": 1059.684803,
+    "A_reference_request_ps": 1100,
+    "ideal_A_over_L_ps": 264.92120075,
+    "factors": [
+      1.25,
+      1.5
+    ],
+    "quantum_ps": 50,
+    "role": "A_clock_calibration_only",
+    "clock_readout_sha256": "dcd10a44ac245fcdf66816beb7a49629e8949eadc72979b3e25658955f69d060",
+    "application_PPA_for_model": false,
+    "final_D_PPA_for_clock": false
+  },
+  {
+    "case": "barrett64",
+    "L": 8,
+    "targets_ps": [
+      900,
+      1100
+    ],
+    "raw_target_ps": [
+      875.5195807812499,
+      1050.6234969375
+    ],
+    "A_reference_Tmin_ps": 5603.325317,
+    "A_reference_request_ps": 6000,
+    "ideal_A_over_L_ps": 700.415664625,
+    "factors": [
+      1.25,
+      1.5
+    ],
+    "quantum_ps": 50,
+    "role": "A_clock_calibration_only",
+    "clock_readout_sha256": "6119fc144eb1138dbe14485bf47fd2a6bfda91304572f20b57bc9f6693360c57",
+    "application_PPA_for_model": false,
+    "final_D_PPA_for_clock": false
+  },
+  {
+    "case": "dot16",
+    "L": 8,
+    "targets_ps": [
+      450,
+      550
+    ],
+    "raw_target_ps": [
+      422.6758525,
+      507.21102300000007
+    ],
+    "A_reference_Tmin_ps": 2705.125456,
+    "A_reference_request_ps": 2700,
+    "ideal_A_over_L_ps": 338.140682,
+    "factors": [
+      1.25,
+      1.5
+    ],
+    "quantum_ps": 50,
+    "role": "A_clock_calibration_only",
+    "clock_readout_sha256": "ed2e214fdcc6ded3ddee77e4ab5510abebd49486e381c069e8125a0db2263fe7",
+    "application_PPA_for_model": false,
+    "final_D_PPA_for_clock": false
+  },
+  {
+    "case": "horner64",
+    "L": 8,
+    "targets_ps": [
+      950,
+      1150
+    ],
+    "raw_target_ps": [
+      934.67634203125,
+      1121.6116104375
+    ],
+    "A_reference_Tmin_ps": 5981.928589,
+    "A_reference_request_ps": 7600,
+    "ideal_A_over_L_ps": 747.741073625,
+    "factors": [
+      1.25,
+      1.5
+    ],
+    "quantum_ps": 50,
+    "role": "A_clock_calibration_only",
+    "clock_readout_sha256": "e4c432e374f810ddbde62aafae537f0189afb3e9082a67408426c7b7494c3a73",
+    "application_PPA_for_model": false,
+    "final_D_PPA_for_clock": false
+  },
+  {
+    "case": "karatsuba256",
+    "L": 8,
+    "targets_ps": [
+      1150,
+      1400
+    ],
+    "raw_target_ps": [
+      1125.204124375,
+      1350.24494925
+    ],
+    "A_reference_Tmin_ps": 7201.306396,
+    "A_reference_request_ps": 9700,
+    "ideal_A_over_L_ps": 900.1632995,
+    "factors": [
+      1.25,
+      1.5
+    ],
+    "quantum_ps": 50,
+    "role": "A_clock_calibration_only",
+    "clock_readout_sha256": "fcc650b22b15824a89c3dff1f6bab2f647fa57dd6d0b2b3cf77e8f881ffe98dc",
+    "application_PPA_for_model": false,
+    "final_D_PPA_for_clock": false
+  },
+  {
+    "case": "mac32",
+    "L": 3,
+    "targets_ps": [
+      500,
+      750,
+      1000
+    ],
+    "role": "confirmed_requests"
+  },
+  {
+    "case": "mul128",
+    "L": 4,
+    "targets_ps": [
+      600,
+      750
+    ],
+    "raw_target_ps": [
+      589.0138553125,
+      706.8166263749999
+    ],
+    "A_reference_Tmin_ps": 1884.844337,
+    "A_reference_request_ps": 2000,
+    "ideal_A_over_L_ps": 471.21108425,
+    "factors": [
+      1.25,
+      1.5
+    ],
+    "quantum_ps": 50,
+    "role": "A_clock_calibration_only",
+    "clock_readout_sha256": "5e10426b8d45c2d1033153215236b288016bac49a57eb86c3a0edbce9ddfd550",
+    "application_PPA_for_model": false,
+    "final_D_PPA_for_clock": false
+  },
+  {
+    "case": "ntt8x64",
+    "L": 16,
+    "targets_ps": [
+      800,
+      950
+    ],
+    "raw_target_ps": [
+      760.484251640625,
+      912.5811019687499
+    ],
+    "A_reference_Tmin_ps": 9734.198421,
+    "A_reference_request_ps": 9700,
+    "ideal_A_over_L_ps": 608.3874013125,
+    "factors": [
+      1.25,
+      1.5
+    ],
+    "quantum_ps": 50,
+    "role": "A_clock_calibration_only",
+    "clock_readout_sha256": "96dab0b171cc1dd2fb42b9fff217ae0ffc27ecb277c168842132bc05cf5ac332",
+    "application_PPA_for_model": false,
+    "final_D_PPA_for_clock": false
+  }
+]

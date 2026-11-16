@@ -1,0 +1,168 @@
+{
+  "checked_at": "2026-11-16T03:19:23.785767+00:00",
+  "status": "nine_slots_operational",
+  "active_total": 9,
+  "predecessor_active": 1,
+  "new_two_thread_jobs": 8,
+  "old_plus_new_limit": 9,
+  "same_ledger": true,
+  "resource_bridge_sha256": "8c65db0f08ec8dea725bd1669da11d6d981ab6261a65b2005fb0708fd8cd9dd0",
+  "jobs": [
+    {
+      "task": "add512-L2-T700-be37505847a5",
+      "admission": "matrix-add512-L2",
+      "manifest": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-add512-L2/runs/add512-L2-T700-be37505847a5/manifest.json",
+      "threads_per_tool": 2,
+      "thread_controls": {
+        "YOSYS_MAX_THREADS": 2,
+        "OMP_NUM_THREADS": 2,
+        "OPENBLAS_NUM_THREADS": 2,
+        "NUM_CORES": 2
+      },
+      "make_thread_arguments": [
+        "NUM_CORES=2",
+        "YOSYS_MAX_THREADS=2",
+        "NUM_CORES=2",
+        "YOSYS_MAX_THREADS=2",
+        "NUM_CORES=2",
+        "YOSYS_MAX_THREADS=2"
+      ]
+    },
+    {
+      "task": "add512-L2-T800-be37505847a5",
+      "admission": "matrix-add512-L2",
+      "manifest": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-add512-L2/runs/add512-L2-T800-be37505847a5/manifest.json",
+      "threads_per_tool": 2,
+      "thread_controls": {
+        "YOSYS_MAX_THREADS": 2,
+        "OMP_NUM_THREADS": 2,
+        "OPENBLAS_NUM_THREADS": 2,
+        "NUM_CORES": 2
+      },
+      "make_thread_arguments": [
+        "NUM_CORES=2",
+        "YOSYS_MAX_THREADS=2",
+        "NUM_CORES=2",
+        "YOSYS_MAX_THREADS=2",
+        "NUM_CORES=2",
+        "YOSYS_MAX_THREADS=2"
+      ]
+    },
+    {
+      "task": "add512-L2-T800-41f1f36cf2c3",
+      "admission": "matrix-add512-L2",
+      "manifest": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-add512-L2/runs/add512-L2-T800-41f1f36cf2c3/manifest.json",
+      "threads_per_tool": 2,
+      "thread_controls": {
+        "YOSYS_MAX_THREADS": 2,
+        "OMP_NUM_THREADS": 2,
+        "OPENBLAS_NUM_THREADS": 2,
+        "NUM_CORES": 2
+      },
+      "make_thread_arguments": [
+        "NUM_CORES=2",
+        "YOSYS_MAX_THREADS=2",
+        "NUM_CORES=2",
+        "YOSYS_MAX_THREADS=2",
+        "NUM_CORES=2",
+        "YOSYS_MAX_THREADS=2"
+      ]
+    },
+    {
+      "task": "add512-L2-T700-41f1f36cf2c3",
+      "admission": "matrix-add512-L2",
+      "manifest": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-add512-L2/runs/add512-L2-T700-41f1f36cf2c3/manifest.json",
+      "threads_per_tool": 2,
+      "thread_controls": {
+        "YOSYS_MAX_THREADS": 2,
+        "OMP_NUM_THREADS": 2,
+        "OPENBLAS_NUM_THREADS": 2,
+        "NUM_CORES": 2
+      },
+      "make_thread_arguments": [
+        "NUM_CORES=2",
+        "YOSYS_MAX_THREADS=2",
+        "NUM_CORES=2",
+        "YOSYS_MAX_THREADS=2",
+        "NUM_CORES=2",
+        "YOSYS_MAX_THREADS=2"
+      ]
+    },
+    {
+      "task": "montgomery256-A-reference-9x2-capacity",
+      "admission": "montgomery-A-reference-9x2",
+      "manifest": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/montgomery-A-reference-9x2/runs/montgomery256-A-reference-9x2-capacity/manifest.json",
+      "threads_per_tool": 2,
+      "thread_controls": {
+        "YOSYS_MAX_THREADS": 2,
+        "OMP_NUM_THREADS": 2,
+        "OPENBLAS_NUM_THREADS": 2,
+        "NUM_CORES": 2
+      },
+      "make_thread_arguments": [
+        "NUM_CORES=2",
+        "YOSYS_MAX_THREADS=2"
+      ]
+    },
+    {
+      "task": "barrett64-L8-T900-4f5c9617af40",
+      "admission": "matrix-barrett64-L8",
+      "manifest": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8/runs/barrett64-L8-T900-4f5c9617af40/manifest.json",
+      "threads_per_tool": 2,
+      "thread_controls": {
+        "YOSYS_MAX_THREADS": 2,
+        "OMP_NUM_THREADS": 2,
+        "OPENBLAS_NUM_THREADS": 2,
+        "NUM_CORES": 2
+      },
+      "make_thread_arguments": [
+        "NUM_CORES=2",
+        "YOSYS_MAX_THREADS=2"
+      ]
+    },
+    {
+      "task": "barrett64-L8-T900-fe0456a5a32c",
+      "admission": "matrix-barrett64-L8",
+      "manifest": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8/runs/barrett64-L8-T900-fe0456a5a32c/manifest.json",
+      "threads_per_tool": 2,
+      "thread_controls": {
+        "YOSYS_MAX_THREADS": 2,
+        "OMP_NUM_THREADS": 2,
+        "OPENBLAS_NUM_THREADS": 2,
+        "NUM_CORES": 2
+      },
+      "make_thread_arguments": [
+        "NUM_CORES=2",
+        "YOSYS_MAX_THREADS=2",
+        "NUM_CORES=2",
+        "YOSYS_MAX_THREADS=2",
+        "NUM_CORES=2",
+        "YOSYS_MAX_THREADS=2"
+      ]
+    },
+    {
+      "task": "barrett64-L8-T900-1c5b5d444d6f",
+      "admission": "matrix-barrett64-L8",
+      "manifest": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8/runs/barrett64-L8-T900-1c5b5d444d6f/manifest.json",
+      "threads_per_tool": 2,
+      "thread_controls": {
+        "YOSYS_MAX_THREADS": 2,
+        "OMP_NUM_THREADS": 2,
+        "OPENBLAS_NUM_THREADS": 2,
+        "NUM_CORES": 2
+      },
+      "make_thread_arguments": [
+        "NUM_CORES=2",
+        "YOSYS_MAX_THREADS=2",
+        "NUM_CORES=2",
+        "YOSYS_MAX_THREADS=2",
+        "NUM_CORES=2",
+        "YOSYS_MAX_THREADS=2"
+      ]
+    }
+  ],
+  "policy_v11_identity_retained_for_old_leaf": true,
+  "final_migration_deferred_until_all_settled": true,
+  "controller_source_sha256": "bd87f76c01982cb5402e03a2152cb6b61bab426e4c4240224b44d99d383cde26",
+  "runtime_source_sha256": "3be8d3d1fa9cea3d08ee3605a5d46168dc490876b6e34a437093a6984296c7f1"
+}

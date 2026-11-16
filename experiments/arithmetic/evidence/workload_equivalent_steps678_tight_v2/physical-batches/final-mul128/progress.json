@@ -1,0 +1,22 @@
+{
+  "status": "batch_settled",
+  "completed": [
+    "mul128-T600-6d72e638cd85",
+    "mul128-T600-e18af3cbdef4",
+    "mul128-T600-334ab0c95758",
+    "mul128-T750-6d72e638cd85",
+    "mul128-T750-e18af3cbdef4",
+    "mul128-T750-334ab0c95758"
+  ],
+  "errors": [
+    {
+      "task": "mul128-T600-78374d7545b6",
+      "reason": "physical child failed; see /home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-mul128/dispatch-logs/mul128-T600-78374d7545b6.log"
+    },
+    {
+      "task": "mul128-T750-78374d7545b6",
+      "reason": "physical child failed; see /home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-mul128/dispatch-logs/mul128-T750-78374d7545b6.log"
+    }
+  ],
+  "active": []
+}

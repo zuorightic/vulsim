@@ -1,0 +1,912 @@
+{
+  "version": "nine-workloads-original-A-reference-v1",
+  "user_instruction": "标出A初版测试设置的时钟与实际周期，不再拿流水T/L目标测A",
+  "prepared_at": "2026-11-16T11:01:17.488983+00:00",
+  "source_sha256": "7b7ce1bf6c58ad8b5b730cb548677365d66f01a0856ee4ddcdf8d14e6f5c2902",
+  "required_groups": 37,
+  "required_BCD_records": 111,
+  "required_unique_A_references": 9,
+  "logical_acceptance_records": 120,
+  "display_ABCD_bindings": 148,
+  "A_repeated_bindings_are_not_new_measurements": true,
+  "original_reference_requests": {
+    "mac32": 1000,
+    "add512": 1100,
+    "mul128": 2000,
+    "dot16": 2700,
+    "horner64": 7600,
+    "barrett64": 6000,
+    "karatsuba256": 9700,
+    "montgomery256": 36000,
+    "ntt8x64": 9700
+  },
+  "clocks_models_RTL_selectors_and_backend_unchanged": true,
+  "threads_per_tool": 2,
+  "parallel_jobs": 9,
+  "automatic_retries": 0,
+  "reference_PPA_used_for_D": false,
+  "already_admitted_tasks": [
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-add512-L2",
+      "task_id": "add512-L2-T700-41f1f36cf2c3",
+      "case": "add512",
+      "request_ps": 700,
+      "rtl_sha256": "41f1f36cf2c301bdcbee45562f1add398ae3160bfb8d6f760d070396d79c5bba",
+      "classification": "excluded_repeated_A"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-add512-L2",
+      "task_id": "add512-L2-T700-be37505847a5",
+      "case": "add512",
+      "request_ps": 700,
+      "rtl_sha256": "be37505847a5d0ff6e64b95c6236dc1c5264a3d5fcd4ac6275c0bf6dcbf9879f",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-add512-L2",
+      "task_id": "add512-L2-T800-41f1f36cf2c3",
+      "case": "add512",
+      "request_ps": 800,
+      "rtl_sha256": "41f1f36cf2c301bdcbee45562f1add398ae3160bfb8d6f760d070396d79c5bba",
+      "classification": "excluded_repeated_A"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-add512-L2",
+      "task_id": "add512-L2-T800-be37505847a5",
+      "case": "add512",
+      "request_ps": 800,
+      "rtl_sha256": "be37505847a5d0ff6e64b95c6236dc1c5264a3d5fcd4ac6275c0bf6dcbf9879f",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L4",
+      "task_id": "barrett64-L4-T1800-fe0456a5a32c",
+      "case": "barrett64",
+      "request_ps": 1800,
+      "rtl_sha256": "fe0456a5a32c9f04c7fbb1deecbc8f3bda0e34129813afa6228106074b8d5a51",
+      "classification": "excluded_repeated_A"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L4",
+      "task_id": "barrett64-L4-T1800-876198aa88c9",
+      "case": "barrett64",
+      "request_ps": 1800,
+      "rtl_sha256": "876198aa88c9a01020eaf4c05ab88e04488da53b5bcb79da13eb1cff40e8a44a",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L4",
+      "task_id": "barrett64-L4-T1800-83a434da7745",
+      "case": "barrett64",
+      "request_ps": 1800,
+      "rtl_sha256": "83a434da7745571b039f2438f4367eca82ce3ed01207c9f0cd759a4ab362cc00",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L4",
+      "task_id": "barrett64-L4-T1800-c3eba59eb78f",
+      "case": "barrett64",
+      "request_ps": 1800,
+      "rtl_sha256": "c3eba59eb78ff127998a32c52d58fb2ffc3c447eb88fac63f326a0b87ec89bd7",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L4",
+      "task_id": "barrett64-L4-T2150-fe0456a5a32c",
+      "case": "barrett64",
+      "request_ps": 2150,
+      "rtl_sha256": "fe0456a5a32c9f04c7fbb1deecbc8f3bda0e34129813afa6228106074b8d5a51",
+      "classification": "excluded_repeated_A"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L4",
+      "task_id": "barrett64-L4-T2150-876198aa88c9",
+      "case": "barrett64",
+      "request_ps": 2150,
+      "rtl_sha256": "876198aa88c9a01020eaf4c05ab88e04488da53b5bcb79da13eb1cff40e8a44a",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L4",
+      "task_id": "barrett64-L4-T2150-83a434da7745",
+      "case": "barrett64",
+      "request_ps": 2150,
+      "rtl_sha256": "83a434da7745571b039f2438f4367eca82ce3ed01207c9f0cd759a4ab362cc00",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L4",
+      "task_id": "barrett64-L4-T2150-c3eba59eb78f",
+      "case": "barrett64",
+      "request_ps": 2150,
+      "rtl_sha256": "c3eba59eb78ff127998a32c52d58fb2ffc3c447eb88fac63f326a0b87ec89bd7",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8",
+      "task_id": "barrett64-L8-T900-fe0456a5a32c",
+      "case": "barrett64",
+      "request_ps": 900,
+      "rtl_sha256": "fe0456a5a32c9f04c7fbb1deecbc8f3bda0e34129813afa6228106074b8d5a51",
+      "classification": "excluded_repeated_A"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8",
+      "task_id": "barrett64-L8-T900-1c5b5d444d6f",
+      "case": "barrett64",
+      "request_ps": 900,
+      "rtl_sha256": "1c5b5d444d6f35ac0a4b36571229b7443241c89778ea82dd94b8c91b75ddecae",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8",
+      "task_id": "barrett64-L8-T900-4f5c9617af40",
+      "case": "barrett64",
+      "request_ps": 900,
+      "rtl_sha256": "4f5c9617af40277eeddbbed066763aea4d63b0079ec60739e2dfe5e7b5523c7c",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8",
+      "task_id": "barrett64-L8-T900-18a834929666",
+      "case": "barrett64",
+      "request_ps": 900,
+      "rtl_sha256": "18a83492966603a3d9d13da0522bdba7ff5efe07070ae9de89dd3b44d4eaa752",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8",
+      "task_id": "barrett64-L8-T900-df305882385e",
+      "case": "barrett64",
+      "request_ps": 900,
+      "rtl_sha256": "df305882385ea50062d414f847e85b91fee9810721eb77f36e7c7abc7201682f",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8",
+      "task_id": "barrett64-L8-T1100-fe0456a5a32c",
+      "case": "barrett64",
+      "request_ps": 1100,
+      "rtl_sha256": "fe0456a5a32c9f04c7fbb1deecbc8f3bda0e34129813afa6228106074b8d5a51",
+      "classification": "excluded_repeated_A"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8",
+      "task_id": "barrett64-L8-T1100-1c5b5d444d6f",
+      "case": "barrett64",
+      "request_ps": 1100,
+      "rtl_sha256": "1c5b5d444d6f35ac0a4b36571229b7443241c89778ea82dd94b8c91b75ddecae",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8",
+      "task_id": "barrett64-L8-T1100-4f5c9617af40",
+      "case": "barrett64",
+      "request_ps": 1100,
+      "rtl_sha256": "4f5c9617af40277eeddbbed066763aea4d63b0079ec60739e2dfe5e7b5523c7c",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8",
+      "task_id": "barrett64-L8-T1100-18a834929666",
+      "case": "barrett64",
+      "request_ps": 1100,
+      "rtl_sha256": "18a83492966603a3d9d13da0522bdba7ff5efe07070ae9de89dd3b44d4eaa752",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8",
+      "task_id": "barrett64-L8-T1100-f0fe43c6f58a",
+      "case": "barrett64",
+      "request_ps": 1100,
+      "rtl_sha256": "f0fe43c6f58a6ca796284779ddce275617f0a5c65c15c344aa7e91841cfc7aca",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4",
+      "task_id": "dot16-L4-T850-2776e286ec00",
+      "case": "dot16",
+      "request_ps": 850,
+      "rtl_sha256": "2776e286ec00d7b2c4915c5180a83dee3f5238392523b027612eff71ab94ac29",
+      "classification": "excluded_repeated_A"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4",
+      "task_id": "dot16-L4-T850-5d322a4d43a9",
+      "case": "dot16",
+      "request_ps": 850,
+      "rtl_sha256": "5d322a4d43a9b34cbd12120da07a8ac377073b1c7792b75e074ce3da1847286d",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4",
+      "task_id": "dot16-L4-T850-8327002228a5",
+      "case": "dot16",
+      "request_ps": 850,
+      "rtl_sha256": "8327002228a54ed3ca1f467965b5688a56f9d50e77ebede876872ecc897daf22",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4",
+      "task_id": "dot16-L4-T850-13041929dd25",
+      "case": "dot16",
+      "request_ps": 850,
+      "rtl_sha256": "13041929dd25f13910d1d62bc604e2765ed8ecada43c0465cf3e10fc23d1489f",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4",
+      "task_id": "dot16-L4-T850-75964220595d",
+      "case": "dot16",
+      "request_ps": 850,
+      "rtl_sha256": "75964220595d3df82f176d8eae24c93ffbd3cf60cfe485ac47ddf2933b2311f8",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4",
+      "task_id": "dot16-L4-T1050-2776e286ec00",
+      "case": "dot16",
+      "request_ps": 1050,
+      "rtl_sha256": "2776e286ec00d7b2c4915c5180a83dee3f5238392523b027612eff71ab94ac29",
+      "classification": "excluded_repeated_A"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4",
+      "task_id": "dot16-L4-T1050-5d322a4d43a9",
+      "case": "dot16",
+      "request_ps": 1050,
+      "rtl_sha256": "5d322a4d43a9b34cbd12120da07a8ac377073b1c7792b75e074ce3da1847286d",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4",
+      "task_id": "dot16-L4-T1050-8327002228a5",
+      "case": "dot16",
+      "request_ps": 1050,
+      "rtl_sha256": "8327002228a54ed3ca1f467965b5688a56f9d50e77ebede876872ecc897daf22",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4",
+      "task_id": "dot16-L4-T1050-13041929dd25",
+      "case": "dot16",
+      "request_ps": 1050,
+      "rtl_sha256": "13041929dd25f13910d1d62bc604e2765ed8ecada43c0465cf3e10fc23d1489f",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4",
+      "task_id": "dot16-L4-T1050-fc4843e24724",
+      "case": "dot16",
+      "request_ps": 1050,
+      "rtl_sha256": "fc4843e247248434f85f71ec813ada4ef05ac44a4a3b6d370521d20dff77a8d7",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5",
+      "task_id": "dot16-L5-T700-2776e286ec00",
+      "case": "dot16",
+      "request_ps": 700,
+      "rtl_sha256": "2776e286ec00d7b2c4915c5180a83dee3f5238392523b027612eff71ab94ac29",
+      "classification": "excluded_repeated_A"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5",
+      "task_id": "dot16-L5-T700-8bbe5fa52f58",
+      "case": "dot16",
+      "request_ps": 700,
+      "rtl_sha256": "8bbe5fa52f58b339068607a6c578edc2f062ee57a6a7e31828dbdbf2d6f336c4",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5",
+      "task_id": "dot16-L5-T700-b6a28e166624",
+      "case": "dot16",
+      "request_ps": 700,
+      "rtl_sha256": "b6a28e1666241813ee673329721374bd0056c5c539f4e860c1e3eb477b79d508",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5",
+      "task_id": "dot16-L5-T700-4c2ee7748c79",
+      "case": "dot16",
+      "request_ps": 700,
+      "rtl_sha256": "4c2ee7748c79e869068a149f332de33903b35c397ba374ef94633bc57dfb3afc",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5",
+      "task_id": "dot16-L5-T700-5d8ecc4f2639",
+      "case": "dot16",
+      "request_ps": 700,
+      "rtl_sha256": "5d8ecc4f26390a93aba33f500b6d8dfe4760f1f8440cc88791df37737a0c7d4f",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5",
+      "task_id": "dot16-L5-T850-8bbe5fa52f58",
+      "case": "dot16",
+      "request_ps": 850,
+      "rtl_sha256": "8bbe5fa52f58b339068607a6c578edc2f062ee57a6a7e31828dbdbf2d6f336c4",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5",
+      "task_id": "dot16-L5-T850-b6a28e166624",
+      "case": "dot16",
+      "request_ps": 850,
+      "rtl_sha256": "b6a28e1666241813ee673329721374bd0056c5c539f4e860c1e3eb477b79d508",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5",
+      "task_id": "dot16-L5-T850-4c2ee7748c79",
+      "case": "dot16",
+      "request_ps": 850,
+      "rtl_sha256": "4c2ee7748c79e869068a149f332de33903b35c397ba374ef94633bc57dfb3afc",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5",
+      "task_id": "dot16-L5-T850-5d8ecc4f2639",
+      "case": "dot16",
+      "request_ps": 850,
+      "rtl_sha256": "5d8ecc4f26390a93aba33f500b6d8dfe4760f1f8440cc88791df37737a0c7d4f",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-horner64-L4",
+      "task_id": "horner64-L4-T1900-6c415b9cf3b2",
+      "case": "horner64",
+      "request_ps": 1900,
+      "rtl_sha256": "6c415b9cf3b26a4cd234814aabda10bdb64cdf93a156f29633327d43f3c0dc1f",
+      "classification": "excluded_repeated_A"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-horner64-L4",
+      "task_id": "horner64-L4-T1900-7dfa023a85cd",
+      "case": "horner64",
+      "request_ps": 1900,
+      "rtl_sha256": "7dfa023a85cdfebe1710b021116cce56c1dae5f2bdad42728f9071f84c4ae234",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-horner64-L4",
+      "task_id": "horner64-L4-T1900-c4d9a155e3c4",
+      "case": "horner64",
+      "request_ps": 1900,
+      "rtl_sha256": "c4d9a155e3c48c64b9174d03da31dd47c719870491651c9236d442e11d87b2e9",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-horner64-L4",
+      "task_id": "horner64-L4-T1900-6ed012ed51db",
+      "case": "horner64",
+      "request_ps": 1900,
+      "rtl_sha256": "6ed012ed51dbf1e86f5d406d6cd723d5f894c1ecf3206ab3de5642c64bb21b6e",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-horner64-L4",
+      "task_id": "horner64-L4-T2250-6c415b9cf3b2",
+      "case": "horner64",
+      "request_ps": 2250,
+      "rtl_sha256": "6c415b9cf3b26a4cd234814aabda10bdb64cdf93a156f29633327d43f3c0dc1f",
+      "classification": "excluded_repeated_A"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-horner64-L4",
+      "task_id": "horner64-L4-T2250-7dfa023a85cd",
+      "case": "horner64",
+      "request_ps": 2250,
+      "rtl_sha256": "7dfa023a85cdfebe1710b021116cce56c1dae5f2bdad42728f9071f84c4ae234",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-horner64-L4",
+      "task_id": "horner64-L4-T2250-c4d9a155e3c4",
+      "case": "horner64",
+      "request_ps": 2250,
+      "rtl_sha256": "c4d9a155e3c48c64b9174d03da31dd47c719870491651c9236d442e11d87b2e9",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-horner64-L4",
+      "task_id": "horner64-L4-T2250-6ed012ed51db",
+      "case": "horner64",
+      "request_ps": 2250,
+      "rtl_sha256": "6ed012ed51dbf1e86f5d406d6cd723d5f894c1ecf3206ab3de5642c64bb21b6e",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-horner64-L8",
+      "task_id": "horner64-L8-T950-4f83e78449a4",
+      "case": "horner64",
+      "request_ps": 950,
+      "rtl_sha256": "4f83e78449a4ac88b6c831e60335f7d6554244fe5d5aedf12a023a8b41634f71",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-horner64-L8",
+      "task_id": "horner64-L8-T950-c4bab4fd0309",
+      "case": "horner64",
+      "request_ps": 950,
+      "rtl_sha256": "c4bab4fd030936630451bf8b404dbfc40022aced2227791c371cdce17d76b274",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-horner64-L8",
+      "task_id": "horner64-L8-T1150-6c415b9cf3b2",
+      "case": "horner64",
+      "request_ps": 1150,
+      "rtl_sha256": "6c415b9cf3b26a4cd234814aabda10bdb64cdf93a156f29633327d43f3c0dc1f",
+      "classification": "excluded_repeated_A"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-horner64-L8",
+      "task_id": "horner64-L8-T1150-428e4557d83e",
+      "case": "horner64",
+      "request_ps": 1150,
+      "rtl_sha256": "428e4557d83e7d728b0d4ea3558ab2b0bc6cbf3799985300df61a2d3ac1ef774",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-horner64-L8",
+      "task_id": "horner64-L8-T1150-cd5be660311a",
+      "case": "horner64",
+      "request_ps": 1150,
+      "rtl_sha256": "cd5be660311a61df4fadb3c83a19c99469d28082afccf2d9851b1e47d55b63e8",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-horner64-L8",
+      "task_id": "horner64-L8-T1150-4f83e78449a4",
+      "case": "horner64",
+      "request_ps": 1150,
+      "rtl_sha256": "4f83e78449a4ac88b6c831e60335f7d6554244fe5d5aedf12a023a8b41634f71",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-horner64-L8",
+      "task_id": "horner64-L8-T1150-c4bab4fd0309",
+      "case": "horner64",
+      "request_ps": 1150,
+      "rtl_sha256": "c4bab4fd030936630451bf8b404dbfc40022aced2227791c371cdce17d76b274",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4",
+      "task_id": "karatsuba256-L4-T2300-c1a64d59e07d",
+      "case": "karatsuba256",
+      "request_ps": 2300,
+      "rtl_sha256": "c1a64d59e07d5ff68496d3aa9b6bc5e3e5729f2c54e6d362d5123840970a9ffe",
+      "classification": "excluded_repeated_A"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4",
+      "task_id": "karatsuba256-L4-T2300-afb74d898573",
+      "case": "karatsuba256",
+      "request_ps": 2300,
+      "rtl_sha256": "afb74d898573e1b70984dc2855390d5b0b4a2e54cab6f6a8fa18539f75f10bdd",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4",
+      "task_id": "karatsuba256-L4-T2300-1de0ecb23206",
+      "case": "karatsuba256",
+      "request_ps": 2300,
+      "rtl_sha256": "1de0ecb23206e8cb62974e10ff8d80cb8e56cd5157e5198379e2e2e68f630d3a",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4",
+      "task_id": "karatsuba256-L4-T2300-8f7d78972cbb",
+      "case": "karatsuba256",
+      "request_ps": 2300,
+      "rtl_sha256": "8f7d78972cbbf42b9c41e26cda6ac83109a80a96c2297fd4393840a60af1943e",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4",
+      "task_id": "karatsuba256-L4-T2300-75a00bee0595",
+      "case": "karatsuba256",
+      "request_ps": 2300,
+      "rtl_sha256": "75a00bee0595a0f7b2c10b335ad3a91f572eee5ee6ea089358074af632efeefd",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4",
+      "task_id": "karatsuba256-L4-T2750-c1a64d59e07d",
+      "case": "karatsuba256",
+      "request_ps": 2750,
+      "rtl_sha256": "c1a64d59e07d5ff68496d3aa9b6bc5e3e5729f2c54e6d362d5123840970a9ffe",
+      "classification": "excluded_repeated_A"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4",
+      "task_id": "karatsuba256-L4-T2750-afb74d898573",
+      "case": "karatsuba256",
+      "request_ps": 2750,
+      "rtl_sha256": "afb74d898573e1b70984dc2855390d5b0b4a2e54cab6f6a8fa18539f75f10bdd",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4",
+      "task_id": "karatsuba256-L4-T2750-1de0ecb23206",
+      "case": "karatsuba256",
+      "request_ps": 2750,
+      "rtl_sha256": "1de0ecb23206e8cb62974e10ff8d80cb8e56cd5157e5198379e2e2e68f630d3a",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4",
+      "task_id": "karatsuba256-L4-T2750-8f7d78972cbb",
+      "case": "karatsuba256",
+      "request_ps": 2750,
+      "rtl_sha256": "8f7d78972cbbf42b9c41e26cda6ac83109a80a96c2297fd4393840a60af1943e",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8",
+      "task_id": "karatsuba256-L8-T1150-c1a64d59e07d",
+      "case": "karatsuba256",
+      "request_ps": 1150,
+      "rtl_sha256": "c1a64d59e07d5ff68496d3aa9b6bc5e3e5729f2c54e6d362d5123840970a9ffe",
+      "classification": "excluded_repeated_A"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8",
+      "task_id": "karatsuba256-L8-T1150-d82729a2bd2b",
+      "case": "karatsuba256",
+      "request_ps": 1150,
+      "rtl_sha256": "d82729a2bd2be94e366bf9e7e780ba72334e7f9dfed2d7f811c29a44278a0e28",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8",
+      "task_id": "karatsuba256-L8-T1150-f3011704032a",
+      "case": "karatsuba256",
+      "request_ps": 1150,
+      "rtl_sha256": "f3011704032ac6988a5681f3e3f678833dbc389d95029a8a2a8f10f76c809044",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8",
+      "task_id": "karatsuba256-L8-T1150-b5e7a118e6c3",
+      "case": "karatsuba256",
+      "request_ps": 1150,
+      "rtl_sha256": "b5e7a118e6c322fc7513b881e24ad0df50ec3e843593f415d5f9c80767f6f1de",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8",
+      "task_id": "karatsuba256-L8-T1150-f0eca851430c",
+      "case": "karatsuba256",
+      "request_ps": 1150,
+      "rtl_sha256": "f0eca851430c14a9e0cc32c14aae3ba06b037aec9d0ab3b630ff1a75f0d4d4f3",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8",
+      "task_id": "karatsuba256-L8-T1400-c1a64d59e07d",
+      "case": "karatsuba256",
+      "request_ps": 1400,
+      "rtl_sha256": "c1a64d59e07d5ff68496d3aa9b6bc5e3e5729f2c54e6d362d5123840970a9ffe",
+      "classification": "excluded_repeated_A"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8",
+      "task_id": "karatsuba256-L8-T1400-d82729a2bd2b",
+      "case": "karatsuba256",
+      "request_ps": 1400,
+      "rtl_sha256": "d82729a2bd2be94e366bf9e7e780ba72334e7f9dfed2d7f811c29a44278a0e28",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8",
+      "task_id": "karatsuba256-L8-T1400-f3011704032a",
+      "case": "karatsuba256",
+      "request_ps": 1400,
+      "rtl_sha256": "f3011704032ac6988a5681f3e3f678833dbc389d95029a8a2a8f10f76c809044",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8",
+      "task_id": "karatsuba256-L8-T1400-b5e7a118e6c3",
+      "case": "karatsuba256",
+      "request_ps": 1400,
+      "rtl_sha256": "b5e7a118e6c322fc7513b881e24ad0df50ec3e843593f415d5f9c80767f6f1de",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8",
+      "task_id": "karatsuba256-L8-T1400-f0eca851430c",
+      "case": "karatsuba256",
+      "request_ps": 1400,
+      "rtl_sha256": "f0eca851430c14a9e0cc32c14aae3ba06b037aec9d0ab3b630ff1a75f0d4d4f3",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mac32-L2",
+      "task_id": "mac32-L2-T950-073243214bc6",
+      "case": "mac32",
+      "request_ps": 950,
+      "rtl_sha256": "073243214bc69543f6e661766532df485f4ead355634215b916e747d21bc9f84",
+      "classification": "excluded_repeated_A"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mac32-L2",
+      "task_id": "mac32-L2-T950-c218c9843815",
+      "case": "mac32",
+      "request_ps": 950,
+      "rtl_sha256": "c218c984381557e67bfacddc0bb7e199f8c39de5c1a23a22d9626a6c9213a9c3",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mac32-L2",
+      "task_id": "mac32-L2-T950-1ae18b2a6206",
+      "case": "mac32",
+      "request_ps": 950,
+      "rtl_sha256": "1ae18b2a62069e3c67d930944fcd26065b4228befb601e337a6d0b7cecd66603",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mac32-L2",
+      "task_id": "mac32-L2-T950-9958a83b1bea",
+      "case": "mac32",
+      "request_ps": 950,
+      "rtl_sha256": "9958a83b1beac6321e806da342ff311a7c15cc21cc142668d4a2e85e705fd616",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mac32-L2",
+      "task_id": "mac32-L2-T1100-073243214bc6",
+      "case": "mac32",
+      "request_ps": 1100,
+      "rtl_sha256": "073243214bc69543f6e661766532df485f4ead355634215b916e747d21bc9f84",
+      "classification": "excluded_repeated_A"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mac32-L2",
+      "task_id": "mac32-L2-T1100-c218c9843815",
+      "case": "mac32",
+      "request_ps": 1100,
+      "rtl_sha256": "c218c984381557e67bfacddc0bb7e199f8c39de5c1a23a22d9626a6c9213a9c3",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mac32-L2",
+      "task_id": "mac32-L2-T1100-1ae18b2a6206",
+      "case": "mac32",
+      "request_ps": 1100,
+      "rtl_sha256": "1ae18b2a62069e3c67d930944fcd26065b4228befb601e337a6d0b7cecd66603",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mac32-L2",
+      "task_id": "mac32-L2-T1100-dce41e76e019",
+      "case": "mac32",
+      "request_ps": 1100,
+      "rtl_sha256": "dce41e76e0194faaac2feec216cedfbb90eddea9d3b39d1d5afc30da3ce39a64",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mac32-L2",
+      "task_id": "mac32-L2-T1100-9958a83b1bea",
+      "case": "mac32",
+      "request_ps": 1100,
+      "rtl_sha256": "9958a83b1beac6321e806da342ff311a7c15cc21cc142668d4a2e85e705fd616",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mul128-L2",
+      "task_id": "mul128-L2-T1200-6d72e638cd85",
+      "case": "mul128",
+      "request_ps": 1200,
+      "rtl_sha256": "6d72e638cd85592c68cfde92e58c0508ba2aef8cb4f52869c8ad8f7a7784f44f",
+      "classification": "excluded_repeated_A"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mul128-L2",
+      "task_id": "mul128-L2-T1200-78f923426662",
+      "case": "mul128",
+      "request_ps": 1200,
+      "rtl_sha256": "78f9234266626f2f06eef4f17c82c8c4f671b54aefbf777d78a6cd51b837d519",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mul128-L2",
+      "task_id": "mul128-L2-T1200-a2c5d3c0f979",
+      "case": "mul128",
+      "request_ps": 1200,
+      "rtl_sha256": "a2c5d3c0f979bb2183f9c75e22cc66b8bdb8ae17eea69d04e6223eb05e1e30f0",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mul128-L2",
+      "task_id": "mul128-L2-T1200-797e2a4ef532",
+      "case": "mul128",
+      "request_ps": 1200,
+      "rtl_sha256": "797e2a4ef532ddac9815b68209df3ef2c9fbc114d4fc852935301c3cab530366",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mul128-L2",
+      "task_id": "mul128-L2-T1200-704d34f2c48f",
+      "case": "mul128",
+      "request_ps": 1200,
+      "rtl_sha256": "704d34f2c48fc4e3b517522c4c65c2f795ee4bdd3007b0ed29fed2972078cb7a",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mul128-L2",
+      "task_id": "mul128-L2-T1450-6d72e638cd85",
+      "case": "mul128",
+      "request_ps": 1450,
+      "rtl_sha256": "6d72e638cd85592c68cfde92e58c0508ba2aef8cb4f52869c8ad8f7a7784f44f",
+      "classification": "excluded_repeated_A"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mul128-L2",
+      "task_id": "mul128-L2-T1450-78f923426662",
+      "case": "mul128",
+      "request_ps": 1450,
+      "rtl_sha256": "78f9234266626f2f06eef4f17c82c8c4f671b54aefbf777d78a6cd51b837d519",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mul128-L2",
+      "task_id": "mul128-L2-T1450-a2c5d3c0f979",
+      "case": "mul128",
+      "request_ps": 1450,
+      "rtl_sha256": "a2c5d3c0f979bb2183f9c75e22cc66b8bdb8ae17eea69d04e6223eb05e1e30f0",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mul128-L2",
+      "task_id": "mul128-L2-T1450-4cb62746f4c5",
+      "case": "mul128",
+      "request_ps": 1450,
+      "rtl_sha256": "4cb62746f4c530da8ab09b2bc7c3d1346986e3719decf4fef905d85562f7dfa2",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mul128-L2",
+      "task_id": "mul128-L2-T1450-704d34f2c48f",
+      "case": "mul128",
+      "request_ps": 1450,
+      "rtl_sha256": "704d34f2c48fc4e3b517522c4c65c2f795ee4bdd3007b0ed29fed2972078cb7a",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mul128-L4",
+      "task_id": "mul128-L4-T600-78374d7545b6",
+      "case": "mul128",
+      "request_ps": 600,
+      "rtl_sha256": "78374d7545b6be3e333da7bbabbe25b76ee9b45b9a61343c8b12c00598720aa1",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mul128-L4",
+      "task_id": "mul128-L4-T750-78374d7545b6",
+      "case": "mul128",
+      "request_ps": 750,
+      "rtl_sha256": "78374d7545b6be3e333da7bbabbe25b76ee9b45b9a61343c8b12c00598720aa1",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-ntt8x64-L16",
+      "task_id": "ntt8x64-L16-T800-0cc5456aa719",
+      "case": "ntt8x64",
+      "request_ps": 800,
+      "rtl_sha256": "0cc5456aa719aaaebd34550a12656b81cefe6a69c61ceed32319722e8ae68a6e",
+      "classification": "excluded_repeated_A"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-ntt8x64-L16",
+      "task_id": "ntt8x64-L16-T800-4b0b80f5dba8",
+      "case": "ntt8x64",
+      "request_ps": 800,
+      "rtl_sha256": "4b0b80f5dba8fc31c9148dcf189f00ab503fa2e04fb21c62c3cd9e18b30fff44",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-ntt8x64-L16",
+      "task_id": "ntt8x64-L16-T800-ada50437924b",
+      "case": "ntt8x64",
+      "request_ps": 800,
+      "rtl_sha256": "ada50437924b8b7b98daa55e18b5934a3edcf6f7f674a41c25c57c46c30b0780",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-ntt8x64-L16",
+      "task_id": "ntt8x64-L16-T800-a6689a6712c6",
+      "case": "ntt8x64",
+      "request_ps": 800,
+      "rtl_sha256": "a6689a6712c659175b709e532f4823667d3f05103cbe212ccf536a0be05c934e",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-ntt8x64-L16",
+      "task_id": "ntt8x64-L16-T800-46150504ec13",
+      "case": "ntt8x64",
+      "request_ps": 800,
+      "rtl_sha256": "46150504ec1308a0112b875f118a90db34e2a26e27b2aea98e7a3be72357bce4",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-ntt8x64-L16",
+      "task_id": "ntt8x64-L16-T950-0cc5456aa719",
+      "case": "ntt8x64",
+      "request_ps": 950,
+      "rtl_sha256": "0cc5456aa719aaaebd34550a12656b81cefe6a69c61ceed32319722e8ae68a6e",
+      "classification": "excluded_repeated_A"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-ntt8x64-L16",
+      "task_id": "ntt8x64-L16-T950-4b0b80f5dba8",
+      "case": "ntt8x64",
+      "request_ps": 950,
+      "rtl_sha256": "4b0b80f5dba8fc31c9148dcf189f00ab503fa2e04fb21c62c3cd9e18b30fff44",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-ntt8x64-L16",
+      "task_id": "ntt8x64-L16-T950-ada50437924b",
+      "case": "ntt8x64",
+      "request_ps": 950,
+      "rtl_sha256": "ada50437924b8b7b98daa55e18b5934a3edcf6f7f674a41c25c57c46c30b0780",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-ntt8x64-L16",
+      "task_id": "ntt8x64-L16-T950-a6689a6712c6",
+      "case": "ntt8x64",
+      "request_ps": 950,
+      "rtl_sha256": "a6689a6712c659175b709e532f4823667d3f05103cbe212ccf536a0be05c934e",
+      "classification": "pipeline_or_ablation"
+    },
+    {
+      "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-ntt8x64-L16",
+      "task_id": "ntt8x64-L16-T950-3cd51401634b",
+      "case": "ntt8x64",
+      "request_ps": 950,
+      "rtl_sha256": "3cd51401634b083a09b00e92a9518f5b8806d7dd5870a3b747e5291af741b2e3",
+      "classification": "pipeline_or_ablation"
+    }
+  ],
+  "protected_frozen_files": {
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-add512-L2/admission.json": "ab91e740ea0a4899545dfb56ad0b6d1f1e0d26dd4c37b150ac98fbf61b2a4b68",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-add512-L2/freeze.json": "d80392be1f0954281eb031c2a5420936ce9fc3ec63debf7b32485434a5712b53",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L4/admission.json": "dcd710ca5a7294763607c4baee7c8185f6a2d60192b2fc1e5ac973eca9be087a",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L4/freeze.json": "9c819b924da1c674e233edee04be8d04cbfe252a02b11f126f4a451a2206cfbd",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8/admission.json": "f0c8f5582f77129e2d60bf1fe5eb1b4c1a81ba5cd9efdf991751acd146b1ed2c",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8/freeze.json": "505fcf4649af4027dbf5fa058fbfb30cacc192b65248cf829569840d3cb16397",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/admission.json": "2dc93ffa8e39a2ac3c397b39e08d64f9fa7593d3650d71d093929d94f66a6c8e",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/freeze.json": "edc5309a695b198d6c41e292aaabe5c875f221102d556d3081015cd1265f642e",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/admission.json": "b089ff1b8f581a8cdf9b29f19b326c1b3a7673e2ac6e859c53d419d36919207f",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/freeze.json": "180a0d55f9e28a12a6666445f82164c8878f4e52784c3a04d0321b29bf4b69f1",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-horner64-L4/admission.json": "867f37aee2d06c3b7a84e35b76687701c840e8c7ab3b9e6c52d881b6026a638c",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-horner64-L4/freeze.json": "e84d16b19fe2ad230135502373f1e02c1ce6853eab7ff2bee666c5580e07c5ad",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-horner64-L8/admission.json": "a6df7e846b51b928986985333700a06ca39243ddd1b85bc89748b7490b0de51f",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-horner64-L8/freeze.json": "fe2e1f3c044c43abbb813bef170249d68d7809e18f2aa5992df4f9b6ae0d0f66",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4/admission.json": "d2e10ee9c13c556f2afd7ca096f0bce45c01083fa2a123ca1a0e8c7e781cac04",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4/freeze.json": "8245762a41cac773a7dccfd4649e729eb29f32393c8c96b7c1fb53cf9186cd5a",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/admission.json": "3abbdb9c12b7b4a6b27d02bd0aba2bef840b9dad433c3b67e7f87e53a42777be",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/freeze.json": "e437530d8e519267ee74da2283aff0cd201deafb3da1cb9c702321d12eb32de9",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mac32-L2/admission.json": "0ebdf4343aa2b49378b07dd2a0cf7a71f5b2aa39b553c7c80adb66f16562481e",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mac32-L2/freeze.json": "edd858e360b78fcd714ca7c02826a96dd0cebf1cf20ada25e59eb92d082adf1b",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mul128-L2/admission.json": "a50a995e8275833d03db88aaf6e487576bfef47fb0f15d6c68a00b3b71f981cd",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mul128-L2/freeze.json": "f2027ee8479327cb140c88504f077cae199e039604c5c81bd24ce2b52f738746",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mul128-L4/admission.json": "f2a533a22083230b2cc654b8b015827f3020d75ff6158969a5763977e44ad12b",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-mul128-L4/freeze.json": "4b99c9a45bd53220dcd7a14a245472c33e313c76d220bbd61455e2d31bf9019f",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-ntt8x64-L16/admission.json": "2b38d15c9ab8e50ffbd597c66cc2570fa5e1f4a81dc9c4da2ab24a0b36be6810",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-ntt8x64-L16/freeze.json": "aff397cdff2b58f8deabe35466a6daf4270c8df0e9ae5f0b6246dce777af9105",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_two_depths_run.py": "bd87f76c01982cb5402e03a2152cb6b61bab426e4c4240224b44d99d383cde26",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_nine_runtime.py": "3be8d3d1fa9cea3d08ee3605a5d46168dc490876b6e34a437093a6984296c7f1",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_latency_matrix.py": "9d0203ec9903668da1b11b5b6f741f4205b3381bbf8fd5917479a5499c00a967",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_two_depths_monitor.py": "595ccad2734adad5272e2aaf972033bd209ee56f025aeaa338ce10893b8ef379",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/configs/backend_policy_v12.json": "8bf5a05cd879d54149374f4caa0da26b200a37ac6a9a220447c9752c9ec45109",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/protocol.json": "31f017e107b4f7890d519ba59dca5721bc890ba1a3e45a9ce4a4af018d152655"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "complete_groups": 5,
+  "required_groups": 19,
+  "rows": [
+    {
+      "case": "mac32",
+      "T_ps": 500,
+      "frequency_ratio_to_A": {
+        "B": 1.2334493252473107,
+        "C": 1.2595499797830796,
+        "D": 2.1182204777308615
+      },
+      "area_ratio_to_A": {
+        "A": 1.0,
+        "B": 1.1364061099563303,
+        "C": 3.4255420583916565,
+        "D": 2.0357367608077963
+      },
+      "D_area_ratio_to_C": 0.5942816424690477,
+      "D_setup_met": false,
+      "D_hold_met": true,
+      "D_coverage": true
+    },
+    {
+      "case": "mac32",
+      "T_ps": 750,
+      "frequency_ratio_to_A": {
+        "B": 1.2124891319166333,
+        "C": 1.2641461312333508,
+        "D": 1.8942386658616661
+      },
+      "area_ratio_to_A": {
+        "A": 1.0,
+        "B": 1.135084572508631,
+        "C": 3.245134910991535,
+        "D": 1.8448186078805768
+      },
+      "D_area_ratio_to_C": 0.5684874923480151,
+      "D_setup_met": false,
+      "D_hold_met": true,
+      "D_coverage": true
+    },
+    {
+      "case": "mac32",
+      "T_ps": 1000,
+      "frequency_ratio_to_A": {
+        "B": 1.2291061894811786,
+        "C": 1.2587063077063445,
+        "D": 1.4438486139498172
+      },
+      "area_ratio_to_A": {
+        "A": 1.0,
+        "B": 1.1210222905457343,
+        "C": 3.1429477325134516,
+        "D": 1.3214066102997697
+      },
+      "D_area_ratio_to_C": 0.4204354391993103,
+      "D_setup_met": false,
+      "D_hold_met": false,
+      "D_coverage": true
+    },
+    {
+      "case": "add512",
+      "T_ps": 350,
+      "frequency_ratio_to_A": {
+        "B": 0.9425396965274031,
+        "C": 0.9425396965274031,
+        "D": 1.2741663030953054
+      },
+      "area_ratio_to_A": {
+        "A": 1.0,
+        "B": 1.3864561729229217,
+        "C": 1.3864561729229217,
+        "D": 1.4923003707337708
+      },
+      "D_area_ratio_to_C": 1.0763415388657465,
+      "D_setup_met": false,
+      "D_hold_met": true,
+      "D_coverage": true
+    },
+    {
+      "case": "add512",
+      "T_ps": 400,
+      "frequency_ratio_to_A": {
+        "B": 0.927137749583584,
+        "C": 0.927137749583584,
+        "D": 1.276987122713873
+      },
+      "area_ratio_to_A": {
+        "A": 1.0,
+        "B": 1.3880935640727197,
+        "C": 1.3880935640727197,
+        "D": 1.4860711479264774
+      },
+      "D_area_ratio_to_C": 1.0705842793235694,
+      "D_setup_met": false,
+      "D_hold_met": false,
+      "D_coverage": true
+    }
+  ],
+  "D_faster_than_A": 5,
+  "D_setup_met": 0,
+  "D_setup_hold_coverage_met": 0,
+  "qualification": "diagnostic_only"
+}

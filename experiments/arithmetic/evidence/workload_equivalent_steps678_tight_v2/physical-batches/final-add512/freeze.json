@@ -1,0 +1,154 @@
+{
+  "version": "equivalent-period-nine-case-physical-v1",
+  "files": {
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T350-L1/A/workload.sv": "41f1f36cf2c301bdcbee45562f1add398ae3160bfb8d6f760d070396d79c5bba",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T350-L1/A/functional-receipt.json": "0773ea099a5e745dfd7932d33c09211b3d6d8909059acf67b3f3c939cc2d1590",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T350-L4/B/workload.sv": "27125920dc8d6d7dda41be6c3f475657a40d24bf3d3ff22f449f62856526d998",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T350-L4/B/functional-receipt.json": "84ee9de2c2d2153cea14e9e63f6534723efac5258f46da6d80c52fd3d6633e6e",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T350-L4/D/workload.sv": "7c21841924530588e0082f59d89df53a290679507fa73643d1e1bacad2571a68",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T350-L4/D/functional-receipt.json": "4f2e3a357a6ce49b87d9a2cd2b8d4591a701a261ffbe2d69281316ae1d17eeec",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T400-L1/A/workload.sv": "41f1f36cf2c301bdcbee45562f1add398ae3160bfb8d6f760d070396d79c5bba",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T400-L1/A/functional-receipt.json": "7b093fad808a3a8a16a2556a6252746370066bbaafa40b67971b057c0378135c",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T400-L4/B/workload.sv": "27125920dc8d6d7dda41be6c3f475657a40d24bf3d3ff22f449f62856526d998",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T400-L4/B/functional-receipt.json": "d4d8745cd63342a235e17697be83176502d2c13a3026a8ba1d52ca0d9ac4dac8",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T400-L4/D/workload.sv": "7c21841924530588e0082f59d89df53a290679507fa73643d1e1bacad2571a68",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T400-L4/D/functional-receipt.json": "04c74b5592b709997874b6c44bab17b9ad91d4a2d93d8a3079f2b7687fb91725",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_tight_continue.py": "8266b1af418fbaaed3f7203228f24df52917d6d6e10025fa728ee63a93c23734",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-add512/dispatch-extension.json": "bacc34ebb8df12e8c9f49bc22863260c6b193fbc660028c978a797bb0ec1e8f7"
+  },
+  "application_PPA_for_selection": false,
+  "role": "final_evaluation",
+  "selection_frozen_before_measurement": true,
+  "tasks": [
+    {
+      "id": "add512-T350-41f1f36cf2c3",
+      "case": "add512",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T350-L1/A/workload.sv",
+      "period_ps": 350,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T350-L1/A/functional-receipt.json",
+      "large": false,
+      "shared_methods": [
+        "A"
+      ],
+      "complete_selection_freeze": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-add512-selection-freeze.json",
+      "complete_selection_freeze_sha256": "f6e57c2df76f187d17d906ec291bd81c7f4ba6f6e86af9cbcc5b2fbca5cd23e0",
+      "rtl_sha256": "41f1f36cf2c301bdcbee45562f1add398ae3160bfb8d6f760d070396d79c5bba",
+      "abc_target_ps": 350,
+      "threads": 4,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 300,
+      "grt_timeout_s": 1200,
+      "support_timeout_s": 300
+    },
+    {
+      "id": "add512-T350-27125920dc8d",
+      "case": "add512",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T350-L4/B/workload.sv",
+      "period_ps": 350,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T350-L4/B/functional-receipt.json",
+      "large": false,
+      "shared_methods": [
+        "B",
+        "C",
+        "same_policy_static"
+      ],
+      "complete_selection_freeze": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-add512-selection-freeze.json",
+      "complete_selection_freeze_sha256": "f6e57c2df76f187d17d906ec291bd81c7f4ba6f6e86af9cbcc5b2fbca5cd23e0",
+      "rtl_sha256": "27125920dc8d6d7dda41be6c3f475657a40d24bf3d3ff22f449f62856526d998",
+      "abc_target_ps": 350,
+      "threads": 4,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 300,
+      "grt_timeout_s": 1200,
+      "support_timeout_s": 300
+    },
+    {
+      "id": "add512-T350-7c2184192453",
+      "case": "add512",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T350-L4/D/workload.sv",
+      "period_ps": 350,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T350-L4/D/functional-receipt.json",
+      "large": false,
+      "shared_methods": [
+        "D"
+      ],
+      "complete_selection_freeze": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-add512-selection-freeze.json",
+      "complete_selection_freeze_sha256": "f6e57c2df76f187d17d906ec291bd81c7f4ba6f6e86af9cbcc5b2fbca5cd23e0",
+      "rtl_sha256": "7c21841924530588e0082f59d89df53a290679507fa73643d1e1bacad2571a68",
+      "abc_target_ps": 350,
+      "threads": 4,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 300,
+      "grt_timeout_s": 1200,
+      "support_timeout_s": 300
+    },
+    {
+      "id": "add512-T400-41f1f36cf2c3",
+      "case": "add512",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T400-L1/A/workload.sv",
+      "period_ps": 400,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T400-L1/A/functional-receipt.json",
+      "large": false,
+      "shared_methods": [
+        "A"
+      ],
+      "complete_selection_freeze": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-add512-selection-freeze.json",
+      "complete_selection_freeze_sha256": "f6e57c2df76f187d17d906ec291bd81c7f4ba6f6e86af9cbcc5b2fbca5cd23e0",
+      "rtl_sha256": "41f1f36cf2c301bdcbee45562f1add398ae3160bfb8d6f760d070396d79c5bba",
+      "abc_target_ps": 400,
+      "threads": 4,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 300,
+      "grt_timeout_s": 1200,
+      "support_timeout_s": 300
+    },
+    {
+      "id": "add512-T400-27125920dc8d",
+      "case": "add512",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T400-L4/B/workload.sv",
+      "period_ps": 400,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T400-L4/B/functional-receipt.json",
+      "large": false,
+      "shared_methods": [
+        "B",
+        "C",
+        "same_policy_static"
+      ],
+      "complete_selection_freeze": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-add512-selection-freeze.json",
+      "complete_selection_freeze_sha256": "f6e57c2df76f187d17d906ec291bd81c7f4ba6f6e86af9cbcc5b2fbca5cd23e0",
+      "rtl_sha256": "27125920dc8d6d7dda41be6c3f475657a40d24bf3d3ff22f449f62856526d998",
+      "abc_target_ps": 400,
+      "threads": 4,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 300,
+      "grt_timeout_s": 1200,
+      "support_timeout_s": 300
+    },
+    {
+      "id": "add512-T400-7c2184192453",
+      "case": "add512",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T400-L4/D/workload.sv",
+      "period_ps": 400,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T400-L4/D/functional-receipt.json",
+      "large": false,
+      "shared_methods": [
+        "D"
+      ],
+      "complete_selection_freeze": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-add512-selection-freeze.json",
+      "complete_selection_freeze_sha256": "f6e57c2df76f187d17d906ec291bd81c7f4ba6f6e86af9cbcc5b2fbca5cd23e0",
+      "rtl_sha256": "7c21841924530588e0082f59d89df53a290679507fa73643d1e1bacad2571a68",
+      "abc_target_ps": 400,
+      "threads": 4,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 300,
+      "grt_timeout_s": 1200,
+      "support_timeout_s": 300
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "status": "failed_settled_and_slot_replaced",
+  "observed_at": "2026-11-16T05:11:16.206678+00:00",
+  "task": "barrett64-L8-T1100-fe0456a5a32c",
+  "case": "barrett64",
+  "T_ps": 1100,
+  "physical_directory": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8/runs/barrett64-L8-T1100-fe0456a5a32c",
+  "root_error": "malloc_consolidate(): invalid chunk size; Signal 6 received; Stack trace:",
+  "stale_log_seconds": 5424.254508495331,
+  "raw_log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8/runs/barrett64-L8-T1100-fe0456a5a32c/logs/asap7/arithmetic_probe/base/3_5_place_dp.tmp.log",
+  "raw_log_sha256": "b02a4cb16b6f0ff8ac988138cf9673c1128a8642890a3dbac368a77b41a95622",
+  "wrapper_host_pid": 913899,
+  "openroad_host_pid": 928352,
+  "action": "SIGTERM only to owned runtime wrapper; existing run_command cleans descendants and settles ledger",
+  "automatic_retry": false,
+  "source_changes": false,
+  "retained_failure": true,
+  "settled_at": "2026-11-16T05:18:26.029177+00:00",
+  "manifest_sha256": "976bc78559c7ae69930aff5f56964b4a07555ca25e0dd05403795717e15635bb",
+  "manifest_failure_reason": "grt: tool_nonzero_exit",
+  "cleanup": {
+    "term_sent": 7,
+    "kill_sent": 0,
+    "remaining_live_pids": []
+  },
+  "cancelled_signal": 15,
+  "job_status": "released",
+  "outcome": {
+    "status": "failed",
+    "task_id": "barrett64-L8-T1100-fe0456a5a32c",
+    "reason": "grt: tool_nonzero_exit",
+    "source_sha256": "3be8d3d1fa9cea3d08ee3605a5d46168dc490876b6e34a437093a6984296c7f1",
+    "automatic_retries": 0
+  },
+  "replacement_task": "dot16-L4-T1050-2776e286ec00",
+  "primary_failure_remains": "OpenROAD allocator abort; wrapper signal only settled the stuck failure"
+}

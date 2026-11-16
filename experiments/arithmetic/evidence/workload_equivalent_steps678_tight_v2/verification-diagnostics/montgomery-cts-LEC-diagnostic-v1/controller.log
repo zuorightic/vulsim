@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_lec.py", line 77, in <module>
+    print(run(a.physical_directory,a.output))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_lec.py", line 58, in run
+    with ledger.job(context):
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/budget.py", line 103, in job
+    raise ValueError('explicit backend job identity required')
+ValueError: explicit backend job identity required

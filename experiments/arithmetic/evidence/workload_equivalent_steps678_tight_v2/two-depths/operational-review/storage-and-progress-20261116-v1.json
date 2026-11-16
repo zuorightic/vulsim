@@ -1,0 +1,453 @@
+{
+  "checked_at": "2026-11-16T06:23:01.327981+00:00",
+  "required_main_records": 148,
+  "main_measured": 45,
+  "registered_groups": 27,
+  "main_statuses": {
+    "measured_grt": 45,
+    "failed": 2,
+    "running": 9,
+    "not_started": 52
+  },
+  "active_jobs": [
+    {
+      "id": "d079bcd78a6746858f88d9fbd52c3b53",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-dot16-L4",
+      "task_id": "dot16-L4-T850-2776e286ec00",
+      "owner_pid_in_namespace": 48509,
+      "started_at": "2026-11-16T04:51:58.352531+00:00"
+    },
+    {
+      "id": "4895be23322c45e8904b83a78d2cdc82",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-dot16-L4",
+      "task_id": "dot16-L4-T850-5d322a4d43a9",
+      "owner_pid_in_namespace": 50415,
+      "started_at": "2026-11-16T05:01:44.147577+00:00"
+    },
+    {
+      "id": "0df2f0311ccd45d7b34fd9f5de8c8397",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-dot16-L4",
+      "task_id": "dot16-L4-T850-8327002228a5",
+      "owner_pid_in_namespace": 51210,
+      "started_at": "2026-11-16T05:02:15.251674+00:00"
+    },
+    {
+      "id": "07b50260338f49428a7b2948fedd9b92",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-dot16-L4",
+      "task_id": "dot16-L4-T850-13041929dd25",
+      "owner_pid_in_namespace": 52770,
+      "started_at": "2026-11-16T05:05:12.212604+00:00"
+    },
+    {
+      "id": "de2769b55a9847489c31d1a58e118462",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-dot16-L4",
+      "task_id": "dot16-L4-T850-75964220595d",
+      "owner_pid_in_namespace": 54603,
+      "started_at": "2026-11-16T05:07:58.674469+00:00"
+    },
+    {
+      "id": "2163a742e9164e679823a7bec899194b",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-dot16-L4",
+      "task_id": "dot16-L4-T1050-2776e286ec00",
+      "owner_pid_in_namespace": 58341,
+      "started_at": "2026-11-16T05:11:38.029338+00:00"
+    },
+    {
+      "id": "c88a7d84610f44799defd4d6aa051351",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-dot16-L4",
+      "task_id": "dot16-L4-T1050-5d322a4d43a9",
+      "owner_pid_in_namespace": 59101,
+      "started_at": "2026-11-16T05:11:58.383842+00:00"
+    },
+    {
+      "id": "45c9dc454d014dbaa1a22c6b8aa1f9b0",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-dot16-L4",
+      "task_id": "dot16-L4-T1050-8327002228a5",
+      "owner_pid_in_namespace": 63611,
+      "started_at": "2026-11-16T05:18:44.268705+00:00"
+    },
+    {
+      "id": "b79f7b53d2e14821baa7f5bc64dd2989",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-dot16-L4",
+      "task_id": "dot16-L4-T1050-13041929dd25",
+      "owner_pid_in_namespace": 69956,
+      "started_at": "2026-11-16T05:32:16.616054+00:00"
+    }
+  ],
+  "software_active": [
+    {
+      "case": "barrett64",
+      "L": 4,
+      "pid": 47827
+    },
+    {
+      "case": "karatsuba256",
+      "L": 4,
+      "pid": 71187
+    }
+  ],
+  "variants": [
+    {
+      "case": "mac32",
+      "L": 2,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "not_started": 8
+      },
+      "targets_ps": [
+        950,
+        1100
+      ]
+    },
+    {
+      "case": "mac32",
+      "L": 3,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "measured_grt": 12
+      },
+      "targets_ps": [
+        500,
+        750,
+        1000
+      ]
+    },
+    {
+      "case": "add512",
+      "L": 2,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "measured_grt": 8
+      },
+      "targets_ps": [
+        700,
+        800
+      ]
+    },
+    {
+      "case": "add512",
+      "L": 4,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "measured_grt": 8
+      },
+      "targets_ps": [
+        350,
+        400
+      ]
+    },
+    {
+      "case": "mul128",
+      "L": 2,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "not_started": 8
+      },
+      "targets_ps": [
+        1200,
+        1450
+      ]
+    },
+    {
+      "case": "mul128",
+      "L": 4,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "measured_grt": 4,
+        "not_started": 4
+      },
+      "targets_ps": [
+        600,
+        750
+      ]
+    },
+    {
+      "case": "dot16",
+      "L": 4,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "running": 8
+      },
+      "targets_ps": [
+        850,
+        1050
+      ]
+    },
+    {
+      "case": "dot16",
+      "L": 5,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "not_started": 7,
+        "running": 1
+      },
+      "targets_ps": [
+        700,
+        850
+      ]
+    },
+    {
+      "case": "horner64",
+      "L": 4,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "not_started": 8
+      },
+      "targets_ps": [
+        1900,
+        2250
+      ]
+    },
+    {
+      "case": "horner64",
+      "L": 8,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "measured_grt": 7,
+        "not_started": 1
+      },
+      "targets_ps": [
+        950,
+        1150
+      ]
+    },
+    {
+      "case": "barrett64",
+      "L": 4,
+      "status": "software_running",
+      "software_ready": false,
+      "main_statuses": {},
+      "targets_ps": [
+        1800,
+        2150
+      ]
+    },
+    {
+      "case": "barrett64",
+      "L": 8,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "failed": 2,
+        "measured_grt": 6
+      },
+      "targets_ps": [
+        900,
+        1100
+      ]
+    },
+    {
+      "case": "karatsuba256",
+      "L": 4,
+      "status": "software_running",
+      "software_ready": false,
+      "main_statuses": {},
+      "targets_ps": [
+        2300,
+        2750
+      ]
+    },
+    {
+      "case": "karatsuba256",
+      "L": 8,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "not_started": 8
+      },
+      "targets_ps": [
+        1150,
+        1400
+      ]
+    },
+    {
+      "case": "montgomery256",
+      "L": 16,
+      "status": "awaiting_A_reference",
+      "software_ready": false,
+      "main_statuses": {},
+      "targets_ps": null
+    },
+    {
+      "case": "montgomery256",
+      "L": 32,
+      "status": "awaiting_A_reference",
+      "software_ready": false,
+      "main_statuses": {},
+      "targets_ps": null
+    },
+    {
+      "case": "ntt8x64",
+      "L": 8,
+      "status": "software_waiting",
+      "software_ready": false,
+      "main_statuses": {},
+      "targets_ps": [
+        1550,
+        1850
+      ]
+    },
+    {
+      "case": "ntt8x64",
+      "L": 16,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "not_started": 8
+      },
+      "targets_ps": [
+        800,
+        950
+      ]
+    }
+  ],
+  "retained_software_errors": [
+    {
+      "case": "mac32",
+      "L": 2,
+      "exit_code": 1,
+      "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/software-logs/mac32-L2.log",
+      "resolved": true
+    },
+    {
+      "case": "add512",
+      "L": 2,
+      "exit_code": 1,
+      "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/software-logs/add512-L2.log",
+      "resolved": true
+    },
+    {
+      "case": "mul128",
+      "L": 2,
+      "exit_code": 1,
+      "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/software-logs/mul128-L2.log",
+      "resolved": true
+    }
+  ],
+  "software_receipt_errors": [],
+  "main_failures": [
+    {
+      "case": "barrett64",
+      "L": 8,
+      "T_ps": 900,
+      "method": "A",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8/runs/barrett64-L8-T900-fe0456a5a32c"
+    },
+    {
+      "case": "barrett64",
+      "L": 8,
+      "T_ps": 1100,
+      "method": "A",
+      "reason": "grt: tool_nonzero_exit",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8/runs/barrett64-L8-T1100-fe0456a5a32c"
+    }
+  ],
+  "active_reservations": [
+    {
+      "task": "dot16-L4-T850-2776e286ec00",
+      "stage": "grt",
+      "elapsed_s": 5136.74974489212,
+      "timeout_s": 7200,
+      "remaining_s": 2063.2502551078796
+    },
+    {
+      "task": "dot16-L4-T850-5d322a4d43a9",
+      "stage": "grt",
+      "elapsed_s": 4551.119669675827,
+      "timeout_s": 7200,
+      "remaining_s": 2648.880330324173
+    },
+    {
+      "task": "dot16-L4-T850-8327002228a5",
+      "stage": "grt",
+      "elapsed_s": 4252.553006887436,
+      "timeout_s": 7200,
+      "remaining_s": 2947.446993112564
+    },
+    {
+      "task": "dot16-L4-T850-13041929dd25",
+      "stage": "grt",
+      "elapsed_s": 4210.174392700195,
+      "timeout_s": 7200,
+      "remaining_s": 2989.8256072998047
+    },
+    {
+      "task": "dot16-L4-T850-75964220595d",
+      "stage": "grt",
+      "elapsed_s": 4066.972352743149,
+      "timeout_s": 7200,
+      "remaining_s": 3133.027647256851
+    },
+    {
+      "task": "dot16-L4-T1050-2776e286ec00",
+      "stage": "grt",
+      "elapsed_s": 4000.5440378189087,
+      "timeout_s": 7200,
+      "remaining_s": 3199.4559621810913
+    },
+    {
+      "task": "dot16-L4-T1050-5d322a4d43a9",
+      "stage": "grt",
+      "elapsed_s": 3925.426909685135,
+      "timeout_s": 7200,
+      "remaining_s": 3274.573090314865
+    },
+    {
+      "task": "dot16-L4-T1050-8327002228a5",
+      "stage": "grt",
+      "elapsed_s": 3213.297554731369,
+      "timeout_s": 7200,
+      "remaining_s": 3986.702445268631
+    },
+    {
+      "task": "dot16-L4-T1050-13041929dd25",
+      "stage": "grt",
+      "elapsed_s": 2570.0087237358093,
+      "timeout_s": 7200,
+      "remaining_s": 4629.991276264191
+    }
+  ],
+  "memory_available_MiB": 20666,
+  "disk_free_GiB": 126.67112731933594,
+  "ledger_usage": {
+    "synth": 3719,
+    "grt": 3692,
+    "final": 16,
+    "support_calls": 23352,
+    "walltime_s": 682947.03565772,
+    "CPU_time_s": 1688635.2599999998,
+    "pending": 9
+  },
+  "source_sha256": "595ccad2734adad5272e2aaf972033bd209ee56f025aeaa338ce10893b8ef379",
+  "model_refitted": false,
+  "backend_sources_changed": false
+}

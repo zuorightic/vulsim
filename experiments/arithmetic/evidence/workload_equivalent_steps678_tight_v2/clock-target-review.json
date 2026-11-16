@@ -1,0 +1,295 @@
+{
+  "status": "review_only_targets_unchanged",
+  "rows": [
+    {
+      "case": "add512",
+      "L": 4,
+      "A_reference_Tmin_ps": 1059.684803,
+      "ideal_A_over_L_ps": 264.92120075,
+      "targets_ps": [
+        350,
+        400
+      ],
+      "extra_over_ideal_ps": [
+        85.07879924999997,
+        135.07879924999997
+      ],
+      "D_predicted_complete_periods_ps": [
+        754.2812092577838,
+        781.1623519325294
+      ],
+      "D_predicted_arithmetic_stages": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "target_file_sha256": "777b33b285371d23206e2f29e88ba9af8a4d3b10c6088d19cd98303e74212264"
+    },
+    {
+      "case": "mul128",
+      "L": 4,
+      "A_reference_Tmin_ps": 1884.844337,
+      "ideal_A_over_L_ps": 471.21108425,
+      "targets_ps": [
+        600,
+        750
+      ],
+      "extra_over_ideal_ps": [
+        128.78891575,
+        278.78891575
+      ],
+      "D_predicted_complete_periods_ps": [
+        1010.7761232087912,
+        1035.8874509976672
+      ],
+      "D_predicted_arithmetic_stages": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "target_file_sha256": "d7b57f224a3c9dea9ee65857b19a4bff1e5e4917525bc7b61c82a8ed924d771c"
+    },
+    {
+      "case": "dot16",
+      "L": 8,
+      "A_reference_Tmin_ps": 2705.125456,
+      "ideal_A_over_L_ps": 338.140682,
+      "targets_ps": [
+        450,
+        550
+      ],
+      "extra_over_ideal_ps": [
+        111.85931799999997,
+        211.85931799999997
+      ],
+      "D_predicted_complete_periods_ps": [
+        1105.57028805692,
+        1141.5343213841873
+      ],
+      "D_predicted_arithmetic_stages": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "target_file_sha256": "c53b2461872c7b88ecd0f1ad9a604019054c7ab4893a6c8fe6dd20f480fd5cb7"
+    },
+    {
+      "case": "horner64",
+      "L": 8,
+      "A_reference_Tmin_ps": 5981.928589,
+      "ideal_A_over_L_ps": 747.741073625,
+      "targets_ps": [
+        950,
+        1150
+      ],
+      "extra_over_ideal_ps": [
+        202.258926375,
+        402.258926375
+      ],
+      "D_predicted_complete_periods_ps": [
+        1083.2301872698295,
+        1087.9746587698367
+      ],
+      "D_predicted_arithmetic_stages": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      ],
+      "target_file_sha256": "e6374b0205ef66a0fba66a449f5b1be04135327d87d909c2f5fd49e78eb261b3"
+    },
+    {
+      "case": "barrett64",
+      "L": 8,
+      "A_reference_Tmin_ps": 5603.325317,
+      "ideal_A_over_L_ps": 700.415664625,
+      "targets_ps": [
+        900,
+        1100
+      ],
+      "extra_over_ideal_ps": [
+        199.58433537500002,
+        399.584335375
+      ],
+      "D_predicted_complete_periods_ps": [
+        1328.856109230515,
+        1334.0362883470405
+      ],
+      "D_predicted_arithmetic_stages": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      ],
+      "target_file_sha256": "c1e6db89114114ee23260a610ce68a5736d6b471ff9c39500392a250744a3582"
+    },
+    {
+      "case": "karatsuba256",
+      "L": 8,
+      "A_reference_Tmin_ps": 7201.306396,
+      "ideal_A_over_L_ps": 900.1632995,
+      "targets_ps": [
+        1150,
+        1400
+      ],
+      "extra_over_ideal_ps": [
+        249.8367005,
+        499.8367005
+      ],
+      "D_predicted_complete_periods_ps": [
+        1623.1617474577342,
+        1660.6213844301978
+      ],
+      "D_predicted_arithmetic_stages": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      ],
+      "target_file_sha256": "5f68ddc4238fbe32e92966cafea5e7f4c4aa2c1f599e5716056a13c5a6ca5613"
+    },
+    {
+      "case": "ntt8x64",
+      "L": 16,
+      "A_reference_Tmin_ps": 9734.198421,
+      "ideal_A_over_L_ps": 608.3874013125,
+      "targets_ps": [
+        800,
+        950
+      ],
+      "extra_over_ideal_ps": [
+        191.61259868750005,
+        341.61259868750005
+      ],
+      "D_predicted_complete_periods_ps": [
+        774.0306874810161,
+        778.20897369992
+      ],
+      "D_predicted_arithmetic_stages": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      ],
+      "target_file_sha256": "136b48ec45c0a8bf8b55cdc9253d348c99e72aaf666504f1841d0b367d1979a4"
+    }
+  ],
+  "model_data_boundary_ps": {
+    "native_state->native_state": 147.7647705000004,
+    "native_state->external_state": 155.31683299999986,
+    "input_service->native_state": 231.42245500000013
+  },
+  "model_joint_reserve_ps": 50.0,
+  "model_precision_qualified": false,
+  "model_sha256": "de067c6983fe92eb7b5771b014f7881483bc2be06a5f70eddd3bc521208bc575",
+  "explanation": "Multiplicative A/L margin shrinks with A/L. Clock-to-Q, setup, enable/hold logic, skew, uncertainty, inter-owner wiring and stage imbalance do not shrink in that way. Nominal occupied-stage count is not a serial-path depth or guarantee of balance.",
+  "proposed_reference": "round_up_50(max(gamma*(A_Tmin-H_A)/L + H_stage + split_wire_reserve, complete_atomic_limit, control_limit, IO_limit))",
+  "proposal_scope": "initial reference only; independent common/offline boundary sources and structural scheduling required; diagnostic predictions are not proven physical lower bounds",
+  "original_ABCD_PPA_for_target_reselection": false,
+  "implemented_target_change": false
+}

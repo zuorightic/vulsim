@@ -1,0 +1,896 @@
+{
+  "status": "passed",
+  "targets": 11,
+  "required_targets": 19,
+  "rows": [
+    {
+      "case": "add512",
+      "T_clk_ps": 350,
+      "status": "passed",
+      "native_owner_checks": {
+        "operators": 5,
+        "exact_v1_projections": 4,
+        "carry_pin_uses": 1,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 20,
+        "public_covered": 0,
+        "public_uncovered": 5,
+        "diagnostic_covered": 0,
+        "diagnostic_uncovered": 5
+      },
+      "requested_deadline_feasible": true,
+      "allocation_envelope_ps": null,
+      "owners": 5,
+      "budget_variables": 4,
+      "families": {
+        "Add": 4
+      },
+      "boundary_extrapolated_owners": 0,
+      "budget_range_ps": [
+        45.94159759169382,
+        152.23522958477508
+      ],
+      "tau_range_ps": [
+        154.98019509169376,
+        261.273827084775
+      ],
+      "maximum_window_residual_ps": 0.0007433133220047239,
+      "full_prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 754.2812092577838,
+        "violation_ps": 404.28120925778376,
+        "total_area_um2": 3502.048364814861,
+        "comb_area_um2": 942.7429189171114,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 472.8587542577837,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 754.2812092577838
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 512.0042173986319,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 709.7689878986323
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 512.0042173986319,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 709.7689878986323
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 489.74200056300606,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 695.0588335630059
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 5,
+        "G_members_not_billed_separately": 0
+      },
+      "rtl_sha256": "7c21841924530588e0082f59d89df53a290679507fa73643d1e1bacad2571a68",
+      "actual_global_T_retained": true
+    },
+    {
+      "case": "add512",
+      "T_clk_ps": 400,
+      "status": "passed",
+      "native_owner_checks": {
+        "operators": 5,
+        "exact_v1_projections": 4,
+        "carry_pin_uses": 1,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 20,
+        "public_covered": 0,
+        "public_uncovered": 5,
+        "diagnostic_covered": 0,
+        "diagnostic_uncovered": 5
+      },
+      "requested_deadline_feasible": true,
+      "allocation_envelope_ps": null,
+      "owners": 5,
+      "budget_variables": 4,
+      "families": {
+        "Add": 4
+      },
+      "boundary_extrapolated_owners": 0,
+      "budget_range_ps": [
+        79.43769133834454,
+        202.23522957977545
+      ],
+      "tau_range_ps": [
+        188.4762888383445,
+        311.2738270797754
+      ],
+      "maximum_window_residual_ps": 0.003831987235315637,
+      "full_prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 781.1623519325294,
+        "violation_ps": 381.1623519325294,
+        "total_area_um2": 3385.549759583845,
+        "comb_area_um2": 828.6664570887796,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 499.7398969325293,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 781.1623519325294
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 526.082580889991,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 723.8473513899914
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 526.082580889991,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 723.8473513899914
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 504.6244980814088,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 709.9413310814086
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 5,
+        "G_members_not_billed_separately": 0
+      },
+      "rtl_sha256": "7c21841924530588e0082f59d89df53a290679507fa73643d1e1bacad2571a68",
+      "actual_global_T_retained": true
+    },
+    {
+      "case": "barrett64",
+      "T_clk_ps": 1100,
+      "status": "passed",
+      "native_owner_checks": {
+        "correlated_G_regions": 3,
+        "G_regions": 3,
+        "operators": 26,
+        "exact_v1_projections": 25,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 1,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 104,
+        "G_integer_checks": 12,
+        "public_covered": 0,
+        "public_uncovered": 29,
+        "diagnostic_covered": 3,
+        "diagnostic_uncovered": 26
+      },
+      "requested_deadline_feasible": true,
+      "allocation_envelope_ps": null,
+      "owners": 29,
+      "budget_variables": 29,
+      "families": {
+        "Mul": 22,
+        "G": 3,
+        "Sub": 2,
+        "Compare": 1,
+        "Mux": 1
+      },
+      "boundary_extrapolated_owners": 3,
+      "budget_range_ps": [
+        249.8703659351751,
+        902.2352295097762
+      ],
+      "tau_range_ps": [
+        404.3417559351751,
+        1035.4726055097763
+      ],
+      "maximum_window_residual_ps": 0.0007357973156558728,
+      "full_prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1334.0362883470405,
+        "violation_ps": 234.03628834704045,
+        "total_area_um2": 10101.379301127547,
+        "comb_area_um2": 7957.492121941153,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1052.6138333470403,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1334.0362883470405
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 558.9489109023106,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 756.713681402311
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 1054.3172916372587,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1252.082062137259
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 715.5781267695404,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 913.3428972695408
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 1054.3172916372587,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1252.082062137259
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 1053.1952673634091,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1250.9600378634095
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 653.3837359311186,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 851.148506431119
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 29,
+        "G_members_not_billed_separately": 19
+      },
+      "rtl_sha256": "18a83492966603a3d9d13da0522bdba7ff5efe07070ae9de89dd3b44d4eaa752",
+      "actual_global_T_retained": true
+    },
+    {
+      "case": "barrett64",
+      "T_clk_ps": 900,
+      "status": "passed",
+      "native_owner_checks": {
+        "correlated_G_regions": 3,
+        "G_regions": 3,
+        "operators": 26,
+        "exact_v1_projections": 25,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 1,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 104,
+        "G_integer_checks": 12,
+        "public_covered": 0,
+        "public_uncovered": 29,
+        "diagnostic_covered": 3,
+        "diagnostic_uncovered": 26
+      },
+      "requested_deadline_feasible": true,
+      "allocation_envelope_ps": null,
+      "owners": 29,
+      "budget_variables": 29,
+      "families": {
+        "Mul": 22,
+        "G": 3,
+        "Sub": 2,
+        "Compare": 1,
+        "Mux": 1
+      },
+      "boundary_extrapolated_owners": 3,
+      "budget_range_ps": [
+        188.04138395224268,
+        702.2352295297751
+      ],
+      "tau_range_ps": [
+        342.5127739522427,
+        853.4479359521745
+      ],
+      "maximum_window_residual_ps": 0.002392344771124044,
+      "full_prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1328.856109230515,
+        "violation_ps": 428.8561092305149,
+        "total_area_um2": 10214.96494751932,
+        "comb_area_um2": 8068.958031852166,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1047.4336542305148,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1328.856109230515
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 548.9861109079907,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 746.7508814079911
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 1049.8309318610218,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1247.5957023610222
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 702.613395500286,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 900.3781660002863
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 1049.8309318610218,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1247.5957023610222
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 1022.0554008456504,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1219.8201713456508
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 633.3899672739228,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 831.1547377739232
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 29,
+        "G_members_not_billed_separately": 19
+      },
+      "rtl_sha256": "18a83492966603a3d9d13da0522bdba7ff5efe07070ae9de89dd3b44d4eaa752",
+      "actual_global_T_retained": true
+    },
+    {
+      "case": "horner64",
+      "T_clk_ps": 1150,
+      "status": "passed",
+      "native_owner_checks": {
+        "correlated_G_regions": 4,
+        "G_regions": 4,
+        "operators": 40,
+        "exact_v1_projections": 40,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 160,
+        "G_integer_checks": 16,
+        "public_covered": 0,
+        "public_uncovered": 44,
+        "diagnostic_covered": 1,
+        "diagnostic_uncovered": 43
+      },
+      "requested_deadline_feasible": true,
+      "allocation_envelope_ps": null,
+      "owners": 44,
+      "budget_variables": 44,
+      "families": {
+        "G": 4,
+        "Mul": 40
+      },
+      "boundary_extrapolated_owners": 0,
+      "budget_range_ps": [
+        868.5775449873086,
+        952.235229504774
+      ],
+      "tau_range_ps": [
+        1001.8149209873086,
+        1085.472605504774
+      ],
+      "maximum_window_residual_ps": 1.1368683772161603e-13,
+      "full_prediction": {
+        "status": "diagnostic_complete",
+        "target_met": true,
+        "critical_required_ps": 1087.9746587698367,
+        "violation_ps": 0.0,
+        "total_area_um2": 6773.774835594491,
+        "comb_area_um2": 4119.324012929825,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 806.5522037698365,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1087.9746587698367
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 659.4399191963951,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 857.2046896963955
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 808.1358772035128,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1005.9006477035132
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 659.4399191963951,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 857.2046896963955
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 808.1358772035128,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1005.9006477035132
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 659.4399191963951,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 857.2046896963955
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 808.1358772035128,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1005.9006477035132
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 659.0925753820575,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 864.4094083820573
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 44,
+        "G_members_not_billed_separately": 64
+      },
+      "rtl_sha256": "4f83e78449a4ac88b6c831e60335f7d6554244fe5d5aedf12a023a8b41634f71",
+      "actual_global_T_retained": true
+    },
+    {
+      "case": "horner64",
+      "T_clk_ps": 950,
+      "status": "passed",
+      "native_owner_checks": {
+        "correlated_G_regions": 4,
+        "G_regions": 4,
+        "operators": 40,
+        "exact_v1_projections": 40,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 160,
+        "G_integer_checks": 16,
+        "public_covered": 0,
+        "public_uncovered": 44,
+        "diagnostic_covered": 1,
+        "diagnostic_uncovered": 43
+      },
+      "requested_deadline_feasible": true,
+      "allocation_envelope_ps": null,
+      "owners": 44,
+      "budget_variables": 44,
+      "families": {
+        "G": 4,
+        "Mul": 40
+      },
+      "boundary_extrapolated_owners": 0,
+      "budget_range_ps": [
+        668.5775449901852,
+        752.2352295247739
+      ],
+      "tau_range_ps": [
+        801.8149209901852,
+        885.4726055247739
+      ],
+      "maximum_window_residual_ps": 1.1368683772161603e-13,
+      "full_prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1083.2301872698295,
+        "violation_ps": 133.23018726982946,
+        "total_area_um2": 6825.144210033748,
+        "comb_area_um2": 4169.583030616098,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 801.8077322698294,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1083.2301872698295
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 648.5999249715493,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 846.3646954715497
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 803.9895654797947,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1001.7543359797951
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 648.5999249715493,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 846.3646954715497
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 803.9895654797947,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1001.7543359797951
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 648.5999249715493,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 846.3646954715497
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 803.9895654797947,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1001.7543359797951
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 648.1097160722722,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 853.4265490722721
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 44,
+        "G_members_not_billed_separately": 64
+      },
+      "rtl_sha256": "4f83e78449a4ac88b6c831e60335f7d6554244fe5d5aedf12a023a8b41634f71",
+      "actual_global_T_retained": true
+    },
+    {
+      "case": "mac32",
+      "T_clk_ps": 1000,
+      "status": "passed",
+      "native_owner_checks": "step5 original owner checks retained",
+      "requested_deadline_feasible": true,
+      "allocation_envelope_ps": null,
+      "owners": 11,
+      "budget_variables": 11,
+      "families": {
+        "Mul": 9,
+        "Add": 1,
+        "G": 1
+      },
+      "boundary_extrapolated_owners": 0,
+      "budget_range_ps": [
+        718.5775449858769,
+        802.2352295197736
+      ],
+      "tau_range_ps": [
+        851.8149209858769,
+        917.2992105197736
+      ],
+      "maximum_window_residual_ps": 0.0,
+      "full_prediction": {
+        "status": "diagnostic_complete",
+        "target_met": true,
+        "critical_required_ps": 984.0155932178709,
+        "violation_ps": 0.0,
+        "total_area_um2": 981.625977143475,
+        "comb_area_um2": 585.3547025065536,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 702.5931382178708,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 984.0155932178709
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 595.8766247618607,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 793.6413952618611
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 482.5496049454031,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 687.8664379454029
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 11,
+        "G_members_not_billed_separately": 8
+      },
+      "rtl_sha256": "9b41cfd87866aa472b2e3191052ddfddc6728cf089c09f0ebb2bb513b8715bf7",
+      "actual_global_T_retained": true
+    },
+    {
+      "case": "mac32",
+      "T_clk_ps": 500,
+      "status": "passed",
+      "native_owner_checks": "step5 original owner checks retained",
+      "requested_deadline_feasible": true,
+      "allocation_envelope_ps": null,
+      "owners": 69,
+      "budget_variables": 69,
+      "families": {
+        "Mul": 64,
+        "G": 5
+      },
+      "boundary_extrapolated_owners": 0,
+      "budget_range_ps": [
+        197.41469981482874,
+        302.2352295697744
+      ],
+      "tau_range_ps": [
+        312.4786808148288,
+        417.29921056977446
+      ],
+      "maximum_window_residual_ps": 2.842170943040401e-14,
+      "full_prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 733.7405933428988,
+        "violation_ps": 233.74059334289882,
+        "total_area_um2": 1513.8718545088202,
+        "comb_area_um2": 820.1776507185086,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 313.06804543949215,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 594.4905004394923
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 526.2660130892208,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 724.0307835892212
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 528.423760342899,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 733.7405933428988
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 69,
+        "G_members_not_billed_separately": 64
+      },
+      "rtl_sha256": "a603cc65f248c0409d680555c3690cf9fc0f98e95de5a48fa1530482f7a85793",
+      "actual_global_T_retained": true
+    },
+    {
+      "case": "mac32",
+      "T_clk_ps": 750,
+      "status": "passed",
+      "native_owner_checks": "step5 original owner checks retained",
+      "requested_deadline_feasible": true,
+      "allocation_envelope_ps": null,
+      "owners": 69,
+      "budget_variables": 69,
+      "families": {
+        "Mul": 64,
+        "G": 5
+      },
+      "boundary_extrapolated_owners": 0,
+      "budget_range_ps": [
+        364.8951685480802,
+        552.235229544776
+      ],
+      "tau_range_ps": [
+        479.9591495480803,
+        667.2992105447761
+      ],
+      "maximum_window_residual_ps": 1.1368683772161603e-13,
+      "full_prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 773.1097730081631,
+        "violation_ps": 23.109773008163074,
+        "total_area_um2": 1456.568419894968,
+        "comb_area_um2": 764.8778639342225,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 330.20375398398846,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 611.6262089839886
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 558.5413335652964,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 756.3061040652968
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 567.7929400081632,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 773.1097730081631
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 69,
+        "G_members_not_billed_separately": 64
+      },
+      "rtl_sha256": "a603cc65f248c0409d680555c3690cf9fc0f98e95de5a48fa1530482f7a85793",
+      "actual_global_T_retained": true
+    },
+    {
+      "case": "mul128",
+      "T_clk_ps": 600,
+      "status": "passed",
+      "native_owner_checks": {
+        "correlated_G_regions": 73,
+        "G_regions": 73,
+        "operators": 1536,
+        "exact_v1_projections": 1536,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 6144,
+        "G_integer_checks": 292,
+        "public_covered": 0,
+        "public_uncovered": 1609,
+        "diagnostic_covered": 0,
+        "diagnostic_uncovered": 1609
+      },
+      "requested_deadline_feasible": true,
+      "allocation_envelope_ps": null,
+      "owners": 1609,
+      "budget_variables": 1609,
+      "families": {
+        "Mul": 1024,
+        "Add": 512,
+        "G": 73
+      },
+      "boundary_extrapolated_owners": 0,
+      "budget_range_ps": [
+        67.94382065983214,
+        402.2352295597752
+      ],
+      "tau_range_ps": [
+        176.9824181598321,
+        564.7867750990456
+      ],
+      "maximum_window_residual_ps": 0.0036056913810398328,
+      "full_prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1010.7761232087912,
+        "violation_ps": 410.7761232087912,
+        "total_area_um2": 93648.03112698074,
+        "comb_area_um2": 43417.735510710954,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 443.74416875831776,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 893.2539994638328
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 813.0113527087908,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1010.7761232087912
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 793.406871368508,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 991.1716418685083
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 803.4142741448379,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 1008.7311071448378
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 1609,
+        "G_members_not_billed_separately": 511
+      },
+      "rtl_sha256": "78374d7545b6be3e333da7bbabbe25b76ee9b45b9a61343c8b12c00598720aa1",
+      "actual_global_T_retained": true
+    },
+    {
+      "case": "mul128",
+      "T_clk_ps": 750,
+      "status": "passed",
+      "native_owner_checks": {
+        "correlated_G_regions": 73,
+        "G_regions": 73,
+        "operators": 1536,
+        "exact_v1_projections": 1536,
+        "carry_pin_uses": 0,
+        "selector_pin_uses": 0,
+        "multiple_consumers": 0,
+        "scalar_integer_checks": 6144,
+        "G_integer_checks": 292,
+        "public_covered": 0,
+        "public_uncovered": 1609,
+        "diagnostic_covered": 0,
+        "diagnostic_uncovered": 1609
+      },
+      "requested_deadline_feasible": true,
+      "allocation_envelope_ps": null,
+      "owners": 1609,
+      "budget_variables": 1609,
+      "families": {
+        "Mul": 1024,
+        "Add": 512,
+        "G": 73
+      },
+      "boundary_extrapolated_owners": 0,
+      "budget_range_ps": [
+        163.69011763705456,
+        552.2352295447745
+      ],
+      "tau_range_ps": [
+        272.7287151370545,
+        667.2992105447745
+      ],
+      "maximum_window_residual_ps": 0.00267209243418165,
+      "full_prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1035.8874509976672,
+        "violation_ps": 285.8874509976672,
+        "total_area_um2": 92341.43842570172,
+        "comb_area_um2": 42132.23355795855,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 489.31566652602606,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 937.6863458239286
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 838.1226804976667,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1035.8874509976672
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 817.9126792523707,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1015.6774497523711
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 828.8353154360608,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 1034.1521484360605
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 1609,
+        "G_members_not_billed_separately": 511
+      },
+      "rtl_sha256": "78374d7545b6be3e333da7bbabbe25b76ee9b45b9a61343c8b12c00598720aa1",
+      "actual_global_T_retained": true
+    }
+  ],
+  "online_file_reads": false,
+  "EDA_calls": 0,
+  "response_refitted": false,
+  "qualified": false,
+  "source_sha256": "0a5e241e65f6bc43a808e8ab923e0f5892017a69cf5be059a99558cc9e39ed33"
+}

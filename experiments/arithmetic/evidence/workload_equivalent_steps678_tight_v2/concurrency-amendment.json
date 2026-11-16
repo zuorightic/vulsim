@@ -1,0 +1,15 @@
+{
+  "version": "tight-four-physical-workers-v1",
+  "old_dispatch_workers": 3,
+  "new_global_workers": 4,
+  "threads_per_tool": 4,
+  "memory_limit_MiB": 8192,
+  "global_policy_sha256": "59097fbac13be8fb59fd7e7380e5cf39226857f012a6a8c3285e5f1f7744530c",
+  "user_authorization": "可不可以4并行每个4线程，如果并行数比这个效率还高，你就不用改",
+  "source": "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_tight_fourth.py",
+  "source_sha256": "dfd94d5a96fc44cbe3c0bcf1827565c565435989aeaaa916d6e8a2f79d63154c",
+  "original_frozen_sources_modified": false,
+  "model_or_selection_changed": false,
+  "task_claims": "same append-only ledger; atomic once-only identity",
+  "duplicate_dispatch_is_not_a_tool_failure": true
+}

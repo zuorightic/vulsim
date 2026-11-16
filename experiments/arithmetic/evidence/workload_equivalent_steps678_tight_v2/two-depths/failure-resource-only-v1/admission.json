@@ -1,0 +1,844 @@
+{
+  "version": "workload-original-clock-resource-successor-v1",
+  "id": "matrix-failure-resource-only-v1",
+  "role": "final_evaluation",
+  "tasks": [
+    {
+      "id": "dot16-L4-resource-T850-5d322a4d43a9",
+      "case": "dot16",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/selected/dot16/T850-L4/B/workload.sv",
+      "period_ps": 850,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/selected/dot16/T850-L4/B/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/dot16/final-selections.json",
+      "source_selection_sha256": "d721c8080b2e5ce6236eea21d6edae1ac543857c01e31a1a5e5ef3ae241b64b8",
+      "shared_methods": [
+        "B"
+      ],
+      "rtl_sha256": "5d322a4d43a9b34cbd12120da07a8ac377073b1c7792b75e074ce3da1847286d",
+      "threads": 2,
+      "abc_target_ps": 850,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 4,
+      "original_period_ps": 850,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T850-5d322a4d43a9",
+      "original_failure_reason": "grt: timeout",
+      "selected_methods": [
+        {
+          "method": "B",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/dot16/final-selections.json",
+          "T_ps": 850
+        }
+      ]
+    },
+    {
+      "id": "dot16-L4-resource-T850-8327002228a5",
+      "case": "dot16",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/selected/dot16/T850-L4/C/workload.sv",
+      "period_ps": 850,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/selected/dot16/T850-L4/C/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/dot16/final-selections.json",
+      "source_selection_sha256": "d721c8080b2e5ce6236eea21d6edae1ac543857c01e31a1a5e5ef3ae241b64b8",
+      "shared_methods": [
+        "C"
+      ],
+      "rtl_sha256": "8327002228a54ed3ca1f467965b5688a56f9d50e77ebede876872ecc897daf22",
+      "threads": 2,
+      "abc_target_ps": 850,
+      "memory_limit_MiB": 16384,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 4,
+      "original_period_ps": 850,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T850-8327002228a5",
+      "original_failure_reason": "grt: timeout",
+      "selected_methods": [
+        {
+          "method": "C",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/dot16/final-selections.json",
+          "T_ps": 850
+        }
+      ]
+    },
+    {
+      "id": "dot16-L4-resource-T850-13041929dd25",
+      "case": "dot16",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/selected/dot16/T850-L4/D/workload.sv",
+      "period_ps": 850,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/selected/dot16/T850-L4/D/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/dot16/final-selections.json",
+      "source_selection_sha256": "d721c8080b2e5ce6236eea21d6edae1ac543857c01e31a1a5e5ef3ae241b64b8",
+      "shared_methods": [
+        "D"
+      ],
+      "rtl_sha256": "13041929dd25f13910d1d62bc604e2765ed8ecada43c0465cf3e10fc23d1489f",
+      "threads": 2,
+      "abc_target_ps": 850,
+      "memory_limit_MiB": 16384,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 4,
+      "original_period_ps": 850,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T850-13041929dd25",
+      "original_failure_reason": "grt: timeout",
+      "selected_methods": [
+        {
+          "method": "D",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/dot16/final-selections.json",
+          "T_ps": 850
+        }
+      ]
+    },
+    {
+      "id": "dot16-L4-resource-T1050-5d322a4d43a9",
+      "case": "dot16",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/selected/dot16/T1050-L4/B/workload.sv",
+      "period_ps": 1050,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/selected/dot16/T1050-L4/B/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/dot16/final-selections.json",
+      "source_selection_sha256": "d721c8080b2e5ce6236eea21d6edae1ac543857c01e31a1a5e5ef3ae241b64b8",
+      "shared_methods": [
+        "B"
+      ],
+      "rtl_sha256": "5d322a4d43a9b34cbd12120da07a8ac377073b1c7792b75e074ce3da1847286d",
+      "threads": 2,
+      "abc_target_ps": 1050,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 4,
+      "original_period_ps": 1050,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T1050-5d322a4d43a9",
+      "original_failure_reason": "grt: timeout",
+      "selected_methods": [
+        {
+          "method": "B",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/dot16/final-selections.json",
+          "T_ps": 1050
+        }
+      ]
+    },
+    {
+      "id": "dot16-L4-resource-T1050-8327002228a5",
+      "case": "dot16",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/selected/dot16/T1050-L4/C/workload.sv",
+      "period_ps": 1050,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/selected/dot16/T1050-L4/C/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/dot16/final-selections.json",
+      "source_selection_sha256": "d721c8080b2e5ce6236eea21d6edae1ac543857c01e31a1a5e5ef3ae241b64b8",
+      "shared_methods": [
+        "C"
+      ],
+      "rtl_sha256": "8327002228a54ed3ca1f467965b5688a56f9d50e77ebede876872ecc897daf22",
+      "threads": 2,
+      "abc_target_ps": 1050,
+      "memory_limit_MiB": 16384,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 4,
+      "original_period_ps": 1050,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T1050-8327002228a5",
+      "original_failure_reason": "grt: timeout",
+      "selected_methods": [
+        {
+          "method": "C",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/dot16/final-selections.json",
+          "T_ps": 1050
+        }
+      ]
+    },
+    {
+      "id": "dot16-L4-resource-T1050-13041929dd25",
+      "case": "dot16",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/selected/dot16/T1050-L4/D/workload.sv",
+      "period_ps": 1050,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/selected/dot16/T1050-L4/D/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/dot16/final-selections.json",
+      "source_selection_sha256": "d721c8080b2e5ce6236eea21d6edae1ac543857c01e31a1a5e5ef3ae241b64b8",
+      "shared_methods": [
+        "D"
+      ],
+      "rtl_sha256": "13041929dd25f13910d1d62bc604e2765ed8ecada43c0465cf3e10fc23d1489f",
+      "threads": 2,
+      "abc_target_ps": 1050,
+      "memory_limit_MiB": 16384,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 4,
+      "original_period_ps": 1050,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T1050-13041929dd25",
+      "original_failure_reason": "grt: timeout",
+      "selected_methods": [
+        {
+          "method": "D",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/dot16/final-selections.json",
+          "T_ps": 1050
+        }
+      ]
+    },
+    {
+      "id": "dot16-L5-resource-T700-8bbe5fa52f58",
+      "case": "dot16",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/selected/dot16/T700-L5/B/workload.sv",
+      "period_ps": 700,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/selected/dot16/T700-L5/B/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/dot16/final-selections.json",
+      "source_selection_sha256": "ff669f8df6194614364661c973e036c17165a81b3c84058b8377d23d1a7265f7",
+      "shared_methods": [
+        "B"
+      ],
+      "rtl_sha256": "8bbe5fa52f58b339068607a6c578edc2f062ee57a6a7e31828dbdbf2d6f336c4",
+      "threads": 2,
+      "abc_target_ps": 700,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 5,
+      "original_period_ps": 700,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T700-8bbe5fa52f58",
+      "original_failure_reason": "grt: tool_nonzero_exit",
+      "selected_methods": [
+        {
+          "method": "B",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/dot16/final-selections.json",
+          "T_ps": 700
+        }
+      ]
+    },
+    {
+      "id": "dot16-L5-resource-T700-b6a28e166624",
+      "case": "dot16",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/selected/dot16/T700-L5/C/workload.sv",
+      "period_ps": 700,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/selected/dot16/T700-L5/C/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/dot16/final-selections.json",
+      "source_selection_sha256": "ff669f8df6194614364661c973e036c17165a81b3c84058b8377d23d1a7265f7",
+      "shared_methods": [
+        "C"
+      ],
+      "rtl_sha256": "b6a28e1666241813ee673329721374bd0056c5c539f4e860c1e3eb477b79d508",
+      "threads": 2,
+      "abc_target_ps": 700,
+      "memory_limit_MiB": 16384,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 5,
+      "original_period_ps": 700,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T700-b6a28e166624",
+      "original_failure_reason": "grt: memory_limit",
+      "selected_methods": [
+        {
+          "method": "C",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/dot16/final-selections.json",
+          "T_ps": 700
+        }
+      ]
+    },
+    {
+      "id": "dot16-L5-resource-T700-4c2ee7748c79",
+      "case": "dot16",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/selected/dot16/T700-L5/D/workload.sv",
+      "period_ps": 700,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/selected/dot16/T700-L5/D/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/dot16/final-selections.json",
+      "source_selection_sha256": "ff669f8df6194614364661c973e036c17165a81b3c84058b8377d23d1a7265f7",
+      "shared_methods": [
+        "D"
+      ],
+      "rtl_sha256": "4c2ee7748c79e869068a149f332de33903b35c397ba374ef94633bc57dfb3afc",
+      "threads": 2,
+      "abc_target_ps": 700,
+      "memory_limit_MiB": 16384,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 5,
+      "original_period_ps": 700,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T700-4c2ee7748c79",
+      "original_failure_reason": "grt: timeout",
+      "selected_methods": [
+        {
+          "method": "D",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/dot16/final-selections.json",
+          "T_ps": 700
+        }
+      ]
+    },
+    {
+      "id": "dot16-L5-resource-T850-8bbe5fa52f58",
+      "case": "dot16",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/selected/dot16/T850-L5/B/workload.sv",
+      "period_ps": 850,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/selected/dot16/T850-L5/B/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/dot16/final-selections.json",
+      "source_selection_sha256": "ff669f8df6194614364661c973e036c17165a81b3c84058b8377d23d1a7265f7",
+      "shared_methods": [
+        "B"
+      ],
+      "rtl_sha256": "8bbe5fa52f58b339068607a6c578edc2f062ee57a6a7e31828dbdbf2d6f336c4",
+      "threads": 2,
+      "abc_target_ps": 850,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 5,
+      "original_period_ps": 850,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T850-8bbe5fa52f58",
+      "original_failure_reason": "grt: timeout",
+      "selected_methods": [
+        {
+          "method": "B",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/dot16/final-selections.json",
+          "T_ps": 850
+        }
+      ]
+    },
+    {
+      "id": "dot16-L5-resource-T850-b6a28e166624",
+      "case": "dot16",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/selected/dot16/T850-L5/C/workload.sv",
+      "period_ps": 850,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/selected/dot16/T850-L5/C/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/dot16/final-selections.json",
+      "source_selection_sha256": "ff669f8df6194614364661c973e036c17165a81b3c84058b8377d23d1a7265f7",
+      "shared_methods": [
+        "C"
+      ],
+      "rtl_sha256": "b6a28e1666241813ee673329721374bd0056c5c539f4e860c1e3eb477b79d508",
+      "threads": 2,
+      "abc_target_ps": 850,
+      "memory_limit_MiB": 16384,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 5,
+      "original_period_ps": 850,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T850-b6a28e166624",
+      "original_failure_reason": "grt: memory_limit",
+      "selected_methods": [
+        {
+          "method": "C",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/dot16/final-selections.json",
+          "T_ps": 850
+        }
+      ]
+    },
+    {
+      "id": "dot16-L5-resource-T850-4c2ee7748c79",
+      "case": "dot16",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/selected/dot16/T850-L5/D/workload.sv",
+      "period_ps": 850,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/selected/dot16/T850-L5/D/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/dot16/final-selections.json",
+      "source_selection_sha256": "ff669f8df6194614364661c973e036c17165a81b3c84058b8377d23d1a7265f7",
+      "shared_methods": [
+        "D"
+      ],
+      "rtl_sha256": "4c2ee7748c79e869068a149f332de33903b35c397ba374ef94633bc57dfb3afc",
+      "threads": 2,
+      "abc_target_ps": 850,
+      "memory_limit_MiB": 16384,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 5,
+      "original_period_ps": 850,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T850-4c2ee7748c79",
+      "original_failure_reason": "grt: timeout",
+      "selected_methods": [
+        {
+          "method": "D",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/dot16/final-selections.json",
+          "T_ps": 850
+        }
+      ]
+    },
+    {
+      "id": "barrett64-L4-resource-T2150-83a434da7745",
+      "case": "barrett64",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/barrett64/L4/software/selected/barrett64/T2150-L4/C/workload.sv",
+      "period_ps": 2150,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/barrett64/L4/software/selected/barrett64/T2150-L4/C/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/barrett64/L4/software/barrett64/final-selections.json",
+      "source_selection_sha256": "a2483e05d7c49b2a3c9543f7760f8453c355ed68da699394effe7c5f5b456bae",
+      "shared_methods": [
+        "C"
+      ],
+      "rtl_sha256": "83a434da7745571b039f2438f4367eca82ce3ed01207c9f0cd759a4ab362cc00",
+      "threads": 2,
+      "abc_target_ps": 2150,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 4,
+      "original_period_ps": 2150,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L4/runs/barrett64-L4-T2150-83a434da7745",
+      "original_failure_reason": "grt: timeout",
+      "selected_methods": [
+        {
+          "method": "C",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/barrett64/L4/software/barrett64/final-selections.json",
+          "T_ps": 2150
+        }
+      ]
+    },
+    {
+      "id": "karatsuba256-L4-resource-T2300-1de0ecb23206",
+      "case": "karatsuba256",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/karatsuba256/L4/software/selected/karatsuba256/T2300-L4/C/workload.sv",
+      "period_ps": 2300,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/karatsuba256/L4/software/selected/karatsuba256/T2300-L4/C/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/karatsuba256/L4/software/karatsuba256/final-selections.json",
+      "source_selection_sha256": "0cdd770346c70680b1bae328f2571f801dbc977a6cd9e25727a87c06cb1d5dea",
+      "shared_methods": [
+        "C"
+      ],
+      "rtl_sha256": "1de0ecb23206e8cb62974e10ff8d80cb8e56cd5157e5198379e2e2e68f630d3a",
+      "threads": 2,
+      "abc_target_ps": 2300,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 4,
+      "original_period_ps": 2300,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4/runs/karatsuba256-L4-T2300-1de0ecb23206",
+      "original_failure_reason": "grt: timeout",
+      "selected_methods": [
+        {
+          "method": "C",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/karatsuba256/L4/software/karatsuba256/final-selections.json",
+          "T_ps": 2300
+        }
+      ]
+    },
+    {
+      "id": "karatsuba256-L4-resource-T2750-afb74d898573",
+      "case": "karatsuba256",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/karatsuba256/L4/software/selected/karatsuba256/T2750-L4/B/workload.sv",
+      "period_ps": 2750,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/karatsuba256/L4/software/selected/karatsuba256/T2750-L4/B/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/karatsuba256/L4/software/karatsuba256/final-selections.json",
+      "source_selection_sha256": "0cdd770346c70680b1bae328f2571f801dbc977a6cd9e25727a87c06cb1d5dea",
+      "shared_methods": [
+        "B",
+        "same_policy_static"
+      ],
+      "rtl_sha256": "afb74d898573e1b70984dc2855390d5b0b4a2e54cab6f6a8fa18539f75f10bdd",
+      "threads": 2,
+      "abc_target_ps": 2750,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 4,
+      "original_period_ps": 2750,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4/runs/karatsuba256-L4-T2750-afb74d898573",
+      "original_failure_reason": "grt: tool_nonzero_exit",
+      "selected_methods": [
+        {
+          "method": "B",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/karatsuba256/L4/software/karatsuba256/final-selections.json",
+          "T_ps": 2750
+        },
+        {
+          "method": "same_policy_static",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/karatsuba256/L4/software/karatsuba256/final-selections.json",
+          "T_ps": 2750
+        }
+      ]
+    },
+    {
+      "id": "karatsuba256-L4-resource-T2750-1de0ecb23206",
+      "case": "karatsuba256",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/karatsuba256/L4/software/selected/karatsuba256/T2750-L4/C/workload.sv",
+      "period_ps": 2750,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/karatsuba256/L4/software/selected/karatsuba256/T2750-L4/C/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/karatsuba256/L4/software/karatsuba256/final-selections.json",
+      "source_selection_sha256": "0cdd770346c70680b1bae328f2571f801dbc977a6cd9e25727a87c06cb1d5dea",
+      "shared_methods": [
+        "C"
+      ],
+      "rtl_sha256": "1de0ecb23206e8cb62974e10ff8d80cb8e56cd5157e5198379e2e2e68f630d3a",
+      "threads": 2,
+      "abc_target_ps": 2750,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 4,
+      "original_period_ps": 2750,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4/runs/karatsuba256-L4-T2750-1de0ecb23206",
+      "original_failure_reason": "grt: timeout",
+      "selected_methods": [
+        {
+          "method": "C",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/karatsuba256/L4/software/karatsuba256/final-selections.json",
+          "T_ps": 2750
+        }
+      ]
+    },
+    {
+      "id": "karatsuba256-L8-resource-T1150-f3011704032a",
+      "case": "karatsuba256",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/karatsuba256/T1150-L8/C/workload.sv",
+      "period_ps": 1150,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/karatsuba256/T1150-L8/C/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/karatsuba256/final-selections.json",
+      "source_selection_sha256": "6f1e3ea98d8b1cdbc5aff2998299037e94b7ab01643945711ab3ba2b5adff0e3",
+      "shared_methods": [
+        "C"
+      ],
+      "rtl_sha256": "f3011704032ac6988a5681f3e3f678833dbc389d95029a8a2a8f10f76c809044",
+      "threads": 2,
+      "abc_target_ps": 1150,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 8,
+      "original_period_ps": 1150,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1150-f3011704032a",
+      "original_failure_reason": "grt: timeout",
+      "selected_methods": [
+        {
+          "method": "C",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/karatsuba256/final-selections.json",
+          "T_ps": 1150
+        }
+      ]
+    },
+    {
+      "id": "karatsuba256-L8-resource-T1150-b5e7a118e6c3",
+      "case": "karatsuba256",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/karatsuba256/T1150-L8/D/workload.sv",
+      "period_ps": 1150,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/karatsuba256/T1150-L8/D/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/karatsuba256/final-selections.json",
+      "source_selection_sha256": "6f1e3ea98d8b1cdbc5aff2998299037e94b7ab01643945711ab3ba2b5adff0e3",
+      "shared_methods": [
+        "D"
+      ],
+      "rtl_sha256": "b5e7a118e6c322fc7513b881e24ad0df50ec3e843593f415d5f9c80767f6f1de",
+      "threads": 2,
+      "abc_target_ps": 1150,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 8,
+      "original_period_ps": 1150,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1150-b5e7a118e6c3",
+      "original_failure_reason": "grt: timeout",
+      "selected_methods": [
+        {
+          "method": "D",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/karatsuba256/final-selections.json",
+          "T_ps": 1150
+        }
+      ]
+    },
+    {
+      "id": "karatsuba256-L8-resource-T1400-f3011704032a",
+      "case": "karatsuba256",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/karatsuba256/T1400-L8/C/workload.sv",
+      "period_ps": 1400,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/karatsuba256/T1400-L8/C/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/karatsuba256/final-selections.json",
+      "source_selection_sha256": "6f1e3ea98d8b1cdbc5aff2998299037e94b7ab01643945711ab3ba2b5adff0e3",
+      "shared_methods": [
+        "C"
+      ],
+      "rtl_sha256": "f3011704032ac6988a5681f3e3f678833dbc389d95029a8a2a8f10f76c809044",
+      "threads": 2,
+      "abc_target_ps": 1400,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 8,
+      "original_period_ps": 1400,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1400-f3011704032a",
+      "original_failure_reason": "grt: timeout",
+      "selected_methods": [
+        {
+          "method": "C",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/karatsuba256/final-selections.json",
+          "T_ps": 1400
+        }
+      ]
+    },
+    {
+      "id": "dot16-L4-resource-T850-75964220595d",
+      "case": "dot16",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/selected/dot16/T850-L4/same_policy_static/workload.sv",
+      "period_ps": 850,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/selected/dot16/T850-L4/same_policy_static/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/dot16/final-selections.json",
+      "source_selection_sha256": "d721c8080b2e5ce6236eea21d6edae1ac543857c01e31a1a5e5ef3ae241b64b8",
+      "shared_methods": [
+        "same_policy_static"
+      ],
+      "rtl_sha256": "75964220595d3df82f176d8eae24c93ffbd3cf60cfe485ac47ddf2933b2311f8",
+      "threads": 2,
+      "abc_target_ps": 850,
+      "memory_limit_MiB": 16384,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 4,
+      "original_period_ps": 850,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T850-75964220595d",
+      "original_failure_reason": "grt: timeout",
+      "selected_methods": [
+        {
+          "method": "same_policy_static",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/dot16/final-selections.json",
+          "T_ps": 850
+        }
+      ]
+    },
+    {
+      "id": "dot16-L4-resource-T1050-fc4843e24724",
+      "case": "dot16",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/selected/dot16/T1050-L4/same_policy_static/workload.sv",
+      "period_ps": 1050,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/selected/dot16/T1050-L4/same_policy_static/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/dot16/final-selections.json",
+      "source_selection_sha256": "d721c8080b2e5ce6236eea21d6edae1ac543857c01e31a1a5e5ef3ae241b64b8",
+      "shared_methods": [
+        "same_policy_static"
+      ],
+      "rtl_sha256": "fc4843e247248434f85f71ec813ada4ef05ac44a4a3b6d370521d20dff77a8d7",
+      "threads": 2,
+      "abc_target_ps": 1050,
+      "memory_limit_MiB": 16384,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 4,
+      "original_period_ps": 1050,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T1050-fc4843e24724",
+      "original_failure_reason": "grt: timeout",
+      "selected_methods": [
+        {
+          "method": "same_policy_static",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/dot16/final-selections.json",
+          "T_ps": 1050
+        }
+      ]
+    },
+    {
+      "id": "dot16-L5-resource-T700-5d8ecc4f2639",
+      "case": "dot16",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/selected/dot16/T700-L5/same_policy_static/workload.sv",
+      "period_ps": 700,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/selected/dot16/T700-L5/same_policy_static/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/dot16/final-selections.json",
+      "source_selection_sha256": "ff669f8df6194614364661c973e036c17165a81b3c84058b8377d23d1a7265f7",
+      "shared_methods": [
+        "same_policy_static"
+      ],
+      "rtl_sha256": "5d8ecc4f26390a93aba33f500b6d8dfe4760f1f8440cc88791df37737a0c7d4f",
+      "threads": 2,
+      "abc_target_ps": 700,
+      "memory_limit_MiB": 16384,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 5,
+      "original_period_ps": 700,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T700-5d8ecc4f2639",
+      "original_failure_reason": "grt: timeout",
+      "selected_methods": [
+        {
+          "method": "same_policy_static",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/dot16/final-selections.json",
+          "T_ps": 700
+        }
+      ]
+    },
+    {
+      "id": "dot16-L5-resource-T850-5d8ecc4f2639",
+      "case": "dot16",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/selected/dot16/T850-L5/same_policy_static/workload.sv",
+      "period_ps": 850,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/selected/dot16/T850-L5/same_policy_static/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/dot16/final-selections.json",
+      "source_selection_sha256": "ff669f8df6194614364661c973e036c17165a81b3c84058b8377d23d1a7265f7",
+      "shared_methods": [
+        "same_policy_static"
+      ],
+      "rtl_sha256": "5d8ecc4f26390a93aba33f500b6d8dfe4760f1f8440cc88791df37737a0c7d4f",
+      "threads": 2,
+      "abc_target_ps": 850,
+      "memory_limit_MiB": 16384,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 5,
+      "original_period_ps": 850,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T850-5d8ecc4f2639",
+      "original_failure_reason": "grt: timeout",
+      "selected_methods": [
+        {
+          "method": "same_policy_static",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/dot16/final-selections.json",
+          "T_ps": 850
+        }
+      ]
+    },
+    {
+      "id": "karatsuba256-L8-resource-T1150-f0eca851430c",
+      "case": "karatsuba256",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/karatsuba256/T1150-L8/same_policy_static/workload.sv",
+      "period_ps": 1150,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/karatsuba256/T1150-L8/same_policy_static/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/karatsuba256/final-selections.json",
+      "source_selection_sha256": "6f1e3ea98d8b1cdbc5aff2998299037e94b7ab01643945711ab3ba2b5adff0e3",
+      "shared_methods": [
+        "same_policy_static"
+      ],
+      "rtl_sha256": "f0eca851430c14a9e0cc32c14aae3ba06b037aec9d0ab3b630ff1a75f0d4d4f3",
+      "threads": 2,
+      "abc_target_ps": 1150,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 8,
+      "original_period_ps": 1150,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1150-f0eca851430c",
+      "original_failure_reason": "grt: timeout",
+      "selected_methods": [
+        {
+          "method": "same_policy_static",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/karatsuba256/final-selections.json",
+          "T_ps": 1150
+        }
+      ]
+    },
+    {
+      "id": "karatsuba256-L8-resource-T1400-f0eca851430c",
+      "case": "karatsuba256",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/karatsuba256/T1400-L8/same_policy_static/workload.sv",
+      "period_ps": 1400,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/karatsuba256/T1400-L8/same_policy_static/functional-receipt.json",
+      "large": true,
+      "source_selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/karatsuba256/final-selections.json",
+      "source_selection_sha256": "6f1e3ea98d8b1cdbc5aff2998299037e94b7ab01643945711ab3ba2b5adff0e3",
+      "shared_methods": [
+        "same_policy_static"
+      ],
+      "rtl_sha256": "f0eca851430c14a9e0cc32c14aae3ba06b037aec9d0ab3b630ff1a75f0d4d4f3",
+      "threads": 2,
+      "abc_target_ps": 1400,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 14400,
+      "support_timeout_s": 300,
+      "L": 8,
+      "original_period_ps": 1400,
+      "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1400-f0eca851430c",
+      "original_failure_reason": "grt: timeout",
+      "selected_methods": [
+        {
+          "method": "same_policy_static",
+          "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/karatsuba256/final-selections.json",
+          "T_ps": 1400
+        }
+      ]
+    }
+  ],
+  "freeze_sha256": "be888dedfa0d1cd4cff4ddb55abbaf28599dfd55e07efbeefce4d37fe8de8703",
+  "source_sha256": "4bfd6681c31ffb9f0bc9c85ee8e136b86bc093c762e01bdd8a5f772508ef83a6",
+  "runtime_source_sha256": "3be8d3d1fa9cea3d08ee3605a5d46168dc490876b6e34a437093a6984296c7f1",
+  "policy_sha256": "8bf5a05cd879d54149374f4caa0da26b200a37ac6a9a220447c9752c9ec45109",
+  "parallel_jobs": 9,
+  "threads_per_tool": 2,
+  "automatic_retries": 0,
+  "authorized_attempts_per_task": 1,
+  "clocks_changed": false,
+  "D_reselected": false,
+  "original_failed_method_records": 26,
+  "physical_tasks": 25,
+  "call_caps": {
+    "synth": 25,
+    "grt": 25,
+    "support": 100
+  },
+  "worst_case_leaf_walltime_s": 481500,
+  "CPU_envelope_s": 963000,
+  "starting_usage": {
+    "synth": 3791,
+    "grt": 3763,
+    "final": 16,
+    "support_calls": 23572,
+    "walltime_s": 997463.581066736,
+    "CPU_time_s": 2304947.79,
+    "pending": 8
+  },
+  "at": "2026-11-16T15:55:53.211936+00:00",
+  "user_instruction": "保持原时钟，只放宽内存与时间；改时钟必须重新生成D，旧变时钟批次撤回",
+  "qualification": "diagnostic_only; original-T resource successor"
+}

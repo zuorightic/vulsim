@@ -1,0 +1,491 @@
+{
+  "checked_at": "2026-11-16T05:22:35.868671+00:00",
+  "required_main_records": 148,
+  "main_measured": 45,
+  "registered_groups": 25,
+  "main_statuses": {
+    "measured_grt": 45,
+    "failed": 2,
+    "running": 8,
+    "not_started": 45
+  },
+  "active_jobs": [
+    {
+      "id": "e484cb5a327b40af98fdc4b7d6f09feb",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "montgomery-A-reference-9x2",
+      "task_id": "montgomery256-A-reference-9x2-capacity",
+      "owner_pid_in_namespace": 9,
+      "started_at": "2026-11-16T03:16:49.909346+00:00"
+    },
+    {
+      "id": "d079bcd78a6746858f88d9fbd52c3b53",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-dot16-L4",
+      "task_id": "dot16-L4-T850-2776e286ec00",
+      "owner_pid_in_namespace": 48509,
+      "started_at": "2026-11-16T04:51:58.352531+00:00"
+    },
+    {
+      "id": "4895be23322c45e8904b83a78d2cdc82",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-dot16-L4",
+      "task_id": "dot16-L4-T850-5d322a4d43a9",
+      "owner_pid_in_namespace": 50415,
+      "started_at": "2026-11-16T05:01:44.147577+00:00"
+    },
+    {
+      "id": "0df2f0311ccd45d7b34fd9f5de8c8397",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-dot16-L4",
+      "task_id": "dot16-L4-T850-8327002228a5",
+      "owner_pid_in_namespace": 51210,
+      "started_at": "2026-11-16T05:02:15.251674+00:00"
+    },
+    {
+      "id": "07b50260338f49428a7b2948fedd9b92",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-dot16-L4",
+      "task_id": "dot16-L4-T850-13041929dd25",
+      "owner_pid_in_namespace": 52770,
+      "started_at": "2026-11-16T05:05:12.212604+00:00"
+    },
+    {
+      "id": "de2769b55a9847489c31d1a58e118462",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-dot16-L4",
+      "task_id": "dot16-L4-T850-75964220595d",
+      "owner_pid_in_namespace": 54603,
+      "started_at": "2026-11-16T05:07:58.674469+00:00"
+    },
+    {
+      "id": "2163a742e9164e679823a7bec899194b",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-dot16-L4",
+      "task_id": "dot16-L4-T1050-2776e286ec00",
+      "owner_pid_in_namespace": 58341,
+      "started_at": "2026-11-16T05:11:38.029338+00:00"
+    },
+    {
+      "id": "c88a7d84610f44799defd4d6aa051351",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-dot16-L4",
+      "task_id": "dot16-L4-T1050-5d322a4d43a9",
+      "owner_pid_in_namespace": 59101,
+      "started_at": "2026-11-16T05:11:58.383842+00:00"
+    },
+    {
+      "id": "45c9dc454d014dbaa1a22c6b8aa1f9b0",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-dot16-L4",
+      "task_id": "dot16-L4-T1050-8327002228a5",
+      "owner_pid_in_namespace": 63611,
+      "started_at": "2026-11-16T05:18:44.268705+00:00"
+    }
+  ],
+  "software_active": [
+    {
+      "case": "horner64",
+      "L": 4,
+      "pid": 47333
+    },
+    {
+      "case": "barrett64",
+      "L": 4,
+      "pid": 47827
+    }
+  ],
+  "variants": [
+    {
+      "case": "mac32",
+      "L": 2,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "not_started": 8
+      },
+      "targets_ps": [
+        950,
+        1100
+      ]
+    },
+    {
+      "case": "mac32",
+      "L": 3,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "measured_grt": 12
+      },
+      "targets_ps": [
+        500,
+        750,
+        1000
+      ]
+    },
+    {
+      "case": "add512",
+      "L": 2,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "measured_grt": 8
+      },
+      "targets_ps": [
+        700,
+        800
+      ]
+    },
+    {
+      "case": "add512",
+      "L": 4,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "measured_grt": 8
+      },
+      "targets_ps": [
+        350,
+        400
+      ]
+    },
+    {
+      "case": "mul128",
+      "L": 2,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "not_started": 8
+      },
+      "targets_ps": [
+        1200,
+        1450
+      ]
+    },
+    {
+      "case": "mul128",
+      "L": 4,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "measured_grt": 4,
+        "not_started": 4
+      },
+      "targets_ps": [
+        600,
+        750
+      ]
+    },
+    {
+      "case": "dot16",
+      "L": 4,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "running": 7,
+        "not_started": 1
+      },
+      "targets_ps": [
+        850,
+        1050
+      ]
+    },
+    {
+      "case": "dot16",
+      "L": 5,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "not_started": 7,
+        "running": 1
+      },
+      "targets_ps": [
+        700,
+        850
+      ]
+    },
+    {
+      "case": "horner64",
+      "L": 4,
+      "status": "software_running",
+      "software_ready": false,
+      "main_statuses": {},
+      "targets_ps": [
+        1900,
+        2250
+      ]
+    },
+    {
+      "case": "horner64",
+      "L": 8,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "measured_grt": 7,
+        "not_started": 1
+      },
+      "targets_ps": [
+        950,
+        1150
+      ]
+    },
+    {
+      "case": "barrett64",
+      "L": 4,
+      "status": "software_running",
+      "software_ready": false,
+      "main_statuses": {},
+      "targets_ps": [
+        1800,
+        2150
+      ]
+    },
+    {
+      "case": "barrett64",
+      "L": 8,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "failed": 2,
+        "measured_grt": 6
+      },
+      "targets_ps": [
+        900,
+        1100
+      ]
+    },
+    {
+      "case": "karatsuba256",
+      "L": 4,
+      "status": "software_waiting",
+      "software_ready": false,
+      "main_statuses": {},
+      "targets_ps": [
+        2300,
+        2750
+      ]
+    },
+    {
+      "case": "karatsuba256",
+      "L": 8,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "not_started": 8
+      },
+      "targets_ps": [
+        1150,
+        1400
+      ]
+    },
+    {
+      "case": "montgomery256",
+      "L": 16,
+      "status": "awaiting_A_reference",
+      "software_ready": false,
+      "main_statuses": {},
+      "targets_ps": null
+    },
+    {
+      "case": "montgomery256",
+      "L": 32,
+      "status": "awaiting_A_reference",
+      "software_ready": false,
+      "main_statuses": {},
+      "targets_ps": null
+    },
+    {
+      "case": "ntt8x64",
+      "L": 8,
+      "status": "software_waiting",
+      "software_ready": false,
+      "main_statuses": {},
+      "targets_ps": [
+        1550,
+        1850
+      ]
+    },
+    {
+      "case": "ntt8x64",
+      "L": 16,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "not_started": 8
+      },
+      "targets_ps": [
+        800,
+        950
+      ]
+    }
+  ],
+  "retained_software_errors": [
+    {
+      "case": "mac32",
+      "L": 2,
+      "exit_code": 1,
+      "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/software-logs/mac32-L2.log",
+      "resolved": true
+    },
+    {
+      "case": "add512",
+      "L": 2,
+      "exit_code": 1,
+      "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/software-logs/add512-L2.log",
+      "resolved": true
+    },
+    {
+      "case": "mul128",
+      "L": 2,
+      "exit_code": 1,
+      "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/software-logs/mul128-L2.log",
+      "resolved": true
+    }
+  ],
+  "software_receipt_errors": [],
+  "main_failures": [
+    {
+      "case": "barrett64",
+      "L": 8,
+      "T_ps": 900,
+      "method": "A",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8/runs/barrett64-L8-T900-fe0456a5a32c"
+    },
+    {
+      "case": "barrett64",
+      "L": 8,
+      "T_ps": 1100,
+      "method": "A",
+      "reason": "grt: tool_nonzero_exit",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8/runs/barrett64-L8-T1100-fe0456a5a32c"
+    }
+  ],
+  "active_reservations": [
+    {
+      "task": "montgomery256-A-reference-9x2-capacity",
+      "stage": "grt",
+      "elapsed_s": 6636.0299870967865,
+      "timeout_s": 7200,
+      "remaining_s": 563.9700129032135
+    },
+    {
+      "task": "dot16-L4-T850-2776e286ec00",
+      "stage": "grt",
+      "elapsed_s": 1511.2891182899475,
+      "timeout_s": 7200,
+      "remaining_s": 5688.7108817100525
+    },
+    {
+      "task": "dot16-L4-T850-5d322a4d43a9",
+      "stage": "grt",
+      "elapsed_s": 925.6590430736542,
+      "timeout_s": 7200,
+      "remaining_s": 6274.340956926346
+    },
+    {
+      "task": "dot16-L4-T850-8327002228a5",
+      "stage": "grt",
+      "elapsed_s": 627.0923802852631,
+      "timeout_s": 7200,
+      "remaining_s": 6572.907619714737
+    },
+    {
+      "task": "dot16-L4-T850-13041929dd25",
+      "stage": "grt",
+      "elapsed_s": 584.7137660980225,
+      "timeout_s": 7200,
+      "remaining_s": 6615.2862339019775
+    },
+    {
+      "task": "dot16-L4-T850-75964220595d",
+      "stage": "grt",
+      "elapsed_s": 441.51172614097595,
+      "timeout_s": 7200,
+      "remaining_s": 6758.488273859024
+    },
+    {
+      "task": "dot16-L4-T1050-2776e286ec00",
+      "stage": "grt",
+      "elapsed_s": 375.08341121673584,
+      "timeout_s": 7200,
+      "remaining_s": 6824.916588783264
+    },
+    {
+      "task": "dot16-L4-T1050-5d322a4d43a9",
+      "stage": "grt",
+      "elapsed_s": 299.96628308296204,
+      "timeout_s": 7200,
+      "remaining_s": 6900.033716917038
+    },
+    {
+      "task": "dot16-L4-T1050-8327002228a5",
+      "stage": "synth",
+      "elapsed_s": 222.64840722084045,
+      "timeout_s": 3600,
+      "remaining_s": 3377.3515927791595
+    }
+  ],
+  "memory_available_MiB": 30411,
+  "disk_free_GiB": 89.0882568359375,
+  "ledger_usage": {
+    "synth": 3718,
+    "grt": 3690,
+    "final": 16,
+    "support_calls": 23349,
+    "walltime_s": 671067.5560873329,
+    "CPU_time_s": 1665927.3699999999,
+    "pending": 9
+  },
+  "source_sha256": "595ccad2734adad5272e2aaf972033bd209ee56f025aeaa338ce10893b8ef379",
+  "model_refitted": false,
+  "backend_sources_changed": false,
+  "current_failures": [
+    {
+      "case": "barrett64",
+      "L": 8,
+      "T_ps": 900,
+      "method": "A",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8/runs/barrett64-L8-T900-fe0456a5a32c",
+      "manifest_sha256": "1b40cbf4644c17639a77fb92cdb2d6012f4a74cc2a4d7698d91ddd48df780db1",
+      "cleanup": {
+        "term_sent": 7,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "timed_out": true,
+      "walltime_s": 7200.149145745003
+    },
+    {
+      "case": "barrett64",
+      "L": 8,
+      "T_ps": 1100,
+      "method": "A",
+      "reason": "grt: tool_nonzero_exit",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8/runs/barrett64-L8-T1100-fe0456a5a32c",
+      "manifest_sha256": "976bc78559c7ae69930aff5f56964b4a07555ca25e0dd05403795717e15635bb",
+      "cleanup": {
+        "term_sent": 7,
+        "kill_sent": 0,
+        "remaining_live_pids": []
+      },
+      "timed_out": false,
+      "walltime_s": 6211.739856746979
+    }
+  ],
+  "all_completed_main_setup_met": 0,
+  "frozen_readout_validation": "freeze-readout-validation.json",
+  "monitor_validation": "monitor-validation.json",
+  "raw_abort_incident": "../barrett-T1100-tool-abort-incident.json",
+  "known_final_scope": "expanded matrix requires 37 target groups and 185 owner/attribution implementations; legacy 19/95 counters do not close it"
+}

@@ -1,0 +1,58 @@
+{
+  "status": "proven",
+  "command": {
+    "command": [
+      "/usr/bin/python3",
+      "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_buffer_equivalence.py",
+      "--before",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/montgomery256-A-reference/results/asap7/arithmetic_probe/base/4_before_rsz_lec.v",
+      "--after",
+      "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/montgomery256-A-reference/results/asap7/arithmetic_probe/base/4_after_rsz_lec.v",
+      "--liberty",
+      "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib.gz",
+      "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib.gz",
+      "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib.gz",
+      "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib",
+      "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz",
+      "--output",
+      "/home/zyrv/vulsim-artifacts/montgomery-cts-buffer-proof-v2/proof.json"
+    ],
+    "exit_code": 0,
+    "process_exit_code": 0,
+    "timed_out": false,
+    "CPU_limit_s": 1200,
+    "CPU_limit_exceeded": false,
+    "sampled_process_tree_CPU_s": 25.04,
+    "cancelled_signal": null,
+    "walltime_s": 25.36682840998401,
+    "unexpected_live_descendants": false,
+    "memory_limit_exceeded": false,
+    "memory_limit_MiB": 8192,
+    "sampled_process_tree_peak_rss_KiB": 1028244,
+    "sampled_process_tree_peak_threads": 2,
+    "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+    "resource_sampling_interval_s": 0.5,
+    "cleanup": {
+      "term_sent": 0,
+      "kill_sent": 0,
+      "remaining_live_pids": []
+    },
+    "log": "/home/zyrv/vulsim-artifacts/montgomery-cts-buffer-proof-v2/proof.log",
+    "gnu_time": "/home/zyrv/vulsim-artifacts/montgomery-cts-buffer-proof-v2/proof.resources.txt"
+  },
+  "proof": {
+    "status": "proven",
+    "method": "mapped-graph-isomorphism-after-identity-buffers-v1",
+    "nonbuffer_instances": 704168,
+    "input_connections_checked": 1315112,
+    "output_bits_checked": 257,
+    "before_buffers": 10480,
+    "after_buffers": 31793,
+    "function_equivalent_resized_cells": 0,
+    "sequential_scope": "same Liberty state signatures, state-instance correspondence and every data/control/clock input",
+    "unsupported_changes_fail_closed": true
+  },
+  "original_check_unchanged": true,
+  "application_PPA_for_selection": false,
+  "admission_sha256": "88b72b70ac0562081652d7336b768d48ec3b24cb42141d19a2782bc45526b34e"
+}

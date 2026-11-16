@@ -1,0 +1,29 @@
+{
+  "version": "equivalent-period-nine-case-physical-v1",
+  "files": {
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-v1/software/add512/archive-0/0/workload.sv": "27125920dc8d6d7dda41be6c3f475657a40d24bf3d3ff22f449f62856526d998",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-v1/software/add512/archive-0/0/functional-receipt.json": "9a7d86006bce920984d660be02bf7439dd0ae8fe7c31c4d0831bc38b7f845cc1"
+  },
+  "application_PPA_for_selection": false,
+  "role": "clock_calibration",
+  "selection_frozen_before_measurement": true,
+  "tasks": [
+    {
+      "id": "add512-clock-probe",
+      "case": "add512",
+      "method": "C",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-v1/software/add512/archive-0/0/workload.sv",
+      "period_ps": 1100,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-v1/software/add512/archive-0/0/functional-receipt.json",
+      "large": false,
+      "rtl_sha256": "27125920dc8d6d7dda41be6c3f475657a40d24bf3d3ff22f449f62856526d998",
+      "abc_target_ps": 1100,
+      "threads": 4,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 300,
+      "grt_timeout_s": 1200,
+      "support_timeout_s": 300
+    }
+  ]
+}

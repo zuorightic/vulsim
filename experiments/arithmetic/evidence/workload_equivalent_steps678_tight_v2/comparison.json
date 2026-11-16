@@ -1,0 +1,4507 @@
+{
+  "version": "equivalent-nine-case-ABCD-grt-v1",
+  "main_records": 52,
+  "main_measured": 24,
+  "required_main_records": 76,
+  "physical_comparison_complete": false,
+  "qualification": "diagnostic_only",
+  "precision_qualified": false,
+  "records": [
+    {
+      "case": "mac32",
+      "target_ps": 500,
+      "L": 1,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "A",
+      "task_id": "mac32-T500-073243214bc6",
+      "rtl_sha256": "073243214bc69543f6e661766532df485f4ead355634215b916e747d21bc9f84",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1699.3638745075173,
+        "violation_ps": 1199.3638745075173,
+        "total_area_um2": 699.0452364523975,
+        "comb_area_um2": 535.3220013718792,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1494.0470415075174,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 1699.3638745075173
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 2,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 764.56062,
+      "Tmin_ps": 1440.360901,
+      "frequency_MHz": 694.2704424326774,
+      "sequential_area_um2": 56.58498,
+      "sequential_cells": 194,
+      "combinational_and_buffer_area_um2": 697.30308,
+      "physical_only_area_um2": 10.672559999999999,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": -4.178602,
+      "hold_met": false,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": 0.17981810900844297,
+      "area_error": -0.08569024068700071,
+      "clock_readout_sha256": "052561cad89f7d4ffb93bde6fd2b5d5686909d599a64ad84fe6fb369465a2981"
+    },
+    {
+      "case": "mac32",
+      "target_ps": 500,
+      "L": 3,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "B",
+      "task_id": "mac32-T500-63bbc97d17bb",
+      "rtl_sha256": "63bbc97d17bb9f35fc8f7c0c615acd7e0d8865d8ecaa28fcd51618a147a0dd62",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1318.0671285118929,
+        "violation_ps": 818.0671285118929,
+        "total_area_um2": 816.1988325569129,
+        "comb_area_um2": 535.3220013718792,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1036.6446735118927,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1318.0671285118929
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 463.692770135754,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 661.4575406357544
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 2,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 868.85136,
+      "Tmin_ps": 1167.750366,
+      "frequency_MHz": 856.3474087577379,
+      "sequential_area_um2": 113.18454000000001,
+      "sequential_cells": 388,
+      "combinational_and_buffer_area_um2": 744.11946,
+      "physical_only_area_um2": 11.54736,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 0.111591,
+      "hold_met": true,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": 0.12872337006991175,
+      "area_error": -0.06060015540873087,
+      "clock_readout_sha256": "2aaee3acfcb3b6c25ffe53687a1306a6a455e31400338792007c2d8808410a8c"
+    },
+    {
+      "case": "mac32",
+      "target_ps": 500,
+      "L": 3,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "C",
+      "task_id": "mac32-T500-b469e122a49c",
+      "rtl_sha256": "b469e122a49cb87d4fab84468d899806edd0c345c725c2e33bdb3dc733e4b497",
+      "grammar": [
+        4,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 859.1263048422821,
+        "violation_ps": 359.12630484228214,
+        "total_area_um2": 2347.4949339924133,
+        "comb_area_um2": 1204.3782057296992,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 517.3036341983092,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 798.7260891983093
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 661.3615343422817,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 859.1263048422821
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 570.9594055861196,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 776.2762385861195
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 101,
+        "G_members_not_billed_separately": 32
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 2619.034560000001,
+      "Tmin_ps": 1143.552002,
+      "frequency_MHz": 874.4683217300686,
+      "sequential_area_um2": 522.34308,
+      "sequential_cells": 1791,
+      "combinational_and_buffer_area_um2": 2072.488680000001,
+      "physical_only_area_um2": 24.2028,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": -0.158318,
+      "hold_met": false,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": -0.24872126205041423,
+      "area_error": -0.10367928325756326,
+      "clock_readout_sha256": "e6580a7d9234b92aee6ed296463811c0ee5bcb30129edd9bfe0f03814c68f6b8"
+    },
+    {
+      "case": "mac32",
+      "target_ps": 500,
+      "L": 3,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "D",
+      "task_id": "mac32-T500-a603cc65f248",
+      "rtl_sha256": "a603cc65f248c0409d680555c3690cf9fc0f98e95de5a48fa1530482f7a85793",
+      "grammar": [
+        4,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 733.7405933428988,
+        "violation_ps": 233.74059334289882,
+        "total_area_um2": 1513.8718545088202,
+        "comb_area_um2": 820.1776507185086,
+        "stages": [
+          {
+            "boundary_ps": 231.42245500000013,
+            "comb_delay_ps": 313.06804543949215,
+            "required_ps": 594.4905004394923,
+            "stage": 0
+          },
+          {
+            "boundary_ps": 147.7647705000004,
+            "comb_delay_ps": 526.2660130892208,
+            "required_ps": 724.0307835892212,
+            "stage": 1
+          },
+          {
+            "boundary_ps": 155.31683299999986,
+            "comb_delay_ps": 528.423760342899,
+            "required_ps": 733.7405933428988,
+            "stage": 2
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 69,
+        "G_members_not_billed_separately": 64
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 1556.4441600000002,
+      "Tmin_ps": 679.986298,
+      "frequency_MHz": 1470.6178682441628,
+      "sequential_area_um2": 307.98792000000003,
+      "sequential_cells": 1056,
+      "combinational_and_buffer_area_um2": 1230.0271200000002,
+      "physical_only_area_um2": 18.429119999999998,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 0.430267,
+      "hold_met": true,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": 0.07905202722614102,
+      "area_error": -0.027352285796864106,
+      "clock_readout_sha256": "e53b336c540eab7a9301850c2add2fe45f588bafeb2242363e2e116a92dcbbcd"
+    },
+    {
+      "case": "mac32",
+      "target_ps": 500,
+      "L": 3,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "same_policy_static",
+      "task_id": "mac32-T500-83903048b70d",
+      "rtl_sha256": "83903048b70d5f494ca821529797a7b22866df6bc1cbeb2a0da95d9525eea364",
+      "grammar": [
+        4,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 530.3376600717102,
+        "violation_ps": 30.33766007171016,
+        "total_area_um2": 4830.830943955203,
+        "comb_area_um2": 4067.815054699868,
+        "stages": [
+          {
+            "boundary_ps": 231.42245500000013,
+            "comb_delay_ps": 221.57613454196138,
+            "required_ps": 530.3376600717102,
+            "stage": 0
+          },
+          {
+            "boundary_ps": 147.7647705000004,
+            "comb_delay_ps": 73.8280921806538,
+            "required_ps": 491.59243868572963,
+            "stage": 1
+          },
+          {
+            "boundary_ps": 155.31683299999986,
+            "comb_delay_ps": 73.8280921806538,
+            "required_ps": 279.1449251806537,
+            "stage": 2
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 82,
+        "G_members_not_billed_separately": 63
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 1825.3576800000005,
+      "Tmin_ps": 958.7701420000001,
+      "frequency_MHz": 1043.0028598032832,
+      "sequential_area_um2": 317.97522000000004,
+      "sequential_cells": 1090,
+      "combinational_and_buffer_area_um2": 1487.2912200000005,
+      "physical_only_area_um2": 20.09124,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 0.030628,
+      "hold_met": true,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": -0.4468563038838248,
+      "area_error": 1.646511966879391,
+      "clock_readout_sha256": "bfd5e62e6a25d5b567194e94ebd07bf7e2919143ddcb93decbf5613751aa54ac"
+    },
+    {
+      "case": "mac32",
+      "target_ps": 750,
+      "L": 1,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "A",
+      "task_id": "mac32-T750-073243214bc6",
+      "rtl_sha256": "073243214bc69543f6e661766532df485f4ead355634215b916e747d21bc9f84",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1724.338417019961,
+        "violation_ps": 974.3384170199611,
+        "total_area_um2": 676.1696546202909,
+        "comb_area_um2": 513.9088698118973,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1519.0215840199612,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 1724.338417019961
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 2,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 755.9584199999998,
+      "Tmin_ps": 1425.865906,
+      "frequency_MHz": 701.3282215333368,
+      "sequential_area_um2": 56.57040000000001,
+      "sequential_cells": 194,
+      "combinational_and_buffer_area_um2": 688.7154599999999,
+      "physical_only_area_um2": 10.672559999999999,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 0.112611,
+      "hold_met": true,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": 0.20932719533021849,
+      "area_error": -0.10554650000420518,
+      "clock_readout_sha256": "0ffd1af0e5c2d6fbd88c91a64cbdcd89d5bcdc790438e74a2e286aa363583b18"
+    },
+    {
+      "case": "mac32",
+      "target_ps": 750,
+      "L": 3,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "B",
+      "task_id": "mac32-T750-63bbc97d17bb",
+      "rtl_sha256": "63bbc97d17bb9f35fc8f7c0c615acd7e0d8865d8ecaa28fcd51618a147a0dd62",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1328.7995464501846,
+        "violation_ps": 578.7995464501846,
+        "total_area_um2": 793.3232507248063,
+        "comb_area_um2": 513.9088698118973,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1047.3770914501845,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1328.7995464501846
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 477.9348947099061,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 675.6996652099065
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 2,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 858.0767399999999,
+      "Tmin_ps": 1175.982422,
+      "frequency_MHz": 850.3528465155919,
+      "sequential_area_um2": 113.18454000000001,
+      "sequential_cells": 388,
+      "combinational_and_buffer_area_um2": 733.3448399999999,
+      "physical_only_area_um2": 11.54736,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 0.071457,
+      "hold_met": true,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": 0.12994847677254184,
+      "area_error": -0.07546351772126303,
+      "clock_readout_sha256": "787daf22549c509abdf2844acc2021596d9cddb9ae0184d661d095fb7e019cdb"
+    },
+    {
+      "case": "mac32",
+      "target_ps": 750,
+      "L": 3,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "C",
+      "task_id": "mac32-T750-b469e122a49c",
+      "rtl_sha256": "b469e122a49cb87d4fab84468d899806edd0c345c725c2e33bdb3dc733e4b497",
+      "grammar": [
+        4,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 890.5774115086109,
+        "violation_ps": 140.5774115086109,
+        "total_area_um2": 2295.963519212506,
+        "comb_area_um2": 1154.759704017146,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 542.278176710753,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 823.7006317107531
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 692.8126410086105,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 890.5774115086109
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 597.8818033319207,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 803.1986363319205
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 101,
+        "G_members_not_billed_separately": 32
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 2453.1870600000007,
+      "Tmin_ps": 1127.92807,
+      "frequency_MHz": 886.5813579761341,
+      "sequential_area_um2": 522.31392,
+      "sequential_cells": 1791,
+      "combinational_and_buffer_area_um2": 1906.6703400000006,
+      "physical_only_area_um2": 24.2028,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 0.261596,
+      "hold_met": true,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": -0.2104306691218253,
+      "area_error": -0.0640895035486998,
+      "clock_readout_sha256": "dedc87971ca073250ae917df8f2274931bc9c629068b927bf7324585a9f7a3be"
+    },
+    {
+      "case": "mac32",
+      "target_ps": 750,
+      "L": 3,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "D",
+      "task_id": "mac32-T750-a603cc65f248",
+      "rtl_sha256": "a603cc65f248c0409d680555c3690cf9fc0f98e95de5a48fa1530482f7a85793",
+      "grammar": [
+        4,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 773.1097730081631,
+        "violation_ps": 23.109773008163074,
+        "total_area_um2": 1456.568419894968,
+        "comb_area_um2": 764.8778639342225,
+        "stages": [
+          {
+            "boundary_ps": 231.42245500000013,
+            "comb_delay_ps": 330.20375398398846,
+            "required_ps": 611.6262089839886,
+            "stage": 0
+          },
+          {
+            "boundary_ps": 147.7647705000004,
+            "comb_delay_ps": 558.5413335652964,
+            "required_ps": 756.3061040652968,
+            "stage": 1
+          },
+          {
+            "boundary_ps": 155.31683299999986,
+            "comb_delay_ps": 567.7929400081632,
+            "required_ps": 773.1097730081631,
+            "stage": 2
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 69,
+        "G_members_not_billed_separately": 64
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 1394.60616,
+      "Tmin_ps": 752.738254,
+      "frequency_MHz": 1328.483034688443,
+      "sequential_area_um2": 307.98792000000003,
+      "sequential_cells": 1056,
+      "combinational_and_buffer_area_um2": 1068.18912,
+      "physical_only_area_um2": 18.429119999999998,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 0.525649,
+      "hold_met": true,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": 0.02706321739317774,
+      "area_error": 0.04442993417938723,
+      "clock_readout_sha256": "3a9fc298b88677d0b4c2924a66856fd70b4bc5bd96f45700d62b41d34a042938"
+    },
+    {
+      "case": "mac32",
+      "target_ps": 750,
+      "L": 3,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "same_policy_static",
+      "task_id": "mac32-T750-a4315f7c75b2",
+      "rtl_sha256": "a4315f7c75b243f66c36bed979221b1c4663c8a34f7c9dfcd20e4ba68a4707a9",
+      "grammar": [
+        8,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": true,
+        "critical_required_ps": 650.6547739032692,
+        "violation_ps": 0.0,
+        "total_area_um2": 2085.099718121531,
+        "comb_area_um2": 1694.9229394582785,
+        "stages": [
+          {
+            "boundary_ps": 231.42245500000013,
+            "comb_delay_ps": 369.232318903269,
+            "required_ps": 650.6547739032692,
+            "stage": 0
+          },
+          {
+            "boundary_ps": 147.7647705000004,
+            "comb_delay_ps": 73.8280921806538,
+            "required_ps": 501.7419006168177,
+            "stage": 1
+          },
+          {
+            "boundary_ps": 155.31683299999986,
+            "comb_delay_ps": 0.0,
+            "required_ps": 205.31683299999986,
+            "stage": 2
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 21,
+        "G_members_not_billed_separately": 16
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 1179.5219999999997,
+      "Tmin_ps": 1260.739288,
+      "frequency_MHz": 793.1854028173983,
+      "sequential_area_um2": 156.92454000000004,
+      "sequential_cells": 538,
+      "combinational_and_buffer_area_um2": 1009.1546999999998,
+      "physical_only_area_um2": 13.44276,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 0.060535,
+      "hold_met": true,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": -0.4839101310664722,
+      "area_error": 0.7677497478822197,
+      "clock_readout_sha256": "6d49c11993ed8b49013c33d2122601767b4125a71a65005bfb61dfefbc6c4893"
+    },
+    {
+      "case": "mac32",
+      "target_ps": 1000,
+      "L": 1,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "A",
+      "task_id": "mac32-T1000-073243214bc6",
+      "rtl_sha256": "073243214bc69543f6e661766532df485f4ead355634215b916e747d21bc9f84",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1737.2998098898945,
+        "violation_ps": 737.2998098898945,
+        "total_area_um2": 665.0308162685617,
+        "comb_area_um2": 503.4965571338902,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1531.9829768898946,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 1737.2998098898945
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 2,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 758.7432,
+      "Tmin_ps": 1444.706055,
+      "frequency_MHz": 692.1823277054099,
+      "sequential_area_um2": 56.58498,
+      "sequential_cells": 194,
+      "combinational_and_buffer_area_um2": 691.48566,
+      "physical_only_area_um2": 10.672559999999999,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 0.195746,
+      "hold_met": true,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": 0.20252822633175316,
+      "area_error": -0.12351001462871536,
+      "clock_readout_sha256": "9e5f879dfc0ab66344afb5b0b44213e95b135b4ccd11facbaa12be756bc5e533"
+    },
+    {
+      "case": "mac32",
+      "target_ps": 1000,
+      "L": 3,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "B",
+      "task_id": "mac32-T1000-63bbc97d17bb",
+      "rtl_sha256": "63bbc97d17bb9f35fc8f7c0c615acd7e0d8865d8ecaa28fcd51618a147a0dd62",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1335.0433794692194,
+        "violation_ps": 335.0433794692194,
+        "total_area_um2": 782.1844123730771,
+        "comb_area_um2": 503.4965571338902,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1053.6209244692193,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1335.0433794692194
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 484.65245456080464,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 682.4172250608051
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 2,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 850.5680400000002,
+      "Tmin_ps": 1175.411911,
+      "frequency_MHz": 850.7655832322088,
+      "sequential_area_um2": 113.19912000000001,
+      "sequential_cells": 388,
+      "combinational_and_buffer_area_um2": 725.8215600000002,
+      "physical_only_area_um2": 11.54736,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 0.007785,
+      "hold_met": true,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": 0.13580895937442938,
+      "area_error": -0.08039759832373095,
+      "clock_readout_sha256": "827d6c25967b855f0655d9c1652e0c1c0d9d9aa2822e9301ba761ee1a000163f"
+    },
+    {
+      "case": "mac32",
+      "target_ps": 1000,
+      "L": 3,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "C",
+      "task_id": "mac32-T1000-b469e122a49c",
+      "rtl_sha256": "b469e122a49cb87d4fab84468d899806edd0c345c725c2e33bdb3dc733e4b497",
+      "grammar": [
+        4,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": true,
+        "critical_required_ps": 908.1424364135985,
+        "violation_ps": 0.0,
+        "total_area_um2": 2273.369431960914,
+        "comb_area_um2": 1133.0722161942033,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 555.2395695806865,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 836.6620245806866
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 710.3776659135981,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 908.1424364135985
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 612.9223358844537,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 818.2391688844535
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 101,
+        "G_members_not_billed_separately": 32
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 2384.6902200000004,
+      "Tmin_ps": 1147.770569,
+      "frequency_MHz": 871.2542619656595,
+      "sequential_area_um2": 522.31392,
+      "sequential_cells": 1791,
+      "combinational_and_buffer_area_um2": 1838.1735000000003,
+      "physical_only_area_um2": 24.2028,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 0.476091,
+      "hold_met": true,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": -0.2087770318027744,
+      "area_error": -0.04668144612891745,
+      "clock_readout_sha256": "4dbebe2f2ce6026bd82466e602683d3d0d939319fbc89ccfebc40b1308581533"
+    },
+    {
+      "case": "mac32",
+      "target_ps": 1000,
+      "L": 3,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "D",
+      "task_id": "mac32-T1000-9b41cfd87866",
+      "rtl_sha256": "9b41cfd87866aa472b2e3191052ddfddc6728cf089c09f0ebb2bb513b8715bf7",
+      "grammar": [
+        12,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": true,
+        "critical_required_ps": 984.0155932178709,
+        "violation_ps": 0.0,
+        "total_area_um2": 981.625977143475,
+        "comb_area_um2": 585.3547025065536,
+        "stages": [
+          {
+            "boundary_ps": 231.42245500000013,
+            "comb_delay_ps": 702.5931382178708,
+            "required_ps": 984.0155932178709,
+            "stage": 0
+          },
+          {
+            "boundary_ps": 147.7647705000004,
+            "comb_delay_ps": 595.8766247618607,
+            "required_ps": 793.6413952618611,
+            "stage": 1
+          },
+          {
+            "boundary_ps": 155.31683299999986,
+            "comb_delay_ps": 482.5496049454031,
+            "required_ps": 687.8664379454029,
+            "stage": 2
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 11,
+        "G_members_not_billed_separately": 8
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 1002.6082800000001,
+      "Tmin_ps": 1000.593858,
+      "frequency_MHz": 999.4064944580142,
+      "sequential_area_um2": 169.18632000000002,
+      "sequential_cells": 580,
+      "combinational_and_buffer_area_um2": 820.4166000000001,
+      "physical_only_area_um2": 13.00536,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": -0.254512,
+      "hold_met": false,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": -0.0165684254901044,
+      "area_error": -0.02092771750949951,
+      "clock_readout_sha256": "916520825fc6db937d34046034f6ef91a809a451bb410c24676c5543d349eb3c"
+    },
+    {
+      "case": "mac32",
+      "target_ps": 1000,
+      "L": 3,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "same_policy_static",
+      "task_id": "mac32-T1000-f6095f4a151a",
+      "rtl_sha256": "f6095f4a151a874aec783e3110acfb039ef55c8a1b5088d70bfac9991d6ae5ee",
+      "grammar": [
+        16,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": true,
+        "critical_required_ps": 945.9671426258843,
+        "violation_ps": 0.0,
+        "total_area_um2": 1045.5431133731938,
+        "comb_area_um2": 762.7153227562253,
+        "stages": [
+          {
+            "boundary_ps": 231.42245500000013,
+            "comb_delay_ps": 664.5446876258842,
+            "required_ps": 945.9671426258843,
+            "stage": 0
+          },
+          {
+            "boundary_ps": 147.7647705000004,
+            "comb_delay_ps": 73.8280921806538,
+            "required_ps": 521.7562924228976,
+            "stage": 1
+          },
+          {
+            "boundary_ps": 155.31683299999986,
+            "comb_delay_ps": 0.0,
+            "required_ps": 205.31683299999986,
+            "stage": 2
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 6,
+        "G_members_not_billed_separately": 3
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 939.0540599999999,
+      "Tmin_ps": 1564.9551999999999,
+      "frequency_MHz": 638.9959278067513,
+      "sequential_area_um2": 113.18454000000001,
+      "sequential_cells": 388,
+      "combinational_and_buffer_area_um2": 813.73896,
+      "physical_only_area_um2": 12.13056,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 0.053652,
+      "hold_met": true,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": -0.3955308480230716,
+      "area_error": 0.11340034393035259,
+      "clock_readout_sha256": "9330c58bcaf94fcf6603b18371b7d667a73f99883fe1374fe060210cd71d83a9"
+    },
+    {
+      "case": "add512",
+      "target_ps": 350,
+      "L": 1,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "A",
+      "task_id": "add512-T350-41f1f36cf2c3",
+      "rtl_sha256": "41f1f36cf2c301bdcbee45562f1add398ae3160bfb8d6f760d070396d79c5bba",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 896.6974216716646,
+        "violation_ps": 546.6974216716646,
+        "total_area_um2": 2152.3726786085163,
+        "comb_area_um2": 987.9263638510635,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 691.3805886716648,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 896.6974216716646
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 1,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 2481.5597399999997,
+      "Tmin_ps": 841.8214720000001,
+      "frequency_MHz": 1187.9003247852531,
+      "sequential_area_um2": 448.77240000000006,
+      "sequential_cells": 1539,
+      "combinational_and_buffer_area_um2": 2012.6086199999997,
+      "physical_only_area_um2": 20.17872,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 0.086001,
+      "hold_met": true,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": 0.0651871584378696,
+      "area_error": -0.13265328901229012,
+      "clock_readout_sha256": "28402ecd4ea2ccf308f945d3a4b1c7d09289f0264995de64637c22eb3731cdca"
+    },
+    {
+      "case": "add512",
+      "target_ps": 350,
+      "L": 4,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "B",
+      "task_id": "add512-T350-27125920dc8d",
+      "rtl_sha256": "27125920dc8d6d7dda41be6c3f475657a40d24bf3d3ff22f449f62856526d998",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 972.8030436716649,
+        "violation_ps": 622.8030436716649,
+        "total_area_um2": 3083.5091426426593,
+        "comb_area_um2": 987.9263638510635,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 691.3805886716648,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 972.8030436716649
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 493.8107649013996
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 493.8107649013996
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 1,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 3440.57382,
+      "Tmin_ps": 893.141663,
+      "frequency_MHz": 1119.643211627896,
+      "sequential_area_um2": 898.5070800000001,
+      "sequential_cells": 3081,
+      "combinational_and_buffer_area_um2": 2512.58598,
+      "physical_only_area_um2": 29.48076,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 0.200867,
+      "hold_met": true,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": 0.08919232409793532,
+      "area_error": -0.10378055988269441,
+      "clock_readout_sha256": "e6ced9f420f422fd1c56ed43423009b217316ef94f7f22063c592eac228ad5e4"
+    },
+    {
+      "case": "add512",
+      "target_ps": 350,
+      "L": 4,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "C",
+      "task_id": "add512-T350-27125920dc8d",
+      "rtl_sha256": "27125920dc8d6d7dda41be6c3f475657a40d24bf3d3ff22f449f62856526d998",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 972.8030436716649,
+        "violation_ps": 622.8030436716649,
+        "total_area_um2": 3083.5091426426593,
+        "comb_area_um2": 987.9263638510635,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 691.3805886716648,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 972.8030436716649
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 493.8107649013996
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 493.8107649013996
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 1,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 3440.57382,
+      "Tmin_ps": 893.141663,
+      "frequency_MHz": 1119.643211627896,
+      "sequential_area_um2": 898.5070800000001,
+      "sequential_cells": 3081,
+      "combinational_and_buffer_area_um2": 2512.58598,
+      "physical_only_area_um2": 29.48076,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 0.200867,
+      "hold_met": true,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": 0.08919232409793532,
+      "area_error": -0.10378055988269441,
+      "clock_readout_sha256": "e6ced9f420f422fd1c56ed43423009b217316ef94f7f22063c592eac228ad5e4"
+    },
+    {
+      "case": "add512",
+      "target_ps": 350,
+      "L": 4,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "D",
+      "task_id": "add512-T350-7c2184192453",
+      "rtl_sha256": "7c21841924530588e0082f59d89df53a290679507fa73643d1e1bacad2571a68",
+      "grammar": [
+        0,
+        128
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 754.2812092577838,
+        "violation_ps": 404.28120925778376,
+        "total_area_um2": 3502.048364814861,
+        "comb_area_um2": 942.7429189171114,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 472.8587542577837,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 754.2812092577838
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 512.0042173986319,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 709.7689878986323
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 512.0042173986319,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 709.7689878986323
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 489.74200056300606,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 695.0588335630059
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 5,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 3703.2325199999996,
+      "Tmin_ps": 660.684143,
+      "frequency_MHz": 1513.5825652773387,
+      "sequential_area_um2": 1122.45588,
+      "sequential_cells": 3849,
+      "combinational_and_buffer_area_um2": 2549.7795599999995,
+      "physical_only_area_um2": 30.997079999999997,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 0.631495,
+      "hold_met": true,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": 0.14166688764888935,
+      "area_error": -0.054326633312546724,
+      "clock_readout_sha256": "9cb4975a6492607f094d7ef33d3f708dcc020dfb89e71bceb11538d7135f1019"
+    },
+    {
+      "case": "add512",
+      "target_ps": 350,
+      "L": 4,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "same_policy_static",
+      "task_id": "add512-T350-27125920dc8d",
+      "rtl_sha256": "27125920dc8d6d7dda41be6c3f475657a40d24bf3d3ff22f449f62856526d998",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 493.8107649013996,
+        "violation_ps": 143.81076490139958,
+        "total_area_um2": 2101.329691008623,
+        "comb_area_um2": 21.18653674322848,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 73.8280921806538,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 475.96912188325
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 493.8107649013996
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 493.8107649013996
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 1,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 3440.57382,
+      "Tmin_ps": 893.141663,
+      "frequency_MHz": 1119.643211627896,
+      "sequential_area_um2": 898.5070800000001,
+      "sequential_cells": 3081,
+      "combinational_and_buffer_area_um2": 2512.58598,
+      "physical_only_area_um2": 29.48076,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 0.200867,
+      "hold_met": true,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": -0.44710812924936905,
+      "area_error": -0.3892502236709391,
+      "clock_readout_sha256": "e6ced9f420f422fd1c56ed43423009b217316ef94f7f22063c592eac228ad5e4"
+    },
+    {
+      "case": "add512",
+      "target_ps": 400,
+      "L": 1,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "A",
+      "task_id": "add512-T400-41f1f36cf2c3",
+      "rtl_sha256": "41f1f36cf2c301bdcbee45562f1add398ae3160bfb8d6f760d070396d79c5bba",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 904.7246133809728,
+        "violation_ps": 504.72461338097276,
+        "total_area_um2": 2075.084263176853,
+        "comb_area_um2": 912.4437170780435,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 699.4077803809729,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 904.7246133809728
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 1,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 2467.708739999999,
+      "Tmin_ps": 841.418732,
+      "frequency_MHz": 1188.468906109402,
+      "sequential_area_um2": 448.77240000000006,
+      "sequential_cells": 1539,
+      "combinational_and_buffer_area_um2": 1998.7576199999992,
+      "physical_only_area_um2": 20.17872,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": -0.049821,
+      "hold_met": false,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": 0.07523707159513626,
+      "area_error": -0.15910486941143076,
+      "clock_readout_sha256": "654bd8c305cb0930f0ebe6d0f394c6eabe6f559e4774480cdffb116b9467cbbe"
+    },
+    {
+      "case": "add512",
+      "target_ps": 400,
+      "L": 4,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "B",
+      "task_id": "add512-T400-27125920dc8d",
+      "rtl_sha256": "27125920dc8d6d7dda41be6c3f475657a40d24bf3d3ff22f449f62856526d998",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 980.830235380973,
+        "violation_ps": 580.830235380973,
+        "total_area_um2": 3006.2207272109954,
+        "comb_area_um2": 912.4437170780435,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 699.4077803809729,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 980.830235380973
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 515.4066259833153
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 515.4066259833153
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 1,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 3425.410619999999,
+      "Tmin_ps": 907.5444640000001,
+      "frequency_MHz": 1101.8743870603346,
+      "sequential_area_um2": 898.5070800000001,
+      "sequential_cells": 3081,
+      "combinational_and_buffer_area_um2": 2497.422779999999,
+      "physical_only_area_um2": 29.48076,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 0.336134,
+      "hold_met": true,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": 0.08075171442065332,
+      "area_error": -0.12237653796641867,
+      "clock_readout_sha256": "bd012a1cfc04e7ce7c11198541de4d563a977434a8ebd90b6a42efddc2196783"
+    },
+    {
+      "case": "add512",
+      "target_ps": 400,
+      "L": 4,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "C",
+      "task_id": "add512-T400-27125920dc8d",
+      "rtl_sha256": "27125920dc8d6d7dda41be6c3f475657a40d24bf3d3ff22f449f62856526d998",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 980.830235380973,
+        "violation_ps": 580.830235380973,
+        "total_area_um2": 3006.2207272109954,
+        "comb_area_um2": 912.4437170780435,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 699.4077803809729,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 980.830235380973
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 515.4066259833153
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 515.4066259833153
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 1,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 3425.410619999999,
+      "Tmin_ps": 907.5444640000001,
+      "frequency_MHz": 1101.8743870603346,
+      "sequential_area_um2": 898.5070800000001,
+      "sequential_cells": 3081,
+      "combinational_and_buffer_area_um2": 2497.422779999999,
+      "physical_only_area_um2": 29.48076,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 0.336134,
+      "hold_met": true,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": 0.08075171442065332,
+      "area_error": -0.12237653796641867,
+      "clock_readout_sha256": "bd012a1cfc04e7ce7c11198541de4d563a977434a8ebd90b6a42efddc2196783"
+    },
+    {
+      "case": "add512",
+      "target_ps": 400,
+      "L": 4,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "D",
+      "task_id": "add512-T400-7c2184192453",
+      "rtl_sha256": "7c21841924530588e0082f59d89df53a290679507fa73643d1e1bacad2571a68",
+      "grammar": [
+        0,
+        128
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 781.1623519325294,
+        "violation_ps": 381.1623519325294,
+        "total_area_um2": 3385.549759583845,
+        "comb_area_um2": 828.6664570887796,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 499.7398969325293,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 781.1623519325294
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 526.082580889991,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 723.8473513899914
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 526.082580889991,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 723.8473513899914
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 504.6244980814088,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 709.9413310814086
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 5,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 3667.19076,
+      "Tmin_ps": 658.909332,
+      "frequency_MHz": 1517.6594888475493,
+      "sequential_area_um2": 1122.45588,
+      "sequential_cells": 3849,
+      "combinational_and_buffer_area_um2": 2513.7378,
+      "physical_only_area_um2": 30.997079999999997,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": -0.140096,
+      "hold_met": false,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": 0.1855384557408719,
+      "area_error": -0.07680020452935332,
+      "clock_readout_sha256": "9a65bd730bc8f3ebe26afe5cc475832227a67d3807a9d93916ad132a3d6bcb4f"
+    },
+    {
+      "case": "add512",
+      "target_ps": 400,
+      "L": 4,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "same_policy_static",
+      "task_id": "add512-T400-27125920dc8d",
+      "rtl_sha256": "27125920dc8d6d7dda41be6c3f475657a40d24bf3d3ff22f449f62856526d998",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 515.4066259833153,
+        "violation_ps": 115.40662598331528,
+        "total_area_um2": 2100.729441861786,
+        "comb_area_um2": 21.18653674322848,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 73.8280921806538,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 495.9689762750713
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 515.4066259833153
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 515.4066259833153
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 1,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 3425.410619999999,
+      "Tmin_ps": 907.5444640000001,
+      "frequency_MHz": 1101.8743870603346,
+      "sequential_area_um2": 898.5070800000001,
+      "sequential_cells": 3081,
+      "combinational_and_buffer_area_um2": 2497.422779999999,
+      "physical_only_area_um2": 29.48076,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 0.336134,
+      "hold_met": true,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": -0.4320866399077994,
+      "area_error": -0.38672186347638904,
+      "clock_readout_sha256": "bd012a1cfc04e7ce7c11198541de4d563a977434a8ebd90b6a42efddc2196783"
+    },
+    {
+      "case": "mul128",
+      "target_ps": 600,
+      "L": 1,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "A",
+      "task_id": "mul128-T600-6d72e638cd85",
+      "rtl_sha256": "6d72e638cd85592c68cfde92e58c0508ba2aef8cb4f52869c8ad8f7a7784f44f",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1751.6909772436204,
+        "violation_ps": 1151.6909772436204,
+        "total_area_um2": 7812.155656476085,
+        "comb_area_um2": 7337.4521551345615,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1546.3741442436205,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 1751.6909772436204
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 1,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 7702.803540000002,
+      "Tmin_ps": 1662.859985,
+      "frequency_MHz": 601.3735425836229,
+      "sequential_area_um2": 149.99904000000004,
+      "sequential_cells": 514,
+      "combinational_and_buffer_area_um2": 7487.8360200000025,
+      "physical_only_area_um2": 64.96848,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 0.890676,
+      "hold_met": true,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": 0.05342060849676433,
+      "area_error": 0.014196404712677246,
+      "clock_readout_sha256": "621dc031c543a49a0f21c7a313d78560ff638d27d3e49f2f2051d54a75ebdba9"
+    },
+    {
+      "case": "mul128",
+      "target_ps": 600,
+      "L": 4,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "B",
+      "task_id": "mul128-T600-e18af3cbdef4",
+      "rtl_sha256": "e18af3cbdef4e1c0a1ed5a9d9e3d3b914a099ebe87425b0159c3ad0f558af47f",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1827.7965992436207,
+        "violation_ps": 1227.7965992436207,
+        "total_area_um2": 8277.696207888108,
+        "comb_area_um2": 7337.4521551345615,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1546.3741442436205,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1827.7965992436207
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 532.7253520414779
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 532.7253520414779
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 1,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 8157.874500000001,
+      "Tmin_ps": 1772.376343,
+      "frequency_MHz": 564.2142561592518,
+      "sequential_area_um2": 374.83722000000006,
+      "sequential_cells": 1285,
+      "combinational_and_buffer_area_um2": 7716.231720000001,
+      "physical_only_area_um2": 66.80556,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 13.125223,
+      "hold_met": true,
+      "hold_review_required": false,
+      "timing_coverage_complete": true,
+      "period_error": 0.0312688986526497,
+      "area_error": 0.01468785869261735,
+      "clock_readout_sha256": "e655672f000de6e5763586d0972a78c6cc77a58b3f51dfc1d17f825a543ae169"
+    },
+    {
+      "case": "mul128",
+      "target_ps": 600,
+      "L": 4,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "C",
+      "task_id": "mul128-T600-78374d7545b6",
+      "rtl_sha256": "78374d7545b6be3e333da7bbabbe25b76ee9b45b9a61343c8b12c00598720aa1",
+      "grammar": [
+        4,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1025.9453995733547,
+        "violation_ps": 425.94539957335473,
+        "total_area_um2": 92727.099474473,
+        "comb_area_um2": 42511.28068207217,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 531.7836628652926,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 893.2539994638328
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 828.1806290733542,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1025.9453995733547
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 808.2103646545886,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1005.975135154589
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 820.010741777919,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 1025.327574777919
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 1609,
+        "G_members_not_billed_separately": 511
+      },
+      "qualification": "diagnostic_only",
+      "status": "failed",
+      "failure_reason": "grt: memory_limit"
+    },
+    {
+      "case": "mul128",
+      "target_ps": 600,
+      "L": 4,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "D",
+      "task_id": "mul128-T600-78374d7545b6",
+      "rtl_sha256": "78374d7545b6be3e333da7bbabbe25b76ee9b45b9a61343c8b12c00598720aa1",
+      "grammar": [
+        4,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1010.7761232087912,
+        "violation_ps": 410.7761232087912,
+        "total_area_um2": 93648.03112698074,
+        "comb_area_um2": 43417.735510710954,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 443.74416875831776,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 893.2539994638328
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 813.0113527087908,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1010.7761232087912
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 793.406871368508,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 991.1716418685083
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 803.4142741448379,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 1008.7311071448378
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 1609,
+        "G_members_not_billed_separately": 511
+      },
+      "qualification": "diagnostic_only",
+      "status": "failed",
+      "failure_reason": "grt: memory_limit"
+    },
+    {
+      "case": "mul128",
+      "target_ps": 600,
+      "L": 4,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "same_policy_static",
+      "task_id": "mul128-T600-334ab0c95758",
+      "rtl_sha256": "334ab0c9575839205454f701a9ed298e505e81074c06ee9a6d51253b49409aae",
+      "grammar": [
+        8,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 677.7541857719934,
+        "violation_ps": 77.75418577199343,
+        "total_area_um2": 31044.12306526304,
+        "comb_area_um2": 27097.580494589227,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 295.3123687226152,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 677.7541857719934
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 73.8280921806538,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 616.8682091408608
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 73.8280921806538,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 571.581213562251
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 261,
+        "G_members_not_billed_separately": 255
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 15075.953279999996,
+      "Tmin_ps": 1287.1998899999999,
+      "frequency_MHz": 776.8801161100162,
+      "sequential_area_um2": 1669.6724400000003,
+      "sequential_cells": 5719,
+      "combinational_and_buffer_area_um2": 13299.584399999996,
+      "physical_only_area_um2": 106.69644,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 6.343565,
+      "hold_met": true,
+      "hold_review_required": false,
+      "timing_coverage_complete": true,
+      "period_error": -0.4734662494634042,
+      "area_error": 1.0591814320920374,
+      "clock_readout_sha256": "30d585780a53d2883bd0f2122157c977c6976c7dad15e6b5dafa3b37c50b2c86"
+    },
+    {
+      "case": "mul128",
+      "target_ps": 750,
+      "L": 1,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "A",
+      "task_id": "mul128-T750-6d72e638cd85",
+      "rtl_sha256": "6d72e638cd85592c68cfde92e58c0508ba2aef8cb4f52869c8ad8f7a7784f44f",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1757.2680547664154,
+        "violation_ps": 1007.2680547664154,
+        "total_area_um2": 7679.516524253549,
+        "comb_area_um2": 7207.44950395497,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1551.9512217664155,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 1757.2680547664154
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 1,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 7666.73262,
+      "Tmin_ps": 1699.602966,
+      "frequency_MHz": 588.3727082175498,
+      "sequential_area_um2": 149.96988,
+      "sequential_cells": 514,
+      "combinational_and_buffer_area_um2": 7451.794260000001,
+      "physical_only_area_um2": 64.96848,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 0.886485,
+      "hold_met": true,
+      "hold_review_required": true,
+      "timing_coverage_complete": true,
+      "period_error": 0.03392856444710124,
+      "area_error": 0.001667451427769917,
+      "clock_readout_sha256": "5a7740f53d7a712c9184302550d3d2c5f0b754ccd931691e5218006b2db34334"
+    },
+    {
+      "case": "mul128",
+      "target_ps": 750,
+      "L": 4,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "B",
+      "task_id": "mul128-T750-e18af3cbdef4",
+      "rtl_sha256": "e18af3cbdef4e1c0a1ed5a9d9e3d3b914a099ebe87425b0159c3ad0f558af47f",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1833.3736767664157,
+        "violation_ps": 1083.3736767664157,
+        "total_area_um2": 8145.0570756655725,
+        "comb_area_um2": 7207.44950395497,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1551.9512217664155,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1833.3736767664157
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 559.5475381113173
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 559.5475381113173
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 1,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 8162.000640000001,
+      "Tmin_ps": 1798.567383,
+      "frequency_MHz": 555.9980734955872,
+      "sequential_area_um2": 374.8518,
+      "sequential_cells": 1285,
+      "combinational_and_buffer_area_um2": 7720.343280000001,
+      "physical_only_area_um2": 66.80556,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 9.701101,
+      "hold_met": true,
+      "hold_review_required": false,
+      "timing_coverage_complete": true,
+      "period_error": 0.01935223227964844,
+      "area_error": -0.0020759082339926183,
+      "clock_readout_sha256": "fd85201b1af063e6f4af61feea41309860da1e0f5c038f15b5d7bb71896be789"
+    },
+    {
+      "case": "mul128",
+      "target_ps": 750,
+      "L": 4,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "C",
+      "task_id": "mul128-T750-78374d7545b6",
+      "rtl_sha256": "78374d7545b6be3e333da7bbabbe25b76ee9b45b9a61343c8b12c00598720aa1",
+      "grammar": [
+        4,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1046.000056383181,
+        "violation_ps": 296.0000563831809,
+        "total_area_um2": 91750.85563128375,
+        "comb_area_um2": 41550.934582889764,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 544.3848523065844,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 937.6863458239286
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 848.2352858831806,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1046.000056383181
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 827.7814351726572,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1025.5462056726576
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 839.8675621736437,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 1045.1843951736437
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 1609,
+        "G_members_not_billed_separately": 511
+      },
+      "qualification": "diagnostic_only",
+      "status": "failed",
+      "failure_reason": "grt: memory_limit"
+    },
+    {
+      "case": "mul128",
+      "target_ps": 750,
+      "L": 4,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "D",
+      "task_id": "mul128-T750-78374d7545b6",
+      "rtl_sha256": "78374d7545b6be3e333da7bbabbe25b76ee9b45b9a61343c8b12c00598720aa1",
+      "grammar": [
+        4,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1035.8874509976672,
+        "violation_ps": 285.8874509976672,
+        "total_area_um2": 92341.43842570172,
+        "comb_area_um2": 42132.23355795855,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 489.31566652602606,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 937.6863458239286
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 838.1226804976667,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1035.8874509976672
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 817.9126792523707,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1015.6774497523711
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 828.8353154360608,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 1034.1521484360605
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 1609,
+        "G_members_not_billed_separately": 511
+      },
+      "qualification": "diagnostic_only",
+      "status": "failed",
+      "failure_reason": "grt: memory_limit"
+    },
+    {
+      "case": "mul128",
+      "target_ps": 750,
+      "L": 4,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "same_policy_static",
+      "task_id": "mul128-T750-334ab0c95758",
+      "rtl_sha256": "334ab0c9575839205454f701a9ed298e505e81074c06ee9a6d51253b49409aae",
+      "grammar": [
+        8,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": true,
+        "critical_required_ps": 710.8315164801265,
+        "violation_ps": 0.0,
+        "total_area_um2": 31043.562832725995,
+        "comb_area_um2": 27097.580494589227,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 295.3123687226152,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 710.8315164801265
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 73.8280921806538,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 648.3657149551946
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 73.8280921806538,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 600.5623895074032
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 261,
+        "G_members_not_billed_separately": 255
+      },
+      "qualification": "diagnostic_only",
+      "status": "measured_grt",
+      "area_um2": 14834.639700000002,
+      "Tmin_ps": 1309.24408,
+      "frequency_MHz": 763.7995201017063,
+      "sequential_area_um2": 1667.7478800000001,
+      "sequential_cells": 5719,
+      "combinational_and_buffer_area_um2": 13060.195380000001,
+      "physical_only_area_um2": 106.69644,
+      "area_breakdown_scope": "functional combinational includes shared buffers; shared is not separately attributed in mapped area",
+      "setup_met": false,
+      "hold_WNS_ps": 6.818018,
+      "hold_met": true,
+      "hold_review_required": false,
+      "timing_coverage_complete": true,
+      "period_error": -0.45706722883931117,
+      "area_error": 1.092640162519484,
+      "clock_readout_sha256": "ee78e839803401f803e18df149e35afa6e48315b83348c304bb04b2111487b47"
+    },
+    {
+      "case": "horner64",
+      "target_ps": 950,
+      "L": 1,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "A",
+      "task_id": "horner64-T950-6c415b9cf3b2",
+      "rtl_sha256": "6c415b9cf3b26a4cd234814aabda10bdb64cdf93a156f29633327d43f3c0dc1f",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 6887.037196912789,
+        "violation_ps": 5937.037196912789,
+        "total_area_um2": 4308.930093668997,
+        "comb_area_um2": 3868.261300810907,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 6681.720363912789,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 6887.037196912789
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 8,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "running",
+      "failure_reason": null
+    },
+    {
+      "case": "horner64",
+      "target_ps": 950,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "B",
+      "task_id": "horner64-T950-428e4557d83e",
+      "rtl_sha256": "428e4557d83e7d728b0d4ea3558ab2b0bc6cbf3799985300df61a2d3ac1ef774",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1463.0351262212012,
+        "violation_ps": 513.0351262212012,
+        "total_area_um2": 5416.546620606348,
+        "comb_area_um2": 3850.445681964597,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1181.612671221201,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1463.0351262212012
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 483.6196682726103,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 681.3844387726107
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 1181.612671221201,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1379.3774417212014
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 483.6196682726103,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 681.3844387726107
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 1181.612671221201,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1379.3774417212014
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 483.6196682726103,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 681.3844387726107
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 1181.612671221201,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1379.3774417212014
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 483.6196682726103,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 688.9365012726101
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 8,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "running",
+      "failure_reason": null
+    },
+    {
+      "case": "horner64",
+      "target_ps": 950,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "C",
+      "task_id": "horner64-T950-cd5be660311a",
+      "rtl_sha256": "cd5be660311a61df4fadb3c83a19c99469d28082afccf2d9851b1e47d55b63e8",
+      "grammar": [
+        8,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1553.5518529687017,
+        "violation_ps": 603.5518529687017,
+        "total_area_um2": 12297.263692669003,
+        "comb_area_um2": 7501.460558963064,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1272.1293979687016,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1553.5518529687017
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 874.7121992556399,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1072.4769697556403
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 1272.1293979687016,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1469.894168468702
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 874.7121992556399,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1072.4769697556403
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 1272.1293979687016,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1469.894168468702
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 874.7121992556399,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1072.4769697556403
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 1272.1293979687016,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1469.894168468702
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 874.7121992556399,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 1080.0290322556398
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 276,
+        "G_members_not_billed_separately": 160
+      },
+      "qualification": "diagnostic_only",
+      "status": "running",
+      "failure_reason": null
+    },
+    {
+      "case": "horner64",
+      "target_ps": 950,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "D",
+      "task_id": "horner64-T950-4f83e78449a4",
+      "rtl_sha256": "4f83e78449a4ac88b6c831e60335f7d6554244fe5d5aedf12a023a8b41634f71",
+      "grammar": [
+        16,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1083.2301872698295,
+        "violation_ps": 133.23018726982946,
+        "total_area_um2": 6825.144210033748,
+        "comb_area_um2": 4169.583030616098,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 801.8077322698294,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1083.2301872698295
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 648.5999249715493,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 846.3646954715497
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 803.9895654797947,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1001.7543359797951
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 648.5999249715493,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 846.3646954715497
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 803.9895654797947,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1001.7543359797951
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 648.5999249715493,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 846.3646954715497
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 803.9895654797947,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1001.7543359797951
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 648.1097160722722,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 853.4265490722721
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 44,
+        "G_members_not_billed_separately": 64
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "horner64",
+      "target_ps": 950,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "same_policy_static",
+      "task_id": "horner64-T950-c4bab4fd0309",
+      "rtl_sha256": "c4bab4fd030936630451bf8b404dbfc40022aced2227791c371cdce17d76b274",
+      "grammar": [
+        16,
+        32
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": true,
+        "critical_required_ps": 945.9671426258843,
+        "violation_ps": 0.0,
+        "total_area_um2": 9857.00191970594,
+        "comb_area_um2": 8220.37625637265,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 664.5446876258842,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 945.9671426258843
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 147.6561843613076,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 624.7709271522554
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 664.5446876258842,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 862.3094581258846
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 147.6561843613076,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 615.1649484243892
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 664.5446876258842,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 862.3094581258846
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 147.6561843613076,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 602.9093744625561
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 664.5446876258842,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 862.3094581258846
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 147.6561843613076,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 352.9730173613075
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 52,
+        "G_members_not_billed_separately": 60
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "horner64",
+      "target_ps": 1150,
+      "L": 1,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "A",
+      "task_id": "horner64-T1150-6c415b9cf3b2",
+      "rtl_sha256": "6c415b9cf3b26a4cd234814aabda10bdb64cdf93a156f29633327d43f3c0dc1f",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 6916.248808615269,
+        "violation_ps": 5766.248808615269,
+        "total_area_um2": 4266.681857664193,
+        "comb_area_um2": 3826.9800394587523,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 6710.931975615269,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 6916.248808615269
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 8,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "horner64",
+      "target_ps": 1150,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "B",
+      "task_id": "horner64-T1150-428e4557d83e",
+      "rtl_sha256": "428e4557d83e7d728b0d4ea3558ab2b0bc6cbf3799985300df61a2d3ac1ef774",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1466.805785802181,
+        "violation_ps": 316.80578580218094,
+        "total_area_um2": 5374.643123820827,
+        "comb_area_um2": 3809.503740614192,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1185.3833308021808,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1466.805785802181
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 487.15191161725056,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 684.916682117251
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 1185.3833308021808,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1383.1481013021812
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 487.15191161725056,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 684.916682117251
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 1185.3833308021808,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1383.1481013021812
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 487.15191161725056,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 684.916682117251
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 1185.3833308021808,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1383.1481013021812
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 487.15191161725056,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 692.4687446172504
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 8,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "horner64",
+      "target_ps": 1150,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "C",
+      "task_id": "horner64-T1150-cd5be660311a",
+      "rtl_sha256": "cd5be660311a61df4fadb3c83a19c99469d28082afccf2d9851b1e47d55b63e8",
+      "grammar": [
+        8,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1564.3869992389618,
+        "violation_ps": 414.38699923896183,
+        "total_area_um2": 12202.387543090284,
+        "comb_area_um2": 7408.378682168541,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1282.9645442389617,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1564.3869992389618
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 887.5976936940569,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1085.3624641940573
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 1282.9645442389617,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1480.729314738962
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 887.5976936940569,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1085.3624641940573
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 1282.9645442389617,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1480.729314738962
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 887.5976936940569,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1085.3624641940573
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 1282.9645442389617,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1480.729314738962
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 887.5976936940569,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 1092.9145266940568
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 276,
+        "G_members_not_billed_separately": 160
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "horner64",
+      "target_ps": 1150,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "D",
+      "task_id": "horner64-T1150-4f83e78449a4",
+      "rtl_sha256": "4f83e78449a4ac88b6c831e60335f7d6554244fe5d5aedf12a023a8b41634f71",
+      "grammar": [
+        16,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": true,
+        "critical_required_ps": 1087.9746587698367,
+        "violation_ps": 0.0,
+        "total_area_um2": 6773.774835594491,
+        "comb_area_um2": 4119.324012929825,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 806.5522037698365,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1087.9746587698367
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 659.4399191963951,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 857.2046896963955
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 808.1358772035128,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1005.9006477035132
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 659.4399191963951,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 857.2046896963955
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 808.1358772035128,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1005.9006477035132
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 659.4399191963951,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 857.2046896963955
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 808.1358772035128,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1005.9006477035132
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 659.0925753820575,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 864.4094083820573
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 44,
+        "G_members_not_billed_separately": 64
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "horner64",
+      "target_ps": 1150,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "same_policy_static",
+      "task_id": "horner64-T1150-c4bab4fd0309",
+      "rtl_sha256": "c4bab4fd030936630451bf8b404dbfc40022aced2227791c371cdce17d76b274",
+      "grammar": [
+        16,
+        32
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": true,
+        "critical_required_ps": 945.9671426258843,
+        "violation_ps": 0.0,
+        "total_area_um2": 9856.69424050939,
+        "comb_area_um2": 8220.37625637265,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 664.5446876258842,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 945.9671426258843
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 147.6561843613076,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 646.1161134927552
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 664.5446876258842,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 862.3094581258846
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 147.6561843613076,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 636.1533988963147
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 664.5446876258842,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 862.3094581258846
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 147.6561843613076,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 623.4426914237781
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 664.5446876258842,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 862.3094581258846
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 147.6561843613076,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 352.9730173613075
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 52,
+        "G_members_not_billed_separately": 60
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "barrett64",
+      "target_ps": 900,
+      "L": 1,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "A",
+      "task_id": "barrett64-T900-fe0456a5a32c",
+      "rtl_sha256": "fe0456a5a32c9f04c7fbb1deecbc8f3bda0e34129813afa6228106074b8d5a51",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 5384.600074171641,
+        "violation_ps": 4484.600074171641,
+        "total_area_um2": 7829.38822317794,
+        "comb_area_um2": 7443.9740397477535,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 5179.283241171641,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 5384.600074171641
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 7,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "barrett64",
+      "target_ps": 900,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "B",
+      "task_id": "barrett64-T900-1c5b5d444d6f",
+      "rtl_sha256": "1c5b5d444d6f35ac0a4b36571229b7443241c89778ea82dd94b8c91b75ddecae",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1576.0806220726054,
+        "violation_ps": 676.0806220726054,
+        "total_area_um2": 8647.250365541497,
+        "comb_area_um2": 7443.9740397477535,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1288.0857456869608,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1569.508200686961
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 1378.315851572605,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1576.0806220726054
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 1304.0451965491777,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1501.809967049178
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 1242.2556707037136,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1440.020441203714
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 548.2747335884376
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 548.2747335884376
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 548.2747335884376
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 7,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "barrett64",
+      "target_ps": 900,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "C",
+      "task_id": "barrett64-T900-4f5c9617af40",
+      "rtl_sha256": "4f5c9617af40277eeddbbed066763aea4d63b0079ec60739e2dfe5e7b5523c7c",
+      "grammar": [
+        8,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 2015.0155708073935,
+        "violation_ps": 1115.0155708073935,
+        "total_area_um2": 23904.377944423715,
+        "comb_area_um2": 13627.296965623018,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 855.6166788818779,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1137.0391338818781
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 1123.2106471104148,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1320.9754176104152
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 856.6055224962764,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1054.370292996277
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 1158.849226502156,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1356.6139970021563
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 621.1603774125608,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 818.9251479125612
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 855.7871909119799,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1053.5519614119803
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 1125.8611785593807,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1323.6259490593811
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 1809.6987378073936,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 2015.0155708073935
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 432,
+        "G_members_not_billed_separately": 136
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "barrett64",
+      "target_ps": 900,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "D",
+      "task_id": "barrett64-T900-18a834929666",
+      "rtl_sha256": "18a83492966603a3d9d13da0522bdba7ff5efe07070ae9de89dd3b44d4eaa752",
+      "grammar": [
+        32,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1328.856109230515,
+        "violation_ps": 428.8561092305149,
+        "total_area_um2": 10214.96494751932,
+        "comb_area_um2": 8068.958031852166,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1047.4336542305148,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1328.856109230515
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 548.9861109079907,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 746.7508814079911
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 1049.8309318610218,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1247.5957023610222
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 702.613395500286,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 900.3781660002863
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 1049.8309318610218,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1247.5957023610222
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 1022.0554008456504,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1219.8201713456508
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 633.3899672739228,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 831.1547377739232
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 29,
+        "G_members_not_billed_separately": 19
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "barrett64",
+      "target_ps": 900,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "same_policy_static",
+      "task_id": "barrett64-T900-df305882385e",
+      "rtl_sha256": "df305882385ea50062d414f847e85b91fee9810721eb77f36e7c7abc7201682f",
+      "grammar": [
+        16,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": true,
+        "critical_required_ps": 872.0471924452305,
+        "violation_ps": 0.0,
+        "total_area_um2": 17307.742123244712,
+        "comb_area_um2": 14512.777669111509,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 590.6247374452304,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 872.0471924452305
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 73.8280921806538,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 642.4223095169547
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 590.6247374452304,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 788.3895079452308
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 73.8280921806538,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 629.6388441783058
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 590.6247374452304,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 788.3895079452308
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 295.4960847226152,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 572.0373390543499
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 572.0373390543499
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 83,
+        "G_members_not_billed_separately": 73
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "barrett64",
+      "target_ps": 1100,
+      "L": 1,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "A",
+      "task_id": "barrett64-T1100-fe0456a5a32c",
+      "rtl_sha256": "fe0456a5a32c9f04c7fbb1deecbc8f3bda0e34129813afa6228106074b8d5a51",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 5427.285780370672,
+        "violation_ps": 4327.285780370672,
+        "total_area_um2": 7744.952890485367,
+        "comb_area_um2": 7361.200207622343,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 5221.968947370672,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 5427.285780370672
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 7,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "barrett64",
+      "target_ps": 1100,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "B",
+      "task_id": "barrett64-T1100-1c5b5d444d6f",
+      "rtl_sha256": "1c5b5d444d6f35ac0a4b36571229b7443241c89778ea82dd94b8c91b75ddecae",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1580.136657048297,
+        "violation_ps": 480.1366570482969,
+        "total_area_um2": 8562.815032848923,
+        "comb_area_um2": 7361.200207622343,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1292.1417806626523,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1573.5642356626524
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 1382.3718865482965,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1580.136657048297
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 1308.101231524869,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1505.8660020248694
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 1272.773271975671,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1470.5380424756713
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 568.2132383753084
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 568.2132383753084
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 568.2132383753084
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 7,
+        "G_members_not_billed_separately": 0
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "barrett64",
+      "target_ps": 1100,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "C",
+      "task_id": "barrett64-T1100-4f5c9617af40",
+      "rtl_sha256": "4f5c9617af40277eeddbbed066763aea4d63b0079ec60739e2dfe5e7b5523c7c",
+      "grammar": [
+        8,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 2049.4794127426303,
+        "violation_ps": 949.4794127426303,
+        "total_area_um2": 23745.647009406675,
+        "comb_area_um2": 13471.395440155486,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 863.6189545208488,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1145.041409520849
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 1141.4854551795186,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1339.250225679519
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 864.6077981352473,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1062.3725686352477
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 1177.736519590121,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1375.5012900901213
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 630.9159877769531,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 828.6807582769535
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 863.7894665509508,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1061.554237050951
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 1144.1791111783057,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1341.943881678306
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 1844.1625797426304,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 2049.4794127426303
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 432,
+        "G_members_not_billed_separately": 136
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "barrett64",
+      "target_ps": 1100,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "D",
+      "task_id": "barrett64-T1100-18a834929666",
+      "rtl_sha256": "18a83492966603a3d9d13da0522bdba7ff5efe07070ae9de89dd3b44d4eaa752",
+      "grammar": [
+        32,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1334.0362883470405,
+        "violation_ps": 234.03628834704045,
+        "total_area_um2": 10101.379301127547,
+        "comb_area_um2": 7957.492121941153,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1052.6138333470403,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1334.0362883470405
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 558.9489109023106,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 756.713681402311
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 1054.3172916372587,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1252.082062137259
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 715.5781267695404,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 913.3428972695408
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 1054.3172916372587,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1252.082062137259
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 1053.1952673634091,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1250.9600378634095
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 653.3837359311186,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 851.148506431119
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 29,
+        "G_members_not_billed_separately": 19
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "barrett64",
+      "target_ps": 1100,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "same_policy_static",
+      "task_id": "barrett64-T1100-f0fe43c6f58a",
+      "rtl_sha256": "f0fe43c6f58a6ca796284779ddce275617f0a5c65c15c344aa7e91841cfc7aca",
+      "grammar": [
+        16,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": true,
+        "critical_required_ps": 945.9671426258843,
+        "violation_ps": 0.0,
+        "total_area_um2": 17005.53076996641,
+        "comb_area_um2": 14512.777669111509,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 664.5446876258842,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 945.9671426258843
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 664.4528296258842,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 862.2176001258846
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 73.8280921806538,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 648.8229284174766
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 664.5446876258842,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 862.3094581258846
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 295.4960847226152,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 589.3150083979356
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 589.3150083979356
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 589.3150083979356
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 92,
+        "G_members_not_billed_separately": 73
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "karatsuba256",
+      "target_ps": 1150,
+      "L": 1,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "A",
+      "task_id": "karatsuba256-T1150-c1a64d59e07d",
+      "rtl_sha256": "c1a64d59e07d5ff68496d3aa9b6bc5e3e5729f2c54e6d362d5123840970a9ffe",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 8827.24597384729,
+        "violation_ps": 7677.24597384729,
+        "total_area_um2": 21772.286897689162,
+        "comb_area_um2": 20301.38867555292,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 8621.92914084729,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 8827.24597384729
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 74,
+        "G_members_not_billed_separately": 16
+      },
+      "qualification": "diagnostic_only",
+      "status": "running",
+      "failure_reason": null
+    },
+    {
+      "case": "karatsuba256",
+      "target_ps": 1150,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "B",
+      "task_id": "karatsuba256-T1150-d82729a2bd2b",
+      "rtl_sha256": "d82729a2bd2be94e366bf9e7e780ba72334e7f9dfed2d7f811c29a44278a0e28",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 6279.79921139185,
+        "violation_ps": 5129.79921139185,
+        "total_area_um2": 27586.90416820584,
+        "comb_area_um2": 20567.153799508516,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1645.4092464649498,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1926.83170146495
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 1265.7307931883884,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1463.4955636883888
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 6082.034440891849,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 6279.79921139185
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 694.5287374832568
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 694.5287374832568
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 694.5287374832568
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 694.5287374832568
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 76,
+        "G_members_not_billed_separately": 12
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "karatsuba256",
+      "target_ps": 1150,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "C",
+      "task_id": "karatsuba256-T1150-f3011704032a",
+      "rtl_sha256": "f3011704032ac6988a5681f3e3f678833dbc389d95029a8a2a8f10f76c809044",
+      "grammar": [
+        8,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 2694.7064760039248,
+        "violation_ps": 1544.7064760039248,
+        "total_area_um2": 40539.782049877926,
+        "comb_area_um2": 26002.513747798013,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1599.2308018626197,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1880.6532568626199
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 654.8880670610325,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 901.7682070973453
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 1208.5749389454406,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1406.339709445441
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 2048.7198317762322,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 2246.4846022762326
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 2496.9417055039244,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 2694.7064760039248
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 2115.5375468850184,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 2313.302317385019
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 720.5287205263326
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 708,
+        "G_members_not_billed_separately": 577
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "karatsuba256",
+      "target_ps": 1150,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "D",
+      "task_id": "karatsuba256-T1150-b5e7a118e6c3",
+      "rtl_sha256": "b5e7a118e6c322fc7513b881e24ad0df50ec3e843593f415d5f9c80767f6f1de",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1623.1617474577342,
+        "violation_ps": 473.16174745773424,
+        "total_area_um2": 32681.153895100746,
+        "comb_area_um2": 21608.885474030383,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1290.3013376940632,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1571.7237926940634
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 1264.6267895071119,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1462.3915600071123
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 1425.3969769577338,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1623.1617474577342
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 1420.1099753365613,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1617.8747458365617
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 1358.6256886566616,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1556.390459156662
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 1254.2359928034884,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1452.0007633034888
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 1310.8709470569647,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1508.6357175569651
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 732.4214733761323,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 937.7383063761322
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 79,
+        "G_members_not_billed_separately": 6
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "karatsuba256",
+      "target_ps": 1150,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "same_policy_static",
+      "task_id": "karatsuba256-T1150-f0eca851430c",
+      "rtl_sha256": "f0eca851430c14a9e0cc32c14aae3ba06b037aec9d0ab3b630ff1a75f0d4d4f3",
+      "grammar": [
+        16,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": true,
+        "critical_required_ps": 1019.7033768065381,
+        "violation_ps": 0.0,
+        "total_area_um2": 40838.28259217471,
+        "comb_area_um2": 32330.65507016666,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 738.280921806538,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1019.7033768065381
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 664.9121196258842,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 862.6768901258846
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 665.0958356258842,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 862.8606061258846
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 147.6561843613076,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 700.665801708564
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 700.665801708564
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 700.665801708564
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 700.665801708564
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 294,
+        "G_members_not_billed_separately": 137
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "karatsuba256",
+      "target_ps": 1400,
+      "L": 1,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "A",
+      "task_id": "karatsuba256-T1400-c1a64d59e07d",
+      "rtl_sha256": "c1a64d59e07d5ff68496d3aa9b6bc5e3e5729f2c54e6d362d5123840970a9ffe",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 8917.88690785171,
+        "violation_ps": 7517.886907851709,
+        "total_area_um2": 21572.39543204014,
+        "comb_area_um2": 20104.896331001622,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 8712.57007485171,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 8917.88690785171
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 74,
+        "G_members_not_billed_separately": 16
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "karatsuba256",
+      "target_ps": 1400,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "B",
+      "task_id": "karatsuba256-T1400-d82729a2bd2b",
+      "rtl_sha256": "d82729a2bd2be94e366bf9e7e780ba72334e7f9dfed2d7f811c29a44278a0e28",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 6358.664849264898,
+        "violation_ps": 4958.664849264898,
+        "total_area_um2": 27368.564257309554,
+        "comb_area_um2": 20352.503014827897,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1651.7970873774216,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1933.2195423774217
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 1269.2871406001216,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1467.051911100122
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 6160.900078764898,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 6358.664849264898
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 717.0541383064691
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 717.0541383064691
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 717.0541383064691
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 717.0541383064691
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 76,
+        "G_members_not_billed_separately": 12
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "karatsuba256",
+      "target_ps": 1400,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "C",
+      "task_id": "karatsuba256-T1400-f3011704032a",
+      "rtl_sha256": "f3011704032ac6988a5681f3e3f678833dbc389d95029a8a2a8f10f76c809044",
+      "grammar": [
+        8,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 2717.1235510440033,
+        "violation_ps": 1317.1235510440033,
+        "total_area_um2": 40254.55169816708,
+        "comb_area_um2": 25722.024023928992,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1607.7252823648355,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1889.1477373648356
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 663.3409970470619,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 931.5363448971522
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 1219.4686784649607,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1417.233448964961
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 2076.107878632895,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 2273.8726491328953
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 2519.358780544003,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 2717.1235510440033
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 2129.5775779057967,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 2327.342348405797
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 743.9627853165371
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 708,
+        "G_members_not_billed_separately": 577
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "karatsuba256",
+      "target_ps": 1400,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "D",
+      "task_id": "karatsuba256-T1400-b5e7a118e6c3",
+      "rtl_sha256": "b5e7a118e6c322fc7513b881e24ad0df50ec3e843593f415d5f9c80767f6f1de",
+      "grammar": [
+        0,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": false,
+        "critical_required_ps": 1660.6213844301978,
+        "violation_ps": 260.62138443019785,
+        "total_area_um2": 32301.567426172114,
+        "comb_area_um2": 21235.5228883906,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 1294.5595725413687,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1575.9820275413688
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 1268.4609333360527,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1466.225703836053
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 1462.8566139301975,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1660.6213844301978
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 1452.5326119397832,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1650.2973824397836
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 1366.6247095071658,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1564.3894800071662
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 1270.7356363824144,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1468.5004068824148
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 1332.019633151046,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 1529.7844036510464
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 735.8236907678212,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 941.140523767821
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 79,
+        "G_members_not_billed_separately": 6
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    },
+    {
+      "case": "karatsuba256",
+      "target_ps": 1400,
+      "L": 8,
+      "II": 1,
+      "additional_input_service_cycles": 1,
+      "method": "same_policy_static",
+      "task_id": "karatsuba256-T1400-f0eca851430c",
+      "rtl_sha256": "f0eca851430c14a9e0cc32c14aae3ba06b037aec9d0ab3b630ff1a75f0d4d4f3",
+      "grammar": [
+        16,
+        0
+      ],
+      "prediction": {
+        "status": "diagnostic_complete",
+        "target_met": true,
+        "critical_required_ps": 1019.7033768065381,
+        "violation_ps": 0.0,
+        "total_area_um2": 40838.02161428478,
+        "comb_area_um2": 32330.65507016666,
+        "stages": [
+          {
+            "stage": 0,
+            "comb_delay_ps": 738.280921806538,
+            "boundary_ps": 231.42245500000013,
+            "required_ps": 1019.7033768065381
+          },
+          {
+            "stage": 1,
+            "comb_delay_ps": 664.9121196258842,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 862.6768901258846
+          },
+          {
+            "stage": 2,
+            "comb_delay_ps": 665.0958356258842,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 862.8606061258846
+          },
+          {
+            "stage": 3,
+            "comb_delay_ps": 147.6561843613076,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 723.4056845610689
+          },
+          {
+            "stage": 4,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 723.4056845610689
+          },
+          {
+            "stage": 5,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 723.4056845610689
+          },
+          {
+            "stage": 6,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 147.7647705000004,
+            "required_ps": 723.4056845610689
+          },
+          {
+            "stage": 7,
+            "comb_delay_ps": 0.0,
+            "boundary_ps": 155.31683299999986,
+            "required_ps": 205.31683299999986
+          }
+        ],
+        "port_required_ps": 339.27806875000016,
+        "owners_count": 294,
+        "G_members_not_billed_separately": 137
+      },
+      "qualification": "diagnostic_only",
+      "status": "not_measured",
+      "failure_reason": null
+    }
+  ],
+  "failures": [
+    {
+      "case": "mul128",
+      "T": 600,
+      "method": "C",
+      "status": "failed",
+      "reason": "grt: memory_limit"
+    },
+    {
+      "case": "mul128",
+      "T": 600,
+      "method": "D",
+      "status": "failed",
+      "reason": "grt: memory_limit"
+    },
+    {
+      "case": "mul128",
+      "T": 750,
+      "method": "C",
+      "status": "failed",
+      "reason": "grt: memory_limit"
+    },
+    {
+      "case": "mul128",
+      "T": 750,
+      "method": "D",
+      "status": "failed",
+      "reason": "grt: memory_limit"
+    },
+    {
+      "case": "horner64",
+      "T": 950,
+      "method": "A",
+      "status": "running",
+      "reason": null
+    },
+    {
+      "case": "horner64",
+      "T": 950,
+      "method": "B",
+      "status": "running",
+      "reason": null
+    },
+    {
+      "case": "horner64",
+      "T": 950,
+      "method": "C",
+      "status": "running",
+      "reason": null
+    },
+    {
+      "case": "horner64",
+      "T": 950,
+      "method": "D",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "horner64",
+      "T": 950,
+      "method": "same_policy_static",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "horner64",
+      "T": 1150,
+      "method": "A",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "horner64",
+      "T": 1150,
+      "method": "B",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "horner64",
+      "T": 1150,
+      "method": "C",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "horner64",
+      "T": 1150,
+      "method": "D",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "horner64",
+      "T": 1150,
+      "method": "same_policy_static",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "barrett64",
+      "T": 900,
+      "method": "A",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "barrett64",
+      "T": 900,
+      "method": "B",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "barrett64",
+      "T": 900,
+      "method": "C",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "barrett64",
+      "T": 900,
+      "method": "D",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "barrett64",
+      "T": 900,
+      "method": "same_policy_static",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "barrett64",
+      "T": 1100,
+      "method": "A",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "barrett64",
+      "T": 1100,
+      "method": "B",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "barrett64",
+      "T": 1100,
+      "method": "C",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "barrett64",
+      "T": 1100,
+      "method": "D",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "barrett64",
+      "T": 1100,
+      "method": "same_policy_static",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "karatsuba256",
+      "T": 1150,
+      "method": "A",
+      "status": "running",
+      "reason": null
+    },
+    {
+      "case": "karatsuba256",
+      "T": 1150,
+      "method": "B",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "karatsuba256",
+      "T": 1150,
+      "method": "C",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "karatsuba256",
+      "T": 1150,
+      "method": "D",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "karatsuba256",
+      "T": 1150,
+      "method": "same_policy_static",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "karatsuba256",
+      "T": 1400,
+      "method": "A",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "karatsuba256",
+      "T": 1400,
+      "method": "B",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "karatsuba256",
+      "T": 1400,
+      "method": "C",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "karatsuba256",
+      "T": 1400,
+      "method": "D",
+      "status": "not_measured",
+      "reason": null
+    },
+    {
+      "case": "karatsuba256",
+      "T": 1400,
+      "method": "same_policy_static",
+      "status": "not_measured",
+      "reason": null
+    }
+  ],
+  "final_PPA_for_model_or_selection": false,
+  "ledger": {
+    "synth": 3690,
+    "grt": 3662,
+    "final": 16,
+    "support_calls": 23253,
+    "walltime_s": 570279.431616511,
+    "CPU_time_s": 1520647.47,
+    "pending": 4
+  },
+  "targets": null
+}

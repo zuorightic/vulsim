@@ -1,0 +1,65 @@
+{
+  "version": "nine-case-A-over-L-tight-targets-v2",
+  "clock_basis": "unsplit_A",
+  "user_confirmed_factors": [
+    1.25,
+    1.5
+  ],
+  "quantum_ps": 50,
+  "reference_A": {
+    "L": 1,
+    "software_reference_request_ps": 1000,
+    "requested_period_rule": "max(1000, ceil(1.10 * unsplit_A_software_period_at_1000ps / 100)*100) ps",
+    "scope": "fixed grt full RR/IR/RO Tmin; IOmax=0.2T",
+    "note": "uniform software-only rule avoids extreme infeasible A repair; not a proof of global mapping optimum"
+  },
+  "final_clock_rule": "ceil(factor * measured_reference_A_Tmin / declared_L / 50) * 50 ps",
+  "rounded_collision_rule": "second target at least first+50ps to retain two distinct groups",
+  "MAC32": {
+    "targets_ps": [
+      500,
+      750,
+      1000
+    ],
+    "L": 3,
+    "unchanged_by_user": true
+  },
+  "no_C_based_clock_relaxation": true,
+  "unreachable_target": "retain closest complete prediction; do not change final T",
+  "finite_grammar_extensions": {
+    "add512_limbs": [
+      8,
+      16
+    ],
+    "mul128_blocks": [
+      4
+    ],
+    "horner64_blocks": [
+      4,
+      8
+    ],
+    "dot16_blocks": [
+      8
+    ],
+    "barrett64_blocks": [
+      8
+    ],
+    "karatsuba256_blocks": [
+      8
+    ],
+    "montgomery256_blocks": [
+      8
+    ],
+    "ntt8x64_blocks": [
+      8
+    ]
+  },
+  "models": "original frozen responses and common diagnostic shell; no refit",
+  "maximum_structures_per_case": 16,
+  "case_specific_model_prices": false,
+  "application_PPA_for_D_selection": false,
+  "original_independent_sources_locked": true,
+  "superseded_C_based_experiment": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-v1",
+  "source_sha256": "7aa73042cf98406a8b7a76bd4d539c777ccee0517d98d47b83d2acda32436728",
+  "native_compiler_sha256": "a44b9b6d8f664894bac1c6c5ad9d872d9cdb3be865bf922d0641e64a74bd12c1"
+}

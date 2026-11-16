@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-16T15:10:54.122067+00:00",
+  "pid": 1301917,
+  "argv": [
+    "ionice",
+    "-c",
+    "3",
+    "nice",
+    "-n",
+    "10",
+    "/usr/bin/python3",
+    "-u",
+    "/home/zyrv/vulsim/experiments/arithmetic/evidence/workload_equivalent_steps678_tight_v2/two-depths/failure-relaxation-v1/pack_completed_intermediates.py",
+    "--target-free-gib",
+    "65",
+    "--watch-seconds",
+    "172800",
+    "--wait-lock"
+  ],
+  "source_sha256": "9a9610ad312c7d9e9f446bd5bdb5382f60beb715205f0e02d44f5b9b407a0706",
+  "watch_seconds": 172800,
+  "target_free_GiB": 65,
+  "waiting_for_existing_packer_lock": true,
+  "terminal_released_runs_only": true,
+  "automatic_EDA_retries": 0
+}

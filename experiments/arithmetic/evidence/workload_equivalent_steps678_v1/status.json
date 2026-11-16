@@ -1,0 +1,87 @@
+{
+  "version": "steps678-nine-case-status-v1",
+  "physical_comparison_complete": false,
+  "model_precision_qualified": false,
+  "superseded_by_A_over_L_rule": true,
+  "main_measured": 0,
+  "required_main_records": 76,
+  "batches": {
+    "calibration-add512": {
+      "role": "clock_calibration",
+      "tasks": 1,
+      "progress": {
+        "status": "batch_settled",
+        "completed": [
+          "add512-clock-probe"
+        ],
+        "errors": [],
+        "active": []
+      },
+      "admission_sha256": "f6d08350f7482a8c6775ab229a15635ba4953373c3513655d2bb97201fb19f16"
+    },
+    "calibration-first-five": {
+      "role": "clock_calibration",
+      "tasks": 5,
+      "progress": {
+        "status": "batch_settled",
+        "completed": [
+          "horner64-clock-probe",
+          "mul128-clock-probe",
+          "barrett64-clock-probe",
+          "dot16-clock-probe"
+        ],
+        "errors": [
+          {
+            "task": "karatsuba256-clock-probe",
+            "reason": "grt: tool_nonzero_exit"
+          }
+        ],
+        "active": []
+      },
+      "admission_sha256": "eaf0e0c87ad1de6ba56c04d8ee864fbcf48294d7e09b9781f297e9392a081933"
+    }
+  },
+  "selected": {
+    "add512": {
+      "targets": [
+        1200,
+        1600
+      ],
+      "records": 2,
+      "candidates": 16,
+      "complete": 16
+    },
+    "horner64": {
+      "targets": [
+        1200,
+        1600
+      ],
+      "records": 2,
+      "candidates": 52,
+      "complete": 52
+    },
+    "mac32": {
+      "targets": [
+        500,
+        750,
+        1000
+      ],
+      "records": 3,
+      "candidates": 175,
+      "complete": 175
+    }
+  },
+  "working_root": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-v1",
+  "ledger": {
+    "synth": 3652,
+    "grt": 3625,
+    "final": 16,
+    "support_calls": 23107,
+    "walltime_s": 524695.4033970882,
+    "CPU_time_s": 1331289.94,
+    "pending": 3
+  },
+  "model_response_refitted": false,
+  "independent_operator_sources_unlocked": false,
+  "application_PPA_for_selection": false
+}

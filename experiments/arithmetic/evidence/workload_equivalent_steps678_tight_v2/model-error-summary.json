@@ -1,0 +1,139 @@
+{
+  "methods": {
+    "A": {
+      "records": 7,
+      "sources": 3,
+      "period_APE": {
+        "count": 7,
+        "median": 0.07523707159513626,
+        "P95": 0.20728750463067888,
+        "maximum": 0.20932719533021849
+      },
+      "area_APE": {
+        "count": 7,
+        "median": 0.10554650000420518,
+        "P95": 0.15116939529168855,
+        "maximum": 0.15910486941143076
+      },
+      "source_mean_period_APE": {
+        "count": 3,
+        "median": 0.07021211501650293,
+        "P95": 0.18452327070277466,
+        "maximum": 0.19722451022347154
+      },
+      "source_mean_area_APE": {
+        "count": 3,
+        "median": 0.10491558510664041,
+        "P95": 0.14178272980133844,
+        "maximum": 0.14587907921186044
+      },
+      "false_feasible_setup": []
+    },
+    "B": {
+      "records": 7,
+      "sources": 3,
+      "period_APE": {
+        "count": 7,
+        "median": 0.08919232409793532,
+        "P95": 0.13405081459386312,
+        "maximum": 0.13580895937442938
+      },
+      "area_APE": {
+        "count": 7,
+        "median": 0.07546351772126303,
+        "P95": 0.11679774454130139,
+        "maximum": 0.12237653796641867
+      },
+      "source_mean_period_APE": {
+        "count": 3,
+        "median": 0.08497201925929432,
+        "P95": 0.12684144379099432,
+        "maximum": 0.13149360207229432
+      },
+      "source_mean_area_APE": {
+        "count": 3,
+        "median": 0.07215375715124162,
+        "P95": 0.10898606974722505,
+        "maximum": 0.11307854892455654
+      },
+      "false_feasible_setup": []
+    },
+    "C": {
+      "records": 5,
+      "sources": 2,
+      "period_APE": {
+        "count": 5,
+        "median": 0.2087770318027744,
+        "P95": 0.24106314346469643,
+        "maximum": 0.24872126205041423
+      },
+      "area_APE": {
+        "count": 5,
+        "median": 0.10367928325756326,
+        "P95": 0.11865734234967382,
+        "maximum": 0.12237653796641867
+      },
+      "source_mean_period_APE": {
+        "count": 2,
+        "median": 0.15380750345881616,
+        "P95": 0.21575943923838578,
+        "maximum": 0.22264298765833798
+      },
+      "source_mean_area_APE": {
+        "count": 2,
+        "median": 0.09228097995147502,
+        "P95": 0.11099879202724838,
+        "maximum": 0.11307854892455654
+      },
+      "false_feasible_setup": [
+        {
+          "case": "mac32",
+          "T_ps": 1000,
+          "predicted_ps": 908.1424364135985,
+          "measured_ps": 1147.770569
+        }
+      ]
+    },
+    "D": {
+      "records": 5,
+      "sources": 2,
+      "period_APE": {
+        "count": 5,
+        "median": 0.07905202722614102,
+        "P95": 0.17676414212247538,
+        "maximum": 0.1855384557408719
+      },
+      "area_APE": {
+        "count": 5,
+        "median": 0.04442993417938723,
+        "P95": 0.072305490285992,
+        "maximum": 0.07680020452935332
+      },
+      "source_mean_period_APE": {
+        "count": 2,
+        "median": 0.10224861419901084,
+        "P95": 0.15746726594529364,
+        "maximum": 0.16360267169488063
+      },
+      "source_mean_area_APE": {
+        "count": 2,
+        "median": 0.048233365708100155,
+        "P95": 0.06383041359966503,
+        "maximum": 0.06556341892095002
+      },
+      "false_feasible_setup": [
+        {
+          "case": "mac32",
+          "T_ps": 1000,
+          "predicted_ps": 984.0155932178709,
+          "measured_ps": 1000.593858
+        }
+      ]
+    }
+  },
+  "quantile": "linear p*(n-1)",
+  "application_evaluation_only": true,
+  "precision_qualification": false,
+  "model_refitted": false,
+  "hold_not_predicted_by_setup_target_met": true
+}

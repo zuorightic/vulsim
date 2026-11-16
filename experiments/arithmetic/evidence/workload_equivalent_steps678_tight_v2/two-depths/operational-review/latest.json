@@ -1,0 +1,615 @@
+{
+  "checked_at": "2026-11-16T11:49:15.966727+00:00",
+  "required_main_records": 148,
+  "main_measured": 59,
+  "registered_groups": 31,
+  "main_statuses": {
+    "measured_grt": 59,
+    "failed": 22,
+    "running": 8,
+    "not_started": 35
+  },
+  "active_jobs": [
+    {
+      "id": "ae9ae67613da4951a0b23638f3a351ee",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-karatsuba256-L4",
+      "task_id": "karatsuba256-L4-T2300-c1a64d59e07d",
+      "owner_pid_in_namespace": 151380,
+      "started_at": "2026-11-16T10:18:54.975722+00:00"
+    },
+    {
+      "id": "ea2494bcdd104a42bcd25820f6b2f0e4",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-karatsuba256-L4",
+      "task_id": "karatsuba256-L4-T2300-afb74d898573",
+      "owner_pid_in_namespace": 154285,
+      "started_at": "2026-11-16T10:23:25.312513+00:00"
+    },
+    {
+      "id": "321d3dff73f94615b8dca43563dabed2",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-karatsuba256-L4",
+      "task_id": "karatsuba256-L4-T2300-1de0ecb23206",
+      "owner_pid_in_namespace": 158037,
+      "started_at": "2026-11-16T10:32:37.240043+00:00"
+    },
+    {
+      "id": "d863084a9d9e4d37a6be150e5c69ec55",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-karatsuba256-L4",
+      "task_id": "karatsuba256-L4-T2300-8f7d78972cbb",
+      "owner_pid_in_namespace": 161131,
+      "started_at": "2026-11-16T10:42:20.723536+00:00"
+    },
+    {
+      "id": "ec81edba95b74420836166bb862a9bb4",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-karatsuba256-L4",
+      "task_id": "karatsuba256-L4-T2300-75a00bee0595",
+      "owner_pid_in_namespace": 162794,
+      "started_at": "2026-11-16T10:43:13.457724+00:00"
+    },
+    {
+      "id": "e7fe1060f83d432cb6726e260a4ab8d9",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-karatsuba256-L4",
+      "task_id": "karatsuba256-L4-T2750-c1a64d59e07d",
+      "owner_pid_in_namespace": 165043,
+      "started_at": "2026-11-16T10:47:02.787677+00:00"
+    },
+    {
+      "id": "ad3e10e096154db29c30d4ab6d1d602e",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-karatsuba256-L4",
+      "task_id": "karatsuba256-L4-T2750-1de0ecb23206",
+      "owner_pid_in_namespace": 174014,
+      "started_at": "2026-11-16T11:31:51.124210+00:00"
+    },
+    {
+      "id": "b01ea0c18c3248d4913468705f8164e7",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-karatsuba256-L4",
+      "task_id": "karatsuba256-L4-T2750-8f7d78972cbb",
+      "owner_pid_in_namespace": 174570,
+      "started_at": "2026-11-16T11:32:23.173244+00:00"
+    },
+    {
+      "id": "13fffec0e6da40f5b0df96135661820d",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-karatsuba256-L8",
+      "task_id": "karatsuba256-L8-T1150-c1a64d59e07d",
+      "owner_pid_in_namespace": 180102,
+      "started_at": "2026-11-16T11:48:00.951310+00:00"
+    }
+  ],
+  "software_active": [],
+  "variants": [
+    {
+      "case": "mac32",
+      "L": 2,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "not_started": 8
+      },
+      "targets_ps": [
+        950,
+        1100
+      ]
+    },
+    {
+      "case": "mac32",
+      "L": 3,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "measured_grt": 12
+      },
+      "targets_ps": [
+        500,
+        750,
+        1000
+      ]
+    },
+    {
+      "case": "add512",
+      "L": 2,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "measured_grt": 8
+      },
+      "targets_ps": [
+        700,
+        800
+      ]
+    },
+    {
+      "case": "add512",
+      "L": 4,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "measured_grt": 8
+      },
+      "targets_ps": [
+        350,
+        400
+      ]
+    },
+    {
+      "case": "mul128",
+      "L": 2,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "not_started": 8
+      },
+      "targets_ps": [
+        1200,
+        1450
+      ]
+    },
+    {
+      "case": "mul128",
+      "L": 4,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "measured_grt": 4,
+        "not_started": 4
+      },
+      "targets_ps": [
+        600,
+        750
+      ]
+    },
+    {
+      "case": "dot16",
+      "L": 4,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "failed": 8
+      },
+      "targets_ps": [
+        850,
+        1050
+      ]
+    },
+    {
+      "case": "dot16",
+      "L": 5,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "failed": 8
+      },
+      "targets_ps": [
+        700,
+        850
+      ]
+    },
+    {
+      "case": "horner64",
+      "L": 4,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "measured_grt": 8
+      },
+      "targets_ps": [
+        1900,
+        2250
+      ]
+    },
+    {
+      "case": "horner64",
+      "L": 8,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "measured_grt": 8
+      },
+      "targets_ps": [
+        950,
+        1150
+      ]
+    },
+    {
+      "case": "barrett64",
+      "L": 4,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "failed": 3,
+        "measured_grt": 5
+      },
+      "targets_ps": [
+        1800,
+        2150
+      ]
+    },
+    {
+      "case": "barrett64",
+      "L": 8,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "failed": 2,
+        "measured_grt": 6
+      },
+      "targets_ps": [
+        900,
+        1100
+      ]
+    },
+    {
+      "case": "karatsuba256",
+      "L": 4,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "running": 7,
+        "failed": 1
+      },
+      "targets_ps": [
+        2300,
+        2750
+      ]
+    },
+    {
+      "case": "karatsuba256",
+      "L": 8,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "running": 1,
+        "not_started": 7
+      },
+      "targets_ps": [
+        1150,
+        1400
+      ]
+    },
+    {
+      "case": "montgomery256",
+      "L": 16,
+      "status": "awaiting_A_reference",
+      "software_ready": false,
+      "main_statuses": {},
+      "targets_ps": null
+    },
+    {
+      "case": "montgomery256",
+      "L": 32,
+      "status": "awaiting_A_reference",
+      "software_ready": false,
+      "main_statuses": {},
+      "targets_ps": null
+    },
+    {
+      "case": "ntt8x64",
+      "L": 8,
+      "status": "software_waiting",
+      "software_ready": false,
+      "main_statuses": {},
+      "targets_ps": [
+        1550,
+        1850
+      ]
+    },
+    {
+      "case": "ntt8x64",
+      "L": 16,
+      "status": "backend_registered",
+      "software_ready": true,
+      "main_statuses": {
+        "not_started": 8
+      },
+      "targets_ps": [
+        800,
+        950
+      ]
+    }
+  ],
+  "retained_software_errors": [
+    {
+      "case": "mac32",
+      "L": 2,
+      "exit_code": 1,
+      "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/software-logs/mac32-L2.log",
+      "resolved": true
+    },
+    {
+      "case": "add512",
+      "L": 2,
+      "exit_code": 1,
+      "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/software-logs/add512-L2.log",
+      "resolved": true
+    },
+    {
+      "case": "mul128",
+      "L": 2,
+      "exit_code": 1,
+      "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/software-logs/mul128-L2.log",
+      "resolved": true
+    },
+    {
+      "case": "ntt8x64",
+      "L": 8,
+      "exit_code": -11,
+      "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/software-logs/ntt8x64-L8.log",
+      "resolved": false
+    }
+  ],
+  "software_receipt_errors": [],
+  "main_failures": [
+    {
+      "case": "barrett64",
+      "L": 4,
+      "T_ps": 1800,
+      "method": "A",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L4/runs/barrett64-L4-T1800-fe0456a5a32c"
+    },
+    {
+      "case": "barrett64",
+      "L": 4,
+      "T_ps": 2150,
+      "method": "A",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L4/runs/barrett64-L4-T2150-fe0456a5a32c"
+    },
+    {
+      "case": "barrett64",
+      "L": 4,
+      "T_ps": 2150,
+      "method": "C",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L4/runs/barrett64-L4-T2150-83a434da7745"
+    },
+    {
+      "case": "barrett64",
+      "L": 8,
+      "T_ps": 900,
+      "method": "A",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8/runs/barrett64-L8-T900-fe0456a5a32c"
+    },
+    {
+      "case": "barrett64",
+      "L": 8,
+      "T_ps": 1100,
+      "method": "A",
+      "reason": "grt: tool_nonzero_exit",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L8/runs/barrett64-L8-T1100-fe0456a5a32c"
+    },
+    {
+      "case": "dot16",
+      "L": 4,
+      "T_ps": 850,
+      "method": "A",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T850-2776e286ec00"
+    },
+    {
+      "case": "dot16",
+      "L": 4,
+      "T_ps": 850,
+      "method": "B",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T850-5d322a4d43a9"
+    },
+    {
+      "case": "dot16",
+      "L": 4,
+      "T_ps": 850,
+      "method": "C",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T850-8327002228a5"
+    },
+    {
+      "case": "dot16",
+      "L": 4,
+      "T_ps": 850,
+      "method": "D",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T850-13041929dd25"
+    },
+    {
+      "case": "dot16",
+      "L": 4,
+      "T_ps": 1050,
+      "method": "A",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T1050-2776e286ec00"
+    },
+    {
+      "case": "dot16",
+      "L": 4,
+      "T_ps": 1050,
+      "method": "B",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T1050-5d322a4d43a9"
+    },
+    {
+      "case": "dot16",
+      "L": 4,
+      "T_ps": 1050,
+      "method": "C",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T1050-8327002228a5"
+    },
+    {
+      "case": "dot16",
+      "L": 4,
+      "T_ps": 1050,
+      "method": "D",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T1050-13041929dd25"
+    },
+    {
+      "case": "dot16",
+      "L": 5,
+      "T_ps": 700,
+      "method": "A",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T700-2776e286ec00"
+    },
+    {
+      "case": "dot16",
+      "L": 5,
+      "T_ps": 700,
+      "method": "B",
+      "reason": "grt: tool_nonzero_exit",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T700-8bbe5fa52f58"
+    },
+    {
+      "case": "dot16",
+      "L": 5,
+      "T_ps": 700,
+      "method": "C",
+      "reason": "grt: memory_limit",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T700-b6a28e166624"
+    },
+    {
+      "case": "dot16",
+      "L": 5,
+      "T_ps": 700,
+      "method": "D",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T700-4c2ee7748c79"
+    },
+    {
+      "case": "dot16",
+      "L": 5,
+      "T_ps": 850,
+      "method": "A",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T850-2776e286ec00"
+    },
+    {
+      "case": "dot16",
+      "L": 5,
+      "T_ps": 850,
+      "method": "B",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T850-8bbe5fa52f58"
+    },
+    {
+      "case": "dot16",
+      "L": 5,
+      "T_ps": 850,
+      "method": "C",
+      "reason": "grt: memory_limit",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T850-b6a28e166624"
+    },
+    {
+      "case": "dot16",
+      "L": 5,
+      "T_ps": 850,
+      "method": "D",
+      "reason": "grt: timeout",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T850-4c2ee7748c79"
+    },
+    {
+      "case": "karatsuba256",
+      "L": 4,
+      "T_ps": 2750,
+      "method": "B",
+      "reason": "grt: tool_nonzero_exit",
+      "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4/runs/karatsuba256-L4-T2750-afb74d898573"
+    }
+  ],
+  "active_reservations": [
+    {
+      "task": "karatsuba256-L4-T2300-c1a64d59e07d",
+      "stage": "grt",
+      "elapsed_s": 5121.030806064606,
+      "timeout_s": 7200,
+      "remaining_s": 2078.9691939353943
+    },
+    {
+      "task": "karatsuba256-L4-T2300-afb74d898573",
+      "stage": "grt",
+      "elapsed_s": 4835.518051147461,
+      "timeout_s": 7200,
+      "remaining_s": 2364.481948852539
+    },
+    {
+      "task": "karatsuba256-L4-T2300-1de0ecb23206",
+      "stage": "grt",
+      "elapsed_s": 4136.783697128296,
+      "timeout_s": 7200,
+      "remaining_s": 3063.216302871704
+    },
+    {
+      "task": "karatsuba256-L4-T2300-8f7d78972cbb",
+      "stage": "grt",
+      "elapsed_s": 3692.6815769672394,
+      "timeout_s": 7200,
+      "remaining_s": 3507.3184230327606
+    },
+    {
+      "task": "karatsuba256-L4-T2300-75a00bee0595",
+      "stage": "grt",
+      "elapsed_s": 3630.0749011039734,
+      "timeout_s": 7200,
+      "remaining_s": 3569.9250988960266
+    },
+    {
+      "task": "karatsuba256-L4-T2750-c1a64d59e07d",
+      "stage": "grt",
+      "elapsed_s": 3436.849442958832,
+      "timeout_s": 7200,
+      "remaining_s": 3763.150557041168
+    },
+    {
+      "task": "karatsuba256-L4-T2750-8f7d78972cbb",
+      "stage": "grt",
+      "elapsed_s": 724.3539659976959,
+      "timeout_s": 7200,
+      "remaining_s": 6475.646034002304
+    },
+    {
+      "task": "karatsuba256-L4-T2750-1de0ecb23206",
+      "stage": "grt",
+      "elapsed_s": 598.2449860572815,
+      "timeout_s": 7200,
+      "remaining_s": 6601.7550139427185
+    },
+    {
+      "task": "karatsuba256-L8-T1150-c1a64d59e07d",
+      "stage": "synth",
+      "elapsed_s": 67.05439496040344,
+      "timeout_s": 3600,
+      "remaining_s": 3532.9456050395966
+    }
+  ],
+  "memory_available_MiB": 26298,
+  "disk_free_GiB": 52.59517288208008,
+  "ledger_usage": {
+    "synth": 3757,
+    "grt": 3729,
+    "final": 16,
+    "support_calls": 23457,
+    "walltime_s": 863774.246533638,
+    "CPU_time_s": 2029792.8499999999,
+    "pending": 9
+  },
+  "source_sha256": "595ccad2734adad5272e2aaf972033bd209ee56f025aeaa338ce10893b8ef379",
+  "model_refitted": false,
+  "backend_sources_changed": false,
+  "new_incidents": []
+}

@@ -1,0 +1,110 @@
+[
+  {
+    "job": {
+      "id": "ae9ae67613da4951a0b23638f3a351ee",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-karatsuba256-L4",
+      "task_id": "karatsuba256-L4-T2300-c1a64d59e07d",
+      "owner_pid_in_namespace": 151380,
+      "started_at": "2026-11-16T10:18:54.975722+00:00"
+    },
+    "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4",
+    "task_id": "karatsuba256-L4-T2300-c1a64d59e07d",
+    "wrapper": {
+      "pid": 1152833,
+      "start": "19955367",
+      "state": "S",
+      "argv": [
+        "/usr/bin/python3",
+        "-u",
+        "-m",
+        "experiments.arithmetic_dse.workload_nine_runtime",
+        "task",
+        "--root",
+        "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4",
+        "--task-id",
+        "karatsuba256-L4-T2300-c1a64d59e07d"
+      ],
+      "cwd": "/home/zyrv/vulsim"
+    },
+    "signal": "SIGTERM",
+    "reason": "标出A初版测试设置的时钟与实际周期，不再拿流水T/L目标测A",
+    "methods": [
+      "A"
+    ],
+    "requested_at": "2026-11-16T11:49:49.864582+00:00"
+  },
+  {
+    "job": {
+      "id": "e7fe1060f83d432cb6726e260a4ab8d9",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-karatsuba256-L4",
+      "task_id": "karatsuba256-L4-T2750-c1a64d59e07d",
+      "owner_pid_in_namespace": 165043,
+      "started_at": "2026-11-16T10:47:02.787677+00:00"
+    },
+    "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4",
+    "task_id": "karatsuba256-L4-T2750-c1a64d59e07d",
+    "wrapper": {
+      "pid": 1170356,
+      "start": "20124156",
+      "state": "S",
+      "argv": [
+        "/usr/bin/python3",
+        "-u",
+        "-m",
+        "experiments.arithmetic_dse.workload_nine_runtime",
+        "task",
+        "--root",
+        "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4",
+        "--task-id",
+        "karatsuba256-L4-T2750-c1a64d59e07d"
+      ],
+      "cwd": "/home/zyrv/vulsim"
+    },
+    "signal": "SIGTERM",
+    "reason": "标出A初版测试设置的时钟与实际周期，不再拿流水T/L目标测A",
+    "methods": [
+      "A"
+    ],
+    "requested_at": "2026-11-16T11:49:49.865345+00:00"
+  },
+  {
+    "job": {
+      "id": "13fffec0e6da40f5b0df96135661820d",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-karatsuba256-L8",
+      "task_id": "karatsuba256-L8-T1150-c1a64d59e07d",
+      "owner_pid_in_namespace": 180102,
+      "started_at": "2026-11-16T11:48:00.951310+00:00"
+    },
+    "batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8",
+    "task_id": "karatsuba256-L8-T1150-c1a64d59e07d",
+    "wrapper": {
+      "pid": 1191538,
+      "start": "20489952",
+      "state": "S",
+      "argv": [
+        "/usr/bin/python3",
+        "-u",
+        "-m",
+        "experiments.arithmetic_dse.workload_nine_runtime",
+        "task",
+        "--root",
+        "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8",
+        "--task-id",
+        "karatsuba256-L8-T1150-c1a64d59e07d"
+      ],
+      "cwd": "/home/zyrv/vulsim"
+    },
+    "signal": "SIGTERM",
+    "reason": "标出A初版测试设置的时钟与实际周期，不再拿流水T/L目标测A",
+    "methods": [
+      "A"
+    ],
+    "requested_at": "2026-11-16T11:49:49.866067+00:00"
+  }
+]

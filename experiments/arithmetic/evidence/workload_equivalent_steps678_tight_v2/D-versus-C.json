@@ -1,0 +1,108 @@
+{
+  "rows": [
+    {
+      "case": "mac32",
+      "T_ps": 500,
+      "area_reduction": 0.4057183575309523,
+      "Tmin_reduction": 0.4053735231884977,
+      "both_setup_hold_coverage_met": false,
+      "same_implementation": false,
+      "C": {
+        "area_um2": 2619.034560000001,
+        "Tmin_ps": 1143.552002,
+        "setup": false,
+        "hold": false
+      },
+      "D": {
+        "area_um2": 1556.4441600000002,
+        "Tmin_ps": 679.986298,
+        "setup": false,
+        "hold": true
+      }
+    },
+    {
+      "case": "mac32",
+      "T_ps": 750,
+      "area_reduction": 0.4315125076519849,
+      "Tmin_reduction": 0.33263629656809585,
+      "both_setup_hold_coverage_met": false,
+      "same_implementation": false,
+      "C": {
+        "area_um2": 2453.1870600000007,
+        "Tmin_ps": 1127.92807,
+        "setup": false,
+        "hold": true
+      },
+      "D": {
+        "area_um2": 1394.60616,
+        "Tmin_ps": 752.738254,
+        "setup": false,
+        "hold": true
+      }
+    },
+    {
+      "case": "mac32",
+      "T_ps": 1000,
+      "area_reduction": 0.5795645608006896,
+      "Tmin_reduction": 0.12822833672083822,
+      "both_setup_hold_coverage_met": false,
+      "same_implementation": false,
+      "C": {
+        "area_um2": 2384.6902200000004,
+        "Tmin_ps": 1147.770569,
+        "setup": false,
+        "hold": true
+      },
+      "D": {
+        "area_um2": 1002.6082800000001,
+        "Tmin_ps": 1000.593858,
+        "setup": false,
+        "hold": false
+      }
+    },
+    {
+      "case": "add512",
+      "T_ps": 350,
+      "area_reduction": -0.07634153886574638,
+      "Tmin_reduction": 0.2602694842598559,
+      "both_setup_hold_coverage_met": false,
+      "same_implementation": false,
+      "C": {
+        "area_um2": 3440.57382,
+        "Tmin_ps": 893.141663,
+        "setup": false,
+        "hold": true
+      },
+      "D": {
+        "area_um2": 3703.2325199999996,
+        "Tmin_ps": 660.684143,
+        "setup": false,
+        "hold": true
+      }
+    },
+    {
+      "case": "add512",
+      "T_ps": 400,
+      "area_reduction": -0.07058427932356934,
+      "Tmin_reduction": 0.27396468367416554,
+      "both_setup_hold_coverage_met": false,
+      "same_implementation": false,
+      "C": {
+        "area_um2": 3425.410619999999,
+        "Tmin_ps": 907.5444640000001,
+        "setup": false,
+        "hold": true
+      },
+      "D": {
+        "area_um2": 3667.19076,
+        "Tmin_ps": 658.909332,
+        "setup": false,
+        "hold": false
+      }
+    }
+  ],
+  "qualified": false,
+  "scope": "frozen grt implementations at each target",
+  "area_benefit_with_complete_TT_timing": 0,
+  "clock_benefit": 5
+}

@@ -1,0 +1,108 @@
+{
+  "version": "dot16-active-L4-L5-v1",
+  "case": "dot16",
+  "variants": [
+    {
+      "L": 4,
+      "targets_ps": [
+        850,
+        1050
+      ]
+    },
+    {
+      "L": 5,
+      "targets_ps": [
+        700,
+        850
+      ]
+    }
+  ],
+  "grammar": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      32
+    ],
+    [
+      0,
+      64
+    ],
+    [
+      16,
+      0
+    ],
+    [
+      16,
+      32
+    ],
+    [
+      16,
+      64
+    ],
+    [
+      32,
+      0
+    ],
+    [
+      32,
+      32
+    ],
+    [
+      32,
+      64
+    ],
+    [
+      8,
+      0
+    ],
+    [
+      8,
+      32
+    ],
+    [
+      8,
+      64
+    ]
+  ],
+  "user_authorization": "可以把dot16调整成4-5级流水试试",
+  "A_reference_Tmin_ps": 2705.125456,
+  "reference_readout": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/dot16-A-reference/clock-readout/result.json",
+  "factors": [
+    1.25,
+    1.5
+  ],
+  "quantum_ps": 50,
+  "required_main_records": 16,
+  "required_attribution_records": 4,
+  "B": "original atomic operators; registers only",
+  "C": "original fixed abstract table",
+  "D": "joint body budgets -> equivalent training T -> unchanged frozen responses",
+  "occupancy": "every stage must contain live non-wiring arithmetic; checked before and after selection",
+  "candidates": "native beam plus active balanced and dependency-depth schedules; same grammar and credit for C/D",
+  "schedule_override": "isolated selector.balanced = active_balanced; original selector source unchanged",
+  "qualification": "diagnostic_only",
+  "model_refitted": false,
+  "application_PPA_for_selection": false,
+  "target_relaxation_after_PPA": false,
+  "original_L8_records_retained": true,
+  "parallel_jobs": 4,
+  "threads_per_tool": 4,
+  "memory_limit_MiB": 8192,
+  "physical_start": "wait until all previously admitted parent tasks settle and ledger is idle",
+  "inputs": {
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_dot16_latency.py": "3edf3e91cdcd85d3de3108c2c156cd24d4c49e719af212186f938e52005615ae",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/targets/dot16.json": "c53b2461872c7b88ecd0f1ad9a604019054c7ab4893a6c8fe6dd20f480fd5cb7",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/dot16-A-reference/clock-readout/result.json": "ed2e214fdcc6ded3ddee77e4ab5510abebd49486e381c069e8125a0db2263fe7",
+    "/home/zyrv/vulsim/build/workload-v10-20261115/rtlzz-workload": "a44b9b6d8f664894bac1c6c5ad9d872d9cdb3be865bf922d0641e64a74bd12c1",
+    "/home/zyrv/vulsim/experiments/arithmetic/evidence/workload_equivalent_mac32_v1/diagnostic-model.json": "de067c6983fe92eb7b5771b014f7881483bc2be06a5f70eddd3bc521208bc575",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/characterization-contract.json": "2d74087801b4f2f3dab450412c2f0855450023473ac0d513bdf0573db8cecd30",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/bindings.json": "0f1a01f22c053602d16ef9dc2ae6fe421fd30cf0b140d95e8782b014afd297ea",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_selection.py": "300f29625d0553c808a33f7a88a38fa531e3ec0c277587611413cecd98dee5ab",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_software.py": "0d7532c2122b4fa64f1b1de21f16076fad3ede5cc828b51f74121737620a8abc",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_tight_equivalent.py": "e0d9efc1451446e78aac5c23a36bc8165fd0538c291b82cdafd420d7cec315b7",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_prices.py": "f741791587cb4a8b98edefde010f232e41835d2cc5fc848b8f4b031db394feb1"
+  }
+}

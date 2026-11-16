@@ -1,0 +1,38 @@
+{
+  "at": "2026-11-16T12:29:33.163118+00:00",
+  "launch": {
+    "at": "2026-11-16T12:27:37.944116+00:00",
+    "pid": 1218553,
+    "source_sha256": "39a2b9d88d9e7171cb44514f27e949a6685b88b39e79d69c0d27eb13c16fcf17",
+    "controller": {
+      "pid": 1192985,
+      "start": "20500951",
+      "state": "S",
+      "argv": [
+        "/usr/bin/python3",
+        "-u",
+        "-m",
+        "experiments.arithmetic_dse.workload_reference_A",
+        "run",
+        "--root",
+        "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1"
+      ],
+      "cwd": "/home/zyrv/vulsim"
+    }
+  },
+  "worker_progress": {
+    "status": "waiting_for_slot",
+    "at": "2026-11-16T12:29:31.057544+00:00",
+    "task": "montgomery256-A-reference-T27000",
+    "active_physical_jobs": 9,
+    "automatic_retries": 0
+  },
+  "new_jobs": [],
+  "active_physical_jobs": 9,
+  "main_controller_latest": "2026-11-16T12:29:28.596525+00:00",
+  "original_queue_protected_files_unchanged": true,
+  "new_admission_sha256": "a89f8e4d6b3666bc04c913d6cdfd081d909daa204306dee290ba25e7dcb593f5",
+  "tests_passed": 27,
+  "source_sha256": "39a2b9d88d9e7171cb44514f27e949a6685b88b39e79d69c0d27eb13c16fcf17",
+  "maximum_parallel_jobs": 9
+}

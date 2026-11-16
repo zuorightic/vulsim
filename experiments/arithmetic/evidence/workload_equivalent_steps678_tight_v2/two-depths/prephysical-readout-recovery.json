@@ -1,0 +1,64 @@
+{
+  "status": "ready",
+  "reason": "prephysical live report and final measurement acceptance correction",
+  "source_sha256": "c0cdeb81a7b93f8f1083e0ed2251d263eb3c6f27adbfb2ad7677c631625c70ba",
+  "runtime_sha256": "964a83ba883384b6ee443994d40225a5d8afd36bf1e1c4ce451695a5c1fba612",
+  "old_controller_pid": 873729,
+  "old_controller_terminated": true,
+  "previous_progress": {
+    "status": "draining_previous_wave",
+    "software_pass": [],
+    "software_errors": [
+      {
+        "case": "mac32",
+        "L": 2,
+        "exit_code": 1,
+        "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/software-logs/mac32-L2.log"
+      },
+      {
+        "case": "add512",
+        "L": 2,
+        "exit_code": 1,
+        "log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/software-logs/add512-L2.log"
+      }
+    ],
+    "physical_pass": [],
+    "physical_errors": [],
+    "software_active": [
+      {
+        "case": "mul128",
+        "L": 2,
+        "pid": 11
+      },
+      {
+        "case": "dot16",
+        "L": 4,
+        "pid": 12
+      }
+    ],
+    "physical_active": []
+  },
+  "software_checks": [
+    {
+      "case": "mul128",
+      "L": 2,
+      "complete_native_exports": true,
+      "completed_score_gzip_valid": true,
+      "interrupted_search_retained": true,
+      "previous_log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/software-logs/mul128-L2.prephysical-readout-handoff.log"
+    },
+    {
+      "case": "dot16",
+      "L": 4,
+      "complete_native_exports": true,
+      "completed_score_gzip_valid": true,
+      "interrupted_search_retained": true,
+      "previous_log": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/software-logs/dot16-L4.prephysical-readout-handoff.log"
+    }
+  ],
+  "physical_admissions": 0,
+  "EDA_calls": 0,
+  "old_EDA_children_signalled": false,
+  "at_epoch": 1794798618.0630422,
+  "automatic_physical_retry": false
+}

@@ -1,0 +1,77 @@
+candidate32 10 [4, 16] 631012233d1ae95b86b077377af768c61f8f6c389108b96eed53a8b7db4ee4a1
+nodes 7257 operators 644 G 24
+calls 689 cache 118
+Timeout (0:00:30)!
+Thread 0x00007cf532d07140 (most recent call first):
+  File "/usr/lib/python3.12/copy.py", line 168 in deepcopy
+  File "/usr/lib/python3.12/copy.py", line 242 in _deepcopy_list
+  File "/usr/lib/python3.12/copy.py", line 136 in deepcopy
+  File "/usr/lib/python3.12/copy.py", line 197 in _deepcopy_list
+  File "/usr/lib/python3.12/copy.py", line 136 in deepcopy
+  File "/usr/lib/python3.12/copy.py", line 196 in _deepcopy_list
+  File "/usr/lib/python3.12/copy.py", line 136 in deepcopy
+  File "/usr/lib/python3.12/copy.py", line 221 in _deepcopy_dict
+  File "/usr/lib/python3.12/copy.py", line 136 in deepcopy
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_equivalent.py", line 33 in request_at
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_adapter.py", line 93 in consumer_price
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_adapter.py", line 96 in <genexpr>
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_adapter.py", line 96 in window
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/equivalent_period.py", line 44 in sample
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/equivalent_period.py", line 62 in invert_window
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_adapter.py", line 98 in convert
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_equivalent.py", line 170 in optimize
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_adapter.py", line 114 in optimize
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_tight_equivalent.py", line 18 in optimize
+  File "/tmp/vulsim-profile-candidate.py", line 30 in <module>
+calls 3903 cache 147
+calls 14842 cache 1389
+Timeout (0:00:30)!
+Thread 0x00007cf532d07140 (most recent call first):
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/prospective_logic.py", line 63 in gate
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/prospective_logic.py", line 82 in prefix
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/flow_structure_features.py", line 87 in reduction_circuit
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/semantic_fanout_features_v8.py", line 61 in reduction_features
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/semantic_reset_features_v9.py", line 182 in reduction_features
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/transition_incidence_features_v10.py", line 125 in reduction_features
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_diagnostic.py", line 225 in reduction_price
+  File "/tmp/vulsim-profile-candidate.py", line 28 in reduction_price
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_adapter.py", line 83 in price
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_adapter.py", line 93 in consumer_price
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_adapter.py", line 96 in <genexpr>
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_adapter.py", line 96 in window
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/equivalent_period.py", line 44 in sample
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/equivalent_period.py", line 62 in invert_window
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_adapter.py", line 98 in convert
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_equivalent.py", line 170 in optimize
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_adapter.py", line 114 in optimize
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_tight_equivalent.py", line 18 in optimize
+  File "/tmp/vulsim-profile-candidate.py", line 30 in <module>
+calls 15160 cache 1506
+calls 21909 cache 1523
+Timeout (0:00:30)!
+Thread 0x00007cf532d07140 (most recent call first):
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/local_budget.py", line 63 in inspect
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/local_budget.py", line 98 in allocate
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/local_budget.py", line 122 in proposals
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_equivalent.py", line 208 in optimize
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_adapter.py", line 114 in optimize
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_tight_equivalent.py", line 18 in optimize
+  File "/tmp/vulsim-profile-candidate.py", line 30 in <module>
+calls 33865 cache 1856
+calls 44589 cache 2006
+Timeout (0:00:30)!
+Thread 0x00007cf532d07140 (most recent call first):
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_diagnostic.py", line 220 in reduction_price
+  File "/tmp/vulsim-profile-candidate.py", line 28 in reduction_price
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_adapter.py", line 83 in price
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_adapter.py", line 93 in consumer_price
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_adapter.py", line 96 in <genexpr>
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_adapter.py", line 96 in window
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/equivalent_period.py", line 44 in sample
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/equivalent_period.py", line 62 in invert_window
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_adapter.py", line 98 in convert
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_equivalent.py", line 170 in optimize
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_final_adapter.py", line 114 in optimize
+  File "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_tight_equivalent.py", line 18 in optimize
+  File "/tmp/vulsim-profile-candidate.py", line 30 in <module>
+calls 54312 cache 2212

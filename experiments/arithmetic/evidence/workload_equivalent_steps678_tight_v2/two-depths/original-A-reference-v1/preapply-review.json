@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-16T11:01:35.363096+00:00",
+  "status": "prepared_preview",
+  "tests": {
+    "command": "python3 -m unittest regression.test_workload_reference_A regression.test_workload_two_depths regression.test_workload_two_depths_monitor",
+    "passed": 21,
+    "failed": 0
+  },
+  "source_sha256": "7b7ce1bf6c58ad8b5b730cb548677365d66f01a0856ee4ddcdf8d14e6f5c2902",
+  "amendment_sha256": "7359fcb0ffde2ce9f0c35530f4b738b2c1257ef640d46566eab1ef530c418bec",
+  "protected_frozen_files_match": true,
+  "model_status_section_sha256": "94111a36244e7c0fb63ca0f9de7c5c7c556954302b511727dd14d4b13139abbf",
+  "historical_tail_sha256": "45cd0f99d78135cc6543ce3fc8f8c90c7a295c50a27348de97cd8bf19a0b4ea9",
+  "BCD_measured": 46,
+  "A_reference_measured": 8,
+  "docs": {
+    "/home/zyrv/vulsim/mission/lxy-plan-fix.md": "01fc502ce016cc16d69332d5380486eb97252df99f932308db3c0fb5ac964762",
+    "/home/zyrv/vulsim/mission/README.md": "1abf46a7b803c2a7bc2e3d31b8806731d1492b03f1d6c44a52a9a703216fdd3d"
+  },
+  "preflight_entry_fix": "Known default --root and code cwd verified; first preflight sent no signals"
+}

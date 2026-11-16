@@ -1,0 +1,63 @@
+{
+  "version": "tight-MAC-near-target-cold-repeat-v1",
+  "targets_ps": [
+    750,
+    1000
+  ],
+  "tasks": [
+    {
+      "id": "mac32-T750-a603cc65f248-repeat",
+      "case": "mac32",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mac32/T750-L3/D/workload.sv",
+      "period_ps": 750,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mac32/T750-L3/D/functional-receipt.json",
+      "large": false,
+      "shared_methods": [
+        "D"
+      ],
+      "complete_selection_freeze": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-mac32-selection-freeze.json",
+      "complete_selection_freeze_sha256": "b29a6d6f674f0a1d7eb62c9d0b737703bbd43695698122386900d6a09884a484",
+      "rtl_sha256": "a603cc65f248c0409d680555c3690cf9fc0f98e95de5a48fa1530482f7a85793",
+      "abc_target_ps": 750,
+      "threads": 4,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 300,
+      "grt_timeout_s": 1200,
+      "support_timeout_s": 300,
+      "repeat_of": "mac32-T750-a603cc65f248",
+      "original_clock_readout": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-mac32/runs/mac32-T750-a603cc65f248/clock-readout/result.json",
+      "original_clock_readout_sha256": "3a9fc298b88677d0b4c2924a66856fd70b4bc5bd96f45700d62b41d34a042938"
+    },
+    {
+      "id": "mac32-T1000-9b41cfd87866-repeat",
+      "case": "mac32",
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mac32/T1000-L3/D/workload.sv",
+      "period_ps": 1000,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mac32/T1000-L3/D/functional-receipt.json",
+      "large": false,
+      "shared_methods": [
+        "D"
+      ],
+      "complete_selection_freeze": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-mac32-selection-freeze.json",
+      "complete_selection_freeze_sha256": "b29a6d6f674f0a1d7eb62c9d0b737703bbd43695698122386900d6a09884a484",
+      "rtl_sha256": "9b41cfd87866aa472b2e3191052ddfddc6728cf089c09f0ebb2bb513b8715bf7",
+      "abc_target_ps": 1000,
+      "threads": 4,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 300,
+      "grt_timeout_s": 1200,
+      "support_timeout_s": 300,
+      "repeat_of": "mac32-T1000-9b41cfd87866",
+      "original_clock_readout": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-mac32/runs/mac32-T1000-9b41cfd87866/clock-readout/result.json",
+      "original_clock_readout_sha256": "916520825fc6db937d34046034f6ef91a809a451bb410c24676c5543d349eb3c"
+    }
+  ],
+  "purpose": "check near-target setup/hold classification stability",
+  "repeat_per_record": 1,
+  "automatic_retries": 0,
+  "application_PPA_for_model_or_selection": false,
+  "replace_main_results": false,
+  "source_sha256": "af04bcc0d91b238ad1bcb84d23d3df0259903c1458c86e126907cf01454fa2c6"
+}

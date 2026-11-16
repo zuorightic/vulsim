@@ -1,0 +1,22 @@
+{
+  "role": "software_performance_diagnostic_only",
+  "case": "horner64",
+  "T_ps": 950,
+  "candidate": 32,
+  "grammar": [
+    4,
+    16
+  ],
+  "nodes": 7257,
+  "operators": 644,
+  "G_regions": 24,
+  "hotspots": [
+    "G reduction_circuit/reduction_features during equivalent-T inversion",
+    "TimingDAG.inspect/allocate/proposals"
+  ],
+  "software_recomputation_not_used_for_selection": true,
+  "EDA_calls": 0,
+  "response_or_search_changed": false,
+  "log_sha256": "58157b7182b2957be162ccacb8b211cc028346e78768c5501c40a429b5a7273b",
+  "last_observed_price_calls": 54312
+}

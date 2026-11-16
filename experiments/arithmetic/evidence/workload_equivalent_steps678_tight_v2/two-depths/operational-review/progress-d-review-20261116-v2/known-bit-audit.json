@@ -1,0 +1,2666 @@
+{
+  "version": "independent-state-known-zero-audit-v1",
+  "new_EDA_calls": 0,
+  "new_model_fits": 0,
+  "frozen_sources_modified": false,
+  "method": "Conservative unsigned ternary addition, structural bit propagation and independent operand upper bounds; no correlation assumption.",
+  "scope": "Software state masks only; physical flop saving and revised PPA are not measured.",
+  "witness": {
+    "origin": 4111,
+    "expression": "(A[3:0]*B[11:8]<<8)+(A[3:0]*B[15:12]<<12)",
+    "exhaustive_assignments": 4096,
+    "declared_width": 21,
+    "original_variable_bits": 21,
+    "exhaustive_zero_mask_hex": "0x1000ff",
+    "independent_proven_zero_mask_hex": "0x1000ff",
+    "maximum": 979200,
+    "full_graph_concrete_vectors": 64,
+    "full_graph_node_value_checks": 459264,
+    "full_product_matches_python": true,
+    "note": "All 12 relevant input bits enumerated; other input bits have no path to origin 4111."
+  },
+  "selected_D": [
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/add512/L2/software/selected/add512/T700-L2/D",
+      "graph_sha256": "a97be01a33c916a0ec16e27c743f2f7f987622271064ea5a35452363b8fd2888",
+      "state_sha256": "b5ff0428d51f410949352adafe83dcbfd8f932106fb0f4e6528dd2e20bf0b05a",
+      "operations": {
+        "input": 3,
+        "add": 1,
+        "wire": 2
+      },
+      "totals": {
+        "original_variable_bits": 1026,
+        "additional_proven_zero_bits": 0,
+        "reset_compatible_zero_bits": 0,
+        "affected_slots": 0,
+        "conservative_remaining_bits": 1026
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 513,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 513,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [],
+      "unsupported_operations": [
+        "add"
+      ],
+      "case": "add512",
+      "L": 2,
+      "T_ps": 700,
+      "grammar": [
+        0,
+        0
+      ],
+      "rtl_sha256": "be37505847a5d0ff6e64b95c6236dc1c5264a3d5fcd4ac6275c0bf6dcbf9879f"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/add512/L2/software/selected/add512/T800-L2/D",
+      "graph_sha256": "a97be01a33c916a0ec16e27c743f2f7f987622271064ea5a35452363b8fd2888",
+      "state_sha256": "6233946aae370c944302b50c5cbf30601e776cd3efb69dbe3cb2cc94400c8d5e",
+      "operations": {
+        "input": 3,
+        "add": 1,
+        "wire": 2
+      },
+      "totals": {
+        "original_variable_bits": 1026,
+        "additional_proven_zero_bits": 0,
+        "reset_compatible_zero_bits": 0,
+        "affected_slots": 0,
+        "conservative_remaining_bits": 1026
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 513,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 513,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [],
+      "unsupported_operations": [
+        "add"
+      ],
+      "case": "add512",
+      "L": 2,
+      "T_ps": 800,
+      "grammar": [
+        0,
+        0
+      ],
+      "rtl_sha256": "be37505847a5d0ff6e64b95c6236dc1c5264a3d5fcd4ac6275c0bf6dcbf9879f"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T350-L4/D",
+      "graph_sha256": "9d531628fb25eda37e3d756d806d4350580bfdb62d296c5e34156611b99e1a93",
+      "state_sha256": "98d6630121e1f0b14a6d77f31b44d2056348182ef5addb139e7a5d8d65b06a1a",
+      "operations": {
+        "input": 3,
+        "wire": 5,
+        "slice": 15,
+        "adc": 5,
+        "bitselect": 4,
+        "concat": 1
+      },
+      "totals": {
+        "original_variable_bits": 2820,
+        "additional_proven_zero_bits": 0,
+        "reset_compatible_zero_bits": 0,
+        "affected_slots": 0,
+        "conservative_remaining_bits": 2820
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 897,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 769,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "3": {
+          "original_variable_bits": 641,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "4": {
+          "original_variable_bits": 513,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [],
+      "unsupported_operations": [
+        "bitselect"
+      ],
+      "case": "add512",
+      "L": 4,
+      "T_ps": 350,
+      "grammar": [
+        0,
+        128
+      ],
+      "rtl_sha256": "7c21841924530588e0082f59d89df53a290679507fa73643d1e1bacad2571a68"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/add512/T400-L4/D",
+      "graph_sha256": "9d531628fb25eda37e3d756d806d4350580bfdb62d296c5e34156611b99e1a93",
+      "state_sha256": "1d92d2a73de334e7acbcb45cccc1aa1de96dceed88cf154a650c1fd202642329",
+      "operations": {
+        "input": 3,
+        "wire": 5,
+        "slice": 15,
+        "adc": 5,
+        "bitselect": 4,
+        "concat": 1
+      },
+      "totals": {
+        "original_variable_bits": 2820,
+        "additional_proven_zero_bits": 0,
+        "reset_compatible_zero_bits": 0,
+        "affected_slots": 0,
+        "conservative_remaining_bits": 2820
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 897,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 769,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "3": {
+          "original_variable_bits": 641,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "4": {
+          "original_variable_bits": 513,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [],
+      "unsupported_operations": [
+        "bitselect"
+      ],
+      "case": "add512",
+      "L": 4,
+      "T_ps": 400,
+      "grammar": [
+        0,
+        128
+      ],
+      "rtl_sha256": "7c21841924530588e0082f59d89df53a290679507fa73643d1e1bacad2571a68"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/barrett64/L4/software/selected/barrett64/T1800-L4/D",
+      "graph_sha256": "6f744aa925c8e58fd7c6f0f0feaa8e666b56d9f89c33a08c8f3815cd84c7a986",
+      "state_sha256": "f20e6a0f4dd563fc74489d03c90c1e45bc0bc1ff31ba6ae829311463c12f6e73",
+      "operations": {
+        "input": 5,
+        "wire": 18,
+        "and": 3,
+        "sub": 2,
+        "ult": 1,
+        "mux": 1,
+        "slice": 7,
+        "mul": 3
+      },
+      "totals": {
+        "original_variable_bits": 1155,
+        "additional_proven_zero_bits": 0,
+        "reset_compatible_zero_bits": 0,
+        "affected_slots": 0,
+        "conservative_remaining_bits": 1155
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 449,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 321,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "3": {
+          "original_variable_bits": 321,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "4": {
+          "original_variable_bits": 64,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [],
+      "unsupported_operations": [
+        "and",
+        "mux",
+        "sub",
+        "ult"
+      ],
+      "case": "barrett64",
+      "L": 4,
+      "T_ps": 1800,
+      "grammar": [
+        0,
+        0
+      ],
+      "rtl_sha256": "876198aa88c9a01020eaf4c05ab88e04488da53b5bcb79da13eb1cff40e8a44a"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/barrett64/L4/software/selected/barrett64/T2150-L4/D",
+      "graph_sha256": "6f744aa925c8e58fd7c6f0f0feaa8e666b56d9f89c33a08c8f3815cd84c7a986",
+      "state_sha256": "26d006523fac4d678c3a0b1a23ad665f424735bae329cb9d59ac30e504f47507",
+      "operations": {
+        "input": 5,
+        "wire": 18,
+        "and": 3,
+        "sub": 2,
+        "ult": 1,
+        "mux": 1,
+        "slice": 7,
+        "mul": 3
+      },
+      "totals": {
+        "original_variable_bits": 1155,
+        "additional_proven_zero_bits": 0,
+        "reset_compatible_zero_bits": 0,
+        "affected_slots": 0,
+        "conservative_remaining_bits": 1155
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 449,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 321,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "3": {
+          "original_variable_bits": 321,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "4": {
+          "original_variable_bits": 64,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [],
+      "unsupported_operations": [
+        "and",
+        "mux",
+        "sub",
+        "ult"
+      ],
+      "case": "barrett64",
+      "L": 4,
+      "T_ps": 2150,
+      "grammar": [
+        0,
+        0
+      ],
+      "rtl_sha256": "876198aa88c9a01020eaf4c05ab88e04488da53b5bcb79da13eb1cff40e8a44a"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/barrett64/T900-L8/D",
+      "graph_sha256": "a91d4963c3367bae56bc9b031d4dff30a8dc7d1c3f6526e4fac1b938cc274be9",
+      "state_sha256": "ad1b1e33d3383975b7cd65350519a79b667269bebea440d8ac9d40e1a3732123",
+      "operations": {
+        "input": 5,
+        "wire": 59,
+        "and": 3,
+        "sub": 2,
+        "ult": 1,
+        "mux": 1,
+        "slice": 54,
+        "mul": 22,
+        "concat": 19,
+        "adc": 19
+      },
+      "totals": {
+        "original_variable_bits": 2954,
+        "additional_proven_zero_bits": 6,
+        "reset_compatible_zero_bits": 6,
+        "affected_slots": 6,
+        "conservative_remaining_bits": 2948
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 449,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 449,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "3": {
+          "original_variable_bits": 900,
+          "additional_proven_zero_bits": 4,
+          "reset_compatible_zero_bits": 4,
+          "affected_slots": 4
+        },
+        "4": {
+          "original_variable_bits": 321,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "5": {
+          "original_variable_bits": 514,
+          "additional_proven_zero_bits": 2,
+          "reset_compatible_zero_bits": 2,
+          "affected_slots": 2
+        },
+        "6": {
+          "original_variable_bits": 193,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "7": {
+          "original_variable_bits": 64,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "8": {
+          "original_variable_bits": 64,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [
+        {
+          "origin": 75,
+          "stage": 3,
+          "operation": "concat",
+          "declared_width": 97,
+          "original_variable_bits": 33,
+          "proven_zero_in_variable_bits": 1,
+          "additional_zero_mask_hex": "0x1000000000000000000000000",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 87,
+          "stage": 3,
+          "operation": "concat",
+          "declared_width": 129,
+          "original_variable_bits": 33,
+          "proven_zero_in_variable_bits": 1,
+          "additional_zero_mask_hex": "0x100000000000000000000000000000000",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 99,
+          "stage": 3,
+          "operation": "concat",
+          "declared_width": 161,
+          "original_variable_bits": 33,
+          "proven_zero_in_variable_bits": 1,
+          "additional_zero_mask_hex": "0x10000000000000000000000000000000000000000",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 111,
+          "stage": 3,
+          "operation": "concat",
+          "declared_width": 193,
+          "original_variable_bits": 33,
+          "proven_zero_in_variable_bits": 1,
+          "additional_zero_mask_hex": "0x1000000000000000000000000000000000000000000000000",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 164,
+          "stage": 5,
+          "operation": "concat",
+          "declared_width": 97,
+          "original_variable_bits": 33,
+          "proven_zero_in_variable_bits": 1,
+          "additional_zero_mask_hex": "0x1000000000000000000000000",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 168,
+          "stage": 5,
+          "operation": "concat",
+          "declared_width": 129,
+          "original_variable_bits": 33,
+          "proven_zero_in_variable_bits": 1,
+          "additional_zero_mask_hex": "0x100000000000000000000000000000000",
+          "reset_compatible": true,
+          "external_capture": false
+        }
+      ],
+      "unsupported_operations": [
+        "and",
+        "mux",
+        "sub",
+        "ult"
+      ],
+      "case": "barrett64",
+      "L": 8,
+      "T_ps": 900,
+      "grammar": [
+        32,
+        0
+      ],
+      "rtl_sha256": "18a83492966603a3d9d13da0522bdba7ff5efe07070ae9de89dd3b44d4eaa752"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/barrett64/T1100-L8/D",
+      "graph_sha256": "a91d4963c3367bae56bc9b031d4dff30a8dc7d1c3f6526e4fac1b938cc274be9",
+      "state_sha256": "6f83a14f998eb0e4452eb6387a464f7dfe566cdc4ce560daf624524f07328bbe",
+      "operations": {
+        "input": 5,
+        "wire": 59,
+        "and": 3,
+        "sub": 2,
+        "ult": 1,
+        "mux": 1,
+        "slice": 54,
+        "mul": 22,
+        "concat": 19,
+        "adc": 19
+      },
+      "totals": {
+        "original_variable_bits": 2954,
+        "additional_proven_zero_bits": 6,
+        "reset_compatible_zero_bits": 6,
+        "affected_slots": 6,
+        "conservative_remaining_bits": 2948
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 449,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 449,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "3": {
+          "original_variable_bits": 900,
+          "additional_proven_zero_bits": 4,
+          "reset_compatible_zero_bits": 4,
+          "affected_slots": 4
+        },
+        "4": {
+          "original_variable_bits": 321,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "5": {
+          "original_variable_bits": 514,
+          "additional_proven_zero_bits": 2,
+          "reset_compatible_zero_bits": 2,
+          "affected_slots": 2
+        },
+        "6": {
+          "original_variable_bits": 193,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "7": {
+          "original_variable_bits": 64,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "8": {
+          "original_variable_bits": 64,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [
+        {
+          "origin": 75,
+          "stage": 3,
+          "operation": "concat",
+          "declared_width": 97,
+          "original_variable_bits": 33,
+          "proven_zero_in_variable_bits": 1,
+          "additional_zero_mask_hex": "0x1000000000000000000000000",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 87,
+          "stage": 3,
+          "operation": "concat",
+          "declared_width": 129,
+          "original_variable_bits": 33,
+          "proven_zero_in_variable_bits": 1,
+          "additional_zero_mask_hex": "0x100000000000000000000000000000000",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 99,
+          "stage": 3,
+          "operation": "concat",
+          "declared_width": 161,
+          "original_variable_bits": 33,
+          "proven_zero_in_variable_bits": 1,
+          "additional_zero_mask_hex": "0x10000000000000000000000000000000000000000",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 111,
+          "stage": 3,
+          "operation": "concat",
+          "declared_width": 193,
+          "original_variable_bits": 33,
+          "proven_zero_in_variable_bits": 1,
+          "additional_zero_mask_hex": "0x1000000000000000000000000000000000000000000000000",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 164,
+          "stage": 5,
+          "operation": "concat",
+          "declared_width": 97,
+          "original_variable_bits": 33,
+          "proven_zero_in_variable_bits": 1,
+          "additional_zero_mask_hex": "0x1000000000000000000000000",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 168,
+          "stage": 5,
+          "operation": "concat",
+          "declared_width": 129,
+          "original_variable_bits": 33,
+          "proven_zero_in_variable_bits": 1,
+          "additional_zero_mask_hex": "0x100000000000000000000000000000000",
+          "reset_compatible": true,
+          "external_capture": false
+        }
+      ],
+      "unsupported_operations": [
+        "and",
+        "mux",
+        "sub",
+        "ult"
+      ],
+      "case": "barrett64",
+      "L": 8,
+      "T_ps": 1100,
+      "grammar": [
+        32,
+        0
+      ],
+      "rtl_sha256": "18a83492966603a3d9d13da0522bdba7ff5efe07070ae9de89dd3b44d4eaa752"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/selected/dot16/T850-L4/D",
+      "graph_sha256": "33443153c851724118e78841d0656e6b79d6a6330ca83b426b54aa8742da51d2",
+      "state_sha256": "c580efd8a231882eb9520ae4ce05de8b251f2eef39ec7575fc1719443cc577da",
+      "operations": {
+        "input": 33,
+        "wire": 2082,
+        "add": 15,
+        "slice": 2096,
+        "mul": 1024,
+        "concat": 1008,
+        "adc": 1008
+      },
+      "totals": {
+        "original_variable_bits": 19084,
+        "additional_proven_zero_bits": 0,
+        "reset_compatible_zero_bits": 0,
+        "affected_slots": 0,
+        "conservative_remaining_bits": 19084
+      },
+      "stages": {
+        "2": {
+          "original_variable_bits": 2048,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "3": {
+          "original_variable_bits": 520,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "1": {
+          "original_variable_bits": 16384,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "4": {
+          "original_variable_bits": 132,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [],
+      "unsupported_operations": [
+        "add"
+      ],
+      "case": "dot16",
+      "L": 4,
+      "T_ps": 850,
+      "grammar": [
+        8,
+        0
+      ],
+      "rtl_sha256": "13041929dd25f13910d1d62bc604e2765ed8ecada43c0465cf3e10fc23d1489f"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L4/software/selected/dot16/T1050-L4/D",
+      "graph_sha256": "33443153c851724118e78841d0656e6b79d6a6330ca83b426b54aa8742da51d2",
+      "state_sha256": "f31885e1d18d5def754d54bce15c323673a422c68039ab6deb8359dfb1893e7b",
+      "operations": {
+        "input": 33,
+        "wire": 2082,
+        "add": 15,
+        "slice": 2096,
+        "mul": 1024,
+        "concat": 1008,
+        "adc": 1008
+      },
+      "totals": {
+        "original_variable_bits": 19084,
+        "additional_proven_zero_bits": 0,
+        "reset_compatible_zero_bits": 0,
+        "affected_slots": 0,
+        "conservative_remaining_bits": 19084
+      },
+      "stages": {
+        "2": {
+          "original_variable_bits": 2048,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "3": {
+          "original_variable_bits": 520,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "1": {
+          "original_variable_bits": 16384,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "4": {
+          "original_variable_bits": 132,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [],
+      "unsupported_operations": [
+        "add"
+      ],
+      "case": "dot16",
+      "L": 4,
+      "T_ps": 1050,
+      "grammar": [
+        8,
+        0
+      ],
+      "rtl_sha256": "13041929dd25f13910d1d62bc604e2765ed8ecada43c0465cf3e10fc23d1489f"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/selected/dot16/T700-L5/D",
+      "graph_sha256": "c1c6639669b60e5da86ce4ece66cedcb0c8c6bf42df91f547263c80ba6217f12",
+      "state_sha256": "8ac478a9c596f85d90fa42e980af11233aaa4db664d5d11313e0cf04a6a9528a",
+      "operations": {
+        "input": 33,
+        "wire": 546,
+        "add": 15,
+        "slice": 560,
+        "mul": 256,
+        "concat": 240,
+        "adc": 240
+      },
+      "totals": {
+        "original_variable_bits": 14314,
+        "additional_proven_zero_bits": 608,
+        "reset_compatible_zero_bits": 608,
+        "affected_slots": 32,
+        "conservative_remaining_bits": 13706
+      },
+      "stages": {
+        "3": {
+          "original_variable_bits": 2048,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "4": {
+          "original_variable_bits": 262,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "1": {
+          "original_variable_bits": 8192,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 3680,
+          "additional_proven_zero_bits": 608,
+          "reset_compatible_zero_bits": 608,
+          "affected_slots": 32
+        },
+        "5": {
+          "original_variable_bits": 132,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [
+        {
+          "origin": 247,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 99,
+          "original_variable_bits": 99,
+          "proven_zero_in_variable_bits": 3,
+          "additional_zero_mask_hex": "0x7000000000000000000000000",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 250,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 131,
+          "original_variable_bits": 131,
+          "proven_zero_in_variable_bits": 35,
+          "additional_zero_mask_hex": "0x7000000000000000000000000ffffffff",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 356,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 99,
+          "original_variable_bits": 99,
+          "proven_zero_in_variable_bits": 3,
+          "additional_zero_mask_hex": "0x7000000000000000000000000",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 359,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 131,
+          "original_variable_bits": 131,
+          "proven_zero_in_variable_bits": 35,
+          "additional_zero_mask_hex": "0x7000000000000000000000000ffffffff",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 465,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 99,
+          "original_variable_bits": 99,
+          "proven_zero_in_variable_bits": 3,
+          "additional_zero_mask_hex": "0x7000000000000000000000000",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 468,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 131,
+          "original_variable_bits": 131,
+          "proven_zero_in_variable_bits": 35,
+          "additional_zero_mask_hex": "0x7000000000000000000000000ffffffff",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 574,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 99,
+          "original_variable_bits": 99,
+          "proven_zero_in_variable_bits": 3,
+          "additional_zero_mask_hex": "0x7000000000000000000000000",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 577,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 131,
+          "original_variable_bits": 131,
+          "proven_zero_in_variable_bits": 35,
+          "additional_zero_mask_hex": "0x7000000000000000000000000ffffffff",
+          "reset_compatible": true,
+          "external_capture": false
+        }
+      ],
+      "unsupported_operations": [
+        "add"
+      ],
+      "case": "dot16",
+      "L": 5,
+      "T_ps": 700,
+      "grammar": [
+        16,
+        0
+      ],
+      "rtl_sha256": "4c2ee7748c79e869068a149f332de33903b35c397ba374ef94633bc57dfb3afc"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-dot16-L45-v1/L5/software/selected/dot16/T850-L5/D",
+      "graph_sha256": "c1c6639669b60e5da86ce4ece66cedcb0c8c6bf42df91f547263c80ba6217f12",
+      "state_sha256": "9c6113104e47518484adaec6d994fa5ab78f85845064e60ad775e086848bf413",
+      "operations": {
+        "input": 33,
+        "wire": 546,
+        "add": 15,
+        "slice": 560,
+        "mul": 256,
+        "concat": 240,
+        "adc": 240
+      },
+      "totals": {
+        "original_variable_bits": 14314,
+        "additional_proven_zero_bits": 608,
+        "reset_compatible_zero_bits": 608,
+        "affected_slots": 32,
+        "conservative_remaining_bits": 13706
+      },
+      "stages": {
+        "3": {
+          "original_variable_bits": 2048,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "4": {
+          "original_variable_bits": 262,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "1": {
+          "original_variable_bits": 8192,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 3680,
+          "additional_proven_zero_bits": 608,
+          "reset_compatible_zero_bits": 608,
+          "affected_slots": 32
+        },
+        "5": {
+          "original_variable_bits": 132,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [
+        {
+          "origin": 247,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 99,
+          "original_variable_bits": 99,
+          "proven_zero_in_variable_bits": 3,
+          "additional_zero_mask_hex": "0x7000000000000000000000000",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 250,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 131,
+          "original_variable_bits": 131,
+          "proven_zero_in_variable_bits": 35,
+          "additional_zero_mask_hex": "0x7000000000000000000000000ffffffff",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 356,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 99,
+          "original_variable_bits": 99,
+          "proven_zero_in_variable_bits": 3,
+          "additional_zero_mask_hex": "0x7000000000000000000000000",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 359,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 131,
+          "original_variable_bits": 131,
+          "proven_zero_in_variable_bits": 35,
+          "additional_zero_mask_hex": "0x7000000000000000000000000ffffffff",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 465,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 99,
+          "original_variable_bits": 99,
+          "proven_zero_in_variable_bits": 3,
+          "additional_zero_mask_hex": "0x7000000000000000000000000",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 468,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 131,
+          "original_variable_bits": 131,
+          "proven_zero_in_variable_bits": 35,
+          "additional_zero_mask_hex": "0x7000000000000000000000000ffffffff",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 574,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 99,
+          "original_variable_bits": 99,
+          "proven_zero_in_variable_bits": 3,
+          "additional_zero_mask_hex": "0x7000000000000000000000000",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 577,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 131,
+          "original_variable_bits": 131,
+          "proven_zero_in_variable_bits": 35,
+          "additional_zero_mask_hex": "0x7000000000000000000000000ffffffff",
+          "reset_compatible": true,
+          "external_capture": false
+        }
+      ],
+      "unsupported_operations": [
+        "add"
+      ],
+      "case": "dot16",
+      "L": 5,
+      "T_ps": 850,
+      "grammar": [
+        16,
+        0
+      ],
+      "rtl_sha256": "4c2ee7748c79e869068a149f332de33903b35c397ba374ef94633bc57dfb3afc"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/horner64/L4/software/selected/horner64/T1900-L4/D",
+      "graph_sha256": "0d3d1768ea7ddb4f4c52669ca6cef68d394385e269929227ec8acace2b7de282",
+      "state_sha256": "b24eac0d8da961584bf95f724cd39495450e244cdd04114e3fce0ecd4b2bfea7",
+      "operations": {
+        "input": 7,
+        "wire": 34,
+        "add": 4,
+        "slice": 36,
+        "mul": 16,
+        "concat": 12,
+        "adc": 12
+      },
+      "totals": {
+        "original_variable_bits": 832,
+        "additional_proven_zero_bits": 0,
+        "reset_compatible_zero_bits": 0,
+        "affected_slots": 0,
+        "conservative_remaining_bits": 832
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 320,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 256,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "3": {
+          "original_variable_bits": 192,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "4": {
+          "original_variable_bits": 64,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [],
+      "unsupported_operations": [
+        "add"
+      ],
+      "case": "horner64",
+      "L": 4,
+      "T_ps": 1900,
+      "grammar": [
+        32,
+        0
+      ],
+      "rtl_sha256": "6ed012ed51dbf1e86f5d406d6cd723d5f894c1ecf3206ab3de5642c64bb21b6e"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/horner64/L4/software/selected/horner64/T2250-L4/D",
+      "graph_sha256": "e931563476277934e3002d8b849d89516f2a8563a9e0c0473f372f366da1bb1e",
+      "state_sha256": "d28e592008e20ded0c17d30c3df9726806ccb86842793168f2c46f1ffaf797cb",
+      "operations": {
+        "input": 7,
+        "wire": 6,
+        "add": 4,
+        "mul": 4
+      },
+      "totals": {
+        "original_variable_bits": 832,
+        "additional_proven_zero_bits": 0,
+        "reset_compatible_zero_bits": 0,
+        "affected_slots": 0,
+        "conservative_remaining_bits": 832
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 320,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 256,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "3": {
+          "original_variable_bits": 192,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "4": {
+          "original_variable_bits": 64,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [],
+      "unsupported_operations": [
+        "add"
+      ],
+      "case": "horner64",
+      "L": 4,
+      "T_ps": 2250,
+      "grammar": [
+        0,
+        0
+      ],
+      "rtl_sha256": "7dfa023a85cdfebe1710b021116cce56c1dae5f2bdad42728f9071f84c4ae234"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/horner64/T950-L8/D",
+      "graph_sha256": "cfc3a6bb817777d9f3221d7a0ec3b1405ab2e4d598f62a561758e28fb630fcb8",
+      "state_sha256": "3ad0a59674ae1acf43201568be289dfd64a7a3baaf138e327aebe782ebcb80fe",
+      "operations": {
+        "input": 7,
+        "wire": 130,
+        "add": 4,
+        "slice": 132,
+        "mul": 64,
+        "concat": 60,
+        "adc": 60
+      },
+      "totals": {
+        "original_variable_bits": 3712,
+        "additional_proven_zero_bits": 0,
+        "reset_compatible_zero_bits": 0,
+        "affected_slots": 0,
+        "conservative_remaining_bits": 3712
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 832,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 320,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "3": {
+          "original_variable_bits": 768,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "4": {
+          "original_variable_bits": 256,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "5": {
+          "original_variable_bits": 704,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "6": {
+          "original_variable_bits": 192,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "7": {
+          "original_variable_bits": 576,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "8": {
+          "original_variable_bits": 64,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [],
+      "unsupported_operations": [
+        "add"
+      ],
+      "case": "horner64",
+      "L": 8,
+      "T_ps": 950,
+      "grammar": [
+        16,
+        0
+      ],
+      "rtl_sha256": "4f83e78449a4ac88b6c831e60335f7d6554244fe5d5aedf12a023a8b41634f71"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/horner64/T1150-L8/D",
+      "graph_sha256": "cfc3a6bb817777d9f3221d7a0ec3b1405ab2e4d598f62a561758e28fb630fcb8",
+      "state_sha256": "79e1b6c72b10ade428432ed67696fd4a7eb8cd69eaa185ee526bf0dcdc2d5f2a",
+      "operations": {
+        "input": 7,
+        "wire": 130,
+        "add": 4,
+        "slice": 132,
+        "mul": 64,
+        "concat": 60,
+        "adc": 60
+      },
+      "totals": {
+        "original_variable_bits": 3712,
+        "additional_proven_zero_bits": 0,
+        "reset_compatible_zero_bits": 0,
+        "affected_slots": 0,
+        "conservative_remaining_bits": 3712
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 832,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 320,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "3": {
+          "original_variable_bits": 768,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "4": {
+          "original_variable_bits": 256,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "5": {
+          "original_variable_bits": 704,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "6": {
+          "original_variable_bits": 192,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "7": {
+          "original_variable_bits": 576,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "8": {
+          "original_variable_bits": 64,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [],
+      "unsupported_operations": [
+        "add"
+      ],
+      "case": "horner64",
+      "L": 8,
+      "T_ps": 1150,
+      "grammar": [
+        16,
+        0
+      ],
+      "rtl_sha256": "4f83e78449a4ac88b6c831e60335f7d6554244fe5d5aedf12a023a8b41634f71"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/karatsuba256/L4/software/selected/karatsuba256/T2300-L4/D",
+      "graph_sha256": "36e79dc11167a101f473421c42541bf3c2f26b69d74b3d3a25f0ac6b55321809",
+      "state_sha256": "3798839b7972fff0db3d8f4a63be6e8c131806a328671264bb26f5df63675ae8",
+      "operations": {
+        "input": 4,
+        "slice": 56,
+        "and": 84,
+        "wire": 134,
+        "add": 33,
+        "sub": 16,
+        "shl": 16,
+        "mul": 17
+      },
+      "totals": {
+        "original_variable_bits": 7543,
+        "additional_proven_zero_bits": 0,
+        "reset_compatible_zero_bits": 0,
+        "affected_slots": 0,
+        "conservative_remaining_bits": 7543
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 3304,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 2188,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "3": {
+          "original_variable_bits": 1538,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "4": {
+          "original_variable_bits": 513,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [],
+      "unsupported_operations": [
+        "add",
+        "and",
+        "shl",
+        "sub"
+      ],
+      "case": "karatsuba256",
+      "L": 4,
+      "T_ps": 2300,
+      "grammar": [
+        0,
+        0
+      ],
+      "rtl_sha256": "8f7d78972cbbf42b9c41e26cda6ac83109a80a96c2297fd4393840a60af1943e"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/karatsuba256/L4/software/selected/karatsuba256/T2750-L4/D",
+      "graph_sha256": "36e79dc11167a101f473421c42541bf3c2f26b69d74b3d3a25f0ac6b55321809",
+      "state_sha256": "0b88dd8e91515def4dab516b854b0db87fc6643e19744fd91827ca93c91e7e49",
+      "operations": {
+        "input": 4,
+        "slice": 56,
+        "and": 84,
+        "wire": 134,
+        "add": 33,
+        "sub": 16,
+        "shl": 16,
+        "mul": 17
+      },
+      "totals": {
+        "original_variable_bits": 7543,
+        "additional_proven_zero_bits": 0,
+        "reset_compatible_zero_bits": 0,
+        "affected_slots": 0,
+        "conservative_remaining_bits": 7543
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 3304,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 2188,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "3": {
+          "original_variable_bits": 1538,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "4": {
+          "original_variable_bits": 513,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [],
+      "unsupported_operations": [
+        "add",
+        "and",
+        "shl",
+        "sub"
+      ],
+      "case": "karatsuba256",
+      "L": 4,
+      "T_ps": 2750,
+      "grammar": [
+        0,
+        0
+      ],
+      "rtl_sha256": "8f7d78972cbbf42b9c41e26cda6ac83109a80a96c2297fd4393840a60af1943e"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/karatsuba256/T1150-L8/D",
+      "graph_sha256": "36e79dc11167a101f473421c42541bf3c2f26b69d74b3d3a25f0ac6b55321809",
+      "state_sha256": "3bd3a13d21115bf4eab07603cb0c391c61864401e600bc7b3e8f9207beb750c6",
+      "operations": {
+        "input": 4,
+        "slice": 56,
+        "and": 84,
+        "wire": 134,
+        "add": 33,
+        "sub": 16,
+        "shl": 16,
+        "mul": 17
+      },
+      "totals": {
+        "original_variable_bits": 16365,
+        "additional_proven_zero_bits": 0,
+        "reset_compatible_zero_bits": 0,
+        "affected_slots": 0,
+        "conservative_remaining_bits": 16365
+      },
+      "stages": {
+        "2": {
+          "original_variable_bits": 3502,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "1": {
+          "original_variable_bits": 2778,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "3": {
+          "original_variable_bits": 2774,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "4": {
+          "original_variable_bits": 2184,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "5": {
+          "original_variable_bits": 2052,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "6": {
+          "original_variable_bits": 1538,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "7": {
+          "original_variable_bits": 1024,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "8": {
+          "original_variable_bits": 513,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [],
+      "unsupported_operations": [
+        "add",
+        "and",
+        "shl",
+        "sub"
+      ],
+      "case": "karatsuba256",
+      "L": 8,
+      "T_ps": 1150,
+      "grammar": [
+        0,
+        0
+      ],
+      "rtl_sha256": "b5e7a118e6c322fc7513b881e24ad0df50ec3e843593f415d5f9c80767f6f1de"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/karatsuba256/T1400-L8/D",
+      "graph_sha256": "36e79dc11167a101f473421c42541bf3c2f26b69d74b3d3a25f0ac6b55321809",
+      "state_sha256": "0da383cc2aba8828794465926056ab9e5b3741bc17e1b350f72dbcb4eb209fe3",
+      "operations": {
+        "input": 4,
+        "slice": 56,
+        "and": 84,
+        "wire": 134,
+        "add": 33,
+        "sub": 16,
+        "shl": 16,
+        "mul": 17
+      },
+      "totals": {
+        "original_variable_bits": 16365,
+        "additional_proven_zero_bits": 0,
+        "reset_compatible_zero_bits": 0,
+        "affected_slots": 0,
+        "conservative_remaining_bits": 16365
+      },
+      "stages": {
+        "2": {
+          "original_variable_bits": 3502,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "1": {
+          "original_variable_bits": 2778,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "3": {
+          "original_variable_bits": 2774,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "4": {
+          "original_variable_bits": 2184,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "5": {
+          "original_variable_bits": 2052,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "6": {
+          "original_variable_bits": 1538,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "7": {
+          "original_variable_bits": 1024,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "8": {
+          "original_variable_bits": 513,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [],
+      "unsupported_operations": [
+        "add",
+        "and",
+        "shl",
+        "sub"
+      ],
+      "case": "karatsuba256",
+      "L": 8,
+      "T_ps": 1400,
+      "grammar": [
+        0,
+        0
+      ],
+      "rtl_sha256": "b5e7a118e6c322fc7513b881e24ad0df50ec3e843593f415d5f9c80767f6f1de"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/mac32/L2/software/selected/mac32/T950-L2/D",
+      "graph_sha256": "22b161a2e2191bfbbd9304de06f638e2f1203fc82e7704cc115baeafae895a86",
+      "state_sha256": "704db362880e151e557b4fe5a6e92446ccefb07466f2bfdcb038434c1bee1f83",
+      "operations": {
+        "input": 4,
+        "wire": 36,
+        "add": 1,
+        "slice": 35,
+        "mul": 16,
+        "concat": 15,
+        "adc": 15
+      },
+      "totals": {
+        "original_variable_bits": 384,
+        "additional_proven_zero_bits": 0,
+        "reset_compatible_zero_bits": 0,
+        "affected_slots": 0,
+        "conservative_remaining_bits": 384
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 320,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 64,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [],
+      "unsupported_operations": [
+        "add"
+      ],
+      "case": "mac32",
+      "L": 2,
+      "T_ps": 950,
+      "grammar": [
+        8,
+        0
+      ],
+      "rtl_sha256": "1ae18b2a62069e3c67d930944fcd26065b4228befb601e337a6d0b7cecd66603"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/mac32/L2/software/selected/mac32/T1100-L2/D",
+      "graph_sha256": "7881c33570f33858fddc96216aeeb66f540dcaacae1ccdc9dc210ebc3baaf8fb",
+      "state_sha256": "550ae2ff044720663f476c3597572c3abb00803bd73a09c7563b265a30e71866",
+      "operations": {
+        "input": 4,
+        "wire": 12,
+        "add": 1,
+        "slice": 11,
+        "mul": 4,
+        "concat": 3,
+        "adc": 3
+      },
+      "totals": {
+        "original_variable_bits": 256,
+        "additional_proven_zero_bits": 0,
+        "reset_compatible_zero_bits": 0,
+        "affected_slots": 0,
+        "conservative_remaining_bits": 256
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 192,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 64,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [],
+      "unsupported_operations": [
+        "add"
+      ],
+      "case": "mac32",
+      "L": 2,
+      "T_ps": 1100,
+      "grammar": [
+        16,
+        0
+      ],
+      "rtl_sha256": "dce41e76e0194faaac2feec216cedfbb90eddea9d3b39d1d5afc30da3ce39a64"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mac32/T500-L3/D",
+      "graph_sha256": "c735cc3260e2236d7147d7b5c578554a328079e5b9656a1ead56e663576a7dc1",
+      "state_sha256": "7e7bd31ea3bca14371a6914eaed5dc41ef29f979473667e99a08c66176ebee11",
+      "operations": {
+        "input": 4,
+        "wire": 132,
+        "add": 1,
+        "slice": 131,
+        "mul": 64,
+        "concat": 63,
+        "adc": 63
+      },
+      "totals": {
+        "original_variable_bits": 928,
+        "additional_proven_zero_bits": 64,
+        "reset_compatible_zero_bits": 64,
+        "affected_slots": 4,
+        "conservative_remaining_bits": 864
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 576,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 288,
+          "additional_proven_zero_bits": 64,
+          "reset_compatible_zero_bits": 64,
+          "affected_slots": 4
+        },
+        "3": {
+          "original_variable_bits": 64,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [
+        {
+          "origin": 438,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 44,
+          "original_variable_bits": 44,
+          "proven_zero_in_variable_bits": 4,
+          "additional_zero_mask_hex": "0xf0000000000",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 441,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 52,
+          "original_variable_bits": 52,
+          "proven_zero_in_variable_bits": 12,
+          "additional_zero_mask_hex": "0xf0000000000ff",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 444,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 60,
+          "original_variable_bits": 60,
+          "proven_zero_in_variable_bits": 20,
+          "additional_zero_mask_hex": "0xf0000000000ffff",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 447,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 68,
+          "original_variable_bits": 68,
+          "proven_zero_in_variable_bits": 28,
+          "additional_zero_mask_hex": "0xf0000000000ffffff",
+          "reset_compatible": true,
+          "external_capture": false
+        }
+      ],
+      "unsupported_operations": [
+        "add"
+      ],
+      "case": "mac32",
+      "L": 3,
+      "T_ps": 500,
+      "grammar": [
+        4,
+        0
+      ],
+      "rtl_sha256": "a603cc65f248c0409d680555c3690cf9fc0f98e95de5a48fa1530482f7a85793"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mac32/T750-L3/D",
+      "graph_sha256": "c735cc3260e2236d7147d7b5c578554a328079e5b9656a1ead56e663576a7dc1",
+      "state_sha256": "81c2c30d0e40fbe9d77541ef337fe5640d3e066b8bb1378509202eb058f80b19",
+      "operations": {
+        "input": 4,
+        "wire": 132,
+        "add": 1,
+        "slice": 131,
+        "mul": 64,
+        "concat": 63,
+        "adc": 63
+      },
+      "totals": {
+        "original_variable_bits": 928,
+        "additional_proven_zero_bits": 64,
+        "reset_compatible_zero_bits": 64,
+        "affected_slots": 4,
+        "conservative_remaining_bits": 864
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 576,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 288,
+          "additional_proven_zero_bits": 64,
+          "reset_compatible_zero_bits": 64,
+          "affected_slots": 4
+        },
+        "3": {
+          "original_variable_bits": 64,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [
+        {
+          "origin": 438,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 44,
+          "original_variable_bits": 44,
+          "proven_zero_in_variable_bits": 4,
+          "additional_zero_mask_hex": "0xf0000000000",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 441,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 52,
+          "original_variable_bits": 52,
+          "proven_zero_in_variable_bits": 12,
+          "additional_zero_mask_hex": "0xf0000000000ff",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 444,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 60,
+          "original_variable_bits": 60,
+          "proven_zero_in_variable_bits": 20,
+          "additional_zero_mask_hex": "0xf0000000000ffff",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 447,
+          "stage": 2,
+          "operation": "adc",
+          "declared_width": 68,
+          "original_variable_bits": 68,
+          "proven_zero_in_variable_bits": 28,
+          "additional_zero_mask_hex": "0xf0000000000ffffff",
+          "reset_compatible": true,
+          "external_capture": false
+        }
+      ],
+      "unsupported_operations": [
+        "add"
+      ],
+      "case": "mac32",
+      "L": 3,
+      "T_ps": 750,
+      "grammar": [
+        4,
+        0
+      ],
+      "rtl_sha256": "a603cc65f248c0409d680555c3690cf9fc0f98e95de5a48fa1530482f7a85793"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mac32/T1000-L3/D",
+      "graph_sha256": "8ead53513486ca77ca9b83720ac58c2dba183e970623e568542489749484383f",
+      "state_sha256": "cb74aec93dbb72240aa204976c897605552f4a48c6bb761ed2d824c167e73864",
+      "operations": {
+        "input": 4,
+        "wire": 22,
+        "add": 1,
+        "slice": 21,
+        "mul": 9,
+        "concat": 8,
+        "adc": 8
+      },
+      "totals": {
+        "original_variable_bits": 448,
+        "additional_proven_zero_bits": 0,
+        "reset_compatible_zero_bits": 0,
+        "affected_slots": 0,
+        "conservative_remaining_bits": 448
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 256,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 128,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "3": {
+          "original_variable_bits": 64,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [],
+      "unsupported_operations": [
+        "add"
+      ],
+      "case": "mac32",
+      "L": 3,
+      "T_ps": 1000,
+      "grammar": [
+        12,
+        0
+      ],
+      "rtl_sha256": "9b41cfd87866aa472b2e3191052ddfddc6728cf089c09f0ebb2bb513b8715bf7"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/mul128/L2/software/selected/mul128/T1200-L2/D",
+      "graph_sha256": "b1f6fa8d0dc00516fe4229ac2a9e25b2520a75877bacaf7d1f1ce4d93d3979ec",
+      "state_sha256": "640404f7bf2e2f48055ba300ae1a47db36a1ee5fe26e5e8b1f16ae09f4a663a5",
+      "operations": {
+        "input": 3,
+        "wire": 132,
+        "slice": 131,
+        "mul": 64,
+        "concat": 63,
+        "adc": 63
+      },
+      "totals": {
+        "original_variable_bits": 2304,
+        "additional_proven_zero_bits": 0,
+        "reset_compatible_zero_bits": 0,
+        "affected_slots": 0,
+        "conservative_remaining_bits": 2304
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 2048,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 256,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [],
+      "unsupported_operations": [],
+      "case": "mul128",
+      "L": 2,
+      "T_ps": 1200,
+      "grammar": [
+        16,
+        0
+      ],
+      "rtl_sha256": "797e2a4ef532ddac9815b68209df3ef2c9fbc114d4fc852935301c3cab530366"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/mul128/L2/software/selected/mul128/T1450-L2/D",
+      "graph_sha256": "e2704adb37989cd5c78f6f9337deda043c63cead6cc8cd2d900146bdb5407498",
+      "state_sha256": "9a60101fd161b4bf0bc39332ac2eb31441dbf5e73ceb55e78eb2452d884e1a88",
+      "operations": {
+        "input": 3,
+        "wire": 36,
+        "slice": 35,
+        "mul": 16,
+        "concat": 15,
+        "adc": 15
+      },
+      "totals": {
+        "original_variable_bits": 1280,
+        "additional_proven_zero_bits": 0,
+        "reset_compatible_zero_bits": 0,
+        "affected_slots": 0,
+        "conservative_remaining_bits": 1280
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 1024,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 256,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [],
+      "unsupported_operations": [],
+      "case": "mul128",
+      "L": 2,
+      "T_ps": 1450,
+      "grammar": [
+        32,
+        0
+      ],
+      "rtl_sha256": "4cb62746f4c530da8ab09b2bc7c3d1346986e3719decf4fef905d85562f7dfa2"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T600-L4/D",
+      "graph_sha256": "c60cce45ab8193b8b2a143547029c175adfbb8f31d7b6f5195897cc8b7068a37",
+      "state_sha256": "b5fae1b4946f8014c48cba39a3ca33d431e85a14808c12d4acbe375c549717e2",
+      "operations": {
+        "input": 3,
+        "wire": 2052,
+        "slice": 2051,
+        "mul": 1024,
+        "concat": 1023,
+        "adc": 1023
+      },
+      "totals": {
+        "original_variable_bits": 81656,
+        "additional_proven_zero_bits": 69752,
+        "reset_compatible_zero_bits": 69752,
+        "affected_slots": 584,
+        "conservative_remaining_bits": 11904
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 69120,
+          "additional_proven_zero_bits": 62976,
+          "reset_compatible_zero_bits": 62976,
+          "affected_slots": 512
+        },
+        "2": {
+          "original_variable_bits": 10624,
+          "additional_proven_zero_bits": 6272,
+          "reset_compatible_zero_bits": 6272,
+          "affected_slots": 64
+        },
+        "3": {
+          "original_variable_bits": 1656,
+          "additional_proven_zero_bits": 504,
+          "reset_compatible_zero_bits": 504,
+          "affected_slots": 8
+        },
+        "4": {
+          "original_variable_bits": 256,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [
+        {
+          "origin": 4108,
+          "stage": 1,
+          "operation": "adc",
+          "declared_width": 13,
+          "original_variable_bits": 13,
+          "proven_zero_in_variable_bits": 1,
+          "additional_zero_mask_hex": "0x1000",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 4111,
+          "stage": 1,
+          "operation": "adc",
+          "declared_width": 21,
+          "original_variable_bits": 21,
+          "proven_zero_in_variable_bits": 9,
+          "additional_zero_mask_hex": "0x1000ff",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 4114,
+          "stage": 1,
+          "operation": "adc",
+          "declared_width": 29,
+          "original_variable_bits": 29,
+          "proven_zero_in_variable_bits": 17,
+          "additional_zero_mask_hex": "0x1000ffff",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 4117,
+          "stage": 1,
+          "operation": "adc",
+          "declared_width": 37,
+          "original_variable_bits": 37,
+          "proven_zero_in_variable_bits": 25,
+          "additional_zero_mask_hex": "0x1000ffffff",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 4120,
+          "stage": 1,
+          "operation": "adc",
+          "declared_width": 45,
+          "original_variable_bits": 45,
+          "proven_zero_in_variable_bits": 33,
+          "additional_zero_mask_hex": "0x1000ffffffff",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 4123,
+          "stage": 1,
+          "operation": "adc",
+          "declared_width": 53,
+          "original_variable_bits": 53,
+          "proven_zero_in_variable_bits": 41,
+          "additional_zero_mask_hex": "0x1000ffffffffff",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 4126,
+          "stage": 1,
+          "operation": "adc",
+          "declared_width": 61,
+          "original_variable_bits": 61,
+          "proven_zero_in_variable_bits": 49,
+          "additional_zero_mask_hex": "0x1000ffffffffffff",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 4129,
+          "stage": 1,
+          "operation": "adc",
+          "declared_width": 69,
+          "original_variable_bits": 69,
+          "proven_zero_in_variable_bits": 57,
+          "additional_zero_mask_hex": "0x1000ffffffffffffff",
+          "reset_compatible": true,
+          "external_capture": false
+        }
+      ],
+      "unsupported_operations": [],
+      "case": "mul128",
+      "L": 4,
+      "T_ps": 600,
+      "grammar": [
+        4,
+        0
+      ],
+      "rtl_sha256": "78374d7545b6be3e333da7bbabbe25b76ee9b45b9a61343c8b12c00598720aa1"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/selected/mul128/T750-L4/D",
+      "graph_sha256": "c60cce45ab8193b8b2a143547029c175adfbb8f31d7b6f5195897cc8b7068a37",
+      "state_sha256": "c6273c7ca61ea88afb6f25517b91abb8c40b4c6ef2c5686cac8b2ffde95d6f48",
+      "operations": {
+        "input": 3,
+        "wire": 2052,
+        "slice": 2051,
+        "mul": 1024,
+        "concat": 1023,
+        "adc": 1023
+      },
+      "totals": {
+        "original_variable_bits": 81656,
+        "additional_proven_zero_bits": 69752,
+        "reset_compatible_zero_bits": 69752,
+        "affected_slots": 584,
+        "conservative_remaining_bits": 11904
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 69120,
+          "additional_proven_zero_bits": 62976,
+          "reset_compatible_zero_bits": 62976,
+          "affected_slots": 512
+        },
+        "2": {
+          "original_variable_bits": 10624,
+          "additional_proven_zero_bits": 6272,
+          "reset_compatible_zero_bits": 6272,
+          "affected_slots": 64
+        },
+        "3": {
+          "original_variable_bits": 1656,
+          "additional_proven_zero_bits": 504,
+          "reset_compatible_zero_bits": 504,
+          "affected_slots": 8
+        },
+        "4": {
+          "original_variable_bits": 256,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [
+        {
+          "origin": 4108,
+          "stage": 1,
+          "operation": "adc",
+          "declared_width": 13,
+          "original_variable_bits": 13,
+          "proven_zero_in_variable_bits": 1,
+          "additional_zero_mask_hex": "0x1000",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 4111,
+          "stage": 1,
+          "operation": "adc",
+          "declared_width": 21,
+          "original_variable_bits": 21,
+          "proven_zero_in_variable_bits": 9,
+          "additional_zero_mask_hex": "0x1000ff",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 4114,
+          "stage": 1,
+          "operation": "adc",
+          "declared_width": 29,
+          "original_variable_bits": 29,
+          "proven_zero_in_variable_bits": 17,
+          "additional_zero_mask_hex": "0x1000ffff",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 4117,
+          "stage": 1,
+          "operation": "adc",
+          "declared_width": 37,
+          "original_variable_bits": 37,
+          "proven_zero_in_variable_bits": 25,
+          "additional_zero_mask_hex": "0x1000ffffff",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 4120,
+          "stage": 1,
+          "operation": "adc",
+          "declared_width": 45,
+          "original_variable_bits": 45,
+          "proven_zero_in_variable_bits": 33,
+          "additional_zero_mask_hex": "0x1000ffffffff",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 4123,
+          "stage": 1,
+          "operation": "adc",
+          "declared_width": 53,
+          "original_variable_bits": 53,
+          "proven_zero_in_variable_bits": 41,
+          "additional_zero_mask_hex": "0x1000ffffffffff",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 4126,
+          "stage": 1,
+          "operation": "adc",
+          "declared_width": 61,
+          "original_variable_bits": 61,
+          "proven_zero_in_variable_bits": 49,
+          "additional_zero_mask_hex": "0x1000ffffffffffff",
+          "reset_compatible": true,
+          "external_capture": false
+        },
+        {
+          "origin": 4129,
+          "stage": 1,
+          "operation": "adc",
+          "declared_width": 69,
+          "original_variable_bits": 69,
+          "proven_zero_in_variable_bits": 57,
+          "additional_zero_mask_hex": "0x1000ffffffffffffff",
+          "reset_compatible": true,
+          "external_capture": false
+        }
+      ],
+      "unsupported_operations": [],
+      "case": "mul128",
+      "L": 4,
+      "T_ps": 750,
+      "grammar": [
+        4,
+        0
+      ],
+      "rtl_sha256": "78374d7545b6be3e333da7bbabbe25b76ee9b45b9a61343c8b12c00598720aa1"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/parallel-software/ntt8x64/selected/ntt8x64/T800-L16/D",
+      "graph_sha256": "a202cbef470f04225fc7315e627cb73e18f83a0d398a383cdde81f8cd27cca73",
+      "state_sha256": "2ef354e10b99822e5f86cdfea844097bb974d80b68febfc85d07e58d6df5a999",
+      "operations": {
+        "input": 9,
+        "wire": 90,
+        "add": 24,
+        "ult": 29,
+        "sub": 46,
+        "mux": 29,
+        "and": 36,
+        "slice": 35,
+        "mul": 15
+      },
+      "totals": {
+        "original_variable_bits": 12816,
+        "additional_proven_zero_bits": 0,
+        "reset_compatible_zero_bits": 0,
+        "affected_slots": 0,
+        "conservative_remaining_bits": 12816
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 776,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 516,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "3": {
+          "original_variable_bits": 968,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "4": {
+          "original_variable_bits": 872,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "5": {
+          "original_variable_bits": 1226,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "6": {
+          "original_variable_bits": 952,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "7": {
+          "original_variable_bits": 885,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "8": {
+          "original_variable_bits": 646,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "9": {
+          "original_variable_bits": 577,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "10": {
+          "original_variable_bits": 1028,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "11": {
+          "original_variable_bits": 900,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "12": {
+          "original_variable_bits": 1028,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "13": {
+          "original_variable_bits": 772,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "14": {
+          "original_variable_bits": 642,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "15": {
+          "original_variable_bits": 516,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "16": {
+          "original_variable_bits": 512,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [],
+      "unsupported_operations": [
+        "add",
+        "and",
+        "mux",
+        "sub",
+        "ult"
+      ],
+      "case": "ntt8x64",
+      "L": 16,
+      "T_ps": 800,
+      "grammar": [
+        0,
+        0
+      ],
+      "rtl_sha256": "a6689a6712c659175b709e532f4823667d3f05103cbe212ccf536a0be05c934e"
+    },
+    {
+      "folder": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/parallel-software/ntt8x64/selected/ntt8x64/T950-L16/D",
+      "graph_sha256": "a202cbef470f04225fc7315e627cb73e18f83a0d398a383cdde81f8cd27cca73",
+      "state_sha256": "7cec02f40bfa3749da35f127d3756031c6fc7c2ac6d8fc6b9591f75b836e4706",
+      "operations": {
+        "input": 9,
+        "wire": 90,
+        "add": 24,
+        "ult": 29,
+        "sub": 46,
+        "mux": 29,
+        "and": 36,
+        "slice": 35,
+        "mul": 15
+      },
+      "totals": {
+        "original_variable_bits": 12816,
+        "additional_proven_zero_bits": 0,
+        "reset_compatible_zero_bits": 0,
+        "affected_slots": 0,
+        "conservative_remaining_bits": 12816
+      },
+      "stages": {
+        "1": {
+          "original_variable_bits": 776,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "2": {
+          "original_variable_bits": 516,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "3": {
+          "original_variable_bits": 968,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "4": {
+          "original_variable_bits": 872,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "5": {
+          "original_variable_bits": 1226,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "6": {
+          "original_variable_bits": 952,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "7": {
+          "original_variable_bits": 885,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "8": {
+          "original_variable_bits": 646,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "9": {
+          "original_variable_bits": 577,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "10": {
+          "original_variable_bits": 1028,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "11": {
+          "original_variable_bits": 900,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "12": {
+          "original_variable_bits": 1028,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "13": {
+          "original_variable_bits": 772,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "14": {
+          "original_variable_bits": 642,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "15": {
+          "original_variable_bits": 516,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        },
+        "16": {
+          "original_variable_bits": 512,
+          "additional_proven_zero_bits": 0,
+          "reset_compatible_zero_bits": 0,
+          "affected_slots": 0
+        }
+      },
+      "examples": [],
+      "unsupported_operations": [
+        "add",
+        "and",
+        "mux",
+        "sub",
+        "ult"
+      ],
+      "case": "ntt8x64",
+      "L": 16,
+      "T_ps": 950,
+      "grammar": [
+        0,
+        0
+      ],
+      "rtl_sha256": "a6689a6712c659175b709e532f4823667d3f05103cbe212ccf536a0be05c934e"
+    }
+  ]
+}

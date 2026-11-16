@@ -1,0 +1,42 @@
+{
+  "version": "equivalent-period-nine-case-physical-v1",
+  "files": {
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/montgomery256/unsplit-A-reference-b0-w0-T36000-L1/0/workload.sv": "a8fc40067367a9db52597b2a068dad6687cef625133bc9ffa13da35022de6c59",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/montgomery256/unsplit-A-reference-b0-w0-T36000-L1/0/functional-receipt.json": "4efdf086db22a4f52fdec4fb65b49dae25bc173cd21096bb5ca413c6de7997cf",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_tight_continue.py": "8266b1af418fbaaed3f7203228f24df52917d6d6e10025fa728ee63a93c23734",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_kepler_proxy.py": "96e4c7be312e635c738d9abef04cc0b16a9455e9cf845ae3a0724ecb9777fd9a",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_buffer_equivalence.py": "6fd5cba2075e13a9a8df358c85669c24de24e376bcefb1be4a8d4b80935290bd",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/montgomery256-A-reference/manifest.json": "e63912bcafded9025f7200533e71b338c6457374cd90a0ecbdc2ae9625083819",
+    "/home/zyrv/vulsim-artifacts/montgomery-cts-buffer-proof-v2/result.json": "c0adf3a6592be6d220b7ea38b45696d2dbc2044794d11ae43439652683f0a2c7",
+    "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference-repair-v1/dispatch-extension.json": "95e344a1c4fb485601762ea6cdc20a85d47ccc54ed8a7b7e783fb798f5972941"
+  },
+  "application_PPA_for_selection": false,
+  "role": "clock_calibration",
+  "selection_frozen_before_measurement": true,
+  "tasks": [
+    {
+      "id": "montgomery256-A-reference-repair-v1",
+      "case": "montgomery256",
+      "method": "A",
+      "L": 1,
+      "rtl": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/montgomery256/unsplit-A-reference-b0-w0-T36000-L1/0/workload.sv",
+      "period_ps": 36000,
+      "software_reference_period_ps": 32716.39977046511,
+      "software_reference_request_ps": 1000,
+      "simulation_status": "passed",
+      "simulation_receipt": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/montgomery256/unsplit-A-reference-b0-w0-T36000-L1/0/functional-receipt.json",
+      "large": true,
+      "rtl_sha256": "a8fc40067367a9db52597b2a068dad6687cef625133bc9ffa13da35022de6c59",
+      "abc_target_ps": 36000,
+      "threads": 4,
+      "memory_limit_MiB": 8192,
+      "synth_timeout_s": 3600,
+      "grt_timeout_s": 7200,
+      "support_timeout_s": 300,
+      "predecessor_batch": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference",
+      "predecessor_task": "montgomery256-A-reference",
+      "verification_protocol": "buffer-size-repair-proof-v1",
+      "physical_transformations_changed": false
+    }
+  ]
+}

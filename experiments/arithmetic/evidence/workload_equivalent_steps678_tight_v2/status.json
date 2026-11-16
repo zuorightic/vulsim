@@ -1,0 +1,692 @@
+{
+  "version": "steps678-nine-case-status-v1",
+  "physical_comparison_complete": false,
+  "model_precision_qualified": false,
+  "superseded_by_A_over_L_rule": false,
+  "main_measured": 24,
+  "required_main_records": 76,
+  "batches": {
+    "A-reference": {
+      "role": "clock_calibration",
+      "tasks": 8,
+      "progress": {
+        "status": "batch_settled",
+        "completed": [
+          "add512-A-reference",
+          "horner64-A-reference",
+          "mul128-A-reference",
+          "barrett64-A-reference",
+          "karatsuba256-A-reference",
+          "dot16-A-reference",
+          "ntt8x64-A-reference"
+        ],
+        "errors": [
+          {
+            "task": "montgomery256-A-reference",
+            "reason": "grt: timeout"
+          }
+        ],
+        "active": []
+      },
+      "admission_sha256": "2efe0fdfc9f4bf673c8479af48e977367ff99caf8b58e04c925e8250216d08cc"
+    },
+    "A-reference-repair-v1": {
+      "role": "clock_calibration",
+      "tasks": 1,
+      "progress": {
+        "status": "batch_settled",
+        "completed": [],
+        "errors": [
+          {
+            "task": "montgomery256-A-reference-repair-v1",
+            "reason": "physical child failed; see /home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference-repair-v1/dispatch-logs/montgomery256-A-reference-repair-v1.log"
+          }
+        ],
+        "active": []
+      },
+      "admission_sha256": "520f68fba706959061b9ca5711069465db3bc41f21dff6ca4f01919514e0fad7"
+    },
+    "final-add512": {
+      "role": "final_evaluation",
+      "tasks": 6,
+      "progress": {
+        "status": "batch_settled",
+        "completed": [
+          "add512-T350-41f1f36cf2c3",
+          "add512-T350-27125920dc8d",
+          "add512-T400-41f1f36cf2c3",
+          "add512-T350-7c2184192453",
+          "add512-T400-27125920dc8d",
+          "add512-T400-7c2184192453"
+        ],
+        "errors": [],
+        "active": []
+      },
+      "admission_sha256": "e9e764fc263f6edd7c872c7d22c5ac5434b23b305fa14e4682e195130fc249eb"
+    },
+    "final-barrett64": {
+      "role": "final_evaluation",
+      "tasks": 10,
+      "progress": {
+        "status": "running",
+        "completed": [],
+        "errors": [],
+        "active": [
+          "barrett64-T900-fe0456a5a32c",
+          "barrett64-T900-1c5b5d444d6f",
+          "barrett64-T900-4f5c9617af40",
+          "barrett64-T900-18a834929666",
+          "barrett64-T900-df305882385e",
+          "barrett64-T1100-fe0456a5a32c",
+          "barrett64-T1100-1c5b5d444d6f",
+          "barrett64-T1100-4f5c9617af40",
+          "barrett64-T1100-18a834929666",
+          "barrett64-T1100-f0fe43c6f58a"
+        ]
+      },
+      "admission_sha256": "e16af6f702018be96aefe27b1b2b82e5e95f2a374924459d30000438b952b27c"
+    },
+    "final-horner64": {
+      "role": "final_evaluation",
+      "tasks": 10,
+      "progress": {
+        "status": "running",
+        "completed": [],
+        "errors": [],
+        "active": [
+          "horner64-T950-6c415b9cf3b2",
+          "horner64-T950-428e4557d83e",
+          "horner64-T950-cd5be660311a",
+          "horner64-T950-4f83e78449a4",
+          "horner64-T950-c4bab4fd0309",
+          "horner64-T1150-6c415b9cf3b2",
+          "horner64-T1150-428e4557d83e",
+          "horner64-T1150-cd5be660311a",
+          "horner64-T1150-4f83e78449a4",
+          "horner64-T1150-c4bab4fd0309"
+        ]
+      },
+      "admission_sha256": "4e4c33804363219eda57a5b257b3f1a9cb2e04be848cf4d66218d60a9e8b82c6"
+    },
+    "final-karatsuba256": {
+      "role": "final_evaluation",
+      "tasks": 10,
+      "progress": {
+        "status": "running",
+        "completed": [],
+        "errors": [],
+        "active": [
+          "karatsuba256-T1150-c1a64d59e07d",
+          "karatsuba256-T1150-d82729a2bd2b",
+          "karatsuba256-T1150-f3011704032a",
+          "karatsuba256-T1150-b5e7a118e6c3",
+          "karatsuba256-T1150-f0eca851430c",
+          "karatsuba256-T1400-c1a64d59e07d",
+          "karatsuba256-T1400-d82729a2bd2b",
+          "karatsuba256-T1400-f3011704032a",
+          "karatsuba256-T1400-b5e7a118e6c3",
+          "karatsuba256-T1400-f0eca851430c"
+        ]
+      },
+      "admission_sha256": "ac9e61c575c9906bd4dc54b0ab27837238b8a3715be8e4b9e79f75bc480bbd4f"
+    },
+    "final-mac32": {
+      "role": "final_evaluation",
+      "tasks": 15,
+      "progress": {
+        "status": "batch_settled",
+        "completed": [
+          "mac32-T500-073243214bc6",
+          "mac32-T500-63bbc97d17bb",
+          "mac32-T500-b469e122a49c",
+          "mac32-T500-a603cc65f248",
+          "mac32-T500-83903048b70d",
+          "mac32-T750-073243214bc6",
+          "mac32-T750-63bbc97d17bb",
+          "mac32-T750-b469e122a49c",
+          "mac32-T750-a603cc65f248",
+          "mac32-T750-a4315f7c75b2",
+          "mac32-T1000-073243214bc6",
+          "mac32-T1000-63bbc97d17bb",
+          "mac32-T1000-b469e122a49c",
+          "mac32-T1000-9b41cfd87866",
+          "mac32-T1000-f6095f4a151a"
+        ],
+        "errors": [],
+        "active": []
+      },
+      "admission_sha256": "c14b9825b6ab615ecc1e2f3b8cae518985099e3f92d211b80fb4f2193a96123f"
+    },
+    "final-mul128": {
+      "role": "final_evaluation",
+      "tasks": 8,
+      "progress": {
+        "status": "batch_settled",
+        "completed": [
+          "mul128-T600-6d72e638cd85",
+          "mul128-T600-e18af3cbdef4",
+          "mul128-T600-334ab0c95758",
+          "mul128-T750-6d72e638cd85",
+          "mul128-T750-e18af3cbdef4",
+          "mul128-T750-334ab0c95758"
+        ],
+        "errors": [
+          {
+            "task": "mul128-T600-78374d7545b6",
+            "reason": "physical child failed; see /home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-mul128/dispatch-logs/mul128-T600-78374d7545b6.log"
+          },
+          {
+            "task": "mul128-T750-78374d7545b6",
+            "reason": "physical child failed; see /home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/final-mul128/dispatch-logs/mul128-T750-78374d7545b6.log"
+          }
+        ],
+        "active": []
+      },
+      "admission_sha256": "dd9a863940e2f126d3089594e6f08fef8e208f602e0030d13b2be65bb75bd127"
+    }
+  },
+  "verification_diagnostics": {
+    "montgomery-cts-LEC-diagnostic-v1": {
+      "directory": "/home/zyrv/vulsim-artifacts/montgomery-cts-LEC-diagnostic-v1",
+      "admission_sha256": "debcfaa948a0a3f9c431e19856702cec9e5cd3f8ad7c1867e0cff652e9ea12b0",
+      "result": null
+    },
+    "montgomery-cts-LEC-diagnostic-v2": {
+      "directory": "/home/zyrv/vulsim-artifacts/montgomery-cts-LEC-diagnostic-v2",
+      "admission_sha256": "f9d41ee15dea3e62a93626cc1f21543a73a973f04b72050176f5bd6e20d4c5bf",
+      "result": {
+        "status": "not_proven",
+        "command": {
+          "command": [
+            "/home/zyrv/OpenROAD-flow-scripts/tools/install/yosys/bin/yosys",
+            "-s",
+            "/home/zyrv/vulsim-artifacts/montgomery-cts-LEC-diagnostic-v2/equivalence.ys"
+          ],
+          "exit_code": 1,
+          "process_exit_code": 1,
+          "timed_out": false,
+          "CPU_limit_s": 1200,
+          "CPU_limit_exceeded": false,
+          "sampled_process_tree_CPU_s": 0,
+          "cancelled_signal": null,
+          "walltime_s": 0.21562545499182306,
+          "unexpected_live_descendants": false,
+          "memory_limit_exceeded": false,
+          "memory_limit_MiB": 8192,
+          "sampled_process_tree_peak_rss_KiB": 1396,
+          "sampled_process_tree_peak_threads": 1,
+          "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+          "resource_sampling_interval_s": 0.5,
+          "cleanup": {
+            "term_sent": 0,
+            "kill_sent": 0,
+            "remaining_live_pids": []
+          },
+          "log": "/home/zyrv/vulsim-artifacts/montgomery-cts-LEC-diagnostic-v2/yosys.log",
+          "gnu_time": "/home/zyrv/vulsim-artifacts/montgomery-cts-LEC-diagnostic-v2/yosys.resources.txt"
+        },
+        "admission_sha256": "f9d41ee15dea3e62a93626cc1f21543a73a973f04b72050176f5bd6e20d4c5bf",
+        "log_sha256": "349b84b5fa03e2b5e1be75c2984cdf6377f57185c1a7ca278491e84b84704ddf",
+        "original_check_unchanged": true,
+        "application_PPA_for_selection": false
+      }
+    },
+    "montgomery-cts-LEC-diagnostic-v3": {
+      "directory": "/home/zyrv/vulsim-artifacts/montgomery-cts-LEC-diagnostic-v3",
+      "admission_sha256": "84ce3fa9ffa9f3f90a945d7a71297f9af5047d3b680cd1a5a49531160ca94a94",
+      "result": null
+    },
+    "montgomery-cts-LEC-diagnostic-v4": {
+      "directory": "/home/zyrv/vulsim-artifacts/montgomery-cts-LEC-diagnostic-v4",
+      "admission_sha256": "f86fbeb8a3181b5dd4ca23ff6898d6f114edd2185b20e1e3f3133499d5ab1523",
+      "result": {
+        "status": "not_proven",
+        "command": {
+          "command": [
+            "/home/zyrv/OpenROAD-flow-scripts/tools/install/yosys/bin/yosys",
+            "-s",
+            "/home/zyrv/vulsim-artifacts/montgomery-cts-LEC-diagnostic-v4/equivalence.ys"
+          ],
+          "exit_code": -15,
+          "process_exit_code": -15,
+          "timed_out": false,
+          "CPU_limit_s": 1200,
+          "CPU_limit_exceeded": false,
+          "sampled_process_tree_CPU_s": 49.47,
+          "cancelled_signal": null,
+          "walltime_s": 49.366797595022945,
+          "unexpected_live_descendants": false,
+          "memory_limit_exceeded": true,
+          "memory_limit_MiB": 8192,
+          "sampled_process_tree_peak_rss_KiB": 8628484,
+          "sampled_process_tree_peak_threads": 2,
+          "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+          "resource_sampling_interval_s": 0.5,
+          "cleanup": {
+            "term_sent": 2,
+            "kill_sent": 0,
+            "remaining_live_pids": []
+          },
+          "log": "/home/zyrv/vulsim-artifacts/montgomery-cts-LEC-diagnostic-v4/yosys.log",
+          "gnu_time": "/home/zyrv/vulsim-artifacts/montgomery-cts-LEC-diagnostic-v4/yosys.resources.txt"
+        },
+        "admission_sha256": "f86fbeb8a3181b5dd4ca23ff6898d6f114edd2185b20e1e3f3133499d5ab1523",
+        "log_sha256": "a834d329fa72b90f0140bf1bb24e33c45ab785dec008a16c47e5ba75c5419fa6",
+        "original_check_unchanged": true,
+        "application_PPA_for_selection": false
+      }
+    },
+    "montgomery-cts-LEC-diagnostic-v5": {
+      "directory": "/home/zyrv/vulsim-artifacts/montgomery-cts-LEC-diagnostic-v5",
+      "admission_sha256": "f6330313b4f658f80b2bbb93d9593c5aa8afe00d1b140abf54846f1519d12607",
+      "result": {
+        "status": "not_proven",
+        "command": {
+          "command": [
+            "/home/zyrv/OpenROAD-flow-scripts/tools/install/yosys/bin/yosys",
+            "-s",
+            "/home/zyrv/vulsim-artifacts/montgomery-cts-LEC-diagnostic-v5/equivalence.ys"
+          ],
+          "exit_code": -15,
+          "process_exit_code": -15,
+          "timed_out": false,
+          "CPU_limit_s": 1200,
+          "CPU_limit_exceeded": false,
+          "sampled_process_tree_CPU_s": 55.73,
+          "cancelled_signal": null,
+          "walltime_s": 55.37735632798285,
+          "unexpected_live_descendants": false,
+          "memory_limit_exceeded": true,
+          "memory_limit_MiB": 8192,
+          "sampled_process_tree_peak_rss_KiB": 8452184,
+          "sampled_process_tree_peak_threads": 2,
+          "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+          "resource_sampling_interval_s": 0.5,
+          "cleanup": {
+            "term_sent": 2,
+            "kill_sent": 0,
+            "remaining_live_pids": []
+          },
+          "log": "/home/zyrv/vulsim-artifacts/montgomery-cts-LEC-diagnostic-v5/yosys.log",
+          "gnu_time": "/home/zyrv/vulsim-artifacts/montgomery-cts-LEC-diagnostic-v5/yosys.resources.txt"
+        },
+        "admission_sha256": "f6330313b4f658f80b2bbb93d9593c5aa8afe00d1b140abf54846f1519d12607",
+        "log_sha256": "b7fff5b910206567a2e37c569549e7ffc94e59e370b5d6135b6aca351491b5d8",
+        "proof_strategy": "cutpoints-first",
+        "final_command": "equiv_status -assert",
+        "original_check_unchanged": true,
+        "application_PPA_for_selection": false
+      }
+    },
+    "montgomery-cts-buffer-proof-v1": {
+      "directory": "/home/zyrv/vulsim-artifacts/montgomery-cts-buffer-proof-v1",
+      "admission_sha256": "35623e9286d8a0561fe01fb26f0fca1f54344059647b637776b10e9dbdba627c",
+      "result": {
+        "status": "not_proven",
+        "command": {
+          "command": [
+            "/usr/bin/python3",
+            "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_buffer_equivalence.py",
+            "--before",
+            "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/montgomery256-A-reference/results/asap7/arithmetic_probe/base/4_before_rsz_lec.v",
+            "--after",
+            "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/montgomery256-A-reference/results/asap7/arithmetic_probe/base/4_after_rsz_lec.v",
+            "--liberty",
+            "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib.gz",
+            "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib.gz",
+            "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib.gz",
+            "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib",
+            "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz",
+            "--output",
+            "/home/zyrv/vulsim-artifacts/montgomery-cts-buffer-proof-v1/proof.json"
+          ],
+          "exit_code": 2,
+          "process_exit_code": 2,
+          "timed_out": false,
+          "CPU_limit_s": 1200,
+          "CPU_limit_exceeded": false,
+          "sampled_process_tree_CPU_s": 5.5,
+          "cancelled_signal": null,
+          "walltime_s": 5.875167324993527,
+          "unexpected_live_descendants": false,
+          "memory_limit_exceeded": false,
+          "memory_limit_MiB": 8192,
+          "sampled_process_tree_peak_rss_KiB": 78344,
+          "sampled_process_tree_peak_threads": 2,
+          "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+          "resource_sampling_interval_s": 0.5,
+          "cleanup": {
+            "term_sent": 0,
+            "kill_sent": 0,
+            "remaining_live_pids": []
+          },
+          "log": "/home/zyrv/vulsim-artifacts/montgomery-cts-buffer-proof-v1/proof.log",
+          "gnu_time": "/home/zyrv/vulsim-artifacts/montgomery-cts-buffer-proof-v1/proof.resources.txt"
+        },
+        "proof": {
+          "status": "not_proven",
+          "reason": "incomplete mapped pin list"
+        },
+        "original_check_unchanged": true,
+        "application_PPA_for_selection": false,
+        "admission_sha256": "35623e9286d8a0561fe01fb26f0fca1f54344059647b637776b10e9dbdba627c"
+      }
+    },
+    "montgomery-cts-buffer-proof-v2": {
+      "directory": "/home/zyrv/vulsim-artifacts/montgomery-cts-buffer-proof-v2",
+      "admission_sha256": "88b72b70ac0562081652d7336b768d48ec3b24cb42141d19a2782bc45526b34e",
+      "result": {
+        "status": "proven",
+        "command": {
+          "command": [
+            "/usr/bin/python3",
+            "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_buffer_equivalence.py",
+            "--before",
+            "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/montgomery256-A-reference/results/asap7/arithmetic_probe/base/4_before_rsz_lec.v",
+            "--after",
+            "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/montgomery256-A-reference/results/asap7/arithmetic_probe/base/4_after_rsz_lec.v",
+            "--liberty",
+            "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib.gz",
+            "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib.gz",
+            "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib.gz",
+            "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib",
+            "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz",
+            "--output",
+            "/home/zyrv/vulsim-artifacts/montgomery-cts-buffer-proof-v2/proof.json"
+          ],
+          "exit_code": 0,
+          "process_exit_code": 0,
+          "timed_out": false,
+          "CPU_limit_s": 1200,
+          "CPU_limit_exceeded": false,
+          "sampled_process_tree_CPU_s": 25.04,
+          "cancelled_signal": null,
+          "walltime_s": 25.36682840998401,
+          "unexpected_live_descendants": false,
+          "memory_limit_exceeded": false,
+          "memory_limit_MiB": 8192,
+          "sampled_process_tree_peak_rss_KiB": 1028244,
+          "sampled_process_tree_peak_threads": 2,
+          "resource_scope": "descendants_across_sessions_with_PID_starttime_and_inherited_token",
+          "resource_sampling_interval_s": 0.5,
+          "cleanup": {
+            "term_sent": 0,
+            "kill_sent": 0,
+            "remaining_live_pids": []
+          },
+          "log": "/home/zyrv/vulsim-artifacts/montgomery-cts-buffer-proof-v2/proof.log",
+          "gnu_time": "/home/zyrv/vulsim-artifacts/montgomery-cts-buffer-proof-v2/proof.resources.txt"
+        },
+        "proof": {
+          "status": "proven",
+          "method": "mapped-graph-isomorphism-after-identity-buffers-v1",
+          "nonbuffer_instances": 704168,
+          "input_connections_checked": 1315112,
+          "output_bits_checked": 257,
+          "before_buffers": 10480,
+          "after_buffers": 31793,
+          "function_equivalent_resized_cells": 0,
+          "sequential_scope": "same Liberty state signatures, state-instance correspondence and every data/control/clock input",
+          "unsupported_changes_fail_closed": true
+        },
+        "original_check_unchanged": true,
+        "application_PPA_for_selection": false,
+        "admission_sha256": "88b72b70ac0562081652d7336b768d48ec3b24cb42141d19a2782bc45526b34e"
+      }
+    }
+  },
+  "selected": {
+    "add512": {
+      "targets": [
+        350,
+        400
+      ],
+      "records": 2,
+      "candidates": 30,
+      "complete": 30
+    },
+    "horner64": {
+      "targets": [
+        950,
+        1150
+      ],
+      "records": 2,
+      "candidates": 84,
+      "complete": 84
+    },
+    "dot16": {
+      "targets": [
+        450,
+        550
+      ],
+      "records": 2,
+      "candidates": 84,
+      "complete": 84
+    },
+    "ntt8x64": {
+      "targets": [
+        800,
+        950
+      ],
+      "records": 2,
+      "candidates": 96,
+      "complete": 96
+    },
+    "mul128": {
+      "targets": [
+        600,
+        750
+      ],
+      "records": 2,
+      "candidates": 30,
+      "complete": 30
+    },
+    "karatsuba256": {
+      "targets": [
+        1150,
+        1400
+      ],
+      "records": 2,
+      "candidates": 94,
+      "complete": 94
+    },
+    "mac32": {
+      "targets": [
+        500,
+        750,
+        1000
+      ],
+      "records": 3,
+      "candidates": 175,
+      "complete": 175
+    },
+    "barrett64": {
+      "targets": [
+        900,
+        1100
+      ],
+      "records": 2,
+      "candidates": 92,
+      "complete": 92
+    }
+  },
+  "parallel_software": {
+    "add512": {
+      "parallel-inputs.json": {
+        "case": "add512",
+        "targets_ps": [
+          350,
+          400
+        ],
+        "target_sha256": "777b33b285371d23206e2f29e88ba9af8a4d3b10c6088d19cd98303e74212264",
+        "static_pool_sha256": "74a2a80766e1dd32c61cd3aa808fa511dbf1de661acf4e5a62817100db0cfa25",
+        "selector_source_sha256": "300f29625d0553c808a33f7a88a38fa531e3ec0c277587611413cecd98dee5ab",
+        "model_sha256": "de067c6983fe92eb7b5771b014f7881483bc2be06a5f70eddd3bc521208bc575",
+        "isolated_directory": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/parallel-software/add512",
+        "response_refitted": false,
+        "candidate_policy_changed": false,
+        "application_PPA_read": false,
+        "EDA_calls": 0
+      },
+      "parallel-replay-validation.json": {
+        "status": "passed",
+        "records": 10,
+        "rows": [
+          {
+            "T_ps": 350,
+            "method": "A",
+            "status": "identical"
+          },
+          {
+            "T_ps": 350,
+            "method": "B",
+            "status": "identical"
+          },
+          {
+            "T_ps": 350,
+            "method": "C",
+            "status": "identical"
+          },
+          {
+            "T_ps": 350,
+            "method": "D",
+            "status": "identical"
+          },
+          {
+            "T_ps": 350,
+            "method": "same_policy_static",
+            "status": "identical"
+          },
+          {
+            "T_ps": 400,
+            "method": "A",
+            "status": "identical"
+          },
+          {
+            "T_ps": 400,
+            "method": "B",
+            "status": "identical"
+          },
+          {
+            "T_ps": 400,
+            "method": "C",
+            "status": "identical"
+          },
+          {
+            "T_ps": 400,
+            "method": "D",
+            "status": "identical"
+          },
+          {
+            "T_ps": 400,
+            "method": "same_policy_static",
+            "status": "identical"
+          }
+        ],
+        "EDA_calls": 0,
+        "all_RTL_placements_predictions_and_D_queries_identical": true,
+        "main_selection_sha256": "82b90b014d2ad5d907476fb41967baeff6b21e53228ff443bd43c947380f70d7",
+        "isolated_selection_sha256": "cd9bf930e50421d4e399399b6b2d12c8e8ae078b71531dd5f777180d26441ec2",
+        "already_selected_import_refused": true,
+        "main_selection_unchanged": true
+      },
+      "parallel-ready.json": {
+        "status": "ready",
+        "case": "add512",
+        "inputs_sha256": "26ace2a6ce21bfd81fc620b9d9a7e14b6861a9fb857f4ce0ee3df3d84e8ac850",
+        "selections_sha256": "cd9bf930e50421d4e399399b6b2d12c8e8ae078b71531dd5f777180d26441ec2",
+        "target_count": 2,
+        "EDA_calls": 0
+      }
+    },
+    "dot16": {
+      "parallel-inputs.json": {
+        "case": "dot16",
+        "targets_ps": [
+          450,
+          550
+        ],
+        "target_sha256": "c53b2461872c7b88ecd0f1ad9a604019054c7ab4893a6c8fe6dd20f480fd5cb7",
+        "static_pool_sha256": "59c3d427b2eee212f5b6e16d3cf417fdc07cf828113d9ac6beb7a4ec10312d59",
+        "selector_source_sha256": "300f29625d0553c808a33f7a88a38fa531e3ec0c277587611413cecd98dee5ab",
+        "model_sha256": "de067c6983fe92eb7b5771b014f7881483bc2be06a5f70eddd3bc521208bc575",
+        "isolated_directory": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/parallel-software/dot16",
+        "response_refitted": false,
+        "candidate_policy_changed": false,
+        "application_PPA_read": false,
+        "EDA_calls": 0
+      },
+      "parallel-imported.json": {
+        "status": "imported",
+        "case": "dot16",
+        "targets_ps": [
+          450,
+          550
+        ],
+        "selections_sha256": "e67441c9937978b75f5d351570f3c6fb21b22ae22f3af6d8c477261e7ec5f516",
+        "numerical_identity_preserved": true,
+        "absolute_provenance_directory_retained": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/parallel-software/dot16",
+        "EDA_calls": 0
+      },
+      "parallel-ready.json": {
+        "status": "ready",
+        "case": "dot16",
+        "inputs_sha256": "789e1eaa0655a89439ef9ca9e2c31c8a879916d70df52ae37606b1cf614b514a",
+        "selections_sha256": "e67441c9937978b75f5d351570f3c6fb21b22ae22f3af6d8c477261e7ec5f516",
+        "target_count": 2,
+        "EDA_calls": 0
+      }
+    },
+    "ntt8x64": {
+      "parallel-inputs.json": {
+        "case": "ntt8x64",
+        "targets_ps": [
+          800,
+          950
+        ],
+        "target_sha256": "136b48ec45c0a8bf8b55cdc9253d348c99e72aaf666504f1841d0b367d1979a4",
+        "static_pool_sha256": "0a2157c5619286bd4f360f235d55129daffeb4256a5516f723767ce403ea20ce",
+        "selector_source_sha256": "300f29625d0553c808a33f7a88a38fa531e3ec0c277587611413cecd98dee5ab",
+        "model_sha256": "de067c6983fe92eb7b5771b014f7881483bc2be06a5f70eddd3bc521208bc575",
+        "isolated_directory": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/parallel-software/ntt8x64",
+        "response_refitted": false,
+        "candidate_policy_changed": false,
+        "application_PPA_read": false,
+        "EDA_calls": 0
+      },
+      "parallel-imported.json": {
+        "status": "imported",
+        "case": "ntt8x64",
+        "targets_ps": [
+          800,
+          950
+        ],
+        "selections_sha256": "4c9ce252fab1f6a1eb315c6d41ce2503ff22e61dd274e8f857f003fcb9f6269e",
+        "numerical_identity_preserved": true,
+        "absolute_provenance_directory_retained": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/parallel-software/ntt8x64",
+        "EDA_calls": 0
+      },
+      "parallel-ready.json": {
+        "status": "ready",
+        "case": "ntt8x64",
+        "inputs_sha256": "c841feb603adc7f997a51a6aed6468669a79c89674e7dbf96ae8387a990b51e8",
+        "selections_sha256": "4c9ce252fab1f6a1eb315c6d41ce2503ff22e61dd274e8f857f003fcb9f6269e",
+        "target_count": 2,
+        "EDA_calls": 0
+      }
+    }
+  },
+  "working_root": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A",
+  "ledger": {
+    "synth": 3690,
+    "grt": 3662,
+    "final": 16,
+    "support_calls": 23253,
+    "walltime_s": 570279.431616511,
+    "CPU_time_s": 1520647.47,
+    "pending": 4
+  },
+  "model_response_refitted": false,
+  "independent_operator_sources_unlocked": false,
+  "application_PPA_for_selection": false
+}

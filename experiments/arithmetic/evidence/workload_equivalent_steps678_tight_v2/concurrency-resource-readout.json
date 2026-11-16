@@ -1,0 +1,51 @@
+{
+  "timestamp_UTC": "2026-11-16T01:34:15.993088+00:00",
+  "logical_CPUs": 20,
+  "memory": {
+    "MemTotal_KiB": 65571376,
+    "MemAvailable_KiB": 46246480
+  },
+  "observed_active_jobs": 4,
+  "active_jobs": [
+    {
+      "id": "d229939ea3bf41b59077c219bbfead5a",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "A-reference-repair-v1",
+      "task_id": "montgomery256-A-reference-repair-v1",
+      "owner_pid_in_namespace": 10,
+      "started_at": "2026-11-16T00:27:28.153665+00:00"
+    },
+    {
+      "id": "b2d03de2734e45e085ccc541c1307a30",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "final-mul128",
+      "task_id": "mul128-T600-78374d7545b6",
+      "owner_pid_in_namespace": 27244,
+      "started_at": "2026-11-16T01:03:18.702580+00:00"
+    },
+    {
+      "id": "b666eaff657c4a94922a720f563b9a94",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "final-karatsuba256",
+      "task_id": "karatsuba256-T1150-c1a64d59e07d",
+      "owner_pid_in_namespace": 7,
+      "started_at": "2026-11-16T01:28:33.300425+00:00"
+    },
+    {
+      "id": "ba1bd1735ce14426b23c958516aa1675",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "final-mul128",
+      "task_id": "mul128-T750-6d72e638cd85",
+      "owner_pid_in_namespace": 37771,
+      "started_at": "2026-11-16T01:30:23.714806+00:00"
+    }
+  ],
+  "threads_per_tool": 4,
+  "memory_limit_MiB": 8192,
+  "policy_parallel_jobs": 4,
+  "amendment_sha256": "cf0783c1698d896c3f550db21a448be02524423680235217b987bb2fe4e1ebb0"
+}

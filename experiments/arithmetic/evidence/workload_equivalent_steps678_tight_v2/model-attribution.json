@@ -1,0 +1,64 @@
+{
+  "rows": [
+    {
+      "case": "mac32",
+      "T_ps": 500,
+      "area_reduction": 0.14732100067094808,
+      "Tmin_reduction": 0.2907723465589524,
+      "same_implementation": false,
+      "control_setup": false,
+      "control_hold": true,
+      "D_setup": false,
+      "D_hold": true
+    },
+    {
+      "case": "mac32",
+      "T_ps": 750,
+      "area_reduction": -0.18234857849196573,
+      "Tmin_reduction": 0.4029390047849449,
+      "same_implementation": false,
+      "control_setup": false,
+      "control_hold": true,
+      "D_setup": false,
+      "D_hold": true
+    },
+    {
+      "case": "mac32",
+      "T_ps": 1000,
+      "area_reduction": -0.06767897899296683,
+      "Tmin_reduction": 0.36062459934955327,
+      "same_implementation": false,
+      "control_setup": false,
+      "control_hold": true,
+      "D_setup": false,
+      "D_hold": false
+    },
+    {
+      "case": "add512",
+      "T_ps": 350,
+      "area_reduction": -0.07634153886574638,
+      "Tmin_reduction": 0.2602694842598559,
+      "same_implementation": false,
+      "control_setup": false,
+      "control_hold": true,
+      "D_setup": false,
+      "D_hold": true
+    },
+    {
+      "case": "add512",
+      "T_ps": 400,
+      "area_reduction": -0.07058427932356934,
+      "Tmin_reduction": 0.27396468367416554,
+      "same_implementation": false,
+      "control_setup": false,
+      "control_hold": true,
+      "D_setup": false,
+      "D_hold": false
+    }
+  ],
+  "required_groups": 19,
+  "D_faster": 5,
+  "D_smaller": 1,
+  "same_implementation": 0,
+  "qualification": "diagnostic_only"
+}

@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "tests": 31,
+  "walltime_s": 4.458,
+  "test_command": "python3 -m unittest regression.test_workload_two_depths regression.test_workload_dot16_latency regression.test_workload_final regression.test_workload_tight_continue regression.test_workload_storage",
+  "source_sha256": {
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_two_depths_run.py": "bd87f76c01982cb5402e03a2152cb6b61bab426e4c4240224b44d99d383cde26",
+    "/home/zyrv/vulsim/experiments/arithmetic_dse/workload_nine_runtime.py": "3be8d3d1fa9cea3d08ee3605a5d46168dc490876b6e34a437093a6984296c7f1",
+    "regression/test_workload_two_depths.py": "8b19a3c481181e5f3cf7b3dfd94aa18ca3768ff7d481a45bb445a7b16acd45b7"
+  },
+  "active_handoff_test": "one live old claim and eight new claims; tenth rejected; both thread policies settle to same ledger; final migration preserves every entry and claim",
+  "EDA_calls": 0
+}

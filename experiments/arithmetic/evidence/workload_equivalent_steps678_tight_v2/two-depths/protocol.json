@@ -1,0 +1,89 @@
+{
+  "version": "nine-workloads-two-pipeline-depths-v1",
+  "depths": {
+    "mac32": [
+      2,
+      3
+    ],
+    "add512": [
+      2,
+      4
+    ],
+    "mul128": [
+      2,
+      4
+    ],
+    "dot16": [
+      4,
+      5
+    ],
+    "horner64": [
+      4,
+      8
+    ],
+    "barrett64": [
+      4,
+      8
+    ],
+    "karatsuba256": [
+      4,
+      8
+    ],
+    "montgomery256": [
+      16,
+      32
+    ],
+    "ntt8x64": [
+      8,
+      16
+    ]
+  },
+  "required_groups": 37,
+  "required_main_records": 148,
+  "required_attribution_records": 37,
+  "MAC32_original_targets_ps": [
+    500,
+    750,
+    1000
+  ],
+  "shallow_clock_rule": "ceil50(factor * frozen measured A / L); factors 1.25,1.5",
+  "MAC32_reference": "existing unsplit A at the largest original request (1000ps); fixed selection rule",
+  "Dot16": "L4/L5 only in the new matrix; L8 records retained as historical evidence",
+  "sources_and_models_unchanged": true,
+  "model_refitted": false,
+  "application_PPA_for_selection": false,
+  "original_selection_reused": true,
+  "original_measurement_threads_reported": true,
+  "new_physical_parallel_jobs": 9,
+  "new_threads_per_tool": 2,
+  "source_sha256": "9d0203ec9903668da1b11b5b6f741f4205b3381bbf8fd5917479a5499c00a967",
+  "compiler_sha256": "a44b9b6d8f664894bac1c6c5ad9d872d9cdb3be865bf922d0641e64a74bd12c1",
+  "model_sha256": "de067c6983fe92eb7b5771b014f7881483bc2be06a5f70eddd3bc521208bc575",
+  "common_contract_sha256": "2d74087801b4f2f3dab450412c2f0855450023473ac0d513bdf0573db8cecd30",
+  "new_MAC32_grammar": [
+    [
+      0,
+      0
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      8,
+      0
+    ],
+    [
+      16,
+      0
+    ],
+    [
+      12,
+      0
+    ]
+  ],
+  "structure_cap": 16,
+  "additional_stage_counts_per_case": 1,
+  "no_post_PPA_selection_or_clock_relaxation": true,
+  "qualification": "diagnostic_only"
+}
