@@ -1,18 +1,18 @@
 # 任务导航与阅读边界
 
-**现行规划统一放在[lxy-plan-fix.md第一章](lxy-plan-fix.md#local-request-plan)：将当前已冻结的D迁移至Nangate45；ASAP7在运实验按原冻结身份及最新授权结清。** 迁移沿用候选／位置策略、预算／等效T、排序与RTL流程，按[N1～N8](lxy-plan-fix.md#local-request-steps)先检验缩放，再对失败部分校准或重拟合。Nangate45与ASAP7使用相同的离线共享函数建模方式，同类跨位宽共享参数，编译期只用图／请求特征与冻结模型，禁止精确实测查表及在线后端反馈，详见[§1.13](lxy-plan-fix.md#nangate45-migration-contract)。
+**现行规划统一放在[lxy-plan-fix.md第一章](lxy-plan-fix.md#local-request-plan)：将当前已冻结的D迁移至Nangate45，仅验证MAC32、Add512、Mul128三例；ASAP7九例按原冻结身份及最新授权结清。** 迁移沿用候选／位置策略、预算／等效T、排序与RTL流程，按[N1～N8](lxy-plan-fix.md#local-request-steps)先检验缩放，再对失败部分校准或重拟合。Nangate45与ASAP7使用相同的离线共享函数建模方式，同类跨位宽共享参数，编译期只用图／请求特征与冻结模型，禁止精确实测查表及在线后端反馈，详见[§1.13](lxy-plan-fix.md#nangate45-migration-contract)。
 
 R1～R5（含R1a）算法修复及原审查要求已移入[第二章暂缓归档](lxy-plan-fix.md#deferred-D-algorithm-repairs)，以后有时间再处理，不作为迁移前置，不设置另一D称谓。已有软件产物见[已完成前置归档](lxy-plan-fix.md#completed-local-request-archive)。已知限制和模型失败保留[诊断身份](lxy-plan-fix.md#local-request-document-status)，流程可运行不等于精度或完整资格通过。
 
-ASAP7现行物理矩阵仍为九例各两档L、37组T／L，复用9份A参考、验收111条BCD及37条归因；A单列初版请求／Tmin，原19组／76条身份保留。Nangate45拟沿用评价规模，本后端A、T、模型与结果另行定标冻结，不复用ASAP7实测数值或混入其完成分母。
+ASAP7现行物理矩阵仍为九例各两档L、37组T／L，复用9份A参考、验收111条BCD及37条归因；A单列初版请求／Tmin，原19组／76条身份保留。Nangate45仅三例：MAC32取L2／L3，Add512、Mul128取L2／L4，每L两个T，共12组目标、3份A＋36条BCD主记录，另存12条软件同池归因，不为归因强制增加独立物理任务。本后端A／T另行定标，拟合只覆盖三例实际需求，不复用ASAP7实测值，不复刻九例全矩阵。
 
 代码从2026-11-15恢复后的v10 test基线出发：主仓库`672df3e`、RTLzz `28a4f1d`，对应用户引用的MAC32／Add512／Mul128后端结果。当前新增独立的软件预算／等效T入口，保留v10默认入口作对照；此前撤下的局部预算、逐模块ABC及采样代码仍在恢复前备份中，没有恢复。原W1—W8及第三至五章中的“下一步／必须／唯一排程”只用于追溯，不自动续跑；模型未达精度、关键源退化和独立／组合资格未通过的事实继续保留。
 
 ## 当前入口
 
-2026-11-17最新规划修订：第一章§1.6／§1.13为冻结D迁移至Nangate45的八步实施和离线模型合同，R1～R5归档暂缓。本次仅修订规划，未启动迁移采样／拟合／后端；以下ASAP7记录及授权安排继续有效。
+2026-11-17已按用户授权完成[N1＋N2](lxy-plan-fix.md#nangate45-N12-complete)：冻结实际D及六种案例／L需求，独立平台／模型入口和回归通过；加法、乘法、小乘加三个Nangate45连接探针均完成grt。完整产物在仓库外，[仓库证据](../experiments/arithmetic/evidence/nangate45_n12_v1/README.md)只保留小型摘要与哈希索引；ASAP7冻结输入及在运调度不改动。N3～N8尚未执行，正式模型仍待离线校准，连接探针不计作A／BCD主表。范围保持MAC32 L2／L3、Add512与Mul128 L2／L4，每L两个T，最终3份A＋36条BCD及12条软件归因；逐级列出活跃算术和传递级，补验必要中间级边界。采样／拟合只补三例所需，完成三例不自动扩展；R1～R5继续归档暂缓。以下ASAP7记录及授权安排继续有效。
 
-2026-11-17最新用户修订见第一章§1.12.5：Karatsuba L4保留2300／2750ps并复用旧RTL，失败项关闭后端LEC补跑；L8保留1400ps、1150ps改为1750ps重新生成。4350／4750与2150／2300的软件排队已取消。NTT L16 C保留800／950ps，资源后继grt放宽为8小时，2200／2400ps额外软件实验继续排队。有效控制器改为`/home/zyrv/vulsim-artifacts/old-D-user-revision-20261117-v1/revision.py`，状态见同目录`status.json`；原两项Montgomery软件worker已接管，原冻结输入及其它任务不变，不恢复旧v2父控制器。
+2026-11-17最新用户修订见第一章§1.12.5：Karatsuba L4保留2300／2750ps并复用旧RTL，失败项关闭后端LEC补跑；L8保留1400ps、1150ps改为1750ps重新生成。4350／4750与2150／2300的软件排队已取消。NTT L16 C保留800／950ps，资源后继grt放宽为8小时，2200／2400ps额外软件实验继续排队。15:54完成执行器策略快照路径修复交接，有效控制器为`/home/zyrv/vulsim-artifacts/old-D-user-revision-startup-fix-20261117-v1/repair.py`，该目录及原`old-D-user-revision-20261117-v1`目录的`status.json`同步更新；五个零EDA叶的启动失败保留，并建立同RTL／T／资源设置的具名后继排队。四项在途软件与五项物理任务保留，原冻结输入及其它任务不变，不恢复旧v2或旧revision父控制器。
 
 2026-11-17最新执行：用户要求统一使用旧D，补齐未生成的Montgomery，并对修复过重的Mul128／Dot16／Karatsuba／NTT L16放宽请求后重新生成、验收并送后端；软件错误如NTT L8暂不处理。入口见第一章§1.12.4及`/home/zyrv/vulsim-artifacts/old-D-clock-successor-20261117-v2/README.md`。8个软件任务／16组请求，原A参考复用；全局后端9槽／每工具2线程，本轮内存重任务最多3个同时运行，Dot16／Montgomery每任务16GiB、其余8GiB，软件按可用内存逐步放行。R1～R5算法修复已归档暂缓，原目标及在途物理任务保留。
 
@@ -23,8 +23,9 @@ ASAP7现行物理矩阵仍为九例各两档L、37组T／L，复用9份A参考�
 | 文件 | 用途 |
 | --- | --- |
 | [原始任务](lxy.md) | 复杂算术拆分、自动流水线与ABCD研究目标，原文保留 |
-| [第一章：冻结D迁移至Nangate45](lxy-plan-fix.md#local-request-plan) | 唯一现行规划；冻结算法、N1～N8迁移、预算／等效T及模型消费，ASAP7合同与运行记录保留 |
-| [Nangate45离线模型与迁移合同](lxy-plan-fix.md#nangate45-migration-contract) | 共享函数、缩放／校准／重拟合、算子及S／shared／G、源分组验证，禁止精确查表与在线后端反馈 |
+| [第一章：冻结D迁移至Nangate45三例验证](lxy-plan-fix.md#local-request-plan) | 唯一现行规划；MAC32／Add512／Mul128，MAC32 L2／L3、Add512与Mul128 L2／L4，每L两个T；N1～N8按三例范围执行；ASAP7九例合同保留 |
+| [Nangate45三例模型与迁移合同](lxy-plan-fix.md#nangate45-migration-contract) | 仅拟合三例所需共享函数与S／shared／G，12组目标、3份A＋36条BCD及12条软件归因；禁止精确查表与在线反馈 |
+| [Nangate45 N1＋N2完成证据](../experiments/arithmetic/evidence/nangate45_n12_v1/README.md) | 实际D冻结、六类需求、平台参数审计、六份D预算回放／新入口RTL仿真、三个grt连接探针及共享账本收据；大产物在仓库外，正式模型待校准 |
 | [暂缓的R1～R5算法修复](lxy-plan-fix.md#deferred-D-algorithm-repairs) | 含R1a、原实现要求、修复表和完整审查证据，以后有时间再处理，不作为迁移前置 |
 | [第1～3步：MAC32软件验收](../experiments/arithmetic/evidence/workload_equivalent_mac32_v1/README.md) | 177条采样合同、90个候选／837次完整评分、实际等效T查询、逐目标身份及完整回放；精度与后端评价另验 |
 | [第4～5步：模型回归与首轮新候选](../experiments/arithmetic/evidence/workload_equivalent_steps45_v1/README.md) | 279条组件／6个旧组合回归、175个完整候选、72份RTL新仿真；首轮有限提案完成，不代表完整位置反馈已实现，S／shared和嵌入资格失败保留 |

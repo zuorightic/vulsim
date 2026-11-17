@@ -1,6 +1,6 @@
 {
   "version": "nine-workloads-original-A-reference-v1",
-  "at": "2026-11-17T07:44:29.856986+00:00",
+  "at": "2026-11-17T08:36:05.332282+00:00",
   "operational_status": "applied",
   "required_groups": 37,
   "required_BCD_records": 111,
@@ -18843,33 +18843,6 @@
   "physical_comparison_complete": false,
   "active_jobs": [
     {
-      "id": "24d9fb75e8d342beb2db46b283d79173",
-      "status": "active",
-      "target_platform": "asap7",
-      "admission_id": "matrix-r1r5-parallel2-dot16-L5",
-      "task_id": "dot16-L5-T1400-418acd011d88-parallel2",
-      "owner_pid_in_namespace": 10158,
-      "started_at": "2026-11-17T04:10:48.724897+00:00"
-    },
-    {
-      "id": "5eb1dddb76884216af889207e5d8824e",
-      "status": "active",
-      "target_platform": "asap7",
-      "admission_id": "matrix-r1r5-parallel2-dot16-L5",
-      "task_id": "dot16-L5-T1700-418acd011d88-parallel2",
-      "owner_pid_in_namespace": 13654,
-      "started_at": "2026-11-17T04:11:45.924420+00:00"
-    },
-    {
-      "id": "776d4c52a5ca444d904829fbf5975c59",
-      "status": "active",
-      "target_platform": "asap7",
-      "admission_id": "matrix-old-d-mul128-L4",
-      "task_id": "mul128-L4-T1200-e18af3cbdef4-old-d",
-      "owner_pid_in_namespace": 1667215,
-      "started_at": "2026-11-17T07:42:42.941288+00:00"
-    },
-    {
       "id": "1cb0c1d0f37b4f7a8ba0dde55fd0d0f3",
       "status": "active",
       "target_platform": "asap7",
@@ -18879,13 +18852,22 @@
       "started_at": "2026-11-17T07:42:54.579427+00:00"
     },
     {
-      "id": "b957c504b6c74c25991c93bb23a07741",
+      "id": "50d469b8fef24c2592b4157cbd22708b",
       "status": "active",
       "target_platform": "asap7",
-      "admission_id": "matrix-old-d-mul128-L4",
-      "task_id": "mul128-L4-T1200-334ab0c95758-old-d",
-      "owner_pid_in_namespace": 1668087,
-      "started_at": "2026-11-17T07:43:06.109500+00:00"
+      "admission_id": "matrix-userrev-startupfix-karatsuba256-L4-T2300-C",
+      "task_id": "karatsuba256-L4-T2300-1de0ecb23206-userrev-startupfix-v1",
+      "owner_pid_in_namespace": 1680962,
+      "started_at": "2026-11-17T08:12:23.489626+00:00"
+    },
+    {
+      "id": "a2aa18f7ef2d4df5ac407487ff123252",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-userrev-startupfix-karatsuba256-L4-T2750-B",
+      "task_id": "karatsuba256-L4-T2750-afb74d898573-userrev-startupfix-v1",
+      "owner_pid_in_namespace": 1689532,
+      "started_at": "2026-11-17T08:19:41.354531+00:00"
     }
   ],
   "qualification": "diagnostic_only",

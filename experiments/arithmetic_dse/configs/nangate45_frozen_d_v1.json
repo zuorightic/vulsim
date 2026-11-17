@@ -1,0 +1,16 @@
+{
+  "schema": "frozen-D-platform-package-v1",
+  "platform": "nangate45",
+  "profile_sha256": "e3adefb4440f6dbcf84c84dad87c0da4bcac5c2e5ade81792c9a8aab18caf728",
+  "evaluation_stage": "grt",
+  "status": "pending_N3_N6_offline_calibration",
+  "pricing": "offline_shared_functions",
+  "online_backend_feedback": false,
+  "application_PPA_used": false,
+  "exact_lookup": false,
+  "scope": {"mac32": [2, 3], "add512": [2, 4], "mul128": [2, 4]},
+  "required_payloads": ["response", "characterization", "cell_cover"],
+  "legacy_asset_role": "step7_models_v1/models/nangate45.json is historical diagnostic evidence; not a compatible full-D package",
+  "selection_algorithm": "frozen old D; R1-R5 deferred",
+  "implementation_ABC": "global requested T; local tau is prediction only"
+}

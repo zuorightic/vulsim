@@ -1,0 +1,1432 @@
+{
+  "version": "nangate45-N12-delivery-v1",
+  "status": "N1_N2_complete",
+  "artifact_root": "/home/zyrv/vulsim-artifacts/nangate45-n12-20261117-v1",
+  "baseline": {
+    "active_parent_files_verified": 496,
+    "compiler": {
+      "path": "/home/zyrv/vulsim/build/workload-v10-20261115/rtlzz-workload",
+      "sha256": "a44b9b6d8f664894bac1c6c5ad9d872d9cdb3be865bf922d0641e64a74bd12c1"
+    },
+    "model": {
+      "path": "/home/zyrv/vulsim/experiments/arithmetic/evidence/workload_equivalent_mac32_v1/diagnostic-model.json",
+      "sha256": "de067c6983fe92eb7b5771b014f7881483bc2be06a5f70eddd3bc521208bc575"
+    },
+    "component_model_sha256": "a1466f0272b55bd20358ea9e3beb84844db8fe8fefe4152e0478224d8f13243d",
+    "diagnostic_identity": "workload-v10-complete-diagnostic-v1",
+    "scope": {
+      "mac32": [
+        2,
+        3
+      ],
+      "add512": [
+        2,
+        4
+      ],
+      "mul128": [
+        2,
+        4
+      ]
+    },
+    "search": {
+      "rounds": 3,
+      "proposals_per_round": 3,
+      "transfer_fraction": 0.125,
+      "root_vectors_per_budget": 3,
+      "floor_ps": 0.001
+    },
+    "inversion": {
+      "min_period_ps": 1.0,
+      "max_period_ps": 6000.0,
+      "scan_intervals": 32,
+      "refinement_steps": 28,
+      "tolerance_ps": 0.05,
+      "quantum_ps": 0.0,
+      "max_roots": 3
+    },
+    "implementation": "global ABC at requested T; equivalent tau affects prediction only",
+    "known_limits": "R1-R5 deferred; no position-feedback or effective-state-bit repair"
+  },
+  "baseline_files": 770,
+  "snapshot_bytes": 83715502,
+  "demand": {
+    "version": "nangate45-frozen-D-N1-v1",
+    "scope": {
+      "mac32": [
+        2,
+        3
+      ],
+      "add512": [
+        2,
+        4
+      ],
+      "mul128": [
+        2,
+        4
+      ]
+    },
+    "unique_shared_descriptors": {
+      "add": 325,
+      "mul": 385,
+      "G": 645,
+      "adc": 201
+    },
+    "source_files": 1056,
+    "full_demand_sha256": "a1fac203528a76b1dd8ebbf041b9dc5f3c725456d2cda9726889cb145f4781c7",
+    "demand_role": "prospective_demand_only_not_prices",
+    "target_T": "Nangate45 A not measured yet; exact tau/budget domains determined after N3-N6",
+    "price_dependent_positions": "candidate grammar unchanged; new models may propose new positions; N5-N7 re-extract before claiming coverage",
+    "new_EDA_calls": 0,
+    "application_PPA_read": false
+  },
+  "variants": [
+    {
+      "case": "mac32",
+      "L": 2,
+      "grammar": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          16,
+          0
+        ],
+        [
+          12,
+          0
+        ]
+      ],
+      "prospective_candidates": 14,
+      "operator_G_observations": {
+        "add": 13,
+        "mul": 336,
+        "functional": 0,
+        "G": 46
+      },
+      "state_feature_ranges": {
+        "data_bits": {
+          "min": 128,
+          "max": 832
+        },
+        "data_signals": {
+          "min": 2,
+          "max": 66
+        },
+        "enable_domains": {
+          "min": 2,
+          "max": 2
+        },
+        "max_declared_width": {
+          "min": 64,
+          "max": 68
+        },
+        "min_variable_width": {
+          "min": 8,
+          "max": 64
+        },
+        "reset_one_bits": {
+          "min": 0,
+          "max": 0
+        },
+        "state_bits": {
+          "min": 130,
+          "max": 834
+        },
+        "state_signals": {
+          "min": 4,
+          "max": 68
+        },
+        "valid_bits": {
+          "min": 2,
+          "max": 2
+        },
+        "valid_signals": {
+          "min": 2,
+          "max": 2
+        }
+      },
+      "deepest_arithmetic_G_stage_count": 2
+    },
+    {
+      "case": "mac32",
+      "L": 3,
+      "grammar": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          16,
+          0
+        ]
+      ],
+      "prospective_candidates": 76,
+      "operator_G_observations": {
+        "add": 665,
+        "mul": 2128,
+        "functional": 0,
+        "G": 277,
+        "adc": 52
+      },
+      "state_feature_ranges": {
+        "data_bits": {
+          "min": 192,
+          "max": 2144
+        },
+        "data_signals": {
+          "min": 3,
+          "max": 105
+        },
+        "enable_domains": {
+          "min": 3,
+          "max": 3
+        },
+        "max_declared_width": {
+          "min": 64,
+          "max": 69
+        },
+        "min_variable_width": {
+          "min": 1,
+          "max": 64
+        },
+        "reset_one_bits": {
+          "min": 0,
+          "max": 0
+        },
+        "state_bits": {
+          "min": 195,
+          "max": 2147
+        },
+        "state_signals": {
+          "min": 6,
+          "max": 108
+        },
+        "valid_bits": {
+          "min": 3,
+          "max": 3
+        },
+        "valid_signals": {
+          "min": 3,
+          "max": 3
+        }
+      },
+      "deepest_arithmetic_G_stage_count": 3
+    },
+    {
+      "case": "add512",
+      "L": 2,
+      "grammar": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          32
+        ],
+        [
+          0,
+          64
+        ],
+        [
+          0,
+          128
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          16
+        ]
+      ],
+      "prospective_candidates": 24,
+      "operator_G_observations": {
+        "add": 24,
+        "functional": 0,
+        "adc": 668
+      },
+      "state_feature_ranges": {
+        "data_bits": {
+          "min": 1026,
+          "max": 1530
+        },
+        "data_signals": {
+          "min": 2,
+          "max": 129
+        },
+        "enable_domains": {
+          "min": 2,
+          "max": 2
+        },
+        "max_declared_width": {
+          "min": 513,
+          "max": 513
+        },
+        "min_variable_width": {
+          "min": 1,
+          "max": 513
+        },
+        "reset_one_bits": {
+          "min": 0,
+          "max": 0
+        },
+        "state_bits": {
+          "min": 1028,
+          "max": 1532
+        },
+        "state_signals": {
+          "min": 4,
+          "max": 131
+        },
+        "valid_bits": {
+          "min": 2,
+          "max": 2
+        },
+        "valid_signals": {
+          "min": 2,
+          "max": 2
+        }
+      },
+      "deepest_arithmetic_G_stage_count": 2
+    },
+    {
+      "case": "add512",
+      "L": 4,
+      "grammar": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          32
+        ],
+        [
+          0,
+          64
+        ],
+        [
+          0,
+          128
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          16
+        ]
+      ],
+      "prospective_candidates": 44,
+      "operator_G_observations": {
+        "add": 44,
+        "functional": 0,
+        "adc": 772
+      },
+      "state_feature_ranges": {
+        "data_bits": {
+          "min": 2052,
+          "max": 3585
+        },
+        "data_signals": {
+          "min": 4,
+          "max": 382
+        },
+        "enable_domains": {
+          "min": 4,
+          "max": 4
+        },
+        "max_declared_width": {
+          "min": 513,
+          "max": 513
+        },
+        "min_variable_width": {
+          "min": 1,
+          "max": 513
+        },
+        "reset_one_bits": {
+          "min": 0,
+          "max": 0
+        },
+        "state_bits": {
+          "min": 2056,
+          "max": 3589
+        },
+        "state_signals": {
+          "min": 8,
+          "max": 386
+        },
+        "valid_bits": {
+          "min": 4,
+          "max": 4
+        },
+        "valid_signals": {
+          "min": 4,
+          "max": 4
+        }
+      },
+      "deepest_arithmetic_G_stage_count": 4
+    },
+    {
+      "case": "mul128",
+      "L": 2,
+      "grammar": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          16,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "prospective_candidates": 20,
+      "operator_G_observations": {
+        "mul": 6413,
+        "functional": 0,
+        "G": 510,
+        "add": 523
+      },
+      "state_feature_ranges": {
+        "data_bits": {
+          "min": 512,
+          "max": 69376
+        },
+        "data_signals": {
+          "min": 2,
+          "max": 1025
+        },
+        "enable_domains": {
+          "min": 2,
+          "max": 2
+        },
+        "max_declared_width": {
+          "min": 256,
+          "max": 261
+        },
+        "min_variable_width": {
+          "min": 8,
+          "max": 256
+        },
+        "reset_one_bits": {
+          "min": 0,
+          "max": 0
+        },
+        "state_bits": {
+          "min": 514,
+          "max": 69378
+        },
+        "state_signals": {
+          "min": 4,
+          "max": 1027
+        },
+        "valid_bits": {
+          "min": 2,
+          "max": 2
+        },
+        "valid_signals": {
+          "min": 2,
+          "max": 2
+        }
+      },
+      "deepest_arithmetic_G_stage_count": 2
+    },
+    {
+      "case": "mul128",
+      "L": 4,
+      "grammar": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          16,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "prospective_candidates": 51,
+      "operator_G_observations": {
+        "mul": 8088,
+        "functional": 0,
+        "add": 3594,
+        "G": 589
+      },
+      "state_feature_ranges": {
+        "data_bits": {
+          "min": 1024,
+          "max": 113408
+        },
+        "data_signals": {
+          "min": 4,
+          "max": 1793
+        },
+        "enable_domains": {
+          "min": 4,
+          "max": 4
+        },
+        "max_declared_width": {
+          "min": 256,
+          "max": 265
+        },
+        "min_variable_width": {
+          "min": 8,
+          "max": 256
+        },
+        "reset_one_bits": {
+          "min": 0,
+          "max": 0
+        },
+        "state_bits": {
+          "min": 1028,
+          "max": 113412
+        },
+        "state_signals": {
+          "min": 8,
+          "max": 1797
+        },
+        "valid_bits": {
+          "min": 4,
+          "max": 4
+        },
+        "valid_signals": {
+          "min": 4,
+          "max": 4
+        }
+      },
+      "deepest_arithmetic_G_stage_count": 4
+    }
+  ],
+  "dependency_audit": {
+    "version": "N12-platform-dependency-audit-v1",
+    "reusable_algorithm": [
+      {
+        "files": [
+          "workload_final_selection.py",
+          "workload_latency_matrix.py",
+          "workload_guided_search.py"
+        ],
+        "role": "frozen grammar, seed/pressure proposals, finite candidates and ranking"
+      },
+      {
+        "files": [
+          "workload_tight_equivalent.py",
+          "workload_final_adapter.py",
+          "workload_equivalent.py",
+          "local_budget.py",
+          "equivalent_period.py"
+        ],
+        "role": "unchanged body budgets, inversion, continuation, stopping and full scoring"
+      },
+      {
+        "files": [
+          "wide_arithmetic.py",
+          "wide_alu_geometry.py",
+          "transition_incidence_features_v10.py",
+          "workload_demand.py"
+        ],
+        "role": "prospective geometry, bit semantics, G ownership; numeric geometry features that consume legal cell cover require platform binding"
+      }
+    ],
+    "explicit_platform_bindings": [
+      {
+        "file": "configs/platforms/nangate45.json",
+        "profile_sha256": "e3adefb4440f6dbcf84c84dad87c0da4bcac5c2e5ade81792c9a8aab18caf728",
+        "role": "TT library/PVT, RC assets, ns/fF and public ps/fF, physical/IO assumptions"
+      },
+      {
+        "files": [
+          "main/arithmetic_workload.cpp:126",
+          "src/backend/arithmetic_workload_plan.cpp:253",
+          "src/backend/arithmetic_workload_provider.cpp:59"
+        ],
+        "root": "rtlzz",
+        "issue": "native export hardcodes ASAP7 metadata and C++ price binding",
+        "resolution": "unchanged frozen binary, empty price models; new isolated export adapter binds prospective owners/query/profile only, records original metadata, refuses native prices"
+      },
+      {
+        "file": "sampling_time_contract.py",
+        "issue": "legacy derive_contract rejects non-ASAP7 and reads old train receipts",
+        "resolution": "unchanged old routine; new explicit package accepts a separately frozen compatible Nangate45 sampling contract from offline N6, no silent legacy derivation"
+      },
+      {
+        "file": "workload_diagnostic.py",
+        "issue": "make_bundle reads ASAP7 S/composition/static bridge and current diagnostic constructor checks fixed v10 SHA",
+        "resolution": "unchanged old factory; platform package loads immutable offline payloads and checks per-platform hashes; no fitting or backend inside entry"
+      }
+    ],
+    "requires_calibration_or_requalification": [
+      {
+        "part": "Mul and Add/ADC",
+        "reason": "shared delay/area coefficients, target response, unequal operands, known bits/carry and immediate consumer/load contexts",
+        "next": "N3 paired representative sources; N4 scale/calibrate/refit only failed response axes"
+      },
+      {
+        "part": "G",
+        "reason": "internal reduction delay/area and boundary features, correlated terms, combinational/register launches; no member double charge",
+        "next": "N3/N5 representative regions, not every exact shape"
+      },
+      {
+        "part": "S/shared",
+        "reason": "control functions, data/valid area, enable/reset, global FF load, functional area coupling, extra stages",
+        "next": "N5 first/middle/last and forwarding state checks"
+      },
+      {
+        "part": "H_char and consumer windows",
+        "reason": "same-path non-body consumption and alpha; no ASAP7 H inheritance",
+        "next": "N6 same-path labels; immutable contract used during selection"
+      },
+      {
+        "part": "inter_owner_wire_ps, data_boundary_ps, joint_reserve_ps",
+        "reason": "platform and flow context, separately owned from arithmetic/G internals",
+        "next": "N5 small compositions and split checks"
+      },
+      {
+        "part": "static_bridge.alpha",
+        "reason": "ASAP7 ps/area conversion for same-pool attribution",
+        "next": "N5 train-only platform attribution bridge; C fixed abstract table unchanged"
+      },
+      {
+        "part": "numerical_floors",
+        "old_values": {
+          "gate_delay_ps": 10,
+          "gate_area_um2": 0.04374
+        },
+        "next": "audit/calibrate common platform floors, no per-case fixes"
+      },
+      {
+        "part": "prospective_cell_cover.AREA",
+        "reason": "hardcoded ASAP7 legal cell costs affect Add features and functional logic; none of the inventoried six pools has functional owners",
+        "next": "explicit hash-bound cell-cover payload for new platform, audit legal equivalent covers before production readiness"
+      }
+    ],
+    "historical_nangate45_model": {
+      "file": "experiments/arithmetic/evidence/step7_models_v1/models/nangate45.json",
+      "role": "historical local grt diagnostic asset only",
+      "current_full_D_qualified": false
+    },
+    "sampling_boundary": {
+      "exact_T_domain": "not fixed before Nangate45 A and actual local-window extraction",
+      "demand_descriptors_are_prices": false,
+      "sample_each_descriptor": false,
+      "online_backend_feedback": false,
+      "same_functions_across_depths": true,
+      "future_price_dependent_positions_need_reinventory": true
+    },
+    "R1_R5": "deferred; no algorithm repair in N1/N2"
+  },
+  "software": {
+    "version": "nangate45-N12-software-check-v1",
+    "status": "passed",
+    "same_model_full_score_replays": [
+      {
+        "case": "mac32",
+        "L": 2,
+        "T_ps": 950,
+        "rtl_sha256": "1ae18b2a62069e3c67d930944fcd26065b4228befb601e337a6d0b7cecd66603",
+        "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/mac32/L2/software/mac32/final-selections.json",
+        "selection_sha256": "8d73f8d1a9f1107d8de9777a91bf96857da3671df46fb6052b52c81ed2b6896d",
+        "full_score_exact_equal": true,
+        "selected_full_budget_replay_matches": true,
+        "complete_variants": 4,
+        "result_sha256": "754da41e612d648438fc6f33aa678144a6652ac31cb89727da393babbc57a8ff"
+      },
+      {
+        "case": "mac32",
+        "L": 3,
+        "T_ps": 500,
+        "rtl_sha256": "a603cc65f248c0409d680555c3690cf9fc0f98e95de5a48fa1530482f7a85793",
+        "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/mac32/final-selections.json",
+        "selection_sha256": "d5fb01c7a439511323a9284ee6b3033df04d40f5b91958245a856486194c92c9",
+        "full_score_exact_equal": true,
+        "selected_full_budget_replay_matches": true,
+        "complete_variants": 10,
+        "result_sha256": "bcc9fa27566ad6581181486e0e0587f13ba8e5663c15a87be42ca91b3305045d"
+      },
+      {
+        "case": "add512",
+        "L": 2,
+        "T_ps": 700,
+        "rtl_sha256": "be37505847a5d0ff6e64b95c6236dc1c5264a3d5fcd4ac6275c0bf6dcbf9879f",
+        "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/add512/L2/software/add512/final-selections.json",
+        "selection_sha256": "bce331904aa747e0ed1cb799fa8c25053e7d864dfaf2e33977c4b9c6e7fd9cc4",
+        "full_score_exact_equal": true,
+        "selected_full_budget_replay_matches": true,
+        "complete_variants": 7,
+        "result_sha256": "04df14dc5108b93fac1c2223d3e236324451f0f89b0ca2ef685fc7399f1e52c8"
+      },
+      {
+        "case": "add512",
+        "L": 4,
+        "T_ps": 350,
+        "rtl_sha256": "7c21841924530588e0082f59d89df53a290679507fa73643d1e1bacad2571a68",
+        "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/add512/final-selections.json",
+        "selection_sha256": "82b90b014d2ad5d907476fb41967baeff6b21e53228ff443bd43c947380f70d7",
+        "full_score_exact_equal": true,
+        "selected_full_budget_replay_matches": true,
+        "complete_variants": 10,
+        "result_sha256": "1e18704f3945674e4770f9a7204fcdacbee6058f7fd92f8a7e56d2d8b0c561b3"
+      },
+      {
+        "case": "mul128",
+        "L": 2,
+        "T_ps": 1200,
+        "rtl_sha256": "797e2a4ef532ddac9815b68209df3ef2c9fbc114d4fc852935301c3cab530366",
+        "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/variants/mul128/L2/software/mul128/final-selections.json",
+        "selection_sha256": "7b0cf623dd02dd6b4ab420b0340ef7c308d6fb1a19e3ecc9796fb3850f57ad89",
+        "full_score_exact_equal": true,
+        "selected_full_budget_replay_matches": true,
+        "complete_variants": 10,
+        "result_sha256": "855aeece9e75fee8d59c461803a7ada8a138d783233daea56d3489a9e3561b12"
+      },
+      {
+        "case": "mul128",
+        "L": 4,
+        "T_ps": 600,
+        "rtl_sha256": "78374d7545b6be3e333da7bbabbe25b76ee9b45b9a61343c8b12c00598720aa1",
+        "selection_file": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/software/mul128/final-selections.json",
+        "selection_sha256": "456811297651cc217d8a28311a9a6599d0f6ba1311dc4cb14d621b7785f7e9e3",
+        "full_score_exact_equal": true,
+        "selected_full_budget_replay_matches": true,
+        "complete_variants": 10,
+        "result_sha256": "84bfb2307ba696f4b3d42bd81e80582a8edf708433518e8809180c7e5908480c"
+      }
+    ],
+    "selected_full_budget_replays": 6,
+    "rankings": [
+      {
+        "case": "mac32",
+        "L": 2,
+        "T_ps": 950,
+        "candidates": 13,
+        "selected_id": "495dac5dfb07ee94d1c62929c0bda63e21beb2c3670096e4d1a8bc1465dcf9ac",
+        "scope": "rerank frozen complete predictions; not all-candidate numerical replay"
+      },
+      {
+        "case": "mac32",
+        "L": 2,
+        "T_ps": 1100,
+        "candidates": 13,
+        "selected_id": "7992797a9ac1761dd24edbc4d5573d0989f06cf32d7f7b93f7c0521d56340d1c",
+        "scope": "rerank frozen complete predictions; not all-candidate numerical replay"
+      },
+      {
+        "case": "mac32",
+        "L": 3,
+        "T_ps": 500,
+        "candidates": 61,
+        "selected_id": "83d774a2749dfbf8c3e214623dc16abd663e7f46404745ac0e89a6620067fb0e",
+        "scope": "rerank frozen complete predictions; not all-candidate numerical replay"
+      },
+      {
+        "case": "mac32",
+        "L": 3,
+        "T_ps": 750,
+        "candidates": 53,
+        "selected_id": "c87eeea7ee5096c98474192e8a70a034961e7c9a8c983eee4720e3ad96d3bd0f",
+        "scope": "rerank frozen complete predictions; not all-candidate numerical replay"
+      },
+      {
+        "case": "mac32",
+        "L": 3,
+        "T_ps": 1000,
+        "candidates": 61,
+        "selected_id": "3f01d5d19e3ad4ef1c61b824914af6c3070fe6acf8b6508eb5e3609297433f12",
+        "scope": "rerank frozen complete predictions; not all-candidate numerical replay"
+      },
+      {
+        "case": "add512",
+        "L": 2,
+        "T_ps": 700,
+        "candidates": 17,
+        "selected_id": "7e75070106f50ede577d31a39b8aaae84a0a686f680915dc4b2020bb43138c71",
+        "scope": "rerank frozen complete predictions; not all-candidate numerical replay"
+      },
+      {
+        "case": "add512",
+        "L": 2,
+        "T_ps": 800,
+        "candidates": 17,
+        "selected_id": "904654f336c50e2c000676dc6287e1a5e3db89c842a24ec8c0df14adca92d8c3",
+        "scope": "rerank frozen complete predictions; not all-candidate numerical replay"
+      },
+      {
+        "case": "add512",
+        "L": 4,
+        "T_ps": 350,
+        "candidates": 15,
+        "selected_id": "d8afc90c5ead93255bb0a83c1e02fd50cceaf8afaed934dc83b85aa3a4b7cbd0",
+        "scope": "rerank frozen complete predictions; not all-candidate numerical replay"
+      },
+      {
+        "case": "add512",
+        "L": 4,
+        "T_ps": 400,
+        "candidates": 15,
+        "selected_id": "11d673a6ad3d7c69ef07a761de5959e25ff3fab54c917f7a28d8814a87229e5a",
+        "scope": "rerank frozen complete predictions; not all-candidate numerical replay"
+      },
+      {
+        "case": "mul128",
+        "L": 2,
+        "T_ps": 1200,
+        "candidates": 16,
+        "selected_id": "72d32f45109bf25679ea2579d282028973bad075348aad284b4104ad3ec35c42",
+        "scope": "rerank frozen complete predictions; not all-candidate numerical replay"
+      },
+      {
+        "case": "mul128",
+        "L": 2,
+        "T_ps": 1450,
+        "candidates": 16,
+        "selected_id": "74f9d7d8ea5e1405345bf09e25df53fd7cf2c6325d3b644cec746694b9d608e7",
+        "scope": "rerank frozen complete predictions; not all-candidate numerical replay"
+      },
+      {
+        "case": "mul128",
+        "L": 4,
+        "T_ps": 600,
+        "candidates": 15,
+        "selected_id": "648fbe8f395c49c35e5d446f5314080157ab6fb0fd53f33f8ab2948efb172cc2",
+        "scope": "rerank frozen complete predictions; not all-candidate numerical replay"
+      },
+      {
+        "case": "mul128",
+        "L": 4,
+        "T_ps": 750,
+        "candidates": 15,
+        "selected_id": "4e347ff44c1eff6fa9b4b6b95439a47170affd837e8f9149793cba0e94db2f73",
+        "scope": "rerank frozen complete predictions; not all-candidate numerical replay"
+      }
+    ],
+    "rejected": {
+      "wrong_platform_package": true,
+      "wrong_owner_profile": true,
+      "pending_production_model": true,
+      "sampling_contract_profile": true,
+      "operator_platform_even_matching_hash": true,
+      "response_hash": true
+    },
+    "native_platform_exports": [
+      {
+        "case": "mac32",
+        "L": 2,
+        "block": 4,
+        "limb": 0,
+        "views": 1,
+        "receipt": "/home/zyrv/vulsim-artifacts/nangate45-n12-20261117-v1/software-check/native/mac32-L2/platform-entry.json",
+        "receipt_sha256": "4f74615fffcc16fbc2162a28a357d6636aa1c336369b5d6279ce1dd5c0278163"
+      },
+      {
+        "case": "mac32",
+        "L": 3,
+        "block": 4,
+        "limb": 0,
+        "views": 1,
+        "receipt": "/home/zyrv/vulsim-artifacts/nangate45-n12-20261117-v1/software-check/native/mac32-L3/platform-entry.json",
+        "receipt_sha256": "5caaa5cbe4192926d1c85d1cd099b85df430707210be20ea4e3e277676c01691"
+      },
+      {
+        "case": "add512",
+        "L": 2,
+        "block": 0,
+        "limb": 32,
+        "views": 1,
+        "receipt": "/home/zyrv/vulsim-artifacts/nangate45-n12-20261117-v1/software-check/native/add512-L2/platform-entry.json",
+        "receipt_sha256": "7792cc9bcdf4bab4f6e007415ed2ba65d2d4e637489634842d7ea65a85ad69c7"
+      },
+      {
+        "case": "add512",
+        "L": 4,
+        "block": 0,
+        "limb": 32,
+        "views": 1,
+        "receipt": "/home/zyrv/vulsim-artifacts/nangate45-n12-20261117-v1/software-check/native/add512-L4/platform-entry.json",
+        "receipt_sha256": "48e369a2f3603f50d3f1dae2c38d0f436d5fffd2eb01b092e36e5026fe0026a4"
+      },
+      {
+        "case": "mul128",
+        "L": 2,
+        "block": 8,
+        "limb": 0,
+        "views": 1,
+        "receipt": "/home/zyrv/vulsim-artifacts/nangate45-n12-20261117-v1/software-check/native/mul128-L2/platform-entry.json",
+        "receipt_sha256": "7f82d64101071e2a69f56ad2916e759fa2a58d53c1de4934ca76ce6f3692f192"
+      },
+      {
+        "case": "mul128",
+        "L": 4,
+        "block": 8,
+        "limb": 0,
+        "views": 1,
+        "receipt": "/home/zyrv/vulsim-artifacts/nangate45-n12-20261117-v1/software-check/native/mul128-L4/platform-entry.json",
+        "receipt_sha256": "0d53a3341ea3c41af1467ae9a01fd1b9729b26761420332a07f546e9e728a725"
+      }
+    ],
+    "backend_disabled_during_consumption": true,
+    "file_IO_disabled_during_consumption": true,
+    "NGA_fixture": "identical ASAP7 numbers; identity plumbing only, not a fitted Nangate45 model",
+    "production_NGA_model_ready": false,
+    "candidate_PPA_calls": 0,
+    "all_pool_numerical_replay": false
+  },
+  "functional": {
+    "status": "passed",
+    "rows": [
+      {
+        "name": "add32",
+        "rtl_sha256": "ba5656b5e47028bf977e13c5467a3002f56fc6227b3961ab8f814cc94d5a96aa",
+        "testbench_sha256": "a5893f9bca8610094449e7581f251f6058edd2cebf1322f99ca8f06659fccbb6",
+        "log_sha256": "6a3b8b2d927bb30281a1513c14a107c234796339e630770bf6d49dd08a0420c9",
+        "status": "passed",
+        "integer_vectors": 256,
+        "reset_checked": true
+      },
+      {
+        "name": "mul32",
+        "rtl_sha256": "d51d01b80349b9b01e315508c075cfb4de738b5e25481467e7c4755badd012a8",
+        "testbench_sha256": "33d4014bbb304bfd6f2c35d15861fec7f93064a2792995fa658c89721ddd4384",
+        "log_sha256": "9c5d51cdea13de983eb896cae0eab470124ade6caa9bc58c538e3feef5276289",
+        "status": "passed",
+        "integer_vectors": 256,
+        "reset_checked": true
+      },
+      {
+        "name": "mac8",
+        "rtl_sha256": "9de5936b7209c985f7c214b256e2abd2311c44bb58fc2a9201c97fb8abbe82eb",
+        "testbench_sha256": "c1b88229861cfe99344c678e61305ca98a909e7f48ee202bbb49cc5d8f6dc02f",
+        "log_sha256": "d10adf1981947fbfa2fa8710c821779aa0a088ca6dadaf1070b71ecf82872aec",
+        "status": "passed",
+        "integer_vectors": 256,
+        "reset_checked": true
+      },
+      {
+        "name": "mac32-L2",
+        "rtl_sha256": "0c465654abaee8c0aa9035c2746ca0ddc5b6540f897718de38e5fd4a327f057f",
+        "testbench_sha256": "328bec3627e0bb894f351f3c2f39a578d39f2202d70ed33494a4320941d2d597",
+        "log_sha256": "6e28f3a50b46776411818e124255ba16484bc5a1c4809d64bdfa9940ad188cc9",
+        "status": "passed",
+        "cycles": 192,
+        "integer_cycle_checks": 137,
+        "reset_stall_protocol_checked": true
+      },
+      {
+        "name": "mac32-L3",
+        "rtl_sha256": "5f112bf64c06be662c7c20df4b40ad1212aa12f11854dbc3881a7d632063ca8e",
+        "testbench_sha256": "d3f14ad506a86ede669186efe61898eea61ca2cbf53ad6b7ce3401d842250bc6",
+        "log_sha256": "46844a2d22a90a5d48241b9b91bb577ad6476ec134a7e46295a351f8069d1483",
+        "status": "passed",
+        "cycles": 192,
+        "integer_cycle_checks": 135,
+        "reset_stall_protocol_checked": true
+      },
+      {
+        "name": "add512-L2",
+        "rtl_sha256": "01a2bdacea643bf6ed48a9323d280dab0f004109dacc71ddeaae3c885a81166e",
+        "testbench_sha256": "87eca4872b4c5f53e01f9d37d8951eecfbbb780ef419c738b016824350adfb8d",
+        "log_sha256": "d909e77b33e12413e5e9f7badee01df16411916e9154e91d9c9dd7e1155bb962",
+        "status": "passed",
+        "cycles": 192,
+        "integer_cycle_checks": 137,
+        "reset_stall_protocol_checked": true
+      },
+      {
+        "name": "add512-L4",
+        "rtl_sha256": "22acdccd2cc8520195769198aa39cd374bc298317e2d769c524b442936034654",
+        "testbench_sha256": "e7f15d62f16c3ab13099d6d4867570b5cd1c1eecdaa6aa18912e60ae8d433812",
+        "log_sha256": "f3cf5fa556ce00538dfca062c0fb020f6539e20e0710edb4413fa3b8024c8f4e",
+        "status": "passed",
+        "cycles": 192,
+        "integer_cycle_checks": 133,
+        "reset_stall_protocol_checked": true
+      },
+      {
+        "name": "mul128-L2",
+        "rtl_sha256": "b9be2099426df85e39a2dce75be829e6c73bde20bb21ecd50ddcf2f497203cd7",
+        "testbench_sha256": "7b71786d068551c9853723892fa8c78a2e4f499966c77180f9a2f13bb6ca6474",
+        "log_sha256": "50b54da647eac36df3f1f7ad848e1f8aa4defb66bab819b91b45b0d503b3c8ff",
+        "status": "passed",
+        "cycles": 192,
+        "integer_cycle_checks": 137,
+        "reset_stall_protocol_checked": true
+      },
+      {
+        "name": "mul128-L4",
+        "rtl_sha256": "149abe6ca00fbd672aecac799d25983a195f9735c100195effe2aba60f20b82b",
+        "testbench_sha256": "4b91d126f9bfa171f051bfde89edc714bdbaa3af8cbf21eeb356275f5f4e44a4",
+        "log_sha256": "689a460f1d95844a8bf6e22c200f80f27b7ab4e6262b80f4e4f9c456ab72f48c",
+        "status": "passed",
+        "cycles": 192,
+        "integer_cycle_checks": 133,
+        "reset_stall_protocol_checked": true
+      }
+    ],
+    "new_synthesis_calls": 0,
+    "new_physical_calls": 0,
+    "source_sha256": "969795fc36a9aa281a0f9a8faf95098fcc0eca8d419f86715ab932c718190acc",
+    "RTL_only": true
+  },
+  "probes": [
+    {
+      "task": "add32",
+      "manifest": "/home/zyrv/vulsim-artifacts/nangate45-n12-20261117-v1/connection/runs/add32/manifest.json",
+      "manifest_sha256": "95fe1551a14144e3d355164044deab823fd17b9f5744a3f73a47053ce6deba8b",
+      "status": "completed",
+      "profile_sha256": "e3adefb4440f6dbcf84c84dad87c0da4bcac5c2e5ade81792c9a8aab18caf728",
+      "metric_stage": "grt",
+      "requested_period_ps": 3000,
+      "actual_ABC_target_ps": 3000.0,
+      "metric": {
+        "cell_area_um2": 1131.032,
+        "functional_cell_area_um2": 1112.944,
+        "sequential_area_um2": 438.634,
+        "sequential_cells": 97,
+        "setup_worst_slack_ps": 2106.162,
+        "hold_worst_slack_ps": 0.091,
+        "timing_coverage_complete": true,
+        "raw_report_units": {
+          "time": {
+            "raw_unit": "time 1ns",
+            "to_ps": 1000.0
+          },
+          "capacitance": {
+            "raw_unit": "capacitance 1fF",
+            "to_fF": 1.0
+          }
+        }
+      },
+      "sdc_contract": {
+        "version": "serialized-sdc-contract-v2",
+        "status": "passed",
+        "sdc_sha256": "51cffcce7945ce03a8cc7957b642bd02c33a1bc98e24986b0c2364791aea1730",
+        "platform": "nangate45",
+        "time_to_ps": 1000.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 3.0,
+          "io_clk": 3.0
+        },
+        "clock_transition_native": 0.01,
+        "setup_uncertainty_native": 0.02,
+        "hold_uncertainty_native": 0.005,
+        "output_load_native": 3.898,
+        "input_ports_checked": 65,
+        "output_ports_checked": 33,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05
+      },
+      "tools": {
+        "yosys": {
+          "path": "/home/zyrv/OpenROAD-flow-scripts/tools/install/yosys/bin/yosys",
+          "sha256": "0c0d6674d38e48d1637003c2542977f74a550103b252f61776c158b2ebeeaca9",
+          "version": "Yosys 0.68+ (git sha1 a5af9d690, Release, GNU /usr/bin/c++ 13.3.0) [github.com/The-OpenROAD-Project/yosys at HEAD]"
+        },
+        "openroad": {
+          "path": "/home/zyrv/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad",
+          "sha256": "c24e4e3a75e223e51e203440992a0364fb8c83a239162238d0772b87a1193f75",
+          "version": "26Q3-1867-g84e3ff1eb2"
+        },
+        "abc": {
+          "path": "/home/zyrv/OpenROAD-flow-scripts/tools/install/yosys/bin/yosys-abc",
+          "sha256": "fab637b96f401f8b3fcadd3e256728f91528960e6da35d5b7e74b13c30ae83e0",
+          "version": "======== ABC command line \"version\"\nUC Berkeley, ABC 1.01 (compiled Sep 10 2026 09:58:03)"
+        }
+      },
+      "libraries": [
+        {
+          "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib",
+          "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+          "voltage_V": 1.1,
+          "temperature_C": 25.0,
+          "time_unit": "1ns",
+          "capacitance_unit": "fF",
+          "time_to_ps": 1000.0,
+          "capacitance_to_fF": 1.0
+        }
+      ],
+      "RC_sources": {
+        "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/rcx_patterns.rules": "2f65fafbe2c704b378563c53a680b93cef080c2799997019d43df7d1e5a563e9",
+        "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl": "521df813bf4da9d7400df33e3f680c9a328cc720830dbfca1188083741503fa5"
+      },
+      "thread_controls": {
+        "YOSYS_MAX_THREADS": 2,
+        "OMP_NUM_THREADS": 2,
+        "OPENBLAS_NUM_THREADS": 2,
+        "NUM_CORES": 2
+      },
+      "minimum_period_report_is_full_Tmin": false,
+      "training_role": "connection_only"
+    },
+    {
+      "task": "mul32",
+      "manifest": "/home/zyrv/vulsim-artifacts/nangate45-n12-20261117-v1/connection/runs/mul32/manifest.json",
+      "manifest_sha256": "a7916b06061c11ad5b6825865a4cfbddd75c1fb4e5444fb6bcbd36395a7cac52",
+      "status": "completed",
+      "profile_sha256": "e3adefb4440f6dbcf84c84dad87c0da4bcac5c2e5ade81792c9a8aab18caf728",
+      "metric_stage": "grt",
+      "requested_period_ps": 3000,
+      "actual_ABC_target_ps": 3000.0,
+      "metric": {
+        "cell_area_um2": 7327.236,
+        "functional_cell_area_um2": 7263.928,
+        "sequential_area_um2": 578.816,
+        "sequential_cells": 128,
+        "setup_worst_slack_ps": 1149.277,
+        "hold_worst_slack_ps": 0.662,
+        "timing_coverage_complete": true,
+        "raw_report_units": {
+          "time": {
+            "raw_unit": "time 1ns",
+            "to_ps": 1000.0
+          },
+          "capacitance": {
+            "raw_unit": "capacitance 1fF",
+            "to_fF": 1.0
+          }
+        }
+      },
+      "sdc_contract": {
+        "version": "serialized-sdc-contract-v2",
+        "status": "passed",
+        "sdc_sha256": "4c634f3f0680d2ff0e59a42cc945c7e30c32360aa925ba990044bbe37b21bed9",
+        "platform": "nangate45",
+        "time_to_ps": 1000.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 3.0,
+          "io_clk": 3.0
+        },
+        "clock_transition_native": 0.01,
+        "setup_uncertainty_native": 0.02,
+        "hold_uncertainty_native": 0.005,
+        "output_load_native": 3.898,
+        "input_ports_checked": 65,
+        "output_ports_checked": 64,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05
+      },
+      "tools": {
+        "yosys": {
+          "path": "/home/zyrv/OpenROAD-flow-scripts/tools/install/yosys/bin/yosys",
+          "sha256": "0c0d6674d38e48d1637003c2542977f74a550103b252f61776c158b2ebeeaca9",
+          "version": "Yosys 0.68+ (git sha1 a5af9d690, Release, GNU /usr/bin/c++ 13.3.0) [github.com/The-OpenROAD-Project/yosys at HEAD]"
+        },
+        "openroad": {
+          "path": "/home/zyrv/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad",
+          "sha256": "c24e4e3a75e223e51e203440992a0364fb8c83a239162238d0772b87a1193f75",
+          "version": "26Q3-1867-g84e3ff1eb2"
+        },
+        "abc": {
+          "path": "/home/zyrv/OpenROAD-flow-scripts/tools/install/yosys/bin/yosys-abc",
+          "sha256": "fab637b96f401f8b3fcadd3e256728f91528960e6da35d5b7e74b13c30ae83e0",
+          "version": "======== ABC command line \"version\"\nUC Berkeley, ABC 1.01 (compiled Sep 10 2026 09:58:03)"
+        }
+      },
+      "libraries": [
+        {
+          "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib",
+          "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+          "voltage_V": 1.1,
+          "temperature_C": 25.0,
+          "time_unit": "1ns",
+          "capacitance_unit": "fF",
+          "time_to_ps": 1000.0,
+          "capacitance_to_fF": 1.0
+        }
+      ],
+      "RC_sources": {
+        "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/rcx_patterns.rules": "2f65fafbe2c704b378563c53a680b93cef080c2799997019d43df7d1e5a563e9",
+        "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl": "521df813bf4da9d7400df33e3f680c9a328cc720830dbfca1188083741503fa5"
+      },
+      "thread_controls": {
+        "YOSYS_MAX_THREADS": 2,
+        "OMP_NUM_THREADS": 2,
+        "OPENBLAS_NUM_THREADS": 2,
+        "NUM_CORES": 2
+      },
+      "minimum_period_report_is_full_Tmin": false,
+      "training_role": "connection_only"
+    },
+    {
+      "task": "mac8",
+      "manifest": "/home/zyrv/vulsim-artifacts/nangate45-n12-20261117-v1/connection/runs/mac8/manifest.json",
+      "manifest_sha256": "c6b4338d9371eefc5c2164f06c43ff2aa67d6f7a1940319acc7fff5504cf7598",
+      "status": "completed",
+      "profile_sha256": "e3adefb4440f6dbcf84c84dad87c0da4bcac5c2e5ade81792c9a8aab18caf728",
+      "metric_stage": "grt",
+      "requested_period_ps": 3000,
+      "actual_ABC_target_ps": 3000.0,
+      "metric": {
+        "cell_area_um2": 844.8160000000003,
+        "functional_cell_area_um2": 828.8560000000002,
+        "sequential_area_um2": 217.056,
+        "sequential_cells": 48,
+        "setup_worst_slack_ps": 1987.165,
+        "hold_worst_slack_ps": 11.173,
+        "timing_coverage_complete": true,
+        "raw_report_units": {
+          "time": {
+            "raw_unit": "time 1ns",
+            "to_ps": 1000.0
+          },
+          "capacitance": {
+            "raw_unit": "capacitance 1fF",
+            "to_fF": 1.0
+          }
+        }
+      },
+      "sdc_contract": {
+        "version": "serialized-sdc-contract-v2",
+        "status": "passed",
+        "sdc_sha256": "23b986a62954fb7c6a6e5263f5165b970ef811fbf56fd722737b5a5f5e21b4c0",
+        "platform": "nangate45",
+        "time_to_ps": 1000.0,
+        "capacitance_to_fF": 1.0,
+        "clock_periods_native": {
+          "core_clk": 3.0,
+          "io_clk": 3.0
+        },
+        "clock_transition_native": 0.01,
+        "setup_uncertainty_native": 0.02,
+        "hold_uncertainty_native": 0.005,
+        "output_load_native": 3.898,
+        "input_ports_checked": 33,
+        "output_ports_checked": 16,
+        "write_sdc_decimal_digits": 4,
+        "native_rounding_tolerance": 5.00001e-05
+      },
+      "tools": {
+        "yosys": {
+          "path": "/home/zyrv/OpenROAD-flow-scripts/tools/install/yosys/bin/yosys",
+          "sha256": "0c0d6674d38e48d1637003c2542977f74a550103b252f61776c158b2ebeeaca9",
+          "version": "Yosys 0.68+ (git sha1 a5af9d690, Release, GNU /usr/bin/c++ 13.3.0) [github.com/The-OpenROAD-Project/yosys at HEAD]"
+        },
+        "openroad": {
+          "path": "/home/zyrv/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad",
+          "sha256": "c24e4e3a75e223e51e203440992a0364fb8c83a239162238d0772b87a1193f75",
+          "version": "26Q3-1867-g84e3ff1eb2"
+        },
+        "abc": {
+          "path": "/home/zyrv/OpenROAD-flow-scripts/tools/install/yosys/bin/yosys-abc",
+          "sha256": "fab637b96f401f8b3fcadd3e256728f91528960e6da35d5b7e74b13c30ae83e0",
+          "version": "======== ABC command line \"version\"\nUC Berkeley, ABC 1.01 (compiled Sep 10 2026 09:58:03)"
+        }
+      },
+      "libraries": [
+        {
+          "path": "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib",
+          "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+          "voltage_V": 1.1,
+          "temperature_C": 25.0,
+          "time_unit": "1ns",
+          "capacitance_unit": "fF",
+          "time_to_ps": 1000.0,
+          "capacitance_to_fF": 1.0
+        }
+      ],
+      "RC_sources": {
+        "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/rcx_patterns.rules": "2f65fafbe2c704b378563c53a680b93cef080c2799997019d43df7d1e5a563e9",
+        "/home/zyrv/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl": "521df813bf4da9d7400df33e3f680c9a328cc720830dbfca1188083741503fa5"
+      },
+      "thread_controls": {
+        "YOSYS_MAX_THREADS": 2,
+        "OMP_NUM_THREADS": 2,
+        "OPENBLAS_NUM_THREADS": 2,
+        "NUM_CORES": 2
+      },
+      "minimum_period_report_is_full_Tmin": false,
+      "training_role": "connection_only"
+    }
+  ],
+  "accounting": {
+    "ledger": "/home/zyrv/vulsim/experiments/arithmetic/backend_usage.json",
+    "ledger_identity": {
+      "policy_sha256": "59097fbac13be8fb59fd7e7380e5cf39226857f012a6a8c3285e5f1f7744530c",
+      "checkpoint_sha256": "18ad798ae7fdd82fc7f060d1a96563ae27b1b2935d47e6be8adb1842bf1c765c"
+    },
+    "usage_reset": false,
+    "policy_migrated": false,
+    "parallel_cap": 9,
+    "new_serial_worker_cap": 1,
+    "threads_per_tool": 2,
+    "probe_memory_limit_MiB": 2048,
+    "probe_minimum_available_MiB": 10240,
+    "new_calls": {
+      "synth": 3,
+      "grt": 3,
+      "support": 10,
+      "final": 0
+    },
+    "walltime_s": 122.37681443296606,
+    "CPU_time_s": 148.45000000000002,
+    "reservation_ids": [
+      "6c8146e84a954ca28f689da17bef6a64",
+      "7895b793ea4e4f6ea283b0b2466c537d",
+      "2498562364c64c55a39340bfd60202b7",
+      "41f16152c5fb4fce9f60815f15bd09ea",
+      "79012ad2d90e47929a151071b4a38fa0",
+      "ee83d513353d42f2a17e37ad51b496dd",
+      "8e6fdf19f5e94a4e8a73a62c75b8e24b",
+      "7b87faa5e7e74e978f88187e9f4ce2fc",
+      "06ccfe8b4fb844a587a0efce2473a4f0",
+      "aedb7cbb9d1a445ba8c10d90810dcaa7",
+      "c046cf23b7124b31b3b24afc37f4fb05",
+      "89d36e930682439ab4b04af662162c7a",
+      "72f5f252d61e41138bfc7a0a3e2d9c08",
+      "64570b41211e4e7ab492021307dd9943",
+      "b467ee449873453ca5e35a66662f3748",
+      "a3a622c41ce04463b97a7010c6985c15"
+    ],
+    "all_new_entries_settled": true,
+    "new_jobs": [
+      {
+        "id": "613cc1cb68004a01bcf43b68c0cc479a",
+        "admission_id": "matrix-nangate45-n12-connection-v1",
+        "task_id": "add32",
+        "status": "released"
+      },
+      {
+        "id": "3f1a5bbd7b764819bb528f3208b67966",
+        "admission_id": "matrix-nangate45-n12-connection-v1",
+        "task_id": "mul32",
+        "status": "released"
+      },
+      {
+        "id": "7cd7f4831048415e8bc5bd2e7415cc46",
+        "admission_id": "matrix-nangate45-n12-connection-v1",
+        "task_id": "mac8",
+        "status": "released"
+      },
+      {
+        "id": "77c6487b9e4d41fbaa1833226da406d3",
+        "admission_id": "matrix-nangate45-n12-validation-v1",
+        "task_id": "nine-RTL-functional-checks",
+        "status": "released"
+      }
+    ],
+    "active_ASAP7_jobs_observed_at_delivery": [
+      {
+        "id": "1cb0c1d0f37b4f7a8ba0dde55fd0d0f3",
+        "admission_id": "matrix-old-d-mul128-L4",
+        "task_id": "mul128-L4-T1200-78374d7545b6-old-d"
+      },
+      {
+        "id": "50d469b8fef24c2592b4157cbd22708b",
+        "admission_id": "matrix-userrev-startupfix-karatsuba256-L4-T2300-C",
+        "task_id": "karatsuba256-L4-T2300-1de0ecb23206-userrev-startupfix-v1"
+      },
+      {
+        "id": "a2aa18f7ef2d4df5ac407487ff123252",
+        "admission_id": "matrix-userrev-startupfix-karatsuba256-L4-T2750-B",
+        "task_id": "karatsuba256-L4-T2750-afb74d898573-userrev-startupfix-v1"
+      }
+    ]
+  },
+  "next": "N3 paired small samples; N4-N6 calibrated model/contract pending",
+  "new_A_BCD_measurements": 0,
+  "model_fit_performed": false,
+  "backend_linearity_decided": false,
+  "offline_shared_functions_required": true,
+  "R1_R5_repairs_performed": false,
+  "external_evidence": [
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n12-20261117-v1/baseline.json",
+      "sha256": "454c61d253d8b1894d1dc5ba66cd84a104f8d3589727b6c23c3e93ba48091a64"
+    },
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n12-20261117-v1/demand.json.gz",
+      "sha256": "a1fac203528a76b1dd8ebbf041b9dc5f3c725456d2cda9726889cb145f4781c7"
+    },
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n12-20261117-v1/demand-summary.json",
+      "sha256": "7d08f80e6a3fcaf990ce66f9593d0b110a5dab0d1b45bde04c94f3eb22c9bf31"
+    },
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n12-20261117-v1/migration-audit.json",
+      "sha256": "c25d124981f6e61f3920451e22b93899b28026982b701246e45ae62692611c3d"
+    },
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n12-20261117-v1/connection/admission.json",
+      "sha256": "8714dbe0170943b5b8de2132b4055402d8737136f4993631015041116edc71c3"
+    },
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n12-20261117-v1/software-check/software-check.json",
+      "sha256": "e7c560df009a9973d8b24cc9a3de7704ef6bdd201b9b4bd066b2538835ee9628"
+    },
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n12-20261117-v1/functional/receipt.json",
+      "sha256": "7ace383b3ecd62852b67b216e72a5147e28053de4ba39d5de50e5b7f3424e153"
+    },
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n12-20261117-v1/functional-accounting/admission.json",
+      "sha256": "0ab6e1c0d2a283177ca8d3ff619ba22ba81556d66588ba29ab2dc3b3bdc8d780"
+    },
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n12-20261117-v1/functional-accounting/settlement.json",
+      "sha256": "2174536b7d539537e7d08374aa5937c7c81ab4f6cd06960d610b7451394d6d9b"
+    },
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n12-20261117-v1/accounting-receipt.json",
+      "sha256": "ec94fe422d0077d9178678162c2cc339830371cdab4e2ad8d41cb8585f77f148"
+    }
+  ],
+  "source_files": {
+    "experiments/arithmetic_dse/nangate45_migration.py": "a52715e31354183f6cfa175f445d2b05b46e4e3629fd73190328e0669e5a6ef3",
+    "experiments/arithmetic_dse/nangate45_connection.py": "7a5884ab04d80d9e25e2b18e8ed690885192a528f080c2d68bf0ffd35745cc3e",
+    "experiments/arithmetic_dse/nangate45_connection_check.py": "969795fc36a9aa281a0f9a8faf95098fcc0eca8d419f86715ab932c718190acc",
+    "experiments/arithmetic_dse/nangate45_entry_check.py": "78e4f06c22b1add0ca47ac725d59683588d70cbbcd3d0d4569522f0311cd6807",
+    "experiments/arithmetic_dse/workload_platform_entry.py": "16e4599cd2864a65a5f31b501577acda422c38ed7595443b756c8dfe41cbf54b",
+    "experiments/arithmetic_dse/configs/nangate45_frozen_d_v1.json": "54f21984af0b238dcaca10af68983ad4ee5c0aead2b16f9d3d1cfc3fcc65c2f8"
+  }
+}
