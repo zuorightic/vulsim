@@ -1,0 +1,73 @@
+{
+  "schema": "nangate45-frozen-D-N56-package-v1",
+  "platform": "nangate45",
+  "profile_sha256": "e3adefb4440f6dbcf84c84dad87c0da4bcac5c2e5ade81792c9a8aab18caf728",
+  "evaluation_stage": "grt",
+  "status": "ready_for_finite_three_case_experiments",
+  "pricing": "offline_shared_functions",
+  "exact_lookup": false,
+  "online_backend_feedback": false,
+  "application_PPA_used": false,
+  "scope": {
+    "mac32": [
+      2,
+      3
+    ],
+    "add512": [
+      2,
+      4
+    ],
+    "mul128": [
+      2,
+      4
+    ]
+  },
+  "G_acceptance": {
+    "user_instruction": "好，G算作通过，请完成N5/N6",
+    "accepted": true,
+    "original_gate_passed": false,
+    "old_validation_APE": 0.166,
+    "parameters_changed": false
+  },
+  "selection_algorithm": "frozen old D; no R1-R5 repairs",
+  "implementation_ABC": "global requested T; local tau prediction only",
+  "precision_qualified": false,
+  "validation_pending": false,
+  "state_support": {
+    "total_FF_bits": [
+      131,
+      969
+    ],
+    "L": [
+      2,
+      3,
+      4
+    ],
+    "target_ps": [
+      1500,
+      3000
+    ],
+    "reset_one_bits": [
+      0,
+      0
+    ]
+  },
+  "arithmetic": {
+    "path": "arithmetic.json",
+    "sha256": "1d377ba51f6462a9c114c448cf96c2df2bba68ee7d5ee416bd1cef464d7da950"
+  },
+  "state_shared": {
+    "path": "state-shared.json",
+    "sha256": "61557616ccdaa264dc183879ae55eba0a431aeef78c9998f15f2090e42803992"
+  },
+  "characterization": {
+    "path": "characterization.json",
+    "sha256": "25a691d68835e1a2073f9ef18b502cf37a38f5321fe99cb6cde16e3707d4bd38"
+  },
+  "cell_cover": {
+    "path": "cell-cover.json",
+    "sha256": "d8b64758fe43f8c5aa662475865ec99028e22bac7bdf7c61f60d33de98fee4b4"
+  },
+  "publication_role": "completed N5/N6 integration; each precision result reported separately",
+  "parent_pre_evaluation_freeze_sha256": "4eadd80a6ce001705fa49116ada12f8ab5c27b2e3c4f4df0c2b01e6341e10115"
+}

@@ -1,0 +1,343 @@
+{
+  "schema": "nangate45-N4-offline-arithmetic-package-v1",
+  "target_platform": "nangate45",
+  "profile_sha256": "e3adefb4440f6dbcf84c84dad87c0da4bcac5c2e5ade81792c9a8aab18caf728",
+  "evaluation_stage": "grt",
+  "status": "arithmetic_delay_recalibration_evaluated",
+  "full_D_ready": false,
+  "qualification": "diagnostic_components_some_recalibration_gates_failed",
+  "numerical_payload": {
+    "version": "nangate45-shared-operator-functions-v1",
+    "target_platform": "nangate45",
+    "profile_sha256": "e3adefb4440f6dbcf84c84dad87c0da4bcac5c2e5ade81792c9a8aab18caf728",
+    "functions": {
+      "Mul": {
+        "delay_ps": {
+          "form": "global_scale",
+          "time_scale": 2.0,
+          "scale": 1.3555322294685688
+        },
+        "area_um2": {
+          "form": "global_scale",
+          "time_scale": 1.0,
+          "scale": 14.080865006068654
+        }
+      },
+      "Add": {
+        "delay_ps": {
+          "form": "shared_log_feature_ridge",
+          "time_scale": 0.5,
+          "alpha": 0.1,
+          "response": {
+            "version": "centered-numerical-response-v1",
+            "features": [
+              "log_old",
+              "log_width",
+              "log_work",
+              "log_clock",
+              "log_load",
+              "carry_dynamic",
+              "known_fraction",
+              "width_clock"
+            ],
+            "centers": [
+              6.095440857455733,
+              4.23809652651004,
+              6.037080490248504,
+              -0.17604336555033784,
+              0.7438303190734659,
+              0.25,
+              0.015625,
+              -0.7996925402237663
+            ],
+            "scales": [
+              0.3614009204788112,
+              1.11626488145656,
+              1.3059038434923738,
+              0.6732503368531259,
+              0.13409498017101526,
+              0.4330127018922193,
+              0.04133986423538423,
+              2.7849282732683722
+            ],
+            "coefficients": [
+              -0.01621143749600132,
+              0.03788649443318229,
+              0.013970269216700483,
+              0.013321748898992408,
+              -0.011172020481901546,
+              0.017733593862587188,
+              0.034247524161015404,
+              0.06658235878943822
+            ],
+            "intercept": 0.19427550744706967,
+            "link": "positive_log_linear"
+          }
+        },
+        "area_um2": {
+          "form": "shared_log_feature_ridge",
+          "time_scale": 2.0,
+          "alpha": 0.1,
+          "response": {
+            "version": "centered-numerical-response-v1",
+            "features": [
+              "log_old",
+              "log_width",
+              "log_work",
+              "log_clock",
+              "log_load",
+              "carry_dynamic",
+              "known_fraction",
+              "width_clock"
+            ],
+            "centers": [
+              3.5434884920408267,
+              3.8011033403816468,
+              5.540971655001958,
+              -0.13515503603605483,
+              0.7607246985779728,
+              0.16666666666666669,
+              0.020833333333333336,
+              -0.5137382589460499
+            ],
+            "scales": [
+              1.3030539838524502,
+              0.9473880946442834,
+              1.1343986068812335,
+              0.7376994246604466,
+              0.15110792403902615,
+              0.37267799624996495,
+              0.04658474953124562,
+              2.8926903826851875
+            ],
+            "coefficients": [
+              0.02626777392968311,
+              -0.010212555531672168,
+              0.003321451687502314,
+              0.003734092715819561,
+              0.015291029541299666,
+              -0.008800553800260933,
+              -0.03645245892472173,
+              -0.04745907047615129
+            ],
+            "intercept": 2.562242251459766,
+            "link": "positive_log_linear"
+          }
+        }
+      },
+      "G": {
+        "delay_ps": {
+          "form": "global_scale",
+          "time_scale": 0.5,
+          "scale": 1.2489744651755654
+        },
+        "area_um2": {
+          "form": "global_scale",
+          "time_scale": 2.0,
+          "scale": 12.977840698656626
+        }
+      }
+    },
+    "ASAP7_response_sha256": "de067c6983fe92eb7b5771b014f7881483bc2be06a5f70eddd3bc521208bc575",
+    "admission_sha256": "e5cbfe28704a5675ef4be58970c627c4e99c707a9d291159266d809941a2f6a9",
+    "clock_support_ps": [
+      475,
+      3700
+    ],
+    "full_D_ready": false,
+    "qualification": "pending fresh sealed test; diagnostic arithmetic components only",
+    "source_keys_used_in_inference": false,
+    "exact_clock_tables": false,
+    "backend_called_at_inference": false,
+    "application_PPA_used": false,
+    "characterization_H_pending_N6": true,
+    "S_shared_pending_N5": true,
+    "support": "limited paired unsigned Mul/Add/ADC/G shells; unmeasured shapes/widths/loads/large G remain extrapolations",
+    "feature_schema": "nangate45-shared-width-clock-features-v2",
+    "feature_contract_sha256": "72d68bab12232c34086ab1ab42a677e2dd2b36a285b4bf0f1edea2416d6539d9",
+    "selection_contract_sha256": "90902f9729e9e8c14864ad390ead2c03a53c2f651582505322cfcbd7cbbba9ad",
+    "recalibration_version": "nangate45-N4-three-pressure-refit-v1",
+    "baseline_model_sha256": "b29256d4aba5b26ef5be9df7c75903f3bdf889d3b1fef5b7a03838867beea09a",
+    "refit_metrics": [
+      "Add.delay_ps",
+      "G.delay_ps"
+    ],
+    "unchanged_metrics": [
+      "Mul.delay_ps",
+      "Mul.area_um2",
+      "Add.area_um2",
+      "G.area_um2"
+    ],
+    "historical_test_used_for_fitting_or_selection": false,
+    "source_amendment_sha256": "b834ad4781860d1150f280e230f301483c83515014e6d69eb434161335eaec5d",
+    "excluded_large_G_diagnostic_used": false
+  },
+  "ASAP7_response_reference": {
+    "path": "experiments/arithmetic/evidence/workload_equivalent_mac32_v1/diagnostic-model.json",
+    "sha256": "de067c6983fe92eb7b5771b014f7881483bc2be06a5f70eddd3bc521208bc575"
+  },
+  "exact_lookup": false,
+  "online_backend_feedback": false,
+  "application_PPA_used": false,
+  "external_model_sha256": "d9743fe0f476b84a17e0f05ba7b794efcf72a49cf3a857f2b5716f44a2dcb7fd",
+  "statistical_contract_sha256": "e5cbfe28704a5675ef4be58970c627c4e99c707a9d291159266d809941a2f6a9",
+  "evaluation_sha256": "b566dbcc330df7d66c1104ed45a09d0b8c7fd1c9f5272fee9aa1cb57fd44d701",
+  "exclusions": [
+    "S/shared/control",
+    "H_char and equivalent-time contract",
+    "G embedding/compositions",
+    "full D selection/RTL/ABCD qualification"
+  ],
+  "measured_support": {
+    "baseline": {
+      "clock_ps": [
+        500,
+        1500,
+        3000
+      ],
+      "paired_sources": 20,
+      "Mul": "six contexts: 4/8/16/64/128 square full products and 32x64 full product; limited consumers",
+      "Add": "ten contexts: full add up to 512, ADC64/128, one known-bit case, direct/two-bank/consumer loads",
+      "G": "four sparse full-region contexts: outputs 24/64/96/128, term counts 3/4/11/7; no G consumer"
+    },
+    "new_sources": 10,
+    "new_points": 30,
+    "request_ps_range": [
+      475,
+      3700
+    ],
+    "source_shapes": [
+      {
+        "family": "Add",
+        "role": "train",
+        "width": 256,
+        "clocks_ps": {
+          "tight": 725,
+          "suitable": 1000,
+          "loose": 1900
+        }
+      },
+      {
+        "family": "Add",
+        "role": "train",
+        "width": 256,
+        "clocks_ps": {
+          "tight": 725,
+          "suitable": 1000,
+          "loose": 1900
+        }
+      },
+      {
+        "family": "G",
+        "role": "train",
+        "width": 64,
+        "clocks_ps": {
+          "tight": 500,
+          "suitable": 700,
+          "loose": 1300
+        }
+      },
+      {
+        "family": "Add",
+        "role": "validation",
+        "width": 192,
+        "clocks_ps": {
+          "tight": 1250,
+          "suitable": 1750,
+          "loose": 3300
+        }
+      },
+      {
+        "family": "Add",
+        "role": "validation",
+        "width": 96,
+        "clocks_ps": {
+          "tight": 600,
+          "suitable": 825,
+          "loose": 1550
+        }
+      },
+      {
+        "family": "G",
+        "role": "validation",
+        "width": 80,
+        "clocks_ps": {
+          "tight": 475,
+          "suitable": 675,
+          "loose": 1250
+        }
+      },
+      {
+        "family": "Add",
+        "role": "test",
+        "width": 384,
+        "clocks_ps": {
+          "tight": 1400,
+          "suitable": 1950,
+          "loose": 3700
+        }
+      },
+      {
+        "family": "Add",
+        "role": "test",
+        "width": 160,
+        "clocks_ps": {
+          "tight": 675,
+          "suitable": 925,
+          "loose": 1750
+        }
+      },
+      {
+        "family": "G",
+        "role": "test",
+        "width": 192,
+        "clocks_ps": {
+          "tight": 750,
+          "suitable": 1025,
+          "loose": 1950
+        }
+      },
+      {
+        "family": "G",
+        "role": "train",
+        "width": 128,
+        "clocks_ps": {
+          "tight": 675,
+          "suitable": 925,
+          "loose": 1750
+        }
+      }
+    ]
+  },
+  "extrapolation": "unsampled widths, slices, masks, large G and load combinations carry no additional qualification",
+  "recalibration_version": "nangate45-N4-three-pressure-refit-v1",
+  "baseline_package_sha256": "3488ad6fc16d0b6c926bb56b91fb86e9d1a3f1653add624c39d03c57b0dd28be",
+  "unchanged_metrics": [
+    "Mul.delay_ps",
+    "Mul.area_um2",
+    "Add.area_um2",
+    "G.area_um2"
+  ],
+  "refit_metrics": [
+    "Add.delay_ps",
+    "G.delay_ps"
+  ],
+  "baseline_role_erratum": {
+    "previous_claim": "same producer load variants do not cross roles",
+    "correct": false,
+    "groups": [
+      {
+        "group": "7eccaa7d091cd55cc666898c8f68ef31f0575323e998b644bd315db03176755a",
+        "roles": [
+          "test",
+          "validation"
+        ],
+        "sources": [
+          "wide-f826704868db02bf",
+          "wide-d842786f167bb36d"
+        ]
+      }
+    ],
+    "treatment": "retain old results; consumed validation is development protection; all old test labels are consumed regression only, never fitting/selection"
+  }
+}

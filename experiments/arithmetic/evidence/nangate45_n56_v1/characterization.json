@@ -1,0 +1,518 @@
+{
+  "version": "characterization-body-window-diagnostic-v1",
+  "profile_sha256": "e3adefb4440f6dbcf84c84dad87c0da4bcac5c2e5ade81792c9a8aab18caf728",
+  "families": {
+    "Add": {
+      "alpha": 1.0,
+      "H_char_ps": 152.81799999999987,
+      "sources": 7,
+      "rows": 21,
+      "row_range_ps": [
+        140.18599999999992,
+        163.66999999999985
+      ]
+    },
+    "G": {
+      "alpha": 1.0,
+      "H_char_ps": 154.26399999999995,
+      "sources": 3,
+      "rows": 9,
+      "row_range_ps": [
+        150.79199999999992,
+        157.91100000000006
+      ]
+    },
+    "Mul": {
+      "alpha": 1.0,
+      "H_char_ps": 200.37700000000007,
+      "sources": 2,
+      "rows": 6,
+      "row_range_ps": [
+        161.94700000000057,
+        252.3119999999999
+      ]
+    }
+  },
+  "formula": "min_p(alpha_p*T-H_char,p-D_other,char,p)",
+  "derivation": "Nangate45 T minus same-path slack minus sum of all same-path arithmetic owners; train only",
+  "summary_rule": "median per complete source, then median across sources; one shared H per family",
+  "audit": [
+    {
+      "source": "operator-7ab4f32d7bb9b588",
+      "family": "Add",
+      "target_ps": 500,
+      "H_char_ps": 140.94500000000005,
+      "path_body_ps": 279.8349999999999,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/operator-7ab4f32d7bb9b588-T500/grt-labels.json",
+      "sha256": "9323a3f4e72755ca165bd70de3cdbee343921626b44dd235ca711c110ef30270",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "operator-7ab4f32d7bb9b588",
+      "family": "Add",
+      "target_ps": 1500,
+      "H_char_ps": 140.18599999999992,
+      "path_body_ps": 285.9190000000001,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/operator-7ab4f32d7bb9b588-T1500/grt-labels.json",
+      "sha256": "1dcadf7ca5e9c9834307ef0ddfc32727be0c8a104bccc44d1a5df6cd1b3c0ac4",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "operator-7ab4f32d7bb9b588",
+      "family": "Add",
+      "target_ps": 3000,
+      "H_char_ps": 143.02600000000007,
+      "path_body_ps": 286.24,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/operator-7ab4f32d7bb9b588-T3000/grt-labels.json",
+      "sha256": "3f4713c34d26f25bda70d6373e11345751b4cae50f27bc964f57b47c14ea60db",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "wide-6c1e33e2246ff438",
+      "family": "Add",
+      "target_ps": 500,
+      "H_char_ps": 148.42100000000005,
+      "path_body_ps": 573.906,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/wide-6c1e33e2246ff438-T500/grt-labels.json",
+      "sha256": "34e706ff8e284afa6e3e04eb02c451ca200609c0847cd2000f8b808aec2967de",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "wide-6c1e33e2246ff438",
+      "family": "Add",
+      "target_ps": 1500,
+      "H_char_ps": 146.43599999999992,
+      "path_body_ps": 703.2450000000001,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/wide-6c1e33e2246ff438-T1500/grt-labels.json",
+      "sha256": "8a349c2e97fef40faceac343859d41937989d475c1ee7c5a12463dba8346406c",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "wide-6c1e33e2246ff438",
+      "family": "Add",
+      "target_ps": 3000,
+      "H_char_ps": 154.27700000000004,
+      "path_body_ps": 727.98,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/wide-6c1e33e2246ff438-T3000/grt-labels.json",
+      "sha256": "73678e1968a633207590b5782f275a486ca887562a682d29a1fdbfc5489b29d3",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "wide-74b91cebde906039",
+      "family": "Add",
+      "target_ps": 500,
+      "H_char_ps": 163.66999999999985,
+      "path_body_ps": 635.3420000000001,
+      "other_owners": [
+        "consumer0"
+      ],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/wide-74b91cebde906039-T500/grt-labels.json",
+      "sha256": "59e42cc4dd905a5624322188e6f139986c09fc4a415f22dc1c92ee3cb74c47dd",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "wide-74b91cebde906039",
+      "family": "Add",
+      "target_ps": 1500,
+      "H_char_ps": 159.2109999999999,
+      "path_body_ps": 843.3620000000001,
+      "other_owners": [
+        "consumer0"
+      ],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/wide-74b91cebde906039-T1500/grt-labels.json",
+      "sha256": "9a588dd1e63ccbdcba54fc6039b485c131b52649764a203507bb32e932e852e9",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "wide-74b91cebde906039",
+      "family": "Add",
+      "target_ps": 3000,
+      "H_char_ps": 156.1070000000002,
+      "path_body_ps": 866.9299999999998,
+      "other_owners": [
+        "consumer0"
+      ],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/wide-74b91cebde906039-T3000/grt-labels.json",
+      "sha256": "7cf25a2dd8b49deb3ab52214f2fd4ff92b6e3081e6ad3732244784b41c2acbe8",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "wide-951cc96c1fb88338",
+      "family": "Add",
+      "target_ps": 500,
+      "H_char_ps": 141.06,
+      "path_body_ps": 375.296,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/wide-951cc96c1fb88338-T500/grt-labels.json",
+      "sha256": "15433699816a70ec9f36084b61229ba88a6919025901088618cbabbc45c6587c",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "wide-951cc96c1fb88338",
+      "family": "Add",
+      "target_ps": 1500,
+      "H_char_ps": 159.74199999999985,
+      "path_body_ps": 477.4280000000001,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/wide-951cc96c1fb88338-T1500/grt-labels.json",
+      "sha256": "23fe999a3eb3b8a7f6981e14fa346d22c1c7b74781c2caebc17aba1bb11f0276",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "wide-951cc96c1fb88338",
+      "family": "Add",
+      "target_ps": 3000,
+      "H_char_ps": 161.82099999999997,
+      "path_body_ps": 481.9250000000001,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/wide-951cc96c1fb88338-T3000/grt-labels.json",
+      "sha256": "31c9dbd5a5f9c2f13d56c2bc5e6c45c79055e96a48620e1b56f31d8652b7a2ce",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/wide-d232ec69b47f206a-T500/grt-labels.json",
+      "sha256": "dd13feb9f3a14489ec2e45cfb77d3fced32306f506c5fdc3c070a03823ffe62c",
+      "status": "excluded_multiple_paths_with_aggregate_slack"
+    },
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/wide-d232ec69b47f206a-T1500/grt-labels.json",
+      "sha256": "99a769dc32ebd1c4153ae919e6c7ecbe027d2bffcf19c80a9ec1d6e1e879b09d",
+      "status": "excluded_multiple_paths_with_aggregate_slack"
+    },
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/wide-d232ec69b47f206a-T3000/grt-labels.json",
+      "sha256": "0f13b187c876d9a8e473f33fd0f237bd8e25b8205ccb143092474aac0cb1631a",
+      "status": "excluded_multiple_paths_with_aggregate_slack"
+    },
+    {
+      "source": "wide-d3d779a9d9167355",
+      "family": "Add",
+      "target_ps": 500,
+      "H_char_ps": 148.96299999999997,
+      "path_body_ps": 504.84900000000005,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/wide-d3d779a9d9167355-T500/grt-labels.json",
+      "sha256": "2526bcc2eabd464e3f3953dacdeba07570eee62e0c29248a40ea2c0681d93090",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "wide-d3d779a9d9167355",
+      "family": "Add",
+      "target_ps": 1500,
+      "H_char_ps": 143.6869999999999,
+      "path_body_ps": 638.5780000000001,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/wide-d3d779a9d9167355-T1500/grt-labels.json",
+      "sha256": "371030340edd1c5d67e22e2b3da30ab1f849ebcb99fffd2b2efad6bf85b2a1b7",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "wide-d3d779a9d9167355",
+      "family": "Add",
+      "target_ps": 3000,
+      "H_char_ps": 145.51400000000012,
+      "path_body_ps": 653.424,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/wide-d3d779a9d9167355-T3000/grt-labels.json",
+      "sha256": "aa24921cc461853c1dc8bd52988bdfded2dcfc2b6952ea11accd7da862eaaf53",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "new/G-a4736d1f1d9438c7",
+      "family": "G",
+      "target_ps": 500,
+      "H_char_ps": 156.28900000000004,
+      "path_body_ps": 334.74099999999993,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/new--G-a4736d1f1d9438c7-T500/grt-labels.json",
+      "sha256": "7af1ed1b3aec1583f57339a6167da4ea98d921cde8286d0d89dc85cbe3a2a4b4",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "new/G-a4736d1f1d9438c7",
+      "family": "G",
+      "target_ps": 1500,
+      "H_char_ps": 153.18399999999997,
+      "path_body_ps": 386.52,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/new--G-a4736d1f1d9438c7-T1500/grt-labels.json",
+      "sha256": "5a8a5e6f25bd16d46b1cea33f562618296045024d036a951d65f4be28f7a0197",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "new/G-a4736d1f1d9438c7",
+      "family": "G",
+      "target_ps": 3000,
+      "H_char_ps": 155.48300000000012,
+      "path_body_ps": 383.377,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/new--G-a4736d1f1d9438c7-T3000/grt-labels.json",
+      "sha256": "4c3d0d425a1d0cc15ed4caf3645278adc75bc743ccc8f414bab5de02101d1050",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "new/G-c9bad07c2b1f226b",
+      "family": "G",
+      "target_ps": 500,
+      "H_char_ps": 157.91100000000006,
+      "path_body_ps": 238.62599999999998,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/new--G-c9bad07c2b1f226b-T500/grt-labels.json",
+      "sha256": "4fbd932c2ec6113f98599853691d350acb85b8514fb8934dc6971991f077785f",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "new/G-c9bad07c2b1f226b",
+      "family": "G",
+      "target_ps": 1500,
+      "H_char_ps": 152.69200000000015,
+      "path_body_ps": 240.96599999999998,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/new--G-c9bad07c2b1f226b-T1500/grt-labels.json",
+      "sha256": "f8b2ba7bb4420a40800794b2ea0cc4eb88f3e7af44240ebaab9c4ac629a87a6b",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "new/G-c9bad07c2b1f226b",
+      "family": "G",
+      "target_ps": 3000,
+      "H_char_ps": 152.69199999999992,
+      "path_body_ps": 240.96599999999998,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/new--G-c9bad07c2b1f226b-T3000/grt-labels.json",
+      "sha256": "18df817131b172c857acf5cea7e56b9605182090d6093791ded626c1e85570eb",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/operator-0e3e802d6fe79d53-T500/grt-labels.json",
+      "sha256": "0e75e7f5ae4f6f7518d154423819aaf16cdcc0daa8733fbb0e8672f386c80c08",
+      "status": "excluded_multiple_paths_with_aggregate_slack"
+    },
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/operator-0e3e802d6fe79d53-T1500/grt-labels.json",
+      "sha256": "c4a71f9f062a62fbbadbc4b13a516b5c7d4865b0e01f024c17c289aca5ff33ca",
+      "status": "excluded_multiple_paths_with_aggregate_slack"
+    },
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/operator-0e3e802d6fe79d53-T3000/grt-labels.json",
+      "sha256": "5b811b7f9024490725455e154a1c940c2b7bbbf00177f6f8c372f406093f59c5",
+      "status": "excluded_multiple_paths_with_aggregate_slack"
+    },
+    {
+      "source": "operator-22ed3945e82bd47f",
+      "family": "Mul",
+      "target_ps": 500,
+      "H_char_ps": 171.68799999999987,
+      "path_body_ps": 1057.01,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/operator-22ed3945e82bd47f-T500/grt-labels.json",
+      "sha256": "1162d149b08163876c7eace9455764cf8573051de5a42a65aeb183122599950c",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "operator-22ed3945e82bd47f",
+      "family": "Mul",
+      "target_ps": 1500,
+      "H_char_ps": 197.1959999999999,
+      "path_body_ps": 1184.452,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/operator-22ed3945e82bd47f-T1500/grt-labels.json",
+      "sha256": "0ba2b9ccfb0755d1c1358a0552684ec9e735f7bee2830a296dfefa0247ef5f2c",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "operator-22ed3945e82bd47f",
+      "family": "Mul",
+      "target_ps": 3000,
+      "H_char_ps": 203.48499999999967,
+      "path_body_ps": 1182.0470000000003,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/operator-22ed3945e82bd47f-T3000/grt-labels.json",
+      "sha256": "8fe4e609a7c12979248442e5e0c76a8cbc92d8d3870e1f0605f7d2b435e93ce5",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "wide-5660be387111d809",
+      "family": "Mul",
+      "target_ps": 500,
+      "H_char_ps": 203.55800000000022,
+      "path_body_ps": 1827.3319999999999,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/wide-5660be387111d809-T500/grt-labels.json",
+      "sha256": "48302fb428e7f029a2f43cef1f089ae61fd5555f60e3a424d7f5099e0406e47f",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "wide-5660be387111d809",
+      "family": "Mul",
+      "target_ps": 1500,
+      "H_char_ps": 161.94700000000057,
+      "path_body_ps": 1858.6209999999994,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/wide-5660be387111d809-T1500/grt-labels.json",
+      "sha256": "e6027b6f6f8627da51487155a069239d679113911183cf00ad72205183a7d35d",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "wide-5660be387111d809",
+      "family": "Mul",
+      "target_ps": 3000,
+      "H_char_ps": 252.3119999999999,
+      "path_body_ps": 2267.436,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/runs/wide-5660be387111d809-T3000/grt-labels.json",
+      "sha256": "ae588d22f9ffe093b04b3d969647908c7910b790f33773f9833746f91c11f4dd",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "wide-3298c0400abe1442",
+      "family": "Add",
+      "target_ps": 725,
+      "H_char_ps": 151.79700000000014,
+      "path_body_ps": 680.2789999999999,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-refit-20261117-v4/runs/wide-3298c0400abe1442-T725/grt-labels.json",
+      "sha256": "6ccbc3a325c43134344e3e6b1f448aca94c1ec4746f6c97b970bb0fb0b3452dc",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "wide-3298c0400abe1442",
+      "family": "Add",
+      "target_ps": 1000,
+      "H_char_ps": 157.0300000000001,
+      "path_body_ps": 817.819,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-refit-20261117-v4/runs/wide-3298c0400abe1442-T1000/grt-labels.json",
+      "sha256": "7b5ae537bc270728c4bffa5630a302514b2457afc17dad21e3796d7e36bcd2c2",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "wide-3298c0400abe1442",
+      "family": "Add",
+      "target_ps": 1900,
+      "H_char_ps": 154.68900000000008,
+      "path_body_ps": 915.088,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-refit-20261117-v4/runs/wide-3298c0400abe1442-T1900/grt-labels.json",
+      "sha256": "635041797526e9eb33b898bba303f5ad607f06896761e8c7d6ea99dc1df55362",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "wide-3bb63c8fddd959f2",
+      "family": "Add",
+      "target_ps": 725,
+      "H_char_ps": 145.63900000000012,
+      "path_body_ps": 691.6869999999999,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-refit-20261117-v4/runs/wide-3bb63c8fddd959f2-T725/grt-labels.json",
+      "sha256": "f4d5545632885afcf35f98634aea94b399aeb67cc3da573e2f06114dc474610c",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "wide-3bb63c8fddd959f2",
+      "family": "Add",
+      "target_ps": 1000,
+      "H_char_ps": 153.529,
+      "path_body_ps": 832.862,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-refit-20261117-v4/runs/wide-3bb63c8fddd959f2-T1000/grt-labels.json",
+      "sha256": "f1d54d99577b17ebae6acdc1f1df5157b0a194367beb5f10118450edf69dc8bd",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "wide-3bb63c8fddd959f2",
+      "family": "Add",
+      "target_ps": 1900,
+      "H_char_ps": 152.81799999999987,
+      "path_body_ps": 890.7020000000001,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-refit-20261117-v4/runs/wide-3bb63c8fddd959f2-T1900/grt-labels.json",
+      "sha256": "930288718f527791eadc0d503de53451718a7ac21b9b71db88b68bf3f89f2502",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "repair/G-b48ff980e300bb37",
+      "family": "G",
+      "target_ps": 500,
+      "H_char_ps": 150.79199999999992,
+      "path_body_ps": 384.83500000000004,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-refit-20261117-v4/runs/repair--G-b48ff980e300bb37-T500/grt-labels.json",
+      "sha256": "9978ac5efbbc452cf0853ff739f3bd782040721ada2296daa3b11efa2585d138",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "repair/G-b48ff980e300bb37",
+      "family": "G",
+      "target_ps": 700,
+      "H_char_ps": 154.26399999999995,
+      "path_body_ps": 400.237,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-refit-20261117-v4/runs/repair--G-b48ff980e300bb37-T700/grt-labels.json",
+      "sha256": "bfa4284b8f88049a7548337135141a8f0aa8a1a8a209f128bcebc856efa853ed",
+      "status": "eligible",
+      "same_path": true
+    },
+    {
+      "source": "repair/G-b48ff980e300bb37",
+      "family": "G",
+      "target_ps": 1300,
+      "H_char_ps": 154.51300000000003,
+      "path_body_ps": 408.1410000000001,
+      "other_owners": [],
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-refit-20261117-v4/runs/repair--G-b48ff980e300bb37-T1300/grt-labels.json",
+      "sha256": "0b0ddfcf619abb480ed21210badfea1b626a14d445e0ff239693447d63086b36",
+      "status": "eligible",
+      "same_path": true
+    }
+  ],
+  "operator_response_refitted": false,
+  "application_PPA_used": false,
+  "validation_labels_read": false,
+  "independent_labels_read": false,
+  "whole_design_boundary_separate": true,
+  "virtual_register_area_added": false,
+  "qualified": false,
+  "consumers": "all actual immediate consumer endpoints retained; subtract each response at numerical tau, take minimum",
+  "limitations": "family-fixed H approximation; multiple aggregate-slack paths excluded from fitting; no source lookup"
+}

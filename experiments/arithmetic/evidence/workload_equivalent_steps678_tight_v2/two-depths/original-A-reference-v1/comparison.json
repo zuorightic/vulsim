@@ -1,6 +1,6 @@
 {
   "version": "nine-workloads-original-A-reference-v1",
-  "at": "2026-11-17T14:09:30.408842+00:00",
+  "at": "2026-11-17T16:07:35.642626+00:00",
   "operational_status": "applied",
   "required_groups": 37,
   "required_BCD_records": 111,
@@ -18843,33 +18843,6 @@
   "physical_comparison_complete": false,
   "active_jobs": [
     {
-      "id": "9d446bf6ea034255923352c8b32e05fb",
-      "status": "active",
-      "target_platform": "asap7",
-      "admission_id": "matrix-userrev-startupfix-karatsuba256-L8-T1400-C",
-      "task_id": "karatsuba256-L8-T1400-f3011704032a-userrev-startupfix-v1",
-      "owner_pid_in_namespace": 1753597,
-      "started_at": "2026-11-17T09:35:01.009748+00:00"
-    },
-    {
-      "id": "fe46948afef74bc1bf99ef7fdea17df2",
-      "status": "active",
-      "target_platform": "asap7",
-      "admission_id": "matrix-old-d-dot16-L4",
-      "task_id": "dot16-L4-T1700-8327002228a5-old-d",
-      "owner_pid_in_namespace": 1845985,
-      "started_at": "2026-11-17T11:48:42.783262+00:00"
-    },
-    {
-      "id": "6709f6a7aece435d9055d4a74c7fa665",
-      "status": "active",
-      "target_platform": "asap7",
-      "admission_id": "matrix-userrev-karatsuba256-L8-T1750",
-      "task_id": "karatsuba256-L8-T1750-d82729a2bd2b-userrev",
-      "owner_pid_in_namespace": 1884870,
-      "started_at": "2026-11-17T12:57:22.007569+00:00"
-    },
-    {
       "id": "20d0f817190f43d5ac496597eff58664",
       "status": "active",
       "target_platform": "asap7",
@@ -18879,22 +18852,49 @@
       "started_at": "2026-11-17T13:04:27.814287+00:00"
     },
     {
-      "id": "b2de465d47264665bfc3048e28cf9cbc",
+      "id": "ce5f2c2fa7b24907af1fc63ba6f15bea",
       "status": "active",
       "target_platform": "asap7",
-      "admission_id": "matrix-userrev-karatsuba256-L8-T1750",
-      "task_id": "karatsuba256-L8-T1750-30c17d3da347-userrev",
-      "owner_pid_in_namespace": 1919461,
-      "started_at": "2026-11-17T13:22:50.843232+00:00"
+      "admission_id": "matrix-userrev-startupfix-ntt8x64-L16-T800-C",
+      "task_id": "ntt8x64-L16-T800-ada50437924b-userrev-startupfix-v1",
+      "owner_pid_in_namespace": 1952837,
+      "started_at": "2026-11-17T14:35:26.089396+00:00"
     },
     {
-      "id": "843c1ea3dd894c1d92df501e8005d4e6",
+      "id": "0c4519d0fe074f4a8937d916f323c9ad",
       "status": "active",
       "target_platform": "asap7",
-      "admission_id": "matrix-userrev-karatsuba256-L8-T1750",
-      "task_id": "karatsuba256-L8-T1750-d75818ec9af2-userrev",
-      "owner_pid_in_namespace": 1933915,
-      "started_at": "2026-11-17T13:44:59.796360+00:00"
+      "admission_id": "matrix-userrev-startupfix-ntt8x64-L16-T950-C",
+      "task_id": "ntt8x64-L16-T950-ada50437924b-userrev-startupfix-v1",
+      "owner_pid_in_namespace": 1955603,
+      "started_at": "2026-11-17T14:41:55.349417+00:00"
+    },
+    {
+      "id": "b0339d5f799240f08495266a17487ae5",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-old-d-dot16-L4",
+      "task_id": "dot16-L4-T1700-ae747d38ca5c-old-d",
+      "owner_pid_in_namespace": 2000515,
+      "started_at": "2026-11-17T15:43:09.561239+00:00"
+    },
+    {
+      "id": "50a28d00024b4b2db63d2ce79dbf63fd",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-old-d-dot16-L4",
+      "task_id": "dot16-L4-T2100-8327002228a5-old-d",
+      "owner_pid_in_namespace": 2001810,
+      "started_at": "2026-11-17T15:43:22.157104+00:00"
+    },
+    {
+      "id": "82b0b9a494f9487287db1d1dfcfba3f4",
+      "status": "active",
+      "target_platform": "asap7",
+      "admission_id": "matrix-old-d-dot16-L4",
+      "task_id": "dot16-L4-T2100-aa22243ad73c-old-d",
+      "owner_pid_in_namespace": 2012973,
+      "started_at": "2026-11-17T15:58:08.687926+00:00"
     }
   ],
   "qualification": "diagnostic_only",

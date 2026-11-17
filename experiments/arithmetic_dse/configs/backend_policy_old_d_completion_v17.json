@@ -1,0 +1,457 @@
+{
+  "version": "old-D-completion-priority-20261117-v1",
+  "status": "step7 qualified local grt; actual admissions required; incomplete domains and main matrix not released",
+  "platform": {
+    "selection": "explicit profile per task; no cross-platform model reuse"
+  },
+  "main_evaluation_stage": "post_CTS_global_route_with_estimated_parasitics",
+  "area_definition": "OpenDB standard-cell area in um2, excluding CORE_SPACER, including taps; functional/sequential/physical-only areas separate",
+  "timing_definition": "report_worst_slack max/min and report_tns max/min under common SDC; coverage checked with check_setup; minimum_clock_period is not a combinational data-path delay",
+  "feasibility": "grt: complete timing coverage and nonnegative TT setup slack; hold separately reported; final: coverage plus nonnegative TT setup/hold, SPEF and zero routing DRC; no multi-corner signoff claim",
+  "detailed_route_scope": {
+    "base_cases": [
+      "MAC_32",
+      "UDR_32",
+      "F1"
+    ],
+    "platforms": [
+      "asap7",
+      "nangate45",
+      "sky130hd",
+      "gf180"
+    ],
+    "groups": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "base_records": 48,
+    "additional_records_max": 8,
+    "additional_selection": "per revised plan first chapter8.5, cover each platform128bit multiply/divrem, D then C; failures retained; exact actual list required before launch",
+    "purpose": "separate physical recheck, never candidate feedback or replacement of main-table points"
+  },
+  "resources": {
+    "threads_per_tool": 3,
+    "parallel_jobs": 9,
+    "memory_limit_MiB": 32768,
+    "memory_enforcement": "all descendants across sessions, with inherited ancestry token and PID/starttime identity; RSS sampled every 0.5s; TERM then KILL even after leader exit; remaining-live-PID check",
+    "synthesis_timeout_s": 300,
+    "floorplan_through_global_route_timeout_s": 1200,
+    "detailed_route_extraction_timeout_s": 1200,
+    "snapshot_timeout_s": 120,
+    "validation_timeout_s": 300,
+    "max_global_walltime_h": 1024,
+    "max_tool_CPU_time_h": 2048,
+    "max_synthesis_calls": 8192,
+    "max_global_route_calls": 8192,
+    "max_detailed_route_calls": 128,
+    "scope": "all calibration, prototypes, search, final evaluation, physical recheck, repeats and retries share these global caps"
+  },
+  "initial_search_limits": {
+    "candidate_configurations_per_case_K": 16,
+    "same_ordered_K_for_C_D": true,
+    "D_search_synthesis_calls_S": 0,
+    "D_search_global_route_calls_G": 0,
+    "D_search_detailed_route_calls_R": 0,
+    "search_walltime_per_case_group_s": 3600,
+    "final_synthesis_calls_per_record": 1,
+    "final_global_route_calls_per_record": 1,
+    "final_detailed_route_calls_per_selected_recheck": 1,
+    "cache_policy": "record all actual calls and hits; final evaluation can reuse an identical already-measured stage with attribution; no unrecorded feedback in B/C"
+  },
+  "repeat_and_retry": {
+    "repeat_policy": "repeat critical and small-gain representative points before interpreting feasibility or gains; changed feasibility/ranking must be reported as unstable; no assumed fixed ps noise floor",
+    "repeat_per_record_max": 1,
+    "additional_detailed_route_repeat_calls_max": 8,
+    "transient_failure_retry_max": 1,
+    "automatic_retries_in_step3_runner": 0,
+    "deterministic_failure_retry": 0,
+    "failure_retention": "keep stage, command, exit code, timeout/memory flags and raw logs; unavailable stage metrics stay absent"
+  },
+  "resource_estimate_basis": "full shared historical ledger including platform, width, stage and context collection; no single 32bit probe extrapolated to all widths",
+  "trial_period_is_main_target": false,
+  "scope_of_enforcement": "one shared append-only ledger; all synth/grt/final and support leaves; failures charged; GNU settlement and descendant cleanup; no reset or per-platform quota copies",
+  "supersedes": "arithmetic-backend-policy-v11",
+  "revision_reason": "User authorizes two memory/time retries and partial comparison priority; Montgomery last.",
+  "timing_scope": {
+    "PVT_scope": "explicit per-platform frozen profile; typical corner only, no cross-platform voltage/temperature assumption",
+    "multi_corner_signoff": false,
+    "grt_hold_gate": false,
+    "final_hold_gate": true,
+    "hold_review_margin_ps": 5,
+    "hold_review_margin_role": "engineering recheck trigger; not measured noise floor or worst-corner guarantee",
+    "comparison_rule": "grt ranking uses setup feasibility and area; hold below review margin marks recheck_required, not infeasible solely from grt hold"
+  },
+  "evidence_policy": {
+    "required_summary_root": "experiments/arithmetic/evidence/step7_models_v1 plus complete unchanged parent chain",
+    "required_local_validation": "source/summary hashes checked without build or external tool installations",
+    "optional_large_artifacts": "logs/ODB/SPEF in build; historical paths are provenance, not required local dependencies"
+  },
+  "budget_accounting": {
+    "ledger": "experiments/arithmetic/backend_usage.json",
+    "checkpoint": "experiments/arithmetic/evidence/step7_budget_v5/checkpoint.json.gz",
+    "checkpoint_rule": "v12 migration checkpoint preserves every settled historical entry; no usage reset",
+    "planning_gate": "actual platform/operator/template/width/target/stage task list, frozen data partitions and capacity plus wall/CPU/support/storage estimates before launch",
+    "time_scope": "sum of all physical and support leaf wall durations, including overlapping jobs; actual CPU separately charged; wrappers excluded; no division of charges by concurrency",
+    "time_enforcement_limit": "CPU/RSS sampled every 0.5s, cleanup may exceed allowance briefly; short-lived descendants can escape CPU samples, GNU time settlement still charges actual CPU when available",
+    "unfinished": "full wall/CPU reservation retained; explicit evidence reconciliation required; no automatic refund or retry",
+    "concurrency": "kernel-locked whole-job leases, maximum nine; two threads per leaf; no automatic retry"
+  },
+  "collection_protocol": "experiments/arithmetic_dse/configs/characterization_v5.json",
+  "step3_acceptance": "backend connected, original-kernel trial, multiplier critical-path evidence, predeclared two-point physical target control, consistent TT stage metrics, portable evidence and cumulative resource accounting; no required response difference or split benefit",
+  "controlled_study": "each declared study records independent ABC/SDC axes and IO policy; historical step3 and step6 probes retain old identities and never become training labels",
+  "budget_authorization": {
+    "date": "2026-11-13",
+    "user_instruction": "物理调用额度可以不管，只要这几天能完成实验",
+    "scope": "expanded finite accounting envelope; no quota reset; exact source/role/T/stage admissions and pilot-based timing remain",
+    "planning_calendar_target_h": 72,
+    "resources_unchanged": "superseded by explicit 2026-11-16 authorization below",
+    "physical_calls_automatically_admitted": 0
+  },
+  "reference_contexts_ps": {
+    "asap7": 1500,
+    "nangate45": 3000,
+    "sky130hd": 30000,
+    "gf180": 30000
+  },
+  "concurrency_authorization": {
+    "user_instruction": "请你把实验改成9并行，每个2线程",
+    "date": "2026-11-16",
+    "previous_jobs": 4,
+    "previous_threads": 4,
+    "parallel_jobs": 9,
+    "threads_per_tool": 2,
+    "active_predecessor_leaves": "finish with original limits; migration only after release",
+    "unchanged_usage_caps": true,
+    "default_memory_limit_MiB": 8192,
+    "memory_successors": "only named, retained 8GiB memory failures may receive a frozen 16GiB exception",
+    "scheduler_memory_admission": "do not start another leaf with less than 8GiB MemAvailable"
+  },
+  "successor_authorization": {
+    "date": "2026-11-17",
+    "user_instruction": "软件未生成的代码生成后入队；修复过重者放宽周期并重新生成后端；软件错误暂不动",
+    "prior_authorization": "2026-11-13: 物理调用额度可以不管，只要这几天能完成实验",
+    "memory_authorization": "2026-11-17: 内存不足反复终止的几个任务少开并行、增大内存限制",
+    "new_heavy_worker_cap": 3,
+    "memory_limit_MiB": 16384,
+    "software_parallelism": "1/2/4/8 according to actual available memory",
+    "scope": [
+      {
+        "case": "montgomery256",
+        "L": 16,
+        "targets_ps": [
+          2000,
+          2350
+        ],
+        "reason": "missing_RTL",
+        "basis": "frozen A-derived requests",
+        "A_reference": {
+          "case": "montgomery256",
+          "method": "A",
+          "L": 1,
+          "reference_request_ps": 27000,
+          "status": "measured_grt",
+          "run": "/home/zyrv/vulsim-artifacts/r1-r5-20261117-v1/reference-recovery/matrix-montgomery-fixed-db-v1/runs/montgomery256-A-T27000-fixed-db",
+          "original_reference_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/montgomery256-A-reference",
+          "retained_reference_attempts": [
+            "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/montgomery256-A-reference",
+            "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference-repair-v1/runs/montgomery256-A-reference-repair-v1",
+            "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/montgomery-A-reference-9x2/runs/montgomery256-A-reference-9x2-capacity"
+          ],
+          "origin": "Original unsplit A clock-calibration measurement",
+          "RTL_sha256": "a8fc40067367a9db52597b2a068dad6687cef625133bc9ffa13da35022de6c59",
+          "BCD_target_applied_to_A": false,
+          "comparison_setup_met": null,
+          "failure_reason": "grt: timeout",
+          "new_A_EDA_requested": false,
+          "Tmin_ps": 25030.718384,
+          "area_um2": 69846.81678000001,
+          "hold_WNS_ps": 16.302959,
+          "independent_frozen_reference": true
+        },
+        "id": "montgomery256-L16"
+      },
+      {
+        "case": "montgomery256",
+        "L": 32,
+        "targets_ps": [
+          1000,
+          1200
+        ],
+        "reason": "missing_RTL",
+        "basis": "frozen A-derived requests",
+        "A_reference": {
+          "case": "montgomery256",
+          "method": "A",
+          "L": 1,
+          "reference_request_ps": 27000,
+          "status": "measured_grt",
+          "run": "/home/zyrv/vulsim-artifacts/r1-r5-20261117-v1/reference-recovery/matrix-montgomery-fixed-db-v1/runs/montgomery256-A-T27000-fixed-db",
+          "original_reference_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/montgomery256-A-reference",
+          "retained_reference_attempts": [
+            "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/montgomery256-A-reference",
+            "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference-repair-v1/runs/montgomery256-A-reference-repair-v1",
+            "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/montgomery-A-reference-9x2/runs/montgomery256-A-reference-9x2-capacity"
+          ],
+          "origin": "Original unsplit A clock-calibration measurement",
+          "RTL_sha256": "a8fc40067367a9db52597b2a068dad6687cef625133bc9ffa13da35022de6c59",
+          "BCD_target_applied_to_A": false,
+          "comparison_setup_met": null,
+          "failure_reason": "grt: timeout",
+          "new_A_EDA_requested": false,
+          "Tmin_ps": 25030.718384,
+          "area_um2": 69846.81678000001,
+          "hold_WNS_ps": 16.302959,
+          "independent_frozen_reference": true
+        },
+        "id": "montgomery256-L32"
+      },
+      {
+        "case": "mul128",
+        "L": 4,
+        "targets_ps": [
+          1200,
+          1500
+        ],
+        "reason": "relaxed_clock",
+        "basis": "user requested range; original 600/750",
+        "A_reference": {
+          "case": "mul128",
+          "method": "A",
+          "L": 1,
+          "reference_request_ps": 2000,
+          "status": "measured_grt",
+          "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/mul128-A-reference",
+          "original_reference_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/mul128-A-reference",
+          "retained_reference_attempts": [
+            "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/mul128-A-reference"
+          ],
+          "origin": "Original unsplit A clock-calibration measurement",
+          "RTL_sha256": "6d72e638cd85592c68cfde92e58c0508ba2aef8cb4f52869c8ad8f7a7784f44f",
+          "BCD_target_applied_to_A": false,
+          "comparison_setup_met": null,
+          "failure_reason": null,
+          "new_A_EDA_requested": false,
+          "Tmin_ps": 1884.844337,
+          "area_um2": 7225.600140000001,
+          "frequency_MHz": 530.5477913320117,
+          "hold_WNS_ps": 0.192943,
+          "setup_met_at_own_request": true,
+          "measured_threads": 4,
+          "clock_readout_sha256": "5e10426b8d45c2d1033153215236b288016bac49a57eb86c3a0edbce9ddfd550",
+          "manifest_sha256": "519316d915e80d3e4f800bd3e43b5be114fef893796a22ee1e432528b43c8204"
+        },
+        "id": "mul128-L4"
+      },
+      {
+        "case": "dot16",
+        "L": 4,
+        "targets_ps": [
+          1700,
+          2100
+        ],
+        "reason": "relaxed_clock",
+        "basis": "user requested range; original 850/1050",
+        "A_reference": {
+          "case": "dot16",
+          "method": "A",
+          "L": 1,
+          "reference_request_ps": 2700,
+          "status": "measured_grt",
+          "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/dot16-A-reference",
+          "original_reference_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/dot16-A-reference",
+          "retained_reference_attempts": [
+            "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/dot16-A-reference"
+          ],
+          "origin": "Original unsplit A clock-calibration measurement",
+          "RTL_sha256": "2776e286ec00d7b2c4915c5180a83dee3f5238392523b027612eff71ab94ac29",
+          "BCD_target_applied_to_A": false,
+          "comparison_setup_met": null,
+          "failure_reason": null,
+          "new_A_EDA_requested": false,
+          "Tmin_ps": 2705.125456,
+          "area_um2": 33186.74814,
+          "frequency_MHz": 369.66862212692877,
+          "hold_WNS_ps": 1.879941,
+          "setup_met_at_own_request": false,
+          "measured_threads": 4,
+          "clock_readout_sha256": "ed2e214fdcc6ded3ddee77e4ab5510abebd49486e381c069e8125a0db2263fe7",
+          "manifest_sha256": "5230f0aaa7e67ed1119045c3363db8476c8f9c1683c8e423e4942a047e73221b"
+        },
+        "id": "dot16-L4"
+      },
+      {
+        "case": "dot16",
+        "L": 5,
+        "targets_ps": [
+          1400,
+          1700
+        ],
+        "reason": "relaxed_clock",
+        "basis": "user requested range; original 700/850",
+        "A_reference": {
+          "case": "dot16",
+          "method": "A",
+          "L": 1,
+          "reference_request_ps": 2700,
+          "status": "measured_grt",
+          "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/dot16-A-reference",
+          "original_reference_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/dot16-A-reference",
+          "retained_reference_attempts": [
+            "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/dot16-A-reference"
+          ],
+          "origin": "Original unsplit A clock-calibration measurement",
+          "RTL_sha256": "2776e286ec00d7b2c4915c5180a83dee3f5238392523b027612eff71ab94ac29",
+          "BCD_target_applied_to_A": false,
+          "comparison_setup_met": null,
+          "failure_reason": null,
+          "new_A_EDA_requested": false,
+          "Tmin_ps": 2705.125456,
+          "area_um2": 33186.74814,
+          "frequency_MHz": 369.66862212692877,
+          "hold_WNS_ps": 1.879941,
+          "setup_met_at_own_request": false,
+          "measured_threads": 4,
+          "clock_readout_sha256": "ed2e214fdcc6ded3ddee77e4ab5510abebd49486e381c069e8125a0db2263fe7",
+          "manifest_sha256": "5230f0aaa7e67ed1119045c3363db8476c8f9c1683c8e423e4942a047e73221b"
+        },
+        "id": "dot16-L5"
+      },
+      {
+        "case": "karatsuba256",
+        "L": 4,
+        "targets_ps": [
+          4350,
+          4750
+        ],
+        "reason": "relaxed_clock",
+        "basis": "repair-time successor; original 2300/2750",
+        "A_reference": {
+          "case": "karatsuba256",
+          "method": "A",
+          "L": 1,
+          "reference_request_ps": 9700,
+          "status": "measured_grt",
+          "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/karatsuba256-A-reference",
+          "original_reference_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/karatsuba256-A-reference",
+          "retained_reference_attempts": [
+            "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/karatsuba256-A-reference"
+          ],
+          "origin": "Original unsplit A clock-calibration measurement",
+          "RTL_sha256": "c1a64d59e07d5ff68496d3aa9b6bc5e3e5729f2c54e6d362d5123840970a9ffe",
+          "BCD_target_applied_to_A": false,
+          "comparison_setup_met": null,
+          "failure_reason": null,
+          "new_A_EDA_requested": false,
+          "Tmin_ps": 7201.306396,
+          "area_um2": 21206.91618,
+          "frequency_MHz": 138.86369292041994,
+          "hold_WNS_ps": 11.165096,
+          "setup_met_at_own_request": true,
+          "measured_threads": 4,
+          "clock_readout_sha256": "fcc650b22b15824a89c3dff1f6bab2f647fa57dd6d0b2b3cf77e8f881ffe98dc",
+          "manifest_sha256": "f1431ac051ff71489c89897140b90f98c9fedecdc7da2d19426009f95a157ca1"
+        },
+        "id": "karatsuba256-L4"
+      },
+      {
+        "case": "karatsuba256",
+        "L": 8,
+        "targets_ps": [
+          2150,
+          2300
+        ],
+        "reason": "relaxed_clock",
+        "basis": "repair-time successor; original 1150/1400",
+        "A_reference": {
+          "case": "karatsuba256",
+          "method": "A",
+          "L": 1,
+          "reference_request_ps": 9700,
+          "status": "measured_grt",
+          "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/karatsuba256-A-reference",
+          "original_reference_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/karatsuba256-A-reference",
+          "retained_reference_attempts": [
+            "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/karatsuba256-A-reference"
+          ],
+          "origin": "Original unsplit A clock-calibration measurement",
+          "RTL_sha256": "c1a64d59e07d5ff68496d3aa9b6bc5e3e5729f2c54e6d362d5123840970a9ffe",
+          "BCD_target_applied_to_A": false,
+          "comparison_setup_met": null,
+          "failure_reason": null,
+          "new_A_EDA_requested": false,
+          "Tmin_ps": 7201.306396,
+          "area_um2": 21206.91618,
+          "frequency_MHz": 138.86369292041994,
+          "hold_WNS_ps": 11.165096,
+          "setup_met_at_own_request": true,
+          "measured_threads": 4,
+          "clock_readout_sha256": "fcc650b22b15824a89c3dff1f6bab2f647fa57dd6d0b2b3cf77e8f881ffe98dc",
+          "manifest_sha256": "f1431ac051ff71489c89897140b90f98c9fedecdc7da2d19426009f95a157ca1"
+        },
+        "id": "karatsuba256-L8"
+      },
+      {
+        "case": "ntt8x64",
+        "L": 16,
+        "targets_ps": [
+          2200,
+          2400
+        ],
+        "reason": "relaxed_clock",
+        "basis": "setup repair implies about 1970ps; retain margin",
+        "A_reference": {
+          "case": "ntt8x64",
+          "method": "A",
+          "L": 1,
+          "reference_request_ps": 9700,
+          "status": "measured_grt",
+          "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/ntt8x64-A-reference",
+          "original_reference_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/ntt8x64-A-reference",
+          "retained_reference_attempts": [
+            "/home/zyrv/vulsim-artifacts/workload-equivalent-steps678-tight-v2-scaled-A/A-reference/runs/ntt8x64-A-reference"
+          ],
+          "origin": "Original unsplit A clock-calibration measurement",
+          "RTL_sha256": "0cc5456aa719aaaebd34550a12656b81cefe6a69c61ceed32319722e8ae68a6e",
+          "BCD_target_applied_to_A": false,
+          "comparison_setup_met": null,
+          "failure_reason": null,
+          "new_A_EDA_requested": false,
+          "Tmin_ps": 9734.198421,
+          "area_um2": 11182.52466,
+          "frequency_MHz": 102.73059544817347,
+          "hold_WNS_ps": 13.047647,
+          "setup_met_at_own_request": false,
+          "measured_threads": 4,
+          "clock_readout_sha256": "96dab0b171cc1dd2fb42b9fff217ae0ffc27ecb277c168842132bc05cf5ac332",
+          "manifest_sha256": "ab5911e93a5b56cabea1ded0867d8f092d23d255991deb3338085d5802aebff0"
+        },
+        "id": "ntt8x64-L16"
+      }
+    ],
+    "maximum_new_tasks": 64,
+    "automatic_retries": 0,
+    "existing_policies_modified": false,
+    "ledger_history_reset": false,
+    "active_handoff": "caller-specific policy bridge over the same original transaction and job locks"
+  },
+  "threads_authorization": {
+    "at": "2026-11-17T14:41:38.506835+00:00",
+    "user_instruction": "如果开6并行的话，请给后续排队的后端换成3线程",
+    "old_D_parallel_cap": 6,
+    "global_parallel_cap": 9,
+    "active_two_thread_jobs_retained": true,
+    "circuit_clock_physical_conditions_and_walltime_limits_unchanged": true
+  },
+  "completion_authorization": {
+    "at": "2026-11-17T15:59:49.906548+00:00",
+    "user_instruction": "两条内存／6小时时限错误放宽资源补跑；优先补齐部分ABCD，Montgomery最后",
+    "memory_retry_MiB": 32768,
+    "high_memory_parallel_cap": 1,
+    "old_D_parallel_cap": 6,
+    "global_cap": 9,
+    "queued_threads": 3,
+    "compiler_RTL_clock_and_physical_conditions_unchanged": true
+  }
+}

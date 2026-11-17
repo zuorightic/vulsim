@@ -10,6 +10,14 @@ ASAP7现行物理矩阵仍为九例各两档L、37组T／L，复用9份A参考�
 
 ## 当前入口
 
+2026-11-17已按用户“G算作通过”授权完成[N5／N6小组合与完整评分接入](lxy-plan-fix.md#nangate45-N56-complete)：11源／22个Nangate45 grt点、S／shared及本后端H_char冻结、六种案例／L的900个所有者与44份完整评分快照回放、9项身份负控和六份192周期RTL验证均完成。[独立模型配置](../experiments/arithmetic_dse/configs/nangate45_frozen_d_n56_v1.json)可供有限三例实验使用，推理为离线共享函数，禁用文件I/O与子进程检查通过。[小型模型与证据](../experiments/arithmetic/evidence/nangate45_n56_v1/README.md)保留全局T输入基线，并补做同一已消费留出组合的局部预算／tau评价：完整周期验证2.99%／24.83%、测试5.09%／23.00%，总面积验证2.04%／3.39%、测试0.99%／2.15%的median／P95均通过；参数不变、无新后端或独立测试宣称。root_repair面积、验证Add本体及G嵌入仍有未过项，五类应用状态规模外推，保持诊断资格。原G本体放行不扩展为新分项放行。完整产物在`/home/zyrv/vulsim-artifacts/nangate45-n56-20261117-v4/`，22 synth／22 grt／169 support全部结清，原ASAP7在运任务与冻结输入保持；未启动N7应用A／BCD，R1～R5继续暂缓。
+
+2026-11-17 23:44～23:46完成ASAP7九例进度核验，完整表及耗时估计见`/home/zyrv/vulsim-artifacts/old-D-progress-20261117-six-by-three-v1/`：9份A已冻结，111条BCD为78实测、2错误、5运行、26排队，现行软件全部ready。修复3线程执行器覆盖历史账本策略身份导致的零EDA启动拒绝，33项启动保留日志后恢复排队；当前父PID2000512，已验证两个新任务实际以3线程进入综合，四个旧任务继续2线程，共六并行。另有10条归因与26条BCD一同等待，实际待启动36任务。当前队列结清估计18～30小时，保守预留36～48小时；不保证全部物理成功或时序达标。Karatsuba L8／1400ps C本轮达到6小时grt时限，作为当前第二条错误保留；原Mul128 L4／1200ps C内存错误保留。
+
+2026-11-17 22:52按用户要求保持ASAP7旧D最多六并行，将交接时尚未启动的38个后端任务改为每工具3线程；六个在途任务继续使用原2线程，完成后自然补位。有效控制器为`/home/zyrv/vulsim-artifacts/old-D-six-by-three-20261117-v1/threads3.py run`，PID1965588，实时入口为同目录`status.json`；22:54运行核验通过，旧D活动六个、全局活动七个。Dot16 L5／1700ps B／C的30／0.50设置保留，D继续引用已有同设置实测；RTL、时钟、时限及其它物理条件保持。准入、零EDA预检和进程核验见该目录，资源调整记录见第一章§1.12.11。
+
+2026-11-17 22:09按用户要求将Dot16 L5／1700ps这一行的BCD统一为利用率30、density 0.50：B／C直接更新原排队任务配置并保留编号，D使用已完成的1698.698819ps／37692.784620µm²、hold WNS+21.244867ps结果，主表行内注明设置。最新完整对比位于`/home/zyrv/vulsim-artifacts/old-D-progress-20261117-matched-dot16-v1/`；当前有效控制器为`/home/zyrv/vulsim-artifacts/dot16-L5-T1700-BCD-core30-density050-20261117-v1/cohort.py`，同目录`status.json`为实时入口。六并行／每工具2线程及其它实验条件保持，说明与验收见第一章§1.12.10。
+
 2026-11-17 21:45～21:47完成ASAP7九例只读进度审查，结果快照位于`/home/zyrv/vulsim-artifacts/old-D-progress-20261117-2145-v1/`：9份A参考可用，现行111条BCD为75条实测、2条错误、5条主记录后端运行、29条主记录排队，软件等待为0；相较20:47新增Dot16 L4／1700ps B／D及2100ps B。1700ps旧D的Tmin为1575.183617ps，但hold WNS为−3.530620ps，不能记为完整时序收敛。六个活动后端由五条BCD和一条same_policy_static归因组成，每工具2线程；其它平台不在本次审查范围。
 
 2026-11-17 20:57按用户追加授权将旧D后端从5增至6并行，每工具仍2线程、全局共享9槽，详见第一章§1.12.9。有效控制器为`/home/zyrv/vulsim-artifacts/old-D-six-backends-20261117-v1/six.py`，实时状态见同目录`status.json`，旧early-BC／repair／revision目录同步更新。新增第六槽已启动Karatsuba L8／1750ps B；原五个后端任务身份保持，B／C提前入队及去重继续生效，RTL／时钟／模型／物理条件不变。20:58核验六条活动后端均为每工具2线程；现行七项软件任务均已ready，含刚完成的NTT L16。
@@ -44,6 +52,7 @@ ASAP7现行物理矩阵仍为九例各两档L、37组T／L，复用9份A参考�
 | [Nangate45 N1＋N2完成证据](../experiments/arithmetic/evidence/nangate45_n12_v1/README.md) | 实际D冻结、六类需求、平台参数审计、六份D预算回放／新入口RTL仿真、三个grt连接探针及共享账本收据；大产物在仓库外，正式模型待校准 |
 | [Nangate45 N3＋N4配对与函数证据](../experiments/arithmetic/evidence/nangate45_n34_v1/README.md) | 20源／60点配对、实测缩放与预测迁移分开评价、六项离线共享响应、封存误差／资格及软件与费用审计；完整D仍待N5／N6 |
 | [Nangate45三档请求补采与时延校准](../experiments/arithmetic/evidence/nangate45_pressure_refit_v1/README.md) | 12训练／9验证／9封存测试，Add／ADC与G时延校准、旧留出已消费回归、职责勘误及费用；其余四个函数保持，完整D仍待N5／N6 |
+| [Nangate45 N5／N6小组合与完整评分接入](../experiments/arithmetic/evidence/nangate45_n56_v1/README.md) | 11源／22点、S／shared与同路径H_char、900所有者／44评分回放、六份RTL验证及有限模型包；完整组合指标通过，分项失败和状态外推保留，N7／N8未执行 |
 | [暂缓的R1～R5算法修复](lxy-plan-fix.md#deferred-D-algorithm-repairs) | 含R1a、原实现要求、修复表和完整审查证据，以后有时间再处理，不作为迁移前置 |
 | [第1～3步：MAC32软件验收](../experiments/arithmetic/evidence/workload_equivalent_mac32_v1/README.md) | 177条采样合同、90个候选／837次完整评分、实际等效T查询、逐目标身份及完整回放；精度与后端评价另验 |
 | [第4～5步：模型回归与首轮新候选](../experiments/arithmetic/evidence/workload_equivalent_steps45_v1/README.md) | 279条组件／6个旧组合回归、175个完整候选、72份RTL新仿真；首轮有限提案完成，不代表完整位置反馈已实现，S／shared和嵌入资格失败保留 |
