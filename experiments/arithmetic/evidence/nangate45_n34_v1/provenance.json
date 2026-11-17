@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "external_root": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9",
+  "delivery_audit": {
+    "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/delivery-audit.json",
+    "sha256": "bfa1a9225b0fd4e3dde690724e6a11778f8a7cbf17c7b7b962bb1f8d76ee3ea8"
+  },
+  "archive_sha256": "29adc046fad38ddd832405cab34b6c091a8eba7bdea33b98788b1770cdd528cc",
+  "calls_by_stage_and_status": {
+    "synth": {
+      "completed": 60
+    },
+    "grt": {
+      "failed": 4,
+      "completed": 60
+    },
+    "support": {
+      "completed": 436
+    }
+  },
+  "selection_contract_sha256": "90902f9729e9e8c14864ad390ead2c03a53c2f651582505322cfcbd7cbbba9ad",
+  "implementation_snapshot_index_sha256": "f15c637088474523c278b4d56f0962e6e4d900cd80190fababf8ea0ae18fc2b6",
+  "supplementary_linearity_sha256": "a797803537400863576e5c66adcabaf7b265f9e8cfa3cb014b4b270b2d9505c5",
+  "supplemental_evidence": [
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/selection-contract.json",
+      "sha256": "90902f9729e9e8c14864ad390ead2c03a53c2f651582505322cfcbd7cbbba9ad"
+    },
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/superseded-selection-guard.json",
+      "sha256": "e358556307645d4e4f1fffc46770ec24e31334d4caebc7e3d8dedb8f83017155"
+    },
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/complete-run.py",
+      "sha256": "0fa9a818cf182c9ec35d91e0325c14e2da75116e50c195d2e4f0aee589c14c82"
+    },
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/completion-status.json",
+      "sha256": "6440f34bcc7306805a86c666da9986b41d016af12ef5cb6ff7f2c3e20f1454a9"
+    },
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/finish-status.json",
+      "sha256": "7d257afd2bdfd5c97277eca5f49d83873477f349ebf1f36ac7cfc27c05770b96"
+    },
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/implementation-final-index.json",
+      "sha256": "f15c637088474523c278b4d56f0962e6e4d900cd80190fababf8ea0ae18fc2b6"
+    },
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/model-freeze.json",
+      "sha256": "08e322dac516756ecd70ce775948ce283c8bb1bd0058ea5251055468688b04e8"
+    },
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/sampled-domains.json",
+      "sha256": "f052f2619786fe4e1b6f0a85675f55c4a6da5b9ef980ad4356a96e1c92c7d832"
+    },
+    {
+      "path": "/home/zyrv/vulsim-artifacts/nangate45-n34-20261117-v9/delivery-audit.py",
+      "sha256": "51d8ca0b741fd28dcf53bbc34cf38a234b9c303d6ff3dac5b63ed3f547c207bd"
+    }
+  ]
+}

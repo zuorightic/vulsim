@@ -1,0 +1,53 @@
+{
+  "finite_N3_N4_activity_complete": true,
+  "full_D_ready": false,
+  "all_validation_gates_passed": false,
+  "all_test_gates_passed": false,
+  "per_metric": {
+    "Mul": {
+      "delay_ps": {
+        "validation_passed": true,
+        "test_passed": true,
+        "maximum_test_point_APE": 0.17509364900520008
+      },
+      "area_um2": {
+        "validation_passed": true,
+        "test_passed": true,
+        "maximum_test_point_APE": 0.18473206573585033
+      }
+    },
+    "Add": {
+      "delay_ps": {
+        "validation_passed": true,
+        "test_passed": false,
+        "maximum_test_point_APE": 0.22664204147472888
+      },
+      "area_um2": {
+        "validation_passed": true,
+        "test_passed": true,
+        "maximum_test_point_APE": 0.5527581815788123
+      }
+    },
+    "G": {
+      "delay_ps": {
+        "validation_passed": false,
+        "test_passed": true,
+        "maximum_test_point_APE": 0.13576713844956867
+      },
+      "area_um2": {
+        "validation_passed": true,
+        "test_passed": true,
+        "maximum_test_point_APE": 0.23002937303478976
+      }
+    }
+  },
+  "support_limits": "20 finite paired historical ASAP7 train sources, limited shapes/loads and 3-11-term G; not all frozen candidate queries",
+  "test_data_returned_to_fit": false,
+  "R1_R5_modified": false,
+  "remaining": [
+    "Unpassed arithmetic validation/test metrics retain diagnostic status",
+    "N5 S/shared, G embedding and small compositions",
+    "N6 H_char, equivalent request contract, cell cover and full D integration"
+  ],
+  "all_sampled_arithmetic_gates_passed": false
+}

@@ -1,0 +1,144 @@
+{
+  "schema": "nangate45-N4-offline-arithmetic-package-v1",
+  "target_platform": "nangate45",
+  "profile_sha256": "e3adefb4440f6dbcf84c84dad87c0da4bcac5c2e5ade81792c9a8aab18caf728",
+  "evaluation_stage": "grt",
+  "status": "arithmetic_components_evaluated",
+  "full_D_ready": false,
+  "qualification": "diagnostic_arithmetic_some_test_gates_failed",
+  "numerical_payload": {
+    "version": "nangate45-shared-operator-functions-v1",
+    "target_platform": "nangate45",
+    "profile_sha256": "e3adefb4440f6dbcf84c84dad87c0da4bcac5c2e5ade81792c9a8aab18caf728",
+    "functions": {
+      "Mul": {
+        "delay_ps": {
+          "form": "global_scale",
+          "time_scale": 2.0,
+          "scale": 1.3555322294685688
+        },
+        "area_um2": {
+          "form": "global_scale",
+          "time_scale": 1.0,
+          "scale": 14.080865006068654
+        }
+      },
+      "Add": {
+        "delay_ps": {
+          "form": "family_affine",
+          "time_scale": 2.0,
+          "scale": 1.1236165176109418,
+          "intercept": 57.23960738308697
+        },
+        "area_um2": {
+          "form": "shared_log_feature_ridge",
+          "time_scale": 2.0,
+          "alpha": 0.1,
+          "response": {
+            "version": "centered-numerical-response-v1",
+            "features": [
+              "log_old",
+              "log_width",
+              "log_work",
+              "log_clock",
+              "log_load",
+              "carry_dynamic",
+              "known_fraction",
+              "width_clock"
+            ],
+            "centers": [
+              3.5434884920408267,
+              3.8011033403816468,
+              5.540971655001958,
+              -0.13515503603605483,
+              0.7607246985779728,
+              0.16666666666666669,
+              0.020833333333333336,
+              -0.5137382589460499
+            ],
+            "scales": [
+              1.3030539838524502,
+              0.9473880946442834,
+              1.1343986068812335,
+              0.7376994246604466,
+              0.15110792403902615,
+              0.37267799624996495,
+              0.04658474953124562,
+              2.8926903826851875
+            ],
+            "coefficients": [
+              0.02626777392968311,
+              -0.010212555531672168,
+              0.003321451687502314,
+              0.003734092715819561,
+              0.015291029541299666,
+              -0.008800553800260933,
+              -0.03645245892472173,
+              -0.04745907047615129
+            ],
+            "intercept": 2.562242251459766,
+            "link": "positive_log_linear"
+          }
+        }
+      },
+      "G": {
+        "delay_ps": {
+          "form": "global_scale",
+          "time_scale": 0.5,
+          "scale": 1.2489744651755654
+        },
+        "area_um2": {
+          "form": "global_scale",
+          "time_scale": 2.0,
+          "scale": 12.977840698656626
+        }
+      }
+    },
+    "ASAP7_response_sha256": "de067c6983fe92eb7b5771b014f7881483bc2be06a5f70eddd3bc521208bc575",
+    "admission_sha256": "0454bb89753a94218daceae7c1e66fbd16d184cea8f194edda7480ee39df1f58",
+    "clock_support_ps": [
+      500,
+      3000
+    ],
+    "full_D_ready": false,
+    "qualification": "pending sealed new-backend tests; arithmetic only",
+    "source_keys_used_in_inference": false,
+    "exact_clock_tables": false,
+    "backend_called_at_inference": false,
+    "application_PPA_used": false,
+    "characterization_H_pending_N6": true,
+    "S_shared_pending_N5": true,
+    "support": "limited paired unsigned Mul/Add/ADC/G shells; unmeasured shapes/widths/loads/large G remain extrapolations",
+    "feature_schema": "nangate45-shared-width-clock-features-v2",
+    "feature_contract_sha256": "72d68bab12232c34086ab1ab42a677e2dd2b36a285b4bf0f1edea2416d6539d9",
+    "selection_contract_sha256": "90902f9729e9e8c14864ad390ead2c03a53c2f651582505322cfcbd7cbbba9ad"
+  },
+  "ASAP7_response_reference": {
+    "path": "experiments/arithmetic/evidence/workload_equivalent_mac32_v1/diagnostic-model.json",
+    "sha256": "de067c6983fe92eb7b5771b014f7881483bc2be06a5f70eddd3bc521208bc575"
+  },
+  "exact_lookup": false,
+  "online_backend_feedback": false,
+  "application_PPA_used": false,
+  "external_model_sha256": "b29256d4aba5b26ef5be9df7c75903f3bdf889d3b1fef5b7a03838867beea09a",
+  "statistical_contract_sha256": "3e64703685d366c675237cf538abf7760e470038268a6981417a4275bf2b1354",
+  "evaluation_sha256": "8298fee94708b41ec54d5b4d11cca5b079182e5fa9f2b7d26942b4fdcb55da1a",
+  "exclusions": [
+    "S/shared/control",
+    "H_char and equivalent-time contract",
+    "G embedding/compositions",
+    "full D selection/RTL/ABCD qualification"
+  ],
+  "measured_support": {
+    "clock_ps": [
+      500,
+      1500,
+      3000
+    ],
+    "paired_sources": 20,
+    "Mul": "six contexts: 4/8/16/64/128 square full products and 32x64 full product; limited consumers",
+    "Add": "ten contexts: full add up to 512, ADC64/128, one known-bit case, direct/two-bank/consumer loads",
+    "G": "four sparse full-region contexts: outputs 24/64/96/128, term counts 3/4/11/7; no G consumer"
+  },
+  "extrapolation": "unsampled widths, slices, masks, large G and load combinations carry no additional qualification"
+}

@@ -1,0 +1,30 @@
+{
+  "full_D_ready": false,
+  "criteria": {
+    "Add": {
+      "new_validation_source_gates": true,
+      "consumed_validation_protection": true,
+      "new_validation_max_point_guard": true,
+      "combined_selection_gates": true,
+      "fresh_test": true,
+      "consumed_test_regression": true,
+      "selected_form": "shared_log_feature_ridge",
+      "function_changed_from_baseline": true
+    },
+    "G": {
+      "new_validation_source_gates": true,
+      "consumed_validation_protection": false,
+      "new_validation_max_point_guard": true,
+      "combined_selection_gates": false,
+      "fresh_test": true,
+      "consumed_test_regression": true,
+      "selected_form": "frozen_baseline",
+      "function_changed_from_baseline": false
+    }
+  },
+  "overall_recalibration_gates_passed": false,
+  "raw_report_field_note": "external evaluation.qualification.<family>.fresh_validation names the conjunction of NEW validation, OLD validation protection and new-point guard; explicit fields here avoid that ambiguous label",
+  "raw_evaluation_sha256": "b566dbcc330df7d66c1104ed45a09d0b8c7fd1c9f5272fee9aa1cb57fd44d701",
+  "thresholds_unchanged": true,
+  "parameters_unchanged": true
+}

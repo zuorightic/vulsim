@@ -1,0 +1,271 @@
+{
+  "parameters_from": "the preregistered report train-only source-balanced global actual-to-actual scales",
+  "new_parameters_fitted": false,
+  "model_parameters_changed": false,
+  "not_a_compiler_price_model": true,
+  "strict_or_full_domain_linearity_demonstrated": false,
+  "global_actual_scales": {
+    "delay_ps": {
+      "scale": 1.2990430625228975,
+      "by_family_and_role": {
+        "Mul": {
+          "train": {
+            "rows": 9,
+            "sources": 3,
+            "median_APE": 0.11710900453701223,
+            "P95_APE": 0.15362693986268516,
+            "per_source_median_APE": {
+              "operator-0e3e802d6fe79d53": 0.15362693986268516,
+              "operator-22ed3945e82bd47f": 0.10618900968029965,
+              "wide-5660be387111d809": 0.11710900453701223
+            },
+            "quantile": "inherited nearest rank",
+            "passed": true,
+            "maximum_point_APE": 0.18064718374257516
+          },
+          "validation": {
+            "rows": 3,
+            "sources": 1,
+            "median_APE": 0.09713853177381482,
+            "P95_APE": 0.09713853177381482,
+            "per_source_median_APE": {
+              "wide-febe867d4f6e6a5b": 0.09713853177381482
+            },
+            "quantile": "inherited nearest rank",
+            "passed": true,
+            "maximum_point_APE": 0.10916312587201771
+          },
+          "test": {
+            "rows": 6,
+            "sources": 2,
+            "median_APE": 0.06286423848920986,
+            "P95_APE": 0.08482886180648452,
+            "per_source_median_APE": {
+              "operator-5c6f82abc0f8c1c3": 0.06286423848920986,
+              "wide-64eb4ca46ec8e799": 0.08482886180648452
+            },
+            "quantile": "inherited nearest rank",
+            "passed": true,
+            "maximum_point_APE": 0.08585361363436006
+          }
+        },
+        "Add": {
+          "train": {
+            "rows": 18,
+            "sources": 6,
+            "median_APE": 0.04581628810675886,
+            "P95_APE": 0.05984280156931021,
+            "per_source_median_APE": {
+              "operator-7ab4f32d7bb9b588": 0.00307782504124543,
+              "wide-6c1e33e2246ff438": 0.05984280156931021,
+              "wide-74b91cebde906039": 0.04581628810675886,
+              "wide-951cc96c1fb88338": 0.050187557150490836,
+              "wide-d232ec69b47f206a": 0.05484148322069715,
+              "wide-d3d779a9d9167355": 0.019329921269707118
+            },
+            "quantile": "inherited nearest rank",
+            "passed": true,
+            "maximum_point_APE": 0.29962464403553035
+          },
+          "validation": {
+            "rows": 6,
+            "sources": 2,
+            "median_APE": 0.05387873834526391,
+            "P95_APE": 0.15147394668637304,
+            "per_source_median_APE": {
+              "operator-0733f1ef9a9165d4": 0.15147394668637304,
+              "wide-f826704868db02bf": 0.05387873834526391
+            },
+            "quantile": "inherited nearest rank",
+            "passed": true,
+            "maximum_point_APE": 0.15473781263153585
+          },
+          "test": {
+            "rows": 6,
+            "sources": 2,
+            "median_APE": 0.07559329716056784,
+            "P95_APE": 0.10601254913499703,
+            "per_source_median_APE": {
+              "wide-4299d1c9f59e7b66": 0.10601254913499703,
+              "wide-d842786f167bb36d": 0.07559329716056784
+            },
+            "quantile": "inherited nearest rank",
+            "passed": true,
+            "maximum_point_APE": 0.22307641620339003
+          }
+        },
+        "G": {
+          "train": {
+            "rows": 6,
+            "sources": 2,
+            "median_APE": 0.01395418200317966,
+            "P95_APE": 0.10043434383772865,
+            "per_source_median_APE": {
+              "new/G-a4736d1f1d9438c7": 0.10043434383772865,
+              "new/G-c9bad07c2b1f226b": 0.01395418200317966
+            },
+            "quantile": "inherited nearest rank",
+            "passed": true,
+            "maximum_point_APE": 0.24215165686114548
+          },
+          "validation": {
+            "rows": 3,
+            "sources": 1,
+            "median_APE": 0.1485169854732632,
+            "P95_APE": 0.1485169854732632,
+            "per_source_median_APE": {
+              "repair/G-0b07a9ff77ffdf9d": 0.1485169854732632
+            },
+            "quantile": "inherited nearest rank",
+            "passed": true,
+            "maximum_point_APE": 0.16293341455622967
+          },
+          "test": {
+            "rows": 3,
+            "sources": 1,
+            "median_APE": 0.10705478101565746,
+            "P95_APE": 0.10705478101565746,
+            "per_source_median_APE": {
+              "G-73053738e9cc1ee8": 0.10705478101565746
+            },
+            "quantile": "inherited nearest rank",
+            "passed": true,
+            "maximum_point_APE": 0.179762856343193
+          }
+        }
+      }
+    },
+    "area_um2": {
+      "scale": 13.973254889734122,
+      "by_family_and_role": {
+        "Mul": {
+          "train": {
+            "rows": 9,
+            "sources": 3,
+            "median_APE": 0.019963490502832526,
+            "P95_APE": 0.05972780675901035,
+            "per_source_median_APE": {
+              "operator-0e3e802d6fe79d53": 0.05972780675901035,
+              "operator-22ed3945e82bd47f": 0.013004213625754435,
+              "wide-5660be387111d809": 0.019963490502832526
+            },
+            "quantile": "inherited nearest rank",
+            "passed": true,
+            "maximum_point_APE": 0.2601486370643461
+          },
+          "validation": {
+            "rows": 3,
+            "sources": 1,
+            "median_APE": 0.017089613696410932,
+            "P95_APE": 0.017089613696410932,
+            "per_source_median_APE": {
+              "wide-febe867d4f6e6a5b": 0.017089613696410932
+            },
+            "quantile": "inherited nearest rank",
+            "passed": true,
+            "maximum_point_APE": 0.08949433355191583
+          },
+          "test": {
+            "rows": 6,
+            "sources": 2,
+            "median_APE": 0.005716489085169862,
+            "P95_APE": 0.011754942304360805,
+            "per_source_median_APE": {
+              "operator-5c6f82abc0f8c1c3": 0.011754942304360805,
+              "wide-64eb4ca46ec8e799": 0.005716489085169862
+            },
+            "quantile": "inherited nearest rank",
+            "passed": true,
+            "maximum_point_APE": 0.05172054607447296
+          }
+        },
+        "Add": {
+          "train": {
+            "rows": 18,
+            "sources": 6,
+            "median_APE": 0.046280685667616006,
+            "P95_APE": 0.20767693114100316,
+            "per_source_median_APE": {
+              "operator-7ab4f32d7bb9b588": 0.10098479669253813,
+              "wide-6c1e33e2246ff438": 0.04509803992796524,
+              "wide-74b91cebde906039": 0.20767693114100316,
+              "wide-951cc96c1fb88338": 0.056456409931107565,
+              "wide-d232ec69b47f206a": 0.046280685667616006,
+              "wide-d3d779a9d9167355": 0.020149416321869174
+            },
+            "quantile": "inherited nearest rank",
+            "passed": true,
+            "maximum_point_APE": 0.41585699161862266
+          },
+          "validation": {
+            "rows": 6,
+            "sources": 2,
+            "median_APE": 0.03470922799409437,
+            "P95_APE": 0.08451789364635331,
+            "per_source_median_APE": {
+              "operator-0733f1ef9a9165d4": 0.08451789364635331,
+              "wide-f826704868db02bf": 0.03470922799409437
+            },
+            "quantile": "inherited nearest rank",
+            "passed": true,
+            "maximum_point_APE": 0.3618453423983379
+          },
+          "test": {
+            "rows": 6,
+            "sources": 2,
+            "median_APE": 0.03470922799409437,
+            "P95_APE": 0.08702237861410833,
+            "per_source_median_APE": {
+              "wide-4299d1c9f59e7b66": 0.08702237861410833,
+              "wide-d842786f167bb36d": 0.03470922799409437
+            },
+            "quantile": "inherited nearest rank",
+            "passed": true,
+            "maximum_point_APE": 0.37348777631094154
+          }
+        },
+        "G": {
+          "train": {
+            "rows": 6,
+            "sources": 2,
+            "median_APE": 0.14628355838896234,
+            "P95_APE": 0.4094332997214707,
+            "per_source_median_APE": {
+              "new/G-a4736d1f1d9438c7": 0.4094332997214707,
+              "new/G-c9bad07c2b1f226b": 0.14628355838896234
+            },
+            "quantile": "inherited nearest rank",
+            "passed": false,
+            "maximum_point_APE": 0.4094332997214707
+          },
+          "validation": {
+            "rows": 3,
+            "sources": 1,
+            "median_APE": 0.022905295168640816,
+            "P95_APE": 0.022905295168640816,
+            "per_source_median_APE": {
+              "repair/G-0b07a9ff77ffdf9d": 0.022905295168640816
+            },
+            "quantile": "inherited nearest rank",
+            "passed": true,
+            "maximum_point_APE": 0.13038440175547839
+          },
+          "test": {
+            "rows": 3,
+            "sources": 1,
+            "median_APE": 0.08747895065055467,
+            "P95_APE": 0.08747895065055467,
+            "per_source_median_APE": {
+              "G-73053738e9cc1ee8": 0.08747895065055467
+            },
+            "quantile": "inherited nearest rank",
+            "passed": true,
+            "maximum_point_APE": 0.206099174143904
+          }
+        }
+      }
+    }
+  },
+  "all_validation_and_test_family_metrics_passed": true,
+  "all_training_family_metrics_passed": false
+}

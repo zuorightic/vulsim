@@ -1,0 +1,18 @@
+{
+  "previous_claim": "same producer load variants do not cross roles",
+  "correct": false,
+  "groups": [
+    {
+      "group": "7eccaa7d091cd55cc666898c8f68ef31f0575323e998b644bd315db03176755a",
+      "roles": [
+        "test",
+        "validation"
+      ],
+      "sources": [
+        "wide-f826704868db02bf",
+        "wide-d842786f167bb36d"
+      ]
+    }
+  ],
+  "treatment": "retain old results; consumed validation is development protection; all old test labels are consumed regression only, never fitting/selection"
+}
