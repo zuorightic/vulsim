@@ -1,10 +1,20 @@
 # 任务导航与阅读边界
 
-**现行规划统一放在[lxy-plan-fix.md第一章](lxy-plan-fix.md#local-request-plan)，已完成前置与W1—W8历史规划放在同文件[第二章](lxy-plan-fix.md#W1-W8-archive)。** 第一章从v10出发，按候选结构和位置联合分配算子／唯一G的本体预算，换算成与原采样外壳同义的等效训练T，再复用共享模型预测完整时序及总面积。预算适配、MAC32固定候选和首轮有限搜索／RTL验证的详细完成记录已[归档](lxy-plan-fix.md#completed-local-request-archive)。2026-11-16审查确认完整评分尚未继续反馈到新位置，并发现G提案路径权重、L相关粒度及状态规模等问题；证据见[§1.10](lxy-plan-fix.md#local-request-document-status)，后继修复按[§1.6](lxy-plan-fix.md#local-request-steps)执行，不能将首轮软件通过说成搜索或模型资格已经完整。现行物理矩阵继续按冻结版本运行：九例各两档L、37组T／L；按最新指令复用9份原始A参考、验收111条BCD主方法及37条同池归因。A不再按流水目标重测，表中单列初版请求与实测Tmin；原19组／76条身份保留。
+**现行规划统一放在[lxy-plan-fix.md第一章](lxy-plan-fix.md#local-request-plan)：将当前已冻结的D迁移至Nangate45；ASAP7在运实验按原冻结身份及最新授权结清。** 迁移沿用候选／位置策略、预算／等效T、排序与RTL流程，按[N1～N8](lxy-plan-fix.md#local-request-steps)先检验缩放，再对失败部分校准或重拟合。Nangate45与ASAP7使用相同的离线共享函数建模方式，同类跨位宽共享参数，编译期只用图／请求特征与冻结模型，禁止精确实测查表及在线后端反馈，详见[§1.13](lxy-plan-fix.md#nangate45-migration-contract)。
+
+R1～R5（含R1a）算法修复及原审查要求已移入[第二章暂缓归档](lxy-plan-fix.md#deferred-D-algorithm-repairs)，以后有时间再处理，不作为迁移前置，不设置另一D称谓。已有软件产物见[已完成前置归档](lxy-plan-fix.md#completed-local-request-archive)。已知限制和模型失败保留[诊断身份](lxy-plan-fix.md#local-request-document-status)，流程可运行不等于精度或完整资格通过。
+
+ASAP7现行物理矩阵仍为九例各两档L、37组T／L，复用9份A参考、验收111条BCD及37条归因；A单列初版请求／Tmin，原19组／76条身份保留。Nangate45拟沿用评价规模，本后端A、T、模型与结果另行定标冻结，不复用ASAP7实测数值或混入其完成分母。
 
 代码从2026-11-15恢复后的v10 test基线出发：主仓库`672df3e`、RTLzz `28a4f1d`，对应用户引用的MAC32／Add512／Mul128后端结果。当前新增独立的软件预算／等效T入口，保留v10默认入口作对照；此前撤下的局部预算、逐模块ABC及采样代码仍在恢复前备份中，没有恢复。原W1—W8及第三至五章中的“下一步／必须／唯一排程”只用于追溯，不自动续跑；模型未达精度、关键源退化和独立／组合资格未通过的事实继续保留。
 
 ## 当前入口
+
+2026-11-17最新规划修订：第一章§1.6／§1.13为冻结D迁移至Nangate45的八步实施和离线模型合同，R1～R5归档暂缓。本次仅修订规划，未启动迁移采样／拟合／后端；以下ASAP7记录及授权安排继续有效。
+
+2026-11-17最新用户修订见第一章§1.12.5：Karatsuba L4保留2300／2750ps并复用旧RTL，失败项关闭后端LEC补跑；L8保留1400ps、1150ps改为1750ps重新生成。4350／4750与2150／2300的软件排队已取消。NTT L16 C保留800／950ps，资源后继grt放宽为8小时，2200／2400ps额外软件实验继续排队。有效控制器改为`/home/zyrv/vulsim-artifacts/old-D-user-revision-20261117-v1/revision.py`，状态见同目录`status.json`；原两项Montgomery软件worker已接管，原冻结输入及其它任务不变，不恢复旧v2父控制器。
+
+2026-11-17最新执行：用户要求统一使用旧D，补齐未生成的Montgomery，并对修复过重的Mul128／Dot16／Karatsuba／NTT L16放宽请求后重新生成、验收并送后端；软件错误如NTT L8暂不处理。入口见第一章§1.12.4及`/home/zyrv/vulsim-artifacts/old-D-clock-successor-20261117-v2/README.md`。8个软件任务／16组请求，原A参考复用；全局后端9槽／每工具2线程，本轮内存重任务最多3个同时运行，Dot16／Montgomery每任务16GiB、其余8GiB，软件按可用内存逐步放行。R1～R5算法修复已归档暂缓，原目标及在途物理任务保留。
 
 2026-11-16最新A政策见[A复用原始参考与调度修订](../experiments/arithmetic/evidence/workload_equivalent_steps678_tight_v2/two-depths/original-A-reference-v1/README.md)，主表见[当前37组ABCD对比](../experiments/arithmetic/evidence/workload_equivalent_steps678_tight_v2/two-depths/original-A-reference-v1/comparison.md)。A单列原请求／实测Tmin，BCD仍按§1.9.6冻结的两档L与目标运行，9并行／2线程保持。当前进度分别统计A参考`/9`与BCD`/111`；具体交接状态以新入口及handoff收据为准。
 
@@ -13,10 +23,12 @@
 | 文件 | 用途 |
 | --- | --- |
 | [原始任务](lxy.md) | 复杂算术拆分、自动流水线与ABCD研究目标，原文保留 |
-| [第一章：本体预算与等效训练T规划](lxy-plan-fix.md#local-request-plan) | 唯一现行规划；时间语义、模型消费、审查后R1～R7修复、37组展示、9份A参考＋111条BCD共同版本交付 |
+| [第一章：冻结D迁移至Nangate45](lxy-plan-fix.md#local-request-plan) | 唯一现行规划；冻结算法、N1～N8迁移、预算／等效T及模型消费，ASAP7合同与运行记录保留 |
+| [Nangate45离线模型与迁移合同](lxy-plan-fix.md#nangate45-migration-contract) | 共享函数、缩放／校准／重拟合、算子及S／shared／G、源分组验证，禁止精确查表与在线后端反馈 |
+| [暂缓的R1～R5算法修复](lxy-plan-fix.md#deferred-D-algorithm-repairs) | 含R1a、原实现要求、修复表和完整审查证据，以后有时间再处理，不作为迁移前置 |
 | [第1～3步：MAC32软件验收](../experiments/arithmetic/evidence/workload_equivalent_mac32_v1/README.md) | 177条采样合同、90个候选／837次完整评分、实际等效T查询、逐目标身份及完整回放；精度与后端评价另验 |
 | [第4～5步：模型回归与首轮新候选](../experiments/arithmetic/evidence/workload_equivalent_steps45_v1/README.md) | 279条组件／6个旧组合回归、175个完整候选、72份RTL新仿真；首轮有限提案完成，不代表完整位置反馈已实现，S／shared和嵌入资格失败保留 |
-| [第6～8步：A/L紧凑目标v2](../experiments/arithmetic/evidence/workload_equivalent_steps678_tight_v2/README.md) | 未拆分A参考实测、1.25／1.5倍A/L目标、新D拆分与预算／位置搜索及ABCD后端状态；未测不算完成 |
+| [第6～8步：A/L紧凑目标v2](../experiments/arithmetic/evidence/workload_equivalent_steps678_tight_v2/README.md) | 未拆分A参考实测、1.25／1.5倍A/L目标、冻结D拆分与预算／位置搜索及ABCD后端状态；未测不算完成 |
 | [Dot16 L4／L5重新拆分](../experiments/arithmetic/evidence/workload_equivalent_steps678_tight_v2/dot16-L45/README.md) | 按用户要求新增4／5级对照，逐级检查活跃算术，保留原L8；软件与后端状态独立报告 |
 | [Montgomery256 A重新测试：27ns](../experiments/arithmetic/evidence/workload_equivalent_steps678_tight_v2/two-depths/montgomery-A-retest-v1/README.md) | 用户追加授权；按旧综合／布局／CTS最大周期留10%余量并取整，2线程／16GiB／grt最多6小时，共享9槽，原36000ps失败保留 |
 | [当前A参考、BCD结果与调度](../experiments/arithmetic/evidence/workload_equivalent_steps678_tight_v2/two-depths/original-A-reference-v1/README.md) | 每例只引用原A；单列原请求与Tmin，统计9份A参考及111条BCD，保留旧费用，未发射重复A排除 |
@@ -34,12 +46,12 @@
 | [流水目标周期审查](../experiments/arithmetic/evidence/workload_equivalent_steps678_tight_v2/clock-target-review.md) | A/L倍率未显式保证固定边界与不均衡开销；逐例额度和改进建议，未放宽冻结周期 |
 | [被替代的C测时v1](../experiments/arithmetic/evidence/workload_equivalent_steps678_v1/README.md) | 原C探针及其实际结果、失败和费用保留；不再用于新目标 |
 | [九例ABCD最终评价（第一章§1.9）](lxy-plan-fix.md#local-request-evaluation) | A／B／C／D定义、冻结对照及完成标准；原19组／76条保留，§1.9.6扩展两档L，§1.9.7改为37组展示、9份A参考＋111条BCD |
-| [第二章：已完成前置与W1—W8历史规划](lxy-plan-fix.md#W1-W8-archive) | 第1～5步软件、旧19组、Dot16、并发／存储前置记录及原W1—W8正文；形成时的下一步不自动续跑 |
+| [第二章：暂缓修复、已完成前置与W1—W8历史规划](lxy-plan-fix.md#W1-W8-archive) | R1～R5暂缓修复与审查原文、第1～5步软件、旧19组及历史规划；形成时的下一步不自动续跑 |
 | [模型精度与保留问题（第一章§1.8）](lxy-plan-fix.md#v10-model-status) | Add／Mux／G／S的具体失败、支持缺口，以及完整诊断版预测误差 |
 | [v10组件模型证据](../experiments/arithmetic/evidence/common_transition_incidence_v10/README.md) | 共享参数、训练诊断、旧验证回归与机制记录 |
 | [v10初次软件集成](../experiments/arithmetic/evidence/workload_transition_v10_v1/README.md) | 公共Query、所有者、真实参数消费及当时覆盖 |
 | [v10完整诊断版后端表](../experiments/arithmetic/evidence/workload_diagnostic_stopped_v1/comparison.md) | ABCD面积／完整setup Tmin／频率、hold、失败与预测误差 |
-| [九例数学源与配置](../experiments/arithmetic/WORKLOADS.md) | v10已有源、语义和软件入口；目标矩阵由第一章§1.9沿用，旧说明中的后继排程不自动执行 |
+| [九例数学源与配置](../experiments/arithmetic/WORKLOADS.md) | v10已有源、语义和软件入口；ASAP7目标见第一章§1.9，Nangate45另定标；旧后继排程不自动执行 |
 | [历史实施与验收（第五章）](lxy-plan-fix.md#step1-wide-acceptance) | 原逐轮实施、失败、资格及后v10预算开发记录；章首标明历史阅读边界 |
 | [恢复前完整阶段快照](archive/lxy-W1-W8-stage-20261115.md) | 恢复前完整文档的补充快照，W1—W8正文阅读入口仍为第二章 |
 | [恢复清单](archive/v10-restore-20261115.json) | 检查点、完整备份、撤下文件、文档身份及验证收据 |

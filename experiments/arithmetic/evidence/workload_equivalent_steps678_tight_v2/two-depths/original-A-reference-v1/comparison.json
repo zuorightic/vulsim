@@ -1,6 +1,6 @@
 {
   "version": "nine-workloads-original-A-reference-v1",
-  "at": "2026-11-16T17:07:15.623916+00:00",
+  "at": "2026-11-17T07:44:29.856986+00:00",
   "operational_status": "applied",
   "required_groups": 37,
   "required_BCD_records": 111,
@@ -18843,85 +18843,49 @@
   "physical_comparison_complete": false,
   "active_jobs": [
     {
-      "id": "923dfd0b69a24da0850a9206a9132fe8",
+      "id": "24d9fb75e8d342beb2db46b283d79173",
       "status": "active",
       "target_platform": "asap7",
-      "admission_id": "matrix-failure-resource-only-v1",
-      "task_id": "dot16-L4-resource-T850-5d322a4d43a9",
-      "owner_pid_in_namespace": 1324323,
-      "started_at": "2026-11-16T15:58:39.843524+00:00"
+      "admission_id": "matrix-r1r5-parallel2-dot16-L5",
+      "task_id": "dot16-L5-T1400-418acd011d88-parallel2",
+      "owner_pid_in_namespace": 10158,
+      "started_at": "2026-11-17T04:10:48.724897+00:00"
     },
     {
-      "id": "f8ad7599d66b4f2eb209f9a418131751",
+      "id": "5eb1dddb76884216af889207e5d8824e",
       "status": "active",
       "target_platform": "asap7",
-      "admission_id": "matrix-failure-resource-only-v1",
-      "task_id": "dot16-L4-resource-T850-8327002228a5",
-      "owner_pid_in_namespace": 1330140,
-      "started_at": "2026-11-16T16:14:29.926586+00:00"
+      "admission_id": "matrix-r1r5-parallel2-dot16-L5",
+      "task_id": "dot16-L5-T1700-418acd011d88-parallel2",
+      "owner_pid_in_namespace": 13654,
+      "started_at": "2026-11-17T04:11:45.924420+00:00"
     },
     {
-      "id": "3cdfaacae1684d18aec34ad5b8e54638",
+      "id": "776d4c52a5ca444d904829fbf5975c59",
       "status": "active",
       "target_platform": "asap7",
-      "admission_id": "matrix-failure-resource-only-v1",
-      "task_id": "dot16-L4-resource-T1050-5d322a4d43a9",
-      "owner_pid_in_namespace": 1335498,
-      "started_at": "2026-11-16T16:27:08.460610+00:00"
+      "admission_id": "matrix-old-d-mul128-L4",
+      "task_id": "mul128-L4-T1200-e18af3cbdef4-old-d",
+      "owner_pid_in_namespace": 1667215,
+      "started_at": "2026-11-17T07:42:42.941288+00:00"
     },
     {
-      "id": "354b8d3ac4b44213ac9aa1912e4cb9f2",
+      "id": "1cb0c1d0f37b4f7a8ba0dde55fd0d0f3",
       "status": "active",
       "target_platform": "asap7",
-      "admission_id": "matrix-failure-resource-only-v1",
-      "task_id": "dot16-L5-resource-T700-8bbe5fa52f58",
-      "owner_pid_in_namespace": 1342823,
-      "started_at": "2026-11-16T16:48:33.510951+00:00"
+      "admission_id": "matrix-old-d-mul128-L4",
+      "task_id": "mul128-L4-T1200-78374d7545b6-old-d",
+      "owner_pid_in_namespace": 1667708,
+      "started_at": "2026-11-17T07:42:54.579427+00:00"
     },
     {
-      "id": "31a41dd0ea154455b73c4a52d2d38cb1",
+      "id": "b957c504b6c74c25991c93bb23a07741",
       "status": "active",
       "target_platform": "asap7",
-      "admission_id": "matrix-failure-resource-only-v1",
-      "task_id": "dot16-L4-resource-T850-13041929dd25",
-      "owner_pid_in_namespace": 1348645,
-      "started_at": "2026-11-16T16:56:02.504882+00:00"
-    },
-    {
-      "id": "f0dd8617a1544ef1bf15924807a4a8e7",
-      "status": "active",
-      "target_platform": "asap7",
-      "admission_id": "matrix-failure-resource-only-v1",
-      "task_id": "dot16-L4-resource-T1050-8327002228a5",
-      "owner_pid_in_namespace": 1349215,
-      "started_at": "2026-11-16T16:56:51.089754+00:00"
-    },
-    {
-      "id": "1b3db90b2d124289957f87af81764581",
-      "status": "active",
-      "target_platform": "asap7",
-      "admission_id": "matrix-failure-resource-only-v1",
-      "task_id": "dot16-L4-resource-T1050-13041929dd25",
-      "owner_pid_in_namespace": 1351218,
-      "started_at": "2026-11-16T16:58:39.610272+00:00"
-    },
-    {
-      "id": "8d4e86abcd914737a38f00152ac88009",
-      "status": "active",
-      "target_platform": "asap7",
-      "admission_id": "matrix-failure-resource-only-v1",
-      "task_id": "dot16-L5-resource-T700-b6a28e166624",
-      "owner_pid_in_namespace": 1352924,
-      "started_at": "2026-11-16T17:00:38.741804+00:00"
-    },
-    {
-      "id": "1410a620aecf4a1ba242546dd820847e",
-      "status": "active",
-      "target_platform": "asap7",
-      "admission_id": "matrix-failure-resource-only-v1",
-      "task_id": "dot16-L5-resource-T700-4c2ee7748c79",
-      "owner_pid_in_namespace": 1358033,
-      "started_at": "2026-11-16T17:05:03.829543+00:00"
+      "admission_id": "matrix-old-d-mul128-L4",
+      "task_id": "mul128-L4-T1200-334ab0c95758-old-d",
+      "owner_pid_in_namespace": 1668087,
+      "started_at": "2026-11-17T07:43:06.109500+00:00"
     }
   ],
   "qualification": "diagnostic_only",

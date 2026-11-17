@@ -1,6 +1,6 @@
 {
   "version": "workload-original-clock-resource-successor-v1",
-  "at": "2026-11-16T17:07:15.738107+00:00",
+  "at": "2026-11-17T03:39:29.962965+00:00",
   "groups": [
     {
       "case": "dot16",
@@ -38,7 +38,7 @@
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T850-5d322a4d43a9",
           "successor_task": "dot16-L4-resource-T850-5d322a4d43a9",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/dot16-L4-resource-T850-5d322a4d43a9",
-          "status": "running",
+          "status": "failed",
           "rtl_sha256": "5d322a4d43a9b34cbd12120da07a8ac377073b1c7792b75e074ce3da1847286d",
           "prediction": {
             "status": "diagnostic_complete",
@@ -78,14 +78,14 @@
             "G_members_not_billed_separately": 0
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "fixed-DB readout failed"
         },
         "C": {
           "original_status": "failed",
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T850-8327002228a5",
           "successor_task": "dot16-L4-resource-T850-8327002228a5",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/dot16-L4-resource-T850-8327002228a5",
-          "status": "running",
+          "status": "failed",
           "rtl_sha256": "8327002228a54ed3ca1f467965b5688a56f9d50e77ebede876872ecc897daf22",
           "prediction": {
             "status": "diagnostic_complete",
@@ -125,14 +125,14 @@
             "G_members_not_billed_separately": 1023
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "grt: tool_nonzero_exit"
         },
         "D": {
           "original_status": "failed",
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T850-13041929dd25",
           "successor_task": "dot16-L4-resource-T850-13041929dd25",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/dot16-L4-resource-T850-13041929dd25",
-          "status": "running",
+          "status": "failed",
           "rtl_sha256": "13041929dd25f13910d1d62bc604e2765ed8ecada43c0465cf3e10fc23d1489f",
           "prediction": {
             "status": "diagnostic_complete",
@@ -172,14 +172,14 @@
             "G_members_not_billed_separately": 1023
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "grt: timeout"
         },
         "same_policy_static": {
           "original_status": "failed",
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T850-75964220595d",
           "successor_task": "dot16-L4-resource-T850-75964220595d",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/dot16-L4-resource-T850-75964220595d",
-          "status": "queued",
+          "status": "failed",
           "rtl_sha256": "75964220595d3df82f176d8eae24c93ffbd3cf60cfe485ac47ddf2933b2311f8",
           "prediction": {
             "status": "diagnostic_complete",
@@ -219,7 +219,7 @@
             "G_members_not_billed_separately": 1008
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "grt: tool_nonzero_exit"
         }
       }
     },
@@ -259,7 +259,7 @@
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T1050-5d322a4d43a9",
           "successor_task": "dot16-L4-resource-T1050-5d322a4d43a9",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/dot16-L4-resource-T1050-5d322a4d43a9",
-          "status": "running",
+          "status": "failed",
           "rtl_sha256": "5d322a4d43a9b34cbd12120da07a8ac377073b1c7792b75e074ce3da1847286d",
           "prediction": {
             "status": "diagnostic_complete",
@@ -299,14 +299,14 @@
             "G_members_not_billed_separately": 0
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "fixed-DB readout failed"
         },
         "C": {
           "original_status": "failed",
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T1050-8327002228a5",
           "successor_task": "dot16-L4-resource-T1050-8327002228a5",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/dot16-L4-resource-T1050-8327002228a5",
-          "status": "running",
+          "status": "failed",
           "rtl_sha256": "8327002228a54ed3ca1f467965b5688a56f9d50e77ebede876872ecc897daf22",
           "prediction": {
             "status": "diagnostic_complete",
@@ -346,14 +346,14 @@
             "G_members_not_billed_separately": 1023
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "grt: tool_nonzero_exit"
         },
         "D": {
           "original_status": "failed",
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T1050-13041929dd25",
           "successor_task": "dot16-L4-resource-T1050-13041929dd25",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/dot16-L4-resource-T1050-13041929dd25",
-          "status": "running",
+          "status": "failed",
           "rtl_sha256": "13041929dd25f13910d1d62bc604e2765ed8ecada43c0465cf3e10fc23d1489f",
           "prediction": {
             "status": "diagnostic_complete",
@@ -393,14 +393,14 @@
             "G_members_not_billed_separately": 1023
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "grt: timeout"
         },
         "same_policy_static": {
           "original_status": "failed",
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L4/runs/dot16-L4-T1050-fc4843e24724",
           "successor_task": "dot16-L4-resource-T1050-fc4843e24724",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/dot16-L4-resource-T1050-fc4843e24724",
-          "status": "queued",
+          "status": "failed",
           "rtl_sha256": "fc4843e247248434f85f71ec813ada4ef05ac44a4a3b6d370521d20dff77a8d7",
           "prediction": {
             "status": "diagnostic_complete",
@@ -440,7 +440,7 @@
             "G_members_not_billed_separately": 240
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "grt: tool_nonzero_exit"
         }
       }
     },
@@ -480,7 +480,7 @@
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T700-8bbe5fa52f58",
           "successor_task": "dot16-L5-resource-T700-8bbe5fa52f58",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/dot16-L5-resource-T700-8bbe5fa52f58",
-          "status": "running",
+          "status": "failed",
           "rtl_sha256": "8bbe5fa52f58b339068607a6c578edc2f062ee57a6a7e31828dbdbf2d6f336c4",
           "prediction": {
             "status": "diagnostic_complete",
@@ -526,14 +526,14 @@
             "G_members_not_billed_separately": 0
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "grt: tool_nonzero_exit"
         },
         "C": {
           "original_status": "failed",
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T700-b6a28e166624",
           "successor_task": "dot16-L5-resource-T700-b6a28e166624",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/dot16-L5-resource-T700-b6a28e166624",
-          "status": "running",
+          "status": "failed",
           "rtl_sha256": "b6a28e1666241813ee673329721374bd0056c5c539f4e860c1e3eb477b79d508",
           "prediction": {
             "status": "diagnostic_complete",
@@ -579,14 +579,14 @@
             "G_members_not_billed_separately": 496
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "grt: tool_nonzero_exit"
         },
         "D": {
           "original_status": "failed",
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T700-4c2ee7748c79",
           "successor_task": "dot16-L5-resource-T700-4c2ee7748c79",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/dot16-L5-resource-T700-4c2ee7748c79",
-          "status": "running",
+          "status": "failed",
           "rtl_sha256": "4c2ee7748c79e869068a149f332de33903b35c397ba374ef94633bc57dfb3afc",
           "prediction": {
             "status": "diagnostic_complete",
@@ -632,14 +632,14 @@
             "G_members_not_billed_separately": 238
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "grt: timeout"
         },
         "same_policy_static": {
           "original_status": "failed",
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T700-5d8ecc4f2639",
           "successor_task": "dot16-L5-resource-T700-5d8ecc4f2639",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/dot16-L5-resource-T700-5d8ecc4f2639",
-          "status": "queued",
+          "status": "failed",
           "rtl_sha256": "5d8ecc4f26390a93aba33f500b6d8dfe4760f1f8440cc88791df37737a0c7d4f",
           "prediction": {
             "status": "diagnostic_complete",
@@ -685,7 +685,7 @@
             "G_members_not_billed_separately": 1008
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "fixed-DB readout failed"
         }
       }
     },
@@ -725,7 +725,7 @@
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T850-8bbe5fa52f58",
           "successor_task": "dot16-L5-resource-T850-8bbe5fa52f58",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/dot16-L5-resource-T850-8bbe5fa52f58",
-          "status": "queued",
+          "status": "failed",
           "rtl_sha256": "8bbe5fa52f58b339068607a6c578edc2f062ee57a6a7e31828dbdbf2d6f336c4",
           "prediction": {
             "status": "diagnostic_complete",
@@ -771,14 +771,14 @@
             "G_members_not_billed_separately": 0
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "grt: tool_nonzero_exit"
         },
         "C": {
           "original_status": "failed",
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T850-b6a28e166624",
           "successor_task": "dot16-L5-resource-T850-b6a28e166624",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/dot16-L5-resource-T850-b6a28e166624",
-          "status": "queued",
+          "status": "failed",
           "rtl_sha256": "b6a28e1666241813ee673329721374bd0056c5c539f4e860c1e3eb477b79d508",
           "prediction": {
             "status": "diagnostic_complete",
@@ -824,14 +824,14 @@
             "G_members_not_billed_separately": 496
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "grt: timeout"
         },
         "D": {
           "original_status": "failed",
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T850-4c2ee7748c79",
           "successor_task": "dot16-L5-resource-T850-4c2ee7748c79",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/dot16-L5-resource-T850-4c2ee7748c79",
-          "status": "queued",
+          "status": "failed",
           "rtl_sha256": "4c2ee7748c79e869068a149f332de33903b35c397ba374ef94633bc57dfb3afc",
           "prediction": {
             "status": "diagnostic_complete",
@@ -877,14 +877,14 @@
             "G_members_not_billed_separately": 238
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "grt: timeout"
         },
         "same_policy_static": {
           "original_status": "failed",
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-dot16-L5/runs/dot16-L5-T850-5d8ecc4f2639",
           "successor_task": "dot16-L5-resource-T850-5d8ecc4f2639",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/dot16-L5-resource-T850-5d8ecc4f2639",
-          "status": "queued",
+          "status": "failed",
           "rtl_sha256": "5d8ecc4f26390a93aba33f500b6d8dfe4760f1f8440cc88791df37737a0c7d4f",
           "prediction": {
             "status": "diagnostic_complete",
@@ -930,7 +930,7 @@
             "G_members_not_billed_separately": 1008
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "fixed-DB readout failed"
         }
       }
     },
@@ -1021,7 +1021,7 @@
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-barrett64-L4/runs/barrett64-L4-T2150-83a434da7745",
           "successor_task": "barrett64-L4-resource-T2150-83a434da7745",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/barrett64-L4-resource-T2150-83a434da7745",
-          "status": "queued",
+          "status": "measured_grt",
           "rtl_sha256": "83a434da7745571b039f2438f4367eca82ce3ed01207c9f0cd759a4ab362cc00",
           "prediction": {
             "status": "diagnostic_complete",
@@ -1061,7 +1061,11 @@
             "G_members_not_billed_separately": 240
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": null,
+          "Tmin_ps": 2487.802673,
+          "area_um2": 15404.07618000001,
+          "hold_WNS_ps": 6.878442,
+          "setup_met": false
         },
         "D": {
           "original_status": "measured_grt",
@@ -1254,7 +1258,7 @@
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4/runs/karatsuba256-L4-T2300-1de0ecb23206",
           "successor_task": "karatsuba256-L4-resource-T2300-1de0ecb23206",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/karatsuba256-L4-resource-T2300-1de0ecb23206",
-          "status": "queued",
+          "status": "failed",
           "rtl_sha256": "1de0ecb23206e8cb62974e10ff8d80cb8e56cd5157e5198379e2e2e68f630d3a",
           "prediction": {
             "status": "diagnostic_complete",
@@ -1294,7 +1298,7 @@
             "G_members_not_billed_separately": 526
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "grt: timeout"
         },
         "D": {
           "original_status": "measured_grt",
@@ -1436,7 +1440,7 @@
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4/runs/karatsuba256-L4-T2750-afb74d898573",
           "successor_task": "karatsuba256-L4-resource-T2750-afb74d898573",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/karatsuba256-L4-resource-T2750-afb74d898573",
-          "status": "queued",
+          "status": "failed",
           "rtl_sha256": "afb74d898573e1b70984dc2855390d5b0b4a2e54cab6f6a8fa18539f75f10bdd",
           "prediction": {
             "status": "diagnostic_complete",
@@ -1476,7 +1480,7 @@
             "G_members_not_billed_separately": 12
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "grt: tool_nonzero_exit"
         },
         "C": {
           "original_status": "failed",
@@ -1581,7 +1585,7 @@
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L4/runs/karatsuba256-L4-T2750-afb74d898573",
           "successor_task": "karatsuba256-L4-resource-T2750-afb74d898573",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/karatsuba256-L4-resource-T2750-afb74d898573",
-          "status": "queued",
+          "status": "failed",
           "rtl_sha256": "afb74d898573e1b70984dc2855390d5b0b4a2e54cab6f6a8fa18539f75f10bdd",
           "prediction": {
             "status": "diagnostic_complete",
@@ -1621,7 +1625,7 @@
             "G_members_not_billed_separately": 12
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "grt: tool_nonzero_exit"
         }
       }
     },
@@ -1736,7 +1740,7 @@
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1150-f3011704032a",
           "successor_task": "karatsuba256-L8-resource-T1150-f3011704032a",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/karatsuba256-L8-resource-T1150-f3011704032a",
-          "status": "queued",
+          "status": "failed",
           "rtl_sha256": "f3011704032ac6988a5681f3e3f678833dbc389d95029a8a2a8f10f76c809044",
           "prediction": {
             "status": "diagnostic_complete",
@@ -1800,14 +1804,14 @@
             "G_members_not_billed_separately": 577
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "grt: timeout"
         },
         "D": {
           "original_status": "failed",
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1150-b5e7a118e6c3",
           "successor_task": "karatsuba256-L8-resource-T1150-b5e7a118e6c3",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/karatsuba256-L8-resource-T1150-b5e7a118e6c3",
-          "status": "queued",
+          "status": "failed",
           "rtl_sha256": "b5e7a118e6c322fc7513b881e24ad0df50ec3e843593f415d5f9c80767f6f1de",
           "prediction": {
             "status": "diagnostic_complete",
@@ -1871,14 +1875,14 @@
             "G_members_not_billed_separately": 6
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "grt: timeout"
         },
         "same_policy_static": {
           "original_status": "failed",
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1150-f0eca851430c",
           "successor_task": "karatsuba256-L8-resource-T1150-f0eca851430c",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/karatsuba256-L8-resource-T1150-f0eca851430c",
-          "status": "queued",
+          "status": "failed",
           "rtl_sha256": "f0eca851430c14a9e0cc32c14aae3ba06b037aec9d0ab3b630ff1a75f0d4d4f3",
           "prediction": {
             "status": "diagnostic_complete",
@@ -1942,7 +1946,7 @@
             "G_members_not_billed_separately": 137
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "fixed-DB readout failed"
         }
       }
     },
@@ -2057,7 +2061,7 @@
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1400-f3011704032a",
           "successor_task": "karatsuba256-L8-resource-T1400-f3011704032a",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/karatsuba256-L8-resource-T1400-f3011704032a",
-          "status": "queued",
+          "status": "failed",
           "rtl_sha256": "f3011704032ac6988a5681f3e3f678833dbc389d95029a8a2a8f10f76c809044",
           "prediction": {
             "status": "diagnostic_complete",
@@ -2121,7 +2125,7 @@
             "G_members_not_billed_separately": 577
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "grt: timeout"
         },
         "D": {
           "original_status": "not_started",
@@ -2199,7 +2203,7 @@
           "original_run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/backend/matrix-karatsuba256-L8/runs/karatsuba256-L8-T1400-f0eca851430c",
           "successor_task": "karatsuba256-L8-resource-T1400-f0eca851430c",
           "run": "/home/zyrv/vulsim-artifacts/workload-equivalent-two-depths-v1/failure-successors/matrix-failure-resource-only-v1/runs/karatsuba256-L8-resource-T1400-f0eca851430c",
-          "status": "queued",
+          "status": "failed",
           "rtl_sha256": "f0eca851430c14a9e0cc32c14aae3ba06b037aec9d0ab3b630ff1a75f0d4d4f3",
           "prediction": {
             "status": "diagnostic_complete",
@@ -2263,14 +2267,15 @@
             "G_members_not_billed_separately": 137
           },
           "inherited_original_result": false,
-          "failure_reason": null
+          "failure_reason": "grt: timeout"
         }
       }
     }
   ],
   "successor_statuses": {
-    "running": 9,
-    "queued": 17
+    "failed": 24,
+    "measured_grt": 1,
+    "queued": 1
   },
   "physical_tasks": 25,
   "original_failed_method_records": 26,
@@ -2280,11 +2285,11 @@
   "qualification": "diagnostic_only",
   "controller": {
     "ready": true,
-    "at": "2026-11-16T17:07:15.718817+00:00",
-    "status": "running",
-    "queued": 16,
-    "worker_processes": 9,
-    "global_active_jobs": 9,
+    "at": "2026-11-17T03:39:29.915490+00:00",
+    "status": "settled",
+    "queued": 0,
+    "worker_processes": 0,
+    "global_active_jobs": 3,
     "clocks_changed": false,
     "automatic_retries": 0,
     "source_sha256": "4bfd6681c31ffb9f0bc9c85ee8e136b86bc093c762e01bdd8a5f772508ef83a6"
