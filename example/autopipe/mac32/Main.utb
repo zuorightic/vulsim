@@ -1,0 +1,35 @@
+#include <cstdint>
+#include <cstdio>
+#include <cstdlib>
+#include <run.hpp>
+
+TOP("TopModule.vul");
+PROJECT(".");
+REQUEST(push, ARG(Int<32>) lhs, ARG(Int<32>) rhs,
+    ARG(Int<64>) bias, ARG(bool) is_valid);
+QUERY(data, Int<64>);
+QUERY(valid, bool);
+
+SIMULATION() {
+    constexpr int count = 96;
+    std::uint64_t expected[count];
+    bool valids[count];
+    for (int pass = 0; pass < 2; ++pass) {
+        sim_reset();
+        if (valid() || data() != Int<64>(22)) std::exit(1);
+        for (int cycle = 0; cycle < count; ++cycle) {
+            std::uint32_t a = cycle % 7 ? std::uint32_t(0x9e3779b9u * (cycle + 1)) : 0xffffffffu;
+            std::uint32_t b = std::uint32_t(0x85ebca6bu * (cycle + 3));
+            std::uint64_t c = std::uint64_t(0xffffffffffffffffull - cycle * 17);
+            expected[cycle] = std::uint64_t(a) * b + c;
+            valids[cycle] = cycle % 5 != 2;
+            push(Int<32>(a), Int<32>(b), Int<64>(c), valids[cycle]);
+            sim_nextcycle();
+            const int source = cycle - MAC_LATENCY;
+            const bool expected_valid = source >= 0 && valids[source];
+            if (valid() != expected_valid) std::exit(2);
+            if (expected_valid && data() != Int<64>(expected[source])) std::exit(3);
+        }
+    }
+    std::printf("AUTOPIPE MAC32 PASS\n");
+}

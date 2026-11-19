@@ -10,10 +10,7 @@
 2. 周期精确的并行模拟，周期行为对齐到最终的RTL实现
 3. 内置调试工具和性能统计工具
 4. 自动化生成 RTL 代码
-
-冻结 v10 算术模型的编译、候选选择及 RTL 生成命令见[模型使用说明](doc/autopipe.md)。模型参数保存在 `vullib/models/autopipe/`，调用入口及软件测试保存在 `tools/autopipe/`，不依赖历史实验目录或物理后端。请从包含本目录的 `zuorightic/vulsim` 版本连同 RTLzz 子模块拉取；下文通用开发指南中的上游地址不保证包含这些模型。
-
-研究过程与历史计划见 [mission 文档导航](doc/mission/README.md)。R1～R5 修复版已弃用，发布入口继续使用冻结 v10；历史“已完成”记录不扩展其模型精度和支持范围。
+5. 多后端适应的复杂算数拆分并流水线功能
 
 ## 项目总架构
 
@@ -117,7 +114,7 @@ circt-opt --help | grep -E -- 'comb-assume-two-valued|comb-int-range-narrowing|c
 初始化 git 目录与 submodule：
 
 ```bash
-git clone https://github.com/meng-cz/vulsim.git
+git clone https://github.com/zuorightic/vulsim.git
 cd vulsim
 git submodule update --init --recursive
 ```
@@ -174,6 +171,7 @@ source build.sh
 ```bash
 # 生成 RTL 代码
 ./vulrtlgen -t example/prodcon/TopModule.vul
+./vulrtlgen -t example/autopipe/mac32/TopModule.vul --auto-pipeline --target-backend asap7 --target-period-ps 1200 -o rtlout-autopipe
 # -t/--top: 指定顶层模块文件；也可用 -m/--main 指定带 TOP(...) 的 TestMain 文件
 # -p/--project: 项目目录（默认顶层模块文件所在目录）
 # -l/--lib: 运行库目录（默认 ./vullib）
@@ -190,6 +188,8 @@ cd rtlout
 ./run.sh
 # 应当输出与运行 vulsimgen 生成的仿真代码相同的结果
 ```
+
+`--auto-pipeline` 为 `PIPELINE` 块启用模型驱动的算术拆分与流水安排，级数沿用源码中的 `latency`；`--target-backend` 选择目标工艺模型（`asap7` 或 `nangate45`），`--target-period-ps` 指定请求周期，单位为 ps。首次使用会自动编译所需工具，生成 RTL 和预测报告。详细用法见[模型使用说明](doc/autopipe.md)。
 
 `vulrtlgen` 至少需要 `-t/--top` 或 `-m/--main` 之一；使用 `-m` 时，TestMain 中的 `TOP(...)` 可提供顶层模块路径。`-r/--release` 会省略中间文件，`--circt` 选择 CIRCT HW/Comb/Seq 后端。
 使用 `-m` 且未指定 `-r/--release` 时，输出目录会包含 Verilator C++ 驱动和 `run.sh`。运行脚本需要已安装 Verilator 与 C++ 编译器，并会构建后立即启动仿真。可从任意当前目录调用该脚本，额外参数会传递给仿真程序。Verilator 构建日志和仿真日志分别保存在 `verilator_build.log` 与 `simulation.log`；失败时脚本会显示对应日志并返回失败状态。

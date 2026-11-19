@@ -1,0 +1,25 @@
+INTERFACE() {
+    SERVICE(push, ARG(Int<32>) lhs, ARG(Int<32>) rhs,
+        ARG(Int<64>) bias, ARG(bool) is_valid);
+    QUERY(data, Int<64>);
+    QUERY(valid, bool);
+}
+
+PIPELINE(mac, MAC_LATENCY,
+    IREG(a, Int<32>) { a = 3; },
+    IREG(b, Int<32>) { b = 5; },
+    IREG(c, Int<64>) { c = 7; },
+    IVALID(iv), OREG(y, Int<64>), OVALID(ov)
+) {
+    y = Int<64>(a) * Int<64>(b) + c;
+}
+
+SERVICE(push, ARG(Int<32>) lhs, ARG(Int<32>) rhs,
+    ARG(Int<64>) bias, ARG(bool) is_valid) {
+    a.setnext(lhs);
+    b.setnext(rhs);
+    c.setnext(bias);
+    iv.setnext(is_valid);
+}
+QUERY(data, Int<64>) { return y; }
+QUERY(valid, bool) { return ov; }

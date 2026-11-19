@@ -36,6 +36,7 @@
 #include <cerrno>
 #include <charconv>
 #include <cstdint>
+#include <cmath>
 #include <cstring>
 #ifndef _WIN32
 #include <fcntl.h>
@@ -50,6 +51,16 @@ unsigned positiveCount(const std::string& text, const char* option) {
     const auto parsed = std::from_chars(text.data(), text.data() + text.size(), value);
     if (parsed.ec != std::errc{} || parsed.ptr != text.data() + text.size() || !value)
         throw VulException(std::string(option) + " requires a positive integer");
+    return value;
+}
+
+double positiveNumber(const std::string &text, const char *option) {
+    std::size_t used = 0;
+    double value = 0;
+    try { value = std::stod(text, &used); }
+    catch (const std::exception &) { throw VulException(std::string(option) + " requires a positive finite number"); }
+    if (used != text.size() || !std::isfinite(value) || value <= 0)
+        throw VulException(std::string(option) + " requires a positive finite number");
     return value;
 }
 
@@ -437,6 +448,14 @@ static int runVulRTLGen(int argc, char * argv[]) {
         .default_value(false)
         .implicit_value(true);
     parser.add_argument("--arithmetic-request").default_value(std::string{}).help("Versioned arithmetic JSON request for PIPELINE kernels or a combinational logic unit; reports are saved next to generated logic sources");
+    parser.add_argument("--auto-pipeline").default_value(false).implicit_value(true)
+        .help("select arithmetic splitting and pipelining for declared PIPELINE blocks using the frozen cost model");
+    parser.add_argument("--target-backend").default_value(std::string{})
+        .help("auto-pipeline physical cost model: asap7 or nangate45");
+    parser.add_argument("--target-period-ps").default_value(std::string{})
+        .help("auto-pipeline requested period in picoseconds; latency comes from each PIPELINE declaration");
+    parser.add_argument("--autopipe-timeout").default_value(std::string("300"))
+        .help("maximum candidate search seconds per PIPELINE, excluding initial compiler build (1..3600)");
     parser.add_argument("--circt")
         .help("emit ordinary and pipeline RTL through the CIRCT HW/Comb/Seq backend")
         .default_value(false)
@@ -456,6 +475,24 @@ static int runVulRTLGen(int argc, char * argv[]) {
     const bool release = parser.get<bool>("--release");
     const bool use_circt = parser.get<bool>("--circt");
     const auto arithmetic_request_file = parser.get<std::string>("--arithmetic-request");
+    rtlgen::AutoPipelineOptions auto_pipeline;
+    auto_pipeline.enabled = parser.get<bool>("--auto-pipeline");
+    auto_pipeline.target_backend = parser.get<std::string>("--target-backend");
+    const auto target_period = parser.get<std::string>("--target-period-ps");
+    const auto search_timeout = parser.get<std::string>("--autopipe-timeout");
+    if (auto_pipeline.enabled) {
+        if (auto_pipeline.target_backend != "asap7" && auto_pipeline.target_backend != "nangate45")
+            throw VulException("--auto-pipeline requires --target-backend asap7 or nangate45");
+        auto_pipeline.target_period_ps = positiveNumber(target_period, "--target-period-ps");
+        if (auto_pipeline.target_period_ps >= 1e9) throw VulException("--target-period-ps must be less than 1e9");
+        auto_pipeline.timeout_seconds = positiveNumber(search_timeout, "--autopipe-timeout");
+        if (auto_pipeline.timeout_seconds < 1 || auto_pipeline.timeout_seconds > 3600)
+            throw VulException("--autopipe-timeout must be in 1..3600 seconds");
+        if (use_circt || !arithmetic_request_file.empty())
+            throw VulException("--auto-pipeline uses native RTLzz and cannot combine with --circt or --arithmetic-request");
+    } else if (parser.is_used("--target-backend") || parser.is_used("--target-period-ps") || parser.is_used("--autopipe-timeout")) {
+        throw VulException("target backend, target period and search timeout require --auto-pipeline");
+    }
     string top_file = parser.get<std::string>("--top");
     string main_file = parser.get<std::string>("--main");
     string out_dir = parser.get<std::string>("--out");
@@ -474,9 +511,6 @@ static int runVulRTLGen(int argc, char * argv[]) {
     proj_dir = project.project_dir_path;
 
     std::filesystem::path out_path(out_dir);
-    if (!prepareOutputDirectory(out_path, out_dir, force)) {
-        return 1;
-    }
 
     // Determine the unique generated modules before launching workers so the
     // dashboard can display a stable total task count.
@@ -498,6 +532,11 @@ static int runVulRTLGen(int argc, char * argv[]) {
         }
         modules.push_back(std::move(mod_instance));
     }
+
+    if (auto_pipeline.enabled && std::none_of(modules.begin(), modules.end(), [](const auto &module) {
+            return !module->pipelines.empty();
+        })) throw VulException("--auto-pipeline requires a declared PIPELINE block; see example/autopipe/mac32/TopModule.vul");
+    if (!prepareOutputDirectory(out_path, out_dir, force)) return 1;
 
     std::map<string, vector<ArrayRTLVariant>> array_variants;
     std::map<string, string> shared_implementations;
@@ -580,7 +619,7 @@ static int runVulRTLGen(int argc, char * argv[]) {
                                   1024, release, use_circt,
                                   processes > 1
                                       ? std::function<void(const std::string &)>([&reporter](const std::string &step) { reporter.progress(step); })
-                                      : std::function<void(const std::string &)>{}, arithmetic_request_file);
+                                      : std::function<void(const std::string &)>{}, arithmetic_request_file, auto_pipeline);
         if (!rtlzz_result.ok) {
             std::filesystem::path error_dbg_path;
             if (!release) {
@@ -671,7 +710,7 @@ static int runVulRTLGen(int argc, char * argv[]) {
                   "set -euo pipefail\n"
                   "SCRIPT_DIR=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" && pwd)\"\n"
                   "cd \"$SCRIPT_DIR\"\n"
-                  "mapfile -d '' RTL_FILES < <(find . -type f -name '*.sv' -not -path './obj_dir/*' -print0 | sort -z)\n"
+                  "mapfile -d '' RTL_FILES < <(find . -type d -name '*.autopipe' -prune -o -type f -name '*.sv' -not -path './obj_dir/*' -print0 | sort -z)\n"
                   "shopt -s nullglob\n"
                   "DRIVER_SOURCES=(./*.cpp)\n"
                   "shopt -u nullglob\n"

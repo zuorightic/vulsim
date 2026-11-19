@@ -112,6 +112,7 @@ file (GLOB_RECURSE LIB_CXX_SRC CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/sr
 list(REMOVE_ITEM LIB_CXX_SRC
     "${CMAKE_CURRENT_SOURCE_DIR}/src/rtlzz_bridge.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/rtlgen_rtlzz.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/autopipe_bridge.cpp"
 )
 
 add_library(vulcore OBJECT ${LIB_CXX_SRC})
@@ -130,7 +131,9 @@ foreach(tool ${TOOL_SOURCES})
         target_sources(${tool_name} PRIVATE
             src/rtlzz_bridge.cpp
             src/rtlgen_rtlzz.cpp
+            src/autopipe_bridge.cpp
         )
+        target_compile_definitions(${tool_name} PRIVATE VUL_AUTOPIPE_SOURCE_DIR="${CMAKE_CURRENT_SOURCE_DIR}")
         target_include_directories(${tool_name} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/rtlzz/src)
         target_link_libraries(${tool_name} predicate-expand-objects)
     endif()

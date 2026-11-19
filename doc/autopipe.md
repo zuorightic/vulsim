@@ -31,7 +31,21 @@ python3 -B -m tools.autopipe build --jobs 4
 
 ## 选择 D 并生成 RTL
 
-在仓库根目录执行：
+完整 VUL 项目可以直接通过 `vulrtlgen` 启用模型选择：
+
+```bash
+./build/vulrtlgen -t example/autopipe/mac32/TopModule.vul \
+  --auto-pipeline --target-backend asap7 --target-period-ps 1200 \
+  -o build/mac32-vul-autopipe
+```
+
+计算边界和级数由源码的 `PIPELINE(..., latency=...)` 定义。工具逐块提取计算函数，搜索分块乘法、分段加法及流水安排，随后将选中核心装回原 VUL 模块，复用两侧寄存器、valid 和复位逻辑。普通逻辑和模块层次继续由原生成流程处理。目标模型可选 `asap7`、`nangate45`，请求周期单位为 ps；该参数选择代价模型，不启动物理后端。自动模式使用原生 RTLzz，不能同时传入 `--circt` 或 `--arithmetic-request`。没有 `PIPELINE` 的项目会给出明确错误。
+
+每个块的默认搜索语法为乘法块宽 `0,16`、加减法段宽 `0,64`，其中 0 表示保留原结构。`--autopipe-timeout` 限制单块搜索时间（默认 300 秒，可设 1～3600 秒）；首次原生工具编译不计入搜索预算。输出中 `*.pipeline_*.cpp.autopipe/` 保存选择记录、核心 RTL、日志和预测；预测范围为该计算块及边界寄存器，其他 VUL 逻辑不计入其中。`target_unmet` 会保留预测违约较小的候选及剩余违约，不表示物理时序达标。
+
+未传入 `--auto-pipeline` 时，继续使用原有流水化流程。支持无 valid 的块；工具在选中核心中接入持续有效的内部信号，不改变 VUL 接口。随附的 `example/autopipe/mac32/Main.utb` 可用于比较普通流水化和模型选择后的功能与周期。
+
+单个 C++ 计算函数仍可使用独立入口。在仓库根目录执行：
 
 ```bash
 python3 -B -m tools.autopipe generate \

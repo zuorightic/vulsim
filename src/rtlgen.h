@@ -67,6 +67,13 @@ struct LogicRTLResult {
     std::map<string, vector<std::uint64_t>> output_reset_values;
 };
 
+struct AutoPipelineOptions {
+    bool enabled = false;
+    string target_backend;
+    double target_period_ps = 0;
+    double timeout_seconds = 300;
+};
+
 RTLGenResult genModuleRTL(
     const VulStaticModuleInstance &module,
     const VulStaticConfigLib &configlib,
@@ -83,7 +90,8 @@ LogicRTLResult appendLogicRTL(
     bool release = false,
     bool use_circt = false,
     std::function<void(const std::string &)> progress_callback = {},
-    const std::string &arithmetic_request_file = {}
+    const std::string &arithmetic_request_file = {},
+    const AutoPipelineOptions &auto_pipeline = {}
 );
 
 vector<string> genVerilatorTestMainCpp(

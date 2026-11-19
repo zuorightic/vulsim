@@ -16,6 +16,7 @@
 
 #include "debugmap.hpp"
 #include "rtlzz_bridge.hpp"
+#include "autopipe_bridge.hpp"
 
 #include <algorithm>
 #include <fstream>
@@ -61,7 +62,8 @@ LogicRTLResult appendLogicRTL(
     bool release,
     bool use_circt,
     std::function<void(const std::string &)> progress_callback,
-    const std::string &arithmetic_request_file
+    const std::string &arithmetic_request_file,
+    const AutoPipelineOptions &auto_pipeline
 ) {
     vector<string> pipeline_debug;
     std::map<string, vector<std::uint64_t>> output_reset_values;
@@ -84,7 +86,22 @@ LogicRTLResult appendLogicRTL(
         const string step = "pipeline " + unit.name + ": latency=" + std::to_string(unit.latency) + (use_circt ? ", CIRCT" : ", native RTLZZ");
         if (progress_callback) progress_callback(step);
         else std::cerr << "[vulrtlgen] module " << module.simClassName() << ": " << step << "\n";
-        auto compiled = generateLogicRTLWithRTLzz(path, unit.top_function, lib_include_dir, unit.bindings, unroll_limit, release, use_circt, progress_callback, unit.latency - 1, true, reset_inputs.output_reset_values, false, unit.input_valid_name, unit.output_valid_name, arithmetic_request_file);
+        if (auto_pipeline.enabled) {
+            const auto selecting = "pipeline " + unit.name + ": selecting " + auto_pipeline.target_backend + " arithmetic/pipeline candidate";
+            if (progress_callback) progress_callback(selecting);
+            else std::cerr << "[vulrtlgen] " << selecting << "\n";
+        }
+        auto compiled = auto_pipeline.enabled
+            ? generateAutoPipeline(unit, path, lib_include_dir, reset_inputs.output_reset_values, auto_pipeline, release)
+            : generateLogicRTLWithRTLzz(path, unit.top_function, lib_include_dir, unit.bindings, unroll_limit, release, use_circt, progress_callback, unit.latency - 1, true, reset_inputs.output_reset_values, false, unit.input_valid_name, unit.output_valid_name, arithmetic_request_file);
+        if (auto_pipeline.enabled && compiled.ok && !compiled.debug_codelines.empty()) {
+            if (progress_callback) {
+                auto summary = compiled.debug_codelines.front();
+                if (!summary.empty() && summary.back() == '\n') summary.pop_back();
+                progress_callback(summary);
+            }
+            else std::cerr << "[vulrtlgen] " << compiled.debug_codelines.front();
+        }
         if(!compiled.arithmetic_report.empty()){std::ofstream report(path+".arithmetic.json");if(!report)throw VulException("Cannot write arithmetic report");report<<compiled.arithmetic_report;}
         if (!compiled.ok) {
             LogicRTLResult error;
