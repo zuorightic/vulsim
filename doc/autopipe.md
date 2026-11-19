@@ -9,7 +9,7 @@ ASAP7 使用论文实验中的冻结 v10 完整诊断模型；Nangate45 使用�
 从包含本目录的版本拉取仓库，并初始化 RTLzz 子模块：
 
 ```bash
-git clone --single-branch --branch release/autopipe-v10-20261119 \
+git clone --depth 1 --branch master \
   --recurse-submodules https://github.com/zuorightic/vulsim.git
 cd vulsim
 git submodule update --init --recursive
@@ -25,7 +25,7 @@ python3 -B -m tools.autopipe build --jobs 4
 
 构建入口从当前 RTLzz 子模块源码生成 `build/autopipe/rtlzz-workload`，并保存编译输入与程序哈希。生成前会核对本地构建收据。修改编译器源码或头文件后，重新运行 `build` 命令即可。使用其他构建位置时，将相同的 `--build-dir` 同时传给 `build` 和 `generate`。
 
-发布分支基于上游历史整理，不包含研究过程中的大文件提交；`--single-branch` 避免同时下载原研究分支的历史产物。分支发布前应先提交并推送当前整理结果。
+模型与生成入口位于 `master` 主分支。主分支保留既有提交历史，当前文件树已经移除历史实验产物；使用 `--depth 1` 只拉取最新版本，避免下载旧提交中的大文件。需要完整历史时，可在拉取后执行 `git fetch --unshallow`。
 
 此路径不需要 CIRCT、Yosys、OpenROAD、ORFS 或 PDK。它查询已经冻结的离线成本函数；取得新的物理面积和时序报告需要另行运行后端。
 
