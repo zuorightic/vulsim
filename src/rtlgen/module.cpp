@@ -186,6 +186,7 @@ RTLGenResult genModuleRTL(
         hls.push_back("#include <cstdint>\n");
         hls.push_back("#include <type_traits>\n");
         hls.push_back("#include <fixint.hpp>\n");
+        hls.push_back("#include <arithmetic.hpp>\n");
         hls.push_back("\n");
         hls.push_back("using std::array;\n");
         hls.push_back("\n");
@@ -247,7 +248,7 @@ RTLGenResult genModuleRTL(
         unit.latency = pipe.latency;
         unit.top_function = logic_module_name + "_pipeline_" + pipe.name;
         auto &source = unit.source;
-        source = {"#include <array>\n", "#include <cstdint>\n", "#include <type_traits>\n", "#include <fixint.hpp>\n", "using std::array;\n",
+        source = {"#include <array>\n", "#include <cstdint>\n", "#include <type_traits>\n", "#include <fixint.hpp>\n", "#include <arithmetic.hpp>\n", "using std::array;\n",
                   "using int8 = int8_t; using uint8 = uint8_t; using int16 = int16_t; using uint16 = uint16_t; using int32 = int32_t; using uint32 = uint32_t; using int64 = int64_t; using uint64 = uint64_t;\n"};
         vulDebugAppendLines(source, unit.debug, ctx.hls_header, ctx.hls_header_debug);
         unit.reset_source = source;

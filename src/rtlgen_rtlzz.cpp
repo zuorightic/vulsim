@@ -60,7 +60,8 @@ LogicRTLResult appendLogicRTL(
     int unroll_limit,
     bool release,
     bool use_circt,
-    std::function<void(const std::string &)> progress_callback
+    std::function<void(const std::string &)> progress_callback,
+    const std::string &arithmetic_request_file
 ) {
     vector<string> pipeline_debug;
     std::map<string, vector<std::uint64_t>> output_reset_values;
@@ -83,7 +84,8 @@ LogicRTLResult appendLogicRTL(
         const string step = "pipeline " + unit.name + ": latency=" + std::to_string(unit.latency) + (use_circt ? ", CIRCT" : ", native RTLZZ");
         if (progress_callback) progress_callback(step);
         else std::cerr << "[vulrtlgen] module " << module.simClassName() << ": " << step << "\n";
-        auto compiled = generateLogicRTLWithRTLzz(path, unit.top_function, lib_include_dir, unit.bindings, unroll_limit, release, use_circt, progress_callback, unit.latency - 1, true, reset_inputs.output_reset_values, false, unit.input_valid_name, unit.output_valid_name);
+        auto compiled = generateLogicRTLWithRTLzz(path, unit.top_function, lib_include_dir, unit.bindings, unroll_limit, release, use_circt, progress_callback, unit.latency - 1, true, reset_inputs.output_reset_values, false, unit.input_valid_name, unit.output_valid_name, arithmetic_request_file);
+        if(!compiled.arithmetic_report.empty()){std::ofstream report(path+".arithmetic.json");if(!report)throw VulException("Cannot write arithmetic report");report<<compiled.arithmetic_report;}
         if (!compiled.ok) {
             LogicRTLResult error;
             error.ok = false;
@@ -116,6 +118,10 @@ LogicRTLResult appendLogicRTL(
         lines.push_back("end\n");
         result.rtl_skeleten_codes.insert(end, lines.begin(), lines.end());
         result.rtl_skeleten_debug.insert(result.rtl_skeleten_debug.begin() + offset, lines.size(), {});
+        // Definitions belong outside the containing VUL module/generate block.
+        vector<string> definitions;appendTextAsLines(definitions,compiled.rtl_module_definitions);
+        result.rtl_skeleten_codes.insert(result.rtl_skeleten_codes.end(),definitions.begin(),definitions.end());
+        result.rtl_skeleten_debug.insert(result.rtl_skeleten_debug.end(),definitions.size(),{});
         for (auto &line : compiled.debug_codelines) {
             const string prefix = "  rtl_line: ";
             if (line.rfind(prefix, 0) != 0) continue;
@@ -144,8 +150,10 @@ LogicRTLResult appendLogicRTL(
         unroll_limit,
         release,
         use_circt,
-        std::move(progress_callback)
+        std::move(progress_callback),
+        0,false,{},false,{},{},result.pipelines.empty()?arithmetic_request_file:std::string{}
     );
+    if(!logic_rtl.arithmetic_report.empty()){std::ofstream report(logic_hls_filepath+".arithmetic.json");if(!report)throw VulException("Cannot write arithmetic report");report<<logic_rtl.arithmetic_report;}
     if (!logic_rtl.ok) {
         LogicRTLResult out;
         out.ok = false;
@@ -171,6 +179,9 @@ LogicRTLResult appendLogicRTL(
     result.rtl_skeleten_codes.insert(endmodule, body_lines.begin(), body_lines.end());
     result.rtl_skeleten_debug.insert(result.rtl_skeleten_debug.begin() + offset,
                                      body_lines.size(), {});
+    vector<string> definitions;appendTextAsLines(definitions,logic_rtl.rtl_module_definitions);
+    result.rtl_skeleten_codes.insert(result.rtl_skeleten_codes.end(),definitions.begin(),definitions.end());
+    result.rtl_skeleten_debug.insert(result.rtl_skeleten_debug.end(),definitions.size(),{});
     vulDebugNormalize(result.rtl_skeleten_codes, result.rtl_skeleten_debug);
     result.rtl_skeleten_debug_lines = vulDebugBuildGeneratedMap(result.rtl_skeleten_debug);
     const string line_prefix = "  rtl_line: ";

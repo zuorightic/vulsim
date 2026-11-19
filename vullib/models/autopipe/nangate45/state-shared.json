@@ -1,0 +1,411 @@
+{
+  "schema": "nangate45-N56-state-shared-functions-v1",
+  "profile_sha256": "e3adefb4440f6dbcf84c84dad87c0da4bcac5c2e5ade81792c9a8aab18caf728",
+  "S": {
+    "area_models": {
+      "input_service": {
+        "kind": "nonnegative_linear",
+        "features": [
+          "data_bits",
+          "data_signals",
+          "valid_bits",
+          "enable_domains",
+          "reset_one_bits"
+        ],
+        "coefficients": [
+          9.676743181817802,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "training_sources": 6,
+        "training_rows": 12
+      },
+      "native_state": {
+        "kind": "nonnegative_linear",
+        "features": [
+          "data_bits",
+          "data_signals",
+          "valid_bits",
+          "enable_domains",
+          "reset_one_bits"
+        ],
+        "coefficients": [
+          7.47373494883698,
+          0.0,
+          6.683478385141274,
+          0.0,
+          0.0
+        ],
+        "training_sources": 6,
+        "training_rows": 12
+      },
+      "external_state": {
+        "kind": "nonnegative_linear",
+        "features": [
+          "data_bits",
+          "data_signals",
+          "valid_bits",
+          "enable_domains",
+          "reset_one_bits"
+        ],
+        "coefficients": [
+          5.58600000000001,
+          5.585999999999471,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "training_sources": 6,
+        "training_rows": 12
+      }
+    },
+    "valid_bit_area_um2": 4.522,
+    "functions": {
+      "native_enable": {
+        "version": "centered-numerical-response-v1",
+        "features": [
+          "log2_logical_sinks",
+          "native_launch",
+          "log2_global_FF",
+          "log2_enabled_words",
+          "capture_bank_reset_fraction",
+          "source_bank_reset_fraction",
+          "log2_target",
+          "clock_pressure",
+          "native_logical_load",
+          "native_log_target"
+        ],
+        "centers": [
+          6.630992134118242,
+          0.2541766943193973,
+          8.238785375762443,
+          2.3751259744477893,
+          0.0,
+          0.0,
+          2.0849625007211636,
+          0.7500000000000046,
+          1.6591960606622698,
+          0.5299488762132023
+        ],
+        "scales": [
+          0.7922945799229522,
+          0.43539740741563304,
+          0.9658367101605942,
+          0.6809328025739372,
+          1.0,
+          1.0,
+          0.5000000000000064,
+          0.2500000000000033,
+          2.8938281430655084,
+          0.9421368777327719
+        ],
+        "coefficients": [
+          0.021054141666328692,
+          -0.00061908697251679,
+          0.014113435874368732,
+          0.01273989894249481,
+          0.0,
+          0.0,
+          -0.0010870685718179648,
+          0.0010870685718179522,
+          0.003487300713676473,
+          -0.001363911269080401
+        ],
+        "intercept": 6.105957218872702,
+        "link": "positive_log_linear"
+      },
+      "native_valid": {
+        "version": "centered-numerical-response-v1",
+        "features": [
+          "log2_logical_sinks",
+          "native_launch",
+          "log2_global_FF",
+          "log2_enabled_words",
+          "capture_bank_reset_fraction",
+          "source_bank_reset_fraction",
+          "log2_target",
+          "clock_pressure",
+          "native_logical_load",
+          "native_log_target"
+        ],
+        "centers": [
+          6.581273329567127,
+          0.30555555555555547,
+          8.238785375762333,
+          2.332892281185703,
+          0.0,
+          0.0,
+          2.0849625007211556,
+          0.7499999999999998,
+          1.9393940644265744,
+          0.637071875220353
+        ],
+        "scales": [
+          0.8353789179335572,
+          0.4606423319938054,
+          0.9658367101605851,
+          0.7266262840398308,
+          1.0,
+          1.0,
+          0.4999999999999999,
+          0.24999999999999994,
+          2.9896171794541324,
+          0.9993994620724261
+        ],
+        "coefficients": [
+          0.030708545638659754,
+          -0.00785137214208469,
+          0.019227056358403816,
+          0.02500058641098657,
+          0.0,
+          0.0,
+          -0.003007318372671934,
+          0.003007318372671935,
+          -0.005354892342705283,
+          -0.007388897461389055
+        ],
+        "intercept": 5.983573139544066,
+        "link": "positive_log_linear"
+      },
+      "input_valid": {
+        "version": "centered-numerical-response-v1",
+        "features": [
+          "log2_logical_sinks",
+          "native_launch",
+          "log2_global_FF",
+          "log2_enabled_words",
+          "capture_bank_reset_fraction",
+          "source_bank_reset_fraction",
+          "log2_target",
+          "clock_pressure",
+          "native_logical_load",
+          "native_log_target"
+        ],
+        "centers": [
+          6.404003010491739,
+          0.0,
+          8.238785375762337,
+          1.7233083338141038,
+          0.0,
+          0.0,
+          2.084962500721156,
+          0.75,
+          0.0,
+          0.0
+        ],
+        "scales": [
+          0.9530968762497379,
+          1.0,
+          0.965836710160585,
+          0.19565055345785157,
+          1.0,
+          1.0,
+          0.5,
+          0.25,
+          1.0,
+          1.0
+        ],
+        "coefficients": [
+          -0.029199137356243986,
+          0.0,
+          -0.06181090691655489,
+          0.01605856641080706,
+          0.0,
+          0.0,
+          0.0016448164256931273,
+          -0.0016448164256931271,
+          0.0,
+          0.0
+        ],
+        "intercept": 4.897070794720642,
+        "link": "positive_log_linear"
+      },
+      "external_valid": {
+        "version": "centered-numerical-response-v1",
+        "features": [
+          "log2_logical_sinks",
+          "native_launch",
+          "log2_global_FF",
+          "log2_enabled_words",
+          "capture_bank_reset_fraction",
+          "source_bank_reset_fraction",
+          "log2_target",
+          "clock_pressure",
+          "native_logical_load",
+          "native_log_target"
+        ],
+        "centers": [
+          1.0,
+          0.0,
+          8.238785375762337,
+          0.0,
+          0.0,
+          0.0,
+          2.084962500721156,
+          0.75,
+          0.0,
+          0.0
+        ],
+        "scales": [
+          1.0,
+          1.0,
+          0.965836710160585,
+          1.0,
+          1.0,
+          1.0,
+          0.5,
+          0.25,
+          1.0,
+          1.0
+        ],
+        "coefficients": [
+          0.0,
+          0.0,
+          0.0005069140288174931,
+          0.0,
+          0.0,
+          0.0,
+          -0.00013147813386344472,
+          0.00013147813386344475,
+          0.0,
+          0.0
+        ],
+        "intercept": 5.143030535772433,
+        "link": "positive_log_linear"
+      }
+    },
+    "features": [
+      "log2_logical_sinks",
+      "native_launch",
+      "log2_global_FF",
+      "log2_enabled_words",
+      "capture_bank_reset_fraction",
+      "source_bank_reset_fraction",
+      "log2_target",
+      "clock_pressure",
+      "native_logical_load",
+      "native_log_target"
+    ],
+    "data_boundary_ps": {
+      "input_service->native_state": 266.68525,
+      "native_state->native_state": 237.50150000000016,
+      "native_state->external_state": 177.02925000000022
+    },
+    "joint_reserve_ps": 147.18374999999992,
+    "control_training_audit": {
+      "native_enable": {
+        "rows": 2554,
+        "source_folds": 6,
+        "in_sample_median_APE": 0.09398164024530553,
+        "independent_qualification": false
+      },
+      "native_valid": {
+        "rows": 22,
+        "source_folds": 6,
+        "in_sample_median_APE": 0.07838800026805348,
+        "independent_qualification": false
+      },
+      "input_valid": {
+        "rows": 12,
+        "source_folds": 6,
+        "in_sample_median_APE": 0.07741748227574252,
+        "independent_qualification": false
+      },
+      "external_valid": {
+        "rows": 12,
+        "source_folds": 6,
+        "in_sample_median_APE": 0.006594420783758381,
+        "independent_qualification": false
+      }
+    }
+  },
+  "shared": {
+    "shared_clock": {
+      "kind": "nonnegative_linear",
+      "features": [
+        "one",
+        "total_FF_bits",
+        "sqrt_FF_bits",
+        "predicted_functional_area_um2",
+        "clock_pressure"
+      ],
+      "coefficients": [
+        0.0,
+        0.29793579825436445,
+        0.0,
+        0.0012829956553606352,
+        0.0
+      ],
+      "training_sources": 6,
+      "training_rows": 12
+    },
+    "shared_physical": {
+      "kind": "nonnegative_linear",
+      "features": [
+        "one",
+        "predicted_functional_area_um2"
+      ],
+      "coefficients": [
+        14.715214056605308,
+        0.006342046762485911
+      ],
+      "training_sources": 6,
+      "training_rows": 12
+    },
+    "root_repair": {
+      "kind": "nonnegative_linear",
+      "features": [
+        "one",
+        "input_data_bits",
+        "total_FF_bits",
+        "clock_pressure"
+      ],
+      "coefficients": [
+        0.0,
+        1.5789771831913524,
+        0.29824533679865256,
+        0.0
+      ],
+      "training_sources": 6,
+      "training_rows": 12
+    }
+  },
+  "inter_owner_wire_ps": 0.2764999999999418,
+  "static_bridge": {
+    "alpha": {
+      "operator_delay_ps": 262.82853124999997,
+      "comb_area_um2": 167.30568749999975
+    },
+    "train_only": true,
+    "source_equal": true
+  },
+  "numerical_floors": {
+    "gate_delay_ps": 8.418000000000006,
+    "gate_area_um2": 0.532
+  },
+  "derivation": "exclusive measured state/shared owners and same-path boundaries; arithmetic parameters unchanged",
+  "application_PPA_used": false,
+  "support": {
+    "total_FF_bits": [
+      131,
+      969
+    ],
+    "L": [
+      2,
+      3,
+      4
+    ],
+    "target_ps": [
+      1500,
+      3000
+    ],
+    "reset_one_bits": [
+      0,
+      0
+    ]
+  },
+  "precision_qualified": false,
+  "extrapolation_requires_explicit_reporting": true
+}

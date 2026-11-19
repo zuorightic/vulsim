@@ -156,6 +156,7 @@ vector<string> genVerilatorTestMainCpp(
 
     out.push_back("#include <array>\n");
     out.push_back("#include <cassert>\n");
+    out.push_back("#include <cstddef>\n");
     out.push_back("#include <cstdint>\n");
     out.push_back("#include <cstdlib>\n");
     out.push_back("#include <type_traits>\n");
@@ -208,12 +209,11 @@ vector<string> genVerilatorTestMainCpp(
     out.push_back("  return word == 0 ? static_cast<uint64_t>(value) : 0;\n");
     out.push_back("}\n");
     out.push_back("\n");
-    out.push_back("template <typename T>\n");
-    out.push_back("static inline typename std::enable_if<!(std::is_integral<T>::value || std::is_enum<T>::value), uint64_t>::type\n");
-    out.push_back("__vul_port_word(const T &value, uint32_t word) {\n");
+    out.push_back("template <std::size_t Words>\n");
+    out.push_back("static inline uint64_t __vul_port_word(const VlWide<Words> &value, uint32_t word) {\n");
     out.push_back("  uint32_t index = word * 2;\n");
-    out.push_back("  uint64_t result = index < value.size() ? value[index] : 0;\n");
-    out.push_back("  if (index + 1 < value.size()) result |= static_cast<uint64_t>(value[index + 1]) << 32;\n");
+    out.push_back("  uint64_t result = index < Words ? value[index] : 0;\n");
+    out.push_back("  if (index + 1 < Words) result |= static_cast<uint64_t>(value[index + 1]) << 32;\n");
     out.push_back("  return result;\n");
     out.push_back("}\n");
     out.push_back("\n");
@@ -223,12 +223,11 @@ vector<string> genVerilatorTestMainCpp(
     out.push_back("  if (word == 0) value = static_cast<T>(data);\n");
     out.push_back("}\n");
     out.push_back("\n");
-    out.push_back("template <typename T>\n");
-    out.push_back("static inline typename std::enable_if<!(std::is_integral<T>::value || std::is_enum<T>::value), void>::type\n");
-    out.push_back("__vul_port_set_word(T &value, uint32_t word, uint64_t data) {\n");
+    out.push_back("template <std::size_t Words>\n");
+    out.push_back("static inline void __vul_port_set_word(VlWide<Words> &value, uint32_t word, uint64_t data) {\n");
     out.push_back("  uint32_t index = word * 2;\n");
-    out.push_back("  if (index < value.size()) value[index] = static_cast<uint32_t>(data);\n");
-    out.push_back("  if (index + 1 < value.size()) value[index + 1] = static_cast<uint32_t>(data >> 32);\n");
+    out.push_back("  if (index < Words) value[index] = static_cast<uint32_t>(data);\n");
+    out.push_back("  if (index + 1 < Words) value[index + 1] = static_cast<uint32_t>(data >> 32);\n");
     out.push_back("}\n");
     out.push_back("\n");
     out.push_back("template <typename T>\n");

@@ -1,0 +1,128 @@
+{
+  "version": "fixed-op-width-v1",
+  "replaces_in_revised_experiment": "simple-cost-v1.1",
+  "source": "mission/lxy-plan-fix.md 第一章§7.1; prescribed abstract weights, not fitted",
+  "known_before_freeze": "historical_ASAP7_probes_exist; not_a_preregistration_before_all_physical_observations",
+  "physical_measurements_read": false,
+  "platform_scaling": false,
+  "units": {
+    "delay_weight": "abstract",
+    "comb_weight": "abstract",
+    "state_weight": "one_per_saved_bit"
+  },
+  "width_buckets": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128
+  ],
+  "operations": {
+    "Mul": {
+      "delay_weight": {
+        "1": 1,
+        "2": 1,
+        "4": 2,
+        "8": 4,
+        "16": 8,
+        "32": 16,
+        "64": 32,
+        "128": 64
+      },
+      "comb_weight": {
+        "1": 1,
+        "2": 1,
+        "4": 2,
+        "8": 4,
+        "16": 8,
+        "32": 16,
+        "64": 32,
+        "128": 64
+      }
+    },
+    "Div": {
+      "delay_weight": {
+        "1": 2,
+        "2": 4,
+        "4": 8,
+        "8": 16,
+        "16": 32,
+        "32": 64,
+        "64": 128,
+        "128": 256
+      },
+      "comb_weight": {
+        "1": 2,
+        "2": 4,
+        "4": 8,
+        "8": 16,
+        "16": 32,
+        "32": 64,
+        "64": 128,
+        "128": 256
+      }
+    },
+    "Mod": {
+      "delay_weight": {
+        "1": 2,
+        "2": 4,
+        "4": 8,
+        "8": 16,
+        "16": 32,
+        "32": 64,
+        "64": 128,
+        "128": 256
+      },
+      "comb_weight": {
+        "1": 2,
+        "2": 4,
+        "4": 8,
+        "8": 16,
+        "16": 32,
+        "32": 64,
+        "64": 128,
+        "128": 256
+      }
+    }
+  },
+  "categories": {
+    "unit": {
+      "delay_weight": 1,
+      "comb_weight": 1
+    },
+    "dynamic": {
+      "delay_weight": 2,
+      "comb_weight": 2
+    },
+    "wire": {
+      "delay_weight": 0,
+      "comb_weight": 0
+    }
+  },
+  "width_rule": "verified_unsigned_ZExt_source_or_preserved_provenance; otherwise_conservative_type_width; max_of_two_data_inputs; round_up_bucket; result_width_not_billing_width",
+  "maximum_arithmetic_input_width": 128,
+  "wide_intermediate_add_logic_wiring": "supported_by_category; 256_and_257_are_not_mul_input_widths",
+  "selection_normalization": "ordered_Case_to_priority_Ite_chain; Lookup_to_reachable_binary_Ite_network; explicit_out_of_range_default_or_reject",
+  "normalization_version": "fixed-normalized-scalar-dag-v1",
+  "arithmetic_source_graph_is_compiler_BEIR": false,
+  "constant_subgraphs": "zero_after_operator_and_shape_validation; no_observed_value_specialization",
+  "delay_aggregation": "longest_path_per_stage_or_atomic_region; parallel_paths_use_max",
+  "comb_aggregation": "sum_live_unique_nodes; shared_Div_Mod_only_with_verified_implementation_receipt",
+  "unknown_operation": "cost_uncovered; lower_or_reject",
+  "register_bit_cost": 1,
+  "relative_delay_limit": {
+    "numerator": 105,
+    "denominator": 100
+  },
+  "candidate_score": [
+    "maximum_stage_abstract_delay",
+    "comb_weight_plus_register_bits",
+    "register_bits",
+    "register_signals",
+    "candidate_id"
+  ],
+  "compiler_adapter": "step4_step5; not_implemented_by_python_contract_alone"
+}

@@ -24,8 +24,10 @@
 struct RTLzzLogicRTLResult {
     bool ok = false;
     std::string rtl_text;
+    std::string rtl_module_definitions;
     std::vector<std::string> debug_codelines;
     std::string error;
+    std::string arithmetic_report;
     std::vector<std::string> error_debug_codelines;
     std::string error_signal_debug_text;
     std::vector<std::string> error_signal_names;
@@ -46,5 +48,6 @@ RTLzzLogicRTLResult generateLogicRTLWithRTLzz(
     const std::map<std::string, std::vector<std::uint64_t>> &input_reset_values = {},
     bool reset_probe = false,
     const std::string &input_valid_name = {},
-    const std::string &output_valid_name = {}
+    const std::string &output_valid_name = {},
+    const std::string &arithmetic_request_file = {}
 );

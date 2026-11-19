@@ -1,0 +1,30 @@
+#include <run.hpp>
+#include <cstdlib>
+#include <cstdio>
+#include <vector>
+TOP("Top.vul"); PROJECT(".");
+REQUEST(push, ARG(Int<32>) x, ARG(Int<32>) w, ARG(bool) v);
+QUERY(result, Int<37>); QUERY(valid, bool);
+SIMULATION() {
+    const uint32_t av[]={0x3f800000,0x7f800000,0x00800000,1,3,0x7f7fffff,0x7f812345,0x80000000};
+    const uint32_t bv[]={0x40000000,0,0x3f7fffff,0x3f000000,0x3f000000,0x40000000,0x3f800000,0x40000000};
+    // Independent fixed expected bit patterns and per-operation exception flags.
+    const uint64_t expected[]={0x0040000000ull,0x107fc00000ull,0x0300800000ull,0x0300000000ull,0x0300000002ull,0x057f800000ull,0x107fc00000ull,0x0080000000ull};
+    unsigned verified=0,bubbles=0;
+    for(unsigned pass=0;pass<3;++pass) {
+        sim_reset();
+        if(valid() || result().to<uint64_t>()!=0x107fc00000ull) {printf("FP REGION RESET FAIL\n");std::exit(2);}
+        std::vector<uint64_t> history;std::vector<bool> valids;
+        for(unsigned i=0;i<96;++i) {
+            unsigned tag=(i+pass)%8;bool v=i%7!=1 && i%7!=2;
+            push(Int<32>(av[tag]),Int<32>(bv[tag]),v);history.push_back(expected[tag]);valids.push_back(v);
+            sim_nextcycle();int source=int(i)-int(LATENCY);
+            if(valid()!=(source>=0 && valids[source])) {printf("FP REGION VALID FAIL pass=%u cycle=%u\n",pass,i);std::exit(3);}
+            if(valid()) {
+                if(result().to<uint64_t>()!=history[source]) {printf("FP REGION DATA FAIL pass=%u cycle=%u got=%llx expected=%llx\n",pass,i,(unsigned long long)result().to<uint64_t>(),(unsigned long long)history[source]);std::exit(4);}
+                ++verified;
+            } else ++bubbles;
+        }
+    }
+    printf("FP REGION VUL PASS latency=%d verified=%u bubbles=%u resets=3\n",int(LATENCY),verified,bubbles);
+}
