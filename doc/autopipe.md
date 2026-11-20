@@ -1,8 +1,8 @@
-# 使用冻结 v10 模型生成 RTL
+# 使用当前模型生成 RTL
 
 模型参数位于 `vullib/models/autopipe/`，推理、候选选择、编译入口和软件测试位于 `tools/autopipe/`。示例输入位于 `example/autopipe/`。这些文件足以在新检出中重新编译 RTLzz 并生成 RTL，不需要历史实验目录、服务器脚本、后端数据库、研究账本或本机预编译程序。
 
-ASAP7 使用论文实验中的冻结 v10 完整诊断模型；Nangate45 使用其冻结 N5/N6 参数包。参数、局部本体预算、等效采样周期反解以及完整候选计价和排序保持原实现。R1～R5 修复版未包含在这个发布入口中。迁移过程中只调整了资源路径和外围调用接口，没有重新拟合响应。
+当前模型是项目唯一的发布模型基线，包含 ASAP7 与 Nangate45 工艺参数。参数、局部本体预算、等效采样周期反解以及完整候选计价和排序保持冻结语义；后续扩展与优化从这些资源开始。模型中的历史 schema、来源身份和哈希用于兼容与校验，不作为多个可选模型版本。拟合方法、适用范围和维护边界见[模型说明](mission/models.md)。
 
 ## 依赖和编译
 
@@ -36,12 +36,15 @@ python3 -B -m tools.autopipe build --jobs 4
 ```bash
 ./build/vulrtlgen -t example/autopipe/mac32/TopModule.vul \
   --auto-pipeline --target-backend asap7 --target-period-ps 1200 \
+  --candidate-profile mac32 \
   -o build/mac32-vul-autopipe
 ```
 
-计算边界和级数由源码的 `PIPELINE(..., latency=...)` 定义。工具逐块提取计算函数，搜索分块乘法、分段加法及流水安排，随后将选中核心装回原 VUL 模块，复用两侧寄存器、valid 和复位逻辑。普通逻辑和模块层次继续由原生成流程处理。目标模型可选 `asap7`、`nangate45`，请求周期单位为 ps；该参数选择代价模型，不启动物理后端。自动模式使用原生 RTLzz，不能同时传入 `--circt` 或 `--arithmetic-request`。没有 `PIPELINE` 的项目会给出明确错误。
+计算边界和级数由源码的 `PIPELINE` 声明定义，第二个参数给出 L，也可引用 `CONFIG` 常量。工具逐块提取计算函数，搜索分块乘法、分段加法及流水安排，随后将选中核心装回原 VUL 模块，复用两侧寄存器、valid 和复位逻辑。普通逻辑和模块层次继续由原生成流程处理。工艺参数可选 `asap7`、`nangate45`，请求周期单位为 ps；该参数选择当前模型的工艺参数，不启动物理后端。自动模式使用原生 RTLzz，不能同时传入 `--circt` 或 `--arithmetic-request`。没有 `PIPELINE` 的项目会给出明确错误。
 
-每个块的默认搜索语法为乘法块宽 `0,16`、加减法段宽 `0,64`，其中 0 表示保留原结构。`--autopipe-timeout` 限制单块搜索时间（默认 300 秒，可设 1～3600 秒）；首次原生工具编译不计入搜索预算。输出中 `*.pipeline_*.cpp.autopipe/` 保存选择记录、核心 RTL、日志和预测；预测范围为该计算块及边界寄存器，其他 VUL 逻辑不计入其中。`target_unmet` 会保留预测违约较小的候选及剩余违约，不表示物理时序达标。
+VUL 未指定 profile 时使用 `generic`：乘法块宽 `0,4,8,16`、加减法段宽 `0,32,64,128`，其中 0 表示保留原结构。上例显式使用 `mac32`，其加减法段宽列表为 `0`。`--candidate-profile`、`--mul-block-widths`、`--add-limb-widths` 与 Python 入口共用配置；完整列表见[当前实现](mission/implementation.md#候选与寄存器放置)。
+
+`--autopipe-timeout` 限制单块搜索时间（默认 300 秒，可设 1～3600 秒）；首次原生工具编译不计入搜索预算。输出中 `*.pipeline_*.cpp.autopipe/` 保存选择记录、核心 RTL、日志和预测；预测范围为该计算块及边界寄存器，其他 VUL 逻辑不计入其中。`target_unmet` 会保留按规则选中的有价违约候选及剩余违约，不表示物理时序达标。
 
 未传入 `--auto-pipeline` 时，继续使用原有流水化流程。支持无 valid 的块；工具在选中核心中接入持续有效的内部信号，不改变 VUL 接口。随附的 `example/autopipe/mac32/Main.utb` 可用于比较普通流水化和模型选择后的功能与周期。
 
@@ -75,7 +78,7 @@ python3 -B -m tools.autopipe generate \
 
 随仓库保留九个数学源：`mac32`、`add512`、`mul128`、`dot16`、`horner64`、`barrett64`、`karatsuba256`、`montgomery256`、`ntt8x64`。它们是重新生成候选的输入，不包含后端产物。复杂源原有的软件稳定性、模型覆盖或求解耗时限制继续存在；提供源文件不等于所有 L/T 均能成功生成。Nangate45 的实证应用范围为 MAC32、Add512、Mul128。
 
-每个已登记源使用 `vullib/models/autopipe/workloads.json` 中的冻结结构语法。可显式指定有限的乘法分块和加减法段宽：
+Python 的每个已登记源默认使用 `vullib/models/autopipe/workloads.json` 中的对应结构语法；自定义源默认使用通用配置。两入口都可以用 `--candidate-profile` 选择语法，或显式指定有限的乘法分块和加减法段宽：
 
 ```bash
 python3 -B -m tools.autopipe generate \
@@ -84,7 +87,7 @@ python3 -B -m tools.autopipe generate \
   --out build/mul128-finite-D --timeout-s 600 --check
 ```
 
-候选由冻结的原生编译器以及静态平衡、依赖深度和模型压力调度产生；D 沿用冻结的预算、反解和完整代价选择。该入口对当前输入重新运行明示的有限搜索，不读取论文中保存的获胜结果，也不承诺在不同候选池或编译输入下逐字节复现所有历史选中 RTL。模型参数的数值一致性由独立的已保存预测回归检查。
+每个列表要求数值不重复，最多组成 16 种结构组合。候选由原生编译器以及静态平衡、依赖深度和模型压力调度产生；D 使用当前模型的预算、反解和完整代价选择。该入口对当前输入重新运行明示的有限搜索，不读取论文中保存的获胜结果，也不承诺在不同候选池或编译输入下逐字节复现所有历史选中 RTL。对照 VUL 与 Python 时，使用 VUL 提取的同一份源请求并匹配参数；独立示例的封装、复位和接口差异也会改变结果。
 
 `--method B` 使用不拆分的结构并按简单代价选择放置；`--method C` 在结构语法中按简单代价选择；`--method A --latency 1` 生成未拆分参考。结果中的带实际单位的预测仍来自后端代价模型，C 的抽象分数单独保存在候选记录中。
 
@@ -98,4 +101,4 @@ python3 -B -m unittest discover -s tools/autopipe/tests -v
 
 测试保留迁移前的 13 份软件预测，覆盖 ASAP7 八种 workload、Nangate45 三种 workload，以及 C 所选候选。测试逐项比较节点组成后的面积、完整周期和分级结果；在线计价时禁止文件读取和子进程。另检查模型资源修改及平台身份错误会被拒绝。测试输入约 221 KiB，不含后端数据库、实测标签或训练流程。
 
-历史过程文档已迁入 [mission 文档](mission/README.md)。其中的冻结、物理测量与历史脚本引用用于研究追溯，当前模型调用以本页命令为准。
+模型参数的数值一致性由已保存的预测回归检查。当前实现、拟合方法和注意事项集中在[维护文档](mission/README.md)；旧过程原文已移出发布文件树，不构成执行排程。

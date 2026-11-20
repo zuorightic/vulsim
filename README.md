@@ -196,9 +196,9 @@ cd rtlout
 
 ### 后端代价模型驱动的拆分与流水线化
 
-`vulrtlgen --auto-pipeline` 使用随仓库提供的冻结后端代价模型，为源码中声明的每个 `PIPELINE` 块生成算术拆分和流水放置候选，预测完整候选的面积与周期，再按 D 方法选择 RTL 并装回原 VUL 模块。它复用 VUL 的输入、输出边界寄存器，以及 valid 和复位逻辑。普通模块逻辑继续由原有生成流程处理。
+`vulrtlgen --auto-pipeline` 使用随仓库提供的当前模型，为源码中声明的每个 `PIPELINE` 块生成算术拆分和流水放置候选，预测完整候选的面积与周期，再按 D 方法选择 RTL 并装回原 VUL 模块。它复用 VUL 的输入、输出边界寄存器，以及 valid 和复位逻辑。普通模块逻辑继续由原有生成流程处理。
 
-当前可选模型为 `asap7` 和 `nangate45`。这里的“后端”指用于计价的目标工艺模型；RTL 生成期间查询已冻结的模型参数，无需安装 OpenROAD、ORFS、Yosys 或 PDK。获取实际综合、布局布线后的面积和时序，需要将生成的 RTL 另行送入物理后端。
+当前模型包含 `asap7` 和 `nangate45` 两套工艺参数。这里的“后端”指用于计价的目标工艺；RTL 生成期间查询当前冻结参数，无需安装 OpenROAD、ORFS、Yosys 或 PDK。获取实际综合、布局布线后的面积和时序，需要将生成的 RTL 另行送入物理后端。
 
 **准备工具。** 以下命令均在仓库根目录执行，需要前述 LLVM/Clang 18、CMake 等构建依赖，以及 Python 3.10 或更新版本：
 
@@ -295,7 +295,7 @@ PIPELINE(mac, MAC_LATENCY,
 
 Add512 可将测试文件换成 `example/autopipe/add512/Main.utb`，并使用 `--candidate-profile add512`。其流水级数由该目录 `header.uh` 中的 `ADD_LATENCY` 设置，随附值为 4。
 
-**查看 RTL 和预测报告。** 主 RTL 文件为输出目录下的 `top.sv`。每个 `PIPELINE` 块都有独立的 `*.pipeline_*.cpp.autopipe/` 报告目录；例如上面的 MAC32 仿真命令会生成 `build/mac32-autopipe-test/sim/top.logic.cpp.pipeline_mac.cpp.autopipe/`：
+**查看 RTL 和预测报告。** 使用 `-t` 时，主 RTL 文件通常为输出目录下的 `top.sv`；使用 `-m` 时通常为 `sim/top.sv`，以终端打印的顶层路径为准。每个 `PIPELINE` 块都有独立的 `*.pipeline_*.cpp.autopipe/` 报告目录；例如上面的 MAC32 仿真命令会生成 `build/mac32-autopipe-test/sim/top.logic.cpp.pipeline_mac.cpp.autopipe/`：
 
 | 文件（相对于每个块的 `.autopipe/` 目录） | 内容 |
 | --- | --- |
@@ -317,7 +317,7 @@ python3 -m json.tool \
 | 参数 | 作用 |
 | --- | --- |
 | `--auto-pipeline` | 为源码声明的 `PIPELINE` 块启用 D 方法的模型驱动选择 |
-| `--target-backend asap7\|nangate45` | 选择目标工艺的冻结代价模型；启用自动模式时必填 |
+| `--target-backend asap7\|nangate45` | 选择当前模型的目标工艺参数；启用自动模式时必填 |
 | `--target-period-ps <ps>` | 正数请求周期，单位 ps；启用自动模式时必填 |
 | `--candidate-profile <名称>` | 使用通用配置或已登记 workload 的候选粒度；默认 `generic` |
 | `--mul-block-widths <列表>` | 逗号分隔的乘法分块候选，覆盖 profile 中的对应列表 |
@@ -330,6 +330,8 @@ python3 -m json.tool \
 超时或生成失败时可查看对应块的 `search.log`；搜索已经启动的情况下，还可查看 `search/failure.json` 和保留的候选文件。提高时限或调整粒度后，使用新的输出目录重新生成。自动模式通过原生 RTLzz 生成候选，不能与 `--circt` 或 `--arithmetic-request` 同时使用。
 
 Python 独立入口 `python3 -m tools.autopipe generate` 使用相同的候选配置和模型选择实现；相同计算源、L、请求周期、目标工艺及粒度配置下，两入口的候选选择一致。对照时应使用 VUL 提取的同一份计算源请求，因为独立示例的封装、复位或接口差异也会影响结果。
+
+当前模型的拟合方法、编译与预算机制、注意事项见[维护文档](doc/mission/README.md)。后续扩展与优化从当前冻结模型开始，已有预测回归作为基线保留。
 
 
 ## 开发文档：
