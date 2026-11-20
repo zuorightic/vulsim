@@ -16,6 +16,7 @@
 
 #include "simgen.h"
 #include "rtlgen.h"
+#include "autopipe_bridge.hpp"
 #include <regex>
 #include "debugmap.hpp"
 #include "argparse.hpp"
@@ -456,6 +457,12 @@ static int runVulRTLGen(int argc, char * argv[]) {
         .help("auto-pipeline requested period in picoseconds; latency comes from each PIPELINE declaration");
     parser.add_argument("--autopipe-timeout").default_value(std::string("300"))
         .help("maximum candidate search seconds per PIPELINE, excluding initial compiler build (1..3600)");
+    parser.add_argument("--candidate-profile").default_value(std::string{})
+        .help("shared candidate grammar: generic (default) or a workload profile such as mac32, add512, mul128");
+    parser.add_argument("--mul-block-widths").default_value(std::string{})
+        .help("override multiplication block candidates, e.g. 0,8,16,32; 0 keeps the original structure");
+    parser.add_argument("--add-limb-widths").default_value(std::string{})
+        .help("override addition/subtraction segment candidates, e.g. 0,32,64,128");
     parser.add_argument("--circt")
         .help("emit ordinary and pipeline RTL through the CIRCT HW/Comb/Seq backend")
         .default_value(false)
@@ -478,9 +485,15 @@ static int runVulRTLGen(int argc, char * argv[]) {
     rtlgen::AutoPipelineOptions auto_pipeline;
     auto_pipeline.enabled = parser.get<bool>("--auto-pipeline");
     auto_pipeline.target_backend = parser.get<std::string>("--target-backend");
+    auto_pipeline.candidate_profile = parser.get<std::string>("--candidate-profile");
+    auto_pipeline.mul_block_widths = parser.get<std::string>("--mul-block-widths");
+    auto_pipeline.add_limb_widths = parser.get<std::string>("--add-limb-widths");
     const auto target_period = parser.get<std::string>("--target-period-ps");
     const auto search_timeout = parser.get<std::string>("--autopipe-timeout");
     if (auto_pipeline.enabled) {
+        for (const auto *option : {"--candidate-profile", "--mul-block-widths", "--add-limb-widths"})
+            if (parser.is_used(option) && parser.get<std::string>(option).empty())
+                throw VulException(std::string(option) + " must not be empty");
         if (auto_pipeline.target_backend != "asap7" && auto_pipeline.target_backend != "nangate45")
             throw VulException("--auto-pipeline requires --target-backend asap7 or nangate45");
         auto_pipeline.target_period_ps = positiveNumber(target_period, "--target-period-ps");
@@ -490,8 +503,9 @@ static int runVulRTLGen(int argc, char * argv[]) {
             throw VulException("--autopipe-timeout must be in 1..3600 seconds");
         if (use_circt || !arithmetic_request_file.empty())
             throw VulException("--auto-pipeline uses native RTLzz and cannot combine with --circt or --arithmetic-request");
-    } else if (parser.is_used("--target-backend") || parser.is_used("--target-period-ps") || parser.is_used("--autopipe-timeout")) {
-        throw VulException("target backend, target period and search timeout require --auto-pipeline");
+    } else if (parser.is_used("--target-backend") || parser.is_used("--target-period-ps") || parser.is_used("--autopipe-timeout") ||
+               parser.is_used("--candidate-profile") || parser.is_used("--mul-block-widths") || parser.is_used("--add-limb-widths")) {
+        throw VulException("target backend, target period and candidate search options require --auto-pipeline");
     }
     string top_file = parser.get<std::string>("--top");
     string main_file = parser.get<std::string>("--main");
@@ -500,6 +514,7 @@ static int runVulRTLGen(int argc, char * argv[]) {
     string lib_dir = parser.get<std::string>("--lib");
     bool force = parser.get<bool>("--force");
     const unsigned processes = positiveCount(parser.get<std::string>("-j"), "-j");
+    if (auto_pipeline.enabled) validateAutoPipelineSearchOptions(auto_pipeline, lib_dir);
 
     if (top_file.empty() && main_file.empty()) {
         std::cerr << "Error: Specify -t/--top, -m/--main, or a TestMain with TOP(...)." << std::endl;

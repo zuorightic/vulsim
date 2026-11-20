@@ -1,0 +1,41 @@
+#include <cstdint>
+#include <cstdio>
+#include <cstdlib>
+#include <run.hpp>
+
+TOP("TopModule.vul");
+PROJECT(".");
+REQUEST(push, ARG(Int<512>) lhs, ARG(Int<512>) rhs, ARG(bool) is_valid);
+QUERY(data, Int<513>);
+QUERY(valid, bool);
+
+SIMULATION() {
+    constexpr int count = 96;
+    Int<513> expected[count];
+    bool valids[count];
+    std::uint64_t random = 0x9e3779b97f4a7c15ull;
+    for (int pass = 0; pass < 2; ++pass) {
+        sim_reset();
+        if (valid() || data() != Int<513>(0)) std::exit(1);
+        for (int cycle = 0; cycle < count; ++cycle) {
+            Int<512> a(0), b(0);
+            for (int word = 0; word < 8; ++word) {
+                random ^= random << 13; random ^= random >> 7; random ^= random << 17;
+                a.pick<64>(word * 64) = random;
+                random ^= random << 13; random ^= random >> 7; random ^= random << 17;
+                b.pick<64>(word * 64) = random;
+            }
+            if (cycle % 9 == 0) { a = ~Int<512>(0); b = Int<512>(1); }
+            if (cycle % 13 == 0) { a = ~Int<512>(0); b = ~Int<512>(0); }
+            expected[cycle] = Int<513>(a) + Int<513>(b);
+            valids[cycle] = cycle % 5 != 2;
+            push(a, b, valids[cycle]);
+            sim_nextcycle();
+            const int source = cycle - ADD_LATENCY;
+            const bool expected_valid = source >= 0 && valids[source];
+            if (valid() != expected_valid) std::exit(2);
+            if (expected_valid && data() != expected[source]) std::exit(3);
+        }
+    }
+    std::printf("AUTOPIPE ADD512 PASS\n");
+}

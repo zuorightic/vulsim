@@ -6,6 +6,8 @@
 #include <filesystem>
 #include <fstream>
 #include <sstream>
+#include <set>
+#include <cctype>
 #ifndef _WIN32
 #include <fcntl.h>
 #include <sys/wait.h>
@@ -29,6 +31,69 @@ std::filesystem::path resourceRoot(const std::string &lib) {
     }
     throw VulException("Auto-pipeline resources not found; use -l /path/to/checkout/vullib");
 }
+
+std::vector<int> widthList(const std::string &text, const llvm::json::Array &defaults, int maximum) {
+    std::vector<int> values;
+    if (text.empty()) {
+        for (const auto &value : defaults) {
+            auto n = value.getAsInteger();
+            if (!n) throw VulException("Invalid candidate profile width");
+            values.push_back(static_cast<int>(*n));
+        }
+    } else {
+        std::size_t start = 0;
+        for (;;) {
+            const auto end = text.find(',', start);
+            const auto item = text.substr(start, end == std::string::npos ? end : end - start);
+            std::size_t used = 0;
+            long long number;
+            try { number = std::stoll(item, &used); }
+            catch (const std::exception &) { throw VulException("Candidate widths require comma-separated integers"); }
+            while (used < item.size() && std::isspace(static_cast<unsigned char>(item[used]))) ++used;
+            if (used != item.size() || number < 0 || number > maximum)
+                throw VulException("Candidate width outside 0.." + std::to_string(maximum));
+            values.push_back(static_cast<int>(number));
+            if (end == std::string::npos) break;
+            start = end + 1;
+        }
+    }
+    std::set<int> unique(values.begin(), values.end());
+    if (values.empty() || values.size() != unique.size()) throw VulException("Candidate widths must be nonempty and distinct");
+    for (int n : values) if (n < 0 || n > maximum) throw VulException("Invalid candidate profile width");
+    return values;
+}
+}
+
+void validateAutoPipelineSearchOptions(const rtlgen::AutoPipelineOptions &options, const std::string &lib_include_dir) {
+    const auto root = resourceRoot(lib_include_dir);
+    auto policy = llvm::json::parse(contents(root / "tools/autopipe/candidate_profiles.json"));
+    auto catalog = llvm::json::parse(contents(root / "vullib/models/autopipe/workloads.json"));
+    if (!policy || !catalog || !policy->getAsObject() || !catalog->getAsObject())
+        throw VulException("Invalid candidate profile catalog");
+    auto &p = *policy->getAsObject();
+    auto defaults = p.getObject("generic");
+    const llvm::json::Array *mul = defaults ? defaults->getArray("mul_block_widths") : nullptr;
+    const llvm::json::Array *add = defaults ? defaults->getArray("add_limb_widths") : nullptr;
+    if (!options.candidate_profile.empty() && options.candidate_profile != "generic") {
+        auto cases = catalog->getAsObject()->getArray("cases");
+        mul = add = nullptr;
+        if (cases) for (const auto &entry : *cases) {
+            auto row = entry.getAsObject();
+            if (!row) continue;
+            auto id = row->getString("id");
+            if (!id || *id != options.candidate_profile) continue;
+            auto search = row->getObject("structural_search");
+            if (search) { mul = search->getArray("mul_block_widths"); add = search->getArray("add_sub_limb_widths"); }
+            break;
+        }
+    }
+    auto max_mul = p.getInteger("max_mul_block_width"), max_add = p.getInteger("max_add_limb_width"), max_structures = p.getInteger("max_structures");
+    if (!mul || !add || !max_mul || !max_add || !max_structures)
+        throw VulException("Unknown or invalid --candidate-profile: " + options.candidate_profile);
+    const auto m = widthList(options.mul_block_widths, *mul, *max_mul);
+    const auto a = widthList(options.add_limb_widths, *add, *max_add);
+    if (m.size() * a.size() > static_cast<std::size_t>(*max_structures))
+        throw VulException("Candidate profile permits at most " + std::to_string(*max_structures) + " structural combinations");
 }
 
 RTLzzLogicRTLResult generateAutoPipeline(
@@ -59,7 +124,10 @@ RTLzzLogicRTLResult generateAutoPipeline(
             {"top", unit.top_function}, {"iv", unit.input_valid_name}, {"ov", unit.output_valid_name},
             {"reset", std::move(reset)}, {"bindings", std::move(bindings)}, {"L", unit.latency},
             {"platform", options.target_backend}, {"period_ps", options.target_period_ps},
-            {"timeout_s", options.timeout_seconds}, {"release", release}
+            {"timeout_s", options.timeout_seconds}, {"release", release},
+            {"candidate_profile", options.candidate_profile.empty() ? llvm::json::Value(nullptr) : llvm::json::Value(options.candidate_profile)},
+            {"mul_block_widths", options.mul_block_widths.empty() ? llvm::json::Value(nullptr) : llvm::json::Value(options.mul_block_widths)},
+            {"add_limb_widths", options.add_limb_widths.empty() ? llvm::json::Value(nullptr) : llvm::json::Value(options.add_limb_widths)}
         };
         const auto request_path = output / "request.json";
         {

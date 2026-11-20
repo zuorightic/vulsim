@@ -8,6 +8,7 @@ from types import SimpleNamespace
 from .compiler import build, verified_build
 from .generate import generate
 from .resources import ROOT, read, write, sha
+from .candidate_grammar import resolve
 
 
 def embedded_core(selection, request):
@@ -55,6 +56,8 @@ def select(request_file):
     request = read(request_file)
     if request['schema'] != 'vul-autopipe-request-v1':
         raise ValueError('unsupported VUL auto-pipeline request')
+    grammar = resolve(profile=request.get('candidate_profile'),
+        mul_block_widths=request.get('mul_block_widths'), add_limb_widths=request.get('add_limb_widths'))
     output = request_file.parent
     # Serialize the initial compiler build across concurrent VUL module workers.
     build_dir = ROOT / 'build/autopipe'
@@ -83,7 +86,8 @@ def select(request_file):
         workload=None, source_request=source_request, platform=request['platform'],
         period_ps=request['period_ps'], latency=request['L'], method='D',
         build_dir=build_dir, out=output / 'search', timeout_s=request['timeout_s'],
-        candidate_limit=256, check=False, mul_block_widths='0,16', add_limb_widths='0,64'))
+        candidate_limit=256, check=False, candidate_profile=grammar['profile'],
+        mul_block_widths=request.get('mul_block_widths'), add_limb_widths=request.get('add_limb_widths')))
     definitions, instance, resets = embedded_core(selection, request)
     (output / 'selected-core.sv').write_text(definitions)
     (output / 'instance.sv').write_text(instance)
@@ -97,7 +101,7 @@ def select(request_file):
         prediction=selection['prediction'], output_reset_values=resets,
         prediction_scope='PIPELINE kernel with boundary registers; excludes other VUL logic',
         VUL_boundary_registers_reused=True, additional_register_cycles=0,
-        grammar=dict(mul_block_widths=[0, 16], add_limb_widths=[0, 64]),
+        grammar=selection['search_grammar'],
         qualification=selection['qualification'], full_D_ready=selection['full_D_ready'],
         backend_calls=0, R1_R5_enabled=False))
     if request.get('release', False):

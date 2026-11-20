@@ -27,6 +27,7 @@ with tempfile.TemporaryDirectory(prefix='vul-autopipe-entry-') as directory:
     common = [TOOL, '-t', ordinary, '-o', sentinel, '-f']
     invalid = [
         ['--target-backend', 'asap7'],
+        ['--candidate-profile', 'mac32'],
         ['--auto-pipeline'],
         ['--auto-pipeline', '--target-backend', 'unknown', '--target-period-ps', '950'],
         ['--auto-pipeline', '--target-backend', 'asap7', '--target-period-ps', 'nan'],
@@ -34,6 +35,14 @@ with tempfile.TemporaryDirectory(prefix='vul-autopipe-entry-') as directory:
         ['--auto-pipeline', '--target-backend', 'asap7', '--target-period-ps', '950', '--autopipe-timeout', '0'],
         ['--auto-pipeline', '--target-backend', 'asap7', '--target-period-ps', '950', '--circt'],
         ['--auto-pipeline', '--target-backend', 'asap7', '--target-period-ps', '950', '--arithmetic-request', 'unused.json'],
+        ['--auto-pipeline', '--target-backend', 'asap7', '--target-period-ps', '950', '--candidate-profile', 'unknown'],
+        ['--auto-pipeline', '--target-backend', 'asap7', '--target-period-ps', '950', '--candidate-profile', ''],
+        ['--auto-pipeline', '--target-backend', 'asap7', '--target-period-ps', '950', '--mul-block-widths', ''],
+        ['--auto-pipeline', '--target-backend', 'asap7', '--target-period-ps', '950', '--add-limb-widths', ''],
+        ['--auto-pipeline', '--target-backend', 'asap7', '--target-period-ps', '950', '--mul-block-widths', '0,16,16'],
+        ['--auto-pipeline', '--target-backend', 'asap7', '--target-period-ps', '950', '--mul-block-widths', '0,256'],
+        ['--auto-pipeline', '--target-backend', 'asap7', '--target-period-ps', '950', '--add-limb-widths', '0,4097'],
+        ['--auto-pipeline', '--target-backend', 'asap7', '--target-period-ps', '950', '--mul-block-widths', '0,4,8,16,32'],
         ['--auto-pipeline', '--target-backend', 'asap7', '--target-period-ps', '950'],  # no PIPELINE
     ]
     for flags in invalid:
@@ -51,13 +60,16 @@ with tempfile.TemporaryDirectory(prefix='vul-autopipe-entry-') as directory:
     for platform, period in [('asap7', '950'), ('nangate45', '1500')]:
         out = base / platform
         run([TOOL, '-m', example / 'Main.utb', '-o', out,
-             '--auto-pipeline', '--target-backend', platform, '--target-period-ps', period])
+             '--auto-pipeline', '--target-backend', platform, '--target-period-ps', period,
+             '--candidate-profile', 'mac32'])
         reports = list(out.rglob('*.autopipe/result.json'))
         assert len(reports) == 1, reports
         report = json.loads(reports[0].read_text())
         assert report['platform'] == platform and report['L'] == 2
         assert report['VUL_boundary_registers_reused'] and report['additional_register_cycles'] == 0
         assert report['backend_calls'] == 0
+        assert report['grammar']['mul_block_widths'] == [0, 4, 8, 16]
+        assert report['grammar']['add_limb_widths'] == [0]
         assert 'AUTOPIPE MAC32 PASS' in run([out / 'run.sh'])
         print(f'PASS {platform}: model selection, unsigned arithmetic, valid, nonzero reset and latency', flush=True)
 
@@ -76,14 +88,15 @@ with tempfile.TemporaryDirectory(prefix='vul-autopipe-entry-') as directory:
     (case / 'Main.utb').write_text(main)
     out = base / 'multiple-out'
     run([TOOL, '-m', case / 'Main.utb', '-o', out, '--auto-pipeline',
-         '--target-backend', 'asap7', '--target-period-ps', '950'])
+         '--target-backend', 'asap7', '--target-period-ps', '950', '--candidate-profile', 'mac32'])
     assert len(list(out.rglob('*.autopipe/result.json'))) == 2
     assert 'AUTOPIPE MAC32 PASS' in run([out / 'run.sh'])
     print('PASS multiple embedded cores and latency-1 core without valid', flush=True)
 
     out = base / 'release'
     run([TOOL, '-t', ROOT / 'example/autopipe/mac32/TopModule.vul', '-o', out,
-         '--auto-pipeline', '--target-backend', 'asap7', '--target-period-ps', '1200', '-r'])
+         '--auto-pipeline', '--target-backend', 'asap7', '--target-period-ps', '1200',
+         '--candidate-profile', 'mac32', '-r'])
     assert not list(out.rglob('*.cpp'))
     assert len(list(out.rglob('*.autopipe/result.json'))) == 1
     run(['verilator', '--lint-only', '--top-module', 'TopModule_top', out / 'top.sv'])

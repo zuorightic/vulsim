@@ -1,0 +1,10 @@
+{
+  "schema": "autopipe-candidate-profiles-v1",
+  "max_structures": 16,
+  "max_mul_block_width": 128,
+  "max_add_limb_width": 4096,
+  "generic": {
+    "mul_block_widths": [0, 4, 8, 16],
+    "add_limb_widths": [0, 32, 64, 128]
+  }
+}

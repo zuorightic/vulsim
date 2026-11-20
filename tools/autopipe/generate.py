@@ -1,6 +1,5 @@
 """Prospective finite candidate search using the unchanged v10 cost functions."""
 import gzip
-import itertools
 import math
 from pathlib import Path
 import shutil
@@ -17,13 +16,7 @@ from .workload_final_software import balanced
 from .workload_equivalent import score_key
 from .workload_platform_entry import rebind_owners
 from .workload_v10_replay import retarget
-
-
-def widths(text, default):
-    result = list(default) if text is None else [int(v) for v in text.split(',')]
-    if not result or len(result) != len(set(result)) or any(v < 0 or v > 4096 for v in result):
-        raise ValueError('width grammar must contain distinct integers in 0..4096')
-    return result
+from .candidate_grammar import resolve
 
 
 class Generation:
@@ -58,16 +51,9 @@ class Generation:
         doc['source']['source'] = 'source.cpp'
         self.request = source_out / 'request.json'
         write(self.request, doc)
-        catalog = read(MODELS / 'workloads.json')
-        case = next((c for c in catalog['cases'] if c['id'] == args.workload), None)
-        grammar = case['structural_search'] if case else dict(mul_block_widths=[0, 4, 8, 16], add_sub_limb_widths=[0, 32, 64, 128])
-        mul = widths(args.mul_block_widths, grammar['mul_block_widths'])
-        limb = widths(args.add_limb_widths, grammar['add_sub_limb_widths'])
-        if any(v > 128 for v in mul):
-            raise ValueError('frozen native multiplier block width must be in 0..128')
-        self.grammar = [(0, 0)] if args.method in ['A', 'B'] else list(itertools.product(mul, limb))
-        if len(self.grammar) > 16:
-            raise ValueError('frozen structural policy permits at most 16 grammars')
+        self.search_grammar = resolve(workload=args.workload, profile=getattr(args, 'candidate_profile', None),
+            mul_block_widths=args.mul_block_widths, add_limb_widths=args.add_limb_widths, method=args.method)
+        self.grammar = [tuple(pair) for pair in self.search_grammar['structures']]
         self.started = time.monotonic()
         self.counter = 0
         self.exported = {}
@@ -182,7 +168,7 @@ class Generation:
         else:
             candidates = [static_winner]
         write(self.out / 'candidate-pool.json', dict(policy='frozen-v10-finite-native-and-balanced-v1',
-            grammar=self.grammar, candidates=candidates, candidate_PPA_calls=0,
+            grammar=self.grammar, search_grammar=self.search_grammar, candidates=candidates, candidate_PPA_calls=0,
             exhaustive_global_search=False, R1_R5_enabled=False))
         return candidates
 
@@ -216,7 +202,8 @@ class Generation:
             T_clk_ps=self.args.period_ps, L=self.args.latency, II=1, additional_input_service_cycles=1,
             selection_status='target_met' if winner['prediction']['target_met'] else 'target_unmet',
             rtl=str(selected), rtl_sha256=sha(selected), prediction=winner['prediction'],
-            selected_candidate=row, complete_candidates=len(scored), candidate_count=len(candidates),
+            selected_candidate=row, search_grammar=self.search_grammar,
+            complete_candidates=len(scored), candidate_count=len(candidates),
             model_manifest_sha256=sha(MODELS / 'manifest.json'), model_refitted=False, R1_R5_enabled=False,
             qualification='diagnostic_only', full_D_ready=False, backend_calls=0)
         write(self.out / 'selection.json', result)

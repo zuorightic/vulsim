@@ -3,6 +3,8 @@
 #include "rtlgen.h"
 #include "rtlzz_bridge.hpp"
 
+void validateAutoPipelineSearchOptions(const rtlgen::AutoPipelineOptions &options, const std::string &lib_include_dir);
+
 // Select a frozen-model candidate and reuse only its core inside the VUL shell.
 RTLzzLogicRTLResult generateAutoPipeline(
     const rtlgen::PipelineRTLUnit &unit,

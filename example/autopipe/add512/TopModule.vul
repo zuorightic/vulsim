@@ -1,0 +1,20 @@
+INTERFACE() {
+    SERVICE(push, ARG(Int<512>) lhs, ARG(Int<512>) rhs, ARG(bool) is_valid);
+    QUERY(data, Int<513>);
+    QUERY(valid, bool);
+}
+
+PIPELINE(add, ADD_LATENCY,
+    IREG(a, Int<512>), IREG(b, Int<512>), IVALID(iv),
+    OREG(y, Int<513>), OVALID(ov)
+) {
+    y = Int<513>(a) + Int<513>(b);
+}
+
+SERVICE(push, ARG(Int<512>) lhs, ARG(Int<512>) rhs, ARG(bool) is_valid) {
+    a.setnext(lhs);
+    b.setnext(rhs);
+    iv.setnext(is_valid);
+}
+QUERY(data, Int<513>) { return y; }
+QUERY(valid, bool) { return ov; }

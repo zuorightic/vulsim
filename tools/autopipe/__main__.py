@@ -5,6 +5,7 @@ from pathlib import Path
 import subprocess
 
 from .resources import ROOT, EXAMPLES, runtime, verify_models
+from .candidate_grammar import available_profiles
 
 
 def main():
@@ -23,6 +24,8 @@ def main():
     p.add_argument('--method', choices=['A', 'B', 'C', 'D'], default='D')
     p.add_argument('--build-dir', type=Path, default=ROOT / 'build/autopipe')
     p.add_argument('--out', type=Path, required=True)
+    p.add_argument('--candidate-profile', choices=available_profiles(),
+                   help='shared structural grammar; default: workload profile or generic for custom source')
     p.add_argument('--mul-block-widths', help='comma-separated finite grammar, for example 0,8,16')
     p.add_argument('--add-limb-widths', help='comma-separated finite grammar, for example 0,32,64,128')
     p.add_argument('--timeout-s', type=float, default=300)

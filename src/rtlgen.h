@@ -72,6 +72,9 @@ struct AutoPipelineOptions {
     string target_backend;
     double target_period_ps = 0;
     double timeout_seconds = 300;
+    string candidate_profile;
+    string mul_block_widths;
+    string add_limb_widths;
 };
 
 RTLGenResult genModuleRTL(
