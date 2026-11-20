@@ -1,0 +1,132 @@
+INTERFACE() {
+    SERVICE(push, ARG(Int<64>) in_a0, ARG(Int<64>) in_b0,
+        ARG(Int<64>) in_a1, ARG(Int<64>) in_b1,
+        ARG(Int<64>) in_a2, ARG(Int<64>) in_b2,
+        ARG(Int<64>) in_a3, ARG(Int<64>) in_b3,
+        ARG(Int<64>) in_a4, ARG(Int<64>) in_b4,
+        ARG(Int<64>) in_a5, ARG(Int<64>) in_b5,
+        ARG(Int<64>) in_a6, ARG(Int<64>) in_b6,
+        ARG(Int<64>) in_a7, ARG(Int<64>) in_b7,
+        ARG(Int<64>) in_a8, ARG(Int<64>) in_b8,
+        ARG(Int<64>) in_a9, ARG(Int<64>) in_b9,
+        ARG(Int<64>) in_a10, ARG(Int<64>) in_b10,
+        ARG(Int<64>) in_a11, ARG(Int<64>) in_b11,
+        ARG(Int<64>) in_a12, ARG(Int<64>) in_b12,
+        ARG(Int<64>) in_a13, ARG(Int<64>) in_b13,
+        ARG(Int<64>) in_a14, ARG(Int<64>) in_b14,
+        ARG(Int<64>) in_a15, ARG(Int<64>) in_b15,
+        ARG(bool) is_valid);
+    QUERY(data, Int<132>);
+    QUERY(valid, bool);
+}
+
+PIPELINE(dot16, DOT16_LATENCY,
+    IREG(a0, Int<64>), IREG(b0, Int<64>),
+    IREG(a1, Int<64>), IREG(b1, Int<64>),
+    IREG(a2, Int<64>), IREG(b2, Int<64>),
+    IREG(a3, Int<64>), IREG(b3, Int<64>),
+    IREG(a4, Int<64>), IREG(b4, Int<64>),
+    IREG(a5, Int<64>), IREG(b5, Int<64>),
+    IREG(a6, Int<64>), IREG(b6, Int<64>),
+    IREG(a7, Int<64>), IREG(b7, Int<64>),
+    IREG(a8, Int<64>), IREG(b8, Int<64>),
+    IREG(a9, Int<64>), IREG(b9, Int<64>),
+    IREG(a10, Int<64>), IREG(b10, Int<64>),
+    IREG(a11, Int<64>), IREG(b11, Int<64>),
+    IREG(a12, Int<64>), IREG(b12, Int<64>),
+    IREG(a13, Int<64>), IREG(b13, Int<64>),
+    IREG(a14, Int<64>), IREG(b14, Int<64>),
+    IREG(a15, Int<64>), IREG(b15, Int<64>),
+    IVALID(iv),
+    OREG(y, Int<132>),
+    OVALID(ov)
+) {
+    // Keep the arithmetic body in sync with workload_top in source.cpp.
+    Int<132> p0 = Int<132>(Int<128>(a0) * Int<128>(b0));
+    Int<132> p1 = Int<132>(Int<128>(a1) * Int<128>(b1));
+    Int<132> p2 = Int<132>(Int<128>(a2) * Int<128>(b2));
+    Int<132> p3 = Int<132>(Int<128>(a3) * Int<128>(b3));
+    Int<132> p4 = Int<132>(Int<128>(a4) * Int<128>(b4));
+    Int<132> p5 = Int<132>(Int<128>(a5) * Int<128>(b5));
+    Int<132> p6 = Int<132>(Int<128>(a6) * Int<128>(b6));
+    Int<132> p7 = Int<132>(Int<128>(a7) * Int<128>(b7));
+    Int<132> p8 = Int<132>(Int<128>(a8) * Int<128>(b8));
+    Int<132> p9 = Int<132>(Int<128>(a9) * Int<128>(b9));
+    Int<132> p10 = Int<132>(Int<128>(a10) * Int<128>(b10));
+    Int<132> p11 = Int<132>(Int<128>(a11) * Int<128>(b11));
+    Int<132> p12 = Int<132>(Int<128>(a12) * Int<128>(b12));
+    Int<132> p13 = Int<132>(Int<128>(a13) * Int<128>(b13));
+    Int<132> p14 = Int<132>(Int<128>(a14) * Int<128>(b14));
+    Int<132> p15 = Int<132>(Int<128>(a15) * Int<128>(b15));
+    Int<132> s0_0 = p0 + p1;
+    Int<132> s0_1 = p2 + p3;
+    Int<132> s0_2 = p4 + p5;
+    Int<132> s0_3 = p6 + p7;
+    Int<132> s0_4 = p8 + p9;
+    Int<132> s0_5 = p10 + p11;
+    Int<132> s0_6 = p12 + p13;
+    Int<132> s0_7 = p14 + p15;
+    Int<132> s1_0 = s0_0 + s0_1;
+    Int<132> s1_1 = s0_2 + s0_3;
+    Int<132> s1_2 = s0_4 + s0_5;
+    Int<132> s1_3 = s0_6 + s0_7;
+    Int<132> s2_0 = s1_0 + s1_1;
+    Int<132> s2_1 = s1_2 + s1_3;
+    Int<132> s3_0 = s2_0 + s2_1;
+    y = s3_0;
+}
+
+SERVICE(push, ARG(Int<64>) in_a0, ARG(Int<64>) in_b0,
+        ARG(Int<64>) in_a1, ARG(Int<64>) in_b1,
+        ARG(Int<64>) in_a2, ARG(Int<64>) in_b2,
+        ARG(Int<64>) in_a3, ARG(Int<64>) in_b3,
+        ARG(Int<64>) in_a4, ARG(Int<64>) in_b4,
+        ARG(Int<64>) in_a5, ARG(Int<64>) in_b5,
+        ARG(Int<64>) in_a6, ARG(Int<64>) in_b6,
+        ARG(Int<64>) in_a7, ARG(Int<64>) in_b7,
+        ARG(Int<64>) in_a8, ARG(Int<64>) in_b8,
+        ARG(Int<64>) in_a9, ARG(Int<64>) in_b9,
+        ARG(Int<64>) in_a10, ARG(Int<64>) in_b10,
+        ARG(Int<64>) in_a11, ARG(Int<64>) in_b11,
+        ARG(Int<64>) in_a12, ARG(Int<64>) in_b12,
+        ARG(Int<64>) in_a13, ARG(Int<64>) in_b13,
+        ARG(Int<64>) in_a14, ARG(Int<64>) in_b14,
+        ARG(Int<64>) in_a15, ARG(Int<64>) in_b15,
+        ARG(bool) is_valid) {
+    a0.setnext(in_a0);
+    b0.setnext(in_b0);
+    a1.setnext(in_a1);
+    b1.setnext(in_b1);
+    a2.setnext(in_a2);
+    b2.setnext(in_b2);
+    a3.setnext(in_a3);
+    b3.setnext(in_b3);
+    a4.setnext(in_a4);
+    b4.setnext(in_b4);
+    a5.setnext(in_a5);
+    b5.setnext(in_b5);
+    a6.setnext(in_a6);
+    b6.setnext(in_b6);
+    a7.setnext(in_a7);
+    b7.setnext(in_b7);
+    a8.setnext(in_a8);
+    b8.setnext(in_b8);
+    a9.setnext(in_a9);
+    b9.setnext(in_b9);
+    a10.setnext(in_a10);
+    b10.setnext(in_b10);
+    a11.setnext(in_a11);
+    b11.setnext(in_b11);
+    a12.setnext(in_a12);
+    b12.setnext(in_b12);
+    a13.setnext(in_a13);
+    b13.setnext(in_b13);
+    a14.setnext(in_a14);
+    b14.setnext(in_b14);
+    a15.setnext(in_a15);
+    b15.setnext(in_b15);
+    iv.setnext(is_valid);
+}
+
+QUERY(data, Int<132>) { return y; }
+QUERY(valid, bool) { return ov; }

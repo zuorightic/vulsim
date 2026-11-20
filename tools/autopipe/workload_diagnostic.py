@@ -97,7 +97,8 @@ class DiagnosticPrices:
             raise ValueError('diagnostic model identity mismatch')
         self.bundle=bundle; self.v10=bundle['v10']
         self.operator=self.v10['inherited_flow']['inherited_centered']['semantic_operator_model']
-        self.cache={};self.geometry_cache={}
+        self.cache={}
+        self.reduction_geometry_cache={}
 
     def _linear(self,model,f):
         return math.fsum([model.get('intercept',0.)]+[c*f[n] for n,c in zip(model['features'],model['coefficients'],strict=True)])
@@ -158,7 +159,13 @@ class DiagnosticPrices:
         geometry=dict(q,terms=terms)
         identity=('G',key(geometry))
         if identity in self.cache:return self.cache[identity]
-        f=v10_features.reduction_features(geometry)['intensive']
+        # A sampling-window scan changes the period while querying the same
+        # reduction. Cache the expensive circuit and coverage features by
+        # normalized geometry, and keep the price cache keyed by the full query.
+        geometry_key = key((geometry['output_bits'], terms))
+        if geometry_key not in self.reduction_geometry_cache:
+            self.reduction_geometry_cache[geometry_key] = v10_features.reduction_features(geometry)['intensive']
+        f = v10_features.intensive_features_at_period(self.reduction_geometry_cache[geometry_key], q['target_ps'])
         entry=self.v10['models']['G']; values={}
         for name in ('area','delay'):
             e=entry[name];v=response.predict(e['function'],f)
@@ -202,7 +209,10 @@ def functional_circuit(graph,i):
 
 
 def state_projection(graph,state,L,target):
-    ports=[p for p in graph.ports if p['input'] and p['name']!=state['valid_input_rtl_name']]
+    # Valid slots carry the input graph node even at the external capture.
+    # Its RTL name can differ from the source port after identifier sanitization.
+    valid_origins = {slot['origin'] for slot in state['slots'] if slot['valid']}
+    ports = [p for p in graph.ports if p['input'] and valid_origins.isdisjoint(p['nodes'])]
     widths=[p['width'] for p in ports];input_bits=sum(widths)
     owners={name:dict(data_bits=0,data_signals=0,valid_bits=0,enable_domains=0,reset_one_bits=0)
             for name in ('input_service','native_state','external_state')}

@@ -3,17 +3,53 @@ import gzip
 import json
 import math
 from pathlib import Path
+import re
 import shutil
 import tempfile
 import unittest
 from unittest.mock import patch
 
 from tools.autopipe import resources
+from tools.autopipe import workload_diagnostic
+from tools.autopipe import transition_incidence_features_v10 as reduction_features
 from tools.autopipe.resources import runtime
 from tools.autopipe.workload_demand import Graph
 
 
 class FrozenPredictionTests(unittest.TestCase):
+    def test_asap7_diagnostic_sub_and_compare_boundary(self):
+        contract = runtime('asap7').contract
+        for name in ('Sub', 'Compare'):
+            with self.subTest(family=name):
+                shell = contract['families'][name]
+                self.assertAlmostEqual(shell['H_char_ps'], 114.844695)
+                self.assertEqual(shell['alpha'], 1.0)
+                self.assertEqual(shell['sources'], 55)
+                self.assertFalse(shell['qualified'])
+
+    def test_state_projection_uses_valid_graph_node(self):
+        graph = Graph(dict(version='prospective-workload-graph-v1', nodes=[
+            dict(id=0, width=7), dict(id=1, width=1)], ports=[
+            dict(name='vul_port_iv', input=True, width=7, nodes=[0]),
+            dict(name='__vul_port_iv', input=True, width=1, nodes=[1])]))
+        state = dict(valid_input_rtl_name='vul_port_iv', slots=[
+            dict(valid=True, origin=1, variable_bits=1, external_capture=True)])
+        projection = workload_diagnostic.state_projection(graph, state, 1, 1200)
+        self.assertEqual(projection['input_widths'], [7])
+        self.assertEqual(projection['total_FF_bits'], 9)
+
+    def test_vul_workload_arithmetic_matches_bundled_source(self):
+        for name in ('mul128', 'dot16', 'horner64', 'barrett64', 'karatsuba256', 'montgomery256', 'ntt8x64'):
+            with self.subTest(workload=name):
+                folder = resources.EXAMPLES / name
+                source = (folder / 'source.cpp').read_text()
+                vul = (folder / 'TopModule.vul').read_text()
+                original = re.search(r'^void workload_top\(\) \{\n(.*?)^\}', source, re.M | re.S)
+                wrapped = re.search(r'^PIPELINE\([\s\S]*?^\) \{\n(.*?)^\}', vul, re.M | re.S)
+                self.assertIsNotNone(original)
+                self.assertIsNotNone(wrapped)
+                self.assertEqual(original[1], re.sub(r'^\s*//[^\n]*\n', '', wrapped[1], flags=re.M))
+
     def test_saved_complete_candidate_predictions(self):
         data = json.loads(gzip.decompress(Path(__file__).with_name('frozen_predictions.json.gz').read_bytes()))
         self.assertEqual(data['schema'], 'frozen-v10-prediction-regression-v1')
@@ -58,6 +94,24 @@ class FrozenPredictionTests(unittest.TestCase):
                 path.write_bytes(path.read_bytes() + b' ')
                 with self.assertRaisesRegex(ValueError, 'frozen model resource changed'):
                     resources.verify_models()
+
+    def test_reduction_geometry_reused_without_reusing_clock_features(self):
+        query = dict(output_bits=12, terms=[
+            [[source, bit, bit + offset] for bit in range(8)]
+            for source, offset in enumerate((0, 2, 4))
+        ], target_ps=1200)
+        build_features = reduction_features.reduction_features
+        prices = runtime('asap7').prices
+        with patch.object(reduction_features, 'reduction_features', wraps=build_features) as builder:
+            reference = build_features(query)['intensive']
+            for period in (1200, 1., 965.321, 6000., 100000.):
+                request = dict(query, target_ps=period)
+                expected = build_features(request)['intensive']
+                self.assertEqual(expected, reduction_features.intensive_features_at_period(reference, period))
+                prices.reduction_price(request)
+            with self.assertRaisesRegex(ValueError, 'positive numerical T'):
+                prices.reduction_price(dict(query, target_ps=True))
+            builder.assert_called_once()
 
     def test_nangate_platform_identity_is_required(self):
         data = json.loads(gzip.decompress(Path(__file__).with_name('frozen_predictions.json.gz').read_bytes()))

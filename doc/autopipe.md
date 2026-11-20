@@ -76,7 +76,20 @@ python3 -B -m tools.autopipe generate \
 
 ## 输入和候选范围
 
-随仓库保留九个数学源：`mac32`、`add512`、`mul128`、`dot16`、`horner64`、`barrett64`、`karatsuba256`、`montgomery256`、`ntt8x64`。它们是重新生成候选的输入，不包含后端产物。复杂源原有的软件稳定性、模型覆盖或求解耗时限制继续存在；提供源文件不等于所有 L/T 均能成功生成。Nangate45 的实证应用范围为 MAC32、Add512、Mul128。
+随仓库提供九个算例：`mac32`、`add512`、`mul128`、`dot16`、`horner64`、`barrett64`、`karatsuba256`、`montgomery256`、`ntt8x64`。每个目录的 `TopModule.vul` 可供 `vulrtlgen -t` 使用，`header.uh` 给出流水级数。`push` 服务成组更新数据端口和输入 valid，由 `valid` 查询标记输出有效周期。NTT 的 `data0` 到 `data7` 按自然顺序分别返回八个结果。
+
+用 `--candidate-profile` 指定同名配置，可以复用 Python `--workload` 的候选粒度。以下命令使用 Mul128 的 ASAP7 对照设置。
+
+```bash
+./build/vulrtlgen -t example/autopipe/mul128/TopModule.vul \
+  --auto-pipeline --target-backend asap7 --target-period-ps 2000 \
+  --candidate-profile mul128 --autopipe-timeout 900 \
+  -o build/mul128-vul-autopipe
+```
+
+Montgomery256 的快速验证可以用同样的命令格式，选择 `montgomery256`、`--target-period-ps 3000`，并传入 `--mul-block-widths 0 --add-limb-widths 0`。这组配置保留原算术结构，D 仍搜索寄存器位置。完整同名配置包含分块与分段候选，完备计价耗时更长。
+
+独立 Python 入口通过各算例目录下的 `source.cpp` 和 `request.json` 读取计算图。复杂算例的模型覆盖和搜索用时随工艺、级数和请求周期变化。Nangate45 的实证应用范围为 MAC32、Add512、Mul128。
 
 Python 的每个已登记源默认使用 `vullib/models/autopipe/workloads.json` 中的对应结构语法；自定义源默认使用通用配置。两入口都可以用 `--candidate-profile` 选择语法，或显式指定有限的乘法分块和加减法段宽：
 

@@ -47,3 +47,17 @@ def reduction_features(query):
     for values in result.values():
         values.update(extra)
     return result
+
+
+def intensive_features_at_period(features, target):
+    """Update the clock-dependent inputs of the intensive G response."""
+    if type(target) not in (int, float) or not math.isfinite(target) or target <= 0:
+        raise ValueError('bounded reduction width and positive numerical T required')
+    clock_pressure = 1500. / target
+    return dict(features,
+                log2_target=math.log2(target / 500.),
+                clock_pressure=clock_pressure,
+                carry_tail_pressure=features['carry_tail_fraction'] * clock_pressure,
+                fanout_repair_pressure=features['fanout_fused_internal_log2_repair_excess'] * clock_pressure,
+                cone_cut_pressure=features['cone_fused_log2_peak_cut'] * clock_pressure,
+                path_pressure=features['path_fused_log2_path_load_work'] * clock_pressure)

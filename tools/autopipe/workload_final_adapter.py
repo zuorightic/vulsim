@@ -20,6 +20,7 @@ class Adapter:
         self.rows={r['node']:('operator',r['query']) for r in owners['operators']}
         self.rows.update({r['root']:('G',r['query']) for r in owners['G_regions']})
         self.prices=prices;self.contract=contract;self.inversion=inversion;self.cache={};self.consumers={}
+        self.consumer_delays = {}
         for i,(kind,q) in self.rows.items():
             consumers=[]
             for index,c in enumerate(q['local_context']['consumers'] if kind=='operator' else q.get('consumers',[])):
@@ -59,6 +60,17 @@ class Adapter:
         if kind=='functional':return dict(delay_ps=q['delay_ps'])
         return self.prices.operator_price(q) if kind=='operator' else self.prices.reduction_price(q)
 
+    def consumer_delay(self, consumer, period):
+        kind, query = consumer['kind'], consumer['query']
+        if kind == 'functional':
+            return query['delay_ps']
+        # Consumer queries are retained for this adapter's lifetime. Multiple
+        # owners and budget proposals can sample the same consumer and period.
+        identity = kind, id(query), period
+        if identity not in self.consumer_delays:
+            self.consumer_delays[identity] = self.price(kind, equivalent.request_at(query, period))['delay_ps']
+        return self.consumer_delays[identity]
+
     def convert(self,node,budget):
         key=(node,budget)
         if key in self.cache:return self.cache[key]
@@ -66,11 +78,9 @@ class Adapter:
         family={'mul':'Mul','add':'Add','adc':'Add','sub':'Sub','ult':'Compare','ule':'Compare','eq':'Compare','mux':'Mux','G':'G'}.get(op)
         if family is None:raise ValueError('uncovered family '+op)
         shell=self.contract['families'][family];h=shell['H_char_ps'];alpha=shell['alpha'];consumers=self.consumers[node]
-        def consumer_price(c,t):
-            return self.price(c['kind'],c['query'] if c['kind']=='functional' else equivalent.request_at(c['query'],t))['delay_ps']
         def window(t):
             values=[alpha*t-h] if kind=='G' or q['local_context']['captures'] else []
-            values.extend(alpha*t-h-consumer_price(c,t) for c in consumers)
+            values.extend(alpha*t-h-self.consumer_delay(c,t) for c in consumers)
             return values
         result=invert_window(budget,window,self.inversion,direct=(alpha,h) if not consumers else None)
         extended=result['status']!='converted'
@@ -82,7 +92,7 @@ class Adapter:
             query=equivalent.request_at(q,root['tau_ps']);price=self.price(kind,query)
             root.update(query=query,query_sha256=sha(canonical(query)),price=price,
                 local_request_met=price['delay_ps']<=budget,local_shortfall_ps=max(0.,price['delay_ps']-budget),
-                D_other_char_ps=[consumer_price(c,root['tau_ps']) for c in consumers])
+                D_other_char_ps=[self.consumer_delay(c,root['tau_ps']) for c in consumers])
         self.cache[key]=result;return result
 
 

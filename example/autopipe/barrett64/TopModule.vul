@@ -1,0 +1,38 @@
+INTERFACE() {
+    SERVICE(push, ARG(Int<64>) in_a, ARG(Int<64>) in_b,
+        ARG(Int<64>) in_modulus, ARG(Int<65>) in_mu,
+        ARG(bool) is_valid);
+    QUERY(data, Int<64>);
+    QUERY(valid, bool);
+}
+
+PIPELINE(barrett64, BARRETT64_LATENCY,
+    IREG(a, Int<64>), IREG(b, Int<64>),
+    IREG(modulus, Int<64>), IREG(mu, Int<65>),
+    IVALID(iv),
+    OREG(y, Int<64>),
+    OVALID(ov)
+) {
+    // Keep the arithmetic body in sync with workload_top in source.cpp.
+    Int<128> n0 = Int<128>(a) * Int<128>(b);
+    Int<193> n1 = Int<193>(n0) * Int<193>(mu);
+    Int<65> n2 = n1.at<192,128>();
+    Int<129> n3 = Int<129>(n2) * Int<129>(modulus);
+    Int<129> n4 = Int<129>(n0) - n3;
+    Int<129> n5 = (n4 < Int<129>(modulus)) ? n4 : (n4 - Int<129>(modulus));
+    Int<64> n6 = Int<64>(n5);
+    y = n6;
+}
+
+SERVICE(push, ARG(Int<64>) in_a, ARG(Int<64>) in_b,
+        ARG(Int<64>) in_modulus, ARG(Int<65>) in_mu,
+        ARG(bool) is_valid) {
+    a.setnext(in_a);
+    b.setnext(in_b);
+    modulus.setnext(in_modulus);
+    mu.setnext(in_mu);
+    iv.setnext(is_valid);
+}
+
+QUERY(data, Int<64>) { return y; }
+QUERY(valid, bool) { return ov; }

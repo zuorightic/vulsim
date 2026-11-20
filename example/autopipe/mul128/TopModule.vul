@@ -1,0 +1,26 @@
+INTERFACE() {
+    SERVICE(push, ARG(Int<128>) in_a, ARG(Int<128>) in_b,
+        ARG(bool) is_valid);
+    QUERY(data, Int<256>);
+    QUERY(valid, bool);
+}
+
+PIPELINE(mul128, MUL128_LATENCY,
+    IREG(a, Int<128>), IREG(b, Int<128>),
+    IVALID(iv),
+    OREG(y, Int<256>),
+    OVALID(ov)
+) {
+    // Keep the arithmetic body in sync with workload_top in source.cpp.
+    y = (Int<256>(a) * Int<256>(b));
+}
+
+SERVICE(push, ARG(Int<128>) in_a, ARG(Int<128>) in_b,
+        ARG(bool) is_valid) {
+    a.setnext(in_a);
+    b.setnext(in_b);
+    iv.setnext(is_valid);
+}
+
+QUERY(data, Int<256>) { return y; }
+QUERY(valid, bool) { return ov; }

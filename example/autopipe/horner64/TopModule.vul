@@ -1,0 +1,44 @@
+INTERFACE() {
+    SERVICE(push, ARG(Int<64>) in_x, ARG(Int<64>) in_c0,
+        ARG(Int<64>) in_c1, ARG(Int<64>) in_c2,
+        ARG(Int<64>) in_c3, ARG(Int<64>) in_c4,
+        ARG(bool) is_valid);
+    QUERY(data, Int<64>);
+    QUERY(valid, bool);
+}
+
+PIPELINE(horner64, HORNER64_LATENCY,
+    IREG(x, Int<64>), IREG(c0, Int<64>),
+    IREG(c1, Int<64>), IREG(c2, Int<64>),
+    IREG(c3, Int<64>), IREG(c4, Int<64>),
+    IVALID(iv),
+    OREG(y, Int<64>),
+    OVALID(ov)
+) {
+    // Keep the arithmetic body in sync with workload_top in source.cpp.
+    Int<64> n0 = c4 * x;
+    Int<64> n1 = n0 + c3;
+    Int<64> n2 = n1 * x;
+    Int<64> n3 = n2 + c2;
+    Int<64> n4 = n3 * x;
+    Int<64> n5 = n4 + c1;
+    Int<64> n6 = n5 * x;
+    Int<64> n7 = n6 + c0;
+    y = n7;
+}
+
+SERVICE(push, ARG(Int<64>) in_x, ARG(Int<64>) in_c0,
+        ARG(Int<64>) in_c1, ARG(Int<64>) in_c2,
+        ARG(Int<64>) in_c3, ARG(Int<64>) in_c4,
+        ARG(bool) is_valid) {
+    x.setnext(in_x);
+    c0.setnext(in_c0);
+    c1.setnext(in_c1);
+    c2.setnext(in_c2);
+    c3.setnext(in_c3);
+    c4.setnext(in_c4);
+    iv.setnext(is_valid);
+}
+
+QUERY(data, Int<64>) { return y; }
+QUERY(valid, bool) { return ov; }

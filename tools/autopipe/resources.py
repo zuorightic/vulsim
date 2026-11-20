@@ -2,6 +2,7 @@
 import hashlib
 import json
 from pathlib import Path
+from statistics import median
 
 from .workload_final_prices import CachedPrices
 from . import workload_diagnostic
@@ -35,10 +36,27 @@ def verify_models():
     return manifest
 
 
+def asap7_characterization():
+    contract = read(MODELS / 'asap7/characterization.json')
+    families = contract['families']
+    # The diagnostic Sub/Compare shell uses the pooled train-source median.
+    # Each source contributes once, even if present in multiple families.
+    source_boundaries = {}
+    for family in families.values():
+        for source, boundary in family['source_medians_ps'].items():
+            source_boundaries.setdefault(source, []).append(boundary)
+    pooled = median(median(boundaries) for boundaries in source_boundaries.values())
+    for family in ('Sub', 'Compare'):
+        families[family] = dict(H_char_ps=pooled, alpha=contract['direct_capture_alpha'],
+                                sources=len(source_boundaries), qualified=False,
+                                boundary_role='train-source-pooled cross-family extrapolation; no family-specific shell observations')
+    return contract
+
+
 class Asap7Runtime:
     def __init__(self):
         self.prices = CachedPrices(read(MODELS / 'asap7/response.json'))
-        self.contract = read(MODELS / 'asap7/characterization.json')
+        self.contract = asap7_characterization()
 
     def evaluate(self, graph, view, state, owners, **kwargs):
         return workload_diagnostic.evaluate(graph, view, state, owners, self.prices, **kwargs)
