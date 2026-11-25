@@ -26,7 +26,53 @@ ASAP7 和 Nangate45 分别确定周期，保持各自的采样外壳、驱动／
 
 ## 记录与产物
 
-- 立项状态为计划。记录时的仓库提交为 `5db071111d4d`，RTLzz 为 `8c136652cc42ae4433029476bf095765f1e7b096`，模型清单 SHA-256 为 `77a01ced46302eaa0f7e7ac92bdd650f3e93973944d0b8c6a212dc160b9a89af`。实验开始时重新登记实际身份。 [模型资源清单](../../vullib/models/autopipe/manifest.json)
+[算术算子扫描与拟合进度](model-calibration-progress.md) · [G、S 和 shared 的阶段进度](model-calibration-structures.md)
+
+- 2026-11-23 启动首轮。实际仓库提交为 `298d5d6c14c4488ee62ae40c632b44831ade54de`，RTLzz 为 `8c136652cc42ae4433029476bf095765f1e7b096`，模型清单 SHA-256 为 `77a01ced46302eaa0f7e7ac92bdd650f3e93973944d0b8c6a212dc160b9a89af`。 [模型资源清单](../../vullib/models/autopipe/manifest.json)
 - 已确认的历史数据入口包括研究归档 `experiments/arithmetic/evidence/common_family_continuation_v1/operator-fit-v3-147-dataset.json.gz`（108 个训练点、39 个验证点），以及 `common_transition_incidence_v10/train-data.json.gz`（Add、Mux、G、S 的继承及补测训练记录）。合并时逐源核对重叠。 [原数据口径](models.md#数据与标签)
 - 实验拟在 `/home/zyrv/vulsim-artifacts/autopipe-model-calibration/` 下按工艺和批次保存源清单、采集与拟合脚本、标签、日志、后端产物、误差报告和候选参数。每批记录实际周期、有效及失败点数、用时和峰值内存。
 - 本文登记计划和成果索引。实验成果进入 Git 时只同步通过验证的模型资产，包括冻结参数、相关采样合同、资源清单和必要的模型预测回归快照。
+
+### 首轮实测记录
+
+| 工艺 | 试测 | 请求周期 | 本体时延 | 全程耗时 | 进程树峰值 RSS |
+| --- | --- | ---: | ---: | ---: | ---: |
+| ASAP7 | 全宽 256×256 位乘法 | 3000 ps | 2510.79 ps | 36 分 35 秒 | 15.7 GiB |
+| Nangate45 | 全宽 256×256 位乘法 | 6000 ps | 3525.48 ps | 19 分 31 秒 | 10.8 GiB |
+
+峰值 RSS 来自 0.5 秒采样。ASAP7 试测在最终证书检查时调用了另一工艺的校验器。用对应校验器从保存的报告恢复标签，复核时间另计。普通组上限为 4 并行，每任务 4 线程和 16 GiB。首轮将 192 位及以上乘法列入大乘法组，上限为 2 并行，每任务 8 线程和 32 GiB。
+
+算术采样登记了每套工艺 141 个结构，共 4230 个正式点位。首轮诊断拟合结合了早期实测和相容历史点，使用 54 个历史验证点比较误差。ASAP7 Mux 的时延误差中位数从 17.5% 降到 12.4%，Compare 从 2.9% 升到 8.5%。两项仍需等本轮完整位宽和周期覆盖后的留出结果复核。报告位于实验目录的 `operators-20261123-v1/fit/initial-scan/metrics.json`。
+
+第一个完成 15 点扫描的结构是 ASAP7 8 位加法。紧凑档请求为 240–360 ps，GRT setup WNS 为 −104.2 到 −7.1 ps。适合档请求为 375–440 ps，WNS 为 +1.3 到 +51.5 ps。宽松档请求为 475–900 ps，WNS 为 +77.9 到 +420.5 ps。包含这条完整曲线的诊断拟合见 `operators-20261123-v1/fit/first-15-point-source/metrics.json`。
+
+后台服务为 `vulsim-autopipe-operator-calibration-20261123.service`。算术全量采样和冻结后测试接续 G，再接续共用寄存器组样本的 S 与 shared 采集。两份进度表随采集更新。候选的发布审查依据全量验证和应用候选复算结果。
+
+### ASAP7 截断乘法采集修复
+
+256×256 位乘法的低 256 位样本在 3415 ps 首次采集中止。左操作数低 8 位固定为零，右操作数第 248–255 位的部分积从结果第 256 位起生效。OpenROAD 综合建库时删除了这 8 个无效输入位的发起寄存器，采集脚本仍按综合网表逐一要求其物理引脚。
+
+采集脚本现在核对整个寄存器是否已从 OpenDB 消失，再由掩码和结果位范围证明对应输入位无效。对照试验分别移除了有效寄存器的输出引脚和整个实例，两种情况仍会报错。恢复任务复用原 RTL、综合网表、OpenDB 和 3415 ps 约束，通过 CTS 等价检查及 GRT 标签核对。本体时延为 2135.58 ps，面积为 12202.56 µm²，整体 setup WNS 为 +1067.77 ps。原失败日志继续保留，拟合输入已验证这条恢复标签恰好读取一次。 [恢复记录](../../../vulsim-artifacts/autopipe-model-calibration/operators-20261123-v1/synth-recoveries/asap7-mul256-9c05a8e700c23747-T3415/status.json)
+
+Nangate45 的同一截断结构在 5295 ps 下也通过采集。本体时延为 3072.15 ps，面积为 169567.02 µm²。
+
+两套工艺的 512×512 位全宽乘法在 CTS 等价性检查阶段触及原 32 GiB 上限。512 位乘法改用单任务 16 个逻辑 CPU 线程、64 GiB 限额。两项试测从已保存的 CTS 时序修复后检查点接续，沿用保存检查点前的 8 线程产物，后续阶段使用新配置。等价性检查对展平网表逐单元读取，并保留完整边界、ABC 等价性结论和负向对照。进度表依据有效标签更新失败计数。
+
+| 工艺 | 请求周期 | GRT 本体时延 | GRT 本体面积 | setup WNS | GRT 进程树峰值 RSS |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| ASAP7 | 6215 ps | 4341.43 ps | 105141.10 µm² | +1686.45 ps | 23.12 GiB |
+| Nangate45 | 9635 ps | 5158.92 ps | 1447809.80 µm² | +4227.34 ps | 15.35 GiB |
+
+Nangate45 的面积核对还发现逐单元浮点累加产生约 0.000012 µm² 偏差。核对所有者证书和 OpenDB 的单元类型及数量后，按单元类型分组稳定求和，从保存的 GRT 报告恢复了标签。
+
+### 大位宽乘法后端限时调整
+
+2026-11-24，ASAP7 512×512 位全宽乘法在 3125 ps 下通过 CTS 和等价性检查，但在全局布线的时序修复中触及原 3 小时限额。综合后阶段的限时从 1.5 小时调到 4 小时（192–384 位），从 3 小时调到 8 小时（512 位）。限时覆盖布局、CTS、等价性检查和全局布线。
+
+控制器于 09:46 在 3485 ps 点的完整 CTS 检查点落盘后切换至新限时。3485 ps 点已读取原 CTS 数据库和 SDC，按 8 小时限时接续全局布线。已超时的 3125 ps 点排在其后，从自己的 CTS 检查点接续，取得合格标签后计入正式成功。 [3485 ps 接续记录](../../../vulsim-artifacts/autopipe-model-calibration/operators-20261123-v1/runs/asap7-mul512-bfffd973fd370e5f-T3485/grt-timeout-retry-commands.json) · [3125 ps 原超时记录](../../../vulsim-artifacts/autopipe-model-calibration/operators-20261123-v1/runs/asap7-mul512-bfffd973fd370e5f-T3125/grt.command.json)
+
+### ASAP7 512 位全宽乘法的时序覆盖
+
+三档取点以 6215 ps 试测估得的约 4529 ps 为中心。正式扫描中，3805 ps 与 4075 ps 分别测得 −1.69 ps 和 +17.37 ps 的 setup WNS，实测达标边界落在预设紧凑档末端附近。已测的适合档点全部达标，当前余量为 +79.92 至 +928.16 ps。宽松档已测点余量为 +1264.03 至 +3779.59 ps，另有 10190 ps 点在测。周期档采用请求登记值，实测余量随标签保存。 [扫描记录](../../../vulsim-artifacts/autopipe-model-calibration/operators-20261123-v1/progress.json)
+
+4710 ps 点的综合已结束，OpenSTA 将标称 942 ps 的 I/O 延迟写为 942.0001 ps。采集校验现在按 OpenSTA 的二进制浮点存储和单位换算推导允许的写回值。使用原 SDC 复现并通过新校验，同时验证改动时钟和 I/O 约束的反例仍会被拒绝。4710 ps 已登记为下一项独占补采，沿用原综合网表、数据库和约束。 [补采登记](../../../vulsim-artifacts/autopipe-model-calibration/operators-20261123-v1/synth-recoveries/asap7-mul512-bfffd973fd370e5f-T4710/queue.json)
