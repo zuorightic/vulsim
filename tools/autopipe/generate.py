@@ -19,6 +19,10 @@ from .workload_v10_replay import retarget
 from .candidate_grammar import resolve
 
 
+class IneligibleMulTemplate(ValueError):
+    """The native exporter rejected the shape of a multiplication."""
+
+
 class Generation:
     def __init__(self, args):
         self.args = args
@@ -81,8 +85,17 @@ class Generation:
                 T_clk_ps=self.args.period_ps, graph_export_sha256=sha(probe / 'graph.json'), placements=placements))
             write(empty, {})
             command.extend([str(empty), str(explicit)])
-        with folder.with_suffix('.log').open('w') as log:
-            subprocess.run(command, check=True, stdout=log, stderr=subprocess.STDOUT, timeout=min(600, self.remaining()))
+        log_path = folder.with_suffix('.log')
+        with log_path.open('w') as log:
+            result = subprocess.run(command, stdout=log, stderr=subprocess.STDOUT, timeout=min(600, self.remaining()))
+        if result.returncode == 1 and block and placements is None:
+            # The pinned exporter emits this diagnostic for source-dependent
+            # width/shape eligibility. Other template and compiler errors are fatal.
+            reason = ('template_ineligible: block template requires unsigned inputs <=128, '
+                      '1<=R<=lhs+rhs and 2<=block<=max input width')
+            if log_path.read_text(errors='replace').splitlines()[-1:] == [reason]:
+                raise IneligibleMulTemplate(reason)
+        result.check_returncode()
         self.exported[key] = folder
         return folder
 
@@ -114,6 +127,7 @@ class Generation:
         seeds = []
         candidates = []
         seen = set()
+        ineligible = []
 
         def add(row):
             if row['rtl_sha256'] not in seen:
@@ -124,7 +138,12 @@ class Generation:
 
         for number, grammar in enumerate(self.grammar):
             block, limb = grammar
-            native = self.export(block, limb)
+            try:
+                native = self.export(block, limb)
+            except IneligibleMulTemplate as error:
+                ineligible.append(dict(grammar=list(grammar), reason=str(error)))
+                print(f'Skipped structure {number + 1}/{len(self.grammar)} {grammar}: {error}', flush=True)
+                continue
             raw = read(native / 'graph.json')
             graph = Graph(raw)
             weights = {n['id']:static_node(graph, n) for n in graph.nodes}
@@ -162,14 +181,17 @@ class Generation:
                 add(row)
             self.remaining()
             print(f'Prepared structure {number + 1}/{len(self.grammar)}; candidates={len(candidates)}', flush=True)
-        static_winner = min(seeds, key=static_score)
-        if self.args.method == 'D':
-            add(static_winner)
-        else:
-            candidates = [static_winner]
+        if seeds:
+            static_winner = min(seeds, key=static_score)
+            if self.args.method == 'D':
+                add(static_winner)
+            else:
+                candidates = [static_winner]
         write(self.out / 'candidate-pool.json', dict(policy='frozen-v10-finite-native-and-balanced-v1',
             grammar=self.grammar, search_grammar=self.search_grammar, candidates=candidates, candidate_PPA_calls=0,
-            exhaustive_global_search=False, R1_R5_enabled=False))
+            ineligible_structures=ineligible, exhaustive_global_search=False, R1_R5_enabled=False))
+        if not seeds:
+            raise ValueError('no requested structure is eligible; see candidate-pool.json')
         return candidates
 
     def select(self):

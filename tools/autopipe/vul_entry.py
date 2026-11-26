@@ -84,7 +84,7 @@ def select(request_file):
         iv=iv, ov=ov, reset=reset, generated_source_sha256=sha(native_source))))
     selection = generate(SimpleNamespace(
         workload=None, source_request=source_request, platform=request['platform'],
-        period_ps=request['period_ps'], latency=request['L'], method='D',
+        period_ps=float(request['period_ps']), latency=request['L'], method='D',
         build_dir=build_dir, out=output / 'search', timeout_s=request['timeout_s'],
         candidate_limit=256, check=False, candidate_profile=grammar['profile'],
         mul_block_widths=request.get('mul_block_widths'), add_limb_widths=request.get('add_limb_widths')))

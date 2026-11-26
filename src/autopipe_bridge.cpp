@@ -2,6 +2,7 @@
 
 #include <llvm/Support/JSON.h>
 #include <llvm/Support/FormatVariadic.h>
+#include <algorithm>
 #include <cerrno>
 #include <filesystem>
 #include <fstream>
@@ -91,6 +92,8 @@ void validateAutoPipelineSearchOptions(const rtlgen::AutoPipelineOptions &option
     if (!mul || !add || !max_mul || !max_add || !max_structures)
         throw VulException("Unknown or invalid --candidate-profile: " + options.candidate_profile);
     const auto m = widthList(options.mul_block_widths, *mul, *max_mul);
+    if (std::find(m.begin(), m.end(), 1) != m.end())
+        throw VulException("Multiply block width must be 0 or 2..128");
     const auto a = widthList(options.add_limb_widths, *add, *max_add);
     if (m.size() * a.size() > static_cast<std::size_t>(*max_structures))
         throw VulException("Candidate profile permits at most " + std::to_string(*max_structures) + " structural combinations");

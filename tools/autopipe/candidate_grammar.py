@@ -39,6 +39,8 @@ def resolve(workload=None, profile=None, mul_block_widths=None, add_limb_widths=
         defaults = dict(mul_block_widths=structural['mul_block_widths'],
                         add_limb_widths=structural['add_sub_limb_widths'])
     mul = widths(mul_block_widths, defaults['mul_block_widths'], policy['max_mul_block_width'])
+    if 1 in mul:
+        raise ValueError('multiply block width must be 0 or 2..128')
     add = widths(add_limb_widths, defaults['add_limb_widths'], policy['max_add_limb_width'])
     structures = [[0, 0]] if method in ['A', 'B'] else [list(p) for p in itertools.product(mul, add)]
     if len(structures) > policy['max_structures']:

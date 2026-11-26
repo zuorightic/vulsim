@@ -290,7 +290,21 @@ def evaluate(graph,view,state,owners,prices,*,static_cal=False,owner_queries=Non
     # outer target, state, placement, captures and all query semantics stay
     # unchanged. Keys are OWNER IDs: equal-shape instances may get different T.
     actual_queries={r['node']:r['query'] for r in owners['operators']}
-    actual_queries.update({g['root']:g['query'] for g in owners['G_regions']})
+    individual = set(actual_queries) | set(owners['functional_logic'])
+    if len(individual) != len(owners['operators']) + len(owners['functional_logic']):
+        raise ValueError('owner overlap')
+    members = set()
+    regions = {}
+    for region in owners['G_regions']:
+        root = region['root']
+        group = set(region['members'])
+        if root not in group or len(group) != len(region['members']):
+            raise ValueError('invalid G region membership')
+        if not group.isdisjoint(members) or not group.isdisjoint(individual):
+            raise ValueError('overlapping G member ownership')
+        members.update(group)
+        regions[root] = region
+        actual_queries[root] = region['query']
     if owner_queries is not None:
         if state['features']['sdc_period_ps']!=target:
             raise ValueError('global state/owner target differs')
@@ -309,11 +323,8 @@ def evaluate(graph,view,state,owners,prices,*,static_cal=False,owner_queries=Non
             if not consistent or not math.isfinite(t) or t<=0 or restored!=original:
                 raise ValueError('equivalent request changed non-T semantics')
         actual_queries=owner_queries
-    delay={};area={};records=[];regions={g['root']:g for g in owners['G_regions']};members=set()
+    delay={};area={};records=[]
     bridge=bundle['static_bridge']['alpha']
-    for region in regions.values():
-        if members & set(region['members']):raise ValueError('duplicate G member ownership')
-        members.update(region['members'])
     for row in owners['operators']:
         i=row['node'];p=prices.operator_price(actual_queries[i])
         if static_cal and p['delay_ps']+p['area_um2']>0:
@@ -335,7 +346,6 @@ def evaluate(graph,view,state,owners,prices,*,static_cal=False,owner_queries=Non
         if static_cal and a>0:
             weight=static_node(graph,graph.nodes[i]);d=weight*bridge['operator_delay_ps'];a=weight*bridge['comb_area_um2']
         delay[i]=d;area[i]=a;records.append(dict(node=i,kind='functional',delay_ps=d,area_um2=a,source='exact local Boolean DAG/legal library cover',qualified=False))
-    if len(delay)!=len(owners['operators'])+len(regions)+len(owners['functional_logic']):raise ValueError('owner overlap')
     active=set();arrivals={}
     def arrival(i):
         if i in arrivals:return arrivals[i]

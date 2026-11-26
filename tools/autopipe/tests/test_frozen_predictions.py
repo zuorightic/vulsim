@@ -50,6 +50,20 @@ class FrozenPredictionTests(unittest.TestCase):
                 self.assertIsNotNone(wrapped)
                 self.assertEqual(original[1], re.sub(r'^\s*//[^\n]*\n', '', wrapped[1], flags=re.M))
 
+    def test_g_member_rejects_separate_billing(self):
+        data = json.loads(gzip.decompress(Path(__file__).with_name('frozen_predictions.json.gz').read_bytes()))
+        fixture = next(f for f in data['fixtures'] if f['platform']=='asap7' and f['owners']['G_regions'])
+        model = runtime('asap7')
+        owners = fixture['owners']
+        group = owners['G_regions'][0]
+        internal = next(i for i in group['members'] if i != group['root'])
+        for kind in ('operators', 'functional_logic'):
+            with self.subTest(kind=kind):
+                duplicate = dict(owners['operators'][0], node=internal) if kind=='operators' else internal
+                invalid = dict(owners, **{kind: owners[kind]+[duplicate]})
+                with self.assertRaisesRegex(ValueError, 'overlapping G member'):
+                    model.evaluate(Graph(fixture['graph']), fixture['view'], fixture['state'], invalid)
+
     def test_saved_complete_candidate_predictions(self):
         data = json.loads(gzip.decompress(Path(__file__).with_name('frozen_predictions.json.gz').read_bytes()))
         self.assertEqual(data['schema'], 'frozen-v10-prediction-regression-v1')

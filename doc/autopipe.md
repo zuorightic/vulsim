@@ -106,6 +106,8 @@ python3 -B -m tools.autopipe generate \
 
 自定义输入用 `--source-request path/to/request.json` 替代 `--workload`。请求使用示例中的 `source` 元数据结构，包含 C++ 文件路径、文件 SHA-256、顶层函数、valid 端口及 reset 值。相对源码路径相对于请求文件解析；源码采用 `vullib/fixint.hpp` 中的无符号有限位宽类型。修改源码后需同步更新 `generated_source_sha256`。自定义请求可以生成 RTL；`--check` 需要随附的独立数学参考，因此仅用于已登记示例。
 
+默认配置和显式宽度列表使用同一条规则。例如，对两个 8 位输入的乘法器请求分块宽度 `0,4,8,16` 时，工具会评价前三种宽度，并在 `candidate-pool.json` 的 `ineligible_structures` 中登记含 16 位分块的组合和原因。如果请求的全部结构均不适用，生成失败，报告中保留各组合的原因。
+
 ## 软件验证
 
 ```bash

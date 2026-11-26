@@ -2,6 +2,7 @@
 """Compare real VUL/Python candidate pools on identical extracted source inputs."""
 import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import gzip
 import hashlib
 import json
 from pathlib import Path
@@ -19,6 +20,7 @@ CASES = [
     dict(id='add512-nangate45', case='add512', platform='nangate45', period=1000, profile='add512'),
     dict(id='generic-mac32', case='mac32', platform='asap7', period=1200),
     dict(id='custom-mul24', case='mac32', platform='asap7', period=1200, mul='24', add='0'),
+    dict(id='mixed-mul-widths', case='mac32', platform='asap7', period=1200, mul='16,64', add='0'),
     dict(id='custom-add96', case='add512', platform='asap7', period=1000, mul='0', add='96'),
 ]
 
@@ -77,7 +79,15 @@ def check(spec, base, baselines):
     pool_vul = read(Path(report['selection']).parent / 'candidate-pool.json')
     pool_python = read(python / 'candidate-pool.json')
     assert pool_vul['grammar'] == pool_python['grammar']
+    assert pool_vul['ineligible_structures'] == pool_python['ineligible_structures']
+    if spec['id'] == 'mixed-mul-widths':
+        assert [r['grammar'] for r in pool_vul['ineligible_structures']] == [[64, 0]]
+        assert all(r['grammar'] == [16, 0] for r in pool_vul['candidates'])
     assert [candidate_identity(r) for r in pool_vul['candidates']] == [candidate_identity(r) for r in pool_python['candidates']]
+    for i in range(len(pool_vul['candidates'])):
+        trace = Path('scores') / f'{i:03d}.json.gz'
+        with gzip.open(Path(report['selection']).parent / trace) as a, gzip.open(python / trace) as b:
+            assert json.load(a) == json.load(b), (spec['id'], trace)
     assert selected_vul['rtl_sha256'] == selected_python['rtl_sha256']
     assert selected_vul['prediction'] == selected_python['prediction']
     assert selected_vul['selected_candidate']['placement'] == selected_python['selected_candidate']['placement']
